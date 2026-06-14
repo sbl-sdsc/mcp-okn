@@ -17,6 +17,8 @@ from mcp.server.fastmcp import FastMCP
 
 from . import crosswalks as crosswalk_table
 from . import registry, schema, session
+from . import taxon as taxon_hub
+from .taxon import TAXON_HUB_KGS, _taxon_source  # noqa: F401  (re-exported)
 from .sparql import (
     FEDERATION_ENDPOINT,
     SparqlError,
@@ -894,76 +896,6 @@ async def get_join_strategy(kg_a: str, kg_b: str | None = None) -> dict[str, Any
     }
 
 
-#: NCBITaxon obo IRI prefix, the canonical key every hub spoke normalizes to.
-_NCBITAXON = "http://purl.obolibrary.org/obo/NCBITaxon_"
-
-
-def _taxon_source(kg: str, var: str) -> str | None:
-    """A SPARQL fragment binding ``?{var}`` to ``kg``'s distinct NCBITaxon IRIs.
-
-    Each fragment applies that KG's own normalization (mirroring crosswalks D3-D10)
-    so the two sides meet on the canonical ``obo/NCBITaxon_`` form. Internal helper
-    variables are derived from ``var`` so two fragments compose without collision.
-    Returns None when ``kg`` is not in the NCBITaxon hub.
-    """
-    g = f"<{named_graph(kg)}>"
-    v, h = f"?{var}", f"?_{var}"
-    if kg == "sawgraph":
-        return (
-            f"GRAPH {g} {{ {v} <http://www.w3.org/2000/01/rdf-schema#subClassOf> {h}1 . "
-            f"FILTER(STRSTARTS(STR({v}),'{_NCBITAXON}')) }}"
-        )
-    if kg == "biobricks-aopwiki":
-        return (
-            f"GRAPH {g} {{ {h}1 <http://purl.org/dc/elements/1.1/identifier> {v} . "
-            f"FILTER(STRSTARTS(STR({v}),'{_NCBITAXON}')) }}"
-        )
-    if kg == "gene-expression-atlas-okn":
-        return (
-            f"GRAPH {g} {{ {h}1 <https://w3id.org/biolink/vocab/in_taxon> {v} . "
-            f"FILTER(STRSTARTS(STR({v}),'{_NCBITAXON}')) }}"
-        )
-    if kg == "spoke-okn":
-        return (
-            f"GRAPH {g} {{ {h}1 a <https://w3id.org/biolink/vocab/OrganismTaxon> }} "
-            f"BIND(IRI(CONCAT('{_NCBITAXON}',"
-            f"REPLACE(STR({h}1),'^.*/organism/([0-9]+).*$','$1'))) AS {v})"
-        )
-    if kg == "nde":
-        return (
-            f"GRAPH {g} {{ {h}1 <http://schema.org/species> {h}2 . "
-            f"FILTER(CONTAINS(STR({h}2),'/taxonomy/')) }} "
-            f"BIND(IRI(CONCAT('{_NCBITAXON}',"
-            f"REPLACE(STR({h}2),'^.*/taxonomy/([0-9]+).*$','$1'))) AS {v})"
-        )
-    if kg == "spoke-genelab":
-        sch = "https://purl.org/okn/frink/kg/spoke-genelab/schema/"
-        # model organisms: obo NCBITaxon string literal on Gene.taxonomy (D4)
-        model = (
-            f"{{ GRAPH {g} {{ {h}1 <{sch}taxonomy> {h}2 . "
-            f"FILTER(STRSTARTS(STR({h}2),'{_NCBITAXON}')) }} BIND(IRI(STR({h}2)) AS {v}) }}"
-        )
-        # microbiome: NCBI taxon id embedded in the Organism node IRI .../node/{id} (D10)
-        micro = (
-            f"{{ GRAPH {g} {{ {h}3 a <{sch}Organism> . }} "
-            f"BIND(IRI(CONCAT('{_NCBITAXON}',"
-            f"REPLACE(STR({h}3),'^.*/node/([0-9]+).*$','$1'))) AS {v}) }}"
-        )
-        return f"{{ {model} UNION {micro} }}"
-    return None
-
-
-#: KGs whose taxa reach the ubergraph NCBITaxon hub (have a `_taxon_source`).
-TAXON_HUB_KGS = [
-    "spoke-okn",
-    "nde",
-    "sawgraph",
-    "biobricks-aopwiki",
-    "spoke-genelab",
-    "gene-expression-atlas-okn",
-]
-
-
 @mcp.tool()
 async def taxon_overlap(kg_a: str, kg_b: str) -> dict[str, Any]:
     """Build a runnable query for the NCBITaxon overlap between two KGs.
@@ -984,20 +916,23 @@ async def taxon_overlap(kg_a: str, kg_b: str) -> dict[str, Any]:
         exact-id count understating a real biological overlap is the #1 trap here.
 
     Each side applies its KG's own id normalization (PATRIC genome id, UniProt
-    taxonomy IRI, label resolution, …). If the pair is already a verified crosswalk
-    (e.g. spoke-genelab<->spoke-okn, D9), its recipe is returned under
-    `materialized` so you can use the stored count instead of re-running.
+    taxonomy IRI, label resolution, …). Materialized counts (exact-id + both clade
+    directions) are returned under `materialized_overlap` when the pair has a
+    non-zero overlap precomputed in the NCBITaxon hub (see `list_crosswalks`); a
+    verified pairwise crosswalk recipe (e.g. spoke-genelab<->spoke-okn, D9) is
+    returned under `materialized` so you can use the stored count instead of
+    re-running.
 
     Args:
         kg_a: a KG shortname in the NCBITaxon hub (see `TAXON_HUB_KGS`).
         kg_b: the other KG shortname.
 
     Returns `{"kg_a", "kg_b", "exact_id_skeleton", "clade_membership_skeleton",
-    "note", "materialized"?}`, or `{"status": "not_in_taxon_hub", ...}` if either
-    KG has no taxon representation that reaches the hub.
+    "note", "materialized_overlap"?, "materialized"?}`, or `{"status":
+    "not_in_taxon_hub", ...}` if either KG has no taxon representation that reaches
+    the hub.
     """
-    sa, sb = _taxon_source(kg_a, "a"), _taxon_source(kg_b, "b")
-    missing = [k for k, s in ((kg_a, sa), (kg_b, sb)) if s is None]
+    missing = [k for k in (kg_a, kg_b) if not taxon_hub.in_taxon_hub(k)]
     if missing:
         return {
             "status": "not_in_taxon_hub",
@@ -1008,38 +943,30 @@ async def taxon_overlap(kg_a: str, kg_b: str) -> dict[str, Any]:
                 f"composed. KGs whose taxa reach the hub: {TAXON_HUB_KGS}."
             ),
         }
-    ub = f"<{named_graph('ubergraph')}>"
-
-    # Each side is wrapped in a DISTINCT subquery: that isolates its BIND-constructed
-    # taxon (a constructed IRI cannot also be pattern-matched in the outer query —
-    # reusing the var would be a SPARQL syntax error) and collapses each KG's taxa
-    # before the join, so the outer pattern is a bounded set-membership check, not a
-    # cross product.
-    def _sub(kg: str, var: str) -> str:
-        return f"{{ SELECT DISTINCT ?{var} WHERE {{ {_taxon_source(kg, var)} }} }}"
-
-    exact = (
-        "SELECT (COUNT(DISTINCT ?t) AS ?shared) WHERE {\n"
-        f"  {_sub(kg_a, 't')}\n  {_sub(kg_b, 't')}\n}}"
-    )
-    clade = (
-        "SELECT (COUNT(DISTINCT ?b) AS ?shared) WHERE {\n"
-        f"  {_sub(kg_a, 'a')}\n  {_sub(kg_b, 'b')}\n"
-        f"  GRAPH {ub} {{ ?b <http://www.w3.org/2000/01/rdf-schema#subClassOf>* ?a . }}\n}}"
-    )
     out: dict[str, Any] = {
         "kg_a": kg_a,
         "kg_b": kg_b,
-        "exact_id_skeleton": exact,
-        "clade_membership_skeleton": clade,
+        "exact_id_skeleton": taxon_hub.build_exact_skeleton(kg_a, kg_b),
+        "clade_membership_skeleton": taxon_hub.build_clade_skeleton(kg_a, kg_b),
         "note": (
-            "Pairwise taxon overlap is computed THROUGH the ubergraph hub, not "
-            "precomputed — run a skeleton with `query`/federation. exact_id counts "
-            "the SAME NCBITaxon id on both sides; clade_membership counts kg_b taxa "
-            "under kg_a's clades (subClassOf*) and can be much larger when one side "
-            "is coarser-grained. Swap kg_a/kg_b to flip the clade direction."
+            "Pairwise taxon overlap is computed THROUGH the ubergraph hub. "
+            "exact_id counts the SAME NCBITaxon id on both sides; clade_membership "
+            "counts kg_b taxa under kg_a's clades (subClassOf*) and can be much "
+            "larger when one side is coarser-grained. Swap kg_a/kg_b to flip the "
+            "clade direction. Run a skeleton with `query`/federation, or use "
+            "`materialized_overlap` if present."
         ),
     }
+    overlap = crosswalk_table.taxon_hub_pair(kg_a, kg_b)
+    if overlap is not None:
+        out["materialized_overlap"] = overlap
+        out["materialized_overlap_verified_on"] = crosswalk_table.taxon_hub_verified_on()
+        out["note"] = (
+            f"Materialized overlap (verified {crosswalk_table.taxon_hub_verified_on()}): "
+            f"exact_id={overlap.get('exact_id')}, "
+            f"{kg_a} taxa in {kg_b} clades={overlap.get('clade_a_in_b')}, "
+            f"{kg_b} taxa in {kg_a} clades={overlap.get('clade_b_in_a')}. " + out["note"]
+        )
     materialized = [
         j
         for j in crosswalk_table.join_between(kg_a, kg_b)
@@ -1047,11 +974,6 @@ async def taxon_overlap(kg_a: str, kg_b: str) -> dict[str, Any]:
     ]
     if materialized:
         out["materialized"] = materialized
-        out["note"] = (
-            f"A verified crosswalk already exists for this pair "
-            f"(count {materialized[0].get('verified_count')}) — prefer its stored "
-            f"`skeleton_query`/count. " + out["note"]
-        )
     return out
 
 
@@ -1072,29 +994,41 @@ async def list_crosswalks(include_examples: bool = True) -> dict[str, Any]:
             more compact listing.
 
     Returns:
-        `{"verified_on", "count", "crosswalks": [{"domain", "kgs", "shared_key",
-        "bridge_kg", "verified_count", "example_question"?}, ...]}`. Rows are
-        sorted by `(domain, shared_key)`, so the list reads as a table grouped by
-        `domain` (e.g. "Genes", "Geospatial", "Disease & phenotype") and ordered
-        by ontology within each — render it directly as such. `kgs` lists every
-        KG the join touches in join order (left → bridge → right), each an
-        official registry shortname usable directly with
-        `describe_kg`/`get_schema`/`query`. `verified_on` dates the counts.
+        `{"verified_on", "count", "crosswalks": [...], "taxon_clade_note"?}`. Rows
+        are sorted by `(domain, shared_key)`, so the list reads as a table grouped
+        by `domain` (e.g. "Genes", "Geospatial", "Disease & phenotype") and ordered
+        by ontology within each — render it directly as such. `kgs` lists every KG
+        the join touches in join order (left → bridge → right), each an official
+        registry shortname usable directly with `describe_kg`/`get_schema`/`query`.
+        Most rows carry a single `verified_count`; `verified_on` dates the counts.
 
         The NCBITaxon crosswalks are a hub (each KG joins `ubergraph`); rather than
-        list each KG's overlap with that plumbing, the per-KG spokes are collapsed
-        into ONE row carrying `hub: "ubergraph"`, the mutually-integratable member
-        KGs in `kgs`, `verified_count: null`, and a `note` pointing to
-        `taxon_overlap(kg_a, kg_b)` for a pair's (two-valued: exact vs clade)
-        counts. Verified pairwise taxon crosswalks (e.g. spoke-genelab<->spoke-okn,
-        bridged through ubergraph) keep their own rows.
+        list each KG's overlap with that plumbing, the listing shows ONE row PER
+        non-zero KG pair, composed through the hub (`kgs: [kg_a, "ubergraph",
+        kg_b]`, `bridge_kg: "ubergraph"`, `hub: "ubergraph"`). These rows have NO
+        single `verified_count`; the overlap is two-valued — `exact_id` (taxa with
+        the same NCBITaxon id, symmetric) plus directional `clade_a_in_b` /
+        `clade_b_in_a` (taxa nested under the other KG's clades via `subClassOf*`,
+        often far larger). When the result includes Taxonomy rows it also carries a
+        top-level `taxon_clade_note`: RENDER IT as a short paragraph AFTER the table
+        so the reader understands the two columns. `taxon_overlap(kg_a, kg_b)`
+        returns the runnable skeletons.
+
+        Rows where `ubergraph` is a bare endpoint (a KG's overlap with the ontology
+        backbone, not a KG-to-KG join — e.g. oard-kg's MONDO terms, biobricks-mesh's
+        MeSH terms) are omitted from this listing; they remain available via
+        `get_join_strategy` and are what inline `subClassOf*` category expansion
+        uses. In the listing ubergraph appears only as a bridge (middle of `kgs`).
     """
     rows = crosswalk_table.all_crosswalks(include_examples=include_examples)
-    return {
+    out: dict[str, Any] = {
         "verified_on": crosswalk_table.verified_on(),
         "count": len(rows),
         "crosswalks": rows,
     }
+    if any(r["shared_key"] == "NCBITaxon" for r in rows):
+        out["taxon_clade_note"] = crosswalk_table.TAXON_CLADE_NOTE
+    return out
 
 
 @mcp.tool()

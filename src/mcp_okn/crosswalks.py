@@ -169,6 +169,24 @@ def _is_taxon_hub_spoke(entry: dict[str, Any]) -> bool:
     )
 
 
+def _is_ubergraph_endpoint_overlap(entry: dict[str, Any]) -> bool:
+    """True when ``ubergraph`` is a bare ENDPOINT of the entry (no ``bridge_kg``).
+
+    Such a row records a KG's overlap with the ontology BACKBONE — e.g. A6
+    (oard-kg's MONDO terms present in ubergraph) or M1 (biobricks-mesh's MeSH
+    descriptors in ubergraph) — not a KG-to-KG integration. ubergraph carries no
+    data of its own; a join "to ubergraph" is always ontology expansion or a bridge
+    half, so these are suppressed from :func:`all_crosswalks` (the listing of
+    integration points). They remain in the table, so ``get_join_strategy`` and
+    inline ``subClassOf*`` category expansion still use them. The NCBITaxon spokes
+    are this shape too but are handled separately (rendered as pairwise rows).
+    """
+    return not entry.get("bridge_kg") and "ubergraph" in (
+        entry.get("left_kg"),
+        entry.get("right_kg"),
+    )
+
+
 def all_crosswalks(include_examples: bool = True) -> list[dict[str, Any]]:
     """Compact summary of every verified cross-KG integration point.
 
@@ -179,14 +197,19 @@ def all_crosswalks(include_examples: bool = True) -> list[dict[str, Any]]:
 
     The NCBITaxon crosswalks are a HUB (each KG joins ``ubergraph``), but a user
     cares about pairwise integration, not each KG's overlap with the ubergraph
-    plumbing. So the per-KG ``KG↔ubergraph`` spokes are collapsed into ONE hub row
-    (``hub: "ubergraph"``) that names the mutually-integratable member KGs and
-    points to ``taxon_overlap(kg_a, kg_b)`` for a pair's counts (which are
-    two-valued — exact id vs clade — so no single pairwise number is shown). The
-    underlying spoke recipes are untouched and still served by
-    ``get_join_strategy`` / ``verified_for``; only this listing collapses them.
-    Verified pairwise taxon crosswalks that bridge through ubergraph (e.g. D9) keep
-    their own rows.
+    plumbing. So ALL NCBITaxon entries (the per-KG ``KG↔ubergraph`` spokes and the
+    bridged pairwise ones like D9) are dropped and re-rendered as ONE row PER
+    non-zero pair from the materialized hub set: ``kgs: [kg_a, "ubergraph", kg_b]``,
+    ``bridge_kg: "ubergraph"``, ``hub: "ubergraph"``, and the two-valued counts
+    ``exact_id`` plus directional ``clade_a_in_b``/``clade_b_in_a`` (no single
+    ``verified_count``). ``taxon_overlap(kg_a, kg_b)`` returns the runnable skeleton.
+
+    Likewise dropped are rows where ``ubergraph`` is a bare ENDPOINT (no bridge) —
+    e.g. A6 (oard-kg MONDO) and M1 (biobricks-mesh MeSH): they record a KG's overlap
+    with the ontology backbone, not a KG-to-KG integration (see
+    :func:`_is_ubergraph_endpoint_overlap`). All these entries are untouched in the
+    table and still served by ``get_join_strategy`` / ``verified_for``; only this
+    listing suppresses them.
 
     Rows are sorted by ``(domain, shared_key, kgs)`` so the result reads as a
     table grouped by domain and ordered by ontology within each — ready to render
@@ -198,14 +221,16 @@ def all_crosswalks(include_examples: bool = True) -> list[dict[str, Any]]:
     (official shortnames) and ``shared_key``.
     """
     rows: list[dict[str, Any]] = []
-    hub_members: set[str] = set()
     for e in load_crosswalks().get("verified_crosswalks", []):
-        if _is_taxon_hub_spoke(e):
-            hub_members.update(
-                kg
-                for kg in (e.get("left_kg"), e.get("right_kg"))
-                if kg and kg != "ubergraph"
-            )
+        # Every NCBITaxon crosswalk (KG↔ubergraph spokes AND the bridged pairwise
+        # ones like D9) is rendered instead from the materialized hub pairwise set
+        # below, so the listing shows verified PER-PAIR counts, not each KG's
+        # (uninteresting) overlap with the ubergraph plumbing.
+        if e.get("shared_key") == "NCBITaxon":
+            continue
+        # Drop rows where ubergraph is a bare endpoint (A6 MONDO, M1 MeSH): a KG's
+        # overlap with the ontology backbone, not a KG-to-KG integration point.
+        if _is_ubergraph_endpoint_overlap(e):
             continue
         row = {
             "domain": domain_for(e.get("shared_key")),
@@ -218,29 +243,32 @@ def all_crosswalks(include_examples: bool = True) -> list[dict[str, Any]]:
             row["example_question"] = e.get("example_question")
         rows.append(row)
 
-    if hub_members:
-        cluster: dict[str, Any] = {
+    # One row per materialized non-zero pair. These are hub joins composed THROUGH
+    # ubergraph, so the bridge sits in the middle (kgs = [a, ubergraph, b]) and the
+    # count is two-valued: exact_id (same NCBITaxon id, symmetric) plus the two
+    # directional clade-membership counts. See TAXON_CLADE_NOTE.
+    hub_verified_on = taxon_hub_verified_on()
+    for rec in taxon_hub_pairwise():
+        a, b = rec["kg_a"], rec["kg_b"]
+        row = {
             "domain": domain_for("NCBITaxon"),
-            "kgs": sorted(hub_members),
+            "kgs": [a, "ubergraph", b],
             "shared_key": "NCBITaxon",
-            "bridge_kg": None,
-            "verified_count": None,
+            "bridge_kg": "ubergraph",
             "hub": "ubergraph",
-            "note": (
-                "NCBITaxon hub: these KGs each map organisms to the ubergraph "
-                "taxonomy and are pairwise-integratable through it. Pairwise "
-                "overlap is two-valued (exact id vs clade membership) — call "
-                "taxon_overlap(kg_a, kg_b) for a pair's counts. Verified pairwise "
-                "taxon crosswalks (e.g. spoke-genelab<->spoke-okn) keep their own "
-                "rows."
-            ),
+            "exact_id": rec["exact_id"],
+            "clade_a_in_b": rec["clade_a_in_b"],
+            "clade_b_in_a": rec["clade_b_in_a"],
+            "verified_on": hub_verified_on,
         }
         if include_examples:
-            cluster["example_question"] = (
-                "Which KGs share organisms, and how many? Use "
-                "taxon_overlap(kg_a, kg_b) for any pair."
+            row["example_question"] = (
+                f"How many organisms do {a} and {b} share? exact_id="
+                f"{rec['exact_id']} carry the identical NCBITaxon id; clade "
+                f"membership ({rec['clade_a_in_b']} / {rec['clade_b_in_a']}) "
+                "expands through the ubergraph hierarchy."
             )
-        rows.append(cluster)
+        rows.append(row)
 
     rows.sort(key=lambda r: (r["domain"], r["shared_key"] or "", r["kgs"]))
     return rows
@@ -309,3 +337,63 @@ def island_status(shortname: str) -> dict[str, Any] | None:
 def verified_on() -> str | None:
     """The date the table's counts were verified, for staleness visibility."""
     return load_crosswalks().get("verified_on")
+
+
+#: Explanation rendered AFTER the list_crosswalks table for the Taxonomy rows,
+#: which carry two materialized counts instead of a single verified_count.
+TAXON_CLADE_NOTE = (
+    "Taxonomy (NCBITaxon) rows are pairwise organism overlaps composed THROUGH the "
+    "ubergraph hub, so each carries two materialized counts rather than one "
+    "verified_count. exact_id = taxa with the IDENTICAL NCBITaxon id on both sides "
+    "(symmetric). clade_a_in_b / clade_b_in_a = how many of the first / second KG's "
+    "taxa fall UNDER the other KG's taxa once expanded through ubergraph's "
+    "rdfs:subClassOf* hierarchy (directional, hence two numbers). Clade membership "
+    "is the more complete biological overlap and is often far larger than exact_id "
+    "when one KG records coarser taxa (e.g. genus) and the other finer ones (e.g. "
+    "strain) — e.g. spoke-genelab × spoke-okn is exact_id 2 but 33,313 by clade. "
+    "Only non-zero pairs are listed; call taxon_overlap(kg_a, kg_b) for the runnable "
+    "skeletons."
+)
+
+
+def taxon_hub_pairwise() -> list[dict[str, Any]]:
+    """Materialized pairwise NCBITaxon overlaps between hub members.
+
+    Each record is ``{kg_a, kg_b, exact_id, clade_a_in_b, clade_b_in_a}`` for a
+    non-zero pair (zero-overlap pairs are omitted). ``kg_a``/``kg_b`` are sorted;
+    ``clade_a_in_b`` counts ``kg_a``'s taxa nested under ``kg_b``'s clades, and
+    ``clade_b_in_a`` the reverse. Populated by
+    ``scripts/refresh_taxon_overlaps.py``; ``[]`` if absent.
+    """
+    hub = load_crosswalks().get("taxon_hub", {})
+    return hub.get("pairwise", []) if isinstance(hub, dict) else []
+
+
+def taxon_hub_verified_on() -> str | None:
+    """The date the materialized taxon-hub pairwise counts were verified."""
+    hub = load_crosswalks().get("taxon_hub", {})
+    return hub.get("verified_on") if isinstance(hub, dict) else None
+
+
+def taxon_hub_pair(kg_a: str, kg_b: str) -> dict[str, Any] | None:
+    """The materialized overlap for ``{kg_a, kg_b}``, oriented so ``a`` == ``kg_a``.
+
+    Returns None when the pair has no non-zero materialized overlap. The stored
+    records are keyed on a sorted pair; when the request order is reversed the
+    directional clade counts are swapped so ``clade_a_in_b`` always means
+    ``kg_a``-in-``kg_b``.
+    """
+    for rec in taxon_hub_pairwise():
+        ra, rb = rec.get("kg_a"), rec.get("kg_b")
+        if {ra, rb} != {kg_a, kg_b}:
+            continue
+        if ra == kg_a:
+            return dict(rec)
+        return {
+            "kg_a": kg_a,
+            "kg_b": kg_b,
+            "exact_id": rec.get("exact_id"),
+            "clade_a_in_b": rec.get("clade_b_in_a"),
+            "clade_b_in_a": rec.get("clade_a_in_b"),
+        }
+    return None

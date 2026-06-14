@@ -80,33 +80,95 @@ async def test_single_kg_listing_returns_all_its_joins():
 
 
 @pytest.mark.asyncio
-async def test_list_crosswalks_collapses_taxon_hub_into_one_row():
+async def test_list_crosswalks_renders_taxon_hub_as_pairwise_rows():
     entries = cw.load_crosswalks()["verified_crosswalks"]
-    spokes = [e for e in entries if cw._is_taxon_hub_spoke(e)]
-    assert len(spokes) >= 2, "expected several KG<->ubergraph taxon spokes to collapse"
+    # every NCBITaxon verified_crosswalk (spokes + the bridged D9) is suppressed
+    # from the per-entry rows, replaced by the materialized pairwise rows.
+    taxon_entries = [e for e in entries if e.get("shared_key") == "NCBITaxon"]
+    assert len(taxon_entries) >= 2
 
     out = await list_crosswalks()
     rows = out["crosswalks"]
     assert out["count"] == len(rows)
     assert all(row["kgs"] for row in rows)  # every row names KGs
 
-    # the spokes collapse into exactly one hub row; all other entries stay as rows
-    hub_rows = [r for r in rows if r.get("hub")]
-    assert len(hub_rows) == 1
-    assert len(rows) == (len(entries) - len(spokes)) + 1
+    pairwise = cw.taxon_hub_pairwise()
+    taxon_rows = [r for r in rows if r["shared_key"] == "NCBITaxon"]
+    # one row per non-zero pair — no single collapsed "hub members" row remains
+    assert len(taxon_rows) == len(pairwise) >= 1
+    # dropped entries = all NCBITaxon (re-rendered as pairwise) + bare ubergraph
+    # endpoint overlaps (A6/M1); the rest stay 1:1 as rows.
+    dropped = [e for e in entries
+               if e.get("shared_key") == "NCBITaxon"
+               or cw._is_ubergraph_endpoint_overlap(e)]
+    assert len(rows) == (len(entries) - len(dropped)) + len(pairwise)
 
-    hub = hub_rows[0]
-    assert hub["hub"] == "ubergraph"
-    assert hub["shared_key"] == "NCBITaxon" and hub["domain"] == "Taxonomy"
-    assert hub["bridge_kg"] is None and hub["verified_count"] is None
-    # names every spoke's non-ubergraph member, and never the hub plumbing itself
-    members = {kg for e in spokes for kg in (e["left_kg"], e["right_kg"]) if kg != "ubergraph"}
-    assert set(hub["kgs"]) == members and "ubergraph" not in hub["kgs"]
-    assert "taxon_overlap" in hub["note"]
+    members = set(cw.load_crosswalks()["taxon_hub"]["members"])
+    for r in taxon_rows:
+        assert r["domain"] == "Taxonomy" and r["hub"] == "ubergraph"
+        # composed through the hub: bridge sits in the middle of the endpoints
+        assert r["bridge_kg"] == "ubergraph"
+        assert r["kgs"][1] == "ubergraph" and len(r["kgs"]) == 3
+        assert {r["kgs"][0], r["kgs"][2]} <= members
+        # both numbers shown per pair; at least one non-zero
+        for field in ("exact_id", "clade_a_in_b", "clade_b_in_a"):
+            assert isinstance(r[field], int)
+        assert any(r[f] > 0 for f in ("exact_id", "clade_a_in_b", "clade_b_in_a"))
+        assert "verified_count" not in r  # replaced by the two count columns
 
-    # a pairwise taxon crosswalk that bridges through ubergraph (D9) is NOT collapsed
-    d9 = [r for r in rows if r["shared_key"] == "NCBITaxon" and r["bridge_kg"] == "ubergraph"]
-    assert d9 and all(set(r["kgs"]) >= {"spoke-genelab", "spoke-okn"} for r in d9)
+    # the D9 pair (spoke-genelab/spoke-okn) appears as one of the pairwise rows
+    assert any({r["kgs"][0], r["kgs"][2]} == {"spoke-genelab", "spoke-okn"}
+               for r in taxon_rows)
+
+    # the clade-membership explanation is surfaced for rendering after the table
+    assert "taxon_clade_note" in out and "clade" in out["taxon_clade_note"].lower()
+
+
+@pytest.mark.asyncio
+async def test_list_crosswalks_omits_bare_ubergraph_endpoint_rows():
+    """ubergraph appears in the listing only as a bridge (middle of kgs), never as a
+    bare endpoint — those rows (A6 oard-kg MONDO, M1 biobricks-mesh MeSH) are a KG's
+    overlap with the ontology backbone, not a KG-to-KG integration. They stay in the
+    table for get_join_strategy."""
+    out = await list_crosswalks()
+    for r in out["crosswalks"]:
+        if "ubergraph" in r["kgs"]:
+            # only ever the bridge, sitting between two endpoints
+            assert r["bridge_kg"] == "ubergraph" and r["kgs"][1] == "ubergraph"
+
+    # A6 / M1 are gone from the listing but still present in the raw table
+    entries = cw.load_crosswalks()["verified_crosswalks"]
+    assert any(e["id"].startswith("A6") for e in entries)
+    assert any(e["id"].startswith("M1") for e in entries)
+    assert all(cw._is_ubergraph_endpoint_overlap(e)
+               for e in entries if e["id"] in ("A6-mondo-expansion", "M1-mesh-ubergraph"))
+
+
+def test_taxon_hub_block_is_well_formed():
+    from mcp_okn.server import TAXON_HUB_KGS
+
+    hub = cw.load_crosswalks().get("taxon_hub", {})
+    assert hub.get("hub_kg") == "ubergraph"
+    # the block's declared members are exactly the tool's hub KGs
+    assert set(hub.get("members", [])) == set(TAXON_HUB_KGS)
+    # every materialized pair is on real hub members, sorted and non-zero
+    for rec in cw.taxon_hub_pairwise():
+        assert rec["kg_a"] in TAXON_HUB_KGS and rec["kg_b"] in TAXON_HUB_KGS
+        assert rec["kg_a"] < rec["kg_b"]
+
+
+def test_taxon_hub_pair_orients_clade_to_request_order():
+    pairs = cw.taxon_hub_pairwise()
+    if not pairs:
+        pytest.skip("no materialized taxon-hub pairs yet")
+    rec = pairs[0]
+    a, b = rec["kg_a"], rec["kg_b"]
+    forward = cw.taxon_hub_pair(a, b)
+    reverse = cw.taxon_hub_pair(b, a)
+    assert forward["exact_id"] == reverse["exact_id"] == rec["exact_id"]
+    # clade direction is relative to the requested first arg, so it flips on swap
+    assert forward["clade_a_in_b"] == rec["clade_a_in_b"] == reverse["clade_b_in_a"]
+    assert forward["clade_b_in_a"] == rec["clade_b_in_a"] == reverse["clade_a_in_b"]
 
 
 @pytest.mark.asyncio

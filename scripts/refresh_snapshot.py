@@ -38,6 +38,11 @@ def sync_crosswalks(known: set[str]) -> None:
             if e.get(key):
                 referenced.add(e[key])
         referenced.update(e.get("members", []))
+    # The NCBITaxon hub names its members and per-pair counts on real KGs too.
+    hub = data.get("taxon_hub", {})
+    referenced.update(hub.get("members", []))
+    for rec in hub.get("pairwise", []):
+        referenced.update(k for k in (rec.get("kg_a"), rec.get("kg_b")) if k)
     unknown = referenced - known
     assert not unknown, f"crosswalk table names unknown KGs: {sorted(unknown)}"
     with CROSSWALK_OUT.open("w", encoding="utf-8") as f:

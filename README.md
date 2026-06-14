@@ -25,7 +25,7 @@ SPARQL queries scoped to one or more named graphs of the form
 | `expand_ontology_term(term, relation="subClassOf", direction="descendants", include_self=True, limit=1000)` | Expand an ontology term to its full subtree/closure via the `ubergraph` graph. |
 | `get_join_strategy(kg_a, kg_b=None)` | Look up a precomputed, hand-verified recipe for joining two KGs — predicates, roles, shared identifier, bridge graph, verified count, and a runnable `skeleton_query` (the example SPARQL to copy and build on; it already encodes the IRI rewrites). Call **before** writing a federated join. Returns `verified` / `known_non_join` / `unknown`; with `kg_b` omitted, lists every join touching `kg_a`. |
 | `list_crosswalks(include_examples=True)` | List **every** verified cross-KG integration point in one call — a global map of which graphs connect and on what shared key. Rows are grouped by `domain` (Genes, Geospatial, Disease & phenotype, …) and sorted by ontology, ready to render as a table. Each row is a compact summary (`domain`, connected `kgs` in join order by official shortname, `shared_key`, `bridge_kg`, `verified_count`, and an `example_question` by default; set `include_examples=False` for a terser list). Use `get_join_strategy(kg_a, kg_b)` for a single pair's full recipe. |
-| `taxon_overlap(kg_a, kg_b)` | Compose the NCBITaxon overlap between two hub KGs *through* `ubergraph` (the table stores each KG↔ubergraph spoke, not pairwise counts). Returns two runnable skeletons — `exact_id` (same taxon id) and `clade_membership` (kg_b taxa under kg_a's clades via `subClassOf*`, which can be far larger when one side is coarser-grained) — plus the verified recipe if the pair is already materialized. Run a skeleton with `sparql_query`. |
+| `taxon_overlap(kg_a, kg_b)` | Compose the NCBITaxon overlap between two hub KGs *through* `ubergraph`. Returns two runnable skeletons — `exact_id` (same taxon id) and `clade_membership` (kg_b taxa under kg_a's clades via `subClassOf*`, which can be far larger when one side is coarser-grained) — plus, for a pair with a precomputed non-zero overlap, the materialized counts under `materialized_overlap` (the same per-pair counts `list_crosswalks` surfaces in the NCBITaxon hub row). Run a skeleton with `sparql_query`. |
 | `reset_query_log()` | Clear the session query log. Call at the **start** of an analysis to scope a transcript. |
 | `get_query_log()` | Return the queries logged so far this session (only those that returned rows and weren't exploratory). |
 | `create_chat_transcript(model, exchanges, ...)` | Emit a reproducible markdown (or JSON) record of a session — prompts, answers, the verbatim queries + results that produced findings, and any `visualize_schema` diagrams. Call at the **end** of an analysis. |
@@ -240,14 +240,24 @@ Actinomycetota) that an `rdfs:label` match silently drops.
 
 Two KGs can also be joined **through** the hub by composing their spokes — and when
 the two sides sit at different granularities (genus vs strain) that is the *only*
-way, since they share no id until a clade is expanded. The table stores each
-KG↔ubergraph spoke, not pairwise counts, so **`taxon_overlap(kg_a, kg_b)`** composes
-two spokes on demand and returns two runnable skeletons: `exact_id` (same NCBITaxon
-id on both sides) and `clade_membership` (one KG's taxa nested under the other's via
-`subClassOf*`). The two can differ enormously — for `spoke-genelab` × `spoke-okn`,
-exact-id is **2** but clade-membership is **33,313** (spoke-genelab's microbiome
-genera expanding down to spoke-okn's strains, also stored as crosswalk D9) — a join
-impossible without the hub.
+way, since they share no id until a clade is expanded. **`taxon_overlap(kg_a, kg_b)`**
+composes two spokes on demand and returns two runnable skeletons: `exact_id` (same
+NCBITaxon id on both sides) and `clade_membership` (one KG's taxa nested under the
+other's via `subClassOf*`). The two can differ enormously — for `spoke-genelab` ×
+`spoke-okn`, exact-id is **2** but clade-membership is **33,313** (spoke-genelab's
+microbiome genera expanding down to spoke-okn's strains, also stored as crosswalk
+D9) — a join impossible without the hub.
+
+These pairwise counts are **materialized**, not just composable on demand:
+`list_crosswalks` renders the NCBITaxon hub as **one row per non-zero pair** (in the
+Taxonomy domain), each bridged through ubergraph (`kgs: [kg_a, ubergraph, kg_b]`) and
+carrying both numbers as columns — `exact_id` (symmetric) and `clade_a_in_b` /
+`clade_b_in_a` (directional) — so an agent identifying integration points sees the
+verified per-pair overlap without a second call. The result also carries a
+`taxon_clade_note` to render after the table explaining the two columns.
+`taxon_overlap` echoes the same counts under `materialized_overlap`. Regenerate them
+when a member KG is updated with `scripts/refresh_taxon_overlaps.py` (then
+`refresh_snapshot.py` to bundle) — see [KG snapshot](#kg-snapshot).
 
 Example — AOPs applicable to any rodent, clade expanded in ubergraph:
 
@@ -348,6 +358,14 @@ uv run python scripts/refresh_snapshot.py
 KGs that are in the registry but not actually loaded under their expected
 federation named graph (currently just `semopenalex`) are filtered out, so
 `list_kgs` only returns graphs that are queryable.
+
+The curated crosswalk table is edited at `metadata/crosswalks.json` and bundled to
+`src/mcp_okn/data/crosswalks.json` by the same `refresh_snapshot.py` run. Two helpers
+recompute its live-verified counts against the federation and write them back:
+`scripts/verify_skeletons.py` (per-crosswalk `skeleton_query` counts) and
+`scripts/refresh_taxon_overlaps.py` (the NCBITaxon hub's pairwise `exact_id` + clade
+counts — `--inject` to write, `--pair A B` for one pair). Run `refresh_snapshot.py`
+afterwards to sync the bundled copy.
 
 ## Notes
 

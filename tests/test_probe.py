@@ -400,7 +400,22 @@ async def test_taxon_overlap_surfaces_materialized_pair():
     out = await taxon_overlap("spoke-genelab", "spoke-okn")
     ids = [m["id"] for m in out.get("materialized", [])]
     assert "D9-ncbitaxon-spokegenelab-spokeokn-via-ubergraph" in ids
-    assert "verified crosswalk already exists" in out["note"]
+
+
+async def test_taxon_overlap_surfaces_materialized_hub_counts():
+    from mcp_okn import crosswalks
+
+    pairs = crosswalks.taxon_hub_pairwise()
+    if not pairs:
+        import pytest
+
+        pytest.skip("no materialized taxon-hub pairs yet")
+    rec = pairs[0]
+    out = await taxon_overlap(rec["kg_a"], rec["kg_b"])
+    ov = out["materialized_overlap"]
+    assert ov["exact_id"] == rec["exact_id"]
+    assert ov["clade_a_in_b"] == rec["clade_a_in_b"]
+    assert "Materialized overlap" in out["note"]
 
 
 async def test_taxon_overlap_rejects_non_hub_kg():
@@ -431,10 +446,14 @@ def test_taxon_hub_kgs_match_crosswalk_table():
     """
     from mcp_okn import crosswalks
 
+    # derive from the RAW KG<->ubergraph spokes (the listing now renders taxonomy as
+    # pairwise rows, but the spokes are still the source of truth for membership).
     table_kgs = set()
-    for row in crosswalks.all_crosswalks(include_examples=False):
-        if row["domain"] == "Taxonomy":
-            table_kgs.update(k for k in row["kgs"] if k != "ubergraph")
+    for e in crosswalks.load_crosswalks()["verified_crosswalks"]:
+        if crosswalks._is_taxon_hub_spoke(e):
+            table_kgs.update(
+                kg for kg in (e["left_kg"], e["right_kg"]) if kg != "ubergraph"
+            )
 
     hub = set(srv.TAXON_HUB_KGS)
     assert hub == table_kgs, (

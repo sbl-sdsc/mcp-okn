@@ -2,6 +2,105 @@
   "$schema_note": "Combined verified cross-KG joins for the Proto-OKN FRINK federation. Merges the A-I clusters with the spoke-okn geolocation crosswalks: cluster J (ZIP, on spoke-okn's full ~42,724-ZIP set) and cluster K (county/state FIPS, including spoke-okn's attachment to the SAWGraph spatial hub). Duplicates removed. Counts are exact COUNT(DISTINCT) over the named graphs on the verified_on date, EXCEPT cluster O (ufokn), whose verified_count is a SAMPLED lower bound (ufokn is too large for an exact full-graph count within the 120s endpoint limit) - see its verified_count_note. A consumer keyed by KG shortname should surface, for a given shortname, every entry where it appears as left_kg, right_kg, or bridge_kg. Clusters: (A) disease/phenotype - oard-kg is the MONDO/HP hub joining prokn, rdkg, nde and ubergraph; spoke-okn attaches via its 180 DOID Disease nodes (DIRECTLY to the DOID carriers prokn/biomarkerkg/nde, A7-A9, and through an ubergraph DOID->MONDO bridge to rdkg/oard-kg, A10-A11), (B) CAS chemical, (C) gene cluster - keyed across THREE id systems: Entrez/NCBI Gene (spoke-okn, spoke-genelab, rdkg, biobricks-aopwiki; in three IRI forms - see C_gene_cluster note - joined by bare-id rebuild; C4-C8), Ensembl (gene-expression-atlas-okn, pankgraph, spoke-okn's schema/ensembl crosswalk, AOP-Wiki; C1-C3, F1-F2), and HGNC (prokn, bridged to Entrez through wikidata P354->P351; C9), (D) SAWGraph S2 spatial hub, (E) toxicology/AOP CAS, (F) AOP-Wiki gene bridge, (G) UniProt protein, (H) soil-carbon spatial leaf, (I) manufacturing supply-chain, (J) spoke-okn ZIP geography, (K) spoke-okn county/state-FIPS geography. (L) county/state-FIPS attachments of geoconnex, scales and nikg to the SAWGraph spatial hub (spatialkg) and spoke-okn, each carrying the same KWG/FIPS county key under a different non-obvious encoding (geoconnex: geoconnex.us/ref/counties/{FIPS5} reference IRIs on the GNIS county predicate; scales: a NUMERIC hasIdbCounty literal with the leading zero dropped; nikg: a phila.gov-rewritten KWG sfWithin IRI). Cluster L SUPERSEDES three base-file verdicts: scales (was an island on the unpopulated fips:CountyCode field), nikg (was 'no geographic key at all'), and geoconnex (only non-joins were recorded - its S2-cell and SAWGraph PWS reference-IRI non-joins remain valid, but the county-FIPS key is a separate, working route to the hub). Four further KGs profiled for cluster L (maudekg, phaseskg, nasa-gesdisc-kg, wildlifekn) share no materialized join key and are recorded as islands / thin threads. (M) biobricks-mesh: the NLM MeSH vocabulary attaches to ubergraph on MeSH descriptor ids (oboInOwl:hasDbXref 'MESH:{ID}'), 9,463 matches dominated by MONDO disease (8,202), making it a MeSH-keyed member of the disease cluster A; biobricks-pubchem-annotations was profiled in the same pass and is an island (keyed solely on PubChem CID, which no federation KG materializes). Additionally biobricks-mesh has a second, DIRECT MeSH route (M2): spoke-okn MeSH-tags ~165 of its Disease and SDoH nodes via mesh_ids/mesh_list (HTTPS mesh IRIs vs biobricks-mesh's HTTP), uniquely reaching spoke-okn's social-determinants layer that the MONDO route (M1) cannot. (N) fiokg (SAWGraph FRS KG): a full SAWGraph spatial leaf attaching to the spatialkg hub via owl:sameAs to native KWG IRIs - 681,045 S2 Level-13 cells (N1, the LARGEST S2 join in the federation) and 3,031 county-FIPS AdministrativeRegion_2 IRIs (N2; 3,032 to spoke-okn, N3) - and to the manufacturing cluster I on the bare 6-digit NAICS code (N4 sudokn 64/66, N5 securechainkg 301/301). fiokg and the sawgraph leaf OVERLAP directly in 4,712 Maine S2 cells (N6, leaf-to-leaf), useful because fiokg flags 188,057 EPA-PFAS-Facility instances against sawgraph's PFAS samples. fiokg attaches at the county + S2 levels only (no KWG state IRIs); 261 leading-zero-truncated admin IRIs are excluded (see known_non_joins). (O) ufokn (Urban Flooding OKN): a FIFTH SAWGraph S2-cell spatial leaf. ufokn encodes its S2 cells as BLANK NODES (typed schema:PropertyValue + its own kwg:S2Cell ontology class), not KWG resource IRIs, with the 64-bit S2 cell id held as a bare decimal string in schema:value - the IDENTICAL value spatialkg uses as the suffix of its s2.level13.{id} node IRI. Rebuilding that IRI joins ufokn DIRECTLY to spatialkg's S2Cell_Level13 nodes (O1, no value rewrite). Three type-bounded samples (1k/8k/20k cells) all show 100% containment of ufokn's level-13 cells in spatialkg, so this is a near-complete attachment whose exact cardinality is not enumerable within the endpoint limit (verified_count 7,670 is a sampled lower bound). Cluster O SUPERSEDES the base file's two ufokn non-join verdicts ('unprofiled-large' and 'S2 Level-13 = 0'): the 0 was a direct typed-NODE join against blank nodes (can never match) and the timeout was an unbounded scan of ufokn's ~11.7M S2 nodes. ufokn also carries finer S2 LEVEL-18 cells that nest inside the level-13 hub cells but do not attach to the (level-13) hub directly. (P) biobricks-pubchem-annotations PubChem CID -> spoke-okn: spoke-okn materializes the CID as oboInOwl:hasDbXref identifiers.org/pubchem.compound/{n} on its ChemicalEntity nodes (762, exact 100% join after bare-CID normalization), SUPERSEDING the base file's biobricks-pubchem-annotations island verdict - it never checked spoke-okn's hasDbXref.",
   "federation": "https://purl.org/okn/frink/kg",
   "verified_on": "2026-06-12",
+  "taxon_hub": {
+    "$note": "Materialized pairwise NCBITaxon overlaps between the hub member KGs (each maps organisms to ubergraph; crosswalks D3-D10). Each record is a non-zero pair {kg_a, kg_b, exact_id, clade_a_in_b, clade_b_in_a}: exact_id = same NCBITaxon id on both sides (symmetric); clade_a_in_b = kg_a taxa nested under kg_b's clades via ubergraph subClassOf* (directional), clade_b_in_a the reverse. Zero-overlap pairs are omitted. Regenerate with scripts/refresh_taxon_overlaps.py when a member KG is updated.",
+    "hub_kg": "ubergraph",
+    "members": [
+      "biobricks-aopwiki",
+      "gene-expression-atlas-okn",
+      "nde",
+      "sawgraph",
+      "spoke-genelab",
+      "spoke-okn"
+    ],
+    "verified_on": "2026-06-14",
+    "pairwise": [
+      {
+        "kg_a": "biobricks-aopwiki",
+        "kg_b": "gene-expression-atlas-okn",
+        "exact_id": 7,
+        "clade_a_in_b": 8,
+        "clade_b_in_a": 8
+      },
+      {
+        "kg_a": "biobricks-aopwiki",
+        "kg_b": "nde",
+        "exact_id": 62,
+        "clade_a_in_b": 164,
+        "clade_b_in_a": 961
+      },
+      {
+        "kg_a": "biobricks-aopwiki",
+        "kg_b": "sawgraph",
+        "exact_id": 7,
+        "clade_a_in_b": 164,
+        "clade_b_in_a": 145
+      },
+      {
+        "kg_a": "biobricks-aopwiki",
+        "kg_b": "spoke-genelab",
+        "exact_id": 7,
+        "clade_a_in_b": 8,
+        "clade_b_in_a": 8
+      },
+      {
+        "kg_a": "gene-expression-atlas-okn",
+        "kg_b": "nde",
+        "exact_id": 6,
+        "clade_a_in_b": 8,
+        "clade_b_in_a": 12
+      },
+      {
+        "kg_a": "gene-expression-atlas-okn",
+        "kg_b": "sawgraph",
+        "exact_id": 0,
+        "clade_a_in_b": 8,
+        "clade_b_in_a": 0
+      },
+      {
+        "kg_a": "gene-expression-atlas-okn",
+        "kg_b": "spoke-genelab",
+        "exact_id": 8,
+        "clade_a_in_b": 8,
+        "clade_b_in_a": 8
+      },
+      {
+        "kg_a": "nde",
+        "kg_b": "sawgraph",
+        "exact_id": 73,
+        "clade_a_in_b": 1727,
+        "clade_b_in_a": 538
+      },
+      {
+        "kg_a": "nde",
+        "kg_b": "spoke-genelab",
+        "exact_id": 7,
+        "clade_a_in_b": 46,
+        "clade_b_in_a": 55
+      },
+      {
+        "kg_a": "nde",
+        "kg_b": "spoke-okn",
+        "exact_id": 23,
+        "clade_a_in_b": 23,
+        "clade_b_in_a": 33601
+      },
+      {
+        "kg_a": "sawgraph",
+        "kg_b": "spoke-genelab",
+        "exact_id": 0,
+        "clade_a_in_b": 0,
+        "clade_b_in_a": 13
+      },
+      {
+        "kg_a": "spoke-genelab",
+        "kg_b": "spoke-okn",
+        "exact_id": 2,
+        "clade_a_in_b": 2,
+        "clade_b_in_a": 33313
+      }
+    ]
+  },
   "merged_from": [
     "verified-crosswalks-combined.json (A-I)",
     "spoke-okn-geolocation-crosswalks.json (J)",
