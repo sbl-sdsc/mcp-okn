@@ -32,17 +32,34 @@ def named_graph(shortname: str) -> str:
     return GRAPH_URI.format(shortname=shortname)
 
 
-# schema.org's canonical RDF namespace is `http://schema.org/`, which is what the
-# Proto-OKN KGs store, but models routinely write the `https://` website form.
-# The two are distinct IRIs to a SPARQL engine, so an `https://schema.org/...`
-# term silently matches nothing. Normalize it to the `http://` form so queries
-# work regardless of which scheme the author used.
-_SCHEMA_ORG_HTTPS = re.compile(r"https://schema\.org/")
+# schema.org's canonical RDF namespace is `http://schema.org/`, which most Proto-OKN
+# KGs store, but models routinely write the `https://` website form. The two are
+# distinct IRIs to a SPARQL engine, so an `https://schema.org/...` term silently
+# matches nothing. We canonicalize the `https` form to `http` — but ONLY where it
+# appears as an angle-bracketed IRI (`<https://schema.org/...>`), never inside a
+# string literal or `IRI(CONCAT("https://schema.org/", ...))`. A few KGs actually
+# STORE the `https` form (nikg's schema:location, ruralkg's schema:postalCode,
+# ufokn's schema:value); leaving literals intact preserves the only way to reach
+# them — bind the predicate as a variable and match it scheme-free, e.g.
+# `FILTER(STRENDS(STR(?p), "schema.org/location"))`, or rebuild the IRI with
+# `IRI(CONCAT("https://schema.org/", ...))`.
+_SCHEMA_ORG_HTTPS_IRI = re.compile(r"<https://schema\.org/")
+_SCHEMA_ORG_HTTPS_BARE = re.compile(r"https://schema\.org/")
 
 
 def normalize_schema_org(query: str) -> str:
-    """Rewrite ``https://schema.org/`` → ``http://schema.org/`` in a query."""
-    return _SCHEMA_ORG_HTTPS.sub("http://schema.org/", query)
+    """Canonicalize bracketed ``<https://schema.org/…>`` IRIs to the ``http`` form.
+
+    Scoped to angle-bracketed IRIs (and so PREFIX declarations), so string literals
+    and ``IRI(CONCAT(…))`` fragments are left untouched — see the module comment.
+    """
+    return _SCHEMA_ORG_HTTPS_IRI.sub("<http://schema.org/", query)
+
+
+def canonicalize_schema_org_iri(iri: str) -> str:
+    """Canonicalize a single bare schema.org IRI string (no angle brackets) to the
+    ``http`` form. For resolving one predicate/term IRI, not a whole query."""
+    return _SCHEMA_ORG_HTTPS_BARE.sub("http://schema.org/", iri)
 
 
 class SparqlError(RuntimeError):

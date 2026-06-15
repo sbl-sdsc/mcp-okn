@@ -1,6 +1,11 @@
 import pytest
 
-from mcp_okn.sparql import _flatten_bindings, named_graph, normalize_schema_org
+from mcp_okn.sparql import (
+    _flatten_bindings,
+    canonicalize_schema_org_iri,
+    named_graph,
+    normalize_schema_org,
+)
 from mcp_okn.server import _to_uri
 
 JSON_RESULT = {
@@ -38,11 +43,27 @@ def test_named_graph():
     assert named_graph("prokn") == "https://purl.org/okn/frink/kg/prokn"
 
 
-def test_normalize_schema_org_rewrites_https():
+def test_normalize_schema_org_rewrites_bracketed_iris():
     q = "SELECT ?x WHERE { ?x a <https://schema.org/Person> ; <https://schema.org/name> ?n }"
     out = normalize_schema_org(q)
     assert "https://schema.org/" not in out
     assert out.count("http://schema.org/") == 2
+
+
+def test_normalize_schema_org_preserves_literals_and_concat():
+    # The escape hatches for reaching https-stored schema.org data (nikg etc.) must
+    # NOT be rewritten: only angle-bracketed IRIs are canonicalized.
+    q = (
+        'SELECT ?o WHERE { ?s ?p ?o . '
+        'FILTER(STR(?p) = "https://schema.org/location") . '
+        'BIND(IRI(CONCAT("https://schema.org/", "location")) AS ?pred) }'
+    )
+    assert normalize_schema_org(q) == q  # no bracketed IRI -> untouched
+    # a bracketed predicate alongside a literal: only the bracket form flips
+    q2 = '{ ?s <https://schema.org/location> ?o . FILTER(STRENDS(STR(?o),"https://schema.org/x")) }'
+    out = q2.replace("<https://schema.org/location>", "<http://schema.org/location>")
+    assert normalize_schema_org(q2) == out
+    assert '"https://schema.org/x"' in normalize_schema_org(q2)  # literal kept
 
 
 def test_normalize_schema_org_leaves_http_and_other_uris_untouched():
@@ -52,6 +73,13 @@ def test_normalize_schema_org_leaves_http_and_other_uris_untouched():
     )
     # Already-http schema.org and the unrelated https purl.org URI are unchanged.
     assert normalize_schema_org(q) == q
+
+
+def test_canonicalize_schema_org_iri_rewrites_bare_iri():
+    assert canonicalize_schema_org_iri("https://schema.org/about") == "http://schema.org/about"
+    # non-schema.org IRIs and the already-http form are untouched
+    assert canonicalize_schema_org_iri("http://schema.org/about") == "http://schema.org/about"
+    assert canonicalize_schema_org_iri("https://w3id.org/x") == "https://w3id.org/x"
 
 
 @pytest.mark.parametrize(

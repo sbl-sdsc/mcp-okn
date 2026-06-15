@@ -22,6 +22,7 @@ from .taxon import TAXON_HUB_KGS, _taxon_source  # noqa: F401  (re-exported)
 from .sparql import (
     FEDERATION_ENDPOINT,
     SparqlError,
+    canonicalize_schema_org_iri,
     named_graph,
     normalize_schema_org,
     run_sparql,
@@ -125,10 +126,15 @@ coverage for the question. Anchor the `subClassOf*` expansion on a term IRI from
 the ontology the KG ACTUALLY uses — expanding MONDO when the KG only links DOID
 (or vice versa) silently returns no rows.
 
-SCHEMA.ORG URIs: `https://schema.org/...` in a query is rewritten to
-`http://schema.org/...` automatically before it runs — the KGs store the
-canonical `http://` form, and the two are distinct IRIs to the engine. You may
-write either scheme; both match.
+SCHEMA.ORG URIs: a bracketed `<https://schema.org/...>` IRI is canonicalized to
+`<http://schema.org/...>` before the query runs — most KGs store the canonical
+`http://` form, and the two are distinct IRIs to the engine. (Only bracketed IRIs
+are rewritten; string literals and `IRI(CONCAT("https://schema.org/", ...))` are
+left as written.) A FEW KGs instead store the `https://` form — nikg
+(`schema:location`), ruralkg (`schema:postalCode`), ufokn (`schema:value`) — so a
+bracketed schema.org IRI matches NOTHING there. For those, bind the predicate as a
+variable and match it scheme-free: `?s ?p ?o . FILTER(STRENDS(STR(?p),
+'schema.org/location'))`.
 
 SCHEMA VISUALIZATION: `visualize_schema` returns a ready-made Mermaid diagram,
 pre-wrapped in a fenced block as `mermaid_block`. Output that `mermaid_block`
@@ -427,7 +433,7 @@ def _predicate_to_iri(predicate: str) -> str | None:
     """Resolve a predicate (full IRI or known CURIE) to a full IRI, else None."""
     p = predicate.strip().strip("<>")
     if p.startswith(("http://", "https://")):
-        return normalize_schema_org(p)
+        return canonicalize_schema_org_iri(p)
     prefix, sep, local = p.partition(":")
     if sep and prefix in _PREDICATE_PREFIXES:
         return _PREDICATE_PREFIXES[prefix] + local
@@ -1109,7 +1115,12 @@ async def sparql_query(
                 "oboInOwl:hasDbXref — run find_crosswalks(kg); (3) the IRI FORM "
                 "differs across graphs (subdomain e.g. www.omim.org vs omim.org, "
                 "http vs https, trailing slash) so it silently matches nothing — "
-                "rewrite with BIND(IRI(REPLACE(...))). Check, then retry."
+                "rewrite with BIND(IRI(REPLACE(...))); (4) you joined on a "
+                "schema.org predicate and this KG stores the non-canonical https "
+                "form (nikg/ruralkg/ufokn do) — a bracketed <https://schema.org/X> "
+                "is canonicalized to http, so name the predicate as a VARIABLE and "
+                "match it scheme-free: ?s ?p ?o . "
+                "FILTER(STRENDS(STR(?p),'schema.org/X')). Check, then retry."
             )
         return result
     except SparqlError as exc:
