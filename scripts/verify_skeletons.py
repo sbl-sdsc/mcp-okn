@@ -194,6 +194,24 @@ SELECT (COUNT(DISTINCT ?cid) AS ?n) WHERE {{
   GRAPH {g('biobricks-pubchem-annotations')} {{ ?ann <http://www.w3.org/ns/oa#hasTarget> ?b . }}
 }}"""
 
+# --- DrugBank cluster ------------------------------------------------------
+# rdkg's biolink:Drug nodes ARE http://identifiers.org/drugbank/DB{n} IRIs;
+# spoke-okn carries the same id as oboInOwl:hasDbXref objects (identical form,
+# direct join). ruralkg uses the go.drugbank.com form (rebuild to identifiers.org).
+DRUG = "<https://w3id.org/biolink/vocab/Drug>"
+Q["Q1-drugbank-rdkg-spokeokn"] = f"""
+SELECT (COUNT(DISTINCT ?db) AS ?n) WHERE {{
+  GRAPH {g('rdkg')} {{ ?db a {DRUG} . FILTER(STRSTARTS(STR(?db),'http://identifiers.org/drugbank/')) }}
+  GRAPH {g('spoke-okn')} {{ ?c {DBXREF} ?db . }}
+}}"""
+
+Q["Q2-drugbank-ruralkg-rdkg"] = f"""
+SELECT (COUNT(DISTINCT ?db) AS ?n) WHERE {{
+  GRAPH {g('ruralkg')} {{ ?s {SAMEAS} ?o . FILTER(CONTAINS(STR(?o),'drugbank'))
+    BIND(IRI(CONCAT('http://identifiers.org/drugbank/',REPLACE(STR(?o),'^.*/(DB[0-9]+).*$','$1'))) AS ?db) }}
+  GRAPH {g('rdkg')} {{ ?db a {DRUG} . }}
+}}"""
+
 # --- Disease ontology cluster (DOID / MONDO / HP) --------------------------
 # oard-kg is a biolink-reified KG: a disease/phenotype IRI can sit on EITHER side
 # of an association, so it appears as the object of BOTH biolink:object and

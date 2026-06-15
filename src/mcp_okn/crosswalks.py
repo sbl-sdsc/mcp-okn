@@ -137,6 +137,7 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "CAS": "Chemicals",
     "CHEBI<->CAS": "Chemicals",
     "PubChem CID": "Chemicals",
+    "DrugBank": "Chemicals",
     "NCBITaxon": "Taxonomy",
     "S2_L13": "Geospatial",
     "county_FIPS": "Geospatial",

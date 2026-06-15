@@ -117,7 +117,8 @@
     "NAICS attachment (2026-06-11): N4 fiokg<->sudokn (64 of 66 NAICS) and N5 fiokg<->securechainkg (301 of 301 NAICS) on the bare 6-digit NAICS code, joining fiokg to the manufacturing cluster I.",
     "leaf-to-leaf PFAS co-location (2026-06-11): N6 fiokg<->sawgraph 4,712 shared S2 Level-13 cells (Maine); fiokg carries 188,057 EPA-PFAS-Facility instances.",
     "ufokn re-profiling pass (2026-06-11): adds cluster O1 (ufokn schema:value 64-bit S2 cell id -> spatialkg S2Cell_Level13 node, by rebuilding the s2.level13.{id} IRI). Establishes ufokn as a FIFTH S2-keyed leaf on the SAWGraph spatial hub alongside sawgraph (D2), hydrologykg (D1), sockg (H1) and fiokg (N1). SUPERSEDES the base file's 'ufokn unprofiled-large' and 'ufokn S2 = 0' known_non_joins (moved to superseded_non_joins). Counts for O are sampled (ufokn too large for an exact COUNT(DISTINCT)).",
-    "PubChem-CID pass (2026-06-11): adds cluster P1 (biobricks-pubchem-annotations oa:hasTarget CID <-> spoke-okn oboInOwl:hasDbXref identifiers.org/pubchem.compound CID; 762/762 exact, bare-CID normalization across rdf.ncbi.nlm.nih.gov vs identifiers.org IRI forms). SUPERSEDES the base file's biobricks-pubchem-annotations PubChem-CID island/non-join (moved to superseded_non_joins) - the original pass checked only the CAS cluster + identifier-mappings, never spoke-okn's hasDbXref."
+    "PubChem-CID pass (2026-06-11): adds cluster P1 (biobricks-pubchem-annotations oa:hasTarget CID <-> spoke-okn oboInOwl:hasDbXref identifiers.org/pubchem.compound CID; 762/762 exact, bare-CID normalization across rdf.ncbi.nlm.nih.gov vs identifiers.org IRI forms). SUPERSEDES the base file's biobricks-pubchem-annotations PubChem-CID island/non-join (moved to superseded_non_joins) - the original pass checked only the CAS cluster + identifier-mappings, never spoke-okn's hasDbXref.",
+    "DrugBank cluster (2026-06-14): adds Q1 (rdkg<->spoke-okn, 43 shared DrugBank drugs - rdkg biolink:Drug nodes ARE http://identifiers.org/drugbank IRIs, spoke-okn carries the same id on oboInOwl:hasDbXref; identical form, direct shared-variable join) and Q2 (ruralkg<->rdkg, 2; ruralkg owl:sameAs go.drugbank.com rebuilt to identifiers.org). Surfaced by the entity-type/ontology sweep (docs/crosswalk-coverage-and-gaps.md): DrugBank was carried by 4 KGs (rdkg, spoke-okn, ruralkg, prokn) but never used as a join key. prokn also references DrugBank IRIs but on no standard xref predicate - deferred/unverified. ruralkg<->spoke-okn = 0."
   ],
   "verified_crosswalks": [
     {
@@ -1546,6 +1547,42 @@
       "hinge_note": "ufokn's primary - and so far only confirmed - attachment to the SAWGraph spatial hub, making it a FIFTH S2 Level-13 leaf on spatialkg alongside sawgraph (Maine PFAS, 88,007; D2), hydrologykg (Illinois wells/streams, 106,138; D1), sockg (multi-state soil carbon, 1,069; H1) and fiokg (national EPA FRS facilities, 681,045; N1). Because ufokn's coverage is the continental US, it co-occupies cells with the national leaf fiokg broadly and with the Maine/Illinois leaves within those states; like the other leaves it meets them through the hub (D1/H1 pattern), and a direct leaf-to-leaf join was NOT separately verified here (regional sampling makes a leaf-to-leaf count unreliable - assert it only via the hub). Via this key every ufokn Risk-Point / built-environment feature rolls up to spatialkg's S2 grid and AdministrativeRegion hierarchy and meets the other S2 leaves in any shared cell. ufokn ALSO carries finer S2 LEVEL-18 cells (schema:name 's2Level18'); spatialkg's grid is level-13, so level-18 cells do not attach to the hub directly (they nest inside the matched level-13 parent).",
       "example_question": "Place urban-flooding Risk-Points and built-environment features (ufokn) on the national S2 Level-13 grid (spatialkg), roll them up to county/state admin regions, and find which flood risk cells also contain EPA FRS facilities (fiokg), PFAS samples (sawgraph) or hydrologic features (hydrologykg).",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {\n  { SELECT DISTINCT ?cell WHERE {\n    GRAPH <https://purl.org/okn/frink/kg/ufokn> {\n      ?bn ?pn \"s2Level13\" .\n      ?bn ?pv ?s2id .\n      FILTER(CONTAINS(STR(?pv),'schema.org/value'))\n    }\n    BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.',STR(?s2id))) AS ?cell)\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }\n}",
+      "skeleton_verified": true
+    },
+    {
+      "id": "Q1-drugbank-rdkg-spokeokn",
+      "left_kg": "rdkg",
+      "left_predicate": "rdf:type https://w3id.org/biolink/vocab/Drug (the node IRI IS the DrugBank IRI)",
+      "left_role": "subject",
+      "right_kg": "spoke-okn",
+      "right_predicate": "http://www.geneontology.org/formats/oboInOwl#hasDbXref",
+      "right_role": "object",
+      "shared_key": "DrugBank",
+      "key_namespace": "http://identifiers.org/drugbank/DB{n}",
+      "bridge_kg": null,
+      "iri_normalization": "Identical IRI form on both sides - NO rewrite. rdkg's biolink:Drug nodes ARE http://identifiers.org/drugbank/DB{n} IRIs (2,074 distinct); spoke-okn's biolink:ChemicalEntity/Compound nodes carry the same IRI as oboInOwl:hasDbXref objects (175 distinct). Bind the rdkg Drug node and the spoke-okn hasDbXref object to the SAME variable for a direct shared-variable join.",
+      "verified_count": 43,
+      "verified_count_note": "Exact COUNT(DISTINCT) on 2026-06-14. rdkg 2,074 Drug nodes INTERSECT spoke-okn 175 hasDbXref drugbank = 43. Links rdkg's drug<->disease knowledge (contraindications/indications) to spoke-okn's chemical layer.",
+      "example_question": "For drugs SPOKE tracks as chemicals, what disease contraindications or associations does rdkg record?",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?db) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?db a <https://w3id.org/biolink/vocab/Drug> . FILTER(STRSTARTS(STR(?db),'http://identifiers.org/drugbank/')) }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?c <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?db . }\n}",
+      "skeleton_verified": true
+    },
+    {
+      "id": "Q2-drugbank-ruralkg-rdkg",
+      "left_kg": "ruralkg",
+      "left_predicate": "http://www.w3.org/2002/07/owl#sameAs (also skos:exactMatch)",
+      "left_role": "object",
+      "right_kg": "rdkg",
+      "right_predicate": "rdf:type https://w3id.org/biolink/vocab/Drug (the node IRI IS the DrugBank IRI)",
+      "right_role": "subject",
+      "shared_key": "DrugBank",
+      "key_namespace": "https://go.drugbank.com/drugs/DB{n} (ruralkg) ; http://identifiers.org/drugbank/DB{n} (rdkg)",
+      "bridge_kg": null,
+      "iri_normalization": "Two IRI forms for the same DrugBank id - a direct match returns 0. ruralkg cross-references 7 of its drug nodes to https://go.drugbank.com/drugs/DB{n} via owl:sameAs/skos:exactMatch; rebuild the canonical http://identifiers.org/drugbank/DB{n} IRI (REPLACE to bare DB id + CONCAT) and shared-variable join to rdkg's Drug node. ruralkg<->spoke-okn on the same key = 0.",
+      "verified_count": 2,
+      "verified_count_note": "Exact COUNT(DISTINCT) on 2026-06-14. ruralkg has only 7 DrugBank-linked drugs (thin thread); 2 join rdkg, 0 join spoke-okn.",
+      "example_question": "Do the substance-use treatment drugs in ruralkg appear in rdkg's drug-disease graph?",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?db) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/ruralkg> { ?s <http://www.w3.org/2002/07/owl#sameAs> ?o . FILTER(CONTAINS(STR(?o),'drugbank'))\n    BIND(IRI(CONCAT('http://identifiers.org/drugbank/',REPLACE(STR(?o),'^.*/(DB[0-9]+).*$','$1'))) AS ?db) }\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?db a <https://w3id.org/biolink/vocab/Drug> . }\n}",
       "skeleton_verified": true
     }
   ],
