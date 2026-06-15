@@ -333,8 +333,9 @@ print(asyncio.run(run_sparql('SELECT ?s WHERE { ?s ?p ?o } LIMIT 3')))"
 Reproducible checks of behaviors that aren't covered by the offline unit tests:
 
 - [schema.org http/https normalization](docs/verification-schema-org-normalization.md)
-  — an `https://schema.org/` query returns 0 rows verbatim but the full result
-  set once normalized.
+  — a bracketed `<https://schema.org/…>` IRI is canonicalized to `http`, so a query
+  written with the `https` form still hits `http`-stored data (dreamkg `schema:Rating`
+  → 3762), while string literals / `IRI(CONCAT(…))` are left intact (see below).
 - [visualize_schema rendering](docs/verification-visualize-schema.md) — the
   generated Mermaid renders cleanly as a class diagram via `mermaid-cli` across
   all three schema paths (curated, class-only, probe fallback), and survives the
@@ -342,6 +343,25 @@ Reproducible checks of behaviors that aren't covered by the offline unit tests:
 - [transcript MCP resource](docs/verification-transcript-resource.md) — the
   `transcript://session/latest` resource serves the full document via the
   resource API, with its embedded diagram still rendering.
+
+#### schema.org predicates stored under the non-canonical `https` form
+
+A few graphs store schema.org terms under the `https://` form. The canonicalization
+hits **only bracketed IRIs**, so those predicates are unreachable by IRI (the bracketed
+`https` form is rewritten to `http`, which the data isn't), but match when the predicate
+is bound as a variable or the IRI is rebuilt from a string literal (now preserved).
+Verified live against the federation:
+
+| Graph (predicate) | `<https://schema.org/X>` (bracketed) | `IRI(CONCAT('https://schema.org/','X'))` | `STRENDS(STR(?p),'schema.org/X')` |
+| --- | --- | --- | --- |
+| `nikg` (`location`) | 0 | 296,189 | 296,189 |
+| `ruralkg` (`postalCode`) | 0 | 9,037 | 9,037 |
+| `ufokn` (`value`, level-13 sample) | 0 | 5/5 (`LIMIT 5`) | 5/5 |
+
+In each case the `IRI(CONCAT)` and `STRENDS` forms agree (same rows / same decimal S2
+ids for ufokn) while the bracketed IRI returns 0 — confirming the literal-preservation
+fix and the variable-predicate workaround documented in the `ruralkg`/`ufokn` crosswalk
+notes.
 
 ## KG snapshot
 
