@@ -475,3 +475,71 @@ async def test_inline_mermaid_on_a_turn_renders():
     )
     assert "```mermaid" in md
     assert "class Foo" in md
+
+
+async def test_final_json_query_capped_to_max_result_rows():
+    # The final logged query no longer dumps a huge table: it caps at
+    # max_result_rows (default 5), preserving the true count.
+    big = {
+        "vars": ["d"],
+        "rows": [{"d": f"row-{i}"} for i in range(20)],
+        "row_count": 20,
+    }
+    session.record(
+        "SELECT ?d WHERE { GRAPH <https://purl.org/okn/frink/kg/prokn> { ?d ?p ?o } }",
+        "json",
+        result=big,
+    )
+    md = await create_chat_transcript(model="m")
+    assert "_20 row(s) — showing first 5_" in md
+    assert "row-4" in md and "row-5" not in md
+
+
+async def test_max_result_rows_none_renders_all():
+    big = {
+        "vars": ["d"],
+        "rows": [{"d": f"row-{i}"} for i in range(20)],
+        "row_count": 20,
+    }
+    session.record(
+        "SELECT ?d WHERE { GRAPH <https://purl.org/okn/frink/kg/prokn> { ?d ?p ?o } }",
+        "json",
+        result=big,
+    )
+    md = await create_chat_transcript(model="m", max_result_rows=None)
+    assert "_20 row(s)_" in md
+    assert "row-19" in md and "showing first" not in md
+
+
+async def test_csv_result_respects_row_cap():
+    # The bug behind the reported transcript: a csv result previously dumped every
+    # row, bypassing the cap. A many-row final csv now caps at max_result_rows...
+    csv_rows = "acc\n" + "\n".join(f"P{i:05d}" for i in range(30))
+    session.record(
+        "SELECT ?acc WHERE { GRAPH <https://purl.org/okn/frink/kg/prokn> { ?p ?x ?acc } }",
+        "csv",
+        result={"format": "csv", "text": csv_rows},
+    )
+    md = await create_chat_transcript(model="m")
+    assert "_30 row(s) — showing first 5_" in md
+    assert "P00004" in md and "P00005" not in md
+    assert "```csv" in md
+
+
+async def test_intermediate_csv_query_previews_first_three():
+    # An intermediate csv query is now held to the 3-row preview (previously the
+    # csv shape ignored the preview cap and dumped everything).
+    inter = {"format": "csv", "text": "acc\n" + "\n".join(f"Q{i:05d}" for i in range(40))}
+    session.record(
+        "SELECT ?acc WHERE { GRAPH <https://purl.org/okn/frink/kg/prokn> { ?a ?b ?acc } }",
+        "csv",
+        result=inter,
+    )
+    session.record(
+        "SELECT ?disease ?label WHERE { GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?x :linkedTo ?disease } }",
+        "json",
+        result=JSON_RESULT,
+    )
+    md = await create_chat_transcript(model="m")
+    assert "_40 row(s) — showing first 3_" in md
+    assert "Q00002" in md and "Q00003" not in md

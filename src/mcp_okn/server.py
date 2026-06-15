@@ -1224,6 +1224,7 @@ async def create_chat_transcript(
     include_query_log: bool = True,
     include_intermediate_rows: bool = False,
     include_visualizations: bool = True,
+    max_result_rows: int | None = 5,
 ) -> Any:
     """Build a reproducible, detailed transcript of a Proto-OKN session.
 
@@ -1267,13 +1268,19 @@ async def create_chat_transcript(
         include_query_log: If true (default), append the auto-logged queries
             as a "SPARQL queries executed" section.
         include_intermediate_rows: If false (default), only the FINAL logged
-            query renders its full result table; earlier (intermediate) queries
+            query renders its result table; earlier (intermediate) queries
             show their SPARQL, row count, and a compact PREVIEW of the rows (a
             single-row result in full, otherwise the first 3 rows), to keep the
             transcript focused on the queries that produced the findings. Set
-            true to render the full result rows for every logged query.
-            (Queries attached inline to an exchange via `queries` always render
-            in full, regardless of this flag.)
+            true to render result rows for every logged query (each still capped
+            at `max_result_rows`).
+        max_result_rows: Cap on how many result rows each rendered table shows —
+            for the final logged query, any inline-attached `queries`, and (with
+            `include_intermediate_rows=True`) every query. The true row count is
+            always preserved, with a "showing first N" note when capped; this
+            applies to csv/tsv results too. Defaults to 5 so a large deliverable
+            doesn't bloat the transcript (the full data belongs in the separate
+            output file). Pass `None` to render every row.
         include_visualizations: If true (default), append a "Schema
             visualizations" section with every `visualize_schema` diagram logged
             this session, each in a fenced ```mermaid block. These are recorded
@@ -1389,7 +1396,7 @@ async def create_chat_transcript(
         # the model flagged exploratory so schema-probing never leaks in.
         shown = [q for q in (exchange.get("queries") or []) if not q.get("exploratory")]
         for j, q in enumerate(shown, start=1):
-            lines += _render_query(q, f"Query {j}")
+            lines += _render_query(q, f"Query {j}", max_rows=max_result_rows)
         # Optional Mermaid diagram(s) attached inline to this turn.
         inline = exchange.get("mermaid")
         for diagram in [inline] if isinstance(inline, str) else (inline or []):
@@ -1407,7 +1414,11 @@ async def create_chat_transcript(
             # queries list their text and row count but omit the result table.
             show_results = include_intermediate_rows or k == len(log)
             lines += _render_query(
-                entry, f"Query {k}", subheading=ctx, show_results=show_results
+                entry,
+                f"Query {k}",
+                subheading=ctx,
+                show_results=show_results,
+                max_rows=max_result_rows,
             )
 
     if visualizations:
@@ -1471,13 +1482,16 @@ def _render_query(
     label: str,
     subheading: str = "",
     show_results: bool = True,
+    max_rows: int | None = None,
 ) -> list[str]:
     """Render one query (verbatim text + results or error) as markdown lines.
 
-    When ``show_results`` is False, only a compact PREVIEW of the rows is shown
-    (a single-row result in full, otherwise the first 3 rows) instead of the full
-    table — used for intermediate queries in the log appendix to keep it focused
-    while still surfacing small results that cost almost no space.
+    When ``show_results`` is True the result table is rendered, capped at
+    ``max_rows`` (``None`` = uncapped). When ``show_results`` is False, only a
+    compact PREVIEW of the rows is shown (a single-row result in full, otherwise
+    the first 3 rows) instead of the full table — used for intermediate queries in
+    the log appendix to keep it focused while still surfacing small results that
+    cost almost no space.
     """
     desc = _clean_description(q.get("description"))
     heading = f"#### {label}" + (f" — {desc}" if desc else "")
@@ -1488,7 +1502,7 @@ def _render_query(
     if q.get("error"):
         lines += [f"**Error:** {q['error']}", ""]
     elif show_results:
-        lines += _render_results(q.get("results"))
+        lines += _render_results(q.get("results"), max_rows=max_rows)
     else:
         # Compact preview: a single-row result renders in full, a larger one
         # shows just its first 3 rows (enough to see the shape without bloating
@@ -1521,7 +1535,18 @@ def _render_results(results: Any, max_rows: int | None = None) -> list[str]:
     # csv/tsv shape: {"format", "text"}.
     if isinstance(results, dict) and "text" in results:
         fmt = results.get("format", "")
-        return [f"```{fmt}".rstrip(), str(results["text"]).strip(), "```", ""]
+        text = str(results["text"]).strip()
+        fence = f"```{fmt}".rstrip()
+        lines = text.split("\n")
+        # First line is the header row (SPARQL csv/tsv always carries one); cap the
+        # DATA rows at max_rows so a large export doesn't dump verbatim. Leave the
+        # block untouched when uncapped or already within the cap.
+        data = lines[1:]
+        if max_rows is None or len(data) <= max_rows:
+            return [fence, text, "```", ""]
+        block = "\n".join(lines[: 1 + max_rows])
+        note = f"_{len(data)} row(s) — showing first {max_rows}_"
+        return [note, "", fence, block, "```", ""]
     # A bare list of row dicts.
     if isinstance(results, list):
         cols = list(results[0].keys()) if results and isinstance(results[0], dict) else []
