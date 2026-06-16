@@ -15,9 +15,32 @@ from ..sparql import (
 from ._shared import _to_uri
 
 
+def _compact(result: dict[str, Any]) -> dict[str, Any]:
+    """Reshape a json result's dict rows into positional arrays.
+
+    ``{"vars", "rows", "row_count"}`` (rows keyed by variable) becomes
+    ``{"columns", "data", "count"}`` (one ``columns`` header, each row an array in
+    ``columns`` order), dropping the per-row repetition of variable names. Unbound
+    cells are ``None``. Sidecar fields (e.g. ``hint``) are carried through. Numeric/
+    boolean values keep the casting :func:`_flatten_bindings` already applied.
+    """
+    cols = result.get("vars", [])
+    out: dict[str, Any] = {
+        "columns": cols,
+        "data": [[row.get(c) for c in cols] for row in result.get("rows", [])],
+        "count": result.get("row_count", 0),
+    }
+    if "hint" in result:
+        out["hint"] = result["hint"]
+    return out
+
+
 @mcp.tool()
 async def sparql_query(
-    query: str, format: str = "json", exploratory: bool = False
+    query: str,
+    format: str = "json",
+    exploratory: bool = False,
+    compact: bool = False,
 ) -> Any:
     """Run a SPARQL query against the FRINK federation endpoint.
 
@@ -61,9 +84,19 @@ async def sparql_query(
             queries you don't want in the transcript. Exploratory queries are
             never logged. (Queries that error or return no rows are skipped
             automatically, exploratory or not.)
+        compact: Set True to return json results in a token-efficient shape that
+            lists the column names ONCE instead of repeating them on every row —
+            useful for large, wide result sets. `{"columns": [...], "data":
+            [[...], ...], "count": N}` where each `data` row is an array in
+            `columns` order (unbound cells are `null`). Default False returns the
+            self-describing dict-row shape below. Only affects json (csv/tsv and
+            errors are unchanged) and only the returned payload — the transcript
+            log is unaffected.
 
     Returns:
-        For json: `{"vars": [...], "rows": [...], "row_count": N}`.
+        For json (default): `{"vars": [...], "rows": [...], "row_count": N}`.
+        For json with `compact=True`: `{"columns": [...], "data": [[...], ...],
+        "count": N}`.
         For csv/tsv: `{"format": ..., "text": "..."}`.
         A zero-row json result also carries a `hint` field — DON'T conclude the
         data is absent; the join term's identifier scheme is the usual culprit.
@@ -100,6 +133,11 @@ async def sparql_query(
                 "match it scheme-free: ?s ?p ?o . "
                 "FILTER(STRENDS(STR(?p),'schema.org/X')). Check, then retry."
             )
+        # Compact LAST — after logging the dict-row result, so the transcript is
+        # unaffected. Only json results (those with `rows`) reshape; csv/tsv pass
+        # through.
+        if compact and isinstance(result, dict) and "rows" in result:
+            result = _compact(result)
         return result
     except SparqlError as exc:
         return {"error": str(exc)}

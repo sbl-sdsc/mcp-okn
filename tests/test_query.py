@@ -145,3 +145,71 @@ async def test_sparql_query_csv_passthrough(monkeypatch):
     monkeypatch.setattr(query_mod, "run_sparql", fake)
     out = await sparql_query("SELECT ?s {}", format="csv")
     assert out == {"format": "csv", "text": "s\nx"}
+
+
+# --- compact format ----------------------------------------------------------
+
+
+async def test_compact_reshapes_rows_into_positional_arrays(monkeypatch):
+    fake, _ = _capturing(
+        {
+            "vars": ["disease", "mondo"],
+            "rows": [
+                {"disease": "asthma", "mondo": "MONDO_1"},
+                {"disease": "eczema", "mondo": "MONDO_2"},
+            ],
+            "row_count": 2,
+        }
+    )
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await sparql_query("SELECT ?disease ?mondo {}", compact=True)
+    assert out == {
+        "columns": ["disease", "mondo"],
+        "data": [["asthma", "MONDO_1"], ["eczema", "MONDO_2"]],
+        "count": 2,
+    }
+
+
+async def test_compact_false_keeps_dict_rows(monkeypatch):
+    fake, _ = _capturing({"vars": ["s"], "rows": [{"s": "x"}], "row_count": 1})
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await sparql_query("SELECT ?s {}")
+    assert out["rows"] == [{"s": "x"}]
+    assert "columns" not in out
+
+
+async def test_compact_preserves_casting_and_unbound_cells(monkeypatch):
+    # n is cast to int by _flatten_bindings upstream; label is unbound (OPTIONAL).
+    fake, _ = _capturing({"vars": ["n", "label"], "rows": [{"n": 42}], "row_count": 1})
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await sparql_query("SELECT ?n ?label {}", compact=True)
+    assert out["data"] == [[42, None]]  # int kept; missing var -> None, not ""
+
+
+async def test_compact_carries_hint_on_empty_result(monkeypatch):
+    fake, _ = _capturing({"vars": ["s"], "rows": [], "row_count": 0})
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await sparql_query("SELECT ?s {}", compact=True)
+    assert out["columns"] == ["s"] and out["data"] == [] and out["count"] == 0
+    assert "hint" in out
+
+
+async def test_compact_does_not_affect_transcript_log(monkeypatch):
+    fake, _ = _capturing({"vars": ["s"], "rows": [{"s": "x"}], "row_count": 1})
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    await sparql_query(
+        "SELECT ?s WHERE { GRAPH <https://purl.org/okn/frink/kg/prokn> { ?s ?p ?o } }",
+        compact=True,
+    )
+    # the session still stores dict rows, so the transcript renderer is unaffected
+    [entry] = session.entries()
+    assert entry["results"]["rows"] == [{"s": "x"}]
+
+
+async def test_compact_passes_csv_through_unchanged(monkeypatch):
+    async def fake(q, fmt="json", **kw):
+        return {"format": "csv", "text": "s\nx"}
+
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await sparql_query("SELECT ?s {}", format="csv", compact=True)
+    assert out == {"format": "csv", "text": "s\nx"}  # csv not reshaped

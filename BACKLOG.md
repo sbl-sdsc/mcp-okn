@@ -29,9 +29,10 @@ error-wrapping, schema.org normalization, graph detection, csv passthrough).
 
 ## Opt-in compact result format
 
-A `compact: bool` flag on `query` (and `multi_graph_query`) that returns
-`{columns, data, count}` positional rows instead of repeated-key dicts, to cut
-tokens on large LLM-facing result sets. Apply it at the tool boundary only —
-internal consumers (crosswalk scans, transcript rendering) rely on dict rows.
-Reuse the existing numeric/boolean casting in `_flatten_bindings`; represent
-unbound cells as `None`, not `""`; pass `hint`/`error` through untouched.
+✅ done. `sparql_query` accepts `compact: bool = False`; when True a json result
+returns `{columns, data, count}` positional rows instead of repeated-key dicts,
+to cut tokens on large LLM-facing result sets. Applied at the tool boundary only
+and AFTER `session.record`, so internal consumers (crosswalk scans, transcript
+rendering) still see dict rows. Reuses the `_flatten_bindings` casting; unbound
+cells are `None`; `hint` is carried through; csv/tsv and errors pass through.
+(`expand_ontology_term` keeps the dict shape — small, `limit`-capped results.)
