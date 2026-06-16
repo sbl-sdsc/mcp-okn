@@ -11,9 +11,9 @@ baseline is clean:
 
 - **mypy** is non-strict (`ignore_missing_imports`, `check_untyped_defs`). Step
   up toward `strict = true`, one flag at a time so each change is a small diff.
-  `disallow_untyped_defs` and `disallow_incomplete_defs` are now enabled (the
-  code was already fully annotated, so both passed with no changes). Next:
-  `warn_return_any` → `no_implicit_optional` → full `strict`.
+  `disallow_untyped_defs`, `disallow_incomplete_defs`, and `warn_return_any` are
+  now enabled (all passed with no source changes). Next: `no_implicit_optional`
+  → full `strict`.
 - **ruff** lints `F/E/W/I/UP/B/C4` with `E501` deferred to the formatter.
   Consider adding `SIM` (flake8-simplify), `RET` (flake8-return), `PTH`
   (flake8-use-pathlib), and `RUF` rule sets, and a docstring convention (`D`)
