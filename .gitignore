@@ -42,3 +42,7 @@ htmlcov/
 
 # verify_skeletons.py live-run cache
 scripts/.skeleton_results.json
+
+# Dated metadata backups (live file is metadata/crosswalks.json; git history
+# preserves prior versions)
+metadata/*_20[0-9][0-9]-[0-1][0-9]-*.json
