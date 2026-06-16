@@ -65,11 +65,4 @@ ignore = ["E501"]
 python_version = "3.10"
 files = ["src/mcp_okn"]
 ignore_missing_imports = true
-# Tightening incrementally toward strict (see BACKLOG.md).
-check_untyped_defs = true
-disallow_untyped_defs = true
-disallow_incomplete_defs = true
-warn_return_any = true
-no_implicit_optional = true
-warn_unused_ignores = true
-warn_redundant_casts = true
+strict = true
