@@ -37,10 +37,12 @@ _PREDICATE_PREFIXES = {
 #    digit (`MONDO_0005240`, `NCIT_C3137`) — report the prefix, else fall back to
 #    the base IRI namespace. Requiring a digit avoids splitting `foo_bar` locals.
 def _ns_classify(var: str = "o") -> str:
-    """BIND block classifying ?<var> into ?namespace (an ontology/CURIE prefix or
-    base IRI namespace). Parameterized on the term variable so the same logic
-    profiles a predicate's OBJECTS (?o) or an arbitrary NODE IRI (?n) — the latter
-    needed when an id is encoded as the node itself, not via a mapping predicate.
+    """Build a BIND block classifying ?<var> into ?namespace.
+
+    ``?namespace`` is an ontology/CURIE prefix or base IRI namespace.
+    Parameterized on the term variable so the same logic profiles a predicate's
+    OBJECTS (?o) or an arbitrary NODE IRI (?n) — the latter needed when an id is
+    encoded as the node itself, not via a mapping predicate.
     """
     s, loc = f"{var}str", f"{var}local"
     return f"""\
@@ -85,9 +87,12 @@ def _namespace_query(ng: str, pred: str, sample: int = 0) -> str:
 
 
 def _undercount_note(namespaces: list[dict[str, Any]]) -> str | None:
-    """Warn when objects span 2+ identifier namespaces, so a single-namespace
-    join (or only-direct-ontology-links) silently UNDERCOUNTS — the partial-result
-    failure that looks like success. None when there's only one namespace."""
+    """Warn when objects span 2+ identifier namespaces.
+
+    A single-namespace join (or only-direct-ontology-links) then silently
+    UNDERCOUNTS — the partial-result failure that looks like success. None when
+    there's only one namespace.
+    """
     names = [n["namespace"] for n in namespaces if n.get("namespace")]
     if len(names) < 2:
         return None
@@ -102,15 +107,16 @@ def _undercount_note(namespaces: list[dict[str, Any]]) -> str | None:
 
 
 def _split_predicate_note(carriers: list[dict[str, Any]]) -> str | None:
-    """Warn when one identifier namespace is reachable through 2+ predicates with
-    DIFFERING distinct-id counts, so a recipe that joins on a single predicate
-    silently UNDERCOUNTS — the predicate-position analogue of the cross-namespace
-    split (`_undercount_note`). The trap case: a disease IRI that is the object of
-    BOTH ``biolink:subject`` and ``biolink:object`` (oard-kg), where joining on
-    one position drops the rest. ``carriers`` is one entry per namespace, each
-    ``{"namespace", "predicates": [(predicate, count), ...]}`` busiest first; only
-    those with 2+ predicates of diverging counts are a true split. None when none
-    qualify."""
+    """Warn when one identifier namespace rides 2+ predicates with differing counts.
+
+    A recipe that joins on a single predicate then silently UNDERCOUNTS — the
+    predicate-position analogue of the cross-namespace split (`_undercount_note`).
+    The trap case: a disease IRI that is the object of BOTH ``biolink:subject``
+    and ``biolink:object`` (oard-kg), where joining on one position drops the
+    rest. ``carriers`` is one entry per namespace, each ``{"namespace",
+    "predicates": [(predicate, count), ...]}`` busiest first; only those with 2+
+    predicates of diverging counts are a true split. None when none qualify.
+    """
     split = [
         c
         for c in carriers
@@ -142,10 +148,13 @@ def _crosswalk_note(
     sample: int = 0,
     split_carriers: list[dict[str, Any]] | None = None,
 ) -> str | None:
-    """Compose the find_crosswalks note. Leads with the headline that ids exist
-    only as node IRIs / domain objects when no mapping predicate carries them
-    (the case that used to read as empty), then any incomplete-scan warning, then
-    the cross-namespace undercount warning. None when nothing noteworthy."""
+    """Compose the find_crosswalks note.
+
+    Leads with the headline that ids exist only as node IRIs / domain objects
+    when no mapping predicate carries them (the case that used to read as empty),
+    then any incomplete-scan warning, then the cross-namespace undercount
+    warning. None when nothing noteworthy.
+    """
     parts: list[str] = []
     if node_scan_failed:
         retry = max(sample // 2, 20000) if sample > 0 else 100000
@@ -350,7 +359,7 @@ def _ontology_id_query(ng: str, role: str, sample: int = 0) -> str:
 
 @mcp.tool()
 async def find_crosswalks(shortname: str, sample: int = 0) -> dict[str, Any]:
-    """Find ontology/database ids in a KG, however they are encoded.
+    r"""Find ontology/database ids in a KG, however they are encoded.
 
     Ontology ids (MONDO, CHEBI, NCBI Gene, …) hide in THREE places, and a KG that
     "lacks" the id you need usually just encodes it somewhere non-obvious. This
@@ -403,7 +412,7 @@ async def find_crosswalks(shortname: str, sample: int = 0) -> dict[str, Any]:
          `https://omim.org/entry/100100` while ProKN uses `https://www.omim.org/
          entry/100100` (note the missing `www.`). A direct join silently matches
          nothing; rewrite at query time, e.g. `BIND(IRI(REPLACE(STR(?omim),
-         "://www\\.omim", "://omim")) AS ?ug_omim)`, then join on `?ug_omim`.
+         "://www\.omim", "://omim")) AS ?ug_omim)`, then join on `?ug_omim`.
     Either way ubergraph also gives you the `subClassOf*` hierarchy. Beware IRI-
     form drift across graphs generally (subdomain, http/https, trailing slash).
 

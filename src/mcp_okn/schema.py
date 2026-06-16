@@ -435,9 +435,10 @@ async def infer_curated_edges(
     pred_uris: list[str],
     limit: int = 400,
 ) -> list[tuple[str, str, str]]:
-    """Infer ``(predicate, domain, range)`` URI triples from the graph's
-    ``rdfs:domain``/``rdfs:range``, restricted to the given curated class and
-    predicate URIs.
+    """Infer ``(predicate, domain, range)`` URI triples from declared domain/range.
+
+    Read from the graph's ``rdfs:domain``/``rdfs:range``, restricted to the given
+    curated class and predicate URIs.
 
     Used when a KG's curated metadata names predicates but not their endpoints
     (e.g. ``sawgraph``): the graph itself often declares domain/range, and

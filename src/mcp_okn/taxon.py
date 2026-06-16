@@ -118,8 +118,10 @@ def build_exact_skeleton(kg_a: str, kg_b: str) -> str:
 
 
 def build_clade_skeleton(kg_a: str, kg_b: str) -> str:
-    """COUNT of ``kg_b`` taxa nested under ``kg_a``'s taxa via ubergraph
-    ``subClassOf*`` (directional — swap ``kg_a``/``kg_b`` to flip the clade)."""
+    """COUNT ``kg_b`` taxa nested under ``kg_a``'s taxa via ubergraph ``subClassOf*``.
+
+    Directional — swap ``kg_a``/``kg_b`` to flip the clade.
+    """
     ub = f"<{named_graph('ubergraph')}>"
     return (
         "SELECT (COUNT(DISTINCT ?b) AS ?shared) WHERE {\n"

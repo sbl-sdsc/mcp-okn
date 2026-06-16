@@ -57,13 +57,23 @@ line-length = 88
 # pyflakes (F), pycodestyle errors (E) + warnings (W), isort (I),
 # pyupgrade (UP), flake8-bugbear (B), flake8-comprehensions (C4),
 # flake8-simplify (SIM), flake8-return (RET), flake8-use-pathlib (PTH),
-# Ruff-specific (RUF).
-select = ["F", "E", "W", "I", "UP", "B", "C4", "SIM", "RET", "PTH", "RUF"]
+# Ruff-specific (RUF), pydocstyle (D).
+select = ["F", "E", "W", "I", "UP", "B", "C4", "SIM", "RET", "PTH", "RUF", "D"]
 # E501: line length is owned by the formatter; the remaining long lines are
 #   SPARQL strings, URLs, and docstrings that shouldn't be force-wrapped.
 # RUF001/002/003: ambiguous-unicode — the instructions, notes, and docstrings
 #   use intentional typography (em/en dashes, ellipsis, × ) in human-facing prose.
 ignore = ["E501", "RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+# Docstrings are required only on the shipped package, not on tests, one-off
+# maintenance scripts, or the benchmark harness.
+"tests/*" = ["D"]
+"scripts/*" = ["D"]
+"benchmark/*" = ["D"]
 
 [tool.mypy]
 python_version = "3.10"

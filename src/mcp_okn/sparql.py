@@ -58,8 +58,10 @@ def normalize_schema_org(query: str) -> str:
 
 
 def canonicalize_schema_org_iri(iri: str) -> str:
-    """Canonicalize a single bare schema.org IRI string (no angle brackets) to the
-    ``http`` form. For resolving one predicate/term IRI, not a whole query."""
+    """Canonicalize a single bare schema.org IRI string to the ``http`` form.
+
+    No angle brackets. For resolving one predicate/term IRI, not a whole query.
+    """
     return _SCHEMA_ORG_HTTPS_BARE.sub("http://schema.org/", iri)
 
 

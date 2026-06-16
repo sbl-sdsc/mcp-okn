@@ -91,8 +91,10 @@ def _listing_sort_key(row: dict[str, Any]) -> tuple[str, str, str]:
 
 
 def verified_for(shortname: str) -> list[dict[str, Any]]:
-    """All verified join entries that touch ``shortname`` (any role), grouped by
-    domain (sorted by ``(domain, shared_key)``)."""
+    """All verified join entries that touch ``shortname`` (any role).
+
+    Grouped by domain (sorted by ``(domain, shared_key)``).
+    """
     data = load_crosswalks()
     out = [
         for_query(e)
@@ -153,9 +155,11 @@ def domain_for(shared_key: str | None) -> str:
 
 
 def _is_taxon_hub_spoke(entry: dict[str, Any]) -> bool:
-    """True for a KG↔ubergraph NCBITaxon *spoke* — collapsed into a single hub row
-    by :func:`all_crosswalks` so the listing speaks in integration terms, not in
-    each KG's (uninteresting) overlap with the ubergraph hub.
+    """True for a KG↔ubergraph NCBITaxon *spoke*.
+
+    Collapsed into a single hub row by :func:`all_crosswalks` so the listing
+    speaks in integration terms, not in each KG's (uninteresting) overlap with
+    the ubergraph hub.
 
     A pairwise taxon crosswalk that merely *bridges through* ubergraph (ubergraph
     is the ``bridge_kg``, e.g. spoke-genelab↔spoke-okn / D9) is NOT a spoke: it is a

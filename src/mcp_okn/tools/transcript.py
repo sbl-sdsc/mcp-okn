@@ -1,5 +1,8 @@
-"""Transcript/logging tools: reset_query_log, get_query_log,
-create_chat_transcript, and the latest-transcript MCP resource."""
+"""Transcript/logging tools.
+
+reset_query_log, get_query_log, create_chat_transcript, and the
+latest-transcript MCP resource.
+"""
 
 from __future__ import annotations
 
@@ -386,9 +389,11 @@ def _render_results(results: Any, max_rows: int | None = None) -> list[str]:
 def _rows_section(
     cols: list[str], rows: list[dict[str, Any]], count: int, max_rows: int | None
 ) -> list[str]:
-    """A row-count label plus the rows as a table, capping at ``max_rows`` (a
-    preview). A single-row result thus shows in full; a larger one shows its
-    first ``max_rows`` with a note that the table was trimmed."""
+    """Build a row-count label plus the rows as a table, capping at ``max_rows``.
+
+    A preview: a single-row result thus shows in full; a larger one shows its
+    first ``max_rows`` with a note that the table was trimmed.
+    """
     shown = rows[:max_rows] if max_rows is not None else rows
     label = (
         f"_{count} row(s) — showing first {len(shown)}_"

@@ -11,14 +11,17 @@ from ..taxon import TAXON_HUB_KGS
 
 
 def _complementary_note(joins: list[dict[str, Any]]) -> str | None:
-    """Flag when a pair has 2+ COMPLEMENTARY linkages — recipes that link the
-    same entity through different identifier systems (e.g. oard-kg↔prokn diseases
-    via direct MONDO AND via the OMIM→ubergraph bridge) and so reach overlapping
-    but DISTINCT sets. Presented side by side they read as alternatives, and an
-    agent picks one and undercounts; this says to UNION them. Driven by the
-    curated ``complementary_note`` tag on each recipe (a coarse same-domain
-    heuristic would wrongly lump phenotypes in with diseases). None when fewer
-    than two tagged linkages are present."""
+    """Flag when a pair has 2+ COMPLEMENTARY linkages.
+
+    These are recipes that link the same entity through different identifier
+    systems (e.g. oard-kg↔prokn diseases via direct MONDO AND via the
+    OMIM→ubergraph bridge) and so reach overlapping but DISTINCT sets. Presented
+    side by side they read as alternatives, and an agent picks one and
+    undercounts; this says to UNION them. Driven by the curated
+    ``complementary_note`` tag on each recipe (a coarse same-domain heuristic
+    would wrongly lump phenotypes in with diseases). None when fewer than two
+    tagged linkages are present.
+    """
     tagged = [j for j in joins if j.get("complementary_note")]
     if len(tagged) < 2:
         return None
