@@ -21,10 +21,11 @@ baseline is clean:
 
 ## Broader test coverage on the tool layer
 
-`tools/taxon.py` has no dedicated test module, and the `sparql_query`
-hint/error-wrapping and `expand_ontology_term` URI-building branches in
-`tools/query.py` aren't directly exercised. Add `tests/test_taxon.py` and a few
-`tools/query.py` cases.
+✅ done. Added `tests/test_taxon.py` (the NCBITaxon hub module's skeleton
+builders and per-KG normalization fragments) and `tests/test_query.py`
+(`expand_ontology_term` query construction — CURIE expansion, reflexive vs
+strict path, ancestors/descendants, partOf, limit, logging — and `sparql_query`
+error-wrapping, schema.org normalization, graph detection, csv passthrough).
 
 ## Opt-in compact result format
 
