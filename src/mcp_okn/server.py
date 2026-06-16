@@ -18,7 +18,6 @@ from mcp.server.fastmcp import FastMCP
 from . import crosswalks as crosswalk_table
 from . import registry, schema, session
 from . import taxon as taxon_hub
-from .taxon import TAXON_HUB_KGS, _taxon_source  # noqa: F401  (re-exported)
 from .sparql import (
     FEDERATION_ENDPOINT,
     SparqlError,
@@ -27,6 +26,7 @@ from .sparql import (
     normalize_schema_org,
     run_sparql,
 )
+from .taxon import TAXON_HUB_KGS, _taxon_source  # noqa: F401  (re-exported)
 
 INSTRUCTIONS = """\
 Query the FRINK federated SPARQL endpoint over the Proto-OKN knowledge graphs.
@@ -285,6 +285,7 @@ _PREDICATE_PREFIXES = {
     "owl": "http://www.w3.org/2002/07/owl#",
 }
 
+
 # Per-term namespace classification, applied inside the GROUP BY below.
 #  * Literal terms (e.g. `oboInOwl:hasDbXref` values like `OMIM:143100`,
 #    `GC_ID:1`, `GOC:TermGenie`) are CURIE strings: report the prefix before the
@@ -326,7 +327,11 @@ def _namespace_query(ng: str, pred: str, sample: int = 0) -> str:
     where a full scan would time out — otherwise every object is counted exactly.
     """
     triple = f"GRAPH <{ng}> {{ ?s <{pred}> ?o . }}"
-    inner = triple if sample <= 0 else f"{{ SELECT ?o WHERE {{ {triple} }} LIMIT {sample} }}"
+    inner = (
+        triple
+        if sample <= 0
+        else f"{{ SELECT ?o WHERE {{ {triple} }} LIMIT {sample} }}"
+    )
     return (
         "SELECT ?namespace (COUNT(*) AS ?count) WHERE {\n"
         f"  {inner}\n"
@@ -532,7 +537,11 @@ def _crosswalk_query(ng: str, sample: int = 0) -> str:
     """
     values = " ".join(f"<{iri}>" for iri in _CROSSWALK_PREDICATES.values())
     pattern = f"VALUES ?pred {{ {values} }}\n  GRAPH <{ng}> {{ ?s ?pred ?o . }}"
-    inner = pattern if sample <= 0 else f"{{ SELECT ?pred ?o WHERE {{ {pattern} }} LIMIT {sample} }}"
+    inner = (
+        pattern
+        if sample <= 0
+        else f"{{ SELECT ?pred ?o WHERE {{ {pattern} }} LIMIT {sample} }}"
+    )
     return (
         "SELECT ?pred ?namespace (COUNT(*) AS ?count) WHERE {\n"
         f"  {inner}\n"
@@ -579,9 +588,7 @@ def _ontology_id_query(ng: str, role: str, sample: int = 0) -> str:
     ``GROUP_CONCAT``, which the FRINK federation engine leaves unbound.
     """
     triple = "?n ?pred ?x ." if role == "subject" else "?x ?pred ?n ."
-    prefixes = " || ".join(
-        f'STRSTARTS(STR(?n), "{p}")' for p in _NODE_ID_IRI_PREFIXES
-    )
+    prefixes = " || ".join(f'STRSTARTS(STR(?n), "{p}")' for p in _NODE_ID_IRI_PREFIXES)
     # The id-bearing FILTER lives INSIDE the scan so that, when sampling, the
     # LIMIT caps already-filtered id triples — not arbitrary triples that may all
     # be filtered away (oard-kg's first rows are reified-association nodes, so a
@@ -666,12 +673,13 @@ async def find_crosswalks(shortname: str, sample: int = 0) -> dict[str, Any]:
     # node IRIs in the SUBJECT and OBJECT positions (separate so a fruitless scan
     # of one role can't time out the other). Each degrades on its own — a slow
     # node scan never hides the crosswalks, nor one role the other.
-    map_res, subj_res, obj_res = await asyncio.gather(
+    gathered = await asyncio.gather(
         run_sparql(_crosswalk_query(ng, sample=sample), fmt="json"),
         run_sparql(_ontology_id_query(ng, "subject", sample=sample), fmt="json"),
         run_sparql(_ontology_id_query(ng, "object", sample=sample), fmt="json"),
         return_exceptions=True,
     )
+    map_res, subj_res, obj_res = gathered
     # Surface only SparqlError as a soft error; let unexpected exceptions bubble.
     for res in (map_res, subj_res, obj_res):
         if isinstance(res, Exception) and not isinstance(res, SparqlError):
@@ -680,7 +688,7 @@ async def find_crosswalks(shortname: str, sample: int = 0) -> dict[str, Any]:
         return {"error": str(map_res)}
 
     crosswalks: list[dict[str, Any]] = []
-    if not isinstance(map_res, Exception):
+    if not isinstance(map_res, BaseException):
         by_pred: dict[str, list[dict[str, Any]]] = {}
         for r in map_res.get("rows", []):
             by_pred.setdefault(r.get("pred"), []).append(
@@ -707,7 +715,7 @@ async def find_crosswalks(shortname: str, sample: int = 0) -> dict[str, Any]:
     # roles) — feeds the split-predicate undercount warning below.
     ns_preds: dict[str, dict[str, int]] = {}
     for role, res in (("subject", subj_res), ("object", obj_res)):
-        if isinstance(res, Exception):
+        if isinstance(res, BaseException):
             continue
         by_ns: dict[str, dict[str, Any]] = {}
         for r in res.get("rows", []):
@@ -880,9 +888,7 @@ async def get_join_strategy(kg_a: str, kg_b: str | None = None) -> dict[str, Any
             ),
         }
 
-    islands = [
-        s for s in (kg_a, kg_b) if crosswalk_table.island_status(s) is not None
-    ]
+    islands = [s for s in (kg_a, kg_b) if crosswalk_table.island_status(s) is not None]
     island_ctx = {s: crosswalk_table.island_status(s) for s in islands}
     note = (
         "No precomputed crosswalk for this pair. Fall back to "
@@ -966,12 +972,15 @@ async def taxon_overlap(kg_a: str, kg_b: str) -> dict[str, Any]:
     overlap = crosswalk_table.taxon_hub_pair(kg_a, kg_b)
     if overlap is not None:
         out["materialized_overlap"] = overlap
-        out["materialized_overlap_verified_on"] = crosswalk_table.taxon_hub_verified_on()
+        out["materialized_overlap_verified_on"] = (
+            crosswalk_table.taxon_hub_verified_on()
+        )
         out["note"] = (
             f"Materialized overlap (verified {crosswalk_table.taxon_hub_verified_on()}): "
             f"exact_id={overlap.get('exact_id')}, "
             f"{kg_a} taxa in {kg_b} clades={overlap.get('clade_a_in_b')}, "
-            f"{kg_b} taxa in {kg_a} clades={overlap.get('clade_b_in_a')}. " + out["note"]
+            f"{kg_b} taxa in {kg_a} clades={overlap.get('clade_b_in_a')}. "
+            + out["note"]
         )
     materialized = [
         j
@@ -1338,10 +1347,7 @@ async def create_chat_transcript(
             if name and name not in names:
                 names.append(name)
         kgs_used = names
-    kgs = [
-        {"shortname": name, "named_graph": named_graph(name)}
-        for name in kgs_used
-    ]
+    kgs = [{"shortname": name, "named_graph": named_graph(name)} for name in kgs_used]
 
     if format == "json":
         return {
@@ -1512,7 +1518,11 @@ def _render_query(
             lines += preview
         else:
             count = q.get("row_count")
-            note = f"{count} row(s) — results omitted" if count is not None else "results omitted"
+            note = (
+                f"{count} row(s) — results omitted"
+                if count is not None
+                else "results omitted"
+            )
             lines += [f"_{note}_", ""]
     return lines
 
@@ -1549,7 +1559,9 @@ def _render_results(results: Any, max_rows: int | None = None) -> list[str]:
         return [note, "", fence, block, "```", ""]
     # A bare list of row dicts.
     if isinstance(results, list):
-        cols = list(results[0].keys()) if results and isinstance(results[0], dict) else []
+        cols = (
+            list(results[0].keys()) if results and isinstance(results[0], dict) else []
+        )
         return _rows_section(cols, results, len(results), max_rows)
     # Anything else: show as text.
     return ["```", str(results).strip(), "```", ""]
@@ -1576,7 +1588,9 @@ def _rows_to_table(cols: list[str], rows: list[dict[str, Any]]) -> list[str]:
         return ["_(no rows)_", ""]
 
     def cell(value: Any) -> str:
-        return "" if value is None else str(value).replace("|", "\\|").replace("\n", " ")
+        return (
+            "" if value is None else str(value).replace("|", "\\|").replace("\n", " ")
+        )
 
     out = [
         "| " + " | ".join(cols) + " |",
@@ -1588,8 +1602,21 @@ def _rows_to_table(cols: list[str], rows: list[dict[str, Any]]) -> list[str]:
 
 
 _OBO_PREFIXES = (
-    "MONDO", "CHEBI", "GO", "HP", "UBERON", "CL", "PR", "NCBITaxon",
-    "DOID", "SO", "PATO", "BFO", "ENVO", "FOODON", "OBI",
+    "MONDO",
+    "CHEBI",
+    "GO",
+    "HP",
+    "UBERON",
+    "CL",
+    "PR",
+    "NCBITaxon",
+    "DOID",
+    "SO",
+    "PATO",
+    "BFO",
+    "ENVO",
+    "FOODON",
+    "OBI",
 )
 
 

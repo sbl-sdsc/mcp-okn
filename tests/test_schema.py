@@ -60,7 +60,9 @@ def test_build_schema_classes_and_predicates():
     assert schema["predicates"]["count"] == 1
     # No edge properties -> the predicate is not flagged.
     pred_row = schema["predicates"]["data"][0]
-    has_edge_props = pred_row[schema["predicates"]["columns"].index("has_edge_properties")]
+    has_edge_props = pred_row[
+        schema["predicates"]["columns"].index("has_edge_properties")
+    ]
     assert has_edge_props is False
     assert schema["edge_properties"] == {}
     # Compact omits the summary.
@@ -97,7 +99,10 @@ https://ex.org/schema/adj_p,adj_p,Adjusted p-value.,EdgeProperty,EXPRESSION,,
 https://ex.org/schema/adj_p,adj_p,Adjusted p-value.,EdgeProperty,ABUNDANCE,,
 """
     meta = _parse(csv_text)
-    assert meta["https://ex.org/schema/adj_p"]["edge_property_of"] == "EXPRESSION;ABUNDANCE"
+    assert (
+        meta["https://ex.org/schema/adj_p"]["edge_property_of"]
+        == "EXPRESSION;ABUNDANCE"
+    )
 
 
 def test_generate_query_template_shape():
@@ -195,7 +200,11 @@ async def test_infer_edge_labels_maps_uris_to_labels(monkeypatch):
 def test_build_mermaid_diagram_probe_shape_classes_only():
     # Probe-shape schema (bare uri columns) -> class boxes from local names.
     schema = {
-        "classes": {"columns": ["uri"], "data": [["http://schema.org/Person"]], "count": 1},
+        "classes": {
+            "columns": ["uri"],
+            "data": [["http://schema.org/Person"]],
+            "count": 1,
+        },
         "predicates": {
             "columns": ["uri"],
             "data": [["http://schema.org/name"]],

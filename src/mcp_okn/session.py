@@ -48,9 +48,7 @@ def _result_row_count(result: Any) -> int:
     return 0
 
 
-def record(
-    query: str, fmt: str, result: Any = None, error: str | None = None
-) -> bool:
+def record(query: str, fmt: str, result: Any = None, error: str | None = None) -> bool:
     """Append one executed query to the session log if it returned results.
 
     Queries that errored or returned zero rows are NOT logged — the transcript

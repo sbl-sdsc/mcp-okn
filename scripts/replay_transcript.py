@@ -74,8 +74,10 @@ async def main() -> None:
     if not queries:
         sys.exit(f"no SPARQL queries found in {path}")
 
-    print(f"Replaying {len(queries)} quer{'y' if len(queries) == 1 else 'ies'} "
-          f"from {path}\n")
+    print(
+        f"Replaying {len(queries)} quer{'y' if len(queries) == 1 else 'ies'} "
+        f"from {path}\n"
+    )
     mismatches = 0
     for i, (sparql, recorded) in enumerate(queries, start=1):
         try:
@@ -95,8 +97,10 @@ async def main() -> None:
 
     print()
     if mismatches:
-        sys.exit(f"{mismatches} quer{'y' if mismatches == 1 else 'ies'} "
-                 "errored or did not match the recorded count")
+        sys.exit(
+            f"{mismatches} quer{'y' if mismatches == 1 else 'ies'} "
+            "errored or did not match the recorded count"
+        )
     print("All queries reproduced the recorded row counts.")
 
 

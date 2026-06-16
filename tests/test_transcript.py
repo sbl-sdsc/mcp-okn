@@ -2,10 +2,10 @@ import pytest
 
 from mcp_okn import session
 from mcp_okn.server import (
-    create_chat_transcript,
-    latest_transcript_resource,
     _clean_description,
     _rows_to_table,
+    create_chat_transcript,
+    latest_transcript_resource,
 )
 from mcp_okn.sparql import FEDERATION_ENDPOINT
 
@@ -373,7 +373,9 @@ async def test_json_format_includes_log():
         "json",
         result={"vars": ["s"], "rows": [{"s": "urn:x"}], "row_count": 1},
     )
-    out = await create_chat_transcript(model="claude-opus-4-8", date="2026-05-31", format="json")
+    out = await create_chat_transcript(
+        model="claude-opus-4-8", date="2026-05-31", format="json"
+    )
     assert out["model"] == "claude-opus-4-8"
     assert out["sparql_endpoint"] == FEDERATION_ENDPOINT
     assert len(out["query_log"]) == 1
@@ -400,7 +402,10 @@ def test_session_records_and_dedupes_visualizations():
     viz = session.visualizations()
     assert [v["shortname"] for v in viz] == ["dreamkg", "spoke-genelab"]
     assert viz[0]["mermaid"].endswith("class A2")
-    assert session.record_visualization("x", "") is None and len(session.visualizations()) == 2
+    assert (
+        session.record_visualization("x", "") is None
+        and len(session.visualizations()) == 2
+    )
 
 
 async def test_transcript_renders_logged_visualization():
@@ -529,7 +534,10 @@ async def test_csv_result_respects_row_cap():
 async def test_intermediate_csv_query_previews_first_three():
     # An intermediate csv query is now held to the 3-row preview (previously the
     # csv shape ignored the preview cap and dumped everything).
-    inter = {"format": "csv", "text": "acc\n" + "\n".join(f"Q{i:05d}" for i in range(40))}
+    inter = {
+        "format": "csv",
+        "text": "acc\n" + "\n".join(f"Q{i:05d}" for i in range(40)),
+    }
     session.record(
         "SELECT ?acc WHERE { GRAPH <https://purl.org/okn/frink/kg/prokn> { ?a ?b ?acc } }",
         "csv",

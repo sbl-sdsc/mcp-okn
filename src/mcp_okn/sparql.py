@@ -77,7 +77,11 @@ def _flatten_bindings(payload: dict[str, Any]) -> list[dict[str, Any]]:
             dtype = cell.get("datatype", "")
             if dtype.endswith(("integer", "int", "long", "decimal", "double", "float")):
                 try:
-                    value = float(value) if "." in value or "e" in value.lower() else int(value)
+                    value = (
+                        float(value)
+                        if "." in value or "e" in value.lower()
+                        else int(value)
+                    )
                 except (TypeError, ValueError):
                     pass
             elif dtype.endswith("boolean"):

@@ -1,15 +1,15 @@
 import mcp_okn.server as srv
 from mcp_okn.server import (
-    _predicate_to_iri,
-    probe_namespaces,
-    _namespace_query,
-    _crosswalk_query,
-    _ontology_id_query,
-    _NODE_ID_IRI_PREFIXES,
-    find_crosswalks,
-    _undercount_note,
-    _split_predicate_note,
     _CROSSWALK_PREDICATES,
+    _NODE_ID_IRI_PREFIXES,
+    _crosswalk_query,
+    _namespace_query,
+    _ontology_id_query,
+    _predicate_to_iri,
+    _split_predicate_note,
+    _undercount_note,
+    find_crosswalks,
+    probe_namespaces,
 )
 
 
@@ -17,9 +17,12 @@ def test_undercount_note_fires_only_for_multiple_namespaces():
     assert _undercount_note([{"namespace": "MONDO", "count": 10}]) is None
     assert _undercount_note([]) is None
     # Empty-string namespaces don't count toward the multi-namespace trigger.
-    assert _undercount_note(
-        [{"namespace": "MONDO", "count": 10}, {"namespace": "", "count": 3}]
-    ) is None
+    assert (
+        _undercount_note(
+            [{"namespace": "MONDO", "count": 10}, {"namespace": "", "count": 3}]
+        )
+        is None
+    )
     note = _undercount_note(
         [{"namespace": "OMIM", "count": 14936}, {"namespace": "MONDO", "count": 7811}]
     )
@@ -30,12 +33,19 @@ def test_undercount_note_fires_only_for_multiple_namespaces():
 def test_split_predicate_note_fires_only_for_multi_predicate_namespace():
     assert _split_predicate_note([]) is None
     # One predicate carrying the namespace — nothing is split.
-    assert _split_predicate_note(
-        [{"namespace": "MONDO", "predicates": [("biolink:object", 1659)]}]
-    ) is None
+    assert (
+        _split_predicate_note(
+            [{"namespace": "MONDO", "predicates": [("biolink:object", 1659)]}]
+        )
+        is None
+    )
     note = _split_predicate_note(
-        [{"namespace": "MONDO",
-          "predicates": [("biolink:subject", 2277), ("biolink:object", 1659)]}]
+        [
+            {
+                "namespace": "MONDO",
+                "predicates": [("biolink:subject", 2277), ("biolink:object", 1659)],
+            }
+        ]
     )
     assert note is not None
     assert "SPLIT across predicate positions" in note and "UNION" in note
@@ -43,11 +53,20 @@ def test_split_predicate_note_fires_only_for_multi_predicate_namespace():
 
 
 def test_predicate_to_iri_resolves_curies_and_iris():
-    assert _predicate_to_iri("schema:healthCondition") == "http://schema.org/healthCondition"
+    assert (
+        _predicate_to_iri("schema:healthCondition")
+        == "http://schema.org/healthCondition"
+    )
     # https schema.org is normalized to the http form the KGs store.
     assert _predicate_to_iri("https://schema.org/about") == "http://schema.org/about"
-    assert _predicate_to_iri("rdfs:seeAlso") == "http://www.w3.org/2000/01/rdf-schema#seeAlso"
-    assert _predicate_to_iri("MONDO:0005240") == "http://purl.obolibrary.org/obo/MONDO_0005240"
+    assert (
+        _predicate_to_iri("rdfs:seeAlso")
+        == "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    )
+    assert (
+        _predicate_to_iri("MONDO:0005240")
+        == "http://purl.obolibrary.org/obo/MONDO_0005240"
+    )
     assert _predicate_to_iri("<http://x.org/p>") == "http://x.org/p"
     # Unknown bare CURIE can't be resolved.
     assert _predicate_to_iri("foo:bar") is None
@@ -213,8 +232,9 @@ async def test_find_crosswalks_groups_by_predicate(monkeypatch):
         if scan == "object":
             return {
                 "vars": ["pred", "namespace", "count"],
-                "rows": [{"pred": "http://ex/hasPhenotype",
-                          "namespace": "HP", "count": 12}],
+                "rows": [
+                    {"pred": "http://ex/hasPhenotype", "namespace": "HP", "count": 12}
+                ],
                 "row_count": 1,
             }
         return {
@@ -231,7 +251,10 @@ async def test_find_crosswalks_groups_by_predicate(monkeypatch):
     out = await find_crosswalks("prokn")
 
     # Busiest predicate first; CURIE label resolved; namespaces sorted desc.
-    assert [c["predicate"] for c in out["crosswalks"]] == ["skos:exactMatch", "rdfs:seeAlso"]
+    assert [c["predicate"] for c in out["crosswalks"]] == [
+        "skos:exactMatch",
+        "rdfs:seeAlso",
+    ]
     see = next(c for c in out["crosswalks"] if c["predicate"] == "rdfs:seeAlso")
     assert see["predicate_iri"] == see_also
     assert see["total"] == 140
@@ -247,7 +270,9 @@ async def test_find_crosswalks_groups_by_predicate(monkeypatch):
     assert out["ontology_ids"][1]["role"] == "object"
 
 
-async def test_find_crosswalks_warns_when_namespace_split_across_predicates(monkeypatch):
+async def test_find_crosswalks_warns_when_namespace_split_across_predicates(
+    monkeypatch,
+):
     # The oard-kg case: a disease IRI is the object of BOTH biolink:subject and
     # biolink:object, with differing counts. Joining on one position undercounts,
     # so the note must flag the split and tell the caller to UNION both.
@@ -256,10 +281,16 @@ async def test_find_crosswalks_warns_when_namespace_split_across_predicates(monk
             return {
                 "vars": ["pred", "namespace", "count"],
                 "rows": [
-                    {"pred": "https://w3id.org/biolink/vocab/subject",
-                     "namespace": "MONDO", "count": 2277},
-                    {"pred": "https://w3id.org/biolink/vocab/object",
-                     "namespace": "MONDO", "count": 1659},
+                    {
+                        "pred": "https://w3id.org/biolink/vocab/subject",
+                        "namespace": "MONDO",
+                        "count": 2277,
+                    },
+                    {
+                        "pred": "https://w3id.org/biolink/vocab/object",
+                        "namespace": "MONDO",
+                        "count": 1659,
+                    },
                 ],
                 "row_count": 2,
             }
@@ -301,8 +332,9 @@ async def test_find_crosswalks_node_iris_when_no_mapping_predicates(monkeypatch)
         if _scan_of(query) == "subject":
             return {
                 "vars": ["pred", "namespace", "count"],
-                "rows": [{"pred": "http://ex/type",
-                          "namespace": "MONDO", "count": 8000}],
+                "rows": [
+                    {"pred": "http://ex/type", "namespace": "MONDO", "count": 8000}
+                ],
                 "row_count": 1,
             }
         return {"vars": ["pred", "namespace", "count"], "rows": [], "row_count": 0}
@@ -334,8 +366,9 @@ async def test_find_crosswalks_object_role_survives_subject_timeout(monkeypatch)
         if scan == "object":
             return {
                 "vars": ["pred", "namespace", "count"],
-                "rows": [{"pred": "http://ex/has_role",
-                          "namespace": "CHEMINF", "count": 311}],
+                "rows": [
+                    {"pred": "http://ex/has_role", "namespace": "CHEMINF", "count": 311}
+                ],
                 "row_count": 1,
             }
         return {"vars": ["pred", "namespace", "count"], "rows": [], "row_count": 0}
@@ -358,8 +391,13 @@ async def test_find_crosswalks_degrades_when_node_scans_fail(monkeypatch):
             raise SparqlError("node scan timed out")
         return {
             "vars": ["pred", "namespace", "count"],
-            "rows": [{"pred": _CROSSWALK_PREDICATES["skos:exactMatch"],
-                      "namespace": "MONDO", "count": 9}],
+            "rows": [
+                {
+                    "pred": _CROSSWALK_PREDICATES["skos:exactMatch"],
+                    "namespace": "MONDO",
+                    "count": 9,
+                }
+            ],
             "row_count": 1,
         }
 
@@ -376,7 +414,7 @@ async def test_find_crosswalks_degrades_when_node_scans_fail(monkeypatch):
 
 
 # --- taxon_overlap -----------------------------------------------------------
-from mcp_okn.server import taxon_overlap, _taxon_source, TAXON_HUB_KGS  # noqa: E402
+from mcp_okn.server import TAXON_HUB_KGS, _taxon_source, taxon_overlap  # noqa: E402
 
 
 async def test_taxon_overlap_composes_both_skeletons():

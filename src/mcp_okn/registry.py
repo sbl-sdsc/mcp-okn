@@ -19,8 +19,7 @@ import yaml
 from .sparql import named_graph
 
 _CONTENTS_API = (
-    "https://api.github.com/repos/frink-okn/okn-registry/"
-    "contents/docs/registry/kgs"
+    "https://api.github.com/repos/frink-okn/okn-registry/contents/docs/registry/kgs"
 )
 _RAW_BASE = (
     "https://raw.githubusercontent.com/frink-okn/okn-registry/"
@@ -44,10 +43,8 @@ def load_snapshot() -> list[dict[str, Any]]:
     can fall back to a live registry fetch.
     """
     try:
-        text = (
-            resources.files("mcp_okn")
-            .joinpath("data", "kgs.json")
-            .read_text(encoding="utf-8")
+        text = (resources.files("mcp_okn") / "data" / "kgs.json").read_text(
+            encoding="utf-8"
         )
         data = json.loads(text)
         return data if isinstance(data, list) else []
@@ -179,8 +176,8 @@ async def list_kgs(refresh: bool = False) -> list[dict[str, Any]]:
             return_exceptions=True,
         )
     result: list[dict[str, Any]] = []
-    for name, meta in zip(names, metas):
-        if isinstance(meta, Exception):
+    for name, meta in zip(names, metas, strict=True):
+        if isinstance(meta, BaseException):
             result.append(
                 {
                     "shortname": name,

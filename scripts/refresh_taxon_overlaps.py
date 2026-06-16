@@ -98,9 +98,7 @@ def inject(records: list[dict[str, int | None]]) -> None:
     """
     data = json.loads(SRC.read_text(encoding="utf-8"))
     hub = data.setdefault("taxon_hub", {})
-    by_pair = {
-        frozenset((r["kg_a"], r["kg_b"])): r for r in hub.get("pairwise", [])
-    }
+    by_pair = {frozenset((r["kg_a"], r["kg_b"])): r for r in hub.get("pairwise", [])}
     skipped: list[tuple[str, str]] = []
     for rec in records:
         key = frozenset((rec["kg_a"], rec["kg_b"]))
@@ -108,8 +106,11 @@ def inject(records: list[dict[str, int | None]]) -> None:
             skipped.append((rec["kg_a"], rec["kg_b"]))
             continue
         if _is_nonzero(rec):
-            by_pair[key] = {"kg_a": rec["kg_a"], "kg_b": rec["kg_b"],
-                            **{k: rec[k] for k in _COUNTS}}
+            by_pair[key] = {
+                "kg_a": rec["kg_a"],
+                "kg_b": rec["kg_b"],
+                **{k: rec[k] for k in _COUNTS},
+            }
         else:
             by_pair.pop(key, None)
     hub["pairwise"] = sorted(by_pair.values(), key=lambda r: (r["kg_a"], r["kg_b"]))
@@ -138,7 +139,9 @@ async def main() -> None:
 
     bad = [kg for p in pairs for kg in p if not taxon.in_taxon_hub(kg)]
     if bad:
-        sys.exit(f"not in the taxon hub: {sorted(set(bad))}; members={taxon.TAXON_HUB_KGS}")
+        sys.exit(
+            f"not in the taxon hub: {sorted(set(bad))}; members={taxon.TAXON_HUB_KGS}"
+        )
 
     print(f"measuring {len(pairs)} pair(s) (timeout {TIMEOUT:.0f}s each skeleton)\n")
     records: list[dict[str, int | None]] = []

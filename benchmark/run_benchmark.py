@@ -47,7 +47,9 @@ def _select(records: list[dict], kg: str | None, limit: int | None) -> list[dict
 
 async def _smoke(records: list[dict], args) -> smoke.SmokeReport:
     print(f"\n── Layer 1: smoke-testing {len(records)} reference queries ──")
-    report = await smoke.run(records, concurrency=args.concurrency, timeout=args.timeout)
+    report = await smoke.run(
+        records, concurrency=args.concurrency, timeout=args.timeout
+    )
     for r in sorted(report.results, key=lambda r: r.id):
         mark = "✓" if r.ok else "✗"
         detail = f"{r.row_count} rows, {r.elapsed_s}s" if r.ok else r.error
@@ -116,10 +118,14 @@ async def _agent_layer(records: list[dict], args) -> dict[str, Any]:
             f"  {mark} {r['id']:48} exact={c['exact']} f1={c['f1']:.2f} "
             f"(ref {c['reference_rows']} / got {c['candidate_rows']}){note}"
         )
-    print(
-        f"\n  exact-match {exact}/{n} ({exact / n:.0%})   mean F1 {mean_f1:.2f}"
-    )
-    return {"agent": agent.name, "n": n, "exact": exact, "mean_f1": mean_f1, "rows": rows_out}
+    print(f"\n  exact-match {exact}/{n} ({exact / n:.0%})   mean F1 {mean_f1:.2f}")
+    return {
+        "agent": agent.name,
+        "n": n,
+        "exact": exact,
+        "mean_f1": mean_f1,
+        "rows": rows_out,
+    }
 
 
 async def _main(args) -> None:
@@ -143,18 +149,27 @@ async def _main(args) -> None:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     ap.add_argument(
-        "--layer", choices=["smoke", "agent", "both"], default="both",
+        "--layer",
+        choices=["smoke", "agent", "both"],
+        default="both",
         help="which layer(s) to run (default: both)",
     )
     ap.add_argument(
-        "--agent", choices=["reference", "claude"], default="reference",
+        "--agent",
+        choices=["reference", "claude"],
+        default="reference",
         help="layer-2 agent (default: reference self-check)",
     )
-    ap.add_argument("--model", default="claude-sonnet-4-6", help="model for --agent claude")
     ap.add_argument(
-        "--list-kgs", action="store_true",
+        "--model", default="claude-sonnet-4-6", help="model for --agent claude"
+    )
+    ap.add_argument(
+        "--list-kgs",
+        action="store_true",
         help="list KGs that have runnable queries (with counts) and exit",
     )
     ap.add_argument("--kg", help="restrict to one KG shortname")

@@ -1,12 +1,12 @@
 import pytest
 
+from mcp_okn.server import _to_uri
 from mcp_okn.sparql import (
     _flatten_bindings,
     canonicalize_schema_org_iri,
     named_graph,
     normalize_schema_org,
 )
-from mcp_okn.server import _to_uri
 
 JSON_RESULT = {
     "head": {"vars": ["s", "n", "active"]},
@@ -54,7 +54,7 @@ def test_normalize_schema_org_preserves_literals_and_concat():
     # The escape hatches for reaching https-stored schema.org data (nikg etc.) must
     # NOT be rewritten: only angle-bracketed IRIs are canonicalized.
     q = (
-        'SELECT ?o WHERE { ?s ?p ?o . '
+        "SELECT ?o WHERE { ?s ?p ?o . "
         'FILTER(STR(?p) = "https://schema.org/location") . '
         'BIND(IRI(CONCAT("https://schema.org/", "location")) AS ?pred) }'
     )
@@ -76,9 +76,15 @@ def test_normalize_schema_org_leaves_http_and_other_uris_untouched():
 
 
 def test_canonicalize_schema_org_iri_rewrites_bare_iri():
-    assert canonicalize_schema_org_iri("https://schema.org/about") == "http://schema.org/about"
+    assert (
+        canonicalize_schema_org_iri("https://schema.org/about")
+        == "http://schema.org/about"
+    )
     # non-schema.org IRIs and the already-http form are untouched
-    assert canonicalize_schema_org_iri("http://schema.org/about") == "http://schema.org/about"
+    assert (
+        canonicalize_schema_org_iri("http://schema.org/about")
+        == "http://schema.org/about"
+    )
     assert canonicalize_schema_org_iri("https://w3id.org/x") == "https://w3id.org/x"
 
 

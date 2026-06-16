@@ -55,7 +55,9 @@ async def _run_one(
     async with sem:
         start = time.perf_counter()
         try:
-            out = await sparql.run_sparql(record["federated"], fmt="json", timeout=timeout)
+            out = await sparql.run_sparql(
+                record["federated"], fmt="json", timeout=timeout
+            )
         except Exception as e:  # SparqlError, timeouts, transport errors
             return SmokeResult(qid, ok=False, error=str(e).splitlines()[0][:300]), None
         elapsed = time.perf_counter() - start
@@ -88,7 +90,7 @@ async def run(
     report = SmokeReport(results=[p[0] for p in pairs])
     if update_cache:
         cache = dataset.load_results_cache()
-        for (result, rows) in pairs:
+        for result, rows in pairs:
             if result.ok and rows is not None:
                 cache[result.id] = {
                     "rows": rows,

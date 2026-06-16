@@ -23,8 +23,7 @@ from .sparql import SparqlError, named_graph, run_sparql
 
 #: Where the curated per-KG entity metadata CSVs live.
 ENTITY_METADATA_BASE = (
-    "https://raw.githubusercontent.com/sbl-sdsc/mcp-proto-okn/"
-    "main/metadata/entities"
+    "https://raw.githubusercontent.com/sbl-sdsc/mcp-proto-okn/main/metadata/entities"
 )
 
 #: Schema namespace template used inside generated edge-property templates.
@@ -416,7 +415,9 @@ def _member_type(description: str) -> str:
 
 def _clean_edge_label(label: str) -> str:
     """Strip characters that would break a Mermaid relationship label."""
-    return re.sub(r"\s+", " ", (label or "").replace("|", " ").replace("\n", " ")).strip()
+    return re.sub(
+        r"\s+", " ", (label or "").replace("|", " ").replace("\n", " ")
+    ).strip()
 
 
 def _col(table: dict[str, Any], name: str) -> int | None:
@@ -479,7 +480,10 @@ async def infer_edge_labels(
     """
     classes_tbl = schema.get("classes", {})
     predicates_tbl = schema.get("predicates", {})
-    p_src, p_tgt = _col(predicates_tbl, "source_class"), _col(predicates_tbl, "target_class")
+    p_src, p_tgt = (
+        _col(predicates_tbl, "source_class"),
+        _col(predicates_tbl, "target_class"),
+    )
 
     # If any curated predicate already declares both endpoints, don't infer.
     if p_src is not None and p_tgt is not None:

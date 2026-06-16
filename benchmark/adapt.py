@@ -18,8 +18,8 @@ Everything here is pure (no network) so it can be unit-tested offline.
 from __future__ import annotations
 
 import re
+from collections.abc import Iterator
 from dataclasses import dataclass, field
-from typing import Iterator
 
 # A KG's federation named-graph URI. Mirrors mcp_okn.sparql.GRAPH_URI so the
 # benchmark stays runnable even if imported without the package installed.
@@ -30,9 +30,7 @@ GRAPH_URI = "https://purl.org/okn/frink/kg/{shortname}"
 # ``ofn:asDays``). These are kept in the dataset as ``incompatible`` — distinct
 # from a query bug — and excluded from the runnable set. Matched against the raw
 # query text, since the namespace appears inside a PREFIX IRI.
-QLEVER_UNSUPPORTED_NAMESPACES = (
-    "http://www.ontotext.com/sparql/functions/",
-)
+QLEVER_UNSUPPORTED_NAMESPACES = ("http://www.ontotext.com/sparql/functions/",)
 
 # Registry header lines look like ``#+ summary: ...`` / ``#+ tags:`` / ``#+   - x``.
 _SUMMARY_RE = re.compile(r"^#\+\s*summary:\s*(.*)$", re.IGNORECASE)

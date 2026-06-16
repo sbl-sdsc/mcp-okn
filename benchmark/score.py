@@ -18,8 +18,9 @@ benchmarks, kept deliberately simple.
 from __future__ import annotations
 
 from collections import Counter
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Any, Iterable
+from typing import Any
 
 
 def _norm_cell(value: Any) -> str:

@@ -7,8 +7,6 @@ separately by ``test_benchmark_smoke.py`` (opt-in).
 import sys
 from pathlib import Path
 
-import pytest
-
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from benchmark import adapt, dataset, score  # noqa: E402
@@ -17,6 +15,7 @@ SERVED = {"hydrologykg", "ruralkg", "prokn", "ubergraph", "fiokg", "nde"}
 
 
 # --- parsing ---------------------------------------------------------------
+
 
 def test_parse_rq_extracts_header_and_body():
     text = (
@@ -41,6 +40,7 @@ def test_parse_rq_handles_missing_header():
 
 # --- GRAPH wrapping --------------------------------------------------------
 
+
 def test_graph_wrap_scopes_where_keeps_modifiers_outside():
     q = "SELECT * WHERE {\n  ?s ?p ?o .\n  FILTER(?o > 1)\n} ORDER BY ?s"
     out = adapt.graph_wrap(q, "hydrologykg")
@@ -59,6 +59,7 @@ def test_graph_wrap_ignores_braces_in_comments_and_strings():
 
 
 # --- keyword detection (the false-positive that bit us) --------------------
+
 
 def test_variable_named_service_is_not_the_service_keyword():
     q = "SELECT ?service WHERE { ?x :hasService ?service }"
@@ -87,8 +88,11 @@ def test_qlever_unsupported_function_is_incompatible():
 
 # --- tag mapping / scoping -------------------------------------------------
 
+
 def test_multi_kg_is_manual():
-    pq = adapt.adapt("s", ["evoweb", "ubergraph"], "SELECT * {?s ?p ?o}", SERVED | {"evoweb"})
+    pq = adapt.adapt(
+        "s", ["evoweb", "ubergraph"], "SELECT * {?s ?p ?o}", SERVED | {"evoweb"}
+    )
     assert pq.adaptation == "manual"
     assert "multi-KG" in pq.adaptation_note
 
@@ -99,12 +103,15 @@ def test_unmapped_tag_is_skipped():
 
 
 def test_tag_map_override_applies():
-    pq = adapt.adapt("s", ["fio-kg"], "SELECT * {?s ?p ?o}", SERVED, {"fio-kg": "fiokg"})
+    pq = adapt.adapt(
+        "s", ["fio-kg"], "SELECT * {?s ?p ?o}", SERVED, {"fio-kg": "fiokg"}
+    )
     assert pq.adaptation == "auto"
     assert pq.extra["mapped_kgs"] == ["fiokg"]
 
 
 # --- scoring ---------------------------------------------------------------
+
 
 def test_score_exact_ignores_column_names_and_order():
     ref = [{"disease": "A", "label": "x"}, {"disease": "B", "label": "y"}]
@@ -132,6 +139,7 @@ def test_score_both_empty_is_exact():
 
 
 # --- dataset integrity (runs against the committed dataset.jsonl) -----------
+
 
 def test_committed_dataset_is_well_formed():
     records = dataset.load()

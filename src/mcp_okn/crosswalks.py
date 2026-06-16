@@ -37,10 +37,8 @@ def load_crosswalks() -> dict[str, Any]:
     if _data_cache is not None:
         return _data_cache
     try:
-        text = (
-            resources.files("mcp_okn")
-            .joinpath("data", "crosswalks.json")
-            .read_text(encoding="utf-8")
+        text = (resources.files("mcp_okn") / "data" / "crosswalks.json").read_text(
+            encoding="utf-8"
         )
         data = json.loads(text)
         _data_cache = data if isinstance(data, dict) else {}
@@ -293,11 +291,7 @@ def join_between(kg_a: str, kg_b: str) -> list[dict[str, Any]]:
 def nonjoin_for(shortname: str) -> list[dict[str, Any]]:
     """Known-non-join records that reference ``shortname``."""
     data = load_crosswalks()
-    return [
-        e
-        for e in data.get("known_non_joins", [])
-        if shortname in _nonjoin_kgs(e)
-    ]
+    return [e for e in data.get("known_non_joins", []) if shortname in _nonjoin_kgs(e)]
 
 
 def nonjoin_between(kg_a: str, kg_b: str) -> list[dict[str, Any]]:

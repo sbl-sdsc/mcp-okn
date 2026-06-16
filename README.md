@@ -325,10 +325,16 @@ and audited without the model re-supplying queries from memory.
 
 ```bash
 uv run python -m pytest       # unit tests (offline)
+uv run ruff check .           # lint
+uv run ruff format .          # auto-format (use --check in CI)
+uv run mypy                   # type-check src/mcp_okn
 # live smoke test:
 uv run python -c "import asyncio; from mcp_okn.sparql import run_sparql; \
 print(asyncio.run(run_sparql('SELECT ?s WHERE { ?s ?p ?o } LIMIT 3')))"
 ```
+
+CI (`.github/workflows/ci.yml`) runs ruff lint, ruff format-check, and mypy on
+every push/PR, plus the offline test suite on Python 3.10 and 3.12.
 
 ### Verification notes
 

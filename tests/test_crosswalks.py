@@ -98,9 +98,11 @@ async def test_list_crosswalks_renders_taxon_hub_as_pairwise_rows():
     assert len(taxon_rows) == len(pairwise) >= 1
     # dropped entries = all NCBITaxon (re-rendered as pairwise) + bare ubergraph
     # endpoint overlaps (A6/M1); the rest stay 1:1 as rows.
-    dropped = [e for e in entries
-               if e.get("shared_key") == "NCBITaxon"
-               or cw._is_ubergraph_endpoint_overlap(e)]
+    dropped = [
+        e
+        for e in entries
+        if e.get("shared_key") == "NCBITaxon" or cw._is_ubergraph_endpoint_overlap(e)
+    ]
     assert len(rows) == (len(entries) - len(dropped)) + len(pairwise)
 
     members = set(cw.load_crosswalks()["taxon_hub"]["members"])
@@ -117,8 +119,9 @@ async def test_list_crosswalks_renders_taxon_hub_as_pairwise_rows():
         assert "verified_count" not in r  # replaced by the two count columns
 
     # the D9 pair (spoke-genelab/spoke-okn) appears as one of the pairwise rows
-    assert any({r["kgs"][0], r["kgs"][2]} == {"spoke-genelab", "spoke-okn"}
-               for r in taxon_rows)
+    assert any(
+        {r["kgs"][0], r["kgs"][2]} == {"spoke-genelab", "spoke-okn"} for r in taxon_rows
+    )
 
     # the clade-membership explanation is surfaced for rendering after the table
     assert "taxon_clade_note" in out and "clade" in out["taxon_clade_note"].lower()
@@ -140,8 +143,11 @@ async def test_list_crosswalks_omits_bare_ubergraph_endpoint_rows():
     entries = cw.load_crosswalks()["verified_crosswalks"]
     assert any(e["id"].startswith("A6") for e in entries)
     assert any(e["id"].startswith("M1") for e in entries)
-    assert all(cw._is_ubergraph_endpoint_overlap(e)
-               for e in entries if e["id"] in ("A6-mondo-expansion", "M1-mesh-ubergraph"))
+    assert all(
+        cw._is_ubergraph_endpoint_overlap(e)
+        for e in entries
+        if e["id"] in ("A6-mondo-expansion", "M1-mesh-ubergraph")
+    )
 
 
 def test_taxon_hub_block_is_well_formed():
@@ -257,11 +263,17 @@ async def test_get_join_strategy_returns_skeleton_not_recipe():
 
 def test_complementary_note_fires_only_for_two_tagged_linkages():
     assert _complementary_note([]) is None
-    assert _complementary_note([{"shared_key": "MONDO", "complementary_note": "x"}]) is None
+    assert (
+        _complementary_note([{"shared_key": "MONDO", "complementary_note": "x"}])
+        is None
+    )
     # An untagged second linkage (e.g. HP phenotypes) must not trigger it.
-    assert _complementary_note(
-        [{"shared_key": "MONDO", "complementary_note": "x"}, {"shared_key": "HP"}]
-    ) is None
+    assert (
+        _complementary_note(
+            [{"shared_key": "MONDO", "complementary_note": "x"}, {"shared_key": "HP"}]
+        )
+        is None
+    )
     note = _complementary_note(
         [
             {"shared_key": "MONDO", "complementary_note": "direct"},
@@ -316,7 +328,10 @@ def test_skeleton_queries_are_well_formed():
         assert "SELECT" in q and "COUNT(" in q, e["id"]
         # The endpoints it joins must each appear as a scoped named graph.
         for kg in cw._entry_kgs(e):
-            if kg in ("ubergraph", "wikidata"):  # bridges aren't always GRAPH-scoped by id
+            if kg in (
+                "ubergraph",
+                "wikidata",
+            ):  # bridges aren't always GRAPH-scoped by id
                 continue
             assert f"/kg/{kg}>" in q, f"{e['id']} skeleton omits graph {kg}"
         assert e.get("skeleton_verified") in (True, False), e["id"]

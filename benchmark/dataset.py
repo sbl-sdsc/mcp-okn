@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any
 
 DATASET_PATH = Path(__file__).resolve().parent / "dataset.jsonl"
 RESULTS_CACHE_PATH = Path(__file__).resolve().parent / "reference_results.json"

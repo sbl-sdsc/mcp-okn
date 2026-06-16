@@ -1,5 +1,5 @@
 from mcp_okn import registry
-from mcp_okn.registry import _split_frontmatter, _meta_from_front
+from mcp_okn.registry import _meta_from_front, _split_frontmatter
 
 SAMPLE = """\
 ---
