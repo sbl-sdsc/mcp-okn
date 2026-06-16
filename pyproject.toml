@@ -6,6 +6,8 @@ readme = "README.md"
 authors = [
     { name = "Peter W. Rose", email = "pwrose.ucsd@gmail.com" },
 ]
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 dependencies = [
     "mcp>=1.2.0",
