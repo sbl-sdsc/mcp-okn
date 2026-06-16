@@ -365,6 +365,10 @@ print(asyncio.run(run_sparql('SELECT ?s WHERE { ?s ?p ?o } LIMIT 3')))"
 CI (`.github/workflows/ci.yml`) runs ruff lint, ruff format-check, and mypy on
 every push/PR, plus the offline test suite on Python 3.10 and 3.12.
 
+Deferred improvements are tracked in [BACKLOG.md](BACKLOG.md) — currently all
+recorded items are complete (ruff/mypy tightening, broader tool-layer tests, and
+the opt-in compact result format).
+
 ### Verification notes
 
 Reproducible checks of behaviors that aren't covered by the offline unit tests:
