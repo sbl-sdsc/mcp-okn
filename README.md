@@ -106,6 +106,22 @@ The model would:
    }
    ```
 
+For large result sets, pass `compact=True` to drop the per-row repetition of the
+column names — the same query returns one `columns` header and positional `data`
+rows (this affects only the returned payload, not the logged transcript):
+
+   ```json
+   {
+     "columns": ["disease", "mondo"],
+     "count": 3,
+     "data": [
+       ["16p13.2 microdeletion syndrome", "http://purl.obolibrary.org/obo/MONDO_0014805"],
+       ["16p13.2 microdeletion syndrome", "http://www.orpha.net/ORDO/Orphanet_643538"],
+       ["16p13.2 microdeletion syndrome", "https://www.omim.org/entry/616863"]
+     ]
+   }
+   ```
+
 To call the tools directly (e.g. from a script) without an MCP client:
 
 ```python
