@@ -129,11 +129,12 @@ async def test_answer_text_rendered_verbatim_and_in_full():
 
 async def test_sparql_query_does_not_log_exploratory(monkeypatch):
     import mcp_okn.server as srv
+    from mcp_okn.tools import query as query_mod
 
     async def fake_run(query, fmt="json", **kw):
         return {"vars": ["x"], "rows": [{"x": 1}], "row_count": 1}
 
-    monkeypatch.setattr(srv, "run_sparql", fake_run)
+    monkeypatch.setattr(query_mod, "run_sparql", fake_run)
     await srv.sparql_query("SELECT ?x {}", exploratory=True)
     assert session.entries() == []
     await srv.sparql_query("SELECT ?x {}")
@@ -142,17 +143,19 @@ async def test_sparql_query_does_not_log_exploratory(monkeypatch):
 
 async def test_sparql_query_does_not_log_empty_result(monkeypatch):
     import mcp_okn.server as srv
+    from mcp_okn.tools import query as query_mod
 
     async def fake_run(query, fmt="json", **kw):
         return {"vars": ["x"], "rows": [], "row_count": 0}
 
-    monkeypatch.setattr(srv, "run_sparql", fake_run)
+    monkeypatch.setattr(query_mod, "run_sparql", fake_run)
     await srv.sparql_query("SELECT ?x {}")
     assert session.entries() == []
 
 
 async def test_sparql_query_hints_on_empty_result(monkeypatch):
     import mcp_okn.server as srv
+    from mcp_okn.tools import query as query_mod
 
     async def empty(query, fmt="json", **kw):
         return {"vars": ["x"], "rows": [], "row_count": 0}
@@ -160,13 +163,13 @@ async def test_sparql_query_hints_on_empty_result(monkeypatch):
     async def nonempty(query, fmt="json", **kw):
         return {"vars": ["x"], "rows": [{"x": 1}], "row_count": 1}
 
-    monkeypatch.setattr(srv, "run_sparql", empty)
+    monkeypatch.setattr(query_mod, "run_sparql", empty)
     out = await srv.sparql_query("SELECT ?x {}")
     assert "hint" in out
     assert "probe_namespaces" in out["hint"] and "find_crosswalks" in out["hint"]
 
     # Non-empty results carry no hint.
-    monkeypatch.setattr(srv, "run_sparql", nonempty)
+    monkeypatch.setattr(query_mod, "run_sparql", nonempty)
     out = await srv.sparql_query("SELECT ?x {}")
     assert "hint" not in out
 

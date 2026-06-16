@@ -11,6 +11,7 @@ from mcp_okn.server import (
     find_crosswalks,
     probe_namespaces,
 )
+from mcp_okn.tools import probe
 
 
 def test_undercount_note_fires_only_for_multiple_namespaces():
@@ -86,7 +87,7 @@ async def test_probe_namespaces_aggregates_rows(monkeypatch):
             "row_count": 2,
         }
 
-    monkeypatch.setattr(srv, "run_sparql", fake_run)
+    monkeypatch.setattr(probe, "run_sparql", fake_run)
     out = await probe_namespaces("nde", "schema:healthCondition")
 
     assert out["shortname"] == "nde"
@@ -110,7 +111,7 @@ async def test_probe_namespaces_passes_sample_through(monkeypatch):
         captured["query"] = query
         return {"vars": ["namespace", "count"], "rows": [], "row_count": 0}
 
-    monkeypatch.setattr(srv, "run_sparql", fake_run)
+    monkeypatch.setattr(probe, "run_sparql", fake_run)
     out = await probe_namespaces("nde", "schema:healthCondition", sample=2000)
     assert out["sampled"] == 2000
     assert "LIMIT 2000" in captured["query"]
@@ -124,7 +125,7 @@ async def test_probe_namespaces_rejects_unresolvable_predicate(monkeypatch):
         called = True
         return {"vars": [], "rows": [], "row_count": 0}
 
-    monkeypatch.setattr(srv, "run_sparql", fake_run)
+    monkeypatch.setattr(probe, "run_sparql", fake_run)
     out = await probe_namespaces("nde", "foo:bar")
     assert "error" in out
     assert called is False  # never hits the endpoint
@@ -247,7 +248,7 @@ async def test_find_crosswalks_groups_by_predicate(monkeypatch):
             "row_count": 3,
         }
 
-    monkeypatch.setattr(srv, "run_sparql", fake_run)
+    monkeypatch.setattr(probe, "run_sparql", fake_run)
     out = await find_crosswalks("prokn")
 
     # Busiest predicate first; CURIE label resolved; namespaces sorted desc.
@@ -296,7 +297,7 @@ async def test_find_crosswalks_warns_when_namespace_split_across_predicates(
             }
         return {"vars": ["pred", "namespace", "count"], "rows": [], "row_count": 0}
 
-    monkeypatch.setattr(srv, "run_sparql", fake_run)
+    monkeypatch.setattr(probe, "run_sparql", fake_run)
     out = await find_crosswalks("oard-kg")
     assert "SPLIT across predicate positions" in out["note"]
     assert "UNION" in out["note"]
@@ -321,7 +322,7 @@ async def test_find_crosswalks_no_split_warning_when_counts_match(monkeypatch):
             }
         return {"vars": ["pred", "namespace", "count"], "rows": [], "row_count": 0}
 
-    monkeypatch.setattr(srv, "run_sparql", fake_run)
+    monkeypatch.setattr(probe, "run_sparql", fake_run)
     out = await find_crosswalks("prokn")
     assert "SPLIT across predicate positions" not in (out["note"] or "")
 
@@ -339,7 +340,7 @@ async def test_find_crosswalks_node_iris_when_no_mapping_predicates(monkeypatch)
             }
         return {"vars": ["pred", "namespace", "count"], "rows": [], "row_count": 0}
 
-    monkeypatch.setattr(srv, "run_sparql", fake_run)
+    monkeypatch.setattr(probe, "run_sparql", fake_run)
     out = await find_crosswalks("rdkg")
 
     assert out["crosswalks"] == []
@@ -373,7 +374,7 @@ async def test_find_crosswalks_object_role_survives_subject_timeout(monkeypatch)
             }
         return {"vars": ["pred", "namespace", "count"], "rows": [], "row_count": 0}
 
-    monkeypatch.setattr(srv, "run_sparql", fake_run)
+    monkeypatch.setattr(probe, "run_sparql", fake_run)
     out = await find_crosswalks("biobricks-ice", sample=80000)
     # Object-role ids survive the subject scan's timeout.
     assert [o["namespace"] for o in out["ontology_ids"]] == ["CHEMINF"]
@@ -401,7 +402,7 @@ async def test_find_crosswalks_degrades_when_node_scans_fail(monkeypatch):
             "row_count": 1,
         }
 
-    monkeypatch.setattr(srv, "run_sparql", fake_run)
+    monkeypatch.setattr(probe, "run_sparql", fake_run)
     out = await find_crosswalks("prokn", sample=100000)
     # Crosswalks still returned even though both node-IRI scans errored.
     assert out["crosswalks"][0]["namespaces"][0]["namespace"] == "MONDO"
