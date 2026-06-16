@@ -395,7 +395,7 @@ def _rows_section(
         if len(shown) < count
         else f"_{count} row(s)_"
     )
-    return [label, ""] + _rows_to_table(cols, shown)
+    return [label, "", *_rows_to_table(cols, shown)]
 
 
 def _rows_to_table(cols: list[str], rows: list[dict[str, Any]]) -> list[str]:

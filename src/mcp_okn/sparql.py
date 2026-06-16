@@ -8,6 +8,7 @@ QLever-backed federation endpoint and scoped to named graphs.
 
 from __future__ import annotations
 
+import contextlib
 import json
 import re
 from typing import Any
@@ -76,14 +77,12 @@ def _flatten_bindings(payload: dict[str, Any]) -> list[dict[str, Any]]:
             # Cast common numeric/boolean datatypes for convenience.
             dtype = cell.get("datatype", "")
             if dtype.endswith(("integer", "int", "long", "decimal", "double", "float")):
-                try:
+                with contextlib.suppress(TypeError, ValueError):
                     value = (
                         float(value)
                         if "." in value or "e" in value.lower()
                         else int(value)
                     )
-                except (TypeError, ValueError):
-                    pass
             elif dtype.endswith("boolean"):
                 value = value == "true"
             row[var] = value

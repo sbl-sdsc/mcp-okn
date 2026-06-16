@@ -17,7 +17,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from benchmark import dataset, smoke  # noqa: E402
+from benchmark import dataset, smoke
 
 pytestmark = pytest.mark.skipif(
     os.environ.get("RUN_BENCHMARK_SMOKE") != "1",

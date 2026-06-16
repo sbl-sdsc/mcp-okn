@@ -29,8 +29,8 @@ from pathlib import Path
 import httpx
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
-from mcp_okn import taxon  # noqa: E402
-from mcp_okn.sparql import run_sparql  # noqa: E402
+from mcp_okn import taxon
+from mcp_okn.sparql import run_sparql
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "metadata" / "crosswalks.json"
@@ -44,7 +44,7 @@ async def _count(query: str, client: httpx.AsyncClient) -> int | None:
     """Run a COUNT skeleton; return the integer, or None on error/timeout."""
     try:
         r = await run_sparql(query, timeout=TIMEOUT, client=client)
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         print(f"      ERR {str(exc)[:120]}")
         return None
     rows = r.get("rows") or []

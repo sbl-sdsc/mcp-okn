@@ -9,7 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from benchmark import adapt, dataset, score  # noqa: E402
+from benchmark import adapt, dataset, score
 
 SERVED = {"hydrologykg", "ruralkg", "prokn", "ubergraph", "fiokg", "nde"}
 

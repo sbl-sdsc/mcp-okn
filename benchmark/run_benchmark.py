@@ -19,6 +19,7 @@ import argparse
 import asyncio
 import json
 from collections import Counter
+from pathlib import Path
 from typing import Any
 
 from . import dataset, score, smoke
@@ -143,7 +144,7 @@ async def _main(args) -> None:
     if args.layer in ("agent", "both"):
         summary = await _agent_layer(records, args)
         if args.out:
-            with open(args.out, "w", encoding="utf-8") as f:
+            with Path(args.out).open("w", encoding="utf-8") as f:
                 json.dump(summary, f, ensure_ascii=False, indent=2)
             print(f"\n  wrote detailed results to {args.out}")
 

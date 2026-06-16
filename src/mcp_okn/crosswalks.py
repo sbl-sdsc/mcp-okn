@@ -303,9 +303,7 @@ def nonjoin_between(kg_a: str, kg_b: str) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     for e in load_crosswalks().get("known_non_joins", []):
         kgs = _nonjoin_kgs(e)
-        if {kg_a, kg_b} <= kgs:
-            out.append(e)
-        elif "kg" in e and e["kg"] in (kg_a, kg_b):
+        if {kg_a, kg_b} <= kgs or ("kg" in e and e["kg"] in (kg_a, kg_b)):
             out.append(e)
     return out
 

@@ -54,11 +54,11 @@ from .tools.transcript import (
 # Listing them in __all__ keeps the re-exports from being flagged as unused.
 __all__ = [
     "INSTRUCTIONS",
-    "SparqlError",
     "TAXON_HUB_KGS",
     "_CROSSWALK_PREDICATES",
     "_NODE_ID_IRI_PREFIXES",
     "_OBO_PREFIXES",
+    "SparqlError",
     "_clean_description",
     "_complementary_note",
     "_crosswalk_query",
