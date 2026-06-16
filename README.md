@@ -323,6 +323,35 @@ and audited without the model re-supplying queries from memory.
 
 ## Development
 
+### Module layout
+
+The package is organized by concern. `server.py` is a thin assembly point: it
+imports the tool modules to trigger their `@mcp.tool()` registration and
+re-exports their public symbols (so `from mcp_okn.server import ...` keeps
+working). The shared `mcp` application instance lives in `app.py`, separate from
+`server.py`, so the tool modules can import it without a circular dependency.
+
+```
+src/mcp_okn/
+├── app.py            # the shared FastMCP `mcp` instance + INSTRUCTIONS
+├── server.py         # assembly point: registers tools, re-exports, main()
+├── registry.py       # KG discovery from the okn-registry (+ bundled snapshot)
+├── schema.py         # get_schema / visualize_schema logic
+├── sparql.py         # federation endpoint client + schema.org normalization
+├── crosswalks.py     # curated cross-KG join table (data/crosswalks.json)
+├── taxon.py          # NCBITaxon hub: taxon-overlap skeleton composition
+├── session.py        # in-memory query/diagram log for transcripts
+├── data/             # bundled snapshots: kgs.json, crosswalks.json
+└── tools/            # one module per concern; each registers via @mcp.tool()
+    ├── _shared.py        # helpers used by >1 tool module (_to_uri, …)
+    ├── discovery.py      # list_kgs, describe_kg
+    ├── schema_tools.py   # get_schema, visualize_schema
+    ├── probe.py          # probe_namespaces, find_crosswalks
+    ├── joins.py          # get_join_strategy, taxon_overlap, list_crosswalks
+    ├── query.py          # sparql_query, expand_ontology_term
+    └── transcript.py     # reset/get_query_log, create_chat_transcript, resource
+```
+
 ```bash
 uv run python -m pytest       # unit tests (offline)
 uv run ruff check .           # lint
