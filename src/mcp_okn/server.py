@@ -40,6 +40,11 @@ from .tools.probe import (
     probe_namespaces,
 )
 from .tools.query import expand_ontology_term, sparql_query
+from .tools.s2_bridge import (
+    point_to_s2,
+    spatial_bridge,
+    sudokn_spatial_join,
+)
 from .tools.schema_tools import get_schema, visualize_schema
 from .tools.transcript import (
     _clean_description,
@@ -82,12 +87,15 @@ __all__ = [
     "list_kgs",
     "main",
     "mcp",
+    "point_to_s2",
     "probe_namespaces",
     "registry",
     "reset_query_log",
     "schema",
     "session",
     "sparql_query",
+    "spatial_bridge",
+    "sudokn_spatial_join",
     "taxon_overlap",
     "visualize_schema",
 ]

@@ -35,6 +35,7 @@ TAXON_HUB_KGS = [
     "biobricks-aopwiki",
     "spoke-genelab",
     "gene-expression-atlas-okn",
+    "wildlifekn",
 ]
 
 
@@ -90,6 +91,25 @@ def _taxon_source(kg: str, var: str) -> str | None:
             f"REPLACE(STR({h}3),'^.*/node/([0-9]+).*$','$1'))) AS {v}) }}"
         )
         return f"{{ {model} UNION {micro} }}"
+    if kg == "wildlifekn":
+        # LABEL BRIDGE (fragile): wildlifekn stores species as scientific-name
+        # label strings WITH taxonomic authority (e.g. "Ardea alba Linnaeus,
+        # 1758"). Strip to the bare binomial (first two whitespace tokens) and
+        # resolve to an NCBITaxon IRI via ubergraph rdfs:label. Unlike the
+        # IRI-based members (D3-D10) this depends on exact binomial/label
+        # agreement and collapses subspecies to species rank.
+        ub = f"<{named_graph('ubergraph')}>"
+        label = "http://www.w3.org/2000/01/rdf-schema#label"
+        binom_re = "^(\\S+\\s+\\S+).*$"
+        return (
+            f"GRAPH {g} {{ VALUES {h}c "
+            f"{{ <https://wildlife.proto-okn.net/kg/Bird_name> "
+            f"<https://wildlife.proto-okn.net/kg/Amphibian_name> }} "
+            f"{h}1 a {h}c ; <{label}> {h}2 . "
+            f"BIND(REPLACE(STR({h}2),'{binom_re}','$1') AS {h}3) }} "
+            f"GRAPH {ub} {{ {v} <{label}> {h}3 . "
+            f"FILTER(STRSTARTS(STR({v}),'{_NCBITAXON}')) }}"
+        )
     return None
 
 
