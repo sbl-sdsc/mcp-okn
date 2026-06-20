@@ -1,4 +1,4 @@
-"""On-the-fly lat/long -> S2 cell bridging: point_to_s2, sudokn_spatial_join, spatial_bridge.
+"""On-the-fly lat/long -> S2 cell bridging: point_to_s2 + spatial_bridge tools.
 
 Some KGs carry POINT coordinates (lat/long literals) but no S2 cell key, so they
 cannot be joined live to spatialkg's S2 grid (FRINK/QLever has no point-in-polygon).
@@ -201,13 +201,17 @@ async def point_to_s2(lat: float, lng: float, level: int = DEFAULT_LEVEL) -> str
     return point_to_s2_iri(lat, lng, level)
 
 
-@mcp.tool()
 async def sudokn_spatial_join(
     naics: str | None = None,
     state: str | None = None,
     limit: int = 1000,
 ) -> Any:
     """Place SUDOKN manufacturers on the spatial hub via on-the-fly S2 cells.
+
+    Internal convenience helper — **not** exposed as an MCP tool, to keep the tool
+    surface free of KG-specific entries. SUDOKN's join runs through the generic
+    ``spatial_bridge`` tool (supply ``sudokn_point_query()`` as its ``point_query``);
+    this wrapper just hard-codes that point query and the spatialkg county target.
 
     Computes each site's S2 cell from its lat/long and joins to spatialkg
     county/FIPS — SUDOKN has no S2 key, so this is the only live join path. Scope

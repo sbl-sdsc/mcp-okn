@@ -1,57 +1,123 @@
 # mcp-okn
 
-An MCP server for querying the **FRINK federated SPARQL endpoint**
+An MCP server for querying the **federated SPARQL endpoint**
 (`https://frink.apps.renci.org/federation/sparql`) over the
 [Proto-OKN](https://www.proto-okn.net/) knowledge graphs.
 
 It lets an LLM discover which knowledge graphs are relevant (from the
-[okn-registry](https://github.com/frink-okn/okn-registry) descriptions), then run
+[okn-registry](https://registry.okn.us/registry/) descriptions), then run
 SPARQL queries scoped to one or more named graphs of the form
 `https://purl.org/okn/frink/kg/{shortname}`.
 
-> **Only the federation endpoint is used.** The per-KG SPARQL/TPF endpoints in
-> the registry (Apache Jena instances) are intentionally not exposed — they time
-> out or run out of memory on complex queries.
+---
 
-## Tools
+## About Proto-OKN
 
-| Tool | Purpose |
-| --- | --- |
-| `list_kgs` | List all KGs with `shortname`, `title`, `description`, `homepage`, and `named_graph`. Served from a bundled snapshot for instant cold start. |
-| `describe_kg(shortname, long_description=False)` | Full registry doc (frontmatter + prose) for one KG, for deeper context. Set `long_description=True` for the registry's ~150-word prose body — useful for picking among near-overlapping KGs. |
-| `get_schema(shortname, compact=True)` | Schema for one KG — classes, predicates, edge properties (with reification query templates), and node properties. Uses curated metadata when available, else probes the endpoint for distinct classes/predicates. Call **before** writing a query. |
-| `visualize_schema(shortname)` | Deterministic Mermaid `classDiagram` of a KG's schema, built server-side from `get_schema` — class boxes, labeled edges, and edge-property predicates as intermediary classes with typed fields (node classes light blue, edge classes orange, with a legend). When the curated metadata names predicates but not their endpoints, edges are recovered from the graph's `rdfs:domain`/`rdfs:range` scoped to the curated classes. Returns `mermaid_block` (already wrapped in a ` ```mermaid ` fence) — output it **verbatim**; don't redraw it as SVG/an image. Rendered examples: [spoke-genelab](docs/spoke-genelab-schema.png), [dreamkg](docs/dreamkg-schema.png), [rdkg](docs/rdkg-schema.png) ([details](docs/verification-visualize-schema.md)). |
-| `probe_namespaces(shortname, predicate, sample=0)` | Report which identifier/ontology namespaces populate a predicate's objects. `get_schema` lists a KG's predicates but not which controlled vocabularies fill their values — call this before the main query whenever a predicate's objects are ontology terms (diseases, chemicals, genes, anatomy) to see the actual namespace distribution and pick the best identifier to join on. Exploratory — not logged. |
-| `find_crosswalks(shortname, sample=0)` | Find ontology/database ids in a KG however they are encoded, profiling all three places at once: mapping predicates (`rdfs:seeAlso`, `owl:sameAs`, SKOS `*Match`, `oboInOwl:hasDbXref`), node IRIs that *are* the ontology term (`role="subject"`), and domain-specific predicates carrying an id (`role="object"`). The latter two are invisible to a mapping-predicate-only scan. Use whenever a KG seems to lack the identifier you need on its obvious predicates. |
-| `sparql_query(query, format="json", exploratory=False, compact=False)` | Run a SPARQL query on the federation endpoint. Substantive results are logged for the transcript unless `exploratory=True`. Pass `compact=True` for a token-efficient json shape — `{"columns", "data", "count"}` with positional rows — instead of the default repeated-key `{"vars", "rows", "row_count"}` (affects only the returned payload, not the transcript). A bracketed `<https://schema.org/…>` IRI is canonicalized to the `http://` form most KGs store (string literals and `IRI(CONCAT(…))` are left as written). A few KGs store the `https://` form (nikg, ruralkg, ufokn); reach those predicates by binding the predicate as a variable and matching scheme-free, e.g. `FILTER(STRENDS(STR(?p),'schema.org/location'))`. |
-| `expand_ontology_term(term, relation="subClassOf", direction="descendants", include_self=True, limit=1000)` | Expand an ontology term to its full subtree/closure via the `ubergraph` graph. |
-| `get_join_strategy(kg_a, kg_b=None)` | Look up a precomputed, hand-verified recipe for joining two KGs — predicates, roles, shared identifier, bridge graph, verified count, and a runnable `skeleton_query` (the example SPARQL to copy and build on; it already encodes the IRI rewrites). Call **before** writing a federated join. Returns `verified` / `known_non_join` / `unknown`; with `kg_b` omitted, lists every join touching `kg_a`. |
-| `list_crosswalks(include_examples=True)` | List **every** verified cross-KG integration point in one call — a global map of which graphs connect and on what shared key. Rows are grouped by `domain` (Genes, Geospatial, Disease & phenotype, …) and sorted by ontology, ready to render as a table. Each row is a compact summary (`domain`, connected `kgs` in join order by official shortname, `shared_key`, `bridge_kg`, `verified_count`, and an `example_question` by default; set `include_examples=False` for a terser list). Use `get_join_strategy(kg_a, kg_b)` for a single pair's full recipe. |
-| `taxon_overlap(kg_a, kg_b)` | Compose the NCBITaxon overlap between two hub KGs *through* `ubergraph`. Returns two runnable skeletons — `exact_id` (same taxon id) and `clade_membership` (kg_b taxa under kg_a's clades via `subClassOf*`, which can be far larger when one side is coarser-grained) — plus, for a pair with a precomputed non-zero overlap, the materialized counts under `materialized_overlap` (the same per-pair counts `list_crosswalks` surfaces in the NCBITaxon hub row). Run a skeleton with `sparql_query`. |
-| `reset_query_log()` | Clear the session query log. Call at the **start** of an analysis to scope a transcript. |
-| `get_query_log()` | Return the queries logged so far this session (only those that returned rows and weren't exploratory). |
-| `create_chat_transcript(model, exchanges, ...)` | Emit a reproducible markdown (or JSON) record of a session — prompts, answers, the verbatim queries + results that produced findings, and any `visualize_schema` diagrams. Call at the **end** of an analysis. |
+[Proto-OKN](https://www.proto-okn.net/) — the **Prototype Open Knowledge
+Network** — is a National Science Foundation initiative (with NASA, NIH, the
+National Institute of Justice, NOAA, and the U.S. Geological Survey) that funds
+research teams to build a publicly accessible, interconnected set of data
+repositories and knowledge graphs. The graphs span domains such as health, the
+environment, criminal justice, space exploration, and supply-chain security, and
+are served together over the **FRINK** federated SPARQL endpoint that this server
+queries. The [okn-registry](https://registry.okn.us/registry/) catalogs
+the participating knowledge graphs.
 
-## Resources
+---
 
-| Resource | Purpose |
-| --- | --- |
-| `transcript://session/latest` (`text/markdown`) | The most recent transcript rendered by `create_chat_transcript`, so a client can fetch/save the document directly (transport-agnostic; works for remote servers). Cleared by `reset_query_log`. |
+## Examples
 
-## Setup
+### Example prompts
+
+Once the server is configured in your MCP client (see
+[Configuration](#configuration)), just ask in natural language — the assistant
+picks the graphs, writes the SPARQL, and combines the results for you. Some
+prompts to try:
+
+- *"List all Proto-OKN knowledge graphs as a table of shortname and description."* — [Result](docs/crosswalks/proto-okn-knowledge-graphs.md)
+- *"List all verified crosswalks, grouped by domain, with an example of what each answers."* — [Result](docs/crosswalks/proto-okn-crosswalk-inventory.md)
+- *"Give a high-level overview of the spoke-genelab knowledge graph — its main classes and relationships — and draw the schema diagram."* — [Result](docs/spoke-genelab-schema.png)
+- *"Which genes does rdkg associate with autism spectrum disorder?"* — [Result](docs/crosswalks/crosswalks_examples/disease06_q1_spoke-rdkg_autism-genes.md)
+- *"What is the maximum PFAS measurement in each county?"* — [Result](docs/crosswalks/crosswalks_examples/geospatial04_q1_sawgraph_spatialkg_pfas_max_by_county.md)
+- *"How do I join spoke-okn and prokn? Show the verified recipe and shared identifier."* — [Result](docs/crosswalks/spoke-prokn-join.md)
+- *"Create a chat transcript of this analysis."* — downloads as Markdown and is served as the `transcript://session/latest` resource
+- *"Create a chat transcript of this analysis in PDF format."* — the server returns Markdown and the client converts the `.md` to a `.pdf` file (Claude Desktop / claude.ai)
+
+### Crosswalk queries & transcripts
+
+A **crosswalk** is a verified way to join two (or three) Proto-OKN knowledge
+graphs on a shared identifier — for example linking a disease in one graph to the
+genes another graph associates with it via a common MONDO or DOID id. Because the
+graphs are built by different teams on different ontologies, the value of the
+federation is in these connections: a crosswalk is an *integration opportunity*
+where a question one graph can't answer alone becomes answerable by combining two.
+This section catalogs the verified crosswalks and shows the queries that exercise
+them.
+
+A visual map of the whole network — all 92 crosswalks across 32 graphs, with
+`ubergraph` and `wikidata` as bridge hubs (edge width ∝ log of the verified join
+count). Click the image for the interactive, zoomable version; see the
+[session transcript](docs/crosswalks/crosswalk-transcript.md) for how it was built.
+
+[![Proto-OKN crosswalk network](docs/crosswalks/crosswalk-network.png)](https://htmlpreview.github.io/?https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/docs/crosswalks/crosswalk-network.html)
+
+Three resources, each backed by live federated SPARQL joins verified to actually
+answer the question (biomedical claims checked against PubMed / Paperclip;
+geospatial and industrial joins against their authoritative shared standard):
+
+- **[Proto-OKN Crosswalk Inventory](docs/crosswalks/proto-okn-crosswalk-inventory.md)**
+  — a single-page map of all **92 verified crosswalks**: the joined KGs, shared
+  key, row count, and a one-line note on what each answers. Start here to see which
+  graphs connect and on what identifier.
+- **[Cross-KG crosswalk catalog](docs/crosswalks/crosswalks_example.md)** — the
+  same 92 crosswalks worked into 184 example questions (two per recipe) across 7
+  domains (Genes, Proteins, Chemicals, Disease & Phenotype, Taxonomy, Geospatial,
+  Industry & Supply Chain), each with a full transcript.
+- **[Multi-domain integration catalog](docs/crosswalks/multi-domain-examples.md)**
+  — 24 use cases that fuse *different* domains (e.g. toxicology × transcriptomics
+  × clinical disease, or PFAS sampling × hydrology × public health).
+
+Every catalog row links to a standalone, replayable transcript — the prompt, the
+answer, and every verbatim SPARQL query with its result. Here are a few examples
+from the crosswalk catalog:
+
+| Question | Knowledge graphs | Transcript |
+|---|---|---|
+| Which genes does rdkg associate with autism spectrum disorder (bridged DOID↔MONDO via ubergraph)? | spoke-okn × rdkg × ubergraph | [md](docs/crosswalks/crosswalks_examples/disease06_q1_spoke-rdkg_autism-genes.md) |
+| AOP target genes differentially expressed in gene-expression-atlas-okn disease studies | biobricks-aopwiki × gene-expression-atlas-okn | [md](docs/crosswalks/crosswalks_examples/genes01_q1_aopwiki-gxa_aop-targets-de-disease.md) |
+| Maximum PFAS measurement by county | sawgraph × spatialkg | [md](docs/crosswalks/crosswalks_examples/geospatial04_q1_sawgraph_spatialkg_pfas_max_by_county.md) |
+| Diabetes gene dossier — pankgraph genes × gene-expression-atlas-okn expression × spoke-okn disease | gene-expression-atlas-okn × pankgraph × spoke-okn | [md](docs/crosswalks/multidomain_examples/multi-domain01_diabetes_gene_dossier.md) |
+
+These transcripts are produced by `create_chat_transcript` and can be re-run
+against the endpoint with `scripts/replay_transcript.py`.
+The catalogs were generated by driving the model with the
+[crosswalk generation prompt](docs/crosswalks/crosswalks_prompt.md) — list every
+`list_crosswalks` recipe, write two research questions per crosswalk, run and
+verify each as live SPARQL, and validate the findings against the literature.
+
+---
+
+## Configuration
+
+### Requirements
+
+Install **[uv](https://docs.astral.sh/uv/)** (see the
+[installation guide](https://docs.astral.sh/uv/getting-started/installation/)),
+then clone this repo:
 
 ```bash
-uv sync
-uv run mcp-okn   # starts the server on stdio
+git clone https://github.com/sbl-sdsc/mcp-okn.git
 ```
 
-## Register with Claude Code
+### Register the server
+
+For Claude Code, register it from the CLI:
 
 ```bash
 claude mcp add mcp-okn -- uv --directory /path/to/mcp-okn run mcp-okn
 ```
 
-Or add to your MCP client config (e.g. Claude Desktop `claude_desktop_config.json`):
+Or add it to any MCP client's config (e.g. Claude Desktop `claude_desktop_config.json`):
 
 ```json
 {
@@ -66,276 +132,46 @@ Or add to your MCP client config (e.g. Claude Desktop `claude_desktop_config.jso
 
 Replace `/path/to/mcp-okn` with the absolute path to your checkout.
 
-## Usage
+---
 
-A typical session walks the tools in order — **discover → inspect → query**.
-Once the server is registered, just ask in natural language; the model drives
-the tools. For example:
+## Tools and resources
 
-> *"Which UniProt diseases in ProKN have a MONDO cross-reference?"*
+### Tools
 
-The model would:
+The tools follow a typical analysis arc — **discover → inspect → plan a join →
+query → record**. The single table below is grouped in that order.
 
-1. **`list_kgs()`** → find `prokn` (the Protein Knowledge Network).
-2. **`get_schema("prokn")`** → confirm it has a `up:Disease` class and that
-   diseases carry `rdfs:seeAlso` cross-references (34 classes, 232 predicates).
-3. **`sparql_query(...)`** → run the query scoped to the `prokn` named graph:
+| Tool | Purpose |
+| --- | --- |
+| **1. Discover graphs** | |
+| `list_kgs` | List all KGs with `shortname`, `title`, `description`, `homepage`, and `named_graph`. Served from a bundled snapshot for instant cold start. |
+| `describe_kg(shortname, long_description=False)` | Full registry doc (frontmatter + prose) for one KG, for deeper context. Set `long_description=True` for the registry's ~150-word prose body — useful for picking among near-overlapping KGs. |
+| **2. Inspect a graph's schema and identifiers** | |
+| `get_schema(shortname, compact=True)` | Schema for one KG — classes, predicates, edge properties (with reification query templates), and node properties. Uses curated metadata when available, else probes the endpoint for distinct classes/predicates. Call **before** writing a query. |
+| `visualize_schema(shortname)` | Deterministic Mermaid `classDiagram` of a KG's schema, built server-side from `get_schema` — class boxes, labeled edges, and edge-property predicates as intermediary classes with typed fields (node classes light blue, edge classes orange, with a legend). When the curated metadata names predicates but not their endpoints, edges are recovered from the graph's `rdfs:domain`/`rdfs:range` scoped to the curated classes. Returns `mermaid_block` (already wrapped in a ` ```mermaid ` fence) — output it **verbatim**; don't redraw it as SVG/an image. Rendered examples: [spoke-genelab](docs/spoke-genelab-schema.png), [dreamkg](docs/dreamkg-schema.png), [rdkg](docs/rdkg-schema.png) ([details](docs/verification-visualize-schema.md)). |
+| `probe_namespaces(shortname, predicate, sample=0)` | Report which identifier/ontology namespaces populate a predicate's objects. `get_schema` lists a KG's predicates but not which controlled vocabularies fill their values — call this before the main query whenever a predicate's objects are ontology terms (diseases, chemicals, genes, anatomy) to see the actual namespace distribution and pick the best identifier to join on. Exploratory — not logged. |
+| `find_crosswalks(shortname, sample=0)` | Find ontology/database ids in a KG however they are encoded, profiling all three places at once: mapping predicates (`rdfs:seeAlso`, `owl:sameAs`, SKOS `*Match`, `oboInOwl:hasDbXref`), node IRIs that *are* the ontology term (`role="subject"`), and domain-specific predicates carrying an id (`role="object"`). The latter two are invisible to a mapping-predicate-only scan. Use whenever a KG seems to lack the identifier you need on its obvious predicates. |
+| **3. Plan a cross-graph join** | |
+| `list_crosswalks(include_examples=True)` | List **every** verified cross-KG integration point in one call — a global map of which graphs connect and on what shared key. Rows are grouped by `domain` (Genes, Geospatial, Disease & phenotype, …) and sorted by ontology, ready to render as a table. Each row is a compact summary (`domain`, connected `kgs` in join order by official shortname, `shared_key`, `bridge_kg`, `verified_count`, and an `example_question` by default; set `include_examples=False` for a terser list). Use `get_join_strategy(kg_a, kg_b)` for a single pair's full recipe. |
+| `get_join_strategy(kg_a, kg_b=None)` | Look up a precomputed, hand-verified recipe for joining two KGs — predicates, roles, shared identifier, bridge graph, verified count, and a runnable `skeleton_query` (the example SPARQL to copy and build on; it already encodes the IRI rewrites). Call **before** writing a federated join. Returns `verified` / `known_non_join` / `unknown`; with `kg_b` omitted, lists every join touching `kg_a`. |
+| `taxon_overlap(kg_a, kg_b)` | Compose the NCBITaxon overlap between two hub KGs *through* `ubergraph`. Returns two runnable skeletons — `exact_id` (same taxon id) and `clade_membership` (kg_b taxa under kg_a's clades via `subClassOf*`, which can be far larger when one side is coarser-grained) — plus, for a pair with a precomputed non-zero overlap, the materialized counts under `materialized_overlap` (the same per-pair counts `list_crosswalks` surfaces in the NCBITaxon hub row). Run a skeleton with `sparql_query`. |
+| `point_to_s2(lat, lng, level=13)` | Convert a lat/long point to its spatialkg/KWG S2 cell IRI (Level-13 default) — the deterministic primitive behind the spatial bridge. Use when a KG carries POINT coordinates but no S2 key and you need the cell IRI spatialkg stores. |
+| `spatial_bridge(point_query, target_pattern, select_vars="*", extra_prefixes="", limit=500)` | Generic point→S2 bridge for **any** point-bearing graph that lacks a stored S2 key (sudokn is the first such graph). `point_query` must `SELECT ?site ?lat ?lng`; the server computes each cell in Python and injects `(?site ?cell)` as a `VALUES` block into a federated query whose `target_pattern` joins `?cell` to spatialkg/fiokg/sawgraph (e.g. county/FIPS). Nothing is persisted — the computed key lives only inside the request. |
+| **4. Run queries** | |
+| `sparql_query(query, format="json", exploratory=False, compact=False)` | Run a SPARQL query on the federation endpoint. Substantive results are logged for the transcript unless `exploratory=True`. Pass `compact=True` for a token-efficient json shape — `{"columns", "data", "count"}` with positional rows — instead of the default repeated-key `{"vars", "rows", "row_count"}` (affects only the returned payload, not the transcript). A bracketed `<https://schema.org/…>` IRI is canonicalized to the `http://` form most KGs store (string literals and `IRI(CONCAT(…))` are left as written). A few KGs store the `https://` form (nikg, ruralkg, ufokn); reach those predicates by binding the predicate as a variable and matching scheme-free, e.g. `FILTER(STRENDS(STR(?p),'schema.org/location'))`. |
+| `expand_ontology_term(term, relation="subClassOf", direction="descendants", include_self=True, limit=1000)` | Expand an ontology term to its full subtree/closure via the `ubergraph` graph. |
+| **5. Record a reproducible transcript** | |
+| `reset_query_log()` | Clear the session query log. Call at the **start** of an analysis to scope a transcript. |
+| `get_query_log()` | Return the queries logged so far this session (only those that returned rows and weren't exploratory). |
+| `create_chat_transcript(model, exchanges, ...)` | Emit a reproducible markdown (or JSON) record of a session — prompts, answers, the verbatim queries + results that produced findings, and any `visualize_schema` diagrams. Call at the **end** of an analysis. |
 
-   ```sparql
-   PREFIX up:   <http://purl.uniprot.org/core/>
-   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-   SELECT DISTINCT ?disease ?mondo WHERE {
-     GRAPH <https://purl.org/okn/frink/kg/prokn> {
-       ?d a up:Disease ; rdfs:label ?disease ; rdfs:seeAlso ?mondo .
-     }
-   } LIMIT 3
-   ```
+### Resources
 
-   ```json
-   {
-     "vars": ["disease", "mondo"],
-     "row_count": 3,
-     "rows": [
-       {"disease": "16p13.2 microdeletion syndrome",
-        "mondo": "http://purl.obolibrary.org/obo/MONDO_0014805"},
-       {"disease": "16p13.2 microdeletion syndrome",
-        "mondo": "http://www.orpha.net/ORDO/Orphanet_643538"},
-       {"disease": "16p13.2 microdeletion syndrome",
-        "mondo": "https://www.omim.org/entry/616863"}
-     ]
-   }
-   ```
+| Resource | Purpose |
+| --- | --- |
+| `transcript://session/latest` (`text/markdown`) | The most recent transcript rendered by `create_chat_transcript`, so a client can fetch/save the document directly (transport-agnostic; works for remote servers). Cleared by `reset_query_log`. |
 
-For large result sets, pass `compact=True` to drop the per-row repetition of the
-column names — the same query returns one `columns` header and positional `data`
-rows (this affects only the returned payload, not the logged transcript):
-
-   ```json
-   {
-     "columns": ["disease", "mondo"],
-     "count": 3,
-     "data": [
-       ["16p13.2 microdeletion syndrome", "http://purl.obolibrary.org/obo/MONDO_0014805"],
-       ["16p13.2 microdeletion syndrome", "http://www.orpha.net/ORDO/Orphanet_643538"],
-       ["16p13.2 microdeletion syndrome", "https://www.omim.org/entry/616863"]
-     ]
-   }
-   ```
-
-To call the tools directly (e.g. from a script) without an MCP client:
-
-```python
-import asyncio
-from mcp_okn import schema
-from mcp_okn.sparql import run_sparql
-
-async def main():
-    print(await schema.get_schema("prokn"))          # inspect the schema
-    result = await run_sparql("""
-        PREFIX up:   <http://purl.uniprot.org/core/>
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        SELECT DISTINCT ?disease ?mondo WHERE {
-          GRAPH <https://purl.org/okn/frink/kg/prokn> {
-            ?d a up:Disease ; rdfs:label ?disease ; rdfs:seeAlso ?mondo .
-          }
-        } LIMIT 3""")
-    print(result["row_count"], "rows")
-
-asyncio.run(main())
-```
-
-## Example query
-
-Scope each KG with its named graph (a single query may span several):
-
-```sparql
-PREFIX up:   <http://purl.uniprot.org/core/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT DISTINCT ?mondo ?label WHERE {
-  GRAPH <https://purl.org/okn/frink/kg/prokn> {
-    ?d a up:Disease ; rdfs:seeAlso ?mondo .
-  }
-}
-```
-
-Use the `ubergraph` graph to expand ontology terms, e.g. all subclasses of a
-MONDO disease:
-
-```sparql
-GRAPH <https://purl.org/okn/frink/kg/ubergraph> {
-  ?mondo rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0003847> .
-}
-```
-
-### Cross-graph join through a bridge
-
-Some graphs share no identifier directly but meet through a **bridge** graph.
-For example, **OARD-KG** keys diseases on MONDO while **ProKN** annotates them
-with OMIM; they join through `ubergraph`'s MONDO→OMIM cross-references. Ask
-`get_join_strategy("oard-kg", "prokn")` for the verified skeleton — it returns
-this runnable query (444 diseases on ProKN's curated `up:Disease`, verified):
-
-```sparql
-SELECT DISTINCT ?mondo ?omim WHERE {
-  GRAPH <https://purl.org/okn/frink/kg/oard-kg> {            # MONDO diseases (either assoc side)
-    { ?a <https://w3id.org/biolink/vocab/object> ?mondo }
-    UNION { ?a <https://w3id.org/biolink/vocab/subject> ?mondo }
-    FILTER(STRSTARTS(STR(?mondo), "http://purl.obolibrary.org/obo/MONDO_"))
-  }
-  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {          # bridge: MONDO → OMIM
-    ?mondo <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?curie .
-    FILTER(STRSTARTS(STR(?curie), "OMIM:"))
-  }
-  # ubergraph stores OMIM:{id} CURIEs; ProKN stores https://www.omim.org/entry/{id} IRIs
-  BIND(IRI(CONCAT("https://www.omim.org/entry/", REPLACE(STR(?curie), "^OMIM:", ""))) AS ?omim)
-  GRAPH <https://purl.org/okn/frink/kg/prokn> {              # OMIM on rdfs:seeAlso, curated up:Disease only
-    ?d a <http://purl.uniprot.org/core/Disease> ;
-       <http://www.w3.org/2000/01/rdf-schema#seeAlso> ?omim .
-  }
-}
-```
-
-The `BIND` rebuild is the crux: a naive `OMIM:…` ↔ `omim.org/entry/…` join
-silently returns nothing. Every verified crosswalk ships such a runnable
-skeleton — see `get_join_strategy` / `list_crosswalks` above.
-
-### The NCBITaxon taxonomy hub
-
-`ubergraph` doubles as a shared **taxonomy hub**: six biological KGs identify
-organisms by NCBI Taxonomy, so each joins ubergraph's precomputed taxonomy. That
-lets you expand a clade *once* in ubergraph and pull the matching organisms — or
-their genes, AOPs, datasets, strains — from any of them.
-
-```mermaid
-graph LR
-  UB(("ubergraph<br/>NCBITaxon hub"))
-  SOK["spoke-okn"]
-  NDE["nde"]
-  SAW["sawgraph"]
-  AOP["biobricks-aopwiki"]
-  GEN["spoke-genelab"]
-  GXA["gene-expression-atlas-okn"]
-
-  SOK -->|"33,602 · PATRIC genome id"| UB
-  NDE -->|"1,797 · UniProt taxonomy IRI"| UB
-  SAW -->|"538 · obo NCBITaxon IRI"| UB
-  AOP -->|"164 · obo on dc:identifier"| UB
-  GEN -->|"9 · Gene.taxonomy id"| UB
-  GEN -->|"46 · microbiome node id"| UB
-  GXA -->|"8 · in_taxon"| UB
-
-  GEN -. "33,313 shared via hub (D9)" .-> SOK
-```
-
-Solid edges are hub spokes (each KG ↔ ubergraph); the dashed edge is a cross-KG
-join *composed through* the hub (D9). spoke-genelab has two spokes — model
-organisms by id (9) and microbiome by node-IRI taxid (46).
-
-| KG (spoke) | how it keys taxa | shared taxa |
-|----|------------------|-------------|
-| `spoke-okn` | PATRIC genome IRI `…/organism/{taxid}.{n}` (extract id) | 33,602 |
-| `nde` | `schema:species` → `uniprot.org/taxonomy/{id}` (extract id) | 1,797 |
-| `sawgraph` | `obo/NCBITaxon_` as `subClassOf` subject | 538 |
-| `biobricks-aopwiki` | `obo/NCBITaxon_` on `dc:identifier` | 164 |
-| `spoke-genelab` (microbiome) | NCBITaxon id in `Organism` node IRI `…/node/{taxid}` | 46 |
-| `spoke-genelab` (model organisms) | `obo/NCBITaxon_` string literal on `Gene.taxonomy` (coerce to IRI) | 9 |
-| `gene-expression-atlas-okn` | `obo/NCBITaxon_` on `biolink:in_taxon` | 8 |
-
-The key form differs per KG — a direct IRI, an integer embedded in a genome id or
-node IRI, a UniProt taxonomy IRI, or a string literal — so each crosswalk ships the
-exact normalization. Ask `get_join_strategy("<kg>", "ubergraph")` for the runnable
-skeleton.
-
-Each KG's representation was audited to be the *complete* structured taxon set it
-carries: sawgraph's count is its full `subClassOf` hierarchy (538 = 538), nde and
-spoke-okn carry no `obo/NCBITaxon_` form at all (only UniProt / PATRIC ids), and
-aopwiki's only structured key is `dc:identifier` (stray NCBI Taxonomy URLs in its
-free-text HTML are not a join key). spoke-genelab is the **one** KG with two
-representations — model-organism ids on `Gene.taxonomy` *and* microbiome taxids in
-the `Organism` node IRI — both captured. Prefer id extraction over name resolution:
-the node-IRI route is robust to ontology renames (e.g. Actinobacteria →
-Actinomycetota) that an `rdfs:label` match silently drops.
-
-Two KGs can also be joined **through** the hub by composing their spokes — and when
-the two sides sit at different granularities (genus vs strain) that is the *only*
-way, since they share no id until a clade is expanded. **`taxon_overlap(kg_a, kg_b)`**
-composes two spokes on demand and returns two runnable skeletons: `exact_id` (same
-NCBITaxon id on both sides) and `clade_membership` (one KG's taxa nested under the
-other's via `subClassOf*`). The two can differ enormously — for `spoke-genelab` ×
-`spoke-okn`, exact-id is **2** but clade-membership is **33,313** (spoke-genelab's
-microbiome genera expanding down to spoke-okn's strains, also stored as crosswalk
-D9) — a join impossible without the hub.
-
-These pairwise counts are **materialized**, not just composable on demand:
-`list_crosswalks` renders the NCBITaxon hub as **one row per non-zero pair** (in the
-Taxonomy domain), each bridged through ubergraph (`kgs: [kg_a, ubergraph, kg_b]`) and
-carrying both numbers as columns — `exact_id` (symmetric) and `clade_a_in_b` /
-`clade_b_in_a` (directional) — so an agent identifying integration points sees the
-verified per-pair overlap without a second call. The result also carries a
-`taxon_clade_note` to render after the table explaining the two columns.
-`taxon_overlap` echoes the same counts under `materialized_overlap`. Regenerate them
-when a member KG is updated with `scripts/refresh_taxon_overlaps.py` (then
-`refresh_snapshot.py` to bundle) — see [KG snapshot](#kg-snapshot).
-
-Example — AOPs applicable to any rodent, clade expanded in ubergraph:
-
-```sparql
-SELECT DISTINCT ?aop ?taxon WHERE {
-  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {              # expand the clade
-    ?taxon rdfs:subClassOf* <http://purl.obolibrary.org/obo/NCBITaxon_9989> .  # Rodentia
-  }
-  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> {      # AOP taxonomic applicability
-    ?aop <http://purl.org/dc/elements/1.1/identifier> ?taxon .
-  }
-}
-```
-
-## Reproducible transcripts
-
-Every `sparql_query` / `expand_ontology_term` call that returns rows is logged
-in-memory for the lifetime of the server process, so a session can be replayed
-and audited without the model re-supplying queries from memory.
-
-- Queries that **error** or return **no rows** are never logged.
-- Pass `exploratory=True` to `sparql_query` to keep schema-probing or
-  trial-and-error queries out of the log.
-- Call `reset_query_log` at the **start** of an analysis to scope the log.
-- Call `create_chat_transcript` at the **end** to render a markdown (or JSON)
-  document: session provenance (date, model, endpoint), the knowledge graphs
-  used, the conversation (prompts + your answers), and every logged query
-  verbatim. Each turn is rendered in the mcp-proto-okn style — a 👤 **User**
-  block and a 🧠 **Assistant** block separated by a rule. Up to `MAX_LOGGED_ROWS`
-  (1000) rows are stored per query; the true row count is always preserved.
-- By default only the **final** logged query's result rows are rendered;
-  intermediate queries show their SPARQL and row count but omit the table, to
-  keep the transcript focused on the queries that produced the findings. Pass
-  `include_intermediate_rows=True` to render full results for every query.
-  (Queries attached inline to an exchange via `queries` always render in full.)
-- `visualize_schema` diagrams are logged too, and rendered in a **Schema
-  visualizations** section (each in a ` ```mermaid ` block) — so a "visualize
-  schema" turn shows up in the transcript without re-supplying the diagram. Pass
-  `include_visualizations=False` to omit them, or attach a `mermaid` field to an
-  exchange to place a diagram inline with that turn.
-- The transcript is a standalone **document**. The model must **output the full
-  markdown** — preferably as a Markdown **artifact** (Claude Desktop / claude.ai
-  show artifacts in a side panel the user can save as `.md` or export to PDF),
-  otherwise in a fenced ` ```markdown ` block. It must not claim a preview is
-  "ready" without actually emitting the content. (An MCP server can't open a
-  preview panel or create an artifact itself — it only returns the markdown;
-  rendering it is the client/model's job.)
-- The rendered markdown is **also published as an MCP resource**,
-  `transcript://session/latest` (`text/markdown`), so a client can fetch and
-  save the document directly — independent of how the model presents it, and
-  transport-agnostic (works the same for a remote server). `reset_query_log`
-  clears it along with the query/diagram log.
-- Because every query is stored verbatim, a saved transcript is **replayable**.
-  `scripts/replay_transcript.py` re-runs every query (from a `.md` or JSON
-  transcript) against the endpoint and checks each row count against the
-  recorded one:
-
-  ```bash
-  uv run python scripts/replay_transcript.py path/to/transcript.md
-  ```
+---
 
 ## Development
 
@@ -381,9 +217,7 @@ print(asyncio.run(run_sparql('SELECT ?s WHERE { ?s ?p ?o } LIMIT 3')))"
 CI (`.github/workflows/ci.yml`) runs ruff lint, ruff format-check, and mypy on
 every push/PR, plus the offline test suite on Python 3.10 and 3.12.
 
-Deferred improvements are tracked in [BACKLOG.md](BACKLOG.md) — currently all
-recorded items are complete (ruff/mypy tightening, broader tool-layer tests, and
-the opt-in compact result format).
+Deferred improvements are tracked in [BACKLOG.md](BACKLOG.md) — currently empty.
 
 ### Verification notes
 
@@ -420,7 +254,7 @@ ids for ufokn) while the bracketed IRI returns 0 — confirming the literal-pres
 fix and the variable-predicate workaround documented in the `ruralkg`/`ufokn` crosswalk
 notes.
 
-## KG snapshot
+### KG snapshot
 
 `list_kgs` serves a static snapshot bundled at `src/mcp_okn/data/kgs.json` (~41
 KGs), so the first call returns instantly without fetching the individual
@@ -444,8 +278,41 @@ recompute its live-verified counts against the federation and write them back:
 counts — `--inject` to write, `--pair A B` for one pair). Run `refresh_snapshot.py`
 afterwards to sync the bundled copy.
 
-## Notes
+---
 
-- The federation endpoint is QLever-backed and runs on a read-only filesystem.
-  Queries needing a large external sort over a full-graph scan (unbounded
-  `ORDER BY`/`GROUP BY`/`DISTINCT`) may fail; add a `LIMIT` or scope the pattern.
+## Citation
+
+`mcp-okn` is the next-generation successor to
+[`mcp-proto-okn`](https://github.com/sbl-sdsc/mcp-proto-okn). If you use this
+software, please cite the paper describing that predecessor:
+
+> Rose, P. W., Good, B. M., Saravia-Butler, A. M., Nelson, C. A., Balhoff, J. P.,
+> Kebede, Y., Whetzel, P. L., Bizon, C., Su, A. I., & Baranzini, S. E. (2026).
+> *mcp-proto-okn: Natural-language access to open scientific knowledge graphs
+> through the Model Context Protocol*. arXiv:2605.30283.
+> <https://arxiv.org/abs/2605.30283>
+
+```bibtex
+@misc{rose2026mcpprotookn,
+  title         = {mcp-proto-okn: Natural-language access to open scientific knowledge graphs through the Model Context Protocol},
+  author        = {Rose, Peter W. and Good, Benjamin M. and Saravia-Butler, Amanda M. and Nelson, Charlotte A. and Balhoff, James P. and Kebede, Yaphet and Whetzel, Patricia L. and Bizon, Christopher and Su, Andrew I. and Baranzini, Sergio E.},
+  year          = {2026},
+  eprint        = {2605.30283},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2605.30283}
+}
+```
+
+---
+
+## Funding
+
+- **National Science Foundation** Award [#2333819](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2333819): "Proto-OKN Theme 1: Connecting Biomedical information on Earth and in Space via the SPOKE knowledge graph"
+- **National Science Foundation** Award [#2535091](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2535091): "Proto-OKN Theme 2: OKN-Fabric"
+
+---
+
+## License
+
+This project is licensed under the [BSD 3-Clause License](LICENSE).
