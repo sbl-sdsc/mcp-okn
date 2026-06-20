@@ -61,7 +61,7 @@ how it was built.
 
 > **▶ Click the image to open the interactive, zoomable network.**
 
-[![Proto-OKN crosswalk network](docs/crosswalks/crosswalk-network.png)](https://htmlpreview.github.io/?https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/docs/crosswalks/crosswalk-network.html)
+[![Proto-OKN crosswalk network](docs/crosswalks/crosswalk-network.png)](https://raw.githack.com/sbl-sdsc/mcp-okn/main/docs/crosswalks/crosswalk-network.html)
 
 Three resources, each backed by live federated SPARQL joins verified to actually
 answer the question (biomedical claims checked against PubMed / Paperclip;
