@@ -155,7 +155,7 @@ async def join_via_s2(
 SELECT {select_vars} WHERE {{
   {_values_block(pairs)}
   {target_pattern}
-}}{f' LIMIT {int(limit)}' if limit else ''}"""
+}}{f" LIMIT {int(limit)}" if limit else ""}"""
     return await _rows(final)
 
 
