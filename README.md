@@ -56,8 +56,10 @@ them.
 
 A visual map of the whole network — all 92 crosswalks across 32 graphs, with
 `ubergraph` and `wikidata` as bridge hubs (edge width ∝ log of the verified join
-count). Click the image for the interactive, zoomable version; see the
-[session transcript](docs/crosswalks/crosswalk-transcript.md) for how it was built.
+count). See the [session transcript](docs/crosswalks/crosswalk-transcript.md) for
+how it was built.
+
+> **▶ Click the image to open the interactive, zoomable network.**
 
 [![Proto-OKN crosswalk network](docs/crosswalks/crosswalk-network.png)](https://htmlpreview.github.io/?https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/docs/crosswalks/crosswalk-network.html)
 
