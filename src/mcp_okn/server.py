@@ -1,7 +1,7 @@
 """FastMCP server exposing the FRINK federated SPARQL endpoint.
 
 All queries go to the single federation endpoint
-(https://frink.apps.renci.org/federation/sparql) and are scoped to named graphs
+(https://apps.okn.us/federation/sparql) and are scoped to named graphs
 of the form https://purl.org/okn/frink/kg/{shortname}. The per-KG endpoints in
 the registry are never used.
 

@@ -1,7 +1,7 @@
 # mcp-okn
 
 An MCP server for querying the **federated SPARQL endpoint**
-(`https://frink.apps.renci.org/federation/sparql`) over the
+(`https://apps.okn.us/federation/sparql`) over the
 [Proto-OKN](https://www.proto-okn.net/) knowledge graphs.
 
 It lets an LLM discover which knowledge graphs are relevant (from the

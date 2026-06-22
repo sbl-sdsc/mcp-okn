@@ -16,7 +16,7 @@ from typing import Any
 import httpx
 
 #: The single federation endpoint. Do not query per-KG endpoints.
-FEDERATION_ENDPOINT = "https://frink.apps.renci.org/federation/sparql"
+FEDERATION_ENDPOINT = "https://apps.okn.us/federation/sparql"
 
 #: Template for a KG's federation named graph URI.
 GRAPH_URI = "https://purl.org/okn/frink/kg/{shortname}"
