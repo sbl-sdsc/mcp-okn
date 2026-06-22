@@ -9,6 +9,12 @@
     # Both layers with a real text-to-SPARQL agent (needs ANTHROPIC_API_KEY):
     python -m benchmark.run_benchmark --agent claude --model claude-sonnet-4-6
 
+    # Key-free path (e.g. Cowork is the model): export questions, answer them
+    # with the live mcp-okn tools, then score the answers file:
+    python -m benchmark.run_benchmark --export-questions questions.json
+    # ...write answers.json as {id: sparql}...
+    python -m benchmark.run_benchmark --agent file --answers answers.json
+
 Layer 2 only scores questions whose reference query passed layer 1 (so there is a
 ground-truth answer to compare against). Use --limit / --kg to run a subset.
 """
@@ -35,6 +41,27 @@ def _list_kgs(records: list[dict]) -> None:
     for kg, n in sorted(counts.items()):
         print(f"  {kg:20} {n}")
     print(f"  {'TOTAL':20} {sum(counts.values())}")
+
+
+def _export_questions(records: list[dict], path: str) -> None:
+    """Dump runnable questions (id, prose, target KGs) for an external solver.
+
+    This is the key-free Cowork hand-off: Cowork's Claude reads this file,
+    answers each question with the live mcp-okn tools, and writes an answers
+    JSON that ``--agent file --answers`` then scores.
+    """
+    questions = [
+        {
+            "id": r["id"],
+            "summary": r["summary"],
+            "kgs": r.get("mapped_kgs") or r.get("tags") or [],
+        }
+        for r in dataset.iter_runnable(records)
+    ]
+    Path(path).write_text(
+        json.dumps(questions, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    print(f"wrote {len(questions)} questions to {path}")
 
 
 def _select(records: list[dict], kg: str | None, limit: int | None) -> list[dict]:
@@ -72,6 +99,12 @@ def _make_agent(args):
         from .agents import ClaudeAgent
 
         return ClaudeAgent(model=args.model)
+    if args.agent == "file":
+        if not args.answers:
+            raise SystemExit("--agent file requires --answers PATH")
+        from .agents import FileAgent
+
+        return FileAgent(args.answers)
     raise SystemExit(f"unknown agent {args.agent!r}")
 
 
@@ -134,6 +167,9 @@ async def _main(args) -> None:
     if args.list_kgs:
         _list_kgs(all_records)
         return
+    if args.export_questions:
+        _export_questions(_select(all_records, args.kg, args.limit), args.export_questions)
+        return
 
     records = _select(all_records, args.kg, args.limit)
     if not records:
@@ -161,12 +197,22 @@ def main() -> None:
     )
     ap.add_argument(
         "--agent",
-        choices=["reference", "claude"],
+        choices=["reference", "claude", "file"],
         default="reference",
-        help="layer-2 agent (default: reference self-check)",
+        help="layer-2 agent (default: reference self-check). 'file' scores "
+        "externally-produced answers (e.g. from Cowork) — no API key.",
     )
     ap.add_argument(
         "--model", default="claude-sonnet-4-6", help="model for --agent claude"
+    )
+    ap.add_argument(
+        "--answers", help="JSON of {id: sparql} answers, for --agent file"
+    )
+    ap.add_argument(
+        "--export-questions",
+        metavar="PATH",
+        help="write runnable questions (id, summary, KGs) to PATH and exit — "
+        "the key-free Cowork hand-off; respects --kg/--limit",
     )
     ap.add_argument(
         "--list-kgs",

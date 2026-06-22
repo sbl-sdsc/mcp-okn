@@ -12,12 +12,17 @@ Two implementations:
   `sparql_query`) through the Anthropic SDK to discover and answer from scratch,
   given only the prose summary and which KG(s) to use. This is the actual
   text-to-SPARQL measurement.
+- :class:`FileAgent` — scores answers produced *outside* the harness (e.g. by
+  Cowork's Claude, which is itself the model and calls the mcp-okn tools live).
+  Reads a JSON map of {record_id: sparql} and runs each query. No API key — use
+  this to benchmark text-to-SPARQL without an ANTHROPIC_API_KEY.
 """
 
 from __future__ import annotations
 
 import json
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Protocol
 
 from mcp_okn import server as srv
@@ -48,6 +53,50 @@ class ReferenceAgent:
         query = record.get("federated")
         if not query:
             return AgentResult(rows=[], error="record has no federated query")
+        try:
+            out = await sparql.run_sparql(query, fmt="json")
+        except Exception as e:
+            return AgentResult(rows=[], sparql=query, error=str(e).splitlines()[0])
+        return AgentResult(rows=out.get("rows", []), sparql=query)
+
+
+# --- File agent (key-free, e.g. Cowork) ------------------------------------
+
+
+class FileAgent:
+    """Scores answers produced outside the harness — no LLM call, no API key.
+
+    Expects a JSON file mapping record id -> final SPARQL query, e.g. the
+    ``answers.json`` Cowork's Claude writes after solving the exported questions
+    with the live ``mcp-okn`` tools. Each query is run against the federation
+    exactly like :class:`ReferenceAgent`, but with the supplied query instead of
+    the curated reference.
+    """
+
+    name = "file"
+
+    def __init__(self, answers_path: str) -> None:
+        path = Path(answers_path)
+        if not path.exists():
+            raise SystemExit(
+                f"answers file {path} not found — export questions, answer them, "
+                "then point --answers at the resulting JSON."
+            )
+        data = json.loads(path.read_text(encoding="utf-8"))
+        # Accept either {id: query} or [{"id": ..., "query"/"sparql": ...}].
+        if isinstance(data, list):
+            data = {
+                r["id"]: r.get("query") or r.get("sparql")
+                for r in data
+                if r.get("id")
+            }
+        self._answers: dict[str, Any] = data
+        self.name = f"file:{path.name}"
+
+    async def solve(self, record: dict[str, Any]) -> AgentResult:
+        query = self._answers.get(record["id"])
+        if not query:
+            return AgentResult(rows=[], error="no answer for id")
         try:
             out = await sparql.run_sparql(query, fmt="json")
         except Exception as e:
