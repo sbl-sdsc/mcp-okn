@@ -38,7 +38,7 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>32 knowledge graphs, 92 verified crosswalks (verified 2026-06-12). Edge colour encodes the data domain; edge width is proportional to log&#8321;&#8320; of the verified join count. <code>ubergraph</code> and <code>wikidata</code> are bridge hubs. Hover a node or edge for detail · drag to rearrange · scroll to zoom · double-click a node to unpin it.</p>
+  <p>33 knowledge graphs, 105 verified crosswalks (verified 2026-06-23). Edge colour encodes the data domain; edge width is proportional to log&#8321;&#8320; of the verified join count. <code>ubergraph</code> and <code>wikidata</code> are bridge hubs. Hover a node or edge for detail · drag to rearrange · scroll to zoom · double-click a node to unpin it.</p>
 </header>
 <div class="bar" id="legend"></div>
 <div class="bar">
@@ -59,7 +59,7 @@
 </script>
 <script>
 (function(){
-const DOM={C:["Chemicals","#D85A30"],D:["Disease & phenotype","#D4537E"],G:["Genes","#7F77DD"],S:["Geospatial","#378ADD"],I:["Industry & supply chain","#BA7517"],P:["Proteins","#1D9E75"],T:["Taxonomy","#639922"]};
+const DOM={C:["Chemicals","#D85A30"],D:["Disease & phenotype","#D4537E"],G:["Genes","#7F77DD"],S:["Geospatial","#378ADD"],I:["Industry & supply chain","#BA7517"],P:["Proteins","#1D9E75"],T:["Taxonomy","#639922"],A:["Anatomy & Cell Type","#17A2B8"]};
 const BRIDGES=new Set(["ubergraph","wikidata"]);
 const R=[
 ["C",["biobricks-aopwiki","biobricks-toxcast"],290,"CAS"],["C",["biobricks-ice","biobricks-toxcast"],9421,"CAS"],["C",["biobricks-tox21","biobricks-ice"],8916,"CAS"],["C",["biobricks-tox21","biobricks-toxcast"],8909,"CAS"],
@@ -80,7 +80,9 @@ const R=[
 ["S",["geoconnex","spatialkg"],51,"state_FIPS"],["S",["spoke-okn","sockg"],18,"state_FIPS"],["S",["spoke-okn","spatialkg"],51,"state_FIPS"],["S",["sudokn","spatialkg"],51,"state_FIPS"],
 ["I",["fiokg","securechainkg"],301,"NAICS"],["I",["fiokg","sudokn"],64,"NAICS"],["I",["securechainkg","sudokn"],35,"NAICS"],["I",["securechainkg","sudokn"],58,"SUDOKN sector"],
 ["P",["biobricks-aopwiki","prokn"],1805,"UniProt"],["P",["ncipidkg","prokn"],12,"UniProt"],
-["T",["biobricks-aopwiki","ubergraph","gene-expression-atlas-okn"],[7,8,8],"NCBITaxon"],["T",["biobricks-aopwiki","ubergraph","nde"],[62,164,961],"NCBITaxon"],["T",["biobricks-aopwiki","ubergraph","sawgraph"],[7,164,145],"NCBITaxon"],["T",["biobricks-aopwiki","ubergraph","spoke-genelab"],[7,8,8],"NCBITaxon"],["T",["gene-expression-atlas-okn","ubergraph","nde"],[6,8,12],"NCBITaxon"],["T",["gene-expression-atlas-okn","ubergraph","sawgraph"],[0,8,0],"NCBITaxon"],["T",["gene-expression-atlas-okn","ubergraph","spoke-genelab"],[8,8,8],"NCBITaxon"],["T",["nde","ubergraph","sawgraph"],[73,1727,538],"NCBITaxon"],["T",["nde","ubergraph","spoke-genelab"],[7,46,55],"NCBITaxon"],["T",["nde","ubergraph","spoke-okn"],[23,23,33601],"NCBITaxon"],["T",["nde","ubergraph","wildlifekn"],[17,57,339],"NCBITaxon"],["T",["sawgraph","ubergraph","spoke-genelab"],[0,0,13],"NCBITaxon"],["T",["sawgraph","ubergraph","wildlifekn"],[2,2,339],"NCBITaxon"],["T",["spoke-genelab","ubergraph","spoke-okn"],[2,2,33313],"NCBITaxon"]
+["T",["biobricks-aopwiki","ubergraph","gene-expression-atlas-okn"],[7,8,8],"NCBITaxon"],["T",["biobricks-aopwiki","ubergraph","nde"],[62,164,961],"NCBITaxon"],["T",["biobricks-aopwiki","ubergraph","sawgraph"],[7,164,145],"NCBITaxon"],["T",["biobricks-aopwiki","ubergraph","spoke-genelab"],[7,8,8],"NCBITaxon"],["T",["gene-expression-atlas-okn","ubergraph","nde"],[6,8,12],"NCBITaxon"],["T",["gene-expression-atlas-okn","ubergraph","sawgraph"],[0,8,0],"NCBITaxon"],["T",["gene-expression-atlas-okn","ubergraph","spoke-genelab"],[8,8,8],"NCBITaxon"],["T",["nde","ubergraph","sawgraph"],[73,1727,538],"NCBITaxon"],["T",["nde","ubergraph","spoke-genelab"],[7,46,55],"NCBITaxon"],["T",["nde","ubergraph","spoke-okn"],[23,23,33601],"NCBITaxon"],["T",["nde","ubergraph","wildlifekn"],[17,57,339],"NCBITaxon"],["T",["sawgraph","ubergraph","spoke-genelab"],[0,0,13],"NCBITaxon"],["T",["sawgraph","ubergraph","wildlifekn"],[2,2,339],"NCBITaxon"],["T",["spoke-genelab","ubergraph","spoke-okn"],[2,2,33313],"NCBITaxon"],
+["D",["biohealth","ubergraph","rdkg"],9122,"UMLS\u2194MONDO"],["D",["biohealth","ubergraph","prokn"],4284,"UMLS\u2194HP"],["D",["biohealth","ubergraph","spoke-okn"],173,"UMLS\u2194MONDO\u2194DOID"],["D",["biohealth","ubergraph","oard-kg"],1796,"UMLS\u2194MONDO"],["D",["biohealth","ubergraph","oard-kg"],4549,"UMLS\u2194HP"],["D",["biohealth","ubergraph","nde"],2760,"UMLS\u2194MONDO"],["D",["biohealth","ubergraph","biomarkerkg"],620,"UMLS\u2194MONDO\u2194DOID"],["D",["biohealth","ubergraph","gene-expression-atlas-okn"],13,"UMLS\u2194HP"],
+["A",["biohealth","ubergraph","gene-expression-atlas-okn"],249,"UMLS\u2194UBERON"],["A",["biohealth","ubergraph","spoke-genelab"],35,"UMLS\u2194UBERON"],["A",["spoke-genelab","gene-expression-atlas-okn"],27,"UBERON"],["A",["gene-expression-atlas-okn","prokn"],31,"CL"],["A",["spoke-genelab","gene-expression-atlas-okn"],4,"CL"],["A",["spoke-genelab","prokn"],1,"CL"]
 ];
 const eff=w=>Array.isArray(w)?Math.max(w[0],w[1],w[2]):w;
 const emap=new Map();

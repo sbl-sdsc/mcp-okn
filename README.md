@@ -54,9 +54,11 @@ where a question one graph can't answer alone becomes answerable by combining tw
 This section catalogs the verified crosswalks and shows the queries that exercise
 them.
 
-A visual map of the whole network — all 92 crosswalks across 32 graphs, with
+A visual map of the whole network — all 105 crosswalks across 33 graphs, with
 `ubergraph` and `wikidata` as bridge hubs (edge width ∝ log of the verified join
-count). See the [session transcript](docs/crosswalks/crosswalk-transcript.md) for
+count). The latest update adds **BioHealthKG** (UMLS-CUI clinical predications) and
+the **Anatomy & Cell Type** domain (UBERON/CL joins among GXA, SPOKE-GeneLab and
+ProKN). See the [session transcript](docs/crosswalks/crosswalk-transcript.md) for
 how it was built.
 
 > **▶ Click the image to open the interactive, zoomable network.**
@@ -68,13 +70,13 @@ answer the question (biomedical claims checked against PubMed / Paperclip;
 geospatial and industrial joins against their authoritative shared standard):
 
 - **[Proto-OKN Crosswalk Inventory](docs/crosswalks/proto-okn-crosswalk-inventory.md)**
-  — a single-page map of all **92 verified crosswalks**: the joined KGs, shared
+  — a single-page map of the **verified crosswalks**: the joined KGs, shared
   key, row count, and a one-line note on what each answers. Start here to see which
   graphs connect and on what identifier.
 - **[Cross-KG crosswalk catalog](docs/crosswalks/crosswalks_example.md)** — the
-  same 92 crosswalks worked into 184 example questions (two per recipe) across 7
-  domains (Genes, Proteins, Chemicals, Disease & Phenotype, Taxonomy, Geospatial,
-  Industry & Supply Chain), each with a full transcript.
+  **105 verified crosswalks** worked into 210 example questions (two per recipe) across 8
+  domains (Genes, Proteins, Chemicals, Disease & Phenotype, Anatomy & Cell Type, Taxonomy,
+  Geospatial, Industry & Supply Chain), each with a full transcript.
 - **[Multi-domain integration catalog](docs/crosswalks/multi-domain-examples.md)**
   — 24 use cases that fuse *different* domains (e.g. toxicology × transcriptomics
   × clinical disease, or PFAS sampling × hydrology × public health).

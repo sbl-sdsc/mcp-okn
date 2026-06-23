@@ -1,6 +1,6 @@
 # Proto-OKN crosswalk network — session transcript
 
-- **Date:** 2026-06-19
+- **Date:** 2026-06-23
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://frink.apps.renci.org/federation/sparql
 
@@ -28,6 +28,7 @@
 - `oard-kg` — <https://purl.org/okn/frink/kg/oard-kg>
 - `nde` — <https://purl.org/okn/frink/kg/nde>
 - `biomarkerkg` — <https://purl.org/okn/frink/kg/biomarkerkg>
+- `biohealth` — <https://purl.org/okn/frink/kg/biohealth>
 - `gene-expression-atlas-okn` — <https://purl.org/okn/frink/kg/gene-expression-atlas-okn>
 - `pankgraph` — <https://purl.org/okn/frink/kg/pankgraph>
 - `ncipidkg` — <https://purl.org/okn/frink/kg/ncipidkg>
@@ -49,15 +50,17 @@ Create an interactive network diagram of the crosswalks. Include bridging KGs (u
 
 🧠 **Assistant**
 
-This is a verified join table — 92 crosswalks across 32 knowledge graphs, with `ubergraph` and `wikidata` acting as bridge hubs. Here's the network. Edge color encodes the data domain, edge width is proportional to log of the verified join count (for the taxonomy edges, which carry no single `verified_count`, I use the largest of the exact-id / clade-membership counts). Hover any node or edge for details; drag to rearrange; scroll to zoom; click a graph to pull its full set of join recipes.
+This is a verified join table — 105 crosswalks across 33 knowledge graphs, with `ubergraph` and `wikidata` acting as bridge hubs. Here's the network. Edge color encodes the data domain, edge width is proportional to log of the verified join count (for the taxonomy edges, which carry no single `verified_count`, I use the largest of the exact-id / clade-membership counts). Hover any node or edge for details; drag to rearrange; scroll to zoom; click a graph to pull its full set of join recipes.
 
-[interactive force-directed network diagram: 32 KG nodes, edges colored by domain (Chemicals, Disease & phenotype, Genes, Geospatial, Industry & supply chain, Proteins, Taxonomy), edge width proportional to log10 of the verified count, ubergraph and wikidata rendered as enlarged bridge hubs]
+[interactive force-directed network diagram: 33 KG nodes, edges colored by domain (Chemicals, Disease & phenotype, Genes, Anatomy & Cell Type, Geospatial, Industry & supply chain, Proteins, Taxonomy), edge width proportional to log10 of the verified count, ubergraph and wikidata rendered as enlarged bridge hubs]
 
 A few things the layout makes visible:
 
 `spatialkg` is the dominant geospatial hub — the thickest edge in the whole graph is `fiokg ↔ spatialkg` (681,045 shared S2 cells), and nearly every geospatial KG joins through it on `S2_L13` or `county_FIPS`. `spoke-okn` is the overall connector, tying together chemicals, disease, genes and geospatial.
 
-The two bridge nodes behave differently. `ubergraph` is a true ontology backbone — it brokers the disease crosswalks (DOID↔MONDO, EFO↔MONDO), the CHEBI↔CAS chemical joins, and all 14 NCBITaxon overlaps. `wikidata` bridges exactly one crosswalk: `prokn → spoke-okn` via HGNC→Entrez (16,298 genes).
+The two bridge nodes behave differently. `ubergraph` is a true ontology backbone — it brokers the disease crosswalks (DOID↔MONDO, EFO↔MONDO), the CHEBI↔CAS chemical joins, all 14 NCBITaxon overlaps, and now the entire `biohealth` cluster (UMLS↔MONDO/HP/UBERON). `wikidata` bridges exactly one crosswalk: `prokn → spoke-okn` via HGNC→Entrez (16,298 genes).
+
+The newest additions are `biohealth` — a SemMedDB-style clinical-predication graph keyed entirely on UMLS CUIs — and a new **Anatomy & Cell Type** domain. `biohealth` carries no ontology ids of its own, so all 10 of its crosswalks attach through `ubergraph` (UMLS→MONDO/HP/UBERON); its thickest edge is `biohealth ↔ ubergraph ↔ rdkg` (9,122 shared diseases). The Anatomy & Cell Type domain adds direct UBERON/CL joins among `gene-expression-atlas-okn`, `spoke-genelab` and `prokn` (e.g. `gxa ↔ prokn` on 31 shared CL cell types), linking spaceflight-assay and terrestrial single-cell expression to cell-type marker knowledge.
 
 One caveat on the taxonomy edges: those rows don't carry a single verified count, so their width uses the larger of the exact-id and clade-membership numbers. That's why `nde ↔ ubergraph ↔ spoke-okn` looks heavy — it's 23 exact taxon matches but 33,601 by clade once expanded through `subClassOf*`.
 
@@ -71,6 +74,6 @@ Create a chat transcript. Render the image as .png.
 
 🧠 **Assistant**
 
-Generated this transcript of the session and rendered the crosswalk network to a static PNG, preserving the same visual encoding: nodes are the 32 knowledge graphs (ubergraph and wikidata enlarged as bridge hubs), edge color encodes the data domain, and edge width is proportional to log10 of the verified join count. Source data: the curated cross-KG join table (92 crosswalks, verified 2026-06-12).
+Generated this transcript of the session and rendered the crosswalk network to a static PNG, preserving the same visual encoding: nodes are the 33 knowledge graphs (ubergraph and wikidata enlarged as bridge hubs), edge color encodes the data domain, and edge width is proportional to log10 of the verified join count. Source data: the curated cross-KG join table (105 crosswalks, verified 2026-06-23).
 
 ![Crosswalk network](crosswalk-network.png)
