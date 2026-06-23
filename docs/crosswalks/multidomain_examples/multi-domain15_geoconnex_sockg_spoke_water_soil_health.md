@@ -1,6 +1,6 @@
 # UC15 — Water Monitoring × Soil-Carbon Agriculture × Health by County (geoconnex + SOCKG + SPOKE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Hydrology (geoconnex) × Soil-carbon agriculture / climate (SOCKG) × Environmental health (SPOKE)
 - **Shared join key:** county FIPS (SOCKG county = KWG `administrativeRegion.USA.{FIPS5}`; geoconnex `gnis:county` → `ref/counties/{FIPS5}`; SPOKE `/location/{FIPS5}`)
 

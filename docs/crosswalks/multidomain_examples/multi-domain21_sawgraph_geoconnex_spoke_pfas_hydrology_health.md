@@ -1,6 +1,6 @@
 # UC21 — PFAS Contamination × Hydrologic Monitoring × Health by County (SAWGraph + geoconnex + SPOKE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** PFAS contamination science (SAWGraph) × Hydrology (geoconnex) × Environmental health (SPOKE)
 - **Shared join key:** county FIPS (SAWGraph via Data Commons geoId → FIPS5; geoconnex `gnis:county`; SPOKE `/location/{FIPS5}`)
 

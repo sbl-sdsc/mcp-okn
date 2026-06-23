@@ -1,6 +1,6 @@
 # UC20 — AOP Chemical Stressors × HTS Screening × Safety Curation (AOP-Wiki + ToxCast + ICE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Predictive toxicology / mechanistic (AOP-Wiki) × High-throughput screening (EPA ToxCast) × Chemical safety curation (NICEATM ICE)
 - **Shared join key:** CAS Registry Number (AOP-Wiki `has_chemical_entity`; ToxCast & ICE `edam:has_identifier`)
 

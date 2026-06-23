@@ -1,6 +1,6 @@
 # UC12 — Homelessness / Social Services × National Geographic-Health Graph (DREAM-KG + SPOKE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Social services / homelessness (DREAM-KG, Philadelphia) × National geographic-health context (SPOKE)
 - **Knowledge graphs:** `dreamkg` <https://purl.org/okn/frink/kg/dreamkg> · `spoke-okn` <https://purl.org/okn/frink/kg/spoke-okn>
 - **Shared join key:** 5-digit ZIP code (DREAM-KG `schema:postalCode`; SPOKE `rdfs:label` on `/location/{STATE}-{ZIP}` nodes)

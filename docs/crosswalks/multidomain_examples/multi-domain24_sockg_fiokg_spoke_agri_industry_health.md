@@ -1,6 +1,6 @@
 # UC24 — Soil-Carbon Agriculture × Industrial Facilities × Health by County (SOCKG + fiokg + SPOKE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Soil-carbon agriculture / climate (SOCKG) × Environmental regulation (EPA facilities, fiokg) × Environmental health (SPOKE)
 - **Shared join key:** county FIPS (SOCKG county = KWG `administrativeRegion.USA.{FIPS5}`; fiokg `sfWithin` county; SPOKE `/location/{FIPS5}`)
 

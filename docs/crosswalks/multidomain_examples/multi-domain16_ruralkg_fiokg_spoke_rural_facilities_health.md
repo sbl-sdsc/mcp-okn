@@ -1,6 +1,6 @@
 # UC16 — Rural-Urban Classification × Industrial Facilities × Health by County (ruralkg + fiokg + SPOKE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Rural sociology / settlement classification (ruralkg) × Environmental regulation (fiokg) × Environmental health (SPOKE)
 - **Shared join key:** county FIPS (ruralkg `censusCounty` → KWG `administrativeRegion.USA.{FIPS5}`; fiokg `sfWithin` county region; SPOKE `/location/{FIPS5}`)
 

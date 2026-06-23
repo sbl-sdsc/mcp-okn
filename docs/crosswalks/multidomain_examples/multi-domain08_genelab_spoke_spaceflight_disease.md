@@ -1,6 +1,6 @@
 # UC8 — Spaceflight-Responsive Genes × Clinical Disease Associations (NASA GeneLab + SPOKE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Space biology (NASA GeneLab spaceflight omics) × Clinical / literature medicine (SPOKE)
 - **Knowledge graphs:** `spoke-genelab` <https://purl.org/okn/frink/kg/spoke-genelab> · `spoke-okn` <https://purl.org/okn/frink/kg/spoke-okn>
 - **Shared join key:** Entrez gene id (GeneLab maps model-organism genes to their human ortholog `IS_ORTHOLOG_MGiG`; both graphs use `ncbi.nlm.nih.gov/gene/{entrez}`)

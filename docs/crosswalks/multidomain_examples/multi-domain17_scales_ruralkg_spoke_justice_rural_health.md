@@ -1,6 +1,6 @@
 # UC17 — Federal Judicial Activity × Rural-Urban Classification × Health by County (SCALES + ruralkg + SPOKE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Federal judiciary (SCALES) × Rural sociology (ruralkg) × Environmental health (SPOKE)
 - **Shared join key:** county FIPS (SCALES `hasIdbCounty`; ruralkg `censusCounty`; SPOKE `/location/{FIPS5}`)
 

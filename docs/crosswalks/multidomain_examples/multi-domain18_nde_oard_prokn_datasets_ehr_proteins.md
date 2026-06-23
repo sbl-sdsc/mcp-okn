@@ -1,6 +1,6 @@
 # UC18 — Research Datasets × EHR Phenotypes × Protein Evidence by Disease (NDE + OARD + ProKN)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Research data resources (NDE — NIAID/ImmPort datasets) × Clinical EHR observation (OARD) × Proteomics (ProKN)
 - **Shared join key:** MONDO disease id (NDE `schema:healthCondition`; OARD `biolink:subject/object`; ProKN `up:Disease rdfs:seeAlso`)
 

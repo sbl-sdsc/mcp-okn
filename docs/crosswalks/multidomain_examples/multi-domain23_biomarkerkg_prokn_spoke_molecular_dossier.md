@@ -1,6 +1,6 @@
 # UC23 — Disease Molecular Dossier: Biomarkers × Protein Evidence × Associations (BiomarkerKG + ProKN + SPOKE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Biomarker discovery (BiomarkerKG) × Proteomics (ProKN) × Network/clinical associations (SPOKE)
 - **Shared join key:** DOID disease id (BiomarkerKG object position; ProKN `up:Disease rdfs:seeAlso`; SPOKE disease node-IRI)
 

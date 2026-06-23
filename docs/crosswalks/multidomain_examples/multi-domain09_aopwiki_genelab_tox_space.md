@@ -1,6 +1,6 @@
 # UC9 — Toxicology AOP Targets × Spaceflight Expression (AOP-Wiki + NASA GeneLab)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Predictive toxicology (Adverse Outcome Pathways) × Space biology (NASA GeneLab)
 - **Knowledge graphs:** `biobricks-aopwiki` <https://purl.org/okn/frink/kg/biobricks-aopwiki> · `spoke-genelab` <https://purl.org/okn/frink/kg/spoke-genelab>
 - **Shared join key:** Entrez gene id (AOP-Wiki `skos:exactMatch` → ncbigene; GeneLab via model→human ortholog `IS_ORTHOLOG_MGiG`)

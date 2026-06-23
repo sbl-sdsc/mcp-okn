@@ -2,7 +2,7 @@
 
 - **Date:** 2026-06-17
 - **Model:** claude-opus-4-8
-- **SPARQL endpoint:** https://frink.apps.renci.org/federation/sparql
+- **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 - **Crosswalk:** securechainkg ↔ fiokg (verified, 301 shared NAICS codes)
 - **Shared identifier:** NAICS 6-digit industry code (fiokg PFAS facilities via `fio#ofIndustry`)
 

@@ -1,6 +1,6 @@
 # UC6 — Software Supply-Chain Participants × Small/Medium Manufacturers by Industry (SecureChainKG + SUDOKN)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Cybersecurity / software supply chain × Advanced manufacturing (small/medium manufacturers)
 - **Knowledge graphs:** `securechainkg` <https://purl.org/okn/frink/kg/securechainkg> · `sudokn` <https://purl.org/okn/frink/kg/sudokn>
 - **Shared join key:** NAICS industry code (3-digit subsector)

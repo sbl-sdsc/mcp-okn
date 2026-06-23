@@ -1,6 +1,6 @@
 # UC14 — EHR Disease–Phenotype Associations × Phenotype-Gene Knowledge (OARD + ProKN)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Clinical / EHR observational data (OARD — Open Annotations on Rare Disease, EHR co-occurrence) × Phenotype-gene / proteomics knowledge (ProKN, HGNC-HPO)
 - **Knowledge graphs:** `oard-kg` <https://purl.org/okn/frink/kg/oard-kg> · `prokn` <https://purl.org/okn/frink/kg/prokn>
 - **Shared join key:** Human Phenotype Ontology term (HP); OARD `biolink:subject/object`, ProKN `rdfs:seeAlso`

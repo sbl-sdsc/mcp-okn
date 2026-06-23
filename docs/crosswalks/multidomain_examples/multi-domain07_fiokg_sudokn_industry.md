@@ -1,6 +1,6 @@
 # UC7 — EPA-Regulated Facilities × Small/Medium Manufacturers by Industry (fiokg + SUDOKN)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Environmental regulation (EPA Facility Registry) × Advanced manufacturing (small/medium manufacturers)
 - **Knowledge graphs:** `fiokg` <https://purl.org/okn/frink/kg/fiokg> · `sudokn` <https://purl.org/okn/frink/kg/sudokn>
 - **Shared join key:** NAICS industry code (3-digit subsector)

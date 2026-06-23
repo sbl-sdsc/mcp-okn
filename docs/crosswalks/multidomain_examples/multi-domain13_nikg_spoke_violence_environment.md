@@ -1,6 +1,6 @@
 # UC13 — Neighborhood Gun Violence × County Environmental Burden (NIKG + SPOKE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Public safety / community gun violence (NIKG) × Environmental monitoring (SPOKE)
 - **Knowledge graphs:** `nikg` <https://purl.org/okn/frink/kg/nikg> · `spoke-okn` <https://purl.org/okn/frink/kg/spoke-okn>
 - **Shared join key:** county FIPS (NIKG census tracts `sfWithin` → `…administrativeRegion_USA_{FIPS5}`; SPOKE `/location/{FIPS5}`)

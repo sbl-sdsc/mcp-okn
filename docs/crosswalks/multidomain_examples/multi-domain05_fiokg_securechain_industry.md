@@ -1,6 +1,6 @@
 # UC5 — EPA Facilities × Software Supply-Chain Participants by Industry (fiokg + SecureChainKG)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Environmental regulation (EPA Facility Registry) × Cybersecurity / software supply chain
 - **Knowledge graphs:** `fiokg` <https://purl.org/okn/frink/kg/fiokg> · `securechainkg` <https://purl.org/okn/frink/kg/securechainkg>
 - **Shared join key:** NAICS industry code (joined at the 3-digit subsector level; fiokg uses `naics#NAICS-{code}`, SecureChain uses `SUDOKN/naics-{code}.0-inst`)

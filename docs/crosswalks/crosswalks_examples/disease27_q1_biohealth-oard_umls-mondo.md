@@ -2,7 +2,7 @@
 
 - **Date:** 2026-06-23
 - **Model:** claude-opus-4-8
-- **SPARQL endpoint:** https://frink.apps.renci.org/federation/sparql
+- **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
 ## Knowledge graphs used
 - `biohealth` — <https://purl.org/okn/frink/kg/biohealth>

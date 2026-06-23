@@ -1,7 +1,7 @@
 # Proto-OKN entity types, ontologies, and unexplored crosswalks
 
 _Survey date: 2026-06-14 · 41 served KGs · federation endpoint
-`https://frink.apps.renci.org/federation/sparql`_
+`https://apps.okn.us/federation/sparql`_
 
 **What this is.** An exhaustive sweep of the entity types and ontologies/identifier
 schemes carried by every served Proto-OKN KG, cross-referenced against the curated

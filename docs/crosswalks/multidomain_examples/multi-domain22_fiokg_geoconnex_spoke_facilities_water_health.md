@@ -1,6 +1,6 @@
 # UC22 — Industrial Facilities × Hydrologic Monitoring × Pollutants by County (fiokg + geoconnex + SPOKE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Environmental regulation (EPA facilities, fiokg) × Hydrology (geoconnex) × Environmental health (SPOKE)
 - **Shared join key:** county FIPS (fiokg `sfWithin` county; geoconnex `gnis:county`; SPOKE `/location/{FIPS5}`)
 

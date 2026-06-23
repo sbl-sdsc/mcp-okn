@@ -1,6 +1,6 @@
 # UC19 — Literature Biomarkers × Multimodal Associations × Research Datasets by Disease (BiomarkerKG + SPOKE + NDE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Biomarker discovery (BiomarkerKG) × Network/clinical associations (SPOKE) × Research data resources (NDE)
 - **Shared join key:** DOID disease id (SPOKE disease node-IRI; BiomarkerKG object position; NDE `schema:healthCondition`)
 

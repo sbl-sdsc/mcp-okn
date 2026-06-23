@@ -1,6 +1,6 @@
 # UC10 — Rare-Disease Genes × Spaceflight Expression (RDKG + NASA GeneLab)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Rare-disease genetics (RDKG) × Space biology (NASA GeneLab)
 - **Knowledge graphs:** `rdkg` <https://purl.org/okn/frink/kg/rdkg> · `spoke-genelab` <https://purl.org/okn/frink/kg/spoke-genelab>
 - **Shared join key:** Entrez gene id (RDKG `ncbigene` node IRIs; GeneLab via model→human ortholog)

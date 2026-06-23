@@ -2,7 +2,7 @@
 
 - **Date:** 2026-06-16
 - **Model:** claude-opus-4-8
-- **SPARQL endpoint:** https://frink.apps.renci.org/federation/sparql
+- **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 - **Domain:** Chemicals · **Shared identifier:** CAS Registry Number
 
 ## Knowledge graphs used

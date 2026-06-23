@@ -2,7 +2,7 @@
 
 - **Date:** 2026-06-19
 - **Model:** claude-opus-4-8
-- **SPARQL endpoint:** https://frink.apps.renci.org/federation/sparql
+- **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 - **Bridge tool:** `mcp-okn` `spatial_bridge` (computed S2 crosswalk; lat/long → S2 cell injected at query time)
 
 ## Knowledge graphs used

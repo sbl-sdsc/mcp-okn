@@ -2,7 +2,7 @@
 
 - **Date:** 2026-06-17
 - **Model:** claude-opus-4-8
-- **SPARQL endpoint:** https://frink.apps.renci.org/federation/sparql
+- **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 - **Crosswalk:** fiokg ↔ sudokn (verified, 64 of sudokn's 66 NAICS codes shared)
 - **Shared identifier:** NAICS 6-digit industry code (sudokn `SUDOKN/NAICS {code}-individual`)
 

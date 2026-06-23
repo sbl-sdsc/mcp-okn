@@ -2,7 +2,7 @@
 
 - **Date:** 2026-06-18
 - **Model:** claude-opus-4-8
-- **SPARQL endpoint:** https://frink.apps.renci.org/federation/sparql
+- **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 - **Domain:** Disease & phenotype · **Shared identifier:** EFO ↔ MONDO (ubergraph bridge)
 
 ## Knowledge graphs used

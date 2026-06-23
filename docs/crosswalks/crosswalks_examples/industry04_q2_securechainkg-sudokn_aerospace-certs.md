@@ -2,7 +2,7 @@
 
 - **Date:** 2026-06-17
 - **Model:** claude-opus-4-8
-- **SPARQL endpoint:** https://frink.apps.renci.org/federation/sparql
+- **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 - **Crosswalk:** securechainkg ↔ sudokn (verified sector crosswalk)
 - **Shared identifier:** SUDOKN industry sector = Aerospace (`suppliesToIndustry`)
 

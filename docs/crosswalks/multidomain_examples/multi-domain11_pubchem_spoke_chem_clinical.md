@@ -1,6 +1,6 @@
 # UC11 — PubChem Chemical Annotations × SPOKE Clinical Drugs (BioBricks-PubChem + SPOKE)
 
-- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://frink.apps.renci.org/federation/sparql
+- **Date:** 2026-06-17 · **Model:** claude-opus-4-8 · **Endpoint:** https://apps.okn.us/federation/sparql
 - **Domains bridged:** Cheminformatics (PubChem free-text annotations) × Clinical pharmacology (SPOKE drug→disease)
 - **Knowledge graphs:** `biobricks-pubchem-annotations` <https://purl.org/okn/frink/kg/biobricks-pubchem-annotations> · `spoke-okn` <https://purl.org/okn/frink/kg/spoke-okn>
 - **Shared join key:** PubChem Compound ID (SPOKE `oboInOwl:hasDbXref` → `identifiers.org/pubchem.compound/{CID}`; BioBricks `oa:hasTarget` → `pubchem/compound/CID{n}`)
