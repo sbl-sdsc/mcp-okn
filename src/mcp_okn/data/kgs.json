@@ -49,6 +49,13 @@
     "named_graph": "https://purl.org/okn/frink/kg/biobricks-toxcast"
   },
   {
+    "shortname": "biohealth",
+    "title": "Bio-Health KG",
+    "description": "Bio-Health KG is a dynamically-updated open knowledge network for health, integrating biomedical insights with social determinants of health.",
+    "homepage": null,
+    "named_graph": "https://purl.org/okn/frink/kg/biohealth"
+  },
+  {
     "shortname": "biomarkerkg",
     "title": "BiomarkerKB KG",
     "description": "The BiomarkerKB knowledge graph is a structured network that connects biomarkers to diseases, drugs, biological entities, and evidence from the scientific literature.",
