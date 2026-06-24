@@ -56,9 +56,7 @@ them.
 
 A visual map of the whole network — all 105 crosswalks across 33 graphs, with
 `ubergraph` and `wikidata` as bridge hubs (edge width ∝ log of the verified join
-count). The latest update adds **BioHealthKG** (UMLS-CUI clinical predications) and
-the **Anatomy & Cell Type** domain (UBERON/CL joins among GXA, SPOKE-GeneLab and
-ProKN). See the [session transcript](docs/crosswalks/crosswalk-transcript.md) for
+count). See the [session transcript](docs/crosswalks/crosswalk-transcript.md) for
 how it was built.
 
 > **▶ Click the image to open the interactive, zoomable network.**
@@ -74,9 +72,10 @@ geospatial and industrial joins against their authoritative shared standard):
   key, row count, and a one-line note on what each answers. Start here to see which
   graphs connect and on what identifier.
 - **[Cross-KG crosswalk catalog](docs/crosswalks/crosswalks_example.md)** — the
-  **105 verified crosswalks** worked into 210 example questions (two per recipe) across 8
-  domains (Genes, Proteins, Chemicals, Disease & Phenotype, Anatomy & Cell Type, Taxonomy,
-  Geospatial, Industry & Supply Chain), each with a full transcript.
+  **105 verified crosswalks** worked into 212 example questions (two per documented
+  crosswalk) across 8 domains (Genes, Proteins, Chemicals, Disease & Phenotype,
+  Anatomy & Cell Type, Taxonomy, Geospatial, Industry & Supply Chain), each with a
+  full transcript.
 - **[Multi-domain integration catalog](docs/crosswalks/multi-domain-examples.md)**
   — 24 use cases that fuse *different* domains (e.g. toxicology × transcriptomics
   × clinical disease, or PFAS sampling × hydrology × public health).
