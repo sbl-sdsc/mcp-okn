@@ -14,7 +14,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 92 verified cross-KG crosswalks in the Proto-OKN federation (counts verified 2026-06-12), grouped by domain with an example of what each join answers.
+Here are all 105 verified cross-KG crosswalks in the Proto-OKN federation (counts verified 2026-06-12; +14 BioHealthKG/anatomy crosswalks verified 2026-06-23), grouped by domain with an example of what each join answers.
 
 ## Chemicals
 
@@ -58,6 +58,14 @@ Here are all 92 verified cross-KG crosswalks in the Proto-OKN federation (counts
 | oard-kg → ubergraph → prokn | MONDO↔OMIM | 444 | OARD ↔ ProKN OMIM-annotated evidence |
 | oard-kg → ubergraph → prokn | MONDO↔Orphanet | 316 | OARD ↔ ProKN Orphanet rare-disease evidence |
 | biobricks-mesh ↔ spoke-okn | MeSH descriptor | 165 | SPOKE SDoH/disease nodes mapped to MeSH definitions |
+| biohealth → ubergraph → rdkg | UMLS↔MONDO | 9,122 | BioHealthKG clinical-predication diseases ranked by RDKG rare-disease gene/drug richness |
+| biohealth → ubergraph → prokn | UMLS↔HP | 4,284 | BioHealthKG phenotypes with ProKN marker-gene evidence |
+| biohealth → ubergraph → spoke-okn | UMLS↔MONDO↔DOID | 173 | BioHealthKG diseases with SPOKE gene/compound association breadth |
+| biohealth → ubergraph → oard-kg | UMLS↔MONDO | 1,796 | BioHealthKG diseases with OARD EHR association evidence |
+| biohealth → ubergraph → oard-kg | UMLS↔HP | 4,549 | BioHealthKG phenotypes shared with the OARD EHR hub |
+| biohealth → ubergraph → nde | UMLS↔MONDO | 2,760 | BioHealthKG diseases ranked by NIAID/NDE dataset count |
+| biohealth → ubergraph → biomarkerkg | UMLS↔MONDO↔DOID | 620 | BioHealthKG diseases with curated biomarkers |
+| biohealth → ubergraph → gene-expression-atlas-okn | UMLS↔HP | 13 | BioHealthKG phenotypes with a GXA expression study |
 
 ## Genes
 
@@ -124,6 +132,17 @@ Here are all 92 verified cross-KG crosswalks in the Proto-OKN federation (counts
 | biobricks-aopwiki ↔ prokn | UniProt | 1,805 | AOP molecular-target proteins with ProKN annotations |
 | ncipidkg ↔ prokn | UniProt | 12 | NCI-PID signaling proteins enriched with ProKN annotations |
 
+## Anatomy & Cell Type
+
+| KGs | Shared key | Count | Answers |
+|---|---|---|---|
+| biohealth → ubergraph → gene-expression-atlas-okn | UMLS↔UBERON | 249 | GXA tissues mapped to BioHealthKG anatomical concepts |
+| biohealth → ubergraph → spoke-genelab | UMLS↔UBERON | 35 | Spaceflight-assayed tissues mapped to BioHealthKG concepts |
+| spoke-genelab ↔ gene-expression-atlas-okn | UBERON | 27 | Tissues assayed in both spaceflight and terrestrial expression |
+| gene-expression-atlas-okn ↔ prokn | CL | 31 | Cell types in both, ranked by ProKN marker genes |
+| spoke-genelab ↔ gene-expression-atlas-okn | CL | 4 | Cell types assayed in both spaceflight and terrestrially |
+| spoke-genelab ↔ prokn | CL | 1 | Shared cell type (T cell) with ProKN markers |
+
 ## Taxonomy (NCBITaxon, via ubergraph hub)
 
 These rows carry two counts instead of one. exact_id = taxa with the identical NCBITaxon id on both sides (symmetric). clade_a_in_b / clade_b_in_a = how many of the first/second KG's taxa fall under the other's once expanded through ubergraph's subClassOf* hierarchy (directional). Clade membership is the more complete biological overlap and is often far larger when one KG records coarser taxa than the other.
@@ -145,7 +164,7 @@ These rows carry two counts instead of one. exact_id = taxa with the identical N
 | sawgraph ↔ wildlifekn | 2 | 2 | 339 |
 | spoke-genelab ↔ spoke-okn | 2 | 2 | 33,313 |
 
-A bridge_kg of ubergraph (shown as A → ubergraph → B) means the join routes through the ontology backbone — e.g. DOID↔MONDO disease crosswalks rely on ubergraph's skos:exactMatch/subClassOf*. The geospatial joins mostly share an S2 Level-13 cell or a FIPS code, while the biomedical ones share an ontology/database id (CAS, Ensembl, Entrez, UniProt, DOID, MONDO, etc.).
+A bridge_kg of ubergraph (shown as A → ubergraph → B) means the join routes through the ontology backbone — e.g. DOID↔MONDO disease crosswalks rely on ubergraph's skos:exactMatch/subClassOf*. The geospatial joins mostly share an S2 Level-13 cell or a FIPS code, while the biomedical ones share an ontology/database id (CAS, Ensembl, Entrez, UniProt, DOID, MONDO, etc.). BioHealthKG carries no ontology ids of its own — its nodes are UMLS CUIs — so all of its crosswalks bridge through ubergraph's oboInOwl:hasDbXref UMLS mappings (UMLS↔MONDO/HP/UBERON).
 
 For the full runnable join recipe for any pair — predicates, roles, IRI-normalization, and a COUNT(DISTINCT) skeleton query — name the two KGs and run get_join_strategy for it.
 
