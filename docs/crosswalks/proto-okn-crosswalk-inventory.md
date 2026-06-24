@@ -164,6 +164,19 @@ These rows carry two counts instead of one. exact_id = taxa with the identical N
 | sawgraph ↔ wildlifekn | 2 | 2 | 339 |
 | spoke-genelab ↔ spoke-okn | 2 | 2 | 33,313 |
 
+### BioHealthKG — label-bridged overlaps
+
+BioHealthKG carries no NCBITaxon ids (every entity is a UMLS CUI), so its organisms can't be matched by id or expanded through the clade hierarchy. Instead each BioHealthKG organism concept is resolved to NCBITaxon by exact scientific-name match against the other KG's taxa via ubergraph's `rdfs:label`. `label_match` = how many of the other KG's NCBITaxon organisms have a same-name BioHealthKG concept (out of that KG's total taxa). Name-based and approximate — a conservative lower bound (misses synonyms/spelling variants), with no subClassOf* clade expansion. Verified 2026-06-23.
+
+| KG pair | label_match | of KG's taxa |
+|---|---|---|
+| biohealth ↔ biobricks-aopwiki | 112 | 166 |
+| biohealth ↔ gene-expression-atlas-okn | 6 | 8 |
+| biohealth ↔ nde | 1,052 | 1,808 |
+| biohealth ↔ sawgraph | 377 | 538 |
+| biohealth ↔ spoke-genelab | 7 | 9 |
+| biohealth ↔ spoke-okn | 1,603 | 34,570 |
+
 A bridge_kg of ubergraph (shown as A → ubergraph → B) means the join routes through the ontology backbone — e.g. DOID↔MONDO disease crosswalks rely on ubergraph's skos:exactMatch/subClassOf*. The geospatial joins mostly share an S2 Level-13 cell or a FIPS code, while the biomedical ones share an ontology/database id (CAS, Ensembl, Entrez, UniProt, DOID, MONDO, etc.). BioHealthKG carries no ontology ids of its own — its nodes are UMLS CUIs — so all of its crosswalks bridge through ubergraph's oboInOwl:hasDbXref UMLS mappings (UMLS↔MONDO/HP/UBERON).
 
 For the full runnable join recipe for any pair — predicates, roles, IRI-normalization, and a COUNT(DISTINCT) skeleton query — name the two KGs and run get_join_strategy for it.
