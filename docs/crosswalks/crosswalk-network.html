@@ -21,6 +21,8 @@
   .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:0 22px 10px}
   .chip{cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 10px;border-radius:8px;border:0.5px solid var(--border2);background:var(--surface);user-select:none}
   .chip.off{opacity:0.32}
+  .lstyle{cursor:pointer;user-select:none}
+  .lstyle.off{opacity:0.3}
   .sw{width:14px;height:3px;border-radius:2px;display:inline-block}
   .meta{display:flex;gap:16px;align-items:center;font-size:12px;color:var(--muted);flex-wrap:wrap}
   .dot{width:13px;height:13px;border-radius:50%;display:inline-block}
@@ -42,15 +44,15 @@
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
   <p>31 knowledge graphs, 105 verified crosswalks (verified 2026-06-23). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count) · <b>dashed</b> = via <code>ubergraph</code> · <b>dotted</b> = via <code>wikidata</code> · solid = direct join.<br>Hover a node or edge for detail · drag to rearrange · scroll to zoom · double-click a node to unpin it.</p>
-  <p class="tip">&#9654; <b>Click a domain in the legend</b> (e.g. <b>Chemicals</b>) to hide its edges; click it again to show them.</p>
+  <p class="tip">&#9654; <b>Click a legend item</b> &mdash; a domain (e.g. <b>Chemicals</b>) or a line style (e.g. <b>via ubergraph</b>) &mdash; to hide those edges; click again to show them.</p>
 </header>
 <div class="bar" id="legend"></div>
 <div class="bar">
   <div class="meta">
     <span><span class="dot" style="background:var(--surface);border:1px solid var(--border2)"></span> knowledge graph</span>
-    <span><svg width="24" height="10" style="vertical-align:middle"><line x1="1" y1="5" x2="23" y2="5" stroke="var(--muted)" stroke-width="2"/></svg> direct join</span>
-    <span><svg width="24" height="10" style="vertical-align:middle"><line x1="1" y1="5" x2="23" y2="5" stroke="var(--muted)" stroke-width="2" stroke-dasharray="7,4"/></svg> via <code>ubergraph</code></span>
-    <span><svg width="24" height="10" style="vertical-align:middle"><line x1="1" y1="5" x2="23" y2="5" stroke="var(--muted)" stroke-width="2" stroke-dasharray="1.5,3.5" stroke-linecap="round"/></svg> via <code>wikidata</code></span>
+    <span class="lstyle" data-b="direct"><svg width="24" height="10" style="vertical-align:middle"><line x1="1" y1="5" x2="23" y2="5" stroke="var(--muted)" stroke-width="2"/></svg> direct join</span>
+    <span class="lstyle" data-b="ubergraph"><svg width="24" height="10" style="vertical-align:middle"><line x1="1" y1="5" x2="23" y2="5" stroke="var(--muted)" stroke-width="2" stroke-dasharray="7,4"/></svg> via <code>ubergraph</code></span>
+    <span class="lstyle" data-b="wikidata"><svg width="24" height="10" style="vertical-align:middle"><line x1="1" y1="5" x2="23" y2="5" stroke="var(--muted)" stroke-width="2" stroke-dasharray="1.5,3.5" stroke-linecap="round"/></svg> via <code>wikidata</code></span>
     <button id="reset">&#8635; reset layout</button>
   </div>
 </div>
@@ -116,6 +118,9 @@ const labelG=g.append("g");
 const tip=document.getElementById("tip");
 const wrap=document.getElementById("wrap");
 const active=new Set(Object.keys(DOM));
+const bactive=new Set(["direct","ubergraph","wikidata"]);
+const bridgeOf=l=>{const k=l.key||"";return /ubergraph/i.test(k)?"ubergraph":(/wikidata/i.test(k)?"wikidata":"direct");};
+const vis=l=>active.has(l.dom)&&bactive.has(bridgeOf(l));
 const inkVar=()=>getComputedStyle(document.body).getPropertyValue('--ink').trim();
 const surfVar=()=>getComputedStyle(document.body).getPropertyValue('--surface').trim();
 const b2Var=()=>getComputedStyle(document.body).getPropertyValue('--border2').trim();
@@ -153,7 +158,7 @@ node.on("mouseover",function(ev,d){
 }).on("mouseleave",function(){restore();hideTip();});
 
 function restore(){
-  link.attr("stroke-opacity",l=>active.has(l.dom)?0.55:0).attr("pointer-events",l=>active.has(l.dom)?"auto":"none");
+  link.attr("stroke-opacity",l=>vis(l)?0.55:0).attr("pointer-events",l=>vis(l)?"auto":"none");
   node.attr("opacity",1);label.attr("opacity",n=>n.bridge?1:0.62);
 }
 
@@ -187,6 +192,7 @@ Object.keys(DOM).forEach(k=>{
   chip.append("span").text(DOM[k][0]);
   chip.on("click",function(){if(active.has(k)){active.delete(k);this.classList.add("off");}else{active.add(k);this.classList.remove("off");}restore();});
 });
+document.querySelectorAll(".lstyle").forEach(el=>{el.onclick=function(){const b=this.getAttribute("data-b");if(bactive.has(b)){bactive.delete(b);this.classList.add("off");}else{bactive.add(b);this.classList.remove("off");}restore();};});
 document.getElementById("reset").onclick=()=>{nodes.forEach(d=>{d.fx=null;d.fy=null;});g.attr("transform",null);sim.alpha(0.7).restart();};
 })();
 </script>
