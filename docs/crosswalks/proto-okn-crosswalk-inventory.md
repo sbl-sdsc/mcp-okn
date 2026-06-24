@@ -166,7 +166,7 @@ These rows carry two counts instead of one. exact_id = taxa with the identical N
 
 ### BioHealthKG — label-bridged overlaps
 
-BioHealthKG carries no NCBITaxon ids (every entity is a UMLS CUI), so its organisms can't be matched by id or expanded through the clade hierarchy. Instead each BioHealthKG organism concept is resolved to NCBITaxon by exact scientific-name match against the other KG's taxa via ubergraph's `rdfs:label`. `label_match` = how many of the other KG's NCBITaxon organisms have a same-name BioHealthKG concept (out of that KG's total taxa). Name-based and approximate — a conservative lower bound (misses synonyms/spelling variants), with no subClassOf* clade expansion. Verified 2026-06-23.
+BioHealthKG carries no NCBITaxon ids (every entity is a UMLS CUI), so its organisms can't be matched by id or expanded through the clade hierarchy. Instead each BioHealthKG organism concept is resolved to NCBITaxon by exact scientific-name match against the other KG's taxa via ubergraph's `rdfs:label`. `label_match` = how many of the other KG's NCBITaxon organisms have a same-name BioHealthKG concept (out of that KG's total taxa). Name-based and approximate — a conservative lower bound (misses synonyms/spelling variants), with no subClassOf* clade expansion. Verified 2026-06-23. In the [network diagram](crosswalk-network.html) these name-matched overlaps are drawn in a **lighter lime** than the exact-id Taxonomy edges to flag the weaker match.
 
 | KG pair | label_match | of KG's taxa |
 |---|---|---|
