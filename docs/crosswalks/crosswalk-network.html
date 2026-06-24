@@ -128,8 +128,11 @@ const b2Var=()=>getComputedStyle(document.body).getPropertyValue('--border2').tr
 const mutVar=()=>getComputedStyle(document.body).getPropertyValue('--muted').trim();
 
 const dashFor=d=>{const k=(d.key||"");return /ubergraph/i.test(k)?"7,4":(/wikidata/i.test(k)?"1.5,3.5":null);};
+// Approximate (name-matched) taxon overlaps — e.g. biohealth, which has no
+// NCBITaxon ids — get a lighter shade of the Taxonomy colour to flag the weaker match.
+const colorFor=d=>(d.dom==="T"&&/name-match/i.test(d.key||""))?"#B4DE78":DOM[d.dom][1];
 const link=linkG.selectAll("path").data(links).join("path")
-  .attr("stroke",d=>DOM[d.dom][1]).attr("stroke-width",d=>lw(d.maxW)).attr("stroke-opacity",0.55)
+  .attr("stroke",d=>colorFor(d)).attr("stroke-width",d=>lw(d.maxW)).attr("stroke-opacity",0.55)
   .attr("stroke-dasharray",d=>dashFor(d)).style("cursor","pointer");
 const node=nodeG.selectAll("circle").data(nodes).join("circle")
   .attr("r",d=>nr(d)).attr("fill",d=>d.bridge?mutVar():surfVar())
@@ -155,7 +158,7 @@ function hideTip(){tip.style.opacity=0;}
 
 link.on("mousemove",function(ev,d){
   const wv=Array.isArray(d.w)?("exact "+d.w[0]+" / clade "+Math.max(d.w[1],d.w[2]).toLocaleString()):d.w.toLocaleString();
-  showTip(`<b>${d.source.id||d.source}</b> &harr; <b>${d.target.id||d.target}</b><br><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${DOM[d.dom][1]};margin-right:5px"></span>${d.key} &middot; <b>${wv}</b>`,ev);
+  showTip(`<b>${d.source.id||d.source}</b> &harr; <b>${d.target.id||d.target}</b><br><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${colorFor(d)};margin-right:5px"></span>${d.key} &middot; <b>${wv}</b>`,ev);
 }).on("mouseleave",hideTip);
 
 node.on("mouseover",function(ev,d){
