@@ -86,9 +86,7 @@ class FileAgent:
         # Accept either {id: query} or [{"id": ..., "query"/"sparql": ...}].
         if isinstance(data, list):
             data = {
-                r["id"]: r.get("query") or r.get("sparql")
-                for r in data
-                if r.get("id")
+                r["id"]: r.get("query") or r.get("sparql") for r in data if r.get("id")
             }
         self._answers: dict[str, Any] = data
         self.name = f"file:{path.name}"

@@ -168,7 +168,9 @@ async def _main(args) -> None:
         _list_kgs(all_records)
         return
     if args.export_questions:
-        _export_questions(_select(all_records, args.kg, args.limit), args.export_questions)
+        _export_questions(
+            _select(all_records, args.kg, args.limit), args.export_questions
+        )
         return
 
     records = _select(all_records, args.kg, args.limit)
@@ -205,9 +207,7 @@ def main() -> None:
     ap.add_argument(
         "--model", default="claude-sonnet-4-6", help="model for --agent claude"
     )
-    ap.add_argument(
-        "--answers", help="JSON of {id: sparql} answers, for --agent file"
-    )
+    ap.add_argument("--answers", help="JSON of {id: sparql} answers, for --agent file")
     ap.add_argument(
         "--export-questions",
         metavar="PATH",
