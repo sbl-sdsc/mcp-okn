@@ -8,6 +8,7 @@
   :root{
     --bg:#faf9f5; --surface:#ffffff; --ink:#1a1a18; --muted:#5f5e5a;
     --hint:#888780; --border:#e2e0d8; --border2:#cfccc2;
+    --tip-bg:#fdf3d3; --tip-border:#ecd98a;
   }
   *{box-sizing:border-box}
   html,body{margin:0;height:100%}
@@ -15,6 +16,8 @@
   header{padding:18px 22px 10px}
   h1{font-size:20px;font-weight:500;margin:0 0 4px}
   header p{margin:0;color:var(--muted);font-size:13px;max-width:900px}
+  .tip{display:inline-block;margin:9px 0 1px;padding:6px 12px;font-size:13px;color:var(--ink);background:var(--tip-bg);border:1px solid var(--tip-border);border-radius:8px}
+  .tip b{font-weight:600}
   .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:0 22px 10px}
   .chip{cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 10px;border-radius:8px;border:0.5px solid var(--border2);background:var(--surface);user-select:none}
   .chip.off{opacity:0.32}
@@ -30,7 +33,7 @@
   #tip b{font-weight:600}
   footer{padding:4px 22px 22px;color:var(--hint);font-size:12px}
   @media (prefers-color-scheme: dark){
-    :root{--bg:#1f1e1c;--surface:#272622;--ink:#ece9e2;--muted:#a8a59c;--hint:#7d7a72;--border:#3a3833;--border2:#4a463f}
+    :root{--bg:#1f1e1c;--surface:#272622;--ink:#ece9e2;--muted:#a8a59c;--hint:#7d7a72;--border:#3a3833;--border2:#4a463f;--tip-bg:#39331d;--tip-border:#574a26}
     #tip{box-shadow:0 2px 12px rgba(0,0,0,.4)}
   }
 </style>
@@ -39,6 +42,7 @@
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
   <p>31 knowledge graphs, 105 verified crosswalks (verified 2026-06-23). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count) · <b>dashed</b> = via <code>ubergraph</code> · <b>dotted</b> = via <code>wikidata</code> · solid = direct join.<br>Hover a node or edge for detail · drag to rearrange · scroll to zoom · double-click a node to unpin it.</p>
+  <p class="tip">&#9654; <b>Click a domain in the legend</b> (e.g. <b>Chemicals</b>) to hide its edges; click it again to show them.</p>
 </header>
 <div class="bar" id="legend"></div>
 <div class="bar">
