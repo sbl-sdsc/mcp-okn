@@ -76,8 +76,8 @@ geospatial and industrial joins against their authoritative shared standard):
   graphs connect and on what identifier.
 - **[Cross-KG crosswalk catalog](docs/crosswalks/crosswalks_example.md)** — the
   **105 verified crosswalks** worked into 212 example questions (two per documented
-  crosswalk) across 8 domains (Genes, Proteins, Chemicals, Disease & Phenotype,
-  Anatomy & Cell Type, Taxonomy, Geospatial, Industry & Supply Chain), each with a
+  crosswalk) across 8 domains (Anatomy & Cell Type, Chemicals, Disease & Phenotype,
+  Genes, Geospatial, Industry & Supply Chain, Proteins, Taxonomy), each with a
   full transcript.
 - **[Multi-domain integration catalog](docs/crosswalks/multi-domain-examples.md)**
   — 24 use cases that fuse *different* domains (e.g. toxicology × transcriptomics

@@ -16,6 +16,17 @@ list crosswalks with examples
 
 Here are all 105 verified cross-KG crosswalks in the Proto-OKN federation (counts verified 2026-06-12; +14 BioHealthKG/anatomy crosswalks verified 2026-06-23), grouped by domain with an example of what each join answers.
 
+## Anatomy & Cell Type
+
+| KGs | Shared key | Count | Answers |
+|---|---|---|---|
+| biohealth → ubergraph → gene-expression-atlas-okn | UMLS↔UBERON | 249 | GXA tissues mapped to BioHealthKG anatomical concepts |
+| biohealth → ubergraph → spoke-genelab | UMLS↔UBERON | 35 | Spaceflight-assayed tissues mapped to BioHealthKG concepts |
+| spoke-genelab ↔ gene-expression-atlas-okn | UBERON | 27 | Tissues assayed in both spaceflight and terrestrial expression |
+| gene-expression-atlas-okn ↔ prokn | CL | 31 | Cell types in both, ranked by ProKN marker genes |
+| spoke-genelab ↔ gene-expression-atlas-okn | CL | 4 | Cell types assayed in both spaceflight and terrestrially |
+| spoke-genelab ↔ prokn | CL | 1 | Shared cell type (T cell) with ProKN markers |
+
 ## Chemicals
 
 | KGs | Shared key | Count | Answers |
@@ -131,17 +142,6 @@ Here are all 105 verified cross-KG crosswalks in the Proto-OKN federation (count
 |---|---|---|---|
 | biobricks-aopwiki ↔ prokn | UniProt | 1,805 | AOP molecular-target proteins with ProKN annotations |
 | ncipidkg ↔ prokn | UniProt | 12 | NCI-PID signaling proteins enriched with ProKN annotations |
-
-## Anatomy & Cell Type
-
-| KGs | Shared key | Count | Answers |
-|---|---|---|---|
-| biohealth → ubergraph → gene-expression-atlas-okn | UMLS↔UBERON | 249 | GXA tissues mapped to BioHealthKG anatomical concepts |
-| biohealth → ubergraph → spoke-genelab | UMLS↔UBERON | 35 | Spaceflight-assayed tissues mapped to BioHealthKG concepts |
-| spoke-genelab ↔ gene-expression-atlas-okn | UBERON | 27 | Tissues assayed in both spaceflight and terrestrial expression |
-| gene-expression-atlas-okn ↔ prokn | CL | 31 | Cell types in both, ranked by ProKN marker genes |
-| spoke-genelab ↔ gene-expression-atlas-okn | CL | 4 | Cell types assayed in both spaceflight and terrestrially |
-| spoke-genelab ↔ prokn | CL | 1 | Shared cell type (T cell) with ProKN markers |
 
 ## Taxonomy (NCBITaxon, via ubergraph hub)
 
