@@ -54,10 +54,11 @@ where a question one graph can't answer alone becomes answerable by combining tw
 This section catalogs the verified crosswalks and shows the queries that exercise
 them.
 
-A visual map of the whole network — all 105 crosswalks across 33 graphs, with
-`ubergraph` and `wikidata` as bridge hubs (edge width ∝ log of the verified join
-count). See the [session transcript](docs/crosswalks/crosswalk-transcript.md) for
-how it was built.
+A visual map of the whole network — all 105 crosswalks across 31 graphs, drawn as
+direct KG-to-KG edges (edge width ∝ log of the verified join count). Identifier-bridged
+joins (e.g. `DOID↔MONDO` via `ubergraph`, `HGNC→Entrez` via `wikidata`) are shown as
+direct edges with the bridge noted in the label. See the
+[session transcript](docs/crosswalks/crosswalk-transcript.md) for how it was built.
 
 > **▶ Click the image to open the interactive, zoomable network.**
 

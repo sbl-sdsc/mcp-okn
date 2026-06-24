@@ -38,12 +38,11 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>33 knowledge graphs, 105 verified crosswalks (verified 2026-06-23). Edge colour encodes the data domain; edge width is proportional to log&#8321;&#8320; of the verified join count. <code>ubergraph</code> and <code>wikidata</code> are bridge hubs. Hover a node or edge for detail · drag to rearrange · scroll to zoom · double-click a node to unpin it.</p>
+  <p>31 knowledge graphs, 105 verified crosswalks (verified 2026-06-23). Edge colour encodes the data domain; edge width is proportional to log&#8321;&#8320; of the verified join count. Identifier-bridged joins (e.g. DOID&#8596;MONDO via <code>ubergraph</code>, HGNC&#8594;Entrez via <code>wikidata</code>) are drawn as direct edges with the bridge noted in the label. Hover a node or edge for detail · drag to rearrange · scroll to zoom · double-click a node to unpin it.</p>
 </header>
 <div class="bar" id="legend"></div>
 <div class="bar">
   <div class="meta">
-    <span><span class="dot" style="background:var(--muted)"></span> bridge hub</span>
     <span><span class="dot" style="background:var(--surface);border:1px solid var(--border2)"></span> knowledge graph</span>
     <button id="reset">&#8635; reset layout</button>
   </div>
@@ -60,27 +59,27 @@
 <script>
 (function(){
 const DOM={C:["Chemicals","#E8590C"],D:["Disease & phenotype","#D6336C"],G:["Genes","#7048E8"],S:["Geospatial","#1C7ED6"],I:["Industry & supply chain","#C9920A"],P:["Proteins","#2B8A3E"],T:["Taxonomy","#82C91E"],A:["Anatomy & Cell Type","#0C8599"]};
-const BRIDGES=new Set(["ubergraph","wikidata"]);
+const BRIDGES=new Set();
 const R=[
 ["C",["biobricks-aopwiki","biobricks-toxcast"],290,"CAS"],["C",["biobricks-ice","biobricks-toxcast"],9421,"CAS"],["C",["biobricks-tox21","biobricks-ice"],8916,"CAS"],["C",["biobricks-tox21","biobricks-toxcast"],8909,"CAS"],
-["C",["spoke-okn","ubergraph","biobricks-ice"],712,"CHEBI\u2194CAS"],["C",["spoke-okn","ubergraph","biobricks-tox21"],480,"CHEBI\u2194CAS"],["C",["spoke-okn","ubergraph","biobricks-toxcast"],496,"CHEBI\u2194CAS"],
+["C",["spoke-okn","biobricks-ice"],712,"CHEBI\u2194CAS (ubergraph)"],["C",["spoke-okn","biobricks-tox21"],480,"CHEBI\u2194CAS (ubergraph)"],["C",["spoke-okn","biobricks-toxcast"],496,"CHEBI\u2194CAS (ubergraph)"],
 ["C",["rdkg","spoke-okn"],43,"DrugBank"],["C",["ruralkg","rdkg"],2,"DrugBank"],["C",["biobricks-pubchem-annotations","spoke-okn"],762,"PubChem CID"],
 ["D",["biomarkerkg","nde"],54,"DOID"],["D",["biomarkerkg","prokn"],388,"DOID"],["D",["spoke-okn","biomarkerkg"],79,"DOID"],["D",["spoke-okn","nde"],20,"DOID"],["D",["spoke-okn","prokn"],96,"DOID"],
-["D",["biomarkerkg","ubergraph","oard-kg"],247,"DOID\u2194MONDO"],["D",["biomarkerkg","ubergraph","rdkg"],595,"DOID\u2194MONDO"],["D",["gene-expression-atlas-okn","ubergraph","spoke-okn"],54,"DOID\u2194MONDO"],["D",["spoke-okn","ubergraph","oard-kg"],40,"DOID\u2194MONDO"],["D",["spoke-okn","ubergraph","rdkg"],149,"DOID\u2194MONDO"],
-["D",["gene-expression-atlas-okn","ubergraph","nde"],325,"EFO\u2194MONDO"],["D",["gene-expression-atlas-okn","ubergraph","oard-kg"],159,"EFO\u2194MONDO"],["D",["gene-expression-atlas-okn","ubergraph","rdkg"],414,"EFO\u2194MONDO"],
+["D",["biomarkerkg","oard-kg"],247,"DOID\u2194MONDO (ubergraph)"],["D",["biomarkerkg","rdkg"],595,"DOID\u2194MONDO (ubergraph)"],["D",["gene-expression-atlas-okn","spoke-okn"],54,"DOID\u2194MONDO (ubergraph)"],["D",["spoke-okn","oard-kg"],40,"DOID\u2194MONDO (ubergraph)"],["D",["spoke-okn","rdkg"],149,"DOID\u2194MONDO (ubergraph)"],
+["D",["gene-expression-atlas-okn","nde"],325,"EFO\u2194MONDO (ubergraph)"],["D",["gene-expression-atlas-okn","oard-kg"],159,"EFO\u2194MONDO (ubergraph)"],["D",["gene-expression-atlas-okn","rdkg"],414,"EFO\u2194MONDO (ubergraph)"],
 ["D",["gene-expression-atlas-okn","oard-kg"],13,"HP"],["D",["gene-expression-atlas-okn","prokn"],12,"HP"],["D",["oard-kg","prokn"],4876,"HP"],
 ["D",["nde","oard-kg"],889,"MONDO"],["D",["oard-kg","prokn"],445,"MONDO"],["D",["rdkg","oard-kg"],2014,"MONDO"],
-["D",["oard-kg","ubergraph","prokn"],111,"MONDO\u2194DOID"],["D",["oard-kg","ubergraph","prokn"],444,"MONDO\u2194OMIM"],["D",["oard-kg","ubergraph","prokn"],316,"MONDO\u2194Orphanet"],["D",["biobricks-mesh","spoke-okn"],165,"MeSH"],
+["D",["oard-kg","prokn"],111,"MONDO\u2194DOID (ubergraph)"],["D",["oard-kg","prokn"],444,"MONDO\u2194OMIM (ubergraph)"],["D",["oard-kg","prokn"],316,"MONDO\u2194Orphanet (ubergraph)"],["D",["biobricks-mesh","spoke-okn"],165,"MeSH"],
 ["G",["biobricks-aopwiki","gene-expression-atlas-okn"],1355,"Ensembl"],["G",["biobricks-aopwiki","spoke-okn"],1385,"Ensembl"],["G",["gene-expression-atlas-okn","pankgraph","spoke-okn"],15132,"Ensembl"],["G",["gene-expression-atlas-okn","spoke-okn"],15132,"Ensembl"],["G",["pankgraph","spoke-okn"],168,"Ensembl"],
 ["G",["biobricks-aopwiki","rdkg"],1193,"Entrez"],["G",["biobricks-aopwiki","spoke-genelab"],1472,"Entrez"],["G",["rdkg","spoke-genelab"],9034,"Entrez"],["G",["rdkg","spoke-okn"],8475,"Entrez"],["G",["spoke-genelab","spoke-okn"],16326,"Entrez"],
-["G",["prokn","wikidata","spoke-okn"],16298,"HGNC\u2192Entrez"],
+["G",["prokn","spoke-okn"],16298,"HGNC\u2192Entrez (wikidata)"],
 ["S",["sockg","spatialkg"],62,"KWG_county"],["S",["fiokg","sawgraph"],4712,"S2_L13"],["S",["fiokg","spatialkg"],681045,"S2_L13"],["S",["hydrologykg","spatialkg"],106138,"S2_L13"],["S",["sawgraph","spatialkg"],88007,"S2_L13"],["S",["sockg","spatialkg"],1069,"S2_L13"],["S",["sudokn","spatialkg"],42560,"S2_L13"],["S",["ufokn","fiokg"],2461,"S2_L13"],["S",["ufokn","spatialkg"],97087,"S2_L13"],
 ["S",["spoke-okn","dreamkg"],53,"ZIP5"],["S",["spoke-okn","ruralkg"],4938,"ZIP5"],["S",["spoke-okn","sudokn"],12329,"ZIP5"],
 ["S",["fiokg","spatialkg"],3031,"county_FIPS"],["S",["fiokg","spoke-okn"],3032,"county_FIPS"],["S",["geoconnex","spatialkg"],3114,"county_FIPS"],["S",["geoconnex","spoke-okn"],3184,"county_FIPS"],["S",["nikg","spatialkg"],2,"county_FIPS"],["S",["nikg","spoke-okn"],2,"county_FIPS"],["S",["scales","spatialkg"],3029,"county_FIPS"],["S",["scales","spoke-okn"],3096,"county_FIPS"],["S",["spoke-okn","ruralkg"],3196,"county_FIPS"],["S",["spoke-okn","sockg"],31,"county_FIPS"],["S",["spoke-okn","spatialkg"],3122,"county_FIPS"],["S",["wildlifekn","spatialkg"],63,"county_FIPS"],
 ["S",["geoconnex","spatialkg"],51,"state_FIPS"],["S",["spoke-okn","sockg"],18,"state_FIPS"],["S",["spoke-okn","spatialkg"],51,"state_FIPS"],["S",["sudokn","spatialkg"],51,"state_FIPS"],
 ["I",["fiokg","securechainkg"],301,"NAICS"],["I",["fiokg","sudokn"],64,"NAICS"],["I",["securechainkg","sudokn"],35,"NAICS"],["I",["securechainkg","sudokn"],58,"SUDOKN sector"],
 ["P",["biobricks-aopwiki","prokn"],1805,"UniProt"],["P",["ncipidkg","prokn"],12,"UniProt"],
-["T",["biobricks-aopwiki","ubergraph","gene-expression-atlas-okn"],[7,8,8],"NCBITaxon"],["T",["biobricks-aopwiki","ubergraph","nde"],[62,164,961],"NCBITaxon"],["T",["biobricks-aopwiki","ubergraph","sawgraph"],[7,164,145],"NCBITaxon"],["T",["biobricks-aopwiki","ubergraph","spoke-genelab"],[7,8,8],"NCBITaxon"],["T",["gene-expression-atlas-okn","ubergraph","nde"],[6,8,12],"NCBITaxon"],["T",["gene-expression-atlas-okn","ubergraph","sawgraph"],[0,8,0],"NCBITaxon"],["T",["gene-expression-atlas-okn","ubergraph","spoke-genelab"],[8,8,8],"NCBITaxon"],["T",["nde","ubergraph","sawgraph"],[73,1727,538],"NCBITaxon"],["T",["nde","ubergraph","spoke-genelab"],[7,46,55],"NCBITaxon"],["T",["nde","ubergraph","spoke-okn"],[23,23,33601],"NCBITaxon"],["T",["nde","ubergraph","wildlifekn"],[17,57,339],"NCBITaxon"],["T",["sawgraph","ubergraph","spoke-genelab"],[0,0,13],"NCBITaxon"],["T",["sawgraph","ubergraph","wildlifekn"],[2,2,339],"NCBITaxon"],["T",["spoke-genelab","ubergraph","spoke-okn"],[2,2,33313],"NCBITaxon"],
+["T",["biobricks-aopwiki","gene-expression-atlas-okn"],[7,8,8],"NCBITaxon (ubergraph)"],["T",["biobricks-aopwiki","nde"],[62,164,961],"NCBITaxon (ubergraph)"],["T",["biobricks-aopwiki","sawgraph"],[7,164,145],"NCBITaxon (ubergraph)"],["T",["biobricks-aopwiki","spoke-genelab"],[7,8,8],"NCBITaxon (ubergraph)"],["T",["gene-expression-atlas-okn","nde"],[6,8,12],"NCBITaxon (ubergraph)"],["T",["gene-expression-atlas-okn","sawgraph"],[0,8,0],"NCBITaxon (ubergraph)"],["T",["gene-expression-atlas-okn","spoke-genelab"],[8,8,8],"NCBITaxon (ubergraph)"],["T",["nde","sawgraph"],[73,1727,538],"NCBITaxon (ubergraph)"],["T",["nde","spoke-genelab"],[7,46,55],"NCBITaxon (ubergraph)"],["T",["nde","spoke-okn"],[23,23,33601],"NCBITaxon (ubergraph)"],["T",["nde","wildlifekn"],[17,57,339],"NCBITaxon (ubergraph)"],["T",["sawgraph","spoke-genelab"],[0,0,13],"NCBITaxon (ubergraph)"],["T",["sawgraph","wildlifekn"],[2,2,339],"NCBITaxon (ubergraph)"],["T",["spoke-genelab","spoke-okn"],[2,2,33313],"NCBITaxon (ubergraph)"],
 ["D",["biohealth","rdkg"],9122,"UMLS\u2194MONDO (ubergraph)"],["D",["biohealth","prokn"],4284,"UMLS\u2194HP (ubergraph)"],["D",["biohealth","spoke-okn"],173,"UMLS\u2194MONDO\u2194DOID (ubergraph)"],["D",["biohealth","oard-kg"],1796,"UMLS\u2194MONDO (ubergraph)"],["D",["biohealth","oard-kg"],4549,"UMLS\u2194HP (ubergraph)"],["D",["biohealth","nde"],2760,"UMLS\u2194MONDO (ubergraph)"],["D",["biohealth","biomarkerkg"],620,"UMLS\u2194MONDO\u2194DOID (ubergraph)"],["D",["biohealth","gene-expression-atlas-okn"],13,"UMLS\u2194HP (ubergraph)"],
 ["A",["biohealth","gene-expression-atlas-okn"],249,"UMLS\u2194UBERON (ubergraph)"],["A",["biohealth","spoke-genelab"],35,"UMLS\u2194UBERON (ubergraph)"],["A",["spoke-genelab","gene-expression-atlas-okn"],27,"UBERON"],["A",["gene-expression-atlas-okn","prokn"],31,"CL"],["A",["spoke-genelab","gene-expression-atlas-okn"],4,"CL"],["A",["spoke-genelab","prokn"],1,"CL"]
 ];
@@ -136,7 +135,7 @@ node.on("mouseover",function(ev,d){
   label.attr("opacity",n=>(n.id===d.id||adj[d.id].has(n.id))?1:0.1);
 }).on("mousemove",function(ev,d){
   const doms=[...new Set(links.filter(l=>l.source.id===d.id||l.target.id===d.id).map(l=>l.dom))].map(x=>DOM[x][0]).join(", ");
-  showTip(`<b>${d.id}</b>${d.bridge?' (bridge hub)':''}<br>${d.deg} connections &middot; ${doms}`,ev);
+  showTip(`<b>${d.id}</b><br>${d.deg} connections &middot; ${doms}`,ev);
 }).on("mouseleave",function(){restore();hideTip();});
 
 function restore(){
