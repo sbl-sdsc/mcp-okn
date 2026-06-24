@@ -141,6 +141,15 @@ const label=labelG.selectAll("text").data(nodes).join("text")
 const adj={};nodes.forEach(n=>adj[n.id]=new Set());
 links.forEach(l=>{adj[l.source].add(l.target);adj[l.target].add(l.source);});
 
+// One spring per unique KG pair: parallel crosswalks between the same two graphs
+// must not multiply the attraction and collapse densely cross-linked clusters.
+const simLinks=[...new Map(
+  links.map(l=>[[l.source,l.target].sort().join("|"),{source:l.source,target:l.target}])
+).values()];
+// forceLink resolves simLinks' ids to node objects; resolve the drawing links too.
+const _nbi=new Map(nodes.map(n=>[n.id,n]));
+links.forEach(l=>{l.source=_nbi.get(l.source);l.target=_nbi.get(l.target);});
+
 function showTip(html,ev){tip.innerHTML=html;const r=wrap.getBoundingClientRect();let x=ev.clientX-r.left+14,y=ev.clientY-r.top+14;if(x>r.width-290)x=ev.clientX-r.left-290;tip.style.left=x+"px";tip.style.top=y+"px";tip.style.opacity=1;}
 function hideTip(){tip.style.opacity=0;}
 
@@ -164,11 +173,11 @@ function restore(){
 }
 
 const sim=d3.forceSimulation(nodes)
-  .force("link",d3.forceLink(links).id(d=>d.id).distance(d=>100+lw(d.maxW)*2).strength(0.12))
-  .force("charge",d3.forceManyBody().strength(-720))
-  .force("x",d3.forceX(W/2).strength(0.022))
-  .force("y",d3.forceY(H/2).strength(0.16))
-  .force("collide",d3.forceCollide().radius(d=>nr(d)+19))
+  .force("link",d3.forceLink(simLinks).id(d=>d.id).distance(110).strength(0.085))
+  .force("charge",d3.forceManyBody().strength(-940))
+  .force("x",d3.forceX(W/2).strength(0.03))
+  .force("y",d3.forceY(H/2).strength(0.14))
+  .force("collide",d3.forceCollide().radius(d=>nr(d)+23))
   .on("tick",ticked);
 
 function ticked(){
