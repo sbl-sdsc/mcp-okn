@@ -38,12 +38,15 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>31 knowledge graphs, 105 verified crosswalks (verified 2026-06-23). Edge colour encodes the data domain; edge width is proportional to log&#8321;&#8320; of the verified join count. Identifier-bridged joins (e.g. DOID&#8596;MONDO via <code>ubergraph</code>, HGNC&#8594;Entrez via <code>wikidata</code>) are drawn as direct edges with the bridge noted in the label. Hover a node or edge for detail · drag to rearrange · scroll to zoom · double-click a node to unpin it.</p>
+  <p>31 knowledge graphs, 105 verified crosswalks (verified 2026-06-23). Edge colour encodes the data domain; edge width is proportional to log&#8321;&#8320; of the verified join count. Identifier-bridged joins (e.g. DOID&#8596;MONDO via <code>ubergraph</code>, HGNC&#8594;Entrez via <code>wikidata</code>) are drawn as direct edges with the bridge noted in the label and the line styled: <b>dashed</b> for an <code>ubergraph</code> bridge, <b>dotted</b> for <code>wikidata</code> (solid = direct join). Each crosswalk is its own edge; multiple crosswalks between the same pair of graphs fan out as parallel arcs. Hover a node or edge for detail · drag to rearrange · scroll to zoom · double-click a node to unpin it.</p>
 </header>
 <div class="bar" id="legend"></div>
 <div class="bar">
   <div class="meta">
     <span><span class="dot" style="background:var(--surface);border:1px solid var(--border2)"></span> knowledge graph</span>
+    <span><svg width="24" height="10" style="vertical-align:middle"><line x1="1" y1="5" x2="23" y2="5" stroke="var(--muted)" stroke-width="2"/></svg> direct join</span>
+    <span><svg width="24" height="10" style="vertical-align:middle"><line x1="1" y1="5" x2="23" y2="5" stroke="var(--muted)" stroke-width="2" stroke-dasharray="7,4"/></svg> via <code>ubergraph</code></span>
+    <span><svg width="24" height="10" style="vertical-align:middle"><line x1="1" y1="5" x2="23" y2="5" stroke="var(--muted)" stroke-width="2" stroke-dasharray="1.5,3.5" stroke-linecap="round"/></svg> via <code>wikidata</code></span>
     <button id="reset">&#8635; reset layout</button>
   </div>
 </div>
@@ -84,13 +87,18 @@ const R=[
 ["A",["biohealth","gene-expression-atlas-okn"],249,"UMLS\u2194UBERON (ubergraph)"],["A",["biohealth","spoke-genelab"],35,"UMLS\u2194UBERON (ubergraph)"],["A",["spoke-genelab","gene-expression-atlas-okn"],27,"UBERON"],["A",["gene-expression-atlas-okn","prokn"],31,"CL"],["A",["spoke-genelab","gene-expression-atlas-okn"],4,"CL"],["A",["spoke-genelab","prokn"],1,"CL"]
 ];
 const eff=w=>Array.isArray(w)?Math.max(w[0],w[1],w[2]):w;
-const emap=new Map();
-function seg(a,b,dom,key,w){const id=[a,b].sort().join("\u00a7");let e=emap.get(id);if(!e){const s=[a,b].sort();e={a:s[0],b:s[1],items:[]};emap.set(id,e);}e.items.push({dom,key,w});}
-R.forEach(r=>{const[dom,kgs,w,key]=r;if(kgs.length===3){seg(kgs[0],kgs[1],dom,key,w);seg(kgs[1],kgs[2],dom,key,w);}else{seg(kgs[0],kgs[1],dom,key,w);}});
-const nodeSet=new Set();emap.forEach(e=>{nodeSet.add(e.a);nodeSet.add(e.b);});
-const deg={};nodeSet.forEach(n=>deg[n]=0);emap.forEach(e=>{deg[e.a]++;deg[e.b]++;});
+// one edge PER crosswalk (no merging); a 3-KG row still routes as two segments
+const links=[];
+R.forEach(r=>{const[dom,kgs,w,key]=r;if(kgs.length===3){links.push({source:kgs[0],target:kgs[1],dom,key,w,maxW:eff(w)});links.push({source:kgs[1],target:kgs[2],dom,key,w,maxW:eff(w)});}else{links.push({source:kgs[0],target:kgs[1],dom,key,w,maxW:eff(w)});}});
+// fan parallel crosswalks that connect the same pair of graphs
+const _pg=new Map();
+links.forEach(l=>{const id=[l.source,l.target].sort().join("|");if(!_pg.has(id))_pg.set(id,[]);_pg.get(id).push(l);});
+_pg.forEach(grp=>{const n=grp.length;grp.forEach((l,i)=>{l.curv=(n===1)?0:(i-(n-1)/2)/Math.max(1,(n-1));l.par=n;});});
+const nodeSet=new Set();links.forEach(l=>{nodeSet.add(l.source);nodeSet.add(l.target);});
+const nbr={};nodeSet.forEach(n=>nbr[n]=new Set());
+links.forEach(l=>{nbr[l.source].add(l.target);nbr[l.target].add(l.source);});
+const deg={};nodeSet.forEach(n=>deg[n]=nbr[n].size);
 const nodes=[...nodeSet].map(id=>({id,bridge:BRIDGES.has(id),deg:deg[id]}));
-const links=[];emap.forEach(e=>{let best=e.items[0];e.items.forEach(it=>{if(eff(it.w)>eff(best.w))best=it;});links.push({source:e.a,target:e.b,maxW:eff(best.w),dom:best.dom,items:e.items});});
 const maxLog=Math.log10(681045);
 const lw=w=>0.8+6.2*(Math.log10(Math.max(w,1)))/maxLog;
 const nr=n=>n.bridge?17:Math.min(13,5+Math.sqrt(n.deg)*2);
@@ -98,7 +106,7 @@ const nr=n=>n.bridge?17:Math.min(13,5+Math.sqrt(n.deg)*2);
 const W=1000,H=720;
 const svg=d3.select("#svg");
 const g=svg.append("g");
-const linkG=g.append("g").attr("stroke-linecap","round");
+const linkG=g.append("g").attr("fill","none").attr("stroke-linecap","round");
 const nodeG=g.append("g");
 const labelG=g.append("g");
 const tip=document.getElementById("tip");
@@ -109,8 +117,10 @@ const surfVar=()=>getComputedStyle(document.body).getPropertyValue('--surface').
 const b2Var=()=>getComputedStyle(document.body).getPropertyValue('--border2').trim();
 const mutVar=()=>getComputedStyle(document.body).getPropertyValue('--muted').trim();
 
-const link=linkG.selectAll("line").data(links).join("line")
-  .attr("stroke",d=>DOM[d.dom][1]).attr("stroke-width",d=>lw(d.maxW)).attr("stroke-opacity",0.55).style("cursor","pointer");
+const dashFor=d=>{const k=(d.key||"");return /ubergraph/i.test(k)?"7,4":(/wikidata/i.test(k)?"1.5,3.5":null);};
+const link=linkG.selectAll("path").data(links).join("path")
+  .attr("stroke",d=>DOM[d.dom][1]).attr("stroke-width",d=>lw(d.maxW)).attr("stroke-opacity",0.55)
+  .attr("stroke-dasharray",d=>dashFor(d)).style("cursor","pointer");
 const node=nodeG.selectAll("circle").data(nodes).join("circle")
   .attr("r",d=>nr(d)).attr("fill",d=>d.bridge?mutVar():surfVar())
   .attr("stroke",d=>d.bridge?inkVar():b2Var()).attr("stroke-width",d=>d.bridge?2:1).style("cursor","pointer");
@@ -125,8 +135,8 @@ function showTip(html,ev){tip.innerHTML=html;const r=wrap.getBoundingClientRect(
 function hideTip(){tip.style.opacity=0;}
 
 link.on("mousemove",function(ev,d){
-  const rows=d.items.map(it=>`<span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${DOM[it.dom][1]};margin-right:5px"></span>${it.key} &middot; <b>${Array.isArray(it.w)?("exact "+it.w[0]+" / clade "+Math.max(it.w[1],it.w[2]).toLocaleString()):it.w.toLocaleString()}</b>`).join("<br>");
-  showTip(`<b>${d.source.id||d.source}</b> &harr; <b>${d.target.id||d.target}</b><br>${rows}`,ev);
+  const wv=Array.isArray(d.w)?("exact "+d.w[0]+" / clade "+Math.max(d.w[1],d.w[2]).toLocaleString()):d.w.toLocaleString();
+  showTip(`<b>${d.source.id||d.source}</b> &harr; <b>${d.target.id||d.target}</b><br><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${DOM[d.dom][1]};margin-right:5px"></span>${d.key} &middot; <b>${wv}</b>`,ev);
 }).on("mouseleave",hideTip);
 
 node.on("mouseover",function(ev,d){
@@ -152,7 +162,7 @@ const sim=d3.forceSimulation(nodes)
 
 function ticked(){
   nodes.forEach(d=>{d.x=Math.max(30,Math.min(W-30,d.x));d.y=Math.max(24,Math.min(H-24,d.y));});
-  link.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y).attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);
+  link.attr("d",d=>{const sx=d.source.x,sy=d.source.y,tx=d.target.x,ty=d.target.y;if(!d.curv)return "M"+sx+","+sy+"L"+tx+","+ty;const dx=tx-sx,dy=ty-sy,dl=Math.hypot(dx,dy)||1,off=d.curv*(16+dl*0.10)*Math.min(3,d.par/2),mx=(sx+tx)/2,my=(sy+ty)/2,ux=-dy/dl,uy=dx/dl;return "M"+sx+","+sy+"Q"+(mx+ux*off)+","+(my+uy*off)+" "+tx+","+ty;});
   node.attr("cx",d=>d.x).attr("cy",d=>d.y);
   label.attr("x",d=>d.x).attr("y",d=>d.y-nr(d)-4);
 }

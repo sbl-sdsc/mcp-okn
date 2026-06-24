@@ -50,9 +50,9 @@ Create an interactive network diagram of the crosswalks. Include bridging KGs (u
 
 🧠 **Assistant**
 
-This is a verified join table — 105 crosswalks across 31 knowledge graphs, drawn as direct KG-to-KG edges. Here's the network. Edge color encodes the data domain, edge width is proportional to log of the verified join count (for the taxonomy edges, which carry no single `verified_count`, I use the largest of the exact-id / clade-membership counts). Identifier-bridged joins (e.g. DOID↔MONDO via `ubergraph`, HGNC→Entrez via `wikidata`) are drawn as direct edges with the bridge noted in the label rather than routed through a hub node. Hover any node or edge for details; drag to rearrange; scroll to zoom; click a graph to pull its full set of join recipes.
+This is a verified join table — 105 crosswalks across 31 knowledge graphs, drawn as direct KG-to-KG edges, one edge per crosswalk (so multiple crosswalks between the same pair of graphs fan out as parallel arcs). Here's the network. Edge color encodes the data domain, edge width is proportional to log of the verified join count (for the taxonomy edges, which carry no single `verified_count`, I use the largest of the exact-id / clade-membership counts). Identifier-bridged joins (e.g. DOID↔MONDO via `ubergraph`, HGNC→Entrez via `wikidata`) are drawn as direct edges with the bridge noted in the label rather than routed through a hub node. Hover any node or edge for details; drag to rearrange; scroll to zoom; click a graph to pull its full set of join recipes.
 
-[interactive force-directed network diagram: 31 KG nodes, edges colored by domain (Chemicals, Disease & phenotype, Genes, Anatomy & Cell Type, Geospatial, Industry & supply chain, Proteins, Taxonomy), edge width proportional to log10 of the verified count, all crosswalks drawn as direct KG-to-KG edges]
+[interactive force-directed network diagram: 31 KG nodes, edges colored by domain (Chemicals, Disease & phenotype, Genes, Anatomy & Cell Type, Geospatial, Industry & supply chain, Proteins, Taxonomy), edge width proportional to log10 of the verified count, one edge per crosswalk — multiple crosswalks between the same pair of graphs fan out as parallel arcs]
 
 A few things the layout makes visible:
 

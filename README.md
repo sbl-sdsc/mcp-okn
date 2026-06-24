@@ -55,10 +55,12 @@ This section catalogs the verified crosswalks and shows the queries that exercis
 them.
 
 A visual map of the whole network — all 105 crosswalks across 31 graphs, drawn as
-direct KG-to-KG edges (edge width ∝ log of the verified join count). Identifier-bridged
-joins (e.g. `DOID↔MONDO` via `ubergraph`, `HGNC→Entrez` via `wikidata`) are shown as
-direct edges with the bridge noted in the label. See the
-[session transcript](docs/crosswalks/crosswalk-transcript.md) for how it was built.
+direct KG-to-KG edges (edge width ∝ log of the verified join count). Each crosswalk is
+its own edge, so multiple crosswalks between the same pair of graphs fan out as parallel
+arcs. Identifier-bridged joins (e.g. `DOID↔MONDO` via `ubergraph`, `HGNC→Entrez` via
+`wikidata`) are shown as direct edges with the bridge noted in the label and the line
+styled (dashed for an `ubergraph` bridge, dotted for `wikidata`, solid for a direct join).
+See the [session transcript](docs/crosswalks/crosswalk-transcript.md) for how it was built.
 
 > **▶ Click the image to open the interactive, zoomable network.**
 
