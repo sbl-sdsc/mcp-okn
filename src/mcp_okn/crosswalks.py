@@ -131,6 +131,12 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "MONDO<->DOID (bridged)": "Disease & phenotype",
     "EFO<->MONDO (bridged)": "Disease & phenotype",
     "MeSH_descriptor_id": "Disease & phenotype",
+    "UMLS<->MONDO": "Disease & phenotype",
+    "UMLS<->HP": "Disease & phenotype",
+    "UMLS<->MONDO<->DOID (two-hop)": "Disease & phenotype",
+    "UMLS<->UBERON": "Anatomy & Cell Type",
+    "UBERON": "Anatomy & Cell Type",
+    "CL": "Anatomy & Cell Type",
     "Ensembl": "Genes",
     "Entrez": "Genes",
     "HGNC -> Entrez (bridged)": "Genes",
@@ -260,18 +266,35 @@ def all_crosswalks(include_examples: bool = True) -> list[dict[str, Any]]:
             "shared_key": "NCBITaxon",
             "bridge_kg": "ubergraph",
             "hub": "ubergraph",
-            "exact_id": rec["exact_id"],
-            "clade_a_in_b": rec["clade_a_in_b"],
-            "clade_b_in_a": rec["clade_b_in_a"],
             "verified_on": hub_verified_on,
         }
-        if include_examples:
-            row["example_question"] = (
-                f"How many organisms do {a} and {b} share? exact_id="
-                f"{rec['exact_id']} carry the identical NCBITaxon id; clade "
-                f"membership ({rec['clade_a_in_b']} / {rec['clade_b_in_a']}) "
-                "expands through the ubergraph hierarchy."
-            )
+        if rec.get("match_type") == "label":
+            # A label-bridged member (e.g. biohealth) carries no NCBITaxon ids, so
+            # its organisms are matched to the other side by scientific name only:
+            # an approximate, conservative lower bound with no clade expansion.
+            row["match_type"] = "label"
+            row["label_match"] = rec["label_match"]
+            row["kg_b_taxa"] = rec["kg_b_taxa"]
+            if include_examples:
+                row["example_question"] = (
+                    f"How many organisms do {a} and {b} share by name? {a} is "
+                    f"label-bridged (no NCBITaxon ids), so {rec['label_match']} of "
+                    f"{b}'s {rec['kg_b_taxa']} NCBITaxon organisms match a {a} "
+                    "concept by exact scientific name (approximate lower bound; no "
+                    "clade expansion)."
+                )
+        else:
+            row["match_type"] = "id"
+            row["exact_id"] = rec["exact_id"]
+            row["clade_a_in_b"] = rec["clade_a_in_b"]
+            row["clade_b_in_a"] = rec["clade_b_in_a"]
+            if include_examples:
+                row["example_question"] = (
+                    f"How many organisms do {a} and {b} share? exact_id="
+                    f"{rec['exact_id']} carry the identical NCBITaxon id; clade "
+                    f"membership ({rec['clade_a_in_b']} / {rec['clade_b_in_a']}) "
+                    "expands through the ubergraph hierarchy."
+                )
         rows.append(row)
 
     rows.sort(key=lambda r: (r["domain"], r["shared_key"] or "", r["kgs"]))
@@ -387,6 +410,16 @@ def taxon_hub_pair(kg_a: str, kg_b: str) -> dict[str, Any] | None:
             continue
         if ra == kg_a:
             return dict(rec)
+        if rec.get("match_type") == "label":
+            # label_match counts shared organisms by name (not directional like the
+            # clade counts), so reorienting only swaps the kg labels.
+            return {
+                "kg_a": kg_a,
+                "kg_b": kg_b,
+                "match_type": "label",
+                "label_match": rec.get("label_match"),
+                "kg_b_taxa": rec.get("kg_b_taxa"),
+            }
         return {
             "kg_a": kg_a,
             "kg_b": kg_b,

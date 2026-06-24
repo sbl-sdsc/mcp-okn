@@ -112,11 +112,16 @@ async def test_list_crosswalks_renders_taxon_hub_as_pairwise_rows():
         assert r["bridge_kg"] == "ubergraph"
         assert r["kgs"][1] == "ubergraph" and len(r["kgs"]) == 3
         assert {r["kgs"][0], r["kgs"][2]} <= members
-        # both numbers shown per pair; at least one non-zero
-        for field in ("exact_id", "clade_a_in_b", "clade_b_in_a"):
-            assert isinstance(r[field], int)
-        assert any(r[f] > 0 for f in ("exact_id", "clade_a_in_b", "clade_b_in_a"))
-        assert "verified_count" not in r  # replaced by the two count columns
+        # id members show exact_id + clade counts; a label-bridged member (e.g.
+        # biohealth, no NCBITaxon ids) shows an approximate name-match count instead.
+        if r.get("match_type") == "label":
+            assert isinstance(r["label_match"], int) and r["label_match"] > 0
+            assert isinstance(r["kg_b_taxa"], int)
+        else:
+            for field in ("exact_id", "clade_a_in_b", "clade_b_in_a"):
+                assert isinstance(r[field], int)
+            assert any(r[f] > 0 for f in ("exact_id", "clade_a_in_b", "clade_b_in_a"))
+        assert "verified_count" not in r  # replaced by the count columns
 
     # the D9 pair (spoke-genelab/spoke-okn) appears as one of the pairwise rows
     assert any(
@@ -155,12 +160,18 @@ def test_taxon_hub_block_is_well_formed():
 
     hub = cw.load_crosswalks().get("taxon_hub", {})
     assert hub.get("hub_kg") == "ubergraph"
-    # the block's declared members are exactly the tool's hub KGs
-    assert set(hub.get("members", [])) == set(TAXON_HUB_KGS)
-    # every materialized pair is on real hub members, sorted and non-zero
+    members = set(hub.get("members", []))
+    # the id/query-source KGs (TAXON_HUB_KGS) are all declared members; the block
+    # may also declare label-bridged members (e.g. biohealth) that carry no
+    # NCBITaxon ids and so are not query sources.
+    assert set(TAXON_HUB_KGS) <= members
     for rec in cw.taxon_hub_pairwise():
-        assert rec["kg_a"] in TAXON_HUB_KGS and rec["kg_b"] in TAXON_HUB_KGS
-        assert rec["kg_a"] < rec["kg_b"]
+        assert rec["kg_a"] in members and rec["kg_b"] in members
+        if rec.get("match_type") == "label":
+            # oriented label-side-first (the label-bridged KG is kg_a), not sorted
+            assert rec["kg_a"] not in TAXON_HUB_KGS
+        else:
+            assert rec["kg_a"] < rec["kg_b"]
 
 
 def test_taxon_hub_pair_orients_clade_to_request_order():
