@@ -1,6 +1,6 @@
 [project]
 name = "mcp-okn"
-version = "1.28.0"
+version = "0.1.0"
 description = "MCP server for querying the FRINK federated SPARQL endpoint over Proto-OKN knowledge graphs"
 readme = "README.md"
 authors = [
