@@ -54,7 +54,7 @@ where a question one graph can't answer alone becomes answerable by combining tw
 This section catalogs the verified crosswalks and shows the queries that exercise
 them.
 
-A visual map of the whole network — all 111 crosswalks across 31 graphs, drawn as
+A visual map of the whole network — all 112 crosswalks across 31 graphs, drawn as
 direct KG-to-KG edges (edge width ∝ log of the verified join count). Each crosswalk is
 its own edge, so multiple crosswalks between the same pair of graphs fan out as parallel
 arcs. Identifier-bridged joins (e.g. `DOID↔MONDO` via `ubergraph`, `HGNC→Entrez` via
@@ -75,7 +75,7 @@ geospatial and industrial joins against their authoritative shared standard):
   key, row count, and a one-line note on what each answers. Start here to see which
   graphs connect and on what identifier.
 - **[Cross-KG crosswalk catalog](docs/crosswalks/crosswalks_example.md)** — the
-  **105 verified crosswalks** worked into 212 example questions (two per documented
+  **106 verified crosswalks** worked into 212 example questions (two per documented
   crosswalk) across 8 domains (Anatomy & Cell Type, Chemicals, Disease & Phenotype,
   Genes, Geospatial, Industry & Supply Chain, Proteins, Taxonomy), each with a
   full transcript.
