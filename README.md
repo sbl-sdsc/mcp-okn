@@ -75,7 +75,7 @@ geospatial and industrial joins against their authoritative shared standard):
   key, row count, and a one-line note on what each answers. Start here to see which
   graphs connect and on what identifier.
 - **[Cross-KG crosswalk catalog](docs/crosswalks/crosswalks_example.md)** — the
-  **106 verified crosswalks** worked into 212 example questions (two per documented
+  **112 verified crosswalks** worked into 224 example questions (two per documented
   crosswalk) across 8 domains (Anatomy & Cell Type, Chemicals, Disease & Phenotype,
   Genes, Geospatial, Industry & Supply Chain, Proteins, Taxonomy), each with a
   full transcript.
