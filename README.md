@@ -144,9 +144,13 @@ Verify with `/mcp` — you should see `mcp-okn-dev` listed as connected.
 
 ### ChatGPT
 
-Supported in the ChatGPT web app at <https://chatgpt.com> with **Developer mode**
-enabled. Go to **Settings → Apps → Create app** and enter the MCP server URL
-`https://apps.okn.us/okn-mcp-dev/mcp`.
+Supported in the ChatGPT web app at <https://chatgpt.com> with **Developer mode** enabled.
+
+1. Go to **Settings → Apps → Create app**.
+2. Enter the MCP server URL `https://apps.okn.us/okn-mcp-dev/mcp`.
+
+> Developer mode must be enabled for custom MCP apps in ChatGPT.
+> A subscription is required for MCP connectors in ChatGPT.
 
 ### VS Code + GitHub Copilot
 
