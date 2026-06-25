@@ -163,8 +163,10 @@ def domain_for(shared_key: str | None) -> str:
 
 
 def _is_ncbitaxon(entry: dict[str, Any]) -> bool:
-    """True for any NCBITaxon crosswalk — the id hub joins AND the biohealth
-    label-bridged ones (``shared_key`` ``"NCBITaxon (biohealth label)"``).
+    """True for any NCBITaxon crosswalk.
+
+    Covers the id hub joins AND the biohealth label-bridged ones
+    (``shared_key`` ``"NCBITaxon (biohealth label)"``).
 
     Both are re-rendered in :func:`all_crosswalks` from the materialized
     ``taxon_hub.pairwise`` set (one row per pair), so a single predicate keyed on
