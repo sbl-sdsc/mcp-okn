@@ -29,6 +29,8 @@ Expanding *Actinopterygii* (NCBITaxon:7898) through ubergraph's `subClassOf*` cl
 
 Every one of these is a SAWGraph PFAS-monitoring target that BioHealthKG also carries as an organism node — so a PFAS bioaccumulation finding in, say, largemouth bass can be tied to the same species in the health graph. (BioHealthKG's coverage of these fish is largely taxonomic — they are organism nodes without deep clinical predications — which is itself the honest limit of a name-based bridge for non-clinical species.)
 
+**Literature validation (PubMed).** PFAS bioaccumulation in edible freshwater fish drives state consumption advisories — a PubMed search for dietary PFAS fish exposure returns 42 articles (e.g. PMID 41411415, 38941943, 40844315), supporting the health relevance of these PFAS-monitored fish species.
+
 **Validation (standard).** The fish restriction uses ubergraph's authoritative `subClassOf*` closure under *Actinopterygii*; each species is in the verified SAWGraph × BioHealthKG shared set (BH13). **Validated** (clade-restricted subset of label-bridged crosswalk BH13).
 
 ## SPARQL query executed

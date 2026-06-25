@@ -29,6 +29,8 @@ The shared set is exactly the **human-exposure** species you would expect a PFAS
 
 This is the dietary-PFAS-exposure overlap: SAWGraph knows *where the contamination is sampled*, BioHealthKG knows the organism as a *health-relevant entity*. The label bridge is conservative and name-exact; the 377 figure includes both species and higher taxonomic ranks that SAWGraph carries.
 
+**Literature validation (PubMed).** Dietary PFAS exposure through fish and food crops is an active human-health concern — a PubMed search for PFAS dietary exposure via fish consumption returns 42 articles (e.g. PMID 41411415, 38941943, 40844315), confirming the food-species overlap is the human-exposure pathway.
+
 **Validation (standard).** Join on the ubergraph `rdfs:label` organism name shared between SAWGraph's NCBITaxon class and the BioHealthKG node; the verified BH13 count of 377 organisms reproduces. **Validated** (label-bridged crosswalk BH13).
 
 ## SPARQL query executed

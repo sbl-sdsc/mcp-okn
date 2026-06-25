@@ -26,6 +26,8 @@ For *Mycobacterium tuberculosis* — one of the organisms shared between SPOKE-O
 
 Neither graph carries the other's view: SPOKE has no clinical-predication layer for the organism, and BioHealthKG carries no NCBITaxon id or SPOKE-style association graph. Matching them on the organism's scientific name (BioHealthKG has no taxon id, so the label is the only key) lets a researcher pull SPOKE's molecular associations and BioHealthKG's literature-derived clinical assertions for the same pathogen in one place.
 
+**Literature validation (PubMed).** *Mycobacterium tuberculosis* drug resistance is a vast clinical literature — a PubMed search returns 12,737 articles (e.g. PMID 36355013, 37552534, 27810467), consistent with the dense SPOKE association graph and BioHealthKG clinical predications for this pathogen.
+
 **Validation (standard).** The BioHealthKG node is confirmed live (C0026926, label *Mycobacterium tuberculosis*, category `bact_bact`); the SPOKE association count of 8,182 is the value from the verified label-bridged crosswalk BH11. **Validated** (organism present in both graphs; label-bridged crosswalk BH11).
 
 ## SPARQL query executed

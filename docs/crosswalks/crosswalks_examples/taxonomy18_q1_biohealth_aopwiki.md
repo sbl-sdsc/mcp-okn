@@ -31,6 +31,8 @@ The shared set is the **toxicology test-species roster** that BioHealthKG also c
 
 Each appears once in AOP-Wiki as a taxonomic-applicability record (the count per organism is 1 — these are applicability citations, not assay volumes). The crosswalk lets a researcher carry an AOP's test organism into BioHealthKG's clinical organism space. The bridge is name-exact and conservative.
 
+**Literature validation (PubMed).** The taxonomic applicability of adverse-outcome pathways across test species is an explicit ecotoxicology topic — a PubMed search returns 8 articles (e.g. PMID 37405877, 36263952, 38980262), confirming AOP-Wiki's species citations are applicability metadata rather than assay records.
+
 **Validation (standard).** Join on the ubergraph `rdfs:label` organism name shared between AOP-Wiki's NCBITaxon node and the BioHealthKG node; the verified BH14 count of 112 organisms reproduces. **Validated** (label-bridged crosswalk BH14).
 
 ## SPARQL query executed

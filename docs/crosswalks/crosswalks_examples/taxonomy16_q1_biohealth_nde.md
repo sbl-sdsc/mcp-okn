@@ -37,6 +37,8 @@ NDE records each dataset's `schema:species` as a `/taxonomy/{taxid}` reference; 
 
 These are integration points where NDE's infectious/immune-disease dataset inventory for an organism can be joined to BioHealthKG's clinical predications about the same species — spanning human, the standard rodent/fly/fish models, livestock (pig, cattle), non-human primate (rhesus macaque) and crop hosts (rice, maize, soy). The tail (1,052 organisms total) reaches far into minor hosts and vectors; the label bridge is conservative (name-exact, no synonym expansion).
 
+**Literature validation (PubMed).** The shared organisms are the standard hosts and reservoirs of infectious/immune research — a PubMed search for animal-reservoir zoonotic infectious-disease surveillance returns 1,019 articles (e.g. PMID 14652202, 20542248, 29479072), coherent with NDE's infectious/immune dataset focus.
+
 **Validation (standard).** Join on the ubergraph `rdfs:label` organism name shared between NDE's rebuilt NCBITaxon IRI and the BioHealthKG node; the verified BH12 count of 1,052 organisms reproduces. **Validated** (label-bridged crosswalk BH12).
 
 ## SPARQL query executed

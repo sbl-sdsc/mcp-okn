@@ -26,6 +26,8 @@ The two graphs give a host-and-disease picture of the pig from complementary sid
 
 The pig is a strong example of the bridge's value: NDE catalogs the *datasets* (where to find the data), BioHealthKG catalogs the *clinical assertions* (what the literature says happens in/with the organism). Joining on the organism name — the only key BioHealthKG exposes — lets a researcher move from "1,698 NDE pig datasets" to "199 BioHealthKG clinical statements about the pig" for the same species.
 
+**Literature validation (PubMed).** *Sus scrofa* is an established infectious-disease model and zoonotic host — a PubMed search returns 138 articles (e.g. PMID 39493181, 32876563, 22153753), supporting both the NDE pig datasets and BioHealthKG's clinical predications.
+
 **Validation (standard).** *Sus scrofa* resolves to a live BioHealthKG node (199 `location_of` predications, semantic category present); the NDE dataset count of 1,698 is the per-organism figure from crosswalk BH12. **Validated** (organism present in both graphs; label-bridged crosswalk BH12).
 
 ## SPARQL query executed

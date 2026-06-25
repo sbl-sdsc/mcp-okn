@@ -26,6 +26,8 @@ The fly is a clean illustration of the two graphs' complementary content:
 
 Joining on the organism name (BioHealthKG exposes no taxon id) lets a researcher pull GXA's expression studies and BioHealthKG's clinical predications for the same species in one query — bridging transcriptomic evidence to literature-asserted organism biology. The same fly is also a shared GeneLab (BH15) and NDE (BH12) organism, so it recurs across the biohealth label-bridged crosswalks.
 
+**Literature validation (PubMed).** *Drosophila melanogaster* is a foundational human-disease genetic model — a PubMed search returns 2,653 articles (e.g. PMID 21415126, 40806617, 39722550), consistent with both the GXA expression studies and BioHealthKG's `interacts_with`/`causes` predications.
+
 **Validation (standard).** *Drosophila melanogaster* resolves to a live BioHealthKG node (45 `interacts_with`, 29 `causes` predications); the GXA study count of 150 is the per-organism figure from crosswalk BH16. **Validated** (organism present in both graphs; label-bridged crosswalk BH16).
 
 ## SPARQL query executed

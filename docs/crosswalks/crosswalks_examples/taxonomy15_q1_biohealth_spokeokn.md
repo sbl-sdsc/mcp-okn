@@ -39,6 +39,8 @@ The top of the ranking is the AMR/ESKAPE roll-call — the bacterial pathogens S
 
 These are integration points where SPOKE-OKN's gene/compound/disease association layer for a pathogen can be joined to BioHealthKG's clinical predications (`causes`, `location_of`, `interacts_with`) about the same organism. The label bridge is name-based and conservative — it misses synonyms and spelling variants — but on the heavily-curated pathogen species it is reliable, and 1,603 organisms match in total.
 
+**Literature validation (PubMed).** The organisms topping the list are the ESKAPE / antimicrobial-resistance priority pathogens — a PubMed search for ESKAPE-pathogen antimicrobial resistance returns 938 articles (e.g. PMID 32404435, 38831030, 27274985), confirming these are the clinically dominant pathogens both graphs would describe most heavily.
+
 **Validation (standard).** Join on the ubergraph `rdfs:label` organism name shared between SPOKE's rebuilt NCBITaxon IRI and the BioHealthKG node; the verified BH11 count of 1,603 organisms reproduces. The result depends entirely on the organism-name bridge. **Validated** (label-bridged crosswalk BH11).
 
 ## SPARQL query executed

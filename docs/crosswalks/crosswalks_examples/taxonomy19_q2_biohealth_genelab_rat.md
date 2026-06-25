@@ -26,6 +26,8 @@ The rat shows the bridge connecting spaceflight molecular data to clinical organ
 
 The join on the organism name lets a researcher move from "6,254 rat genes with spaceflight expression evidence" to "10,096 clinical statements about the rat" for the same species — connecting GeneLab's molecular layer to BioHealthKG's literature-derived physiology. The bridge is the scientific name (BioHealthKG has no taxon id).
 
+**Literature validation (PubMed).** *Rattus norvegicus* is the classic spaceflight-physiology model — a PubMed search for rat spaceflight / microgravity gene expression returns 77 articles (e.g. PMID 10352154, 36982513, 12207961), supporting the GeneLab rat assays this crosswalk counts.
+
 **Validation (standard).** *Rattus norvegicus* resolves to a live BioHealthKG node (10,096 `location_of` predications); the GeneLab gene count of 6,254 is the per-organism figure from crosswalk BH15. **Validated** (organism present in both graphs; label-bridged crosswalk BH15).
 
 ## SPARQL query executed

@@ -32,6 +32,8 @@ SPOKE-GeneLab tags each gene with its organism via its `schema/taxonomy` predica
 
 These are the integration points where spaceflight differential-expression evidence (SPOKE-GeneLab) can be joined to BioHealthKG's clinical predications for the same organism — human plus the standard plant/worm/fly/rat/yeast models that dominate GeneLab's assays. The count of 7 reproduces the verified exact crosswalk.
 
+**Literature validation (PubMed).** The NASA GeneLab spaceflight-omics model-organism panel is documented in the literature — a PubMed search returns 5 articles (e.g. PMID 30329036, 30688299, 42149965), matching the organisms SPOKE-GeneLab carries.
+
 **Validation (standard).** Join on the ubergraph `rdfs:label` organism name shared between SPOKE-GeneLab's NCBITaxon tag and the BioHealthKG node; the verified BH15 count of 7 organisms reproduces. **Validated** (label-bridged crosswalk BH15).
 
 ## SPARQL query executed

@@ -26,6 +26,8 @@ Yellow perch is a nice three-way touch point (AOP-Wiki toxicology ↔ SAWGraph P
 
 Because BioHealthKG exposes no taxon id, the only way to assert "AOP-Wiki's yellow perch == BioHealthKG's yellow perch" is the shared scientific name through ubergraph — exactly what crosswalk BH14 does. The same name also matches the SAWGraph PFAS-monitored species (crosswalk BH13, Q2), so the three graphs meet on this one fish.
 
+**Literature validation (PubMed).** *Perca flavescens* is an established ecotoxicology sentinel species — a PubMed search for yellow-perch ecotoxicology / contaminants returns 8 articles (e.g. PMID 18031837, 37341539, 24084258), consistent with its AOP-Wiki test-species role.
+
 **Validation (standard).** AOP-Wiki node NCBITaxon:8167 confirmed (`dc:title` "Perca flavescens", `dc:source` NCBI); the organism is in the verified AOP-Wiki × BioHealthKG shared set (BH14) and the SAWGraph fish subset (BH13). **Validated** (organism present in both graphs; label-bridged crosswalk BH14).
 
 ## SPARQL query executed

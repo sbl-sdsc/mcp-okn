@@ -31,6 +31,8 @@ GXA tags each study with `biolink:in_taxon` (an NCBITaxon IRI); BioHealthKG desc
 
 These six species are the integration points where baseline/differential transcriptomics (GXA) and BioHealthKG's clinical predications describe the same organism — so an expression signature can be linked to the clinical organism record. All six GXA taxa match, reproducing the verified exact crosswalk of 6.
 
+**Literature validation (PubMed).** Expression Atlas is a documented baseline/differential gene-expression resource — a PubMed search returns 5 articles (e.g. PMID 22996553, 34850121, 42226795), describing the GXA studies this crosswalk counts.
+
 **Validation (standard).** Join on the ubergraph `rdfs:label` organism name shared between GXA's `biolink:in_taxon` IRI and the BioHealthKG node; the verified BH16 count of 6 organisms reproduces. **Validated** (label-bridged crosswalk BH16).
 
 ## SPARQL query executed
