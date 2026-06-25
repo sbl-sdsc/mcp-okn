@@ -660,6 +660,50 @@ SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {{
 }}"""
 
 
+# --- NCBITaxon (biohealth label-bridged) -----------------------------------
+# biohealth keys every entity on a UMLS CUI and carries NO NCBITaxon id, so its
+# organisms reach the hub only by NAME: take the partner KG's NCBITaxon taxa,
+# resolve each taxon's scientific name via ubergraph rdfs:label, and point-check a
+# biohealth node carrying that exact label. Drive from the bounded partner side
+# (biohealth is ~110M triples). Exact name match — an approximate lower bound that
+# misses synonyms/spelling variants and cannot do subClassOf* clade expansion.
+_BH_LABEL_TAIL = f"""
+  GRAPH {g("ubergraph")} {{ ?taxon {LABEL} ?name . }}
+  GRAPH {g("biohealth")} {{ ?bh {LABEL} ?name . }}
+}}"""
+
+Q["BH11-ncbitaxon-label-spoke-okn"] = f"""
+SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {{
+  {{ SELECT DISTINCT ?taxon WHERE {{
+    GRAPH {g("spoke-okn")} {{ ?ot a <https://w3id.org/biolink/vocab/OrganismTaxon> }}
+    BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?ot),'^.*/organism/([0-9]+).*$','$1'))) AS ?taxon)
+  }} }}{_BH_LABEL_TAIL}"""
+
+Q["BH12-ncbitaxon-label-nde"] = f"""
+SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {{
+  {{ SELECT DISTINCT ?taxon WHERE {{
+    GRAPH {g("nde")} {{ ?s <http://schema.org/species> ?o . FILTER(CONTAINS(STR(?o),'/taxonomy/')) }}
+    BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?o),'^.*/taxonomy/([0-9]+).*$','$1'))) AS ?taxon)
+  }} }}{_BH_LABEL_TAIL}"""
+
+Q["BH13-ncbitaxon-label-sawgraph"] = f"""
+SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {{
+  GRAPH {g("sawgraph")} {{ ?taxon {SUBCLASS} ?sup . FILTER(STRSTARTS(STR(?taxon),'http://purl.obolibrary.org/obo/NCBITaxon_')) }}{_BH_LABEL_TAIL}"""
+
+Q["BH14-ncbitaxon-label-biobricks-aopwiki"] = f"""
+SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {{
+  GRAPH {g("biobricks-aopwiki")} {{ ?s <http://purl.org/dc/elements/1.1/identifier> ?taxon . FILTER(STRSTARTS(STR(?taxon),'http://purl.obolibrary.org/obo/NCBITaxon_')) }}{_BH_LABEL_TAIL}"""
+
+Q["BH15-ncbitaxon-label-spoke-genelab"] = f"""
+SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {{
+  GRAPH {g("spoke-genelab")} {{ ?gene <{_SGL}taxonomy> ?ts . FILTER(STRSTARTS(STR(?ts),'http://purl.obolibrary.org/obo/NCBITaxon_')) }}
+  BIND(IRI(STR(?ts)) AS ?taxon){_BH_LABEL_TAIL}"""
+
+Q["BH16-ncbitaxon-label-gene-expression-atlas-okn"] = f"""
+SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {{
+  GRAPH {g("gene-expression-atlas-okn")} {{ ?s <https://w3id.org/biolink/vocab/in_taxon> ?taxon . FILTER(STRSTARTS(STR(?taxon),'http://purl.obolibrary.org/obo/NCBITaxon_')) }}{_BH_LABEL_TAIL}"""
+
+
 RESULTS = ROOT / "scripts" / ".skeleton_results.json"
 
 

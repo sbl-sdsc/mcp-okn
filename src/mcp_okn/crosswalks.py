@@ -146,6 +146,7 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "PubChem CID": "Chemicals",
     "DrugBank": "Chemicals",
     "NCBITaxon": "Taxonomy",
+    "NCBITaxon (biohealth label)": "Taxonomy",
     "S2_L13": "Geospatial",
     "county_FIPS": "Geospatial",
     "state_FIPS": "Geospatial",
@@ -159,6 +160,17 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
 def domain_for(shared_key: str | None) -> str:
     """The domain a crosswalk belongs to, keyed by its shared identifier."""
     return _DOMAIN_BY_SHARED_KEY.get(shared_key or "", "Other")
+
+
+def _is_ncbitaxon(entry: dict[str, Any]) -> bool:
+    """True for any NCBITaxon crosswalk — the id hub joins AND the biohealth
+    label-bridged ones (``shared_key`` ``"NCBITaxon (biohealth label)"``).
+
+    Both are re-rendered in :func:`all_crosswalks` from the materialized
+    ``taxon_hub.pairwise`` set (one row per pair), so a single predicate keyed on
+    the ``NCBITaxon`` prefix suppresses every per-entry taxon row from the listing.
+    """
+    return (entry.get("shared_key") or "").startswith("NCBITaxon")
 
 
 def _is_taxon_hub_spoke(entry: dict[str, Any]) -> bool:
@@ -232,11 +244,12 @@ def all_crosswalks(include_examples: bool = True) -> list[dict[str, Any]]:
     """
     rows: list[dict[str, Any]] = []
     for e in load_crosswalks().get("verified_crosswalks", []):
-        # Every NCBITaxon crosswalk (KG↔ubergraph spokes AND the bridged pairwise
-        # ones like D9) is rendered instead from the materialized hub pairwise set
-        # below, so the listing shows verified PER-PAIR counts, not each KG's
-        # (uninteresting) overlap with the ubergraph plumbing.
-        if e.get("shared_key") == "NCBITaxon":
+        # Every NCBITaxon crosswalk (KG↔ubergraph spokes, the bridged pairwise ones
+        # like D9, AND the biohealth label-bridged ones) is rendered instead from
+        # the materialized hub pairwise set below, so the listing shows verified
+        # PER-PAIR counts, not each KG's (uninteresting) overlap with the ubergraph
+        # plumbing — and the new label entries don't duplicate their pairwise rows.
+        if _is_ncbitaxon(e):
             continue
         # Drop rows where ubergraph is a bare endpoint (A6 MONDO, M1 MeSH): a KG's
         # overlap with the ontology backbone, not a KG-to-KG integration point.
@@ -372,6 +385,12 @@ TAXON_CLADE_NOTE = (
     "is the more complete biological overlap and is often far larger than exact_id "
     "when one KG records coarser taxa (e.g. genus) and the other finer ones (e.g. "
     "strain) — e.g. spoke-genelab × spoke-okn is exact_id 2 but 33,313 by clade. "
+    "Some rows are LABEL-BRIDGED instead (match_type 'label'): biohealth carries no "
+    "NCBITaxon id, so its organisms are matched to the other KG by exact scientific "
+    "name (biohealth rdfs:label -> ubergraph NCBITaxon rdfs:label). These rows carry "
+    "label_match / kg_b_taxa rather than exact_id/clade — render them as 'label "
+    "match: <label_match> of <kg_b_taxa> organisms by name' (an approximate lower "
+    "bound; misses synonyms/spelling variants, no clade expansion). "
     "Only non-zero pairs are listed; call taxon_overlap(kg_a, kg_b) for the runnable "
     "skeletons."
 )

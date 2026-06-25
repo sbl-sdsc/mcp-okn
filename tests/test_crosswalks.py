@@ -96,12 +96,13 @@ async def test_list_crosswalks_renders_taxon_hub_as_pairwise_rows():
     taxon_rows = [r for r in rows if r["shared_key"] == "NCBITaxon"]
     # one row per non-zero pair — no single collapsed "hub members" row remains
     assert len(taxon_rows) == len(pairwise) >= 1
-    # dropped entries = all NCBITaxon (re-rendered as pairwise) + bare ubergraph
-    # endpoint overlaps (A6/M1); the rest stay 1:1 as rows.
+    # dropped entries = all NCBITaxon — the id hub joins AND the biohealth
+    # label-bridged ones (re-rendered as pairwise) — + bare ubergraph endpoint
+    # overlaps (A6/M1); the rest stay 1:1 as rows.
     dropped = [
         e
         for e in entries
-        if e.get("shared_key") == "NCBITaxon" or cw._is_ubergraph_endpoint_overlap(e)
+        if cw._is_ncbitaxon(e) or cw._is_ubergraph_endpoint_overlap(e)
     ]
     assert len(rows) == (len(entries) - len(dropped)) + len(pairwise)
 
@@ -128,8 +129,26 @@ async def test_list_crosswalks_renders_taxon_hub_as_pairwise_rows():
         {r["kgs"][0], r["kgs"][2]} == {"spoke-genelab", "spoke-okn"} for r in taxon_rows
     )
 
-    # the clade-membership explanation is surfaced for rendering after the table
+    # the clade-membership explanation is surfaced for rendering after the table,
+    # and it explains the label-bridged rows (biohealth) too
     assert "taxon_clade_note" in out and "clade" in out["taxon_clade_note"].lower()
+    assert "label" in out["taxon_clade_note"].lower()
+
+
+@pytest.mark.asyncio
+async def test_biohealth_label_taxon_pairs_are_verified_joins():
+    """biohealth's label-bridged organism overlaps are verified crosswalks, so
+    get_join_strategy returns a ready recipe whose join key names the label bridge,
+    even though biohealth carries no NCBITaxon id."""
+    out = await get_join_strategy("biohealth", "sawgraph")
+    assert out["status"] == "verified"
+    label = [j for j in out["joins"] if j["shared_key"] == "NCBITaxon (biohealth label)"]
+    assert label, "no label-bridged taxon recipe surfaced"
+    j = label[0]
+    assert j["domain"] == "Taxonomy"
+    assert j["verified_count"] == 377
+    assert "label" in j["key_namespace"].lower()
+    assert "COUNT(" in j["skeleton_query"]
 
 
 @pytest.mark.asyncio

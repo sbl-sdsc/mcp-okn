@@ -246,10 +246,16 @@ async def list_crosswalks(include_examples: bool = True) -> dict[str, Any]:
         single `verified_count`; the overlap is two-valued — `exact_id` (taxa with
         the same NCBITaxon id, symmetric) plus directional `clade_a_in_b` /
         `clade_b_in_a` (taxa nested under the other KG's clades via `subClassOf*`,
-        often far larger). When the result includes Taxonomy rows it also carries a
-        top-level `taxon_clade_note`: RENDER IT as a short paragraph AFTER the table
-        so the reader understands the two columns. `taxon_overlap(kg_a, kg_b)`
-        returns the runnable skeletons.
+        often far larger). Some Taxonomy rows are instead LABEL-BRIDGED
+        (`match_type: "label"`): biohealth carries no NCBITaxon id, so its organisms
+        are matched to the other KG by exact scientific name, and the row carries
+        `label_match` / `kg_b_taxa` (NOT `exact_id`/clade) — render these as
+        "label match: <label_match> of <kg_b_taxa> organisms by name". Do NOT drop a
+        Taxonomy row just because it lacks the id columns. When the result includes
+        Taxonomy rows it also carries a top-level `taxon_clade_note`: RENDER IT as a
+        short paragraph AFTER the table so the reader understands both the id columns
+        and the label rows. `taxon_overlap(kg_a, kg_b)` returns the runnable
+        skeletons.
 
         Rows where `ubergraph` is a bare endpoint (a KG's overlap with the ontology
         backbone, not a KG-to-KG join — e.g. oard-kg's MONDO terms, biobricks-mesh's
