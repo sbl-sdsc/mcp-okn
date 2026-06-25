@@ -30,7 +30,7 @@ the participating knowledge graphs.
 ### Example prompts
 
 Once the server is configured in your MCP client (see
-[Configuration](#configuration)), just ask in natural language — the assistant
+[Connecting your client](#connecting-your-client)), just ask in natural language — the assistant
 picks the graphs, writes the SPARQL, and combines the results for you. Some
 prompts to try:
 
@@ -103,7 +103,60 @@ verify each as live SPARQL, and validate the findings against the literature.
 
 ---
 
-## Configuration
+## Connecting your client
+
+The server is hosted at **`https://apps.okn.us/okn-mcp-dev/mcp`** — point any MCP
+client at that URL, no local install required. (For a local install instead, see
+[Local installation](#local-installation).)
+
+### Claude Desktop
+
+Open **Settings → Connectors → Add custom connector**, name it `mcp-okn-dev`, and
+enter the URL `https://apps.okn.us/okn-mcp-dev/mcp`. After **Configure**, set the
+tool permissions to **Always allow**. In a new chat, click the `+` icon and enable
+the `mcp-okn-dev` toggle. A Claude Pro or Max subscription is required for MCP
+connectors in Claude Desktop.
+
+### Claude Code
+
+Register it from the CLI:
+
+```bash
+claude mcp add --transport http mcp-okn-dev https://apps.okn.us/okn-mcp-dev/mcp
+```
+
+Or add it to `.mcp.json` in your project root (or `~/.claude/settings.json` for
+universal access):
+
+```json
+{
+  "mcpServers": {
+    "mcp-okn-dev": {
+      "type": "url",
+      "url": "https://apps.okn.us/okn-mcp-dev/mcp"
+    }
+  }
+}
+```
+
+Verify with `/mcp` — you should see `mcp-okn-dev` listed as connected.
+
+### ChatGPT
+
+Supported in the ChatGPT web app at <https://chatgpt.com> with **Developer mode**
+enabled. Go to **Settings → Apps → Create app** and enter the MCP server URL
+`https://apps.okn.us/okn-mcp-dev/mcp`.
+
+### VS Code + GitHub Copilot
+
+Use MCP in Agent mode with the GitHub Copilot extension, with the same URL:
+`https://apps.okn.us/okn-mcp-dev/mcp`.
+
+---
+
+## Local installation
+
+To run the server yourself instead of using the hosted service:
 
 ### Requirements
 
