@@ -111,11 +111,12 @@ client at that URL, no local install required. (For a local install instead, see
 
 ### Claude Desktop
 
-Open **Settings → Connectors → Add custom connector**, name it `mcp-okn-dev`, and
-enter the URL `https://apps.okn.us/okn-mcp-dev/mcp`. After **Configure**, set the
-tool permissions to **Always allow**. In a new chat, click the `+` icon and enable
-the `mcp-okn-dev` toggle. A Claude Pro or Max subscription is required for MCP
-connectors in Claude Desktop.
+1. Open **Settings → Connectors → Add custom connector**.
+2. Name it `mcp-okn-dev` and enter the URL `https://apps.okn.us/okn-mcp-dev/mcp`.
+3. Click **Configure** and set the tool permissions to **Always allow**.
+4. In a new chat, click the `+` icon and enable the `mcp-okn-dev` toggle.
+
+> A Claude Pro or Max subscription is required for MCP connectors in Claude Desktop.
 
 ### Claude Code
 
