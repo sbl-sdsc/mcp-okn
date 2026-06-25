@@ -14,7 +14,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 111 verified cross-KG crosswalks in the Proto-OKN federation (counts verified 2026-06-12; +14 BioHealthKG/anatomy crosswalks verified 2026-06-23; +6 BioHealthKG label-bridged taxonomy crosswalks verified 2026-06-25), grouped by domain with an example of what each join answers.
+Here are all 112 verified cross-KG crosswalks in the Proto-OKN federation (counts verified 2026-06-12; +14 BioHealthKG/anatomy crosswalks verified 2026-06-23; +6 BioHealthKG label-bridged taxonomy crosswalks verified 2026-06-25), grouped by domain with an example of what each join answers.
 
 ## Anatomy & Cell Type
 
