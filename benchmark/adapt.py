@@ -231,9 +231,7 @@ def graph_wrap(query: str, shortname: str) -> str:
 # ``https`` triples. The benchmark runs them with canonicalization OFF so the
 # concrete ``https`` IRIs match by index lookup (fast); every other KG keeps the
 # canonicalization (its data is the canonical ``http`` form). See smoke.py.
-HTTPS_SCHEMA_ORG_KGS = frozenset(
-    {"ruralkg", "sockg", "hydrologykg", "nikg", "ufokn"}
-)
+HTTPS_SCHEMA_ORG_KGS = frozenset({"ruralkg", "sockg", "hydrologykg", "nikg", "ufokn"})
 
 
 def adapt(

@@ -28,6 +28,7 @@ class _CaptureClient:
 
         return _Resp()
 
+
 JSON_RESULT = {
     "head": {"vars": ["s", "n", "active"]},
     "results": {

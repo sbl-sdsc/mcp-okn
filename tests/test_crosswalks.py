@@ -142,7 +142,9 @@ async def test_biohealth_label_taxon_pairs_are_verified_joins():
     even though biohealth carries no NCBITaxon id."""
     out = await get_join_strategy("biohealth", "sawgraph")
     assert out["status"] == "verified"
-    label = [j for j in out["joins"] if j["shared_key"] == "NCBITaxon (biohealth label)"]
+    label = [
+        j for j in out["joins"] if j["shared_key"] == "NCBITaxon (biohealth label)"
+    ]
     assert label, "no label-bridged taxon recipe surfaced"
     j = label[0]
     assert j["domain"] == "Taxonomy"
