@@ -240,7 +240,8 @@ query → record**. The single table below is grouped in that order.
 
 ### Design
 
-- **[mcp-okn redesign (slide deck, PDF)](docs/mcp-okn-redesign.pdf)** — a side-by-side
+- **[mcp-okn redesign](docs/mcp-okn-redesign.md)** (also as a [slide deck, PDF](docs/mcp-okn-redesign.pdf))
+  — a side-by-side
   comparison of the previous **`mcp-proto-okn`** server and this **`mcp-okn`** redesign
   across eight areas: native multi-graph / cross-graph bridge queries with explicit
   named-graph scoping; coverage of all FRINK-loaded KGs (bar semopenalex); a registry and
