@@ -4,6 +4,11 @@ The benchmark scores **41** questions (38 exact). This documents the other **39*
 registry questions that were never scored, with the reason for each. Diagnosis date:
 2026-06-25 (live FRINK federation).
 
+> **Update 2026-06-25:** the 8 `SCHEMA.ORG https/http` rows in section B are now
+> **fixed** (commit `a1129fd`) and a fresh `--layer smoke` lifts the scorable count
+> **41 → 49**. See the first key takeaway. The remaining 11 in section B (empty graph,
+> predicate mismatch, mis-adapted cross-graph, truncated-cache passers) are unchanged.
+
 ## The funnel
 
 ```
@@ -103,15 +108,21 @@ empty graph 5 · predicate mismatch 1 · mis-adapted cross-graph 1.
 
 ## Key takeaways
 
-- **schema.org https/http is the single biggest cause (8 of 19).** ruralkg, hydrologykg
-  and sockg store schema.org predicates in the non-canonical **https** form. The
+- **schema.org https/http was the single biggest cause (8 of 19) — now FIXED.** ruralkg,
+  hydrologykg and sockg store schema.org predicates in the non-canonical **https** form. The
   federation canonicalizes a bracketed `<https://schema.org/X>` to `http`, so it silently
-  matches nothing. Fix at the harness/registry level: match these predicates scheme-free
-  (`?s ?p ?o . FILTER(STRENDS(STR(?p),'schema.org/X'))`) or via `IRI(CONCAT(...))`.
-- **4 of the 19 already pass** (`prokn/list_diseases`, `fiokg/fio-facilities-by-NAICS-Subsector`,
+  matched nothing. **Resolved 2026-06-25 (commit `a1129fd`):** rather than rewrite the queries
+  (a scheme-free `FILTER(STRENDS(STR(?p),'schema.org/X'))` is correct but times out on large
+  graphs like hydrologykg's 434k flowpaths), the smoke layer now runs these KGs with
+  canonicalization **off** — `run_sparql(normalize_schema=False)` for the KGs in
+  `benchmark.adapt.HTTPS_SCHEMA_ORG_KGS` — so the concrete `https` IRIs match by index lookup
+  (all 8 return rows in <1s). All 8 are now cached and scorable.
+- **4 of the 19 also pass on a fresh run** (`prokn/list_diseases`, `fiokg/fio-facilities-by-NAICS-Subsector`,
   `sockg/biomassCarbohydrate`, `sockg/harvest_fraction`) — they were transient/empty on the
-  2026-06-20 smoke snapshot. A fresh `--layer smoke` would lift the scorable count from 41
-  toward ~45.
+  2026-06-20 smoke snapshot. A fresh `--layer smoke` (run 2026-06-25) passes **53/60** and
+  caches **49** references — the original 41 plus the 8 schema.org fixes — lifting the scorable
+  count **41 → 49**. (Passers whose result exceeds the 5,000-row cache cap, e.g.
+  `prokn/list_diseases` and `sockg/harvest_fraction`, stay uncached, so 53 passed ≠ 49 cached.)
 - **nasa-gesdisc-kg is not loaded in FRINK.** Its served named graph has zero triples,
   which knocks out 5 auto questions here (plus its 2 `*-wikidata` skips) — 7 questions in total.
 - **`oard-kg/oard-ubergraph-concordance` is an adaptation bug**: it is inherently a
