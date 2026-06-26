@@ -241,15 +241,9 @@ query → record**. The single table below is grouped in that order.
 ### Design
 
 - **[mcp-okn redesign](docs/mcp-okn-redesign.md)** (also as a [slide deck, PDF](docs/mcp-okn-redesign.pdf))
-  — a side-by-side
-  comparison of the previous **`mcp-proto-okn`** server and this **`mcp-okn`** redesign
-  across eight areas: native multi-graph / cross-graph bridge queries with explicit
-  named-graph scoping; coverage of all FRINK-loaded KGs (bar semopenalex); a registry and
-  schemas auto-built from FRINK and cached at startup; deterministic server-generated
-  Mermaid schema diagrams; full-subtree Ubergraph ontology expansion via precomputed
-  closures; precomputed, verified cross-graph join recipes (`list_crosswalks` /
-  `get_join_strategy`); a `point_to_s2` geospatial helper; and reproducible transcripts
-  with replayable queries.
+  — a side-by-side comparison of the previous **`mcp-proto-okn`** server and this
+  **`mcp-okn`** redesign across query model, KG coverage, schema/registry handling,
+  cross-graph joins, and reproducibility.
 
 ### Module layout
 
