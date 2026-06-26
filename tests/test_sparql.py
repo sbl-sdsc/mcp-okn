@@ -6,7 +6,27 @@ from mcp_okn.sparql import (
     canonicalize_schema_org_iri,
     named_graph,
     normalize_schema_org,
+    run_sparql,
 )
+
+
+class _CaptureClient:
+    """Fake httpx client that records the query sent to the endpoint."""
+
+    def __init__(self):
+        self.query = None
+
+    async def post(self, url, data=None, headers=None, timeout=None):
+        self.query = data["query"]
+
+        class _Resp:
+            status_code = 200
+            text = '{"head":{"vars":[]},"results":{"bindings":[]}}'
+
+            def json(self):
+                return {"head": {"vars": []}, "results": {"bindings": []}}
+
+        return _Resp()
 
 JSON_RESULT = {
     "head": {"vars": ["s", "n", "active"]},
@@ -73,6 +93,18 @@ def test_normalize_schema_org_leaves_http_and_other_uris_untouched():
     )
     # Already-http schema.org and the unrelated https purl.org URI are unchanged.
     assert normalize_schema_org(q) == q
+
+
+async def test_run_sparql_normalize_schema_toggle():
+    q = "SELECT ?x WHERE { ?x <https://schema.org/name> ?n }"
+
+    on = _CaptureClient()
+    await run_sparql(q, client=on, normalize_schema=True)
+    assert "<http://schema.org/name>" in on.query  # canonicalized by default
+
+    off = _CaptureClient()
+    await run_sparql(q, client=off, normalize_schema=False)
+    assert "<https://schema.org/name>" in off.query  # left as written for https KGs
 
 
 def test_canonicalize_schema_org_iri_rewrites_bare_iri():

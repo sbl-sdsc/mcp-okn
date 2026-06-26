@@ -97,6 +97,7 @@ async def run_sparql(
     fmt: str = "json",
     timeout: float = 120.0,
     client: httpx.AsyncClient | None = None,
+    normalize_schema: bool = True,
 ) -> dict[str, Any]:
     """Run a SPARQL query against the FRINK federation endpoint.
 
@@ -107,6 +108,11 @@ async def run_sparql(
             ``tsv`` (returned as raw text).
         timeout: Request timeout in seconds.
         client: Optional shared httpx.AsyncClient.
+        normalize_schema: Canonicalize bracketed ``<https://schema.org/…>`` IRIs
+            to the ``http`` form (default True). Set False to leave them as
+            written — required for the few KGs that STORE the ``https`` form
+            (see ``benchmark.adapt.HTTPS_SCHEMA_ORG_KGS``), where canonicalizing
+            to ``http`` would silently match nothing.
 
     Returns:
         For ``json``: ``{"vars": [...], "rows": [...], "row_count": N}``.
@@ -120,7 +126,8 @@ async def run_sparql(
     if fmt not in _ACCEPT:
         raise ValueError(f"Unsupported format {fmt!r}; use one of {sorted(_ACCEPT)}")
 
-    query = normalize_schema_org(query)
+    if normalize_schema:
+        query = normalize_schema_org(query)
     headers = {"Accept": _ACCEPT[fmt]}
     data = {"query": query}
 

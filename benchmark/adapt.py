@@ -224,6 +224,18 @@ def graph_wrap(query: str, shortname: str) -> str:
     )
 
 
+# KGs that STORE schema.org predicates in the non-canonical ``https://`` form
+# (verified against the live federation: ruralkg, sockg, hydrologykg; nikg and
+# ufokn per mcp_okn.sparql). For these the server's https->http canonicalization
+# is WRONG — it rewrites the query to ``http`` and silently misses the stored
+# ``https`` triples. The benchmark runs them with canonicalization OFF so the
+# concrete ``https`` IRIs match by index lookup (fast); every other KG keeps the
+# canonicalization (its data is the canonical ``http`` form). See smoke.py.
+HTTPS_SCHEMA_ORG_KGS = frozenset(
+    {"ruralkg", "sockg", "hydrologykg", "nikg", "ufokn"}
+)
+
+
 def adapt(
     summary: str,
     tags: list[str],

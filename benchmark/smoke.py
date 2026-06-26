@@ -18,6 +18,7 @@ from typing import Any
 from mcp_okn import sparql
 
 from . import dataset
+from .adapt import HTTPS_SCHEMA_ORG_KGS
 
 #: Cap on reference rows cached per query. A query returning more is still a
 #: "pass", but its results are flagged truncated and excluded from strict
@@ -52,11 +53,18 @@ async def _run_one(
     record: dict[str, Any], sem: asyncio.Semaphore, timeout: float
 ) -> tuple[SmokeResult, list[dict] | None]:
     qid = record["id"]
+    # KGs that store schema.org in the non-canonical https form must NOT be
+    # canonicalized to http, or the query silently matches nothing.
+    kgs = record.get("mapped_kgs") or []
+    normalize_schema = not any(kg in HTTPS_SCHEMA_ORG_KGS for kg in kgs)
     async with sem:
         start = time.perf_counter()
         try:
             out = await sparql.run_sparql(
-                record["federated"], fmt="json", timeout=timeout
+                record["federated"],
+                fmt="json",
+                timeout=timeout,
+                normalize_schema=normalize_schema,
             )
         except Exception as e:  # SparqlError, timeouts, transport errors
             return SmokeResult(qid, ok=False, error=str(e).splitlines()[0][:300]), None

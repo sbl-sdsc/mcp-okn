@@ -110,6 +110,14 @@ def test_tag_map_override_applies():
     assert pq.extra["mapped_kgs"] == ["fiokg"]
 
 
+def test_https_schema_org_kgs_policy():
+    # KGs verified to STORE schema.org in the non-canonical https form, which the
+    # smoke layer must run with canonicalization OFF (see smoke._run_one).
+    assert {"ruralkg", "sockg", "hydrologykg"} <= adapt.HTTPS_SCHEMA_ORG_KGS
+    # canonical http-stored KGs must NOT be in the set, or their queries break.
+    assert adapt.HTTPS_SCHEMA_ORG_KGS.isdisjoint({"dreamkg", "nde", "prokn"})
+
+
 # --- scoring ---------------------------------------------------------------
 
 
