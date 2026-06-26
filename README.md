@@ -238,6 +238,14 @@ query → record**. The single table below is grouped in that order.
 
 ## Development
 
+### Design
+
+- **[mcp-okn redesign (slide deck, PDF)](docs/mcp-okn-redesign.pdf)** — compares the
+  two Proto-OKN MCP server approaches: the unified multi-graph **`proto-okn`** server
+  (one tool surface over the individual knowledge graphs) and this **`mcp-okn`** server
+  (a federation-first design over the FRINK endpoint), and outlines the resulting
+  redesign direction.
+
 ### Module layout
 
 The package is organized by concern. `server.py` is a thin assembly point: it
