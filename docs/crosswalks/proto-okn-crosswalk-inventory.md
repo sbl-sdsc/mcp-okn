@@ -1,4 +1,4 @@
-# Proto-OKN Crosswalks Listing
+# Proto-OKN Crosswalk Inventory
 
 - **Date:** 2026-06-25
 - **Model:** claude-opus-4-8
