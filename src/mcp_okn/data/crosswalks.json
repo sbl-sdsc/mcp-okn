@@ -2063,8 +2063,8 @@
       "key_namespace": "https://biohealthkg.proto-okn.net/kg/node/C{cui} (biohealth; the node IRI IS the UMLS CUI) ; http://purl.obolibrary.org/obo/HP_ (prokn) — bridged on ubergraph oboInOwl:hasDbXref 'UMLS:{cui}'",
       "bridge_kg": "ubergraph",
       "iri_normalization": "biohealth keys phenotype/clinical concepts on UMLS CUIs (node IRI). prokn references HP phenotype terms (obo/HP_). Bridge through ubergraph: an HP term carries oboInOwl:hasDbXref 'UMLS:{cui}'; strip 'UMLS:' and rebuild the biohealth node IRI to confirm membership, then match the same HP term in prokn.",
-      "verified_count": 4284,
-      "verified_count_note": "DISTINCT UMLS CUIs that are (a) a biohealth node, (b) the UMLS hasDbXref of an HP term in ubergraph, and (c) that HP term is referenced in prokn. Exact COUNT(DISTINCT) on 2026-06-23. The ubergraph UMLS->HP bridge maps 4,828 HP terms to biohealth CUIs; prokn consumes 4,284 of them.",
+      "verified_count": 4340,
+      "verified_count_note": "DISTINCT UMLS CUIs that are (a) a biohealth node, (b) the UMLS hasDbXref of an HP term in ubergraph, and (c) that HP term is referenced in prokn. Exact COUNT(DISTINCT), re-verified 2026-06-26 (was 4,284 on 2026-06-23; +56 as prokn's HP coverage grew). The ubergraph UMLS->HP bridge maps 4,828 HP terms to biohealth CUIs; prokn consumes 4,340 of them.",
       "example_question": "For a phenotype biohealth tracks (UMLS CUI), what protein / marker-gene evidence does prokn attach (HP), bridged through ubergraph UMLS->HP?",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {\n    ?hp <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n    FILTER(STRSTARTS(STR(?hp), 'http://purl.obolibrary.org/obo/HP_'))\n    FILTER(STRSTARTS(STR(?x), 'UMLS:'))\n    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)\n  }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?s ?p ?hp . }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
       "skeleton_verified": true

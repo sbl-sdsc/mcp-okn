@@ -704,6 +704,124 @@ SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {{
   GRAPH {g("gene-expression-atlas-okn")} {{ ?s <https://w3id.org/biolink/vocab/in_taxon> ?taxon . FILTER(STRSTARTS(STR(?taxon),'http://purl.obolibrary.org/obo/NCBITaxon_')) }}{_BH_LABEL_TAIL}"""
 
 
+# --- DOID/MONDO disease cluster (rdkg, via ubergraph) ----------------------
+# rdkg keys diseases on MONDO node IRIs; partner KGs that key on DOID bridge
+# through ubergraph skos:exactMatch (MONDO<->DOID). GXA carries MONDO directly
+# plus EFO/Orphanet that ubergraph maps onto MONDO (UNION all three).
+Q["A16-doid-mondo-biomarkerkg-rdkg"] = f"""
+SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {{
+  GRAPH {g("biomarkerkg")} {{ ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }}
+  GRAPH {g("ubergraph")} {{ ?mondo {EXACT} ?doid . }}
+  GRAPH {g("rdkg")} {{ ?mondo ?pr ?orx . }}
+}}"""
+
+Q["A19-efo-mondo-gxa-rdkg"] = f"""
+SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {{
+  {{ {{ GRAPH {g("gene-expression-atlas-okn")} {{ ?mondo a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }} }}
+    UNION {{ GRAPH {g("gene-expression-atlas-okn")} {{ ?efo a <https://w3id.org/biolink/vocab/Disease> . FILTER(CONTAINS(STR(?efo),'/efo/EFO_')) }} GRAPH {g("ubergraph")} {{ ?mondo {EXACT} ?efo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }} }}
+    UNION {{ GRAPH {g("gene-expression-atlas-okn")} {{ ?orph a <https://w3id.org/biolink/vocab/Disease> . FILTER(CONTAINS(STR(?orph),'Orphanet_')) }} GRAPH {g("ubergraph")} {{ ?mondo {EXACT} ?orph . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }} }} }}
+  GRAPH {g("rdkg")} {{ ?mondo ?pr ?o . }}
+}}"""
+
+
+# --- biohealth UMLS-CUI disease/phenotype/anatomy bridges ------------------
+# biohealth keys EVERY entity on a UMLS CUI carried as the node's own IRI
+# (BH_NODE + cui) and materializes no ontology ids; it reaches the federation
+# only through ubergraph's INBOUND oboInOwl:hasDbXref 'UMLS:{cui}' on MONDO / HP
+# / UBERON terms. Each skeleton bridges a partner KG's term to a UMLS CUI via
+# ubergraph, rebuilds the biohealth node IRI, and point-checks its membership.
+# Drive from the bounded partner/ubergraph side — biohealth (~110M triples) times
+# out if scanned unbounded.
+BH_NODE = "https://biohealthkg.proto-okn.net/kg/node/"
+_BH_TAIL = f"""
+  BIND(IRI(CONCAT('{BH_NODE}', ?cui)) AS ?bh)
+  GRAPH {g("biohealth")} {{ ?bh ?bp ?bo . }}
+}}"""
+
+Q["BH1-umls-mondo-biohealth-rdkg"] = f"""
+SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {{
+  GRAPH {g("ubergraph")} {{
+    ?mondo {DBXREF} ?x .
+    FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_'))
+    FILTER(STRSTARTS(STR(?x),'UMLS:'))
+    BIND(STRAFTER(STR(?x),'UMLS:') AS ?cui)
+  }}
+  GRAPH {g("rdkg")} {{ ?mondo ?p ?o . }}{_BH_TAIL}"""
+
+Q["BH2-umls-hp-biohealth-prokn"] = f"""
+SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {{
+  GRAPH {g("ubergraph")} {{
+    ?hp {DBXREF} ?x .
+    FILTER(STRSTARTS(STR(?hp),'http://purl.obolibrary.org/obo/HP_'))
+    FILTER(STRSTARTS(STR(?x),'UMLS:'))
+    BIND(STRAFTER(STR(?x),'UMLS:') AS ?cui)
+  }}
+  GRAPH {g("prokn")} {{ ?s ?p ?hp . }}{_BH_TAIL}"""
+
+Q["BH3-umls-mondo-doid-biohealth-spokeokn"] = f"""
+SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {{
+  GRAPH {g("ubergraph")} {{
+    ?mondo {DBXREF} ?x .
+    FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_'))
+    FILTER(STRSTARTS(STR(?x),'UMLS:'))
+    BIND(STRAFTER(STR(?x),'UMLS:') AS ?cui)
+    ?mondo {EXACT} ?doid .
+    FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_'))
+  }}
+  GRAPH {g("spoke-okn")} {{ ?doid a <https://w3id.org/biolink/vocab/Disease> . }}{_BH_TAIL}"""
+
+Q["BH4-umls-mondo-biohealth-oardkg"] = f"""
+SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {{
+  GRAPH {g("ubergraph")} {{
+    ?mondo {DBXREF} ?x .
+    FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_'))
+    FILTER(STRSTARTS(STR(?x),'UMLS:'))
+    BIND(STRAFTER(STR(?x),'UMLS:') AS ?cui)
+  }}
+  GRAPH {g("oard-kg")} {{ {{ ?z {BL_OBJ} ?mondo }} UNION {{ ?z2 {BL_SUBJ} ?mondo }} }}{_BH_TAIL}"""
+
+Q["BH5-umls-hp-biohealth-oardkg"] = f"""
+SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {{
+  {{ SELECT DISTINCT ?hp WHERE {{
+      GRAPH {g("oard-kg")} {{ {{ ?z {BL_OBJ} ?hp }} UNION {{ ?z2 {BL_SUBJ} ?hp }} FILTER(STRSTARTS(STR(?hp),'http://purl.obolibrary.org/obo/HP_')) }} }} }}
+  GRAPH {g("ubergraph")} {{ ?hp {DBXREF} ?x . FILTER(STRSTARTS(STR(?x),'UMLS:')) BIND(STRAFTER(STR(?x),'UMLS:') AS ?cui) }}{_BH_TAIL}"""
+
+Q["BH6-umls-mondo-biohealth-nde"] = f"""
+SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {{
+  {{ SELECT DISTINCT ?mondo WHERE {{
+      GRAPH {g("nde")} {{ ?s <http://schema.org/healthCondition> ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }} }} }}
+  GRAPH {g("ubergraph")} {{ ?mondo {DBXREF} ?x . FILTER(STRSTARTS(STR(?x),'UMLS:')) BIND(STRAFTER(STR(?x),'UMLS:') AS ?cui) }}{_BH_TAIL}"""
+
+Q["BH7-umls-mondo-doid-biohealth-biomarkerkg"] = f"""
+SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {{
+  {{ SELECT DISTINCT ?doid WHERE {{
+      GRAPH {g("biomarkerkg")} {{ ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }} }} }}
+  GRAPH {g("ubergraph")} {{
+    ?mondo {EXACT} ?doid .
+    ?mondo {DBXREF} ?x .
+    FILTER(STRSTARTS(STR(?x),'UMLS:'))
+    BIND(STRAFTER(STR(?x),'UMLS:') AS ?cui)
+  }}{_BH_TAIL}"""
+
+Q["BH8-umls-hp-biohealth-gxa"] = f"""
+SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {{
+  {{ SELECT DISTINCT ?hp WHERE {{
+      GRAPH {g("gene-expression-atlas-okn")} {{ ?hp a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?hp),'http://purl.obolibrary.org/obo/HP_')) }} }} }}
+  GRAPH {g("ubergraph")} {{ ?hp {DBXREF} ?x . FILTER(STRSTARTS(STR(?x),'UMLS:')) BIND(STRAFTER(STR(?x),'UMLS:') AS ?cui) }}{_BH_TAIL}"""
+
+Q["BH9-umls-uberon-biohealth-gxa"] = f"""
+SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {{
+  {{ SELECT DISTINCT ?t WHERE {{
+      GRAPH {g("gene-expression-atlas-okn")} {{ ?s <https://w3id.org/biolink/vocab/has_attribute> ?t . FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/UBERON_')) }} }} }}
+  GRAPH {g("ubergraph")} {{ ?t {DBXREF} ?x . FILTER(STRSTARTS(STR(?x),'UMLS:')) BIND(STRAFTER(STR(?x),'UMLS:') AS ?cui) }}{_BH_TAIL}"""
+
+Q["BH10-umls-uberon-biohealth-spokegenelab"] = f"""
+SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {{
+  {{ SELECT DISTINCT ?t WHERE {{
+      GRAPH {g("spoke-genelab")} {{ ?s <https://purl.org/okn/frink/kg/spoke-genelab/schema/INVESTIGATED_ASiA> ?t }} }} }}
+  GRAPH {g("ubergraph")} {{ ?t {DBXREF} ?x . FILTER(STRSTARTS(STR(?x),'UMLS:')) BIND(STRAFTER(STR(?x),'UMLS:') AS ?cui) }}{_BH_TAIL}"""
+
+
 RESULTS = ROOT / "scripts" / ".skeleton_results.json"
 
 
