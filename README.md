@@ -326,7 +326,7 @@ notes.
 
 ### KG snapshot
 
-`list_kgs` serves a static snapshot bundled at `src/mcp_okn/data/kgs.json` (~41
+`list_kgs` serves a static snapshot bundled at `src/mcp_okn/data/kgs.json` (~42
 KGs), so the first call returns instantly without fetching the individual
 registry files. The live registry is only contacted when the snapshot is missing
 (or when an internal `refresh=True` is passed). To refresh the snapshot after the
@@ -337,7 +337,7 @@ uv run python scripts/refresh_snapshot.py
 ```
 
 KGs that are in the registry but not actually loaded under their expected
-federation named graph (currently `semopenalex` and `biohealth`) are filtered
+federation named graph (currently `semopenalex`) are filtered
 out, so `list_kgs` only returns graphs that are queryable.
 
 The curated crosswalk table is edited at `metadata/crosswalks.json` and bundled to
