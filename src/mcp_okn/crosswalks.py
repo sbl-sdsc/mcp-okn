@@ -81,7 +81,7 @@ def for_query(entry: dict[str, Any]) -> dict[str, Any]:
     so a multi-join listing groups consistently with ``list_crosswalks``.
     """
     out = {k: v for k, v in entry.items() if k not in _RECIPE_ONLY_FIELDS}
-    out["domain"] = domain_for(entry.get("shared_key"))
+    out["domain"] = domain_of(entry)
     return out
 
 
@@ -154,12 +154,39 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "ZIP5": "Geospatial",
     "NAICS": "Industry & supply chain",
     "SUDOKN_industry_sector": "Industry & supply chain",
+    "GO": "Function & Pathways",
+    "Reactome": "Function & Pathways",
+    # digcfdekg multi-vocabulary disease joins (verbose composite keys)
+    "DOID<->MONDO (+ EFO/Orphanet -> MONDO)": "Disease & phenotype",
+    "MONDO (+ EFO/Orphanet -> MONDO bridged)": "Disease & phenotype",
+    "EFO / Orphanet / MONDO (direct, multi-vocabulary)": "Disease & phenotype",
+    "Entrez -> HGNC (bridged)": "Genes",
+}
+
+# Canonical spelling for explicit per-row ``domain`` values that vary only by
+# case/wording, so they don't fragment a domain into near-duplicates.
+_DOMAIN_ALIASES: dict[str, str] = {
+    "Anatomy & cell type": "Anatomy & Cell Type",
 }
 
 
 def domain_for(shared_key: str | None) -> str:
     """The domain a crosswalk belongs to, keyed by its shared identifier."""
     return _DOMAIN_BY_SHARED_KEY.get(shared_key or "", "Other")
+
+
+def domain_of(entry: dict[str, Any]) -> str:
+    """Domain for a crosswalk entry.
+
+    Prefers the entry's own curated ``domain`` field (normalized for casing) —
+    needed when the shared key alone is ambiguous, e.g. a ``CAS`` join tagged
+    "Environmental toxicology" vs the generic Chemicals default. Falls back to
+    the shared-key map when no explicit domain is set.
+    """
+    explicit = entry.get("domain")
+    if explicit:
+        return _DOMAIN_ALIASES.get(explicit, explicit)
+    return domain_for(entry.get("shared_key"))
 
 
 def _is_ncbitaxon(entry: dict[str, Any]) -> bool:
@@ -258,7 +285,7 @@ def all_crosswalks(include_examples: bool = True) -> list[dict[str, Any]]:
         if _is_ubergraph_endpoint_overlap(e):
             continue
         row = {
-            "domain": domain_for(e.get("shared_key")),
+            "domain": domain_of(e),
             "kgs": _ordered_kgs(e),
             "shared_key": e.get("shared_key"),
             "bridge_kg": e.get("bridge_kg"),
