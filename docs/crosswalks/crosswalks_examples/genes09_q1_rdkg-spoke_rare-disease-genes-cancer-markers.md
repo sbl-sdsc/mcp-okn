@@ -1,6 +1,6 @@
-# CW9-Q1: Rare-disease genes that are SPOKE cancer prognostic markers
+# Rare-disease genes (rdkg) that SPOKE flags as cancer prognostic markers
 
-- **Date:** 2026-06-17
+- **Date:** 2026-06-27
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
@@ -8,69 +8,75 @@
 
 - `rdkg` — <https://purl.org/okn/frink/kg/rdkg>
 - `spoke-okn` — <https://purl.org/okn/frink/kg/spoke-okn>
-- `ubergraph` — <https://purl.org/okn/frink/kg/ubergraph>
 
 ## Conversation
 
 👤 **User**
 
-Crosswalk: rdkg × spoke-okn on the shared Entrez gene id (rdkg gene nodes are ncbigene IRIs; spoke-okn gene nodes are www.ncbi.nlm.nih.gov/gene IRIs). Rare-disease (MONDO) labels via ubergraph.
+Crosswalk: rdkg (Rare Disease KG) × spoke-okn, joined on the shared Entrez gene id. rdkg gene nodes are `http://identifiers.org/ncbigene/{entrez}` IRIs; spoke-okn gene nodes are `http://www.ncbi.nlm.nih.gov/gene/{entrez}` IRIs — same Entrez integer, different IRI prefix, so the join needs a one-line rewrite.
 
-Research question: Which genes that rdkg classifies as rare (monogenic) disease genes are ALSO flagged by SPOKE as cancer prognostic markers (favorable/unfavorable)? This identifies rare-disease genes with a second role in cancer prognosis.
+Research question: For genes that rdkg curates as the causative gene of a named rare (monogenic) disorder, does SPOKE independently flag that same gene as a favorable or unfavorable cancer prognostic marker — and in which cancer? This surfaces rare-disease genes with a second, prognostic role in common cancers.
 
-Why the join is required: rdkg holds the rare-disease gene-condition links; SPOKE holds the cancer prognostic-marker edges. Neither knows about the other; only the Entrez join surfaces genes that are both.
+Why the join is required: rdkg holds the curated rare-disease gene→condition edges (`genetic_association`, with MONDO/Orphanet rare-disease labels) but no cancer-prognosis data; spoke-okn holds the Human-Protein-Atlas-derived prognostic-marker edges (`MARKER_POS_GmpD` / `MARKER_NEG_GmnD`) but no rare-disease context. Only the Entrez join shows a gene that is BOTH a rare-disease gene (rdkg) AND a cancer prognostic marker (SPOKE).
 
 ---
 
 🧠 **Assistant**
 
-Rare-disease genes (rdkg) that SPOKE also lists as cancer prognostic markers:
+Genes that rdkg curates as causative for a named rare disorder, each paired with the cancer prognostic-marker role SPOKE independently records for the same Entrez gene (rdkg rare disease AND SPOKE marker+cancer in the same row):
 
-| Gene | rdkg rare disease | SPOKE marker | Cancer |
+| Gene | rdkg rare disease (genetic_association) | SPOKE marker | SPOKE cancer |
 |---|---|---|---|
-| AAAS | triple-A (Allgrove) syndrome | unfavorable | kidney cancer |
-| AASS | hyperlysinemia / saccharopinuria | favorable | liver cancer |
-| AAGAB | mal de Meleda / palmoplantar keratosis | favorable / unfavorable | kidney / thyroid cancer |
-| AADAT | (hepatic) | favorable | colorectal cancer |
-| A4GALT | Burkitt lymphoma susceptibility | favorable | cervical cancer |
+| ABCB6 | coloboma of optic disc | unfavorable | liver cancer; kidney cancer |
+| ACTB | actinomyopathy-associated syndromic thrombocytopenia | unfavorable | kidney cancer |
+| ACTG2 | megacystis-microcolon-intestinal hypoperistalsis syndrome | unfavorable | kidney cancer |
+| ADK | hypermethioninemia-encephalopathy (adenosine kinase deficiency) | favorable | liver cancer |
+| AGGF1 | capillary-lymphatic-venous malformation | favorable | colorectal cancer |
+| AGRN | presynaptic congenital myasthenic syndrome | unfavorable | liver cancer |
+| AKAP9 | Romano-Ward (long-QT) syndrome | favorable | kidney cancer |
+| ALG2 | congenital myasthenic syndrome with glycosylation defect | favorable | kidney cancer |
+| AMMECR1 | midface-hypoplasia / elliptocytosis / nephrocalcinosis syndrome | favorable | ovarian cancer; thyroid cancer |
+| ANGPT2 | Milroy disease | unfavorable | cervical; kidney; liver; stomach cancer |
 
-Why this answers the question: AAAS, the causative gene of triple-A (Allgrove) syndrome, is simultaneously an unfavorable prognostic marker in kidney cancer per SPOKE; AASS (hyperlysinemia) is a favorable liver-cancer marker. These dual rare-disease/cancer-prognosis roles are only visible by joining the rare-disease gene set (rdkg) with SPOKE's prognostic-marker edges on the shared Entrez id.
+Why this answers the question: each gene is curated by rdkg as the cause of a *named* rare monogenic disorder — the visceral-myopathy gene ACTG2 (megacystis-microcolon-intestinal hypoperistalsis syndrome), the angiopoietin gene ANGPT2 (the lymphedema disorder Milroy disease), the A-kinase scaffold AKAP9 (Romano-Ward long-QT syndrome), and congenital-myasthenic-syndrome genes AGRN/ALG2 — and SPOKE independently flags the *same* Entrez gene as a Human-Protein-Atlas cancer prognostic marker, giving a direction (favorable/unfavorable) and a cancer (ANGPT2 is unfavorable across four cancers; ACTG2 unfavorable in kidney cancer; ADK favorable in liver cancer). The dual rare-disease/cancer-prognosis role is only visible by joining rdkg's rare-disease gene set with SPOKE's prognostic-marker edges on the shared Entrez id.
 
-Literature validation (PubMed): AAAS as the triple-A / Allgrove syndrome gene returns 83 records (e.g. PMIDs 20687490, 32073457). The rare-disease gene identities are literature-supported.
-
-## SPARQL queries executed
-
-#### Query 1
-
-_2026-06-17 · `rdkg`, `ubergraph`, `spoke-okn`_
+## SPARQL query executed
 
 ```sparql
 PREFIX biolink: <https://w3id.org/biolink/vocab/>
 PREFIX spoke: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# rdkg x spoke-okn on Entrez. rdkg rare-disease genes (Disease --genetic_association--> Gene)
+# that SPOKE independently flags as cancer prognostic markers (favorable / unfavorable).
+# Join key: Entrez integer; rewrite rdkg ncbigene IRI -> spoke-okn www.ncbi.nlm.nih.gov/gene IRI.
 SELECT DISTINCT ?sym ?rareDisease ?markerType ?cancer WHERE {
   GRAPH <https://purl.org/okn/frink/kg/rdkg> {
-    ?r a biolink:Gene ; rdfs:label ?sym ; biolink:related_to ?mondo .
+    ?dis a biolink:Disease ; rdfs:label ?rareDisease ;
+         biolink:genetic_association ?r .
+    ?r a biolink:Gene ; rdfs:label ?sym .
     FILTER(STRSTARTS(STR(?r),'http://identifiers.org/ncbigene/'))
-    FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_'))
+    FILTER(!CONTAINS(?rareDisease,'OBSOLETE') && !CONTAINS(?rareDisease,'Non-specific'))
   }
   BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',REPLACE(STR(?r),'^.*/ncbigene/',''))) AS ?gene)
-  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo rdfs:label ?rareDisease . }
   GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
     { ?gene spoke:MARKER_POS_GmpD ?c . BIND("favorable" AS ?markerType) }
     UNION
     { ?gene spoke:MARKER_NEG_GmnD ?c . BIND("unfavorable" AS ?markerType) }
     ?c rdfs:label ?cancer .
   }
-} ORDER BY ?sym LIMIT 20
+} ORDER BY ?sym LIMIT 15
 ```
 
-_20 row(s) — showing first 5_
+_15 row(s) — showing the joined gene set (rows with the same gene/cancer differing only by cancer site collapsed)_
 
 | sym | rareDisease | markerType | cancer |
 | --- | --- | --- | --- |
-| A4GALT | Burkitt lymphoma | favorable | cervical cancer |
-| AAAS | familial prostate carcinoma | unfavorable | kidney cancer |
-| AAAS | triple-A syndrome | unfavorable | kidney cancer |
-| AAAS | prostate cancer | unfavorable | kidney cancer |
-| AAAS | prostate carcinoma | unfavorable | kidney cancer |
+| ABCB6 | coloboma of optic disc | unfavorable | liver cancer |
+| ACTB | actinomyopathy-associated syndromic thrombocytopenia | unfavorable | kidney cancer |
+| ACTG2 | megacystis-microcolon-intestinal hypoperistalsis syndrome | unfavorable | kidney cancer |
+| ADK | hypermethioninemia encephalopathy (adenosine kinase deficiency) | favorable | liver cancer |
+| ANGPT2 | Milroy disease | unfavorable | stomach cancer |
+
+## Literature validation
+
+According to PubMed, Hilberath et al., 2025, *Orphanet J Rare Dis* — a genotype-phenotype cohort of megacystis-microcolon-intestinal hypoperistalsis syndrome (MMIHS) confirms **ACTG2** as the most common causative gene (15/19 molecularly diagnosed patients), corroborating rdkg's ACTG2→MMIHS rare-disease edge that this crosswalk pairs with SPOKE's kidney-cancer prognostic-marker role. [PMID:41387873](https://pubmed.ncbi.nlm.nih.gov/41387873/) · [DOI](https://doi.org/10.1186/s13023-025-04154-9)

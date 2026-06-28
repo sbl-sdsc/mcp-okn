@@ -1,6 +1,6 @@
-# disease25_q1_biohealth-prokn_umls-hp
+# Clinical phenotypes BioHealthKG tracks (UMLS) beside their ProKN marker genes (HP), bridged UMLS↔HP
 
-- **Date:** 2026-06-23
+- **Date:** 2026-06-27
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
@@ -12,53 +12,74 @@
 ## Conversation
 👤 **User**
 
-BioHealthKG tracks phenotype concepts by UMLS CUI; ProKN attaches protein / marker-gene evidence to HP phenotype terms. **Crosswalk on UMLS↔HP (bridged):** which phenotypes that BioHealthKG tracks carry the most ProKN marker-gene evidence? Join biohealth and prokn, bridging UMLS→HP through ubergraph.
+BioHealthKG tracks phenotype concepts by UMLS CUI; ProKN attaches marker-gene evidence to HP phenotype terms. Crosswalk on UMLS↔HP (bridged through ubergraph): across several organ systems, show me — in the same rows — a clinical phenotype BioHealthKG tracks and the named ProKN marker genes that evidence it. Why the join?
 
 ---
 🧠 **Assistant**
 
-**Why the join is required.** BioHealthKG records clinical predications for a phenotype but no molecular markers; ProKN attaches marker genes/proteins to HP terms but keys on HP and has no SemMedDB clinical layer. A UMLS↔HP bridge connects the two.
+**Why the join is required.** BioHealthKG records a clinical phenotype concept (a UMLS CUI with a clinical label) but no molecular markers; ProKN attaches marker genes to HP phenotype terms (reified `biolink:associated_with` statements, `rdf:object` = HP term, `rdf:subject` = Ensembl gene) but has no UMLS clinical layer. Neither graph holds both halves.
 
-**Join mechanics.** An HP term in ubergraph carries `oboInOwl:hasDbXref 'UMLS:{cui}'`; rebuild the BioHealthKG node IRI to confirm membership and count ProKN marker-gene statements (`rdf:object ?hp`) per phenotype. **4,284 phenotypes** join (verified 2026-06-23).
+**Join mechanics.** An HP term in ubergraph carries `oboInOwl:hasDbXref 'UMLS:{cui}'`; rebuild the BioHealthKG node IRI (`.../kg/node/{cui}`) to confirm the concept is tracked clinically, and read its named ProKN marker genes off the HP term. Each row therefore carries a BioHealthKG clinical phenotype **and** named ProKN marker genes — not a count.
 
-| Phenotype (BioHealthKG label) | ProKN marker-gene statements |
+**Result (verified, 6 rows; gene lists trimmed to named representatives):**
+
+| Phenotype (BioHealthKG label) · HP | ProKN marker genes (named) |
 | --- | --- |
-| Congenital neurologic anomalies | 3,559 |
-| Eye Abnormalities / Disorder of eye | 2,757 |
-| Congenital anomaly of face / Disorder of face | 2,636 |
-| Abnormality of the musculature | 2,607 |
+| Hypertrophic Cardiomyopathy · HP_0001639 | MYH7, MYBPC3, TNNT2, TNNI3, TPM1, ACTC1, MYL2, MYL3, TTN, PLN |
+| Left ventricular noncompaction cardiomyopathy · HP_0011664 | TAFAZZIN, MYH7, MYBPC3, RBM20, DSP, PKP2, LMNA, RYR2, HCN4, TBX5 |
+| Neonatal Alloimmune Thrombocytopenia · HP_0004809 | ITGB3, ITGA2B, GP1BA, GP1BB, ITGA2, CD109, TREX1, SAMHD1, ADAR, IFIH1 |
+| Sensorineural hearing loss, bilateral · HP_0008619 | GJB2, MYO7A, OTOF, TECTA, CDH23, KCNQ4, COCH, FGFR2, NCOA3 |
+| Severe T-cell immunodeficiency · HP_0005352 | FOXN1, FRAS1 |
+| Spastic Ataxia · HP_0002497 | SETX, SPG7, SYNE1, AFG3L2, ATP7B, GALC, ARSA, DNMT1, CYP7B1, ATP1A2 |
 
-The phenotypes ProKN most heavily annotates — congenital neurological, ocular, craniofacial and muscular abnormalities — are precisely the developmental/Mendelian phenotype classes with dense gene panels, and each is a phenotype BioHealthKG also tracks clinically. The result depends on the UMLS→HP bridge.
+**Why these rows answer the question.** Each row's gene panel is the recognized molecular basis of the phenotype BioHealthKG tracks: the sarcomere genes (MYH7, MYBPC3, TNNT2, TNNI3) for hypertrophic cardiomyopathy; TAFAZZIN and the desmosome/structural set for LV-noncompaction; the platelet glycoproteins ITGB3/ITGA2B/GP1BA for neonatal alloimmune thrombocytopenia; GJB2/MYO7A/OTOF/TECTA for bilateral sensorineural deafness; FOXN1 for severe T-cell immunodeficiency; and the senataxin/paraplegin axis (SETX, SPG7, SYNE1, AFG3L2) for spastic ataxia. The clinical concept identity comes only from BioHealthKG, the marker genes only from ProKN, and the UMLS↔HP bridge is what puts them in one row.
 
-**Validation (standard).** Join on ubergraph curated `hasDbXref 'UMLS:'` (authoritative UMLS↔HP mapping); each rebuilt CUI confirmed as a live BioHealthKG node; verified shared-phenotype count 4,284. **Validated** (shared UMLS↔HP identifier; hand-verified crosswalk BH2).
-
-## SPARQL queries executed
+## SPARQL query executed
 #### Query 1
-_`biohealth`, `prokn`, `ubergraph` · phenotypes ranked by ProKN marker-statement count_
+_2026-06-27 · `biohealth`, `prokn`, `ubergraph` · phenotypes paired with named ProKN marker genes_
 ```sparql
-SELECT ?label (COUNT(DISTINCT ?s) AS ?proknStmts) WHERE {
-  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {
-    ?hp <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .
-    FILTER(STRSTARTS(STR(?hp), 'http://purl.obolibrary.org/obo/HP_'))
-    FILTER(STRSTARTS(STR(?x), 'UMLS:'))
-    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX pbl: <https://biolink.github.io/biolink-model/>
+PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
+# CW D25-Q1 (biohealth x prokn, UMLS<->HP via ubergraph). Across organ systems, each row pairs a
+# specific clinical phenotype BioHealthKG tracks (UMLS CUI -> clinical label, bridged to HP)
+# with named ProKN marker genes evidencing that HP phenotype.
+SELECT ?phenotype ?bhLabel (GROUP_CONCAT(DISTINCT ?markerGene; SEPARATOR=", ") AS ?markerGenes) WHERE {
+  VALUES ?hp {
+    <http://purl.obolibrary.org/obo/HP_0001639>   # Hypertrophic cardiomyopathy
+    <http://purl.obolibrary.org/obo/HP_0011664>   # Left ventricular noncompaction cardiomyopathy
+    <http://purl.obolibrary.org/obo/HP_0002497>   # Spastic ataxia
+    <http://purl.obolibrary.org/obo/HP_0004809>   # Neonatal alloimmune thrombocytopenia
+    <http://purl.obolibrary.org/obo/HP_0008619>   # Bilateral sensorineural hearing impairment
+    <http://purl.obolibrary.org/obo/HP_0005352>   # Severe T-cell immunodeficiency
   }
-  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> ?hp . }
+  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {
+    ?hp rdfs:label ?phenotype ; oio:hasDbXref ?x .
+    FILTER(STRSTARTS(STR(?x),'UMLS:'))
+    BIND(STRAFTER(STR(?x),'UMLS:') AS ?cui)
+  }
   BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)
-  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh <http://www.w3.org/2000/01/rdf-schema#label> ?label . }
+  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh rdfs:label ?bhLabel }
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    ?stmt rdf:object ?hp ; rdf:predicate pbl:associated_with ; rdf:subject ?g .
+    ?g rdfs:label ?markerGene .
+    FILTER(STRSTARTS(STR(?g),'https://www.ensembl.org/id/'))
+  }
 }
-GROUP BY ?label ORDER BY DESC(?proknStmts) LIMIT 6
+GROUP BY ?phenotype ?bhLabel LIMIT 12
 ```
-| label | proknStmts |
-| --- | --- |
-| Congenital neurologic anomalies | 3559 |
-| Eye Abnormalities | 2757 |
-| Congenital anomaly of face | 2636 |
-| Abnormality of the musculature | 2607 |
+_6 row(s) — marker-gene lists abbreviated above to named representatives_
 
-**Validation:** shared UMLS↔HP identifier (ubergraph `hasDbXref` bridge); verified crosswalk count 4,284 (BH2).
-
+| phenotype | bhLabel | markerGenes (first listed) |
+| --- | --- | --- |
+| Hypertrophic cardiomyopathy | Hypertrophic Cardiomyopathy | MYH7, MYBPC3, TNNT2, TNNI3, TPM1, ACTC1, MYL2, MYL3, TTN, PLN, … |
+| Left ventricular noncompaction cardiomyopathy | Left ventricular noncompaction cardiomyopathy | TAFAZZIN, MYH7, MYBPC3, RBM20, DSP, PKP2, LMNA, RYR2, HCN4, TBX5, … |
+| Neonatal alloimmune thrombocytopenia | Neonatal Alloimmune Thrombocytopenia | ITGB3, ITGA2B, GP1BA, GP1BB, ITGA2, CD109, TREX1, SAMHD1, ADAR, IFIH1 |
+| Bilateral sensorineural hearing impairment | Sensorineural hearing loss, bilateral | GJB2, MYO7A, OTOF, TECTA, CDH23, KCNQ4, COCH, FGFR2, NCOA3 |
+| Severe T-cell immunodeficiency | Severe T-cell immunodeficiency | FOXN1, FRAS1 |
+| Spastic ataxia | Spastic Ataxia | SETX, SPG7, SYNE1, AFG3L2, ATP7B, GALC, ARSA, DNMT1, CYP7B1, ATP1A2, … |
 
 ## Literature validation
 
-According to PubMed, the ProKN marker CFH surfaced for the ocular-abnormality phenotype is the major risk gene for age-related macular degeneration: a common CFH variant raises AMD likelihood ~7-fold (Klein RJ et al., "Complement factor H polymorphism in age-related macular degeneration," *Science* 308, 385-389 (2005), [DOI](https://doi.org/10.1126/science.1109557)). **Validated** (literature-corroborated; shared UMLS↔HP identifier).
+According to PubMed, Koshy et al., *Indian J Med Res* 2023, in a scoping review of hypertrophic cardiomyopathy report pathogenic variants concentrated in the sarcomere genes MYH7, MYBPC3, TNNT2, TNNI3 and TPM1 — exactly the ProKN marker panel this UMLS↔HP join pairs with the BioHealthKG "Hypertrophic Cardiomyopathy" concept. [PMID:37787257](https://pubmed.ncbi.nlm.nih.gov/37787257/) · [DOI](https://doi.org/10.4103/ijmr.ijmr_3567_21)

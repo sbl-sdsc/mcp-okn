@@ -1,45 +1,36 @@
-# Protein Use Case Q1 — AOP-Wiki x ProKN — AOP target proteins with disease variants
+# AOP-Wiki molecular-target proteins with ProKN disease-causing sequence variants, joined on UniProt accession
 
-- **Date:** 2026-06-16
+- **Date:** 2026-06-27
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
 ## Knowledge graphs used
-
 - `biobricks-aopwiki` — <https://purl.org/okn/frink/kg/biobricks-aopwiki>
 - `prokn` — <https://purl.org/okn/frink/kg/prokn>
 
 ## Conversation
-
 👤 **User**
 
-Which proteins that serve as molecular targets of Key Events in AOP-Wiki Adverse Outcome Pathways also carry disease-causing natural sequence variants recorded in ProKN, and which AOP key events and diseases are involved? (Crosswalk: biobricks-aopwiki x prokn; shared identifier: UniProt accession.)
+Crosswalk biobricks-aopwiki × prokn on UniProt accession: which proteins that serve as molecular targets of Key Events in AOP-Wiki Adverse Outcome Pathways also carry disease-causing natural sequence variants in ProKN — and which AOP key events and diseases are involved?
 
 ---
-
 🧠 **Assistant**
 
-I joined biobricks-aopwiki and prokn on the shared UniProt accession. In AOP-Wiki, a Key Event points (edamontology:data_1025) to a gene/protein node that carries skos:exactMatch links to identifiers.org/uniprot IRIs; I normalized each to the purl.uniprot.org/uniprot form used as the node IRI in ProKN, then required that the same protein in ProKN carry a natural sequence variant (biolink:has_sequence_variant) that is causally related (obo:RO_0002410) to a UniProt Disease with a label. This returns proteins that are simultaneously (a) molecular targets within toxicological Adverse Outcome Pathways and (b) carriers of disease-causing germline/somatic variants.
+**Why the join is required.** AOP-Wiki names the toxicological Key Event and the protein it acts on (Key Event → `edam:data_1025` → gene/protein node → `skos:exactMatch` → identifiers.org/uniprot IRI) but carries no curated protein-variant-disease assertion. ProKN carries the natural sequence variant (`biolink:has_sequence_variant`) causally related (`obo:RO_0002410`) to a UniProt Disease, keyed on the same protein, but no AOP context. Linking an AOP key event to a disease-causing variant of the same protein needs the UniProt join.
 
-The query returned 100 rows. Representative results:
+**Join mechanics.** AOP-Wiki gene node `skos:exactMatch` identifiers.org/uniprot accession, normalised to ProKN's `purl.uniprot.org/uniprot/{acc}` node IRI; gene name from ProKN `ncit:C164806`. The query returned 100 rows.
 
-- P05067 (APP) — AOP key events 'Systemic acute phase response' and 'Transcription of genes encoding acute phase proteins, Increased' — disease: Alzheimer's disease (also anxiety disorder).
-- P49768 (PSEN1 / AD3) — AOP key event 'Succinate dehydrogenase, inhibited' — disease: Alzheimer's disease.
-- O00206 (TLR4) — AOP key events including 'Toll Like Receptor (TLR) Dysregulation', 'Tissue resident cell activation' — disease: Alzheimer's disease.
-- P23560 (BDNF) — AOP key events 'Reduced levels of BDNF', 'Neurodegeneration', 'Glutamate dyshomeostasis' — disease: Alzheimer's disease.
-- P49841 (GSK3B) — AOP key event 'GSK3beta inactivation' — disease: Alzheimer's disease.
-- P10909 (CLU/APOJ) — AOP key event 'Occurrence, Kidney toxicity' — disease: Alzheimer's disease.
+| UniProt | Gene (ProKN) | AOP Key Event (AOP-Wiki) | Disease via variant (ProKN) |
+|---|---|---|---|
+| O00206 | TLR4 | Toll Like Receptor (TLR) Dysregulation | Alzheimer's disease |
+| O00327 | BMAL1 | dimerization, AHR/ARNT | Alzheimer's disease |
+| O75581 | LRP6 | beta-catenin activation | Alzheimer's disease |
+| P00749 | PLAU | Fibrinolysis, decreased | Alzheimer's disease |
+| P01584 | IL1B | NLRP3 inflammasome activity, increased | Alzheimer's disease |
 
-Why these answer the question: each row pairs an AOP Key Event (the toxicological/mechanistic context contributed by AOP-Wiki) with a disease that ProKN ties to a curated sequence variant of the SAME protein. The join is essential — neither KG alone links an AOP key event to a curated protein-variant-disease assertion. APP, PSEN1, CLU, BDNF and GSK3B are all bona fide Alzheimer's-associated proteins, so the integration surfaces toxicological pathways converging on established neurodegeneration genes.
+**Why it answers the question:** each row pairs an AOP Key Event (the toxicological/mechanistic context from AOP-Wiki) with a disease ProKN ties to a curated sequence variant of the same protein. TLR4, IL1B (NLRP3 inflammasome) and LRP6 (Wnt/β-catenin) are bona-fide neuroinflammatory and neurodegeneration genes, so the integration surfaces toxicological pathways converging on established Alzheimer's-associated proteins — a link neither KG encodes alone.
 
-Literature validation (according to PubMed): APP/PSEN1/PSEN2 mutations cause autosomal-dominant early-onset Alzheimer disease — Lanoiselee et al., PLoS Medicine 2017, [DOI](https://doi.org/10.1371/journal.pmed.1002270) (PubMed returned 819 matching articles). TLR4/NLRP3 microglial signaling drives Alzheimer's neuroinflammation — Li et al., J Alzheimers Dis 2024, [DOI](https://doi.org/10.3233/JAD-230273) (241 matching articles). The protein-disease associations surfaced by the join are therefore well supported in the literature. Query retained as valid.
-
-## SPARQL queries executed
-
-#### Query 1
-
-_`biobricks-aopwiki`, `prokn`_
-
+## SPARQL query executed
 ```sparql
 PREFIX aop:  <http://aopkb.org/aop_ontology#>
 PREFIX dc:   <http://purl.org/dc/elements/1.1/>
@@ -49,7 +40,6 @@ PREFIX edam: <http://edamontology.org/>
 PREFIX biolink: <https://biolink.github.io/biolink-model/>
 PREFIX obo:  <http://purl.obolibrary.org/obo/>
 PREFIX ncit: <http://purl.obolibrary.org/obo/NCIT_>
-
 SELECT DISTINCT ?uniprot ?geneName ?keTitle ?disease WHERE {
   GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> {
     ?ke a aop:KeyEvent ; edam:data_1025 ?gene .
@@ -65,17 +55,9 @@ SELECT DISTINCT ?uniprot ?geneName ?keTitle ?disease WHERE {
     ?var obo:RO_0002410 ?d .
     ?d rdfs:label ?disease .
   }
-}
-ORDER BY ?disease ?uniprot ?keTitle
-LIMIT 100
+} ORDER BY ?disease ?uniprot ?keTitle LIMIT 100
 ```
 
-_100 row(s) — sample_
+## Literature validation
 
-| uniprot | geneName | keTitle | disease |
-| --- | --- | --- | --- |
-| P05067 | APP | Systemic acute phase response | Alzheimer's disease |
-| P49768 | PSEN1 | Succinate dehydrogenase, inhibited | Alzheimer's disease |
-| O00206 | TLR4 | Toll Like Receptor (TLR) Dysregulation | Alzheimer's disease |
-| P23560 | BDNF | Reduced levels of BDNF | Alzheimer's disease |
-| P49841 | GSK3B | GSK3beta inactivation | Alzheimer's disease |
+Mutations in APP, PSEN1 and PSEN2 cause autosomal-dominant early-onset Alzheimer disease, anchoring the AOP-target → disease-variant links recovered by the join. Lanoiselée HM et al., "APP, PSEN1, and PSEN2 mutations in early-onset Alzheimer disease: A genetic screening study of familial and sporadic cases," *PLoS Med* 14, e1002270 (2017). [PMID:28350801](https://pubmed.ncbi.nlm.nih.gov/28350801/) · [DOI](https://doi.org/10.1371/journal.pmed.1002270)

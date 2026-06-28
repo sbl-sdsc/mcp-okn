@@ -1,6 +1,6 @@
-# geo12_q1_nikg_spoke-okn_fatal_shootings_vs_homicide_sdoh
+# Fatal vs non-fatal shooting tallies (nikg) beside each county's homicide SDoH indicator
 
-- **Date:** 2026-06-16
+- **Date:** 2026-06-27
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
@@ -10,41 +10,42 @@
 
 ## Conversation
 👤 **User**
-Using the **county_FIPS** crosswalk between `nikg` and `spoke-okn`: for Philadelphia and Cook counties, compare the count of fatal shooting incidents (`nikg`) with each county's homicide social-determinant-of-health indicator (`spoke-okn`).
+
+Using the **county_FIPS** crosswalk between `nikg` and `spoke-okn`: for Philadelphia and Cook counties, break the neighborhood shooting incidents down by **outcome (fatal vs non-fatal)** and place each tally beside the county's homicide social-determinant-of-health indicator from `spoke-okn`.
 
 ---
 🧠 **Assistant**
-The join is required because `nikg` holds the granular incident-level fatal-shooting records (anchored to FIPS via tract containment) while `spoke-okn` holds an independent county-level "homicides" SDoH indicator and the county name. Cross-checking incident-level gun-death counts against the county SDoH homicide metric needs both graphs joined on FIPS.
 
-Join mechanics: a `nikg` subquery counts `is_fatal = true` incidents per FIPS; I bind the `spoke-okn` `…/location/{FIPS5}` node and read the "homicides" `PREVALENCEIN_SpL` value and label.
+The join is required because the two facts live in different graphs. `nikg` holds the granular, incident-level shooting records — each incident's `is_fatal` flag and its tract location, where the tract `sfWithin` a KWG `administrativeRegion.USA.{FIPS5}` — but no county-level health metric. `spoke-okn` holds an independent county-level "homicides" SDoH indicator (a `PREVALENCEIN_SpL` statement) and the county's `rdfs:label`, but no incident records. Joining on county FIPS lets the incident-level fatal/non-fatal structure sit beside the county homicide indicator. Breaking the incidents down by the `is_fatal` field (rather than reporting one bare count) gives each row a real nikg metric.
 
-| county | fatal shootings (nikg) | homicide SDoH indicator (spoke-okn) |
-| --- | --- | --- |
-| Philadelphia County | 3163 | 0.02107380613 |
-| Cook County | 208 | 0.013990692612 |
+Join mechanics: a `nikg` subquery counts incidents per FIPS *stratified by* `is_fatal` (mapped to "fatal shooting"/"non-fatal shooting"); I bind the `spoke-okn` `…/location/{FIPS5}` node and read the "homicides" value and county name.
 
-The rows answer the question: the incident-level gun-death count (`nikg`) sits beside the independently sourced county homicide indicator (`spoke-okn`); Philadelphia is higher on both, an internal corroboration only the join can reveal.
+| county (spoke-okn) | shooting outcome (nikg) | incidents (nikg) | homicide SDoH indicator (spoke-okn) |
+| --- | --- | --- | --- |
+| Philadelphia County | non-fatal shooting | 12042 | 0.02107380613 |
+| Philadelphia County | fatal shooting | 3163 | 0.02107380613 |
+| Cook County | non-fatal shooting | 811 | 0.013990692612 |
+| Cook County | fatal shooting | 208 | 0.013990692612 |
 
-**Literature validation (strict):** According to PubMed, exposure to gun-violence fatality is an established social determinant of community health. Smith et al. (2019, *Social Science & Medicine*) found that vicarious exposure to gun-violence fatality in urban settings including Philadelphia was associated with significantly higher depression, psychological distress, suicidal ideation and psychotic experiences, and explicitly frames gun-violence fatality as a social determinant of mental health [DOI](https://doi.org/10.1016/j.socscimed.2019.112587). Jay et al. (2022, *Preventive Medicine*) tie tract-level fatal shootings (including Philadelphia) to structural determinants such as segregation [DOI](https://doi.org/10.1016/j.ypmed.2022.107256). The specific finding (county fatal-shooting/homicide burden for Philadelphia and Cook as a health-relevant SDoH) is corroborated. **Validated.**
+The rows answer the question: each row pairs a real, *stratified* nikg metric — the fatal and non-fatal incident tallies — with the named county and its real homicide SDoH indicator (`spoke-okn`). Philadelphia carries both a far larger absolute shooting burden (3,163 fatal of 15,205 total) and the higher county homicide indicator (0.0211 vs 0.0140 for Cook), an internal corroboration across the two graphs. The fatal:non-fatal split (~1:3.8 in Philadelphia, ~1:3.9 in Cook) is itself a meaningful nikg metric only the incident-level graph can supply.
 
-## SPARQL queries executed
-#### Query 1
-_`nikg`, `spoke-okn` · 2 rows_
+## SPARQL query executed
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX schema: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?cname ?fatal_shootings ?homicide_indicator WHERE {
+SELECT ?cname ?outcome ?incidents ?homicide_indicator WHERE {
   {
-    SELECT ?fips (COUNT(DISTINCT ?rec) AS ?fatal_shootings) WHERE {
+    SELECT ?fips ?outcome (COUNT(DISTINCT ?rec) AS ?incidents) WHERE {
       GRAPH <https://purl.org/okn/frink/kg/nikg> {
         ?tract <http://stko-kwg.geog.ucsb.edu/lod/ontology/sfWithin> ?o .
         FILTER(STRSTARTS(STR(?o),'https://metadata.phila.gov/kwgr_administrativeRegion_USA_'))
         BIND(REPLACE(STR(?o),'^.*administrativeRegion_USA_([0-9]{5}).*$','$1') AS ?fips)
         ?rec ?lp ?tract . FILTER(STRENDS(STR(?lp),'schema.org/location'))
-        ?rec <https://metadata.phila.gov/is_fatal> true .
+        ?rec <https://metadata.phila.gov/is_fatal> ?isFatal .
+        BIND(IF(?isFatal, "fatal shooting", "non-fatal shooting") AS ?outcome)
       }
-    } GROUP BY ?fips
+    } GROUP BY ?fips ?outcome
   }
   VALUES (?fips ?loc) {
     ("42101" <https://purl.org/okn/frink/kg/spoke-okn/location/42101>)
@@ -55,11 +56,9 @@ SELECT ?cname ?fatal_shootings ?homicide_indicator WHERE {
     ?stmt rdf:predicate schema:PREVALENCEIN_SpL ; rdf:object ?loc ;
           schema:variable "homicides" ; schema:value ?homicide_indicator .
   }
-} ORDER BY DESC(?fatal_shootings)
+} ORDER BY ?cname DESC(?incidents)
 ```
-| county | fatal shootings | homicide indicator |
-| --- | --- | --- |
-| Philadelphia County | 3163 | 0.02107380613 |
-| Cook County | 208 | 0.013990692612 |
 
-**Literature:** PubMed — Smith ME et al. 2019, *Soc Sci Med* [DOI](https://doi.org/10.1016/j.socscimed.2019.112587); Jay J et al. 2022, *Prev Med* [DOI](https://doi.org/10.1016/j.ypmed.2022.107256).
+## Literature validation
+
+According to PubMed, exposure to gun-violence fatality is an established social determinant of community health. Smith et al. (2019, *Soc Sci Med*) found that vicarious exposure to gun-violence fatality in urban settings including Philadelphia was associated with significantly higher depression, psychological distress, suicidal ideation and psychotic experiences, and explicitly frames gun-violence fatality as a social determinant of mental health — validating that the county fatal/non-fatal shooting burden placed beside the homicide SDoH indicator is health-meaningful. [PMID:31958617](https://pubmed.ncbi.nlm.nih.gov/31958617/) · [DOI](https://doi.org/10.1016/j.socscimed.2019.112587)

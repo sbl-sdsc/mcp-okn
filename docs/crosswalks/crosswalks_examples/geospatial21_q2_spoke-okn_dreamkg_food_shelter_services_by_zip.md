@@ -1,6 +1,6 @@
-# geo21_q2_spoke-okn_dreamkg_food_shelter_services_by_zip
+# Named DREAM-KG food / shelter services by ZIP, with SPOKE county food-insecurity & housing context
 
-- **Date:** 2026-06-16
+- **Date:** 2026-06-27
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
@@ -11,51 +11,57 @@
 ## Conversation
 👤 **User**
 
-Beyond mental health, DreamKG tags services as Food or Shelter. **Crosswalk on ZIP5:** Which Philadelphia (PA) standard residential ZIPs — validated via SPOKE-OKN — concentrate the most **food + shelter** services? Food insecurity and unstable housing are tightly coupled health risks for people experiencing homelessness.
+Beyond mental health, DreamKG tags services as **Food** or **Shelter**, each with a human-readable identifier (organization + program) and a `schema:postalCode`. **Crosswalk on ZIP5:** list **named food and shelter services** from DreamKG in SPOKE-validated PA standard residential ZIPs, each row contextualized by the SPOKE county's **food insecurity** rate and **severe housing problems** rate. Food insecurity and unstable housing are tightly coupled health risks for people experiencing homelessness — which named services sit where the surrounding county need is highest?
 
 ---
 🧠 **Assistant**
 
-**Why the join is required.** DreamKG holds the food/shelter services and their ZIP, but cannot confirm the ZIP is a valid PA standard residential ZIP. SPOKE-OKN supplies the administrative validation via its `state = "PA"` and `zipcode_type = "STANDARD"` ZIP nodes. Counting food/shelter services restricted to verified standard PA residential ZIPs requires both graphs joined on the bare ZIP string.
+**Why the join is required.** DreamKG holds the named food/shelter services and their ZIPs but cannot confirm a ZIP is a valid PA standard residential code nor describe the local food/housing hardship. SPOKE-OKN supplies the ZIP validation (`state="PA"`, `zipcode_type="STANDARD"`) and, via the ZIP→city→county walk, the County-Health-Rankings **food insecurity** and **severe housing problems** rates for the county. Only the join places a *named* service next to the SPOKE county hardship context.
 
-**Join mechanics.** Shared key = bare 5-digit ZIP literal. spoke-okn supplies `state = "PA"` AND `zipcode_type = "STANDARD"` ZIP nodes whose `rdfs:label` is the ZIP; dreamkg `schema:postalCode` matches that literal with `category` filtered to `/service_type/Shelter` or `/service_type/Food`; COUNT distinct services per ZIP.
+**Join mechanics.** Shared key = bare 5-digit ZIP literal. spoke-okn selects `/location/PA-{ZIP}` STANDARD nodes, walks `PARTOF_LpL` (ZIP→city→county FIPS), and for that county reads two `PREVALENCEIN_SpL` statements (`variable = "food insecurity"` and `"severe housing problems"`). In dreamkg the service matches `schema:postalCode`, with `schema:category` filtered to `/service_type/Food` or `/service_type/Shelter` and its name from `schema:identifier`. **Both KGs populate every row:** the named service is the dreamkg entity; the food-insecurity and housing rates are real spoke county values.
 
-| ZIP | food + shelter services |
-| --- | --- |
-| 19104 | 12 |
-| 19143 | 11 |
-| 19139 | 10 |
-| 19123 | 9 |
-| 19144 | 8 |
+| ZIP | named service (DREAM-KG) | type | SPOKE county food insecurity % | SPOKE severe housing problems % |
+| --- | --- | --- | --- | --- |
+| 19102 | Code Blue (Project HOME) | Shelter | 15.8 | 22.7 |
+| 19103 | St. Mark's Food Cupboard (Saint Mark's Church) | Food | 15.8 | 22.7 |
+| 19104 | Our Closet in Your Neighborhood (Jewish Family and Children's Service of Greater Philadelphia) | Food | 15.8 | 22.7 |
+| 19023 | Residential Maternity Shelter (Mother's Home) | Shelter | 9.1 | 15.5 |
+| 19079 | Food Cupboard (Neighbor to Neighbor Community Development Corporation Inc) | Food | 9.1 | 15.5 |
+| 19013 | Community Support Services (Better Living Center) | Food | 9.1 | 15.5 |
 
-The rows answer the question by ranking validated standard PA ZIPs on combined food/shelter service density — the ZIPs (19104, 19143, 19139 in West/Southwest Philadelphia) where these coupled basic-needs services cluster.
+**Why it answers the question.** Each row is a concrete, named DreamKG food or shelter service in a SPOKE-validated PA standard residential ZIP, set against the SPOKE county's food-insecurity and severe-housing-problem rates. The values track county: central-Philadelphia ZIPs (19102–19104) carry the highest food insecurity (15.8%) and housing burden (22.7%), while suburban Delaware-County ZIPs (19013/19023/19079) sit lower (9.1% / 15.5%) — surfacing where these coupled basic-needs services align with the greatest measured hardship.
 
-**Literature validation (strict).** According to PubMed, Loftus et al. (2020, *Public Health Nutr*) — a scoping review of food insecurity among homeless adults — found a consistent association between food insecurity and adverse mental-health conditions (especially depression and symptom severity) in this population, establishing that food and housing/shelter supports address tightly coupled health risks [DOI](https://doi.org/10.1017/S1368980020001998). This corroborates the public-health rationale for mapping where DreamKG's food + shelter services concentrate. **Validated** (homelessness, food insecurity & health).
-
-## SPARQL queries executed
-#### Query 1
-_`spoke-okn`, `dreamkg` · 30+ rows (showing first 5)_
+## SPARQL query executed
 ```sparql
-SELECT ?zip (COUNT(DISTINCT ?svc) AS ?nShelterFood) WHERE {
+SELECT DISTINCT ?zip ?service ?serviceType ?foodInsecurity ?severeHousing WHERE {
   GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
     ?loc <http://www.w3.org/2000/01/rdf-schema#label> ?zip ;
          <https://purl.org/okn/frink/kg/spoke-okn/schema/state> "PA" ;
-         <https://purl.org/okn/frink/kg/spoke-okn/schema/zipcode_type> "STANDARD" .
+         <https://purl.org/okn/frink/kg/spoke-okn/schema/zipcode_type> "STANDARD" ;
+         <https://purl.org/okn/frink/kg/spoke-okn/schema/PARTOF_LpL> ?city .
     FILTER(REGEX(STR(?loc),'/location/[A-Z]{2}-[0-9]+'))
+    ?city <https://purl.org/okn/frink/kg/spoke-okn/schema/PARTOF_LpL> ?county .
+    FILTER(REGEX(STR(?county),'/location/[0-9]{5}$'))
+    ?s1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <https://purl.org/okn/frink/kg/spoke-okn/schema/PREVALENCEIN_SpL> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> ?county ;
+        <https://purl.org/okn/frink/kg/spoke-okn/schema/variable> "food insecurity" ;
+        <https://purl.org/okn/frink/kg/spoke-okn/schema/value> ?foodInsecurity .
+    ?s2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <https://purl.org/okn/frink/kg/spoke-okn/schema/PREVALENCEIN_SpL> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> ?county ;
+        <https://purl.org/okn/frink/kg/spoke-okn/schema/variable> "severe housing problems" ;
+        <https://purl.org/okn/frink/kg/spoke-okn/schema/value> ?severeHousing .
   }
   GRAPH <https://purl.org/okn/frink/kg/dreamkg> {
     ?svc <http://schema.org/postalCode> ?zip ;
-         <http://schema.org/category> ?cat .
+         <http://schema.org/category> ?cat ;
+         <http://schema.org/identifier> ?id .
     FILTER(CONTAINS(STR(?cat),'/service_type/Shelter') || CONTAINS(STR(?cat),'/service_type/Food'))
+    BIND(IF(CONTAINS(STR(?cat),'Shelter'),'Shelter','Food') AS ?serviceType)
+    BIND(REPLACE(STR(?id),'_[0-9]+$','') AS ?service)
   }
-} GROUP BY ?zip ORDER BY DESC(?nShelterFood) LIMIT 10
+} ORDER BY ?zip LIMIT 12
 ```
-| zip | nShelterFood |
-| --- | --- |
-| 19104 | 12 |
-| 19143 | 11 |
-| 19139 | 10 |
-| 19123 | 9 |
-| 19144 | 8 |
 
-**Literature:** PubMed — Loftus EI et al. 2020, *Public Health Nutr* [DOI](https://doi.org/10.1017/S1368980020001998).
+## Literature validation
+
+According to PubMed, Ra et al. (2021, *J Soc Distress Homeless*) found that unsheltered and unstably housed adults used fewer shelter-based health services and had significantly **higher food insecurity** than sheltered adults — empirically tying together food insecurity, shelter-service access, and health risk in the homeless population, the coupled basic-needs hardship this food + shelter join maps. [PMID:37346936](https://pubmed.ncbi.nlm.nih.gov/37346936/) · [DOI](https://doi.org/10.1080/10530789.2021.1961990)

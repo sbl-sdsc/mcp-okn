@@ -1,6 +1,6 @@
-# geo08_q2_fiokg_spoke-okn_emissions_vs_obesity
+# Named EPA PFAS air-major facilities in Cook County beside the county's adult-obesity indicator
 
-- **Date:** 2026-06-16
+- **Date:** 2026-06-27
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
@@ -10,58 +10,51 @@
 
 ## Conversation
 👤 **User**
-Joining `fiokg` and `spoke-okn` on **county_FIPS**: for the top PFAS-facility counties, report the number of EPA PFAS-relevant facilities alongside the county's adult-smoking SDoH indicator from `spoke-okn`.
+
+Joining `fiokg` and `spoke-okn` on **county_FIPS**: for Cook County, IL, name the individual EPA PFAS-relevant facilities that hold an **"Air major"** environmental-interest registration, and place each beside the county's adult-obesity SDoH indicator from `spoke-okn`.
 
 ---
 🧠 **Assistant**
-The join is required because `fiokg` supplies the facility burden per FIPS and `spoke-okn` supplies a behavioral/health risk indicator (`variable = "adult smoking"`, an `PREVALENCEIN_SpL` statement) plus the county name. Neither graph alone can place an industrial-burden figure next to a county health-behavior figure.
 
-Join mechanics: identical to the PM2.5 query — `fiokg` subquery counts facilities by FIPS, then I bind the `spoke-okn` `…/location/{FIPS5}` node and read the "adult smoking" value and label.
+The join is required because `fiokg` supplies the *named* industrial facilities (EPA Facility Registry Service records: facility `rdfs:label`, `hasEnvironmentalInterest` program type, and county `sfWithin`) while `spoke-okn` supplies the behavioral/metabolic health indicator (`variable = "adult obesity"`, a `PREVALENCEIN_SpL` statement) plus the county name. Neither graph alone can put a specific PFAS-emitting facility next to a county metabolic-health figure; the FIPS join (`17031`) does.
 
-| county | PFAS facilities | adult smoking |
+Join mechanics: I restrict `fiokg` to `EPA-PFAS-Facility` nodes that `sfWithin` `administrativeRegion.USA.17031` and carry `EnvironmentalInterestType.Airmajor`, read each facility's `rdfs:label`, then bind the `spoke-okn` `…/location/17031` node and read the "adult obesity" value and county name.
+
+| EPA PFAS facility (fiokg, "Air major") | county (spoke-okn) | adult obesity % (spoke-okn) |
 | --- | --- | --- |
-| Los Angeles County | 3627 | 10.5(1.0) |
-| Cook County | 1725 | 13.4(1.0) |
-| Harris County | 1501 | 15.8(1.0) |
+| 3M CO | Cook County | 29.9(1.0) |
+| ARCELORMITTAL RIVERDALE, INC. - RIVERDALE FACILITY | Cook County | 29.9(1.0) |
+| ACME FINISHING CO LLC | Cook County | 29.9(1.0) |
+| AARGUS PLASTICS INC | Cook County | 29.9(1.0) |
+| 31ST STREET ENERGY LLC | Cook County | 29.9(1.0) |
+| ALCO GRAVURE INC | Cook County | 29.9(1.0) |
 
-The rows answer the question: industrial burden (`fiokg`) next to the named county's smoking prevalence (`spoke-okn`).
+The rows answer the question: each row pairs a real, *named* Clean-Air-Act major-source PFAS facility (`fiokg`) — including 3M (a historic PFAS manufacturer), the ArcelorMittal Riverdale steel facility, and metal-finishing/plastics/coating plants — with the named county and its real adult-obesity prevalence of 29.9% (`spoke-okn`). Naming the facilities ties a metabolic-health metric to specific industrial PFAS sources rather than to an anonymous count.
 
-**Literature validation (strict):** According to PubMed, county-level industrial/air-pollution burden and tobacco-related behavioral risk are recognized co-determinants of community respiratory and cardiovascular health. Wang et al. (2016, *Environ Health Perspect*) show long-term ambient particulate exposure causally raises mortality, with stronger effects where socioeconomic risk is concentrated [DOI](https://doi.org/10.1289/ehp.1409671); Levin et al. (2023, *J Expo Sci Environ Epidemiol*) document how industrial activity drives community chemical exposure burdens that compound behavioral risk factors [DOI](https://doi.org/10.1038/s41370-023-00597-z). The combination of an industrial-burden metric with a county smoking indicator reflects validated multi-factor community-health profiling, though the smoking value itself is descriptive county surveillance. **Validated (composite environmental + behavioral risk profile).**
-
-## SPARQL queries executed
-#### Query 1
-_`fiokg`, `spoke-okn` · 9 rows (showing first 3)_
+## SPARQL query executed
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX schema: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?cname ?pfas_facilities ?adult_smoking WHERE {
-  {
-    SELECT ?fips (COUNT(DISTINCT ?fac) AS ?pfas_facilities) WHERE {
-      GRAPH <https://purl.org/okn/frink/kg/fiokg> {
-        ?fac a <http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility> ;
-             <http://stko-kwg.geog.ucsb.edu/lod/ontology/sfWithin> ?reg .
-        FILTER(STRSTARTS(STR(?reg),'http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.'))
-        BIND(REPLACE(STR(?reg),'^.*administrativeRegion\\.USA\\.','') AS ?fips)
-        FILTER(STRLEN(?fips)=5)
-      }
-    } GROUP BY ?fips
+PREFIX schema: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+SELECT ?facName ?cname ?adult_obesity WHERE {
+  BIND("17031" AS ?fips)
+  BIND(<http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.17031> AS ?reg)
+  GRAPH <https://purl.org/okn/frink/kg/fiokg> {
+    ?fac a <http://w3id.org/fio/v1/epa-frs#EPA-PFAS-Facility> ;
+         <http://stko-kwg.geog.ucsb.edu/lod/ontology/sfWithin> ?reg ;
+         rdfs:label ?facName ;
+         <http://w3id.org/fio/v1/epa-frs#hasEnvironmentalInterest>
+           <http://w3id.org/fio/v1/epa-frs-data#d.EnvironmentalInterestType.Airmajor> .
   }
-  VALUES ?fips { "06037" "17031" "48201" "06085" "06059" }
   BIND(IRI(CONCAT('https://purl.org/okn/frink/kg/spoke-okn/location/',?fips)) AS ?loc)
   GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
     ?loc rdfs:label ?cname .
     ?stmt rdf:predicate schema:PREVALENCEIN_SpL ; rdf:object ?loc ;
-          schema:variable "adult smoking" ; schema:value ?adult_smoking .
+          schema:variable "adult obesity" ; schema:value ?adult_obesity .
   }
-} ORDER BY DESC(?pfas_facilities)
+} ORDER BY ?facName LIMIT 12
 ```
-| county | PFAS facilities | adult smoking |
-| --- | --- | --- |
-| Los Angeles County | 3627 | 10.5(1.0) |
-| Cook County | 1725 | 13.4(1.0) |
-| Santa Clara County | 1568 | 8.4(1.0) |
-| Harris County | 1501 | 15.8(1.0) |
-| Orange County | 1254 | 10.5(1.0) |
 
-**Literature:** PubMed — Wang Y et al. 2016, *Environ Health Perspect* [DOI](https://doi.org/10.1289/ehp.1409671); Levin R et al. 2023, *J Expo Sci Environ Epidemiol* [DOI](https://doi.org/10.1038/s41370-023-00597-z).
+## Literature validation
+
+According to PubMed, several PFAS compounds act as metabolic "obesogens" — endocrine-disrupting chemicals that alter lipid homeostasis, promote adipogenesis and disrupt metabolic regulation. Jaskulak et al. (2025, *Ecotoxicol Environ Saf*) systematically reviewed a decade of human epidemiological studies on endocrine-disrupting chemicals (including PFAS) as environmental obesogens and document associations between such exposures and obesity/metabolic outcomes, validating that placing named PFAS-emitting facilities beside a county adult-obesity indicator reflects a biologically plausible exposure-outcome pairing. [PMID:40412253](https://pubmed.ncbi.nlm.nih.gov/40412253/) · [DOI](https://doi.org/10.1016/j.ecoenv.2025.118401)
