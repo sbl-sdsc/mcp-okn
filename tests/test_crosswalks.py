@@ -59,14 +59,18 @@ async def test_known_non_join_pair_is_flagged_not_verified():
 
 @pytest.mark.asyncio
 async def test_single_kg_non_join_blocks_any_pairing():
-    # digcfdekg is unmaterialized at the endpoint: nothing to join, with anything.
-    out = await get_join_strategy("digcfdekg", "prokn")
+    # maudekg is a profiled island (single-KG known_non_join record): nothing to
+    # join, with anything. The bare-"kg" record must block pairing it with prokn.
+    out = await get_join_strategy("maudekg", "prokn")
     assert out["status"] == "known_non_join"
 
 
 @pytest.mark.asyncio
 async def test_unknown_pair_routes_to_find_crosswalks():
-    out = await get_join_strategy("prokn", "securechainkg")
+    # hydrologykg (water/geospatial) and prokn (protein/disease) are both
+    # materialized but share no precomputed crosswalk and neither is an island,
+    # so the verdict is "unknown" -> go discover a key live.
+    out = await get_join_strategy("hydrologykg", "prokn")
     assert out["status"] == "unknown"
     assert "find_crosswalks" in out["note"]
 

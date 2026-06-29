@@ -199,7 +199,8 @@
     "Environmental-toxicology axis (2026-06-27): adds ET1 sawgraph<->biobricks-toxcast (CAS, 7) and ET2 sawgraph<->biobricks-ice (CAS, 12) - the first bridge from the environmental/geospatial cluster (SAWGraph PFAS contamination) into the toxicology cluster. SAWGraph stores CAS as a dashed string LITERAL on coso:casNumber; build http://identifiers.org/cas/{cas} and INNER-join (OPTIONAL returns false 0). Links PFAS environmental measurements (location/time/concentration; e.g. GenX 2,184 water-sample observations) to ToxCast assay endpoints (GenX 506) and ICE EPA-CompTox identity. SAWGraph co-locates with fiokg (NAICS facilities) on S2 cells (N6), extending the chain industrial -> environmental -> toxicology. Counts exact COUNT(DISTINCT) 2026-06-27.",
     "Industry-KG deep scan (2026-06-27): no new crosswalk found - the industry cluster (sudokn, securechainkg, fiokg, nikg) is saturated on NAICS (I1/N4/N5), SUDOKN industry sector (I2) and geography (J/K/L/N/SU). Records three findings as known_non_joins: (1) securechainkg carries a large self-contained CYBER / software-supply-chain axis (28,559 CVE, 803k software, 8.6M versions, 4.7M dependencies, 294 licenses, CPE 2.3) - a new domain but an island, bridged out only on NAICS/Manufacturer; (2) fiokg has no chemical CAS (only NAICS + EPA program-type categories + spatial), so no facility<->chemical crosswalk; (3) sudokn materials/certs/capabilities are internal ontology classes, not external ids.",
     "spoke-okn / spoke-genelab deep dive (2026-06-27): no new crosswalk axis - both are among the most-saturated KGs (Entrez, NCBITaxon, UBERON/CL, DOID, DrugBank/CHEBI/PubChem-CID, FIPS/ZIP, SDoH). Surfaced underexploited CONTENT that rides existing keys: spoke-genelab spaceflight microbiome (NCBITaxon hub D9/D10), DNA methylation/epigenetics (Entrez), model->human ortholog (Entrez); spoke-okn environmental chemical exposure (ChEMBL - no partner), air-quality PM2.5/PM10 features, bacterial AMR (NCBITaxon hub). Recorded the genuinely-new but unpartnered identifiers as known_non_joins: NASA OSDR study/mission accessions (island), methylation regions (internal coordinates), spoke-okn ChEMBL environmental chemicals + PM air-quality features (no direct partner; ChEMBL bridges to CAS only via CHEBI/B2).",
-    "Cross-domain label match (2026-06-27): adds SS1 dreamkg<->biohealth - the first bridge from the social-services / homelessness domain (DREAM-KG) into health, matching dreamkg service audience terms (health conditions + social determinants) to biohealth UMLS concept names (14 exact on first-letter capitalization, ~24 with light normalization). Label-bridge, lower bound. Also checked maudekg (FDA medical devices only - island) and confirmed scales attaches on county FIPS only."
+    "Cross-domain label match (2026-06-27): adds SS1 dreamkg<->biohealth - the first bridge from the social-services / homelessness domain (DREAM-KG) into health, matching dreamkg service audience terms (health conditions + social determinants) to biohealth UMLS concept names (14 exact on first-letter capitalization, ~24 with light normalization). Label-bridge, lower bound. Also checked maudekg (FDA medical devices only - island) and confirmed scales attaches on county FIPS only.",
+    "climate-model software-dependency crosswalk (2026-06-29): securechainkg embeds climatemodelskg Source IRIs as sc:dependsOn subjects, adding cluster P1 (climatemodelskg <-> securechainkg; 3 climate models -> vulnerable PyPI dependencies/CVEs); supersedes the pair's known_non_join verdict for this link."
   ],
   "verified_crosswalks": [
     {
@@ -2815,6 +2816,25 @@
       "skeleton_verified": true,
       "methodology_note": "Label-bridge like BH18 (SDoH) and BH11-16 (taxonomy): fragile (exact string + light normalization) and a lower bound. dreamkg is a curated Philadelphia social-services directory (Service/Organization/Place/Audience over schema.org), so its side is shallow (often one Audience node per term) - the value is the CROSS-DOMAIN link, not volume. Other social/justice/FDA KGs checked do NOT bridge: maudekg is medical devices only (FDA product codes, island); scales is criminal-justice cases (attaches on county FIPS only).",
       "domain": "Social Determinants & Services"
+    },
+    {
+      "id": "P1-climate-deps",
+      "left_kg": "climatemodelskg",
+      "left_predicate": "node-iri",
+      "left_role": "subject",
+      "right_kg": "securechainkg",
+      "right_predicate": "https://w3id.org/secure-chain/dependsOn",
+      "right_role": "subject",
+      "shared_key": "climatemodelskg Source IRI",
+      "key_namespace": "https://climatepub4kg.github.io/id/Source/",
+      "bridge_kg": null,
+      "domain": "Industry & supply chain",
+      "iri_normalization": "None. securechainkg reuses climatemodelskg's verbatim climate-model Source IRIs (https://climatepub4kg.github.io/id/Source/{model}, e.g. .../CESM2) as the SUBJECT of sc:dependsOn edges that point into its PyPI software graph, so the two named graphs join DIRECTLY on the identical IRI with no rewrite. The Source IRI is climatemodelskg's own node IRI (left_predicate 'node-iri'); on the securechainkg side that same IRI is the subject of sc:dependsOn. Reach the vulnerabilities by extending: ?model sc:dependsOn ?dep . ?dep sc:hasSoftwareVersion ?ver . ?ver sc:vulnerableTo ?cve ; and ?dep schema:name for the package name.",
+      "verified_count": 3,
+      "verified_count_note": "COUNT(DISTINCT ?model) = climate-model Sources (cp:Source) that carry sc:dependsOn edges in securechainkg, verified 2026-06-29. The 3 models are CESM2 (18 dependencies, 12 vulnerable, 35 distinct CVEs), GFDL-ESM4 (3 deps, 14 CVEs) and GFDL-CM4 (2 deps, 11 CVEs); the vulnerable deps are the scientific-Python stack (numpy, lxml, torch, scipy, setuptools, ujson, ...). Only these 3 of climatemodelskg's 394 Sources are currently wired into securechainkg; the other Sources have no dependency edges, so absence is 'not recorded', not 'no vulnerabilities'.",
+      "example_question": "Which climate models have the most vulnerable dependencies and the highest number of vulnerabilities? (CESM2, GFDL-ESM4 and GFDL-CM4 link through securechainkg sc:dependsOn to vulnerable PyPI packages and their CVEs.)",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?model) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> { ?model a <https://climatepub4kg.github.io/ontology#Source> . }\n  GRAPH <https://purl.org/okn/frink/kg/securechainkg> { ?model <https://w3id.org/secure-chain/dependsOn> ?dep . }\n}",
+      "skeleton_verified": true
     }
   ],
   "cluster_notes": {
@@ -2889,7 +2909,8 @@
       "kg": "climatemodelskg",
       "attempted_key": "any off-the-shelf IRI join key",
       "result": "no public key",
-      "diagnosis": "Climate Models KG is a self-contained custom ontology (climatepub4kg.github.io/ontology#*). Its geography is modeled as bespoke classes (City, Country, Country_Subdivision, Continent) with no KWG admin-region, S2, or FIPS IRIs, and 0 S2Cell_Level13 nodes shared with spatialkg. The only outward-facing handles are literal node properties — Variable.cf_standard_name (CF standard names) and Paper.id/title — neither an IRI join key. Effectively an island for IRI-level federation; a literal cf_standard_name match to NASA/GCMD keyword text is the only conceivable thin thread."
+      "diagnosis": "Climate Models KG is a self-contained custom ontology (climatepub4kg.github.io/ontology#*). Its geography is modeled as bespoke classes (City, Country, Country_Subdivision, Continent) with no KWG admin-region, S2, or FIPS IRIs, and 0 S2Cell_Level13 nodes shared with spatialkg. The only outward-facing handles are literal node properties — Variable.cf_standard_name (CF standard names) and Paper.id/title — neither an IRI join key. Effectively an island for IRI-level federation; a literal cf_standard_name match to NASA/GCMD keyword text is the only conceivable thin thread.",
+      "correction": "PARTIAL (2026-06-29): a curated cross-graph bridge to securechainkg now exists - securechainkg reuses climatemodelskg's Source IRIs (https://climatepub4kg.github.io/id/Source/{model}) as the subject of sc:dependsOn, linking 3 climate models (CESM2, GFDL-ESM4, GFDL-CM4) to their vulnerable PyPI dependencies and CVEs. See verified_crosswalks id P1-climate-deps. The no-public-IRI-key verdict still holds for climatemodelskg's geography (City/Country) and CF-variable axes against every OTHER federation KG."
     },
     {
       "left_kg": "spoke-okn",
@@ -3007,7 +3028,8 @@
       "kg": "securechainkg",
       "attempted_key": "software-supply-chain / cybersecurity ids (CVE, CPE 2.3, SPDX license, software/hardware product, dependency)",
       "result": "island (new domain, no federation partner)",
-      "diagnosis": "Deep scan 2026-06-27: securechainkg carries a large, self-contained software-supply-chain-security graph - 28,559 CVE vulnerabilities (https://nvd.nist.gov/vuln/detail/CVE-...), 803,769 Software products, 8,593,149 SoftwareVersions, 4,695,894 dependsOn dependency edges, 294 Licenses, plus CPE 2.3 identifiers and VulnerabilityType/CWE. NONE of these identifier types (CVE, CPE, SPDX, software package/version) appear in any other Proto-OKN KG, so the cyber axis forms NO crosswalk. securechainkg's ONLY bridge to the rest of the federation is the industrial side it shares with sudokn/fiokg: NAICS (I1 35, N5 301) and SUDOKN industry sector (I2 58), via the IOF Manufacturer class. It is a new DOMAIN (cybersecurity / software supply chain) but an island on its domain entities."
+      "diagnosis": "Deep scan 2026-06-27: securechainkg carries a large, self-contained software-supply-chain-security graph - 28,559 CVE vulnerabilities (https://nvd.nist.gov/vuln/detail/CVE-...), 803,769 Software products, 8,593,149 SoftwareVersions, 4,695,894 dependsOn dependency edges, 294 Licenses, plus CPE 2.3 identifiers and VulnerabilityType/CWE. NONE of these identifier types (CVE, CPE, SPDX, software package/version) appear in any other Proto-OKN KG, so the cyber axis forms NO crosswalk. securechainkg's ONLY bridge to the rest of the federation is the industrial side it shares with sudokn/fiokg: NAICS (I1 35, N5 301) and SUDOKN industry sector (I2 58), via the IOF Manufacturer class. It is a new DOMAIN (cybersecurity / software supply chain) but an island on its domain entities.",
+      "correction": "PARTIAL (2026-06-29): securechainkg DOES form one cross-graph crosswalk on its software-supply-chain axis - it reuses climatemodelskg's climate-model Source IRIs as the subject of sc:dependsOn, linking those models to their vulnerable PyPI packages and CVEs (3 models; verified_crosswalks id P1-climate-deps). The CVE/CPE/SPDX identifier types remain unshared with the rest of the federation, so the island verdict still holds against every KG except climatemodelskg."
     },
     {
       "kg": "fiokg",
