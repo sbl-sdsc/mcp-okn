@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 133 precomputed cross-KG crosswalks (verified through 2026-06-27), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and an example question the join answers.
+Here are all 134 precomputed cross-KG crosswalks (verified through 2026-06-29), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and an example question the join answers.
 
 ## Anatomy & Cell Type
 
@@ -161,6 +161,7 @@ Here are all 133 precomputed cross-KG crosswalks (verified through 2026-06-27), 
 
 | KGs | Shared key | Count | Example |
 |---|---|---|---|
+| climatemodelskg ↔ securechainkg | climate-model Source IRI (sc:dependsOn) | 3 | Which climate models have the most vulnerable software dependencies and the highest number of vulnerabilities? securechainkg reuses climatemodelskg's Source IRIs as sc:dependsOn subjects, linking CESM2, GFDL-ESM4 and GFDL-CM4 to their vulnerable PyPI packages and CVEs. |
 | fiokg ↔ securechainkg | NAICS | 301 | Cross-reference the NAICS industries of SecureChain supply-chain participants and SUDOKN manufacturers with the EPA FRS facilities (fiokg) in those same industries, then locate those facilities on the spatial hub via fiokg's S2/county links. |
 | fiokg ↔ sudokn | NAICS | 64 | For a manufacturing NAICS industry, list SUDOKN small/medium manufacturers (capabilities, certificates) alongside the EPA FRS facilities (fiokg) in that same industry - and, via fiokg's county/S2 location, where those facilities sit on the spatial hub. |
 | securechainkg ↔ sudokn | NAICS | 35 | For a manufacturing NAICS industry, list SUDOKN small/medium manufacturers (capabilities, certificates, capacity) and SecureChain supply-chain participants (software/hardware products and their vulnerabilities) in that same industry. |
