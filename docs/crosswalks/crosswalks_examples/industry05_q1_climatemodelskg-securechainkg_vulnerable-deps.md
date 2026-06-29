@@ -27,18 +27,19 @@ Three climate-model Sources in climatemodelskg are wired into securechainkg's so
 
 ```sparql
 PREFIX cp: <https://climatepub4kg.github.io/ontology#>
-PREFIX cpsource: <https://climatepub4kg.github.io/id/Source/>
 PREFIX sc: <https://w3id.org/secure-chain/>
 SELECT ?model ?modelName (COUNT(DISTINCT ?dep) AS ?depCount) (COUNT(DISTINCT ?v) AS ?vulnCount)
-FROM <https://purl.org/okn/frink/kg/securechainkg>
-FROM <https://purl.org/okn/frink/kg/climatemodelskg>
 WHERE {
-  ?model a cp:Source ;
-         cp:name ?modelName .
-  ?model sc:dependsOn ?dep .
-  OPTIONAL {
-    ?dep sc:hasSoftwareVersion ?ver .
-    ?ver sc:vulnerableTo ?v .
+  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> {
+    ?model a cp:Source ;
+           cp:name ?modelName .
+  }
+  GRAPH <https://purl.org/okn/frink/kg/securechainkg> {
+    ?model sc:dependsOn ?dep .
+    OPTIONAL {
+      ?dep sc:hasSoftwareVersion ?ver .
+      ?ver sc:vulnerableTo ?v .
+    }
   }
 }
 GROUP BY ?model ?modelName
@@ -55,4 +56,4 @@ _3 row(s) returned_
 
 ## Validation
 
-Validated by construction on the verified `climatemodelskg ↔ securechainkg` crosswalk (P1-climate-deps): the join key is the climate-model Source IRI, which securechainkg reuses verbatim as the subject of `sc:dependsOn`, so no rewrite is needed. The `FROM … FROM …` clauses merge both named graphs into the default graph for the cross-graph join. Counts are distinct dependencies and distinct CVEs (`https://nvd.nist.gov/vuln/detail/CVE-…`) per model, reproducible at COUNT(DISTINCT ?model)=3. Software-supply-chain integration; not a biomedical claim.
+Validated by construction on the verified `climatemodelskg ↔ securechainkg` crosswalk (P1-climate-deps): the join key is the climate-model Source IRI, which securechainkg reuses verbatim as the subject of `sc:dependsOn`, so no rewrite is needed. Each named graph is scoped with its own `GRAPH <…>` block and the two are joined on the shared `?model` IRI. Counts are distinct dependencies and distinct CVEs (`https://nvd.nist.gov/vuln/detail/CVE-…`) per model, reproducible at COUNT(DISTINCT ?model)=3. Software-supply-chain integration; not a biomedical claim.

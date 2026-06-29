@@ -29,22 +29,23 @@ CESM2's 12 vulnerable dependencies: numpy (8 CVEs), lxml (6), torch (6), scipy (
 
 ```sparql
 PREFIX cp: <https://climatepub4kg.github.io/ontology#>
-PREFIX cpsource: <https://climatepub4kg.github.io/id/Source/>
 PREFIX sc: <https://w3id.org/secure-chain/>
 SELECT ?model ?modelName
        (COUNT(DISTINCT ?dep)  AS ?totalDeps)
        (COUNT(DISTINCT ?vdep) AS ?depsWithVulns)
        (COUNT(DISTINCT ?v)    AS ?totalVulns)
-FROM <https://purl.org/okn/frink/kg/securechainkg>
-FROM <https://purl.org/okn/frink/kg/climatemodelskg>
 WHERE {
-  ?model a cp:Source ;
-         cp:name ?modelName .
-  ?model sc:dependsOn ?dep .
-  OPTIONAL {
-    ?dep sc:hasSoftwareVersion ?ver .
-    ?ver sc:vulnerableTo ?v .
-    BIND(?dep AS ?vdep)
+  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> {
+    ?model a cp:Source ;
+           cp:name ?modelName .
+  }
+  GRAPH <https://purl.org/okn/frink/kg/securechainkg> {
+    ?model sc:dependsOn ?dep .
+    OPTIONAL {
+      ?dep sc:hasSoftwareVersion ?ver .
+      ?ver sc:vulnerableTo ?v .
+      BIND(?dep AS ?vdep)
+    }
   }
 }
 GROUP BY ?model ?modelName
