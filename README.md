@@ -147,9 +147,23 @@ Verify with `/mcp` — you should see `mcp-okn-dev` listed as connected.
 
 Supported in the ChatGPT web app at <https://chatgpt.com>.
 
-1. Enable **Developer mode** (required for custom MCP apps in ChatGPT).
-2. Go to **Settings → Apps → Create app**.
-3. Enter the MCP server URL `https://apps.okn.us/okn-mcp-dev/mcp`.
+1. Sign in to <https://chatgpt.com>.
+2. Click your profile name/avatar.
+3. Open **Settings**.
+4. Go to **Apps**.
+5. Open **Advanced settings**.
+6. Turn on **Developer mode** (required for custom MCP apps in ChatGPT).
+7. Return to **Apps**.
+8. Click **Create app**.
+9. Enter the MCP app details:
+   - **Name:** `mcp-okn-dev`
+   - **URL:** `https://apps.okn.us/okn-mcp-dev/mcp`
+10. Save or create the app.
+11. Start a new chat.
+12. Click the **+** button in the message box.
+13. Select **mcp-okn-dev** from the list of available apps/tools.
+14. Turn **Web search** off before testing, so ChatGPT uses the MCP app rather than web search.
+15. Run the verification prompt. If ChatGPT returns a graph list, the MCP app is working.
 
 > A subscription is required for MCP connectors in ChatGPT.
 
