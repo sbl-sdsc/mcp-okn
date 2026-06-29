@@ -31,10 +31,16 @@ async def get_schema(shortname: str, compact: bool = True) -> dict[str, Any]:
         `edge_properties` maps relationship names to their properties and a
         `query_template` showing the RDF reification pattern to query them.
         Also includes `next_step` reminding you to `probe_namespaces` for any
-        predicate whose objects are ontology terms before writing the query.
+        predicate whose objects are ontology terms before writing the query. For
+        KGs with domain rules the schema alone does not convey (e.g.
+        `spoke-genelab`), also includes `usage_notes` with `guidance` prose and a
+        reusable `query_snippet`.
     """
     result = await schema.get_schema(shortname, compact=compact)
     if isinstance(result, dict) and "schema" in result:
+        notes = schema.usage_notes(shortname)
+        if notes is not None:
+            result["usage_notes"] = notes
         # Surface the value-space step at the point of decision: the model is
         # holding the schema and about to write SPARQL, which is exactly when it
         # tends to assume an ontology (DOID) instead of checking (MONDO).

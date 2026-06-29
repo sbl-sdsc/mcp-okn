@@ -9,6 +9,7 @@ from mcp_okn.schema import (
     _should_exclude_uri,
     build_mermaid_diagram,
     infer_edge_labels,
+    usage_notes,
 )
 
 
@@ -195,6 +196,67 @@ async def test_infer_edge_labels_maps_uris_to_labels(monkeypatch):
 
     monkeypatch.setattr(schema_mod, "infer_curated_edges", fake_infer)
     assert await infer_edge_labels("demo", schema) == [("Person", "name", "Person")]
+
+
+def test_usage_notes_spoke_genelab_carries_both_rules():
+    notes = usage_notes("spoke-genelab")
+    assert notes is not None
+    assert set(notes) == {"guidance", "query_snippet"}
+    guidance = notes["guidance"]
+    snippet = notes["query_snippet"]
+    # Rule 1 (direction) pins SF arm 1 vs GC arm 2.
+    assert 'schema:factor_space_1 "Space Flight"' in snippet
+    assert 'schema:factor_space_2 "Ground Control"' in snippet
+    # Rule 2 (comparability) strips the spelled-out condition labels (incl. the
+    # in-vitro one), case-insensitively...
+    for label in (
+        "space flight",
+        "ground control",
+        "basal control",
+        "vivarium control",
+        "cell culture control",
+    ):
+        assert label in snippet
+    # ...and the short group codes via the anchored regex (GC, FLT_C1, VIV_C2, …).
+    assert "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$" in snippet
+    assert "material_id_1" in snippet and "material_id_2" in snippet
+    # Guidance states both rules and the sign convention.
+    assert "DIRECTION" in guidance and "COMPARABILITY" in guidance
+    assert "GROUP CODES" in guidance
+
+
+def test_condition_code_regex_matches_codes_not_real_factors():
+    import re
+
+    from mcp_okn.contrasts import (
+        SPOKE_GENELAB_CONDITION_CODE_REGEX,
+        SPOKE_GENELAB_CONDITION_LABELS,
+        SPOKE_GENELAB_CONTRAST_SNIPPET,
+    )
+
+    assert "Cell Culture Control" in SPOKE_GENELAB_CONDITION_LABELS
+    # The snippet uses the same regex constant (no drift).
+    assert SPOKE_GENELAB_CONDITION_CODE_REGEX in SPOKE_GENELAB_CONTRAST_SNIPPET
+    pat = re.compile(SPOKE_GENELAB_CONDITION_CODE_REGEX)
+    # Group codes (with/without cohort suffix) match.
+    for code in ("GC", "FLT", "VIV_C2", "BSL_C1", "CC_C1", "GC_C2", "FLT_C1"):
+        assert pat.match(code), code
+    # Real factors that merely contain a control word must NOT match.
+    for real in ("Hardware 1G Ground Control", "HLU_IR", "Euth_C_DI", "GCN2 KO", "FLTbox"):
+        assert not pat.match(real), real
+
+
+def test_usage_notes_absent_for_other_kgs():
+    assert usage_notes("prokn") is None
+    assert usage_notes("spoke-okn") is None
+
+
+def test_instructions_include_spaceflight_contrast_section():
+    from mcp_okn.app import INSTRUCTIONS
+
+    assert "SPOKE-GENELAB SPACEFLIGHT CONTRASTS" in INSTRUCTIONS
+    for label in ("Space Flight", "Ground Control", "Basal Control", "Vivarium Control"):
+        assert label in INSTRUCTIONS
 
 
 def test_build_mermaid_diagram_probe_shape_classes_only():

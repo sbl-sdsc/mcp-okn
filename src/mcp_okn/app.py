@@ -11,6 +11,11 @@ from __future__ import annotations
 
 from mcp.server.fastmcp import FastMCP
 
+from .contrasts import (
+    SPOKE_GENELAB_CONTRAST_GUIDANCE,
+    SPOKE_GENELAB_CONTRAST_SNIPPET,
+)
+
 INSTRUCTIONS = """\
 Query the FRINK federated SPARQL endpoint over the Proto-OKN knowledge graphs.
 
@@ -128,5 +133,17 @@ producing your own graphic yields a messy, incorrect picture.
 IMPORTANT: Only the federation endpoint is used. Do not attempt to use the
 per-KG SPARQL endpoints — they are not exposed and time out on complex queries.
 """
+
+# Spoke-genelab assay-comparison rules. Appended by concatenation (not an
+# f-string / .format) because the SPARQL snippet contains `{`/`}` braces.
+INSTRUCTIONS += (
+    "\nSPOKE-GENELAB SPACEFLIGHT CONTRASTS (read before reading any "
+    "spoke-genelab differential value):\n"
+    + SPOKE_GENELAB_CONTRAST_GUIDANCE
+    + "\n\nReusable comparability-signature query "
+    "(also returned as `usage_notes` by `get_schema(\"spoke-genelab\")`):\n\n"
+    + SPOKE_GENELAB_CONTRAST_SNIPPET
+    + "\n"
+)
 
 mcp = FastMCP("mcp-okn", instructions=INSTRUCTIONS)

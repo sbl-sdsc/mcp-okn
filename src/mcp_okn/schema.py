@@ -19,12 +19,32 @@ from typing import Any
 
 import httpx
 
+from .contrasts import (
+    SPOKE_GENELAB_CONTRAST_GUIDANCE,
+    SPOKE_GENELAB_CONTRAST_SNIPPET,
+)
 from .sparql import SparqlError, named_graph, run_sparql
 
 #: Where the curated per-KG entity metadata CSVs live.
 ENTITY_METADATA_BASE = (
     "https://raw.githubusercontent.com/sbl-sdsc/mcp-proto-okn/main/metadata/entities"
 )
+
+#: Per-KG usage notes surfaced on ``get_schema`` (attached by the tool wrapper in
+#: :mod:`mcp_okn.tools.schema_tools`), delivered exactly when a client is about to
+#: write SPARQL for that KG. Only KGs with domain rules that the schema alone does
+#: not convey are listed.
+_KG_USAGE_NOTES: dict[str, dict[str, str]] = {
+    "spoke-genelab": {
+        "guidance": SPOKE_GENELAB_CONTRAST_GUIDANCE,
+        "query_snippet": SPOKE_GENELAB_CONTRAST_SNIPPET,
+    },
+}
+
+
+def usage_notes(shortname: str) -> dict[str, str] | None:
+    """Return curated usage notes for a KG, or None if it has none."""
+    return _KG_USAGE_NOTES.get(shortname)
 
 #: Schema namespace template used inside generated edge-property templates.
 _SCHEMA_NS = "https://purl.org/okn/frink/kg/{shortname}/schema/"
