@@ -40,7 +40,7 @@ prompts to try:
 - *"Which genes does rdkg associate with autism spectrum disorder?"* — [Result](docs/crosswalks/crosswalks_examples/disease06_q1_spoke-rdkg_autism-genes.md)
 - *"What is the maximum PFAS measurement in each county?"* — [Result](docs/crosswalks/crosswalks_examples/geospatial04_q1_sawgraph_spatialkg_pfas_max_by_county.md)
 - *"How do I join spoke-okn and prokn? Show the verified recipe and shared identifier."* — [Result](docs/crosswalks/spoke-prokn-join.md)
-- *"Create a chat transcript of this analysis."* — downloads as Markdown and is served as the `transcript://session/latest` resource
+- *"Create a chat transcript of this analysis."* — create a transcript in a downloadable Markdown file
 - *"Create a chat transcript of this analysis in PDF format."* — the server returns Markdown and the client converts the `.md` to a `.pdf` file (Claude Desktop / claude.ai)
 
 ### Crosswalk queries & transcripts
