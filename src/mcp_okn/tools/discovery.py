@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from .. import registry
+from .. import registry, schema
 from ..app import mcp
 
 
@@ -38,8 +38,21 @@ async def describe_kg(shortname: str, long_description: bool = False) -> str:
 
     Returns the registry markdown (title, description, and prose) for deeper
     context before writing a query — or just the long description when
-    `long_description` is set.
+    `long_description` is set. For KGs with query-time domain rules the registry
+    prose does not cover (e.g. `spoke-genelab`'s spaceflight assay-comparison
+    rules), the relevant guidance is appended to the returned text.
     """
     if long_description:
-        return await registry.fetch_kg_long_description(shortname)
-    return await registry.fetch_kg_doc(shortname)
+        doc = await registry.fetch_kg_long_description(shortname)
+    else:
+        doc = await registry.fetch_kg_doc(shortname)
+
+    notes = schema.usage_notes(shortname)
+    if notes is not None:
+        doc = (
+            f"{doc}\n\n## Assay-comparison rules ({shortname})\n\n"
+            f"{notes['guidance']}\n\n"
+            f'(A reusable comparability-signature SPARQL query is returned as '
+            f'`usage_notes.query_snippet` by `get_schema(\"{shortname}\")`.)'
+        )
+    return doc

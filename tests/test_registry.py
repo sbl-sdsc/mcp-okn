@@ -63,3 +63,25 @@ async def test_describe_kg_long_description_returns_only_prose(monkeypatch):
     assert "shortname: prokn" in full
     assert "shortname:" not in prose
     assert prose.startswith("The Protein Knowledge Network")
+    # prokn has no usage notes -> nothing appended.
+    assert "Assay-comparison rules" not in full
+
+
+async def test_describe_kg_appends_assay_rules_for_spoke_genelab(monkeypatch):
+    from mcp_okn import server
+
+    async def fake_doc(shortname, client=None, refresh=False):
+        return "# spoke-genelab\n\nNASA GeneLab spaceflight omics."
+
+    async def fake_long(shortname, client=None, refresh=False):
+        return "NASA GeneLab spaceflight omics."
+
+    monkeypatch.setattr(registry, "fetch_kg_doc", fake_doc)
+    monkeypatch.setattr(registry, "fetch_kg_long_description", fake_long)
+
+    for kwargs in ({}, {"long_description": True}):
+        out = await server.describe_kg("spoke-genelab", **kwargs)
+        assert "Assay-comparison rules (spoke-genelab)" in out
+        assert "DIRECTION" in out and "COMPARABILITY" in out
+        # Points at the reusable snippet without inlining it here.
+        assert 'get_schema("spoke-genelab")' in out
