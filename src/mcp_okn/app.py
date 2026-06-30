@@ -41,6 +41,26 @@ Workflow:
    often times out. Respect its answer: `known_non_join` means that pair was
    checked and does NOT join on the obvious key — do not retry it; only on
    `unknown` should you fall back to `find_crosswalks` to discover a key live.
+3d. When the question asks what CONTEXT a graph can add to an entity ("who supplies
+   pathway / GO / trait / disease for a gene?", "what else do we know about this
+   protein/disease?"), call `find_context_sources(want=[...], join_key=...)` — the
+   reverse capability index. It enumerates, per requested context type, every KG
+   that SUPPLIES it together with the predicate, shared key, and verified join size
+   — sorted biggest-join-first — plus a `payload_only` bucket of KGs that carry the
+   type but key it differently. Judge a graph by its `payload` tags (from
+   `list_kgs`), NOT by its name: a graph named for one thing routinely carries
+   much more (e.g. `pankgraph` supplies GO; `digcfdekg` is a large gene→trait join).
+
+ABSENCE REQUIRES EVIDENCE (read before reporting that any context type is missing
+or a question is "not reproducible"): for a cross-graph question, first ENUMERATE
+every graph reachable from your anchor on each shared key, grouped by payload —
+via `find_context_sources` and/or `list_crosswalks` + the `payload` tags from
+`list_kgs` — and only THEN narrow. You may NOT report a context type (pathway, GO,
+trait, gene set, disease, …) as unavailable until you have inspected the schema of
+EVERY graph that shares the relevant key and is tagged with that payload (check the
+`payload_only` graphs too — they may just need an id conversion). "I didn't find
+it" is not the same as "it isn't there"; do not conclude absence without that
+enumeration.
 4. Call `sparql_query` with a SPARQL query that scopes each KG with
    `GRAPH <https://purl.org/okn/frink/kg/{shortname}> { ... }`. A single query
    may span multiple named graphs (that is the point of federation).

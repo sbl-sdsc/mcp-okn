@@ -1,0 +1,269 @@
+{
+  "$schema_note": "Curated 'payload' tags: WHAT each KG supplies, not just how it joins. Each tag is a controlled-vocabulary context type (see 'vocabulary'). Sourced from the registry long descriptions + each KG's curated entity schema (classes/predicates) + its verified crosswalk shared-keys. The value-add types that are NOT join keys (gene_set, trait, pathway, tox_assay, expression, biomarker, variant, ...) are the curated part this file exists to surface. Edit this file (the source of record under metadata/) and run scripts/refresh_snapshot.py to sync the bundled copy.",
+  "verified_on": "2026-06-30",
+  "vocabulary": {
+    "disease": "Disease concepts or disease-entity associations (MONDO/DOID/OMIM/EFO/Orphanet)",
+    "phenotype": "Phenotypes / clinical signs (HP)",
+    "gene": "Genes (Ensembl / Entrez / HGNC / symbol)",
+    "gene_set": "Gene sets, signatures, or inferred gene-trait / gene-factor groupings",
+    "trait": "Traits / GWAS-style associations",
+    "variant": "Sequence variants - SNPs / SNVs / eQTLs / natural variants",
+    "protein": "Proteins (UniProt) and protein-level annotations",
+    "GO": "Gene Ontology terms / annotations",
+    "Reactome": "Reactome pathway membership",
+    "pathway": "Pathways and biomolecular / signaling interactions (Reactome / NCI-PID)",
+    "expression": "Gene-expression or DNA-methylation measurements",
+    "chemical": "Chemicals / substances (CAS / CHEBI / PubChem)",
+    "drug": "Drugs and therapies (DrugBank)",
+    "anatomy": "Anatomical structures (UBERON)",
+    "cell_type": "Cell types (CL)",
+    "organism": "Organisms / taxa (NCBITaxon)",
+    "biomarker": "Biomarkers and their diagnostic / prognostic / predictive roles",
+    "tox_assay": "Toxicology / bioassay screening results (ToxCast / Tox21 / ICE)",
+    "adverse_event": "Adverse events and adverse outcome pathways (MAUDE / AOP-Wiki)",
+    "medical_device": "Medical devices",
+    "social_determinant": "Social determinants of health (SDoH)",
+    "aging": "Aging, solitude, and behavioral-health research concepts",
+    "biology_concept": "General biology concepts and causal mechanisms (textbook-derived)",
+    "geospatial": "Geospatial features / place-based linkage (S2 cells, FIPS, ZIP, admin regions)",
+    "hydrology": "Hydrologic features (streams, aquifers, water wells, water systems)",
+    "environmental": "Environmental contamination, samples, and measurements (e.g. PFAS)",
+    "agriculture": "Agriculture and soil / soil-organic-carbon data",
+    "climate": "Climate models, projections, and natural hazards",
+    "justice": "Criminal-justice, court, and crime / incident records",
+    "social_service": "Social-service organizations and offerings (e.g. homelessness)",
+    "industry": "Industry classification / supply-chain / manufacturing entities (NAICS)",
+    "facility": "Regulated facilities and sites (EPA FRS)",
+    "software": "Software packages, versions, and vulnerabilities (supply chain)",
+    "infrastructure": "Urban / built-environment infrastructure (buildings, roads, stormwater)",
+    "dataset": "Dataset / data-catalog metadata records",
+    "publication": "Scientific publications and their links to data",
+    "ontology": "OBO ontology hierarchies - the cross-graph expansion / bridge backbone",
+    "identifier_mapping": "Cross-reference identifier mappings between vocabularies",
+    "metadata": "Dataset-level VoID metadata about the OKN graphs themselves",
+    "general": "Broad, general-purpose knowledge base spanning many domains"
+  },
+  "payloads": {
+    "bio101": [
+      "biology_concept"
+    ],
+    "biobricks-aopwiki": [
+      "adverse_event",
+      "chemical",
+      "gene",
+      "protein",
+      "pathway",
+      "disease",
+      "organism"
+    ],
+    "biobricks-ice": [
+      "chemical",
+      "tox_assay",
+      "gene"
+    ],
+    "biobricks-mesh": [
+      "chemical",
+      "disease",
+      "anatomy",
+      "organism"
+    ],
+    "biobricks-pubchem-annotations": [
+      "chemical"
+    ],
+    "biobricks-tox21": [
+      "chemical",
+      "tox_assay"
+    ],
+    "biobricks-toxcast": [
+      "chemical",
+      "tox_assay",
+      "gene"
+    ],
+    "biohealth": [
+      "disease",
+      "phenotype",
+      "anatomy",
+      "organism",
+      "social_determinant"
+    ],
+    "biomarkerkg": [
+      "biomarker",
+      "disease",
+      "drug",
+      "gene",
+      "protein",
+      "phenotype",
+      "cell_type"
+    ],
+    "climatemodelskg": [
+      "climate"
+    ],
+    "digcfdekg": [
+      "gene",
+      "gene_set",
+      "trait",
+      "disease"
+    ],
+    "dreamkg": [
+      "social_service",
+      "geospatial"
+    ],
+    "evoweb": [
+      "protein",
+      "gene"
+    ],
+    "fiokg": [
+      "facility",
+      "industry",
+      "geospatial"
+    ],
+    "gene-expression-atlas-okn": [
+      "gene",
+      "expression",
+      "disease",
+      "phenotype",
+      "anatomy",
+      "cell_type",
+      "pathway",
+      "organism",
+      "Reactome"
+    ],
+    "geoconnex": [
+      "hydrology",
+      "geospatial"
+    ],
+    "hydrologykg": [
+      "hydrology",
+      "geospatial"
+    ],
+    "identifier-mappings": [
+      "identifier_mapping"
+    ],
+    "maudekg": [
+      "adverse_event",
+      "medical_device"
+    ],
+    "nasa-gesdisc-kg": [
+      "dataset",
+      "publication"
+    ],
+    "ncipidkg": [
+      "pathway",
+      "protein"
+    ],
+    "nde": [
+      "dataset",
+      "disease",
+      "organism"
+    ],
+    "nikg": [
+      "justice",
+      "geospatial"
+    ],
+    "oard-kg": [
+      "disease",
+      "phenotype"
+    ],
+    "okn-void": [
+      "metadata"
+    ],
+    "pankgraph": [
+      "gene",
+      "GO",
+      "variant",
+      "disease",
+      "cell_type"
+    ],
+    "phaseskg": [
+      "aging"
+    ],
+    "prokn": [
+      "protein",
+      "gene",
+      "GO",
+      "Reactome",
+      "pathway",
+      "disease",
+      "phenotype",
+      "drug",
+      "chemical",
+      "variant",
+      "cell_type"
+    ],
+    "rdkg": [
+      "disease",
+      "gene",
+      "drug",
+      "chemical",
+      "phenotype",
+      "anatomy",
+      "variant"
+    ],
+    "ruralkg": [
+      "drug",
+      "justice",
+      "social_service",
+      "geospatial"
+    ],
+    "sawgraph": [
+      "chemical",
+      "environmental",
+      "geospatial",
+      "organism"
+    ],
+    "scales": [
+      "justice",
+      "geospatial"
+    ],
+    "securechainkg": [
+      "software",
+      "industry"
+    ],
+    "sockg": [
+      "agriculture",
+      "geospatial"
+    ],
+    "spatialkg": [
+      "geospatial"
+    ],
+    "spoke-genelab": [
+      "gene",
+      "expression",
+      "anatomy",
+      "cell_type",
+      "organism"
+    ],
+    "spoke-okn": [
+      "disease",
+      "gene",
+      "chemical",
+      "drug",
+      "protein",
+      "organism",
+      "geospatial",
+      "social_determinant",
+      "environmental"
+    ],
+    "sudokn": [
+      "industry",
+      "geospatial"
+    ],
+    "ubergraph": [
+      "ontology"
+    ],
+    "ufokn": [
+      "infrastructure",
+      "hydrology",
+      "geospatial"
+    ],
+    "wikidata": [
+      "general",
+      "identifier_mapping"
+    ],
+    "wildlifekn": [
+      "organism",
+      "geospatial",
+      "climate"
+    ]
+  }
+}

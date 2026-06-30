@@ -23,6 +23,7 @@ from .tools._shared import _OBO_PREFIXES, _to_uri
 from .tools.discovery import describe_kg, list_kgs
 from .tools.joins import (
     _complementary_note,
+    find_context_sources,
     get_join_strategy,
     list_crosswalks,
     taxon_overlap,
@@ -78,6 +79,7 @@ __all__ = [
     "create_chat_transcript",
     "describe_kg",
     "expand_ontology_term",
+    "find_context_sources",
     "find_crosswalks",
     "get_join_strategy",
     "get_query_log",

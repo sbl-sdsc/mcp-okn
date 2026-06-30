@@ -1,10 +1,14 @@
-"""Cross-KG join tools: get_join_strategy, taxon_overlap, list_crosswalks."""
+"""Cross-KG join tools.
+
+get_join_strategy, taxon_overlap, list_crosswalks, find_context_sources.
+"""
 
 from __future__ import annotations
 
 from typing import Any
 
 from .. import crosswalks as crosswalk_table
+from .. import payloads as payload_table
 from .. import taxon as taxon_hub
 from ..app import mcp
 from ..taxon import TAXON_HUB_KGS
@@ -271,4 +275,153 @@ async def list_crosswalks(include_examples: bool = True) -> dict[str, Any]:
     }
     if any(r["shared_key"] == "NCBITaxon" for r in rows):
         out["taxon_clade_note"] = crosswalk_table.TAXON_CLADE_NOTE
+    return out
+
+
+def _supplier_predicate(entry: dict[str, Any], kg: str) -> tuple[str | None, str | None]:
+    """The predicate/role on ``kg``'s OWN side of a verified join recipe.
+
+    Returns ``(None, None)`` when ``kg`` is only the bridge (or a clique member)
+    of the entry — it has no single endpoint predicate there.
+    """
+    if entry.get("left_kg") == kg:
+        return entry.get("left_predicate"), entry.get("left_role")
+    if entry.get("right_kg") == kg:
+        return entry.get("right_predicate"), entry.get("right_role")
+    return None, None
+
+
+def _key_matches(shared_key: str | None, join_key: str) -> bool:
+    """Case-insensitive substring match of ``join_key`` against a shared key.
+
+    So ``Entrez`` also matches the bridged keys ``Entrez -> HGNC (bridged)`` and
+    ``HGNC -> Entrez (bridged)``.
+    """
+    return bool(shared_key) and join_key.lower() in str(shared_key).lower()
+
+
+def _joins_on_key(kg: str, join_key: str | None) -> list[dict[str, Any]]:
+    """Project ``kg``'s verified joins, optionally filtered to ``join_key``.
+
+    Each is projected to ``{shared_key, predicate, role, bridge_kg, size}``,
+    deduplicated, with the biggest verified count first.
+    """
+    seen: set[tuple[Any, ...]] = set()
+    rows: list[dict[str, Any]] = []
+    for entry in crosswalk_table.verified_for(kg):
+        sk = entry.get("shared_key")
+        if join_key is not None and not _key_matches(sk, join_key):
+            continue
+        predicate, role = _supplier_predicate(entry, kg)
+        sig = (sk, predicate, entry.get("bridge_kg"))
+        if sig in seen:
+            continue
+        seen.add(sig)
+        rows.append(
+            {
+                "shared_key": sk,
+                "predicate": predicate,
+                "role": role,
+                "bridge_kg": entry.get("bridge_kg"),
+                "size": entry.get("verified_count"),
+            }
+        )
+    rows.sort(key=lambda r: (r.get("size") is None, -(r.get("size") or 0)))
+    return rows
+
+
+def _best_size(joins: list[dict[str, Any]]) -> int:
+    """The largest verified join size in a list (0 if none has a count)."""
+    return max((j.get("size") or 0) for j in joins) if joins else 0
+
+
+@mcp.tool()
+async def find_context_sources(
+    want: list[str] | None = None,
+    join_key: str | None = None,
+) -> dict[str, Any]:
+    """Reverse capability index: which KGs SUPPLY a given context type, joinably.
+
+    The inverse of `get_join_strategy`. Instead of "how do these two KGs join?",
+    this answers "who supplies pathway / GO / trait / disease … for an entity I can
+    join on `join_key`?" in ONE deterministic call — so you enumerate every graph
+    that adds the context you need BEFORE narrowing, rather than judging a graph by
+    its name and concluding a context type is "unavailable" without checking. It
+    combines the curated per-KG `payload` tags (what a graph carries; see
+    `list_kgs`) with the verified crosswalk table (the predicate, shared key, and
+    `COUNT(DISTINCT)` size of each join).
+
+    Args:
+        want: context types to look for, from the payload vocabulary — e.g.
+            `["GO", "pathway", "gene_set", "trait", "disease"]`. Unknown types are
+            echoed back in `unmatched_want` (the rest still run). Omit to consider
+            every payload type.
+        join_key: optional shared identifier the supplier must be joinable on —
+            e.g. `"Entrez"`, `"UniProt"`, `"MONDO"`, `"S2_L13"`. Matched as a
+            case-insensitive substring, so `"Entrez"` also matches bridged keys
+            like `"Entrez -> HGNC (bridged)"`. Omit to list every key each
+            supplier joins on.
+
+    Returns `{"want", "join_key", "payloads_verified_on", "crosswalks_verified_on",
+    "sources", "payload_only", "unmatched_want", "note"}`:
+      * `sources` — `{context_type: [{"kg", "payloads", "joins": [{shared_key,
+        predicate, role, bridge_kg, size}, ...]}, ...]}`. Within each type, KGs are
+        sorted by their LARGEST join `size` first, so the biggest join surfaces at
+        the top (the trap this defeats: not noticing the biggest gene join). `kg`'s
+        full `payloads` list is included so you see everything it adds, not just the
+        type you asked for.
+      * `payload_only` — `{context_type: [kg, ...]}`: KGs that SUPPLY the type but
+        do NOT join on `join_key` (e.g. they key genes on Ensembl, not Entrez).
+        They are not hidden — they still warrant a schema check or an id
+        conversion. Empty when `join_key` is omitted.
+      * `unmatched_want` — requested types that are not in the vocabulary.
+
+    Every requested (known) type appears as a key in `sources` even when its list
+    is empty, so an empty list is POSITIVE evidence that nothing supplies it on
+    that key — not an unchecked assumption.
+    """
+    vocab = payload_table.vocabulary()
+    requested = list(want) if want else sorted(vocab)
+    known = [t for t in requested if t in vocab]
+    unmatched = [t for t in requested if t not in vocab]
+
+    sources: dict[str, list[dict[str, Any]]] = {t: [] for t in known}
+    payload_only: dict[str, list[str]] = {}
+    for ptype in known:
+        for kg in payload_table.kgs_with_payload(ptype):
+            joins = _joins_on_key(kg, join_key)
+            if not joins and join_key is not None:
+                # Has the payload but isn't reachable on this key — surface it
+                # separately rather than dropping it silently.
+                payload_only.setdefault(ptype, []).append(kg)
+                continue
+            sources[ptype].append(
+                {
+                    "kg": kg,
+                    "payloads": payload_table.payloads_for(kg),
+                    "joins": joins,
+                }
+            )
+        sources[ptype].sort(key=lambda s: -_best_size(s["joins"]))
+
+    note = (
+        "Each requested type is listed even when empty: an empty `sources[type]` is "
+        "verified evidence that no KG supplies it"
+        + (f" joinably on '{join_key}'" if join_key else "")
+        + ". Check `payload_only` for KGs that carry the type but key it "
+        "differently before concluding a context is unavailable. KGs within a type "
+        "are sorted by largest join size first."
+    )
+    out: dict[str, Any] = {
+        "want": known,
+        "join_key": join_key,
+        "payloads_verified_on": payload_table.verified_on(),
+        "crosswalks_verified_on": crosswalk_table.verified_on(),
+        "sources": sources,
+        "payload_only": payload_only,
+        "note": note,
+    }
+    if unmatched:
+        out["unmatched_want"] = unmatched
+        out["vocabulary"] = vocab
     return out

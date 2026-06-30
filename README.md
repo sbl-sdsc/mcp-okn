@@ -40,6 +40,7 @@ prompts to try:
 - *"Which genes does rdkg associate with autism spectrum disorder?"* — [Result](docs/crosswalks/crosswalks_examples/disease06_q1_spoke-rdkg_autism-genes.md)
 - *"What is the maximum PFAS measurement in each county?"* — [Result](docs/crosswalks/crosswalks_examples/geospatial04_q1_sawgraph_spatialkg_pfas_max_by_county.md)
 - *"How do I join spoke-okn and prokn? Show the verified recipe and shared identifier."* — [Result](docs/crosswalks/spoke-prokn-join.md)
+- *"Which knowledge graphs supply GO, pathway, or trait annotations for a gene I can join on Entrez?"* — uses `find_context_sources` to list every supplier with its join key and size
 - *"Create a chat transcript of this analysis."* — create a transcript in a downloadable Markdown file
 - *"Create a chat transcript of this analysis in PDF format."* — the server returns Markdown and the client converts the `.md` to a `.pdf` file (Claude Desktop / claude.ai)
 
@@ -223,7 +224,7 @@ query → record**. The single table below is grouped in that order.
 | Tool | Purpose |
 | --- | --- |
 | **1. Discover graphs** | |
-| `list_kgs` | List all KGs with `shortname`, `title`, `description`, `homepage`, and `named_graph`. Served from a bundled snapshot for instant cold start. |
+| `list_kgs` | List all KGs with `shortname`, `title`, `description`, `homepage`, `named_graph`, and a `payload` list — the curated context types each graph **supplies** (e.g. `digcfdekg` → `gene, gene_set, trait, disease`), so you judge a graph by what it carries, not its name. Served from a bundled snapshot for instant cold start. |
 | `describe_kg(shortname, long_description=False)` | Full registry doc (frontmatter + prose) for one KG, for deeper context. Set `long_description=True` for the registry's ~150-word prose body — useful for picking among near-overlapping KGs. For `spoke-genelab`, also appends its [spaceflight assay-comparison rules](#spoke-genelab-spaceflight-assay-comparisons). |
 | **2. Inspect a graph's schema and identifiers** | |
 | `get_schema(shortname, compact=True)` | Schema for one KG — classes, predicates, edge properties (with reification query templates), and node properties. Uses curated metadata when available, else probes the endpoint for distinct classes/predicates. Call **before** writing a query. Returns `usage_notes` (guidance + a reusable SPARQL snippet) for KGs with query-time domain rules, e.g. [`spoke-genelab`](#spoke-genelab-spaceflight-assay-comparisons). |
@@ -233,6 +234,7 @@ query → record**. The single table below is grouped in that order.
 | **3. Plan a cross-graph join** | |
 | `list_crosswalks(include_examples=True)` | List **every** verified cross-KG integration point in one call — a global map of which graphs connect and on what shared key. Rows are grouped by `domain` (Genes, Geospatial, Disease & phenotype, …) and sorted by ontology, ready to render as a table. Each row is a compact summary (`domain`, connected `kgs` in join order by official shortname, `shared_key`, `bridge_kg`, `verified_count`, and an `example_question` by default; set `include_examples=False` for a terser list). Use `get_join_strategy(kg_a, kg_b)` for a single pair's full recipe. |
 | `get_join_strategy(kg_a, kg_b=None)` | Look up a precomputed, hand-verified recipe for joining two KGs — predicates, roles, shared identifier, bridge graph, verified count, and a runnable `skeleton_query` (the example SPARQL to copy and build on; it already encodes the IRI rewrites). Call **before** writing a federated join. Returns `verified` / `known_non_join` / `unknown`; with `kg_b` omitted, lists every join touching `kg_a`. |
+| `find_context_sources(want=None, join_key=None)` | Reverse capability index — the inverse of `get_join_strategy`. Answers "which KGs **supply** pathway / GO / trait / disease … for an entity I can join on `join_key`?" by combining the per-KG `payload` tags with the verified crosswalk table. Returns, per requested context type, the supplier KGs with predicate + shared key + verified join `size`, **sorted biggest-join-first**, plus a `payload_only` bucket (KGs that carry the type but key it differently, e.g. Ensembl vs Entrez). A requested type that yields an empty list is positive evidence nothing supplies it on that key — so you never conclude a context is "unavailable" without checking. |
 | `taxon_overlap(kg_a, kg_b)` | Compose the NCBITaxon overlap between two hub KGs *through* `ubergraph`. Returns two runnable skeletons — `exact_id` (same taxon id) and `clade_membership` (kg_b taxa under kg_a's clades via `subClassOf*`, which can be far larger when one side is coarser-grained) — plus, for a pair with a precomputed non-zero overlap, the materialized counts under `materialized_overlap` (the same per-pair counts `list_crosswalks` surfaces in the NCBITaxon hub row). Run a skeleton with `sparql_query`. |
 | `point_to_s2(lat, lng, level=13)` | Convert a lat/long point to its spatialkg/KWG S2 cell IRI (Level-13 default) — the deterministic primitive behind the spatial bridge. Use when a KG carries POINT coordinates but no S2 key and you need the cell IRI spatialkg stores. |
 | `spatial_bridge(point_query, target_pattern, select_vars="*", extra_prefixes="", limit=500)` | Generic point→S2 bridge for **any** point-bearing graph that lacks a stored S2 key (sudokn is the first such graph). `point_query` must `SELECT ?site ?lat ?lng`; the server computes each cell in Python and injects `(?site ?cell)` as a `VALUES` block into a federated query whose `target_pattern` joins `?cell` to spatialkg/fiokg/sawgraph (e.g. county/FIPS). Nothing is persisted — the computed key lives only inside the request. |
@@ -277,15 +279,16 @@ src/mcp_okn/
 ├── schema.py         # get_schema / visualize_schema logic
 ├── sparql.py         # federation endpoint client + schema.org normalization
 ├── crosswalks.py     # curated cross-KG join table (data/crosswalks.json)
+├── payloads.py       # curated per-KG payload tags (data/kg_payloads.json)
 ├── taxon.py          # NCBITaxon hub: taxon-overlap skeleton composition
 ├── session.py        # in-memory query/diagram log for transcripts
-├── data/             # bundled snapshots: kgs.json, crosswalks.json
+├── data/             # bundled snapshots: kgs.json, crosswalks.json, kg_payloads.json
 └── tools/            # one module per concern; each registers via @mcp.tool()
     ├── _shared.py        # helpers used by >1 tool module (_to_uri, …)
     ├── discovery.py      # list_kgs, describe_kg
     ├── schema_tools.py   # get_schema, visualize_schema
     ├── probe.py          # probe_namespaces, find_crosswalks
-    ├── joins.py          # get_join_strategy, taxon_overlap, list_crosswalks
+    ├── joins.py          # get_join_strategy, taxon_overlap, list_crosswalks, find_context_sources
     ├── query.py          # sparql_query, expand_ontology_term
     └── transcript.py     # reset/get_query_log, create_chat_transcript, resource
 ```
