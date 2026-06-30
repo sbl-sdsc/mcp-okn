@@ -18,7 +18,7 @@ The mouse is NASA's primary mammalian spaceflight model and a workhorse of infec
 
 spoke-genelab supplies the organ + the confounder-free spaceflight DE gene per row but no disease context; NDE supplies the named infectious disease studied in the same species (with its dataset count) but holds no spaceflight data. Each row only exists because both graphs describe the same organism (mouse), so the row pairs a real spaceflight datum with a real terrestrial-disease datum.
 
-**Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); mouse gene expression.
+**Spaceflight contrast:** Space Flight vs Ground Control on the same material, with all other factors *balanced* across the two arms — the `mcp-okn` server's `spoke-genelab` Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — arms differ only in the condition after stripping balanced shared factors/group codes), replacing the earlier strict "factor arrays contain only the condition label" filter. Each organ still yields a clean-contrast mouse DE gene under the broader (superset) Rule 2 pool — Rule 2 only adds balanced contrasts (e.g. thymus now offers 91 such genes), so the representative gene per organ shown below remains valid; `SAMPLE` picks one.
 
 **Sample result** (7 of 7) — each row shows GeneLab + nde data:
 
@@ -58,8 +58,13 @@ SELECT ?organ ?geneLabGene ?geneLabLog2fc ?ndeDisease (COUNT(DISTINCT ?ds) AS ?n
         ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
                sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 ; sg:INVESTIGATED_ASiA ?tissue .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        # Rule 2 comparability: arms differ ONLY in the condition (extra factors balanced across both arms)
+        FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+          FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+        FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+          FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
         ?stmt rdf:subject ?assay ; rdf:predicate sg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ;
               rdf:object ?gene ; sg:log2fc ?lfc ; sg:adj_p_value ?a .
         ?gene sg:symbol ?sym ; sg:taxonomy <http://purl.obolibrary.org/obo/NCBITaxon_10090> .

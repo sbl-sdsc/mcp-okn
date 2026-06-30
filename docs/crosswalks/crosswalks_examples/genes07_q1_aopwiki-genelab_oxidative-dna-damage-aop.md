@@ -18,7 +18,7 @@ Which key-event genes of AOPs for **oxidative stress, reactive-oxygen-species to
 
 AOP-Wiki defines which genes are mechanistic key events of oxidative/genotoxic pathways but has no spaceflight data; spoke-genelab has the spaceflight differential-expression measurements but no AOP annotation. Only the Entrez join links a genotoxicity pathway target to a measured, unconfounded spaceflight stress response.
 
-**Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
+**Spaceflight contrast:** Space Flight vs Ground Control on the same material, with all other factors *balanced* across the two arms — the `mcp-okn` server's `spoke-genelab` Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — arms differ only in the condition after stripping balanced shared factors/group codes). Adopting Rule 2 grows the genome-wide clean-contrast pool from 56 to 127 assays, but the most-significant value for each AOP gene already came from the stricter subset, so the headline genes below are unchanged.
 
 **Sample result** (6 of 15):
 
@@ -53,22 +53,22 @@ SELECT DISTINCT ?aopTitle ?symbol (MAX(?log2fc) AS ?maxLog2fc) (MIN(?log2fc) AS 
       BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',REPLACE(STR(?e),'^.*/ncbigene/',''))) AS ?gene)
     }
   }
-  {
-    SELECT DISTINCT ?assay WHERE {
-      GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
-        ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
-               sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 .
-        FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
-      }
-    }
-  }
+  # GeneLab: the (small) AOP gene set drives the DE lookup; Rule 2 comparability is applied to each matching assay —
+  # arms differ ONLY in the condition after stripping balanced shared factors/group codes (replaces the earlier strict
+  # "factor arrays contain only the condition label" filter, which dropped clean contrasts carrying a balanced factor).
+  # Gene-first so the comparability check runs only on the few assays that measured an AOP gene (avoids a full scan).
   GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
-    ?stmt rdf:subject ?assay ; rdf:predicate sg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ;
-          rdf:object ?gene ; sg:log2fc ?log2fc ; sg:adj_p_value ?adjp .
-    ?gene sg:symbol ?symbol .
-    FILTER(?adjp < 0.01)
+    ?stmt rdf:object ?gene ; rdf:predicate sg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ; rdf:subject ?assay ;
+          sg:log2fc ?log2fc ; sg:adj_p_value ?adjp .
+    ?gene sg:symbol ?symbol . FILTER(?adjp < 0.01)
+    ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
+           sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 . FILTER(?m1 = ?m2)
+    FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+      FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+    FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+      FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
   }
 } GROUP BY ?aopTitle ?symbol ORDER BY ?minAdjP LIMIT 15
 ```

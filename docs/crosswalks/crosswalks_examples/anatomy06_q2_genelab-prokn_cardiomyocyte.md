@@ -18,7 +18,7 @@ Cardiovascular deconditioning is a core microgravity risk. Which ProKN canonical
 
 ProKN supplies the cardiomyocyte→marker-gene assignment but no spaceflight data; GeneLab supplies the confounder-free spaceflight heart/muscle log2fc but no marker-gene/cell-type annotation. Each row needs ProKN (cardiomyocyte + marker gene) AND GeneLab (the same gene's clean spaceflight log2fc + tissue).
 
-**Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression in heart `UBERON_0000948` / skeletal-muscle tissues.
+**Spaceflight contrast:** Space Flight vs Ground Control on the same material, with all other factors *balanced* across the two arms — the `mcp-okn` server's `spoke-genelab` Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — arms differ only in the condition after stripping balanced shared factors/group codes), replacing the earlier strict "factor arrays contain only the condition label" filter; gene expression in heart `UBERON_0000948` / skeletal-muscle tissues. (Rule 2 also admits the genotype-matched OSD-347 *Drosophila* contrasts, but those carry no mouse cardiomyocyte-marker genes, so the eight markers below are unchanged.)
 
 **Sample result** (all 8) — each row shows prokn + GeneLab data (GeneLab tissue: heart `UBERON_0000948`, soleus `UBERON_0001389`, or quadriceps `UBERON_0001377`):
 
@@ -76,8 +76,13 @@ SELECT ?cellType ?markerSym ?genelabSymbol (SAMPLE(?lfc) AS ?glLog2fc) (MIN(?adj
       <http://purl.obolibrary.org/obo/UBERON_0001377>
     }
     FILTER(?m1 = ?m2)
-    FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-    FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+    # Rule 2 comparability: arms differ ONLY in the condition (any extra factor must be balanced, i.e. present on BOTH arms)
+    FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 .
+      FILTER(LCASE(STR(?f1)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?f1), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay schema:factors_2 ?f1 } }
+    FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 .
+      FILTER(LCASE(STR(?f2)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?f2), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay schema:factors_1 ?f2 } }
     FILTER(?adjp < 0.05)
   }
 } GROUP BY ?cellType ?markerSym ?genelabSymbol ORDER BY ?glAdjp LIMIT 15

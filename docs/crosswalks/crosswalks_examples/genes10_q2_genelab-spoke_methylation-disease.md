@@ -18,7 +18,7 @@ Beyond expression, does spaceflight leave an **epigenetic mark on skeletal muscl
 
 spoke-genelab holds the spaceflight muscle methylation but no disease context; spoke-okn holds the gene–disease associations but no spaceflight/epigenetics data, and the methylated gene is the mouse ortholog. Connecting a clean spaceflight methylation hit to disease relevance needs the methylation→gene→ortholog→`ASSOCIATES_DaG` chain.
 
-**Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter), restricted to skeletal-muscle tissues (tibialis anterior / quadriceps femoris); **DNA methylation** (`MEASURED_DIFFERENTIAL_METHYLATION_ASmMR`, region→gene via `METHYLATED_IN_MGmMR`, `methylation_diff` + `q_value`).
+**Spaceflight contrast:** Space Flight vs Ground Control on the same material, with all other factors *balanced* across the two arms — the `mcp-okn` server's `spoke-genelab` Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — arms differ only in the condition after stripping balanced shared factors/group codes), replacing the earlier strict "factor arrays contain only the condition label" filter (the muscle methylation hits are the same under both); restricted to skeletal-muscle tissues (tibialis anterior / quadriceps femoris); **DNA methylation** (`MEASURED_DIFFERENTIAL_METHYLATION_ASmMR`, region→gene via `METHYLATED_IN_MGmMR`, `methylation_diff` + `q_value`).
 
 **Sample result** (7 of 15):
 
@@ -46,8 +46,13 @@ SELECT ?modelSym ?tissue ?disease (MAX(ABS(?mdiff)) AS ?maxAbsMethylDiff) (MIN(?
            sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 ; sg:material_name_1 ?tissue .
     FILTER(?m1 = ?m2)
     FILTER(?tissue IN ("tibialis anterior","quadriceps femoris"))
-    FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-    FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+    # Rule 2 comparability: arms differ ONLY in the condition (any extra factor must be balanced, i.e. present on BOTH arms)
+    FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+      FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+    FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+      FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
     ?st rdf:subject ?assay ; rdf:predicate sg:MEASURED_DIFFERENTIAL_METHYLATION_ASmMR ;
         rdf:object ?mr ; sg:methylation_diff ?mdiff ; sg:q_value ?qval .
     ?gene sg:METHYLATED_IN_MGmMR ?mr ; sg:symbol ?modelSym ; sg:IS_ORTHOLOG_MGiG ?humanGene .

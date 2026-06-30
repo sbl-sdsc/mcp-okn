@@ -19,20 +19,20 @@ The class Gammaproteobacteria becomes strongly more abundant in NASA's spaceflig
 
 spoke-genelab measures which microbial clade shifts in spaceflight (with the abundance value) but has no pathogen-surveillance context; NDE catalogs which pathogen species anchor infectious-disease datasets (and their diseases) but has no spaceflight data; the ubergraph NCBITaxon hierarchy supplies the clade link. Each row pairs a GeneLab spaceflight abundance value with an NDE pathogen + disease under the same clade.
 
-**Spaceflight contrast:** Space Flight vs Ground Control — *fallback applied*: the VEG-01 differential-abundance assays carry no `material_id` and always bundle a plant-compartment factor, so the strict `material_id` + `FILTER NOT EXISTS` clean filter returns 0 rows; per methodology the contrast is restricted to `factor_space_1 = "Space Flight"` / `factor_space_2 = "Ground Control"` only (stated explicitly). Gammaproteobacteria is **up in spaceflight** (lnfc +8.22, log2fc +11.86).
+**Spaceflight contrast:** Space Flight vs Ground Control under the `mcp-okn` server's `spoke-genelab` Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — arms differ only in the condition after stripping balanced shared factors). These VEG-01 differential-abundance assays carry no `material_id` and bundle a plant-compartment factor (root / leaf), so the first edition fell back to direction-only and inadvertently included confounded *cross-compartment* contrasts (root-flight vs leaf-ground). Rule 2 resolves that cleanly without a fallback: enforcing comparability on the factor arrays alone keeps the balanced **root-vs-root** contrast and drops the cross-compartment ones. Gammaproteobacteria is **up in spaceflight** (lnfc +8.20, log2fc +11.84) in that balanced contrast.
 
 **Sample result** (8 of 11) — each row shows GeneLab + nde data:
 
 | Spaceflight-enriched clade (GeneLab) | lnfc / log2fc (SF vs GC, up) | NDE pathogen under that clade | NIAID disease (nde) |
 |---|---|---|---|
-| Gammaproteobacteria | +8.22 / +11.86 | *Escherichia coli* | escherichia coli infection |
-| Gammaproteobacteria | +8.22 / +11.86 | *Escherichia coli* O157:H7 | escherichia coli infection |
-| Gammaproteobacteria | +8.22 / +11.86 | *Salmonella* | salmonellosis |
-| Gammaproteobacteria | +8.22 / +11.86 | *Salmonella* Typhi | typhoid fever |
-| Gammaproteobacteria | +8.22 / +11.86 | *Shigella* | shigellosis |
-| Gammaproteobacteria | +8.22 / +11.86 | *Vibrio cholerae* | cholera |
-| Gammaproteobacteria | +8.22 / +11.86 | *Haemophilus influenzae* | haemophilus infectious disease |
-| Gammaproteobacteria | +8.22 / +11.86 | *Legionella* | legionellosis |
+| Gammaproteobacteria | +8.20 / +11.84 | *Escherichia coli* | escherichia coli infection |
+| Gammaproteobacteria | +8.20 / +11.84 | *Escherichia coli* O157:H7 | escherichia coli infection |
+| Gammaproteobacteria | +8.20 / +11.84 | *Salmonella* | salmonellosis |
+| Gammaproteobacteria | +8.20 / +11.84 | *Salmonella* Typhi | typhoid fever |
+| Gammaproteobacteria | +8.20 / +11.84 | *Shigella* | shigellosis |
+| Gammaproteobacteria | +8.20 / +11.84 | *Vibrio cholerae* | cholera |
+| Gammaproteobacteria | +8.20 / +11.84 | *Haemophilus influenzae* | haemophilus infectious disease |
+| Gammaproteobacteria | +8.20 / +11.84 | *Legionella* | legionellosis |
 
 **Why it answers the question:** every row carries a real GeneLab spaceflight differential-abundance value for the Gammaproteobacteria clade AND a real NIAID pathogen species (verified `subClassOf*` descendant of that clade) with its named disease — turning the species-level coverage gap into a meaningful clade-level bridge from spaceflight microbial ecology to terrestrial Gammaproteobacterial pathogens.
 
@@ -42,7 +42,7 @@ PREFIX schema: <http://schema.org/>
 PREFIX sg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-# GeneLab spaceflight-enriched Gammaproteobacteria (differential abundance, factor_space fallback contrast)
+# GeneLab spaceflight-enriched Gammaproteobacteria (differential abundance, Rule 2 balanced contrast)
 # bridged via ubergraph clade to NDE pathogen species under Gammaproteobacteria (1236) and their NIAID disease.
 SELECT ?sfClade (MAX(?sfLnfc) AS ?maxLnfc) (MAX(?sfLog2fc) AS ?maxLog2fc) ?ndePathogen ?ndeDisease WHERE {
   # GeneLab: Gammaproteobacteria differential abundance, Space Flight vs Ground Control
@@ -52,6 +52,15 @@ SELECT ?sfClade (MAX(?sfLnfc) AS ?maxLnfc) (MAX(?sfLog2fc) AS ?maxLog2fc) ?ndePa
     ?gorg rdfs:label ?sfClade .
     ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" .
     FILTER(STRENDS(STR(?gorg),'/node/1236'))
+    # Rule 2 comparability: arms differ ONLY in the condition — keeps the balanced root-vs-root (and leaf-vs-leaf)
+    # contrasts and drops the confounded cross-compartment ones (root-flight vs leaf-ground). These abundance
+    # assays carry no material_id, so comparability is enforced on the factor arrays alone.
+    FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+      FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+    FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+      FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
   }
   # NDE pathogen species (uniprot taxonomy IRI) + its ubergraph obo IRI for clade membership
   VALUES (?sp ?spTax ?ndePathogen) {

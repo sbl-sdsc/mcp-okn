@@ -18,22 +18,22 @@
 
 digcfdekg supplies the PIGEAN eGFR gene-relevance scores; spoke-genelab supplies clean spaceflight differential expression but has no trait-relevance concept. Identifying which kidney-function genes are genuinely microgravity-responsive needs the Entrez join plus the confounder-free contrast.
 
-**Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
+**Spaceflight contrast:** Space Flight vs Ground Control on the same material, with all other factors *balanced* across the two arms — the `mcp-okn` server's `spoke-genelab` Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — arms differ only in the condition after stripping balanced shared factors/group codes), replacing the earlier strict "factor arrays contain only the condition label" filter. Rule 2 grows the clean-contrast pool from 56 to 127 assays and brings the highest-confidence kidney-function genes **PKHD1 (7.55, the autosomal-recessive polycystic-kidney gene), VEGFA (7.03) and CYP24A1** into the top eight; the renin gene **REN** (PIGEAN 4.56, +6.44 up) remains, lower in the ranking.
 
 **Sample result** (8 of 15):
 
 | Gene | PIGEAN (eGFR) | log2FC (SF vs GC) | min adj. p |
 |---|---|---|---|
+| PKHD1 | 7.55 | -1.01 (down) | 1.6e-5 |
+| VEGFA | 7.03 | +3.85 / +0.92 | 2.9e-7 |
 | SALL1 | 6.27 | -1.18 (down) | 3.4e-5 |
 | SLC15A2 | 6.15 | +3.25 (up) | 1.4e-10 |
+| CDKN1C | 6.12 | +0.96 (up) | 9.1e-4 |
 | SHH | 6.11 | -2.48 (down) | 3.5e-5 |
 | SLC47A1 | 5.98 | -2.38 (down) | 2.7e-5 |
-| REN | 4.56 | +6.44 (up) | 4.2e-10 |
-| MAF | 4.48 | -6.49 (down) | 4.2e-13 |
-| PAX8 | 4.34 | -3.78 (down) | 3.3e-39 |
-| PKD1 | 4.20 | +0.48 (up) | 1.2e-3 |
+| CYP24A1 | 5.91 | +1.30 (up) | 9.1e-6 |
 
-**Why it answers the question:** the intersection is the core kidney-function machinery — **REN (renin) strongly up (+6.44)** in the clean contrast, renal solute transporters SLC15A2/SLC47A1, kidney developmental factors SALL1/PAX8/SHH, and the polycystic-kidney gene PKD1 — tying eGFR genetics to confounder-free microgravity perturbation; the renin up-regulation is the expected direction for spaceflight RAAS activation.
+**Why it answers the question:** the intersection is the core kidney-function machinery — the polycystic-kidney genes **PKHD1** and PKD1, the angiogenesis factor VEGFA, renal solute transporters SLC15A2/SLC47A1, the vitamin-D hydroxylase CYP24A1, kidney developmental factors SALL1/PAX8/SHH/CDKN1C, and **REN (renin) strongly up (+6.44)** — tying eGFR genetics to confounder-free, balanced microgravity perturbation; the renin up-regulation is the expected direction for spaceflight RAAS activation. Adopting the server's Rule 2 (restoring the balanced contrasts the strict filter dropped) lifts the top-ranked PKHD1/VEGFA/CYP24A1 into view alongside the renin/transporter signal.
 
 ## SPARQL query executed
 ```sparql
@@ -55,8 +55,13 @@ SELECT ?sym ?pigeanScore (MAX(?lfc) AS ?maxLog2fc) (MIN(?lfc) AS ?minLog2fc) (MI
         ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
                sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        # Rule 2 comparability: arms differ ONLY in the condition (extra factors balanced across both arms)
+        FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+          FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+        FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+          FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
       }
     }
   }

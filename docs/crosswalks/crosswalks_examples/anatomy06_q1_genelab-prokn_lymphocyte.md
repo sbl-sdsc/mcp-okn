@@ -18,22 +18,26 @@ Microgravity dysregulates circulating lymphocytes. Which ProKN canonical **lymph
 
 ProKN supplies the cell-type→marker-gene assignment (which gene defines which lymphocyte subtype) but holds no spaceflight data; GeneLab supplies the confounder-free spaceflight immune-tissue log2fc but no marker-gene/cell-type annotation. Each row therefore needs ProKN (cell type + marker gene) AND GeneLab (the same gene's clean spaceflight log2fc + tissue).
 
-**Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression in an immune tissue (thymus `UBERON_0002370` / spleen `UBERON_0002106`).
+**Spaceflight contrast:** Space Flight vs Ground Control on the same material, with all other factors *balanced* across the two arms — the `mcp-okn` server's `spoke-genelab` Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — arms differ only in the condition after stripping balanced shared factors/group codes); gene expression in an immune tissue (thymus `UBERON_0002370` / spleen `UBERON_0002106` / blood `UBERON_0000178` / lymph node `UBERON_0000029`). Replacing the earlier strict "factor arrays contain only the condition label" filter admits the genotype/duration-matched contrasts (e.g. OSD-690 *Wild-Type-vs-Wild-Type* and *Nrf2KO-vs-Nrf2KO*) it wrongly dropped, so **all 12** canonical lymphocyte markers now resolve (vs 8 before).
 
-**Sample result** (8 of 12) — each row shows prokn + GeneLab data (GeneLab tissue: thymus `UBERON_0002370` unless noted):
+**Sample result** (all 12 marker matches) — each row shows ProKN + GeneLab data; the SF-vs-GC value is the most significant across the *balanced* immune-tissue contrasts:
 
-| Lymphocyte subtype (ProKN, CL) | ProKN marker gene | GeneLab gene | GeneLab log2FC (SF vs GC, immune tissue) | GeneLab adj. p |
+| Lymphocyte subtype (ProKN, CL) | ProKN marker gene | GeneLab gene | GeneLab log2FC (SF vs GC) | GeneLab adj. p |
 |---|---|---|---|---|
 | CD4-positive, alpha-beta T cell | IL7R | Il7r | +1.16 (up) | 7.2e-7 |
+| CD4-positive, alpha-beta T cell | LTB | Ltb | +0.61 (up) | 3.1e-5 |
 | natural killer cell | KLRD1 | Klrd1 | +1.53 (up) | 3.6e-4 |
 | natural killer cell | GZMB | Gzmb | -1.11 (down) | 2.2e-3 |
-| CD4-positive, alpha-beta T cell | CD69 | Cd69 | +0.46 (up) | 4.6e-3 |
+| CD4-positive, alpha-beta T cell | CD69 | Cd69 | +0.49 (up) | 4.6e-3 |
 | natural killer cell | CMC1 | Cmc1 | +0.84 (up) | 4.9e-3 |
-| natural killer cell | AOAH | Aoah | +0.89 (up, spleen) | 8.5e-3 |
+| natural killer cell | AOAH | Aoah | +0.89 (up) | 5.3e-3 |
+| CD8-positive, alpha-beta T cell | CD8A | Cd8a | +0.42 (up) | 2.0e-2 |
 | B cell | FCRL1 | Fcrl1 | -2.86 (down) | 2.6e-2 |
-| CD8-positive, alpha-beta T cell | CD8A | Cd8a | -0.38 (down) | 4.4e-2 |
+| B cell | GNG7 | Gng7 | +1.16 (up) | 3.8e-2 |
+| B cell | ARHGAP24 | Arhgap24 | +0.81 (up) | 4.2e-2 |
+| B cell | INPP5D | Inpp5d | +0.89 (up) | 4.7e-2 |
 
-**Why it answers the question:** every row pairs a ProKN cell-type→marker-gene assignment with that exact gene's clean GeneLab spaceflight log2fc in an immune organ — surfacing lymphocyte-defining genes that are themselves microgravity-responsive (NK markers **KLRD1**/**GZMB**, CD4-T markers **IL7R**/**CD69**, B-cell marker **FCRL1**, CD8 marker **CD8A**), a both-KG result neither graph yields alone.
+**Why it answers the question:** every row pairs a ProKN cell-type→marker-gene assignment with that exact gene's spaceflight log2fc in an immune organ — surfacing lymphocyte-defining genes that are themselves microgravity-responsive: NK markers **KLRD1**/**GZMB**/**CMC1**/**AOAH**, CD4-T markers **IL7R**/**CD69**/**LTB**, CD8 marker **CD8A**, and B-cell markers **FCRL1**/**GNG7**/**ARHGAP24**/**INPP5D** — a both-KG result neither graph yields alone. Applying the server's Rule 2 (which keeps the balanced genotype/duration-matched contrasts the strict filter discarded) lifts the resolved markers from 8 to all 12 and, for **CD8A**, reads up (+0.42) from a balanced contrast rather than the −0.38 the narrower set returned.
 
 ## SPARQL query executed
 ```sparql
@@ -78,8 +82,14 @@ SELECT ?cellType ?markerSym ?genelabSymbol (SAMPLE(?lfc) AS ?glLog2fc) (MIN(?adj
       <http://purl.obolibrary.org/obo/UBERON_0002371>
     }
     FILTER(?m1 = ?m2)
-    FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-    FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+    # Rule 2 comparability: arms differ ONLY in the condition — extra factors must be balanced (present on BOTH arms),
+    # so genotype/duration-matched contrasts (e.g. OSD-690 Wild-Type vs Wild-Type, Nrf2KO vs Nrf2KO) are kept too.
+    FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 .
+      FILTER(LCASE(STR(?f1)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?f1), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay schema:factors_2 ?f1 } }
+    FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 .
+      FILTER(LCASE(STR(?f2)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?f2), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay schema:factors_1 ?f2 } }
     FILTER(?adjp < 0.05)
   }
 } GROUP BY ?cellType ?markerSym ?genelabSymbol ORDER BY ?glAdjp LIMIT 15

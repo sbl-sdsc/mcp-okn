@@ -19,7 +19,7 @@ Spaceflight-induced renal dysfunction ("cosmic kidney disease") makes the kidney
 
 spoke-genelab contributes the per-gene spaceflight differential-expression values (symbol, log2FC, adj. p) for the kidney but holds no clinical/disease knowledge; biohealth contributes the renal diseases localized to the UMLS kidney concept but holds no spaceflight data. Each row exists only because the UMLS↔UBERON bridge ties both KGs' values to the one spaceflight-perturbed kidney.
 
-**Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
+**Spaceflight contrast:** Space Flight vs Ground Control on the same material, with all other factors *balanced* across the two arms — the `spoke-genelab` assay-comparison rules the `mcp-okn` server now provides: Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — the arms differ only in the condition after stripping balanced shared factors/group codes). This replaces the earlier strict filter that required the factor arrays to contain *only* "Space Flight"/"Ground Control" (which would drop a clean contrast that merely carries a balanced extra factor such as sex or strain). For the kidney both give the same two assays / ten genes.
 
 **Sample result** (9 of 10) — each row carries a GeneLab spaceflight value AND a biohealth value for the same spaceflight-perturbed kidney:
 
@@ -53,8 +53,13 @@ SELECT ?rank ?symbol ?log2fc ?adjp ?diseaseLabel WHERE {
                schema:material_id_1 ?m1 ; schema:material_id_2 ?m2 ;
                schema:INVESTIGATED_ASiA <http://purl.obolibrary.org/obo/UBERON_0004538> .
             FILTER(?m1 = ?m2)
-            FILTER NOT EXISTS { ?a schema:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-            FILTER NOT EXISTS { ?a schema:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+            # Rule 2 comparability: arms differ ONLY in the condition (any extra factor must be balanced, i.e. present on BOTH arms)
+            FILTER NOT EXISTS { ?a schema:factors_1 ?f1 .
+              FILTER(LCASE(STR(?f1)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+                && !REGEX(STR(?f1), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?a schema:factors_2 ?f1 } }
+            FILTER NOT EXISTS { ?a schema:factors_2 ?f2 .
+              FILTER(LCASE(STR(?f2)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+                && !REGEX(STR(?f2), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?a schema:factors_1 ?f2 } }
             ?st rdf:subject ?a ; rdf:predicate schema:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ;
                 rdf:object ?g ; schema:log2fc ?lfc ; schema:adj_p_value ?ap .
             ?g schema:symbol ?symbol . FILTER(?ap < 1.0e-15)
@@ -68,8 +73,12 @@ SELECT ?rank ?symbol ?log2fc ?adjp ?diseaseLabel WHERE {
                 schema:material_id_1 ?n1 ; schema:material_id_2 ?n2 ;
                 schema:INVESTIGATED_ASiA <http://purl.obolibrary.org/obo/UBERON_0004538> .
             FILTER(?n1 = ?n2)
-            FILTER NOT EXISTS { ?a2 schema:factors_1 ?g1 . FILTER(?g1 != "Space Flight") }
-            FILTER NOT EXISTS { ?a2 schema:factors_2 ?g2 . FILTER(?g2 != "Ground Control") }
+            FILTER NOT EXISTS { ?a2 schema:factors_1 ?g1 .
+              FILTER(LCASE(STR(?g1)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+                && !REGEX(STR(?g1), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?a2 schema:factors_2 ?g1 } }
+            FILTER NOT EXISTS { ?a2 schema:factors_2 ?g2 .
+              FILTER(LCASE(STR(?g2)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+                && !REGEX(STR(?g2), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?a2 schema:factors_1 ?g2 } }
             ?x2 rdf:subject ?a2 ; rdf:predicate schema:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ;
                 rdf:object ?ge2 ; schema:adj_p_value ?ap2 .
             ?ge2 schema:symbol ?s2 . FILTER(?ap2 < 1.0e-15)

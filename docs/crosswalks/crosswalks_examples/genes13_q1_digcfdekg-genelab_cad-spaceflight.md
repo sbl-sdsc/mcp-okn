@@ -18,7 +18,7 @@ Long-duration spaceflight raises cardiovascular-disease concern. Which genes CFD
 
 digcfdekg supplies the PIGEAN CAD gene-relevance scores; spoke-genelab supplies clean spaceflight differential expression but has no disease-relevance concept. Identifying which CAD-relevant genes are genuinely microgravity-responsive needs the Entrez join plus the confounder-free contrast.
 
-**Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
+**Spaceflight contrast:** Space Flight vs Ground Control on the same material, with all other factors *balanced* across the two arms — the `mcp-okn` server's `spoke-genelab` Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — arms differ only in the condition after stripping balanced shared factors/group codes), replacing the earlier strict "factor arrays contain only the condition label" filter. Rule 2 grows the clean-contrast pool from 56 to 127 assays and now shows **LDLR (9.48), VEGFA (7.9) and TGFB1 (7.2)** — among the highest-confidence CFDE CAD genes — to be microgravity-responsive, so the full LDL/cholesterol-handling axis (APOE, LDLR, PCSK9, LIPA, SCARB1) is recovered.
 
 **Sample result** (8 of 15):
 
@@ -26,14 +26,14 @@ digcfdekg supplies the PIGEAN CAD gene-relevance scores; spoke-genelab supplies 
 |---|---|---|---|
 | APOE | 10.9 | +2.05 (up) | 2.6e-12 |
 | SCARB1 | 9.73 | +0.92 (up) | 5.7e-7 |
+| LDLR | 9.48 | +1.04 / -1.43 | 8.1e-5 |
 | PCSK9 | 8.86 | -1.15 (down) | 1.7e-4 |
+| VEGFA | 7.9 | +3.85 / +0.92 | 2.9e-7 |
 | LIPA | 7.88 | -1.13 (down) | 7.1e-14 |
-| SMAD3 | 7.62 | +1.61 (up) | 1.7e-32 |
-| EDNRA | 5.67 | -2.05 (down) | 8.9e-13 |
-| TCF21 | 5.63 | -2.03 (down) | 1.0e-13 |
-| LIPG | 5.56 | -2.21 (down) | 8.5e-16 |
+| SMAD3 | 7.62 | +1.86 / -0.59 | 1.7e-32 |
+| TGFB1 | 7.2 | +1.41 (up) | 5.4e-3 |
 
-**Why it answers the question:** the intersection is the canonical lipid/atherosclerosis machinery — the highest-confidence CFDE CAD genes APOE, SCARB1, PCSK9, LIPA, LIPG — joined by the vascular-remodeling factors SMAD3 (TGF-β), EDNRA (endothelin receptor) and the coronary-artery transcription factor TCF21, every one significantly DE in an unconfounded Space-Flight-vs-Ground-Control contrast (APOE up, PCSK9 down), giving confounder-free molecular evidence that microgravity perturbs the genetic circuitry of coronary disease.
+**Why it answers the question:** the intersection is the canonical lipid/atherosclerosis machinery — the highest-confidence CFDE CAD genes of the LDL/cholesterol axis (APOE, LDLR, PCSK9, LIPA, SCARB1) — joined by the vascular-remodeling/angiogenesis factors SMAD3 and TGFB1 (TGF-β) and VEGFA, every one significantly DE in confounder-free, *balanced* Space-Flight-vs-Ground-Control contrasts (APOE up, PCSK9 down), giving evidence that microgravity perturbs the genetic circuitry of coronary disease. Adopting the server's Rule 2 (which restores the balanced contrasts the strict filter dropped) brings the top-ranked LDLR, VEGFA and TGFB1 into view alongside the lower-ranked EDNRA/TCF21/LIPG seen before.
 
 ## SPARQL query executed
 ```sparql
@@ -55,8 +55,13 @@ SELECT ?sym ?pigeanScore (MAX(?lfc) AS ?maxLog2fc) (MIN(?lfc) AS ?minLog2fc) (MI
         ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
                sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        # Rule 2 comparability: arms differ ONLY in the condition (extra factors balanced across both arms)
+        FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+          FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+        FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+          FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
       }
     }
   }

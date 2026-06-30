@@ -18,20 +18,20 @@ Spaceflight drives hepatic lipid accumulation and early liver injury. Which key-
 
 AOP-Wiki defines which genes are mechanistic key events of steatosis/liver-injury pathways but has no spaceflight data; spoke-genelab has the spaceflight differential-expression measurements but no AOP annotation. Only the Entrez join links a steatogenic pathway target to a clean, unconfounded spaceflight stress response.
 
-**Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
+**Spaceflight contrast:** Space Flight vs Ground Control on the same material, with all other factors *balanced* across the two arms — the `mcp-okn` server's `spoke-genelab` Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — arms differ only in the condition after stripping balanced shared factors/group codes), replacing the earlier strict "factor arrays contain only the condition label" filter. Rule 2 grows the genome-wide clean-contrast pool from 56 to 127 assays and **surfaces NFASC** (−4.39, a hepatic-nuclear-receptor/thyroid-catabolism AOP key event) whose strongest clean signal sits in a balanced contrast the strict filter dropped.
 
 **Sample result** (6 of 15):
 
 | AOP | Gene | log2FC (SF vs GC) | min adj. p |
 |---|---|---|---|
 | Inhibition of N-linked glycosylation → liver injury | CDKN1A | -3.05 (down) | 2.1e-132 |
-| LXR activation leading to hepatic steatosis | FAS | -2.26 (down) | 4.8e-52 |
-| Liver X Receptor (LXR) activation → liver steatosis | FAS | -2.26 (down) | 4.8e-52 |
-| NR1I3 (CAR) suppression → hepatic steatosis | FAS | -2.26 (down) | 4.8e-52 |
+| Upregulation of thyroid-hormone catabolism via hepatic nuclear receptors | NFASC | -4.39 (down) | 8.3e-80 |
 | TLR4 activation & PPARγ inactivation → fibrosis | CYP1B1 | -2.48 (down) | 6.1e-63 |
+| LXR activation leading to hepatic steatosis | FAS | -2.26 (down) | 4.8e-52 |
+| NR1I3 (CAR) suppression → hepatic steatosis | FAS | -2.26 (down) | 4.8e-52 |
 | TLR4 activation & PPARγ inactivation → fibrosis | SNAI1 | +2.52 (up) | 3.8e-45 |
 
-**Why it answers the question:** every gene is a curated key event in a hepatic-steatosis / liver-injury / fibrosis AOP and is significantly DE in an unconfounded Space-Flight-vs-Ground-Control contrast — FAS (fatty-acid synthase, the steatosis effector in three LXR/CAR AOPs) and the injury gene CDKN1A are down, while the fibrosis EMT factor SNAI1 is up — and the clean filter guarantees the signal is microgravity-driven, not a co-varying factor.
+**Why it answers the question:** every gene is a curated key event in a hepatic-steatosis / liver-injury / fibrosis AOP and is significantly DE in an unconfounded Space-Flight-vs-Ground-Control contrast — FAS (fatty-acid synthase, the steatosis effector in three LXR/CAR AOPs) and the injury gene CDKN1A are down, the hepatic-nuclear-receptor key event **NFASC** (surfaced once the server's Rule 2 admits balanced contrasts) is strongly down, while the fibrosis EMT factor SNAI1 is up — and the balanced-comparability filter guarantees the signal is microgravity-driven, not a co-varying factor.
 
 ## SPARQL query executed
 ```sparql
@@ -57,8 +57,13 @@ SELECT DISTINCT ?aopTitle ?symbol ?organism (MAX(?log2fc) AS ?maxLog2fc) (MIN(?l
     ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
            sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 .
     FILTER(?m1 = ?m2)
-    FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-    FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+    # Rule 2 comparability: arms differ ONLY in the condition (extra factors balanced across both arms)
+    FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+      FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+    FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+      FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
     FILTER(?adjp < 0.05)
   }
 } GROUP BY ?aopTitle ?symbol ?organism ORDER BY ?minAdjP LIMIT 15

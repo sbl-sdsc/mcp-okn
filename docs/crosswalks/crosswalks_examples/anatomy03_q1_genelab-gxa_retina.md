@@ -18,7 +18,7 @@ SANS makes the eye a priority organ. For genes DE in the retina under a *clean* 
 
 GeneLab holds the confounder-free spaceflight retinal log2fc but no terrestrial/disease data; GXA holds terrestrial retinal differential expression but only as a named *test-vs-reference* contrast, with no spaceflight data. Each row pairs the GeneLab spaceflight log2fc with the GXA log2fc **and the named GXA contrast that produced it** for the same gene — reporting, per gene, its most-significant retina contrast.
 
-**Spaceflight contrast (GeneLab side):** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter). **GXA side:** the named disease/injury contrast shown per row (e.g. *Nrl*-null photoreceptor degeneration, retinal ischemia–reperfusion injury, optic-nerve transection).
+**Spaceflight contrast (GeneLab side):** Space Flight vs Ground Control on the same material, all other factors *balanced* across arms — the `mcp-okn` server's `spoke-genelab` Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — arms differ only in the condition after stripping balanced shared factors/group codes), which replaces the earlier strict "factor arrays contain only the condition label" filter (the retina genes are the same under both). **GXA side:** the named disease/injury contrast shown per row (e.g. *Nrl*-null photoreceptor degeneration, retinal ischemia–reperfusion injury, optic-nerve transection).
 
 **Sample result** (8 of 15) — each row pairs the GeneLab spaceflight value with the GXA value **and its named contrast**:
 
@@ -52,8 +52,13 @@ SELECT ?symbol ?glLog2fc ?glAdjp ?gxaContrast ?gxaLog2fc ?gxaAdjp WHERE {
                schema:material_id_1 ?m1 ; schema:material_id_2 ?m2 ;
                schema:INVESTIGATED_ASiA <http://purl.obolibrary.org/obo/UBERON_0000966> .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        # Rule 2 comparability: arms differ ONLY in the condition (any extra factor must be balanced, i.e. present on BOTH arms)
+        FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 .
+          FILTER(LCASE(STR(?f1)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?f1), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay schema:factors_2 ?f1 } }
+        FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 .
+          FILTER(LCASE(STR(?f2)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?f2), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay schema:factors_1 ?f2 } }
         FILTER(?adjp < 1.0e-3)
       } } GROUP BY ?symbol }
   # GXA: the most significant retina contrast for that gene ...

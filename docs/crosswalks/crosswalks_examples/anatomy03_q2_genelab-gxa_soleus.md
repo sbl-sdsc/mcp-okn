@@ -18,7 +18,7 @@ Muscle atrophy is a signature microgravity hazard, and the slow-twitch soleus is
 
 GeneLab holds the confounder-free spaceflight soleus log2fc but no terrestrial contrast; GXA holds terrestrial muscle differential expression only as a named test-vs-reference contrast, with no spaceflight data. Each row pairs the GeneLab spaceflight log2fc with the GXA log2fc **and the named muscle contrast that produced it**, reporting per gene its most-significant (non-tissue-baseline) muscle contrast.
 
-**Spaceflight contrast (GeneLab side):** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter). **GXA side:** the named muscle contrast shown per row — predominantly the **PGC-1β knock-in vs wild type** oxidative-muscle reprogramming model (also YY1-knockout, androgen treatment).
+**Spaceflight contrast (GeneLab side):** Space Flight vs Ground Control on the same material, all other factors *balanced* across arms — the `mcp-okn` server's `spoke-genelab` Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — arms differ only in the condition after stripping balanced shared factors/group codes), replacing the earlier strict "factor arrays contain only the condition label" filter (soleus gives the same 1,573 genes / 2 assays under both). **GXA side:** the named muscle contrast shown per row — predominantly the **PGC-1β knock-in vs wild type** oxidative-muscle reprogramming model (also YY1-knockout, androgen treatment).
 
 **Sample result** (8 of 15) — each row pairs the GeneLab spaceflight value with the GXA value **and its named contrast**:
 
@@ -52,8 +52,13 @@ SELECT ?symbol ?glLog2fc ?glAdjp ?gxaContrast ?gxaLog2fc ?gxaAdjp WHERE {
                schema:material_id_1 ?m1 ; schema:material_id_2 ?m2 ;
                schema:INVESTIGATED_ASiA <http://purl.obolibrary.org/obo/UBERON_0001389> .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        # Rule 2 comparability: arms differ ONLY in the condition (any extra factor must be balanced, i.e. present on BOTH arms)
+        FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 .
+          FILTER(LCASE(STR(?f1)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?f1), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay schema:factors_2 ?f1 } }
+        FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 .
+          FILTER(LCASE(STR(?f2)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?f2), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay schema:factors_1 ?f2 } }
         FILTER(?adjp < 1.0e-6)
       } } GROUP BY ?symbol }
   # GXA: most significant skeletal-muscle contrast for that gene (excluding tissue-identity "vs liver")

@@ -18,7 +18,7 @@ Skeletal-muscle and cardiac atrophy are signature spaceflight risks. Which **mus
 
 rdkg curates the muscle/heart rare-disease gene set but has no spaceflight data; spoke-genelab has the clean in-muscle spaceflight expression but no rare-disease annotation, and assays the mouse ortholog. Connecting a Mendelian muscle-disease gene to its measured, unconfounded spaceflight perturbation in muscle needs the Entrez+ortholog join.
 
-**Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter), restricted to skeletal-muscle tissues; gene expression.
+**Spaceflight contrast:** Space Flight vs Ground Control on the same material, with all other factors *balanced* across the two arms — the `mcp-okn` server's `spoke-genelab` Rule 1 (direction via `factor_space_1/2`) + Rule 2 (comparability — arms differ only in the condition after stripping balanced shared factors/group codes), replacing the earlier strict "factor arrays contain only the condition label" filter; restricted to skeletal-muscle tissues. The top six contractile/cardiomyopathy hits are unchanged; Rule 2 additionally surfaces the limb-girdle-muscular-dystrophy gene BVES and the Brody-myopathy SERCA1 gene ATP2A1 (plus MYL2, AGT) above the previously-shown TNNT1/HNRNPA1.
 
 **Sample result** (8 of 15):
 
@@ -28,12 +28,12 @@ rdkg curates the muscle/heart rare-disease gene set but has no spaceflight data;
 | Idh2 → IDH2 | soleus | cardiomyopathy | -1.36 (down) | 9.7e-41 |
 | Pdlim3 → PDLIM3 | soleus | hypertrophic cardiomyopathy | +2.41 (up) | 2.0e-38 |
 | Alpk3 → ALPK3 | soleus | hypertrophic cardiomyopathy | -0.73 (down) | 8.7e-38 |
-| Pln → PLN | soleus | dilated cardiomyopathy | -3.49 (down) | 1.7e-37 |
-| Ryr1 → RYR1 | soleus | congenital myopathy | +0.48 (up) | 4.2e-32 |
-| Tnnt1 → TNNT1 | quadriceps femoris | nemaline myopathy | -3.61 (down) | 9.7e-20 |
-| Hnrnpa1 → HNRNPA1 | EDL | inclusion-body myopathy | -3.79 (down) | 1.1e-18 |
+| Pln → PLN | soleus | familial dilated cardiomyopathy | -3.49 (down) | 1.7e-37 |
+| Ryr1 → RYR1 | soleus | myopathy, centronuclear | +0.48 (up) | 4.2e-32 |
+| Bves → BVES | soleus | limb-girdle muscular dystrophy | +0.53 (up) | 4.8e-24 |
+| Atp2a1 → ATP2A1 | soleus | Brody myopathy | +1.26 (up) | 5.7e-24 |
 
-**Why it answers the question:** measured directly in spaceflight skeletal muscle under a confounder-free contrast, the hits are the canonical contractile / calcium-handling / sarcomere disease genes — PLN (phospholamban, dilated cardiomyopathy, strongly down), RYR1, the nemaline-myopathy troponin TNNT1 (down), PDLIM3/ALPK3/EYA4 (cardiomyopathy), HNRNPA1 — linking inherited muscle-wasting genetics to genuine microgravity-driven muscle perturbation.
+**Why it answers the question:** measured directly in spaceflight skeletal muscle under confounder-free, *balanced* contrasts (the server's Rule 2), the hits are the canonical contractile / calcium-handling / sarcomere disease genes — PLN (phospholamban, dilated cardiomyopathy, strongly down), the SR calcium genes RYR1 and ATP2A1/SERCA1 (Brody myopathy), PDLIM3/ALPK3/EYA4 (cardiomyopathy), IDH2, and the limb-girdle gene BVES — linking inherited muscle-wasting genetics to genuine microgravity-driven muscle perturbation. Rule 2 keeps the balanced muscle contrasts the strict filter dropped, which lifts ATP2A1 and BVES into the top eight.
 
 ## SPARQL query executed
 ```sparql
@@ -50,23 +50,22 @@ SELECT ?humanSym ?modelSym ?tissue (SAMPLE(?diseaseLabel) AS ?exampleRareDisease
         || CONTAINS(LCASE(?diseaseLabel),'cardiomyopathy') || CONTAINS(LCASE(?diseaseLabel),'myofibrillar'))
   }
   BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',REPLACE(STR(?r),'^.*/ncbigene/',''))) AS ?hgene)
-  {
-    SELECT DISTINCT ?assay ?tissue WHERE {
-      GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
-        ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
-               sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 ; sg:material_name_1 ?tissue .
-        FILTER(?m1 = ?m2)
-        FILTER(?tissue IN ("quadriceps femoris","tibialis anterior","soleus","gastrocnemius","extensor digitorum longus","heart"))
-        FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
-      }
-    }
-  }
+  # GeneLab: rare-disease gene → mouse ortholog → in-muscle DE; Rule 2 comparability per matching assay — arms differ
+  # ONLY in the condition after stripping balanced shared factors/group codes (replaces the earlier strict "factor
+  # arrays contain only the condition label" filter). Gene-first so the check runs only on assays measuring these genes.
   GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
     ?modelGene sg:IS_ORTHOLOG_MGiG ?hgene ; sg:symbol ?modelSym .
-    ?stmt rdf:subject ?assay ; rdf:predicate sg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ;
-          rdf:object ?modelGene ; sg:log2fc ?log2fc ; sg:adj_p_value ?adjp .
-    FILTER(?adjp < 0.001)
+    ?stmt rdf:object ?modelGene ; rdf:predicate sg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ; rdf:subject ?assay ;
+          sg:log2fc ?log2fc ; sg:adj_p_value ?adjp . FILTER(?adjp < 0.001)
+    ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
+           sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 ; sg:material_name_1 ?tissue . FILTER(?m1 = ?m2)
+    FILTER(?tissue IN ("quadriceps femoris","tibialis anterior","soleus","gastrocnemius","extensor digitorum longus","heart"))
+    FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+      FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+    FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+      FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$")) FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
   }
 } GROUP BY ?humanSym ?modelSym ?tissue ORDER BY ?minAdjP LIMIT 15
 ```
