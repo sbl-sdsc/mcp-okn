@@ -224,9 +224,9 @@ query → record**. The single table below is grouped in that order.
 | --- | --- |
 | **1. Discover graphs** | |
 | `list_kgs` | List all KGs with `shortname`, `title`, `description`, `homepage`, and `named_graph`. Served from a bundled snapshot for instant cold start. |
-| `describe_kg(shortname, long_description=False)` | Full registry doc (frontmatter + prose) for one KG, for deeper context. Set `long_description=True` for the registry's ~150-word prose body — useful for picking among near-overlapping KGs. |
+| `describe_kg(shortname, long_description=False)` | Full registry doc (frontmatter + prose) for one KG, for deeper context. Set `long_description=True` for the registry's ~150-word prose body — useful for picking among near-overlapping KGs. For `spoke-genelab`, also appends its [spaceflight assay-comparison rules](#spoke-genelab-spaceflight-assay-comparisons). |
 | **2. Inspect a graph's schema and identifiers** | |
-| `get_schema(shortname, compact=True)` | Schema for one KG — classes, predicates, edge properties (with reification query templates), and node properties. Uses curated metadata when available, else probes the endpoint for distinct classes/predicates. Call **before** writing a query. |
+| `get_schema(shortname, compact=True)` | Schema for one KG — classes, predicates, edge properties (with reification query templates), and node properties. Uses curated metadata when available, else probes the endpoint for distinct classes/predicates. Call **before** writing a query. Returns `usage_notes` (guidance + a reusable SPARQL snippet) for KGs with query-time domain rules, e.g. [`spoke-genelab`](#spoke-genelab-spaceflight-assay-comparisons). |
 | `visualize_schema(shortname)` | Deterministic Mermaid `classDiagram` of a KG's schema, built server-side from `get_schema` — class boxes, labeled edges, and edge-property predicates as intermediary classes with typed fields (node classes light blue, edge classes orange, with a legend). When the curated metadata names predicates but not their endpoints, edges are recovered from the graph's `rdfs:domain`/`rdfs:range` scoped to the curated classes. Returns `mermaid_block` (already wrapped in a ` ```mermaid ` fence) — output it **verbatim**; don't redraw it as SVG/an image. Rendered examples: [spoke-genelab](docs/spoke-genelab-schema.png), [dreamkg](docs/dreamkg-schema.png), [rdkg](docs/rdkg-schema.png) ([details](docs/verification-visualize-schema.md)). |
 | `probe_namespaces(shortname, predicate, sample=0)` | Report which identifier/ontology namespaces populate a predicate's objects. `get_schema` lists a KG's predicates but not which controlled vocabularies fill their values — call this before the main query whenever a predicate's objects are ontology terms (diseases, chemicals, genes, anatomy) to see the actual namespace distribution and pick the best identifier to join on. Exploratory — not logged. |
 | `find_crosswalks(shortname, sample=0)` | Find ontology/database ids in a KG however they are encoded, profiling all three places at once: mapping predicates (`rdfs:seeAlso`, `owl:sameAs`, SKOS `*Match`, `oboInOwl:hasDbXref`), node IRIs that *are* the ontology term (`role="subject"`), and domain-specific predicates carrying an id (`role="object"`). The latter two are invisible to a mapping-predicate-only scan. Use whenever a KG seems to lack the identifier you need on its obvious predicates. |
@@ -339,6 +339,39 @@ In each case the `IRI(CONCAT)` and `STRENDS` forms agree (same rows / same decim
 ids for ufokn) while the bracketed IRI returns 0 — confirming the literal-preservation
 fix and the variable-predicate workaround documented in the `ruralkg`/`ufokn` crosswalk
 notes.
+
+#### spoke-genelab spaceflight assay comparisons
+
+`spoke-genelab` (NASA GeneLab) models each differential measurement as an `Assay`
+with two arms — `factor_space_1`/`factor_space_2` (the condition labels) and
+`factors_1`/`factors_2` (lists bundling the condition label *plus* extra factors
+like dose, time, sex, strain). Reading any assay as a "spaceflight effect" is
+wrong; two domain rules apply:
+
+1. **Direction** — keep only `factor_space_1 = "Space Flight"` **and**
+   `factor_space_2 = "Ground Control"`. Drop the reverse and every other pairing.
+   Verified live: **680** assays are SF→GC vs **664** the reverse (plus SF/SF
+   1244, GC/GC 424, and Basal/Vivarium pairings). With this orientation group 1 =
+   Space Flight, so `log2fc`/`methylation_diff`/`lnfc` > 0 means up in spaceflight.
+2. **Comparability** — two separate `Assay` records are comparable only if they
+   share the same materials (prefer `material_id_1`/`material_id_2`) **and** the
+   same `factors_1`/`factors_2` *after* the experimental-condition labels are
+   stripped, then test the remaining factors for equality (a shared extra factor
+   is allowed if present on both sides).
+
+Stripping removes exactly **15** distinct values, verified live: the spelled-out
+labels (`Space Flight`, `Ground Control`, `Basal Control`, `Vivarium Control`,
+`Cell Culture Control`; case-insensitive, so `Ground control`/`Vivarium control`
+match too) and the short group codes via the **anchored** regex
+`^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$` (`GC`, `FLT`, `VIV_C2`, `BSL_C1`, `CC_C1`, …).
+The anchoring is deliberate: real factors that merely contain a control word —
+`Hardware 1G Ground Control`, `Ground Control Rerun`, `HLU_IR`
+(hindlimb-unloading) — stay in the list as legitimate distinguishing factors.
+
+The rules live once in `src/mcp_okn/contrasts.py` (guidance prose + a reusable
+comparability-signature SPARQL snippet) and are surfaced in the server
+`INSTRUCTIONS`, as `usage_notes` on `get_schema("spoke-genelab")`, and appended to
+`describe_kg("spoke-genelab")`.
 
 ### KG snapshot
 
