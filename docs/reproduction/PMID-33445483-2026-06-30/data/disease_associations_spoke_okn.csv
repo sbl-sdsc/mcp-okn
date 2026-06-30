@@ -1,0 +1,23 @@
+disease,n_spaceflight_genes,nasa_hazard
+epilepsy,615,CNS / Psychiatric
+nervous system disease,482,CNS / Psychiatric
+liver disease,368,Metabolic / GI / Liver
+hypertension,189,Cardiovascular
+gastroesophageal reflux disease,164,Metabolic / GI / Liver
+diabetes mellitus,159,Metabolic / GI / Liver
+obesity,159,Metabolic / GI / Liver
+cardiomyopathy,157,Cardiovascular
+dermatitis,145,Immune / Inflammatory
+myopia,137,Ocular (SANS)
+depressive disorder,137,CNS / Psychiatric
+schizophrenia,130,CNS / Psychiatric
+asthma,123,Immune / Inflammatory
+coronary artery disease,121,Cardiovascular
+glaucoma,107,Ocular (SANS)
+leukemia,105,Cancer (radiation)
+inflammatory bowel disease,101,Immune / Inflammatory
+chronic obstructive pulmonary disease,90,Immune / Inflammatory
+breast carcinoma,90,Cancer (radiation)
+migraine,78,CNS / Psychiatric
+Parkinson's disease,64,CNS / Psychiatric
+rheumatoid arthritis,62,Immune / Inflammatory

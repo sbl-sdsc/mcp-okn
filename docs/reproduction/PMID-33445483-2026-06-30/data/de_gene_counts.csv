@@ -1,0 +1,6 @@
+tissue,OSD,matched_comparison,genes_measured,genes_sig_adjp_lt_0.05
+thymus,OSD-244,30d LAR (Upon euthanasia),6281,3597
+thymus,OSD-244,60d ISS-terminal (Carcass),2885,1699
+liver,OSD-245,30d LAR (Upon euthanasia),136,61
+liver,OSD-245,60d ISS-terminal (Carcass),2036,1431
+spleen,OSD-246,60d ISS-terminal (Carcass),101,52

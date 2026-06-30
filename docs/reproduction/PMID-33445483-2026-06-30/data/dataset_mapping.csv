@@ -1,0 +1,7 @@
+paper_GLDS,spoke_genelab_OSD,project_title,tissue,platform,mission
+GLDS-4,OSD-4,Effects of Vector-Averaged Gravity on T-cell development,thymus,DNA microarray,STS-118
+GLDS-244,OSD-244,Rodent Research-6,thymus,RNA-Seq,RR-6 / SpaceX-13
+GLDS-245,OSD-245,Rodent Research-6,liver,RNA-Seq,RR-6 / SpaceX-13
+GLDS-246,OSD-246,Rodent Research-6,spleen,RNA-Seq,RR-6 / SpaceX-13
+GLDS-288,OSD-288,Mouse Habitat Unit-1,spleen,RNA-Seq,MHU / SpaceX-12
+GLDS-289,OSD-289,Mouse Habitat Unit-1/2,thymus,RNA-Seq,MHU / SpaceX-12

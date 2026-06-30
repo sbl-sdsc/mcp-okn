@@ -1,0 +1,73 @@
+representative_shared_GO_BP,theme
+apoptotic process,★ Apoptosis / programmed cell death
+intrinsic apoptotic signaling (p53),★ Apoptosis / programmed cell death
+extrinsic apoptotic signaling pathway,★ Apoptosis / programmed cell death
+programmed cell death,★ Apoptosis / programmed cell death
+release of cytochrome c from mitochondria,★ Apoptosis / programmed cell death
+necroptotic signaling pathway,★ Apoptosis / programmed cell death
+lipid metabolic process,★ Cell metabolic process
+fatty acid beta-oxidation,★ Cell metabolic process
+DNA / RNA / mRNA metabolic process,★ Cell metabolic process
+reactive oxygen species metabolism,★ Cell metabolic process
+gluconeogenesis,★ Cell metabolic process
+lipid & energy homeostasis,★ Cell metabolic process
+protein localization to plasma membrane,★ Cell-membrane integrity
+extracellular matrix organization,★ Cell-membrane integrity
+extracellular matrix disassembly,★ Cell-membrane integrity
+endomembrane system organization,★ Cell-membrane integrity
+tight-junction assembly (neg. reg.),★ Cell-membrane integrity
+endothelial barrier establishment,★ Cell-membrane integrity
+cellular response to ionizing radiation,"DNA damage / radiation
+(NASA: ionizing radiation)"
+cellular response to gamma radiation,"DNA damage / radiation
+(NASA: ionizing radiation)"
+DNA damage response,"DNA damage / radiation
+(NASA: ionizing radiation)"
+double-strand break repair,"DNA damage / radiation
+(NASA: ionizing radiation)"
+nucleotide-excision repair,"DNA damage / radiation
+(NASA: ionizing radiation)"
+cellular senescence,"DNA damage / radiation
+(NASA: ionizing radiation)"
+circadian rhythm,"Circadian rhythm
+(validates spleen clock genes)"
+circadian regulation of gene expression,"Circadian rhythm
+(validates spleen clock genes)"
+entrainment of clock by photoperiod,"Circadian rhythm
+(validates spleen clock genes)"
+locomotor rhythm,"Circadian rhythm
+(validates spleen clock genes)"
+regulation of circadian rhythm,"Circadian rhythm
+(validates spleen clock genes)"
+rhythmic process,"Circadian rhythm
+(validates spleen clock genes)"
+immune / innate immune response,"Immune / inflammatory
+(NASA: immune dysfunction)"
+inflammatory response,"Immune / inflammatory
+(NASA: immune dysfunction)"
+B-cell & T-cell differentiation,"Immune / inflammatory
+(NASA: immune dysfunction)"
+type II interferon signaling,"Immune / inflammatory
+(NASA: immune dysfunction)"
+defense response to virus,"Immune / inflammatory
+(NASA: immune dysfunction)"
+interleukin-6 production,"Immune / inflammatory
+(NASA: immune dysfunction)"
+response to oxidative stress,Oxidative / hypoxic stress
+cellular response to H2O2,Oxidative / hypoxic stress
+response to hypoxia,Oxidative / hypoxic stress
+response to unfolded protein,Oxidative / hypoxic stress
+response to xenobiotic stimulus,Oxidative / hypoxic stress
+response to nutrient levels,Oxidative / hypoxic stress
+regulation of vasoconstriction,"Vascular & musculoskeletal
+(NASA: CV / bone-muscle)"
+VEGF production,"Vascular & musculoskeletal
+(NASA: CV / bone-muscle)"
+vascular smooth-muscle proliferation,"Vascular & musculoskeletal
+(NASA: CV / bone-muscle)"
+skeletal system development,"Vascular & musculoskeletal
+(NASA: CV / bone-muscle)"
+osteoblast differentiation (neg. reg.),"Vascular & musculoskeletal
+(NASA: CV / bone-muscle)"
+skeletal muscle contraction,"Vascular & musculoskeletal
+(NASA: CV / bone-muscle)"
