@@ -14,7 +14,7 @@ def _capturing(rows):
 
     async def fake(q, client=None, **kw):
         captured["query"] = q
-        return {"vars": ["s", "version", "last_updated", "modified"], "rows": rows}
+        return {"vars": ["s", "version", "last_updated"], "rows": rows}
 
     return fake, captured
 
@@ -23,7 +23,6 @@ _PROKN_ROW = {
     "s": "https://purl.org/okn/frink/kg/prokn",
     "version": "v0.0.5",
     "last_updated": "2026-06-23T14:26:02.126+00:00",
-    "modified": "Jun 2026",
 }
 
 
@@ -32,7 +31,6 @@ def test_version_query_targets_okn_void_and_pav_predicates():
     assert "kg/okn-void" in q
     assert "http://purl.org/pav/version" in q
     assert "http://purl.org/pav/lastUpdatedOn" in q
-    assert "http://purl.org/dc/terms/modified" in q
     # No-shortname form scans all subjects.
     assert "?s <http://purl.org/pav/version>" in q
 
@@ -56,7 +54,7 @@ async def test_get_kg_version_single_returns_record(monkeypatch):
     assert out["shortname"] == "prokn"
     assert out["version"] == "v0.0.5"
     assert out["last_updated"].startswith("2026-06-23")
-    assert out["modified"] == "Jun 2026"
+    assert "modified" not in out
     assert out["named_graph"] == "https://purl.org/okn/frink/kg/prokn"
 
 
@@ -75,7 +73,6 @@ async def test_get_kg_version_all_sorted_and_counted(monkeypatch):
             "s": "https://purl.org/okn/frink/kg/spoke-okn",
             "version": "v0.0.6",
             "last_updated": "2026-03-16T02:27:00.564+00:00",
-            "modified": "Mar 2026",
         },
         _PROKN_ROW,
     ]
@@ -94,7 +91,6 @@ async def test_get_kg_version_filters_excluded_kgs(monkeypatch):
             "s": "https://purl.org/okn/frink/kg/semopenalex",
             "version": "v9",
             "last_updated": None,
-            "modified": None,
         },
     ]
     fake, _ = _capturing(rows)
@@ -111,4 +107,4 @@ async def test_get_kg_version_handles_missing_optional_dates(monkeypatch):
     out = await get_kg_version("maudekg")
     assert out["version"] == "v0.0.1"
     assert out["last_updated"] is None
-    assert out["modified"] is None
+    assert "modified" not in out

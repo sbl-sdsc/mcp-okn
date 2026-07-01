@@ -78,7 +78,6 @@ async def get_kg_version(shortname: str | None = None) -> dict[str, Any]:
       * `version` — the release string, e.g. `"v0.0.5"` (`pav:version`);
       * `last_updated` — an ISO-8601 timestamp of the last load
         (`pav:lastUpdatedOn`), e.g. `"2026-06-23T14:26:02.126+00:00"`;
-      * `modified` — a coarse `"Mon YYYY"` month stamp (`dcterms:modified`);
       * `named_graph` — the KG's federation named-graph URI.
 
     Use it to check how current a graph is, cite the exact version behind an
