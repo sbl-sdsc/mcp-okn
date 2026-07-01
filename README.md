@@ -400,6 +400,25 @@ recompute its live-verified counts against the federation and write them back:
 counts — `--inject` to write, `--pair A B` for one pair). Run `refresh_snapshot.py`
 afterwards to sync the bundled copy.
 
+### Payload tags
+
+Each KG carries curated `payload` tags — the context types it **supplies** —
+edited at `metadata/kg_payloads.json` and bundled to
+`src/mcp_okn/data/kg_payloads.json` by `refresh_snapshot.py` (which validates that
+every tag is a defined vocabulary term and every servable KG is tagged). These tags
+are partly derived from each KG's entity schema, which `get_schema` fetches live
+from the upstream `*_entities.csv` files — so a KG's schema can change under the
+tags. `scripts/check_payload_drift.py` guards against that: it fingerprints each
+KG's live class + predicate labels and diffs them against a committed baseline
+(`metadata/schema_fingerprints.json`), flagging KGs whose schema moved so their
+tags can be re-reviewed. Run it after an upstream schema update; re-ground any
+affected tags, then `--update` to accept the new baseline.
+
+```bash
+uv run python scripts/check_payload_drift.py            # report drift; exit 1 if any
+uv run python scripts/check_payload_drift.py --update   # accept current schemas as baseline
+```
+
 ---
 
 ## Citation
