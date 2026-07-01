@@ -52,13 +52,14 @@ DOMAIN_CODE = {
     "Function & Pathways": "F",
     "Social Determinants & Services": "L",
     "Environmental toxicology": "E",
+    "Justice & Public Safety": "J",
     "Other": "O",
 }
 # fallback colours for domains not already present in the file's DOM
 DEFAULT_COLORS = {
     "C": "#E8590C", "D": "#D6336C", "G": "#7048E8", "S": "#1C7ED6",
     "I": "#C9920A", "P": "#2B8A3E", "T": "#82C91E", "A": "#0C8599",
-    "F": "#9C36B5", "L": "#15AABF", "E": "#5C940D", "O": "#868E96",
+    "F": "#9C36B5", "L": "#15AABF", "E": "#5C940D", "J": "#A61E4D", "O": "#868E96",
 }
 
 

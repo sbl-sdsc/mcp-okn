@@ -521,6 +521,17 @@ SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {{
   GRAPH {g("sockg")} {{ ?reg ?q ?r . }}
 }}"""
 
+# --- Justice: NIBRS offense category ---------------------------------------
+# scales fbi:OffenseUCRCode (offense name on jxdm:Charge) meets ruralkg's rural
+# crime-data codebook (variable/answerContent on NIBRSAnswer) on the shared FBI
+# NIBRS offense-category vocabulary. Join by binding the SAME literal variable in
+# both graphs — a cross-graph FILTER string-equality silently returns 0 here.
+Q["CJ1-nibrs-offense-scales-ruralkg"] = f"""
+SELECT (COUNT(DISTINCT ?off) AS ?n) WHERE {{
+  GRAPH {g("scales")} {{ ?ch <http://fbi.gov/cjis/nibrs/2023.0/OffenseUCRCode> ?off . }}
+  GRAPH {g("ruralkg")} {{ ?ans <http://sail.ua.edu/ruralkg/variable/answerContent> ?off . }}
+}}"""
+
 Q["H2-county"] = f"""
 SELECT (COUNT(DISTINCT ?reg) AS ?n) WHERE {{
   GRAPH {g("sockg")} {{ ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_2> . }}

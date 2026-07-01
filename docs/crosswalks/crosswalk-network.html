@@ -43,7 +43,7 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>33 knowledge graphs, 133 verified crosswalks (verified 2026-06-30). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
+  <p>33 knowledge graphs, 134 verified crosswalks (verified 2026-06-30). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
   <p class="tip">&#9654; <b>Hover</b> a node or edge for detail · <b>drag</b> to rearrange · <b>scroll</b> to zoom · <b>double-click</b> a node to unpin it.<br>&#9654; <b>Click a legend item</b> &mdash; a domain (e.g. <b>Chemicals</b>) or a line style (e.g. <b>via ubergraph</b>) &mdash; to toggle those edges.</p>
 </header>
 <div class="bar" id="legend"></div>
@@ -67,7 +67,7 @@
 </script>
 <script>
 (function(){
-const DOM={A:["Anatomy & Cell Type","#0C8599"],C:["Chemicals","#E8590C"],D:["Disease & phenotype","#D6336C"],E:["Environmental toxicology","#5C940D"],F:["Function & Pathways","#9C36B5"],G:["Genes","#7048E8"],S:["Geospatial","#1C7ED6"],I:["Industry & supply chain","#C9920A"],P:["Proteins","#2B8A3E"],L:["Social Determinants & Services","#15AABF"],T:["Taxonomy","#82C91E"]};
+const DOM={A:["Anatomy & Cell Type","#0C8599"],C:["Chemicals","#E8590C"],D:["Disease & phenotype","#D6336C"],E:["Environmental toxicology","#5C940D"],F:["Function & Pathways","#9C36B5"],G:["Genes","#7048E8"],S:["Geospatial","#1C7ED6"],I:["Industry & supply chain","#C9920A"],J:["Justice & Public Safety","#A61E4D"],P:["Proteins","#2B8A3E"],L:["Social Determinants & Services","#15AABF"],T:["Taxonomy","#82C91E"]};
 const BRIDGES=new Set();
 const R=[
 ["A",["biomarkerkg","gene-expression-atlas-okn"],8,"CL"],
@@ -183,6 +183,8 @@ const R=[
 ["I",["securechainkg","sudokn"],35,"NAICS"],
 ["I",["securechainkg","sudokn"],58,"SUDOKN_industry_sector"],
 ["I",["climatemodelskg","securechainkg"],3,"climatemodelskg Source IRI"],
+
+["J",["scales","ruralkg"],37,"NIBRS_offense_category"],
 
 ["P",["biobricks-aopwiki","prokn"],1805,"UniProt"],
 ["P",["biomarkerkg","biobricks-aopwiki"],84,"UniProt"],

@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 133 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and an example question the join answers.
+Here are all 134 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and an example question the join answers.
 
 ## Anatomy & Cell Type
 
@@ -165,6 +165,12 @@ Here are all 133 precomputed cross-KG crosswalks (verified through 2026-06-30), 
 | securechainkg ↔ sudokn | NAICS | 35 | For a manufacturing NAICS industry, list SUDOKN small/medium manufacturers (capabilities, certificates, capacity) and SecureChain supply-chain participants (software/hardware products and their vulnerabilities) in that same industry. |
 | securechainkg ↔ sudokn | SUDOKN_industry_sector | 58 | Cross-reference the industry sectors served by SUDOKN manufacturers with the industry sectors of SecureChain supply-chain participants (e.g. which suppliers to the aerospace or automotive sector appear in both graphs). |
 | climatemodelskg ↔ securechainkg | climatemodelskg Source IRI | 3 | Which climate models have the most vulnerable dependencies and the highest number of vulnerabilities? (CESM2, GFDL-ESM4 and GFDL-CM4 link through securechainkg sc:dependsOn to vulnerable PyPI packages and their CVEs.) |
+
+## Justice & Public Safety
+
+| KGs | Shared key | Count | Example |
+|---|---|---|---|
+| scales ↔ ruralkg | NIBRS_offense_category | 37 | Rank the NIBRS offense categories that both drive SCALES federal charges and appear in ruralkg's rural crime-data codebook, showing federal charge volume and the NIBRS answer code for each. |
 
 ## Proteins
 

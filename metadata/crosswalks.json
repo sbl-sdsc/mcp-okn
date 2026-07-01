@@ -1231,6 +1231,31 @@
       "skeleton_verified": true
     },
     {
+      "id": "CJ1-nibrs-offense-scales-ruralkg",
+      "left_kg": "scales",
+      "left_predicate": "http://fbi.gov/cjis/nibrs/2023.0/OffenseUCRCode",
+      "left_role": "object",
+      "right_kg": "ruralkg",
+      "right_predicate": "http://sail.ua.edu/ruralkg/variable/answerContent",
+      "right_role": "object",
+      "shared_key": "NIBRS_offense_category",
+      "key_namespace": "FBI NIBRS/UCR offense-category NAME as a plain string literal, identical on both sides (e.g. 'Aggravated Assault', 'Drug/Narcotic Violations', 'Robbery'). scales attaches it to jxdm:Charge nodes via fbi:OffenseUCRCode; ruralkg attaches it to NIBRSAnswer nodes via variable/answerContent (which also carry the matching NIBRS variable/answerCode, e.g. 131 = Aggravated Assault, 351 = Drug/Narcotic Violations). Both sides ingest the FBI NIBRS crime taxonomy, so this is a CONTROLLED-vocabulary match, not fuzzy label collision.",
+      "bridge_kg": null,
+      "domain": "Justice & Public Safety",
+      "iri_normalization": "NEW join enabled by the 2026-07-01 scales entities.csv update, which added the populated fbi:OffenseUCRCode predicate (2,689,214 charge triples; the sibling niem fips:CountyCode, LocaleCensusBlockID and postal-code predicates were added to the schema but carry 0 triples). Join directly on the shared string literal by binding the SAME variable in both GRAPH blocks (GRAPH scales { ?ch fbi:OffenseUCRCode ?off } GRAPH ruralkg { ?ans rk:answerContent ?off }). Do NOT join with a cross-graph FILTER(STR(?a)=STR(?b)) equality — the federation engine mishandles that theta-join and silently returns 0 even though exact matches exist. Match is exact/case-sensitive; a few scales offense strings differ only in case or wording from ruralkg's ('ASSAULT OFFENSES' vs 'Assault Offenses') and legitimately do not join.",
+      "verified_count": 37,
+      "verified_on": "2026-07-01",
+      "verified_count_secondary": {
+        "scales_distinct_offense_types": 111,
+        "ruralkg_crime_codebook_variables_reached": 165,
+        "scales_offense_charge_triples": 2689214
+      },
+      "hinge_note": "scales's attachment to ruralkg on the OFFENSE-TYPE axis — complementary to, and independent of, the county-FIPS axis on which scales already meets spatialkg (L4) and spoke-okn (L5). 37 distinct NIBRS offense categories are shared: scales supplies real federal-court charge VOLUME per offense (e.g. Drug/Narcotic Violations 86,454 charges; Simple Assault 177,758; Aggravated Assault 34,298), ruralkg supplies the rural crime-reporting CODEBOOK — the NIBRS answer codes and the survey variables (165 of them, e.g. 'UCR ARREST OFFENSE CODE') that instrument each offense. This is a CATEGORICAL join (37 offense categories), not an entity-level identity join: use it to compare federal charge activity by offense type against ruralkg's rural crime-data instrumentation, not to link individual cases.",
+      "example_question": "Rank the NIBRS offense categories that both drive SCALES federal charges and appear in ruralkg's rural crime-data codebook, showing federal charge volume and the NIBRS answer code for each.",
+      "skeleton_query": "PREFIX fbi: <http://fbi.gov/cjis/nibrs/2023.0/>\nPREFIX rk: <http://sail.ua.edu/ruralkg/variable/>\nSELECT (COUNT(DISTINCT ?off) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/scales> { ?ch fbi:OffenseUCRCode ?off . }\n  GRAPH <https://purl.org/okn/frink/kg/ruralkg> { ?ans rk:answerContent ?off . }\n}",
+      "skeleton_verified": true
+    },
+    {
       "id": "I1-naics",
       "left_kg": "securechainkg",
       "left_predicate": "http://asu.edu/semantics/SUDOKN/hasPrimaryNAICSClassifier",
