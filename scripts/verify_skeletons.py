@@ -217,16 +217,25 @@ SELECT (COUNT(DISTINCT ?db) AS ?n) WHERE {{
 # of an association, so it appears as the object of BOTH biolink:object and
 # biolink:subject. Join on only one position and the recipe undercounts (the
 # silent partial-result failure). UNION both so the join is entity-complete.
+#
+# PROKN v0.0.5 DRIFT (2026-06-23, re-verified 2026-06-30): prokn dropped rdfs:seeAlso
+# entirely (0 triples) and re-keyed up:Disease on MONDO via skos:exactMatch; it no
+# longer carries DOID/OMIM/Orphanet disease xrefs. Repaired to match:
+#   A5-doid  (biomarkerkg<->prokn): DOID/seeAlso -> DOID->MONDO via ubergraph, 388->344
+#   A3-mondo (oard<->prokn):        prokn seeAlso -> skos:exactMatch, 445->470
+#   A7-doid  (spoke-okn<->prokn):   direct DOID -> DOID->MONDO via ubergraph, 96->115
+#   A1-hp    (oard<->prokn):        prokn seeAlso -> any-predicate HP object, 4876->4941
+# SUPERSEDED (now 0, folded into A3-mondo's MONDO route): A12-omim, A14-orphanet, A15-doid.
 Q["A1-hp"] = f"""
 SELECT (COUNT(DISTINCT ?hp) AS ?n) WHERE {{
   GRAPH {g("oard-kg")} {{ {{ ?s {BL_OBJ} ?hp }} UNION {{ ?ss {BL_SUBJ} ?hp }} FILTER(STRSTARTS(STR(?hp),'http://purl.obolibrary.org/obo/HP_')) }}
-  GRAPH {g("prokn")} {{ ?x {SEEALSO} ?hp . }}
+  GRAPH {g("prokn")} {{ ?x ?p ?hp . }}
 }}"""
 
 Q["A3-mondo"] = f"""
 SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {{
   GRAPH {g("oard-kg")} {{ {{ ?s {BL_OBJ} ?mondo }} UNION {{ ?ss {BL_SUBJ} ?mondo }} FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }}
-  GRAPH {g("prokn")} {{ ?x a {UP_DISEASE} ; {SEEALSO} ?mondo . }}
+  GRAPH {g("prokn")} {{ ?x a {UP_DISEASE} ; {EXACT} ?mondo . }}
 }}"""
 
 Q["A4-mondo"] = f"""
@@ -242,9 +251,10 @@ SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {{
 }}"""
 
 Q["A5-doid"] = f"""
-SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {{
-  GRAPH {g("prokn")} {{ ?x {SEEALSO} ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }}
-  GRAPH {g("biomarkerkg")} {{ ?b ?p ?doid . }}
+SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {{
+  GRAPH {g("biomarkerkg")} {{ ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }}
+  GRAPH {g("ubergraph")} {{ ?mondo {EXACT} ?doid . }}
+  GRAPH {g("prokn")} {{ ?d {EXACT} ?mondo . }}
 }}"""
 
 Q["A6-mondo-expansion"] = f"""
@@ -256,7 +266,8 @@ SELECT (COUNT(DISTINCT ?disease) AS ?n) WHERE {{
 Q["A7-doid-spokeokn-prokn"] = f"""
 SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {{
   GRAPH {g("spoke-okn")} {{ ?doid a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }}
-  GRAPH {g("prokn")} {{ ?x ?q ?doid . }}
+  GRAPH {g("ubergraph")} {{ ?mondo {EXACT} ?doid . }}
+  GRAPH {g("prokn")} {{ ?d {EXACT} ?mondo . }}
 }}"""
 
 Q["A8-doid-spokeokn-biomarkerkg"] = f"""
