@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from .. import payloads, registry, schema
+from .. import payloads, registry, schema, void
 from ..app import mcp
 
 
@@ -67,3 +67,43 @@ async def describe_kg(shortname: str, long_description: bool = False) -> str:
             f'`usage_notes.query_snippet` by `get_schema(\"{shortname}\")`.)'
         )
     return doc
+
+
+@mcp.tool()
+async def get_kg_version(shortname: str | None = None) -> dict[str, Any]:
+    """Return a KG's release version and last-updated date (from the VoID metadata).
+
+    The `okn-void` meta-graph records provenance for each loaded KG. This tool
+    reads it live and returns, per KG:
+      * `version` — the release string, e.g. `"v0.0.5"` (`pav:version`);
+      * `last_updated` — an ISO-8601 timestamp of the last load
+        (`pav:lastUpdatedOn`), e.g. `"2026-06-23T14:26:02.126+00:00"`;
+      * `modified` — a coarse `"Mon YYYY"` month stamp (`dcterms:modified`);
+      * `named_graph` — the KG's federation named-graph URI.
+
+    Use it to check how current a graph is, cite the exact version behind an
+    analysis, or compare release freshness across graphs.
+
+    Args:
+        shortname: a KG shortname (as from `list_kgs`). Omit to return the
+            provenance for EVERY KG that records it, sorted by shortname.
+
+    Returns (shortname given) a single record dict, or `{"shortname", "version":
+    None, "note": ...}` when that KG records no VoID provenance (a few, e.g.
+    `bio101` and `wikidata`, do not). Returns (shortname omitted) `{"count",
+    "versions": [record, ...]}`.
+    """
+    records = await void.fetch_versions(shortname)
+    if shortname is not None:
+        if records:
+            return records[0]
+        return {
+            "shortname": shortname,
+            "version": None,
+            "note": (
+                f"No VoID provenance recorded for '{shortname}' in the okn-void "
+                "graph (some KGs, e.g. bio101 and wikidata, do not publish version "
+                "metadata). Check the shortname with `list_kgs` if unexpected."
+            ),
+        }
+    return {"count": len(records), "versions": records}

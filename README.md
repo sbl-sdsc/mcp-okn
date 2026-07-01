@@ -41,6 +41,7 @@ prompts to try:
 - *"What is the maximum PFAS measurement in each county?"* — [Result](docs/crosswalks/crosswalks_examples/geospatial04_q1_sawgraph_spatialkg_pfas_max_by_county.md)
 - *"How do I join spoke-okn and prokn? Show the verified recipe and shared identifier."* — [Result](docs/crosswalks/spoke-prokn-join.md)
 - *"Which knowledge graphs supply GO, pathway, or trait annotations for a gene I can join on Entrez?"* — uses `find_context_sources` to list every supplier with its join key and size
+- *"What version of prokn is loaded, and when was it last updated?"* — reads the `okn-void` provenance via `get_kg_version`
 - *"Create a chat transcript of this analysis."* — create a transcript in a downloadable Markdown file
 - *"Create a chat transcript of this analysis in PDF format."* — the server returns Markdown and the client converts the `.md` to a `.pdf` file (Claude Desktop / claude.ai)
 
@@ -226,6 +227,7 @@ query → record**. The single table below is grouped in that order.
 | **1. Discover graphs** | |
 | `list_kgs` | List all KGs with `shortname`, `title`, `description`, `homepage`, `named_graph`, and a `payload` list — the curated context types each graph **supplies** (e.g. `digcfdekg` → `gene, gene_set, trait, disease`), so you judge a graph by what it carries, not its name. Served from a bundled snapshot for instant cold start. |
 | `describe_kg(shortname, long_description=False)` | Full registry doc (frontmatter + prose) for one KG, for deeper context. Set `long_description=True` for the registry's ~150-word prose body — useful for picking among near-overlapping KGs. For `spoke-genelab`, also appends its [spaceflight assay-comparison rules](#spoke-genelab-spaceflight-assay-comparisons). |
+| `get_kg_version(shortname=None)` | A KG's release `version`, `last_updated` (ISO-8601 timestamp), and `modified` (month) — read live from the `okn-void` meta-graph's VoID provenance (`pav:version`, `pav:lastUpdatedOn`, `dcterms:modified`). Omit `shortname` for every KG that records provenance (39 of 42), sorted by shortname. Use it to check how current a graph is or cite the exact version behind an analysis. |
 | **2. Inspect a graph's schema and identifiers** | |
 | `get_schema(shortname, compact=True)` | Schema for one KG — classes, predicates, edge properties (with reification query templates), and node properties. Uses curated metadata when available, else probes the endpoint for distinct classes/predicates. Call **before** writing a query. Returns `usage_notes` (guidance + a reusable SPARQL snippet) for KGs with query-time domain rules, e.g. [`spoke-genelab`](#spoke-genelab-spaceflight-assay-comparisons). |
 | `visualize_schema(shortname)` | Deterministic Mermaid `classDiagram` of a KG's schema, built server-side from `get_schema` — class boxes, labeled edges, and edge-property predicates as intermediary classes with typed fields (node classes light blue, edge classes orange, with a legend). When the curated metadata names predicates but not their endpoints, edges are recovered from the graph's `rdfs:domain`/`rdfs:range` scoped to the curated classes. Returns `mermaid_block` (already wrapped in a ` ```mermaid ` fence) — output it **verbatim**; don't redraw it as SVG/an image. Rendered examples: [spoke-genelab](docs/spoke-genelab-schema.png), [dreamkg](docs/dreamkg-schema.png), [rdkg](docs/rdkg-schema.png) ([details](docs/verification-visualize-schema.md)). |
@@ -280,12 +282,13 @@ src/mcp_okn/
 ├── sparql.py         # federation endpoint client + schema.org normalization
 ├── crosswalks.py     # curated cross-KG join table (data/crosswalks.json)
 ├── payloads.py       # curated per-KG payload tags (data/kg_payloads.json)
+├── void.py           # per-KG version / last-updated from the okn-void graph
 ├── taxon.py          # NCBITaxon hub: taxon-overlap skeleton composition
 ├── session.py        # in-memory query/diagram log for transcripts
 ├── data/             # bundled snapshots: kgs.json, crosswalks.json, kg_payloads.json
 └── tools/            # one module per concern; each registers via @mcp.tool()
     ├── _shared.py        # helpers used by >1 tool module (_to_uri, …)
-    ├── discovery.py      # list_kgs, describe_kg
+    ├── discovery.py      # list_kgs, describe_kg, get_kg_version
     ├── schema_tools.py   # get_schema, visualize_schema
     ├── probe.py          # probe_namespaces, find_crosswalks
     ├── joins.py          # get_join_strategy, taxon_overlap, list_crosswalks, find_context_sources

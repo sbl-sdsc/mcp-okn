@@ -20,7 +20,7 @@ from .app import INSTRUCTIONS, mcp
 from .sparql import SparqlError
 from .taxon import TAXON_HUB_KGS, _taxon_source
 from .tools._shared import _OBO_PREFIXES, _to_uri
-from .tools.discovery import describe_kg, list_kgs
+from .tools.discovery import describe_kg, get_kg_version, list_kgs
 from .tools.joins import (
     _complementary_note,
     find_context_sources,
@@ -82,6 +82,7 @@ __all__ = [
     "find_context_sources",
     "find_crosswalks",
     "get_join_strategy",
+    "get_kg_version",
     "get_query_log",
     "get_schema",
     "latest_transcript_resource",
