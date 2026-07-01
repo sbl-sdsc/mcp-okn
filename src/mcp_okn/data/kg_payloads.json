@@ -89,10 +89,7 @@
     "biomarkerkg": [
       "biomarker",
       "disease",
-      "drug",
-      "gene",
       "protein",
-      "phenotype",
       "cell_type"
     ],
     "climatemodelskg": [

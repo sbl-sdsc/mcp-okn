@@ -52,7 +52,7 @@
     "biobricks-tox21": ["chemical", "tox_assay"],
     "biobricks-toxcast": ["chemical", "tox_assay", "gene"],
     "biohealth": ["disease", "phenotype", "anatomy", "organism", "social_determinant"],
-    "biomarkerkg": ["biomarker", "disease", "drug", "gene", "protein", "phenotype", "cell_type"],
+    "biomarkerkg": ["biomarker", "disease", "protein", "cell_type"],
     "climatemodelskg": ["climate"],
     "digcfdekg": ["gene", "gene_set", "trait", "disease"],
     "dreamkg": ["social_service", "geospatial"],
