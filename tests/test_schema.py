@@ -242,7 +242,13 @@ def test_condition_code_regex_matches_codes_not_real_factors():
     for code in ("GC", "FLT", "VIV_C2", "BSL_C1", "CC_C1", "GC_C2", "FLT_C1"):
         assert pat.match(code), code
     # Real factors that merely contain a control word must NOT match.
-    for real in ("Hardware 1G Ground Control", "HLU_IR", "Euth_C_DI", "GCN2 KO", "FLTbox"):
+    for real in (
+        "Hardware 1G Ground Control",
+        "HLU_IR",
+        "Euth_C_DI",
+        "GCN2 KO",
+        "FLTbox",
+    ):
         assert not pat.match(real), real
 
 
@@ -255,7 +261,12 @@ def test_instructions_include_spaceflight_contrast_section():
     from mcp_okn.app import INSTRUCTIONS
 
     assert "SPOKE-GENELAB SPACEFLIGHT CONTRASTS" in INSTRUCTIONS
-    for label in ("Space Flight", "Ground Control", "Basal Control", "Vivarium Control"):
+    for label in (
+        "Space Flight",
+        "Ground Control",
+        "Basal Control",
+        "Vivarium Control",
+    ):
         assert label in INSTRUCTIONS
 
 

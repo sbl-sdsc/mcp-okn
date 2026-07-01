@@ -26,7 +26,10 @@ def test_removed_class_is_flagged():
     current = {"biomarkerkg": _fp(["Dataset"])}
     report = drift.diff_fingerprints(base, current)
     assert report["biomarkerkg"]["reason"] == "changed"
-    assert report["biomarkerkg"]["removed"]["classes"] == ["Disease", "Phenotypic Feature"]
+    assert report["biomarkerkg"]["removed"]["classes"] == [
+        "Disease",
+        "Phenotypic Feature",
+    ]
     assert report["biomarkerkg"]["added"]["classes"] == []
 
 

@@ -63,8 +63,8 @@ async def describe_kg(shortname: str, long_description: bool = False) -> str:
         doc = (
             f"{doc}\n\n## Assay-comparison rules ({shortname})\n\n"
             f"{notes['guidance']}\n\n"
-            f'(A reusable comparability-signature SPARQL query is returned as '
-            f'`usage_notes.query_snippet` by `get_schema(\"{shortname}\")`.)'
+            f"(A reusable comparability-signature SPARQL query is returned as "
+            f'`usage_notes.query_snippet` by `get_schema("{shortname}")`.)'
         )
     return doc
 

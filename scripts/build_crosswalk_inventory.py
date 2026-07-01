@@ -18,6 +18,7 @@ KGs column joins the join-order KGs with ``→`` when the row bridges through a 
 way the network figure cleans it. Taxonomy is special-cased (two materialized
 counts per pair, id-rows then label-bridged ``†`` rows), matching its schema.
 """
+
 from __future__ import annotations
 
 import re
@@ -64,7 +65,9 @@ TAXON_CLOSING = (
 def clean_key(shared_key: str | None) -> str:
     """Render a shared_key for display: ASCII arrows -> unicode, drop the trailing
     ``(bridged)``/``(two-hop)`` marker (the bridge shows in the KGs column instead)."""
-    base = (shared_key or "").replace("<->", "↔").replace(" -> ", "→").replace("->", "→")
+    base = (
+        (shared_key or "").replace("<->", "↔").replace(" -> ", "→").replace("->", "→")
+    )
     return re.sub(r"\s*\((?:bridged|two-hop)\)\s*$", "", base)
 
 
@@ -79,7 +82,12 @@ def _num(n) -> str:
 
 
 def render_domain_table(domain: str, rows: list[dict]) -> list[str]:
-    out = [f"## {domain}", "", "| KGs | Shared key | Count | Example |", "|---|---|---|---|"]
+    out = [
+        f"## {domain}",
+        "",
+        "| KGs | Shared key | Count | Example |",
+        "|---|---|---|---|",
+    ]
     for r in rows:
         out.append(
             f"| {fmt_kgs(r)} | {clean_key(r['shared_key'])} | "
@@ -97,8 +105,14 @@ def render_taxonomy(rows: list[dict]) -> list[str]:
     label_rows = sorted(
         (r for r in rows if r.get("match_type") == "label"), key=lambda r: r["kgs"]
     )
-    out = [f"## {TAXON_DOMAIN}", "", TAXON_INTRO, "",
-           "| KGs | exact_id | clade A-in-B / B-in-A |", "|---|---|---|"]
+    out = [
+        f"## {TAXON_DOMAIN}",
+        "",
+        TAXON_INTRO,
+        "",
+        "| KGs | exact_id | clade A-in-B / B-in-A |",
+        "|---|---|---|",
+    ]
     for r in id_rows:
         a, b = r["kgs"][0], r["kgs"][-1]
         out.append(
@@ -107,7 +121,9 @@ def render_taxonomy(rows: list[dict]) -> list[str]:
         )
     for r in label_rows:
         a, b = r["kgs"][0], r["kgs"][-1]
-        out.append(f"| {a} × {b} † | {_num(r['label_match'])} / {_num(r['kg_b_taxa'])} | — |")
+        out.append(
+            f"| {a} × {b} † | {_num(r['label_match'])} / {_num(r['kg_b_taxa'])} | — |"
+        )
     out += ["", TAXON_FOOTNOTE, "", TAXON_CLOSING, ""]
     return out
 
@@ -165,15 +181,19 @@ def main() -> None:
     if check:
         current = DOC.read_text(encoding="utf-8") if DOC.exists() else ""
         if current != generated:
-            print(f"OUT OF DATE: {DOC} differs from crosswalks.json — run "
-                  "scripts/build_crosswalk_inventory.py")
+            print(
+                f"OUT OF DATE: {DOC} differs from crosswalks.json — run "
+                "scripts/build_crosswalk_inventory.py"
+            )
             sys.exit(1)
         print(f"up to date: {DOC.name} matches crosswalks.json")
         return
     DOC.write_text(generated, encoding="utf-8")
     n = len(C.all_crosswalks(include_examples=False))
-    print(f"wrote {DOC.relative_to(ROOT)} — {n} crosswalks across "
-          f"{len({r['domain'] for r in C.all_crosswalks()})} domains")
+    print(
+        f"wrote {DOC.relative_to(ROOT)} — {n} crosswalks across "
+        f"{len({r['domain'] for r in C.all_crosswalks()})} domains"
+    )
 
 
 if __name__ == "__main__":

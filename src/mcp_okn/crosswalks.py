@@ -183,7 +183,7 @@ def domain_of(entry: dict[str, Any]) -> str:
     "Environmental toxicology" vs the generic Chemicals default. Falls back to
     the shared-key map when no explicit domain is set.
     """
-    explicit = entry.get("domain")
+    explicit: str | None = entry.get("domain")
     if explicit:
         return _DOMAIN_ALIASES.get(explicit, explicit)
     return domain_for(entry.get("shared_key"))

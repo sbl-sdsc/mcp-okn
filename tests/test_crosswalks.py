@@ -460,7 +460,9 @@ def test_example_question_count_matches_files():
     if not examples.exists() or not readme.exists():
         pytest.skip("examples dir or README not present in this checkout")
     n_files = len(list(examples.glob("*.md")))
-    m = re.search(r"\*\*(\d+) example questions\*\*", readme.read_text(encoding="utf-8"))
+    m = re.search(
+        r"\*\*(\d+) example questions\*\*", readme.read_text(encoding="utf-8")
+    )
     assert m, "README: '**N example questions**' phrase not found"
     assert int(m.group(1)) == n_files, (
         f"README cites {m.group(1)} example questions; {n_files} transcript files exist"

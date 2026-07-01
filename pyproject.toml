@@ -53,6 +53,10 @@ asyncio_mode = "auto"
 [tool.ruff]
 target-version = "py310"
 line-length = 88
+# One-off, non-shipped artifacts: paper-reproduction figure/PDF generators under
+# docs/reproduction/ are throwaway matplotlib scripts (like scripts/, but not even
+# maintained tooling). They are not held to the package's lint/format standards.
+extend-exclude = ["docs/reproduction"]
 
 [tool.ruff.lint]
 # pyflakes (F), pycodestyle errors (E) + warnings (W), isort (I),

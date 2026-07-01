@@ -278,7 +278,9 @@ async def list_crosswalks(include_examples: bool = True) -> dict[str, Any]:
     return out
 
 
-def _supplier_predicate(entry: dict[str, Any], kg: str) -> tuple[str | None, str | None]:
+def _supplier_predicate(
+    entry: dict[str, Any], kg: str
+) -> tuple[str | None, str | None]:
     """The predicate/role on ``kg``'s OWN side of a verified join recipe.
 
     Returns ``(None, None)`` when ``kg`` is only the bridge (or a clique member)

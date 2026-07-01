@@ -26,6 +26,7 @@ Then re-render the static PNG:
 
     python scripts/render_crosswalk_network_png.py
 """
+
 from __future__ import annotations
 
 import json
@@ -57,9 +58,19 @@ DOMAIN_CODE = {
 }
 # fallback colours for domains not already present in the file's DOM
 DEFAULT_COLORS = {
-    "C": "#E8590C", "D": "#D6336C", "G": "#7048E8", "S": "#1C7ED6",
-    "I": "#C9920A", "P": "#2B8A3E", "T": "#82C91E", "A": "#0C8599",
-    "F": "#9C36B5", "L": "#15AABF", "E": "#5C940D", "J": "#A61E4D", "O": "#868E96",
+    "C": "#E8590C",
+    "D": "#D6336C",
+    "G": "#7048E8",
+    "S": "#1C7ED6",
+    "I": "#C9920A",
+    "P": "#2B8A3E",
+    "T": "#82C91E",
+    "A": "#0C8599",
+    "F": "#9C36B5",
+    "L": "#15AABF",
+    "E": "#5C940D",
+    "J": "#A61E4D",
+    "O": "#868E96",
 }
 
 
@@ -76,7 +87,11 @@ def viz_count(r):
     if r["shared_key"] == "NCBITaxon":
         if r.get("match_type") == "label":
             return r.get("label_match", 0)
-        return [r.get("exact_id", 0), r.get("clade_a_in_b", 0), r.get("clade_b_in_a", 0)]
+        return [
+            r.get("exact_id", 0),
+            r.get("clade_a_in_b", 0),
+            r.get("clade_b_in_a", 0),
+        ]
     return r.get("verified_count", 0)
 
 
@@ -84,8 +99,12 @@ def viz_key(r) -> str:
     if r["shared_key"] == "NCBITaxon":
         base = "NCBITaxon name-match" if r.get("match_type") == "label" else "NCBITaxon"
     else:
-        base = r["shared_key"].replace("<->", "↔").replace(" -> ", "→").replace("->", "→")
-        base = re.sub(r"\s*\((?:bridged|two-hop)\)\s*$", "", base)  # re-added as bridge below
+        base = (
+            r["shared_key"].replace("<->", "↔").replace(" -> ", "→").replace("->", "→")
+        )
+        base = re.sub(
+            r"\s*\((?:bridged|two-hop)\)\s*$", "", base
+        )  # re-added as bridge below
     b = r.get("bridge_kg")
     return base + (f" ({b})" if b else "")
 
@@ -116,12 +135,15 @@ def build_rows():
 
 def parse_dom(html: str) -> dict[str, tuple[str, str]]:
     block = re.search(r"const DOM=\{(.*?)\};", html).group(1)
-    return {c: (l, col) for c, l, col in re.findall(r'(\w):\["([^"]+)","(#[0-9A-Fa-f]+)"\]', block)}
+    return {
+        c: (label, col)
+        for c, label, col in re.findall(r'(\w):\["([^"]+)","(#[0-9A-Fa-f]+)"\]', block)
+    }
 
 
 def main() -> None:
     html = HTML.read_text(encoding="utf-8")
-    R, rows = build_rows()
+    R, _rows = build_rows()
 
     # nodes shown = distinct KGs across the figure's endpoint arrays (bridges excluded)
     nodes = sorted({kg for row in R for kg in row[1]})
@@ -134,14 +156,20 @@ def main() -> None:
     dom = {}
     for code in DOMAIN_CODE.values():
         if code in needed:
-            color = existing[code][1] if code in existing else DEFAULT_COLORS.get(code, "#868E96")
+            color = (
+                existing[code][1]
+                if code in existing
+                else DEFAULT_COLORS.get(code, "#868E96")
+            )
             dom[code] = (label_for[code], color)
     # emit DOM ordered alphabetically by domain label — the D3 legend and the PNG
     # renderer both follow DOM order, so the legend reads alphabetically.
     ordered = sorted(dom, key=lambda c: dom[c][0].lower())
-    dom_js = "const DOM={" + ",".join(
-        f'{c}:["{dom[c][0]}","{dom[c][1]}"]' for c in ordered
-    ) + "};"
+    dom_js = (
+        "const DOM={"
+        + ",".join(f'{c}:["{dom[c][0]}","{dom[c][1]}"]' for c in ordered)
+        + "};"
+    )
     html = re.sub(r"const DOM=\{.*?\};", lambda _m: dom_js, html, count=1)
 
     # --- R: one JS array literal per row, grouped by domain for readability ---
@@ -157,10 +185,13 @@ def main() -> None:
 
     # --- header counts ---
     hdr = f"{len(nodes)} knowledge graphs, {len(R)} verified crosswalks (verified {verified_on})"
-    html = re.sub(r"\d+ knowledge graphs, \d+ verified crosswalks \(verified [^)]*\)", hdr, html)
+    html = re.sub(
+        r"\d+ knowledge graphs, \d+ verified crosswalks \(verified [^)]*\)", hdr, html
+    )
 
     HTML.write_text(html, encoding="utf-8")
     from collections import Counter
+
     print(f"updated {HTML.relative_to(ROOT)}")
     print(f"  crosswalks: {len(R)} | nodes: {len(nodes)} | verified_on: {verified_on}")
     print(f"  domains: {dict(Counter(r[0] for r in R))}")

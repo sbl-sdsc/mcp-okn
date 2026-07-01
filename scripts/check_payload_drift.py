@@ -38,7 +38,9 @@ ROOT = Path(__file__).resolve().parent.parent
 BASELINE = ROOT / "metadata" / "schema_fingerprints.json"
 
 
-async def _fingerprint(shortname: str, client: httpx.AsyncClient) -> dict[str, list[str]]:
+async def _fingerprint(
+    shortname: str, client: httpx.AsyncClient
+) -> dict[str, list[str]]:
     """Live schema fingerprint for a KG: its sorted class and predicate labels.
 
     Empty (``{}``) when the KG has no curated entity CSV — nothing to diff.

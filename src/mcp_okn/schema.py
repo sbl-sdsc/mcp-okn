@@ -52,9 +52,13 @@ _PROVENANCE_URIS = frozenset(
 
 
 def _is_provenance_uri(uri: str) -> bool:
-    """True for dataset-summary/provenance vocabulary (VOID, PAV, …) that describes
-    the dataset rather than its queryable domain schema — filtered from schemas."""
+    """True for provenance/dataset-summary vocabulary (VOID, PAV, …).
+
+    Such terms describe the dataset rather than its queryable domain schema, so
+    they are filtered out of the returned schemas.
+    """
     return uri in _PROVENANCE_URIS or uri.startswith(_PROVENANCE_NAMESPACES)
+
 
 #: Per-KG usage notes surfaced on ``get_schema`` (attached by the tool wrapper in
 #: :mod:`mcp_okn.tools.schema_tools`), delivered exactly when a client is about to
@@ -71,6 +75,7 @@ _KG_USAGE_NOTES: dict[str, dict[str, str]] = {
 def usage_notes(shortname: str) -> dict[str, str] | None:
     """Return curated usage notes for a KG, or None if it has none."""
     return _KG_USAGE_NOTES.get(shortname)
+
 
 #: Schema namespace template used inside generated edge-property templates.
 _SCHEMA_NS = "https://purl.org/okn/frink/kg/{shortname}/schema/"

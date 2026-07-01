@@ -161,7 +161,7 @@ INSTRUCTIONS += (
     "spoke-genelab differential value):\n"
     + SPOKE_GENELAB_CONTRAST_GUIDANCE
     + "\n\nReusable comparability-signature query "
-    "(also returned as `usage_notes` by `get_schema(\"spoke-genelab\")`):\n\n"
+    '(also returned as `usage_notes` by `get_schema("spoke-genelab")`):\n\n'
     + SPOKE_GENELAB_CONTRAST_SNIPPET
     + "\n"
 )
