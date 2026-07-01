@@ -50,7 +50,7 @@ Create an interactive network diagram of the crosswalks. Include bridging KGs (u
 
 🧠 **Assistant**
 
-This is a verified join table — 133 crosswalks across 32 knowledge graphs, drawn as direct KG-to-KG edges, one edge per crosswalk (so multiple crosswalks between the same pair of graphs fan out as parallel arcs). Here's the network. Edge color encodes the data domain, edge width is proportional to log of the verified join count (for the taxonomy edges, which carry no single `verified_count`, I use the largest of the exact-id / clade-membership counts). Identifier-bridged joins (e.g. DOID↔MONDO via `ubergraph`, HGNC→Entrez via `wikidata`) are drawn as direct edges with the bridge noted in the label rather than routed through a hub node. Hover any node or edge for details; drag to rearrange; scroll to zoom; click a graph to pull its full set of join recipes.
+This is a verified join table — 134 crosswalks across 33 knowledge graphs, drawn as direct KG-to-KG edges, one edge per crosswalk (so multiple crosswalks between the same pair of graphs fan out as parallel arcs). Here's the network. Edge color encodes the data domain, edge width is proportional to log of the verified join count (for the taxonomy edges, which carry no single `verified_count`, I use the largest of the exact-id / clade-membership counts). Identifier-bridged joins (e.g. DOID↔MONDO via `ubergraph`, HGNC→Entrez via `wikidata`) are drawn as direct edges with the bridge noted in the label rather than routed through a hub node. Hover any node or edge for details; drag to rearrange; scroll to zoom; click a graph to pull its full set of join recipes.
 
 [interactive force-directed network diagram: 32 KG nodes, edges colored by domain (Chemicals, Disease & phenotype, Genes, Proteins, Function & Pathways, Anatomy & Cell Type, Taxonomy, Geospatial, Industry & supply chain, Social Determinants & Services, Environmental toxicology), edge width proportional to log10 of the verified count, one edge per crosswalk — multiple crosswalks between the same pair of graphs fan out as parallel arcs; ubergraph-bridged edges dashed, wikidata-bridged dotted]
 
@@ -74,6 +74,6 @@ Create a chat transcript. Render the image as .png.
 
 🧠 **Assistant**
 
-Generated this transcript of the session and rendered the crosswalk network to a static PNG, preserving the same visual encoding: nodes are the 32 knowledge graphs, edge color encodes the data domain, and edge width is proportional to log10 of the verified join count. Source data: the curated cross-KG join table (133 crosswalks, verified 2026-06-27).
+Generated this transcript of the session and rendered the crosswalk network to a static PNG, preserving the same visual encoding: nodes are the 33 knowledge graphs, edge color encodes the data domain, and edge width is proportional to log10 of the verified join count. Source data: the curated cross-KG join table (134 crosswalks, verified 2026-06-30).
 
 ![Crosswalk network](crosswalk-network.png)

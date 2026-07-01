@@ -416,3 +416,52 @@ def test_inventory_doc_matches_generator():
     assert doc.read_text(encoding="utf-8") == mod.render(), (
         "inventory doc is stale — run scripts/build_crosswalk_inventory.py"
     )
+
+
+def test_user_facing_crosswalk_count_is_canonical():
+    """Every user-facing doc must cite len(all_crosswalks()) as THE crosswalk
+    count — the single number list_crosswalks returns. Guards against the
+    133-vs-134 drift where docs hardcoded a stale count (or the internal
+    verified_crosswalks array length). Add/remove a crosswalk → update these
+    docs or this fails."""
+    import pathlib
+    import re
+
+    repo = pathlib.Path(__file__).resolve().parent.parent
+    n = len(cw.all_crosswalks(include_examples=False))
+    checks = [
+        ("README.md", r"all (\d+) crosswalks across \d+ graphs"),
+        ("docs/crosswalks/crosswalks_example.md", r"\((\d+) hand-verified crosswalks"),
+        (
+            "docs/crosswalks/proto-okn-crosswalk-inventory.md",
+            r"Here are all (\d+) precomputed cross-KG crosswalks",
+        ),
+    ]
+    for rel, pat in checks:
+        path = repo / rel
+        if not path.exists():
+            pytest.skip(f"{rel} not present in this checkout")
+        m = re.search(pat, path.read_text(encoding="utf-8"))
+        assert m, f"{rel}: canonical crosswalk-count phrase not found (pattern {pat!r})"
+        assert int(m.group(1)) == n, (
+            f"{rel} cites {m.group(1)} crosswalks; canonical len(all_crosswalks()) is {n}"
+        )
+
+
+def test_example_question_count_matches_files():
+    """README's '**N example questions**' must equal the actual transcript
+    count in docs/crosswalks/crosswalks_examples/ (one .md per question)."""
+    import pathlib
+    import re
+
+    repo = pathlib.Path(__file__).resolve().parent.parent
+    examples = repo / "docs" / "crosswalks" / "crosswalks_examples"
+    readme = repo / "README.md"
+    if not examples.exists() or not readme.exists():
+        pytest.skip("examples dir or README not present in this checkout")
+    n_files = len(list(examples.glob("*.md")))
+    m = re.search(r"\*\*(\d+) example questions\*\*", readme.read_text(encoding="utf-8"))
+    assert m, "README: '**N example questions**' phrase not found"
+    assert int(m.group(1)) == n_files, (
+        f"README cites {m.group(1)} example questions; {n_files} transcript files exist"
+    )
