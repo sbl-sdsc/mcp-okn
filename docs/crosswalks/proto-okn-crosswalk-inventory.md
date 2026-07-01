@@ -1,6 +1,6 @@
 # Proto-OKN Crosswalk Inventory
 
-- **Date:** 2026-06-27
+- **Date:** 2026-06-30
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 134 precomputed cross-KG crosswalks (verified through 2026-06-29), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and an example question the join answers.
+Here are all 133 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and an example question the join answers.
 
 ## Anatomy & Cell Type
 
@@ -53,14 +53,14 @@ Here are all 134 precomputed cross-KG crosswalks (verified through 2026-06-29), 
 | KGs | Shared key | Count | Example |
 |---|---|---|---|
 | biomarkerkg ↔ nde | DOID | 54 | Infectious/immune-mediated disease datasets (NDE) for a disease biomarkerkg also tracks, joined directly on DOID. |
-| biomarkerkg ↔ prokn | DOID | 388 | Literature biomarkers for a disease (BiomarkerKG) cross-referenced to protein/marker-gene evidence (ProKN). |
 | spoke-okn ↔ biomarkerkg | DOID | 79 | Biomarkers for a disease (BiomarkerKB) alongside that disease's spoke-okn gene/compound associations, joined on DOID. |
 | spoke-okn ↔ nde | DOID | 20 | Infectious/immune-mediated disease datasets (NDE) for a disease, with that disease's spoke-okn associations, joined on DOID. |
-| spoke-okn ↔ prokn | DOID | 96 | spoke-okn disease associations (genes/compounds/prevalence/mortality) for diseases ProKN also describes, joined on DOID. |
 | biomarkerkg → ubergraph → oard-kg | DOID↔MONDO | 247 | EHR-derived disease-phenotype associations (OARD, MONDO) for a biomarkerkg disease (DOID), bridged through ubergraph. |
+| biomarkerkg → ubergraph → prokn | DOID↔MONDO | 344 | Literature biomarkers for a disease (BiomarkerKG) cross-referenced to protein/marker-gene evidence (ProKN). |
 | biomarkerkg → ubergraph → rdkg | DOID↔MONDO | 595 | Rare-disease gene/drug associations (rdkg, MONDO) for a biomarkerkg disease (DOID), bridged through ubergraph DOID->MONDO. |
 | gene-expression-atlas-okn → ubergraph → spoke-okn | DOID↔MONDO | 54 | spoke-okn gene/compound/prevalence associations for diseases GXA profiles by differential expression, bridged EFO->MONDO->DOID. |
 | spoke-okn → ubergraph → oard-kg | DOID↔MONDO | 40 | EHR-derived disease-phenotype associations (OARD, MONDO) for a spoke-okn disease (DOID), bridged through ubergraph. |
+| spoke-okn → ubergraph → prokn | DOID↔MONDO | 115 | spoke-okn disease associations (genes/compounds/prevalence/mortality) for diseases ProKN also describes, joined on DOID. |
 | spoke-okn → ubergraph → rdkg | DOID↔MONDO | 149 | Rare-disease gene/drug associations (rdkg, MONDO) for a spoke-okn disease (DOID), bridged through ubergraph DOID->MONDO. |
 | biomarkerkg → ubergraph → digcfdekg | DOID↔MONDO (+ EFO/Orphanet→MONDO) | 123 | Biomarker-disease associations (biomarkerkg, DOID) for diseases CFDE REVEAL has gene-trait factor inferences on, bridged DOID->MONDO through ubergraph. |
 | spoke-okn → ubergraph → digcfdekg | DOID↔MONDO (+ EFO/Orphanet→MONDO) | 50 | spoke-okn disease associations (genes/compounds/prevalence) for diseases CFDE REVEAL has factor inferences on, bridged DOID->MONDO through ubergraph. |
@@ -70,14 +70,13 @@ Here are all 134 precomputed cross-KG crosswalks (verified through 2026-06-29), 
 | gene-expression-atlas-okn → ubergraph → rdkg | EFO↔MONDO | 414 | Rare-disease gene/drug associations (rdkg) for diseases GXA has differential-expression studies on, via the EFO->MONDO bridge. |
 | gene-expression-atlas-okn ↔ oard-kg | HP | 13 | EHR-derived phenotype co-occurrences (OARD) for the phenotypes GXA studies, joined on HP. |
 | gene-expression-atlas-okn ↔ prokn | HP | 12 | ProKN protein/marker-gene evidence for the phenotypes GXA studies, joined on HP. |
-| oard-kg ↔ prokn | HP | 4,876 | Phenotypes clinically associated with rare diseases (OARD) that also have protein/marker-gene evidence (ProKN). |
+| oard-kg ↔ prokn | HP | 4,941 | Phenotypes clinically associated with rare diseases (OARD) that also have protein/marker-gene evidence (ProKN). |
 | nde ↔ oard-kg | MONDO | 889 | NIAID datasets for a disease (NDE) plus its EHR phenotype signature (OARD). |
-| oard-kg ↔ prokn | MONDO | 445 | Diseases with both EHR phenotype associations (OARD) and marker-gene/protein evidence (ProKN). |
+| oard-kg ↔ prokn | MONDO | 470 | Diseases with both EHR phenotype associations (OARD) and marker-gene/protein evidence (ProKN). |
 | rdkg ↔ oard-kg | MONDO | 2,014 | Rare-disease EHR phenotype profile (OARD) combined with contraindicated/treating drugs (RDKG, DrugBank). |
 | digcfdekg → ubergraph → oard-kg | MONDO (+ EFO/Orphanet→MONDO bridged) | 402 | Rare-disease EHR phenotype profile (OARD) combined with the gene-trait factor inferences CFDE REVEAL records for the same disease. |
 | digcfdekg → ubergraph → rdkg | MONDO (+ EFO/Orphanet→MONDO bridged) | 1,045 | For a rare disease (rdkg, MONDO) with its gene/drug associations, what disease-mechanism factors and gene-trait probabilities does CFDE REVEAL infer? |
-| oard-kg → ubergraph → prokn | MONDO↔DOID | 111 | Join OARD disease associations (oard-kg, MONDO) to ProKN disease entities annotated with DOID by bridging MONDO to DOID through ubergraph's skos:exactMatch. |
-| oard-kg → ubergraph → prokn | MONDO↔OMIM | 444 | Cross-reference OARD drug/outcome disease associations (oard-kg, MONDO) with ProKN's OMIM-annotated disease evidence by bridging MONDO to OMIM through ubergraph's cross-references. |
+| oard-kg → ubergraph → prokn | MONDO↔OMIM | 11 | Cross-reference OARD drug/outcome disease associations (oard-kg, MONDO) with ProKN's OMIM-annotated disease evidence by bridging MONDO to OMIM through ubergraph's cross-references. |
 | oard-kg → ubergraph → prokn | MONDO↔Orphanet | 316 | Cross-reference OARD disease associations (oard-kg, MONDO) with ProKN's Orphanet-annotated rare-disease protein evidence by bridging MONDO to Orphanet through ubergraph. |
 | biobricks-mesh ↔ spoke-okn | MeSH_descriptor_id | 165 | Map spoke-okn's social-determinants and disease nodes to MeSH (e.g. Social Vulnerability = MeSH D000091482) to pull MeSH definitions / tree placement from biobricks-mesh, or to connect spoke-okn disease nodes to MeSH-tagged concepts - reaching the SDoH layer that the MONDO route (M1) misses. |
 | biohealth → ubergraph → gene-expression-atlas-okn | UMLS↔HP | 13 | For a phenotype biohealth tracks (UMLS CUI), is there a GXA differential-expression study on it (HP), bridged through ubergraph UMLS->HP? |
@@ -161,11 +160,11 @@ Here are all 134 precomputed cross-KG crosswalks (verified through 2026-06-29), 
 
 | KGs | Shared key | Count | Example |
 |---|---|---|---|
-| climatemodelskg ↔ securechainkg | climate-model Source IRI (sc:dependsOn) | 3 | Which climate models have the most vulnerable software dependencies and the highest number of vulnerabilities? securechainkg reuses climatemodelskg's Source IRIs as sc:dependsOn subjects, linking CESM2, GFDL-ESM4 and GFDL-CM4 to their vulnerable PyPI packages and CVEs. |
 | fiokg ↔ securechainkg | NAICS | 301 | Cross-reference the NAICS industries of SecureChain supply-chain participants and SUDOKN manufacturers with the EPA FRS facilities (fiokg) in those same industries, then locate those facilities on the spatial hub via fiokg's S2/county links. |
 | fiokg ↔ sudokn | NAICS | 64 | For a manufacturing NAICS industry, list SUDOKN small/medium manufacturers (capabilities, certificates) alongside the EPA FRS facilities (fiokg) in that same industry - and, via fiokg's county/S2 location, where those facilities sit on the spatial hub. |
 | securechainkg ↔ sudokn | NAICS | 35 | For a manufacturing NAICS industry, list SUDOKN small/medium manufacturers (capabilities, certificates, capacity) and SecureChain supply-chain participants (software/hardware products and their vulnerabilities) in that same industry. |
 | securechainkg ↔ sudokn | SUDOKN_industry_sector | 58 | Cross-reference the industry sectors served by SUDOKN manufacturers with the industry sectors of SecureChain supply-chain participants (e.g. which suppliers to the aerospace or automotive sector appear in both graphs). |
+| climatemodelskg ↔ securechainkg | climatemodelskg Source IRI | 3 | Which climate models have the most vulnerable dependencies and the highest number of vulnerabilities? (CESM2, GFDL-ESM4 and GFDL-CM4 link through securechainkg sc:dependsOn to vulnerable PyPI packages and their CVEs.) |
 
 ## Proteins
 

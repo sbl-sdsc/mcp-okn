@@ -43,7 +43,7 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>33 knowledge graphs, 134 verified crosswalks (verified 2026-06-27). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
+  <p>33 knowledge graphs, 133 verified crosswalks (verified 2026-06-30). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
   <p class="tip">&#9654; <b>Hover</b> a node or edge for detail · <b>drag</b> to rearrange · <b>scroll</b> to zoom · <b>double-click</b> a node to unpin it.<br>&#9654; <b>Click a legend item</b> &mdash; a domain (e.g. <b>Chemicals</b>) or a line style (e.g. <b>via ubergraph</b>) &mdash; to toggle those edges.</p>
 </header>
 <div class="bar" id="legend"></div>
@@ -91,14 +91,14 @@ const R=[
 ["C",["biobricks-pubchem-annotations","spoke-okn"],762,"PubChem CID"],
 
 ["D",["biomarkerkg","nde"],54,"DOID"],
-["D",["biomarkerkg","prokn"],388,"DOID"],
 ["D",["spoke-okn","biomarkerkg"],79,"DOID"],
 ["D",["spoke-okn","nde"],20,"DOID"],
-["D",["spoke-okn","prokn"],96,"DOID"],
 ["D",["biomarkerkg","oard-kg"],247,"DOID↔MONDO (ubergraph)"],
+["D",["biomarkerkg","prokn"],344,"DOID↔MONDO (ubergraph)"],
 ["D",["biomarkerkg","rdkg"],595,"DOID↔MONDO (ubergraph)"],
 ["D",["gene-expression-atlas-okn","spoke-okn"],54,"DOID↔MONDO (ubergraph)"],
 ["D",["spoke-okn","oard-kg"],40,"DOID↔MONDO (ubergraph)"],
+["D",["spoke-okn","prokn"],115,"DOID↔MONDO (ubergraph)"],
 ["D",["spoke-okn","rdkg"],149,"DOID↔MONDO (ubergraph)"],
 ["D",["biomarkerkg","digcfdekg"],123,"DOID↔MONDO (+ EFO/Orphanet→MONDO) (ubergraph)"],
 ["D",["spoke-okn","digcfdekg"],50,"DOID↔MONDO (+ EFO/Orphanet→MONDO) (ubergraph)"],
@@ -108,14 +108,13 @@ const R=[
 ["D",["gene-expression-atlas-okn","rdkg"],414,"EFO↔MONDO (ubergraph)"],
 ["D",["gene-expression-atlas-okn","oard-kg"],13,"HP"],
 ["D",["gene-expression-atlas-okn","prokn"],12,"HP"],
-["D",["oard-kg","prokn"],4876,"HP"],
+["D",["oard-kg","prokn"],4941,"HP"],
 ["D",["nde","oard-kg"],889,"MONDO"],
-["D",["oard-kg","prokn"],445,"MONDO"],
+["D",["oard-kg","prokn"],470,"MONDO"],
 ["D",["rdkg","oard-kg"],2014,"MONDO"],
 ["D",["digcfdekg","oard-kg"],402,"MONDO (+ EFO/Orphanet→MONDO bridged) (ubergraph)"],
 ["D",["digcfdekg","rdkg"],1045,"MONDO (+ EFO/Orphanet→MONDO bridged) (ubergraph)"],
-["D",["oard-kg","prokn"],111,"MONDO↔DOID (ubergraph)"],
-["D",["oard-kg","prokn"],444,"MONDO↔OMIM (ubergraph)"],
+["D",["oard-kg","prokn"],11,"MONDO↔OMIM (ubergraph)"],
 ["D",["oard-kg","prokn"],316,"MONDO↔Orphanet (ubergraph)"],
 ["D",["biobricks-mesh","spoke-okn"],165,"MeSH_descriptor_id"],
 ["D",["biohealth","gene-expression-atlas-okn"],13,"UMLS↔HP (ubergraph)"],

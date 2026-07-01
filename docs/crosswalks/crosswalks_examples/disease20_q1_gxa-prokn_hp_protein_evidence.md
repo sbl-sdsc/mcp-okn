@@ -12,14 +12,14 @@
 ## Conversation
 👤 **User**
 
-GXA stores some studied conditions as HP phenotype terms. ProKN cross-references disease/phenotype entities (carrying HP via `rdfs:seeAlso`). **Crosswalk on HP:** which of GXA's phenotypes also appear in ProKN's protein-centric evidence layer, so an expression-studied phenotype can be tied to ProKN protein/disease annotations? Join gene-expression-atlas-okn and prokn on the shared HP identifier.
+GXA stores some studied conditions as HP phenotype terms. ProKN cross-references disease/phenotype entities (carrying HP via `skos:exactMatch`). **Crosswalk on HP:** which of GXA's phenotypes also appear in ProKN's protein-centric evidence layer, so an expression-studied phenotype can be tied to ProKN protein/disease annotations? Join gene-expression-atlas-okn and prokn on the shared HP identifier.
 
 ---
 🧠 **Assistant**
 
-**Why the join is required.** GXA gives the phenotype; ProKN gives the protein/disease evidence side. Bridging them requires matching GXA's HP-typed nodes to the HP terms ProKN attaches (via `rdfs:seeAlso`) to its disease entities. 12 of GXA's 13 HP phenotypes are present in ProKN.
+**Why the join is required.** GXA gives the phenotype; ProKN gives the protein/disease evidence side. Bridging them requires matching GXA's HP-typed nodes to the HP terms ProKN attaches (via `skos:exactMatch`) to its disease entities. 12 of GXA's 13 HP phenotypes are present in ProKN. _(Re-verified 2026-07-01 after ProKN v0.0.5 migrated its disease/phenotype cross-references from `rdfs:seeAlso` to `skos:exactMatch`; the query below uses the current predicate and the counts are unchanged.)_
 
-**Join mechanics.** Shared key = HP term IRI. In GXA, `?hp a biolink:Disease` (`obo/HP_` IRI); in ProKN, `?entity rdfs:seeAlso ?hp`. COUNT distinct ProKN entities per phenotype; labels from ubergraph.
+**Join mechanics.** Shared key = HP term IRI. In GXA, `?hp a biolink:Disease` (`obo/HP_` IRI); in ProKN, `?entity skos:exactMatch ?hp`. COUNT distinct ProKN entities per phenotype; labels from ubergraph.
 
 | GXA phenotype (HP) | ProKN entities |
 | --- | --- |
@@ -38,7 +38,7 @@ GXA stores some studied conditions as HP phenotype terms. ProKN cross-references
 
 The rows answer the question: 12 GXA-studied phenotypes are represented in ProKN's disease/evidence layer, so each can be linked from its expression studies to ProKN's protein/marker annotations. The metabolic-liver and renal phenotypes carry the most ProKN entities. The result depends on the HP join.
 
-**Validation (shared standard + literature).** Join on the HP ontology identifier; ProKN attaches HP via curated `rdfs:seeAlso` cross-references. According to PubMed, the leading phenotype here — hepatic steatosis / NASH — has an established protein-biomarker layer that motivates tying it to ProKN's protein evidence: large-scale proteomic markers for steatohepatitis and fibrosis (Vali et al., LITMUS, *Lancet Gastroenterol Hepatol* 2023, [DOI](https://doi.org/10.1016/S2468-1253(23)00017-1)) and osteopontin as a NASH-associated macrophage biomarker (Remmerie et al., *Immunity* 2020, [DOI](https://doi.org/10.1016/j.immuni.2020.08.004)). **Validated** (shared HP identifier; PubMed-corroborated).
+**Validation (shared standard + literature).** Join on the HP ontology identifier; ProKN attaches HP via curated `skos:exactMatch` cross-references. According to PubMed, the leading phenotype here — hepatic steatosis / NASH — has an established protein-biomarker layer that motivates tying it to ProKN's protein evidence: large-scale proteomic markers for steatohepatitis and fibrosis (Vali et al., LITMUS, *Lancet Gastroenterol Hepatol* 2023, [DOI](https://doi.org/10.1016/S2468-1253(23)00017-1)) and osteopontin as a NASH-associated macrophage biomarker (Remmerie et al., *Immunity* 2020, [DOI](https://doi.org/10.1016/j.immuni.2020.08.004)). **Validated** (shared HP identifier; PubMed-corroborated).
 
 ## SPARQL queries executed
 #### Query 1
@@ -48,7 +48,7 @@ PREFIX bl: <https://w3id.org/biolink/vocab/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?hpLabel (COUNT(DISTINCT ?c) AS ?proknEntities) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?hp a bl:Disease . FILTER(STRSTARTS(STR(?hp),'http://purl.obolibrary.org/obo/HP_')) }
-  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?c <http://www.w3.org/2000/01/rdf-schema#seeAlso> ?hp . }
+  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?c <http://www.w3.org/2004/02/skos/core#exactMatch> ?hp . }
   GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?hp rdfs:label ?hpLabel }
 } GROUP BY ?hp ?hpLabel ORDER BY DESC(?proknEntities)
 ```
@@ -60,4 +60,4 @@ SELECT ?hpLabel (COUNT(DISTINCT ?c) AS ?proknEntities) WHERE {
 | Sepsis | 2 |
 | Polyuria | 1 |
 
-**Validation:** shared HP ontology identifier; ProKN `rdfs:seeAlso` cross-references. PubMed — Vali 2023 [DOI](https://doi.org/10.1016/S2468-1253(23)00017-1); Remmerie 2020 [DOI](https://doi.org/10.1016/j.immuni.2020.08.004).
+**Validation:** shared HP ontology identifier; ProKN `skos:exactMatch` cross-references. PubMed — Vali 2023 [DOI](https://doi.org/10.1016/S2468-1253(23)00017-1); Remmerie 2020 [DOI](https://doi.org/10.1016/j.immuni.2020.08.004).

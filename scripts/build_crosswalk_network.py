@@ -89,15 +89,28 @@ def viz_key(r) -> str:
     return base + (f" ({b})" if b else "")
 
 
+def _effective_count(count) -> int:
+    """Single count for a row whose viz_count may be a taxon triple (list)."""
+    return max(count) if isinstance(count, list) else (count or 0)
+
+
 def build_rows():
     rows = C.all_crosswalks(include_examples=False)
     out = []
+    kept = []
     for r in rows:
         dom = DOMAIN_CODE.get(r["domain"])
         if dom is None:
             raise SystemExit(f"Unknown domain {r['domain']!r}; add it to DOMAIN_CODE")
-        out.append([dom, viz_kgs(r), viz_count(r), viz_key(r)])
-    return out, rows
+        count = viz_count(r)
+        # Drop count-0 edges: superseded/dead routes (e.g. prokn v0.0.5 bridges
+        # that now return 0) are disclosed in the crosswalk table but must not
+        # appear as ghost edges in the network figure.
+        if _effective_count(count) <= 0:
+            continue
+        out.append([dom, viz_kgs(r), count, viz_key(r)])
+        kept.append(r)
+    return out, kept
 
 
 def parse_dom(html: str) -> dict[str, tuple[str, str]]:

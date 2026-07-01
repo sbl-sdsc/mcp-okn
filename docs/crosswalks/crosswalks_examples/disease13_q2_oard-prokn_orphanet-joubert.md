@@ -24,7 +24,7 @@ CW13 (oard-kg × prokn, bridged MONDO↔Orphanet via ubergraph), Q2: For Joubert
 
 **Why the join is required:** ProKN holds the ciliary protein panel under an Orphanet id; OARD holds the EHR phenotype enrichment under MONDO. Combining the molecular panel with the strongest real-world phenotype needs the ubergraph MONDO→Orphanet bridge.
 
-**Result (verified):** 11 ciliary proteins, non-empty, each paired with the top phenotype. Sample:
+**Result (verified):** 11 ciliary proteins, non-empty, each paired with the top phenotype. _(Re-verified 2026-06-30 after ProKN v0.0.5 migrated its disease cross-references from `rdfs:seeAlso` to `skos:exactMatch`; the query below uses the current predicate and the panel is unchanged at 11.)_ Sample:
 
 | protein | accession | top OARD phenotype (log-odds) |
 |---|---|---|
@@ -49,6 +49,7 @@ PREFIX biolink: <https://w3id.org/biolink/vocab/>
 PREFIX pbl: <https://biolink.github.io/biolink-model/>
 PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX up: <http://purl.uniprot.org/core/>
 # CW13 (oard-kg <-> prokn, bridged MONDO<->Orphanet via ubergraph hasDbXref) Q2:
 # Joubert syndrome (MONDO_0018772) reached via the Orphanet rare-disease bridge:
@@ -77,7 +78,7 @@ SELECT DISTINCT ?orphaId ?accession ?protein ?topPheno ?topLOR WHERE {
   BIND(REPLACE(STR(?curie),'^Orphanet:','') AS ?orphaId)
   BIND(IRI(CONCAT('http://www.orpha.net/ORDO/Orphanet_',?orphaId)) AS ?orpha)
   GRAPH <https://purl.org/okn/frink/kg/prokn> {
-    ?y a up:Disease ; rdfs:seeAlso ?orpha .
+    ?y a up:Disease ; skos:exactMatch ?orpha .
     ?prot pbl:associated_with ?y ; a up:Protein ; up:mnemonic ?protein .
     BIND(REPLACE(STR(?prot),'http://purl.uniprot.org/uniprot/','') AS ?accession)
   }

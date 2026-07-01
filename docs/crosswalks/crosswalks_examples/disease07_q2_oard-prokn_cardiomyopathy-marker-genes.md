@@ -24,7 +24,7 @@ CW7 (oard-kg × prokn, shared key HP), Q2: For cardiomyopathy, which EHR-co-occu
 
 **Why the join is required:** OARD gives the EHR co-occurrence counts but no gene/protein layer; ProKN gives the HP→protein/gene marker mapping but no EHR statistics. Mapping a cardiomyopathy-co-occurring EHR phenotype to its molecular marker needs the shared HP key.
 
-**Result (verified):** 8 rows, non-empty, gene–phenotype pairs all canonical. Sample (phenotype | pair-count | gene):
+**Result (verified):** 8 rows, non-empty, gene–phenotype pairs all canonical. _(Re-verified 2026-07-01 after ProKN v0.0.5 migrated its disease/phenotype cross-references from `rdfs:seeAlso` to `skos:exactMatch`; the query below uses the current predicate and the rows are unchanged.)_ Sample (phenotype | pair-count | gene):
 
 | OARD phenotype | pair-count | ProKN gene |
 |---|---|---|
@@ -49,6 +49,7 @@ _2026-06-17 · `oard-kg`, `prokn`, `ubergraph`_
 PREFIX biolink: <https://w3id.org/biolink/vocab/>
 PREFIX pbl: <https://biolink.github.io/biolink-model/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX up: <http://purl.uniprot.org/core/>
 PREFIX schema: <http://schema.org/>
 # CW7 (oard-kg <-> prokn, shared key HP) Q2:
@@ -66,7 +67,7 @@ SELECT DISTINCT ?hp ?hpLabel ?pairCount ?gene ?accession WHERE {
     ?res biolink:concept_pair_count ?pairCount .
   }
   GRAPH <https://purl.org/okn/frink/kg/prokn> {
-    ?pheno rdfs:seeAlso ?hp ; a up:Disease .
+    ?pheno a up:Disease ; skos:exactMatch ?hp .
     ?prot pbl:associated_with ?pheno ; a up:Protein ; schema:name ?gene .
     BIND(REPLACE(STR(?prot),'http://purl.uniprot.org/uniprot/','') AS ?accession)
   }

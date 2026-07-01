@@ -14,7 +14,7 @@
 
 👤 **User**
 
-Crosswalk: prokn × wikidata × spoke-okn, bridged HGNC -> Entrez via Wikidata (Wikidata P351 = Entrez Gene ID, P354 = HGNC ID). spoke-okn gene nodes are Entrez IRIs; ProKN references genes as HGNC IRIs (e.g. on rdfs:seeAlso). Wikidata is the bridge.
+Crosswalk: prokn × wikidata × spoke-okn, bridged HGNC -> Entrez via Wikidata (Wikidata P351 = Entrez Gene ID, P354 = HGNC ID). spoke-okn gene nodes are Entrez IRIs; ProKN references genes as HGNC IRIs (match the HGNC IRI on any predicate — ProKN v0.0.5 dropped `rdfs:seeAlso`). Wikidata is the bridge.
 
 Research question: For genes SPOKE associates with breast cancer, which ones does ProKN (a protein-centric KG) also hold knowledge about, reached through the Wikidata HGNC<->Entrez bridge? This lets a researcher pull ProKN's protein-level annotations for SPOKE's disease genes.
 
@@ -24,7 +24,7 @@ Why the join is required: SPOKE keys genes by Entrez and ProKN keys them by HGNC
 
 🧠 **Assistant**
 
-SPOKE breast-cancer-associated genes successfully bridged (Entrez -> Wikidata -> HGNC) to their ProKN protein entries. The breast-cancer genes recovered include canonical susceptibility/driver genes:
+SPOKE breast-cancer-associated genes successfully bridged (Entrez -> Wikidata -> HGNC) to their ProKN protein entries. _(Re-verified 2026-07-01 after ProKN v0.0.5 dropped `rdfs:seeAlso`; the prokn side now matches the HGNC IRI on any predicate — the 20-row result is unchanged.)_ The breast-cancer genes recovered include canonical susceptibility/driver genes:
 
 | Gene | HGNC | ProKN protein (Ensembl) |
 |---|---|---|
@@ -36,7 +36,7 @@ SPOKE breast-cancer-associated genes successfully bridged (Entrez -> Wikidata ->
 | AR | 644 | ENSG00000169083 |
 | BAP1 | 950 | ENSG00000163930 |
 
-Why this answers the question: SPOKE associates these genes with breast cancer (keyed by Entrez); the query maps each Entrez id through Wikidata (P351->P354) to its HGNC id, then matches ProKN's HGNC reference (rdfs:seeAlso) to retrieve ProKN's protein node. The recovered set is dominated by established breast-cancer genes (ATM, BARD1, ATR, AKT1, BCL2), confirming the bridge connects the right entities. This linkage is impossible without the Wikidata HGNC<->Entrez bridge because the two KGs use different gene-id schemes.
+Why this answers the question: SPOKE associates these genes with breast cancer (keyed by Entrez); the query maps each Entrez id through Wikidata (P351->P354) to its HGNC id, then matches ProKN's HGNC reference (on any predicate) to retrieve ProKN's protein node. The recovered set is dominated by established breast-cancer genes (ATM, BARD1, ATR, AKT1, BCL2), confirming the bridge connects the right entities. This linkage is impossible without the Wikidata HGNC<->Entrez bridge because the two KGs use different gene-id schemes.
 
 Literature validation (PubMed): BARD1 as a breast-cancer susceptibility gene returns 218 records (e.g. PMIDs 33471991, 25452441); ATM, ATR, AKT1 and BCL2 are all well-established breast-cancer genes. The disease-gene associations are strongly literature-supported.
 
@@ -61,7 +61,7 @@ SELECT DISTINCT ?sym ?hgnc ?proknProtein WHERE {
   }
   BIND(IRI(CONCAT('http://identifiers.org/hgnc/',?hgnc)) AS ?h)
   GRAPH <https://purl.org/okn/frink/kg/prokn> {
-    ?proknProtein rdfs:seeAlso ?h .
+    ?proknProtein ?p ?h .
   }
 } ORDER BY ?sym LIMIT 20
 ```

@@ -219,13 +219,17 @@ SELECT (COUNT(DISTINCT ?db) AS ?n) WHERE {{
 # silent partial-result failure). UNION both so the join is entity-complete.
 #
 # PROKN v0.0.5 DRIFT (2026-06-23, re-verified 2026-06-30): prokn dropped rdfs:seeAlso
-# entirely (0 triples) and re-keyed up:Disease on MONDO via skos:exactMatch; it no
-# longer carries DOID/OMIM/Orphanet disease xrefs. Repaired to match:
+# entirely (0 triples) and re-keyed up:Disease xrefs on skos:exactMatch (it did NOT
+# drop the xrefs themselves — MONDO 3,191, Orphanet 2,617, OMIM 51, DOID only 5).
+# Repaired to match by swapping the prokn-side predicate seeAlso -> skos:exactMatch:
 #   A5-doid  (biomarkerkg<->prokn): DOID/seeAlso -> DOID->MONDO via ubergraph, 388->344
 #   A3-mondo (oard<->prokn):        prokn seeAlso -> skos:exactMatch, 445->470
 #   A7-doid  (spoke-okn<->prokn):   direct DOID -> DOID->MONDO via ubergraph, 96->115
 #   A1-hp    (oard<->prokn):        prokn seeAlso -> any-predicate HP object, 4876->4941
-# SUPERSEDED (now 0, folded into A3-mondo's MONDO route): A12-omim, A14-orphanet, A15-doid.
+#   A12-omim (oard<->prokn):        prokn seeAlso -> skos:exactMatch, 444->11  (still +2 over A3)
+#   A14-orphanet (oard<->prokn):    prokn seeAlso -> skos:exactMatch, 316 unchanged (+278 over A3)
+# A15-doid GENUINELY DEAD after the migration (prokn kept only 5 DOID exactMatch ids,
+# 0 join pairs) -> removed from verified_crosswalks, recorded in superseded_non_joins.
 Q["A1-hp"] = f"""
 SELECT (COUNT(DISTINCT ?hp) AS ?n) WHERE {{
   GRAPH {g("oard-kg")} {{ {{ ?s {BL_OBJ} ?hp }} UNION {{ ?ss {BL_SUBJ} ?hp }} FILTER(STRSTARTS(STR(?hp),'http://purl.obolibrary.org/obo/HP_')) }}
@@ -296,37 +300,34 @@ SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {{
   GRAPH {g("oard-kg")} {{ {{ ?x {BL_OBJ} ?mondo }} UNION {{ ?xs {BL_SUBJ} ?mondo }} }}
 }}"""
 
-# oard-kg MONDO -> ubergraph hasDbXref 'OMIM:{{id}}' -> prokn OMIM seeAlso.
+# oard-kg MONDO -> ubergraph hasDbXref 'OMIM:{{id}}' -> prokn OMIM skos:exactMatch.
 # prokn stores OMIM as https://www.omim.org/entry/{{id}} (https, www); rebuild it
-# from the bare id in ubergraph's OMIM CURIE.
+# from the bare id in ubergraph's OMIM CURIE. (v0.0.5: seeAlso -> skos:exactMatch,
+# 51 OMIM ids remain, count 444->11; still +2 prokn diseases beyond A3.)
 Q["A12-omim-oardkg-prokn-via-ubergraph"] = f"""
 SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {{
   GRAPH {g("oard-kg")} {{ {{ ?x {BL_OBJ} ?mondo }} UNION {{ ?xs {BL_SUBJ} ?mondo }} FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }}
   GRAPH {g("ubergraph")} {{ ?mondo {DBXREF} ?curie . FILTER(STRSTARTS(STR(?curie),'OMIM:')) }}
   BIND(IRI(CONCAT('https://www.omim.org/entry/',REPLACE(STR(?curie),'^OMIM:',''))) AS ?omim)
-  GRAPH {g("prokn")} {{ ?y a {UP_DISEASE} ; {SEEALSO} ?omim . }}
+  GRAPH {g("prokn")} {{ ?y a {UP_DISEASE} ; {EXACT} ?omim . }}
 }}"""
 
 # oard-kg MONDO -> ubergraph hasDbXref 'Orphanet:{{id}}' -> prokn up:Disease Orphanet
-# seeAlso (http://www.orpha.net/ORDO/Orphanet_{{id}}, 2,192 such ids on up:Disease).
-# Sibling of A12: recovers prokn diseases keyed by Orphanet but no usable MONDO/OMIM.
+# skos:exactMatch (http://www.orpha.net/ORDO/Orphanet_{{id}}, 2,617 such ids on up:Disease).
+# Sibling of A12: recovers prokn diseases keyed by Orphanet but no usable MONDO/OMIM
+# (largest complementary bridge, +278 prokn diseases beyond A3; count 316 unchanged).
 Q["A14-orphanet-oardkg-prokn-via-ubergraph"] = f"""
 SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {{
   GRAPH {g("oard-kg")} {{ {{ ?x {BL_OBJ} ?mondo }} UNION {{ ?xs {BL_SUBJ} ?mondo }} FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }}
   GRAPH {g("ubergraph")} {{ ?mondo {DBXREF} ?curie . FILTER(STRSTARTS(STR(?curie),'Orphanet:')) }}
   BIND(IRI(CONCAT('http://www.orpha.net/ORDO/Orphanet_',REPLACE(STR(?curie),'^Orphanet:',''))) AS ?orpha)
-  GRAPH {g("prokn")} {{ ?y a {UP_DISEASE} ; {SEEALSO} ?orpha . }}
+  GRAPH {g("prokn")} {{ ?y a {UP_DISEASE} ; {EXACT} ?orpha . }}
 }}"""
 
-# oard-kg MONDO -> ubergraph skos:exactMatch DOID -> prokn up:Disease DOID seeAlso.
-# Sibling of A12; reaches 111 disease entities (109 net-new) but those net-new
-# DOID-only diseases carry NO up:Protein associations (0 net-new disease-protein pairs).
-Q["A15-doid-oardkg-prokn-via-ubergraph"] = f"""
-SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {{
-  GRAPH {g("oard-kg")} {{ {{ ?x {BL_OBJ} ?mondo }} UNION {{ ?xs {BL_SUBJ} ?mondo }} FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }}
-  GRAPH {g("ubergraph")} {{ ?mondo {EXACT} ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }}
-  GRAPH {g("prokn")} {{ ?y a {UP_DISEASE} ; {SEEALSO} ?doid . }}
-}}"""
+# A15-doid (oard-kg MONDO -> ubergraph skos:exactMatch DOID -> prokn DOID) is GENUINELY
+# DEAD after prokn v0.0.5: prokn kept only 5 DOID skos:exactMatch ids and the bridge
+# yields 0 join pairs. Removed from verified_crosswalks -> superseded_non_joins; no
+# skeleton is authored here because the harness only tests verified_crosswalks.
 
 # --- CHEBI<->CAS bridge ----------------------------------------------------
 Q["B2-chebi-cas-bridge"] = f"""

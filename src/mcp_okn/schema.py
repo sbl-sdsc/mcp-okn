@@ -30,6 +30,32 @@ ENTITY_METADATA_BASE = (
     "https://raw.githubusercontent.com/sbl-sdsc/mcp-proto-okn/main/metadata/entities"
 )
 
+#: Provenance / dataset-summary vocabularies (VOID and friends) that some upstream
+#: ``*_entities.csv`` files now embed as schema rows. These describe the dataset
+#: (triple counts, class/property partitions, last-updated timestamps) rather than
+#: the KG's queryable *domain* schema, so surfacing them in ``get_schema`` would
+#: mislead a client into writing SPARQL against ``void:triples`` and the like. We
+#: expose that provenance properly via ``get_kg_version`` / the ``okn-void`` graph,
+#: so drop these rows at the CSV-parsing layer — that keeps both ``get_schema`` and
+#: the drift-check fingerprint (:mod:`scripts.check_payload_drift`) domain-only.
+_PROVENANCE_NAMESPACES = (
+    "http://rdfs.org/ns/void#",  # VOID
+    "http://ldf.fi/void-ext#",  # VOID-ext
+    "http://purl.org/pav/",  # PAV provenance (e.g. pav:lastUpdatedOn)
+)
+_PROVENANCE_URIS = frozenset(
+    {
+        "http://purl.org/dc/terms/modified",
+        "https://research.bioinformatics.udel.edu/ProKN/rdf/topClassName",
+    }
+)
+
+
+def _is_provenance_uri(uri: str) -> bool:
+    """True for dataset-summary/provenance vocabulary (VOID, PAV, …) that describes
+    the dataset rather than its queryable domain schema — filtered from schemas."""
+    return uri in _PROVENANCE_URIS or uri.startswith(_PROVENANCE_NAMESPACES)
+
 #: Per-KG usage notes surfaced on ``get_schema`` (attached by the tool wrapper in
 #: :mod:`mcp_okn.tools.schema_tools`), delivered exactly when a client is about to
 #: write SPARQL for that KG. Only KGs with domain rules that the schema alone does
@@ -98,7 +124,7 @@ async def fetch_entity_metadata(
     metadata: dict[str, dict[str, str]] = {}
     for row in csv.DictReader(StringIO(content)):
         uri = (row.get("URI") or "").strip()
-        if not uri:
+        if not uri or _is_provenance_uri(uri):
             continue
         edge_property_of = (row.get("EdgePropertyOf") or "").strip()
         if uri in metadata and edge_property_of:

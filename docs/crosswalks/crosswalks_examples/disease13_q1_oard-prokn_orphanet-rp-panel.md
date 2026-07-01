@@ -24,7 +24,7 @@ CW13 (oard-kg × prokn, bridged MONDO↔Orphanet via ubergraph), Q1: For retinit
 
 **Why the join is required:** OARD anchors RP on MONDO (844 EHR phenotypes) but has no protein layer; ProKN keys its rare-disease protein panel on Orphanet. Reaching ProKN's RP gene panel from the OARD disease requires the ubergraph MONDO→Orphanet bridge.
 
-**Result (verified):** 32 proteins, non-empty, the full heterogeneous RP panel (Orphanet 791, 844 EHR phenotypes). Sample:
+**Result (verified):** 32 proteins, non-empty, the full heterogeneous RP panel (Orphanet 791, 844 EHR phenotypes). _(Re-verified 2026-06-30 after ProKN v0.0.5 migrated its disease cross-references from `rdfs:seeAlso` to `skos:exactMatch`; the query below uses the current predicate and the panel is unchanged at 32.)_ Sample:
 
 | protein | accession |
 |---|---|
@@ -51,6 +51,7 @@ PREFIX biolink: <https://w3id.org/biolink/vocab/>
 PREFIX pbl: <https://biolink.github.io/biolink-model/>
 PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX up: <http://purl.uniprot.org/core/>
 # CW13 (oard-kg <-> prokn, bridged MONDO<->Orphanet via ubergraph hasDbXref) Q1:
 # Retinitis pigmentosa (MONDO_0019200) reached via the Orphanet rare-disease bridge:
@@ -73,7 +74,7 @@ SELECT DISTINCT ?orphaId ?accession ?protein ?nEHRPheno WHERE {
   BIND(REPLACE(STR(?curie),'^Orphanet:','') AS ?orphaId)
   BIND(IRI(CONCAT('http://www.orpha.net/ORDO/Orphanet_',?orphaId)) AS ?orpha)
   GRAPH <https://purl.org/okn/frink/kg/prokn> {
-    ?y a up:Disease ; rdfs:seeAlso ?orpha .
+    ?y a up:Disease ; skos:exactMatch ?orpha .
     ?prot pbl:associated_with ?y ; a up:Protein ; up:mnemonic ?protein .
     BIND(REPLACE(STR(?prot),'http://purl.uniprot.org/uniprot/','') AS ?accession)
   }

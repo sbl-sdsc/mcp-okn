@@ -20,11 +20,11 @@ CW7 (oard-kg × prokn, shared key HP), Q1: For ALS, which OARD EHR-correlated ph
 
 🧠 **Assistant**
 
-**Crosswalk:** oard-kg × prokn · **Shared identifier:** Human Phenotype Ontology (HP) term. OARD links ALS (MONDO_0004976) to HP phenotypes with `log_odds_ratio`; ProKN attaches UniProt proteins to a disease entity that `rdfs:seeAlso` the *same HP term*. (Key trap: ProKN uses the `biolink.github.io/biolink-model/associated_with` predicate, not OARD's `w3id.org/biolink/vocab/` form.)
+**Crosswalk:** oard-kg × prokn · **Shared identifier:** Human Phenotype Ontology (HP) term. OARD links ALS (MONDO_0004976) to HP phenotypes with `log_odds_ratio`; ProKN attaches UniProt proteins to a disease entity that `skos:exactMatch` the *same HP term*. (Key trap: ProKN uses the `biolink.github.io/biolink-model/associated_with` predicate, not OARD's `w3id.org/biolink/vocab/` form.)
 
 **Why the join is required:** OARD supplies the real-world EHR phenotype enrichment but no molecular layer; ProKN supplies the protein evidence but no EHR statistics. Connecting an ALS-correlated EHR phenotype to its underlying proteins requires the shared HP key.
 
-**Result (verified):** 15 rows, non-empty, mechanistically coherent. Sample (phenotype | log-odds | protein):
+**Result (verified):** 15 rows, non-empty, mechanistically coherent. _(Re-verified 2026-07-01 after ProKN v0.0.5 migrated its disease/phenotype cross-references from `rdfs:seeAlso` to `skos:exactMatch`; the query below uses the current predicate and the top rows are unchanged.)_ Sample (phenotype | log-odds | protein):
 
 | OARD phenotype (ALS) | log-odds | ProKN protein |
 |---|---|---|
@@ -46,6 +46,7 @@ _2026-06-17 · `oard-kg`, `prokn`, `ubergraph`_
 PREFIX biolink: <https://w3id.org/biolink/vocab/>
 PREFIX pbl: <https://biolink.github.io/biolink-model/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX up: <http://purl.uniprot.org/core/>
 # CW7 (oard-kg <-> prokn, shared key HP) Q1:
 # HP phenotypes positively correlated with ALS (MONDO_0004976) in OARD EHR data
@@ -62,7 +63,7 @@ SELECT DISTINCT ?hp ?hpLabel ?lor ?protein WHERE {
     ?res biolink:log_odds_ratio ?lor .
   }
   GRAPH <https://purl.org/okn/frink/kg/prokn> {
-    ?pheno rdfs:seeAlso ?hp ; a up:Disease .
+    ?pheno a up:Disease ; skos:exactMatch ?hp .
     ?prot pbl:associated_with ?pheno ; a up:Protein .
     BIND(REPLACE(STR(?prot),'http://purl.uniprot.org/uniprot/','') AS ?protein)
   }

@@ -17,9 +17,9 @@ Hepatic steatosis is a phenotype GXA profiles and the one with the most ProKN en
 ---
 🧠 **Assistant**
 
-**Why the join is required.** GXA flags hepatic steatosis as studied; ProKN holds the cross-referenced disease entities. Naming them requires resolving GXA's HP term and pulling the ProKN entities that `seeAlso` it.
+**Why the join is required.** GXA flags hepatic steatosis as studied; ProKN holds the cross-referenced disease entities. Naming them requires resolving GXA's HP term and pulling the ProKN entities that `skos:exactMatch` it. _(Re-verified 2026-07-01 after ProKN v0.0.5 migrated its disease/phenotype cross-references from `rdfs:seeAlso` to `skos:exactMatch`; the query below uses the current predicate and both entities are unchanged.)_
 
-**Join mechanics.** Resolve `?hp` whose ubergraph label is "Hepatic steatosis", then `?entity rdfs:seeAlso ?hp` in ProKN, with the entity's `rdf:type`.
+**Join mechanics.** Resolve `?hp` whose ubergraph label is "Hepatic steatosis", then `?entity skos:exactMatch ?hp` in ProKN, with the entity's `rdf:type`.
 
 | ProKN entity | type |
 | --- | --- |
@@ -39,7 +39,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT DISTINCT ?proknEntity ?type WHERE {
   GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?hp a bl:Disease . FILTER(STRSTARTS(STR(?hp),'http://purl.obolibrary.org/obo/HP_')) }
   GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?hp rdfs:label "Hepatic steatosis" }
-  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?proknEntity <http://www.w3.org/2000/01/rdf-schema#seeAlso> ?hp . OPTIONAL { ?proknEntity a ?type } }
+  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?proknEntity <http://www.w3.org/2004/02/skos/core#exactMatch> ?hp . OPTIONAL { ?proknEntity a ?type } }
 } LIMIT 10
 ```
 | proknEntity | type |

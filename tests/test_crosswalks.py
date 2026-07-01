@@ -396,3 +396,23 @@ def test_bundled_table_matches_metadata_source(tmp_path):
     if not source.exists():
         pytest.skip("metadata source not present in this checkout")
     assert json.loads(source.read_text()) == cw.load_crosswalks()
+
+
+def test_inventory_doc_matches_generator():
+    """docs/crosswalks/proto-okn-crosswalk-inventory.md is generated from the
+    crosswalk table — guard that it hasn't drifted (regenerate with
+    scripts/build_crosswalk_inventory.py)."""
+    import importlib.util
+    import pathlib
+
+    repo = pathlib.Path(__file__).resolve().parent.parent
+    doc = repo / "docs" / "crosswalks" / "proto-okn-crosswalk-inventory.md"
+    gen = repo / "scripts" / "build_crosswalk_inventory.py"
+    if not doc.exists() or not gen.exists():
+        pytest.skip("inventory doc or generator not present in this checkout")
+    spec = importlib.util.spec_from_file_location("_inv_gen", gen)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    assert doc.read_text(encoding="utf-8") == mod.render(), (
+        "inventory doc is stale — run scripts/build_crosswalk_inventory.py"
+    )

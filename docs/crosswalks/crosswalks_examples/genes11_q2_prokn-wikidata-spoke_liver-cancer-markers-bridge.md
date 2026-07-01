@@ -24,7 +24,7 @@ Why the join is required: SPOKE prognostic-marker genes are keyed by Entrez; Pro
 
 🧠 **Assistant**
 
-SPOKE liver-cancer prognostic-marker genes bridged (Entrez -> Wikidata -> HGNC) to their ProKN protein entries:
+SPOKE liver-cancer prognostic-marker genes bridged (Entrez -> Wikidata -> HGNC) to their ProKN protein entries. _(Re-verified 2026-07-01 after ProKN v0.0.5 dropped `rdfs:seeAlso`; the prokn side now matches the HGNC IRI on any predicate — the 20-row result is unchanged.)_
 
 | Gene | SPOKE marker (liver cancer) | HGNC | ProKN protein (Ensembl) |
 |---|---|---|---|
@@ -63,7 +63,7 @@ SELECT DISTINCT ?sym ?markerType ?hgnc ?proknProtein WHERE {
   }
   BIND(IRI(CONCAT('http://identifiers.org/hgnc/',?hgnc)) AS ?h)
   GRAPH <https://purl.org/okn/frink/kg/prokn> {
-    ?proknProtein rdfs:seeAlso ?h .
+    ?proknProtein ?p ?h .
   }
 } ORDER BY ?sym LIMIT 20
 ```
