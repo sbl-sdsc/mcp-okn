@@ -508,8 +508,10 @@
       "Collection"
     ],
     "predicates": [
+      "connected to",
       "label",
-      "member"
+      "member",
+      "secondary component"
     ]
   },
   "fiokg": {
@@ -1120,6 +1122,7 @@
       "dataset count",
       "has study results",
       "has supporting studies",
+      "in subset",
       "label",
       "log odds ratio",
       "log odds ratio 95 ci",
