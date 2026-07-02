@@ -1,17 +1,25 @@
-"""In-memory log of SPARQL queries executed during a session.
+"""Per-session log of SPARQL queries executed during a session.
 
 Every query run through the server is appended here so `create_chat_transcript`
 can render a faithful, ground-truth record of what actually hit the endpoint —
 rather than relying on the model to re-supply queries from memory.
 
-The log lives for the lifetime of the server process. Call `reset()` (exposed as
+The log is scoped to the current MCP session. Under stdio (a single local
+client) there is effectively one log; but when the server is run as a REMOTE
+(HTTP/SSE) server, several chats share one process, each on its own
+`ServerSession`. Keying the log by that session keeps one chat's queries,
+diagrams, and transcript from leaking into another's. Call `reset()` (exposed as
 the `reset_query_log` tool) at the start of a new analysis to scope a transcript
-to just that session.
+to just that session's work so far.
+
+State for a session is dropped automatically when its connection closes and the
+`ServerSession` is garbage-collected (the store is held in a `WeakKeyDictionary`).
 """
 
 from __future__ import annotations
 
 import re
+import weakref
 from datetime import datetime, timezone
 from typing import Any
 
@@ -21,9 +29,60 @@ MAX_LOGGED_ROWS = 1000
 
 _GRAPH_RE = re.compile(r"GRAPH\s*<https://purl\.org/okn/frink/kg/([^>]+)>")
 
-_log: list[dict[str, Any]] = []
-_visualizations: list[dict[str, Any]] = []
-_last_transcript: str | None = None
+
+class _Store:
+    """The mutable per-session state: query log, diagrams, last transcript."""
+
+    __slots__ = ("last_transcript", "log", "visualizations")
+
+    def __init__(self) -> None:
+        self.log: list[dict[str, Any]] = []
+        self.visualizations: list[dict[str, Any]] = []
+        self.last_transcript: str | None = None
+
+
+# Fallback store used when there is no active MCP request (direct calls in tests,
+# or any code path outside a request). All such callers share this one store, so
+# behavior matches the previous process-global log.
+_default_store = _Store()
+
+# Per-session stores, keyed by the live `ServerSession` object. Weak keys so a
+# store is reclaimed when its connection closes — no manual cleanup, no unbounded
+# growth on a long-running remote server.
+_stores: weakref.WeakKeyDictionary[Any, _Store] = weakref.WeakKeyDictionary()
+
+
+def _current_store() -> _Store:
+    """Return the store for the current MCP session (or the shared fallback).
+
+    Resolves the active `ServerSession` via the FastMCP request context. Outside
+    a request — or if the context is unavailable for any reason — falls back to a
+    single process-wide store so non-request callers (e.g. tests) keep working.
+    """
+    session_obj = _current_session()
+    if session_obj is None:
+        return _default_store
+    store = _stores.get(session_obj)
+    if store is None:
+        store = _Store()
+        _stores[session_obj] = store
+    return store
+
+
+def _current_session() -> Any | None:
+    """The active MCP `ServerSession`, or None when outside a request.
+
+    Imported lazily to avoid a hard import cycle and to keep this module usable
+    without a running server (the app instance pulls in the tool modules).
+    """
+    try:
+        from .app import mcp
+
+        return mcp.get_context().session
+    except Exception:
+        # No request context (stdio startup, tests, background tasks) or the
+        # session isn't available yet — use the shared fallback store.
+        return None
 
 
 def graphs_in(query: str) -> list[str]:
@@ -92,13 +151,13 @@ def record(query: str, fmt: str, result: Any = None, error: str | None = None) -
             "format": result.get("format", fmt),
             "text": result.get("text", ""),
         }
-    _log.append(entry)
+    _current_store().log.append(entry)
     return True
 
 
 def entries() -> list[dict[str, Any]]:
     """Return a shallow copy of the logged queries, in execution order."""
-    return list(_log)
+    return list(_current_store().log)
 
 
 def record_visualization(shortname: str, mermaid: str) -> None:
@@ -116,16 +175,17 @@ def record_visualization(shortname: str, mermaid: str) -> None:
         "shortname": shortname,
         "mermaid": mermaid,
     }
-    for i, existing in enumerate(_visualizations):
+    visualizations = _current_store().visualizations
+    for i, existing in enumerate(visualizations):
         if existing.get("shortname") == shortname:
-            _visualizations[i] = entry
+            visualizations[i] = entry
             return
-    _visualizations.append(entry)
+    visualizations.append(entry)
 
 
 def visualizations() -> list[dict[str, Any]]:
     """Return a shallow copy of the logged schema visualizations, in order."""
-    return list(_visualizations)
+    return list(_current_store().visualizations)
 
 
 def set_last_transcript(markdown: str) -> None:
@@ -135,13 +195,12 @@ def set_last_transcript(markdown: str) -> None:
     client can fetch/save the document directly, independent of how (or whether)
     the model re-emits it.
     """
-    global _last_transcript
-    _last_transcript = markdown
+    _current_store().last_transcript = markdown
 
 
 def last_transcript() -> str | None:
     """Return the most recently rendered transcript markdown, or None."""
-    return _last_transcript
+    return _current_store().last_transcript
 
 
 def reset() -> int:
@@ -149,9 +208,9 @@ def reset() -> int:
 
     Returns the number of logged queries removed.
     """
-    global _last_transcript
-    n = len(_log)
-    _log.clear()
-    _visualizations.clear()
-    _last_transcript = None
+    store = _current_store()
+    n = len(store.log)
+    store.log.clear()
+    store.visualizations.clear()
+    store.last_transcript = None
     return n

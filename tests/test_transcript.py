@@ -41,6 +41,52 @@ def test_session_records_query_and_detects_graphs():
     assert entry["results"]["rows"][0]["label"] == "kidney cancer"
 
 
+def test_query_log_is_isolated_per_session(monkeypatch):
+    """Concurrent MCP sessions must not see each other's queries/diagrams.
+
+    Regression for the remote-server bug where the log was a single process
+    global, so one chat's queries leaked into another chat's transcript.
+    """
+
+    class FakeSession:  # a distinct object per simulated connection
+        pass
+
+    session_a, session_b = FakeSession(), FakeSession()
+    current = {"s": session_a}
+    monkeypatch.setattr(session, "_current_session", lambda: current["s"])
+
+    # Session A records a query and a diagram.
+    current["s"] = session_a
+    assert session.record(
+        "SELECT * WHERE { GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?s ?p ?o } }",
+        "json",
+        result=JSON_RESULT,
+    )
+    session.record_visualization("sawgraph", "classDiagram\n  class A")
+    session.set_last_transcript("transcript-A")
+
+    # Session B sees a clean, independent log.
+    current["s"] = session_b
+    assert session.entries() == []
+    assert session.visualizations() == []
+    assert session.last_transcript() is None
+    session.record(
+        "SELECT * WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke> { ?s ?p ?o } }",
+        "json",
+        result=JSON_RESULT,
+    )
+    assert [e["graphs"] for e in session.entries()] == [["spoke"]]
+
+    # Session A is unaffected by B's activity, and reset() only clears A.
+    current["s"] = session_a
+    assert [e["graphs"] for e in session.entries()] == [["sawgraph"]]
+    assert session.last_transcript() == "transcript-A"
+    assert session.reset() == 1
+    assert session.entries() == []
+    current["s"] = session_b
+    assert [e["graphs"] for e in session.entries()] == [["spoke"]]
+
+
 def test_session_skips_errored_queries():
     assert session.record("BAD QUERY", "json", error="boom") is False
     assert session.entries() == []
