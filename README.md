@@ -106,7 +106,7 @@ verify each as live SPARQL, and validate the findings against the literature.
 
 ### Case studies
 
-Two hand-crafted, end-to-end analyses that federate many Proto-OKN graphs into a
+Two end-to-end analyses that federate many Proto-OKN graphs into a
 single evidence-backed map of a disease's biology — genes (coding/non-coding),
 variants, pathways/gene sets, drugs, altered-activity signatures, and
 clinical/biomarker features — each finding tagged with its source(s), relationship,
