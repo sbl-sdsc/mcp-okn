@@ -106,7 +106,7 @@ verify each as live SPARQL, and validate the findings against the literature.
 
 ### Case studies
 
-Two end-to-end analyses that federate many Proto-OKN graphs into a
+Three end-to-end analyses that federate many Proto-OKN graphs into a
 single evidence-backed map of a disease's biology — genes (coding/non-coding),
 variants, pathways/gene sets, drugs, altered-activity signatures, and
 clinical/biomarker features — each finding tagged with its source(s), relationship,
@@ -118,6 +118,7 @@ transcript (each verbatim SPARQL query preserved).
 |---|---|---|---|
 | **Alzheimer's disease** — 8 KGs, 491 findings | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Alzheimers/AD_knowledge_map_report.html) | [Markdown](docs/examples/Alzheimers/AD_knowledge_map_report.md) | [Transcript](docs/examples/Alzheimers/AD_analysis_transcript.md) |
 | **Multiple sclerosis** — 7 KGs, 474 findings | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/MS/MS_knowledge_map_report.html) | [Markdown](docs/examples/MS/MS_knowledge_map_report.md) | [Transcript](docs/examples/MS/MS_analysis_transcript.md) |
+| **Spaceflight-associated neuro-ocular syndrome (SANS)** — 8 KGs, 1,203-gene signature | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/SANS/SANS_ocular_spaceflight_report.html) | [Markdown](docs/examples/SANS/SANS_ocular_spaceflight_report.md) | [Transcript](docs/examples/SANS/SANS_reproducibility_transcript.md) |
 
 ---
 
