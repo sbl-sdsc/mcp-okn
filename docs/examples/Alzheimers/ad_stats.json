@@ -1,0 +1,262 @@
+{
+  "n_findings": 491,
+  "n_genes": 316,
+  "n_genes_noncoding": 27,
+  "n_drugs": 107,
+  "n_pathways": 19,
+  "n_clinical": 39,
+  "n_biomarkers": 9,
+  "gene_by_nsources": {
+    "2": 44,
+    "1": 248,
+    "3": 20,
+    "4": 4
+  },
+  "evidence_counts": {
+    "curated_link": 393,
+    "statistical_association": 121,
+    "measured_activity_change": 19
+  },
+  "entity_counts": {
+    "gene": 316,
+    "drug": 107,
+    "pathway_or_geneset": 19,
+    "clinical_feature": 39,
+    "biomarker": 9,
+    "genetic_variant": 1
+  },
+  "tier1_genes_3plus": [
+    "ABCA7",
+    "ACE",
+    "ACHE",
+    "ADAM10",
+    "APOE",
+    "APP",
+    "BACE1",
+    "CASP3",
+    "CD2AP",
+    "CLU",
+    "CR1",
+    "HFE",
+    "MPO",
+    "MS4A4A",
+    "NCSTN",
+    "PICALM",
+    "PLCG2",
+    "PRNP",
+    "PSEN1",
+    "PSEN2",
+    "SORL1",
+    "TNF",
+    "TREM2",
+    "UNC5C"
+  ],
+  "tier_top_genes": [
+    [
+      "PSEN1",
+      4,
+      9.32
+    ],
+    [
+      "APP",
+      4,
+      8.65
+    ],
+    [
+      "SORL1",
+      4,
+      8.59
+    ],
+    [
+      "PSEN2",
+      4,
+      8.11
+    ],
+    [
+      "APOE",
+      3,
+      10.2
+    ],
+    [
+      "CLU",
+      3,
+      9.38
+    ],
+    [
+      "ABCA7",
+      3,
+      9.13
+    ],
+    [
+      "PICALM",
+      3,
+      8.72
+    ],
+    [
+      "ACE",
+      3,
+      8.37
+    ],
+    [
+      "ADAM10",
+      3,
+      7.22
+    ],
+    [
+      "TNF",
+      3,
+      5.89
+    ],
+    [
+      "PLCG2",
+      3,
+      5.71
+    ],
+    [
+      "CD2AP",
+      3,
+      4.44
+    ],
+    [
+      "PRNP",
+      3,
+      4.43
+    ],
+    [
+      "BACE1",
+      3,
+      4.42
+    ],
+    [
+      "CR1",
+      3,
+      4.4
+    ],
+    [
+      "CASP3",
+      3,
+      4.27
+    ],
+    [
+      "TREM2",
+      3,
+      4.23
+    ],
+    [
+      "MS4A4A",
+      3,
+      4.13
+    ],
+    [
+      "NCSTN",
+      3,
+      4.07
+    ],
+    [
+      "ACHE",
+      3,
+      3.95
+    ],
+    [
+      "HFE",
+      3,
+      ""
+    ],
+    [
+      "MPO",
+      3,
+      ""
+    ],
+    [
+      "UNC5C",
+      3,
+      ""
+    ],
+    [
+      "BIN1",
+      2,
+      9.04
+    ],
+    [
+      "APH1B",
+      2,
+      8.61
+    ],
+    [
+      "MME",
+      2,
+      7.79
+    ],
+    [
+      "CTSB",
+      2,
+      5.64
+    ],
+    [
+      "ABCA1",
+      2,
+      5.32
+    ],
+    [
+      "GSK3A",
+      2,
+      5.08
+    ],
+    [
+      "MS4A6A",
+      2,
+      4.73
+    ],
+    [
+      "CTSH",
+      2,
+      4.62
+    ],
+    [
+      "PSENEN",
+      2,
+      4.5
+    ],
+    [
+      "CHRNA7",
+      2,
+      4.38
+    ],
+    [
+      "CD33",
+      2,
+      4.2
+    ],
+    [
+      "RASGEF1C",
+      2,
+      4.15
+    ],
+    [
+      "BLNK",
+      2,
+      4.12
+    ],
+    [
+      "IGF1",
+      2,
+      4.04
+    ],
+    [
+      "APH1A",
+      2,
+      4.03
+    ],
+    [
+      "DHCR24",
+      2,
+      3.92
+    ]
+  ],
+  "source_gene_totals": {
+    "spoke-okn": 180,
+    "rdkg": 103,
+    "digcfdekg": 120,
+    "prokn": 9
+  }
+}
