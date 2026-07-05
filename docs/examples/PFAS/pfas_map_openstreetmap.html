@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maine PFAS detections vs. co-located facilities — OpenStreetMap</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+ integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<style>
+  html,body{margin:0;height:100%;font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1a2230}
+  #map{position:absolute;top:0;bottom:0;left:0;right:0}
+  .panel{position:absolute;z-index:1000;background:#fff;border:1px solid #e4e8ee;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:10px 12px}
+  #title{top:10px;left:10px;max-width:340px}
+  #title h1{font-size:15px;margin:0 0 3px}
+  #title p{font-size:11.5px;color:#5b6675;margin:0}
+  #legend{bottom:20px;left:10px;font-size:12px}
+  #legend b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:#5b6675;margin-bottom:5px}
+  #legend .row{display:flex;align-items:center;gap:7px;margin:3px 0}
+  #legend i{width:12px;height:12px;border-radius:50%;display:inline-block;border:1.5px solid rgba(0,0,0,.15)}
+  #legend .sz{color:#5b6675;font-size:11px;margin-top:6px;border-top:1px solid #eef2f5;padding-top:5px}
+  .leaflet-popup-content{font-size:12.5px;line-height:1.45}
+  .leaflet-popup-content b{font-size:13px}
+  .leaflet-popup-content .cat{display:inline-block;color:#fff;padding:1px 6px;border-radius:5px;font-size:11px;margin:3px 0}
+  .leaflet-popup-content .kv{color:#5b6675}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="title" class="panel">
+  <h1>Maine PFAS detections × co-located facilities</h1>
+  <p>Markers = EPA PFAS-relevant facilities (fiokg / EPA FRS) sharing a ~1&nbsp;km S2 cell with a SAWGraph PFAS sample. Colour = source category; size = peak single-compound concentration (ng/L, water). Data: Proto-OKN FRINK KGs. Basemap: © OpenStreetMap contributors.</p>
+</div>
+<div id="legend" class="panel"></div>
+<script>
+// Facility data — derived entirely from the OKN KGs (SAWGraph × fiokg × SpatialKG).
+// [name, lon, lat, maxNgL(single-compound, water), nObs]
+const FAC = [
+ ["US Navy Naval Air Station Brunswick",-69.924608,43.897690,87500,792],
+ ["101st Air Refueling Wing",-68.821460,44.817720,21300,204],
+ ["Air National Guard 101st Air Refuel Wing",-68.824558,44.814905,21300,204],
+ ["Pixelle Androscoggin",-70.240300,44.504700,20000,752],
+ ["Specialty Minerals Inc",-70.240296,44.503535,20000,752],
+ ["Verso Paper — Androscoggin Mill",-70.238810,44.507100,20000,752],
+ ["Hatch Hill Solid Waste Disposal Facility",-69.713686,44.317863,5100,426],
+ ["Loring Development Auth (former Loring AFB)",-67.896389,46.932500,3320,880],
+ ["Lewiston Solid Waste & Recycling Facility",-70.186930,44.049280,2700,717],
+ ["EnPro Services of Maine",-70.286620,43.635940,1160,84],
+ ["SK Environmental Services (POT)",-70.283202,43.639071,1160,84],
+ ["Sprague Energy Terminal",-70.285910,43.636870,1160,84],
+ ["South Portland Terminal LLC",-70.285254,43.636001,1160,84],
+ ["Global Petroleum Terminal",-70.284761,43.635196,1160,84],
+ ["Soil Preparation, Inc.",-69.200000,44.780000,1020,120],
+ ["Bath Wastewater Treatment Facility",-69.810980,43.927253,970,1175],
+ ["Bath Snow Dump",-69.811910,43.926760,970,1175],
+ ["Hartland Wastewater Treatment Facility",-69.447107,44.878171,836,318],
+ ["Tasman Leather Group LLC — Hartland",-69.448538,44.882197,836,318],
+ ["Tex Tech Industries Incorporated",-70.026070,44.274570,820,747],
+ ["Woodland Pulp Mill",-67.402006,45.156894,686,301],
+ ["Bath Landfill",-69.820000,43.940000,618,134],
+ ["Elm Street Printing and Graphics",-69.071960,44.204490,534,140],
+ ["Micro Metrics Inc",-69.067839,44.200634,534,140],
+ ["Presque Isle Landfill",-68.039350,46.597800,392,112],
+ ["Aroostook Waste Solutions — Presque Isle Landfill",-68.039350,46.597800,392,112],
+ ["Aroostook Waste Solutions",-68.049700,46.626910,318,651],
+ ["ND Paper Inc — Rumford Division",-70.541100,44.550800,282,306],
+ ["Wiscasset WWTF",-69.663440,44.004240,248,324],
+ ["Rumford Paper — Farrington Mountain Landfill",-70.500000,44.540000,215,139],
+ ["Limestone Water & Sewer District",-67.926470,46.915500,193,226],
+ ["Loring WWTF",-67.926470,46.915500,193,226],
+ ["Orono CDD Landfill",-68.727187,44.897279,172,54],
+ ["Portsmouth Naval Shipyard",-70.741666,43.084167,148,276],
+ ["Belfast Wastewater Treatment Facility",-69.007190,44.428080,132,325],
+ ["Spinnaker Coating",-70.342425,43.685316,126,277],
+ ["Buckeye Terminals, LLC",-68.780378,44.782168,113,323],
+ ["Coldbrook Energy Oil Terminal",-68.783956,44.778673,113,323],
+ ["Kennebec Wastewater Treatment Facility",-69.653771,44.527040,104,324],
+ ["Eastland Woolen Mills Inc",-69.261111,44.921667,70,168],
+ ["Great Northern Paper #2",-68.572970,45.625010,55.6,319],
+ ["Ensyn Fuels Inc.",-68.572970,45.625010,55.6,319],
+ ["Southwest Harbor WWTF",-68.323722,44.275168,51,318],
+ ["Tri-Community Landfill — Fort Fairfield",-67.902350,46.861590,50.3,28],
+ ["Webber Tanks",-68.805608,44.581946,46.4,136],
+ ["Rockland Wastewater Treatment Facility",-69.107180,44.104030,43.4,323],
+ ["FMC BioPolymer Food Ingredients",-69.104236,44.107014,43.4,323],
+ ["Aggregate Recycling Corporation",-70.763940,43.124151,42.7,645],
+ ["Rangeley Wastewater Treatment Facility",-70.671790,44.989630,39.9,277],
+ ["Lewiston Auburn Wastewater Treatment Facility",-70.204444,44.075556,39.6,318],
+ ["Bath Water Pollution Control Facility",-69.814160,43.912790,38.8,140],
+ ["Spray Maine Inc",-70.809019,43.231318,37,342],
+ ["Yarmouth Wastewater Treatment Facility",-70.165600,43.790300,36.1,329],
+ ["Sabattus Sanitary District",-70.110357,44.110772,33.3,319],
+ ["Skowhegan Wastewater Treatment Facility",-69.709220,44.769360,31.4,348],
+ ["Eastern Fine Paper",-68.780340,44.771680,29.4,331],
+ ["Naval Computer & Telecom Station",-67.293245,44.641785,29.4,24],
+ ["Naval Support Activity (NSA) Cutler",-67.283141,44.645007,29.4,24],
+ ["Chemlan Co",-70.557236,43.542619,19.9,166],
+ ["Biddeford Textile Company",-70.449480,43.492930,15.4,319],
+ ["Biddeford Wastewater Treatment Facility",-70.447870,43.491550,15.4,319],
+ ["Cooper Wiring Devices",-69.963480,43.918140,15.1,212],
+ ["Penobscot Indian Nation Wastewater Treatment Plant",-68.647150,44.952570,14.9,318],
+ ["Livermore Falls WWTF",-70.182798,44.464447,11.6,322],
+ ["Newton Field",-70.254420,45.632730,11.0,280],
+ ["Mechanic Falls Wastewater Treatment Facility",-70.385520,44.110570,10.8,333],
+ ["EWaste Recycling Solutions LLC",-70.274910,44.041534,5.58,47],
+ ["Passamaquoddy Wastewater Treatment Facility",-67.628167,45.245902,4.53,111],
+ ["Norridgewock Wastewater Treatment Facility",-69.793267,44.720515,1.92,253],
+ ["Kimberly Clark Tissue Company",-69.625354,44.547594,1.72,106],
+ ["Smith & Wesson Division",-67.785650,46.124900,1.01,14],
+ ["Tom's of Maine",-70.699930,43.406770,0.8,2],
+ ["Caribou Water Filter Plant",-68.003330,46.848510,0.694,106],
+ ["Angstrom Fiber Auburn LLC",-70.263234,44.035820,0.607,132],
+ ["Stephen A Bean Municipal Airport",-70.660410,44.991400,0.214,83],
+ ["AC Lawrence Leather",-70.514130,44.218170,0,77],
+ ["Camden Tanning Co",-69.077780,44.216350,0,3]
+];
+
+const CATS=[
+ ["Military / AFFF","#c0392b",/naval|air (national|refuel|force|station)|air national|refuel|shipyard|guard|loring|brunswick|cutler|newton field|municipal airport|regional airport|army/i],
+ ["Wastewater / Sewage","#2563eb",/wastewater|wwtf|wwtp|sewer|sewage|water pollution|pollution control|sanitary|water & sewer|treatment plant|treatment facility|water filter/i],
+ ["Landfill / Waste","#7c3aed",/landfill|solid waste|waste solutions|waste management|recycling|snow dump|disposal|aggregate|ewaste/i],
+ ["Paper / Pulp","#0d9488",/paper|pulp|androscoggin|verso|pixelle|tissue|fine paper|great northern/i],
+ ["Textile / Leather","#d35400",/textile|woolen|fabric|leather|tanning|tannery|felt|shoes|dyeables|fiber/i],
+ ["Petroleum / Chemical","#b45309",/petroleum|terminal|energy|\boil\b|fuel|citgo|sprague|global|buckeye|webber|tanks|chemlan|chemical|coating|spray|roehm|specialty minerals|enpro|sk environmental/i],
+ ["Other manufacturing","#64748b",null]
+];
+function categorize(n){ for(const c of CATS){ if(c[2] && c[2].test(n)) return c; } return CATS[CATS.length-1]; }
+function fmt(n){ n=+n; if(n>=1000) return n.toLocaleString('en-US',{maximumFractionDigits:0}); if(n>=10) return (Math.round(n*10)/10).toString(); return (Math.round(n*1000)/1000).toString(); }
+
+const map = L.map('map',{preferCanvas:true}).setView([45.3,-69.2],7);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+  maxZoom:19, attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+const bounds=[];
+FAC.slice().sort((a,b)=>b[3]-a[3]).forEach(f=>{
+  const cat=categorize(f[0]);
+  const lat=f[2], lon=f[1];
+  bounds.push([lat,lon]);
+  const r = f[3]>0 ? 5+Math.log10(f[3]+1)*3.2 : 4;
+  const m = L.circleMarker([lat,lon],{
+    radius:r, color:cat[1], weight:1.5, fillColor:(f[3]>0?cat[1]:'#ffffff'),
+    fillOpacity:(f[3]>0?0.75:1)
+  }).addTo(map);
+  m.bindPopup('<b>'+f[0]+'</b><br><span class="cat" style="background:'+cat[1]+'">'+cat[0]+'</span><br>'+
+    '<span class="kv">Peak PFAS (single compound):</span> '+(f[3]>0?(fmt(f[3])+' ng/L'):'non-detect')+'<br>'+
+    '<span class="kv">PFAS observations in cell:</span> '+fmt(f[4]));
+  m.bindTooltip(f[0]+' — '+(f[3]>0?fmt(f[3])+' ng/L':'ND'),{direction:'top',opacity:0.9});
+});
+map.fitBounds(bounds,{padding:[40,40]});
+
+// legend
+const used=new Set(FAC.map(f=>categorize(f[0])[0]));
+document.getElementById('legend').innerHTML='<b>Source category</b>'+
+  CATS.filter(c=>used.has(c[0])).map(c=>'<div class="row"><i style="background:'+c[1]+'"></i>'+c[0]+'</div>').join('')+
+  '<div class="row"><i style="background:#fff;border:1.5px solid #64748b"></i>non-detect</div>'+
+  '<div class="sz">Marker size ∝ log peak concentration (ng/L)</div>';
+</script>
+</body>
+</html>

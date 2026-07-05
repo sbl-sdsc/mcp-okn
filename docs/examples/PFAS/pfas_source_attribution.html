@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PFAS Source Prioritization — Knowledge-Graph Integration</title>
+<style>
+:root{ color-scheme:light; --blue:#2E86AB;--green:#3B8C4D;--orange:#F18F01;--purple:#A23B72;--red:#C0392B;
+ --ink:#1c2733;--muted:#6b7783;--line:#e3e8ee;--bg:#f7f9fb; }
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+header.masthead{background:linear-gradient(135deg,#1c2733,#2E86AB);color:#fff;padding:30px 40px}
+header.masthead h1{margin:0 0 7px;font-size:25px;letter-spacing:-.2px}
+header.masthead p.sub{margin:0;color:#eaf2f7;font-size:14px;max-width:940px}
+.wrap{max-width:1180px;margin:0 auto;padding:22px 40px 70px}
+.bar-top{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin:16px 0 6px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 10px;border-radius:20px;border:1px solid var(--line);background:#fff;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.badge.live .dot{background:var(--green)}.badge.snap .dot{background:var(--orange)}.badge.err .dot{background:var(--red)}
+button.refresh{font:inherit;font-size:12.5px;cursor:pointer;border:1px solid var(--blue);background:var(--blue);color:#fff;padding:7px 13px;border-radius:8px}
+button.refresh:hover{filter:brightness(1.08)} button.refresh:disabled{opacity:.5;cursor:default}
+h2{font-size:20px;margin:36px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line);display:flex;align-items:center;gap:9px}
+h2 .n{color:var(--blue);font-weight:700;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:20px 0 6px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.stat .v{font-size:24px;font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums}
+.stat .l{font-size:11.5px;color:var(--muted);margin-top:3px}
+.prov{color:var(--muted);font-size:12px;margin:8px 2px}
+code,.prov code{background:#eef3f7;padding:1px 5px;border-radius:5px;font-size:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.note{font-size:12.7px;color:var(--muted);margin:8px 2px 0;line-height:1.5}
+.callout{background:#FFF6E6;border:1px solid var(--orange);border-radius:10px;padding:12px 14px;font-size:13px;color:#5b4a28;margin:12px 0}
+.callout b{color:#4a3c1e}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin:8px 2px 10px;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:5px}.legend i{width:11px;height:11px;border-radius:50%;display:inline-block}
+svg{display:block;width:100%;height:auto}
+.maphold{position:relative}
+#tip{position:absolute;pointer-events:none;background:#1c2733;color:#fff;font-size:11.5px;padding:6px 8px;border-radius:6px;opacity:0;transform:translate(-50%,-115%);white-space:nowrap;z-index:5;transition:opacity .08s}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 4px;align-items:center}
+.controls input{padding:8px 11px;border:1px solid var(--line);border-radius:8px;font-size:13px;flex:1;min-width:240px;font-family:inherit}
+.controls input:focus{outline:2px solid #bcd7e6;border-color:var(--blue)}
+.controls .hint{font-size:11.5px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+th{background:#eef3f7;position:sticky;top:0;color:#33566b;font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+th.sortable{cursor:pointer;user-select:none} th.sortable:hover{background:#e0e9f0} th.sortable::after{content:" \21C5";opacity:.4;font-size:10px}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr:hover td{background:#f2f7fb}
+.tblscroll{max-height:540px;overflow:auto;border:1px solid var(--line);border-radius:12px}
+.cbar{position:relative;height:9px;border-radius:5px;background:#eef3f7;overflow:hidden;min-width:60px}
+.cbar>i{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:linear-gradient(90deg,var(--orange),var(--red))}
+.pill{font-size:11px;padding:1px 8px;border-radius:10px;background:#eef3f7;color:#33566b;white-space:nowrap}
+.bars{display:flex;flex-direction:column;gap:7px}
+.bars .row{display:grid;grid-template-columns:250px 1fr 44px;align-items:center;gap:10px;font-size:12.5px}
+.bars .lab{color:var(--ink)}
+.bars .track{background:#eef3f7;border-radius:6px;height:17px;overflow:hidden}
+.bars .fill{height:100%;background:var(--blue);border-radius:6px}
+.bars .val{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+details{margin:12px 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:4px 16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+summary{cursor:pointer;font-size:14px;font-weight:600;padding:10px 0;color:var(--ink)}
+pre{background:#1c2733;color:#e6edf3;padding:12px;border-radius:8px;overflow:auto;font-size:11px;line-height:1.5}
+.flow{font-size:12.7px;color:var(--muted);background:#eef3f7;border:1px solid var(--line);border-radius:10px;padding:12px 14px;line-height:1.7}
+.flow b{color:var(--ink)}
+.foot{color:var(--muted);font-size:11.5px;margin-top:28px;border-top:1px solid var(--line);padding-top:12px}
+#mapbox{height:540px;border-radius:8px;overflow:hidden;background:#eef3f7}
+.leaflet-container{font:inherit}
+a{color:var(--blue)}
+@media(max-width:900px){.stats{grid-template-columns:repeat(3,1fr)}.wrap{padding:20px}header.masthead{padding:22px}.bars .row{grid-template-columns:150px 1fr 42px}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+<header class="masthead">
+  <h1>PFAS Source Prioritization via Knowledge-Graph Integration</h1>
+  <p class="sub">Environmental PFAS detections co-located with EPA-regulated facilities likely to handle PFAS, resolved to chemical identity, functional-use, and toxicological coverage — assembled across five Proto-OKN knowledge graphs on the FRINK federation.</p>
+</header>
+<div class="wrap">
+
+  <div class="bar-top">
+    <div>
+      <span class="badge" id="status"><span class="dot"></span><span id="statustxt">Loading…</span></span>
+      <span class="badge" id="stamp" style="display:none"></span>
+    </div>
+  </div>
+
+  <div class="stats" id="stats"></div>
+  <p class="prov" id="prov"></p>
+
+  <h2><span class="n">1.</span> Sources used</h2>
+  <p class="note">Five Proto-OKN knowledge graphs on the FRINK federated SPARQL endpoint. All cross-KG integration is on <b>S2 Level-13 grid cells</b> (geospatial) and <b>CompTox DTXSID / CAS</b> (chemical). Versions are exact FRINK releases pinned 2026-07-04.</p>
+  <div class="tblscroll" style="margin-top:10px"><table id="tblSrc"><thead><tr>
+    <th>Knowledge graph</th><th class="num">Version</th><th>Role in this analysis</th><th>Entity types contributed</th><th>Join key</th>
+  </tr></thead><tbody>
+    <tr><td><b>sawgraph</b> — SAWGraph PFAS KG</td><td class="num">v0.0.15</td><td><b>Primary:</b> PFAS observations in water / soil / biota / food — samples &amp; media, concentrations &amp; detect vs non-detect, sampling time</td><td>PFAS samples, substances (CAS + DSSTox DTXSID), sample points</td><td>S2 L13 · DTXSID</td></tr>
+    <tr><td><b>fiokg</b> — SAWGraph FRS KG</td><td class="num">v0.0.11</td><td><b>Primary:</b> EPA-<code>PFAS-Facility</code> designated sites, NAICS industry, permit / enforcement / TRI / RCRA records, point geolocation</td><td>facilities, industries, regulatory records</td><td>S2 L13 · admin region</td></tr>
+    <tr><td>spatialkg — SAWGraph Spatial KG</td><td class="num">v0.0.6</td><td>S2 grid ↔ GADM county / state roll-ups; supplies the county basemap geometry</td><td>S2 cells, administrative regions, geometry</td><td>S2 L13 (direct)</td></tr>
+    <tr><td>biobricks-ice — BioBricks ICE</td><td class="num">v0.0.3</td><td>EPA CompTox identity (DTXSID), functional-use categories, ADME, curated high-throughput screening</td><td>chemicals, functional-use categories</td><td>DTXSID (CompTox) · CAS</td></tr>
+    <tr><td>biobricks-toxcast — BioBricks ToxCast</td><td class="num">v0.0.2</td><td>ToxCast high-throughput <i>in vitro</i> assay endpoints per chemical (bioactivity coverage)</td><td>chemicals, assay endpoints</td><td>DTXSID (CompTox) · CAS</td></tr>
+  </tbody></table></div>
+
+  <h2><span class="n">2.</span> Source map — Maine PFAS detections vs. co-located facilities</h2>
+  <p class="note">Each marker is an EPA <b>PFAS-relevant facility</b> (fiokg / EPA FRS) that shares a ~1&nbsp;km S2 Level-13 cell with one or more SAWGraph PFAS samples. Colour = source category (from facility name / NAICS); size = the peak single-compound PFAS concentration in that ~1&nbsp;km cell (log scale, ng/L, water). Basemap: OpenStreetMap tiles (© OpenStreetMap contributors). Where tiles cannot load — e.g. the in-app sandbox — the map falls back automatically to SpatialKG county geometry. Every marker is KG-derived.</p>
+  <div class="legend" id="legend"></div>
+  <div class="card maphold">
+    <div id="mapbox"></div>
+    <div id="tip"></div>
+  </div>
+  <p class="note">The strongest signals recover Maine's principal PFAS-source sites purely from graph structure: military airfields with AFFF firefighting-foam history (Brunswick NAS, Bangor Air National Guard, former Loring AFB, NSA Cutler, Portsmouth Naval Shipyard), pulp &amp; paper mills (Androscoggin / Verso&nbsp;·&nbsp;Pixelle, Woodland, Great Northern), municipal landfills and wastewater-treatment facilities, and textile / tannery mills.</p>
+
+  <h2><span class="n">3.</span> Ranked hotspots — cells by peak PFAS concentration</h2>
+  <p class="note">Co-located S2 cells ranked by the maximum single PFAS concentration (ng/L) among all samples in the cell, with the facilities occupying that cell.</p>
+  <div class="controls"><input id="qCells" type="search" placeholder="Filter sites / facilities…"><span class="hint" id="qCellsN"></span></div>
+  <div class="tblscroll"><table id="tblCells"><thead><tr>
+    <th class="num">#</th><th class="sortable">Facilities in cell</th>
+    <th class="sortable num">Facilities</th><th class="sortable num">PFAS obs</th><th class="sortable num">Max ng/L</th><th></th>
+  </tr></thead><tbody></tbody></table></div>
+
+  <h2><span class="n">4.</span> Candidate source categories (NAICS)</h2>
+  <p class="note">Industry classes of the PFAS-relevant facilities co-located with Maine PFAS samples — a data-driven ranking of candidate source sectors. These are the industry sectors flagged by EPA's PFAS Analytic Tools — the basis of fiokg's EPA-PFAS-Facility class — so the prioritisation is internally consistent with the knowledge graph's own source designation.</p>
+  <div class="card" id="naicsBars"></div>
+
+  <h2><span class="n">5.</span> Detected chemicals — identity, use &amp; toxicology coverage</h2>
+  <p class="note">Every PFAS analyte detected in Maine co-located cells, resolved to its CompTox <b>DTXSID</b>, with ICE functional-use records and ToxCast high-throughput assay coverage joined on DTXSID. Concentrations are peak ng/L in water media.</p>
+  <div class="controls"><input id="qChem" type="search" placeholder="Filter chemicals — name, abbreviation, DTXSID…"><span class="hint" id="qChemN"></span></div>
+  <div class="tblscroll"><table id="tblChem"><thead><tr>
+    <th class="sortable">Abbr.</th><th class="sortable">Chemical (DTXSID)</th>
+    <th class="sortable num">ng/L meas.</th><th class="sortable num">Cells</th>
+    <th class="sortable num">Max ng/L</th><th></th>
+    <th class="sortable">ICE use</th><th class="sortable num">ToxCast endpts</th>
+  </tr></thead><tbody></tbody></table></div>
+  <p class="callout"><b>Methodological note:</b> joining on the DTXSID that SAWGraph natively carries recovers <b>35</b> chemicals with ICE records and <b>33</b> with ToxCast coverage — far more than the CAS-based crosswalk (12 / 7), because Maine EGAD stores CAS without dashes, breaking the <code>identifiers.org/cas</code> join. The KG's native DTXSID is the more complete bridge.</p>
+
+  <h2><span class="n">6.</span> National footprint — where the join fires</h2>
+  <p class="note">Co-located cells (a PFAS sample and an EPA-PFAS facility in the same S2 cell) by state. Maine dominates because SAWGraph's densest campaign is the Maine EGAD program; the same join extends nationally through the SpatialKG hub wherever US-WQP samples fall near facilities.</p>
+  <div class="tblscroll"><table id="tblStates"><thead><tr>
+    <th class="sortable">State</th><th class="sortable num">Co-located cells</th><th class="sortable num">PFAS facilities</th><th></th>
+  </tr></thead><tbody></tbody></table></div>
+
+  <h2><span class="n">7.</span> KG-internal validation — regulatory footprint (fiokg)</h2>
+  <p class="callout">Validation uses <b>no external data</b>. Within fiokg, the co-located PFAS-relevant facilities carry exactly the EPA regulatory records expected of PFAS dischargers — Clean Water Act (NPDES) permits, Toxics Release Inventory reporting, RCRA hazardous-waste handling, industrial stormwater, and formal enforcement actions. Counts are Maine co-located EPA-PFAS facilities carrying each interest.</p>
+  <div class="tblscroll"><table id="tblInt"><thead><tr>
+    <th class="sortable">EPA environmental interest / program (fiokg)</th><th class="sortable num">Facilities</th><th></th>
+  </tr></thead><tbody></tbody></table></div>
+
+  <h2><span class="n">8.</span> Method &amp; reproducibility</h2>
+  <div class="flow">
+    <b>Join backbone.</b> &nbsp;EPA-PFAS-Facility <span style="color:var(--accent)">—sfWithin→</span> S2 cell <span style="color:var(--accent)">←owl:sameAs—</span> SAWGraph cell <span style="color:var(--accent)">—sfContains→</span> sample point <span style="color:var(--accent)">←observedAtSamplePoint—</span> PFAS observation (<code>ofDSSToxSubstance</code>, <code>hasResult</code>, media, time). &nbsp;Chemical axis: observation DTXSID <span style="color:var(--accent)">→</span> ICE / ToxCast on <code>comptox.epa.gov/…/{DTXSID}</code>. &nbsp;Rollups: S2 cell <span style="color:var(--accent)">→</span> SpatialKG county / state.
+  </div>
+  <details><summary>Show the SPARQL queries (the exact federated queries behind this analysis)</summary>
+    <div id="queryDump"></div>
+  </details>
+
+  <p class="foot" id="foot"></p>
+</div>
+
+<script>
+"use strict";
+/* ============================ BAKED SNAPSHOT ============================ */
+/* Verified via FRINK federation. Renders instantly; "Re-query" refreshes live. */
+const SNAP = {
+ stats:{cells:477, facilities:696, obs:24662, chemicals:79, states:12},
+ provenance:"SAWGraph v0.0.15 · fiokg/EPA-FRS v0.0.11 · SpatialKG v0.0.6 · BioBricks-ICE v0.0.3 · BioBricks-ToxCast v0.0.2 · FRINK federated SPARQL",
+ interests:[["Enforcement / compliance activity",233],["ICIS-NPDES discharge permit (non-major)",217],["Industrial stormwater",156],["TRI reporter (Toxics Release Inventory)",101],["NPDES permit",92],["Hazardous-waste biennial reporter",56],["Formal enforcement action",44],["POTW (wastewater treatment)",42],["Large-Quantity Generator (RCRA)",35]],
+ states:[
+  ["Maine",279,336],["Massachusetts",44,125],["Minnesota",43,55],["Indiana",38,47],
+  ["Arizona",26,54],["Illinois",19,39],["New Hampshire",13,17],["South Carolina",3,3],
+  ["Alabama",1,1],["Idaho",1,1],["Kentucky",1,1],["Wisconsin",1,2]
+ ],
+ naics:[
+  ["Sewage Treatment Facilities",45],["Chemical Manufacturing",22],["Solid Waste Landfill",21],
+  ["Petroleum Bulk Stations / Terminals",19],["Paper Mills",14],["National Security (military)",13],
+  ["Semiconductor Manufacturing",12],["Coating / Engraving / Heat Treating",12],
+  ["Waste Collection",12],["Broadwoven Fabric Mills",11],["Pulp Mills",10]
+ ],
+ // [firstFacility(+more), nFac, nObs, maxNgL]
+ cells:[["US Navy Naval Air Station Brunswick",1,792,87500],["Air National Guard 101st Air Refueling Wing",2,204,21300],["Pixelle · Verso Androscoggin Mill · Specialty Minerals",3,752,20000],["Hatch Hill Solid Waste Disposal Facility",1,426,5100],["Loring Development Authority (former Loring AFB)",1,880,3320],["Lewiston Solid Waste & Recycling Facility",1,717,2700],["South Portland petroleum terminals (Sprague, Global, +3)",5,84,1160],["Soil Preparation, Inc.",1,120,1020],["Bath Wastewater Treatment · Bath Snow Dump",2,1175,970],["Tasman Leather Group · Hartland WWTF",2,318,836],["Tex Tech Industries Incorporated",1,747,820],["Woodland Pulp Mill",1,301,686],["Bath Landfill",1,134,618],["Micro Metrics · Elm Street Printing",2,140,534],["Presque Isle Landfill · Aroostook Waste Solutions",2,112,392],["Aroostook Waste Solutions",1,651,318],["ND Paper Inc — Rumford Division",1,306,282],["Wiscasset WWTF",1,324,248],["Rumford Paper — Farrington Mountain Landfill",1,139,215],["Loring WWTF · Limestone Water & Sewer District",2,226,193],["Orono CDD Landfill",1,54,172],["Portsmouth Naval Shipyard",1,276,148],["Belfast Wastewater Treatment Facility",1,325,132],["Spinnaker Coating",1,277,126],["Buckeye Terminals · Coldbrook Energy Oil Terminal",2,323,113],["Kennebec Wastewater Treatment Facility",1,324,104],["Eastland Woolen Mills Inc",1,168,70],["Great Northern Paper #2 · Ensyn Fuels",2,319,55.6],["Southwest Harbor WWTF",1,318,51],["Tri-Community Landfill — Fort Fairfield",1,28,50.3]],
+ // [abbr, name, dtxid, ngLmeas, cells, maxNgL]
+ chem:[
+  ["PFOA","Perfluorooctanoic acid","DTXSID8031865",536,55,8030],
+  ["PFOS","Perfluorooctanesulfonic acid","DTXSID3031864",523,50,20000],
+  ["PFHpA","Perfluoroheptanoic acid","DTXSID1037303",506,52,9630],
+  ["PFHxA","Perfluorohexanoic acid","DTXSID3031862",482,52,28100],
+  ["PFBA","Perfluorobutanoic acid","DTXSID4059916",474,51,12700],
+  ["PFPeA","Perfluoropentanoic acid","DTXSID6062599",462,47,18200],
+  ["PFHxS","Perfluorohexanesulfonic acid","DTXSID7040150",454,44,7000],
+  ["PFBS","Perfluorobutanesulfonic acid","DTXSID5030030",445,46,87500],
+  ["PFNA","Perfluorononanoic acid","DTXSID8031863",404,44,753],
+  ["PFDA","Perfluorodecanoic acid","DTXSID3031860",286,34,857],
+  ["PFPeS","Perfluoropentanesulfonic acid","DTXSID8062600",211,33,141],
+  ["6:2 FTSA","6:2 Fluorotelomer sulfonic acid","DTXSID6067331",203,40,1650],
+  ["N-EtFOSAA","2-(N-Ethylperfluorooctanesulfonamido)acetic acid","DTXSID5062760",133,22,3470],
+  ["N-MeFOSAA","2-(N-Methylperfluorooctanesulfonamido)acetic acid","DTXSID10624392",131,29,180],
+  ["PFHpS","Perfluoroheptanesulfonic acid","DTXSID8059920",118,20,2060],
+  ["8:2 FTSA","8:2 Fluorotelomer sulfonic acid","DTXSID00192353",78,15,610],
+  ["PFOSA","Perfluorooctanesulfonamide","DTXSID3038939",67,14,701],
+  ["PFUnDA","Perfluoroundecanoic acid","DTXSID8047553",68,18,69.4],
+  ["PFTeDA","Perfluorotetradecanoic acid","DTXSID3059921",28,12,3.18],
+  ["PFTrDA","Perfluorotridecanoic acid","DTXSID90868151",16,6,94.2],
+  ["PFDoDA","Perfluorododecanoic acid","DTXSID8031861",14,8,21.2],
+  ["4:2 FTSA","4:2 Fluorotelomer sulfonic acid","DTXSID30891564",6,3,11],
+  ["HFPO-DA (GenX)","Perfluoro-2-methyl-3-oxahexanoic acid","DTXSID70880215",4,1,750],
+  ["5:3 FTCA","2H,2H,3H,3H-Perfluorooctanoic acid","DTXSID20874028",3,3,10.9],
+  ["PFDS","Perfluorodecanesulfonic acid","DTXSID3040148",3,2,1.9]
+ ],
+ ice:{"DTXSID3031864":918,"DTXSID8031865":831,"DTXSID8047553":734,"DTXSID3031860":722,"DTXSID8031863":707,"DTXSID3038939":686,"DTXSID3031862":671,"DTXSID1037303":651,"DTXSID5030030":10,"DTXSID7040150":3,"DTXSID8062600":1,"DTXSID8059920":1,"DTXSID8031861":1,"DTXSID90868151":1,"DTXSID6067331":1,"DTXSID6062599":1,"DTXSID3059921":1,"DTXSID3040148":1},
+ tox:{"DTXSID3031864":1510,"DTXSID8031865":1396,"DTXSID8031863":1124,"DTXSID8047553":1123,"DTXSID3031862":1098,"DTXSID3031860":1075,"DTXSID3038939":1071,"DTXSID1037303":1038,"DTXSID00192353":506,"DTXSID4059916":506,"DTXSID70880215":506,"DTXSID5030030":504,"DTXSID20874028":497,"DTXSID30891564":497,"DTXSID90868151":465,"DTXSID8059920":464,"DTXSID3059921":463,"DTXSID7040150":461,"DTXSID6067331":461,"DTXSID6062599":461},
+ // facilities for the map: [name, lon, lat, maxNgL, nObs]
+ fac:[["US NAVY NAVAL AIR STATION BRUNSWICK 2",-69.924608,43.89769,87500,792],["101ST AIR REFUELING WING",-68.82146,44.81772,21300,204],["AIR NATIONAL GUARD 101ST AIR REFUEL WING",-68.824558,44.814905,21300,204],["PIXELLE ANDROSCOGGIN",-70.2403,44.5047,20000,752],["SPECIALTY MINERALS INC",-70.240296,44.503535,20000,752],["VERSO PAPER - ANDROSCOGGIN MILL",-70.23881,44.5071,20000,752],["HATCH HILL SOLID WASTE DISPOSAL FACILITY",-69.713686,44.317863,5100,426],["LORING DEVELOPMENT AUTH",-67.896389,46.9325,3320,880],["LEWISTON SOLID WASTE & RECYCLING FACILITY",-70.18693,44.04928,2700,717],["ENPRO SERVICES OF MAINE, INC",-70.28662,43.63594,1160,84],["SK ENVIRONMENTAL SERVICES (POT)",-70.283202,43.639071,1160,84],["SPRAGUE ENERGY TERMINAL",-70.28591,43.63687,1160,84],["SOUTH PORTLAND TERMINAL LLC",-70.285254,43.636001,1160,84],["GLOBAL PETROLEUM TERMINAL",-70.284761,43.635196,1160,84],["SOIL PREPARATION, INC.",-69.2,44.78,1020,120],["BATH WASTEWATER TREATMENT FACILITY",-69.81098,43.927253,970,1175],["BATH SNOW DUMP",-69.81191,43.92676,970,1175],["HARTLAND WASTEWATER TREATMENT FACILITY",-69.447107,44.878171,836,318],["TASMAN LEATHER GROUP LLC - HARTLAND",-69.448538,44.882197,836,318],["TEX TECH INDUSTRIES INCORPORATED",-70.02607,44.27457,820,747],["WOODLAND PULP MILL",-67.402006,45.156894,686,301],["BATH LANDFILL",-69.82,43.94,618,134],["ELM STREET PRINTING AND GRAPHICS, INC.",-69.07196,44.20449,534,140],["MICRO METRICS INC",-69.067839,44.200634,534,140],["PRESQUE ISLE LANDFILL",-68.03935,46.5978,392,112],["AROOSTOOK WASTE SOLUTIONS - PRESQUE ISLE LANDFILL",-68.03935,46.5978,392,112],["AROOSTOOK WASTE SOLUTIONS",-68.0497,46.62691,318,651],["ND PAPER INC - RUMFORD DIVISION",-70.5411,44.5508,282,306],["WISCASSET WWTF",-69.66344,44.00424,248,324],["RUMFORD PAPER COMPANY- FARRINGTON MOUNTAIN LANDFILL",-70.5,44.54,215,139],["LIMESTONE WATER & SEWER DISTRICT",-67.92647,46.9155,193,226],["LORING WWTF",-67.92647,46.9155,193,226],["ORONO CDD LANDFILL",-68.727187,44.897279,172,54],["PORTSMOUTH NAVAL SHIPYARD",-70.741666,43.084167,148,276],["BELFAST WASTEWATER TREATMENT FACILITY",-69.00719,44.42808,132,325],["SPINNAKER COATING",-70.342425,43.685316,126,277],["BUCKEYE TERMINALS, LLC",-68.780378,44.782168,113,323],["COLDBROOK ENERGY OIL TERMINAL",-68.783956,44.778673,113,323],["KENNEBEC WASTEWATER TREATMENT FACILITY",-69.653771,44.52704,104,324],["EASTLAND WOOLEN MILLS INC",-69.261111,44.921667,70,168],["GREAT NORTHERN PAPER #2",-68.57297,45.62501,55.6,319],["ENSYN FUELS INC.",-68.57297,45.62501,55.6,319],["SOUTHWEST HARBOR WWTF",-68.323722,44.275168,51,318],["TRI-COMMUNITY RECYCLING AND SANITARY LANDFILL-FORT FAIRFIELD",-67.90235,46.86159,50.3,28],["WEBBER TANKS",-68.805608,44.581946,46.4,136],["ROCKLAND WASTEWATER TREATMENT FACILITY",-69.10718,44.10403,43.4,323],["FMC BIOPOLYMER FOOD INGREDIENTS",-69.104236,44.107014,43.4,323],["AGGREGATE RECYCLING CORPORATION",-70.76394,43.124151,42.7,645],["RANGELEY WASTEWATER TREATMENT FACILITY",-70.67179,44.98963,39.9,277],["LEWISTON AUBURN WASTEWATER TREATMENT FACILITY",-70.204444,44.075556,39.6,318],["BATH WATER POLLUTION CONTROL FACILITY",-69.81416,43.91279,38.8,140],["SPRAY MAINE INC",-70.809019,43.231318,37,342],["YARMOUTH WASTEWATER TREATIMENT FACILITY",-70.1656,43.7903,36.1,329],["SABATTUS SANITARY DISTRICT",-70.110357,44.110772,33.3,319],["SKOWHEGAN WASTEWATER TREATMENT FACILITY",-69.70922,44.76936,31.4,348],["EASTERN FINE PAPER",-68.78034,44.77168,29.4,331],["NAVAL COMPUTER & TELECOM STATION",-67.293245,44.641785,29.4,24],["NAVAL SUPPORT ACTIVITY (NSA) CUTLER",-67.283141,44.645007,29.4,24],["CHEMLAN CO",-70.557236,43.542619,19.9,166],["BIDDEFORD TEXTILE COMPANY",-70.44948,43.49293,15.4,319],["BIDDEFORD WASTEWATER TREATMENT FACILITY",-70.44787,43.49155,15.4,319],["COOPER WIRING DEVICES",-69.96348,43.91814,15.1,212],["PENOBSCOT INDIAN NATION WASTEWATER TREATMENT PLANT",-68.64715,44.95257,14.9,318],["LIVERMORE FALLS WWTF",-70.182798,44.464447,11.6,322],["NEWTON FIELD",-70.25442,45.63273,11.0,280],["MECHANIC FALLS WASTEWATER TREATMENT FACILITY",-70.38552,44.11057,10.8,333],["EWASTE RECYCLING SOLUTIONS LLC",-70.27491,44.041534,5.58,47],["PASSAMAQUODDY WASTEWATER TREATMENT FACILITY",-67.628167,45.245902,4.53,111],["NORRIDGEWOCK WASTEWATER TREATMENT FACILITY",-69.793267,44.720515,1.92,253],["KIMBERLY CLARK TISSUE COMPANY",-69.625354,44.547594,1.72,106],["SMITH & WESSON DIVISION",-67.78565,46.1249,1.01,14],["TOM'S OF MAINE",-70.69993,43.40677,0.8,2],["CARIBOU WATER FILTER PLANT",-68.00333,46.84851,0.694,106],["ANGSTROM FIBER AUBURN LLC",-70.263234,44.03582,0.607,132],["STEPHEN A BEAN MUNICIPAL AIRPORT",-70.66041,44.9914,0.214,83],["AC LAWRENCE LEATHER",-70.51413,44.21817,0,77],["CAMDEN TANNING CO",-69.07778,44.21635,0,3]]
+};
+
+const MAINE_GEO=[[[-68.301,45.59],[-68.433,45.578],[-68.436,46.382],[-68.822,46.396],[-68.821,46.573],[-70.023,46.573],[-69.997,46.696],[-69.224,47.46],[-69.043,47.427],[-69.051,47.256],[-68.9,47.178],[-68.617,47.243],[-68.58,47.287],[-68.378,47.287],[-68.363,47.355],[-68.235,47.355],[-67.957,47.2],[-67.883,47.104],[-67.79,47.067],[-67.781,45.943],[-67.751,45.918],[-67.804,45.883],[-67.755,45.823],[-67.806,45.794],[-67.782,45.731],[-67.81,45.73],[-67.806,45.68]],[[-69.356,45.073],[-69.621,45.011],[-69.78,45.543],[-69.714,45.586],[-69.716,45.648],[-69.692,45.645],[-69.744,45.652],[-69.739,45.679],[-69.833,45.739],[-69.788,45.747],[-69.802,45.786],[-69.726,45.762],[-69.704,45.846],[-69.738,45.883],[-69.698,45.886],[-69.683,45.851],[-69.647,45.864],[-69.684,45.984],[-69.729,45.977],[-69.721,46.574],[-68.821,46.573],[-68.827,45.685],[-68.959,45.662],[-68.965,45.512],[-68.857,45.527],[-68.776,45.24],[-68.881,45.225],[-68.857,45.143]],[[-69.344,44.75],[-69.398,44.747],[-69.417,44.701],[-69.633,44.7],[-69.579,44.627],[-69.606,44.577],[-69.93,44.611],[-69.96,44.681],[-69.996,44.677],[-70.033,44.865],[-70.13,44.851],[-70.152,44.942],[-70.11,44.947],[-70.159,45.128],[-70.294,45.11],[-70.312,45.165],[-70.419,45.144],[-70.553,45.668],[-70.4,45.72],[-70.417,45.796],[-70.259,45.891],[-70.239,45.944],[-70.316,45.963],[-70.284,45.995],[-70.318,46.019],[-70.278,46.056],[-70.302,46.082],[-70.253,46.1],[-70.236,46.145],[-70.293,46.191],[-70.191,46.35],[-70.056,46.416],[-70.023,46.573],[-69.721,46.574],[-69.729,45.977],[-69.684,45.984],[-69.647,45.864],[-69.683,45.851],[-69.698,45.886],[-69.738,45.883],[-69.704,45.846],[-69.726,45.762],[-69.802,45.786],[-69.788,45.747],[-69.833,45.739],[-69.739,45.679],[-69.744,45.652],[-69.692,45.645],[-69.716,45.648],[-69.714,45.586],[-69.78,45.543],[-69.621,45.011],[-69.356,45.073],[-69.267,44.722],[-69.327,44.714]],[[-68.409,45.574],[-68.048,45.64],[-67.94,45.268],[-68.304,45.222],[-68.27,45.1],[-68.397,45.083],[-68.376,44.997],[-68.501,44.981],[-68.445,44.763],[-68.617,44.741],[-68.647,44.704],[-68.691,44.722],[-68.744,44.661],[-68.838,44.702],[-69.184,44.644],[-69.205,44.73],[-69.267,44.722],[-69.356,45.073],[-68.857,45.143],[-68.881,45.225],[-68.776,45.24],[-68.857,45.527],[-68.965,45.512],[-68.959,45.662],[-68.827,45.685],[-68.819,46.396],[-68.436,46.382],[-68.433,45.578]],[[-67.346,44.52],[-67.443,44.505],[-67.483,44.44],[-67.574,44.395],[-67.775,44.411],[-67.824,44.327],[-67.925,44.341],[-68.105,44.939],[-67.982,44.956],[-68.055,45.253],[-67.94,45.268],[-68.048,45.64],[-67.902,45.68],[-67.721,45.662],[-67.729,45.689],[-67.646,45.613],[-67.45,45.602],[-67.416,45.501],[-67.504,45.487],[-67.419,45.377],[-67.49,45.282],[-67.429,45.193],[-67.341,45.125],[-67.284,45.192],[-67.159,45.162],[-66.969,44.91],[-66.975,44.842],[-66.885,44.794],[-67.141,44.608]],[[-68.17,44.186],[-68.203,44.1],[-68.485,44.028],[-68.549,44.13],[-68.728,44.116],[-68.812,44.201],[-68.896,44.21],[-68.841,44.363],[-68.852,44.415],[-68.796,44.474],[-68.798,44.568],[-68.847,44.62],[-68.816,44.684],[-68.744,44.661],[-68.691,44.722],[-68.647,44.704],[-68.617,44.741],[-68.445,44.763],[-68.501,44.981],[-68.376,44.997],[-68.397,45.083],[-68.27,45.1],[-68.304,45.222],[-68.055,45.253],[-67.982,44.956],[-68.105,44.939],[-67.925,44.341],[-67.999,44.28],[-68.128,44.264],[-68.124,44.222]],[[-70.736,44.122],[-70.867,44.08],[-70.715,43.962],[-70.748,43.946],[-70.744,43.886],[-70.801,43.857],[-70.783,43.814],[-70.989,43.792],[-71.084,45.305],[-71.009,45.319],[-71.011,45.348],[-70.918,45.312],[-70.885,45.235],[-70.838,45.235],[-70.835,45.277],[-70.78,45.018],[-70.824,45.014],[-70.769,44.732],[-70.615,44.796],[-70.511,44.627],[-70.55,44.611],[-70.281,44.57],[-70.308,44.538],[-70.239,44.462],[-70.274,44.441],[-70.265,44.363],[-70.325,44.208],[-70.485,44.06],[-70.48,44.032],[-70.583,44.019],[-70.614,44.062],[-70.587,44.124],[-70.624,44.171]],[[-70.151,44.936],[-70.13,44.851],[-70.033,44.865],[-69.996,44.677],[-69.96,44.681],[-69.928,44.604],[-69.953,44.575],[-70.04,44.589],[-70.073,44.53],[-70.042,44.485],[-70.239,44.459],[-70.251,44.503],[-70.308,44.538],[-70.281,44.57],[-70.55,44.611],[-70.511,44.627],[-70.615,44.796],[-70.769,44.732],[-70.824,45.014],[-70.78,45.018],[-70.835,45.277],[-70.803,45.366],[-70.826,45.4],[-70.781,45.431],[-70.635,45.383],[-70.63,45.426],[-70.724,45.51],[-70.559,45.666],[-70.419,45.144],[-70.312,45.165],[-70.294,45.11],[-70.159,45.128],[-70.11,44.947]],[[-70.019,43.58],[-70.222,43.467],[-70.492,43.607],[-70.458,43.642],[-70.55,43.716],[-70.577,43.687],[-70.657,43.702],[-70.653,43.788],[-70.766,43.792],[-70.802,43.856],[-70.744,43.886],[-70.748,43.946],[-70.715,43.962],[-70.793,44.04],[-70.848,44.05],[-70.859,44.095],[-70.822,44.077],[-70.624,44.171],[-70.587,44.124],[-70.614,44.062],[-70.544,44.006],[-70.502,44.043],[-70.364,43.986],[-70.315,44.038],[-70.116,43.907],[-70.034,43.976],[-69.978,43.915],[-69.857,43.945],[-69.896,43.867],[-69.87,43.817],[-69.882,43.636]],[[-70.766,43.792],[-70.653,43.788],[-70.657,43.702],[-70.577,43.687],[-70.55,43.716],[-70.458,43.642],[-70.492,43.607],[-70.222,43.467],[-70.367,43.323],[-70.521,43.252],[-70.522,43.155],[-70.441,43.167],[-70.404,43.109],[-70.459,43.071],[-70.525,43.089],[-70.54,43.131],[-70.582,43.095],[-70.6,43.057],[-70.529,43.006],[-70.575,42.917],[-70.706,43.075],[-70.827,43.127],[-70.81,43.226],[-70.986,43.38],[-70.951,43.551],[-70.989,43.792],[-70.788,43.814]],[[-68.707,43.964],[-68.743,43.943],[-68.679,43.923],[-68.669,43.87],[-68.785,43.804],[-68.827,43.736],[-68.926,43.75],[-69.056,43.859],[-69.15,43.796],[-69.262,43.815],[-69.233,43.778],[-69.332,43.819],[-69.398,43.872],[-69.364,44.013],[-69.328,44.006],[-69.282,44.065],[-69.338,44.209],[-69.433,44.227],[-69.451,44.314],[-69.394,44.343],[-69.347,44.308],[-69.269,44.365],[-69.122,44.256],[-69.043,44.26],[-69.006,44.203],[-68.83,44.21],[-68.726,44.116],[-68.549,44.13],[-68.491,44.013],[-68.578,43.956]],[[-69.606,44.578],[-69.579,44.627],[-69.633,44.7],[-69.483,44.72],[-69.476,44.677],[-69.443,44.672],[-69.461,44.647],[-69.393,44.64],[-69.417,44.551],[-69.372,44.545],[-69.396,44.457],[-69.445,44.464],[-69.535,44.267],[-69.65,44.28],[-69.657,44.122],[-69.856,44.168],[-69.898,44.108],[-70.027,44.131],[-69.994,44.181],[-70.076,44.206],[-70.074,44.298],[-70.133,44.371],[-70.1,44.384],[-70.129,44.487],[-70.042,44.485],[-70.073,44.53],[-70.04,44.589],[-69.953,44.575],[-69.93,44.611],[-69.853,44.622],[-69.818,44.581],[-69.776,44.608]],[[-69.476,44.692],[-69.417,44.701],[-69.372,44.755],[-69.327,44.714],[-69.205,44.73],[-69.184,44.644],[-68.817,44.686],[-68.847,44.62],[-68.798,44.568],[-68.796,44.474],[-68.852,44.416],[-68.841,44.363],[-68.901,44.203],[-69.006,44.204],[-69.043,44.26],[-69.122,44.256],[-69.269,44.365],[-69.347,44.308],[-69.394,44.343],[-69.506,44.343],[-69.445,44.464],[-69.396,44.457],[-69.372,44.545],[-69.417,44.551],[-69.393,44.64],[-69.461,44.647],[-69.443,44.672]],[[-69.398,43.868],[-69.233,43.778],[-69.262,43.725],[-69.356,43.711],[-69.409,43.811],[-69.506,43.778],[-69.551,43.707],[-69.656,43.707],[-69.69,43.853],[-69.722,43.852],[-69.744,43.894],[-69.707,43.927],[-69.7,44.007],[-69.814,44.026],[-69.758,44.139],[-69.657,44.122],[-69.65,44.28],[-69.543,44.263],[-69.506,44.343],[-69.41,44.328],[-69.451,44.314],[-69.433,44.227],[-69.338,44.209],[-69.282,44.065],[-69.328,44.006],[-69.364,44.013]],[[-70.133,44.371],[-70.074,44.298],[-70.076,44.206],[-69.994,44.181],[-70.027,44.131],[-70.005,44.125],[-70.052,43.991],[-70.034,43.976],[-70.081,43.926],[-70.116,43.907],[-70.204,43.948],[-70.315,44.038],[-70.364,43.986],[-70.48,44.026],[-70.485,44.06],[-70.325,44.208],[-70.265,44.363],[-70.274,44.441],[-70.129,44.487],[-70.1,44.384]],[[-69.743,43.893],[-69.69,43.853],[-69.665,43.712],[-69.73,43.657],[-69.882,43.636],[-69.87,43.817],[-69.896,43.867],[-69.857,43.945],[-69.932,43.912],[-70.02,43.946],[-70.052,43.991],[-70.005,44.125],[-69.898,44.108],[-69.856,44.168],[-69.764,44.153],[-69.814,44.026],[-69.7,44.007],[-69.707,43.927]]];
+/* Map anchoring uses a computed lat/long graticule only — no external coordinates. */
+
+/* ============================ CATEGORIES ============================ */
+const CATS=[
+ ["Military / AFFF","#c0392b",/naval|air (national|refuel|force|station)|air national|refuel|shipyard|guard|loring|brunswick|cutler|newton field|municipal airport|regional airport|army/i],
+ ["Wastewater / Sewage","#2563eb",/wastewater|wwtf|wwtp|sewer|sewage|water pollution|pollution control|sanitary|water & sewer|treatment plant|treatment facility|water filter/i],
+ ["Landfill / Waste","#7c3aed",/landfill|solid waste|waste solutions|waste management|recycling|snow dump|disposal|aggregate|ewaste/i],
+ ["Paper / Pulp","#0d9488",/paper|pulp|androscoggin|verso|pixelle|tissue|fine paper|great northern/i],
+ ["Textile / Leather","#d35400",/textile|woolen|fabric|leather|tanning|tannery|felt|shoes|dyeables|fiber/i],
+ ["Petroleum / Chemical","#b45309",/petroleum|terminal|energy|\boil\b|fuel|citgo|sprague|global|buckeye|webber|tanks|chemlan|chemical|coating|spray|roehm|specialty minerals|enpro|sk environmental/i]
+];
+function categorize(name){
+ for(const c of CATS){ if(c[2].test(name)) return c; }
+ return ["Other manufacturing","#64748b",null];
+}
+
+/* ============================ HELPERS ============================ */
+const $=s=>document.querySelector(s);
+const dtx=id=>id.replace(/.*\//,'');
+function fmt(n){ if(n===null||n===undefined||n==='')return'—'; n=+n; if(!isFinite(n))return'—';
+ if(n>=1000) return n.toLocaleString('en-US',{maximumFractionDigits:0});
+ if(n>=10) return (Math.round(n*10)/10).toString();
+ return (Math.round(n*1000)/1000).toString(); }
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+const CMAX=Math.log10(110000);
+function cbar(v){ const w = v>0 ? Math.max(3,Math.round(Math.log10(v+1)/CMAX*100)) : 2;
+ return '<div class="cbar"><i style="width:'+w+'%"></i></div>'; }
+
+/* ============================ RENDER ============================ */
+function renderStats(s){
+ const items=[["Co-located cells",s.cells],["PFAS-relevant facilities",s.facilities],
+  ["PFAS observations",s.obs],["Distinct chemicals",s.chemicals],["States",s.states]];
+ $('#stats').innerHTML=items.map(i=>'<div class="stat"><div class="v">'+fmt(i[1])+'</div><div class="l">'+i[0]+'</div></div>').join('');
+}
+function renderProv(t){ $('#prov').innerHTML='Data sources: '+esc(t)+'. Co-location key: shared S2 Level-13 cell (~1&nbsp;km²).'; }
+
+function buildLegend(fac){
+ const used=new Set(fac.map(f=>categorize(f[0])[0]));
+ document.getElementById('legend').innerHTML=CATS.concat([["Other manufacturing","#64748b"]]).filter(c=>used.has(c[0]))
+   .map(c=>'<span><i style="background:'+c[1]+'"></i>'+c[0]+'</span>').join('')
+   +'<span><i style="background:#fff;border:1.2px solid #64748b"></i>non-detect</span>';
+}
+function renderMap(fac){
+ const box=document.getElementById('mapbox'); if(!box) return;
+ if(window.L && L.map){ try{ renderLeaflet(box,fac); buildLegend(fac); return; }catch(e){} }
+ renderSVGMap(box,fac); buildLegend(fac);
+}
+function renderLeaflet(box,fac){
+ box.style.height='540px'; box.innerHTML='';
+ const map=L.map(box,{preferCanvas:true}).setView([45.3,-69.2],7);
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,
+   attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+ const b=[];
+ fac.slice().sort((a,c)=>c[3]-a[3]).forEach(f=>{
+   const cat=categorize(f[0]); b.push([f[2],f[1]]);
+   const r=f[3]>0?5+Math.log10(f[3]+1)*3.0:4;
+   L.circleMarker([f[2],f[1]],{radius:r,color:cat[1],weight:1.4,fillColor:(f[3]>0?cat[1]:'#ffffff'),fillOpacity:(f[3]>0?0.78:1)})
+    .addTo(map)
+    .bindPopup('<b>'+esc(f[0])+'</b><br><span style="display:inline-block;color:#fff;background:'+cat[1]+';padding:1px 6px;border-radius:5px;font-size:11px;margin:2px 0">'+cat[0]+'</span><br>'+(f[3]>0?('Peak '+fmt(f[3])+' ng/L'):'non-detect')+' &middot; '+fmt(f[4])+' obs')
+    .bindTooltip(esc(f[0]),{direction:'top',opacity:0.9});
+ });
+ if(b.length) map.fitBounds(b,{padding:[34,34]});
+ setTimeout(()=>{try{map.invalidateSize();}catch(e){}},90);
+}
+function renderSVGMap(box,fac){
+ box.style.height='auto';
+ const W=900,padL=42,padR=18,padT=14,padB=30;
+ const LON0=-71.2,LON1=-66.85,LAT0=42.95,LAT1=47.5;
+ const kx=(W-padL-padR)/(LON1-LON0);
+ const ky=kx*Math.cos(((LAT0+LAT1)/2)*Math.PI/180);
+ const H=Math.round(padT+padB+(LAT1-LAT0)*ky);
+ const px=lon=>padL+(lon-LON0)*kx;
+ const py=lat=>padT+(LAT1-lat)*ky;
+ let g='<rect x="0" y="0" width="'+W+'" height="'+H+'" fill="#f5faf9"/>';
+ for(let lon=-71;lon<=-67;lon++){const x=px(lon);g+='<line x1="'+x.toFixed(1)+'" y1="'+padT+'" x2="'+x.toFixed(1)+'" y2="'+(H-padB).toFixed(1)+'" stroke="#e3ece9" stroke-width="0.6"/><text x="'+x.toFixed(1)+'" y="'+(H-padB+13).toFixed(1)+'" font-size="9.5" fill="#9aacb4" text-anchor="middle">'+lon+'°</text>';}
+ for(let lat=43;lat<=47;lat++){const y=py(lat);g+='<line x1="'+padL+'" y1="'+y.toFixed(1)+'" x2="'+(W-padR).toFixed(1)+'" y2="'+y.toFixed(1)+'" stroke="#e3ece9" stroke-width="0.6"/><text x="'+(padL-5).toFixed(1)+'" y="'+(y+3).toFixed(1)+'" font-size="9.5" fill="#9aacb4" text-anchor="end">'+lat+'°</text>';}
+ MAINE_GEO.forEach(r=>{ let d='M'+r.map(p=>px(p[0]).toFixed(1)+' '+py(p[1]).toFixed(1)).join('L')+'Z'; g+='<path d="'+d+'" fill="#e7f0ec" stroke="#c1d2cc" stroke-width="0.7"/>'; });
+ const rows=fac.slice().sort((a,c)=>c[3]-a[3]);
+ rows.forEach((f,i)=>{ const cat=categorize(f[0]); const x=px(f[1]),y=py(f[2]); const r=f[3]>0?4+Math.log10(f[3]+1)*3.0:3.2; const fill=f[3]>0?cat[1]:'#ffffff'; g+='<circle class="mk" data-i="'+i+'" cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+r.toFixed(1)+'" fill="'+fill+'" fill-opacity="'+(f[3]>0?0.82:1)+'" stroke="'+cat[1]+'" stroke-width="1.2"/>'; });
+ box.innerHTML='<svg id="map" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Map of Maine PFAS facilities"></svg>';
+ const svg=box.querySelector('#map'); svg.innerHTML=g;
+ const tip=document.getElementById('tip'),hold=document.querySelector('.maphold');
+ svg.querySelectorAll('.mk').forEach(el=>{
+   el.addEventListener('mouseenter',()=>{ const f=rows[+el.dataset.i],cat=categorize(f[0]);
+     tip.innerHTML='<b>'+esc(f[0])+'</b><br>'+cat[0]+' · '+(f[3]>0?('max '+fmt(f[3])+' ng/L'):'non-detect')+' · '+fmt(f[4])+' obs';
+     const R=svg.getBoundingClientRect(),H2=hold.getBoundingClientRect();
+     tip.style.left=((+el.getAttribute('cx'))/W*R.width+(R.left-H2.left))+'px';
+     tip.style.top=((+el.getAttribute('cy'))/H*R.height+(R.top-H2.top))+'px'; tip.style.opacity=1; });
+   el.addEventListener('mouseleave',()=>{tip.style.opacity=0;});
+ });
+}
+function renderCells(rows){
+ const tb=$('#tblCells tbody'); const mx=rows.length?Math.max(...rows.map(r=>r[3])):1;
+ tb.innerHTML=rows.map((r,i)=>'<tr><td class="num">'+(i+1)+'</td><td>'+esc(r[0])+'</td>'+
+   '<td class="num">'+r[1]+'</td><td class="num">'+fmt(r[2])+'</td>'+
+   '<td class="num">'+fmt(r[3])+'</td><td>'+cbar(r[3])+'</td></tr>').join('');
+}
+function renderChem(rows,ice,tox){
+ const tb=$('#tblChem tbody');
+ tb.innerHTML=rows.map(r=>{
+  const id=r[2]; const use=ice[id]!==undefined; const tx=tox[id]||0;
+  const usePill= use ? '<span class="pill" style="border-color:#bfe3df;color:#0d7a70">func-use ✓</span>' : '<span class="pill">—</span>';
+  const txPill= tx>0 ? '<span class="pill" style="border-color:#c9d6f5;color:#1d4ed8">'+fmt(tx)+'</span>' : '<span class="pill">0</span>';
+  return '<tr><td><b>'+esc(r[0])+'</b></td>'+
+   '<td>'+esc(r[1])+'<br><span style="color:#8a97a4;font-size:11px">'+id+'</span></td>'+
+   '<td class="num">'+fmt(r[3])+'</td><td class="num">'+r[4]+'</td>'+
+   '<td class="num">'+fmt(r[5])+'</td><td>'+cbar(r[5])+'</td>'+
+   '<td>'+usePill+'</td><td class="num">'+txPill+'</td></tr>';
+ }).join('');
+}
+function renderStates(rows){
+ const tb=$('#tblStates tbody'); const mx=Math.max(...rows.map(r=>r[1]));
+ tb.innerHTML=rows.map(r=>'<tr><td>'+esc(r[0])+'</td><td class="num">'+r[1]+'</td>'+
+   '<td class="num">'+r[2]+'</td><td><div class="cbar"><i style="width:'+Math.round(r[1]/mx*100)+'%;background:linear-gradient(90deg,#5eead4,#0d9488)"></i></div></td></tr>').join('');
+}
+function renderNaics(rows){
+ const mx=Math.max.apply(null,rows.map(r=>r[1]));
+ $('#naicsBars').innerHTML='<div class="bars">'+rows.map(r=>'<div class="row"><div class="lab">'+esc(r[0])+'</div><div class="track"><div class="fill" style="width:'+Math.round(r[1]/mx*100)+'%"></div></div><div class="val">'+r[1]+'</div></div>').join('')+'</div>';
+}
+function wireFilter(inputId,tableId,countId){
+ const inp=document.getElementById(inputId); if(!inp)return;
+ const run=()=>{ const q=inp.value.trim().toLowerCase(); let n=0;
+  document.querySelectorAll('#'+tableId+' tbody tr').forEach(tr=>{ const s=tr.innerText.toLowerCase().indexOf(q)>=0; tr.style.display=s?'':'none'; if(s)n++; });
+  const c=document.getElementById(countId); if(c) c.textContent=n+' shown'; };
+ inp.addEventListener('input',run); run();
+}
+function renderInterests(rows){
+ const tb=$('#tblInt tbody'); const mx=Math.max.apply(null,rows.map(r=>r[1]));
+ tb.innerHTML=rows.map(r=>'<tr><td>'+esc(r[0])+'</td><td class="num">'+r[1]+'</td><td><div class="cbar"><i style="width:'+Math.round(r[1]/mx*100)+'%;background:linear-gradient(90deg,#93c5fd,#2563eb)"></i></div></td></tr>').join('');
+}
+function renderAll(D){
+ renderStats(D.stats); renderProv(D.provenance);
+ renderMap(D.fac); renderCells(D.cells); renderChem(D.chem,D.ice,D.tox);
+ renderStates(D.states); renderNaics(D.naics); renderInterests(D.interests||SNAP.interests);
+}
+
+/* ============================ SORTABLE TABLES ============================ */
+function makeSortable(id){
+ const t=$(id); const ths=[...t.tHead.rows[0].cells];
+ ths.forEach((th,ci)=>{ if(!th.classList.contains('sortable'))return;
+  let dir=1;
+  th.addEventListener('click',()=>{
+   const rows=[...t.tBodies[0].rows];
+   const num=th.classList.contains('num');
+   rows.sort((a,b)=>{
+    let x=a.cells[ci].innerText.replace(/[, ]/g,''), y=b.cells[ci].innerText.replace(/[, ]/g,'');
+    if(num){x=parseFloat(x)||0;y=parseFloat(y)||0; return (x-y)*dir;}
+    return x.localeCompare(y)*dir;
+   });
+   dir*=-1; rows.forEach(r=>t.tBodies[0].appendChild(r));
+   // renumber rank col if present
+   if(t.tBodies[0].rows.length && t.id==='tblCells'){[...t.tBodies[0].rows].forEach((r,i)=>r.cells[0].innerText=i+1);}
+  });
+ });
+}
+
+/* ============================ LIVE QUERIES ============================ */
+const NG='<http://qudt.org/vocab/unit/NanoGM-PER-L>';
+const P=`PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
+PREFIX kwg: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
+PREFIX epa: <http://w3id.org/fio/v1/epa-frs#>
+PREFIX fio: <http://w3id.org/fio/v1/fio#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>`;
+const SAW='<https://purl.org/okn/frink/kg/sawgraph>', FIO='<https://purl.org/okn/frink/kg/fiokg>';
+const ME_CELL=`?fac a epa:EPA-PFAS-Facility ; kwg:sfWithin ?cell ; kwg:sfWithin ?cty .
+    FILTER(STRSTARTS(STR(?cell),'http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.'))
+    FILTER(STRSTARTS(STR(?cty),'http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.23'))`;
+
+const QUERIES={
+ states:`${P}
+SELECT ?fips (COUNT(DISTINCT ?cell) AS ?cells) (COUNT(DISTINCT ?fac) AS ?facilities) WHERE {
+  GRAPH ${FIO} { ?fac a epa:EPA-PFAS-Facility ; kwg:sfWithin ?cell ; kwg:sfWithin ?cty .
+    FILTER(STRSTARTS(STR(?cell),'http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.'))
+    FILTER(STRSTARTS(STR(?cty),'http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.'))
+    BIND(SUBSTR(STRAFTER(STR(?cty),'administrativeRegion.USA.'),1,2) AS ?fips) }
+  GRAPH ${SAW} { ?s <http://www.w3.org/2002/07/owl#sameAs> ?cell . }
+} GROUP BY ?fips ORDER BY DESC(?cells)`,
+
+ chem:`${P}
+SELECT ?dtxsid (SAMPLE(?ab) AS ?abbr) (SAMPLE(?nm) AS ?chem)
+  (COUNT(DISTINCT ?obs) AS ?meas) (COUNT(DISTINCT ?cell) AS ?cells) (MAX(IF(isNumeric(?v),?v,0)) AS ?maxNgL) WHERE {
+  { SELECT DISTINCT ?cell WHERE { GRAPH ${FIO} { ${ME_CELL} } } }
+  GRAPH ${SAW} { ?sc <http://www.w3.org/2002/07/owl#sameAs> ?cell ; kwg:sfContains ?pt .
+    ?obs coso:observedAtSamplePoint ?pt ; coso:ofDSSToxSubstance ?dtxsid ; coso:hasResult ?r .
+    ?dtxsid rdfs:label ?nm . OPTIONAL { ?dtxsid skos:altLabel ?ab }
+    ?r coso:measurementValue ?v ; coso:measurementUnit ${NG} . }
+} GROUP BY ?dtxsid ORDER BY DESC(?meas)`,
+
+ naics:`${P}
+SELECT ?label (COUNT(DISTINCT ?fac) AS ?facilities) WHERE {
+  GRAPH ${FIO} { ?fac a epa:EPA-PFAS-Facility ; kwg:sfWithin ?cell ; kwg:sfWithin ?cty ; fio:ofIndustry ?naics .
+    ?naics a <http://w3id.org/fio/v1/naics#NAICS-Industry> ; rdfs:label ?label .
+    FILTER(STRSTARTS(STR(?cell),'http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.'))
+    FILTER(STRSTARTS(STR(?cty),'http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.23')) }
+  GRAPH ${SAW} { ?sc <http://www.w3.org/2002/07/owl#sameAs> ?cell . }
+} GROUP BY ?label ORDER BY DESC(?facilities) LIMIT 12`,
+
+ cells:`${P}
+SELECT ?cell (COUNT(DISTINCT ?fac) AS ?nFac) (GROUP_CONCAT(DISTINCT ?fn;separator=" · ") AS ?facs)
+  (COUNT(DISTINCT ?obs) AS ?nObs) (MAX(IF(isNumeric(?v),?v,0)) AS ?maxNgL) WHERE {
+  GRAPH ${FIO} { ${ME_CELL} OPTIONAL { ?fac dct:alternative ?fn } }
+  GRAPH ${SAW} { ?sc <http://www.w3.org/2002/07/owl#sameAs> ?cell ; kwg:sfContains ?pt .
+    ?obs coso:observedAtSamplePoint ?pt ; coso:ofDSSToxSubstance ?dtx ; coso:hasResult ?r .
+    OPTIONAL { ?r coso:measurementValue ?v ; coso:measurementUnit ${NG} } }
+} GROUP BY ?cell ORDER BY DESC(?maxNgL) LIMIT 30`,
+
+ interests:`${P}
+SELECT ?interest (COUNT(DISTINCT ?fac) AS ?facilities) WHERE {
+  GRAPH ${FIO} { ?fac a epa:EPA-PFAS-Facility ; kwg:sfWithin ?cell ; kwg:sfWithin ?cty ; epa:hasEnvironmentalInterest ?i .
+    FILTER(STRSTARTS(STR(?cell),'http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.'))
+    FILTER(STRSTARTS(STR(?cty),'http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.23'))
+    BIND(REPLACE(STR(?i),'.*EnvironmentalInterestType.','') AS ?interest) }
+  GRAPH ${SAW} { ?sc <http://www.w3.org/2002/07/owl#sameAs> ?cell . }
+} GROUP BY ?interest ORDER BY DESC(?facilities) LIMIT 12`,
+
+ fac:`${P}
+SELECT ?name ?wkt ?cell ?maxNgL ?nObs WHERE {
+  { SELECT ?cell (MAX(IF(isNumeric(?v),?v,0)) AS ?maxNgL) (COUNT(DISTINCT ?obs) AS ?nObs) WHERE {
+      { SELECT DISTINCT ?cell WHERE { GRAPH ${FIO} { ${ME_CELL} } } }
+      GRAPH ${SAW} { ?sc <http://www.w3.org/2002/07/owl#sameAs> ?cell ; kwg:sfContains ?pt .
+        ?obs coso:observedAtSamplePoint ?pt ; coso:ofDSSToxSubstance ?dtx ; coso:hasResult ?r .
+        OPTIONAL { ?r coso:measurementValue ?v ; coso:measurementUnit ${NG} } } } GROUP BY ?cell }
+  GRAPH ${FIO} { ?fac a epa:EPA-PFAS-Facility ; kwg:sfWithin ?cell .
+    OPTIONAL { ?fac dct:alternative ?name }
+    OPTIONAL { ?fac geo:hasGeometry ?g . ?g geo:asWKT ?wkt } }
+} ORDER BY DESC(?maxNgL) LIMIT 400`
+};
+
+const FIPS={"23":"Maine","25":"Massachusetts","27":"Minnesota","18":"Indiana","04":"Arizona","17":"Illinois","33":"New Hampshire","45":"South Carolina","01":"Alabama","16":"Idaho","21":"Kentucky","55":"Wisconsin","36":"New York","09":"Connecticut","44":"Rhode Island","34":"New Jersey"};
+
+async function runQuery(q){
+ const r=await window.cowork.callMcpTool('mcp__mcp-okn__sparql_query',{query:q});
+ if(r&&r.isError) throw new Error('tool error');
+ let d = r&&r.structuredContent ? r.structuredContent : (r&&r.content&&r.content[0]?JSON.parse(r.content[0].text):null);
+ if(d&&d.structuredContent) d=d.structuredContent;
+ return (d&&d.rows)?d.rows:[];
+}
+const val=(row,k)=>{const c=row[k]; return (c&&typeof c==='object'&&'value'in c)?c.value:c;};
+
+function parseWKT(w){ const m=/POINT\s*\(\s*(-?[\d.]+)\s+(-?[\d.]+)\s*\)/i.exec(w||''); return m?[+m[1],+m[2]]:null; }
+
+async function liveRefresh(){
+ const btn=$('#refreshBtn'); btn.disabled=true;
+ setStatus('loading','Querying FRINK federation…');
+ try{
+  const [st,ch,na,ce,fa]=await Promise.all([
+   runQuery(QUERIES.states),runQuery(QUERIES.chem),runQuery(QUERIES.naics),runQuery(QUERIES.cells),runQuery(QUERIES.fac)
+  ]);
+  const D=JSON.parse(JSON.stringify(SNAP)); // keep ice/tox + stats defaults
+  // states
+  if(st.length){ let cellsTot=0,facTot=0,stset=new Set();
+   D.states=st.map(r=>[FIPS[val(r,'fips')]||('FIPS '+val(r,'fips')),+val(r,'cells'),+val(r,'facilities')])
+     .filter(r=>!/FIPS (00|03)/.test(r[0]));
+   st.forEach(r=>{cellsTot+=+val(r,'cells');facTot+=+val(r,'facilities');stset.add(val(r,'fips'));});
+   D.stats.cells=cellsTot; D.stats.facilities=facTot; D.stats.states=D.states.length;
+  }
+  // chem
+  if(ch.length){ D.chem=ch.map(r=>[val(r,'abbr')||'—',val(r,'chem'),dtx(val(r,'dtxsid')),+val(r,'meas'),+val(r,'cells'),+val(r,'maxNgL')]); }
+  // naics
+  if(na.length){ D.naics=na.map(r=>[val(r,'label').trim(),+val(r,'facilities')]); }
+  // cells
+  if(ce.length){ D.cells=ce.map(r=>{const f=(val(r,'facs')||'').split(' · ').filter(Boolean);
+    const lbl=f.length?(f[0]+(f.length>1?(' + '+(f.length-1)+' more'):'')):'(unnamed facility)';
+    return [lbl,+val(r,'nFac'),+val(r,'nObs'),+val(r,'maxNgL')];}); }
+  // fac
+  if(fa.length){ const seen={}; const arr=[];
+   fa.forEach(r=>{const w=parseWKT(val(r,'wkt')); if(!w)return; const nm=val(r,'name')||'(unnamed)';
+     const k=nm+w[0]; if(seen[k])return; seen[k]=1; arr.push([nm,w[0],w[1],+val(r,'maxNgL'),+val(r,'nObs')]);});
+   if(arr.length) D.fac=arr;
+  }
+  renderAll(D);
+  setStatus('live','Live from knowledge graphs');
+  const s=$('#stamp'); s.style.display=''; s.textContent='updated '+new Date().toLocaleString();
+ }catch(e){
+  setStatus('err','Live query unavailable — showing verified snapshot');
+ }finally{ btn.disabled=false; }
+}
+function setStatus(cls,txt){ const b=$('#status'); b.className='badge '+(cls==='live'?'live':cls==='err'?'err':cls==='snap'?'snap':''); $('#statustxt').textContent=txt; }
+
+/* ============================ BOOT ============================ */
+renderAll(SNAP);
+['#tblCells','#tblChem','#tblStates','#tblInt'].forEach(makeSortable);
+wireFilter('qChem','tblChem','qChemN');wireFilter('qCells','tblCells','qCellsN');
+$('#queryDump').innerHTML=Object.entries(QUERIES).map(([k,q])=>'<div style="margin:6px 0"><div style="font-size:12px;color:#5b6675;margin-bottom:3px">— '+k+'</div><pre>'+esc(q)+'</pre></div>').join('');
+$('#foot').innerHTML='Reproducible knowledge-graph workflow over the Proto-OKN FRINK federation ('+esc(SNAP.provenance)+'). Co-location is defined at S2 Level-13 (~1&nbsp;km²); "PFAS-relevant facility" = EPA PFAS Analytic Tools industry designation. Concentrations are peak values in water media (ng/L); soil, biota, and food media are excluded from the concentration axis. Snapshot verified July 2026.';
+setStatus('snap','Verified snapshot');
+</script>
+</body>
+</html>
