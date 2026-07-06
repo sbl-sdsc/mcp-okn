@@ -1,0 +1,530 @@
+{
+  "n_findings": 1327,
+  "n_genes": 966,
+  "n_genes_noncoding": 61,
+  "n_drugs": 151,
+  "n_pathways": 26,
+  "n_altered_activity": 43,
+  "n_variants": 20,
+  "n_clinical": 5,
+  "n_biomarkers": 1,
+  "n_env": 44,
+  "n_prevalence": 50,
+  "n_sdoh": 21,
+  "gene_by_nsources": {
+    "1": 824,
+    "2": 103,
+    "3": 28,
+    "4": 11
+  },
+  "evidence_counts": {
+    "curated_link": 1032,
+    "statistical_association": 284,
+    "pathway_membership": 26,
+    "measured_activity_change": 43,
+    "epidemiological": 50
+  },
+  "entity_counts": {
+    "gene": 966,
+    "pathway_or_geneset": 26,
+    "drug": 151,
+    "environmental_factor": 44,
+    "altered_activity_gene": 38,
+    "altered_activity_program": 5,
+    "genetic_variant": 20,
+    "clinical_feature": 5,
+    "biomarker": 1,
+    "prevalence_geolocation": 50,
+    "sdoh_correlation": 21
+  },
+  "source_gene_totals": {
+    "spoke_okn": 678,
+    "rdkg": 224,
+    "digcfdekg": 243,
+    "prokn": 13
+  },
+  "tier1_genes": [
+    "ABCC8",
+    "GCK",
+    "HNF1A",
+    "HNF1B",
+    "HNF4A",
+    "IRS1",
+    "KCNJ11",
+    "PDX1",
+    "PPARG",
+    "SLC2A2",
+    "WFS1"
+  ],
+  "tier2_genes": [
+    "ADCY5",
+    "ADIPOQ",
+    "AKT2",
+    "CDKAL1",
+    "ENPP1",
+    "FGF21",
+    "FTO",
+    "GCG",
+    "GLIS3",
+    "GLP1R",
+    "HMGA1",
+    "IGF2BP2",
+    "INS",
+    "INSR",
+    "IRS2",
+    "JAZF1",
+    "KCNQ1",
+    "LEP",
+    "LEPR",
+    "NOS3",
+    "PAX4",
+    "PPARGC1A",
+    "SIRT1",
+    "SLC2A4",
+    "SLC30A8",
+    "TCF7L2",
+    "UBE2E2",
+    "UCP2"
+  ],
+  "top_digcfdekg": [
+    [
+      "INS",
+      10.3
+    ],
+    [
+      "LEP",
+      9.77
+    ],
+    [
+      "GCK",
+      9.73
+    ],
+    [
+      "GCKR",
+      8.97
+    ],
+    [
+      "WFS1",
+      8.62
+    ],
+    [
+      "HNF1A",
+      8.6
+    ],
+    [
+      "GIPR",
+      8.34
+    ],
+    [
+      "IRS1",
+      8.29
+    ],
+    [
+      "SLC2A2",
+      8.18
+    ],
+    [
+      "KCNJ11",
+      8.13
+    ],
+    [
+      "PPARG",
+      8.06
+    ],
+    [
+      "CEBPA",
+      7.91
+    ],
+    [
+      "TCF7L2",
+      7.85
+    ],
+    [
+      "SLC30A8",
+      7.67
+    ],
+    [
+      "HNF4A",
+      7.54
+    ],
+    [
+      "PTEN",
+      7.37
+    ],
+    [
+      "GLP1R",
+      7.32
+    ],
+    [
+      "FTO",
+      6.92
+    ],
+    [
+      "HNF1B",
+      6.9
+    ],
+    [
+      "CDKAL1",
+      6.55
+    ]
+  ],
+  "sdoh_correlations": [
+    [
+      "poor or fair health",
+      0.9355947179317804,
+      3129
+    ],
+    [
+      "physical inactivity",
+      0.8715888902881921,
+      3129
+    ],
+    [
+      "children in poverty",
+      0.817550438439942,
+      3129
+    ],
+    [
+      "high school completion",
+      -0.7706158503335474,
+      3129
+    ],
+    [
+      "insufficient sleep",
+      0.7553635989788048,
+      3129
+    ],
+    [
+      "food insecurity",
+      0.7424772113599191,
+      3129
+    ],
+    [
+      "adult obesity",
+      0.7387247192545238,
+      3129
+    ],
+    [
+      "premature death",
+      0.7003820964700663,
+      2854
+    ],
+    [
+      "children in single-parent households",
+      0.6979984453209731,
+      3129
+    ],
+    [
+      "life expectancy",
+      -0.6523684729007598,
+      3061
+    ],
+    [
+      "some college",
+      -0.6406293935271035,
+      3129
+    ],
+    [
+      "food environment index",
+      -0.6356119708926663,
+      3099
+    ],
+    [
+      "excessive drinking",
+      -0.629943642721505,
+      3129
+    ],
+    [
+      "adult smoking",
+      0.621002623932299,
+      3129
+    ],
+    [
+      "broadband access",
+      -0.6114944688043983,
+      3129
+    ],
+    [
+      "income inequality",
+      0.5316668687535883,
+      3122
+    ],
+    [
+      "uninsured",
+      0.5027050952404243,
+      3129
+    ],
+    [
+      "unemployment",
+      0.4213417287735275,
+      3129
+    ],
+    [
+      "limited access to healthy foods",
+      0.23736328571695073,
+      3099
+    ],
+    [
+      "severe housing cost burden",
+      0.1895573688728662,
+      3126
+    ],
+    [
+      "rural",
+      0.06581740958560468,
+      3124
+    ]
+  ],
+  "prevalence_state": [
+    [
+      "MS",
+      "Mississippi",
+      14.17
+    ],
+    [
+      "LA",
+      "Louisiana",
+      12.84
+    ],
+    [
+      "SC",
+      "South Carolina",
+      12.8
+    ],
+    [
+      "GA",
+      "Georgia",
+      12.65
+    ],
+    [
+      "NM",
+      "New Mexico",
+      12.53
+    ],
+    [
+      "AL",
+      "Alabama",
+      12.46
+    ],
+    [
+      "WV",
+      "West Virginia",
+      12.37
+    ],
+    [
+      "TX",
+      "Texas",
+      12.14
+    ],
+    [
+      "AZ",
+      "Arizona",
+      12.02
+    ],
+    [
+      "AK",
+      "Alaska",
+      11.98
+    ],
+    [
+      "OK",
+      "Oklahoma",
+      11.71
+    ],
+    [
+      "AR",
+      "Arkansas",
+      11.49
+    ],
+    [
+      "TN",
+      "Tennessee",
+      11.4
+    ],
+    [
+      "NC",
+      "North Carolina",
+      11.12
+    ],
+    [
+      "KY",
+      "Kentucky",
+      10.75
+    ],
+    [
+      "MO",
+      "Missouri",
+      10.39
+    ],
+    [
+      "VA",
+      "Virginia",
+      10.3
+    ],
+    [
+      "OH",
+      "Ohio",
+      10.25
+    ],
+    [
+      "CA",
+      "California",
+      10.18
+    ],
+    [
+      "IN",
+      "Indiana",
+      10.04
+    ],
+    [
+      "DE",
+      "Delaware",
+      9.69
+    ],
+    [
+      "SD",
+      "South Dakota",
+      9.59
+    ],
+    [
+      "MD",
+      "Maryland",
+      9.54
+    ],
+    [
+      "KS",
+      "Kansas",
+      9.52
+    ],
+    [
+      "ID",
+      "Idaho",
+      9.46
+    ],
+    [
+      "NV",
+      "Nevada",
+      9.4
+    ],
+    [
+      "DC",
+      "District of Columbia",
+      9.2
+    ],
+    [
+      "IL",
+      "Illinois",
+      9.08
+    ],
+    [
+      "MI",
+      "Michigan",
+      8.99
+    ],
+    [
+      "OR",
+      "Oregon",
+      8.9
+    ],
+    [
+      "NY",
+      "New York",
+      8.83
+    ],
+    [
+      "HI",
+      "Hawaii",
+      8.78
+    ],
+    [
+      "UT",
+      "Utah",
+      8.78
+    ],
+    [
+      "MT",
+      "Montana",
+      8.75
+    ],
+    [
+      "ND",
+      "North Dakota",
+      8.69
+    ],
+    [
+      "PA",
+      "Pennsylvania",
+      8.62
+    ],
+    [
+      "WA",
+      "Washington",
+      8.58
+    ],
+    [
+      "NE",
+      "Nebraska",
+      8.41
+    ],
+    [
+      "ME",
+      "Maine",
+      8.32
+    ],
+    [
+      "WY",
+      "Wyoming",
+      8.29
+    ],
+    [
+      "MN",
+      "Minnesota",
+      8.23
+    ],
+    [
+      "IA",
+      "Iowa",
+      8.21
+    ],
+    [
+      "NJ",
+      "New Jersey",
+      8.1
+    ],
+    [
+      "CT",
+      "Connecticut",
+      7.95
+    ],
+    [
+      "RI",
+      "Rhode Island",
+      7.91
+    ],
+    [
+      "WI",
+      "Wisconsin",
+      7.74
+    ],
+    [
+      "CO",
+      "Colorado",
+      7.6
+    ],
+    [
+      "NH",
+      "New Hampshire",
+      7.45
+    ],
+    [
+      "VT",
+      "Vermont",
+      7.35
+    ],
+    [
+      "MA",
+      "Massachusetts",
+      7.26
+    ]
+  ]
+}
