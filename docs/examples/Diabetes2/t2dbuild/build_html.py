@@ -107,23 +107,15 @@ A further {len(S['tier2_genes'])} genes are supported by 3 sources (Tier&nbsp;2)
 <div class="muted">Static ranking companion to the interactive OpenStreetMap above (no lat/long scatter).</div>
 <img src="{figs['fig6_prevalence_by_state']}" alt="prevalence by state" style="margin-top:6px">
 
-<div class="two" style="margin-top:16px">
-<div class="card"><h3>Highest-prevalence states ("diabetes belt")</h3>
-<table><thead><tr><th>State</th><th class="num">Age-adj. prevalence</th></tr></thead><tbody>{prevtop}</tbody></table></div>
-<div class="card"><h3>Strongest social-determinant correlates</h3>
-<div class="muted">County-level Pearson r vs diabetes prevalence (n≈3,100 counties)</div>
-<table><thead><tr><th>SDoH variable</th><th class="num">r</th><th class="num">n</th></tr></thead>
-<tbody>{sdoh_rows}</tbody></table></div>
-</div>
+<h3 style="margin-top:18px">Social determinants of health — county-level correlates</h3>
+<div class="muted">Pearson r between county diabetes prevalence and each SDoH variable (n≈3,100 counties).</div>
 <img src="{figs['fig5_sdoh_correlations']}" alt="sdoh" style="margin-top:6px">
 
 <h2>Cross-source corroboration</h2>
 <img src="{figs['fig1_cross_source_corroboration']}" alt="corroboration">
 <div class="two" style="margin-top:16px">
 <div><img src="{figs['fig4_top_gene_matrix']}" alt="matrix"></div>
-<div><img src="{figs['fig2_evidence_entity_breakdown']}" alt="evidence">
-<div class="card" style="margin-top:14px"><h3>Top statistical signals (digcfdekg PIGEAN weight)</h3>
-<table><thead><tr><th>Gene</th><th class="num">weight</th></tr></thead><tbody>{topw}</tbody></table></div></div>
+<div><img src="{figs['fig2_evidence_entity_breakdown']}" alt="evidence"></div>
 </div>
 
 <h2>Gene–pathway–drug mechanistic map</h2>
