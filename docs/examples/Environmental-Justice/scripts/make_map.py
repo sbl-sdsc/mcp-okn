@@ -16,7 +16,7 @@ for _,r in m.iterrows():
     B[r['fips']]=[round(float(idx),3), (int(r['burden_agreement']) if pd.notna(r['burden_agreement']) else None),
                   str(r['name']), str(r['state']), g('epa_fac',0), g('court_cases',0),
                   g('svi',3), g('rucc',0), g('poverty',1), g('sud_providers',0)]
-brk=list(np.round(m['burden_index'].quantile([.15,.35,.55,.7,.82,.92]).values,3))
+brk=np.round(m['burden_index'].quantile([.15,.35,.55,.7,.82,.92]).values,3).tolist()
 data=json.dumps(B,separators=(',',':'))
 html=f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>Cumulative Environmental-Justice Burden by U.S. County — Proto-OKN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
