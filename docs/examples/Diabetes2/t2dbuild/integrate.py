@@ -1,0 +1,310 @@
+#!/usr/bin/env python3
+"""
+Integrate Proto-OKN / FRINK federated query extracts into a single Type 2 Diabetes
+evidence map: one row per finding, cross-source corroboration, confidence tiers,
+SDoH correlations, and state-level prevalence for the OpenStreetMap layer.
+
+All inputs are verbatim results of the SPARQL queries run in this session
+(see T2D_analysis_transcript.md). Evidence types are kept strictly separate:
+  curated_link | statistical_association | measured_activity_change | pathway_membership | epidemiological
+"""
+import csv, json, math, re, os
+
+OUT = os.path.dirname(os.path.abspath(__file__))
+
+# ------------------------------------------------------------------ raw extracts
+# spoke-okn ASSOCIATES_DaG for "diabetes mellitus" (DOID_9351, parent term) — curated
+SPOKE_GENES = """ABCA1 ABCA4 ABCB4 ABCC8 ACE ACE2 ACTB ADA2 ADAR ADCY5 ADIPOQ ADIPOR1 ADIPOR2 ADRA2A ADRB3 AEBP1 AGBL5 AGER AGPAT2 AGRP AGT AGTR1 AHI1 AHR AIP AIRE AKR1B1 AKT1 AKT2 ALB ALMS1 AMACR AMY1B AMY2A AMY2B ANGPTL8 ANKH ANO4 APCS APOA1 APOA5 APOB APOC3 APOE APP APPL1 AR ARAP1 ARHGEF18 ARL2BP ARL3 ARL6 ARNT2 ATM ATP12A ATP4A ATP6 ATRX BAX BAZ1B BBIP1 BBS1 BBS10 BBS12 BBS2 BBS4 BBS5 BBS7 BBS9 BCAR1 BCL2 BCL7B BDNF BEST1 BGLAP BLK BLM BMP2 BMP6 BRAF BRCA1 BRCA2 BSCL2 BUD23 CA4 CAPN10 CARS1 CASP1 CASP3 CASR CAT CAV1 CAVIN1 CBLB CC2D2A CCDC28B CCL2 CCR5 CD36 CD38 CD4 CD8A CDH23 CDHR1 CDKAL1 CDKN2A CDON CEL CELA2A CEP19 CEP290 CERKL CETP CFAP418 CFTR CIDEC CISD2 CKB CKM CKMT1B CKMT2 CLCNKB CLEC16A CLIP2 CLPS CLRN1 CNBP CNGA1 CNGB1 CNOT1 COL2A1 CORIN COX1 COX2 COX3 CP CPA1 CPE CRB1 CREB1 CRIPTO CRP CRTC1 CRX CST3 CTC1 CTLA4 CTNNB1 CTNS CTRC CXCL10 CXCL8 CYBB CYCS CYP19A1 CYTB DCAF17 DHDDS DHX38 DISP1 DKC1 DLK1 DLL1 DMXL2 DNAH8 DNAJC21 DNAJC3 DNAJC30 DNASE2 DNM1L DNMT1 DPP4 DUT DYRK1B EDA EDA2R EDN1 EFL1 EGF EIF2AK3 EIF2S3 EIF4H ELMO2 ELN EML2 ENPP1 EPO ESR1 EYS F2 F3 FABP4 FAM161A FASN FBN1 FCGR3B FGF21 FGF8 FGFR1 FKBP6 FLT1 FMR1 FN1 FNDC5 FOS FOXC2 FOXH1 FOXO1 FOXP1 FOXP3 FOXRED1 FSCN2 FTO FUZ G6PC2 G6PC3 GAD2 GAPDH GAS1 GATA3 GATA6 GCG GCGR GCK GFM2 GHRL GIP GJA1 GJB3 GJB4 GLI2 GLIS3 GLP1R GLRX5 GOSR2 GPD2 GPR101 GPR35 GPT GPT2 GPX2 GPX3 GPX5 GPX6 GPX7 GPX8 GSK3A GSK3B GTF2I GTF2IRD1 GTF2IRD2 GUCA1B GYG1 GYS1 HAMP HBA1 HBA2 HBB HERC2 HESX1 HFE HGSNAT HIF1A HJV HLA-DQA1 HLA-DQA2 HLA-DQB1 HLA-DRB1 HMGA1 HMGA2 HMGCR HMOX1 HNF1A HNF1B HNF4A HR HSPA5 HSPG2 IAPP IARS1 ICAM1 IDH3A IDH3B IER3IP1 IFIH1 IFNG IFT140 IFT172 IFT27 IFT74 IFT88 IGF1 IGF1R IGF2 IGF2BP2 IL10 IL13 IL17A IL18 IL18BP IL1A IL1B IL2 IL2RA IL4 IL6 IMPDH1 IMPG1 IMPG2 INPPL1 INS INSR INTS11 IRS1 IRS2 ITCH ITGAM ITPR3 JAZF1 JUN KCNJ11 KCNQ1 KCTD1 KDSR KIAA1549 KIF11 KIZ KLF11 KLHL7 KRAS LCN2 LDLR LEMD3 LEP LEPR LHX1 LIG4 LIMK1 LIPC LIPE LMF1 LMNA LMNB2 LPL LRAT LRBA LRP6 LSM11 LZTFL1 MAFA MAGEL2 MAK MANF MAPK3 MAPK8 MAPK8IP1 MC4R MCF2L2 MEF2A MEN1 MERTK METTL27 MGAM MIA3 MICU1 MKKS MKRN3 MKS1 MLXIPL MMP14 MMP2 MMP9 MOG MST1 MTHFR MTNR1B MTOR MYH14 NAA10 NAF1 NAMPT NCF1 ND1 ND2 ND3 ND4 ND5 ND6 NDN NDP NDUFA1 NDUFA11 NDUFA6 NDUFAF1 NDUFAF2 NDUFAF3 NDUFAF4 NDUFAF5 NDUFAF8 NDUFB10 NDUFB11 NDUFB3 NDUFB9 NDUFS1 NDUFS2 NDUFS3 NDUFS4 NDUFS6 NDUFS7 NDUFS8 NDUFV1 NDUFV2 NEK2 NEUROD1 NEUROG3 NFE2L2 NFKB1 NHP2 NKX2-5 NLRP3 NODAL NOP10 NOS3 NOTCH3 NOX4 NPAP1 NPHP1 NPM1 NPPB NPY NR1H4 NR2E3 NR3C1 NR3C2 NRL NSMCE2 NUAK2 NUBPL OAS1 OCA2 OFD1 OPA1 OR5V1 OTX2 PALB2 PALLD PAM PARN PAX4 PCARE PCBD1 PCNT PCSK9 PCYT1A PDE11A PDE4D PDE6A PDE6B PDE6G PDE8B PDX1 PECAM1 PEX1 PEX10 PEX6 PI4KA PIK3C3 PIK3CA PIK3CB PIK3CD PIK3CG PIK3R1 PLAGL1 PLAT PLCD1 PLG PLIN1 PNPLA2 PNPLA3 PNPLA6 POC1A POLA1 POLD1 POLG POLG2 POLR3A POMC POMGNT1 PPARA PPARD PPARG PPARGC1A PPP1R15B PPP1R3A PPY PRCD PRKACA PRKACB PRKACG PRKAR1A PRL PROK2 PROKR2 PROM1 PRPF3 PRPF31 PRPF4 PRPF6 PRPF8 PRPH2 PRSS1 PRSS2 PSTPIP1 PTCH1 PTF1A PTGS2 PTH PTPN1 PTPN22 PTPRC PTPRN PTPRN2 PTRH2 PXDN PXDNL PYY RABL3 RAC1 RBM6 RBP3 RBP4 RDH12 REEP6 REN RETN RETNLB RFC2 RFX6 RGR RHO RLBP1 RNASEH2A RNASEH2B RNASEH2C ROM1 RP1 RP1L1 RP2 RP9 RPE65 RPGR RPS6KB1 RREB1 RRM2B RTEL1 RTL1 SAG SAMHD1 SARS2 SBDS SCAPER SCARB1 SCARB2 SCD SCLT1 SDCCAG8 SELE SEMA4A SEMA4D SERPINE1 SH2B3 SHBG SHH SI SIM1 SIN3A SIRT1 SIRT3 SIX3 SLC12A3 SLC16A11 SLC16A13 SLC19A2 SLC25A4 SLC29A3 SLC2A1 SLC2A2 SLC2A4 SLC30A10 SLC30A8 SLC37A4 SLC40A1 SLC5A1 SLC5A2 SLC7A14 SMAD4 SMPD4 SNRNP200 SNRPN SOX2 SOX3 SPATA7 SPI1 SPINK1 SREBF1 SRP54 SST ST6GAL1 STAT1 STAT3 STOX1 STUB1 STX1A SUFU SUMO4 TBC1D4 TBL2 TCF4 TCF7L2 TERT TGFB1 TGIF1 THRB TIMMDC1 TINF2 TKT TLE1 TLR2 TLR4 TLR8 TMEM126B TMEM270 TNF TNFRSF25 TOM1 TOPORS TP53 TREX1 TRIM32 TRMT10A TTC7A TTC8 TTPA TUB TULP1 TWNK TYMS UBE2E2 UBR1 UCP1 UCP2 UCP3 USB1 USH2A USP48 USP8 VANGL1 VANGL2 VCAM1 VPS37D VWF WDPCP WFS1 WRAP53 WRN XDH XRCC4 YIPF5 ZBTB20 ZFP57 ZFYVE26 ZIC2 ZMIZ1 ZMPSTE24 ZNF408 ZNF513 ZNF668 ZNRF3""".split()
+
+# rdkg — genes via related_to (T2D MONDO subtypes), curated. (disease-name objects excluded below)
+RDKG_RELATED = """ABCC8 ADAMTS9 ADCY5 ADIPOQ AKT2 AP3S2 ATF3 ATP2A2 ATP2A3 AUTS2 BCL2 BCL2L1 BCL2L11 BHMT BRAF C2CD4A C2CD4B C3 CAPN10 CASP3 CASP8 CAT CAV1 CAVIN1 CBS CCDC92 CCND2 CDKAL1 CDO1 CISD2 CMIP CNKSR2 CPT1A CYBA CYP1A2 DGKD ECE1 EDN1 EDNRA EDNRB EGFR ENPP1 EPC2 ETS1 FAM234A FAS FGF21 FOS FTO GCG GCGR GCK GCKR GLIS3 GLP1R GNB3 GP2 GPD2 GPX1 GRB14 GSTM1 HBA1 HHEX HK1 HLA-DRB5 HMG20A HMGA1 HMOX1 HNF1A HNF1B HNF4A HP HPX IAPP ICAM1 ID1 IGF2BP2 IL13RA1 INPPL1 INS INSR IRS1 IRS2 ITGA1 ITLN1 JADE2 JAZF1 KCNJ11 KCNK16 KCNQ1 KCNU1 KL KLF14 KSR2 LEP LEPR LIPC MAEA MAPK8IP1 MAT1A MOK MRAS MTNR1B NEUROD1 NFATC2 NFKB1 NKX6-1 NOS2 NOS3 NOTCH2 NUS1 OGG1 PAM PAX4 PAX6 PCSK2 PDX1 PEPD PLEKHA1 PPARA PPARG PPARGC1A PPP1R3A PRKCB PROX1 PSMD6 PTPN1 RELA RETN RNF6 S100A6 SCTR SFRP4 SHBG SIRT1 SLC1A2 SLC22A3 SLC2A1 SLC2A2 SLC2A4 SLC30A8 SMAD5 SNAP25 SOD1 SOD2 ST6GAL1 TCF7L2 TGFB1 THADA TIMP1 TMEM155 TMEM18 TNF TNFRSF1A TNFRSF1B UBE2E2 UCP2 USP48 VPS26A WFS1 ZC3HC1 ZFAND3 ZNF257""".split()
+# rdkg microRNAs (non-coding), via related_to
+RDKG_MIRS = """MIR10B MIR1226 MIR1228 MIR1249 MIR125B1 MIR126 MIR1260A MIR1260B MIR127 MIR1296 MIR1301 MIR1306 MIR1307 MIR130B MIR140 MIR141 MIR142 MIR144 MIR151A MIR17HG MIR181C MIR1908 MIR192 MIR195 MIR200A MIR203A MIR204 MIR205 MIR2116 MIR214 MIR215 MIR221 MIR222 MIR27A MIR30A MIR3173 MIR335 MIR339 MIR33B MIR375 MIR377 MIR409 MIR423 MIR432 MIR4482 MIR4516 MIR483 MIR485 MIR487B MIR532 MIR628 MIR6741 MIR6803 MIR744 MIR7704 MIR8061 MIR885 MIR92B MIR939 MIR98 MIRLET7D""".split()
+# rdkg has_phenotype (clinical features), curated
+RDKG_PHENO = ["Insulin resistance", "Increased waist to hip ratio", "Autosomal dominant inheritance", "Late onset", "Type II diabetes mellitus"]
+# rdkg contraindicated_for (drugs that worsen glycemic control), curated
+RDKG_CONTRA = """Acetazolamide Amcinonide Amlodipine Atenolol Chlorothiazide Chlorthalidone Clonidine Dexfenfluramine Dichlorophen Diclofenamide Diethylpropion Etretinate Fenfluramine Halcinonide Hydrochlorothiazide Methazolamide Phenmetrazine Reserpine Sulfamethizole Triamterene""".split()
+# rdkg contributes_to (environmental / chemical risk factors), curated
+RDKG_ENV = ["2,4-Dichlorophenoxyacetic Acid","Agent Orange","Air Pollutants","alpha-hexachlorocyclohexane","alpha-Linolenic Acid","Arsenic","beta-hexachlorocyclohexane","bis(4-hydroxyphenyl)sulfone","bisphenol A","Boron","Bromine","Cadmium","Calcium","Cesium","Chromium","Copper","delta-hexachlorocyclohexane","Dichlorodiphenyl Dichloroethylene","Docosahexaenoic Acids","docosapentaenoic acid","Fatty Acids, Omega-3","Gallium","Gold","Indium","Iron","Lead","Magnesium","Manganese","Mercury","Metals","Molybdenum","Nickel","perfluorooctane sulfonic acid","perfluorooctanoic acid","Polychlorinated Biphenyls","Rubidium","Selenium","Silver","Strontium","Tantalum","Thallium","Tin","Vehicle Emissions","Zinc"]
+
+# digcfdekg (CFDE REVEAL) statistical gene-trait weights for T2D = MONDO_0005148 (PIGEAN/EAGGL). Clean T2D (NOT HbA1c).
+DIGCFDEKG_GENES = """INS,10.3 LEP,9.77 GCK,9.73 GCKR,8.97 WFS1,8.62 HNF1A,8.6 GIPR,8.34 IRS1,8.29 SLC2A2,8.18 KCNJ11,8.13 PPARG,8.06 CEBPA,7.91 TCF7L2,7.85 SLC30A8,7.67 HNF4A,7.54 PTEN,7.37 GLP1R,7.32 FTO,6.92 HNF1B,6.9 CDKAL1,6.55 SLC9B2,6.49 GLIS3,6.43 BAD,6.1 PFKM,6.1 CCND2,6.05 IRS2,6.03 GNAS,5.89 CEBPB,5.87 INSR,5.86 KL,5.55 ONECUT1,5.38 JAZF1,5.3 PTPN11,5.26 E2F1,5.19 FOXA2,5.07 ADCY5,5.02 ADIPOQ,5.01 CDK8,4.93 IGF2BP2,4.93 VPS13C,4.87 NEUROG3,4.83 CDKN2C,4.82 MC4R,4.78 FBXW7,4.68 CDKN2A,4.66 HHEX,4.66 KLF14,4.57 FGFR3,4.54 APOE,4.54 STK11,4.45 PPARGC1A,4.37 MANSC4,4.34 THADA,4.33 TNKS2,4.33 EBF1,4.32 ANKRD55,4.3 KCNH6,4.29 CCND1,4.28 BCL11A,4.17 PDX1,4.13 ZCCHC12,4.12 LEPR,4.11 PRKAA2,4.11 ZMIZ1,4.11 IGF1R,4.09 HUWE1,4.02 CYP26A1,4.01 PIK3R1,4.01 SPRY2,4.01 LYPLAL1,4.0 FOXO1,3.97 HMGA1,3.95 SLC2A4,3.93 MOB1B,3.88 PRKACA,3.88 NOTCH2,3.88 UBE3C,3.85 ETS1,3.84 SIRT6,3.84 ABCC8,3.82 CPEB3,3.81 MACF1,3.8 ZBTB20,3.78 COL1A1,3.77 HMGA2,3.77 PIM3,3.75 FAM60A,3.74 TP53INP1,3.72 BGLAP,3.71 ANKH,3.7 NFAT5,3.69 POC5,3.69 ANK1,3.67 GRB14,3.67 NKX6-1,3.67 ACSL1,3.66 GIN1,3.66 NR1H4,3.66 CRHR2,3.64 PRKAB2,3.64 EYA2,3.63 DGKB,3.63 SSTR5,3.63 INHBB,3.62 DLEU7,3.61 GYS2,3.61 UBE2E2,3.6 GRM8,3.59 ADIPOR2,3.56 BPTF,3.54 TLE1,3.54 CDKN2B,3.53 RSPO3,3.52 SIDT2,3.51 ADAMTS9,3.49 NUS1,3.48 IL6,3.47 SLC35D3,3.47 PAX4,3.46 CYB5R4,3.45 NRXN3,3.43 ERN1,3.42 FGF21,3.42 GCG,3.41 LDLR,3.4 PROX1,3.4 SH2B1,3.39 TMEM18,3.34 SSPN,3.32 CTBP1,3.31 MPC2,3.31 NUDT12,3.29 NUCKS1,3.28 PCSK1,3.27 SELENOT,3.27 VEGFA,3.26 KCNK16,3.25 TCF4,3.25 AUTS2,3.22 CLOCK,3.2 LIPE,3.2 HK1,3.19 NOS3,3.19 AKT2,3.18 PDPK1,3.18 LPL,3.17 PSMD6,3.17 CD101,3.15 SREBF1,3.15 FGFR4,3.13 DUSP9,3.12 MLXIPL,3.1 SIRT1,3.1 RRAGA,3.08 SOX4,3.07 STAT3,3.07 TSPAN8,3.05 TBL1X,3.03 KCNQ1,2.99 MSRA,2.97 NKX6-3,2.96 CYP19A1,2.94 FAM13A,2.93 CASR,2.93 HIF1A,2.93 HLA-C,2.93 MAFA,2.93 RASGRP1,2.93 QKI,2.93 ARID5B,2.9 CYB5D2,2.89 OCIAD1,2.89 NKX2-2,2.89 ZXDA,2.89 ZZEF1,2.89 ARAP1,2.88 BHMT,2.87 ZNF664,2.87 RBM4,2.86 TRPS1,2.84 SESN2,2.8 ABO,2.77 GIP,2.77 ITGA1,2.77 ADIPOR1,2.74 CCL2,2.73 TLE4,2.73 CDKN1C,2.72 ACE,2.72 SIN3A,2.72 FFAR1,2.68 BSCL2,2.68 ANPEP,2.67 CPE,2.66 LRP5,2.66 KCNU1,2.66 TSC2,2.66 AGER,2.65 GPC5,2.65 NUDT5,2.65 WRN,2.65 CEP68,2.64 PAX6,2.64 IER3IP1,2.63 CMIP,2.62 CDKN1B,2.62 AGPAT2,2.61 SLX4,2.61 TP53,2.61 KSR2,2.6 PELO,2.6 CDC123,2.59 HLA-DQA2,2.58 ITGB6,2.57 BCL2L11,2.55 LYZ,2.55 GPR27,2.54 GHR,2.53 HMGCR,2.53 GPER1,2.53 HTR2C,2.52 CLEC14A,2.5 FOXA1,2.49 ANK2,2.49 CRY2,2.47 FANCL,2.47 ARNTL,2.47 ZNF236,2.47 NPY6R,2.44 ZFP64,2.41 FAM46C,2.4 CSF2,2.4 HMG20A,2.4 FBXL22,2.38 STEAP4,2.36 UCP2,2.36 AKAP6,2.35 MGAT4A,2.35 POMC,2.35 CTRB2,2.34 IGF2BP1,2.34 PDGFC,2.34 PLA2G6,2.34""".split()
+# digcfdekg gene sets / pathways / phenotype factors (statistical membership), for T2D
+DIGCFDEKG_GENESETS = [
+ ("WP_TRANSCRIPTION_FACTOR_REGULATION_IN_ADIPOGENESIS",2.77),("KEGG_MATURITY_ONSET_DIABETES_OF_THE_YOUNG",2.77),
+ ("REACTOME_REGULATION_OF_GENE_EXPRESSION_IN_BETA_CELLS",2.71),("mp_absent_pancreatic_beta_cells",2.66),
+ ("mp_type_2_diabetes_mellitus",2.56),("mp_increased_pancreatic_beta_cell_mass",2.48),("mp_small_pancreatic_islets",2.4),
+ ("mp_disorganized_pancreatic_islets",2.33),("mp_decreased_pancreatic_beta_cell_mass",2.3),("mp_abnormal_insulin_secretion",2.27),
+ ("mp_decreased_pancreatic_beta_cell_number",2.22),("mp_abnormal_circulating_insulin_level",2.22),("mp_pancreatic_islet_hyperplasia",2.12),
+ ("mp_abnormal_pancreatic_islet_morphology",2.07),("WP_ROLES_OF_CERAMIDES_IN_DEVELOPMENT_OF_INSULIN_RESISTANCE",2.06),
+ ("mp_decreased_insulin_secretion",2.01),("mp_hyperglycemia",1.95),("KEGG_TYPE_II_DIABETES_MELLITUS",1.93),
+ ("mp_decreased_muscle_cell_glucose_uptake",1.92),("PID_HNF3B_PATHWAY",1.91),("REACTOME_SIGNALING_BY_LEPTIN",1.84),
+ ("GOBP_CARBOHYDRATE_HOMEOSTASIS",1.79),("mp_increased_circulating_glucose_level",1.76),("mp_abnormal_glucose_homeostasis",1.72),
+ ("GOBP_POSITIVE_REGULATION_OF_INSULIN_SECRETION",1.64),("mp_increased_pancreatic_beta_cell_apoptosis",1.65)]
+
+# prokn curated T2D genes (associated_with MONDO_0005148)
+PROKN_GENES = ["ABCC8","HNF4A","GCK","WFS1","PPARG","HNF1A","PDX1","SLC2A2","RBPJ","IRS1","KCNJ11","ENPP1","HNF1B"]
+
+# prokn drug indications (ChEMBL "Indication", NCIT_C41184) — named agents (deduped), curated
+PROKN_DRUGS = """METFORMIN PIOGLITAZONE ROSIGLITAZONE LOBEGLITAZONE BALAGLITAZONE RIVOGLITAZONE CHIGLITAZAR SITAGLIPTIN SAXAGLIPTIN LINAGLIPTIN ALOGLIPTIN VILDAGLIPTIN GEMIGLIPTIN TENELIGLIPTIN TRELAGLIPTIN OMARIGLIPTIN EVOGLIPTIN ANAGLIPTIN GOSOGLIPTIN DUTOGLIPTIN DENAGLIPTIN RETAGLIPTIN CANAGLIFLOZIN DAPAGLIFLOZIN EMPAGLIFLOZIN ERTUGLIFLOZIN BEXAGLIFLOZIN SOTAGLIFLOZIN IPRAGLIFLOZIN TOFOGLIFLOZIN ENAVOGLIFLOZIN HENAGLIFLOZIN LICOGLIFLOZIN REMOGLIFLOZIN GLIMEPIRIDE GLIPIZIDE GLYBURIDE GLICLAZIDE CHLORPROPAMIDE TOLBUTAMIDE TOLAZAMIDE REPAGLINIDE NATEGLINIDE MITIGLINIDE ACARBOSE MIGLITOL VOGLIBOSE DORZAGLIATIN CADISEGLIATIN ORFORGLIPRON DANUGLIPRON LOTIGLIPRON IMEGLIMIN BROMOCRIPTINE DIAZOXIDE ALEGLITAZAR MURAGLITAZAR TESAGLITAZAR ALOGLIPTIN ELAFIBRANOR FASIGLIFAM CANAKINUMAB GEVOKIZUMAB BIMAGRUMAB VOLAGIDEMAB CROTEDUMAB ATORVASTATIN ROSUVASTATIN SIMVASTATIN PITAVASTATIN PRAVASTATIN EZETIMIBE FENOFIBRATE GEMFIBROZIL BEZAFIBRATE BEMPEDOIC_ACID NIACIN OMEGA-3-ACID_ETHYL_ESTERS RAMIPRIL LISINOPRIL BENAZEPRIL CAPTOPRIL PERINDOPRIL LOSARTAN VALSARTAN IRBESARTAN TELMISARTAN CANDESARTAN AZILSARTAN OLMESARTAN ALISKIREN AMLODIPINE FELODIPINE DILTIAZEM VERAPAMIL FINERENONE EPLERENONE HYDROCHLOROTHIAZIDE INDAPAMIDE FUROSEMIDE BUMETANIDE TORSEMIDE CARVEDILOL METOPROLOL ATENOLOL PROPRANOLOL TERAZOSIN CLENBUTEROL BUPROPION TESOFENSINE RIMONABANT TARANABANT IBIPINABANT LORCASERIN TETRAHYDROCANNABIVARIN RANOLAZINE TADALAFIL ASPIRIN CLOPIDOGREL TICAGRELOR RIVAROXABAN WARFARIN BERBERINE RESVERATROL QUERCETIN CURCUMIN SULFORAPHANE EPIGALOCATECHIN_GALLATE ALPHA-LIPOIC_ACID BENFOTIAMINE CHROMIUM_PICOLINATE CHOLECALCIFEROL""".split()
+
+# pankgraph beta-cell (CL_0000169) T2D vs non-diabetic OCR gene-activity — measured, cell type = beta cell
+PANK_BETA_UP = """ANKRD20A1,19.54,8.55 IRF8,122.43,67.97 IL27,43.29,29.91 NHLH2,134.95,93.83 NUPR1,27.67,19.34 MSN,498.12,349.25 FLG,23.10,16.54 FABP5,65.83,47.18 HLA-DRB5,24.97,18.15 NEFL,58.34,48.31 SH2D3A,117.00,98.01 TBX2,148.23,129.77 PRDM1,126.10,113.26 PTCHD1,138.33,125.42 FPR3,71.98,64.50 RETN,10.86,9.99""".split()
+PANK_BETA_DOWN = """RASSF10,56.53,289.78 ADH6,11.12,54.60 A1CF,151.39,705.37 FOXE1,42.01,191.87 TMED6,60.97,254.83 PCDH20,60.23,251.37 DACT2,90.44,373.25 ST8SIA4,131.69,541.10 HNF1A,106.54,422.34 SYDE2,132.01,519.64 HGD,111.51,430.21 TTR,114.31,433.80 NPC1L1,151.32,567.72 RASGRP1,284.93,1034.79 FFAR4,254.03,884.34 ASCL2,100.69,347.82 HCN4,210.48,709.40 MC4R,10.18,33.61 GABRA2,155.69,513.74 SGK2,93.37,304.48 GPR119,31.57,101.54 MTNR1B,58.57,188.35""".split()
+
+# GXA measured differential expression: tissue x direction (adj-p<0.05), T2D vs control
+GXA_TISSUE = [("islet of Langerhans","UBERON_0000006","up",66),("islet of Langerhans","UBERON_0000006","down",6),
+ ("retina","UBERON_0000966","up",13),("retina","UBERON_0000966","down",1),("liver","UBERON_0002107","up",5)]
+
+# pankgraph islet cis-eQTL variant layer: genes with most SNP eQTLs (variant affects_expression_of gene)
+PANK_EQTL = """HLA-F,31 MTRF1L,27 HLA-A,26 POMZP3,26 RRP7A,26 FN3KRP,24 HLA-B,24 KLHL7-DT,23 ZNF880,23 DPYSL4,22 ACHE,22 NQO2,22 NDUFV3,22 NDUFAF1,22 CCZ1,21 TTC23,21 GSTM3,20 NAAA,20 PSORS1C1,20 UQCC6,20""".split()
+
+# biomarkerkg: 27 curated T2D biomarker records (specimen UBERON); molecule labels not populated in release
+BIOMARKER_N = 27
+BIOMARKER_SPECIMENS = {"blood":1,"blood plasma":4,"blood serum":4,"urine":6,"cerebrospinal fluid":2,
+ "urinary bladder":1,"body fluid":1,"saliva/other":8}
+
+# spoke-okn disease prevalence (CDC PLACES, age-adjusted %) per state — epidemiological (parent term: diabetes mellitus)
+PREV_STATE = [("MS","Mississippi",14.17),("LA","Louisiana",12.84),("SC","South Carolina",12.80),("GA","Georgia",12.65),
+ ("NM","New Mexico",12.53),("AL","Alabama",12.46),("WV","West Virginia",12.37),("TX","Texas",12.14),("AZ","Arizona",12.02),
+ ("AK","Alaska",11.98),("OK","Oklahoma",11.71),("AR","Arkansas",11.49),("TN","Tennessee",11.40),("NC","North Carolina",11.12),
+ ("KY","Kentucky",10.75),("MO","Missouri",10.39),("VA","Virginia",10.30),("OH","Ohio",10.25),("CA","California",10.18),
+ ("IN","Indiana",10.04),("DE","Delaware",9.69),("SD","South Dakota",9.59),("MD","Maryland",9.54),("KS","Kansas",9.52),
+ ("ID","Idaho",9.46),("NV","Nevada",9.40),("DC","District of Columbia",9.20),("IL","Illinois",9.08),("MI","Michigan",8.99),
+ ("OR","Oregon",8.90),("NY","New York",8.83),("HI","Hawaii",8.78),("UT","Utah",8.78),("MT","Montana",8.75),
+ ("ND","North Dakota",8.69),("PA","Pennsylvania",8.62),("WA","Washington",8.58),("NE","Nebraska",8.41),("ME","Maine",8.32),
+ ("WY","Wyoming",8.29),("MN","Minnesota",8.23),("IA","Iowa",8.21),("NJ","New Jersey",8.10),("CT","Connecticut",7.95),
+ ("RI","Rhode Island",7.91),("WI","Wisconsin",7.74),("CO","Colorado",7.60),("NH","New Hampshire",7.45),
+ ("VT","Vermont",7.35),("MA","Massachusetts",7.26)]
+
+# spoke-okn SDoH correlation sums (county-level, County Health Rankings): var,n,sx,sy,sxy,sxx,syy
+SDOH_SUMS = [
+ ("adult obesity",3129,32769.4,113283,1210000.0,358240,4169180.0),
+ ("adult smoking",3129,32769.4,62692.6,673883,358240,1307760.0),
+ ("broadband access",3129,32769.4,252059,2606780.0,358240,20498100.0),
+ ("children in poverty",3129,32769.4,62703.5,703810,358240,1477310.0),
+ ("children in single-parent households",3129,32769.4,75342,837625,358240,2135980.0),
+ ("excessive drinking",3129,32769.4,59756.2,611939,358240,1173430.0),
+ ("food environment index",3099,32459.3,23012.6,236080,354937,174954),
+ ("food insecurity",3129,32769.4,38892.3,426183,358240,526335),
+ ("high school completion",3129,32769.4,275275,2851920.0,358240,24324800.0),
+ ("income inequality",3122,32706.8,14152.1,151196,357643,66184),
+ ("insufficient sleep",3129,32769.4,107863.0,1148460.0,358240,3759550.0),
+ ("life expectancy",3061,32119,235402,2455850.0,351714,18135600.0),
+ ("limited access to healthy foods",3099,32459.3,26420.4,288694,354937,395119),
+ ("physical inactivity",3129,32769.4,80460.4,873590,358240,2152730.0),
+ ("poor or fair health",3129,32769.4,50153.2,553655,358240,865140),
+ ("premature death",2854,30160.2,25641.3,283564,332360,254084),
+ ("rural",3124,32724.7,183023,1931400.0,357832,13813500.0),
+ ("severe housing cost burden",3126,32738.3,33382.1,354190,357894,395368),
+ ("some college",3129,32769.4,183733,1872360.0,358240,11223700.0),
+ ("unemployment",3129,32769.4,14555.2,157471,358240,77201.9),
+ ("uninsured",3129,32769.4,37021.2,405577,358240,521888),
+]
+
+STATE_CENTROIDS = {
+ "AL":(32.8,-86.8),"AK":(64.0,-152.0),"AZ":(34.3,-111.7),"AR":(34.9,-92.4),"CA":(37.2,-119.5),
+ "CO":(39.0,-105.5),"CT":(41.6,-72.7),"DE":(39.0,-75.5),"DC":(38.9,-77.0),"FL":(28.6,-82.4),
+ "GA":(32.6,-83.4),"HI":(20.3,-156.4),"ID":(44.4,-114.6),"IL":(40.0,-89.2),"IN":(39.9,-86.3),
+ "IA":(42.0,-93.5),"KS":(38.5,-98.4),"KY":(37.5,-85.3),"LA":(31.0,-92.0),"ME":(45.4,-69.2),
+ "MD":(39.0,-76.8),"MA":(42.3,-71.8),"MI":(44.3,-85.4),"MN":(46.3,-94.3),"MS":(32.7,-89.7),
+ "MO":(38.4,-92.5),"MT":(47.0,-109.6),"NE":(41.5,-99.8),"NV":(39.3,-116.6),"NH":(43.7,-71.6),
+ "NJ":(40.1,-74.7),"NM":(34.4,-106.1),"NY":(42.9,-75.5),"NC":(35.5,-79.4),"ND":(47.4,-100.5),
+ "OH":(40.3,-82.8),"OK":(35.6,-97.5),"OR":(43.9,-120.6),"PA":(40.9,-77.8),"RI":(41.7,-71.6),
+ "SC":(33.9,-80.9),"SD":(44.4,-100.2),"TN":(35.9,-86.4),"TX":(31.5,-99.3),"UT":(39.3,-111.7),
+ "VT":(44.1,-72.7),"VA":(37.5,-78.9),"WA":(47.4,-120.5),"WV":(38.6,-80.7),"WI":(44.6,-89.9),"WY":(43.0,-107.5)}
+
+# ------------------------------------------------------------------ helpers
+NONCODING_RE = re.compile(r'^(MIR|MIRLET|LINC|SNOR|SNAR|LOC|.*-AS\d|.*-DT$)')
+def biotype(sym):
+    return "non-coding" if NONCODING_RE.match(sym) else "protein-coding"
+
+digc = {}
+for tok in DIGCFDEKG_GENES:
+    s,w = tok.rsplit(",",1); digc[s]=float(w)
+
+# gene universe & source membership
+DISEASE_WORDS = ("diabet","lipoatrophic")
+def is_gene(sym):
+    return not any(w in sym.lower() for w in DISEASE_WORDS)
+
+gene_sources = {}   # sym -> set(sources)
+def add(sym, src):
+    if not is_gene(sym): return
+    gene_sources.setdefault(sym,set()).add(src)
+
+for g in SPOKE_GENES: add(g,"spoke-okn")
+for g in RDKG_RELATED: add(g,"rdkg")
+for g in RDKG_MIRS: add(g,"rdkg")
+for g in digc: add(g,"digcfdekg")
+for g in PROKN_GENES: add(g,"prokn")
+
+def tier(nsrc, w):
+    if nsrc>=4: return "T1 very-high"
+    if nsrc==3 or (w and w>=5.0): return "T2 high"
+    if nsrc==2 or (w and w>=3.5): return "T3 medium"
+    return "T4 low"
+
+# ------------------------------------------------------------------ findings rows
+rows=[]
+def row(**k):
+    base=dict(entity_type="",entity="",entity_id="",biotype="",relationship="",sources="",n_sources="",
+              evidence_types="",best_score="",score_type="",tissue_celltype="",confidence_tier="",notes="")
+    base.update(k); rows.append(base)
+
+# GENES
+gene_matrix=[]
+for sym in sorted(gene_sources):
+    srcs=sorted(gene_sources[sym]); n=len(srcs); w=digc.get(sym)
+    ev=set()
+    if {"spoke-okn","rdkg","prokn"} & set(srcs): ev.add("curated_link")
+    if "digcfdekg" in srcs: ev.add("statistical_association")
+    bt=biotype(sym)
+    row(entity_type="gene", entity=sym, biotype=bt, relationship="associated_with_T2D",
+        sources=";".join(srcs), n_sources=n, evidence_types=";".join(sorted(ev)),
+        best_score=(f"{w}" if w else ""), score_type=("PIGEAN/EAGGL_weight" if w else "source_count"),
+        confidence_tier=tier(n,w),
+        notes=("spoke-okn is parent-term (diabetes mellitus)" if srcs==["spoke-okn"] else ""))
+    gene_matrix.append((sym,bt,int("spoke-okn" in srcs),int("rdkg" in srcs),int("prokn" in srcs),
+                        int("digcfdekg" in srcs),n,(w or ""),tier(n,w)))
+
+# PATHWAYS / GENE SETS (digcfdekg statistical membership)
+for name,w in DIGCFDEKG_GENESETS:
+    kind = "mouse_phenotype_geneset" if name.startswith("mp_") else "pathway_geneset"
+    row(entity_type="pathway_or_geneset", entity=name, relationship="gene_set_enriched_for_T2D",
+        sources="digcfdekg", n_sources=1, evidence_types="pathway_membership",
+        best_score=f"{w}", score_type="PIGEAN/EAGGL_weight", confidence_tier=("T2 high" if w>=2.5 else "T3 medium"),
+        notes=kind)
+
+# DRUGS — indicated (prokn), curated
+for d in sorted(set(PROKN_DRUGS)):
+    row(entity_type="drug", entity=d.replace("_"," ").title(), relationship="indicated_or_investigated_for_T2D",
+        sources="prokn", n_sources=1, evidence_types="curated_link", score_type="ChEMBL_indication",
+        confidence_tier="T3 medium", notes="ChEMBL indication (approved/investigational/failed mixed)")
+# DRUGS — contraindicated (rdkg), curated
+for d in sorted(set(RDKG_CONTRA)):
+    row(entity_type="drug", entity=d, relationship="contraindicated_for_T2D",
+        sources="rdkg", n_sources=1, evidence_types="curated_link", score_type="",
+        confidence_tier="T3 medium", notes="worsens glycemic control / prescribing caution")
+
+# ENVIRONMENTAL CONTRIBUTORS (rdkg contributes_to), curated
+for c in sorted(set(RDKG_ENV)):
+    row(entity_type="environmental_factor", entity=c, relationship="contributes_to_T2D",
+        sources="rdkg", n_sources=1, evidence_types="curated_link", score_type="",
+        confidence_tier="T4 low", notes="environmental/chemical exposure (CTD-derived)")
+
+# ALTERED ACTIVITY — pankgraph beta cell (measured, cell type)
+def log2r(t,n): return math.log2(t/n) if (t>0 and n>0) else 0
+for tok in PANK_BETA_UP:
+    s,t,n = tok.split(","); t=float(t); n=float(n)
+    row(entity_type="altered_activity_gene", entity=s, relationship="increased_OCR_gene_activity_in_T2D",
+        sources="pankgraph", n_sources=1, evidence_types="measured_activity_change",
+        best_score=f"{log2r(t,n):+.2f}", score_type="log2(T2D/nondiabetic)_OCR",
+        tissue_celltype="pancreatic beta cell (CL:0000169)", confidence_tier="T3 medium")
+for tok in PANK_BETA_DOWN:
+    s,t,n = tok.split(","); t=float(t); n=float(n)
+    row(entity_type="altered_activity_gene", entity=s, relationship="decreased_OCR_gene_activity_in_T2D",
+        sources="pankgraph", n_sources=1, evidence_types="measured_activity_change",
+        best_score=f"{log2r(t,n):+.2f}", score_type="log2(T2D/nondiabetic)_OCR",
+        tissue_celltype="pancreatic beta cell (CL:0000169)", confidence_tier="T3 medium")
+# ALTERED ACTIVITY — GXA (measured, tissue)
+for tlabel,tub,dirn,n in GXA_TISSUE:
+    row(entity_type="altered_activity_program", entity=f"{n} genes {dirn}-regulated ({tlabel})",
+        relationship=f"{dirn}regulated_in_T2D", sources="gene-expression-atlas-okn", n_sources=1,
+        evidence_types="measured_activity_change", best_score=str(n), score_type="n_DE_genes(adj-p<0.05)",
+        tissue_celltype=f"{tlabel} ({tub})", confidence_tier="T2 high")
+
+# VARIANTS — pankgraph islet cis-eQTL (statistical/regulatory)
+for tok in PANK_EQTL:
+    s,ne = tok.split(",")
+    row(entity_type="genetic_variant", entity=f"islet cis-eQTLs at {s}", relationship="variant_affects_expression_of_gene",
+        sources="pankgraph", n_sources=1, evidence_types="statistical_association",
+        best_score=ne, score_type="n_eQTL_SNPs", tissue_celltype="pancreatic islet",
+        confidence_tier="T3 medium", notes="islet cis-eQTL (not T2D-disease-anchored)")
+
+# CLINICAL FEATURES (rdkg) + BIOMARKERS (biomarkerkg)
+for p in RDKG_PHENO:
+    row(entity_type="clinical_feature", entity=p, relationship="has_phenotype",
+        sources="rdkg", n_sources=1, evidence_types="curated_link", confidence_tier="T3 medium")
+row(entity_type="biomarker", entity=f"{BIOMARKER_N} curated T2D biomarker records",
+    relationship="biomarker_for_T2D", sources="biomarkerkg", n_sources=1, evidence_types="curated_link",
+    best_score=str(BIOMARKER_N), score_type="n_records",
+    tissue_celltype="; ".join(f"{k}({v})" for k,v in BIOMARKER_SPECIMENS.items()),
+    confidence_tier="T3 medium", notes="molecule labels not populated in release; specimens: blood/plasma/serum/urine/CSF")
+
+# PREVALENCE at geolocation (spoke-okn PLACES) — epidemiological
+prev=[]
+for st,name,val in PREV_STATE:
+    prev.append((st,name,val))
+    lat,lng=STATE_CENTROIDS.get(st,(None,None))
+    row(entity_type="prevalence_geolocation", entity=name, entity_id=st,
+        relationship="age_adjusted_diabetes_prevalence", sources="spoke-okn", n_sources=1,
+        evidence_types="epidemiological", best_score=f"{val:.2f}", score_type="pct_age_adjusted",
+        tissue_celltype=f"lat={lat},lng={lng}", confidence_tier="T2 high",
+        notes="CDC PLACES; parent term diabetes mellitus (~90-95% T2D)")
+
+# SDoH correlations (spoke-okn) — statistical (ecological, county-level)
+def pearson(n,sx,sy,sxy,sxx,syy):
+    num=n*sxy - sx*sy; den=math.sqrt((n*sxx-sx*sx)*(n*syy-sy*sy))
+    return num/den if den else 0
+sdoh=[]
+for var,n,sx,sy,sxy,sxx,syy in SDOH_SUMS:
+    r=pearson(n,sx,sy,sxy,sxx,syy); sdoh.append((var,r,n))
+    row(entity_type="sdoh_correlation", entity=var, relationship="correlates_with_county_diabetes_prevalence",
+        sources="spoke-okn", n_sources=1, evidence_types="statistical_association",
+        best_score=f"{r:+.3f}", score_type="pearson_r", confidence_tier=("T2 high" if abs(r)>=0.5 else "T3 medium"),
+        notes=f"County Health Rankings; n={n} counties")
+
+# ------------------------------------------------------------------ write outputs
+cols=["entity_type","entity","entity_id","biotype","relationship","sources","n_sources",
+      "evidence_types","best_score","score_type","tissue_celltype","confidence_tier","notes"]
+with open(f"{OUT}/T2D_knowledge_map_findings.csv","w",newline="") as f:
+    w=csv.DictWriter(f,fieldnames=cols); w.writeheader(); w.writerows(rows)
+
+with open(f"{OUT}/T2D_gene_source_matrix.csv","w",newline="") as f:
+    w=csv.writer(f); w.writerow(["gene","biotype","spoke-okn","rdkg","prokn","digcfdekg","n_sources","digcfdekg_weight","confidence_tier"])
+    for r_ in sorted(gene_matrix,key=lambda x:(-x[6], -(x[7] if x[7]!="" else 0))): w.writerow(r_)
+
+# stats
+from collections import Counter
+ev_counter=Counter()
+for r_ in rows:
+    for e in r_["evidence_types"].split(";"):
+        if e: ev_counter[e]+=1
+et_counter=Counter(r_["entity_type"] for r_ in rows)
+nsrc_dist=Counter(len(v) for v in gene_sources.values())
+genes_noncoding=sum(1 for s in gene_sources if biotype(s)=="non-coding")
+stats=dict(
+ n_findings=len(rows), n_genes=len(gene_sources), n_genes_noncoding=genes_noncoding,
+ n_drugs=et_counter["drug"], n_pathways=et_counter["pathway_or_geneset"],
+ n_altered_activity=et_counter["altered_activity_gene"]+et_counter["altered_activity_program"],
+ n_variants=et_counter["genetic_variant"], n_clinical=et_counter["clinical_feature"],
+ n_biomarkers=et_counter["biomarker"], n_env=et_counter["environmental_factor"],
+ n_prevalence=et_counter["prevalence_geolocation"], n_sdoh=et_counter["sdoh_correlation"],
+ gene_by_nsources={str(k):v for k,v in sorted(nsrc_dist.items())},
+ evidence_counts=dict(ev_counter), entity_counts=dict(et_counter),
+ source_gene_totals=dict(spoke_okn=len([g for g in gene_sources if "spoke-okn" in gene_sources[g]]),
+   rdkg=len([g for g in gene_sources if "rdkg" in gene_sources[g]]),
+   digcfdekg=len([g for g in gene_sources if "digcfdekg" in gene_sources[g]]),
+   prokn=len([g for g in gene_sources if "prokn" in gene_sources[g]])),
+ tier1_genes=sorted([g for g in gene_sources if len(gene_sources[g])>=4]),
+ tier2_genes=sorted([g for g in gene_sources if len(gene_sources[g])==3]),
+ top_digcfdekg=sorted(digc.items(),key=lambda x:-x[1])[:20],
+ sdoh_correlations=sorted(sdoh,key=lambda x:-abs(x[1])),
+ prevalence_state=sorted(prev,key=lambda x:-x[2]),
+)
+with open(f"{OUT}/t2d_stats.json","w") as f: json.dump(stats,f,indent=2)
+# map + viz data
+json.dump([dict(state=st,name=nm,prev=v,lat=STATE_CENTROIDS.get(st,(None,None))[0],
+                lng=STATE_CENTROIDS.get(st,(None,None))[1]) for st,nm,v in prev],
+          open(f"{OUT}/map_state_prevalence.json","w"),indent=2)
+
+print("findings rows:", len(rows))
+print("genes:", len(gene_sources), "| non-coding:", genes_noncoding)
+print("gene n_sources dist:", dict(sorted(nsrc_dist.items())))
+print("Tier1 (4/4):", stats["tier1_genes"])
+print("Tier2 (3):", stats["tier2_genes"])
+print("evidence:", dict(ev_counter))
+print("entities:", dict(et_counter))
+print("\nSDoH correlations (Pearson r vs county diabetes prevalence):")
+for v,r,n in stats["sdoh_correlations"]: print(f"  {r:+.3f}  {v}  (n={n})")
