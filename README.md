@@ -106,14 +106,17 @@ verify each as live SPARQL, and validate the findings against the literature.
 
 ### Case studies
 
-Six end-to-end analyses that federate many Proto-OKN graphs into a single
+Seven end-to-end analyses that federate many Proto-OKN graphs into a single
 evidence-backed map — four of a disease's biology (genes, variants,
 pathways/gene sets, drugs, altered-activity signatures, and clinical/biomarker
 features), one of environmental PFAS source attribution (detections
 co-located with regulated facilities, resolved to chemical identity, functional
-use, and toxicological coverage), and one of the chemical exposome of bisphenols
+use, and toxicological coverage), one of the chemical exposome of bisphenols
 (exposure and industrial use → adverse outcome pathways → molecular targets →
-assay activity → disease) — each finding tagged with its source(s) and
+assay activity → disease), and one of cumulative environmental-justice burden
+across U.S. counties (PFAS, regulated facilities, social vulnerability, court
+activity, rurality, and treatment-service scarcity, ranked by cross-source
+agreement) — each finding tagged with its source(s) and
 evidence kind, then ranked by cross-source agreement. Every case study ships an
 interactive HTML report, a Markdown report, and a replayable analysis transcript
 (each verbatim SPARQL query preserved).
@@ -126,6 +129,7 @@ interactive HTML report, a Markdown report, and a replayable analysis transcript
 | **Spaceflight-associated neuro-ocular syndrome (SANS)** — 8 KGs, 1,203-gene signature | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/SANS/SANS_ocular_spaceflight_report.html) | [Markdown](docs/examples/SANS/SANS_ocular_spaceflight_report.md) | [Transcript](docs/examples/SANS/SANS_reproducibility_transcript.md) |
 | **PFAS source prioritization** — 5 KGs, 696 co-located facilities | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/PFAS/pfas_source_attribution.html) | [Markdown](docs/examples/PFAS/pfas_source_attribution.md) | [Transcript](docs/examples/PFAS/PFAS_reproducibility_transcript.md) |
 | **Chemical exposome of bisphenols** — 14 KGs, 216 findings | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Exposome/bisphenol_exposome_report.html) | [Markdown](docs/examples/Exposome/bisphenol_exposome_report.md) | [Transcript](docs/examples/Exposome/bisphenol_exposome_transcript.md) |
+| **Cumulative environmental-justice burden** — 12 KGs, 70,839 findings | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Environmental-Justice/report.html) | [Markdown](docs/examples/Environmental-Justice/report.md) | [Transcript](docs/examples/Environmental-Justice/transcript.md) |
 
 ---
 
