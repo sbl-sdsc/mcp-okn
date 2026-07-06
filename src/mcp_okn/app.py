@@ -144,6 +144,17 @@ bracketed schema.org IRI matches NOTHING there. For those, bind the predicate as
 variable and match it scheme-free: `?s ?p ?o . FILTER(STRENDS(STR(?p),
 'schema.org/location'))`.
 
+GEOLOCATION / MAPS: when a KG supplies geographic coordinates (latitude/longitude,
+points, well/facility/feature locations, county/state centroids, …) and you
+visualize them, render a REAL map — an actual slippy/basemap such as OpenStreetMap
+(e.g. Leaflet with OSM tiles) — with the points as markers on it. Do NOT plot
+coordinates as a bare 2D scatter chart with longitude on the x-axis and latitude on
+the y-axis: that strips away coastlines, borders, and all geographic context, so the
+reader cannot tell where the points actually are. (Note: a strict artifact/CSP
+sandbox may block external tile servers; in that case use a standalone HTML file
+where tiles load, or embed an inline vector basemap — do NOT silently fall back to a
+lat/long scatter plot.)
+
 SCHEMA VISUALIZATION: `visualize_schema` returns a ready-made Mermaid diagram,
 pre-wrapped in a fenced block as `mermaid_block`. Output that `mermaid_block`
 VERBATIM and nothing else. Do NOT redraw it as SVG/PNG/HTML/an image/an artifact
