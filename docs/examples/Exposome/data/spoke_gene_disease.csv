@@ -1,0 +1,93 @@
+symbol,doid,disease,source,relationship,evidence_kind
+AHR,DOID_9351,diabetes mellitus,spoke-okn,associated-with-disease,curated/statistical disease association
+AHR,DOID_1686,glaucoma,spoke-okn,associated-with-disease,curated/statistical disease association
+AHR,DOID_0050589,inflammatory bowel disease,spoke-okn,associated-with-disease,curated/statistical disease association
+AHR,DOID_863,nervous system disease,spoke-okn,associated-with-disease,curated/statistical disease association
+AHR,DOID_9970,obesity,spoke-okn,associated-with-disease,curated/statistical disease association
+AHR,DOID_14330,Parkinson's disease,spoke-okn,associated-with-disease,curated/statistical disease association
+AHR,DOID_7148,rheumatoid arthritis,spoke-okn,associated-with-disease,curated/statistical disease association
+AHR,DOID_8923,skin melanoma,spoke-okn,associated-with-disease,curated/statistical disease association
+AHR,DOID_1749,squamous cell carcinoma,spoke-okn,associated-with-disease,curated/statistical disease association
+AR,DOID_1612,breast cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+AR,DOID_1596,depressive disorder,spoke-okn,associated-with-disease,curated/statistical disease association
+AR,DOID_2723,dermatitis,spoke-okn,associated-with-disease,curated/statistical disease association
+AR,DOID_9351,diabetes mellitus,spoke-okn,associated-with-disease,curated/statistical disease association
+AR,DOID_12336,male infertility,spoke-okn,associated-with-disease,curated/statistical disease association
+AR,DOID_231,motor neuron disease,spoke-okn,associated-with-disease,curated/statistical disease association
+AR,DOID_863,nervous system disease,spoke-okn,associated-with-disease,curated/statistical disease association
+AR,DOID_11612,polycystic ovary syndrome,spoke-okn,associated-with-disease,curated/statistical disease association
+AR,DOID_10283,prostate cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+AR,DOID_2998,testicular cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_2349,arteriosclerosis,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_1612,breast cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_3459,breast carcinoma,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_9256,colorectal cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_2723,dermatitis,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_9351,diabetes mellitus,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_289,endometriosis,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_3571,liver cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_409,liver disease,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_1324,lung cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_1470,major depressive disorder,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_6364,migraine,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_863,nervous system disease,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_374,nutrition disease,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_9970,obesity,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_2394,ovarian cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_11612,polycystic ovary syndrome,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_10283,prostate cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR1,DOID_363,uterine cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR2,DOID_1612,breast cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR2,DOID_289,endometriosis,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR2,DOID_1470,major depressive disorder,spoke-okn,associated-with-disease,curated/statistical disease association
+ESR2,DOID_8893,psoriasis,spoke-okn,associated-with-disease,curated/statistical disease association
+ESRRG,DOID_3459,breast carcinoma,spoke-okn,associated-with-disease,curated/statistical disease association
+ESRRG,DOID_3083,chronic obstructive pulmonary disease,spoke-okn,associated-with-disease,curated/statistical disease association
+ESRRG,DOID_1470,major depressive disorder,spoke-okn,associated-with-disease,curated/statistical disease association
+GATA3,DOID_2841,asthma,spoke-okn,associated-with-disease,curated/statistical disease association
+GATA3,DOID_1612,breast cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+GATA3,DOID_2723,dermatitis,spoke-okn,associated-with-disease,curated/statistical disease association
+GATA3,DOID_9351,diabetes mellitus,spoke-okn,associated-with-disease,curated/statistical disease association
+GATA3,DOID_1826,epilepsy,spoke-okn,associated-with-disease,curated/statistical disease association
+GATA3,DOID_8567,Hodgkin's lymphoma,spoke-okn,associated-with-disease,curated/statistical disease association
+GATA3,DOID_1037,lymphoid leukemia,spoke-okn,associated-with-disease,curated/statistical disease association
+GATA3,DOID_2377,multiple sclerosis,spoke-okn,associated-with-disease,curated/statistical disease association
+GATA3,DOID_8893,psoriasis,spoke-okn,associated-with-disease,curated/statistical disease association
+GATA3,DOID_7148,rheumatoid arthritis,spoke-okn,associated-with-disease,curated/statistical disease association
+NR3C1,DOID_2030,anxiety disorder,spoke-okn,associated-with-disease,curated/statistical disease association
+NR3C1,DOID_1596,depressive disorder,spoke-okn,associated-with-disease,curated/statistical disease association
+NR3C1,DOID_2723,dermatitis,spoke-okn,associated-with-disease,curated/statistical disease association
+NR3C1,DOID_9351,diabetes mellitus,spoke-okn,associated-with-disease,curated/statistical disease association
+NR3C1,DOID_10763,hypertension,spoke-okn,associated-with-disease,curated/statistical disease association
+NR3C1,DOID_1470,major depressive disorder,spoke-okn,associated-with-disease,curated/statistical disease association
+NR3C1,DOID_9970,obesity,spoke-okn,associated-with-disease,curated/statistical disease association
+PGR,DOID_1612,breast cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+PGR,DOID_3459,breast carcinoma,spoke-okn,associated-with-disease,curated/statistical disease association
+PGR,DOID_289,endometriosis,spoke-okn,associated-with-disease,curated/statistical disease association
+PGR,DOID_2394,ovarian cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+PGR,DOID_363,uterine cancer,spoke-okn,associated-with-disease,curated/statistical disease association
+PGR,DOID_13223,uterine fibroid,spoke-okn,associated-with-disease,curated/statistical disease association
+PPARG,DOID_2349,arteriosclerosis,spoke-okn,associated-with-disease,curated/statistical disease association
+PPARG,DOID_0050700,cardiomyopathy,spoke-okn,associated-with-disease,curated/statistical disease association
+PPARG,DOID_6713,cerebrovascular disease,spoke-okn,associated-with-disease,curated/statistical disease association
+PPARG,DOID_3393,coronary artery disease,spoke-okn,associated-with-disease,curated/statistical disease association
+PPARG,DOID_9351,diabetes mellitus,spoke-okn,associated-with-disease,curated/statistical disease association
+PPARG,DOID_10763,hypertension,spoke-okn,associated-with-disease,curated/statistical disease association
+PPARG,DOID_409,liver disease,spoke-okn,associated-with-disease,curated/statistical disease association
+PPARG,DOID_863,nervous system disease,spoke-okn,associated-with-disease,curated/statistical disease association
+PPARG,DOID_374,nutrition disease,spoke-okn,associated-with-disease,curated/statistical disease association
+PPARG,DOID_9970,obesity,spoke-okn,associated-with-disease,curated/statistical disease association
+PPARG,DOID_4989,pancreatitis,spoke-okn,associated-with-disease,curated/statistical disease association
+PPARG,DOID_11612,polycystic ovary syndrome,spoke-okn,associated-with-disease,curated/statistical disease association
+THRA,DOID_2841,asthma,spoke-okn,associated-with-disease,curated/statistical disease association
+THRA,DOID_3312,bipolar disorder,spoke-okn,associated-with-disease,curated/statistical disease association
+THRA,DOID_3083,chronic obstructive pulmonary disease,spoke-okn,associated-with-disease,curated/statistical disease association
+THRB,DOID_9351,diabetes mellitus,spoke-okn,associated-with-disease,curated/statistical disease association
+THRB,DOID_1470,major depressive disorder,spoke-okn,associated-with-disease,curated/statistical disease association
+THRB,DOID_13223,uterine fibroid,spoke-okn,associated-with-disease,curated/statistical disease association
+TTR,DOID_0050700,cardiomyopathy,spoke-okn,associated-with-disease,curated/statistical disease association
+TTR,DOID_1826,epilepsy,spoke-okn,associated-with-disease,curated/statistical disease association
+TTR,DOID_409,liver disease,spoke-okn,associated-with-disease,curated/statistical disease association
+TTR,DOID_11830,myopia,spoke-okn,associated-with-disease,curated/statistical disease association
+TTR,DOID_863,nervous system disease,spoke-okn,associated-with-disease,curated/statistical disease association
+TTR,DOID_7148,rheumatoid arthritis,spoke-okn,associated-with-disease,curated/statistical disease association

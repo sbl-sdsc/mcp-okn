@@ -1,0 +1,17 @@
+symbol,name,ensembl,entrez,uniprot,role_in_bisphenol_MoA
+ESR1,Estrogen receptor alpha,ENSG00000091831,2099,P03372,Primary estrogenic MIE target (AOP314/522); ToxCast ER assays
+ESR2,Estrogen receptor beta,ENSG00000140009,2100,Q92731,Estrogenic target; ERalpha/beta heterodimer (AOP535 KE)
+GPER1,G-protein coupled estrogen receptor 1,ENSG00000164850,2852,Q99527,MIE of AOP535 (GPER activation -> memory impairment)
+AR,Androgen receptor,ENSG00000169083,367,P10275,Anti-androgen activity in ToxCast/ICE AR assays
+TTR,Transthyretin,ENSG00000118271,7276,P02766,MIE of AOP152 (TTR binding -> neurodevelopmental tox); TBBPA
+THRA,Thyroid hormone receptor alpha,ENSG00000126351,7067,P10827,Thyroid axis (TBBPA/halogenated bisphenols)
+THRB,Thyroid hormone receptor beta,ENSG00000151090,7068,P10828,Thyroid axis (TBBPA/halogenated bisphenols)
+ESRRA,Estrogen-related receptor alpha,,,P11474,BPA high-affinity receptor (literature); not in aopwiki HGNC set
+ESRRG,Estrogen-related receptor gamma,,,P62508,BPA very high-affinity receptor (literature); not in aopwiki HGNC set
+NR1I2,Pregnane X receptor (PXR),ENSG00000144852,8856,O75469,Xenobiotic nuclear receptor; ToxCast actives
+NR1I3,Constitutive androstane receptor (CAR),ENSG00000143257,9970,Q14994,Xenobiotic nuclear receptor
+NR3C1,Glucocorticoid receptor,ENSG00000113580,2908,P04150,Steroid receptor cross-talk
+PGR,Progesterone receptor,ENSG00000082175,5241,P06401,Steroid receptor
+PPARG,Peroxisome proliferator-activated receptor gamma,ENSG00000132170,5468,P37231,Metabolic/adipogenic target (obesogen hypothesis)
+AHR,Aryl hydrocarbon receptor,ENSG00000106546,196,P35869,Xenobiotic sensing
+GATA3,GATA binding protein 3,ENSG00000107485,2625,P23771,KE in AOP314 (GATA3 induction -> Th2/IL-4 -> SLE)

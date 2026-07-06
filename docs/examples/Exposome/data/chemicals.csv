@@ -1,0 +1,14 @@
+abbrev,name,cas,pubchem_cid,dtxsid,chebi,in_aopwiki,in_toxcast,in_tox21,in_ice,toxcast_tested,toxcast_active
+BPA,Bisphenol A,80-05-7,6623,DTXSID7020182,CHEBI:33216,1,1,1,1,1414,375
+BPS,"Bisphenol S (4,4'-sulfonyldiphenol)",80-09-1,,DTXSID3022409,,0,1,1,1,558,72
+BPF,Bisphenol F (bis(4-hydroxyphenyl)methane),620-92-8,,DTXSID9022445,,0,1,1,1,665,51
+BPAF,Bisphenol AF (hexafluoro),1478-61-1,,DTXSID7037717,,0,1,1,1,1189,484
+BPB,Bisphenol B,77-40-7,,DTXSID4022442,,0,1,1,1,991,309
+BPAP,Bisphenol AP,1571-75-1,,DTXSID5051444,,0,1,1,1,273,80
+BPE,Bisphenol E,2081-08-5,,DTXSID3047891,,0,1,1,1,398,62
+BPC,"Bisphenol C (3,3'-dimethyl BPA)",79-97-0,,DTXSID8047890,,0,1,1,1,662,229
+BPZ,Bisphenol Z,843-55-0,,DTXSID4047963,,0,1,1,1,238,119
+BPP,Bisphenol P,2167-51-3,,DTXSID0058693,,0,0,0,1,,
+BPM,Bisphenol M,13595-25-0,,DTXSID7065548,,0,0,0,1,,
+TBBPA,Tetrabromobisphenol A,79-94-7,6618,DTXSID1026081,,1,1,1,1,1138,377
+TCBPA,Tetrachlorobisphenol A,79-95-8,,DTXSID3021770,,0,1,1,1,808,297

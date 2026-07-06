@@ -1,0 +1,5 @@
+chemical,cas,aop_id,aop_title,mie_title,adverse_outcome,n_key_events,curated_target
+BPA,80-05-7,314,Binding to ER-alpha in immune cells leading to exacerbation of systemic lupus erythematosus (SLE),Binding to estrogen receptor (ER)-alpha in immune cells,Exacerbation of systemic lupus erythematosus (SLE),5,ESR1/GATA3
+BPA,80-05-7,522,Estrogen antagonism leading to increased risk of autism-like behavior,"Antagonism, Estrogen receptor",autism-like behavior,6,ESR1/ESR2
+BPA,80-05-7,535,Binding and activation of GPER leading to learning and memory impairments,protein-coupled estrogen receptor 1 (GPER) activation,"Impairment, Learning and memory",9,GPER1/ESR1/ESR2
+TBBPA,79-94-7,152,Interference with thyroid serum binding protein transthyretin and subsequent adverse human neurodevelopmental toxicity,"Binding, Transthyretin in serum","Cognitive function, decreased",11,TTR

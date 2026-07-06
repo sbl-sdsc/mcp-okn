@@ -1,0 +1,235 @@
+chemical,disease,doid,mondo,corroboration_score,n_independent_sources,aop_anchored,mediating_targets,sources,ehr_phenotypes_in_oard
+BPA,arteriosclerosis,DOID_2349,MONDO_0002277,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,breast cancer,DOID_1612,MONDO_0007254,7,7,1,ESR1|ESR2|GATA3,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,breast carcinoma,DOID_3459,MONDO_0004989,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,colorectal cancer,DOID_9256,MONDO_0005575,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,dermatitis,DOID_2723,MONDO_0002406,7,7,1,ESR1|GATA3,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,diabetes mellitus,DOID_9351,MONDO_0005015,7,7,1,ESR1|GATA3,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,endometriosis,DOID_289,MONDO_0005133,7,7,1,ESR1|ESR2,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,liver cancer,DOID_3571,MONDO_0002691,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,liver disease,DOID_409,MONDO_0005154,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,lung cancer,DOID_1324,MONDO_0008903,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,major depressive disorder,DOID_1470,MONDO_0002009,7,7,1,ESR1|ESR2,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,migraine,DOID_6364,MONDO_0005277,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,nervous system disease,DOID_863,MONDO_0005071,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,nutrition disease,DOID_374,MONDO_0005137,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,obesity,DOID_9970,MONDO_0011122,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,ovarian cancer,DOID_2394,MONDO_0008170,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,polycystic ovary syndrome,DOID_11612,MONDO_0008487,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,prostate cancer,DOID_10283,MONDO_0008315,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,1
+BPA,uterine cancer,DOID_363,MONDO_0002715,7,7,1,ESR1,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,psoriasis,DOID_8893,MONDO_0005083,7,7,1,ESR2|GATA3,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,asthma,DOID_2841,MONDO_0004979,7,7,1,GATA3,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,epilepsy,DOID_1826,MONDO_0005027,7,7,1,GATA3,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,Hodgkin's lymphoma,DOID_8567,MONDO_0004952,7,7,1,GATA3,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,lymphoid leukemia,DOID_1037,MONDO_0005402,7,7,1,GATA3,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,multiple sclerosis,DOID_2377,MONDO_0005301,7,7,1,GATA3,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+BPA,rheumatoid arthritis,DOID_7148,MONDO_0008383,7,7,1,GATA3,aop_structure|assay_activity|disease_assoc|expression|hazard|protein_annot|rare_disease,0
+TBBPA,cardiomyopathy,DOID_0050700,MONDO_0004994,6,6,1,TTR,aop_structure|assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,epilepsy,DOID_1826,MONDO_0005027,6,6,1,TTR,aop_structure|assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,liver disease,DOID_409,MONDO_0005154,6,6,1,ESR1|TTR,aop_structure|assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,myopia,DOID_11830,MONDO_0001384,6,6,1,TTR,aop_structure|assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,nervous system disease,DOID_863,MONDO_0005071,6,6,1,ESR1|TTR,aop_structure|assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,rheumatoid arthritis,DOID_7148,MONDO_0008383,6,6,1,TTR,aop_structure|assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,asthma,DOID_2841,MONDO_0004979,6,6,1,THRA,aop_structure|assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,bipolar disorder,DOID_3312,MONDO_0004985,6,6,1,THRA,aop_structure|assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,chronic obstructive pulmonary disease,DOID_3083,MONDO_0005002,6,6,1,THRA,aop_structure|assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,diabetes mellitus,DOID_9351,MONDO_0005015,6,6,1,ESR1|THRB,aop_structure|assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,major depressive disorder,DOID_1470,MONDO_0002009,6,6,1,ESR1|ESR2|THRB,aop_structure|assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,uterine fibroid,DOID_13223,MONDO_0007886,6,6,1,THRB,aop_structure|assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,arteriosclerosis,DOID_2349,MONDO_0002277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,breast cancer,DOID_1612,MONDO_0007254,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,breast carcinoma,DOID_3459,MONDO_0004989,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,colorectal cancer,DOID_9256,MONDO_0005575,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,dermatitis,DOID_2723,MONDO_0002406,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,diabetes mellitus,DOID_9351,MONDO_0005015,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,endometriosis,DOID_289,MONDO_0005133,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,liver cancer,DOID_3571,MONDO_0002691,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,liver disease,DOID_409,MONDO_0005154,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,lung cancer,DOID_1324,MONDO_0008903,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,major depressive disorder,DOID_1470,MONDO_0002009,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,migraine,DOID_6364,MONDO_0005277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,nervous system disease,DOID_863,MONDO_0005071,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,nutrition disease,DOID_374,MONDO_0005137,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,obesity,DOID_9970,MONDO_0011122,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,ovarian cancer,DOID_2394,MONDO_0008170,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,polycystic ovary syndrome,DOID_11612,MONDO_0008487,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,prostate cancer,DOID_10283,MONDO_0008315,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,1
+BPAF,uterine cancer,DOID_363,MONDO_0002715,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAF,psoriasis,DOID_8893,MONDO_0005083,5,5,0,ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,arteriosclerosis,DOID_2349,MONDO_0002277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,breast cancer,DOID_1612,MONDO_0007254,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,breast carcinoma,DOID_3459,MONDO_0004989,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,colorectal cancer,DOID_9256,MONDO_0005575,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,dermatitis,DOID_2723,MONDO_0002406,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,diabetes mellitus,DOID_9351,MONDO_0005015,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,endometriosis,DOID_289,MONDO_0005133,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,liver cancer,DOID_3571,MONDO_0002691,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,liver disease,DOID_409,MONDO_0005154,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,lung cancer,DOID_1324,MONDO_0008903,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,major depressive disorder,DOID_1470,MONDO_0002009,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,migraine,DOID_6364,MONDO_0005277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,nervous system disease,DOID_863,MONDO_0005071,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,nutrition disease,DOID_374,MONDO_0005137,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,obesity,DOID_9970,MONDO_0011122,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,ovarian cancer,DOID_2394,MONDO_0008170,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,polycystic ovary syndrome,DOID_11612,MONDO_0008487,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,prostate cancer,DOID_10283,MONDO_0008315,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,1
+BPAP,uterine cancer,DOID_363,MONDO_0002715,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPAP,psoriasis,DOID_8893,MONDO_0005083,5,5,0,ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,arteriosclerosis,DOID_2349,MONDO_0002277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,breast cancer,DOID_1612,MONDO_0007254,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,breast carcinoma,DOID_3459,MONDO_0004989,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,colorectal cancer,DOID_9256,MONDO_0005575,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,dermatitis,DOID_2723,MONDO_0002406,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,diabetes mellitus,DOID_9351,MONDO_0005015,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,endometriosis,DOID_289,MONDO_0005133,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,liver cancer,DOID_3571,MONDO_0002691,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,liver disease,DOID_409,MONDO_0005154,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,lung cancer,DOID_1324,MONDO_0008903,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,major depressive disorder,DOID_1470,MONDO_0002009,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,migraine,DOID_6364,MONDO_0005277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,nervous system disease,DOID_863,MONDO_0005071,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,nutrition disease,DOID_374,MONDO_0005137,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,obesity,DOID_9970,MONDO_0011122,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,ovarian cancer,DOID_2394,MONDO_0008170,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,polycystic ovary syndrome,DOID_11612,MONDO_0008487,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,prostate cancer,DOID_10283,MONDO_0008315,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,1
+BPB,uterine cancer,DOID_363,MONDO_0002715,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPB,psoriasis,DOID_8893,MONDO_0005083,5,5,0,ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,arteriosclerosis,DOID_2349,MONDO_0002277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,breast cancer,DOID_1612,MONDO_0007254,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,breast carcinoma,DOID_3459,MONDO_0004989,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,colorectal cancer,DOID_9256,MONDO_0005575,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,dermatitis,DOID_2723,MONDO_0002406,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,diabetes mellitus,DOID_9351,MONDO_0005015,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,endometriosis,DOID_289,MONDO_0005133,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,liver cancer,DOID_3571,MONDO_0002691,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,liver disease,DOID_409,MONDO_0005154,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,lung cancer,DOID_1324,MONDO_0008903,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,major depressive disorder,DOID_1470,MONDO_0002009,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,migraine,DOID_6364,MONDO_0005277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,nervous system disease,DOID_863,MONDO_0005071,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,nutrition disease,DOID_374,MONDO_0005137,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,obesity,DOID_9970,MONDO_0011122,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,ovarian cancer,DOID_2394,MONDO_0008170,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,polycystic ovary syndrome,DOID_11612,MONDO_0008487,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,prostate cancer,DOID_10283,MONDO_0008315,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,1
+BPC,uterine cancer,DOID_363,MONDO_0002715,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPC,psoriasis,DOID_8893,MONDO_0005083,5,5,0,ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,arteriosclerosis,DOID_2349,MONDO_0002277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,breast cancer,DOID_1612,MONDO_0007254,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,breast carcinoma,DOID_3459,MONDO_0004989,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,colorectal cancer,DOID_9256,MONDO_0005575,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,dermatitis,DOID_2723,MONDO_0002406,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,diabetes mellitus,DOID_9351,MONDO_0005015,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,endometriosis,DOID_289,MONDO_0005133,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,liver cancer,DOID_3571,MONDO_0002691,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,liver disease,DOID_409,MONDO_0005154,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,lung cancer,DOID_1324,MONDO_0008903,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,major depressive disorder,DOID_1470,MONDO_0002009,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,migraine,DOID_6364,MONDO_0005277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,nervous system disease,DOID_863,MONDO_0005071,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,nutrition disease,DOID_374,MONDO_0005137,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,obesity,DOID_9970,MONDO_0011122,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,ovarian cancer,DOID_2394,MONDO_0008170,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,polycystic ovary syndrome,DOID_11612,MONDO_0008487,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,prostate cancer,DOID_10283,MONDO_0008315,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,1
+BPE,uterine cancer,DOID_363,MONDO_0002715,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPE,psoriasis,DOID_8893,MONDO_0005083,5,5,0,ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,arteriosclerosis,DOID_2349,MONDO_0002277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,breast cancer,DOID_1612,MONDO_0007254,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,breast carcinoma,DOID_3459,MONDO_0004989,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,colorectal cancer,DOID_9256,MONDO_0005575,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,dermatitis,DOID_2723,MONDO_0002406,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,diabetes mellitus,DOID_9351,MONDO_0005015,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,endometriosis,DOID_289,MONDO_0005133,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,liver cancer,DOID_3571,MONDO_0002691,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,liver disease,DOID_409,MONDO_0005154,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,lung cancer,DOID_1324,MONDO_0008903,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,major depressive disorder,DOID_1470,MONDO_0002009,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,migraine,DOID_6364,MONDO_0005277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,nervous system disease,DOID_863,MONDO_0005071,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,nutrition disease,DOID_374,MONDO_0005137,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,obesity,DOID_9970,MONDO_0011122,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,ovarian cancer,DOID_2394,MONDO_0008170,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,polycystic ovary syndrome,DOID_11612,MONDO_0008487,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,prostate cancer,DOID_10283,MONDO_0008315,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,1
+BPF,uterine cancer,DOID_363,MONDO_0002715,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPF,psoriasis,DOID_8893,MONDO_0005083,5,5,0,ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,arteriosclerosis,DOID_2349,MONDO_0002277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,breast cancer,DOID_1612,MONDO_0007254,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,breast carcinoma,DOID_3459,MONDO_0004989,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,colorectal cancer,DOID_9256,MONDO_0005575,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,dermatitis,DOID_2723,MONDO_0002406,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,diabetes mellitus,DOID_9351,MONDO_0005015,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,endometriosis,DOID_289,MONDO_0005133,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,liver cancer,DOID_3571,MONDO_0002691,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,liver disease,DOID_409,MONDO_0005154,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,lung cancer,DOID_1324,MONDO_0008903,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,major depressive disorder,DOID_1470,MONDO_0002009,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,migraine,DOID_6364,MONDO_0005277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,nervous system disease,DOID_863,MONDO_0005071,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,nutrition disease,DOID_374,MONDO_0005137,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,obesity,DOID_9970,MONDO_0011122,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,ovarian cancer,DOID_2394,MONDO_0008170,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,polycystic ovary syndrome,DOID_11612,MONDO_0008487,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,prostate cancer,DOID_10283,MONDO_0008315,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,1
+BPS,uterine cancer,DOID_363,MONDO_0002715,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPS,psoriasis,DOID_8893,MONDO_0005083,5,5,0,ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,arteriosclerosis,DOID_2349,MONDO_0002277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,breast cancer,DOID_1612,MONDO_0007254,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,breast carcinoma,DOID_3459,MONDO_0004989,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,colorectal cancer,DOID_9256,MONDO_0005575,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,dermatitis,DOID_2723,MONDO_0002406,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,diabetes mellitus,DOID_9351,MONDO_0005015,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,endometriosis,DOID_289,MONDO_0005133,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,liver cancer,DOID_3571,MONDO_0002691,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,liver disease,DOID_409,MONDO_0005154,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,lung cancer,DOID_1324,MONDO_0008903,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,major depressive disorder,DOID_1470,MONDO_0002009,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,migraine,DOID_6364,MONDO_0005277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,nervous system disease,DOID_863,MONDO_0005071,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,nutrition disease,DOID_374,MONDO_0005137,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,obesity,DOID_9970,MONDO_0011122,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,ovarian cancer,DOID_2394,MONDO_0008170,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,polycystic ovary syndrome,DOID_11612,MONDO_0008487,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,prostate cancer,DOID_10283,MONDO_0008315,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,1
+BPZ,uterine cancer,DOID_363,MONDO_0002715,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+BPZ,psoriasis,DOID_8893,MONDO_0005083,5,5,0,ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,arteriosclerosis,DOID_2349,MONDO_0002277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,breast cancer,DOID_1612,MONDO_0007254,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,breast carcinoma,DOID_3459,MONDO_0004989,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,colorectal cancer,DOID_9256,MONDO_0005575,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,dermatitis,DOID_2723,MONDO_0002406,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,endometriosis,DOID_289,MONDO_0005133,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,liver cancer,DOID_3571,MONDO_0002691,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,lung cancer,DOID_1324,MONDO_0008903,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,migraine,DOID_6364,MONDO_0005277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,nutrition disease,DOID_374,MONDO_0005137,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,obesity,DOID_9970,MONDO_0011122,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,ovarian cancer,DOID_2394,MONDO_0008170,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,polycystic ovary syndrome,DOID_11612,MONDO_0008487,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,prostate cancer,DOID_10283,MONDO_0008315,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,1
+TBBPA,uterine cancer,DOID_363,MONDO_0002715,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TBBPA,psoriasis,DOID_8893,MONDO_0005083,5,5,0,ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,arteriosclerosis,DOID_2349,MONDO_0002277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,breast cancer,DOID_1612,MONDO_0007254,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,breast carcinoma,DOID_3459,MONDO_0004989,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,colorectal cancer,DOID_9256,MONDO_0005575,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,dermatitis,DOID_2723,MONDO_0002406,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,diabetes mellitus,DOID_9351,MONDO_0005015,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,endometriosis,DOID_289,MONDO_0005133,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,liver cancer,DOID_3571,MONDO_0002691,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,liver disease,DOID_409,MONDO_0005154,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,lung cancer,DOID_1324,MONDO_0008903,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,major depressive disorder,DOID_1470,MONDO_0002009,5,5,0,ESR1|ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,migraine,DOID_6364,MONDO_0005277,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,nervous system disease,DOID_863,MONDO_0005071,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,nutrition disease,DOID_374,MONDO_0005137,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,obesity,DOID_9970,MONDO_0011122,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,ovarian cancer,DOID_2394,MONDO_0008170,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,polycystic ovary syndrome,DOID_11612,MONDO_0008487,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,prostate cancer,DOID_10283,MONDO_0008315,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,1
+TCBPA,uterine cancer,DOID_363,MONDO_0002715,5,5,0,ESR1,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0
+TCBPA,psoriasis,DOID_8893,MONDO_0005083,5,5,0,ESR2,assay_activity|disease_assoc|expression|protein_annot|rare_disease,0

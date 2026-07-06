@@ -1,0 +1,9 @@
+chemical,cid,hazard_annotation,category,source,relationship,evidence_kind
+BPA,6623,H361f: Suspected of damaging fertility,Reproductive toxicity,biobricks-pubchem-annotations,hazard-annotation,literature/safety annotation
+BPA,6623,Reproductive toxicity - category 2,Reproductive toxicity,biobricks-pubchem-annotations,hazard-annotation,literature/safety annotation
+BPA,6623,Potential endocrine disrupting compound,Endocrine disruption,biobricks-pubchem-annotations,hazard-annotation,literature/safety annotation
+BPA,6623,Mutagen,Genotoxicity,biobricks-pubchem-annotations,hazard-annotation,literature/safety annotation
+BPA,6623,H317: May cause an allergic skin reaction,Skin sensitization,biobricks-pubchem-annotations,hazard-annotation,literature/safety annotation
+BPA,6623,H318: Causes serious eye damage,Eye damage,biobricks-pubchem-annotations,hazard-annotation,literature/safety annotation
+BPA,6623,H335: May cause respiratory irritation,Respiratory irritation,biobricks-pubchem-annotations,hazard-annotation,literature/safety annotation
+BPA,6623,NTP Toxicology & Carcinogenesis Studies of Bisphenol A (F344/N rats and B6C3F1 mice),Carcinogenicity study,biobricks-pubchem-annotations,hazard-annotation,literature/safety annotation
