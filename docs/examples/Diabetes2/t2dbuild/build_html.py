@@ -1,34 +1,114 @@
 #!/usr/bin/env python3
-import csv, json, base64, os
-OUT=os.path.dirname(os.path.abspath(__file__)); FIG=f"{OUT}/figures"
-S=json.load(open(f"{OUT}/t2d_stats.json"))
-PREV=json.load(open(f"{OUT}/map_state_prevalence.json"))
-rows=list(csv.DictReader(open(f"{OUT}/T2D_knowledge_map_findings.csv")))
-def b64(p):
-    with open(p,"rb") as f: return "data:image/png;base64,"+base64.b64encode(f.read()).decode()
-figs={k:b64(f"{FIG}/{k}.png") for k in ["fig1_cross_source_corroboration","fig2_evidence_entity_breakdown",
- "fig3_gene_pathway_drug_network","fig4_top_gene_matrix","fig5_sdoh_correlations","fig6_prevalence_by_state"]}
-DATA=json.dumps(rows,separators=(",",":"))
-PREVJS=json.dumps(PREV,separators=(",",":"))
-sdoh=S["sdoh_correlations"]
-sdoh_rows="".join(f"<tr><td>{v}</td><td class='num'>{r:+.3f}</td><td class='num'>{n}</td></tr>" for v,r,n in sdoh)
-t1=", ".join(S["tier1_genes"]); t2=", ".join(S["tier2_genes"])
-topw="".join(f"<tr><td>{g}</td><td class='num'>{w}</td></tr>" for g,w in S["top_digcfdekg"][:15])
-SOURCES=[
- ("spoke-okn","v0.0.6","Curated disease→gene; prevalence by location (CDC PLACES); SDoH by county (County Health Rankings)","genes, prevalence, SDoH"),
- ("rdkg","v0.0.1","Curated T2D-subtype genes + microRNAs; contraindicated drugs; environmental contributors; phenotypes","genes (coding+non-coding), drugs, clinical, exposures"),
- ("digcfdekg (CFDE REVEAL)","v0.0.1","Statistical gene–trait weights + gene sets (PIGEAN/EAGGL, GWAS-derived)","genes, gene sets"),
- ("prokn (Protein KN)","v0.0.5","Curated T2D genes/proteins; drug indications (ChEMBL)","genes/proteins, drugs"),
- ("pankgraph (PanKbase, NIDDK)","v0.0.1","Islet cell-type open-chromatin gene-activity (T2D vs non-diabetic); islet cis-eQTL variants","altered-activity genes, variants, cell types"),
- ("gene-expression-atlas-okn","v0.0.3","Measured differential expression by tissue (islet, retina, liver)","altered-activity genes/programs"),
- ("biomarkerkg","v0.0.2","Curated clinical biomarker records + specimen","biomarkers"),
- ("oard-kg","v0.0.3","Checked — no rows for T2D (rare-disease EHR corpus)","— (none)"),
- ("ubergraph","v0.0.2","Subtype expansion + cross-ontology ID crosswalks (bridge only)","ontology"),
-]
-src_rows="".join(f"<tr><td><b>{k}</b></td><td class='num'>{v}</td><td>{d}</td><td>{e}</td></tr>" for k,v,d,e in SOURCES)
-prevtop="".join(f"<tr><td>{n}</td><td class='num'>{v:.1f}%</td></tr>" for _,n,v in S["prevalence_state"][:8])
+"""Build the self-contained Type 2 Diabetes evidence-map HTML report (figures + table)."""
 
-html=f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+import base64
+import csv
+import json
+from pathlib import Path
+
+OUT = str(Path(__file__).resolve().parent)
+FIG = f"{OUT}/figures"
+S = json.loads(Path(f"{OUT}/t2d_stats.json").read_text())
+PREV = json.loads(Path(f"{OUT}/map_state_prevalence.json").read_text())
+with Path(f"{OUT}/T2D_knowledge_map_findings.csv").open() as _f:
+    rows = list(csv.DictReader(_f))
+
+
+def b64(p):
+    """Return a PNG file at path ``p`` as a base64 data URI."""
+    with Path(p).open("rb") as f:
+        return "data:image/png;base64," + base64.b64encode(f.read()).decode()
+
+
+figs = {
+    k: b64(f"{FIG}/{k}.png")
+    for k in [
+        "fig1_cross_source_corroboration",
+        "fig2_evidence_entity_breakdown",
+        "fig3_gene_pathway_drug_network",
+        "fig4_top_gene_matrix",
+        "fig5_sdoh_correlations",
+        "fig6_prevalence_by_state",
+    ]
+}
+DATA = json.dumps(rows, separators=(",", ":"))
+PREVJS = json.dumps(PREV, separators=(",", ":"))
+sdoh = S["sdoh_correlations"]
+sdoh_rows = "".join(
+    f"<tr><td>{v}</td><td class='num'>{r:+.3f}</td><td class='num'>{n}</td></tr>"
+    for v, r, n in sdoh
+)
+t1 = ", ".join(S["tier1_genes"])
+t2 = ", ".join(S["tier2_genes"])
+topw = "".join(
+    f"<tr><td>{g}</td><td class='num'>{w}</td></tr>" for g, w in S["top_digcfdekg"][:15]
+)
+SOURCES = [
+    (
+        "spoke-okn",
+        "v0.0.6",
+        "Curated disease→gene; prevalence by location (CDC PLACES); SDoH by county (County Health Rankings)",
+        "genes, prevalence, SDoH",
+    ),
+    (
+        "rdkg",
+        "v0.0.1",
+        "Curated T2D-subtype genes + microRNAs; contraindicated drugs; environmental contributors; phenotypes",
+        "genes (coding+non-coding), drugs, clinical, exposures",
+    ),
+    (
+        "digcfdekg (CFDE REVEAL)",
+        "v0.0.1",
+        "Statistical gene–trait weights + gene sets (PIGEAN/EAGGL, GWAS-derived)",
+        "genes, gene sets",
+    ),
+    (
+        "prokn (Protein KN)",
+        "v0.0.5",
+        "Curated T2D genes/proteins; drug indications (ChEMBL)",
+        "genes/proteins, drugs",
+    ),
+    (
+        "pankgraph (PanKbase, NIDDK)",
+        "v0.0.1",
+        "Islet cell-type open-chromatin gene-activity (T2D vs non-diabetic); islet cis-eQTL variants",
+        "altered-activity genes, variants, cell types",
+    ),
+    (
+        "gene-expression-atlas-okn",
+        "v0.0.3",
+        "Measured differential expression by tissue (islet, retina, liver)",
+        "altered-activity genes/programs",
+    ),
+    (
+        "biomarkerkg",
+        "v0.0.2",
+        "Curated clinical biomarker records + specimen",
+        "biomarkers",
+    ),
+    (
+        "oard-kg",
+        "v0.0.3",
+        "Checked — no rows for T2D (rare-disease EHR corpus)",
+        "— (none)",
+    ),
+    (
+        "ubergraph",
+        "v0.0.2",
+        "Subtype expansion + cross-ontology ID crosswalks (bridge only)",
+        "ontology",
+    ),
+]
+src_rows = "".join(
+    f"<tr><td><b>{k}</b></td><td class='num'>{v}</td><td>{d}</td><td>{e}</td></tr>"
+    for k, v, d, e in SOURCES
+)
+prevtop = "".join(
+    f"<tr><td>{n}</td><td class='num'>{v:.1f}%</td></tr>"
+    for _, n, v in S["prevalence_state"][:8]
+)
+
+html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Type 2 Diabetes Knowledge Map — Proto-OKN</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
@@ -76,23 +156,23 @@ code{{background:#eef3f7;padding:1px 5px;border-radius:5px;font-size:12px}}
 <div class="wrap">
 
 <div class="kpis">
-<div class="kpi"><div class="n">{S['n_findings']:,}</div><div class="l">total findings</div></div>
-<div class="kpi"><div class="n">{S['n_genes']}</div><div class="l">genes ({S['n_genes_noncoding']} non-coding)</div></div>
-<div class="kpi"><div class="n">{S['n_drugs']}</div><div class="l">drug findings</div></div>
-<div class="kpi"><div class="n">{S['n_altered_activity']}</div><div class="l">altered-activity</div></div>
-<div class="kpi"><div class="n">{S['n_prevalence']}</div><div class="l">geo prevalence</div></div>
-<div class="kpi"><div class="n">{S['n_sdoh']}</div><div class="l">SDoH correlations</div></div>
+<div class="kpi"><div class="n">{S["n_findings"]:,}</div><div class="l">total findings</div></div>
+<div class="kpi"><div class="n">{S["n_genes"]}</div><div class="l">genes ({S["n_genes_noncoding"]} non-coding)</div></div>
+<div class="kpi"><div class="n">{S["n_drugs"]}</div><div class="l">drug findings</div></div>
+<div class="kpi"><div class="n">{S["n_altered_activity"]}</div><div class="l">altered-activity</div></div>
+<div class="kpi"><div class="n">{S["n_prevalence"]}</div><div class="l">geo prevalence</div></div>
+<div class="kpi"><div class="n">{S["n_sdoh"]}</div><div class="l">SDoH correlations</div></div>
 </div>
 
 <div class="card">
 <b>Highest-confidence core.</b> <span class="tier1">{t1}</span> are corroborated by all four gene sources (Tier&nbsp;1) — the β-cell K‑ATP / glucokinase / MODY core.
-A further {len(S['tier2_genes'])} genes are supported by 3 sources (Tier&nbsp;2): {t2}.
+A further {len(S["tier2_genes"])} genes are supported by 3 sources (Tier&nbsp;2): {t2}.
 <div style="margin-top:8px">Evidence types kept separate:
-<span class="badge b-cur">curated {S['evidence_counts'].get('curated_link',0)}</span>
-<span class="badge b-stat">statistical {S['evidence_counts'].get('statistical_association',0)}</span>
-<span class="badge b-meas">measured {S['evidence_counts'].get('measured_activity_change',0)}</span>
-<span class="badge b-path">pathway {S['evidence_counts'].get('pathway_membership',0)}</span>
-<span class="badge b-epi">geospatial {S['evidence_counts'].get('epidemiological',0)}</span></div>
+<span class="badge b-cur">curated {S["evidence_counts"].get("curated_link", 0)}</span>
+<span class="badge b-stat">statistical {S["evidence_counts"].get("statistical_association", 0)}</span>
+<span class="badge b-meas">measured {S["evidence_counts"].get("measured_activity_change", 0)}</span>
+<span class="badge b-path">pathway {S["evidence_counts"].get("pathway_membership", 0)}</span>
+<span class="badge b-epi">geospatial {S["evidence_counts"].get("epidemiological", 0)}</span></div>
 </div>
 
 <h2>Knowledge graphs used</h2>
@@ -105,22 +185,22 @@ A further {len(S['tier2_genes'])} genes are supported by 3 sources (Tier&nbsp;2)
 
 <h3 style="margin-top:18px">Prevalence by state (ranked)</h3>
 <div class="muted">Static ranking companion to the interactive OpenStreetMap above (no lat/long scatter).</div>
-<img src="{figs['fig6_prevalence_by_state']}" alt="prevalence by state" style="margin-top:6px">
+<img src="{figs["fig6_prevalence_by_state"]}" alt="prevalence by state" style="margin-top:6px">
 
 <h3 style="margin-top:18px">Social determinants of health — county-level correlates</h3>
 <div class="muted">Pearson r between county diabetes prevalence and each SDoH variable (n≈3,100 counties).</div>
-<img src="{figs['fig5_sdoh_correlations']}" alt="sdoh" style="margin-top:6px">
+<img src="{figs["fig5_sdoh_correlations"]}" alt="sdoh" style="margin-top:6px">
 
 <h2>Cross-source corroboration</h2>
-<img src="{figs['fig1_cross_source_corroboration']}" alt="corroboration">
+<img src="{figs["fig1_cross_source_corroboration"]}" alt="corroboration">
 <div class="two" style="margin-top:16px">
-<div><img src="{figs['fig4_top_gene_matrix']}" alt="matrix"></div>
-<div><img src="{figs['fig2_evidence_entity_breakdown']}" alt="evidence"></div>
+<div><img src="{figs["fig4_top_gene_matrix"]}" alt="matrix"></div>
+<div><img src="{figs["fig2_evidence_entity_breakdown"]}" alt="evidence"></div>
 </div>
 
 <h2>Gene–pathway–drug mechanistic map</h2>
 <div class="muted">Entities actually retrieved from the sources, placed onto established T2D modules (β-cell K‑ATP/secretion, MODY/islet TFs, insulin signaling/resistance, incretin/GPCR, obesity/adipo-lipid).</div>
-<img style="margin-top:10px" src="{figs['fig3_gene_pathway_drug_network']}" alt="network">
+<img style="margin-top:10px" src="{figs["fig3_gene_pathway_drug_network"]}" alt="network">
 
 <h2>Findings by entity type</h2>
 <div class="card"><b>Genes (coding + non-coding).</b> 4 sources → Tier-1 β-cell/MODY core (ABCC8, KCNJ11, GCK, HNF1A/4A/1B, PDX1, SLC2A2, PPARG, IRS1, WFS1); INS carries the strongest statistical weight (10.3); TCF7L2 is the top common-variant gene. 61 non-coding genes — chiefly islet microRNAs (MIR375, MIR29 family).</div>
@@ -130,7 +210,7 @@ A further {len(S['tier2_genes'])} genes are supported by 3 sources (Tier&nbsp;2)
 <div class="card"><b>Environmental contributors (rdkg).</b> 44 exposures linked to diabetes risk — arsenic, cadmium, lead, mercury, bisphenol A, PFOA/PFOS, PCBs, air pollutants.</div>
 <div class="note"><b>Scope flags.</b> spoke-okn resolves diabetes only at the <b>parent</b> term (all diagnosed diabetes), inflating single-source gene counts and making the geo/SDoH layers a T2D proxy. pankgraph's curated gene–condition layer is type-1. See report §8.</div>
 
-<h2>Full annotated findings — interactive ({S['n_findings']:,} rows)</h2>
+<h2>Full annotated findings — interactive ({S["n_findings"]:,} rows)</h2>
 <div class="muted">Search, filter by entity type / evidence type / tier, and click any column header to sort. Full CSV: <code>T2D_knowledge_map_findings.csv</code>.</div>
 <div class="controls">
 <input id="q" placeholder="Search entity, relationship, notes…">
@@ -190,5 +270,5 @@ function render(){{
 render();
 </script>
 </body></html>"""
-open(f"{OUT}/T2D_knowledge_map_report.html","w").write(html)
+Path(f"{OUT}/T2D_knowledge_map_report.html").write_text(html)
 print("HTML written:", len(html), "bytes")

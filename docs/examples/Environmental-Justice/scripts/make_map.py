@@ -1,24 +1,47 @@
 #!/usr/bin/env python3
 """Build a self-contained OpenStreetMap-based county choropleth of cumulative EJ burden.
+
 Burden data = Proto-OKN (master_county.csv). County polygons = us-atlas TopoJSON fetched
-client-side from a CDN (cartographic base only); OSM tile layer as basemap."""
-import json, pandas as pd, numpy as np
-OUT="/sessions/amazing-focused-bardeen/mnt/outputs"
-m=pd.read_csv(OUT+"/master_county.csv",dtype={'fips':str})
-m=m[m['in_us50']==True]
-B={}
-for _,r in m.iterrows():
-    idx=r['burden_index']
-    if pd.isna(idx): continue
-    def g(k,nd=1):
-        v=r.get(k);
-        return None if pd.isna(v) else (round(float(v),nd) if nd else int(v))
-    B[r['fips']]=[round(float(idx),3), (int(r['burden_agreement']) if pd.notna(r['burden_agreement']) else None),
-                  str(r['name']), str(r['state']), g('epa_fac',0), g('court_cases',0),
-                  g('svi',3), g('rucc',0), g('poverty',1), g('sud_providers',0)]
-brk=np.round(m['burden_index'].quantile([.15,.35,.55,.7,.82,.92]).values,3).tolist()
-data=json.dumps(B,separators=(',',':'))
-html=f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>Cumulative Environmental-Justice Burden by U.S. County — Proto-OKN</title>
+client-side from a CDN (cartographic base only); OSM tile layer as basemap.
+"""
+
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+OUT = "/sessions/amazing-focused-bardeen/mnt/outputs"
+m = pd.read_csv(OUT + "/master_county.csv", dtype={"fips": str})
+m = m[m["in_us50"]]
+B = {}
+for _, r in m.iterrows():
+    idx = r["burden_index"]
+    if pd.isna(idx):
+        continue
+
+    def g(k, nd=1, r=r):
+        """Return county field ``k`` from row ``r``, rounded or int-cast, else None."""
+        v = r.get(k)
+        return None if pd.isna(v) else (round(float(v), nd) if nd else int(v))
+
+    B[r["fips"]] = [
+        round(float(idx), 3),
+        (int(r["burden_agreement"]) if pd.notna(r["burden_agreement"]) else None),
+        str(r["name"]),
+        str(r["state"]),
+        g("epa_fac", 0),
+        g("court_cases", 0),
+        g("svi", 3),
+        g("rucc", 0),
+        g("poverty", 1),
+        g("sud_providers", 0),
+    ]
+brk = np.round(
+    m["burden_index"].quantile([0.15, 0.35, 0.55, 0.7, 0.82, 0.92]).values, 3
+).tolist()
+data = json.dumps(B, separators=(",", ":"))
+html = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>Cumulative Environmental-Justice Burden by U.S. County — Proto-OKN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
@@ -75,5 +98,5 @@ for(var i=0;i<colors.length;i++){{ var a=lb[i], z=(i<brk.length?brk[i]:1);
   lg.innerHTML+='<div><i style="background:'+colors[i]+'"></i>'+a.toFixed(2)+' – '+z.toFixed(2)+'</div>'; }}
 lg.innerHTML+='<div><i style="background:#e0e0e0"></i>no data</div>';
 </script></body></html>"""
-open(OUT+"/report/choropleth_burden.html","w").write(html)
-print("map written; counties embedded:",len(B),"| breaks:",brk)
+Path(OUT + "/report/choropleth_burden.html").write_text(html)
+print("map written; counties embedded:", len(B), "| breaks:", brk)

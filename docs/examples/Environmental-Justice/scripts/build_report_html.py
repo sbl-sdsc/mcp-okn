@@ -1,41 +1,68 @@
 #!/usr/bin/env python3
-"""Render report.html in the Alzheimer's-report visual style (gradient header, KPI cards,
-white content cards, evidence badges, sources table, embedded figures, and an interactive
-searchable/sortable/filterable county-burden explorer). Self-contained (figures base64)."""
-import base64, json, os
-import pandas as pd, numpy as np
-DEST="/sessions/amazing-focused-bardeen/mnt/Environmental-Justice/EJ_Burden_ProtoOKN"
-m=pd.read_csv(DEST+"/data/master_county.csv",dtype={'fips':str})
-U=m[m['in_us50']==True].copy()
+"""Render report.html in the Alzheimer's-report visual style.
+
+Gradient header, KPI cards, white content cards, evidence badges, sources table,
+embedded figures, and an interactive searchable/sortable/filterable county-burden
+explorer. Self-contained (figures base64).
+"""
+
+import base64
+import json
+from pathlib import Path
+
+import pandas as pd
+
+DEST = "/sessions/amazing-focused-bardeen/mnt/Environmental-Justice/EJ_Burden_ProtoOKN"
+m = pd.read_csv(DEST + "/data/master_county.csv", dtype={"fips": str})
+U = m[m["in_us50"]].copy()
+
 
 def b64(p):
-    with open(p,'rb') as f: return "data:image/png;base64,"+base64.b64encode(f.read()).decode()
-F1=b64(DEST+"/figures/fig1_burden_source_matrix.png")
-F2=b64(DEST+"/figures/fig2_correlation_heatmap.png")
-F3=b64(DEST+"/figures/fig3_ranked_counties.png")
-F4=b64(DEST+"/figures/fig4_agreement_coverage.png")
+    """Return a base64 PNG data URI for the image file at path ``p``."""
+    return "data:image/png;base64," + base64.b64encode(Path(p).read_bytes()).decode()
+
+
+F1 = b64(DEST + "/figures/fig1_burden_source_matrix.png")
+F2 = b64(DEST + "/figures/fig2_correlation_heatmap.png")
+F3 = b64(DEST + "/figures/fig3_ranked_counties.png")
+F4 = b64(DEST + "/figures/fig4_agreement_coverage.png")
+
 
 # interactive DATA: one row per US50 county
-def num(v,nd=2):
-    return None if pd.isna(v) else round(float(v),nd)
-rows=[]
-for _,r in U.iterrows():
-    agr = None if pd.isna(r['burden_agreement']) else int(r['burden_agreement'])
-    rows.append({
-        "county":str(r['name']),"state":str(r['state']),
-        "agreement":(agr if agr is not None else 0),
-        "burden_index":num(r['burden_index'],3),
-        "epa_fac":(None if pd.isna(r['epa_fac']) else int(r['epa_fac'])),
-        "court_cases":(None if pd.isna(r['court_cases']) else int(r['court_cases'])),
-        "svi":num(r['svi'],3),"rucc":(None if pd.isna(r['rucc']) else int(r['rucc'])),
-        "sud_providers":(None if pd.isna(r['sud_providers']) else int(r['sud_providers'])),
-        "poverty":num(r['poverty'],1),"uninsured":num(r['uninsured'],1),
-        "diabetes":num(r['diabetes'],1),"obesity":num(r['obesity'],1),
-        "tier":("T1" if agr==5 else "T2" if agr==4 else "")})
-rows.sort(key=lambda x:(-x['agreement'], -(x['burden_index'] or 0)))
-DATA=json.dumps(rows,separators=(',',':'))
+def num(v, nd=2):
+    """Return ``v`` as a float rounded to ``nd`` decimals, or None if missing."""
+    return None if pd.isna(v) else round(float(v), nd)
 
-CSS="""
+
+rows = []
+for _, r in U.iterrows():
+    agr = None if pd.isna(r["burden_agreement"]) else int(r["burden_agreement"])
+    rows.append(
+        {
+            "county": str(r["name"]),
+            "state": str(r["state"]),
+            "agreement": (agr if agr is not None else 0),
+            "burden_index": num(r["burden_index"], 3),
+            "epa_fac": (None if pd.isna(r["epa_fac"]) else int(r["epa_fac"])),
+            "court_cases": (
+                None if pd.isna(r["court_cases"]) else int(r["court_cases"])
+            ),
+            "svi": num(r["svi"], 3),
+            "rucc": (None if pd.isna(r["rucc"]) else int(r["rucc"])),
+            "sud_providers": (
+                None if pd.isna(r["sud_providers"]) else int(r["sud_providers"])
+            ),
+            "poverty": num(r["poverty"], 1),
+            "uninsured": num(r["uninsured"], 1),
+            "diabetes": num(r["diabetes"], 1),
+            "obesity": num(r["obesity"], 1),
+            "tier": ("T1" if agr == 5 else "T2" if agr == 4 else ""),
+        }
+    )
+rows.sort(key=lambda x: (-x["agreement"], -(x["burden_index"] or 0)))
+DATA = json.dumps(rows, separators=(",", ":"))
+
+CSS = """
 :root{--blue:#2E86AB;--green:#3B8C4D;--orange:#F18F01;--purple:#A23B72;--red:#C0392B;--teal:#1B7A7A;--ink:#1c2733;--muted:#6b7783;--line:#e3e8ee;--bg:#f7f9fb}
 *{box-sizing:border-box}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
@@ -73,7 +100,7 @@ code{background:#eef3f7;padding:1px 5px;border-radius:5px;font-size:12px}
 a{color:var(--blue)}
 """
 
-HEAD="""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cumulative Environmental-Justice Burden by U.S. County — Proto-OKN</title>
 <style>__CSS__</style></head><body>
@@ -200,7 +227,13 @@ render();
 </script>
 </body></html>"""
 
-html=(HEAD.replace("__CSS__",CSS).replace("__F1__",F1).replace("__F2__",F2).replace("__F3__",F3).replace("__F4__",F4)
-          .replace("__DATA__",DATA))
-open(DEST+"/report.html","w").write(html)
-print("report.html bytes:",len(html),"| counties in explorer:",len(rows))
+html = (
+    HEAD.replace("__CSS__", CSS)
+    .replace("__F1__", F1)
+    .replace("__F2__", F2)
+    .replace("__F3__", F3)
+    .replace("__F4__", F4)
+    .replace("__DATA__", DATA)
+)
+Path(DEST + "/report.html").write_text(html)
+print("report.html bytes:", len(html), "| counties in explorer:", len(rows))

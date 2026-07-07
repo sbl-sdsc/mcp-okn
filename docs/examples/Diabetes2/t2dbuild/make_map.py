@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """Standalone interactive OpenStreetMap of U.S. state diabetes prevalence (Leaflet + OSM tiles)."""
-import json, os
-OUT=os.path.dirname(os.path.abspath(__file__))
-PREV=json.load(open(f"{OUT}/map_state_prevalence.json"))
-PREVJS=json.dumps(PREV,separators=(",",":"))
-html="""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+
+import json
+from pathlib import Path
+
+OUT = str(Path(__file__).resolve().parent)
+PREV = json.loads(Path(f"{OUT}/map_state_prevalence.json").read_text())
+PREVJS = json.dumps(PREV, separators=(",", ":"))
+html = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Type 2 Diabetes Prevalence — OpenStreetMap</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
@@ -35,5 +38,5 @@ lg.onAdd=function(){const d=L.DomUtil.create('div','legend');d.innerHTML='<b>Dia
  '<i style="background:#fc8d59"></i>9–11%<br><i style="background:#fdd49e"></i>&lt;9%';return d;};
 lg.addTo(map);
 </script></body></html>"""
-open(f"{OUT}/T2D_prevalence_map.html","w").write(html.replace("__PREV__",PREVJS))
+Path(f"{OUT}/T2D_prevalence_map.html").write_text(html.replace("__PREV__", PREVJS))
 print("wrote T2D_prevalence_map.html")

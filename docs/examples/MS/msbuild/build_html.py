@@ -1,15 +1,32 @@
 #!/usr/bin/env python3
 """Build the self-contained interactive HTML MS knowledge-map report."""
-import base64, csv, json
+
+import base64
+import csv
+import json
+from pathlib import Path
 
 OUT = "/sessions/stoic-charming-ride/mnt/MS"
+
+
 def b64(p):
-    with open(p,"rb") as f: return "data:image/png;base64,"+base64.b64encode(f.read()).decode()
-fig = {n: b64(f"{OUT}/figures/{n}.png") for n in
-       ["fig1_cross_source_corroboration","fig2_evidence_entity_breakdown",
-        "fig3_gene_pathway_drug_network","fig4_top_gene_matrix"]}
-rows = list(csv.DictReader(open(f"{OUT}/MS_knowledge_map_findings.csv")))
-stats = json.load(open(f"{OUT}/ms_stats.json"))
+    """Return a PNG file encoded as a base64 data URI."""
+    with Path(p).open("rb") as f:
+        return "data:image/png;base64," + base64.b64encode(f.read()).decode()
+
+
+fig = {
+    n: b64(f"{OUT}/figures/{n}.png")
+    for n in [
+        "fig1_cross_source_corroboration",
+        "fig2_evidence_entity_breakdown",
+        "fig3_gene_pathway_drug_network",
+        "fig4_top_gene_matrix",
+    ]
+}
+with Path(f"{OUT}/MS_knowledge_map_findings.csv").open() as f:
+    rows = list(csv.DictReader(f))
+stats = json.loads(Path(f"{OUT}/ms_stats.json").read_text())
 DATA = json.dumps(rows)
 
 html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
@@ -89,15 +106,15 @@ Evidence types are kept separate: <span class="badge b-cur">curated link 247</sp
 <div class="muted" style="margin-top:8px">Checked but not contributory: <code>oard-kg</code> (no MS phenotype edges), <code>pankgraph</code> (no MS node), <code>ncipidkg</code>, <code>biobricks-aopwiki</code>, <code>nde</code>, <code>biohealth</code>.</div>
 
 <h2>Cross-source corroboration</h2>
-<img src="{fig['fig1_cross_source_corroboration']}" alt="corroboration">
+<img src="{fig["fig1_cross_source_corroboration"]}" alt="corroboration">
 <div class="two" style="margin-top:16px">
-<div><img src="{fig['fig4_top_gene_matrix']}" alt="matrix"></div>
-<div><img src="{fig['fig2_evidence_entity_breakdown']}" alt="evidence"></div>
+<div><img src="{fig["fig4_top_gene_matrix"]}" alt="matrix"></div>
+<div><img src="{fig["fig2_evidence_entity_breakdown"]}" alt="evidence"></div>
 </div>
 
 <h2>Gene–pathway–drug mechanistic map</h2>
 <div class="muted">Entities are those actually retrieved from the sources (genes: spoke/rdkg/digcfdekg; drugs: prokn indications; interferon module: GXA measured), placed onto the established MS immune modules.</div>
-<img style="margin-top:10px" src="{fig['fig3_gene_pathway_drug_network']}" alt="network">
+<img style="margin-top:10px" src="{fig["fig3_gene_pathway_drug_network"]}" alt="network">
 
 <h2>Findings by entity type</h2>
 <div class="card"><b>Genes (association).</b> 3 sources → Tier-1 immune core (HLA-DRB1, IL2RA, IL7R, TYK2, STAT4, CD6, CD40, CD58…); CD28 carries the strongest statistical weight (10.6). Non-coding involvement is minimal in the association layer (one lncRNA) — an MS/AD contrast — and appears mostly in the measured layer.</div>
@@ -157,5 +174,6 @@ function render(){{
 render();
 </script>
 </body></html>"""
-with open(f"{OUT}/MS_knowledge_map_report.html","w") as f: f.write(html)
+with Path(f"{OUT}/MS_knowledge_map_report.html").open("w") as f:
+    f.write(html)
 print("HTML written:", len(html), "chars")

@@ -1,4 +1,4 @@
-# Other MS entity data from Proto-OKN, 2026-07-03.
+"""Other MS entity data from Proto-OKN, 2026-07-03."""
 
 # gene-expression-atlas-okn (measured differential expression) for MONDO_0005301.
 # 475 distinct DE genes across 4 assays (E-MTAB-69, E-MTAB-2973, ...): MS before/after
@@ -70,69 +70,131 @@ MS4A1,CL_0000542,up,1.3,0.0"""
 
 # Cell Ontology / UBERON labels used by GXA MS assays
 CL_LABELS = {
-    "CL_0000576": "monocyte", "CL_0000542": "lymphocyte", "CL_0000624": "CD4+ T cell",
-    "CL_0000625": "CD8+ T cell", "CL_0000775": "neutrophil", "CL_0000236": "B cell",
-    "CL_0000623": "natural killer cell", "UBERON_0000178": "whole blood",
+    "CL_0000576": "monocyte",
+    "CL_0000542": "lymphocyte",
+    "CL_0000624": "CD4+ T cell",
+    "CL_0000625": "CD8+ T cell",
+    "CL_0000775": "neutrophil",
+    "CL_0000236": "B cell",
+    "CL_0000623": "natural killer cell",
+    "UBERON_0000178": "whole blood",
 }
 
 # prokn ChEMBL "Indication" (NCIT_C41184) for MONDO_0005301 — 180 compounds.
 # Named subset resolvable in prokn (rest are ChEMBL-ID-only -> readable-name undercount).
 PROKN_DRUG_TOTAL = 180
 PROKN_DRUGS_NAMED = [
-    "Alemtuzumab", "Baclofen", "Amantadine", "Amantadine hydrochloride", "Biotin",
-    "Amifampridine", "Armodafinil", "Cannabidiol", "Cannabinol", "Arbaclofen placarbil",
-    "Atorvastatin", "Celecoxib", "Acetazolamide", "Aspirin", "Acetaminophen",
-    "Acetylcysteine", "Azithromycin", "Acyclovir sodium", "Cetirizine", "Carbidopa",
-    "Briakinumab", "Belimumab", "Bryostatin 1", "BIIB-091", "Alfuzosin",
-    "Butylated hydroxytoluene", "Charcoal, activated",
+    "Alemtuzumab",
+    "Baclofen",
+    "Amantadine",
+    "Amantadine hydrochloride",
+    "Biotin",
+    "Amifampridine",
+    "Armodafinil",
+    "Cannabidiol",
+    "Cannabinol",
+    "Arbaclofen placarbil",
+    "Atorvastatin",
+    "Celecoxib",
+    "Acetazolamide",
+    "Aspirin",
+    "Acetaminophen",
+    "Acetylcysteine",
+    "Azithromycin",
+    "Acyclovir sodium",
+    "Cetirizine",
+    "Carbidopa",
+    "Briakinumab",
+    "Belimumab",
+    "Bryostatin 1",
+    "BIIB-091",
+    "Alfuzosin",
+    "Butylated hydroxytoluene",
+    "Charcoal, activated",
 ]
 
 # rdkg drug relationships for MS
-RDKG_CONTRA = ["Ascorbic acid", "Zinc gluconate"]  # biolink:contraindicated_for (DrugBank)
-RDKG_RISK = ["Teriflunomide", "Lead", "Mercury", "Solvents", "Tobacco Smoke Pollution"]  # contributes_to (ChemicalExposure)
+RDKG_CONTRA = [
+    "Ascorbic acid",
+    "Zinc gluconate",
+]  # biolink:contraindicated_for (DrugBank)
+RDKG_RISK = [
+    "Teriflunomide",
+    "Lead",
+    "Mercury",
+    "Solvents",
+    "Tobacco Smoke Pollution",
+]  # contributes_to (ChemicalExposure)
 
 # spoke-okn TREATS_CtD for MS DOID terms — only 3 (non-therapeutic artifacts)
 SPOKE_TREATS = ["Carbonic acid", "Isopropyl alcohol", "Methane"]
 
 # digcfdekg gene sets predicting MS (geneSetToTrait) — top 40 by weight
 DIGCFDE_GENESETS = [
-    ("BIOCARTA_CTLA4_PATHWAY", 3.0), ("GOBP_T_HELPER_17_CELL_LINEAGE_COMMITMENT", 2.89),
-    ("KEGG_ALLOGRAFT_REJECTION", 2.83), ("WP_GENES_ASSOCIATED_WITH_THE_DEVELOPMENT_OF_RHEUMATOID_ARTHRITIS", 2.8),
-    ("BIOCARTA_TH1TH2_PATHWAY", 2.69), ("PID_IL27_PATHWAY", 2.64), ("GOBP_T_CELL_SELECTION", 2.63),
-    ("GOBP_REGULATION_OF_B_CELL_DIFFERENTIATION", 2.62), ("GOBP_POSITIVE_REGULATION_OF_ALPHA_BETA_T_CELL_PROLIFERATION", 2.54),
-    ("WP_MODULATORS_OF_TCR_SIGNALING_AND_T_CELL_ACTIVATION", 2.53), ("REACTOME_INTERLEUKIN_2_SIGNALING", 2.5),
-    ("GOBP_T_CELL_ACTIVATION_INVOLVED_IN_IMMUNE_RESPONSE", 2.51), ("mp_decreased_memory_T_cell_number", 2.72),
-    ("mp_abnormal_T_cell_proliferation", 2.65), ("mp_decreased_CD4-positive_regulatory_T_cell_number", 2.73),
-    ("DURANTE_ADULT_OLFACTORY_NEUROEPITHELIUM_CD4_T_CELLS", 2.83), ("DESCARTES_FETAL_STOMACH_LYMPHOID_CELLS", 2.57),
+    ("BIOCARTA_CTLA4_PATHWAY", 3.0),
+    ("GOBP_T_HELPER_17_CELL_LINEAGE_COMMITMENT", 2.89),
+    ("KEGG_ALLOGRAFT_REJECTION", 2.83),
+    ("WP_GENES_ASSOCIATED_WITH_THE_DEVELOPMENT_OF_RHEUMATOID_ARTHRITIS", 2.8),
+    ("BIOCARTA_TH1TH2_PATHWAY", 2.69),
+    ("PID_IL27_PATHWAY", 2.64),
+    ("GOBP_T_CELL_SELECTION", 2.63),
+    ("GOBP_REGULATION_OF_B_CELL_DIFFERENTIATION", 2.62),
+    ("GOBP_POSITIVE_REGULATION_OF_ALPHA_BETA_T_CELL_PROLIFERATION", 2.54),
+    ("WP_MODULATORS_OF_TCR_SIGNALING_AND_T_CELL_ACTIVATION", 2.53),
+    ("REACTOME_INTERLEUKIN_2_SIGNALING", 2.5),
+    ("GOBP_T_CELL_ACTIVATION_INVOLVED_IN_IMMUNE_RESPONSE", 2.51),
+    ("mp_decreased_memory_T_cell_number", 2.72),
+    ("mp_abnormal_T_cell_proliferation", 2.65),
+    ("mp_decreased_CD4-positive_regulatory_T_cell_number", 2.73),
+    ("DURANTE_ADULT_OLFACTORY_NEUROEPITHELIUM_CD4_T_CELLS", 2.83),
+    ("DESCARTES_FETAL_STOMACH_LYMPHOID_CELLS", 2.57),
 ]
 
 # digcfdekg latent Factors modeling MS mechanism (traitToFactor) — top by weight (probabilities)
 DIGCFDE_FACTORS = [
-    ("absent spleen germinal center", 0.977), ("Lung and thyroid immune genes", 0.96),
-    ("TH1/TH2 T cell pathway", 0.957), ("CD4 T cell activation genes", 0.952),
-    ("regulatory T cell signaling", 0.948), ("Decreased regulatory T cell numbers", 0.917),
-    ("T and B cell signaling", 0.874), ("Naive CD8 T cell program", 0.832),
-    ("B and T cell changes", 0.736), ("Lymphoid tissue and B cells", 0.726),
-    ("IL-2/JAK-STAT signaling pathway", 0.645), ("MHC II and alloimmune signaling", 0.499),
-    ("T cell activation and NF-kB", 0.494), ("Lipoprotein Metabolism", 0.494),
-    ("B cell receptor signaling pathway", 0.347), ("TCR signaling and activation", 0.29),
+    ("absent spleen germinal center", 0.977),
+    ("Lung and thyroid immune genes", 0.96),
+    ("TH1/TH2 T cell pathway", 0.957),
+    ("CD4 T cell activation genes", 0.952),
+    ("regulatory T cell signaling", 0.948),
+    ("Decreased regulatory T cell numbers", 0.917),
+    ("T and B cell signaling", 0.874),
+    ("Naive CD8 T cell program", 0.832),
+    ("B and T cell changes", 0.736),
+    ("Lymphoid tissue and B cells", 0.726),
+    ("IL-2/JAK-STAT signaling pathway", 0.645),
+    ("MHC II and alloimmune signaling", 0.499),
+    ("T cell activation and NF-kB", 0.494),
+    ("Lipoprotein Metabolism", 0.494),
+    ("B cell receptor signaling pathway", 0.347),
+    ("TCR signaling and activation", 0.29),
 ]
 
 # rdkg clinical features (has_phenotype HP terms + onset/inheritance) for MS
 RDKG_CLINICAL = [
-    ("Spasticity", "HP:0001257"), ("Paresthesia", "HP:0003401"), ("Muscle weakness", "HP:0001324"),
-    ("Incoordination", "HP:0002311"), ("Diplopia", "HP:0000651"), ("CNS demyelination", "HP:0007305"),
-    ("Urinary incontinence", "HP:0000020"), ("Urinary hesitancy", "HP:0000019"),
-    ("Depressivity", "HP:0000716"), ("Emotional lability", "HP:0000712"),
-    ("Adult onset", "HP:0003581"), ("Multifactorial inheritance", "HP:0001426"),
+    ("Spasticity", "HP:0001257"),
+    ("Paresthesia", "HP:0003401"),
+    ("Muscle weakness", "HP:0001324"),
+    ("Incoordination", "HP:0002311"),
+    ("Diplopia", "HP:0000651"),
+    ("CNS demyelination", "HP:0007305"),
+    ("Urinary incontinence", "HP:0000020"),
+    ("Urinary hesitancy", "HP:0000019"),
+    ("Depressivity", "HP:0000716"),
+    ("Emotional lability", "HP:0000712"),
+    ("Adult onset", "HP:0003581"),
+    ("Multifactorial inheritance", "HP:0001426"),
 ]
 
 # biomarkerkg records for DOID_2377 (MS): specimen-tagged; only 1 record analyte-resolved
 BIOMARKER_TOTAL_RECORDS = 53
 BIOMARKER_SPECIMENS = {
-    "UBERON_0001359": "cerebrospinal fluid", "UBERON_0001969": "blood plasma",
-    "UBERON_0001977": "blood serum", "UBERON_0001088": "urine",
-    "UBERON_0006314": "body fluid", "UBERON_0000178": "blood",
+    "UBERON_0001359": "cerebrospinal fluid",
+    "UBERON_0001969": "blood plasma",
+    "UBERON_0001977": "blood serum",
+    "UBERON_0001088": "urine",
+    "UBERON_0006314": "body fluid",
+    "UBERON_0000178": "blood",
 }
 # AN6263-1 assessed molecules (sphingosine-1-phosphate / IFN-IL17 axis)
 BIOMARKER_ANALYTES = ["SPHK1", "SPHK2", "S1PR1", "S1PR5", "IL17A", "IFNG", "APOA1"]
