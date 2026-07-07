@@ -36,6 +36,7 @@ prompts to try:
 
 - *"List all Proto-OKN knowledge graphs as a table of shortname and description."* — [Result](docs/crosswalks/proto-okn-knowledge-graphs.md)
 - *"List all verified crosswalks, grouped by domain, with an example of what each answers."* — [Result](docs/crosswalks/proto-okn-crosswalk-inventory.md)
+- *"For each crosswalk, list the join key and the SPARQL skeleton."* — [Result](docs/crosswalks/crosswalks_sparql_skeletons.md)
 - *"Give a high-level overview of the spoke-genelab knowledge graph — its main classes and relationships — and draw the schema diagram."* — [Result](docs/spoke-genelab-schema.png)
 - *"Which genes does rdkg associate with autism spectrum disorder?"* — [Result](docs/crosswalks/crosswalks_examples/disease06_q1_spoke-rdkg_autism-genes.md)
 - *"What is the maximum PFAS measurement in each county?"* — [Result](docs/crosswalks/crosswalks_examples/geospatial04_q1_sawgraph_spatialkg_pfas_max_by_county.md)
