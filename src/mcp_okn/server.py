@@ -20,6 +20,7 @@ from .app import INSTRUCTIONS, mcp
 from .sparql import SparqlError
 from .taxon import TAXON_HUB_KGS, _taxon_source
 from .tools._shared import _OBO_PREFIXES, _to_uri
+from .tools.contrasts_tools import get_valid_contrasts
 from .tools.discovery import describe_kg, get_kg_version, list_kgs
 from .tools.joins import (
     _complementary_note,
@@ -85,6 +86,7 @@ __all__ = [
     "get_kg_version",
     "get_query_log",
     "get_schema",
+    "get_valid_contrasts",
     "latest_transcript_resource",
     "list_crosswalks",
     "list_kgs",

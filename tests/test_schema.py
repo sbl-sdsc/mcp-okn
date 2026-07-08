@@ -220,9 +220,19 @@ def test_usage_notes_spoke_genelab_carries_both_rules():
     # ...and the short group codes via the anchored regex (GC, FLT_C1, VIV_C2, …).
     assert "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$" in snippet
     assert "material_id_1" in snippet and "material_id_2" in snippet
-    # Guidance states both rules and the sign convention.
+    # Rule 2 is the WITHIN-assay test: a covariate present on one arm but absent
+    # on the other (factors_1 vs factors_2) disqualifies the assay. The snippet
+    # must cross-reference the two arms, not just emit two separate signatures.
+    assert "schema:factors_1 ?x" in snippet
+    assert "FILTER NOT EXISTS { ?assay schema:factors_2 ?x }" in snippet
+    assert "schema:factors_2 ?y" in snippet
+    assert "FILTER NOT EXISTS { ?assay schema:factors_1 ?y }" in snippet
+    # It steers to the vetted-contrast tool rather than the hand-written self-join.
+    assert "get_valid_contrasts" in snippet
+    # Guidance states both rules, leads with the within-assay case, sign convention.
     assert "DIRECTION" in guidance and "COMPARABILITY" in guidance
     assert "GROUP CODES" in guidance
+    assert "WITHIN-assay" in guidance or "within-assay" in guidance
 
 
 def test_condition_code_regex_matches_codes_not_real_factors():

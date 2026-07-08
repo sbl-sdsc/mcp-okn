@@ -171,7 +171,9 @@ INSTRUCTIONS += (
     "\nSPOKE-GENELAB SPACEFLIGHT CONTRASTS (read before reading any "
     "spoke-genelab differential value):\n"
     + SPOKE_GENELAB_CONTRAST_GUIDANCE
-    + "\n\nReusable comparability-signature query "
+    + "\n\nPREFERRED: call `get_valid_contrasts(tissue=…)` — it returns the "
+    "assays that pass these rules, each flagged `is_clean_contrast`, so you do "
+    "not hand-write the comparability test. The equivalent query, spelled out "
     '(also returned as `usage_notes` by `get_schema("spoke-genelab")`):\n\n'
     + SPOKE_GENELAB_CONTRAST_SNIPPET
     + "\n"
