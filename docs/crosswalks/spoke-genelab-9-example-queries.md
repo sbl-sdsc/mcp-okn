@@ -1,12 +1,12 @@
 # SPOKE-GeneLab — 18 real-world example queries (two per crosswalk partner)
 
 **Standalone showcase — NOT part of the crosswalk catalog** (`crosswalks_example.md` / `crosswalks_examples/`).
-This file presents **two scientifically meaningful, literature-grounded, executed example queries for each of the 9 distinct knowledge graphs that `spoke-genelab` crosswalks with** in the Proto-OKN / FRINK federation. (Companion to `spoke-okn-25-example-queries.md`.) Every example that reads a differential measurement uses a strict **Space-Flight-vs-Ground-Control** contrast — see the ⚠️ section below.
+This file presents **two scientifically meaningful, literature-grounded, executed example queries for each of the 9 distinct knowledge graphs that `spoke-genelab` crosswalks with** in the Proto-OKN / FRINK federation. (Companion to `spoke-okn-25-example-queries.md`.) Every example that reads a differential measurement uses a within-assay covariate-matched **Space-Flight-vs-Ground-Control** contrast — see the ⚠️ section below.
 
 - **Focus KG:** `spoke-genelab` — NASA GeneLab spaceflight omics: measured differential gene expression and DNA-methylation on tissues, cell types and genes from spaceflight / space-radiation experiments.
 - **Model:** claude-opus-4-8 · **Crosswalk source:** `mcp-okn list_crosswalks` (134 verified crosswalks, verified 2026-06-30)
 - **Endpoint:** FRINK federated SPARQL via the `mcp-okn` service (`https://apps.okn.us/federation/sparql`)
-- **Two examples per crosswalk (18 queries total), all executed on 2026-06-27**; each block shows the runnable SPARQL, a real sample of returned rows, and a PubMed/literature anchor. The two examples per partner differ by scientific angle (tissue / trait / disease); **every example that reads a differential measurement (expression, methylation, abundance) enforces the strict Space-Flight-vs-Ground-Control contrast** described below.
+- **Two examples per crosswalk (18 queries total), all executed on 2026-07-07**; each block shows the runnable SPARQL, a real sample of returned rows, and a PubMed/literature anchor. The two examples per partner differ by scientific angle (tissue / trait / disease); **every example that reads a differential measurement (expression, methylation, abundance) enforces the within-assay covariate-matched Space-Flight-vs-Ground-Control contrast** described below.
 - **Scope rule — "9 crosswalks":** `spoke-genelab` participates in several `list_crosswalks` rows that resolve to **9 distinct partner KGs**. This file gives one *new-angle* example per partner — deliberately different tissues / cell types / genes / organisms from the q1/q2 already in the catalog. Where a partner connects on more than one key (e.g. GXA via UBERON and CL; AOP-Wiki and biohealth also via NCBITaxon), the single most compelling join is shown.
 
 ## Methodology
@@ -17,18 +17,29 @@ For each partner KG, the verified join recipe (shared identifier, predicates, IR
 
 spoke-genelab models each differential **expression / methylation / abundance** result as an `Assay` that compares **two groups** (`group_mean_1` vs `group_mean_2`). Crucially, **many assays are confounded** and must not be read as a spaceflight effect: of the gene-DE assays, ~1,244 compare Space-Flight-vs-Space-Flight, ~424 compare control-vs-control, others compare Space Flight against Basal/Vivarium controls, and many bundle an extra factor (infection, dose, plant compartment, …) that differs between the two groups. A scientifically valid spaceflight effect requires comparing **Space Flight vs Ground Control with every other factor identical**.
 
-Every differential example in this file (both **a** and **b**) enforces this with the verified clean-contrast filter:
+Every differential example in this file (both **a** and **b**) enforces this with the verified **within-assay covariate-matching** filter — the same rule the server's `get_valid_contrasts` tool applies:
 
 ```sparql
 ?assay schema:factor_space_1 "Space Flight" ;
        schema:factor_space_2 "Ground Control" ;
        schema:material_id_1 ?m1 ; schema:material_id_2 ?m2 .
-FILTER(?m1 = ?m2)                                                       # same biological material
-FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }   # no other differing factor in group 1
-FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 . FILTER(?f2 != "Ground Control") } # no other differing factor in group 2
+FILTER(?m1 = ?m2)                                    # same biological material
+# Clean contrast: the flight arm (factors_1) and ground arm (factors_2) must
+# carry the SAME covariates once the condition labels/codes are stripped. A
+# factor present on one arm but not the other (genotype, sex, dose, time point,
+# infection, …) confounds the spaceflight comparison. Require set-equality both
+# ways; a covariate shared by BOTH arms (e.g. both infected) is allowed.
+FILTER NOT EXISTS { ?assay schema:factors_1 ?x .
+  FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+    && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+  FILTER NOT EXISTS { ?assay schema:factors_2 ?x } }
+FILTER NOT EXISTS { ?assay schema:factors_2 ?y .
+  FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+    && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+  FILTER NOT EXISTS { ?assay schema:factors_1 ?y } }
 ```
 
-Only **56** of the assays are such clean contrasts. **Direction:** group 1 = Space Flight, group 2 = Ground Control, so `log2fc > 0` (or `methylation_diff > 0`, `lnfc > 0`) means **up in spaceflight relative to ground**. The one exception is **8b**, where the VEG-01 microbiome assays carry no `material_id` and always bundle a plant-compartment factor — there the block falls back to the `factor_space_1/2` fields alone and says so explicitly.
+**Prefer the `get_valid_contrasts` tool**, which returns exactly these vetted assays (each flagged `is_clean_contrast`) so you never hand-write this test. **117** gene-expression assays with matched material pass this within-assay rule (re-verified 2026-07-07; all measurement types: 188 — 170 transcription, 10 methylation, 8 amplicon). This is broader than the older zero-covariate filter (`factors_1` = only "Space Flight"), which admitted only ~50 assays by rejecting legitimately-clean assays where both arms share a covariate. **Direction:** group 1 = Space Flight, group 2 = Ground Control, so `log2fc > 0` (or `methylation_diff > 0`, `lnfc > 0`) means **up in spaceflight relative to ground**. The one exception is **8b**, where the VEG-01 microbiome assays carry no `material_id` and always bundle a plant-compartment factor — there the block falls back to the `factor_space_1/2` fields alone and says so explicitly.
 
 ## Index
 
@@ -47,7 +58,7 @@ Each crosswalk partner has two examples (**a** = original angle, **b** = a secon
 | 4a | `biobricks-aopwiki` | Entrez (direct) | Oxidative-stress / DNA-damage AOP key-event genes (clean contrast) |
 | 4b | `biobricks-aopwiki` | Entrez (direct) | Hepatic-steatosis / liver-injury AOP genes (clean contrast) |
 | 5a | `digcfdekg` | Entrez (direct) | Coronary-artery-disease factor genes (clean contrast) |
-| 5b | `digcfdekg` | Entrez (direct) | eGFR / kidney-function factor genes (clean contrast; renin up) |
+| 5b | `digcfdekg` | Entrez (direct) | eGFR / kidney-function factor genes (clean contrast) |
 | 6a | `rdkg` | Entrez + ortholog (direct) | DNA-repair / genome-instability rare-disease genes (clean contrast) |
 | 6b | `rdkg` | Entrez + ortholog (direct) | Muscular-dystrophy / cardiomyopathy genes in clean muscle contrast |
 | 7a | `spoke-okn` | Entrez (direct) | Immune / inflammatory disease genes (clean contrast) |
@@ -68,7 +79,7 @@ Each crosswalk partner has two examples (**a** = original angle, **b** = a secon
 - **Spaceflight contrast (GeneLab side):** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter). **GXA side:** the named disease/injury contrast shown per row (e.g. *Nrl*-null photoreceptor degeneration, retinal ischemia–reperfusion injury, optic-nerve transection).
 - **Research question:** SANS makes the eye a priority organ. For genes DE in the retina under a *clean* Space-Flight-vs-Ground-Control contrast, how does each gene move in EBI Expression Atlas's terrestrial retinal **disease/injury** models — and, crucially, **in which named GXA contrast** (so the terrestrial log2fc is interpretable, not a bare number)?
 - **Why the join is required:** GeneLab holds the confounder-free spaceflight retinal log2fc but no terrestrial/disease data; GXA holds terrestrial retinal differential expression but only as a named *test-vs-reference* contrast, with no spaceflight data. Each row pairs the GeneLab spaceflight log2fc with the GXA log2fc **and the named GXA contrast that produced it** for the same gene — reporting, per gene, its most-significant retina contrast.
-- **SPARQL** (executed 2026-06-27, returned 15 rows; per gene, the most significant GXA retina contrast):
+- **SPARQL** (executed 2026-07-07, returned 15 rows; per gene, the most significant GXA retina contrast):
 ```sparql
 PREFIX schema: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -85,8 +96,14 @@ SELECT ?symbol ?glLog2fc ?glAdjp ?gxaContrast ?gxaLog2fc ?gxaAdjp WHERE {
                schema:material_id_1 ?m1 ; schema:material_id_2 ?m2 ;
                schema:INVESTIGATED_ASiA <http://purl.obolibrary.org/obo/UBERON_0000966> .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        FILTER NOT EXISTS { ?assay schema:factors_1 ?x .
+          FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay schema:factors_2 ?x } }
+        FILTER NOT EXISTS { ?assay schema:factors_2 ?y .
+          FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay schema:factors_1 ?y } }
         FILTER(?adjp < 1.0e-3)
       } } GROUP BY ?symbol }
   # GXA: the most significant retina contrast for that gene ...
@@ -125,7 +142,7 @@ SELECT ?symbol ?glLog2fc ?glAdjp ?gxaContrast ?gxaLog2fc ?gxaAdjp WHERE {
 - **Spaceflight contrast (GeneLab side):** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter). **GXA side:** the named muscle contrast shown per row — predominantly the **PGC-1β knock-in vs wild type** oxidative-muscle reprogramming model (also YY1-knockout, androgen treatment).
 - **Research question:** Muscle atrophy is a signature microgravity hazard, and the slow-twitch soleus is most affected. For genes DE in the soleus under a *clean* Space-Flight-vs-Ground-Control contrast, how do they move in a **named** terrestrial muscle contrast — chiefly the PGC-1β-knock-in model that reprograms oxidative/slow-fibre metabolism (directly relevant to the oxidative soleus and the spaceflight fast-fibre shift)?
 - **Why the join is required:** GeneLab holds the confounder-free spaceflight soleus log2fc but no terrestrial contrast; GXA holds terrestrial muscle differential expression only as a named test-vs-reference contrast, with no spaceflight data. Each row pairs the GeneLab spaceflight log2fc with the GXA log2fc **and the named muscle contrast that produced it**, reporting per gene its most-significant (non-tissue-baseline) muscle contrast.
-- **SPARQL** (executed 2026-06-27, returned 15 rows; per gene, most significant non-"vs liver" muscle contrast):
+- **SPARQL** (executed 2026-07-07, returned 15 rows; per gene, most significant non-"vs liver" muscle contrast):
 ```sparql
 PREFIX schema: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -142,8 +159,14 @@ SELECT ?symbol ?glLog2fc ?glAdjp ?gxaContrast ?gxaLog2fc ?gxaAdjp WHERE {
                schema:material_id_1 ?m1 ; schema:material_id_2 ?m2 ;
                schema:INVESTIGATED_ASiA <http://purl.obolibrary.org/obo/UBERON_0001389> .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        FILTER NOT EXISTS { ?assay schema:factors_1 ?x .
+          FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay schema:factors_2 ?x } }
+        FILTER NOT EXISTS { ?assay schema:factors_2 ?y .
+          FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay schema:factors_1 ?y } }
         FILTER(?adjp < 1.0e-6)
       } } GROUP BY ?symbol }
   # GXA: most significant skeletal-muscle contrast for that gene (excluding tissue-identity "vs liver")
@@ -183,7 +206,7 @@ SELECT ?symbol ?glLog2fc ?glAdjp ?gxaContrast ?gxaLog2fc ?gxaAdjp WHERE {
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression in an immune tissue (thymus `UBERON_0002370` / spleen `UBERON_0002106`).
 - **Research question:** Microgravity dysregulates circulating lymphocytes. Which ProKN canonical **lymphocyte-subtype marker genes** (NK, B, CD8/CD4 T) are *themselves* differentially expressed in a clean Space-Flight-vs-Ground-Control GeneLab assay in an immune organ — i.e. which of the genes that define each lymphocyte population are also directly spaceflight-responsive?
 - **Why the join is required:** ProKN supplies the cell-type→marker-gene assignment (which gene defines which lymphocyte subtype) but holds no spaceflight data; GeneLab supplies the confounder-free spaceflight immune-tissue log2fc but no marker-gene/cell-type annotation. Each row therefore needs ProKN (cell type + marker gene) AND GeneLab (the same gene's clean spaceflight log2fc + tissue).
-- **SPARQL** (executed 2026-06-27, returned 12 rows):
+- **SPARQL** (executed 2026-07-07, returned 12 rows):
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -226,8 +249,14 @@ SELECT ?cellType ?markerSym ?genelabSymbol (SAMPLE(?lfc) AS ?glLog2fc) (MIN(?adj
       <http://purl.obolibrary.org/obo/UBERON_0002371>
     }
     FILTER(?m1 = ?m2)
-    FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-    FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+    FILTER NOT EXISTS { ?assay schema:factors_1 ?x .
+      FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+      FILTER NOT EXISTS { ?assay schema:factors_2 ?x } }
+    FILTER NOT EXISTS { ?assay schema:factors_2 ?y .
+      FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+      FILTER NOT EXISTS { ?assay schema:factors_1 ?y } }
     FILTER(?adjp < 0.05)
   }
 } GROUP BY ?cellType ?markerSym ?genelabSymbol ORDER BY ?glAdjp LIMIT 15
@@ -236,16 +265,16 @@ SELECT ?cellType ?markerSym ?genelabSymbol (SAMPLE(?lfc) AS ?glLog2fc) (MIN(?adj
 
 | Lymphocyte subtype (ProKN, CL) | ProKN marker gene | GeneLab gene | GeneLab log2FC (SF vs GC, immune tissue) | GeneLab adj. p |
 |---|---|---|---|---|
-| CD4-positive, alpha-beta T cell | IL7R | Il7r | +1.16 (up) | 7.2e-7 |
+| CD4-positive, alpha-beta T cell | IL7R | Il7r | -0.57 (down, bone marrow) | 7.2e-7 |
+| CD4-positive, alpha-beta T cell | LTB | Ltb | +0.68 (up, bone marrow) | 3.1e-5 |
 | natural killer cell | KLRD1 | Klrd1 | +1.53 (up) | 3.6e-4 |
-| natural killer cell | GZMB | Gzmb | -1.11 (down) | 2.2e-3 |
+| natural killer cell | GZMB | Gzmb | +0.69 (up, bone marrow) | 2.2e-3 |
 | CD4-positive, alpha-beta T cell | CD69 | Cd69 | +0.46 (up) | 4.6e-3 |
 | natural killer cell | CMC1 | Cmc1 | +0.84 (up) | 4.9e-3 |
-| natural killer cell | AOAH | Aoah | +0.89 (up, spleen) | 8.5e-3 |
-| B cell | FCRL1 | Fcrl1 | -2.86 (down) | 2.6e-2 |
-| CD8-positive, alpha-beta T cell | CD8A | Cd8a | -0.38 (down) | 4.4e-2 |
+| natural killer cell | AOAH | Aoah | +0.89 (up, spleen) | 5.3e-3 |
+| CD8-positive, alpha-beta T cell | CD8A | Cd8a | -0.38 (down) | 2.0e-2 |
 
-- **Why it answers the question:** every row pairs a ProKN cell-type→marker-gene assignment with that exact gene's clean GeneLab spaceflight log2fc in an immune organ — surfacing lymphocyte-defining genes that are themselves microgravity-responsive (NK markers **KLRD1**/**GZMB**, CD4-T markers **IL7R**/**CD69**, B-cell marker **FCRL1**, CD8 marker **CD8A**), a both-KG result neither graph yields alone.
+- **Why it answers the question:** every row pairs a ProKN cell-type→marker-gene assignment with that exact gene's clean GeneLab spaceflight log2fc in an immune organ — surfacing lymphocyte-defining genes that are themselves microgravity-responsive (NK markers **KLRD1**/**GZMB**/**CMC1**/**AOAH**, CD4-T markers **IL7R**/**LTB**/**CD69**, CD8 marker **CD8A**), a both-KG result neither graph yields alone.
 - **Literature support:** Stratis et al., 2023, *Front Immunol* — RNA-seq of astronaut leukocytes across ~6-month ISS missions shows spaceflight immune modulation with 276 differentially expressed transcripts (immune suppression entering space, reactivation on return). [PMID:37426644](https://pubmed.ncbi.nlm.nih.gov/37426644/) · [DOI](https://doi.org/10.3389/fimmu.2023.1171103)
 
 ### 2b. spoke-genelab × prokn — Cardiomyocyte markers that are themselves spaceflight-responsive
@@ -254,7 +283,7 @@ SELECT ?cellType ?markerSym ?genelabSymbol (SAMPLE(?lfc) AS ?glLog2fc) (MIN(?adj
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression in heart `UBERON_0000948` / skeletal-muscle tissues.
 - **Research question:** Cardiovascular deconditioning is a core microgravity risk. Which ProKN canonical **cardiomyocyte marker genes** are *themselves* differentially expressed in a clean Space-Flight-vs-Ground-Control GeneLab assay in heart or muscle — i.e. which of the genes that define the cardiac-muscle cell are also directly spaceflight-responsive?
 - **Why the join is required:** ProKN supplies the cardiomyocyte→marker-gene assignment but no spaceflight data; GeneLab supplies the confounder-free spaceflight heart/muscle log2fc but no marker-gene/cell-type annotation. Each row needs ProKN (cardiomyocyte + marker gene) AND GeneLab (the same gene's clean spaceflight log2fc + tissue).
-- **SPARQL** (executed 2026-06-27, returned 8 rows):
+- **SPARQL** (executed 2026-07-07, returned 8 rows):
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -295,8 +324,14 @@ SELECT ?cellType ?markerSym ?genelabSymbol (SAMPLE(?lfc) AS ?glLog2fc) (MIN(?adj
       <http://purl.obolibrary.org/obo/UBERON_0001377>
     }
     FILTER(?m1 = ?m2)
-    FILTER NOT EXISTS { ?assay schema:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-    FILTER NOT EXISTS { ?assay schema:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+    FILTER NOT EXISTS { ?assay schema:factors_1 ?x .
+      FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+      FILTER NOT EXISTS { ?assay schema:factors_2 ?x } }
+    FILTER NOT EXISTS { ?assay schema:factors_2 ?y .
+      FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+      FILTER NOT EXISTS { ?assay schema:factors_1 ?y } }
     FILTER(?adjp < 0.05)
   }
 } GROUP BY ?cellType ?markerSym ?genelabSymbol ORDER BY ?glAdjp LIMIT 15
@@ -323,7 +358,7 @@ SELECT ?cellType ?markerSym ?genelabSymbol (SAMPLE(?lfc) AS ?glLog2fc) (MIN(?adj
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
 - **Research question:** Spaceflight-induced renal dysfunction ("cosmic kidney disease") makes the kidney a priority organ. For the kidney NASA GeneLab examined under a *clean* Space-Flight-vs-Ground-Control contrast, which genes are differentially expressed, and how does that spaceflight-perturbed kidney map onto the organ's documented clinical disease landscape — so the same organ carries a measured space-omics signal and its known pathologies side by side?
 - **Why the join is required:** spoke-genelab contributes the per-gene spaceflight differential-expression values (symbol, log2FC, adj. p) for the kidney but holds no clinical/disease knowledge; biohealth contributes the renal diseases localized to the UMLS kidney concept but holds no spaceflight data. Each row exists only because the UMLS↔UBERON bridge ties both KGs' values to the one spaceflight-perturbed kidney.
-- **SPARQL** (executed 2026-06-27, returned 10 rows — 10 clean-contrast kidney DE genes paired with 10 of the kidney diseases biohealth localizes to `C0227614`):
+- **SPARQL** (executed 2026-07-07, returned 10 rows — 10 clean-contrast kidney DE genes paired with 10 of the kidney diseases biohealth localizes to `C0227614`):
 ```sparql
 PREFIX schema: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -339,8 +374,14 @@ SELECT ?rank ?symbol ?log2fc ?adjp ?diseaseLabel WHERE {
                schema:material_id_1 ?m1 ; schema:material_id_2 ?m2 ;
                schema:INVESTIGATED_ASiA <http://purl.obolibrary.org/obo/UBERON_0004538> .
             FILTER(?m1 = ?m2)
-            FILTER NOT EXISTS { ?a schema:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-            FILTER NOT EXISTS { ?a schema:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+            FILTER NOT EXISTS { ?a schema:factors_1 ?x .
+              FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+                && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+              FILTER NOT EXISTS { ?a schema:factors_2 ?x } }
+            FILTER NOT EXISTS { ?a schema:factors_2 ?y .
+              FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+                && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+              FILTER NOT EXISTS { ?a schema:factors_1 ?y } }
             ?st rdf:subject ?a ; rdf:predicate schema:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ;
                 rdf:object ?g ; schema:log2fc ?lfc ; schema:adj_p_value ?ap .
             ?g schema:symbol ?symbol . FILTER(?ap < 1.0e-15)
@@ -354,8 +395,14 @@ SELECT ?rank ?symbol ?log2fc ?adjp ?diseaseLabel WHERE {
                 schema:material_id_1 ?n1 ; schema:material_id_2 ?n2 ;
                 schema:INVESTIGATED_ASiA <http://purl.obolibrary.org/obo/UBERON_0004538> .
             FILTER(?n1 = ?n2)
-            FILTER NOT EXISTS { ?a2 schema:factors_1 ?g1 . FILTER(?g1 != "Space Flight") }
-            FILTER NOT EXISTS { ?a2 schema:factors_2 ?g2 . FILTER(?g2 != "Ground Control") }
+            FILTER NOT EXISTS { ?a2 schema:factors_1 ?x .
+              FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+                && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+              FILTER NOT EXISTS { ?a2 schema:factors_2 ?x } }
+            FILTER NOT EXISTS { ?a2 schema:factors_2 ?y .
+              FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+                && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+              FILTER NOT EXISTS { ?a2 schema:factors_1 ?y } }
             ?x2 rdf:subject ?a2 ; rdf:predicate schema:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ;
                 rdf:object ?ge2 ; schema:adj_p_value ?ap2 .
             ?ge2 schema:symbol ?s2 . FILTER(?ap2 < 1.0e-15)
@@ -427,7 +474,7 @@ SELECT ?rank ?symbol ?log2fc ?adjp ?diseaseLabel WHERE {
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
 - **Research question:** Spaceflight is documented to shrink and remodel immune organs, and the spleen is examined in clean Space-Flight-vs-Ground-Control GeneLab assays. Which genes are differentially expressed in the spaceflight spleen, and how does that perturbed organ map onto the splenic diseases catalogued in the clinical literature — so a measured space-omics signal and the organ's documented pathologies sit on the same rows?
 - **Why the join is required:** spoke-genelab contributes the per-gene spaceflight differential-expression values (symbol, log2FC, adj. p) for the spleen but holds no clinical/disease knowledge; biohealth contributes the splenic diseases localized to the UMLS spleen concept but holds no spaceflight data. Each row exists only because the UMLS↔UBERON bridge ties both KGs' values to the one spaceflight-perturbed spleen.
-- **SPARQL** (executed 2026-06-27, returned 9 rows — 9 clean-contrast spleen DE genes paired with 9 of the splenic diseases biohealth localizes to `C0037993`):
+- **SPARQL** (executed 2026-07-07, returned 9 rows — 9 clean-contrast spleen DE genes paired with 9 of the splenic diseases biohealth localizes to `C0037993`):
 ```sparql
 PREFIX schema: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -443,8 +490,14 @@ SELECT ?rank ?symbol ?log2fc ?adjp ?diseaseLabel WHERE {
                schema:material_id_1 ?m1 ; schema:material_id_2 ?m2 ;
                schema:INVESTIGATED_ASiA <http://purl.obolibrary.org/obo/UBERON_0002106> .
             FILTER(?m1 = ?m2)
-            FILTER NOT EXISTS { ?a schema:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-            FILTER NOT EXISTS { ?a schema:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+            FILTER NOT EXISTS { ?a schema:factors_1 ?x .
+              FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+                && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+              FILTER NOT EXISTS { ?a schema:factors_2 ?x } }
+            FILTER NOT EXISTS { ?a schema:factors_2 ?y .
+              FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+                && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+              FILTER NOT EXISTS { ?a schema:factors_1 ?y } }
             ?st rdf:subject ?a ; rdf:predicate schema:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ;
                 rdf:object ?g ; schema:log2fc ?lfc ; schema:adj_p_value ?ap .
             ?g schema:symbol ?symbol . FILTER(?ap < 1.0e-6)
@@ -458,8 +511,14 @@ SELECT ?rank ?symbol ?log2fc ?adjp ?diseaseLabel WHERE {
                 schema:material_id_1 ?n1 ; schema:material_id_2 ?n2 ;
                 schema:INVESTIGATED_ASiA <http://purl.obolibrary.org/obo/UBERON_0002106> .
             FILTER(?n1 = ?n2)
-            FILTER NOT EXISTS { ?a2 schema:factors_1 ?g1 . FILTER(?g1 != "Space Flight") }
-            FILTER NOT EXISTS { ?a2 schema:factors_2 ?g2 . FILTER(?g2 != "Ground Control") }
+            FILTER NOT EXISTS { ?a2 schema:factors_1 ?x .
+              FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+                && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+              FILTER NOT EXISTS { ?a2 schema:factors_2 ?x } }
+            FILTER NOT EXISTS { ?a2 schema:factors_2 ?y .
+              FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+                && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+              FILTER NOT EXISTS { ?a2 schema:factors_1 ?y } }
             ?x2 rdf:subject ?a2 ; rdf:predicate schema:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ;
                 rdf:object ?ge2 ; schema:adj_p_value ?ap2 .
             ?ge2 schema:symbol ?s2 . FILTER(?ap2 < 1.0e-6)
@@ -533,7 +592,7 @@ SELECT ?rank ?symbol ?log2fc ?adjp ?diseaseLabel WHERE {
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
 - **Research question:** Which key-event genes of AOPs for **oxidative stress, reactive-oxygen-species toxicity, and DNA-damage genotoxicity** (including the ionizing-radiation → DNA-damage pathway) are differentially expressed in a *clean* Space-Flight-vs-Ground-Control contrast, and in which direction? This targets the cosmic-radiation / oxidative axis of astronaut risk without the confounded assays.
 - **Why the join is required:** AOP-Wiki defines which genes are mechanistic key events of oxidative/genotoxic pathways but has no spaceflight data; spoke-genelab has the spaceflight differential-expression measurements but no AOP annotation. Only the Entrez join links a genotoxicity pathway target to a measured, unconfounded spaceflight stress response.
-- **SPARQL** (executed 2026-06-27, returned 15 rows):
+- **SPARQL** (executed 2026-07-07, returned 15 rows):
 ```sparql
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -559,8 +618,14 @@ SELECT DISTINCT ?aopTitle ?symbol (MAX(?log2fc) AS ?maxLog2fc) (MIN(?log2fc) AS 
         ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
                sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+          FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+        FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+          FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
       }
     }
   }
@@ -592,7 +657,7 @@ SELECT DISTINCT ?aopTitle ?symbol (MAX(?log2fc) AS ?maxLog2fc) (MIN(?log2fc) AS 
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
 - **Research question:** Spaceflight drives hepatic lipid accumulation and early liver injury. Which key-event genes of AOPs for **hepatic steatosis, fatty-liver and liver injury / fibrosis** are differentially expressed in a *clean* Space-Flight-vs-Ground-Control contrast, and in which direction?
 - **Why the join is required:** AOP-Wiki defines which genes are mechanistic key events of steatosis/liver-injury pathways but has no spaceflight data; spoke-genelab has the spaceflight differential-expression measurements but no AOP annotation. Only the Entrez join links a steatogenic pathway target to a clean, unconfounded spaceflight stress response.
-- **SPARQL** (executed 2026-06-27, returned 15 rows):
+- **SPARQL** (executed 2026-07-07, returned 15 rows):
 ```sparql
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -616,8 +681,14 @@ SELECT DISTINCT ?aopTitle ?symbol ?organism (MAX(?log2fc) AS ?maxLog2fc) (MIN(?l
     ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
            sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 .
     FILTER(?m1 = ?m2)
-    FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-    FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+    FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+      FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+      FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+    FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+      FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+      FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
     FILTER(?adjp < 0.05)
   }
 } GROUP BY ?aopTitle ?symbol ?organism ORDER BY ?minAdjP LIMIT 15
@@ -631,7 +702,7 @@ SELECT DISTINCT ?aopTitle ?symbol ?organism (MAX(?log2fc) AS ?maxLog2fc) (MIN(?l
 | Liver X Receptor (LXR) activation → liver steatosis | FAS | -2.26 (down) | 4.8e-52 |
 | NR1I3 (CAR) suppression → hepatic steatosis | FAS | -2.26 (down) | 4.8e-52 |
 | TLR4 activation & PPARγ inactivation → fibrosis | CYP1B1 | -2.48 (down) | 6.1e-63 |
-| TLR4 activation & PPARγ inactivation → fibrosis | SNAI1 | +2.52 (up) | 3.8e-45 |
+| PPARγ inactivation → lung fibrosis | SNAI1 | +2.52 (up) | 3.8e-45 |
 
 - **Why it answers the question:** every gene is a curated key event in a hepatic-steatosis / liver-injury / fibrosis AOP and is significantly DE in an unconfounded Space-Flight-vs-Ground-Control contrast — FAS (fatty-acid synthase, the steatosis effector in three LXR/CAR AOPs) and the injury gene CDKN1A are down, while the fibrosis EMT factor SNAI1 is up — and the clean filter guarantees the signal is microgravity-driven, not a co-varying factor.
 - **Literature support:** Beheshti et al., 2019, *Sci Rep* — multi-omics of mice sacrificed on-orbit across ISS missions shows abnormal hepatic lipid accumulation and activation of lipotoxic / fatty-acid-metabolism pathways attributable to space stressors alone. [PMID:31844325](https://pubmed.ncbi.nlm.nih.gov/31844325/) · [DOI](https://doi.org/10.1038/s41598-019-55869-2)
@@ -642,7 +713,7 @@ SELECT DISTINCT ?aopTitle ?symbol ?organism (MAX(?log2fc) AS ?maxLog2fc) (MIN(?l
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
 - **Research question:** Long-duration spaceflight raises cardiovascular-disease concern. Which genes CFDE REVEAL infers as relevant to **coronary artery disease (CAD)** (trait `449de16e8049af35333b`) are differentially expressed in a *clean* Space-Flight-vs-Ground-Control contrast, and in which direction — do the genes underlying CAD genetic risk show up as genuinely microgravity-responsive?
 - **Why the join is required:** digcfdekg supplies the PIGEAN CAD gene-relevance scores; spoke-genelab supplies clean spaceflight differential expression but has no disease-relevance concept. Identifying which CAD-relevant genes are genuinely microgravity-responsive needs the Entrez join plus the confounder-free contrast.
-- **SPARQL** (executed 2026-06-27, returned 15 rows):
+- **SPARQL** (executed 2026-07-07, returned 15 rows):
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -662,8 +733,14 @@ SELECT ?sym ?pigeanScore (MAX(?lfc) AS ?maxLog2fc) (MIN(?lfc) AS ?minLog2fc) (MI
         ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
                sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+          FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+        FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+          FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
       }
     }
   }
@@ -680,14 +757,14 @@ SELECT ?sym ?pigeanScore (MAX(?lfc) AS ?maxLog2fc) (MIN(?lfc) AS ?minLog2fc) (MI
 |---|---|---|---|
 | APOE | 10.9 | +2.05 (up) | 2.6e-12 |
 | SCARB1 | 9.73 | +0.92 (up) | 5.7e-7 |
+| LDLR | 9.48 | +1.04 / -1.43 | 8.1e-5 |
 | PCSK9 | 8.86 | -1.15 (down) | 1.7e-4 |
+| VEGFA | 7.9 | +3.85 (up) | 2.9e-7 |
 | LIPA | 7.88 | -1.13 (down) | 7.1e-14 |
-| SMAD3 | 7.62 | +1.61 (up) | 1.7e-32 |
-| EDNRA | 5.67 | -2.05 (down) | 8.9e-13 |
-| TCF21 | 5.63 | -2.03 (down) | 1.0e-13 |
-| LIPG | 5.56 | -2.21 (down) | 8.5e-16 |
+| SMAD3 | 7.62 | +1.86 / -0.59 | 1.7e-32 |
+| TGFB1 | 7.2 | +1.41 (up) | 5.4e-3 |
 
-- **Why it answers the question:** the intersection is the canonical lipid/atherosclerosis machinery — the highest-confidence CFDE CAD genes APOE, SCARB1, PCSK9, LIPA, LIPG — joined by the vascular-remodeling factors SMAD3 (TGF-β), EDNRA (endothelin receptor) and the coronary-artery transcription factor TCF21, every one significantly DE in an unconfounded Space-Flight-vs-Ground-Control contrast (APOE up, PCSK9 down), giving confounder-free molecular evidence that microgravity perturbs the genetic circuitry of coronary disease.
+- **Why it answers the question:** the intersection is the canonical lipid/atherosclerosis machinery — the highest-confidence CFDE CAD genes APOE, SCARB1, LDLR, PCSK9, LIPA — joined by the angiogenic and vascular-remodeling factors VEGFA, SMAD3 and TGFB1 (TGF-β signaling), every one significantly DE in an unconfounded Space-Flight-vs-Ground-Control contrast (APOE up, PCSK9 down), giving confounder-free molecular evidence that microgravity perturbs the genetic circuitry of coronary disease.
 - **Literature support:** Robin et al., 2023, *Nat Commun* — dry-immersion microgravity simulation rapidly induced a metabolic-syndrome-like shift with an increased atherogenic index of plasma and impaired lipid profile, alongside cardiovascular deconditioning. [PMID:37813884](https://pubmed.ncbi.nlm.nih.gov/37813884/) · [DOI](https://doi.org/10.1038/s41467-023-41990-4)
 
 ### 5b. spoke-genelab × digcfdekg — Glomerular-filtration-rate (eGFR / kidney-function) factor genes responsive to clean spaceflight
@@ -696,7 +773,7 @@ SELECT ?sym ?pigeanScore (MAX(?lfc) AS ?maxLog2fc) (MIN(?lfc) AS ?minLog2fc) (MI
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
 - **Research question:** "Cosmic kidney disease" and microgravity fluid shifts make renal function a priority risk. Which genes CFDE REVEAL infers as relevant to **glomerular filtration rate (eGFR / kidney function, OBA_0003747)** are differentially expressed in a *clean* Space-Flight-vs-Ground-Control contrast, and in which direction?
 - **Why the join is required:** digcfdekg supplies the PIGEAN eGFR gene-relevance scores; spoke-genelab supplies clean spaceflight differential expression but has no trait-relevance concept. Identifying which kidney-function genes are genuinely microgravity-responsive needs the Entrez join plus the confounder-free contrast.
-- **SPARQL** (executed 2026-06-27, returned 15 rows):
+- **SPARQL** (executed 2026-07-07, returned 15 rows):
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -716,8 +793,14 @@ SELECT ?sym ?pigeanScore (MAX(?lfc) AS ?maxLog2fc) (MIN(?lfc) AS ?minLog2fc) (MI
         ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
                sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+          FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+        FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+          FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
       }
     }
   }
@@ -732,17 +815,17 @@ SELECT ?sym ?pigeanScore (MAX(?lfc) AS ?maxLog2fc) (MIN(?lfc) AS ?minLog2fc) (MI
 
 | Gene | PIGEAN (eGFR) | log2FC (SF vs GC) | min adj. p |
 |---|---|---|---|
+| PKHD1 | 7.55 | -1.01 (down) | 1.6e-5 |
+| VEGFA | 7.03 | +3.85 (up) | 2.9e-7 |
 | SALL1 | 6.27 | -1.18 (down) | 3.4e-5 |
 | SLC15A2 | 6.15 | +3.25 (up) | 1.4e-10 |
+| CDKN1C | 6.12 | +0.96 (up) | 9.1e-4 |
 | SHH | 6.11 | -2.48 (down) | 3.5e-5 |
 | SLC47A1 | 5.98 | -2.38 (down) | 2.7e-5 |
-| REN | 4.56 | +6.44 (up) | 4.2e-10 |
-| MAF | 4.48 | -6.49 (down) | 4.2e-13 |
-| PAX8 | 4.34 | -3.78 (down) | 3.3e-39 |
-| PKD1 | 4.20 | +0.48 (up) | 1.2e-3 |
+| CYP24A1 | 5.91 | +1.30 (up) | 9.1e-6 |
 
-- **Why it answers the question:** the intersection is the core kidney-function machinery — **REN (renin) strongly up (+6.44)** in the clean contrast, renal solute transporters SLC15A2/SLC47A1, kidney developmental factors SALL1/PAX8/SHH, and the polycystic-kidney gene PKD1 — tying eGFR genetics to confounder-free microgravity perturbation; the renin up-regulation is the expected direction for spaceflight RAAS activation.
-- **Literature support:** Norsk, 2000, *Pflügers Archiv* ("Renal adjustments to microgravity") — spaceflight attenuates renal fluid excretion and elevates the renin–angiotensin–aldosterone axis, the physiological correlate of the up-regulated REN seen here. [PMID:11200982](https://pubmed.ncbi.nlm.nih.gov/11200982/) · [DOI](https://doi.org/10.1007/s004240000332)
+- **Why it answers the question:** the intersection is the core kidney-function machinery — the polycystic-kidney fibrocystin gene **PKHD1**, angiogenic **VEGFA**, renal solute transporters **SLC15A2**/**SLC47A1**, kidney developmental factors **SALL1**/**SHH**, the renal vitamin-D-catabolism enzyme **CYP24A1**, and the imprinted growth regulator **CDKN1C** — tying eGFR genetics to confounder-free microgravity perturbation of renal transport and development.
+- **Literature support:** Norsk, 2000, *Pflügers Archiv* ("Renal adjustments to microgravity") — spaceflight attenuates renal fluid excretion and alters the renin–angiotensin–aldosterone axis and renal solute handling, the physiological backdrop for the perturbed renal transporters (SLC15A2/SLC47A1) and kidney-function genes seen here. [PMID:11200982](https://pubmed.ncbi.nlm.nih.gov/11200982/) · [DOI](https://doi.org/10.1007/s004240000332)
 
 ### 6a. spoke-genelab × rdkg — DNA-repair / genome-instability rare-disease genes (clean spaceflight contrast, via ortholog)
 - **Partner KG:** `rdkg` — rare-disease gene/disease associations (Orphanet/MONDO/DrugBank/Entrez); `biolink:Gene` → `biolink:related_to` → `biolink:Disease` (MONDO).
@@ -750,7 +833,7 @@ SELECT ?sym ?pigeanScore (MAX(?lfc) AS ?maxLog2fc) (MIN(?lfc) AS ?minLog2fc) (MI
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
 - **Research question:** Which **DNA-repair and genome-instability rare-disease genes** — Fanconi anemia, xeroderma pigmentosum / Cockayne, trichothiodystrophy, dyskeratosis congenita, ataxia-telangiectasia, Bloom, Nijmegen — are differentially expressed in a *clean* Space-Flight-vs-Ground-Control contrast? These monogenic genome-maintenance disorders are the most mechanistically relevant rare diseases to chronic cosmic-radiation DNA damage.
 - **Why the join is required:** rdkg curates the rare-disease gene set but has no spaceflight data; spoke-genelab has the clean spaceflight differential expression but no rare-disease annotation, and assays the mouse ortholog. Connecting a genome-maintenance disease gene to its measured, unconfounded spaceflight perturbation needs the Entrez+ortholog join.
-- **SPARQL** (executed 2026-06-27, returned 15 rows):
+- **SPARQL** (executed 2026-07-07, returned 15 rows):
 ```sparql
 PREFIX biolink: <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -777,8 +860,14 @@ SELECT ?sym (SAMPLE(?diseaseLabel) AS ?exampleRareDisease) (MAX(?log2fc) AS ?max
         ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
                sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+          FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+        FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+          FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
       }
     }
   }
@@ -794,16 +883,16 @@ SELECT ?sym (SAMPLE(?diseaseLabel) AS ?exampleRareDisease) (MAX(?log2fc) AS ?max
 
 | Gene (human) | example rare disease | log2FC (SF vs GC) | min adj. p |
 |---|---|---|---|
-| FANCA | Fanconi anemia complementation group | -3.93 / +3.08 | 7.8e-38 |
-| XPC | xeroderma pigmentosum | -0.81 (down) | 5.0e-23 |
-| UNG | Bloom syndrome | -2.13 (down) | 2.9e-21 |
-| FANCI | Fanconi anemia complementation group | +2.75 (up) | 6.4e-20 |
-| BRIP1 | Fanconi anemia | -3.16 / +4.08 | 2.1e-17 |
-| NOP10 | dyskeratosis congenita, autosomal recessive | -1.21 (down) | 1.9e-14 |
-| FANCD2 | Fanconi anemia | -4.86 / +2.35 | 2.3e-13 |
-| RAD51 | Fanconi anemia | -2.25 / +2.35 | 5.1e-12 |
+| SLC2A2 | adult Fanconi syndrome | -5.89 / +7.22 | 6.6e-260 |
+| NHP2 | dyskeratosis congenita | -1.73 / +0.83 | 7.9e-246 |
+| PCNA | ataxia-telangiectasia-like disorder 2 | -1.74 / +0.65 | 1.7e-242 |
+| NPM1 | dyskeratosis congenita, X-linked | -1.24 / +1.39 | 5.4e-222 |
+| NBN | Nijmegen breakage syndrome | -1.00 / +1.18 | 4.9e-175 |
+| DKC1 | dyskeratosis congenita, autosomal recessive | -0.68 / +0.31 | 1.6e-147 |
+| POC1A | Fanconi anemia complementation group | -0.97 / +1.52 | 1.1e-138 |
+| NOP10 | dyskeratosis congenita, X-linked | -1.74 / +0.62 | 1.9e-130 |
 
-- **Why it answers the question:** measured under a confounder-free Space-Flight-vs-Ground-Control contrast, the hits are the core genome-maintenance machinery — the Fanconi-anemia complex (FANCA, FANCI, FANCD2, BRIP1, the homologous-recombination recombinase RAD51), nucleotide-excision-repair gene XPC, base-excision-repair glycosylase UNG (Bloom), and the telomere/dyskeratosis gene NOP10 — directly linking inherited genome-instability disorders to genuine microgravity-driven perturbation in the spaceflight DNA-damage environment.
+- **Why it answers the question:** measured under a confounder-free Space-Flight-vs-Ground-Control contrast, the hits are dominated by telomere-maintenance / dyskeratosis-congenita genes (the H/ACA-ribonucleoprotein cluster **NHP2**, **DKC1**, **NOP10** and **NPM1**), the replication/repair sliding-clamp **PCNA**, the double-strand-break sensor **NBN** (Nijmegen breakage syndrome), and the Fanconi-associated **POC1A** — directly linking inherited genome-instability disorders to genuine microgravity-driven perturbation in the spaceflight DNA-damage environment; the single strongest signal, **SLC2A2**, maps to the renal "adult Fanconi syndrome" (a name-shared tubulopathy rather than Fanconi anemia).
 - **Literature support:** Handwerk et al., 2023, *Int J Mol Sci* — simulated space conditions (microgravity + particle irradiation) evoke DNA-damage responses and induce FANCD2 foci and replication stress in human hematopoietic stem/progenitor cells, implicating Fanconi-pathway / genome-instability machinery in spaceflight. [PMID:37762064](https://pubmed.ncbi.nlm.nih.gov/37762064/) · [DOI](https://doi.org/10.3390/ijms241813761)
 
 ### 6b. spoke-genelab × rdkg — Muscular-dystrophy / cardiomyopathy / myopathy rare-disease genes DE in clean skeletal-muscle spaceflight
@@ -812,13 +901,16 @@ SELECT ?sym (SAMPLE(?diseaseLabel) AS ?exampleRareDisease) (MAX(?log2fc) AS ?max
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter), restricted to skeletal-muscle tissues; gene expression.
 - **Research question:** Skeletal-muscle and cardiac atrophy are signature spaceflight risks. Which **muscular-dystrophy, myopathy and cardiomyopathy rare-disease genes** are differentially expressed in a *clean* Space-Flight-vs-Ground-Control contrast measured directly in skeletal muscle, and in which direction?
 - **Why the join is required:** rdkg curates the muscle/heart rare-disease gene set but has no spaceflight data; spoke-genelab has the clean in-muscle spaceflight expression but no rare-disease annotation, and assays the mouse ortholog. Connecting a Mendelian muscle-disease gene to its measured, unconfounded spaceflight perturbation in muscle needs the Entrez+ortholog join.
-- **SPARQL** (executed 2026-06-27, returned 15 rows):
+- **SPARQL** (executed 2026-07-07, returned 15 rows):
 ```sparql
 PREFIX biolink: <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX sg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?humanSym ?modelSym ?tissue (SAMPLE(?diseaseLabel) AS ?exampleRareDisease) (MAX(?log2fc) AS ?maxLog2fc) (MIN(?log2fc) AS ?minLog2fc) (MIN(?adjp) AS ?minAdjP) WHERE {
+  # rdkg-first join order: the small muscle rare-disease gene set drives the join into the
+  # clean muscle assays, keeping QLever query-planning within limits (a subquery-per-KG form
+  # of this query times out in the planner once the covariate-matching filter is added).
   GRAPH <https://purl.org/okn/frink/kg/rdkg> {
     ?r a biolink:Gene ; rdfs:label ?humanSym ; biolink:related_to ?mondo .
     FILTER(STRSTARTS(STR(?r),'http://identifiers.org/ncbigene/'))
@@ -827,23 +919,23 @@ SELECT ?humanSym ?modelSym ?tissue (SAMPLE(?diseaseLabel) AS ?exampleRareDisease
         || CONTAINS(LCASE(?diseaseLabel),'cardiomyopathy') || CONTAINS(LCASE(?diseaseLabel),'myofibrillar'))
   }
   BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',REPLACE(STR(?r),'^.*/ncbigene/',''))) AS ?hgene)
-  {
-    SELECT DISTINCT ?assay ?tissue WHERE {
-      GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
-        ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
-               sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 ; sg:material_name_1 ?tissue .
-        FILTER(?m1 = ?m2)
-        FILTER(?tissue IN ("quadriceps femoris","tibialis anterior","soleus","gastrocnemius","extensor digitorum longus","heart"))
-        FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
-      }
-    }
-  }
   GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
     ?modelGene sg:IS_ORTHOLOG_MGiG ?hgene ; sg:symbol ?modelSym .
     ?stmt rdf:subject ?assay ; rdf:predicate sg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ;
           rdf:object ?modelGene ; sg:log2fc ?log2fc ; sg:adj_p_value ?adjp .
+    ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
+           sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 ; sg:material_name_1 ?tissue .
+    FILTER(?m1 = ?m2)
+    FILTER(?tissue IN ("quadriceps femoris","tibialis anterior","soleus","gastrocnemius","extensor digitorum longus","heart"))
     FILTER(?adjp < 0.001)
+    FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+      FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+      FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+    FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+      FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+      FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
   }
 } GROUP BY ?humanSym ?modelSym ?tissue ORDER BY ?minAdjP LIMIT 15
 ```
@@ -855,12 +947,12 @@ SELECT ?humanSym ?modelSym ?tissue (SAMPLE(?diseaseLabel) AS ?exampleRareDisease
 | Idh2 → IDH2 | soleus | cardiomyopathy | -1.36 (down) | 9.7e-41 |
 | Pdlim3 → PDLIM3 | soleus | hypertrophic cardiomyopathy | +2.41 (up) | 2.0e-38 |
 | Alpk3 → ALPK3 | soleus | hypertrophic cardiomyopathy | -0.73 (down) | 8.7e-38 |
-| Pln → PLN | soleus | dilated cardiomyopathy | -3.49 (down) | 1.7e-37 |
-| Ryr1 → RYR1 | soleus | congenital myopathy | +0.48 (up) | 4.2e-32 |
-| Tnnt1 → TNNT1 | quadriceps femoris | nemaline myopathy | -3.61 (down) | 9.7e-20 |
-| Hnrnpa1 → HNRNPA1 | EDL | inclusion-body myopathy | -3.79 (down) | 1.1e-18 |
+| Pln → PLN | soleus | familial dilated cardiomyopathy | -3.49 (down) | 1.7e-37 |
+| Ryr1 → RYR1 | soleus | centronuclear myopathy | +0.48 (up) | 4.2e-32 |
+| Bves → BVES | soleus | limb-girdle muscular dystrophy | +0.53 (up) | 4.8e-24 |
+| Atp2a1 → ATP2A1 | soleus | Brody myopathy | +1.26 (up) | 5.7e-24 |
 
-- **Why it answers the question:** measured directly in spaceflight skeletal muscle under a confounder-free contrast, the hits are the canonical contractile / calcium-handling / sarcomere disease genes — PLN (phospholamban, dilated cardiomyopathy, strongly down), RYR1, the nemaline-myopathy troponin TNNT1 (down), PDLIM3/ALPK3/EYA4 (cardiomyopathy), HNRNPA1 — linking inherited muscle-wasting genetics to genuine microgravity-driven muscle perturbation.
+- **Why it answers the question:** measured directly in spaceflight skeletal muscle under a confounder-free contrast, the hits are the canonical contractile / calcium-handling / sarcomere disease genes — PLN (phospholamban, dilated cardiomyopathy, strongly down), the ryanodine receptor RYR1 and the SERCA1 calcium pump ATP2A1 (Brody myopathy), the limb-girdle-dystrophy gene BVES, and the cardiomyopathy set PDLIM3/ALPK3/EYA4/IDH2 — linking inherited muscle-wasting genetics to genuine microgravity-driven muscle perturbation.
 - **Literature support:** Henrich et al., 2022, *Skeletal Muscle* — RNA-seq of mouse gastrocnemius and quadriceps after 9 weeks of spaceflight shows the skeletal-muscle transcriptome is remodeled in structural/contractile and fiber-type gene networks associated with atrophy. [PMID:35642060](https://pubmed.ncbi.nlm.nih.gov/35642060/) · [DOI](https://doi.org/10.1186/s13395-022-00294-9)
 
 ### 7a. spoke-genelab × spoke-okn — Immune / inflammatory / autoimmune disease genes (clean spaceflight contrast)
@@ -869,7 +961,7 @@ SELECT ?humanSym ?modelSym ?tissue (SAMPLE(?diseaseLabel) AS ?exampleRareDisease
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); gene expression.
 - **Research question:** Which genes most strongly differentially expressed in a *clean* Space-Flight-vs-Ground-Control contrast are associated in SPOKE with **immune, inflammatory and autoimmune disease** (rheumatoid arthritis, psoriasis, asthma, inflammatory bowel disease, lupus, multiple sclerosis)? This probes the immune-dysregulation system using only confounder-free assays — distinct from the methylation angle in block 7b.
 - **Why the join is required:** spoke-genelab has clean spaceflight expression but no curated gene–disease associations; spoke-okn has the gene–disease associations but no spaceflight data. The direct Entrez join links an unconfounded spaceflight transcriptional response to its immune-disease relevance.
-- **SPARQL** (executed 2026-06-27, returned 15 rows):
+- **SPARQL** (executed 2026-07-07, returned 15 rows):
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX sg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
@@ -882,8 +974,14 @@ SELECT ?sym ?spokeDisease (MAX(?lfc) AS ?maxLog2fc) (MIN(?lfc) AS ?minLog2fc) (M
         ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
                sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+          FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+        FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+          FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
       }
     }
   }
@@ -925,7 +1023,7 @@ SELECT ?sym ?spokeDisease (MAX(?lfc) AS ?maxLog2fc) (MIN(?lfc) AS ?minLog2fc) (M
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter), restricted to skeletal-muscle tissues (tibialis anterior / quadriceps femoris); **DNA methylation** (`MEASURED_DIFFERENTIAL_METHYLATION_ASmMR`, region→gene via `METHYLATED_IN_MGmMR`, `methylation_diff` + `q_value`).
 - **Research question:** Beyond expression, does spaceflight leave an **epigenetic mark on skeletal muscle**? Which genes are most strongly and significantly differentially *methylated* in a *clean* Space-Flight-vs-Ground-Control contrast in tibialis anterior / quadriceps, and which diseases does SPOKE associate them with?
 - **Why the join is required:** spoke-genelab holds the spaceflight muscle methylation but no disease context; spoke-okn holds the gene–disease associations but no spaceflight/epigenetics data, and the methylated gene is the mouse ortholog. Connecting a clean spaceflight methylation hit to disease relevance needs the methylation→gene→ortholog→`ASSOCIATES_DaG` chain.
-- **SPARQL** (executed 2026-06-27, returned 15 rows):
+- **SPARQL** (executed 2026-07-07, returned 15 rows):
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX sg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
@@ -937,8 +1035,14 @@ SELECT ?modelSym ?tissue ?disease (MAX(ABS(?mdiff)) AS ?maxAbsMethylDiff) (MIN(?
            sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 ; sg:material_name_1 ?tissue .
     FILTER(?m1 = ?m2)
     FILTER(?tissue IN ("tibialis anterior","quadriceps femoris"))
-    FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-    FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+    FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+      FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+      FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+    FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+      FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+        && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+      FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
     ?st rdf:subject ?assay ; rdf:predicate sg:MEASURED_DIFFERENTIAL_METHYLATION_ASmMR ;
         rdf:object ?mr ; sg:methylation_diff ?mdiff ; sg:q_value ?qval .
     ?gene sg:METHYLATED_IN_MGmMR ?mr ; sg:symbol ?modelSym ; sg:IS_ORTHOLOG_MGiG ?humanGene .
@@ -975,7 +1079,7 @@ SELECT ?modelSym ?tissue ?disease (MAX(ABS(?mdiff)) AS ?maxAbsMethylDiff) (MIN(?
 - **Spaceflight contrast:** Space Flight vs Ground Control, same material, all other factors identical (factor_space_1/2 + factors_1/2 + material_id filter); mouse gene expression.
 - **Research question:** The mouse is NASA's primary mammalian spaceflight model and a workhorse of infectious-disease research. For each organ that GeneLab measured under a *clean* Space-Flight-vs-Ground-Control mouse contrast, what is a top spaceflight-DE gene, and what NIAID infectious disease — studied in that same mouse and localizing to that organ — could those spaceflight findings be connected to?
 - **Why the join is required:** spoke-genelab supplies the organ + the confounder-free spaceflight DE gene per row but no disease context; NDE supplies the named infectious disease studied in the same species (with its dataset count) but holds no spaceflight data. Each row only exists because both graphs describe the same organism (mouse), so the row pairs a real spaceflight datum with a real terrestrial-disease datum.
-- **SPARQL** (executed 2026-06-27, returned 7 rows):
+- **SPARQL** (executed 2026-07-07, returned 7 rows):
 ```sparql
 PREFIX schema: <http://schema.org/>
 PREFIX sg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
@@ -999,8 +1103,14 @@ SELECT ?organ ?geneLabGene ?geneLabLog2fc ?ndeDisease (COUNT(DISTINCT ?ds) AS ?n
         ?assay sg:factor_space_1 "Space Flight" ; sg:factor_space_2 "Ground Control" ;
                sg:material_id_1 ?m1 ; sg:material_id_2 ?m2 ; sg:INVESTIGATED_ASiA ?tissue .
         FILTER(?m1 = ?m2)
-        FILTER NOT EXISTS { ?assay sg:factors_1 ?f1 . FILTER(?f1 != "Space Flight") }
-        FILTER NOT EXISTS { ?assay sg:factors_2 ?f2 . FILTER(?f2 != "Ground Control") }
+        FILTER NOT EXISTS { ?assay sg:factors_1 ?x .
+          FILTER(LCASE(STR(?x)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?x), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay sg:factors_2 ?x } }
+        FILTER NOT EXISTS { ?assay sg:factors_2 ?y .
+          FILTER(LCASE(STR(?y)) NOT IN ("space flight","ground control","basal control","vivarium control","cell culture control")
+            && !REGEX(STR(?y), "^(GC|FLT|VIV|BSL|CC)(_C[0-9]+)?$"))
+          FILTER NOT EXISTS { ?assay sg:factors_1 ?y } }
         ?stmt rdf:subject ?assay ; rdf:predicate sg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ;
               rdf:object ?gene ; sg:log2fc ?lfc ; sg:adj_p_value ?a .
         ?gene sg:symbol ?sym ; sg:taxonomy <http://purl.obolibrary.org/obo/NCBITaxon_10090> .
@@ -1020,13 +1130,13 @@ SELECT ?organ ?geneLabGene ?geneLabLog2fc ?ndeDisease (COUNT(DISTINCT ?ds) AS ?n
 
 | Organ (GeneLab spaceflight, mouse) | GeneLab clean-contrast DE gene (log2FC, SF vs GC) | NIAID disease in mouse (nde) | NDE datasets |
 |---|---|---|---|
-| left lung | Sstr4 (-1.72) | influenza | 338 |
-| left lung | Sstr4 (-1.72) | pulmonary tuberculosis | 12 |
-| thymus | Cks1b (-2.01) | HIV infectious disease | 43 |
-| liver | Atp2b2 (-3.45) | malaria | 111 |
-| liver | Atp2b2 (-3.45) | *Plasmodium falciparum* malaria | 6 |
+| left kidney | Npas2 (+1.44) | tuberculosis | 186 |
+| left lung | Ntm (+2.26) | influenza | 338 |
+| left lung | Ntm (+2.26) | pulmonary tuberculosis | 12 |
+| liver | Cyp4a14 (+2.45) | malaria | 111 |
+| liver | Cyp4a14 (+2.45) | *Plasmodium falciparum* malaria | 6 |
 | spleen | Gpx3 (+0.93) | Sepsis | 14 |
-| left kidney | Fgg (+2.97) | tuberculosis | 186 |
+| thymus | E2f8 (-2.67) | HIV infectious disease | 43 |
 
 - **Why it answers the question:** every row contains a real GeneLab confounder-free Space-Flight-vs-Ground-Control mouse DE gene for an organ AND a real NIAID infectious disease studied in that same mouse and localizing to that organ (with its NDE dataset count) — a spaceflight-to-terrestrial-disease pairing neither graph holds alone.
 - **Literature support:** Li et al., 2014, *PLoS ONE* — combined microgravity (hindlimb suspension) and solar-particle-event-like radiation increased morbidity and impaired clearance of systemic and pulmonary bacterial infections across three mouse strains, showing spaceflight conditions raise infectious-disease risk in the mouse model. [PMID:24454913](https://pubmed.ncbi.nlm.nih.gov/24454913/) · [DOI](https://doi.org/10.1371/journal.pone.0085665)
@@ -1037,7 +1147,7 @@ SELECT ?organ ?geneLabGene ?geneLabLog2fc ?ndeDisease (COUNT(DISTINCT ?ds) AS ?n
 - **Spaceflight contrast:** Space Flight vs Ground Control — *fallback applied*: the VEG-01 differential-abundance assays carry no `material_id` and always bundle a plant-compartment factor, so the strict `material_id` + `FILTER NOT EXISTS` clean filter returns 0 rows; per methodology the contrast is restricted to `factor_space_1 = "Space Flight"` / `factor_space_2 = "Ground Control"` only (stated explicitly). Gammaproteobacteria is **up in spaceflight** (lnfc +8.22, log2fc +11.86).
 - **Research question:** The class Gammaproteobacteria becomes strongly more abundant in NASA's spaceflight crop microbiome (VEG-01). Although no spaceflight-enriched microbe matches NDE at the species level, do any NIAID-tracked infectious-disease pathogens fall *within* that spaceflight-enriched clade — i.e. can the spaceflight microbial-ecology signal be connected, by clade, to concrete terrestrial pathogens and their diseases?
 - **Why the join is required:** spoke-genelab measures which microbial clade shifts in spaceflight (with the abundance value) but has no pathogen-surveillance context; NDE catalogs which pathogen species anchor infectious-disease datasets (and their diseases) but has no spaceflight data; the ubergraph NCBITaxon hierarchy supplies the clade link. Each row pairs a GeneLab spaceflight abundance value with an NDE pathogen + disease under the same clade.
-- **SPARQL** (executed 2026-06-27, returned 11 rows):
+- **SPARQL** (executed 2026-07-07, returned 11 rows):
 ```sparql
 PREFIX schema: <http://schema.org/>
 PREFIX sg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
@@ -1098,7 +1208,7 @@ SELECT ?sfClade (MAX(?sfLnfc) AS ?maxLnfc) (MAX(?sfLog2fc) AS ?maxLog2fc) ?ndePa
 - **Spaceflight contrast:** n/a — organism-level (clade) join; no differential values read.
 - **Research question:** NASA's spaceflight fish model is the zebrafish (*Danio rerio*); SAWGraph monitors a fish of the same ray-finned lineage (white perch, *Morone americana*). Which **specific PFAS chemicals** has SAWGraph measured in that lineage-sharing fish — the real environmental contaminant panel a spaceflight zebrafish toxicology study could anchor to?
 - **Why the join is required:** spoke-genelab supplies the spaceflight organism (zebrafish) but no contaminant data; SAWGraph supplies the monitored organism + PFAS panel but no spaceflight context; only the ubergraph Actinopterygii clade links them. Each row therefore contains both a GeneLab organism and a SAWGraph organism + PFAS chemical.
-- **SPARQL** (executed 2026-06-27, returned 12 rows):
+- **SPARQL** (executed 2026-07-07, returned 12 rows):
 ```sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
@@ -1145,7 +1255,7 @@ SELECT DISTINCT ?geneLabOrganism ?sharedClade ?sawOrganism ?pfasChemical WHERE {
 - **Spaceflight contrast:** n/a — organism-level (clade) join; no differential values read.
 - **Research question:** NASA's spaceflight plant model is *Arabidopsis thaliana*; SAWGraph monitors a flowering-plant crop of the same green-plant lineage — maize (*Zea mays*). Which **specific PFAS chemicals** has SAWGraph measured in that crop — the real contaminant panel relevant to space-agriculture and food-crop safety?
 - **Why the join is required:** spoke-genelab supplies the spaceflight plant model (*Arabidopsis*) but no contaminant data; SAWGraph supplies the monitored crop + PFAS panel but no spaceflight context; the two share no exact taxon (one eudicot model, one monocot crop), so only clade expansion through the ubergraph Viridiplantae node links them. Each row therefore contains both a GeneLab organism and a SAWGraph crop + PFAS chemical.
-- **SPARQL** (executed 2026-06-27, returned 12 rows):
+- **SPARQL** (executed 2026-07-07, returned 12 rows):
 ```sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
@@ -1188,6 +1298,6 @@ SELECT DISTINCT ?geneLabOrganism ?sharedClade ?sawCrop ?pfasChemical WHERE {
 
 ## Coverage summary
 
-All **9 distinct partner knowledge graphs** that `spoke-genelab` crosswalks with are represented by **two examples each (a + b, 18 total)** above. **Every result table contains data from both knowledge graphs in the same rows** — a spoke-genelab spaceflight value (gene/methylation/abundance measurement, organism, or tissue) paired with the partner KG's value (GXA terrestrial expression, ProKN marker gene, AOP/PIGEAN/rare-disease/SPOKE annotation, biohealth disease, NIAID disease, or SAWGraph PFAS), joined on the shared key (gene symbol/Entrez, CL/UBERON/UMLS anatomy, or NCBITaxon organism). **Every example that reads a differential expression / methylation / abundance value enforces the strict Space-Flight-vs-Ground-Control contrast** (matched factors + material) — the methodologically correct way to attribute a change to spaceflight; only the two organism-overlap examples (9a, 9b) read no differential value and instead pair the GeneLab spaceflight organism with the SAWGraph organism + PFAS by clade. Several partners also connect on additional keys not shown here (e.g. AOP-Wiki, biohealth, GXA and spoke-okn also via NCBITaxon) — see `crosswalks_example.md` and `proto-okn-crosswalk-inventory.md` for the full recipe catalog. The `spoke-genelab × spoke-okn` pair is shown here from a fresh immune-disease angle; its musculoskeletal angle appears in `spoke-okn-25-example-queries.md`.
+All **9 distinct partner knowledge graphs** that `spoke-genelab` crosswalks with are represented by **two examples each (a + b, 18 total)** above. **Every result table contains data from both knowledge graphs in the same rows** — a spoke-genelab spaceflight value (gene/methylation/abundance measurement, organism, or tissue) paired with the partner KG's value (GXA terrestrial expression, ProKN marker gene, AOP/PIGEAN/rare-disease/SPOKE annotation, biohealth disease, NIAID disease, or SAWGraph PFAS), joined on the shared key (gene symbol/Entrez, CL/UBERON/UMLS anatomy, or NCBITaxon organism). **Every example that reads a differential expression / methylation / abundance value enforces the within-assay covariate-matched Space-Flight-vs-Ground-Control contrast** (matched factors + material) — the methodologically correct way to attribute a change to spaceflight; only the two organism-overlap examples (9a, 9b) read no differential value and instead pair the GeneLab spaceflight organism with the SAWGraph organism + PFAS by clade. Several partners also connect on additional keys not shown here (e.g. AOP-Wiki, biohealth, GXA and spoke-okn also via NCBITaxon) — see `crosswalks_example.md` and `proto-okn-crosswalk-inventory.md` for the full recipe catalog. The `spoke-genelab × spoke-okn` pair is shown here from a fresh immune-disease angle; its musculoskeletal angle appears in `spoke-okn-25-example-queries.md`.
 
 *This is a standalone showcase. It does not modify the crosswalk catalog or its per-recipe transcripts.*
