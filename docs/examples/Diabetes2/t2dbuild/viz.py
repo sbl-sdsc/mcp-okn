@@ -381,7 +381,10 @@ sd = S["sdoh_correlations"]
 sd = sorted(sd, key=lambda x: x[1])
 labels = [v for v, r, n in sd]
 rs = [r for v, r, n in sd]
-cols = [RED if r > 0 else BLUE for r in rs]
+cols = [
+    "#95a5a6" if v == "excessive drinking" else (RED if r > 0 else BLUE)
+    for v, r, n in sd
+]
 fig, ax = plt.subplots(figsize=(11, 8))
 b = ax.barh(labels, rs, color=cols, edgecolor="#333")
 for r, val in zip(b, rs, strict=False):
@@ -403,7 +406,8 @@ ax.set_title(
     fontsize=12,
 )
 ax.set_xlabel(
-    "Pearson r  (red = higher SDoH burden → higher diabetes; blue = protective)"
+    "Pearson r  (red = higher SDoH burden → higher diabetes; blue = protective; "
+    "grey = confounded, see note)"
 )
 plt.tight_layout()
 plt.savefig(f"{FIG}/fig5_sdoh_correlations.png", dpi=140, bbox_inches="tight")

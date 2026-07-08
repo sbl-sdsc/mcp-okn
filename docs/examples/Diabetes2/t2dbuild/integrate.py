@@ -1978,9 +1978,19 @@ def pearson(n, sx, sy, sxy, sxx, syy):
 
 
 sdoh = []
+CONFOUNDED = {
+    "excessive drinking": (
+        "SPURIOUS negative — ecological SES confounding: excessive drinking tracks "
+        "affluence (education +0.48, life expectancy +0.48) and inversely tracks "
+        "poverty/obesity; NOT protective"
+    )
+}
 for var, n, sx, sy, sxy, sxx, syy in SDOH_SUMS:
     r = pearson(n, sx, sy, sxy, sxx, syy)
     sdoh.append((var, r, n))
+    note = f"County Health Rankings; n={n} counties; ecological (county-level)"
+    if var in CONFOUNDED:
+        note += " — " + CONFOUNDED[var]
     row(
         entity_type="sdoh_correlation",
         entity=var,
@@ -1990,8 +2000,12 @@ for var, n, sx, sy, sxy, sxx, syy in SDOH_SUMS:
         evidence_types="statistical_association",
         best_score=f"{r:+.3f}",
         score_type="pearson_r",
-        confidence_tier=("T2 high" if abs(r) >= 0.5 else "T3 medium"),
-        notes=f"County Health Rankings; n={n} counties",
+        confidence_tier=(
+            "T4 low"
+            if var in CONFOUNDED
+            else ("T2 high" if abs(r) >= 0.5 else "T3 medium")
+        ),
+        notes=note,
     )
 
 # ------------------------------------------------------------------ write outputs
