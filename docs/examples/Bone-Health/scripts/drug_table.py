@@ -1,0 +1,42 @@
+import pandas as pd
+D="data"
+# Curated from rdkg `treats` (Drug->Disease), bone-LOSS diseases only (oncology / marrow-failure excluded).
+drugs=[
+ ["Bisphosphonates (anti-resorptive)","Alendronate, Risedronate, Zoledronic acid, Ibandronate, Pamidronate, Etidronate, Minodronate, Neridronate",
+  "osteoporosis; postmenopausal / glucocorticoid / juvenile OP; Paget disease; osteogenesis imperfecta; osteoporosis-pseudoglioma (LRP5)",
+  "osteoclast: NFATC1 down, MMP9 down, CA2 down, CSF1 down","rdkg treats"],
+ ["Anti-RANKL antibody","Denosumab (Prolia)",
+  "osteoporosis (post/premenopausal, glucocorticoid, drug-induced); osteogenesis imperfecta",
+  "osteoclast differentiation: CSF1 down, NFATC1 down","rdkg treats"],
+ ["PTH anabolic","Teriparatide, Parathyroid hormone (PTH 1-34)",
+  "osteoporosis (post/premenopausal, glucocorticoid, drug-induced); metabolic bone disorder; osteogenesis imperfecta",
+  "osteoblast formation: ALPL down, IBSP down, COL1A1 down","rdkg treats"],
+ ["Anti-sclerostin antibody (Wnt)","Romosozumab (Evenity), Setrusumab (BPS804)",
+  "osteoporosis (post/premenopausal, glucocorticoid); osteogenesis imperfecta",
+  "Wnt / bone mass: LRP5 down, WIF1 down, LGR5 down","rdkg treats"],
+ ["ALPL enzyme replacement","Asfotase alfa (Strensiq), Efzimfotase alfa (ALXN1850)",
+  "hypophosphatasia",
+  "DIRECT target of ALPL down (alkaline phosphatase / mineralization)","rdkg treats"],
+ ["SERM","Raloxifene, Bazedoxifene, Lasofoxifene",
+  "postmenopausal osteoporosis",
+  "estrogen-pathway bone protection (systemic)","rdkg treats"],
+ ["Calcitonin","Salmon calcitonin",
+  "osteoporosis; Paget disease; osteogenesis imperfecta",
+  "anti-resorptive (osteoclast)","rdkg treats"],
+ ["Vitamin D / calcium / mineral","Calcitriol, Alfacalcidol, Eldecalcitol, Cholecalciferol, Ergocalciferol, Calcifediol, calcium salts, phylloquinone (vit K)",
+  "osteoporosis; rickets; osteomalacia; hypophosphatemia",
+  "mineralization substrate: supports ALPL / FAM20A axis","rdkg treats"],
+ ["Anti-FGF23 antibody","Burosumab (Crysvita, KRN23)",
+  "X-linked / hereditary hypophosphatemic rickets",
+  "phosphate homeostasis / mineralization","rdkg treats"],
+ ["Dual-action / other bone agents","Strontium ranelate, Tibolone, Estradiol",
+  "osteoporosis",
+  "coupled formation/resorption; hormone (systemic)","rdkg treats"],
+ ["Proteasome inhibitor (repurposing)","Bortezomib",
+  "hypophosphatasia (rdkg)",
+  "corroborates enriched ubiquitin-proteasome GO/Reactome themes","rdkg treats (exploratory)"],
+]
+df=pd.DataFrame(drugs,columns=["drug_class","example_agents_retrieved","treats_bone_disease_rdkg","linked_signature_genes_axis","source"])
+df.to_csv(f"{D}/retrieved_drugs.tsv",sep="\t",index=False)
+print("retrieved-drug classes:",len(df))
+print(df[['drug_class','linked_signature_genes_axis']].to_string(index=False))

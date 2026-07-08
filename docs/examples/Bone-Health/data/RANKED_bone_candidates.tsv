@@ -1,0 +1,954 @@
+humanSymbol	symbol	hEntrez	direction	l2fc_WT	p_WT	l2fc_KO	p_KO	n_arms	both_samedir	nrf2_dependent	bone_role	bone_evidence	digcfde_bonecat	rdkg_pheno	osteoarthritis	specificity	nTissues	priority	tier
+CXCL2	Cxcl2	2920	↑	1.901	0.00539	1.992	0.00257	2	True	False	inflammatory chemokine	canonical			False	systemic	4.0	63.3	A
+ALPL	Alpl	249	↓	-1.086	0.00085	-1.142	0.00179	2	True	False	osteoblast/mineralization	canonical	BMD|fracture	Fracture	False	systemic	14.0	57.6	A
+BCORL1	Bcorl1	63035	↓	-0.586694	0.00648911	-0.83831	6.00531e-05	2	True	False		mendelian		Osteoporosis|Osteopenia	False			55.6	A
+AGO2	Ago2	27161	↓	-0.69497	0.000131438	-0.833939	2.99875e-06	2	True	False		mendelian		Osteoporosis|Osteopenia	False			55.6	A
+ZNF526	Zfp526	116115	↓	-0.515818	0.00789584	-0.827073	9.2253e-06	2	True	False		mendelian		Osteoporosis|Osteopenia	False			55.5	A
+IBSP	Ibsp	3381	↓	-0.811	0.0137	-0.649	0.0489	2	True	False	bone matrix (osteoblast)	canonical	BMD|fracture|osteoporosis		False			55.4	A
+GATA1	Gata1	2623	↓	-0.485538	0.00384981	-0.788694	7.11654e-07	2	True	False		mendelian	BMD|fracture	Osteoporosis|Osteopenia|Fracture	False			55.3	A
+CLCN3	Clcn3	1182	↓	-0.687362	2.52121e-06	-0.551994	0.000230807	2	True	False		mendelian		Osteoporosis|Osteopenia	False			54.6	A
+OTUD5	Otud5	55593	↓	-0.551061	8.95958e-05	-0.633699	4.96536e-06	2	True	False		mendelian		Osteoporosis|Osteopenia	False			54.2	A
+ANKH	Ank	56172	↓	-0.610334	6.11082e-05	-0.611269	5.73772e-05	2	True	False		mendelian	BMD|fracture	Reduced_BMD	False			54.1	A
+IFT140	Ift140	9742	↓	-0.555819	0.00314842	-0.587169	0.00157768	2	True	False		mendelian	BMD|fracture	Osteopenia	False			53.9	A
+UROS	Uros	7390	↓	-0.579995	0.000131438	-0.536998	0.000424321	2	True	False		mendelian		Osteoporosis|Osteopenia|Fracture	False			53.9	A
+KMT2B	Kmt2b	9757	↓	-0.508982	0.00655807	-0.554133	0.00298197	2	True	False		mendelian		Osteoporosis|Osteopenia	False			53.7	A
+IER3IP1	Ier3ip1	51124	↑	0.552308	6.935e-07	0.451788	4.7977e-05	2	True	False		mendelian		Osteopenia|Fracture	False			53.7	A
+RAG2	Rag2	5897	↓	-1.26825	1.90525e-07	-0.879645	0.000582547	2	True	False		gwas_strong	BMD|fracture|osteoporosis		False	intermediate	2.0	53.5	B
+MAPK8IP3	Mapk8ip3	23162	↓	-0.494509	0.000967049	-0.429062	0.00500051	2	True	False		mendelian		Osteoporosis|Osteopenia	False			53.3	A
+BCAS3	Bcas3	54828	↓	-0.354674	0.014308	-0.471873	0.000708633	2	True	False		mendelian	BMD|fracture	Osteoporosis|Osteopenia	False			53.1	A
+TRAPPC4	Trappc4	51399	↑	0.442302	0.00156995	0.389445	0.00610235	2	True	False		mendelian		Osteoporosis|Osteopenia	False			52.9	A
+CA2	Car2	760	↓	-0.419	0.0297	-0.402	0.0376	2	True	False	osteoclast carbonic anhydrase	canonical	BMD|fracture		False			52.8	A
+CDK8	Cdk8	1024	↓	-0.354132	0.0104215	-0.343931	0.0119687	2	True	False		mendelian		Osteoporosis|Osteopenia	False			52.4	A
+PGM2L1	Pgm2l1	283209	↓	-0.347794	0.00100277	-0.240631	0.0300993	2	True	False		mendelian		Osteoporosis|Osteopenia	False			52.3	A
+ZFPM1	Zfpm1	161882	↓	-0.837904	1.10539e-05	-1.79165	1.32556e-23	2	True	False		gwas_strong	BMD|fracture		False			51.9	B
+PAX8	Pax8	7849	↑	1.93957	5.42347e-05	1.24593	0.0234636	2	True	False		gwas_bmd	BMD		False	marrow-selective	0.0	50.9	C
+PCDHGC4	Pcdhgc4	56098	↓			-1.17501	0.000378876	1		True		mendelian		Osteoporosis|Osteopenia	False			50.8	B
+FER1L6	Fer1l6	654463	↓	-1.26006	0.0046724	-1.27126	0.00343651	2	True	False		gwas_strong	fracture		False	systemic	10.0	48.5	B
+FAM20A	Fam20a	54757	↓	-2.014	0.00541			1		False	biomineralization kinase	canonical			False	systemic	4.0	48.4	B
+DPP9	Dpp9	91039	↓			-0.8017	0.000429934	1		True		mendelian		Osteopenia	False			48.3	B
+GLIS2	Glis2	84662	↓	-0.673369	0.0385078	-1.20883	0.000622312	2	True	False		gwas_strong	fracture		False			48.1	B
+ADGRL1	Adgrl1	22859	↓			-0.732572	0.0394948	1		True		mendelian		Osteoporosis|Osteopenia	False			47.9	B
+LMNA	Lmna	4000	↓	-0.614323	0.0034475	-1.16459	2.51633e-09	2	True	False		gwas_strong	BMD|fracture|osteolysis_necrosis		False			47.8	B
+SETD1A	Setd1a	9739	↓			-0.723141	0.00170937	1		True		mendelian	BMD|fracture	Osteoporosis|Osteopenia	False			47.8	B
+SLC6A20	Slc6a20b	54716	↓	-1.12702	0.00065797	-0.875703	0.000349244	2	True	False		gwas_strong	osteoporosis		False	systemic	4.0	47.5	B
+MMP9	Mmp9	4318	↓			-0.672	0.0381	1		True	osteoclast MMP	canonical			False			47.5	B
+CSTA	Stfa2	1475	↑	2.5763	2.41814e-08	1.7373	0.0394027	2	True	False		none			False	intermediate	2.0	47.2	C
+C4A|LOC110384692	C4b	720	↓	-1.08041	0.00488306	-0.794869	0.0473933	2	True	False		gwas_strong	osteoporosis		False	systemic	10.0	47.2	B
+C4B	C4b	721	↓	-1.08041	0.00488306	-0.794869	0.0473933	2	True	False		gwas_strong	osteoporosis		False	systemic	10.0	47.2	B
+ZMIZ1	Zmiz1	57178	↓			-0.636561	0.0255408	1		True		mendelian	BMD	Osteoporosis|Osteopenia	False			47.2	B
+NUAK1	Nuak1	9891	↓	-1.06082	2.8177e-07	-0.831421	0.000179816	2	True	False		gwas_strong	BMD|fracture		False	systemic	9.0	47.1	B
+TNK2	Tnk2	10188	↓	-0.454734	0.0396006	-1.0595	1.349e-07	2	True	False		gwas_strong	osteoporosis		False			47.1	B
+NFATC1	Nfatc1	4772	↓			-0.598	0.0278	1		True	master osteoclast TF	canonical	BMD|fracture		False			47.0	B
+PRPF8	Prpf8	10594	↓			-0.582068	0.0171586	1		True		mendelian		Osteoporosis|Osteopenia	False			46.9	B
+E2F2	E2f2	1870	↓	-0.481711	0.00136322	-1.02503	3.98071e-13	2	True	False		gwas_strong	BMD|fracture		False			46.8	B
+CNOT3	Cnot3	4849	↓			-0.553704	0.00887788	1		True		mendelian	BMD	Osteoporosis|Osteopenia	False			46.7	B
+EMC10	Emc10	284361	↓			-0.537968	5.73776e-06	1		True		mendelian		Osteoporosis|Osteopenia	False			46.6	B
+EPAS1	Epas1	2034	↓	-0.741474	0.0196687	-0.976609	0.00159052	2	True	False		gwas_strong	BMD|fracture		False			46.5	B
+TBX6	Tbx6	6911	↓	-0.96824	8.18873e-05	-0.832083	0.00137258	2	True	False		gwas_strong	BMD|fracture		False			46.5	B
+LRP5	Lrp5	4041	↓			-0.511	0.0465	1		True	Wnt co-receptor (bone mass)	canonical	BMD|OI|fracture|osteoporosis	Osteopenia|Reduced_BMD|Fracture	False			46.4	B
+RNF2	Rnf2	6045	↑			0.478449	0.00196315	1		True		mendelian	BMD	Osteoporosis|Osteopenia	False			46.2	B
+KDM4B	Kdm4b	23030	↓			-0.468339	0.0198989	1		True		mendelian		Osteoporosis|Osteopenia	False			46.1	B
+AGTR1	Agtr1a	185	↓	-0.906438	2.86551e-06	-0.646323	0.00115994	2	True	False		gwas_strong	fracture		False			46.0	B
+ARRDC2	Arrdc2	27106	↓	-0.689801	8.95309e-05	-0.901142	1.53984e-07	2	True	False		gwas_strong	BMD|fracture		False			46.0	B
+CASKIN2	Caskin2	57513	↓	-0.547734	0.0129584	-0.879286	5.11585e-05	2	True	False		gwas_strong	BMD|fracture		False			45.9	B
+DPF3	Dpf3	8110	↓	-0.742312	9.31647e-05	-0.869398	1.17056e-06	2	True	False		gwas_strong	osteoporosis		False			45.8	B
+AQP1	Aqp1	358	↓	-0.796399	1.73949e-05	-0.868479	2.4385e-06	2	True	False		gwas_strong	BMD|fracture		False			45.8	B
+SCAF4	Scaf4	57466	↓			-0.413277	0.00868284	1		True		mendelian		Osteoporosis|Osteopenia	False			45.8	B
+FGFRL1	Fgfrl1	53834	↓	-0.553394	0.00853994	-0.835987	5.62295e-05	2	True	False		gwas_strong	BMD|fracture		False			45.6	B
+XYLB	Xylb	9942	↓			-1.88112	0.00487936	1		True		gwas_strong	BMD|fracture		False			45.5	B
+SLC25A37	Slc25a37	51312	↓	-0.8321	8.98632e-07	-0.754145	1.08238e-05	2	True	False		gwas_strong	osteoporosis		False			45.5	B
+IRF4	Irf4	3662	↓	-0.823082	4.88782e-05	-0.72826	0.000529898	2	True	False		gwas_strong	osteoporosis		False			45.5	B
+CSF1	Csf1	1435	↓			-0.379	0.0485	1		True	osteoclast differentiation (M-CSF)	canonical	BMD|fracture		False			45.5	B
+SOX6	Sox6	55553	↓	-0.795471	0.00140232	-0.698015	0.00590289	2	True	False		gwas_strong	BMD|fracture|osteoporosis		False			45.3	B
+MRM1	Mrm1	79922	↓	-0.593577	0.00247494	-0.795152	2.375e-05	2	True	False		gwas_strong	osteoporosis		False			45.3	B
+HNMT	Hnmt	3176	↑	0.784708	0.000281731	0.495943	0.0293719	2	True	False		gwas_strong	osteoporosis		False			45.2	B
+TYROBP	Tyrobp	7305	↑	0.783532	3.23766e-08	0.477768	0.00146926	2	True	False		gwas_strong	BMD|fracture		False			45.2	B
+MAST2	Mast2	23139	↓	-0.610496	1.52641e-05	-0.770639	4.55357e-08	2	True	False		gwas_strong	BMD|fracture		False			45.1	B
+PARVB	Parvb	29780	↓	-0.601712	0.012394	-0.768925	0.00101206	2	True	False		gwas_strong	BMD|fracture		False			45.1	B
+NXPE2	Nxpe2	120406	↓	-0.766988	0.000297936	-0.539484	0.0151761	2	True	False		gwas_strong	osteoporosis		False			45.1	B
+SERTAD2	Sertad2	9792	↓	-0.764412	6.23405e-08	-0.681767	1.85338e-06	2	True	False		gwas_strong	BMD|fracture		False			45.1	B
+SLC30A10	Slc30a10	55532	↓	-0.711758	0.00240089	-0.764407	0.000362184	2	True	False		gwas_strong	BMD|fracture		False			45.1	B
+MTURN	Mturn	222166	↓	-0.764309	7.68384e-07	-0.531511	0.00080958	2	True	False		gwas_strong	BMD|fracture		False			45.1	B
+IL2RA	Il2ra	3559	↓	-0.757229	0.00298732	-0.664128	0.0122346	2	True	False		gwas_strong	osteoporosis		False			45.0	B
+SLC26A1	Slc26a1	10861	↓	-0.738811	0.00407947	-0.697865	0.00918774	2	True	False		gwas_strong	BMD|fracture		False			44.9	B
+COL27A1	Col27a1	85301	↓	-0.646908	0.0328472	-0.737101	0.0146371	2	True	False		gwas_strong	BMD|fracture		False			44.9	B
+PLPP1	Plpp1	8611	↓	-0.735728	0.000528059	-0.631071	0.00308979	2	True	False		gwas_strong	BMD|fracture		False			44.9	B
+POU2AF1	Pou2af1	5450	↓	-0.684575	0.000196112	-0.703934	0.000153911	2	True	False		gwas_strong	fracture		False			44.7	B
+CTSH	Ctsh	1512	↑	0.685208	4.48901e-10	0.496175	1.11159e-05	2	True	False		gwas_strong	BMD|fracture		False			44.6	B
+LYZ	Lyz1	4069	↑	0.655142	0.0313032	0.666769	0.0250485	2	True	False		gwas_strong	BMD|fracture		False			44.4	B
+ABCB4	Abcb4	5244	↓	-0.66333	0.000509369	-0.635611	0.000891971	2	True	False		gwas_strong	fracture		False			44.4	B
+TNFAIP8L2	Tnfaip8l2	79626	↑	0.660761	4.1343e-09	0.407059	0.000561063	2	True	False		gwas_strong	osteoporosis		False			44.4	B
+CEP164	Cep164	22897	↓	-0.635448	0.00691411	-0.653616	0.00594893	2	True	False		gwas_strong	osteoporosis		False			44.4	B
+RLIM	Rlim	51132	↑			0.209295	0.0248198	1		True		mendelian		Osteoporosis|Osteopenia	False			44.4	B
+SEC61B	Sec61b	10952	↑	0.650491	0.000331489	0.529477	0.00435141	2	True	False		gwas_strong	osteoporosis		False			44.3	B
+TXN	Txn1	7295	↑	0.64419	4.73474e-08	0.521496	1.45874e-05	2	True	False		gwas_strong	fracture		False			44.3	B
+INPP4B	Inpp4b	8821	↑	0.642802	0.00337816	0.485688	0.0319852	2	True	False		gwas_strong	BMD|fracture		False			44.3	B
+PAXIP1	Paxip1	22976	↓	-0.441806	0.000369224	-0.640967	1.02194e-07	2	True	False		gwas_strong	osteoporosis		False			44.3	B
+OSTC	Ostc	58505	↑	0.638121	1.67622e-06	0.60016	6.61726e-06	2	True	False		gwas_strong	osteoporosis		False			44.3	B
+TCF20	Tcf20	6942	↑			0.199496	0.0166777	1		True		mendelian		Osteoporosis|Osteopenia	False			44.3	B
+APOL2	Apol11a	23780	↓	-2.1317	2.53484e-07	-0.970842	0.0115916	2	True	False		none			False	intermediate	2.0	44.2	C
+APOL4	Apol11a	80832	↓	-2.1317	2.53484e-07	-0.970842	0.0115916	2	True	False		none			False	intermediate	2.0	44.2	C
+APOL3	Apol11a	80833	↓	-2.1317	2.53484e-07	-0.970842	0.0115916	2	True	False		none			False	intermediate	2.0	44.2	C
+APOL1	Apol11a	8542	↓	-2.1317	2.53484e-07	-0.970842	0.0115916	2	True	False		none			False	intermediate	2.0	44.2	C
+IFT80	Ift80	57560	↓	-0.634563	0.000518813	-0.548673	0.0030892	2	True	False		gwas_strong	BMD|fracture		False			44.2	B
+SOX4	Sox4	6659	↓	-0.627047	0.00020083	-0.609744	0.000398557	2	True	False		gwas_strong	BMD|fracture|osteoporosis		False			44.2	B
+CALCOCO1	Calcoco1	57658	↓	-0.385762	0.0378518	-0.625209	0.000389791	2	True	False		gwas_strong	BMD|fracture		False			44.2	B
+RB1	Rb1	5925	↓	-0.621304	0.000106129	-0.525995	0.00134333	2	True	False		gwas_strong	BMD|fracture|osteoporosis		False			44.1	B
+RPL38	Rpl38	6169	↑	0.600391	1.32777e-05	0.554785	6.73235e-05	2	True	False		gwas_strong	BMD|fracture		False			44.0	B
+TREM1	Trem1	54210	↑	0.572244	0.0222114	0.599281	0.0153705	2	True	False		gwas_strong	osteoporosis		False			44.0	B
+KMT2A	Kmt2a	4297	↓	-0.597404	0.00856739	-0.470184	0.0466837	2	True	False		gwas_strong	BMD|fracture		False			44.0	B
+OLFM4	Olfm4	10562	↑	0.593619	0.00129677	0.539188	0.00393254	2	True	False		gwas_strong	BMD|fracture		False			44.0	B
+BRCA1	Brca1	672	↓	-0.591899	6.18758e-05	-0.574801	0.000104969	2	True	False		gwas_strong	BMD|fracture		False			43.9	B
+TFEC	Tfec	22797	↑	0.430106	0.00338133	0.591508	1.70705e-05	2	True	False		gwas_strong	BMD|osteoporosis		False			43.9	B
+ORC1	Orc1	4998	↓	-0.444225	0.0234261	-0.588662	0.00149684	2	True	False		gwas_strong	BMD|fracture		False			43.9	B
+CDKL1	Cdkl1	8814	↓	-0.582091	0.00712363	-0.455392	0.0338824	2	True	False		gwas_strong	osteoporosis		True			43.9	B
+TNNT3	Tnnt3	7140	↓			-2.67037	0.0387068	1		True		gwas_bmd	BMD		False			43.8	C
+RPS12	Rps12	6206	↑	0.518661	0.0045559	0.573662	0.00139502	2	True	False		gwas_strong	BMD|fracture		False			43.8	B
+HSPE1	Hspe1	3336	↑	0.429493	0.0114397	0.573602	0.000366496	2	True	False		gwas_strong	BMD|fracture|osteoporosis		False			43.8	B
+S100A10	S100a10	6281	↑	0.571037	0.00190518	0.540827	0.00335728	2	True	False		gwas_strong	fracture		False			43.8	B
+FOXO1	Foxo1	2308	↓	-0.568918	0.0140452	-0.558697	0.017633	2	True	False		gwas_strong	BMD|fracture		False			43.8	B
+JDP2	Jdp2	122953	↑	0.491906	0.0113238	0.56417	0.00294183	2	True	False		gwas_strong	BMD|fracture		False			43.8	B
+SLC20A2	Slc20a2	6575	↓	-0.376466	0.013276	-0.555554	0.000107332	2	True	False		gwas_strong	fracture		False			43.7	B
+TLR2	Tlr2	7097	↑	0.45161	0.0257697	0.549146	0.00516766	2	True	False		gwas_strong	osteoporosis		False			43.7	B
+NRIP1	Nrip1	8204	↓	-0.547758	0.00104916	-0.416857	0.016246	2	True	False		gwas_strong	osteoporosis		False			43.7	B
+WIF1	Wif1	11197	↓	-1.58491	0.0216655	-1.26572	0.0402627	2	True	False		gwas_bmd	BMD		False	systemic	5.0	43.6	C
+DHRS11	Dhrs11	79154	↓	-0.544147	0.000620742	-0.499451	0.00185357	2	True	False		gwas_strong	osteoporosis		False			43.6	B
+DAPK2	Dapk2	23604	↓	-0.499828	0.00100277	-0.542526	0.000256323	2	True	False		gwas_strong	osteoporosis		False			43.6	B
+MED13L	Med13l	23389	↓	-0.442814	0.00206762	-0.540678	0.000118337	2	True	False		gwas_strong	BMD|osteoporosis		False			43.6	B
+MCPH1	Mcph1	79648	↓	-0.517128	0.000164564	-0.495714	0.000292906	2	True	False		gwas_strong	osteoporosis		False			43.4	B
+CCDC6	Ccdc6	8030	↓	-0.360757	0.0190678	-0.516412	0.000442735	2	True	False		gwas_strong	fracture		False			43.4	B
+TACSTD2	Tacstd2	4070	↑	0.514175	0.00323171	0.44774	0.0100317	2	True	False		gwas_strong	osteoporosis		False			43.4	B
+HGF	Hgf	3082	↑	0.512563	7.11944e-06	0.35475	0.00283898	2	True	False		gwas_strong	BMD|fracture		False			43.4	B
+RPL37A	Rpl37a	6168	↑	0.43383	0.0109677	0.503555	0.00248388	2	True	False		gwas_strong	osteoporosis		False			43.4	B
+AGPAT4	Agpat4	56895	↓	-0.473732	0.00144179	-0.500605	0.000560349	2	True	False		gwas_strong	fracture		False			43.3	B
+PIK3R1	Pik3r1	5295	↓	-0.499225	1.51225e-07	-0.226838	0.0310599	2	True	False		gwas_strong	BMD|osteoporosis		False			43.3	B
+DDHD1	Ddhd1	80821	↓	-0.472625	0.0022666	-0.495137	0.00118556	2	True	False		gwas_strong	BMD|fracture		False			43.3	B
+BMPR1A	Bmpr1a	657	↑	0.449118	0.0150573	0.490065	0.00643399	2	True	False		gwas_strong	BMD|fracture		False			43.3	B
+SLC30A1	Slc30a1	7779	↓	-0.259311	0.0398934	-0.489627	2.13028e-05	2	True	False		gwas_strong	fracture|osteoporosis		False			43.3	B
+FBXO30	Fbxo30	84085	↓	-0.488422	0.00483057	-0.434277	0.0131586	2	True	False		gwas_strong	BMD|fracture		False			43.3	B
+RCN1	Rcn1	5954	↑	0.48381	7.29308e-06	0.285325	0.0131913	2	True	False		gwas_strong	osteoporosis		False			43.2	B
+URB2	Urb2	9816	↓	-0.410578	0.00372989	-0.474437	0.000758656	2	True	False		gwas_strong	osteoporosis		False			43.2	B
+SMG6	Smg6	23293	↓	-0.468494	0.000411774	-0.390934	0.00411068	2	True	False		gwas_strong	BMD|fracture		True			43.1	B
+RAB28	Rab28	9364	↑	0.464644	0.00185512	0.366295	0.0165683	2	True	False		gwas_strong	osteoporosis		False			43.1	B
+CMAS	Cmas	55907	↓	-0.385126	0.00989375	-0.459998	0.00148297	2	True	False		gwas_strong	osteoporosis		False			43.1	B
+TMED7-TICAM2	Tmed7	100302736	↑	0.457474	3.53547e-07	0.211994	0.033112	2	True	False		gwas_strong	osteoporosis		False			43.0	B
+TMED7	Tmed7	51014	↑	0.457474	3.53547e-07	0.211994	0.033112	2	True	False		gwas_strong	osteoporosis		False			43.0	B
+FER	Fer	2241	↑	0.456129	5.18969e-05	0.373709	0.000897897	2	True	False		gwas_strong	BMD|fracture		False			43.0	B
+ARNTL	Arntl	406	↓	-0.430999	0.00223661	-0.455885	0.00154275	2	True	False		gwas_strong	BMD|fracture		True			43.0	B
+RNF144B	Rnf144b	255488	↑	0.453843	0.00032043	0.36033	0.00595401	2	True	False		gwas_strong	osteoporosis		False			43.0	B
+XBP1	Xbp1	7494	↑	0.452612	1.94641e-07	0.2788	0.00250711	2	True	False		gwas_strong	BMD|fracture		False			43.0	B
+OSTF1	Ostf1	26578	↑	0.451313	3.14542e-05	0.334666	0.00308771	2	True	False		gwas_strong	BMD|fracture		False			43.0	B
+UVSSA	Uvssa	57654	↓	-0.309194	0.0294866	-0.442928	0.000976206	2	True	False		gwas_strong	BMD|fracture		False			43.0	B
+PFDN5	Pfdn5	5204	↑	0.437466	0.0062965	0.383091	0.0180137	2	True	False		gwas_strong	BMD|osteoporosis		False			42.9	B
+EZH2	Ezh2	2146	↓	-0.435836	7.20764e-06	-0.261382	0.0116554	2	True	False		gwas_strong	BMD|fracture		False			42.9	B
+TLR4	Tlr4	7099	↑	0.435745	0.000495103	0.363723	0.00418504	2	True	False		gwas_strong	BMD|fracture		False			42.9	B
+E2F1	E2f1	1869	↓	-0.354571	0.000302297	-0.433827	6.61726e-06	2	True	False		gwas_strong	BMD|fracture		False			42.9	B
+CDK5RAP2	Cdk5rap2	55755	↓	-0.432608	0.00864617	-0.397038	0.0168903	2	True	False		gwas_strong	osteoporosis		False			42.9	B
+CDC42	Cdc42	998	↑	0.430577	5.45416e-07	0.389705	7.10034e-06	2	True	False		gwas_strong	BMD|fracture		False			42.9	B
+SNX10	Snx10	29887	↑	0.429839	8.21225e-05	0.394077	0.0003227	2	True	False		gwas_strong	BMD|fracture		False			42.9	B
+CNNM2	Cnnm2	54805	↓	-0.421784	0.0110531	-0.401689	0.0151593	2	True	False		gwas_strong	BMD|fracture		False			42.8	B
+HSD17B12	Hsd17b12	51144	↑	0.42019	1.11563e-06	0.394835	4.80468e-06	2	True	False		gwas_strong	osteoporosis		False			42.8	B
+ARL4A	Arl4a	10124	↓	-0.400411	0.0457672	-0.414572	0.0350968	2	True	False		gwas_strong	fracture		False			42.8	B
+CCDC91	Ccdc91	55297	↑	0.368229	0.0377505	0.406482	0.0168326	2	True	False		gwas_strong	BMD|fracture		False			42.7	B
+PDE8A	Pde8a	5151	↑	0.398218	0.00879437	0.34819	0.0310005	2	True	False		gwas_strong	BMD|fracture		False			42.7	B
+TMEM131L	Tmem131l	23240	↓	-0.39688	0.00908189	-0.330599	0.0350364	2	True	False		gwas_strong	fracture		False			42.6	B
+GABPB2	Gabpb2	126626	↓	-0.395373	6.42836e-05	-0.279784	0.00712042	2	True	False		gwas_strong	osteoporosis		False			42.6	B
+HSBP1	Hsbp1	3281	↑	0.281434	0.0128373	0.392664	0.000227923	2	True	False		gwas_strong	osteoporosis		False			42.6	B
+RFLNB	Rflnb	359845	↑	0.382856	0.0237218	0.390968	0.0201077	2	True	False		gwas_strong	BMD|fracture		False			42.6	B
+SLX4	Slx4	84464	↓	-0.386687	0.00244631	-0.389953	0.00285286	2	True	False		gwas_strong	BMD|fracture		False			42.6	B
+PITRM1	Pitrm1	10531	↓	-0.387941	0.00525642	-0.329891	0.0210012	2	True	False		gwas_strong	osteoporosis		False			42.6	B
+HMMR	Hmmr	3161	↓	-0.380407	0.0186312	-0.382698	0.0171104	2	True	False		gwas_strong	BMD|fracture		False			42.6	B
+KCNG1	Kcng1	3755	↓			-1.41765	0.0116806	1		True		gwas_strong	osteoporosis		False			42.5	B
+IBTK	Ibtk	25998	↓	-0.380412	0.000693583	-0.322677	0.00480794	2	True	False		gwas_strong	fracture		False			42.5	B
+C5orf22	6030458C11Rik	55322	↓	-0.372908	0.00465673	-0.337594	0.0106139	2	True	False		gwas_strong	fracture		False			42.5	B
+PAM16	Pam16	51025	↑	0.371903	0.0276578	0.35594	0.0311467	2	True	False		gwas_strong	fracture		False			42.5	B
+SFR1	Sfr1	119392	↑	0.184392	0.0367854	0.369888	7.93871e-06	2	True	False		gwas_strong	osteoporosis		False			42.5	B
+DCTN3	Dctn3	11258	↑	0.301519	0.0319101	0.369586	0.00607964	2	True	False		gwas_strong	osteoporosis		False			42.5	B
+LIMD1	Limd1	8994	↓	-0.26232	0.0138963	-0.35534	0.000507848	2	True	False		gwas_strong	BMD|fracture		False			42.4	B
+ZNF462	Zfp462	58499	↓			-1.39507	0.0487747	1		True		gwas_strong	BMD|osteoporosis		False			42.3	B
+SP140	Sp140	11262	↑	0.219519	0.0160223	0.351652	3.61094e-05	2	True	False		gwas_strong	osteoporosis		False			42.3	B
+MMP2	Mmp2	4313	↓			-1.37821	0.043091	1		True		gwas_strong	BMD|fracture|osteolysis_necrosis		False			42.2	B
+TANGO2	Tango2	128989	↓	-0.335622	0.00597686	-0.321479	0.00745523	2	True	False		gwas_strong	BMD|fracture		False			42.2	B
+NBR1	Nbr1	4077	↓	-0.322427	0.00525642	-0.333375	0.00378138	2	True	False		gwas_strong	BMD|fracture		False			42.2	B
+TAPT1	Tapt1	202018	↓	-0.323211	0.0026201	-0.331048	0.0018304	2	True	False		gwas_strong	BMD|osteoporosis		False			42.2	B
+OMA1	Oma1	115209	↑	0.327577	0.00587075	0.284878	0.0180317	2	True	False		gwas_strong	osteoporosis		False			42.2	B
+PPP1R2	Ppp1r2	5504	↑	0.325108	0.0115598	0.277203	0.0351226	2	True	False		gwas_strong	osteoporosis		False			42.2	B
+EPG5	Epg5	57724	↓	-0.285663	0.0327793	-0.323642	0.0144617	2	True	False		gwas_strong	BMD|fracture		False			42.2	B
+EPHA4	Epha4	2043	↓			-1.37067	0.0476907	1		True		gwas_strong	osteoporosis		False			42.1	B
+ANKRD46	Ankrd46	157567	↑	0.312818	0.0153996	0.315617	0.0158157	2	True	False		gwas_strong	osteoporosis		False			42.1	B
+ZDHHC16	Zdhhc16	84287	↑	0.293739	0.0286662	0.309871	0.0198104	2	True	False		gwas_strong	BMD|fracture		False			42.1	B
+OSTM1	Ostm1	28962	↑	0.308016	0.000152204	0.231792	0.00557779	2	True	False		gwas_strong	BMD|fracture		False			42.1	B
+FOS	Fos	2353	↑			1.33562	0.0152497	1		True		gwas_strong	BMD|fracture		False			41.9	B
+NFATC4	Nfatc4	4776	↓			-1.32907	0.048671	1		True		gwas_strong	BMD|fracture		False			41.9	B
+CTSC	Ctsc	1075	↑	0.271216	0.0305309	0.290999	0.018826	2	True	False		gwas_strong	osteoporosis		False			41.9	B
+	Trpv5	56302	↓	-1.77681	0.00434867	-1.16687	0.00930942	2	True	False		none			False	intermediate	1.0	41.8	C
+BOC	Boc	91653	↓			-1.32279	0.0396181	1		True		gwas_strong	BMD|fracture		False			41.8	B
+TMEM132A	Tmem132a	54972	↓			-1.31518	0.0353112	1		True		gwas_strong	BMD|fracture		False			41.8	B
+VAPA	Vapa	9218	↑	0.276429	0.0130818	0.260493	0.0206777	2	True	False		gwas_strong	fracture		False			41.8	B
+FAR1	Far1	84188	↑	0.216468	0.034703	0.253643	0.0107923	2	True	False		gwas_strong	BMD|fracture		False			41.7	B
+TENM4	Tenm4	26011	↓	-1.27551	0.0191696	-1.14433	0.042854	2	True	False		gwas_bmd	BMD		False	systemic	10.0	41.5	C
+TSHZ2	Tshz2	128553	↓	-1.09507	0.0339087	-1.27216	0.0100317	2	True	False		gwas_bmd	BMD		False	systemic	7.0	41.5	C
+NR3C1	Nr3c1	2908	↑	0.190678	0.0241645	0.231705	0.00451855	2	True	False		gwas_strong	BMD|fracture|osteoporosis		False			41.5	B
+GFRA1	Gfra1	2674	↓	-0.894801	0.00964472	-1.26519	0.000167886	2	True	False		gwas_bmd	BMD		False			41.4	C
+ADAMTSL2	Adamtsl2	9719	↓			-2.29916	0.0353112	1		True		gwas_bmd	BMD		False			41.3	C
+RGS6	Rgs6	9628	↓			-2.28232	0.0166542	1		True		gwas_bmd	BMD		False			41.2	C
+SPTB	Sptb	6710	↓	-1.13692	1.18624e-09	-1.21795	5.69336e-11	2	True	False		gwas_bmd	BMD		False	systemic	6.0	41.1	C
+SBK1	Sbk1	388228	↓			-1.2043	1.51703e-05	1		True		gwas_strong	osteoporosis		False			41.0	B
+MGP	Mgp	4256	↓			-1.15544	0.00269681	1		True		gwas_strong	BMD|fracture		False			40.7	B
+KCNG2	Kcng2	26251	↓	-1.31267	0.0205029	-2.33489	0.000127327	2	True	False		none			False	systemic	4.0	40.6	C
+TBX2	Tbx2	6909	↓	-1.11285	0.0141955	-1.13585	0.00355956	2	True	False		gwas_bmd	BMD		False	systemic	3.0	40.6	C
+NOTCH3	Notch3	4854	↓			-1.10771	0.0020424	1		True		gwas_strong	BMD|fracture		False			40.4	B
+ADTRP	Adtrp	84830	↑	1.08002	0.000251911	1.10743	0.000190176	2	True	False		gwas_bmd	BMD		False	systemic	7.0	40.4	C
+NDST3	Ndst3	9348	↓	-2.27688	0.0252946	-1.87409	0.0327475	2	True	False		none			False	systemic	3.0	40.2	C
+MFHAS1	Mfhas1	9258	↓	-0.742857	3.69155e-05	-1.0838	5.3999e-10	2	True	False		gwas_bmd	BMD		False			40.2	C
+RGS1	Rgs1	5996	↑	0.965757	0.0115104	1.03735	0.00421102	2	True	False		gwas_bmd	BMD		False			39.9	C
+PTH1R	Pth1r	5745	↓			-1.02856	0.0173382	1		True		gwas_strong	BMD|fracture		False			39.9	B
+CRACD	Cracd	57482	↓	-1.01642	2.6399e-10	-0.851347	2.0256e-07	2	True	False		gwas_bmd	BMD		False	systemic	7.0	39.8	C
+UACA	Uaca	55075	↓			-1.0143	0.00123001	1		True		gwas_strong	BMD|fracture		False			39.8	B
+DHCR24	Dhcr24	1718	↓	-0.500109	0.0374416	-1.01396	4.65429e-06	2	True	False		gwas_bmd	BMD		False			39.8	C
+ACOT2	Acot1	10965	↑	2.19146	3.73469e-10	2.19937	6.07593e-10	2	True	False		none			False	systemic	12.0	39.7	C
+ACOT1	Acot1	641371	↑	2.19146	3.73469e-10	2.19937	6.07593e-10	2	True	False		none			False	systemic	12.0	39.7	C
+ENG	Eng	2022	↓	-0.523399	0.0275242	-1.00844	9.20233e-06	2	True	False		gwas_bmd	BMD		False			39.7	C
+TGFB1	Tgfb1	7040	↓			-0.982848	2.41289e-06	1		True		gwas_strong	BMD|fracture		True			39.6	B
+DENND2B	Denn2b	6764	↓	-0.98235	1.99335e-06	-0.741935	0.000476681	2	True	False		gwas_bmd	BMD		False			39.5	C
+DCLK2	Dclk2	166614	↓	-0.930859	7.18018e-07	-0.980747	1.42603e-07	2	True	False		gwas_bmd	BMD		False			39.5	C
+TNFRSF19	Tnfrsf19	55504	↓	-0.812592	0.00862979	-0.978737	0.0012672	2	True	False		gwas_bmd	BMD		False			39.5	C
+EPHA2	Epha2	1969	↓	-0.977968	2.25667e-06	-0.907334	6.15793e-05	2	True	False		gwas_bmd	BMD		False			39.5	C
+PCOLCE	Pcolce	5118	↓	-0.80497	0.0306259	-0.970457	0.0175723	2	True	False		gwas_bmd	BMD		False			39.5	C
+EPOR	Epor	2057	↓	-0.651209	0.000102494	-0.953992	3.04157e-09	2	True	False		gwas_bmd	BMD		False			39.4	C
+MS4A6E	Ms4a6d	245802	↑	0.941407	7.34373e-06	0.536926	0.0166777	2	True	False		gwas_bmd	BMD		False			39.3	C
+MS4A6A	Ms4a6d	64231	↑	0.941407	7.34373e-06	0.536926	0.0166777	2	True	False		gwas_bmd	BMD		False			39.3	C
+NPRL3	Nprl3	8131	↓	-0.828275	1.58748e-05	-0.902593	2.05699e-06	2	True	False		gwas_bmd	BMD		False			39.0	C
+RELA	Rela	5970	↓			-0.899071	0.000164606	1		True		gwas_strong	BMD|fracture		False			39.0	B
+BMP6	Bmp6	654	↓			-0.894336	0.0142984	1		True		gwas_strong	BMD|fracture		True			39.0	B
+COL6A1	Col6a1	1291	↓			-0.893462	0.0269576	1		True		gwas_strong	BMD|fracture|osteoporosis		False			39.0	B
+SLC1A4	Slc1a4	6509	↓			-0.888506	0.0234649	1		True		gwas_strong	osteoporosis		False			38.9	B
+	Gstt1	2952	↓	-0.864567	0.000113747	-0.871482	2.74445e-05	2	True	False		gwas_bmd	BMD		False			38.8	C
+SRCAP	Srcap	10847	↓	-0.563599	0.00231031			1		False		mendelian		Osteoporosis|Osteopenia	False			38.8	B
+TP53	Trp53	7157	↓			-0.850323	2.54743e-05	1		True		gwas_strong	BMD|fracture|osteoporosis		False			38.7	B
+TMEM88B	Tmem88b	643965	↓	-1.3117	0.0378122	-2.03223	0.000378802	2	True	False		none			False	systemic	4.0	38.5	C
+TAL1	Tal1	6886	↓	-0.599135	0.000140265	-0.826799	5.59347e-08	2	True	False		gwas_bmd	BMD		False			38.5	C
+CMIP	Cmip	80790	↓			-0.821425	0.00014108	1		True		gwas_strong	BMD|osteoporosis		False			38.5	B
+FZD5	Fzd5	7855	↓	-0.537705	0.00358855	-0.819306	4.64367e-06	2	True	False		gwas_bmd	BMD		False			38.5	C
+SH3TC2	Sh3tc2	79628	↓	-0.631777	0.000224724	-0.814827	1.03725e-06	2	True	False		gwas_bmd	BMD		False			38.4	C
+PPARD	Ppard|1810013A23Rik	5467	↓			-0.813664	0.00189917	1		True		gwas_strong	fracture		False			38.4	B
+ESPL1	Espl1	9700	↓	-0.809713	0.000549734	-0.6247	0.0106412	2	True	False		gwas_bmd	BMD		False			38.4	C
+FOXK1	Foxk1	221937	↓			-0.805988	0.00608651	1		True		gwas_strong	BMD|osteoporosis		False			38.4	B
+FAM53B	Fam53b	9679	↓	-0.661977	9.44441e-07	-0.804969	1.56312e-09	2	True	False		gwas_bmd	BMD		False			38.4	C
+SMARCA4	Smarca4	6597	↓	-0.683059	0.00162941	-0.803371	0.000164606	2	True	False		gwas_bmd	BMD		False			38.4	C
+CXCL1	Cxcl2	2919	↑	1.9011	0.00538677	1.99159	0.00257287	2	True	False		none			False	systemic	4.0	38.3	C
+CXCL3	Cxcl2	2921	↑	1.9011	0.00538677	1.99159	0.00257287	2	True	False		none			False	systemic	4.0	38.3	C
+PTP4A1	Ptp4a1	7803	↑	0.795046	0.0137614	0.72824	0.0242197	2	True	False		gwas_bmd	BMD		False			38.3	C
+HS6ST1	Hs6st1	9394	↓	-0.786154	1.51225e-07	-0.789231	1.59022e-07	2	True	False		gwas_bmd	BMD		False			38.3	C
+SKI	Ski	6497	↓			-0.786909	0.00156749	1		True		gwas_strong	BMD|fracture		False			38.2	B
+BTRC	Btrc	8945	↓	-0.784104	5.72829e-10	-0.639297	7.06151e-07	2	True	False		gwas_bmd	BMD		False			38.2	C
+BGN	Bgn	633	↓			-0.775197	0.0220941	1		True		gwas_strong	BMD|fracture		False			38.2	B
+SLIT1	Slit1	6585	↓	-1.97198	4.82364e-07	-1.28354	0.00140766	2	True	False		none			False	systemic	5.0	38.1	C
+E2F4	E2f4	1874	↓	-0.448859	0.00182833	-0.763383	1.92484e-08	2	True	False		gwas_bmd	BMD		False			38.1	C
+NRG1	Nrg1	3084	↑			0.761886	0.00459158	1		True		gwas_strong	BMD|osteoporosis		False			38.1	B
+LRRC29	Lrrc29	26231	↓	-0.76024	4.73597e-05	-0.600463	0.00176856	2	True	False		gwas_bmd	BMD		False			38.1	C
+GP1BB	Gp1bb	2812	↓			-0.758715	0.0237414	1		True		gwas_strong	BMD|fracture		False			38.1	B
+PML	Pml	5371	↓	-0.6483	2.70642e-05	-0.758241	8.96946e-07	2	True	False		gwas_bmd	BMD		False			38.1	C
+MAP1B	Map1b	4131	↓			-1.79575	0.0015681	1		True		gwas_bmd	BMD		False			38.0	C
+AP1B1	Ap1b1	162	↓	-0.405882	0.0242471	-0.751009	6.61726e-06	2	True	False		gwas_bmd	BMD		False			38.0	C
+PHOSPHO1	Phospho1	162466	↓			-0.750972	0.0018132	1		True		gwas_strong	BMD|fracture		False			38.0	B
+MKI67	Mki67	4288	↓	-0.738326	1.70596e-05	-0.717775	3.21286e-05	2	True	False		gwas_bmd	BMD		False			37.9	C
+CEBPD	Cebpd	1052	↑	0.733251	4.03266e-08	0.323598	0.0294549	2	True	False		gwas_bmd	BMD		False			37.9	C
+GFRA2	Gfra2	2675	↓			-0.733238	0.00651253	1		True		gwas_strong	osteoporosis		False			37.9	B
+HDAC5	Hdac5	10014	↓			-0.73163	5.94601e-05	1		True		gwas_strong	BMD|fracture		False			37.9	B
+SH3PXD2B	Sh3pxd2b	285590	↓			-0.731511	0.0120705	1		True		gwas_strong	BMD|fracture		False			37.9	B
+CSF1R	Csf1r	1436	↓			-0.729983	0.0104163	1		True		gwas_strong	BMD|fracture		False			37.9	B
+SMPDL3A	Smpdl3a	10924	↑	0.728136	1.53306e-15	0.397554	4.59641e-05	2	True	False		gwas_bmd	BMD		False			37.9	C
+DAG1	Dag1	1605	↓			-0.72631	0.00542745	1		True		gwas_strong	BMD|osteoporosis		False			37.8	B
+FAM167A	Fam167a	83648	↓			-0.725502	0.0241534	1		True		gwas_strong	BMD|osteoporosis		False			37.8	B
+MED12	Med12	9968	↓	-0.537597	0.00820678	-0.722301	0.000225633	2	True	False		gwas_bmd	BMD		False			37.8	C
+NUP210	Nup210	23225	↓			-0.715496	6.22256e-05	1		True		gwas_strong	osteoporosis		False			37.8	B
+EIF5A	Eif5a	1984	↑	0.418609	5.18231e-05			1		False		mendelian		Osteoporosis|Osteopenia	False			37.8	B
+FAM205A	Fam205a1	259308	↓	-1.11801	0.0409577	-1.15513	0.00511442	2	True	False		none			False	marrow-selective	0.0	37.7	C
+	Fam205a1	389715	↓	-1.11801	0.0409577	-1.15513	0.00511442	2	True	False		none			False	marrow-selective	0.0	37.7	C
+PITPNM2	Pitpnm2	57605	↓			-0.712483	0.000746618	1		True		gwas_strong	fracture		True			37.7	B
+MTOR	Mtor	2475	↓			-0.711158	5.27363e-05	1		True		gwas_strong	BMD|fracture		False			37.7	B
+SLC20A1	Slc20a1	6574	↓	-0.707665	7.68384e-07	-0.64222	8.67541e-06	2	True	False		gwas_bmd	BMD		False			37.7	C
+TNS1	Tns1	7145	↓	-0.570212	0.0249041	-0.698195	0.0047534	2	True	False		gwas_bmd	BMD		False			37.7	C
+NCOR2	Ncor2	9612	↓			-0.697909	0.00313953	1		True		gwas_strong	BMD|fracture		False			37.7	B
+H4C9	H4c4	8294	↑	0.409474	0.010756			1		False		mendelian		Osteoporosis|Osteopenia	False			37.7	B
+H4C3	H4c4	8364	↑	0.409474	0.010756			1		False		mendelian		Osteoporosis|Osteopenia	False			37.7	B
+	Smpd5	392275	↑	1.13757	6.36016e-05	0.633397	0.046492	2	True	False		none			False	intermediate	2.0	37.6	C
+MS4A4A	Ms4a4b	51338	↑	0.464026	0.00552951	0.693285	0.0219654	2	True	False		gwas_bmd	BMD		False			37.6	C
+NFKB2	Nfkb2	4791	↓			-0.691657	0.00460542	1		True		gwas_strong	BMD|fracture		False			37.6	B
+INPPL1	Inppl1	3636	↓			-0.690531	0.0414132	1		True		gwas_strong	BMD|fracture		False			37.6	B
+RBM44	Rbm44	375316	↓	-1.11966	0.0190059	-1.0174	0.0288801	2	True	False		none			False	intermediate	2.0	37.5	C
+EHBP1L1	Ehbp1l1	254102	↓	-0.374825	0.00764883	-0.66188	4.39386e-07	2	True	False		gwas_bmd	BMD		False			37.4	C
+PSTPIP1	Pstpip1	9051	↑	0.361219	0.00531453			1		False		mendelian		Osteoporosis	False			37.4	B
+DOHH	Dohh	83475	↑	0.353426	0.0125577			1		False		mendelian		Osteoporosis|Osteopenia	False			37.4	B
+MMP14	Mmp14	4323	↓			-0.651556	0.00774159	1		True		gwas_strong	BMD|fracture|osteolysis_necrosis		False			37.3	B
+APRT	Aprt	353	↑	0.648745	6.935e-07	0.370728	0.00862784	2	True	False		gwas_bmd	BMD		False			37.3	C
+BCL2	Bcl2	596	↑			0.638162	2.85039e-05	1		True		gwas_strong	BMD|fracture		False			37.3	B
+ZNF142	Zfp142	7701	↓	-0.343048	0.0282684			1		False		mendelian		Osteoporosis|Osteopenia	False			37.3	B
+MED13	Med13	9969	↓	-0.341185	0.0215015			1		False		mendelian		Osteoporosis|Osteopenia	False			37.3	B
+HTT	Htt	3064	↓	-0.338869	0.0096139			1		False		mendelian		Osteoporosis|Osteopenia	False			37.3	B
+KAT2A	Kat2a	2648	↓			-0.636121	0.00305092	1		True		gwas_strong	BMD|fracture		False			37.2	B
+RPL30	Rpl30	6156	↑	0.62581	1.91773e-05	0.604254	4.0772e-05	2	True	False		gwas_bmd	BMD		False			37.2	C
+CCNE1	Ccne1	898	↓	-0.361015	0.042204	-0.622128	0.000142861	2	True	False		gwas_bmd	BMD		False			37.1	C
+BCL9L	Bcl9l	283149	↓			-0.617645	0.0391573	1		True		gwas_strong	BMD|fracture		False			37.1	B
+PLPP3	Plpp3	8613	↓	-0.616634	0.0281965	-0.600297	0.0355237	2	True	False		gwas_bmd	BMD		False			37.1	C
+RPS21	Rps21	6227	↑	0.481396	0.0113263	0.615224	0.000765696	2	True	False		gwas_bmd	BMD		False			37.1	C
+KLF3	Klf3	51274	↓	-0.614312	0.000105652	-0.528469	0.00111612	2	True	False		gwas_bmd	BMD		False			37.1	C
+TRIB1	Trib1	10221	↑			0.614063	0.0264862	1		True		gwas_strong	osteoporosis		False			37.1	B
+E2F7	E2f7	144455	↓	-0.501909	0.00112062	-0.613942	5.63654e-05	2	True	False		gwas_bmd	BMD		False			37.1	C
+JUP	Jup	3728	↓			-0.600768	0.0167787	1		True		gwas_strong	BMD|fracture		False			37.0	B
+PGAP6	Pgap6	58986	↓			-0.599072	4.39611e-05	1		True		gwas_strong	fracture		False			37.0	B
+TCOF1	Tcof1	6949	↓			-0.597383	0.0230987	1		True		gwas_strong	BMD|fracture		False			37.0	B
+PTCH1	Ptch1	5727	↓			-0.595755	0.00216625	1		True		gwas_strong	BMD|fracture		False			37.0	B
+NEIL3	Neil3	55247	↓	-0.478558	0.00361845	-0.593741	0.000174746	2	True	False		gwas_bmd	BMD		False			37.0	C
+ASXL2	Asxl2	55252	↓	-0.292651	0.00951727			1		False		mendelian	fracture|osteoporosis	Osteoporosis	False			37.0	B
+DOP1B	Dop1b	9980	↓			-0.58998	0.0026078	1		True		gwas_strong	BMD|fracture		False			36.9	B
+TNFRSF1B	Tnfrsf1b	7133	↓			-0.587101	0.0429408	1		True		gwas_strong	BMD|fracture		False			36.9	B
+PPP1R3B	Ppp1r3b	79660	↑			0.585791	0.0114663	1		True		gwas_strong	BMD|fracture		False			36.9	B
+PBX3	Pbx3	5090	↓			-0.585541	0.000339428	1		True		gwas_strong	BMD|fracture		False			36.9	B
+FXYD5	Fxyd5	53827	↑	0.583538	6.35705e-05	0.489416	0.00111226	2	True	False		gwas_bmd	BMD		False			36.9	C
+HROB	Hrob	78995	↓			-0.581061	0.00214123	1		True		gwas_strong	BMD|fracture		False			36.9	B
+LIPE	Lipe	3991	↓			-0.577584	0.0164118	1		True		gwas_strong	BMD|fracture		False			36.9	B
+GATM	Gatm	2628	↑	0.280992	0.0392654			1		False		mendelian		Osteopenia|Fracture	False			36.9	B
+MAP3K1	Map3k1	4214	↓	-0.455315	0.00707764	-0.576963	0.000430682	2	True	False		gwas_bmd	BMD		False			36.8	C
+ADAMTS14	Adamts14	140766	↓			-0.57629	0.0365919	1		True		gwas_strong	fracture		False			36.8	B
+HDAC6	Hdac6	10013	↓			-0.572382	0.0114951	1		True		gwas_strong	BMD|fracture		False			36.8	B
+PLEKHM1	Plekhm1	9842	↓			-0.564146	0.0193837	1		True		gwas_strong	BMD|fracture		False			36.8	B
+COPS9	Cops9	150678	↑	0.563917	0.00089693	0.468591	0.00674875	2	True	False		gwas_bmd	BMD		False			36.8	C
+NIPAL3	Nipal3	57185	↓			-0.563709	0.00130848	1		True		gwas_strong	osteoporosis		False			36.8	B
+GATA2	Gata2	2624	↓			-0.563073	0.0301463	1		True		gwas_strong	BMD|osteoporosis		False			36.8	B
+PPP2CA	Ppp2ca	5515	↑	0.273378	0.000687			1		False		mendelian	BMD	Osteoporosis|Osteopenia	False			36.8	B
+HRH1	Hrh1	3269	↑			1.59903	0.0423401	1		True		gwas_bmd	BMD		False			36.7	C
+NAA38	Naa38	84316	↑	0.561974	2.8308e-05	0.455517	0.000758084	2	True	False		gwas_bmd	BMD		False			36.7	C
+UNK	Unk	85451	↓	-0.47173	0.00595664	-0.561432	0.00134298	2	True	False		gwas_bmd	BMD		False			36.7	C
+SGSH	Sgsh	6448	↓			-0.559384	0.0350681	1		True		gwas_strong	BMD|fracture		False			36.7	B
+KLHL12	Klhl12	59349	↓	-0.559375	1.99481e-07	-0.433747	7.24725e-05	2	True	False		gwas_bmd	BMD		False			36.7	C
+FAM120A	Fam120a	23196	↓			-0.558348	5.78657e-06	1		True		gwas_strong	BMD|fracture		False			36.7	B
+DVL3	Dvl3	1857	↓			-0.558284	0.00724471	1		True		gwas_strong	BMD|fracture|osteoporosis		False			36.7	B
+KREMEN1	Kremen1	83999	↓			-0.552378	0.0462721	1		True		gwas_strong	BMD|fracture		False			36.7	B
+AAAS	Aaas	8086	↓			-0.551525	0.00745156	1		True		gwas_strong	BMD|osteoporosis		False			36.7	B
+CLCN7	Clcn7	1186	↓			-0.549014	0.005542	1		True		gwas_strong	BMD|fracture		False			36.7	B
+TNFSF12-TNFSF13	Tnfsf12	407977	↓			-0.546237	0.0487625	1		True		gwas_strong	osteoporosis		False			36.6	B
+TNFSF12	Tnfsf12	8742	↓			-0.546237	0.0487625	1		True		gwas_strong	osteoporosis		False			36.6	B
+CD53	Cd53	963	↑	0.542941	6.03456e-08	0.352574	0.000794796	2	True	False		gwas_bmd	BMD		False			36.6	C
+AGAP1	Agap1	116987	↓			-0.542701	0.000592397	1		True		gwas_strong	osteoporosis		False			36.6	B
+HPRT1	Hprt	3251	↑	0.540812	1.55475e-05	0.346577	0.00888173	2	True	False		gwas_bmd	BMD		False			36.6	C
+IFIH1	Ifih1	64135	↓	-0.539208	0.000371829	-0.368146	0.0192184	2	True	False		gwas_bmd	BMD		False			36.6	C
+ERCC2	Ercc2	2068	↓			-0.536592	0.0433546	1		True		gwas_strong	BMD|fracture		False			36.6	B
+CST7	Cst7	8530	↑	0.390714	0.00648911	0.533662	0.000102525	2	True	False		gwas_bmd	BMD		False			36.6	C
+APOC2	Apoc2	344	↑			0.529645	0.0142694	1		True		gwas_strong	fracture		False			36.5	B
+RASA2	Rasa2	5922	↑	0.388258	0.0173725	0.526777	0.000702263	2	True	False		gwas_bmd	BMD		False			36.5	C
+NFIA	Nfia	4774	↓	-0.52609	0.0179754	-0.519518	0.0197604	2	True	False		gwas_bmd	BMD		False			36.5	C
+ID2	Id2	3398	↑	0.524014	0.000865028	0.482299	0.00233952	2	True	False		gwas_bmd	BMD		False			36.5	C
+ZBTB40	Zbtb40	9923	↓			-0.520789	0.0229262	1		True		gwas_strong	BMD|fracture|osteoporosis		False			36.5	B
+TBCA	Tbca	6902	↑	0.465779	0.00466545	0.516933	0.0011427	2	True	False		gwas_bmd	BMD		False			36.4	C
+DROSHA	Drosha	29102	↓			-0.515762	0.00738653	1		True		gwas_strong	BMD|fracture		False			36.4	B
+NFATC2	Nfatc2	4773	↓			-0.51573	0.0422344	1		True		gwas_strong	BMD|osteoporosis		False			36.4	B
+GLRX3	Glrx3	10539	↑	0.510581	0.000772848	0.372791	0.0182918	2	True	False		gwas_bmd	BMD		False			36.4	C
+SBNO2	Sbno2	22904	↓			-0.508653	0.00676111	1		True		gwas_strong	BMD|fracture		False			36.4	B
+DAAM1	Daam1	23002	↓	-0.507298	0.00258543	-0.494727	0.00327393	2	True	False		gwas_bmd	BMD		False			36.4	C
+ATP5MF	Atp5mf	9551	↑	0.506449	0.0030346	0.365345	0.0402183	2	True	False		gwas_bmd	BMD		False			36.4	C
+TMEM132E	Tmem132e	124842	↓	-0.892995	0.0256366	-1.69846	2.22375e-05	2	True	False		none			False			36.3	C
+PROKR1	Prokr1	10887	↓	-0.496411	0.0249041	-0.464896	0.0360959	2	True	False		gwas_bmd	BMD		False			36.3	C
+MTFR1	Mtfr1	9650	↓	-0.494035	0.000971182	-0.340859	0.0303444	2	True	False		gwas_bmd	BMD		False			36.3	C
+ZFP36L1	Zfp36l1	677	↓			-0.491459	0.00880484	1		True		gwas_strong	BMD|fracture		False			36.3	B
+FBXW8	Fbxw8	26259	↓			-0.489277	0.00749003	1		True		gwas_strong	fracture		False			36.3	B
+BRCA2	Brca2	675	↓	-0.472753	0.0167376	-0.489178	0.0123604	2	True	False		gwas_bmd	BMD		False			36.3	C
+PLA2G6	Pla2g6	8398	↓			-0.488751	0.0224388	1		True		gwas_strong	fracture		False			36.3	B
+TGFBR1	Tgfbr1	7046	↑	0.1974	0.0348767			1		False		mendelian	BMD|fracture	Osteoporosis	False			36.3	B
+HNRNPC	Hnrnpc	3183	↑	0.194915	0.0302288			1		False		mendelian		Osteoporosis|Osteopenia	False			36.3	B
+TNS3	Tns3	64759	↓			-0.485536	0.00767964	1		True		gwas_strong	BMD|fracture		False			36.2	B
+TROAP	Troap	10024	↓	-0.484714	0.0032668	-0.46678	0.00621957	2	True	False		gwas_bmd	BMD		False			36.2	C
+PRKAR2A	Prkar2a	5576	↑	0.428119	0.000963261	0.479903	0.000273538	2	True	False		gwas_bmd	BMD		False			36.2	C
+SUN1	Sun1	23353	↓	-0.479739	0.000269817	-0.47662	0.0003227	2	True	False		gwas_bmd	BMD		False			36.2	C
+RARG	Rarg	5916	↓			-0.478385	0.0170248	1		True		gwas_strong	BMD|fracture		False			36.2	B
+MRPL1	Mrpl1	65008	↑	0.460841	0.00132238	0.477601	0.000585966	2	True	False		gwas_bmd	BMD		False			36.2	C
+PPIB	Ppib	5479	↑	0.476998	0.000171094	0.284699	0.0374034	2	True	False		gwas_bmd	BMD|OI		False			36.2	C
+PYGO2	Pygo2	90780	↓			-0.470848	0.012891	1		True		gwas_strong	BMD|fracture		False			36.1	B
+IPCEF1	Ipcef1	26034	↑	0.368203	0.00496294	0.470607	0.000193664	2	True	False		gwas_bmd	BMD		False			36.1	C
+LBR	Lbr	3930	↓			-0.470591	1.22458e-05	1		True		gwas_strong	BMD|fracture		False			36.1	B
+LRRC20	Lrrc20	55222	↓			-0.470141	0.0316762	1		True		gwas_strong	osteoporosis		False			36.1	B
+NDRG1	Ndrg1	10397	↓			-0.46937	0.041308	1		True		gwas_strong	osteoporosis		False			36.1	B
+PLXND1	Plxnd1	23129	↓			-0.466629	0.0143248	1		True		gwas_strong	BMD|fracture		False			36.1	B
+PDCD6	Pdcd6	10016	↑	0.348225	0.0226449	0.462343	0.00140721	2	True	False		gwas_bmd	BMD		False			36.1	C
+ANKRD9	Ankrd9	122416	↓			-0.457872	0.0137104	1		True		gwas_strong	BMD|osteoporosis		False			36.1	B
+NFIC	Nfic	4782	↓			-1.50328	1.8543e-06	1		True		gwas_bmd	BMD		False			36.0	C
+CAPZB	Capzb	832	↑	0.398199	5.57908e-05	0.456246	2.95607e-06	2	True	False		gwas_bmd	BMD		False			36.0	C
+STK11	Stk11	6794	↓			-0.453615	1.5902e-06	1		True		gwas_strong	BMD|fracture		False			36.0	B
+PAK1	Pak1	5058	↑	0.297375	0.0154732	0.452405	0.000106326	2	True	False		gwas_bmd	BMD		False			36.0	C
+TMEM165	Tmem165	55858	↑	0.449563	5.01292e-07	0.228406	0.02042	2	True	False		gwas_bmd	BMD		False			36.0	C
+CYCS	Cycs	54205	↑	0.448988	0.00351095	0.434925	0.00449195	2	True	False		gwas_bmd	BMD		False			36.0	C
+WNK1	Wnk1	65125	↓	-0.437886	0.00342164	-0.446546	0.00269854	2	True	False		gwas_bmd	BMD		False			36.0	C
+SMTN	Smtn	6525	↓			-0.446124	0.0295708	1		True		gwas_strong	fracture		False			36.0	B
+PTPN11	Ptpn11	5781	↓			-0.444111	0.000248966	1		True		gwas_strong	BMD|fracture		False			36.0	B
+UNC119	Unc119	9094	↑	0.443625	1.06404e-05	0.25886	0.018083	2	True	False		gwas_bmd	BMD		False			36.0	C
+ZCCHC24	Zcchc24	219654	↓			-0.44362	0.00240699	1		True		gwas_strong	fracture		False			36.0	B
+CHD4	Chd4	1108	↓			-0.443555	0.0172589	1		True		gwas_strong	fracture		False			36.0	B
+UGDH	Ugdh	7358	↑	0.415506	1.96085e-05	0.443009	6.09489e-06	2	True	False		gwas_bmd	BMD		False			36.0	C
+RPL13	Rpl13	6137	↑	0.440756	0.00858361	0.354475	0.0406849	2	True	False		gwas_bmd	BMD		False			35.9	C
+CABIN1	Cabin1	23523	↓	-0.312566	0.0338714	-0.439454	0.00175744	2	True	False		gwas_bmd	BMD		False			35.9	C
+TBC1D23	Tbc1d23	55773	↑			0.436709	0.00108955	1		True		gwas_strong	osteoporosis		False			35.9	B
+RSL24D1	Rsl24d1	51187	↑			0.43349	0.000365511	1		True		gwas_strong	fracture		False			35.9	B
+SMO	Smo	6608	↓			-0.432329	0.0440582	1		True		gwas_strong	BMD|fracture		False			35.9	B
+MSRA	Msra	4482	↑	0.423366	0.00069836	0.429235	0.000591944	2	True	False		gwas_bmd	BMD		False			35.9	C
+ARMC2	Armc2	84071	↑			1.47505	0.0320817	1		True		gwas_bmd	BMD		False			35.8	C
+POFUT1	Pofut1	23509	↓	-0.273164	0.0263937	-0.42471	0.000266364	2	True	False		gwas_bmd	BMD		False			35.8	C
+PRKCQ	Prkcq	5588	↑			0.423529	0.00112849	1		True		gwas_strong	BMD|fracture|osteoporosis		False			35.8	B
+IRF2BP2	Irf2bp2	359948	↓			-0.42199	0.0359948	1		True		gwas_strong	BMD|fracture		False			35.8	B
+SRP19	Srp19	6728	↑	0.421202	0.00379022	0.302308	0.0442043	2	True	False		gwas_bmd	BMD		False			35.8	C
+BCL2L11	Bcl2l11	10018	↓			-0.418835	0.00814654	1		True		gwas_strong	BMD|fracture		False			35.8	B
+ATXN7L3	Atxn7l3	56970	↓			-0.4187	0.0376271	1		True		gwas_strong	BMD|fracture		False			35.8	B
+PLA2G4A	Pla2g4a	5321	↑	0.417372	0.00365832	0.335132	0.0230058	2	True	False		gwas_bmd	BMD		False			35.8	C
+RAD21	Rad21	5885	↓	-0.262764	0.0198212	-0.412495	9.38765e-05	2	True	False		gwas_bmd	BMD		False			35.7	C
+ACTR3	Actr3	10096	↑	0.412399	9.24969e-08	0.289666	0.000308565	2	True	False		gwas_bmd	BMD		False			35.7	C
+RND3	Rnd3	390	↑	0.325577	0.0263715	0.411733	0.0030892	2	True	False		gwas_bmd	BMD		False			35.7	C
+AFF1	Aff1	4299	↓	-0.409969	0.00900362	-0.387057	0.0145947	2	True	False		gwas_bmd	BMD		False			35.7	C
+TSC1	Tsc1	7248	↓	-0.406961	0.0013608	-0.309365	0.0220314	2	True	False		gwas_bmd	BMD		False			35.7	C
+NTAN1	Ntan1	123803	↑	0.404856	0.00493171	0.298566	0.0434212	2	True	False		gwas_bmd	BMD		False			35.7	C
+CELF1	Celf1	10658	↓	-0.351999	0.00456899	-0.40208	0.000976653	2	True	False		gwas_bmd	BMD		False			35.7	C
+U2AF2	U2af2	11338	↓			-0.400534	0.00286135	1		True		gwas_strong	BMD|fracture		False			35.7	B
+LHFPL2	Lhfpl2	10184	↑			0.400392	0.00375314	1		True		gwas_strong	osteoporosis		False			35.7	B
+	Ighv7-3	28318	↓	-1.41326	0.0143573	-1.59713	0.012891	2	True	False		none			False	systemic	5.0	35.6	C
+	Ighv7-3	28409	↓	-1.41326	0.0143573	-1.59713	0.012891	2	True	False		none			False	systemic	5.0	35.6	C
+IGHV3-72	Ighv7-3	28410	↓	-1.41326	0.0143573	-1.59713	0.012891	2	True	False		none			False	systemic	5.0	35.6	C
+	Ighv7-3	28423	↓	-1.41326	0.0143573	-1.59713	0.012891	2	True	False		none			False	systemic	5.0	35.6	C
+	Ighv7-3	28444	↓	-1.41326	0.0143573	-1.59713	0.012891	2	True	False		none			False	systemic	5.0	35.6	C
+	Ighv7-3	28448	↓	-1.41326	0.0143573	-1.59713	0.012891	2	True	False		none			False	systemic	5.0	35.6	C
+	Ighv7-3	28449	↓	-1.41326	0.0143573	-1.59713	0.012891	2	True	False		none			False	systemic	5.0	35.6	C
+ATP6	ATP6	4508	↑	1.58911	8.29164e-16	0.988196	1.98587e-06	2	True	False		none			False	systemic	6.0	35.6	C
+SH3BP2	Sh3bp2	6452	↓			-0.394874	0.0101494	1		True		gwas_strong	BMD|fracture		False			35.6	B
+HSD17B11	Hsd17b11	51170	↑	0.276372	0.0320605	0.394223	0.00137603	2	True	False		gwas_bmd	BMD		False			35.6	C
+ARHGAP17	Arhgap17	55114	↓			-0.392666	0.03569	1		True		gwas_strong	osteoporosis		False			35.6	B
+MEN1	Men1	4221	↓			-0.391844	0.0149651	1		True		gwas_strong	BMD|fracture		False			35.6	B
+PRKACA	Prkaca	5566	↓			-0.390957	0.0237885	1		True		gwas_strong	BMD|fracture		False			35.6	B
+DRAM1	Dram1	55332	↑	0.302971	0.00799439	0.390638	0.0004375	2	True	False		gwas_bmd	BMD		False			35.6	C
+ACSS1	Acss1	84532	↓	-0.389483	0.00532577	-0.3322	0.0207272	2	True	False		gwas_bmd	BMD		False			35.6	C
+ITGA4	Itga4	3676	↓	-0.387889	0.000553735	-0.306119	0.00845193	2	True	False		gwas_bmd	BMD		False			35.6	C
+PTS	Pts	5805	↑			0.385572	0.00680838	1		True		gwas_strong	BMD|fracture|osteoporosis		False			35.6	B
+CD82	Cd82	3732	↓			-0.384745	0.000434682	1		True		gwas_strong	BMD|osteoporosis		False			35.6	B
+ATP8	ATP8	4509	↑	1.56765	0.0114458	1.26486	0.0477298	2	True	False		none			False	systemic	7.0	35.5	C
+LY86	Ly86	9450	↑	0.378534	0.00083719	0.305655	0.00842253	2	True	False		gwas_bmd	BMD		False			35.5	C
+HELB	Helb	92797	↓	-0.212912	0.021702	-0.377107	1.34659e-05	2	True	False		gwas_bmd	BMD		False			35.5	C
+TMEM38B	Tmem38b	55151	↑	0.303358	0.00476766	0.376167	0.000244422	2	True	False		gwas_bmd	BMD|OI		False			35.5	C
+SMIM29	Smim29	221491	↑	0.358728	0.0179877	0.371116	0.0122943	2	True	False		gwas_bmd	BMD		False			35.5	C
+ZNF703	Zfp703	80139	↓			-1.41462	8.98855e-08	1		True		gwas_bmd	BMD		False			35.4	C
+NEDD9	Nedd9	4739	↑			0.366325	0.00641917	1		True		gwas_strong	osteoporosis		False			35.4	B
+NFIX	Nfix	4784	↓	-0.364711	0.0250849	-0.347181	0.0372955	2	True	False		gwas_bmd	BMD		False			35.4	C
+DVL1	Dvl1	1855	↓			-0.360373	0.0400783	1		True		gwas_strong	BMD|fracture|osteoporosis		False			35.4	B
+ARL14EP	Arl14ep	120534	↑			0.360364	0.0113827	1		True		gwas_strong	fracture		False			35.4	B
+SCMH1	Scmh1	22955	↓			-0.359572	0.0403585	1		True		gwas_strong	BMD|fracture		False			35.4	B
+DECR2	Decr2	26063	↑			0.35817	0.0400782	1		True		gwas_strong	fracture		False			35.4	B
+CLPTM1	Clptm1	1209	↓			-0.357834	0.00906601	1		True		gwas_strong	fracture		False			35.4	B
+NDUFS4	Ndufs4	4724	↑	0.356712	0.0373321	0.346334	0.0406018	2	True	False		gwas_bmd	BMD		False			35.4	C
+RTF1	Rtf1	23168	↓	-0.356625	0.00482632	-0.286902	0.0316995	2	True	False		gwas_bmd	BMD		False			35.4	C
+ATG13	Atg13	9776	↓			-0.355826	0.0257343	1		True		gwas_strong	BMD|fracture		False			35.4	B
+LMO4	Lmo4	8543	↑	0.354838	0.000320048	0.252271	0.0153705	2	True	False		gwas_bmd	BMD		False			35.4	C
+COA8	Coa8	84334	↑			0.353889	0.0123808	1		True		gwas_strong	fracture		False			35.4	B
+ALDH3B2	Aldh3b2	222	↓	-0.998152	0.00460147	-1.54611	6.50239e-06	2	True	False		none			False			35.3	C
+ACTR2	Actr2	10097	↑	0.351503	1.9174e-05	0.327379	8.2736e-05	2	True	False		gwas_bmd	BMD		False			35.3	C
+GMDS	Gmds	2762	↑			0.351168	0.00784827	1		True		gwas_strong	BMD|fracture		False			35.3	B
+PRKD3	Prkd3	23683	↑			0.350258	6.31076e-05	1		True		gwas_strong	fracture		False			35.3	B
+GPCPD1	Gpcpd1	56261	↓	-0.339805	0.0307348	-0.346475	0.0261355	2	True	False		gwas_bmd	BMD		False			35.3	C
+ELK4	Elk4	2005	↓	-0.345882	0.0126368	-0.30474	0.0320902	2	True	False		gwas_bmd	BMD		False			35.3	C
+H3-5	H3f3b	440093	↑			0.338201	0.0400782	1		True		gwas_strong	BMD|osteoporosis		False			35.3	B
+SSR3	Ssr3	6747	↑	0.267946	0.00504078	0.331682	0.000314506	2	True	False		gwas_bmd	BMD		False			35.2	C
+WLS	Wls	79971	↑			0.328566	0.000742243	1		True		gwas_strong	BMD|fracture|osteoporosis		False			35.2	B
+ABCA13	Abca13	154664	↑			0.327814	0.0364361	1		True		gwas_strong	BMD|fracture		False			35.2	B
+ALDH1L1	Aldh1l1	10840	↓			-1.36496	0.0413095	1		True		gwas_bmd	BMD		False			35.1	C
+NOL10	Nol10	79954	↓			-0.3225	0.0367963	1		True		gwas_strong	fracture		False			35.1	B
+NUP160	Nup160	23279	↓			-0.320034	0.0105919	1		True		gwas_strong	fracture		False			35.1	B
+KDM6A	Kdm6a	7403	↓	-0.22169	0.0145025	-0.319961	0.000170836	2	True	False		gwas_bmd	BMD		False			35.1	C
+CBY1	Cby1	25776	↑			0.319824	0.0435742	1		True		gwas_strong	BMD|fracture		False			35.1	B
+RBX1	Rbx1	9978	↑	0.3191	0.0140764	0.308484	0.0167695	2	True	False		gwas_bmd	BMD		False			35.1	C
+UBE2K	Ube2k	3093	↑	0.21801	0.0198924	0.318083	0.000286695	2	True	False		gwas_bmd	BMD		False			35.1	C
+ATP11B	Atp11b	23200	↑			0.316293	0.00333452	1		True		gwas_strong	osteoporosis		False			35.1	B
+UBE2E1	Ube2e1	7324	↑	0.27905	0.0230138	0.313942	0.00796343	2	True	False		gwas_bmd	BMD		False			35.1	C
+MARCKS	Marcks	4082	↓			-0.311796	0.0395598	1		True		gwas_strong	osteoporosis		False			35.1	B
+FIGNL1	Fignl1	63979	↓			-0.311291	0.0168326	1		True		gwas_strong	fracture		False			35.1	B
+MARK3	Mark3	4140	↓			-0.308843	0.00270074	1		True		gwas_strong	BMD|fracture		False			35.1	B
+RECK	Reck	8434	↑			0.307232	0.0408646	1		True		gwas_strong	BMD|fracture		False			35.0	B
+EIF1B	Eif1b	10289	↑			0.303684	0.0102133	1		True		gwas_strong	fracture		False			35.0	B
+KRR1	Krr1	11103	↑			0.303527	0.00745156	1		True		gwas_strong	osteoporosis		False			35.0	B
+HNRNPR	Hnrnpr	10236	↓			-0.303357	0.0371423	1		True		gwas_strong	osteoporosis		False			35.0	B
+IFT20	Ift20	90410	↑			0.302464	0.0420816	1		True		gwas_strong	BMD|fracture		False			35.0	B
+DDX23	Ddx23	9416	↓			-0.301168	0.0290003	1		True		gwas_strong	fracture		False			35.0	B
+C11orf58	1110004F10Rik	10944	↑			0.298195	0.0327829	1		True		gwas_strong	BMD|fracture		False			35.0	B
+MTPN|LUZP6	Mtpn	136319	↑			0.297761	0.00379721	1		True		gwas_strong	fracture|osteoporosis		False			35.0	B
+SACM1L	Sacm1l	22908	↑			0.293499	0.00594893	1		True		gwas_strong	osteoporosis		False			35.0	B
+CDK4	Cdk4	1019	↑	0.291303	0.0463571	0.292673	0.0442043	2	True	False		gwas_bmd	BMD		False			35.0	C
+RBL2	Rbl2	5934	↑			0.292255	0.00809173	1		True		gwas_strong	BMD|fracture		False			34.9	B
+SELENOW	Selenow	6415	↑			0.28849	0.0464271	1		True		gwas_strong	BMD|fracture		False			34.9	B
+KAT7	Kat7	11143	↓			-0.281576	0.0221855	1		True		gwas_strong	fracture		False			34.9	B
+SOX18	Sox18	54345	↓			-1.31798	0.00809173	1		True		gwas_bmd	BMD		False			34.8	C
+PTPN2	Ptpn2	5771	↑			0.277397	0.012026	1		True		gwas_strong	BMD|fracture		False			34.8	B
+PPP3R1	Ppp3r1	5534	↑	0.275987	0.00085546	0.256167	0.00207958	2	True	False		gwas_bmd	BMD		False			34.8	C
+RNF146	Rnf146	81847	↑			0.273119	0.00252745	1		True		gwas_strong	BMD|fracture		False			34.8	B
+RPTOR	Rptor	57521	↓			-0.268553	0.0356344	1		True		gwas_strong	fracture		False			34.8	B
+ADAMTS2	Adamts2	9509	↓			-1.30987	0.000171101	1		True		gwas_bmd	BMD|OI		False			34.7	C
+YWHAZ	Ywhaz	7534	↑	0.209587	0.0395915	0.261081	0.00791145	2	True	False		gwas_bmd	BMD		False			34.7	C
+CREB1	Creb1	1385	↑			0.25945	0.0164644	1		True		gwas_strong	BMD|fracture		False			34.7	B
+RHEB	Rheb	6009	↑	0.258836	0.0122177	0.208499	0.0472116	2	True	False		gwas_bmd	BMD		False			34.7	C
+PTEN	Pten	5728	↑			0.250462	0.0243683	1		True		gwas_strong	BMD|fracture|osteoporosis		False			34.7	B
+KDM1A	Kdm1a	23028	↓			-0.249378	0.0491202	1		True		gwas_strong	BMD|fracture		False			34.7	B
+UBE2Q2	Ube2q2	92912	↑			0.248516	0.0162712	1		True		gwas_strong	BMD|fracture		False			34.7	B
+SLC7A5	Slc7a5	8140	↓	-0.8565	0.000100162	-1.43366	1.39817e-11	2	True	False		none			False			34.6	C
+TACC1	Tacc1	6867	↓	-0.246677	0.0158789	-0.236272	0.0219599	2	True	False		gwas_bmd	BMD		False			34.6	C
+TMEM64	Tmem64	169200	↓			-0.240282	0.0326936	1		True		gwas_strong	BMD|fracture		False			34.6	B
+GOSR2	Gosr2	9570	↑	0.236877	0.0100351	0.205951	0.0287975	2	True	False		gwas_bmd	BMD		False			34.6	C
+PTDSS1	Ptdss1	9791	↑	0.236232	0.00645838	0.209445	0.0165353	2	True	False		gwas_bmd	BMD		False			34.6	C
+NRAS	Nras	4893	↑			0.235621	0.0294834	1		True		gwas_strong	BMD|fracture		False			34.6	B
+SRBD1	Srbd1	55133	↓			-0.234376	0.0343908	1		True		gwas_strong	BMD|fracture		False			34.6	B
+SPIN1	Spin1	10927	↑			0.233176	0.030873	1		True		gwas_strong	fracture		False			34.6	B
+MPP2	Mpp2	4355	↓	-1.03681	1.75686e-06	-1.43163	3.51916e-11	2	True	False		none			False	systemic	7.0	34.5	C
+MAP1A	Map1a	4130	↓	-1.15073	0.0375516	-1.42767	0.0112024	2	True	False		none			False	systemic	7.0	34.5	C
+ADAM33	Adam33	80332	↓	-1.01913	0.0026201	-1.42586	4.46895e-06	2	True	False		none			False	systemic	4.0	34.5	C
+CCL2	Ccl2	6347	↑	1.42364	0.00734632	1.10819	0.042728	2	True	False		none			False	systemic	9.0	34.5	C
+DNASE1L3	Dnase1l3	1776	↓	-0.868751	0.00966717	-1.4211	2.97166e-05	2	True	False		none			False			34.5	C
+LAG3	Lag3	3902	↓			-1.27061	0.00216625	1		True		gwas_bmd	BMD		False			34.5	C
+SP1	Sp1	6667	↓			-0.223077	0.0435742	1		True		gwas_strong	BMD|osteoporosis		False			34.5	B
+VPS41	Vps41	27072	↑			0.219493	0.0442043	1		True		gwas_strong	fracture		False			34.5	B
+ATP6V1E1	Atp6v1e1	529	↑	0.202628	0.0304756	0.198666	0.0334091	2	True	False		gwas_bmd	BMD		False			34.4	C
+ZNF582	Zfp582	147948	↑	1.68075	0.0223			1		False		gwas_bmd	BMD		False	intermediate	2.0	34.2	C
+DUSP8	Dusp8	1850	↓	-0.95041	4.95838e-06	-1.3832	2.36166e-11	2	True	False		none			False			34.2	C
+PDK4	Pdk4	5166	↓	-1.3807	0.0473598			1		False		gwas_strong	BMD|fracture		False	systemic	11.0	34.2	B
+DCHS1	Dchs1	8642	↓	-1.35433	0.0204481			1		False		gwas_strong	BMD|fracture		False	systemic	7.0	34.0	B
+COL1A1		1277	↓			-1.347	0.0502	0		False	type I collagen (bone matrix)	canonical						34.0	B
+SLC4A1	Slc4a1	6521	↓	-0.774705	1.67454e-05	-1.34618	8.73518e-15	2	True	False		none			False			34.0	C
+MTSS2	Mtss2	92154	↓			-1.18523	0.000928115	1		True		gwas_bmd	BMD		False			33.9	C
+LGR5	Lgr5	8549	↓	-1.31314	2.43378e-08			1		False		gwas_strong	BMD|osteoporosis		False	systemic	7.0	33.8	B
+IGFBP5	Igfbp5	3488	↓	-1.31313	0.00917241	-1.25853	0.0130157	2	True	False		none			False	systemic	10.0	33.8	C
+RIPOR1	Ripor1	79567	↓			-1.16409	5.53043e-07	1		True		gwas_bmd	BMD		False			33.8	C
+CBLN1	Cbln1	869	↓	-1.29455	0.0303574	-1.24372	0.0462433	2	True	False		none			False	systemic	3.0	33.6	C
+CACNA1G	Cacna1g	8913	↓	-1.29275	4.56543e-07	-1.16676	7.0521e-06	2	True	False		none			False	systemic	7.0	33.6	C
+PCDHGC5	Pcdhgc5	56097	↓	-1.29018	0.000892267	-0.959371	0.00840572	2	True	False		none			False	systemic	3.0	33.6	C
+SHROOM2	Shroom2	357	↓	-1.2734	0.0228261	-1.24794	0.0189876	2	True	False		none			False	systemic	5.0	33.5	C
+HEYL	Heyl	26508	↓			-1.12793	0.0252407	1		True		gwas_bmd	BMD		False			33.5	C
+GSK3A	Gsk3a	2931	↓			-1.12097	6.17502e-11	1		True		gwas_bmd	BMD		False			33.5	C
+CECR2	Cecr2	27443	↓	-1.26743	1.43367e-13	-0.811331	6.52066e-06	2	True	False		none			False	systemic	9.0	33.4	C
+KIAA1671	2900026A02Rik	85379	↓	-0.697321	0.00865139	-1.26338	1.29794e-06	2	True	False		none			False			33.4	C
+SAMD14	Samd14	201191	↓	-0.849578	4.95387e-07	-1.26306	4.43389e-14	2	True	False		none			False			33.4	C
+CYYR1	Cyyr1	116159	↓	-1.26188	0.0151104	-1.14755	0.0265971	2	True	False		none			False	systemic	6.0	33.4	C
+ADAM12	Adam12	8038	↓	-1.26119	0.0103065			1		False		gwas_strong	fracture		False	systemic	9.0	33.4	B
+B3GNT3	B3gnt3	10331	↓	-1.26093	7.2967e-08	-1.1886	5.69512e-07	2	True	False		none			False	systemic	4.0	33.4	C
+ARHGDIG	Arhgdig	398	↑	1.25711	0.0474625			1		False		gwas_strong	BMD|osteoporosis		False	systemic	4.0	33.4	B
+LIMCH1	Limch1	22998	↓			-1.10314	0.0234649	1		True		gwas_bmd	BMD		False			33.4	C
+SLC7A11	Slc7a11	23657	↑	0.990636	0.000297428	1.24044	3.37476e-06	2	True	False		none			False			33.3	C
+TNS2	Tns2	23371	↓	-1.13	0.0290631	-1.23108	0.0188952	2	True	False		none			False	systemic	12.0	33.2	C
+SOX12	Sox12	6666	↓			-1.0796	1.06401e-06	1		True		gwas_bmd	BMD		False			33.2	C
+SNX22	Snx22	79856	↓	-1.06817	1.00375e-08	-1.22106	2.57583e-11	2	True	False		none			False	systemic	5.0	33.1	C
+TMEM108	Tmem108	66000	↓	-1.21958	2.79233e-05	-0.934707	0.00400399	2	True	False		none			False	systemic	3.0	33.1	C
+OAS3	Oas3	4940	↓	-0.475032	0.0101765	-1.21743	7.5212e-13	2	True	False		none			False			33.1	C
+CCDC92B	Ccdc92b	101928991	↓	-0.748661	0.00382382	-1.21666	7.92641e-07	2	True	False		none			False			33.1	C
+POPDC2	Popdc2	64091	↓	-1.21618	1.51225e-07	-1.1997	2.41949e-07	2	True	False		none			False	systemic	8.0	33.1	C
+ZBED5	Chchd2l	58486	↑	1.21129	0.0193124			1		False		gwas_strong	fracture		False	systemic	4.0	33.1	B
+NINL	Ninl	22981	↓	-1.2104	2.60797e-10	-0.636947	0.00139523	2	True	False		none			False	systemic	5.0	33.1	C
+CDT1	Cdt1	81620	↓			-1.06891	9.30894e-10	1		True		gwas_bmd	BMD		False			33.1	C
+SYT14	Syt14	255928	↓	-1.2072	1.52473e-05	-0.755734	0.00285476	2	True	False		none			False	systemic	7.0	33.0	C
+TEKTIP1	4930404N11Rik	100128569	↓	-0.968323	0.000273651	-1.20631	1.11921e-05	2	True	False		none			False			33.0	C
+SNAI2	Snai2	6591	↓	-1.20282	0.02461			1		False		gwas_strong	BMD|fracture		False	systemic	4.0	33.0	B
+TTLL12	Ttll12	23170	↓	-0.507216	0.00938156	-1.20027	2.38739e-11	2	True	False		none			False			33.0	C
+AKAP12	Akap12	9590	↓	-1.19963	6.21892e-06	-0.999884	0.000312547	2	True	False		none			False	systemic	6.0	33.0	C
+ASPRV1|PCBP1-AS1	Asprv1	151516	↑	1.19731	9.63531e-09	0.654846	0.00340023	2	True	False		none			False	systemic	6.0	33.0	C
+GALNT15	Galnt15	117248	↓	-1.19014	0.00490817	-0.962165	0.0240169	2	True	False		none			False	systemic	10.0	32.9	C
+AOC2	Aoc2	314	↓	-1.1899	1.76068e-08	-0.910142	2.29547e-05	2	True	False		none			False	systemic	4.0	32.9	C
+PERM1	Perm1	84808	↓	-1.18401	0.000104503	-0.988026	0.00202073	2	True	False		none			False	systemic	10.0	32.9	C
+ATL1	Atl1	51062	↓	-1.1803	0.000167569	-0.750818	0.0198628	2	True	False		none			False	systemic	5.0	32.9	C
+CCN5	Ccn5	8839	↓	-1.03824	0.0380455	-1.17854	0.0111032	2	True	False		none			False	systemic	5.0	32.9	C
+CPLX2	Cplx2	10814	↓	-1.16171	9.24969e-08	-0.737742	0.00160474	2	True	False		none			False	systemic	5.0	32.7	C
+SLC6A9	Slc6a9	6536	↓	-1.05329	9.75887e-10	-1.15786	1.67217e-11	2	True	False		none			False	systemic	8.0	32.7	C
+OMP	Omp	4975	↓	-0.896937	0.002267	-1.15246	7.65061e-05	2	True	False		none			False			32.7	C
+FLT4	Flt4	2324	↓	-1.12351	0.0367265	-1.14892	0.0340437	2	True	False		none			False	systemic	4.0	32.7	C
+PDE7B	Pde7b	27115	↑			1.00582	0.00928666	1		True		gwas_bmd	BMD		False			32.7	C
+RBMS3	Rbms3	27303	↓			-1.00375	0.0367173	1		True		gwas_bmd	BMD		False			32.7	C
+DDR1	Ddr1	780	↓			-1.00189	0.00137401	1		True		gwas_bmd	BMD		False			32.7	C
+ELMO3	Elmo3	79767	↓	-1.13414	0.000516162	-0.924627	0.00465268	2	True	False		none			False	systemic	8.0	32.6	C
+PTGS2	Ptgs2	5743	↑			0.988917	0.024173	1		True		gwas_bmd	BMD		True			32.6	C
+PHYHIP	Phyhip	9796	↓	-0.627073	0.00195035	-1.13154	3.07098e-09	2	True	False		none			False			32.5	C
+PCDHGB5	Pcdhgb5	56101	↓	-1.12526	0.00821011	-0.847594	0.0498188	2	True	False		none			False	systemic	7.0	32.5	C
+C1orf198	2310022B05Rik	84886	↓	-0.600876	0.000725334	-1.12123	5.25966e-11	2	True	False		none			False			32.5	C
+CLEC4C	Clec4b2	170482	↑	0.766877	9.71614e-05	1.11566	3.04157e-09	2	True	False		none			False			32.4	C
+	Btnl10	100129094	↓	-1.11414	1.03571e-11	-1.00838	7.4355e-10	2	True	False		none			False	systemic	3.0	32.4	C
+KEL	Kel	3792	↓	-1.11179	1.34507e-08	-0.905093	5.71265e-06	2	True	False		none			False	systemic	5.0	32.4	C
+KLF1	Klf1	10661	↓	-0.496273	0.0150728	-1.11092	1.8019e-09	2	True	False		none			False			32.4	C
+TMEM229A	Tmem229a	730130	↑	0.90316	0.0362012	1.10742	0.00355956	2	True	False		none			False			32.4	C
+SRP54	Srp54c	6729	↑			0.958793	0.00136263	1		True		gwas_bmd	BMD		False			32.4	C
+CPM	Cpm	1368	↓	-1.09729	9.96151e-07			1		False		gwas_strong	fracture		False	systemic	6.0	32.3	B
+CAPN5	Capn5	726	↓	-0.89811	1.62556e-07	-1.09417	1.13833e-10	2	True	False		none			False			32.3	C
+ARHGAP23	Arhgap23	57636	↓	-0.596551	0.00170782	-1.08964	1.1792e-09	2	True	False		none			False			32.3	C
+COL4A2	Col4a2	1284	↓			-0.946437	0.0334346	1		True		gwas_bmd	BMD		False			32.3	C
+PHLDB2	Phldb2	90102	↓	-1.08667	0.0119708			1		False		gwas_strong	fracture		False	systemic	7.0	32.2	B
+RFX2	Rfx2	5990	↓	-1.01122	3.86835e-09	-1.08489	3.47782e-10	2	True	False		none			False	systemic	6.0	32.2	C
+MYL4	Myl4	4635	↓	-1.01559	0.000694099	-1.0848	0.000261185	2	True	False		none			False	systemic	9.0	32.2	C
+BRPF3	Brpf3	27154	↓	-0.824921	4.51195e-07	-1.08131	1.67217e-11	2	True	False		none			False			32.2	C
+CTSF	Ctsf	8722	↓	-0.942572	0.00105553	-1.08079	9.16826e-05	2	True	False		none			False			32.2	C
+	C4b	100293534	↓	-1.08041	0.00488306	-0.794869	0.0473933	2	True	False		none			False	systemic	10.0	32.2	C
+PLVAP	Plvap	83483	↓	-0.892819	0.00323331	-1.07305	0.00107409	2	True	False		none			False			32.2	C
+ANK1	Ank1	286	↓	-1.07247	2.77547e-10	-1.04787	6.14759e-10	2	True	False		none			False	systemic	10.0	32.1	C
+ACKR1	Ackr1	2532	↓	-0.867196	3.13427e-07	-1.07245	7.47549e-11	2	True	False		none			False			32.1	C
+COX3	COX3	4514	↑	1.07212	2.2549e-07	0.481271	0.0371094	2	True	False		none			False	systemic	4.0	32.1	C
+SLC25A42	Slc25a42	284439	↓	-1.06925	1.20648e-11	-0.727414	8.68302e-06	2	True	False		none			False	systemic	10.0	32.1	C
+ND1	ND1	4535	↑	1.06769	1.31087e-07	0.953108	3.08465e-06	2	True	False		none			False	systemic	9.0	32.1	C
+TMC3	Tmc3	342125	↓	-0.979451	0.0321055	-1.06699	0.00532827	2	True	False		none			False			32.1	C
+SLC22A23	Slc22a23	63027	↓	-1.06305	2.48126e-06	-1.04116	4.69498e-06	2	True	False		none			False	systemic	7.0	32.1	C
+ZMIZ2	Zmiz2	83637	↓			-0.921721	0.000357195	1		True		gwas_bmd	BMD		False			32.1	C
+SPON1	Spon1	10418	↓			-0.907793	0.0155008	1		True		gwas_bmd	BMD		False			32.1	C
+COL11A2	Col11a2	1302	↓			-0.907621	0.004865	1		True		gwas_bmd	BMD		True			32.1	C
+C22orf15	Gm867	150248	↓	-1.05615	1.8251e-07	-1.02609	3.18977e-07	2	True	False		none			False	systemic	3.0	32.0	C
+ZNF521	Zfp521	25925	↓	-1.05236	0.0100275			1		False		gwas_strong	BMD|fracture		False	systemic	7.0	32.0	B
+RBM38	Rbm38	55544	↓	-0.444861	0.0353009	-1.04723	2.87814e-08	2	True	False		none			False			32.0	C
+COL5A3	Col5a3	50509	↓	-0.847666	0.00188391	-1.04634	0.000178391	2	True	False		none			False			32.0	C
+GFI1B	Gfi1b	8328	↓	-0.702117	0.00180413	-1.04542	1.53818e-06	2	True	False		none			False			32.0	C
+SUOX	Suox	6821	↓	-0.390258	0.0409692	-1.04314	8.97266e-10	2	True	False		none			False			32.0	C
+ITSN1	Itsn1	6453	↓	-1.04079	3.71228e-10	-0.719196	2.7017e-05	2	True	False		none			False	systemic	11.0	31.9	C
+ACHE	Ache	43	↓	-1.04075	9.05203e-09	-0.923076	4.44732e-07	2	True	False		none			False	systemic	7.0	31.9	C
+PC	Pcx	5091	↓	-1.03781	5.01292e-07	-1.01182	1.34185e-06	2	True	False		none			False	systemic	10.0	31.9	C
+MPIG6B	Mpig6b	80739	↓	-0.863508	0.0196826	-1.03457	0.00520485	2	True	False		none			False			31.9	C
+DMTN	Dmtn	2039	↓	-1.03247	7.56438e-11	-0.976669	6.14505e-10	2	True	False		none			False	systemic	5.0	31.9	C
+C1orf226	Gm7694	400793	↓	-0.492903	0.0496077	-1.03226	1.30002e-05	2	True	False		none			False			31.9	C
+PDPN	Pdpn	10630	↑	1.03098	0.0392498			1		False		gwas_strong	BMD|fracture		False	systemic	7.0	31.9	B
+LRRC32	Lrrc32	2615	↓	-0.996816	0.00973029	-1.02716	0.00853754	2	True	False		none			False			31.8	C
+CLEC4D	Clec4d	338339	↑	1.02622	8.46057e-05	1.00041	0.00013564	2	True	False		none			False	systemic	7.0	31.8	C
+TTC39A	Ttc39a	22996	↓	-0.919209	0.000820566	-1.0257	4.81203e-05	2	True	False		none			False			31.8	C
+NIBAN3	Niban3	199786	↓	-0.874235	0.000339593	-1.02475	2.56441e-05	2	True	False		none			False			31.8	C
+TMC8	Tmc8	147138	↓	-0.465198	0.0359561	-1.02143	4.5708e-07	2	True	False		none			False			31.8	C
+SLC25A20	Slc25a20	788	↑	0.931582	4.25629e-05	1.01895	6.61726e-06	2	True	False		none			False			31.8	C
+PPP1R42	Ppp1r42	286187	↑	1.01831	1.23533e-05	0.834219	0.000271378	2	True	False		none			False	systemic	5.0	31.8	C
+NATD1	Natd1	256302	↓	-0.537415	0.00116296	-1.01477	1.03956e-10	2	True	False		none			False			31.8	C
+UFSP1	Ufsp1	402682	↓	-1.01289	1.76068e-08	-0.724197	0.000165401	2	True	False		none			False	systemic	8.0	31.8	C
+KIF18B	Kif18b	146909	↓	-0.739161	7.18853e-06	-1.01269	4.4127e-10	2	True	False		none			False			31.8	C
+MEF2D	Mef2d	4209	↓			-0.86958	0.000101084	1		True		gwas_bmd	BMD		False			31.8	C
+STEAP3	Steap3	55240	↓	-0.582401	0.00748811	-1.00912	8.9218e-07	2	True	False		none			False			31.7	C
+REEP6	Reep6	92840	↓	-0.672907	0.0316561	-1.00702	0.00147127	2	True	False		none			False			31.7	C
+KCND1	Kcnd1	3750	↓	-1.00077	0.000574773	-0.789042	0.00878672	2	True	False		none			False	systemic	5.0	31.7	C
+KDM6B	Kdm6b	23135	↓			-0.855391	0.00449095	1		True		gwas_bmd	BMD		False			31.7	C
+NIBAN2	Niban2	64855	↓			-0.842652	0.000677466	1		True		gwas_bmd	BMD		False			31.6	C
+MEGF8	Megf8	1954	↓			-0.842501	0.00782873	1		True		gwas_bmd	BMD		False			31.6	C
+SREBF1	Srebf1	6720	↓			-0.826969	0.000759673	1		True		gwas_bmd	BMD		False			31.5	C
+PHF2	Phf2	5253	↓			-0.825339	0.000140669	1		True		gwas_bmd	BMD		False			31.5	C
+PDGFRB	Pdgfrb	5159	↓			-0.818453	0.012194	1		True		gwas_bmd	BMD		False			31.5	C
+FAM9A	Xlr4c	171482	↑	1.24689	0.0160891			1		False		gwas_bmd	BMD		False	intermediate	2.0	31.3	C
+AKR1E2	Akr1e1	83592	↑	0.936845	0.0137407			1		False		gwas_strong	BMD|fracture|osteoporosis		False			31.2	B
+KIRREL1	Kirrel1	55243	↓	-0.928693	0.0471287			1		False		gwas_strong	BMD|osteoporosis		False			31.2	B
+SYNE3	Syne3	161176	↓			-0.785503	4.67786e-06	1		True		gwas_bmd	BMD		False			31.2	C
+NEK3	Nek3	4752	↓	-0.90984	0.000389505			1		False		gwas_strong	fracture		False			31.1	B
+APLNR	Aplnr	187	↓			-0.772052	0.0425201	1		True		gwas_bmd	BMD		False			31.1	C
+IRS2	Irs2	8660	↓			-0.767678	8.81654e-05	1		True		gwas_bmd	BMD		False			31.1	C
+DHRS9	Dhrs9	10170	↑			0.762033	0.0052317	1		True		gwas_bmd	BMD		False			31.1	C
+RBM14-RBM4	Rbm14	100526737	↓			-0.75811	1.03333e-05	1		True		gwas_bmd	BMD		False			31.1	C
+RBM14	Rbm14	10432	↓			-0.75811	1.03333e-05	1		True		gwas_bmd	BMD		False			31.1	C
+SCRIB	Scrib	23513	↓			-0.7526	1.37131e-05	1		True		gwas_bmd	BMD		False			31.0	C
+NAGLU	Naglu	4669	↓			-0.745873	0.00407482	1		True		gwas_bmd	BMD		False			31.0	C
+EFNB1	Efnb1	1947	↓			-0.729827	0.00621957	1		True		gwas_bmd	BMD		False			30.9	C
+RFNG	Rfng	5986	↓			-0.728447	0.000676895	1		True		gwas_bmd	BMD		False			30.9	C
+GIT1	Git1	28964	↓			-0.72408	0.00267235	1		True		gwas_bmd	BMD		False			30.8	C
+MAZ	Maz	4150	↓			-0.712934	3.30816e-08	1		True		gwas_bmd	BMD		False			30.8	C
+SLC29A3	Slc29a3	55315	↓			-0.70306	0.00657151	1		True		gwas_bmd	BMD		False			30.7	C
+BCR	Bcr	613	↓			-0.699789	0.00095295	1		True		gwas_bmd	BMD		False			30.7	C
+TIE1	Tie1	7075	↓			-0.693802	0.0297889	1		True		gwas_bmd	BMD		False			30.6	C
+KIF13A	Kif13a	63971	↓			-0.679042	0.00724357	1		True		gwas_bmd	BMD		False			30.5	C
+SLC38A10	Slc38a10	124565	↓			-0.673227	3.58632e-06	1		True		gwas_bmd	BMD		False			30.5	C
+RTL6	Rtl6	84247	↓			-0.657822	0.0286244	1		True		gwas_bmd	BMD		False			30.4	C
+LTBP1	Ltbp1	4052	↓	-0.788124	0.0404365			1		False		gwas_strong	fracture		True			30.3	B
+GAS2L1	Gas2l1	10634	↓			-0.651399	0.0454541	1		True		gwas_bmd	BMD		False			30.3	C
+MAFB	Mafb	9935	↓			-0.650069	0.00892198	1		True		gwas_bmd	BMD|osteolysis_necrosis		False			30.3	C
+ATP5ME	Atp5k	521	↑			0.649615	0.00607882	1		True		gwas_bmd	BMD		False			30.3	C
+PLPPR3	Plppr3	79948	↓			-0.643942	0.0309603	1		True		gwas_bmd	BMD		False			30.3	C
+UBQLN2	Ubqln2	29978	↓			-0.642866	0.00788725	1		True		gwas_bmd	BMD		False			30.3	C
+LAMC1	Lamc1	3915	↓			-0.629404	0.0109347	1		True		gwas_bmd	BMD		False			30.2	C
+LGALS3	Lgals3	3958	↑	0.760457	1.12658e-07			1		False		gwas_strong	BMD|fracture		False			30.1	B
+STXBP1	Stxbp1	6812	↓			-0.616443	0.0422344	1		True		gwas_bmd	BMD		False			30.1	C
+PIEZO1	Piezo1	9780	↓			-0.613917	0.00123917	1		True		gwas_bmd	BMD		False			30.1	C
+VCAN	Vcan	1462	↑	0.744029	0.0288592			1		False		gwas_strong	BMD|fracture|osteoporosis		False			30.0	B
+HMGCLL1	Hmgcll1	54511	↓	-1.03357	0.00399295			1		False		gwas_bmd	BMD		False	intermediate	2.0	29.9	C
+CCR3|LOC105377067	Ccr3	1232	↑	0.73125	0.000189017			1		False		gwas_strong	osteoporosis		False			29.9	B
+CLIC5	Clic5	53405	↓	-0.728564	0.0479682			1		False		gwas_strong	osteoporosis		False			29.9	B
+LEMD2	Lemd2	221496	↓			-0.580212	6.54484e-06	1		True		gwas_bmd	BMD		False			29.9	C
+PIGS	Pigs	94005	↓			-0.579864	0.00689164	1		True		gwas_bmd	BMD		False			29.9	C
+ARID1A	Arid1a	8289	↓			-0.575121	0.00551434	1		True		gwas_bmd	BMD		False			29.8	C
+JUNB	Junb	3726	↑	0.70431	0.0215015			1		False		gwas_strong	BMD|fracture		False			29.7	B
+SRF	Srf	6722	↓			-0.556106	0.0185166	1		True		gwas_bmd	BMD		False			29.7	C
+FAR2	Far2	55711	↑			0.554847	2.82046e-06	1		True		gwas_bmd	BMD		False			29.7	C
+ACO1	Aco1	48	↓			-0.549276	0.0017744	1		True		gwas_bmd	BMD		False			29.7	C
+SELENOM	Selenom	140606	↑	0.695562	0.000395835			1		False		gwas_strong	fracture		False			29.6	B
+VANGL2	Vangl2	57216	↓	-0.694352	0.0334473			1		False		gwas_strong	BMD|fracture		False			29.6	B
+SCN4A	Scn4a	6329	↓	-0.689508	0.00962571			1		False		gwas_strong	osteoporosis		False			29.6	B
+ABTB2	Abtb2	25841	↓			-0.538829	0.0191856	1		True		gwas_bmd	BMD		False			29.6	C
+IRS1	Irs1	3667	↓	-0.678039	0.0243858			1		False		gwas_strong	BMD|fracture		False			29.5	B
+STK39	Stk39	27347	↑			0.532292	0.0205322	1		True		gwas_bmd	BMD		False			29.5	C
+GNA11	Gna11	2767	↓			-0.527256	0.00361909	1		True		gwas_bmd	BMD		False			29.5	C
+HDAC4	Hdac4	9759	↓			-0.524677	0.0223498	1		True		gwas_bmd	BMD		False			29.5	C
+ZXDB	Zxdb	158586	↓			-0.523669	0.0211985	1		True		gwas_bmd	BMD		False			29.5	C
+ZXDA	Zxdb	7789	↓			-0.523669	0.0211985	1		True		gwas_bmd	BMD		False			29.5	C
+KLF6	Klf6	1316	↑			0.516838	0.00125041	1		True		gwas_bmd	BMD		False			29.4	C
+PGRMC2	Pgrmc2	10424	↓			-0.507897	8.88775e-05	1		True		gwas_bmd	BMD		False			29.4	C
+AHR	Ahr	196	↑			0.507835	0.0389026	1		True		gwas_bmd	BMD		False			29.4	C
+GLG1	Glg1	2734	↓			-0.506239	0.00556182	1		True		gwas_bmd	BMD		False			29.4	C
+FHOD1	Fhod1	29109	↓			-0.503755	0.00469295	1		True		gwas_bmd	BMD		False			29.4	C
+TULP3	Tulp3	7289	↓	-0.638933	0.0382701			1		False		gwas_strong	BMD|fracture		False			29.3	B
+CSF3R	Csf3r	1441	↓			-0.500628	0.0319852	1		True		gwas_bmd	BMD		False			29.3	C
+CHAF1B	Chaf1b	8208	↓			-0.499678	0.000216856	1		True		gwas_bmd	BMD		False			29.3	C
+PIAS4	Pias4	51588	↓			-0.489667	0.000239032	1		True		gwas_bmd	BMD		False			29.3	C
+CD5L	Cd5l	922	↑	0.636514	0.00764042			1		False		gwas_strong	BMD|fracture		False			29.2	B
+HCST	Hcst	10870	↑	0.634522	0.000634846			1		False		gwas_strong	BMD|fracture		False			29.2	B
+NME4	Nme4	4833	↑	0.63074	0.0102454			1		False		gwas_strong	fracture		False			29.2	B
+TARBP1	Tarbp1	6894	↓			-0.487426	0.00117366	1		True		gwas_bmd	BMD		False			29.2	C
+PTBP1	Ptbp1	5725	↓			-0.484924	0.00253687	1		True		gwas_bmd	BMD		False			29.2	C
+LARP1	Larp1	23367	↓			-0.479211	0.0132073	1		True		gwas_bmd	BMD		False			29.2	C
+UTP11	Utp11	51118	↑			0.477239	5.63654e-05	1		True		gwas_bmd	BMD		False			29.2	C
+NAB1	Nab1	4664	↑			0.47646	0.000198768	1		True		gwas_bmd	BMD		False			29.2	C
+MRPS35	Mrps35	60488	↑			0.476085	0.00870227	1		True		gwas_bmd	BMD		False			29.2	C
+INHBA	Inhba	3624	↑			0.473423	0.00351651	1		True		gwas_bmd	BMD		False			29.2	C
+SNAP47	Snap47	116841	↑	0.609242	0.01168			1		False		gwas_strong	BMD|fracture		False			29.1	B
+GIMAP7	Gimap7	168537	↑			0.471019	0.00527671	1		True		gwas_bmd	BMD		False			29.1	C
+PTMS	Ptms	5763	↓			-0.460249	0.0111859	1		True		gwas_bmd	BMD		False			29.1	C
+METRNL	Metrnl	284207	↑	0.606475	0.000176438			1		False		gwas_strong	fracture		False			29.0	B
+RPP38	Rpp38	10557	↑			0.444608	0.033168	1		True		gwas_bmd	BMD		False			29.0	C
+PHC2	Phc2	1912	↓			-0.443712	0.00162656	1		True		gwas_bmd	BMD		False			29.0	C
+CLEC11A	Clec11a	6320	↑	0.589031	0.036905			1		False		gwas_strong	fracture		False			28.9	B
+RUNX1T1	Runx1t1	862	↓	-0.587699	0.0448567			1		False		gwas_strong	BMD|fracture		False			28.9	B
+CBR4	Cbr4	84869	↑	0.582465	0.00975074			1		False		gwas_strong	BMD|fracture		False			28.9	B
+CCDC77	Ccdc77	84318	↓	-0.581227	8.67792e-06			1		False		gwas_strong	BMD|fracture		False			28.9	B
+SOX13	Sox13	9580	↑	0.580881	0.0331323			1		False		gwas_strong	BMD|fracture|osteoporosis		False			28.9	B
+TSC2	Tsc2	7249	↓			-0.435414	0.0206468	1		True		gwas_bmd	BMD		False			28.9	C
+MTAP	Mtap	4507	↑			0.428326	0.00191428	1		True		gwas_bmd	BMD		False			28.9	C
+NUFIP1	Nufip1	26747	↑			0.427637	0.00242868	1		True		gwas_bmd	BMD		False			28.9	C
+CTNNBIP1	Ctnnbip1	56998	↑	0.572565	0.00641195			1		False		gwas_strong	BMD|fracture		False			28.8	B
+POLQ	Polq	10721	↓	-0.570166	0.000349659			1		False		gwas_strong	osteoporosis		False			28.8	B
+MTHFD1	Mthfd1	4522	↓			-0.424536	0.035382	1		True		gwas_bmd	BMD		False			28.8	C
+XRCC4	Xrcc4	7518	↑			0.421298	0.00838513	1		True		gwas_bmd	BMD		False			28.8	C
+ZFP41	Zfp41	286128	↓			-0.419102	0.00670683	1		True		gwas_bmd	BMD		False			28.8	C
+CTNND1	Ctnnd1	1500	↓			-0.417488	0.0467295	1		True		gwas_bmd	BMD		False			28.8	C
+CYTIP	Cytip	9595	↑	0.557009	0.00718379			1		False		gwas_strong	osteoporosis		False			28.7	B
+ATP5MC2	Atp5g2	517	↑	0.547554	7.18853e-06			1		False		gwas_strong	BMD|fracture		False			28.7	B
+PDLIM1	Pdlim1	9124	↓			-0.410223	0.0189876	1		True		gwas_bmd	BMD		False			28.7	C
+ACD	Acd	65057	↓			-0.409648	0.00716375	1		True		gwas_bmd	BMD		False			28.7	C
+CCDC88C	Ccdc88c	440193	↓			-0.405052	0.0131943	1		True		gwas_bmd	BMD		False			28.7	C
+EIF3B	Eif3b	8662	↓			-0.402805	0.0306273	1		True		gwas_bmd	BMD		False			28.7	C
+LRRK2	Lrrk2	120892	↑			0.402121	0.021635	1		True		gwas_bmd	BMD		False			28.7	C
+UBTF	Ubtf	7343	↓			-0.401795	2.7017e-05	1		True		gwas_bmd	BMD		False			28.7	C
+PSD3	Psd3	23362	↓	-0.542304	0.00145807			1		False		gwas_strong	BMD|fracture|osteoporosis		False			28.6	B
+GLCCI1	Glcci1	113263	↓			-0.396842	0.0207834	1		True		gwas_bmd	BMD		False			28.6	C
+SMG9	Smg9	56006	↓			-0.396179	0.0167695	1		True		gwas_bmd	BMD		False			28.6	C
+HNRNPU	Hnrnpu	3192	↓			-0.395461	0.00261486	1		True		gwas_bmd	BMD		False			28.6	C
+DEAF1	Deaf1	10522	↓			-0.393609	0.00181263	1		True		gwas_bmd	BMD		False			28.6	C
+MINPP1	Minpp1	9562	↓			-0.389529	0.0059618	1		True		gwas_bmd	BMD		False			28.6	C
+RXRB	Rxrb	6257	↓			-0.38328	0.00689062	1		True		gwas_bmd	BMD		False			28.6	C
+RIOX1	Riox1	79697	↑	0.52777	0.00115674			1		False		gwas_strong	BMD|fracture		False			28.5	B
+DCTD	Dctd	1635	↑			0.38165	0.0425799	1		True		gwas_bmd	BMD		False			28.5	C
+TIPARP	Tiparp	25976	↑			0.380987	0.0139327	1		True		gwas_bmd	BMD		False			28.5	C
+TMUB2	Tmub2	79089	↓			-0.376733	0.000589004	1		True		gwas_bmd	BMD		False			28.5	C
+MLH3	Mlh3	27030	↑			0.376716	0.0075338	1		True		gwas_bmd	BMD		False			28.5	C
+DIPK2A	Dipk2a	205428	↓			-0.372834	0.0173573	1		True		gwas_bmd	BMD		False			28.5	C
+SCYL1	Scyl1	57410	↓			-0.368213	0.0102936	1		True		gwas_bmd	BMD		False			28.5	C
+C6orf62	BC005537	81688	↓			-0.36774	0.00138274	1		True		gwas_bmd	BMD		False			28.5	C
+ACMSD	Acmsd	130013	↓	-0.516462	0.016006			1		False		gwas_strong	BMD|fracture		False			28.4	B
+TCF4	Tcf4	6925	↓	-0.516124	0.000335612			1		False		gwas_strong	BMD|osteoporosis		False			28.4	B
+DUSP6	Dusp6	1848	↑	0.516061	0.00882767			1		False		gwas_strong	BMD|fracture		False			28.4	B
+ZNF85	Zfp953	7639	↑			0.365087	0.0285466	1		True		gwas_bmd	BMD		False			28.4	C
+CHPF2	Chpf2	54480	↓			-0.364711	0.0234649	1		True		gwas_bmd	BMD		False			28.4	C
+TRRAP	Trrap	8295	↓			-0.359335	0.0462433	1		True		gwas_bmd	BMD		False			28.4	C
+GALM	Galm	130589	↑			0.356411	0.0451757	1		True		gwas_bmd	BMD		False			28.4	C
+AMN1	Amn1	196394	↑			0.353414	0.0221622	1		True		gwas_bmd	BMD		False			28.4	C
+MTX2	Mtx2	10651	↑	0.500917	0.00856328			1		False		gwas_strong	BMD|fracture|osteolysis_necrosis		False			28.3	B
+RPN1	Rpn1	6184	↑	0.497998	0.00196916			1		False		gwas_strong	osteoporosis		False			28.3	B
+CHCHD7	Chchd7	79145	↑	0.49658	0.0120641			1		False		gwas_strong	fracture		False			28.3	B
+TP53I11	Trp53i11	9537	↓	-0.494541	0.0256998			1		False		gwas_strong	fracture		False			28.3	B
+TIAM2	Tiam2	26230	↑			0.347175	0.0213864	1		True		gwas_bmd	BMD		False			28.3	C
+TMED2	Tmed2	10959	↑			0.344443	0.021428	1		True		gwas_bmd	BMD		False			28.3	C
+POGLUT1	Poglut1	56983	↑			0.343876	0.00409604	1		True		gwas_bmd	BMD		False			28.3	C
+MYSM1	Mysm1	114803	↑			0.343737	0.0146225	1		True		gwas_bmd	BMD		False			28.3	C
+UTP23	Utp23	84294	↑			0.342606	0.0426158	1		True		gwas_bmd	BMD		False			28.3	C
+RYBP	Rybp|Rybp-ps	23429	↑			0.341865	0.00613388	1		True		gwas_bmd	BMD		False			28.3	C
+ANKRD44	Ankrd44	91526	↑			0.340957	0.0302864	1		True		gwas_bmd	BMD		False			28.3	C
+MAP1LC3A	Map1lc3a	84557	↑	0.487489	0.0142033			1		False		gwas_strong	fracture		False			28.2	B
+LFNG	Lfng	3955	↑	0.486646	0.00184442			1		False		gwas_strong	BMD|fracture		False			28.2	B
+TNF	Tnf	7124	↑	0.475657	0.00628465			1		False		gwas_strong	BMD|fracture		True			28.2	B
+LIN7C	Lin7c	55327	↑			0.335783	0.015404	1		True		gwas_bmd	BMD		False			28.2	C
+TET2	Tet2	54790	↑			0.325678	0.0356786	1		True		gwas_bmd	BMD		False			28.2	C
+PIGN	Pign	23556	↑			0.323516	0.0377275	1		True		gwas_bmd	BMD		False			28.2	C
+CAMK2D	Camk2d	817	↓	-0.471261	0.00807438			1		False		gwas_strong	osteoporosis		False			28.1	B
+HMGA1	Hmga1	3159	↓			-0.320205	0.0369409	1		True		gwas_bmd	BMD		False			28.1	C
+LDB1	Ldb1	8861	↓			-0.318685	0.00378789	1		True		gwas_bmd	BMD		False			28.1	C
+ALG12	Alg12	79087	↑			0.315277	0.0246604	1		True		gwas_bmd	BMD		False			28.1	C
+TUBA1C	Tuba1c	84790	↓			-0.312582	0.00497825	1		True		gwas_bmd	BMD		False			28.1	C
+TRNP1	Trnp1	388610	↑	1.50133	0.0427784			1		False		gwas_bmd	BMD		False	systemic	4.0	28.0	C
+NR2F2	Nr2f2	7026	↓	-1.49807	0.0378122			1		False		gwas_bmd	BMD		False	systemic	7.0	28.0	C
+SLC39A11	Slc39a11	201266	↑	0.450021	0.00379034			1		False		gwas_strong	osteoporosis		False			28.0	B
+NDUFB4	Ndufb4|Ndufb4c|Ndufb4b	4710	↑	0.449507	0.0143573			1		False		gwas_strong	osteoporosis		False			28.0	B
+ABCE1	Abce1	6059	↑			0.306423	0.0226218	1		True		gwas_bmd	BMD		False			28.0	C
+USP3	Usp3	9960	↑			0.302881	0.0331432	1		True		gwas_bmd	BMD		False			28.0	C
+NAA11	Txnl4a|Naa12	84779	↑			0.295562	0.0197241	1		True		gwas_bmd	BMD		False			28.0	C
+NSMCE1	Nsmce1	197370	↑	0.437746	0.00248871			1		False		gwas_strong	osteoporosis		False			27.9	B
+RPL5	Rpl5	6125	↑	0.434928	0.00985073			1		False		gwas_strong	fracture		False			27.9	B
+TTC32	Ttc32	130502	↑	0.431991	0.00379207			1		False		gwas_strong	osteoporosis		False			27.9	B
+PHOSPHO2	Phospho2	493911	↑	0.431381	0.021356			1		False		gwas_strong	osteoporosis		False			27.9	B
+HDAC2	Hdac2	3066	↑			0.286741	0.0188378	1		True		gwas_bmd	BMD		False			27.9	C
+ABRAXAS2	Abraxas2	23172	↑			0.281506	0.0059312	1		True		gwas_bmd	BMD		False			27.9	C
+EMD	Emd	2010	↑			0.281174	0.0387502	1		True		gwas_bmd	BMD		False			27.9	C
+SUMO1	Sumo1	7341	↑	0.427057	0.0158789			1		False		gwas_strong	osteoporosis		False			27.8	B
+CENPW	Cenpw	387103	↑	0.425221	0.0473598			1		False		gwas_strong	BMD|fracture		False			27.8	B
+ICA1	Ica1	3382	↑	0.424069	0.0202103			1		False		gwas_strong	osteoporosis		False			27.8	B
+SH3PXD2A	Sh3pxd2a	9644	↓	-0.419694	0.0252661			1		False		gwas_strong	fracture|osteoporosis		False			27.8	B
+BNIP2	Bnip2	663	↑			0.274077	0.0164118	1		True		gwas_bmd	BMD		False			27.8	C
+VPS33A	Vps33a	65082	↓			-0.271555	0.0423171	1		True		gwas_bmd	BMD		False			27.8	C
+UBE2E3	Ube2e3	10477	↓			-0.26514	0.0200494	1		True		gwas_bmd	BMD		False			27.8	C
+HLA-DQA1	H2-Aa	3117	↑	0.410264	0.00838452			1		False		gwas_strong	osteoporosis		False			27.7	B
+NSFL1C	Nsfl1c	55968	↑	0.401743	1.46153e-05			1		False		gwas_strong	fracture		False			27.7	B
+FCER1G	Fcer1g	2207	↑	0.401411	0.000898112			1		False		gwas_strong	BMD|fracture		False			27.7	B
+GPSM3	Gpsm3	63940	↑	0.401198	0.0236255			1		False		gwas_strong	BMD|fracture		False			27.7	B
+CCR2	Ccr2	729230	↑	0.400608	0.0403925			1		False		gwas_strong	osteoporosis		False			27.7	B
+NXN	Nxn	64359	↑	0.398407	0.001131			1		False		gwas_strong	BMD|fracture		False			27.7	B
+CDCA7L	Cdca7l	55536	↑			0.258842	0.0278257	1		True		gwas_bmd	BMD		False			27.7	C
+LEMD3	Lemd3	23592	↓			-0.25302	0.0314051	1		True		gwas_bmd	BMD		False			27.7	C
+ATP7A	Atp7a	538	↑			0.248223	0.0497966	1		True		gwas_bmd	BMD		False			27.7	C
+ARSB	Arsb	411	↑	0.394021	0.0244424			1		False		gwas_strong	BMD|fracture		False			27.6	B
+ESR1	Esr1	2099	↓	-0.392927	0.0389424			1		False		gwas_strong	BMD|fracture|osteoporosis		False			27.6	B
+ADPRS	Adprs	54936	↑	0.38327	0.0169707			1		False		gwas_strong	BMD|fracture		False			27.6	B
+TSPAN5	Tspan5	10098	↑	0.372239	0.00385214			1		False		gwas_strong	osteoporosis		False			27.5	B
+PDP1	Pdp1	54704	↑	0.371126	0.0243583			1		False		gwas_strong	osteoporosis		False			27.5	B
+OXR1	Oxr1	55074	↑			0.227628	0.0209013	1		True		gwas_bmd	BMD		False			27.5	C
+ZNF726	Zfp958	730087	↑	0.366215	0.0492027			1		False		gwas_strong	osteoporosis		False			27.4	B
+WDSUB1	Wdsub1	151525	↓	-0.355726	0.0436636			1		False		gwas_strong	BMD|osteoporosis		False			27.4	B
+EDEM1	Edem1	9695	↑			0.207078	0.0271418	1		True		gwas_bmd	BMD		False			27.4	C
+PDXDC1	Pdxdc1	23042	↑			0.202615	0.0270408	1		True		gwas_bmd	BMD		False			27.4	C
+ZMPSTE24	Zmpste24	10269	↑	0.350899	0.012535			1		False		gwas_strong	BMD|fracture|osteolysis_necrosis		False			27.3	B
+WDR61	Wdr61	80349	↑	0.350096	0.0424886			1		False		gwas_strong	osteoporosis		False			27.3	B
+FAM193A	Fam193a	8603	↓	-0.349308	0.0295393			1		False		gwas_strong	osteoporosis		False			27.3	B
+CEBPA	Cebpa	1050	↑	0.34656	0.0448567			1		False		gwas_strong	BMD|fracture		False			27.3	B
+PDLIM2	Pdlim2	64236	↑	0.342754	0.0184244			1		False		gwas_strong	osteoporosis		False			27.3	B
+TGOLN2	Tgoln1	10618	↑			0.187818	0.0220122	1		True		gwas_bmd	BMD		False			27.3	C
+ENPP6	Enpp6	133121	↓	-1.37276	0.0115172			1		False		gwas_bmd	BMD		False	systemic	4.0	27.2	C
+LRP4		4038	↓			-0.331	0.0818	0		False	Wnt co-receptor/sclerostin	canonical						27.2	B
+DCLRE1C	Dclre1c	64421	↓	-0.330432	0.016406			1		False		gwas_strong	osteoporosis		False			27.2	B
+NAA10	Naa10	8260	↑	0.327844	0.0344557			1		False		gwas_strong	BMD|fracture		False			27.2	B
+PITPNB	Pitpnb	23760	↑			0.184312	0.0220284	1		True		gwas_bmd	BMD		False			27.2	C
+NDC80	Ndc80	10403	↓	-0.316953	0.0169391			1		False		gwas_strong	osteoporosis		False			27.1	B
+APC	Apc	324	↓	-0.315789	0.0208933			1		False		gwas_strong	BMD|fracture|osteoporosis		False			27.1	B
+MAPK3	Mapk3	5595	↑	0.309215	0.0378426			1		False		gwas_strong	BMD|fracture		False			27.1	B
+CTBP2	Ctbp2	1488	↑	0.307642	0.0224212			1		False		gwas_strong	BMD|fracture|osteoporosis		False			27.1	B
+BID	Bid	637	↑	0.302885	0.00913957			1		False		gwas_strong	fracture		False			27.0	B
+PRKAR1A	Prkar1a	5573	↑	0.29721	0.00189261			1		False		gwas_strong	BMD|fracture		False			27.0	B
+PHTF2	Phtf2	57157	↓	-0.292751	0.0480645			1		False		gwas_strong	osteoporosis		False			27.0	B
+GSKIP	Gskip	51527	↑	0.285406	0.0324233			1		False		gwas_strong	BMD|fracture		False			26.9	B
+RBL1	Rbl1	5933	↓	-0.283227	0.0112869			1		False		gwas_strong	BMD|fracture		False			26.9	B
+AKT1	Akt1	207	↑	0.277341	0.0104572			1		False		gwas_strong	BMD|fracture		False			26.8	B
+MAEA	Maea	10296	↑	0.276617	0.048825			1		False		gwas_strong	BMD|fracture		False			26.8	B
+HEXA	Hexa	3073	↑	0.274328	0.0311031			1		False		gwas_strong	BMD|fracture		False			26.8	B
+FKBP1A	Fkbp1a	2280	↑	0.269207	0.0349621			1		False		gwas_strong	BMD|fracture		False			26.8	B
+SLC1A3	Slc1a3	6507	↓	-1.29861	0.00668905			1		False		gwas_bmd	BMD		False	systemic	5.0	26.7	C
+DRG1	Drg1	4733	↑	0.25684	0.0145025			1		False		gwas_strong	fracture		False			26.7	B
+MAP3K20	Map3k20	51776	↓	-0.256254	0.0311172			1		False		gwas_strong	osteoporosis		False			26.7	B
+HEXB	Hexb	3074	↑	0.24855	0.0344974			1		False		gwas_strong	BMD|fracture		False			26.7	B
+ATF4	Atf4	468	↓	-0.232427	0.031954			1		False		gwas_strong	BMD|fracture		False			26.5	B
+PPM1A	Ppm1a	5494	↑	0.230559	0.0323869			1		False		gwas_strong	BMD|fracture		False			26.5	B
+ZNF800	Zfp800	168850	↓	-0.227735	0.0489507			1		False		gwas_strong	BMD|fracture|osteoporosis		False			26.5	B
+ETNK1	Etnk1	55500	↓	-0.225911	0.0197669			1		False		gwas_strong	BMD|fracture		False			26.5	B
+NIPBL	Nipbl	25836	↓	-0.221655	0.0363416			1		False		gwas_strong	BMD|fracture|osteoporosis		False			26.5	B
+CASP7	Casp7	840	↑	0.215916	0.0401347			1		False		gwas_strong	osteoporosis		False			26.4	B
+MEX3C	Mex3c	51320	↑	0.2152	0.0453047			1		False		gwas_strong	BMD|fracture		False			26.4	B
+EP300	Ep300	2033	↓	-0.21333	0.0498966			1		False		gwas_strong	BMD|fracture		False			26.4	B
+RAF1	Raf1	5894	↑	0.213111	0.0287086			1		False		gwas_strong	BMD|fracture		False			26.4	B
+HBS1L	Hbs1l	10767	↓	-0.203131	0.00815096			1		False		gwas_strong	fracture		False			26.4	B
+PRKAG1	Prkag1	5571	↑	0.197248	0.0299349			1		False		gwas_strong	osteoporosis		False			26.3	B
+PDE12	Pde12	201626	↑	0.192261	0.0368073			1		False		gwas_strong	fracture		False			26.3	B
+RHOA	Rhoa	387	↑	0.192186	0.0302288			1		False		gwas_strong	BMD|fracture|osteoporosis		False			26.3	B
+HOXA5	Hoxa5	3202	↓	-1.10521	0.0292555			1		False		gwas_bmd	BMD		False	systemic	7.0	25.4	C
+EML6	Eml6	400954	↓	-1.09151	0.00906017			1		False		gwas_bmd	BMD		False	systemic	6.0	25.3	C
+RAG1	Rag1	5896	↓	-1.08582	0.000117921			1		False		gwas_bmd	BMD		False	systemic	4.0	25.2	C
+GPLD1	Gpld1	2822	↑	1.07555	0.00373915			1		False		gwas_bmd	BMD		False	systemic	7.0	25.2	C
+ADARB1	Adarb1	104	↓	-1.03575	0.0416765			1		False		gwas_bmd	BMD		False	systemic	5.0	24.9	C
+RAPSN	Rapsn	5913	↑	1.0152	0.0243858			1		False		gwas_bmd	BMD		False	systemic	6.0	24.8	C
+SLC9A5	Slc9a5	6553	↓	-0.895909	0.0168324			1		False		gwas_bmd	BMD		False			24.0	C
+ZNF484	Zfp268	83744	↑	0.828604	0.00085245			1		False		gwas_bmd	BMD		False			23.5	C
+FRMD4B	Frmd4b	23150	↓	-0.786673	0.0377431			1		False		gwas_bmd	BMD		False			23.2	C
+SLC38A9	Slc38a9	153129	↓	-0.770655	7.31583e-07			1		False		gwas_bmd	BMD		False			23.1	C
+EPB41L5	Epb41l5	57669	↓	-0.764707	0.0108032			1		False		gwas_bmd	BMD		False			23.1	C
+DST	Dst	667	↓	-0.738109	0.0286662			1		False		gwas_bmd	BMD		False			22.9	C
+CABLES1	Cables1	91768	↑	0.687675	0.0486089			1		False		gwas_bmd	BMD		False			22.6	C
+VANGL1	Vangl1	81839	↓	-0.681217	0.0019186			1		False		gwas_bmd	BMD		False			22.5	C
+XRCC3	Xrcc3	7517	↓	-0.667787	0.0359087			1		False		gwas_bmd	BMD		False			22.5	C
+RHOC	Rhoc	389	↑	0.621581	0.00253829			1		False		gwas_bmd	BMD		False			22.1	C
+CIBAR1	Cibar1	137392	↑	0.612616	0.0159043			1		False		gwas_bmd	BMD		False			22.1	C
+CETN3	Cetn3	1070	↑	0.609788	0.000183934			1		False		gwas_bmd	BMD		False			22.1	C
+EBF1	Ebf1	1879	↓	-0.592991	0.00982304			1		False		gwas_bmd	BMD		False			22.0	C
+CEP89	Cep89	84902	↓	-0.592759	1.28612e-05			1		False		gwas_bmd	BMD		False			22.0	C
+PTPDC1	Ptpdc1	138639	↓	-0.591121	0.0269086			1		False		gwas_bmd	BMD		False			21.9	C
+NAV1	Nav1	89796	↓	-0.579049	0.0133919			1		False		gwas_bmd	BMD		False			21.9	C
+FCN1	Fcnb	2219	↑	0.579017	7.73403e-06			1		False		gwas_bmd	BMD		False			21.9	C
+MRPS28	Mrps28	28957	↑	0.570517	0.00255502			1		False		gwas_bmd	BMD		False			21.8	C
+RAB20	Rab20	55647	↑	0.567694	0.00328323			1		False		gwas_bmd	BMD		False			21.8	C
+UBE2V2	Ube2v2	7336	↑	0.55869	0.012983			1		False		gwas_bmd	BMD		False			21.7	C
+THEMIS	Themis	387357	↑	0.557476	0.0250456			1		False		gwas_bmd	BMD		False			21.7	C
+HYAL1	Hyal1	3373	↓	-0.550737	0.0470039			1		False		gwas_bmd	BMD		False			21.7	C
+PHB1	Phb1	5245	↑	0.550212	0.000329073			1		False		gwas_bmd	BMD		False			21.7	C
+RPS7	Rps7	6201	↑	0.538606	0.0182259			1		False		gwas_bmd	BMD		False			21.6	C
+RAB11FIP4	Rab11fip4	84440	↑	0.528162	0.0222844			1		False		gwas_bmd	BMD		False			21.5	C
+UQCRHL	Uqcrh	440567	↑	0.525228	0.007629			1		False		gwas_bmd	BMD		False			21.5	C
+FLT1	Flt1	2321	↓	-0.522235	0.0244046			1		False		gwas_bmd	BMD		False			21.5	C
+TNFRSF13C	Tnfrsf13c	115650	↓	-0.51718	0.0232614			1		False		gwas_bmd	BMD		False			21.4	C
+TIMM22	Timm22	29928	↑	0.501234	0.0120737			1		False		gwas_bmd	BMD		False			21.3	C
+SLC35F5	Slc35f5	80255	↑	0.490069	0.00949177			1		False		gwas_bmd	BMD		False			21.3	C
+SERPINA3	Serpina3g	12	↑	0.484535	0.0216655			1		False		gwas_bmd	BMD		False			21.2	C
+C9orf64	2210016F16Rik	84267	↑	0.476756	7.72351e-05			1		False		gwas_bmd	BMD		False			21.2	C
+HINT1	Hint1	3094	↑	0.471199	0.00930206			1		False		gwas_bmd	BMD		False			21.1	C
+CEP72	Cep72	55722	↓	-0.466365	0.0265122			1		False		gwas_bmd	BMD		False			21.1	C
+FYCO1	Fyco1	79443	↓	-0.446504	0.0097865			1		False		gwas_bmd	BMD		False			21.0	C
+TOMM20	Tomm20	9804	↑	0.446053	0.0226447			1		False		gwas_bmd	BMD		False			21.0	C
+DUSP10	Dusp10	11221	↓	-0.44261	0.00309884			1		False		gwas_bmd	BMD		False			21.0	C
+DIAPH3	Diaph3	81624	↓	-0.44129	0.00789584			1		False		gwas_bmd	BMD		False			20.9	C
+HDAC9	Hdac9	9734	↓	-0.435031	0.0444579			1		False		gwas_bmd	BMD		False			20.9	C
+HERC2	Herc2	8924	↓	-0.430071	0.00821011			1		False		gwas_bmd	BMD		False			20.9	C
+ZNRD2	Znrd2	10534	↑	0.416394	0.0269017			1		False		gwas_bmd	BMD		False			20.8	C
+LYSMD3	Lysmd3	116068	↑	0.414683	0.00707803			1		False		gwas_bmd	BMD		False			20.8	C
+SPI1	Spi1	6688	↑	0.412046	0.00515406			1		False		gwas_bmd	BMD		False			20.7	C
+LPCAT2	Lpcat2	54947	↑	0.408061	0.0182664			1		False		gwas_bmd	BMD		False			20.7	C
+PSMD13	Psmd13	5719	↑	0.407715	0.000100162			1		False		gwas_bmd	BMD		False			20.7	C
+ZEB2	Zeb2	9839	↓	-0.399715	0.0468412			1		False		gwas_bmd	BMD		False			20.7	C
+ATP6V1A	Atp6v1a	523	↑	0.394825	0.0286024			1		False		gwas_bmd	BMD		False			20.6	C
+ACOT7	Acot7	11332	↑	0.390181	0.0123111			1		False		gwas_bmd	BMD		False			20.6	C
+TMEM208	Tmem208	29100	↑	0.387635	0.0100275			1		False		gwas_bmd	BMD		False			20.6	C
+P4HB	P4hb	5034	↑	0.37963	0.00913162			1		False		gwas_bmd	BMD|OI		False			20.5	C
+EPB41L2	Epb41l2	2037	↓	-0.37789	0.0309997			1		False		gwas_bmd	BMD		False			20.5	C
+NCF4	Ncf4	4689	↑	0.377068	0.00615602			1		False		gwas_bmd	BMD		False			20.5	C
+GADD45B	Gadd45b	4616	↑	0.373247	0.0222168			1		False		gwas_bmd	BMD		False			20.5	C
+LRBA	Lrba	987	↓	-0.369458	0.0172275			1		False		gwas_bmd	BMD		False			20.5	C
+CRELD2	Creld2	79174	↑	0.367568	0.00755189			1		False		gwas_bmd	BMD		False			20.5	C
+ASB3|GPR75-ASB3	Asb3	100302652	↑	0.367468	0.012757			1		False		gwas_bmd	BMD		False			20.4	C
+PRKRA	Prkra	8575	↑	0.363555	0.00745527			1		False		gwas_bmd	BMD		False			20.4	C
+RRAS2	Rras2	22800	↑	0.362787	0.00648911			1		False		gwas_bmd	BMD		False			20.4	C
+ACAT1	Acat1	38	↑	0.358712	0.00163503			1		False		gwas_bmd	BMD		False			20.4	C
+RBM6	Rbm6	10180	↓	-0.356974	0.00710228			1		False		gwas_bmd	BMD		True			20.4	C
+MON1A	Mon1a	84315	↑	0.35625	0.018199			1		False		gwas_bmd	BMD		False			20.4	C
+ASB7	Asb7	140460	↑	0.355156	0.0119744			1		False		gwas_bmd	BMD		False			20.4	C
+CASP3	Casp3	836	↑	0.34506	2.59482e-05			1		False		gwas_bmd	BMD		False			20.3	C
+FAM174A	Fam174a	345757	↑	0.342961	0.0201172			1		False		gwas_bmd	BMD		False			20.3	C
+FRAT1	Frat1	10023	↑	0.320667	0.0202012			1		False		gwas_bmd	BMD		False			20.1	C
+ANP32E	Anp32e	81611	↓	-0.319065	0.0225689			1		False		gwas_bmd	BMD		False			20.1	C
+PDCD10	Pdcd10	11235	↑	0.318979	0.0377549			1		False		gwas_bmd	BMD		False			20.1	C
+ITPA	Itpa	3704	↑	0.318271	0.0497049			1		False		gwas_bmd	BMD		False			20.1	C
+MAX	Max	4149	↑	0.306638	0.0170117			1		False		gwas_bmd	BMD		False			20.0	C
+FKBP8	Fkbp8	23770	↑	0.305128	0.00317061			1		False		gwas_bmd	BMD		False			20.0	C
+SPPL2A	Sppl2a	84888	↑	0.295791	0.00457918			1		False		gwas_bmd	BMD		False			20.0	C
+TLE5	Tle5	166	↑	0.290524	0.0076895			1		False		gwas_bmd	BMD		False			19.9	C
+WDR5	Wdr5	11091	↑	0.289105	0.00386147			1		False		gwas_bmd	BMD		False			19.9	C
+CDCA7	Cdca7	83879	↑	0.288869	0.0077534			1		False		gwas_bmd	BMD		False			19.9	C
+EMSY	Emsy	56946	↓	-0.287688	0.0189388			1		False		gwas_bmd	BMD		False			19.9	C
+CTCF	Ctcf	10664	↓	-0.282284	0.000798613			1		False		gwas_bmd	BMD		False			19.9	C
+ZNRF2	Znrf2	223082	↑	0.280418	0.0208004			1		False		gwas_bmd	BMD		False			19.9	C
+PTPN12	Ptpn12	5782	↑	0.277967	0.00705173			1		False		gwas_bmd	BMD		False			19.9	C
+SRSF11	Srsf11	9295	↓	-0.257665	0.0256998			1		False		gwas_bmd	BMD		False			19.7	C
+GATAD1	Gatad1	57798	↑	0.256224	0.0165223			1		False		gwas_bmd	BMD		False			19.7	C
+SLC26A2	Slc26a2	1836	↓	-0.25332	0.0192947			1		False		gwas_bmd	BMD		False			19.7	C
+FUT8	Fut8	2530	↑	0.24809	0.0299768			1		False		gwas_bmd	BMD		False			19.7	C
+PSMC3	Psmc3	5702	↑	0.246292	0.0188756			1		False		gwas_bmd	BMD		False			19.6	C
+SMC3	Smc3	9126	↓	-0.246261	0.034965			1		False		gwas_bmd	BMD		False			19.6	C
+CCT5	Cct5	22948	↑	0.243088	0.0404416			1		False		gwas_bmd	BMD		False			19.6	C
+CCZ1B	Ccz1	221960	↑	0.236227	0.00619994			1		False		gwas_bmd	BMD		False			19.6	C
+CCZ1	Ccz1	51622	↑	0.236227	0.00619994			1		False		gwas_bmd	BMD		False			19.6	C
+CCM2	Ccm2	83605	↑	0.234498	0.0252661			1		False		gwas_bmd	BMD		False			19.6	C
+ADO	Ado	84890	↑	0.217548	0.0257584			1		False		gwas_bmd	BMD		False			19.5	C
+SMURF2	Smurf2	64750	↑	0.211416	0.0219954			1		False		gwas_bmd	BMD		False			19.4	C
+TOP1	Top1	7150	↓	-0.192393	0.0151293			1		False		gwas_bmd	BMD		False			19.3	C
+MYG1	Myg1	60314	↑	0.296477	0.0195388	-0.304991	0.0179377	2	False	False		gwas_strong	BMD|osteoporosis		False			17.0	B
+ARFGAP2	Arfgap2	84364	↑	0.214419	0.0102495	-0.266186	0.00149845	2	False	False		gwas_strong	BMD|fracture		False			16.8	B
+HLA-A	H2-Q10	3105	↑	0.692279	2.43724e-05	-0.625796	0.00149378	2	False	False		gwas_bmd	BMD		False			12.6	C

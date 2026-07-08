@@ -1,0 +1,44 @@
+import pandas as pd
+D="data"
+# gene+pathway grounded countermeasures (mouse-derived, ortholog-inferred; research hypotheses)
+cm=[
+ ["Nrf2 activation / antioxidants","oxidative-stress defense (Nrf2/NFE2L2)",
+  "Nrf2-KO worsens COL1A1/LRP5/NFATC1/CSF1/MMP9 suppression; ALPL/IBSP down",
+  "GO: response to oxidative stress, cellular oxidant detoxification; mitochondrial OXPHOS",
+  "sulforaphane, N-acetylcysteine, resveratrol, dimethyl fumarate",
+  "High","Strongest data-driven signal: genetic Nrf2 loss broadens bone-remodeling collapse and oxidative-stress GO terms are enriched."],
+ ["Mechanical loading / resistive exercise","mechanotransduction vs disuse unloading",
+  "whole flight signature (disuse); Wnt formation axis LRP5/WIF1/LGR5 down",
+  "GO: OXPHOS/respiration, oxidative stress (metabolic deconditioning)",
+  "ARED resistive exercise; vibration; (adjunct: mito-antioxidant MitoQ)",
+  "High (established)","The proven in-flight countermeasure; directly opposes the unloading state the signature reflects."],
+ ["Sclerostin inhibition / Wnt agonism","Wnt-driven bone formation",
+  "LRP5 down (Nrf2-KO), WIF1 down, LGR5 down; NFATC1 (neg. reg. Wnt)",
+  "GO: Wnt signaling pathway, mesenchymal cell proliferation",
+  "romosozumab (anti-sclerostin); GSK-3B inhibitors; lithium",
+  "Moderate-High","Signature shows a suppressed Wnt/bone-formation axis; anti-sclerostin is an approved anabolic that re-activates it."],
+ ["PTH anabolic agents","osteoblast bone formation",
+  "ALPL down, IBSP down, COL1A1 down, FAM20A down (formation/mineralization)",
+  "GO: ossification, bone mineralization, osteoblast differentiation, skeletal system development",
+  "teriparatide, abaloparatide",
+  "Moderate-High","Directly targets the suppressed osteoblast/matrix-mineralization program."],
+ ["Anti-resorptives","osteoclast resorption",
+  "NFATC1 down, CSF1 down, MMP9 down, CA2 down (osteoclast machinery)",
+  "GO: osteoclast differentiation; carbonic-anhydrase acidification",
+  "bisphosphonates (also inhibit CA2), denosumab (anti-RANKL)",
+  "Moderate","Standard osteoporosis/flight countermeasure; note the marrow signature already shows osteoclast genes DOWN, so benefit is context-dependent."],
+ ["Anti-inflammatory / cytokine modulation","inflammatory osteoclastogenesis",
+  "CXCL2 up, CCL2 up (both flight arms)",
+  "GO: TNF production, IL-2, type I/II interferon, T-cell differentiation",
+  "TNF inhibitors; IL-6R (tocilizumab); resolvins",
+  "Exploratory","Inflammatory cytokines drive bone resorption; the marrow signature is strongly inflammatory."],
+ ["Mitochondrial / metabolic support","OXPHOS & redox stress",
+  "systemic OXPHOS-stress genes; heme/erythroid program",
+  "GO: oxidative phosphorylation, electron transport, TCA cycle, heme biosynthesis",
+  "MitoQ, coenzyme Q10, NAD+ precursors",
+  "Exploratory","Enriched mitochondrial/respiration and heme programs suggest metabolic support as an adjunct."],
+]
+df=pd.DataFrame(cm,columns=["countermeasure","target_axis","supporting_signature_genes","supporting_GO_pathway","example_agents","confidence","rationale"])
+df.to_csv(f"{D}/countermeasures.tsv",sep="\t",index=False)
+print("countermeasures saved:",len(df))
+print(df[['countermeasure','confidence']].to_string(index=False))
