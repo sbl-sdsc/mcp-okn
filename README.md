@@ -233,9 +233,9 @@ Agent Skills work in these Claude clients:
 
 | Client | Install method | Notes |
 | --- | --- | --- |
-| **Claude Code** (CLI + IDE extensions) | Copy the folder into `.claude/skills/` or `~/.claude/skills/` | Free tier and up |
 | **Claude Desktop** (macOS / Windows) | Upload the zip under Settings → Capabilities → Skills | Pro, Max, Team, or Enterprise |
 | **claude.ai** (web) | Upload the zip under Settings → Capabilities → Skills | Pro, Max, Team, or Enterprise |
+| **Claude Code** (CLI + IDE extensions) | Copy the folder into `.claude/skills/` or `~/.claude/skills/` | Free tier and up |
 | **Claude Agent SDK** | Point the SDK at the skill folder | For building custom agents |
 | **Claude Developer Platform** (API) | Load via the code-execution / Skills API | For programmatic use |
 
@@ -255,13 +255,6 @@ cp -R skills/okn-bioanalysis skills/okn-report-style ~/.claude/skills/
 
 Verify with `/skills` — you should see `okn-bioanalysis` and `okn-report-style`
 listed. Claude invokes a skill automatically when a task matches its description.
-
-### Claude Desktop / claude.ai
-
-Under **Settings → Capabilities → Skills**, upload the prebuilt archives
-[`skills/okn-bioanalysis.zip`](skills/okn-bioanalysis.zip) and
-[`skills/okn-report-style.zip`](skills/okn-report-style.zip) (a Pro, Max, Team, or
-Enterprise plan with skills enabled is required).
 
 ---
 
