@@ -222,7 +222,22 @@ report deliverables without re-explaining conventions each time:
   deliverable (interactive HTML + Markdown + multi-sheet Excel + figures + maps).
 
 Each skill is a self-contained folder: a `SKILL.md` plus `references/` and
-`scripts/`. Install by copying the folder into your client's skills directory.
+`scripts/`. A ready-to-upload zip of each is also committed for convenience:
+
+- [`skills/okn-bioanalysis.zip`](skills/okn-bioanalysis.zip)
+- [`skills/okn-report-style.zip`](skills/okn-report-style.zip)
+
+### Supported clients
+
+Agent Skills work in these Claude clients:
+
+| Client | Install method | Notes |
+| --- | --- | --- |
+| **Claude Code** (CLI + IDE extensions) | Copy the folder into `.claude/skills/` or `~/.claude/skills/` | Free tier and up |
+| **Claude Desktop** (macOS / Windows) | Upload the zip under Settings → Capabilities → Skills | Pro, Max, Team, or Enterprise |
+| **claude.ai** (web) | Upload the zip under Settings → Capabilities → Skills | Pro, Max, Team, or Enterprise |
+| **Claude Agent SDK** | Point the SDK at the skill folder | For building custom agents |
+| **Claude Developer Platform** (API) | Load via the code-execution / Skills API | For programmatic use |
 
 ### Claude Code
 
@@ -243,12 +258,15 @@ listed. Claude invokes a skill automatically when a task matches its description
 
 ### Claude Desktop / claude.ai
 
-Upload each skill as a folder under **Settings → Capabilities → Skills** (a Pro,
-Max, Team, or Enterprise plan with skills enabled is required). Zip the skill
-folder first if the uploader expects an archive:
+Under **Settings → Capabilities → Skills**, upload the prebuilt archives
+[`skills/okn-bioanalysis.zip`](skills/okn-bioanalysis.zip) and
+[`skills/okn-report-style.zip`](skills/okn-report-style.zip) (a Pro, Max, Team, or
+Enterprise plan with skills enabled is required).
+
+To rebuild the zips after editing a skill:
 
 ```bash
-cd skills && zip -r okn-bioanalysis.zip okn-bioanalysis && zip -r okn-report-style.zip okn-report-style
+cd skills && zip -r okn-bioanalysis.zip okn-bioanalysis -x '*.DS_Store' && zip -r okn-report-style.zip okn-report-style -x '*.DS_Store'
 ```
 
 ---
