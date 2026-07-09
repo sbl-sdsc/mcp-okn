@@ -263,12 +263,6 @@ Under **Settings → Capabilities → Skills**, upload the prebuilt archives
 [`skills/okn-report-style.zip`](skills/okn-report-style.zip) (a Pro, Max, Team, or
 Enterprise plan with skills enabled is required).
 
-To rebuild the zips after editing a skill:
-
-```bash
-cd skills && zip -r okn-bioanalysis.zip okn-bioanalysis -x '*.DS_Store' && zip -r okn-report-style.zip okn-report-style -x '*.DS_Store'
-```
-
 ---
 
 ## Local installation
