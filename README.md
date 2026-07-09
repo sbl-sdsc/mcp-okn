@@ -205,6 +205,54 @@ Use MCP in Agent mode with the GitHub Copilot extension, with the same URL:
 
 ---
 
+## Skills
+
+Two optional [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills) ship
+in the [`skills/`](skills/) directory. They teach a client the repeatable
+methodology for working with the `mcp-okn` tools, so you get consistent analyses and
+report deliverables without re-explaining conventions each time:
+
+- **[`okn-bioanalysis`](skills/okn-bioanalysis/)** — methodology for biomedical
+  knowledge-graph analysis and cross-KG hypothesis generation over the OKN
+  federation's bio graphs (genes, proteins, diseases, phenotypes, pathways,
+  chemicals, drugs, enrichment, ortholog projection, and linking bio entities to
+  place-based data via geography).
+- **[`okn-report-style`](skills/okn-report-style/)** — layout, figure, and style
+  conventions for turning any OKN case study into a polished, reproducible report
+  deliverable (interactive HTML + Markdown + multi-sheet Excel + figures + maps).
+
+Each skill is a self-contained folder: a `SKILL.md` plus `references/` and
+`scripts/`. Install by copying the folder into your client's skills directory.
+
+### Claude Code
+
+Copy the skills into your project or personal skills directory:
+
+```bash
+# project-scoped (shared with the repo, committed to .claude/skills/)
+mkdir -p .claude/skills
+cp -R skills/okn-bioanalysis skills/okn-report-style .claude/skills/
+
+# or personal (available in every project on this machine)
+mkdir -p ~/.claude/skills
+cp -R skills/okn-bioanalysis skills/okn-report-style ~/.claude/skills/
+```
+
+Verify with `/skills` — you should see `okn-bioanalysis` and `okn-report-style`
+listed. Claude invokes a skill automatically when a task matches its description.
+
+### Claude Desktop / claude.ai
+
+Upload each skill as a folder under **Settings → Capabilities → Skills** (a Pro,
+Max, Team, or Enterprise plan with skills enabled is required). Zip the skill
+folder first if the uploader expects an archive:
+
+```bash
+cd skills && zip -r okn-bioanalysis.zip okn-bioanalysis && zip -r okn-report-style.zip okn-report-style
+```
+
+---
+
 ## Local installation
 
 To run the server yourself instead of using the hosted service:
