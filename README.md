@@ -212,20 +212,20 @@ in the [`skills/`](skills/) directory. They teach a client the repeatable
 methodology for working with the `mcp-okn` tools, so you get consistent analyses and
 report deliverables without re-explaining conventions each time:
 
+- **[`okn-report-style`](skills/okn-report-style/)** — layout, figure, and style
+  conventions for turning any OKN case study into a polished, reproducible report
+  deliverable (interactive HTML + Markdown + multi-sheet Excel + figures + maps).
 - **[`okn-bioanalysis`](skills/okn-bioanalysis/)** — methodology for biomedical
   knowledge-graph analysis and cross-KG hypothesis generation over the OKN
   federation's bio graphs (genes, proteins, diseases, phenotypes, pathways,
   chemicals, drugs, enrichment, ortholog projection, and linking bio entities to
   place-based data via geography).
-- **[`okn-report-style`](skills/okn-report-style/)** — layout, figure, and style
-  conventions for turning any OKN case study into a polished, reproducible report
-  deliverable (interactive HTML + Markdown + multi-sheet Excel + figures + maps).
 
 Each skill is a self-contained folder: a `SKILL.md` plus `references/` and
 `scripts/`. A ready-to-upload zip of each is also committed for convenience:
 
-- [`skills/okn-bioanalysis.zip`](skills/okn-bioanalysis.zip)
 - [`skills/okn-report-style.zip`](skills/okn-report-style.zip)
+- [`skills/okn-bioanalysis.zip`](skills/okn-bioanalysis.zip)
 
 ### Supported clients
 
@@ -248,19 +248,19 @@ for whichever skills you want:
 ```bash
 mkdir -p ~/.claude/skills && cd ~/.claude/skills
 
-# okn-bioanalysis
-curl -sL "https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/skills/okn-bioanalysis.zip" -o okn-bioanalysis.zip
-unzip -oq okn-bioanalysis.zip && rm okn-bioanalysis.zip
-
 # okn-report-style
 curl -sL "https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/skills/okn-report-style.zip" -o okn-report-style.zip
 unzip -oq okn-report-style.zip && rm okn-report-style.zip
+
+# okn-bioanalysis
+curl -sL "https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/skills/okn-bioanalysis.zip" -o okn-bioanalysis.zip
+unzip -oq okn-bioanalysis.zip && rm okn-bioanalysis.zip
 ```
 
 For a project-scoped install (shared with a repo), swap `~/.claude/skills` for
 `.claude/skills` in your project root.
 
-Verify with `/skills` — you should see `okn-bioanalysis` and `okn-report-style`
+Verify with `/skills` — you should see `okn-report-style` and `okn-bioanalysis`
 listed. Claude invokes a skill automatically when a task matches its description.
 
 ---
