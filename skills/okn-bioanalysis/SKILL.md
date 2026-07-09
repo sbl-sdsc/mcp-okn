@@ -29,10 +29,10 @@ source** — pick the KGs the question needs and **integrate on shared entity id
 study / dataset accessions).
 
 **Two references (progressive disclosure):**
-- **`references/mcp-okn-workflow.md`** — how to let the mcp-okn **server tools** drive discovery
-  (`list_crosswalks` / `get_join_strategy` / `find_crosswalks` / `get_valid_contrasts`), a brief
-  integration-currency map (verify live), the **bio↔geography bridge**, and the endpoint quirks that
-  shape your code. **Read this first.**
+- **`references/mcp-okn-workflow.md`** — how to let the mcp-okn **server tools** drive discovery and
+  joins (`list_crosswalks` / `get_join_strategy` / `find_context_sources` / `find_crosswalks` /
+  `get_valid_contrasts`), the identifier types you join on, the **bio↔geography bridge**, and the
+  endpoint quirks that shape your code. **Read this first.**
 - **`references/enrichment-methods.md`** — over-representation (GO, Reactome, disease / trait /
   phenotype / chemical sets) done right: explicit background, hypergeometric + FDR, interpretation.
 
@@ -53,34 +53,45 @@ study / dataset accessions).
    `find_crosswalks(kg)` before giving up — the id is usually just encoded non-obviously (a buried
    mapping predicate, the node's own IRI, or an arbitrary domain predicate). Before joining on
    ontology-term objects: `probe_namespaces` — pick the richest id scheme, don't guess.
-3. **Integrate only on shared entity identifiers** — gene, protein, disease, phenotype, chemical,
-   tissue, cell type, taxon, or **geography** (see the currency table). Study / dataset / mission
-   accessions (e.g. OSD / GLDS) are a federation island — never join across KGs on them.
+3. **Integrate only on shared entities** — gene, protein, disease, phenotype, chemical, tissue, cell
+   type, taxon, or **geography**; get each join recipe from `get_join_strategy` / `list_crosswalks`.
+   Study / dataset / mission accessions (e.g. OSD / GLDS) are a federation island — never join across
+   KGs on them.
 4. **Endpoint reliability:** no global `ORDER BY` (endpoint-wide sort → timeout) — rank client-side;
    pull one contrast / one big pattern at a time; large results auto-save to a file — process with
    pandas / jq, don't read them inline.
 
-## The integration currency (what you join on)
+## Integrating across KGs — ask the join tools, don't plan from a table
 
-Integrate across KGs on shared **identifiers**, not names — an orienting map for planning; the
-authoritative, versioned recipe is whatever `list_crosswalks` / `get_join_strategy` return today
-(don't hard-code keys). The main keys and where they reach:
+**Get the join recipe from the tools, not from memory.** `list_crosswalks` returns every verified
+cross-KG join the federation ships (grouped by domain + shared id); `get_join_strategy(a, b)` returns
+a specific pair's recipe — the exact predicates, the IRI-normalization rewrite, a verified count, and
+a runnable `skeleton_query` to copy; `find_context_sources(want, join_key)` finds *which* KGs can
+annotate an entity. These are **live and versioned — treat them as the source of truth** (raw keys
+drift across KG releases; don't hard-code them).
 
-| Entity | Join key(s) | Reaches (KGs) |
-|---|---|---|
-| **Gene** | Entrez / Ensembl (+ HGNC symbol bridge for prokn) | spoke-okn, digcfdekg, rdkg, prokn, pankgraph, gene-expression-atlas-okn, spoke-genelab, biobricks-aopwiki |
-| **Protein** | UniProt | prokn, ncipidkg, biobricks-aopwiki, biomarkerkg, evoweb |
-| **Disease** | MONDO / DOID (bridge via ubergraph `skos:exactMatch`) | spoke-okn, prokn, rdkg, digcfdekg, biomarkerkg, oard-kg, nde, biohealth |
-| **Phenotype** | HP (HPO) | rdkg, oard-kg, gene-expression-atlas-okn |
-| **Pathway / function** | Reactome `R-HSA`, GO | prokn, gene-expression-atlas-okn, ncipidkg, biobricks-aopwiki |
-| **Chemical / drug** | CHEBI ↔ CAS, PubChem CID, MeSH, DrugBank | spoke-okn, biobricks-ice / tox21 / toxcast, biobricks-pubchem-annotations, rdkg |
-| **Cell type** | CL | prokn, pankgraph, gene-expression-atlas-okn, biomarkerkg, spoke-genelab |
-| **Tissue / anatomy** | UBERON (+ MeSH) | gene-expression-atlas-okn, spoke-genelab, biobricks-mesh |
-| **Social determinants of health (SDoH)** | UMLS concept (MeSH / SNOMED bridge); also by geography (FIPS / ZIP) | spoke-okn, biohealth |
-| **Geography** *(to reach place-based data)* | **S2 L13 cell · county / state FIPS · ZIP** | via **spoke-okn** → spatialkg, sawgraph, hydrologykg, fiokg, geoconnex, ufokn, sockg; dreamkg, ruralkg, scales, nikg |
+The federation joins **mostly on shared identifiers** (Entrez, UniProt, MONDO, …), but **some joins
+are exact name / label matches** — a gene **symbol** on `rdfs:label`, a SNOMED / UMLS **concept
+name**, an organism **label** where a KG has no taxon id. Label matches are more fragile (exact,
+case-sensitive); `get_join_strategy` tells you which key a given pair actually uses. The recurring
+join keys — so you know what to ask the tools for:
 
-**spoke-okn is the hub** — it carries bio *and* geospatial / environmental / social-determinant
-payloads, so it is the bridge from a gene / disease / chemical to a **place**.
+| Entity | Join key(s) |
+|---|---|
+| Gene | Entrez / Ensembl (+ HGNC symbol) |
+| Protein | UniProt |
+| Disease | MONDO / DOID |
+| Phenotype | HP (HPO) |
+| Pathway / function | Reactome `R-HSA`, GO |
+| Chemical / drug | CHEBI / CAS / PubChem CID / MeSH / DrugBank |
+| Cell type / tissue | CL / UBERON |
+| Social determinants (SDoH) | UMLS concept |
+| Geography *(to reach place-based data)* | S2 L13 cell · county / state FIPS · ZIP |
+
+To reach **place-based data**, join on a geographic key (S2 / FIPS / ZIP). Several bio-carrying KGs
+also carry geography — e.g. spoke-okn (gene / disease / chemical + geo / SDoH / environmental),
+biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find_context_sources` /
+`get_join_strategy` which bridge fits your entity rather than assuming one.
 
 ## Analysis menu (run the ones the question needs)
 
@@ -88,10 +99,12 @@ payloads, so it is the bridge from a gene / disease / chemical to a **place**.
    supplies the context you want and on which key.
 2. **Retrieve the entity set.** Pull the genes / proteins / diseases / chemicals of interest (a
    curated set, a disease's genes, a pathway's members, an exposure's targets) as raw rows.
-3. **Cross-KG annotation.** Join on shared IDs to add context: disease↔gene (spoke-okn
-   `ASSOCIATES_DaG`), gene↔trait (digcfdekg `geneToTrait`), gene / protein↔pathway & GO (prokn,
-   ncipidkg), chemical↔gene / adverse-outcome (biobricks tox + aopwiki), disease↔phenotype
-   (rdkg / oard-kg HPO), gene↔drug & disease↔drug (rdkg `treats`, spoke-okn).
+3. **Cross-KG annotation.** Add context by joining on shared IDs — get each recipe from
+   `get_join_strategy`, and `find_context_sources` to list *all* suppliers of an annotation (don't
+   privilege one KG). Typical annotations (with example suppliers): disease↔gene, gene↔trait
+   (digcfdekg), gene / protein↔pathway & GO (prokn, ncipidkg), chemical↔gene / adverse-outcome
+   (biobricks tox + aopwiki), disease↔phenotype (rdkg / oard-kg, HPO), gene↔drug & disease↔drug
+   (rdkg `treats`).
 4. **Differential expression / omics (optional).** Where a source has it: spoke-genelab
    (model-organism DE, reified) or gene-expression-atlas baselines. Apply that source's selection
    rules; threshold adj_p ≤ 0.05 (+ effect size). See the workflow appendix for spoke-genelab.
@@ -102,16 +115,31 @@ payloads, so it is the bridge from a gene / disease / chemical to a **place**.
 7. **Disease / phenotype / trait linkage.** Test the entity set for over-representation of disease /
    phenotype / trait genes; distinguish a **broad** (GWAS) set (null by construction) from a
    **curated** (Mendelian) set (the discriminating test).
-8. **Chemical / drug / exposure linkage.** Map to toxicological targets (biobricks tox), adverse
-   outcome pathways (aopwiki), and therapeutics (rdkg `treats`); flag toxicogenomic vs therapeutic
-   layers (spoke-okn's compound→gene layer is toxicogenomic, not therapeutics).
-9. **Place-based linkage (bio ↔ geography).** When the question is spatial, bridge bio entities to
-   location via spoke-okn's geography keys (county FIPS / ZIP / S2), then join the spatial hub:
-   environmental measurements (sawgraph PFAS, hydrology), facilities (fiokg), social services
-   (dreamkg / ruralkg), neighborhood / justice (nikg / scales), soil / flood (sockg / ufokn). This
-   turns a gene / disease / chemical result into an exposure- or place-aware map.
+8. **Drug / target / exposure linkage.**
+   - **Known & candidate treatments for a target (therapeutic hypotheses).** For each known or
+     top-ranked target, find drugs / compounds that act on it: on a **protein (UniProt)** target,
+     **prokn** links approved / investigational **drugs** and **probe compounds** (measured
+     bioactivity) to the protein; and chain **target → its diseases → drugs that treat them** for a
+     **repurposing** angle (disease↔gene, then a drug→disease layer — **rdkg `treats`** is the clean
+     curated source; **spoke-okn** also carries DrugBank drugs + a `TREATS_CtD` drug→disease layer,
+     though sparser). Map every hit back onto the target; `find_context_sources(want=["drug"],
+     join_key=…)` confirms the suppliers. spoke-okn can also tie a drug to **place / SDoH** (step 9).
+   - **Label the evidence layer honestly:** approved therapeutic > investigational > medicinal-
+     chemistry probe (potential, unvalidated) > toxicogenomic perturbation — e.g. **spoke-okn's
+     compound→gene layer is a toxicogenomic perturbation, not a treatment**, so check what a
+     compound→gene predicate means.
+   - **Exposure / toxicology (environmental questions):** chemical↔gene tox screens (biobricks tox)
+     and adverse outcome pathways (aopwiki) — the harmful-exposure direction, distinct from therapy.
+9. **Place-based linkage (bio ↔ geography).** When the question is spatial, get the bio entity onto a
+   **geographic key** (county FIPS / ZIP / S2) via whichever KG carries both your entity and geography
+   (use `find_context_sources` / `get_join_strategy` to pick it — e.g. spoke-okn for a gene / disease,
+   sawgraph for a chemical exposure), then join the spatial hub: environmental measurements (sawgraph,
+   hydrology), facilities (fiokg), social services (dreamkg / ruralkg), neighborhood / justice
+   (nikg / scales), soil / flood (sockg / ufokn). This turns a gene / disease / chemical result into
+   an exposure- or place-aware map.
 10. **Ranking & tiering.** Integrate the evidence axes (recurrence, effect size, disease / phenotype
-    support, curated role, specificity, number of corroborating KGs) into one score + A / B / C tiers.
+    support, **druggability — a known or candidate drug acts on it**, curated role, specificity,
+    number of corroborating KGs) into one score + A / B / C tiers.
 11. **Literature comparison (optional).** PubMed + Paperclip: supported / novel / contradicted;
     verify central claims against full text.
 
@@ -131,7 +159,7 @@ payloads, so it is the bridge from a gene / disease / chemical to a **place**.
 
 - Joining across KGs on study / dataset accessions (island) → integrate on entity IDs / geography.
 - Enrichment against an implicit / all-genome background → inflated significance.
-- Reaching place-based data by name instead of a geographic key → bridge on FIPS / ZIP / S2 via
-  spoke-okn.
+- Reaching place-based data by name instead of a geographic key → join on FIPS / ZIP / S2 (find the
+  bridge KG with `find_context_sources` / `get_join_strategy`).
 - A single combined query pushing a big reified pattern + OPTIONAL joins → timeout; go one piece at a
   time, no global ORDER BY.

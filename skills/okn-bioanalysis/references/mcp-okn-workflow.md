@@ -30,39 +30,47 @@ Dedicated bridge graphs the tools route through: **`ubergraph`** (ontology `skos
 `subClassOf*` closure) and **`identifier-mappings` / `wikidata`** (Wikidata ↔ external-id, e.g.
 HGNC ↔ Entrez behind prokn).
 
-## What to integrate on (orienting map — verify live)
+## What to integrate on (identifier types — get the recipe from the tools)
 
-Integrate across KGs on **shared identifiers, not names**. This is a mental model for planning; the
-authoritative, versioned recipe is whatever `list_crosswalks` / `get_join_strategy` return today.
+The federation joins **mostly on shared identifiers** (Entrez, UniProt, MONDO, …), but **some joins
+are exact name / label matches** — a gene **symbol** (`rdfs:label`), a SNOMED / UMLS **concept
+name**, an organism **label** where a KG has no taxon id; these are more fragile (exact,
+case-sensitive). Use `list_crosswalks` / `get_join_strategy` / `find_context_sources` to get the
+actual join (predicates, IRI normalization, verified count, `skeleton_query`) and which KGs supply it
+— **don't plan or hard-code from this list**; it just names the recurring join keys so you know what
+to ask the tools for.
 
-| Entity | Typical key | Example reach |
-|---|---|---|
-| Gene | Entrez / Ensembl (+ HGNC symbol bridge) | spoke-okn, digcfdekg, rdkg, prokn, gene-expression-atlas-okn |
-| Protein | UniProt | prokn, ncipidkg, biobricks-aopwiki, biomarkerkg |
-| Disease | MONDO / DOID (via ubergraph exactMatch) | spoke-okn, prokn, rdkg, digcfdekg, oard-kg, biohealth |
-| Phenotype | HP (HPO) | rdkg, oard-kg, gene-expression-atlas-okn |
-| Pathway / function | Reactome `R-HSA`, GO | prokn, ncipidkg, gene-expression-atlas-okn |
-| Chemical / drug | CHEBI ↔ CAS, PubChem CID, MeSH, DrugBank | spoke-okn, biobricks-ice / tox21 / toxcast, rdkg |
-| Cell type / tissue | CL / UBERON | prokn, pankgraph, gene-expression-atlas-okn, spoke-genelab |
-| SDoH | UMLS concept (MeSH / SNOMED bridges); or by geography | spoke-okn, biohealth |
-| Geography | S2 L13 cell · county / state FIPS · ZIP | the spatial hub via spoke-okn (sawgraph, spatialkg, fiokg, …) |
+| Entity | Join key(s) |
+|---|---|
+| Gene | Entrez / Ensembl (+ HGNC symbol) |
+| Protein | UniProt |
+| Disease | MONDO / DOID (bridged via ubergraph `skos:exactMatch`) |
+| Phenotype | HP (HPO) |
+| Pathway / function | Reactome `R-HSA`, GO |
+| Chemical / drug | CHEBI / CAS / PubChem CID / MeSH / DrugBank |
+| Cell type / tissue | CL / UBERON |
+| Social determinants (SDoH) | UMLS concept |
+| Geography *(to reach place-based data)* | S2 L13 cell · county / state FIPS · ZIP |
 
 Study / dataset / mission accessions (OSD, GLDS…) are a **federation island** — never join on them.
 
 ## Bio ↔ place-based data (the analytical pattern)
 
-`spoke-okn` is the hub: it carries bio payloads AND geospatial / environmental / social-determinant
-payloads, so it connects a molecular result to a **place** — on a **geographic key** (S2 / county
-FIPS / ZIP), never a name. Pull the recipe with `get_join_strategy("spoke-okn", "<geo-kg>")` and build
-on its `skeleton_query`. Useful chains:
+To connect a molecular result to a **place**, get the bio entity onto a **geographic key** (S2 /
+county FIPS / ZIP), never a name — through whichever KG carries **both** your entity and geography.
+Ask `find_context_sources(want=["geospatial"], join_key=…)` / `get_join_strategy` which bridge fits,
+and build on the returned `skeleton_query`. Common bridges: **spoke-okn** (gene / disease / chemical +
+geo / SDoH / environmental), **biohealth** (disease + SDoH), **sawgraph** (chemical + environmental).
+Useful chains:
 
-- **disease / gene → place → exposure / services**: spoke-okn → county FIPS → sawgraph (PFAS,
+- **disease / gene → place → exposure / services**: entity → county FIPS → sawgraph (PFAS,
   environment), fiokg (facilities), dreamkg / ruralkg (services), nikg / scales (neighborhood /
   justice), sockg / ufokn (soil / flood).
 - **chemical → adverse outcome → gene / disease**: chemical (CHEBI / CAS / PubChem) → biobricks tox →
   biobricks-aopwiki key-event targets → disease.
-- **chemical exposure → place**: the same chemical id → sawgraph observations located on S2 / county.
-- **gene / disease → SDoH**: spoke-okn / biohealth social-determinant layers by disease or geography.
+- **chemical exposure → place**: the same chemical id → sawgraph observations located on S2 / county
+  (no bio hub needed).
+- **gene / disease → SDoH**: social-determinant layers (spoke-okn / biohealth) by disease or geography.
 
 ## Within-KG recipe worth keeping: prokn GO / Reactome enrichment
 
