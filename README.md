@@ -241,17 +241,19 @@ Agent Skills work in these Claude clients:
 
 ### Claude Code
 
-Copy the skills into your project or personal skills directory:
+Download the skills straight from this repo into your personal skills directory
+(available in every project on this machine) — no clone required:
 
 ```bash
-# project-scoped (shared with the repo, committed to .claude/skills/)
-mkdir -p .claude/skills
-cp -R skills/okn-bioanalysis skills/okn-report-style .claude/skills/
-
-# or personal (available in every project on this machine)
-mkdir -p ~/.claude/skills
-cp -R skills/okn-bioanalysis skills/okn-report-style ~/.claude/skills/
+mkdir -p ~/.claude/skills && cd ~/.claude/skills
+for s in okn-bioanalysis okn-report-style; do
+  curl -sL "https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/skills/$s.zip" -o "$s.zip"
+  unzip -oq "$s.zip" && rm "$s.zip"
+done
 ```
+
+For a project-scoped install (shared with a repo), swap `~/.claude/skills` for
+`.claude/skills` in your project root.
 
 Verify with `/skills` — you should see `okn-bioanalysis` and `okn-report-style`
 listed. Claude invokes a skill automatically when a task matches its description.
