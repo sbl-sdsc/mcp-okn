@@ -117,9 +117,10 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
    **curated** (Mendelian) set (the discriminating test).
 8. **Drug / target / exposure linkage.**
    - **Known & candidate treatments for a target (therapeutic hypotheses).** For each known or
-     top-ranked target, find drugs / compounds that act on it: on a **protein (UniProt)** target,
-     **prokn** links approved / investigational **drugs** and **probe compounds** (measured
-     bioactivity) to the protein; and chain **target → its diseases → drugs that treat them** for a
+     top-ranked target, find drugs / compounds that act on it: on a **protein (UniProt)** or **gene**
+     (Ensembl; Entrez / HGNC symbol via a bridge) target, **prokn** links approved / investigational
+     **drugs** and **probe compounds** (measured bioactivity) to the target; and chain
+     **target → its diseases → drugs that treat them** for a
      **repurposing** angle (disease↔gene, then a drug→disease layer — **rdkg `treats`** is the clean
      curated source; **spoke-okn** also carries DrugBank drugs + a `TREATS_CtD` drug→disease layer,
      though sparser). Map every hit back onto the target; `find_context_sources(want=["drug"],
@@ -127,7 +128,9 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
    - **Label the evidence layer honestly:** approved therapeutic > investigational > medicinal-
      chemistry probe (potential, unvalidated) > toxicogenomic perturbation — e.g. **spoke-okn's
      compound→gene layer is a toxicogenomic perturbation, not a treatment**, so check what a
-     compound→gene predicate means.
+     compound→gene predicate means. The payload label is the fastest evidence cue: a **`drug`**
+     payload is a DrugBank therapeutic (approved / investigational); a **`chemical`** payload is a
+     CAS / CHEBI / PubChem *substance* — a med-chem probe or tox-screen chemical, i.e. a lower rung.
    - **Exposure / toxicology (environmental questions):** chemical↔gene tox screens (biobricks tox)
      and adverse outcome pathways (aopwiki) — the harmful-exposure direction, distinct from therapy.
 9. **Place-based linkage (bio ↔ geography).** When the question is spatial, get the bio entity onto a
