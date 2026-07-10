@@ -113,5 +113,6 @@ Its query-time contrast rules are returned by `get_schema` (`usage_notes`) and e
 `get_valid_contrasts` — **use those, don't re-derive them**. In brief: reified DE
 `?stmt rdf:subject ?assay ; rdf:predicate gl:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ; rdf:object
 ?gene ; schema:log2fc ?l ; schema:adj_p_value ?p` (methylation `…_ASmMR` / microbial abundance
-`…_ASmO` analogous); ortholog `?gene gl:IS_ORTHOLOG_MGiG ?humanGene` → collapse with
-`scripts/collapse_orthologs.py`; then integrate on Entrez like any other gene source.
+`…_ASmO` analogous); call a gene differentially expressed at **adj_p ≤ 0.05 and |log2FC| ≥ 1**
+(`FILTER(?p <= 0.05 && ABS(?l) >= 1)`). Then ortholog `?gene gl:IS_ORTHOLOG_MGiG ?humanGene` →
+collapse with `scripts/collapse_orthologs.py`; then integrate on Entrez like any other gene source.

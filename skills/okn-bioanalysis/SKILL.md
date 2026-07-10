@@ -107,7 +107,7 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
    (rdkg `treats`).
 4. **Differential expression / omics (optional).** Where a source has it: spoke-genelab
    (model-organism DE, reified) or gene-expression-atlas baselines. Apply that source's selection
-   rules; threshold adj_p ≤ 0.05 (+ effect size). See the workflow appendix for spoke-genelab.
+   rules; threshold adj_p ≤ 0.05 and |log2FC| ≥ 1. See the workflow appendix for spoke-genelab.
 5. **Cross-species projection (optional).** If the source is a model organism, project to human
    orthologs and collapse with `collapse_orthologs.py`; carry the *ortholog-inferred* caveat.
 6. **Functional enrichment.** GO / Reactome / disease / trait / chemical-set over-representation with
