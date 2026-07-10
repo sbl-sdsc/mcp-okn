@@ -1,6 +1,6 @@
 # The Chemical Exposome of Bisphenols
 ### An evidence-backed exposure→disease map built exclusively from Proto-OKN knowledge graphs
-*Generated 2026-07-05 · FRINK federated SPARQL endpoint · 216 findings across 14 knowledge graphs*
+*Generated 2026-07-05 · OKN federated SPARQL endpoint · 216 findings across 14 knowledge graphs*
 
 ---
 ## Executive summary
@@ -16,7 +16,7 @@ This map traces bisphenol A (BPA) and 12 structural analogues from **exposure an
 > **Read the uncertainties section carefully.** AOP coverage is curated and sparse; assay activity is *in-vitro*, not *in-vivo* effect; several joins are ontology-bridged; and AOP-Wiki's automated key-event→gene annotations are unreliable (documented below), so molecular targets were taken from the *curated molecular-initiating-event biology*, not those automated links.
 
 ## 1. Data provenance & method
-All data come from the Proto-OKN FRINK federation. Knowledge graphs and versions used:
+All data come from the Proto-OKN federation. Knowledge graphs and versions used:
 
 | Layer | Knowledge graph | Version | Role in the map |
 |---|---|---|---|
@@ -145,7 +145,7 @@ BPA is the monomer of **polycarbonate plastic** and **epoxy resins**; TBBPA is a
 - All queries ran against `https://frink.apps.renci.org` named graphs listed in §1.
 
 ## Sources
-All findings derive from the Proto-OKN FRINK federation. Primary graphs (with homepages):
+All findings derive from the Proto-OKN federation. Primary graphs (with homepages):
 
 - [biobricks-aopwiki](https://github.com/biobricks-ai/aopwikirdf-kg)
 - [biobricks-toxcast](https://github.com/biobricks-ai/biobricks-okg)

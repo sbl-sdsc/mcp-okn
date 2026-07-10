@@ -12,7 +12,7 @@ tracing, exposure modelling, …).
 # <Descriptive title of the analysis / knowledge map>
 ### <one-line subtitle: what kind of analysis, on which OKN graphs>
 
-**Date:** YYYY-MM-DD · **Endpoint:** OKN federated SPARQL (FRINK) · **Model:** <model>
+**Date:** YYYY-MM-DD · **Endpoint:** OKN federated SPARQL · **Model:** <model>
 
 > **Framing (non-negotiable).** <unit of analysis> over <spatial / temporal coverage>;
 > <level of inference>. <one-sentence key caveat> — e.g. *"hypothesis generation, not causal /

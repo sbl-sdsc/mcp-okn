@@ -55,4 +55,4 @@ The bridge counts (exactMatch = hasDbXref = 401) are a curated ubergraph mapping
 
 ## Sources
 
-- Proto-OKN / FRINK federation via the `mcp-okn` service. Join recipes A19/A20/A21/A22; counts verified 2026-06-18.
+- Proto-OKN / OKN federation via the `mcp-okn` service. Join recipes A19/A20/A21/A22; counts verified 2026-06-18.

@@ -69,4 +69,4 @@ Validated by construction on the shared NCBITaxon standard, with the wildlifekn 
 
 ## Sources
 
-- Proto-OKN / FRINK federation via the `mcp-okn` service. Join recipe D11-ncbitaxon-wildlifekn-nde; exact-id count verified 2026-06-18 (`taxon_overlap`).
+- Proto-OKN / OKN federation via the `mcp-okn` service. Join recipe D11-ncbitaxon-wildlifekn-nde; exact-id count verified 2026-06-18 (`taxon_overlap`).

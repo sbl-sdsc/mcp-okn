@@ -2,7 +2,7 @@
 
 - **Date:** 2026-07-05
 - **Model:** claude-opus-4-8
-- **SPARQL endpoint:** FRINK federation (`https://purl.org/okn/frink/kg/…` named graphs)
+- **SPARQL endpoint:** OKN federation (`https://purl.org/okn/frink/kg/…` named graphs)
 
 ## Knowledge graphs used (with release versions)
 

@@ -81,7 +81,7 @@ M.append(
     "### An evidence-backed exposure→disease map built exclusively from Proto-OKN knowledge graphs\n"
 )
 M.append(
-    f"*Generated {os.popen('date +%Y-%m-%d').read().strip()} · FRINK federated SPARQL endpoint · {nfind} findings across 14 knowledge graphs*\n"
+    f"*Generated {os.popen('date +%Y-%m-%d').read().strip()} · OKN federated SPARQL endpoint · {nfind} findings across 14 knowledge graphs*\n"
 )
 M.append("\n---\n")
 M.append("## Executive summary\n")
@@ -106,7 +106,7 @@ M.append(
 
 M.append("\n## 1. Data provenance & method\n")
 M.append(
-    "All data come from the Proto-OKN FRINK federation. Knowledge graphs and versions used:\n\n"
+    "All data come from the Proto-OKN federation. Knowledge graphs and versions used:\n\n"
 )
 M.append("| Layer | Knowledge graph | Version | Role in the map |\n|---|---|---|---|\n")
 tbl_rows = [
@@ -240,7 +240,7 @@ M.append(
 
 M.append("\n## Sources\n")
 M.append(
-    "All findings derive from the Proto-OKN FRINK federation. Primary graphs (with homepages):\n\n"
+    "All findings derive from the Proto-OKN federation. Primary graphs (with homepages):\n\n"
 )
 for sn, url in [
     ("biobricks-aopwiki", "https://github.com/biobricks-ai/aopwikirdf-kg"),
@@ -326,7 +326,7 @@ H = [
 H.append(
     '<header><div class="in"><h1>The Chemical Exposome of Bisphenols</h1>'
     '<div class="sub">An evidence-backed exposure→disease map built exclusively from Proto-OKN knowledge graphs</div>'
-    f'<div class="meta">FRINK federated SPARQL · {nfind} findings · 14 knowledge graphs · generated {os.popen("date +%Y-%m-%d").read().strip()}</div></div></header>'
+    f'<div class="meta">OKN federated SPARQL · {nfind} findings · 14 knowledge graphs · generated {os.popen("date +%Y-%m-%d").read().strip()}</div></div></header>'
 )
 H.append('<div class="wrap">')
 # stats
@@ -467,11 +467,11 @@ H.append(
 )
 
 H.append(
-    "<h2>11 · Reproducibility</h2><p><code>findings_master.csv</code> (216 findings) · <code>corroboration_detail.csv</code> (275 triples) · <code>corroboration_ranking.csv</code> (234 links) · 12 per-layer CSVs in <code>data/</code> · 5 figures + interactive Sankey · <code>bisphenol_exposome_transcript.md</code> (verbatim SPARQL). Queries ran against the FRINK federation named graphs in §1.</p>"
+    "<h2>11 · Reproducibility</h2><p><code>findings_master.csv</code> (216 findings) · <code>corroboration_detail.csv</code> (275 triples) · <code>corroboration_ranking.csv</code> (234 links) · 12 per-layer CSVs in <code>data/</code> · 5 figures + interactive Sankey · <code>bisphenol_exposome_transcript.md</code> (verbatim SPARQL). Queries ran against the OKN federation named graphs in §1.</p>"
 )
 
 H.append(
-    '<div class="foot">Built with the Proto-OKN MCP over the FRINK federated SPARQL endpoint. Evidence types (curated AOP link · HTS assay measurement · measured differential expression · literature annotation · curated/statistical disease association · ontology bridge) are recorded separately for every finding and never merged.</div>'
+    '<div class="foot">Built with the Proto-OKN MCP over the OKN federated SPARQL endpoint. Evidence types (curated AOP link · HTS assay measurement · measured differential expression · literature annotation · curated/statistical disease association · ontology bridge) are recorded separately for every finding and never merged.</div>'
 )
 H.append("</div></body></html>")
 with Path(f"{BASE}/bisphenol_exposome_report.html").open("w") as f:

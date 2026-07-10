@@ -1,10 +1,10 @@
 # SPOKE-OKN — 25 real-world example queries, one per crosswalk partner
 
 **Standalone showcase — NOT part of the crosswalk catalog** (`crosswalks_example.md` / `crosswalks_examples/`).
-This file presents **one scientifically meaningful, literature-grounded, executed example query for each of the 25 distinct knowledge graphs that `spoke-okn` crosswalks with** in the Proto-OKN / FRINK federation.
+This file presents **one scientifically meaningful, literature-grounded, executed example query for each of the 25 distinct knowledge graphs that `spoke-okn` crosswalks with** in the Proto-OKN / OKN federation.
 
 - **Model:** claude-opus-4-8 · **Crosswalk source:** `mcp-okn list_crosswalks` (134 verified crosswalks, verified 2026-06-30)
-- **Endpoint:** FRINK federated SPARQL via the `mcp-okn` service (`https://apps.okn.us/federation/sparql`)
+- **Endpoint:** OKN federated SPARQL via the `mcp-okn` service (`https://apps.okn.us/federation/sparql`)
 - **All 25 queries were executed on 2026-06-27**; each block shows the runnable SPARQL, a real sample of returned rows, and a PubMed/literature anchor.
 - **Scope rule — "25 crosswalks":** `spoke-okn` participates in many `list_crosswalks` rows, but they resolve to **25 distinct partner KGs**. This file gives one *new-angle* example per partner — deliberately different diseases / genes / chemicals / regions from the q1/q2 already in the catalog. Where a partner connects on more than one key (e.g. `rdkg` via DrugBank / Entrez / DOID↔MONDO; `ruralkg` via ZIP5 / county FIPS), the single most compelling join is shown and noted.
 

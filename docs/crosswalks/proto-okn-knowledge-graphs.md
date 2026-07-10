@@ -14,7 +14,7 @@ List all Proto-OKN knowledge graphs as a table of shortname and description.
 
 🧠 **Assistant**
 
-Here are the 41 Proto-OKN knowledge graphs served on the FRINK federation.
+Here are the 41 Proto-OKN knowledge graphs served on the OKN federation.
 
 | Shortname | Description |
 |---|---|

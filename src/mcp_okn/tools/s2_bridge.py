@@ -1,7 +1,7 @@
 """On-the-fly lat/long -> S2 cell bridging: point_to_s2 + spatial_bridge tools.
 
 Some KGs carry POINT coordinates (lat/long literals) but no S2 cell key, so they
-cannot be joined live to spatialkg's S2 grid (FRINK/QLever has no point-in-polygon).
+cannot be joined live to spatialkg's S2 grid (OKN/QLever has no point-in-polygon).
 SUDOKN is the first such graph. Rather than materialize a new named graph, this
 module supplies the missing join key AT QUERY TIME:
 

@@ -2,7 +2,7 @@
 
 The registry query files (frink-okn/okn-registry) are written against each KG's
 *own* SPARQL endpoint, so their `WHERE` patterns are unscoped. The mcp-okn server
-only ever talks to the single FRINK *federation* endpoint, where every pattern
+only ever talks to the single OKN *federation* endpoint, where every pattern
 must be scoped to a named graph:
 
     GRAPH <https://purl.org/okn/frink/kg/{shortname}> { ... }

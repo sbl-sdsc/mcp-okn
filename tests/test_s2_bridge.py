@@ -3,7 +3,7 @@
 The point->cell primitive is exercised directly (deterministic, no network); the
 bridge tools patch `run_sparql` on the module — where the helpers look it up — and
 queue per-call results so the fetch->compute->inject pipeline can be asserted on
-without hitting FRINK.
+without hitting OKN.
 """
 
 import pytest

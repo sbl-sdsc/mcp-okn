@@ -1,4 +1,4 @@
-"""Client for the FRINK federated SPARQL endpoint.
+"""Client for the OKN federated SPARQL endpoint.
 
 This is the ONLY network path used to run queries. The per-KG SPARQL endpoints
 listed in the registry (Apache Jena instances) are deliberately never used: they
@@ -99,7 +99,7 @@ async def run_sparql(
     client: httpx.AsyncClient | None = None,
     normalize_schema: bool = True,
 ) -> dict[str, Any]:
-    """Run a SPARQL query against the FRINK federation endpoint.
+    """Run a SPARQL query against the OKN federation endpoint.
 
     Args:
         query: A complete SPARQL query string. Scope to a KG with

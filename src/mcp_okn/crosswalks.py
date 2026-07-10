@@ -1,4 +1,4 @@
-"""Precomputed, hand-verified cross-KG join recipes for the FRINK federation.
+"""Precomputed, hand-verified cross-KG join recipes for the OKN federation.
 
 `find_crosswalks` discovers join keys LIVE — it fires federation scans that time
 out on large graphs, so it is unreliable. This module instead serves a curated

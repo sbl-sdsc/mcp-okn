@@ -57,4 +57,4 @@ Validated by construction: biomarkerkg and nde carry the identical `obo/DOID_` I
 
 ## Sources
 
-- Proto-OKN / FRINK federation via the `mcp-okn` service. Join verified with `get_join_strategy`; counts are exact `COUNT(DISTINCT)` verified 2026-06-18.
+- Proto-OKN / OKN federation via the `mcp-okn` service. Join verified with `get_join_strategy`; counts are exact `COUNT(DISTINCT)` verified 2026-06-18.

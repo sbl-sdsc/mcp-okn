@@ -1,9 +1,9 @@
 # PFAS Source Prioritization via Knowledge-Graph Integration
 
-*A reproducible Proto-OKN case study — environmental PFAS detections co-located with EPA-regulated facilities likely to handle PFAS, resolved to chemical identity, functional-use, and toxicological coverage, assembled across five Proto-OKN knowledge graphs on the FRINK federation.*
+*A reproducible Proto-OKN case study — environmental PFAS detections co-located with EPA-regulated facilities likely to handle PFAS, resolved to chemical identity, functional-use, and toxicological coverage, assembled across five Proto-OKN knowledge graphs on the OKN federation.*
 
 - **Date:** 2026-07-04  **·  Model:** claude-opus-4-8
-- **Endpoint:** FRINK federated SPARQL — `https://apps.okn.us/federation/sparql`
+- **Endpoint:** OKN federated SPARQL — `https://apps.okn.us/federation/sparql`
 - **KG versions (pinned):** sawgraph v0.0.15 · fiokg v0.0.11 · spatialkg v0.0.6 · biobricks-ice v0.0.3 · biobricks-toxcast v0.0.2
 - **Companion files:** `pfas_source_attribution.html` (interactive report), `pfas_map_openstreetmap.html` (OpenStreetMap figure), `PFAS_reproducibility_transcript.md` (queries).
 
@@ -23,7 +23,7 @@ Co-location is defined at **S2 Level-13** (~1 km² grid cell). A "PFAS-relevant 
 
 ## 1. Sources used
 
-Five Proto-OKN knowledge graphs on the FRINK federated SPARQL endpoint. All cross-KG integration is on **S2 Level-13 grid cells** (geospatial) and **CompTox DTXSID / CAS** (chemical).
+Five Proto-OKN knowledge graphs on the OKN federated SPARQL endpoint. All cross-KG integration is on **S2 Level-13 grid cells** (geospatial) and **CompTox DTXSID / CAS** (chemical).
 
 | Knowledge graph | Ver. | Role in this analysis | Entity types contributed | Join key |
 |---|---|---|---|---|
@@ -198,4 +198,4 @@ The exact SPARQL queries behind every table above are recorded in **`PFAS_reprod
 
 ---
 
-*Reproducible knowledge-graph workflow over the Proto-OKN FRINK federation. Snapshot verified 2026-07-04.*
+*Reproducible knowledge-graph workflow over the Proto-OKN federation. Snapshot verified 2026-07-04.*

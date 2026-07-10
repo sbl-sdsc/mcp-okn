@@ -62,4 +62,4 @@ Validated by construction on the shared S2 Level-13 standard (both graphs refere
 
 ## Sources
 
-- Proto-OKN / FRINK federation via the `mcp-okn` service. Join recipe O2-s2-ufokn-fiokg; sampled lower bound verified 2026-06-19.
+- Proto-OKN / OKN federation via the `mcp-okn` service. Join recipe O2-s2-ufokn-fiokg; sampled lower bound verified 2026-06-19.

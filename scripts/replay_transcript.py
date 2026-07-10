@@ -3,7 +3,7 @@
 The transcript records each non-exploratory query verbatim (the ```sparql blocks
 in the markdown, or the ``query_log`` in the JSON format), which is what makes a
 session reproducible. This script replays those queries, in order, against the
-FRINK federation endpoint and reports each query's row count against the count
+OKN federation endpoint and reports each query's row count against the count
 recorded in the transcript.
 
 Usage:
@@ -13,7 +13,7 @@ Usage:
 
 Exits non-zero if any query errors or its row count differs from the recorded
 one (a difference can mean the underlying KG changed since the transcript was
-made — FRINK is a live endpoint).
+made — OKN is a live endpoint).
 """
 
 from __future__ import annotations

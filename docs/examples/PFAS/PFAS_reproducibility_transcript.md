@@ -2,7 +2,7 @@
 
 - **Date:** 2026-07-04
 - **Model:** claude-opus-4-8
-- **SPARQL endpoint:** https://apps.okn.us/federation/sparql (Proto-OKN FRINK federation)
+- **SPARQL endpoint:** https://apps.okn.us/federation/sparql (Proto-OKN federation)
 
 ## Knowledge graphs used
 
@@ -222,4 +222,4 @@ _Result: 16 Maine county `POLYGON` geometries; Ramer–Douglas–Peucker-simplif
 - SAWGraph observations carry the DSSTox **DTXSID** directly via `coso:ofDSSToxSubstance`; CAS lives on the parallel dataset-parameter node (`coso:casNumber`), stored dash-less in Maine EGAD — hence the DTXSID join outperforms the CAS crosswalk.
 - Units vary by medium (ng/L water, ng/g soil, etc.); the concentration axis is restricted to `unit/NanoGM-PER-L` for comparability.
 
-*All queries executed against the FRINK federation on 2026-07-04. KG releases pinned above.*
+*All queries executed against the OKN federation on 2026-07-04. KG releases pinned above.*

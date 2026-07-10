@@ -336,7 +336,7 @@ def _ontology_id_query(ng: str, role: str, sample: int = 0) -> str:
     role's scan finds nothing and, on a large KG, runs the store to a timeout —
     splitting them means that fruitless scan can't take the productive one down
     with it. Grouping is kept explicit per predicate rather than via
-    ``GROUP_CONCAT``, which the FRINK federation engine leaves unbound.
+    ``GROUP_CONCAT``, which the OKN federation engine leaves unbound.
     """
     triple = "?n ?pred ?x ." if role == "subject" else "?x ?pred ?n ."
     prefixes = " || ".join(f'STRSTARTS(STR(?n), "{p}")' for p in _NODE_ID_IRI_PREFIXES)

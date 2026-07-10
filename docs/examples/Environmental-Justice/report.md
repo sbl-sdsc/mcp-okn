@@ -2,7 +2,7 @@
 
 ### An evidence-backed, multi-source map built exclusively from Proto-OKN knowledge graphs
 
-*Prepared with the FRINK federated SPARQL endpoint over the Proto-OKN knowledge-graph ecosystem. Model: claude-opus-4-8. Analysis date: 2026-07-06. All burden, health, and social data derive solely from Proto-OKN graphs; the only non-KG input is cartographic county/state polygon geometry used to draw the map.*
+*Prepared with the OKN federated SPARQL endpoint over the Proto-OKN knowledge-graph ecosystem. Model: claude-opus-4-8. Analysis date: 2026-07-06. All burden, health, and social data derive solely from Proto-OKN graphs; the only non-KG input is cartographic county/state polygon geometry used to draw the map.*
 
 ---
 
@@ -25,7 +25,7 @@ All correlations are **ecological** (county-level aggregates) and several covera
 
 ## 2. Data sources and integration architecture
 
-Twelve Proto-OKN graphs were queried live via FRINK. Each contributes a distinct **entity type**, and all are joined on shared geographic keys.
+Twelve Proto-OKN graphs were queried live via OKN. Each contributes a distinct **entity type**, and all are joined on shared geographic keys.
 
 | Knowledge graph | Version | Contribution (entity type) | Join key into the hub |
 |---|---|---|---|
@@ -204,4 +204,4 @@ All files are in this folder:
 
 ---
 
-*Reproducibility: the companion `transcript.md` records the session and the SPARQL queries behind these findings against the named FRINK graphs and versions listed in §2.*
+*Reproducibility: the companion `transcript.md` records the session and the SPARQL queries behind these findings against the named OKN graphs and versions listed in §2.*

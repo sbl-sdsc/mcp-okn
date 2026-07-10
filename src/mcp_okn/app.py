@@ -17,7 +17,7 @@ from .contrasts import (
 )
 
 INSTRUCTIONS = """\
-Query the FRINK federated SPARQL endpoint over the Proto-OKN knowledge graphs.
+Query the OKN federated SPARQL endpoint over the Proto-OKN knowledge graphs.
 
 Workflow:
 1. Call `list_kgs` to see the available knowledge graphs and their descriptions,

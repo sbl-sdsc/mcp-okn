@@ -150,8 +150,8 @@ code{{background:#eef3f7;padding:1px 5px;border-radius:5px;font-size:12px}}
 </style></head><body>
 <header>
 <h1>An Evidence-Backed Map of Type 2 Diabetes Biology</h1>
-<p>Integrated across nine Proto-OKN / FRINK federated knowledge graphs · anchored on type 2 diabetes mellitus (MONDO:0005148) + 6 subtypes</p>
-<p>Prepared for Peter · 2026-07-05 · model claude-opus-4-8 · FRINK federated SPARQL</p>
+<p>Integrated across nine Proto-OKN / OKN federated knowledge graphs · anchored on type 2 diabetes mellitus (MONDO:0005148) + 6 subtypes</p>
+<p>Prepared for Peter · 2026-07-05 · model claude-opus-4-8 · OKN federated SPARQL</p>
 </header>
 <div class="wrap">
 
@@ -176,7 +176,7 @@ A further {len(S["tier2_genes"])} genes are supported by 3 sources (Tier&nbsp;2)
 </div>
 
 <h2>Knowledge graphs used</h2>
-<div class="muted">Nine Proto-OKN / FRINK knowledge graphs queried on 2026-07-05 (versions from VoID provenance). <code>ubergraph</code> is the ontology bridge only; <code>oard-kg</code> was checked but returned no T2D rows.</div>
+<div class="muted">Nine Proto-OKN / OKN knowledge graphs queried on 2026-07-05 (versions from VoID provenance). <code>ubergraph</code> is the ontology bridge only; <code>oard-kg</code> was checked but returned no T2D rows.</div>
 <div style="overflow:auto"><table style="margin-top:10px"><thead><tr><th>KG (shortname)</th><th>Version</th><th>Kind of data used in this map</th><th>Entity types supplied</th></tr></thead><tbody>{src_rows}</tbody></table></div>
 
 <h2>Prevalence across the U.S. — interactive OpenStreetMap</h2>

@@ -54,4 +54,4 @@ The contrast (fiokg 2,461 vs sawgraph/hydrologykg 0 on the identical sample) is 
 
 ## Sources
 
-- Proto-OKN / FRINK federation via the `mcp-okn` service. Recipe O2-s2-ufokn-fiokg (verified); ufokn↔sawgraph / ufokn↔hydrologykg recorded as `known_non_joins` (unverified). Checked 2026-06-19.
+- Proto-OKN / OKN federation via the `mcp-okn` service. Recipe O2-s2-ufokn-fiokg (verified); ufokn↔sawgraph / ufokn↔hydrologykg recorded as `known_non_joins` (unverified). Checked 2026-06-19.

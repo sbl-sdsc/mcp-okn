@@ -18,9 +18,9 @@ SUDOKN manufacturers carry a point location (lat/long) but no S2 grid cell, so t
 ---
 🧠 **Assistant**
 
-**Why the join is required.** SUDOKN has the manufacturer and its coordinates but no S2 cell; SAWGraph has PFAS samples keyed to S2 cells. There is no shared stored identifier — spatialkg loads no ZIP areas and FRINK/QLever has no point-in-polygon — so the only way to co-locate a SUDOKN plater with a PFAS sample is to derive each manufacturer's S2 cell from its lat/long and match it to SAWGraph's cell.
+**Why the join is required.** SUDOKN has the manufacturer and its coordinates but no S2 cell; SAWGraph has PFAS samples keyed to S2 cells. There is no shared stored identifier — spatialkg loads no ZIP areas and OKN/QLever has no point-in-polygon — so the only way to co-locate a SUDOKN plater with a PFAS sample is to derive each manufacturer's S2 cell from its lat/long and match it to SAWGraph's cell.
 
-**Join mechanics (computed crosswalk).** The `mcp-okn` `spatial_bridge` tool runs a *compute-and-inject* pipeline: (1) fetch the NAICS-332813 SUDOKN sites with their `hasLatitudeValue`/`hasLongitudeValue`; (2) compute each point's standard Google S2 Level-13 `CellId` and format the spatialkg cell IRI (`…/s2.level13.{id}`); (3) inject the `(site, cell)` pairs as a `VALUES` block and join `?cell` to a SAWGraph PFAS sample (`owl:sameAs`) and to spatialkg (`S2Cell_Level13 → sfWithin` county). Nothing is persisted to FRINK. Validation: point (35.7956, −78.7941) → `s2.level13.9920570487421796352`, present in spatialkg, `sfWithin` Wake County, NC.
+**Join mechanics (computed crosswalk).** The `mcp-okn` `spatial_bridge` tool runs a *compute-and-inject* pipeline: (1) fetch the NAICS-332813 SUDOKN sites with their `hasLatitudeValue`/`hasLongitudeValue`; (2) compute each point's standard Google S2 Level-13 `CellId` and format the spatialkg cell IRI (`…/s2.level13.{id}`); (3) inject the `(site, cell)` pairs as a `VALUES` block and join `?cell` to a SAWGraph PFAS sample (`owl:sameAs`) and to spatialkg (`S2Cell_Level13 → sfWithin` county). Nothing is persisted to OKN. Validation: point (35.7956, −78.7941) → `s2.level13.9920570487421796352`, present in spatialkg, `sfWithin` Wake County, NC.
 
 | Manufacturer site | S2 cell (level 13) | County |
 | --- | --- | --- |

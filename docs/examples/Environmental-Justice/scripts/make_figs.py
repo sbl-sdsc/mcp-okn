@@ -22,7 +22,7 @@ plt.rcParams.update(
 )
 OUT = "/sessions/amazing-focused-bardeen/mnt/outputs"
 FIG = OUT + "/figs"
-SRC = "Data: Proto-OKN federated knowledge graphs (spoke-okn, fiokg, scales, ruralkg, sawgraph, geoconnex, nikg) via FRINK SPARQL"
+SRC = "Data: Proto-OKN federated knowledge graphs (spoke-okn, fiokg, scales, ruralkg, sawgraph, geoconnex, nikg) via OKN SPARQL"
 m = pd.read_csv(OUT + "/master_county.csv", dtype={"fips": str})
 corr = pd.read_csv(OUT + "/correlations.csv")
 

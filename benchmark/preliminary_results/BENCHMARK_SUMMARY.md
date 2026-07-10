@@ -63,7 +63,7 @@ order was stable enough that the reference subset reproduced exactly.)
 
 ## Method notes
 
-- **Sandbox can't reach FRINK** (HTTP 403 at the egress proxy), so SPARQL ran via
+- **Sandbox can't reach OKN** (HTTP 403 at the egress proxy), so SPARQL ran via
   the `mcp-okn` host tool and answers were scored against the committed reference
   cache using three techniques, by result size:
   1. **Set-hash** (small): MD5 over the sorted row set vs the reference's hash.

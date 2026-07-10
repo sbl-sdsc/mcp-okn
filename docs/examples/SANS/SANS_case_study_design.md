@@ -1,7 +1,7 @@
 # Case-Study Design: Spaceflight-Associated Neuro-ocular Syndrome (SANS)
 ### A knowledge-graph–driven integrative omics study using SPOKE-GeneLab and the Proto-OKN federation
 
-**Status:** Study *design* only — no analysis executed. All data-availability claims below were verified against the live FRINK federated SPARQL endpoint (counts current as of the KG versions in §9).
+**Status:** Study *design* only — no analysis executed. All data-availability claims below were verified against the live OKN federated SPARQL endpoint (counts current as of the KG versions in §9).
 **Author aid:** Drafted from Proto-OKN knowledge graphs via the `mcp-okn` tooling.
 **Date:** 2026-07-04
 
@@ -183,7 +183,7 @@ flowchart LR
 
 ## 9. Methods appendix — endpoints, graphs, versions
 
-- **Federation:** FRINK federated SPARQL endpoint; scope every pattern with `GRAPH <named_graph> { … }`.
+- **Federation:** OKN federated SPARQL endpoint; scope every pattern with `GRAPH <named_graph> { … }`.
 - **KG versions used (pinned; `pav:version` / last-updated):**
   spoke-genelab **v0.0.2** (2026-03-13) · spoke-okn **v0.0.6** (2026-03-16) · rdkg **v0.0.1** (2026-05-04) · prokn **v0.0.5** (2026-06-23) · gene-expression-atlas-okn **v0.0.3** (2026-03-18) · digcfdekg **v0.0.1** (2026-06-21) · biobricks-aopwiki **v0.0.4** (2026-03-18) · biohealth **v0.0.4** (2026-03-16) · ubergraph **v0.0.2** (2026-05-01).
 - **Key spoke-genelab predicates:** `CONDUCTED_MIcS` (Mission→Study), `PERFORMED_SpAS` (Study→Assay), `INVESTIGATED_ASiA` (Assay→UBERON), `INVESTIGATED_ASiCT` (Assay→CL), `MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG` (reified; carries `log2fc`, `adj_p_value`, group means/SDs), `IS_ORTHOLOG_MGiG` (mouse→human gene).
@@ -222,4 +222,4 @@ SANS clinical/mechanistic background:
 - [SANS: proposed pathogenesis, terrestrial analogues, and emerging countermeasures (PMC10359702)](https://pmc.ncbi.nlm.nih.gov/articles/PMC10359702/)
 - [Spaceflight-Associated Neuro-Ocular Syndrome — EyeWiki](https://eyewiki.org/Spaceflight-Associated_Neuro-Ocular_Syndrome_(SANS))
 
-Data: NASA Open Science Data Repository / GeneLab (OSDR), surfaced through the `spoke-genelab` KG and the Proto-OKN FRINK federation.
+Data: NASA Open Science Data Repository / GeneLab (OSDR), surfaced through the `spoke-genelab` KG and the Proto-OKN federation.

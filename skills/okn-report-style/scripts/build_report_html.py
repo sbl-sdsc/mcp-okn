@@ -207,7 +207,7 @@ def _demo():
            'pull-down menus to filter by tier, state, or medium; <b>sources (n)</b> = number of '
            'federation KGs corroborating each row (pills show which).</div>')
     build_report("Demo OKN Report", "self-contained interactive report (example: PFAS in water)",
-                 "Date · OKN federated SPARQL (FRINK) · Model",
+                 "Date · OKN federated SPARQL · Model",
                  kpis=[("8", "priority sites"), ("3", "media"), ("4", "source KGs")],
                  body_blocks=['<div class="note"><b>Framing.</b> observational; hypothesis generation, '
                               'not a regulatory determination.</div>',

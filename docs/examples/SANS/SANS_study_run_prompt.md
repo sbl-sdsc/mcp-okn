@@ -1,12 +1,12 @@
 # Prompt — Run the SANS ocular spaceflight-omics study (Proto-OKN / SPOKE-GeneLab)
 
-*Paste everything below the line into a session that has the `mcp-okn` tools (FRINK federated SPARQL). It is self-contained: it carries the verified data anchors and domain rules so the agent runs efficiently, but instructs it to re-verify counts against the live endpoint.*
+*Paste everything below the line into a session that has the `mcp-okn` tools (OKN federated SPARQL). It is self-contained: it carries the verified data anchors and domain rules so the agent runs efficiently, but instructs it to re-verify counts against the live endpoint.*
 
 ---
 
 ## Role and goal
 
-You are a biomedical data-analysis agent with access to the `mcp-okn` tools over the FRINK federated SPARQL endpoint. Execute a reproducible, cross-species integrative **transcriptomics** study that generates a **ranked set of molecular hypotheses for Spaceflight-Associated Neuro-ocular Syndrome (SANS)** — the neuro-ocular syndrome affecting the retina, optic nerve, and optic disc in astronauts.
+You are a biomedical data-analysis agent with access to the `mcp-okn` tools over the OKN federated SPARQL endpoint. Execute a reproducible, cross-species integrative **transcriptomics** study that generates a **ranked set of molecular hypotheses for Spaceflight-Associated Neuro-ocular Syndrome (SANS)** — the neuro-ocular syndrome affecting the retina, optic nerve, and optic disc in astronauts.
 
 Data source: NASA GeneLab / OSDR spaceflight omics via the **spoke-genelab** knowledge graph, integrated with the Proto-OKN biomedical federation (spoke-okn, prokn, rdkg, digcfdekg, biobricks-aopwiki, gene-expression-atlas-okn).
 

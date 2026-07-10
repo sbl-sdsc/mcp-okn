@@ -1,7 +1,7 @@
 # Reproducibility Appendix — SANS Ocular Spaceflight-Omics Study
 
 - **Date:** 2026-07-04 · **Model:** claude-opus-4-8
-- **Endpoint:** FRINK federated SPARQL (`https://apps.okn.us/federation/sparql`)
+- **Endpoint:** OKN federated SPARQL (`https://apps.okn.us/federation/sparql`)
 - **KG versions (pinned via `get_kg_version`):** spoke-genelab **v0.0.2** (2026-03-13) · spoke-okn **v0.0.6** · rdkg **v0.0.1** · digcfdekg **v0.0.1** · prokn **v0.0.5** · biobricks-aopwiki **v0.0.4** · gene-expression-atlas-okn **v0.0.3** · ubergraph **v0.0.2**
 
 A machine-generated transcript of all queries logged after the analysis-phase log scope (14 cross-KG / specificity / fluid-shift / disease / drug / trait queries, verbatim with sampled results) was produced with `create_chat_transcript`. This appendix additionally records the **cohort-construction queries** (run in the first analysis phase) so the full pipeline is reproducible end-to-end.

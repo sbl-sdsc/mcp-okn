@@ -1,6 +1,6 @@
 # Originating prompt
 
-This reproduction was produced in response to the prompt below (reproduced verbatim), using the `mcp-okn` MCP service against the FRINK federated SPARQL endpoint. Model: `claude-opus-4-8`. Date: 2026‑06‑30.
+This reproduction was produced in response to the prompt below (reproduced verbatim), using the `mcp-okn` MCP service against the OKN federated SPARQL endpoint. Model: `claude-opus-4-8`. Date: 2026‑06‑30.
 
 ---
 

@@ -1,8 +1,8 @@
 # Molecular Hypotheses for Spaceflight-Associated Neuro-ocular Syndrome (SANS)
 
-### A cross-species integrative transcriptomics map on the Proto-OKN / FRINK federation
+### A cross-species integrative transcriptomics map on the Proto-OKN / OKN federation
 
-**Prepared for:** Peter · **Date:** 2026-07-04 · **Endpoint:** Proto-OKN / FRINK federated SPARQL (`https://apps.okn.us/federation/sparql`) · **Model:** claude-opus-4-8
+**Prepared for:** Peter · **Date:** 2026-07-04 · **Endpoint:** Proto-OKN / OKN federated SPARQL (`https://apps.okn.us/federation/sparql`) · **Model:** claude-opus-4-8
 
 > **Framing (non-negotiable).** All eye omics are **mouse RNA-Seq**; human relevance is obtained by projecting mouse genes to human orthologs (`IS_ORTHOLOG_MGiG`). **Every human-level statement is mouse-derived and ortholog-inferred** — this is *hypothesis generation, not clinical inference*.
 
@@ -10,7 +10,7 @@
 
 ## 1. Executive summary
 
-This report maps the ocular spaceflight response and generates a ranked set of molecular hypotheses for **Spaceflight-Associated Neuro-ocular Syndrome (SANS)** by querying NASA GeneLab/OSDR mouse eye omics in the **spoke-genelab** knowledge graph and integrating the result across the Proto-OKN / FRINK federation. Seven mouse eye studies were anchored on the **Space-Flight-vs-Ground-Control** contrast (direction rule) with a materials + non-condition-factor comparability rule, and projected to human orthologs; all cross-KG integration is on **Entrez gene / UBERON tissue only** (OSD study accessions are a federation island).
+This report maps the ocular spaceflight response and generates a ranked set of molecular hypotheses for **Spaceflight-Associated Neuro-ocular Syndrome (SANS)** by querying NASA GeneLab/OSDR mouse eye omics in the **spoke-genelab** knowledge graph and integrating the result across the Proto-OKN / OKN federation. Seven mouse eye studies were anchored on the **Space-Flight-vs-Ground-Control** contrast (direction rule) with a materials + non-condition-factor comparability rule, and projected to human orthologs; all cross-KG integration is on **Entrez gene / UBERON tissue only** (OSD study accessions are a federation island).
 
 The cohort rebuilt **exactly** against the verified anchors (zero drift) and yields a **1,203-gene human-ortholog signature** (adj_p ≤ 0.05 in ≥ 1 study). Its reproducible core — a **54-gene retina ∩ optic-nerve** set spanning two independent tissues from two independent studies — braids six coherent programs: **oxidative stress** (metallothionein MT1 family ↑, PMAIP1 ↑, TXNIP ↑), **proteostasis / ER stress** (CIRBP ↑, FKBP5 ↑, HSPA5/HSPA8/HSPH1 ↓), **hypoxia / metabolism** (HIF3A ↑, PDK4 ↑, UCP3 ↑, PLIN4/5 ↑), **neuroinflammation** (LCN2 ↑, IRF7 ↑, type-I interferon), **cell-cycle stress** (CDKN1A/p21 ↑), and a **fluid / vascular / blood-retinal-barrier** module (AQP1 ↑, AQP5 ↑, renin REN ↑, AGTR2 ↑, VEGFA ↓, APLNR ↓, NOSTRIN ↑, and the apical-polarity gene **PALS1 ↑**).
 
@@ -20,7 +20,7 @@ Two orthogonal controls sharpen causal attribution. The ground **hindlimb-unload
 
 ## 2. Sources used
 
-Eight knowledge graphs were queried. **spoke-genelab** is the primary differential-expression source; the rest supply cross-KG context on the **shared Entrez gene / UBERON tissue** keys. Direct-Entrez joins are high-confidence; prokn's Entrez→HGNC Wikidata bridge is lower-confidence and was **avoided**. Versions are the exact FRINK releases pinned 2026-07-04 (`get_kg_version`).
+Eight knowledge graphs were queried. **spoke-genelab** is the primary differential-expression source; the rest supply cross-KG context on the **shared Entrez gene / UBERON tissue** keys. Direct-Entrez joins are high-confidence; prokn's Entrez→HGNC Wikidata bridge is lower-confidence and was **avoided**. Versions are the exact OKN releases pinned 2026-07-04 (`get_kg_version`).
 
 | KG (shortname) | Version | Role in this map | Entity types | Join / confidence |
 |---|---|---|---|---|

@@ -1,6 +1,6 @@
 """Opt-in live smoke gate for the benchmark (layer 1).
 
-Hits the real FRINK federation endpoint, so it's skipped unless you opt in:
+Hits the real OKN federation endpoint, so it's skipped unless you opt in:
 
     RUN_BENCHMARK_SMOKE=1 pytest tests/test_benchmark_smoke.py
 

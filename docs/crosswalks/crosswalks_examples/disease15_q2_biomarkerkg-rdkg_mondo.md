@@ -54,4 +54,4 @@ Validated by construction on the disease ontology bridge: DOID (biomarkerkg) ⟶
 
 ## Sources
 
-- Proto-OKN / FRINK federation via the `mcp-okn` service. Join verified with `get_join_strategy`; counts are exact `COUNT(DISTINCT)` verified 2026-06-18.
+- Proto-OKN / OKN federation via the `mcp-okn` service. Join verified with `get_join_strategy`; counts are exact `COUNT(DISTINCT)` verified 2026-06-18.

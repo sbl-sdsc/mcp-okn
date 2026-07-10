@@ -19,7 +19,7 @@ National Institute of Justice, NOAA, and the U.S. Geological Survey) that funds
 research teams to build a publicly accessible, interconnected set of data
 repositories and knowledge graphs. The graphs span domains such as health, the
 environment, criminal justice, space exploration, and supply-chain security, and
-are served together over the **FRINK** federated SPARQL endpoint that this server
+are served together over the **OKN** federated SPARQL endpoint that this server
 queries. The [okn-registry](https://registry.okn.us/registry/) catalogs
 the participating knowledge graphs.
 

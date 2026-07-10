@@ -3,7 +3,7 @@
 The taxonomy crosswalks are a HUB: each member KG maps organisms to ubergraph, so a
 pairwise overlap between two members is COMPOSED from their two hub spokes and is
 two-valued (exact NCBITaxon id vs directional clade membership via subClassOf*).
-This script runs those skeletons (from ``mcp_okn.taxon``) LIVE against the FRINK
+This script runs those skeletons (from ``mcp_okn.taxon``) LIVE against the OKN
 federation for every unordered pair of ``TAXON_HUB_KGS`` and materializes the
 non-zero results into ``metadata/crosswalks.json`` ``taxon_hub.pairwise`` — the
 counts ``list_crosswalks`` then surfaces inline. Re-run it whenever a member KG is

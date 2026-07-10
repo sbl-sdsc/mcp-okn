@@ -64,4 +64,4 @@ Validated by construction on the curated EFO→MONDO mapping in ubergraph (the `
 
 ## Sources
 
-- Proto-OKN / FRINK federation via the `mcp-okn` service. Join recipe A19-efo-mondo-gxa-rdkg; count verified 2026-06-18.
+- Proto-OKN / OKN federation via the `mcp-okn` service. Join recipe A19-efo-mondo-gxa-rdkg; count verified 2026-06-18.

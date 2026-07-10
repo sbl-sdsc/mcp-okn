@@ -1,14 +1,14 @@
 # An Evidence-Backed Map of Type 2 Diabetes Biology
 
-### Integrated across the Proto-OKN / FRINK federated knowledge graphs
+### Integrated across the Proto-OKN / OKN federated knowledge graphs
 
-**Prepared for:** Peter · **Date:** 2026-07-05 · **Endpoint:** Proto-OKN / FRINK federated SPARQL (`https://apps.okn.us/federation/sparql`) · **Model:** claude-opus-4-8
+**Prepared for:** Peter · **Date:** 2026-07-05 · **Endpoint:** Proto-OKN / OKN federated SPARQL (`https://apps.okn.us/federation/sparql`) · **Model:** claude-opus-4-8
 
 ---
 
 ## 1. Executive summary
 
-This report maps Type 2 diabetes (T2D) biology by querying **nine biomedical knowledge graphs** on the Proto-OKN / FRINK federation and integrating their findings by entity type. The disease was anchored on **type 2 diabetes mellitus (MONDO:0005148) plus its 6 ontology subtypes** (lipoatrophic diabetes; non-insulin-dependent diabetes 1–5), and each source was queried in **its own native identifier scheme** (MONDO, DOID, OMIM, EFO, UMLS) after building a full cross-ontology crosswalk of 75 cross-references.
+This report maps Type 2 diabetes (T2D) biology by querying **nine biomedical knowledge graphs** on the Proto-OKN / OKN federation and integrating their findings by entity type. The disease was anchored on **type 2 diabetes mellitus (MONDO:0005148) plus its 6 ontology subtypes** (lipoatrophic diabetes; non-insulin-dependent diabetes 1–5), and each source was queried in **its own native identifier scheme** (MONDO, DOID, OMIM, EFO, UMLS) after building a full cross-ontology crosswalk of 75 cross-references.
 
 **1,327 findings** were integrated: **966 genes** (905 protein-coding, 61 non-coding), **151 drug/therapeutic findings**, **26 pathways/gene sets**, **43 altered-activity findings** (with islet cell type / tissue), **20 genetic-variant findings** (islet cis-eQTLs), **5 clinical features + a curated biomarker panel**, **44 environmental contributors**, and — new relative to a purely molecular map — **50 state-level prevalence measurements** and **21 social-determinant (SDoH) correlations**.
 
@@ -20,7 +20,7 @@ Evidence types are kept strictly separate throughout: **curated link** (1,032 fi
 
 ## 2. Sources used
 
-Nine knowledge graphs supplied T2D evidence; `ubergraph` was used only as the ontology bridge (subtype expansion + ID crosswalks). Versions are the FRINK releases queried on 2026-07-05.
+Nine knowledge graphs supplied T2D evidence; `ubergraph` was used only as the ontology bridge (subtype expansion + ID crosswalks). Versions are the OKN releases queried on 2026-07-05.
 
 | KG (shortname) | Version | Kind of data used in this map | Entity types supplied | Disease ID scheme | Gene/other ID |
 |---|---|---|---|---|---|

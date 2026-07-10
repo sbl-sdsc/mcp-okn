@@ -73,7 +73,7 @@ a{color:var(--blue)}
 <body>
 <header class="masthead">
   <h1>PFAS Source Prioritization via Knowledge-Graph Integration</h1>
-  <p class="sub">Environmental PFAS detections co-located with EPA-regulated facilities likely to handle PFAS, resolved to chemical identity, functional-use, and toxicological coverage — assembled across five Proto-OKN knowledge graphs on the FRINK federation.</p>
+  <p class="sub">Environmental PFAS detections co-located with EPA-regulated facilities likely to handle PFAS, resolved to chemical identity, functional-use, and toxicological coverage — assembled across five Proto-OKN knowledge graphs on the OKN federation.</p>
 </header>
 <div class="wrap">
 
@@ -88,7 +88,7 @@ a{color:var(--blue)}
   <p class="prov" id="prov"></p>
 
   <h2><span class="n">1.</span> Sources used</h2>
-  <p class="note">Five Proto-OKN knowledge graphs on the FRINK federated SPARQL endpoint. All cross-KG integration is on <b>S2 Level-13 grid cells</b> (geospatial) and <b>CompTox DTXSID / CAS</b> (chemical). Versions are exact FRINK releases pinned 2026-07-04.</p>
+  <p class="note">Five Proto-OKN knowledge graphs on the OKN federated SPARQL endpoint. All cross-KG integration is on <b>S2 Level-13 grid cells</b> (geospatial) and <b>CompTox DTXSID / CAS</b> (chemical). Versions are exact OKN releases pinned 2026-07-04.</p>
   <div class="tblscroll" style="margin-top:10px"><table id="tblSrc"><thead><tr>
     <th>Knowledge graph</th><th class="num">Version</th><th>Role in this analysis</th><th>Entity types contributed</th><th>Join key</th>
   </tr></thead><tbody>
@@ -157,10 +157,10 @@ a{color:var(--blue)}
 <script>
 "use strict";
 /* ============================ BAKED SNAPSHOT ============================ */
-/* Verified via FRINK federation. Renders instantly; "Re-query" refreshes live. */
+/* Verified via OKN federation. Renders instantly; "Re-query" refreshes live. */
 const SNAP = {
  stats:{cells:477, facilities:696, obs:24662, chemicals:79, states:12},
- provenance:"SAWGraph v0.0.15 · fiokg/EPA-FRS v0.0.11 · SpatialKG v0.0.6 · BioBricks-ICE v0.0.3 · BioBricks-ToxCast v0.0.2 · FRINK federated SPARQL",
+ provenance:"SAWGraph v0.0.15 · fiokg/EPA-FRS v0.0.11 · SpatialKG v0.0.6 · BioBricks-ICE v0.0.3 · BioBricks-ToxCast v0.0.2 · OKN federated SPARQL",
  interests:[["Enforcement / compliance activity",233],["ICIS-NPDES discharge permit (non-major)",217],["Industrial stormwater",156],["TRI reporter (Toxics Release Inventory)",101],["NPDES permit",92],["Hazardous-waste biennial reporter",56],["Formal enforcement action",44],["POTW (wastewater treatment)",42],["Large-Quantity Generator (RCRA)",35]],
  states:[
   ["Maine",279,336],["Massachusetts",44,125],["Minnesota",43,55],["Indiana",38,47],
@@ -456,7 +456,7 @@ function parseWKT(w){ const m=/POINT\s*\(\s*(-?[\d.]+)\s+(-?[\d.]+)\s*\)/i.exec(
 
 async function liveRefresh(){
  const btn=$('#refreshBtn'); btn.disabled=true;
- setStatus('loading','Querying FRINK federation…');
+ setStatus('loading','Querying OKN federation…');
  try{
   const [st,ch,na,ce,fa]=await Promise.all([
    runQuery(QUERIES.states),runQuery(QUERIES.chem),runQuery(QUERIES.naics),runQuery(QUERIES.cells),runQuery(QUERIES.fac)
@@ -497,7 +497,7 @@ renderAll(SNAP);
 ['#tblCells','#tblChem','#tblStates','#tblInt'].forEach(makeSortable);
 wireFilter('qChem','tblChem','qChemN');wireFilter('qCells','tblCells','qCellsN');
 $('#queryDump').innerHTML=Object.entries(QUERIES).map(([k,q])=>'<div style="margin:6px 0"><div style="font-size:12px;color:#5b6675;margin-bottom:3px">— '+k+'</div><pre>'+esc(q)+'</pre></div>').join('');
-$('#foot').innerHTML='Reproducible knowledge-graph workflow over the Proto-OKN FRINK federation ('+esc(SNAP.provenance)+'). Co-location is defined at S2 Level-13 (~1&nbsp;km²); "PFAS-relevant facility" = EPA PFAS Analytic Tools industry designation. Concentrations are peak values in water media (ng/L); soil, biota, and food media are excluded from the concentration axis. Snapshot verified July 2026.';
+$('#foot').innerHTML='Reproducible knowledge-graph workflow over the Proto-OKN federation ('+esc(SNAP.provenance)+'). Co-location is defined at S2 Level-13 (~1&nbsp;km²); "PFAS-relevant facility" = EPA PFAS Analytic Tools industry designation. Concentrations are peak values in water media (ng/L); soil, biota, and food media are excluded from the concentration axis. Snapshot verified July 2026.';
 setStatus('snap','Verified snapshot');
 </script>
 </body>

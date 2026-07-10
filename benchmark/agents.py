@@ -106,7 +106,7 @@ class FileAgent:
 
 _SYSTEM = """\
 You answer questions by querying the Proto-OKN knowledge graphs through a single \
-FRINK federation SPARQL endpoint. Every triple pattern MUST be scoped to a named \
+OKN federation SPARQL endpoint. Every triple pattern MUST be scoped to a named \
 graph: GRAPH <https://purl.org/okn/frink/kg/{shortname}> {{ ... }}.
 
 You are told which knowledge graph(s) to use. Workflow:

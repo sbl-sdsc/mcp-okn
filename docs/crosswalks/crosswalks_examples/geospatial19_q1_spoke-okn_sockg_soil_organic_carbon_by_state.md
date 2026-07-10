@@ -18,7 +18,7 @@ The Soil Organic Carbon Knowledge Graph (sockg) records soil-organic-carbon (SOC
 
 **Why the join is required.** sockg's SOC measurements roll up to GADM/KWG state regions whose `rdfs:label` is just "MT", "IA", etc. — not analyst-friendly. spoke-okn supplies the full name "Montana", "Iowa" on `/location/30`, `/location/19`. Producing a readable, ranked SOC-by-state answer requires bridging sockg's measurement aggregation to spoke-okn's naming on the shared 2-digit FIPS.
 
-**Join mechanics.** In `sockg` I traverse `AdministrativeRegion_1 → sfContains → Site ← sfWithin ← ExperimentalUnit`, then `ExperimentalUnit ← fromUnit ← SoilChemicalSample → hasMeasurement → Measurement → of → Parameter` where the parameter label is `organic_c_gc_kg`, reading the value via `quantityValue → numericValue`. I AVG by the 2-digit FIPS extracted from the `administrativeRegion.USA.NN` IRI (computed in a subquery to avoid FRINK's unbound-right-graph explosion), then BIND `spoke-okn/location/{FIPS}` and read `rdfs:label`.
+**Join mechanics.** In `sockg` I traverse `AdministrativeRegion_1 → sfContains → Site ← sfWithin ← ExperimentalUnit`, then `ExperimentalUnit ← fromUnit ← SoilChemicalSample → hasMeasurement → Measurement → of → Parameter` where the parameter label is `organic_c_gc_kg`, reading the value via `quantityValue → numericValue`. I AVG by the 2-digit FIPS extracted from the `administrativeRegion.USA.NN` IRI (computed in a subquery to avoid OKN's unbound-right-graph explosion), then BIND `spoke-okn/location/{FIPS}` and read `rdfs:label`.
 
 | state | avg SOC (g C / kg) | n measurements |
 | --- | --- | --- |

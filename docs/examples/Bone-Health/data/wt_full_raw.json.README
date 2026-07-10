@@ -1,4 +1,4 @@
-Raw SPARQL results (spoke-genelab v0.0.2, FRINK federation) for the OSD-690 bone-marrow
+Raw SPARQL results (spoke-genelab v0.0.2, OKN federation) for the OSD-690 bone-marrow
 Space-Flight-vs-Ground-Control significant signatures (adj_p_value <= 0.05), projected to
 human orthologs via IS_ORTHOLOG_MGiG. wt_full_raw.json = Wild Type arm (assay
 OSD-690-f82a89dc82f2903149d2d11cbd6a130d); ko_full_raw.json = Nrf2KO arm

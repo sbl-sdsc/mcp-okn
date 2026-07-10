@@ -6,7 +6,7 @@ queries in [frink-okn/okn-registry](https://github.com/frink-okn/okn-registry/tr
 Each registry `.rq` file pairs a natural-language `summary` with a hand-written
 SPARQL query for one knowledge graph. We turn those into two layered tests:
 
-1. **Smoke (layer 1)** — adapt each reference query to the FRINK *federation*
+1. **Smoke (layer 1)** — adapt each reference query to the OKN *federation*
    endpoint (scope its `WHERE` in the KG's `GRAPH <…/kg/{shortname}>`) and run it.
    A query *passes* if it still returns rows. Passing results are the ground
    truth, cached for layer 2.

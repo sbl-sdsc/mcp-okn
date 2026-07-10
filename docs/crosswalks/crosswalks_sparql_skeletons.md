@@ -1,4 +1,4 @@
-# FRINK / Proto-OKN Crosswalk Reference — Join Keys & SPARQL Skeletons
+# OKN / Proto-OKN Crosswalk Reference — Join Keys & SPARQL Skeletons
 
 - **Date:** 2026-07-07
 - **Model:** claude-opus-4-8
@@ -52,7 +52,7 @@ For each crosswalk, list the join key and the SPARQL skeleton
 
 🧠 **Assistant**
 
-The FRINK federation has 134 crosswalks, which collapse into ~39 distinct join-key families. Rather than repeat near-identical SPARQL 134 times, they are grouped by domain and key family — each entry lists every KG pair sharing that key (with verified COUNT(DISTINCT) counts), the identifier scheme/namespace, and a runnable COUNT(DISTINCT) skeleton (with the IRI normalization already applied, since naive joins on the raw id usually return 0). Counts verified 2026-06-30 (taxonomy 2026-06-14).
+The OKN federation has 134 crosswalks, which collapse into ~39 distinct join-key families. Rather than repeat near-identical SPARQL 134 times, they are grouped by domain and key family — each entry lists every KG pair sharing that key (with verified COUNT(DISTINCT) counts), the identifier scheme/namespace, and a runnable COUNT(DISTINCT) skeleton (with the IRI normalization already applied, since naive joins on the raw id usually return 0). Counts verified 2026-06-30 (taxonomy 2026-06-14).
 
 ### ANATOMY & CELL TYPE
 
@@ -497,4 +497,4 @@ SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {
 
 Bridged joins (ubergraph, wikidata) are federated 3-graph queries and heavier than direct joins. Complementary linkages (e.g. oard-kg↔prokn on MONDO + OMIM + Orphanet) should be UNIONed for complete coverage. IRI normalization matters: the same id commonly appears in 2–3 IRI/literal forms across KGs; each skeleton handles its case.
 
-**Sources:** FRINK federation `list_crosswalks` / `get_join_strategy` / `taxon_overlap`, verified 2026-06-30 (taxonomy 2026-06-14).
+**Sources:** OKN federation `list_crosswalks` / `get_join_strategy` / `taxon_overlap`, verified 2026-06-30 (taxonomy 2026-06-14).

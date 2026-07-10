@@ -1,6 +1,6 @@
 """
 Recreate key results of Nelson et al. 2021 (Life 11(1):42, doi:10.3390/life11010042)
-from spoke-genelab + cross-graph queries (spoke-okn, digcfdekg) on the FRINK federation.
+from spoke-genelab + cross-graph queries (spoke-okn, digcfdekg) on the OKN federation.
 
 Generates:
   figures/fig1_spaceflight_disease_associations.png   -> recreation of the paper's central

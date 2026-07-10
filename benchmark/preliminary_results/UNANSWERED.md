@@ -2,7 +2,7 @@
 
 The benchmark scores **41** questions (38 exact). This documents the other **39**
 registry questions that were never scored, with the reason for each. Diagnosis date:
-2026-06-25 (live FRINK federation).
+2026-06-25 (live OKN federation).
 
 > **Update 2026-06-25:** the 8 `SCHEMA.ORG https/http` rows in section B are now
 > **fixed** (commit `a1129fd`) and a fresh `--layer smoke` lifts the scorable count
@@ -15,7 +15,7 @@ registry questions that were never scored, with the reason for each. Diagnosis d
 80  registry questions in dataset.jsonl
  │   adaptation: auto 60 · manual 8 · incompatible 3 · skip 9
  ▼
-60  auto (GRAPH-wrapped, runnable on the FRINK federation)
+60  auto (GRAPH-wrapped, runnable on the OKN federation)
  │   layer-1 smoke (snapshot 2026-06-20): keep only queries returning ≥1 row
  ▼
 41  scorable (cached in reference_results.json) → answered: 38 exact, 3 non-exact
@@ -84,7 +84,7 @@ empty graph 5 · predicate mismatch 1 · mis-adapted cross-graph 1.
 
 | id | KG | cause | evidence (live 2026-06-25) |
 |---|---|---|---|
-| `nasa-gesdisc-kg/count-publications-use-each-dataset` | nasa-gesdisc-kg | EMPTY GRAPH | `GRAPH <…/nasa-gesdisc-kg> { ?s ?p ?o }` = 0; real predicate IRI also 0 — data not loaded in FRINK |
+| `nasa-gesdisc-kg/count-publications-use-each-dataset` | nasa-gesdisc-kg | EMPTY GRAPH | `GRAPH <…/nasa-gesdisc-kg> { ?s ?p ?o }` = 0; real predicate IRI also 0 — data not loaded in OKN |
 | `nasa-gesdisc-kg/datasets-science-keywords` | nasa-gesdisc-kg | EMPTY GRAPH | same — the served graph has no triples |
 | `nasa-gesdisc-kg/frequent-sciencekeywords` | nasa-gesdisc-kg | EMPTY GRAPH | same |
 | `nasa-gesdisc-kg/publications-datasets-used` | nasa-gesdisc-kg | EMPTY GRAPH | same |
@@ -123,7 +123,7 @@ empty graph 5 · predicate mismatch 1 · mis-adapted cross-graph 1.
   caches **49** references — the original 41 plus the 8 schema.org fixes — lifting the scorable
   count **41 → 49**. (Passers whose result exceeds the 5,000-row cache cap, e.g.
   `prokn/list_diseases` and `sockg/harvest_fraction`, stay uncached, so 53 passed ≠ 49 cached.)
-- **nasa-gesdisc-kg is not loaded in FRINK.** Its served named graph has zero triples,
+- **nasa-gesdisc-kg is not loaded in OKN.** Its served named graph has zero triples,
   which knocks out 5 auto questions here (plus its 2 `*-wikidata` skips) — 7 questions in total.
 - **`oard-kg/oard-ubergraph-concordance` is an adaptation bug**: it is inherently a
   two-graph (OARD × ubergraph) query but was classified `auto` and wrapped in a single

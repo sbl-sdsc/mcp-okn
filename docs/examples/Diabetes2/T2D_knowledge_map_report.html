@@ -40,8 +40,8 @@ code{background:#eef3f7;padding:1px 5px;border-radius:5px;font-size:12px}
 </style></head><body>
 <header>
 <h1>An Evidence-Backed Map of Type 2 Diabetes Biology</h1>
-<p>Integrated across nine Proto-OKN / FRINK federated knowledge graphs · anchored on type 2 diabetes mellitus (MONDO:0005148) + 6 subtypes</p>
-<p>Prepared for Peter · 2026-07-05 · model claude-opus-4-8 · FRINK federated SPARQL</p>
+<p>Integrated across nine Proto-OKN / OKN federated knowledge graphs · anchored on type 2 diabetes mellitus (MONDO:0005148) + 6 subtypes</p>
+<p>Prepared for Peter · 2026-07-05 · model claude-opus-4-8 · OKN federated SPARQL</p>
 </header>
 <div class="wrap">
 
@@ -66,7 +66,7 @@ A further 28 genes are supported by 3 sources (Tier&nbsp;2): ADCY5, ADIPOQ, AKT2
 </div>
 
 <h2>Knowledge graphs used</h2>
-<div class="muted">Nine Proto-OKN / FRINK knowledge graphs queried on 2026-07-05 (versions from VoID provenance). <code>ubergraph</code> is the ontology bridge only; <code>oard-kg</code> was checked but returned no T2D rows.</div>
+<div class="muted">Nine Proto-OKN / OKN knowledge graphs queried on 2026-07-05 (versions from VoID provenance). <code>ubergraph</code> is the ontology bridge only; <code>oard-kg</code> was checked but returned no T2D rows.</div>
 <div style="overflow:auto"><table style="margin-top:10px"><thead><tr><th>KG (shortname)</th><th>Version</th><th>Kind of data used in this map</th><th>Entity types supplied</th></tr></thead><tbody><tr><td><b>spoke-okn</b></td><td class='num'>v0.0.6</td><td>Curated disease→gene; prevalence by location (CDC PLACES); SDoH by county (County Health Rankings)</td><td>genes, prevalence, SDoH</td></tr><tr><td><b>rdkg</b></td><td class='num'>v0.0.1</td><td>Curated T2D-subtype genes + microRNAs; contraindicated drugs; environmental contributors; phenotypes</td><td>genes (coding+non-coding), drugs, clinical, exposures</td></tr><tr><td><b>digcfdekg (CFDE REVEAL)</b></td><td class='num'>v0.0.1</td><td>Statistical gene–trait weights + gene sets (PIGEAN/EAGGL, GWAS-derived)</td><td>genes, gene sets</td></tr><tr><td><b>prokn (Protein KN)</b></td><td class='num'>v0.0.5</td><td>Curated T2D genes/proteins; drug indications (ChEMBL)</td><td>genes/proteins, drugs</td></tr><tr><td><b>pankgraph (PanKbase, NIDDK)</b></td><td class='num'>v0.0.1</td><td>Islet cell-type open-chromatin gene-activity (T2D vs non-diabetic); islet cis-eQTL variants</td><td>altered-activity genes, variants, cell types</td></tr><tr><td><b>gene-expression-atlas-okn</b></td><td class='num'>v0.0.3</td><td>Measured differential expression by tissue (islet, retina, liver)</td><td>altered-activity genes/programs</td></tr><tr><td><b>biomarkerkg</b></td><td class='num'>v0.0.2</td><td>Curated clinical biomarker records + specimen</td><td>biomarkers</td></tr><tr><td><b>oard-kg</b></td><td class='num'>v0.0.3</td><td>Checked — no rows for T2D (rare-disease EHR corpus)</td><td>— (none)</td></tr><tr><td><b>ubergraph</b></td><td class='num'>v0.0.2</td><td>Subtype expansion + cross-ontology ID crosswalks (bridge only)</td><td>ontology</td></tr></tbody></table></div>
 
 <h2>Prevalence across the U.S. — interactive OpenStreetMap</h2>

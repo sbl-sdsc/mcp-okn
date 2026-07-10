@@ -45,4 +45,4 @@ Validated by construction on the shared DOID standard: both graphs carry the ide
 
 ## Sources
 
-- Proto-OKN / FRINK federation via the `mcp-okn` service. Join verified with `get_join_strategy`; counts are exact `COUNT(DISTINCT)` verified 2026-06-18.
+- Proto-OKN / OKN federation via the `mcp-okn` service. Join verified with `get_join_strategy`; counts are exact `COUNT(DISTINCT)` verified 2026-06-18.

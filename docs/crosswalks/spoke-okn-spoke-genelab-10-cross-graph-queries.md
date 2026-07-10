@@ -1,11 +1,11 @@
 # SPOKE-OKN ↔ SPOKE-GeneLab — 10 real-world cross-graph queries
 
 **Standalone showcase — NOT part of the crosswalk catalog** (`crosswalks_example.md` / `crosswalks_examples/` / `proto-okn-crosswalk-inventory.md` / `metadata/crosswalks.json`).
-This file presents **10 scientifically meaningful, literature-grounded, executed cross-graph queries that put `spoke-okn` and `spoke-genelab` at the center** and link them to *each other* and to the additional Proto-OKN / FRINK knowledge graphs that share crosswalks with them. Several queries span **3 or 4 KGs in a single federated query**. It is a companion to `spoke-genelab-9-example-queries.md` and `spoke-okn-25-example-queries.md`, but is organized by **translational use case** (reproduce / extend a published spaceflight-omics result), not by crosswalk partner.
+This file presents **10 scientifically meaningful, literature-grounded, executed cross-graph queries that put `spoke-okn` and `spoke-genelab` at the center** and link them to *each other* and to the additional Proto-OKN / OKN knowledge graphs that share crosswalks with them. Several queries span **3 or 4 KGs in a single federated query**. It is a companion to `spoke-genelab-9-example-queries.md` and `spoke-okn-25-example-queries.md`, but is organized by **translational use case** (reproduce / extend a published spaceflight-omics result), not by crosswalk partner.
 
 - **Focus KGs:** `spoke-genelab` (NASA OSDR/GeneLab spaceflight omics — differential gene expression, DNA methylation, microbial abundance) **×** `spoke-okn` (UCSF SPOKE — genes, diseases, compounds, organisms, geography).
 - **Model:** claude-opus-4-8 · **Crosswalk source:** `mcp-okn` `list_crosswalks` / `get_join_strategy` (134 verified crosswalks, verified 2026-06-30)
-- **Endpoint:** FRINK federated SPARQL via the `mcp-okn` service (`https://frink.apps.renci.org/federation/sparql`)
+- **Endpoint:** OKN federated SPARQL via the `mcp-okn` service (`https://frink.apps.renci.org/federation/sparql`)
 - **All 10 queries executed on 2026-07-07**; each block shows the runnable SPARQL, a real sample of returned rows, an interpretation, and a PubMed/literature anchor (literature retrieved via PubMed; DOIs linked).
 
 ---
@@ -573,5 +573,5 @@ SELECT ?sym (COUNT(DISTINCT ?ke) AS ?nAOP_KEs)
 9. Casaletto JA, et al. *Analyzing the relationship between gene expression and phenotype in space-flown mice using a causal inference machine learning ensemble.* Sci Rep, 2025. [PMID 39824847](https://pubmed.ncbi.nlm.nih.gov/39824847/) · [DOI](https://doi.org/10.1038/s41598-024-81394-y) — Q3 (liver-phenotype gene workflow)
 10. Finch RH, et al. *Spaceflight causes strain-dependent gene expression changes in the kidneys of mice* (GeneLab OSD-102, OSD-163). npj Microgravity, 2025. [DOI](https://doi.org/10.1038/s41526-025-00465-0) — tissue-specific extension of Q1/Q7
 
-*Source data: NASA OSDR/GeneLab publications archive (https://science.nasa.gov/reference/osdr-publications-archive/) and PubMed. Knowledge graphs and verified crosswalk recipes via the `mcp-okn` FRINK federation service.*
+*Source data: NASA OSDR/GeneLab publications archive (https://science.nasa.gov/reference/osdr-publications-archive/) and PubMed. Knowledge graphs and verified crosswalk recipes via the `mcp-okn` OKN federation service.*
 

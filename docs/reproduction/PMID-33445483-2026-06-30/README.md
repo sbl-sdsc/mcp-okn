@@ -2,7 +2,7 @@
 
 **A worked Proto‑OKN use case: spaceflight mouse transcriptomics → terrestrial disease signs & symptoms, recovered by federated cross‑graph queries instead of graph embeddings.**
 
-Generated with the `mcp-okn` MCP service against the FRINK federated SPARQL endpoint (knowledge graphs `spoke-genelab`, `spoke-okn`, `digcfdekg`, `ubergraph`). Model: `claude-opus-4-8`. Date: 2026‑06‑30.
+Generated with the `mcp-okn` MCP service against the OKN federated SPARQL endpoint (knowledge graphs `spoke-genelab`, `spoke-okn`, `digcfdekg`, `ubergraph`). Model: `claude-opus-4-8`. Date: 2026‑06‑30.
 
 ---
 
@@ -277,6 +277,6 @@ python3 make_figures.py    # result figures (fig1–4) and data/ CSVs from the v
 python3 make_diagrams.py   # schematic diagrams (fig0 strategy, fig_go_bridge) for §5 and §8
 python3 make_pdf.py        # render README.md -> PDF with all figures embedded inline
 ```
-All queries above are runnable through the `mcp-okn` `sparql_query` tool against the FRINK federation. Files: `figures/*.png`, `data/*.csv`, `make_figures.py`, `make_diagrams.py`, `make_pdf.py`.
+All queries above are runnable through the `mcp-okn` `sparql_query` tool against the OKN federation. Files: `figures/*.png`, `data/*.csv`, `make_figures.py`, `make_diagrams.py`, `make_pdf.py`.
 
 *Source paper retrieved from PubMed Central (open access): Nelson et al. 2021, [doi:10.3390/life11010042](https://doi.org/10.3390/life11010042).*

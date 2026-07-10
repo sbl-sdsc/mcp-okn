@@ -60,4 +60,4 @@ Same label-bridge caveat as T13-Q1: the wildlifekn side is resolved by binomial/
 
 ## Sources
 
-- Proto-OKN / FRINK federation via the `mcp-okn` service. Join recipe D11-ncbitaxon-wildlifekn-nde; exact-id overlap verified 2026-06-18.
+- Proto-OKN / OKN federation via the `mcp-okn` service. Join recipe D11-ncbitaxon-wildlifekn-nde; exact-id overlap verified 2026-06-18.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Integrate Proto-OKN / FRINK federated query extracts into a Type 2 Diabetes map.
+"""Integrate Proto-OKN / OKN federated query extracts into a Type 2 Diabetes map.
 
 Build a single evidence map: one row per finding, cross-source corroboration,
 confidence tiers, SDoH correlations, and state-level prevalence for the

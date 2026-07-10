@@ -18,7 +18,7 @@ RuralKG catalogs rural mental-health / substance-use **treatment providers**, ea
 
 **Why the join is required.** RuralKG gives the providers and their ZIP, but cannot place a ZIP in a state or confirm it is a residential ZIP. SPOKE-OKN supplies the ZIP→state mapping (`state = "AL"`). Counting providers by validated Alabama ZIP requires joining the two graphs on the bare 5-digit ZIP string.
 
-**Join mechanics.** Shared key = the bare ZIP literal. spoke-okn selects `/location/AL-…` ZIP nodes (`state = "AL"`) whose `rdfs:label` is the ZIP. RuralKG stores postalCode under the non-canonical `https://schema.org/postalCode` form (which FRINK canonicalizes), so I bind the predicate as a variable and match scheme-free with `STRENDS(...,'schema.org/postalCode')`, restricting to `TreatmentProvider`; then COUNT distinct providers per ZIP.
+**Join mechanics.** Shared key = the bare ZIP literal. spoke-okn selects `/location/AL-…` ZIP nodes (`state = "AL"`) whose `rdfs:label` is the ZIP. RuralKG stores postalCode under the non-canonical `https://schema.org/postalCode` form (which OKN canonicalizes), so I bind the predicate as a variable and match scheme-free with `STRENDS(...,'schema.org/postalCode')`, restricting to `TreatmentProvider`; then COUNT distinct providers per ZIP.
 
 | ZIP | treatment providers |
 | --- | --- |

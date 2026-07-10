@@ -10,7 +10,7 @@ from ..app import mcp
 
 @mcp.tool()
 async def list_kgs() -> list[dict[str, Any]]:
-    """List all Proto-OKN knowledge graphs available on the FRINK federation.
+    """List all Proto-OKN knowledge graphs available on the OKN federation.
 
     Returns one entry per KG with its `shortname`, `title`, `description`,
     `homepage`, the `named_graph` URI to use inside `GRAPH <...> { ... }` blocks,

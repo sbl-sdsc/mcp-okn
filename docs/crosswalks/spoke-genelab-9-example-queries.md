@@ -1,11 +1,11 @@
 # SPOKE-GeneLab — 18 real-world example queries (two per crosswalk partner)
 
 **Standalone showcase — NOT part of the crosswalk catalog** (`crosswalks_example.md` / `crosswalks_examples/`).
-This file presents **two scientifically meaningful, literature-grounded, executed example queries for each of the 9 distinct knowledge graphs that `spoke-genelab` crosswalks with** in the Proto-OKN / FRINK federation. (Companion to `spoke-okn-25-example-queries.md`.) Every example that reads a differential measurement uses a within-assay covariate-matched **Space-Flight-vs-Ground-Control** contrast — see the ⚠️ section below.
+This file presents **two scientifically meaningful, literature-grounded, executed example queries for each of the 9 distinct knowledge graphs that `spoke-genelab` crosswalks with** in the Proto-OKN / OKN federation. (Companion to `spoke-okn-25-example-queries.md`.) Every example that reads a differential measurement uses a within-assay covariate-matched **Space-Flight-vs-Ground-Control** contrast — see the ⚠️ section below.
 
 - **Focus KG:** `spoke-genelab` — NASA GeneLab spaceflight omics: measured differential gene expression and DNA-methylation on tissues, cell types and genes from spaceflight / space-radiation experiments.
 - **Model:** claude-opus-4-8 · **Crosswalk source:** `mcp-okn list_crosswalks` (134 verified crosswalks, verified 2026-06-30)
-- **Endpoint:** FRINK federated SPARQL via the `mcp-okn` service (`https://apps.okn.us/federation/sparql`)
+- **Endpoint:** OKN federated SPARQL via the `mcp-okn` service (`https://apps.okn.us/federation/sparql`)
 - **Two examples per crosswalk (18 queries total), all executed on 2026-07-07**; each block shows the runnable SPARQL, a real sample of returned rows, and a PubMed/literature anchor. The two examples per partner differ by scientific angle (tissue / trait / disease); **every example that reads a differential measurement (expression, methylation, abundance) enforces the within-assay covariate-matched Space-Flight-vs-Ground-Control contrast** described below.
 - **Scope rule — "9 crosswalks":** `spoke-genelab` participates in several `list_crosswalks` rows that resolve to **9 distinct partner KGs**. This file gives one *new-angle* example per partner — deliberately different tissues / cell types / genes / organisms from the q1/q2 already in the catalog. Where a partner connects on more than one key (e.g. GXA via UBERON and CL; AOP-Wiki and biohealth also via NCBITaxon), the single most compelling join is shown.
 

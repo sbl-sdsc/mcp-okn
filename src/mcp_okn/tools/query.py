@@ -42,7 +42,7 @@ async def sparql_query(
     exploratory: bool = False,
     compact: bool = False,
 ) -> Any:
-    """Run a SPARQL query against the FRINK federation endpoint.
+    """Run a SPARQL query against the OKN federation endpoint.
 
     Scope each knowledge graph with its named graph, e.g.::
 

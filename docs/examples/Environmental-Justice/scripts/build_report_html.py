@@ -106,8 +106,8 @@ HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <style>__CSS__</style></head><body>
 <header>
 <h1>A County-Level Map of Cumulative Environmental-Justice Burden</h1>
-<p>Integrated across twelve Proto-OKN / FRINK federated knowledge graphs · 3,158 U.S. counties (50 states + DC) · joined on county FIPS, S2 Level-13, ZIP5 &amp; NIBRS offense category</p>
-<p>Prepared for Peter · 2026-07-06 · model claude-opus-4-8 · FRINK federated SPARQL · <b>data exclusively from Proto-OKN graphs</b></p>
+<p>Integrated across twelve Proto-OKN / OKN federated knowledge graphs · 3,158 U.S. counties (50 states + DC) · joined on county FIPS, S2 Level-13, ZIP5 &amp; NIBRS offense category</p>
+<p>Prepared for Peter · 2026-07-06 · model claude-opus-4-8 · OKN federated SPARQL · <b>data exclusively from Proto-OKN graphs</b></p>
 </header>
 <div class="wrap">
 <div class="kpis">
@@ -131,7 +131,7 @@ Evidence kinds are kept separate:
 </div>
 
 <h2>Knowledge graphs used</h2>
-<div class="muted">Twelve Proto-OKN graphs supplied county-level evidence; <code>spatialkg</code> is the S2/administrative spatial hub and <code>ubergraph</code>/<code>hydrologykg</code> are supporting. Versions are the exact FRINK releases queried 2026-07-06.</div>
+<div class="muted">Twelve Proto-OKN graphs supplied county-level evidence; <code>spatialkg</code> is the S2/administrative spatial hub and <code>ubergraph</code>/<code>hydrologykg</code> are supporting. Versions are the exact OKN releases queried 2026-07-06.</div>
 <table style="margin-top:10px"><thead><tr><th>Knowledge graph</th><th>Ver</th><th>Contribution (entity type)</th><th>Join key</th></tr></thead><tbody>
 <tr><td>spoke-okn</td><td>v0.0.6</td><td>SDoH (SAIPE, ACS/AHRQ), CDC SVI, CDC PLACES disease prevalence, geography</td><td>county FIPS; place→county</td></tr>
 <tr><td>fiokg</td><td>v0.0.11</td><td>EPA facilities, PFAS-facility flag, enforcement records</td><td>facility <code>sfWithin</code> county</td></tr>

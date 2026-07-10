@@ -2,7 +2,7 @@
 
 - **Date:** 2026-07-06
 - **Model:** claude-opus-4-8
-- **Federation endpoint:** FRINK federated SPARQL — `https://apps.okn.us/federation/sparql`
+- **Federation endpoint:** OKN federated SPARQL — `https://apps.okn.us/federation/sparql`
 - **Method:** each knowledge graph was queried in its own named `GRAPH <…>` block; county rollups use verified join keys (county FIPS, S2 Level-13, ZIP5, NIBRS category). Extraction queries returned per-county aggregates written to CSV, then joined and analyzed in Python (pandas/scipy). All schema-probing queries were run in exploratory mode and are excluded here; only the finding-producing queries are listed.
 
 ## Knowledge graphs & versions used
@@ -245,4 +245,4 @@ SELECT ?fips (COUNT(DISTINCT ?i) AS ?incidents) WHERE {
 5. Pearson correlations (scipy) between exposure/vulnerability predictors and 14 health/SDoH outcomes across counties (ecological).
 6. Outputs: `master_county.csv`, `findings_long.csv` (70,839 rows), `burden_ranking.csv`, `correlations.csv`, `corr_matrix.csv`, four figures, and `choropleth_burden.html`.
 
-*Reproduce by running each query above against the FRINK federation (versions in the table), then the pipeline in `build_master.py` / `make_figs.py` / `make_map.py`.*
+*Reproduce by running each query above against the OKN federation (versions in the table), then the pipeline in `build_master.py` / `make_figs.py` / `make_map.py`.*

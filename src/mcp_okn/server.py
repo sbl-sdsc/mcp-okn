@@ -1,4 +1,4 @@
-"""FastMCP server exposing the FRINK federated SPARQL endpoint.
+"""FastMCP server exposing the OKN federated SPARQL endpoint.
 
 All queries go to the single federation endpoint
 (https://apps.okn.us/federation/sparql) and are scoped to named graphs

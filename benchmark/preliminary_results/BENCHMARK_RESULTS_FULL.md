@@ -34,7 +34,7 @@ The dataset has 60 auto-runnable queries; **41 have a cached reference** (the ot
 
 ## Method
 
-The sandbox is firewalled from the FRINK endpoint (HTTP 403), so SPARQL ran via the `mcp-okn` host tool and answers were scored against the committed cache with: (1) MD5 **set-hash** for small results, (2) the benchmark's **score.compare** for medium ones, and (3) an order-independent **fingerprint** (row count, distinct rows, total char length, numeric-normalized) for large results up to 3,545 rows. A **key-free path** (`FileAgent` + `--export-questions`) was added to the harness so Cowork's Claude can be the model without an `ANTHROPIC_API_KEY`.
+The sandbox is firewalled from the OKN endpoint (HTTP 403), so SPARQL ran via the `mcp-okn` host tool and answers were scored against the committed cache with: (1) MD5 **set-hash** for small results, (2) the benchmark's **score.compare** for medium ones, and (3) an order-independent **fingerprint** (row count, distinct rows, total char length, numeric-normalized) for large results up to 3,545 rows. A **key-free path** (`FileAgent` + `--export-questions`) was added to the harness so Cowork's Claude can be the model without an `ANTHROPIC_API_KEY`.
 
 > Caveat: measures Opus 4.8 under the Cowork harness, not the benchmark's pinned `claude-sonnet-4-6` API config. A few of the hardest questions were reproduced from the reference query's structure rather than derived purely from the prose.
 
