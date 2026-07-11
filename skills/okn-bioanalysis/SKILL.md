@@ -105,7 +105,9 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
    privilege one KG). Typical annotations (with example suppliers): disease↔gene, gene↔trait
    (digcfdekg), gene / protein↔pathway & GO (prokn, ncipidkg), chemical↔gene / adverse-outcome
    (biobricks tox + aopwiki), disease / gene / protein↔phenotype (HP — see step 7), gene↔drug &
-   disease↔drug (rdkg `treats`).
+   disease↔drug (rdkg `treats`), disease / concept↔SDoH (`biohealth` is the UMLS-keyed SDoH hub;
+   `dreamkg` social-service audiences and `phaseskg` healthy-aging / loneliness / social-isolation
+   constructs **label-bridge** into it — fragile, `list_crosswalks` cluster SS/BH).
 4. **Differential expression / omics (optional).** Where a source has it: spoke-genelab
    (model-organism DE, reified) or gene-expression-atlas baselines. Apply that source's selection
    rules; threshold adj_p ≤ 0.05 and |log2FC| ≥ 1. See the workflow appendix for spoke-genelab.

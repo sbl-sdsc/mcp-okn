@@ -72,6 +72,14 @@ Useful chains:
 - **chemical exposure → place**: the same chemical id → sawgraph observations located on S2 / county
   (no bio hub needed).
 - **gene / disease → SDoH**: social-determinant layers (spoke-okn / biohealth) by disease or geography.
+- **social / psychosocial concept → SDoH**: `biohealth` is the **UMLS-keyed SDoH hub**; other domain
+  vocabularies attach to it by **exact concept-name LABEL match** (fragile, curated lower bound) —
+  `dreamkg` social-service audience terms (SS1) and `phaseskg`'s healthy-aging ontology (SS2:
+  loneliness, social isolation, social withdrawal, social detachment, shyness, alienation,
+  reminiscence therapy, self-efficacy → biohealth UMLS concepts). Use these to pull biohealth's
+  clinical / SDoH associations for an aging / social-connection construct; get the recipe from
+  `get_join_strategy` / `list_crosswalks` (cluster SS/BH), and note these are OBSERVATIONAL literature
+  associations, not causal.
 
 ## Mapping to phenotypes (HP)
 
