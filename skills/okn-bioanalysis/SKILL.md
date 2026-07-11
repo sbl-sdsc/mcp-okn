@@ -1,18 +1,17 @@
 ---
 name: okn-bioanalysis
 description: >-
-  Methodology for biomedical knowledge-graph analysis and cross-KG hypothesis generation over the
+  Methodology for biomedical knowledge-graph analysis and cross-KG hypotheses over the
   OKN federated SPARQL endpoint via the mcp-okn tools. Works across the federation's bio graphs
   (spoke-okn, prokn, rdkg, digcfdekg, gene-expression-atlas-okn, the biobricks chemical/tox graphs,
   biobricks-aopwiki, biomarkerkg, ncipidkg, oard-kg, pankgraph, spoke-genelab, ubergraph),
   integrating on shared identifiers — gene, protein, disease (MONDO/DOID), phenotype (HP),
   GO/Reactome, chemical/drug — and can LINK bio entities to place-based data (exposure, facilities,
-  social determinants) via geography (county FIPS / ZIP / S2 cells). Use whenever a task involves
+  social determinants) via geography (FIPS / ZIP / S2). Use whenever a task involves
   genes, proteins, diseases, phenotypes, pathways, chemicals, drugs, exposures, differential
   expression, enrichment, ortholog projection, or mapping these across KGs or onto locations.
-  Triggers: "analyze these genes", "map genes to diseases / drugs", "map genes / proteins / diseases
-  to phenotypes", "GO / Reactome enrichment", "link a disease or chemical to exposure / geography", or
-  naming a bio KG.
+  Triggers: "analyze these genes", "map genes / proteins / diseases to drugs / phenotypes",
+  "GO / Reactome enrichment", "link a disease or chemical to exposure / geography", or naming a bio KG.
 ---
 
 # OKN bio-analysis
