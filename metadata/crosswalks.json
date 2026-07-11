@@ -221,6 +221,10 @@
         "biobricks-tox21": 285
       },
       "example_question": "Chemical stressors of Adverse Outcome Pathways (AOP-Wiki) that are also assayed in ToxCast / Tox21 / ICE.",
+      "example_questions": [
+        "Chemical stressors of Adverse Outcome Pathways (AOP-Wiki) that are also assayed in ToxCast / Tox21 / ICE.",
+        "How many ToxCast-assayed chemicals (CAS) act as molecular initiating-event stressors in at least one AOP-Wiki Adverse Outcome Pathway?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?c2) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?s <http://aopkb.org/aop_ontology#has_chemical_entity> ?cas . }\n  BIND(IRI(REPLACE(STR(?cas),'https://identifiers.org/cas/','http://identifiers.org/cas/')) AS ?c2)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-toxcast> { ?t <http://edamontology.org/has_identifier> ?c2 . }\n}",
       "skeleton_verified": true
     },
@@ -238,6 +242,10 @@
       "iri_normalization": "Same https->http Ensembl rewrite as F1. GXA Ensembl genes are node IRIs (http://identifiers.org/ensembl/), so the rewritten AOP-Wiki id joins directly on GXA's subject.",
       "verified_count": 1355,
       "example_question": "Baseline tissue expression (GXA) for genes implicated as AOP key-event targets (AOP-Wiki).",
+      "example_questions": [
+        "Baseline tissue expression (GXA) for genes implicated as AOP key-event targets (AOP-Wiki).",
+        "Which AOP-Wiki key events target genes whose GXA baseline expression is restricted to a single tissue such as liver or kidney?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?s <http://www.w3.org/2004/02/skos/core#exactMatch> ?e . FILTER(STRSTARTS(STR(?e),'https://identifiers.org/ensembl/')) }\n  BIND(IRI(REPLACE(STR(?e),'https://identifiers.org/ensembl/','http://identifiers.org/ensembl/')) AS ?gene)\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?gene ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -255,6 +263,10 @@
       "iri_normalization": "Three UniProt IRI forms exist across the protein KGs. AOP-Wiki proteins are own-node IRIs https://identifiers.org/uniprot/{ACC}; ProKN proteins (up:Protein) are http://purl.uniprot.org/uniprot/{ACC}. Extract the bare accession (REPLACE(STR(?u),'^.*/','')) and rebuild the target form: IRI(CONCAT('http://purl.uniprot.org/uniprot/', ?acc)). Note: do NOT additionally constrain the ProKN side with 'a up:Protein' in the join (some shared accessions ride other ProKN classes); match on IRI existence.",
       "verified_count": 1805,
       "example_question": "Proteins acting as AOP molecular targets (AOP-Wiki) with their ProKN protein-centric annotations (domains, PTMs, marker genes, disease links).",
+      "example_questions": [
+        "Proteins acting as AOP molecular targets (AOP-Wiki) with their ProKN protein-centric annotations (domains, PTMs, marker genes, disease links).",
+        "Starting from ProKN proteins carrying disease links and PTMs, how many map by UniProt accession to AOP-Wiki molecular targets, and which adverse outcome pathways do they initiate?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?p2) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?u ?pa ?oa . FILTER(STRSTARTS(STR(?u),'https://identifiers.org/uniprot/')) }\n  BIND(IRI(CONCAT('http://purl.uniprot.org/uniprot/',REPLACE(STR(?u),'^.*/uniprot/',''))) AS ?p2)\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?p2 ?pp ?op . }\n}",
       "skeleton_verified": true
     },
@@ -273,6 +285,10 @@
       "verified_count": 1193,
       "verified_count_note": "DISTINCT Entrez genes shared between AOP-Wiki key-event targets and rdkg rare-disease genes.",
       "example_question": "AOP key-event target genes (AOP-Wiki) that are also rare-disease genes (rdkg) - toxicology pathway meets rare-disease genetics.",
+      "example_questions": [
+        "AOP key-event target genes (AOP-Wiki) that are also rare-disease genes (rdkg) - toxicology pathway meets rare-disease genetics.",
+        "For a given rare disease in rdkg, which AOP-Wiki molecular initiating or key events involve its causative Entrez genes?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?s <http://www.w3.org/2004/02/skos/core#exactMatch> ?e . FILTER(STRSTARTS(STR(?e),'https://identifiers.org/ncbigene/')) }\n  BIND(IRI(REPLACE(STR(?e),'https://identifiers.org/ncbigene/','http://identifiers.org/ncbigene/')) AS ?gene)\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?gene ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -291,6 +307,10 @@
       "verified_count": 1472,
       "verified_count_note": "DISTINCT Entrez genes shared (AOP-Wiki carries ~1,480 ncbigene exactMatch ids).",
       "example_question": "Gene targets of AOP molecular initiating / key events (AOP-Wiki) that have spaceflight/omics evidence in spoke-genelab.",
+      "example_questions": [
+        "Gene targets of AOP molecular initiating / key events (AOP-Wiki) that have spaceflight/omics evidence in spoke-genelab.",
+        "Which AOP-Wiki adverse outcome pathways are over-represented among genes differentially expressed under spaceflight in spoke-genelab?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?s <http://www.w3.org/2004/02/skos/core#exactMatch> ?e . FILTER(STRSTARTS(STR(?e),'https://identifiers.org/ncbigene/')) }\n  BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',REPLACE(STR(?e),'^.*/ncbigene/',''))) AS ?gene)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?gene ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -308,6 +328,10 @@
       "iri_normalization": "AOP-Wiki gene targets are skos:exactMatch -> https://identifiers.org/ensembl/{ENSG} (https); the Ensembl cluster (spoke-okn, GXA, pankgraph; base file C-series) uses http://identifiers.org/ensembl/ (http). Rewrite https->http and join.",
       "verified_count": 1385,
       "example_question": "Gene targets of AOP molecular initiating / key events (AOP-Wiki) with their spoke-okn network/disease/compound associations.",
+      "example_questions": [
+        "Gene targets of AOP molecular initiating / key events (AOP-Wiki) with their spoke-okn network/disease/compound associations.",
+        "For an AOP-Wiki molecular initiating event triggered by a given stressor, which spoke-okn diseases and compounds are linked to its target genes?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?s <http://www.w3.org/2004/02/skos/core#exactMatch> ?e . FILTER(STRSTARTS(STR(?e),'https://identifiers.org/ensembl/')) }\n  BIND(IRI(REPLACE(STR(?e),'https://identifiers.org/ensembl/','http://identifiers.org/ensembl/')) AS ?gene)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?x ?p ?gene . }\n}",
       "skeleton_verified": true
     },
@@ -325,6 +349,10 @@
       "iri_normalization": null,
       "verified_count": 9421,
       "example_question": "ToxCast-screened chemicals (CAS) with Integrated Chemical Environment safety/curation data.",
+      "example_questions": [
+        "ToxCast-screened chemicals (CAS) with Integrated Chemical Environment safety/curation data.",
+        "Across the 9,421 shared CAS, which ToxCast-active chemicals carry ICE acute/in-vivo toxicity curation usable for read-across?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?a <http://edamontology.org/has_identifier> ?cas . }\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-toxcast> { ?b <http://edamontology.org/has_identifier> ?cas . }\n  FILTER(STRSTARTS(STR(?cas),'http://identifiers.org/cas/'))\n}",
       "skeleton_verified": true
     },
@@ -348,6 +376,10 @@
       },
       "hinge_note": "A SECOND, DIRECT attachment for biobricks-mesh, complementary to M1 (the ubergraph route). spoke-okn MeSH-tags ~165 nodes: 159 biolink:Disease nodes via mesh_list (155 distinct MeSH) and 10 SDoH nodes via mesh_ids, all matching biobricks-mesh. All spoke-okn Disease nodes are DOID-identified, so the disease MeSH tags sit on the SAME entities the established DOID join reaches (see overlap_with_doid_join) - making M2's disease half a MeSH<->DOID map rather than new disease coverage. Its UNIQUE value is (a) that MeSH<->DOID correspondence on 159 shared nodes and (b) the 10 SDoH / social-determinants nodes (Social Vulnerability D000091482, Internet Access D000077230, Child Poverty D000091486, Medically Uninsured D017057, Premature Mortality D061213), which have no MONDO equivalent and so are invisible to both the DOID join and the M1 MeSH->MONDO route.",
       "example_question": "Map spoke-okn's social-determinants and disease nodes to MeSH (e.g. Social Vulnerability = MeSH D000091482) to pull MeSH definitions / tree placement from biobricks-mesh, or to connect spoke-okn disease nodes to MeSH-tagged concepts - reaching the SDoH layer that the MONDO route (M1) misses.",
+      "example_questions": [
+        "Map spoke-okn's social-determinants and disease nodes to MeSH (e.g. Social Vulnerability = MeSH D000091482) to pull MeSH definitions / tree placement from biobricks-mesh, or to connect spoke-okn disease nodes to MeSH-tagged concepts - reaching the SDoH layer that the MONDO route (M1) misses.",
+        "Starting from a MeSH tree branch (e.g. the Social Determinants of Health descriptor set), enumerate which spoke-okn SDoH and disease nodes fall under it and count the diseases carrying each descriptor."
+      ],
       "overlap_with_doid_join": "Checked against spoke-okn's established DOID disease join. spoke-okn has 180 biolink:Disease nodes, ALL of them DOID-identified (the node IRI is http://purl.obolibrary.org/obo/DOID_{n}); mesh_list hangs the MeSH id directly on 159 of those same DOID nodes (155 distinct MeSH). So for DISEASES the MeSH route and the DOID route reach the SAME entities - MeSH is a co-located annotation on the DOID nodes, not a different slice (0 MeSH-tagged diseases are non-DOID; 21 DOID disease nodes simply carry no MeSH). M2's disease half therefore adds no new spoke-okn disease entities beyond the DOID join, but it DOES materialize a verified MeSH<->DOID correspondence on those 159 shared nodes (e.g. D015212<->DOID:0050589 inflammatory bowel disease, D000071243<->DOID:0060478 Zika fever), usable as a MeSH->DOID->MONDO bridge. The genuinely unique reach is the 10 SDoH nodes (mesh_ids), which are not Disease/DOID and have no MONDO term, so neither the DOID join nor M1 touches them.",
       "cross_route_validation": {
         "question": "Do spoke-okn's MeSH<->DOID disease pairs (M2) agree with ubergraph's independent MeSH->MONDO xrefs (M1), once DOID is bridged to MONDO via ubergraph?",
@@ -386,6 +418,10 @@
       },
       "hinge_note": "THIS IS biobricks-mesh's attachment to the federation. biobricks-mesh is a standalone MeSH vocabulary keyed only by its own MeSH descriptor IRIs (it carries no outbound ontology xref of its own), so it reaches the federation through ubergraph, which cross-references 10,004 MeSH ids on OBO terms. 9,463 MeSH descriptors match - 8,202 of them MONDO disease terms - so via ubergraph's MONDO hub biobricks-mesh joins the entire disease cluster (A): oard-kg, rdkg, prokn and nde (which key disease on MONDO/HP) and spoke-okn (through the ubergraph DOID<->MONDO bridge, A10-A11). The match also reaches 1,051 UBERON anatomy and 83 CL cell-type terms. NOTE: MeSH chemical (D-category) descriptors pick up NO CHEBI xref on this predicate (0 CHEBI matches), so this is a disease/anatomy bridge, not a chemical one.",
       "example_question": "Take a MeSH descriptor (e.g. Asthma = MeSH D001249), resolve it to MONDO via ubergraph, and pull matching disease records across oard-kg / rdkg / prokn / nde - optionally expanding to MONDO subtypes first with ubergraph's subClassOf* closure.",
+      "example_questions": [
+        "Take a MeSH descriptor (e.g. Asthma = MeSH D001249), resolve it to MONDO via ubergraph, and pull matching disease records across oard-kg / rdkg / prokn / nde - optionally expanding to MONDO subtypes first with ubergraph's subClassOf* closure.",
+        "Given a MONDO disease term, recover its source MeSH descriptor and tree number through ubergraph's hasDbXref back-link, and flag MeSH descriptors that map ambiguously to more than one MONDO term."
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?m) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?curie . FILTER(STRSTARTS(STR(?curie),'MESH:')) }\n  BIND(IRI(CONCAT('http://id.nlm.nih.gov/mesh/',REPLACE(STR(?curie),'^MESH:',''))) AS ?m)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-mesh> { ?m ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -404,6 +440,10 @@
       "verified_count": 762,
       "verified_count_note": "Exact COUNT(DISTINCT) on 2026-06-11. 762/762 = 100% of spoke-okn's pubchem.compound xref-bearing ChemicalEntity nodes have >=1 biobricks annotation. spoke-okn is the ONLY federation KG that materializes PubChem CID, so it is biobricks-pubchem-annotations' sole partner.",
       "example_question": "What PubChem free-text annotations (toxicity, hazards, uses) exist for the chemicals SPOKE links to diseases and genes?",
+      "example_questions": [
+        "What PubChem free-text annotations (toxicity, hazards, uses) exist for the chemicals SPOKE links to diseases and genes?",
+        "For chemicals flagged as carcinogenic or acutely toxic in PubChem free-text annotations, which diseases and genes does SPOKE connect them to (via PubChem CID)?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?c <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x . FILTER(STRSTARTS(STR(?x),'http://identifiers.org/pubchem.compound/')) }\n  BIND(REPLACE(STR(?x),'^http://identifiers.org/pubchem.compound/','') AS ?cid)\n  BIND(IRI(CONCAT('http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID',?cid)) AS ?b)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-pubchem-annotations> { ?ann <http://www.w3.org/ns/oa#hasTarget> ?b . }\n}",
       "skeleton_verified": true
     },
@@ -421,6 +461,10 @@
       "iri_normalization": null,
       "verified_count": 8916,
       "example_question": "Tox21-screened chemicals (CAS) tied to Integrated Chemical Environment safety/curation data.",
+      "example_questions": [
+        "Tox21-screened chemicals (CAS) tied to Integrated Chemical Environment safety/curation data.",
+        "How many Tox21 nuclear-receptor and stress-pathway hits (CAS) also have ICE curated in-vivo toxicity records?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?b <http://edamontology.org/has_identifier> ?cas . }\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-tox21> { ?cas ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -439,6 +483,10 @@
       "verified_count": 8909,
       "hinge_note": "tox21 keys chemicals as its OWN node IRIs (http://identifiers.org/cas/), exactly the form toxcast/ice carry as the object of edam:has_identifier (base file B1). tox21 therefore joins the existing CAS cluster directly, no rewrite. tox21 carries 8947 distinct CAS-typed subjects total.",
       "example_question": "Tox21 high-throughput screening hits (CAS) for chemicals also covered by EPA ToxCast assays.",
+      "example_questions": [
+        "Tox21 high-throughput screening hits (CAS) for chemicals also covered by EPA ToxCast assays.",
+        "For chemicals (CAS) screened in both Tox21 and ToxCast, do the assay activity calls agree across the shared set?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-toxcast> { ?b <http://edamontology.org/has_identifier> ?cas . }\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-tox21> { ?cas ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -459,6 +507,10 @@
       "hinge_note": "biomarkerkg keys disease on DOID. As of prokn v0.0.5 (pav:lastUpdatedOn 2026-06-23) ProKN NO LONGER carries DOID on rdfs:seeAlso - it has 0 rdfs:seeAlso triples, and its up:Disease nodes now cross-reference MONDO via skos:exactMatch. The join is therefore routed DOID->MONDO through ubergraph skos:exactMatch and lands on prokn's MONDO exactMatch.",
       "drift_note": "PROKN-SIDE DRIFT (prokn v0.0.5, 2026-06-23): the original recipe (biomarkerkg OBCI_* DOID <-> prokn rdfs:seeAlso DOID; verified_count 388 on 2026-06-27) returns 0 as of 2026-06-30 because prokn migrated its disease cross-references from rdfs:seeAlso/DOID to skos:exactMatch/MONDO. biomarkerkg's side is unchanged (714 DOIDs on OBCI_1000002/1000006/1000008). Repaired 2026-06-30 via the ubergraph MONDO bridge and re-verified at 344. PREDICATE FLAP (issue #4, re-verified 2026-07-02): prokn's up:Disease cross-reference predicate is NOT stable across versions — it moved rdfs:seeAlso -> skos:exactMatch at v0.0.5 and has since been observed back on rdfs:seeAlso. The prokn side now matches EITHER predicate via the property-path alternation (rdfs:seeAlso|skos:exactMatch), so the join survives the flap; count unchanged at 344 (live seeAlso=0, so identical to exactMatch-only today).",
       "example_question": "Literature biomarkers for a disease (BiomarkerKG) cross-referenced to protein/marker-gene evidence (ProKN).",
+      "example_questions": [
+        "Literature biomarkers for a disease (BiomarkerKG) cross-referenced to protein/marker-gene evidence (ProKN).",
+        "For colorectal cancer (DOID), do BiomarkerKG's literature biomarker proteins coincide with ProKN's marker genes for the matching MONDO disease, flagging markers that lack molecular evidence?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?d (<http://www.w3.org/2000/01/rdf-schema#seeAlso>|<http://www.w3.org/2004/02/skos/core#exactMatch>) ?mondo . }\n}",
       "skeleton_verified": true
     },
@@ -481,6 +533,10 @@
       },
       "hinge_note": "A rare, genuinely useful DIRECT leaf-to-leaf spatial join (most SAWGraph leaves only meet through the spatialkg hub). 4,712 S2 Level-13 cells carry BOTH a sawgraph PFAS sample/feature and a fiokg EPA FRS facility - i.e. PFAS observations and regulated facilities in the same ~1 km cell in Maine (sawgraph's footprint). This is especially pointed because fiokg flags 188,057 facilities as EPA-PFAS-Facility (industries likely to handle PFAS): the cell-level co-location lets you ask which PFAS detections sit near which PFAS-relevant facilities. For non-Maine analysis, both still roll up to the national hub via N1/D2.",
       "example_question": "In Maine, find S2 cells where a sawgraph PFAS sample co-occurs with an EPA FRS facility (fiokg) - especially EPA-PFAS-Facility-typed ones - to relate PFAS detections to nearby potentially-PFAS-handling facilities.",
+      "example_questions": [
+        "In Maine, find S2 cells where a sawgraph PFAS sample co-occurs with an EPA FRS facility (fiokg) - especially EPA-PFAS-Facility-typed ones - to relate PFAS detections to nearby potentially-PFAS-handling facilities.",
+        "Across Maine, how many EPA FRS facilities (fiokg) share an S2 Level-13 cell with at least one sawgraph PFAS detection, and which FRS facility types dominate those co-located cells?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?cell . FILTER(STRSTARTS(STR(?cell),'http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.')) }\n  GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?s <http://www.w3.org/2002/07/owl#sameAs> ?cell . }\n}",
       "skeleton_verified": true
     },
@@ -503,6 +559,10 @@
       },
       "hinge_note": "ALL 301 of securechainkg's distinct NAICS codes are present in fiokg (complete containment of securechainkg's industry codes in fiokg's national all-sector facility set). fiokg therefore reaches securechainkg's software/hardware supply-chain participants and SUDOKN's manufacturers (N4) through the shared NAICS classification - the same industry-class join securechainkg and sudokn use between themselves (I1). Industry-class level, not individual instances.",
       "example_question": "Cross-reference the NAICS industries of SecureChain supply-chain participants and SUDOKN manufacturers with the EPA FRS facilities (fiokg) in those same industries, then locate those facilities on the spatial hub via fiokg's S2/county links.",
+      "example_questions": [
+        "Cross-reference the NAICS industries of SecureChain supply-chain participants and SUDOKN manufacturers with the EPA FRS facilities (fiokg) in those same industries, then locate those facilities on the spatial hub via fiokg's S2/county links.",
+        "For each NAICS code shared across all three graphs, how many EPA FRS facilities (fiokg) coexist with SecureChain supply-chain participants and SUDOKN manufacturers, ranking industries by combined physical-plus-supply-chain footprint?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?code) AS ?n) WHERE {\n  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry>|<http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry> ?ind . } BIND(REPLACE(STR(?ind),'^.*naics#NAICS-([0-9]+)$','$1') AS ?code) } }\n  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/securechainkg> { ?a <http://asu.edu/semantics/SUDOKN/hasPrimaryNAICSClassifier> ?sn . } BIND(REPLACE(STR(?sn),'^.*/naics-([0-9]+)\\\\.0-inst$','$1') AS ?code) } }\n}",
       "skeleton_verified": true
     },
@@ -525,6 +585,10 @@
       },
       "hinge_note": "THIS IS fiokg's primary attachment to the SAWGraph spatial hub, and the LARGEST S2 join in the federation: 681,045 of fiokg's 681,108 S2 cells are present in spatialkg (near-complete containment; the ~63 unmatched are AK/HI/PR/territory cells spatialkg does not load). fiokg is now a FOURTH S2-keyed leaf on the hub alongside sawgraph (Maine PFAS, 88,007; D2), hydrologykg (Illinois wells/streams, 106,138; D1) and sockg (multi-state soil carbon, 1,069; H1) - and by far the largest, because fiokg's EPA FRS facilities are national. Via this key every FRS facility rolls up to spatialkg's S2 grid and AdministrativeRegion hierarchy, and meets the other S2 leaves in any shared cell.",
       "example_question": "Place EPA FRS facilities (fiokg) on the national S2 grid (spatialkg), roll them up to county/state admin regions, and find which facilities share an S2 cell with PFAS samples (sawgraph) or hydrologic features (hydrologykg).",
+      "example_questions": [
+        "Place EPA FRS facilities (fiokg) on the national S2 grid (spatialkg), roll them up to county/state admin regions, and find which facilities share an S2 cell with PFAS samples (sawgraph) or hydrologic features (hydrologykg).",
+        "Which S2 Level-13 cells hold the most EPA FRS facilities (fiokg) nationally, and which county/state do those facility-dense cells roll up to on the spatialkg admin hierarchy?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?cell . FILTER(STRSTARTS(STR(?cell),'http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.')) }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }\n}",
       "skeleton_verified": true
     },
@@ -548,6 +612,10 @@
       },
       "hinge_note": "fiokg's county-level attachment to the SAWGraph spatial hub. 3,031 of fiokg's 3,040 clean 5-digit county FIPS match a spatialkg AdministrativeRegion_2 county (spatialkg covers the 48 contiguous states + DC; the unmatched ~9 are AK/HI/PR/territory counties). ALL matches are county-level (AdministrativeRegion_2); fiokg carries NO KWG state (AdministrativeRegion_1) IRIs, so there is no state-level rollup key on this route - go up via spatialkg's admin-region hierarchy instead. This county key is the same one cluster K/L members (spoke-okn K1, ruralkg K2, sockg K3, geoconnex L1, scales L4, nikg L6) share, so fiokg meets all of them at the county level through the hub.",
       "example_question": "Aggregate EPA FRS facilities (fiokg) to the county, place those counties on the spatialkg admin-region hierarchy, and join to county-keyed members (e.g. SCALES federal-court activity, ruralkg rural-resilience indicators) for the same county.",
+      "example_questions": [
+        "Aggregate EPA FRS facilities (fiokg) to the county, place those counties on the spatialkg admin-region hierarchy, and join to county-keyed members (e.g. SCALES federal-court activity, ruralkg rural-resilience indicators) for the same county.",
+        "For a given county, count its EPA FRS facilities (fiokg) and use the spatialkg admin hierarchy to find neighboring counties carrying a comparable facility burden."
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?reg) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?reg . FILTER(STRSTARTS(STR(?reg),'http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.')) }\n  FILTER(STRLEN(REPLACE(STR(?reg),'^.*administrativeRegion[.]USA[.]',''))=5)\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_2> . }\n}",
       "skeleton_verified": true
     },
@@ -570,6 +638,10 @@
       },
       "hinge_note": "fiokg shares 3,032 county FIPS with spoke-okn - marginally more than with spatialkg (3,031) because spoke-okn has national county coverage (incl. AK/HI/territories) while spatialkg is limited to the 48 contiguous states + DC. spoke-okn thus bridges fiokg's facility county data to its environmental-health county context and onward to the spatialkg hub via the shared county-FIPS key both carry (base-file K1). Same county-FIPS-to-spoke-okn pattern as geoconnex (L2), scales (L5) and nikg (L7).",
       "example_question": "For a county, combine EPA FRS facility counts/types (fiokg) with spoke-okn's county-level environmental and health indicators, and roll up to state via the shared FIPS.",
+      "example_questions": [
+        "For a county, combine EPA FRS facility counts/types (fiokg) with spoke-okn's county-level environmental and health indicators, and roll up to state via the shared FIPS.",
+        "Rank counties where high EPA FRS facility density (fiokg) coincides with poor spoke-okn county health indicators at the same FIPS."
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?reg . FILTER(STRSTARTS(STR(?reg),'http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.')) }\n  BIND(REPLACE(STR(?reg),'^.*administrativeRegion\\\\.USA\\\\.','') AS ?fips)\n  FILTER(STRLEN(?fips)=5)\n  BIND(IRI(CONCAT('https://purl.org/okn/frink/kg/spoke-okn/location/',?fips)) AS ?loc)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -592,6 +664,10 @@
       },
       "hinge_note": "fiokg attaches to the manufacturing cluster (I) on the bare NAICS code: 64 of sudokn's 66 distinct NAICS codes also appear among fiokg's 3,842 (near-complete containment of sudokn's manufacturing codes in fiokg's national, all-sector facility set). This puts fiokg in the same NAICS world as sudokn and securechainkg (base-file I1/I2). The join is at the industry-classification level, NOT on individual facility/company instances (fiokg facilities and sudokn manufacturers have unrelated IRIs).",
       "example_question": "For a manufacturing NAICS industry, list SUDOKN small/medium manufacturers (capabilities, certificates) alongside the EPA FRS facilities (fiokg) in that same industry - and, via fiokg's county/S2 location, where those facilities sit on the spatial hub.",
+      "example_questions": [
+        "For a manufacturing NAICS industry, list SUDOKN small/medium manufacturers (capabilities, certificates) alongside the EPA FRS facilities (fiokg) in that same industry - and, via fiokg's county/S2 location, where those facilities sit on the spatial hub.",
+        "Starting from EPA FRS facilities (fiokg) clustered in a given county via their S2/county links, which NAICS industries do they represent, and are there SUDOKN small/medium manufacturers with matching capabilities in those same NAICS codes for local sourcing?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?code) AS ?n) WHERE {\n  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry>|<http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry> ?ind . } BIND(REPLACE(STR(?ind),'^.*naics#NAICS-([0-9]+)$','$1') AS ?code) } }\n  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/sudokn> { ?b <http://asu.edu/semantics/SUDOKN/hasPrimaryNAICSClassifier> ?dn . } BIND(REPLACE(STR(?dn),'^.*NAICS%20([0-9]+)-individual$','$1') AS ?code) } }\n}",
       "skeleton_verified": true
     },
@@ -609,6 +685,10 @@
       "verified_count": 15132,
       "note": "3-way intersection equals the GXA-spoke 2-way because pankgraph carries the full gene catalog.",
       "example_question": "One-query gene dossier: expression (GXA) + associations (spoke-okn) + islet/pancreatic context (pankgraph).",
+      "example_questions": [
+        "One-query gene dossier: expression (GXA) + associations (spoke-okn) + islet/pancreatic context (pankgraph).",
+        "For INS, assemble in one Ensembl-keyed query its GXA baseline tissue expression, spoke-okn disease/compound associations, and pankgraph islet context."
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?gene a <https://w3id.org/biolink/vocab/Gene> . }\n  { SELECT DISTINCT ?gene WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?x ?q ?gene . FILTER(STRSTARTS(STR(?gene),'http://identifiers.org/ensembl/')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/pankgraph> { ?gene a <https://w3id.org/biolink/vocab/Gene> . }\n}",
       "skeleton_verified": true
     },
@@ -626,6 +706,10 @@
       "iri_normalization": null,
       "verified_count": 15132,
       "example_question": "Baseline tissue expression (GXA) for any spoke-okn gene plus its network/disease/compound associations.",
+      "example_questions": [
+        "Baseline tissue expression (GXA) for any spoke-okn gene plus its network/disease/compound associations.",
+        "Among spoke-okn genes associated with a given disease, which show the highest GXA baseline expression in the disease-relevant tissue?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?gene a <https://w3id.org/biolink/vocab/Gene> . }\n  { SELECT DISTINCT ?gene WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?x ?q ?gene . FILTER(STRSTARTS(STR(?gene),'http://identifiers.org/ensembl/')) } } }\n}",
       "skeleton_verified": true
     },
@@ -648,6 +732,10 @@
       },
       "hinge_note": "THIS IS geoconnex's attachment to the SAWGraph spatial hub. 3,114 of geoconnex's 3,243 distinct county FIPS match a spatialkg AdministrativeRegion_2 county (spatialkg covers the 48 contiguous states + DC; the unmatched ~129 are AK/HI/PR/territory counties spatialkg does not load). Via this key geoconnex's hydrologic features (wells, streams, monitoring sites - placed in a county by the GNIS county predicate) roll up to spatialkg's S2 grid and admin-region hierarchy, making geoconnex a county-keyed member of the SAWGraph spatial world alongside sockg, ruralkg and spoke-okn.",
       "example_question": "Roll geoconnex hydrologic monitoring features up to the county, then place those counties on the spatialkg S2 grid / admin-region hierarchy to pull neighboring counties or state-level rollups.",
+      "example_questions": [
+        "Roll geoconnex hydrologic monitoring features up to the county, then place those counties on the spatialkg S2 grid / admin-region hierarchy to pull neighboring counties or state-level rollups.",
+        "How many geoconnex hydrologic monitoring features does each county hold, and which counties on the spatialkg admin hierarchy have none (monitoring gaps)?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/geoconnex> { ?x <http://gnis-ld.org/lod/gnis/ontology/county> ?county . }\n  BIND(REPLACE(STR(?county),'^.*/counties/([0-9]{5}).*$','$1') AS ?fips)\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_2> . }\n}",
       "skeleton_verified": true
     },
@@ -667,6 +755,10 @@
       "verified_count_secondary": {},
       "hinge_note": "51 states (50 states + DC) are common to geoconnex and spatialkg - a complete coarse state-level rollup key for geoconnex's hydrologic features.",
       "example_question": "Roll geoconnex hydrologic features up to the state and join state-level summaries to the spatialkg admin-region hierarchy.",
+      "example_questions": [
+        "Roll geoconnex hydrologic features up to the state and join state-level summaries to the spatialkg admin-region hierarchy.",
+        "Which states have the densest geoconnex hydrologic-feature coverage per the spatialkg AdministrativeRegion_1 state regions?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/geoconnex> { ?x <http://gnis-ld.org/lod/gnis/ontology/state> ?st . }\n  BIND(REPLACE(STR(?st),'^.*/states/([0-9]{2}).*$','$1') AS ?fips)\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_1> . }\n}",
       "skeleton_verified": true
     },
@@ -689,6 +781,10 @@
       },
       "hinge_note": "geoconnex shares 3,184 county FIPS with spoke-okn - more than with spatialkg (3,114) because spoke-okn has national county coverage (incl. AK/HI/territories) while spatialkg is limited to the 48 contiguous states + DC. spoke-okn thus bridges geoconnex's hydrologic county data to its environmental-health county data and onward to the spatialkg hub via the shared county-FIPS key both carry (base-file K1).",
       "example_question": "For a county, combine geoconnex's water-monitoring features with spoke-okn's local environmental/health context, and roll up to state via the shared FIPS.",
+      "example_questions": [
+        "For a county, combine geoconnex's water-monitoring features with spoke-okn's local environmental/health context, and roll up to state via the shared FIPS.",
+        "For counties lacking geoconnex water-monitoring features, what spoke-okn environmental/health burden is reported at the same FIPS, flagging under-monitored at-risk counties?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/geoconnex> { ?x <http://gnis-ld.org/lod/gnis/ontology/county> ?county . }\n  BIND(REPLACE(STR(?county),'^.*/counties/([0-9]{5}).*$','$1') AS ?fips)\n  BIND(IRI(CONCAT('https://purl.org/okn/frink/kg/spoke-okn/location/',?fips)) AS ?loc)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -706,6 +802,10 @@
       "iri_normalization": null,
       "verified_count": 106138,
       "example_question": "Place Illinois wells/streams (hydrologykg) on the national S2 grid and roll up to county via spatialkg admin regions.",
+      "example_questions": [
+        "Place Illinois wells/streams (hydrologykg) on the national S2 grid and roll up to county via spatialkg admin regions.",
+        "After rolling hydrologykg S2 cells up through the spatialkg admin regions, how many wells vs streams fall in each Illinois county?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/hydrologykg> { ?h <http://stko-kwg.geog.ucsb.edu/lod/ontology/sfWithin> ?cell . FILTER(STRSTARTS(STR(?cell),'http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.')) }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }\n}",
       "skeleton_verified": true
     },
@@ -724,6 +824,10 @@
       "verified_count": 12,
       "thin_thread_note": "Small join: NCI-PID exposes only ~85 distinct UniProt ids via owl:sameAs (it is a focused signaling-pathway graph), of which 12 are present in ProKN. Real but low-cardinality; useful for pathway-context lookups, not bulk joins. NCI-PID also encodes some proteins as obo/PR_ terms that this CURIE route does not reach.",
       "example_question": "Signaling-pathway interaction proteins (NCI-PID) enriched with ProKN protein annotations.",
+      "example_questions": [
+        "Signaling-pathway interaction proteins (NCI-PID) enriched with ProKN protein annotations.",
+        "Of the 12 shared UniProt proteins, which NCI-PID signaling hubs also carry a ProKN disease association or PTM annotation, flagging pathway nodes with therapeutic relevance?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?p2) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/ncipidkg> { ?s <http://www.w3.org/2002/07/owl#sameAs> ?u . FILTER(STRSTARTS(STR(?u),'http://identifiers.org/uniprot/')) }\n  BIND(IRI(CONCAT('http://purl.uniprot.org/uniprot/',REPLACE(STR(?u),'^.*/uniprot/',''))) AS ?p2)\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?p2 ?pp ?op . }\n}",
       "skeleton_verified": true
     },
@@ -741,6 +845,10 @@
       "iri_normalization": null,
       "verified_count": 889,
       "example_question": "NIAID datasets for a disease (NDE) plus its EHR phenotype signature (OARD).",
+      "example_questions": [
+        "NIAID datasets for a disease (NDE) plus its EHR phenotype signature (OARD).",
+        "Which MONDO diseases with an NIAID dataset in NDE carry the richest OARD EHR phenotype profiles, ranked by number of associated phenotypes?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/nde> { ?s <http://schema.org/healthCondition> ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?x <https://w3id.org/biolink/vocab/object> ?mondo } UNION { ?xs <https://w3id.org/biolink/vocab/subject> ?mondo } }\n}",
       "skeleton_verified": true,
       "methodology_note": "oard-kg disease/phenotype IRIs appear as the object of BOTH biolink:subject and biolink:object (a reified association can carry the entity on either side); the skeleton UNIONs both positions so the join is entity-complete. Joining on one position only undercounts (was 713, now 889)."
@@ -764,6 +872,10 @@
       },
       "hinge_note": "nikg covers exactly two counties - Philadelphia (42101) and Cook/Chicago (17031) - and BOTH attach to the spatialkg hub. Small but real: it places nikg's Philadelphia/Chicago neighborhood-incident data (crime, arrests, officer-involved events) on the national S2 / admin-region hierarchy. nikg ALSO carries finer census-tract (CT_{id}) sfWithin objects not used here.",
       "example_question": "Place nikg Philadelphia/Chicago neighborhood-incident data on the spatialkg admin-region hierarchy and compare the two counties' state-level context.",
+      "example_questions": [
+        "Place nikg Philadelphia/Chicago neighborhood-incident data on the spatialkg admin-region hierarchy and compare the two counties' state-level context.",
+        "Which states (Illinois vs Pennsylvania) do nikg's two neighborhood-incident counties roll up to on spatialkg, and how do their state-level admin contexts differ?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/nikg> { ?x <http://stko-kwg.geog.ucsb.edu/lod/ontology/sfWithin> ?o . FILTER(STRSTARTS(STR(?o),'https://metadata.phila.gov/kwgr_administrativeRegion_USA_')) }\n  BIND(REPLACE(STR(?o),'^.*administrativeRegion_USA_([0-9]{5}).*$','$1') AS ?fips)\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg ?p ?o2 . }\n}",
       "skeleton_verified": true
     },
@@ -786,6 +898,10 @@
       },
       "hinge_note": "Both nikg counties (Philadelphia 42101, Cook 17031) are present in spoke-okn, joining nikg neighborhood-incident data to spoke-okn's county environmental/health context. (nikg is Philadelphia-centric; dreamkg's Philadelphia ZIP data - base-file J3 - is a related but ZIP-keyed neighbor, not directly joinable to nikg, whose geography is county + census tract, not ZIP.)",
       "example_question": "Join nikg Philadelphia neighborhood-incident counts with spoke-okn's Philadelphia-County environmental/health indicators.",
+      "example_questions": [
+        "Join nikg Philadelphia neighborhood-incident counts with spoke-okn's Philadelphia-County environmental/health indicators.",
+        "For Cook County (Chicago), pair nikg neighborhood-incident counts with spoke-okn's Cook-County environmental/health indicators at the same FIPS."
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/nikg> { ?x <http://stko-kwg.geog.ucsb.edu/lod/ontology/sfWithin> ?o . FILTER(STRSTARTS(STR(?o),'https://metadata.phila.gov/kwgr_administrativeRegion_USA_')) }\n  BIND(REPLACE(STR(?o),'^.*administrativeRegion_USA_([0-9]{5}).*$','$1') AS ?fips)\n  BIND(IRI(CONCAT('https://purl.org/okn/frink/kg/spoke-okn/location/',?fips)) AS ?loc)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o2 . }\n}",
       "skeleton_verified": true
     },
@@ -804,6 +920,10 @@
       "verified_count": 63,
       "verified_count_note": "63 Florida counties shared between wildlifekn Location county-names and spatialkg (county FIPS5; e.g. Alachua County = 12001). Verified 2026-06-18. LABEL-BRIDGED (county name). Florida-only; city-type locations excluded.",
       "example_question": "Roll wildlifekn bird/amphibian observations up to the Florida county and join county-level PFAS (sawgraph), EPA facilities (fiokg) or health (spoke-okn) via spatialkg county FIPS.",
+      "example_questions": [
+        "Roll wildlifekn bird/amphibian observations up to the Florida county and join county-level PFAS (sawgraph), EPA facilities (fiokg) or health (spoke-okn) via spatialkg county FIPS.",
+        "How many Florida counties carry wildlifekn amphibian/bird observations, and which of those also register sawgraph PFAS detections in the same county FIPS?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips5) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/wildlifekn> { ?loc a <https://wildlife.proto-okn.net/kg/Location> ; <http://www.w3.org/2000/01/rdf-schema#label> ?county . FILTER(STRENDS(STR(?county),'County')) }\n  { SELECT DISTINCT ?cname ?fips5 WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg <http://www.w3.org/2000/01/rdf-schema#label> ?rl . FILTER(CONTAINS(STR(?rl),' County, Florida'))\n        BIND(REPLACE(STR(?rl),'^.*, ([^,]+ County), Florida.*$','') AS ?cname)\n        BIND(SUBSTR(REPLACE(STR(?reg),'^.*administrativeRegion[.]USA[.]',''),1,5) AS ?fips5) } } }\n  FILTER(STR(?county) = ?cname)\n}",
       "skeleton_verified": true,
       "methodology_note": "LABEL-BRIDGED via county NAME (fragile, verified 2026-06-18): wildlifekn Location nodes carry free-text place labels - a mix of Florida cities (Clearwater, Palm Coast) and counties (\"Alachua County\"). The county-type labels match spatialkg Florida county-subdivision labels (\"Geometry of <CCD>, <X> County, Florida\"); the county FIPS5 is the first 5 digits of the geoid embedded in the spatialkg region IRI (administrativeRegion.USA.{geoid10}). 63 Florida counties resolve this way (e.g. Alachua County -> 12001). Depends on exact county-name agreement, is Florida-only, and excludes city-type locations. Attaches wildlifekn to the county_FIPS spatial hub (spatialkg) and thereby transitively to the other county-keyed members (fiokg, sawgraph, spoke-okn, scales, ruralkg, geoconnex, sockg, nikg)."
@@ -823,6 +943,10 @@
       "verified_count": 4941,
       "verified_on": "2026-06-30",
       "example_question": "Phenotypes clinically associated with rare diseases (OARD) that also have protein/marker-gene evidence (ProKN).",
+      "example_questions": [
+        "Phenotypes clinically associated with rare diseases (OARD) that also have protein/marker-gene evidence (ProKN).",
+        "For hepatomegaly (HP), list the marker-gene proteins ProKN attaches alongside the diseases OARD shows it co-occurring with in EHR data."
+      ],
       "drift_note": "PROKN-SIDE DRIFT (prokn v0.0.5, 2026-06-23): prokn dropped rdfs:seeAlso entirely but STILL carries HP phenotype IRIs (via other predicates). Repaired 2026-06-30 (prokn side rdfs:seeAlso ?hp -> ?p ?hp, any-predicate HP object, matching the A24/BH2 convention); re-verified 4941 (was 4876 on 2026-06-27).",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?hp) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?s <https://w3id.org/biolink/vocab/object> ?hp } UNION { ?ss <https://w3id.org/biolink/vocab/subject> ?hp } FILTER(STRSTARTS(STR(?hp),'http://purl.obolibrary.org/obo/HP_')) }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?x ?p ?hp . }\n}",
       "skeleton_verified": true,
@@ -843,6 +967,10 @@
       "verified_count": 470,
       "verified_on": "2026-07-02",
       "example_question": "Diseases with both EHR phenotype associations (OARD) and marker-gene/protein evidence (ProKN).",
+      "example_questions": [
+        "Diseases with both EHR phenotype associations (OARD) and marker-gene/protein evidence (ProKN).",
+        "How many of OARD's MONDO diseases carry ProKN protein evidence, and which of them accumulate the most marker genes?"
+      ],
       "drift_note": "PROKN-SIDE DRIFT (prokn v0.0.5, 2026-06-23): prokn migrated its up:Disease cross-references from rdfs:seeAlso to skos:exactMatch (0 rdfs:seeAlso triples remain). Repaired 2026-06-30 (prokn side rdfs:seeAlso -> skos:exactMatch, still MONDO); re-verified 470 (was 445 on 2026-06-27). PREDICATE FLAP (issue #4, re-verified 2026-07-02): prokn's up:Disease cross-reference predicate is NOT stable across versions — it moved rdfs:seeAlso -> skos:exactMatch at v0.0.5 and has since been observed back on rdfs:seeAlso. The prokn side now matches EITHER predicate via the property-path alternation (rdfs:seeAlso|skos:exactMatch), so the join survives the flap; count unchanged at 470 (live seeAlso=0, so identical to exactMatch-only today).",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?s <https://w3id.org/biolink/vocab/object> ?mondo } UNION { ?ss <https://w3id.org/biolink/vocab/subject> ?mondo } FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?x a <http://purl.uniprot.org/core/Disease> ; (<http://www.w3.org/2000/01/rdf-schema#seeAlso>|<http://www.w3.org/2004/02/skos/core#exactMatch>) ?mondo . }\n}",
       "skeleton_verified": true,
@@ -863,6 +991,10 @@
       "iri_normalization": null,
       "verified_count": 168,
       "example_question": "Diabetes/pancreas disease-associated genes (pankgraph) with their spoke-okn associations.",
+      "example_questions": [
+        "Diabetes/pancreas disease-associated genes (pankgraph) with their spoke-okn associations.",
+        "Which spoke-okn compounds target the pankgraph diabetes/pancreas disease-associated genes on the shared Ensembl id?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/pankgraph> { ?gene <https://w3id.org/biolink/vocab/gene_associated_with_condition> ?cond . FILTER(STRSTARTS(STR(?gene),'http://identifiers.org/ensembl/')) }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?x ?q ?gene . }\n}",
       "skeleton_verified": true
     },
@@ -884,6 +1016,10 @@
       },
       "verified_count_note": "DISTINCT spoke-okn Entrez genes reached from prokn's HGNC gene set via the Wikidata P354->P351 bridge (16,298 of spoke-okn's 16,346 genes). The same bridge reaches spoke-genelab (27,226) and, by the shared Entrez key, rdkg and biobricks-aopwiki (C5-C8). prokn carries ~38,328 distinct HGNC ids; most ride on rdf:subject/rdf:object (reified INDRA-evidence statements) and rdfs:seeAlso, not the direct biolink relations, so those predicates must be included to capture the full set. prokn also appears in the protein cluster (G1/G2) via UniProt - it carries marker genes as HGNC and proteins as UniProt.",
       "example_question": "Protein marker genes for a cell type / tissue (ProKN HAS_MARKER_GENE, HGNC) mapped via Wikidata to their spoke-okn network/disease/compound associations.",
+      "example_questions": [
+        "Protein marker genes for a cell type / tissue (ProKN HAS_MARKER_GENE, HGNC) mapped via Wikidata to their spoke-okn network/disease/compound associations.",
+        "For a spoke-okn disease-associated gene, which cell type or tissue does ProKN flag it as a protein marker of (HGNC, via Wikidata)?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?gene a <https://w3id.org/biolink/vocab/Gene> . }\n  BIND(REPLACE(STR(?gene),'^.*/gene/','') AS ?entrez)\n  GRAPH <https://purl.org/okn/frink/kg/wikidata> { ?item <http://www.wikidata.org/prop/direct/P351> ?entrez ;\n                                  <http://www.wikidata.org/prop/direct/P354> ?hgnc . }\n  BIND(IRI(CONCAT('http://identifiers.org/hgnc/',?hgnc)) AS ?h)\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?x ?p ?h . }\n}",
       "skeleton_verified": true
     },
@@ -901,6 +1037,10 @@
       "iri_normalization": null,
       "verified_count": 2014,
       "example_question": "Rare-disease EHR phenotype profile (OARD) combined with contraindicated/treating drugs (RDKG, DrugBank).",
+      "example_questions": [
+        "Rare-disease EHR phenotype profile (OARD) combined with contraindicated/treating drugs (RDKG, DrugBank).",
+        "For a DrugBank drug in RDKG, which of the rare diseases it treats also present an EHR phenotype signature in OARD (MONDO)?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?mondo ?p ?o . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?x <https://w3id.org/biolink/vocab/object> ?mondo } UNION { ?xs <https://w3id.org/biolink/vocab/subject> ?mondo } }\n}",
       "skeleton_verified": true,
       "methodology_note": "oard-kg disease/phenotype IRIs appear as the object of BOTH biolink:subject and biolink:object (a reified association can carry the entity on either side); the skeleton UNIONs both positions so the join is entity-complete. Joining on one position only undercounts (was 1444, now 2014)."
@@ -920,6 +1060,10 @@
       "verified_count": 9034,
       "verified_count_note": "DISTINCT Entrez genes shared (of rdkg's 9,326 genes) - near-complete containment of rdkg's gene set in spoke-genelab.",
       "example_question": "Rare-disease genes (rdkg) with their spaceflight/omics observations in spoke-genelab (NASA GeneLab).",
+      "example_questions": [
+        "Rare-disease genes (rdkg) with their spaceflight/omics observations in spoke-genelab (NASA GeneLab).",
+        "How many spoke-genelab spaceflight differentially expressed genes are known rare-disease genes in rdkg?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?r ?p ?o . FILTER(STRSTARTS(STR(?r),'http://identifiers.org/ncbigene/')) BIND(?r AS ?src) }\n  BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',REPLACE(STR(?src),'^.*/ncbigene/',''))) AS ?gene)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?gene ?q ?r2 . }\n}",
       "skeleton_verified": true
     },
@@ -938,6 +1082,10 @@
       "verified_count": 8475,
       "verified_count_note": "DISTINCT Entrez genes shared (of rdkg's 9,326 biolink:Gene nodes); spoke-okn has 16,346 genes so the join is bounded by rdkg.",
       "example_question": "Rare-disease gene associations (rdkg: gene_associated_with_condition / has_gene) enriched with that gene's network/disease/compound associations in spoke-okn.",
+      "example_questions": [
+        "Rare-disease gene associations (rdkg: gene_associated_with_condition / has_gene) enriched with that gene's network/disease/compound associations in spoke-okn.",
+        "For the causative genes of a specific rare disease in rdkg, which spoke-okn compounds and pathways are associated?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?r ?p ?o . FILTER(STRSTARTS(STR(?r),'http://identifiers.org/ncbigene/')) BIND(?r AS ?src) }\n  BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',REPLACE(STR(?src),'^.*/ncbigene/',''))) AS ?gene)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?gene ?q ?r2 . }\n}",
       "skeleton_verified": true
     },
@@ -955,6 +1103,10 @@
       "iri_normalization": null,
       "verified_count": 88007,
       "example_question": "Aggregate Maine PFAS samples (sawgraph) to S2 cells and counties (spatialkg).",
+      "example_questions": [
+        "Aggregate Maine PFAS samples (sawgraph) to S2 cells and counties (spatialkg).",
+        "Which Maine counties contain the most S2 cells with sawgraph PFAS samples once rolled up through the spatialkg admin hierarchy?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?s <http://www.w3.org/2002/07/owl#sameAs> ?cell . FILTER(STRSTARTS(STR(?cell),'http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.')) }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }\n}",
       "skeleton_verified": true
     },
@@ -1205,6 +1357,10 @@
       },
       "hinge_note": "THIS IS scales's attachment to the SAWGraph spatial hub, and a correction to its base-file island status. scales holds 3,129 distinct valid county FIPS on hasIdbCounty (near-complete national coverage of federal court cases by county of filing); 3,029 of them match a spatialkg county (the ~100 unmatched are AK/HI/PR/territory + the 88888 sentinel). Via this key federal criminal/civil court activity (charges, parties, dispositions) rolls up to the county and joins the SAWGraph spatial world - and meets ruralkg's rural health+justice indicators (base-file K2) on the same county key.",
       "example_question": "Aggregate SCALES federal court cases to the county of filing and place those counties on the spatialkg S2 grid / admin-region hierarchy for state-level or neighboring-county justice summaries.",
+      "example_questions": [
+        "Aggregate SCALES federal court cases to the county of filing and place those counties on the spatialkg S2 grid / admin-region hierarchy for state-level or neighboring-county justice summaries.",
+        "Which counties file the most SCALES federal court cases, and which neighboring counties on the spatialkg admin hierarchy fall in the same district?"
+      ],
       "skeleton_query": "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nSELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/scales> { ?x <http://schemas.scales-okn.org/rdf/scales#hasIdbCounty> ?c . FILTER(?c != 88888) }\n  BIND(REPLACE(CONCAT('00000',STR(xsd:integer(?c))),'^.*(.{5})$','$1') AS ?fips)\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_2> . }\n}",
       "skeleton_verified": true
     },
@@ -1227,6 +1383,10 @@
       },
       "hinge_note": "scales shares 3,096 county FIPS with spoke-okn (more than with spatialkg's contiguous-only 3,029, since spoke-okn has national county coverage). Lets federal court activity (scales) be joined to spoke-okn's county-level environmental/health context on the shared FIPS key.",
       "example_question": "For a county, combine SCALES federal court case volume/charges with spoke-okn's county-level environmental and health indicators.",
+      "example_questions": [
+        "For a county, combine SCALES federal court case volume/charges with spoke-okn's county-level environmental and health indicators.",
+        "In counties with elevated spoke-okn pollution indicators, how many SCALES federal cases carry environmental charges at the same county FIPS?"
+      ],
       "skeleton_query": "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nSELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/scales> { ?x <http://schemas.scales-okn.org/rdf/scales#hasIdbCounty> ?c . FILTER(?c != 88888) }\n  BIND(REPLACE(CONCAT('00000',STR(xsd:integer(?c))),'^.*(.{5})$','$1') AS ?fips)\n  BIND(IRI(CONCAT('https://purl.org/okn/frink/kg/spoke-okn/location/',?fips)) AS ?loc)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -1252,6 +1412,10 @@
       },
       "hinge_note": "scales's attachment to ruralkg on the OFFENSE-TYPE axis — complementary to, and independent of, the county-FIPS axis on which scales already meets spatialkg (L4) and spoke-okn (L5). 37 distinct NIBRS offense categories are shared: scales supplies real federal-court charge VOLUME per offense (e.g. Drug/Narcotic Violations 86,454 charges; Simple Assault 177,758; Aggravated Assault 34,298), ruralkg supplies the rural crime-reporting CODEBOOK — the NIBRS answer codes and the survey variables (165 of them, e.g. 'UCR ARREST OFFENSE CODE') that instrument each offense. This is a CATEGORICAL join (37 offense categories), not an entity-level identity join: use it to compare federal charge activity by offense type against ruralkg's rural crime-data instrumentation, not to link individual cases.",
       "example_question": "Rank the NIBRS offense categories that both drive SCALES federal charges and appear in ruralkg's rural crime-data codebook, showing federal charge volume and the NIBRS answer code for each.",
+      "example_questions": [
+        "Rank the NIBRS offense categories that both drive SCALES federal charges and appear in ruralkg's rural crime-data codebook, showing federal charge volume and the NIBRS answer code for each.",
+        "For a NIBRS offense category tracked in ruralkg's rural crime-data codebook (e.g. Drug/Narcotic Violations), pull the matching SCALES federal charges under that OffenseUCRCode to see how the rural survey category translates into actual federal prosecutions."
+      ],
       "skeleton_query": "PREFIX fbi: <http://fbi.gov/cjis/nibrs/2023.0/>\nPREFIX rk: <http://sail.ua.edu/ruralkg/variable/>\nSELECT (COUNT(DISTINCT ?off) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/scales> { ?ch fbi:OffenseUCRCode ?off . }\n  GRAPH <https://purl.org/okn/frink/kg/ruralkg> { ?ans rk:answerContent ?off . }\n}",
       "skeleton_verified": true
     },
@@ -1274,6 +1438,10 @@
       },
       "hinge_note": "The two KGs do NOT share manufacturer/company instance IRIs (securechainkg mints '...{name}-company-inst' from DHS/D&B/MSKG sources; sudokn mints '...{domain}-company-instance'); a direct company join is 0. They join on the industry-classification keys, not on individual firms. 35 of sudokn's 66 NAICS codes are also used in securechainkg (which spans 301 codes total).",
       "example_question": "For a manufacturing NAICS industry, list SUDOKN small/medium manufacturers (capabilities, certificates, capacity) and SecureChain supply-chain participants (software/hardware products and their vulnerabilities) in that same industry.",
+      "example_questions": [
+        "For a manufacturing NAICS industry, list SUDOKN small/medium manufacturers (capabilities, certificates, capacity) and SecureChain supply-chain participants (software/hardware products and their vulnerabilities) in that same industry.",
+        "How many distinct SUDOKN manufacturers operate in each shared NAICS industry, and does the count of SecureChain participants (with known CVEs) in that same NAICS code rise or fall with it?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?code) AS ?n) WHERE {\n  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/securechainkg> { ?a <http://asu.edu/semantics/SUDOKN/hasPrimaryNAICSClassifier> ?sn . } BIND(REPLACE(STR(?sn),'^.*/naics-([0-9]+)\\\\.0-inst$','$1') AS ?code) } }\n  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/sudokn> { ?b <http://asu.edu/semantics/SUDOKN/hasPrimaryNAICSClassifier> ?dn . } BIND(REPLACE(STR(?dn),'^.*NAICS%20([0-9]+)-individual$','$1') AS ?code) } }\n}",
       "skeleton_verified": true
     },
@@ -1295,6 +1463,10 @@
         "sudokn_distinct_sectors": 59
       },
       "example_question": "Cross-reference the industry sectors served by SUDOKN manufacturers with the industry sectors of SecureChain supply-chain participants (e.g. which suppliers to the aerospace or automotive sector appear in both graphs).",
+      "example_questions": [
+        "Cross-reference the industry sectors served by SUDOKN manufacturers with the industry sectors of SecureChain supply-chain participants (e.g. which suppliers to the aerospace or automotive sector appear in both graphs).",
+        "Which SUDOKN-defined industry sector (aerospace, automotive, etc.) is served by the largest number of SecureChain supply-chain participants via suppliesToIndustry, and which manufacturers back it on the SUDOKN side?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?sec) AS ?n) WHERE {\n  { SELECT DISTINCT ?sec WHERE { GRAPH <https://purl.org/okn/frink/kg/securechainkg> { ?a <http://asu.edu/semantics/SUDOKN/suppliesToIndustry> ?si . } BIND(LCASE(REPLACE(STR(?si),'^.*/SUDOKN/(.*)-inst$','$1')) AS ?sec) } }\n  { SELECT DISTINCT ?sec WHERE { GRAPH <https://purl.org/okn/frink/kg/sudokn> { ?b <http://asu.edu/semantics/SUDOKN/suppliesToIndustry> ?di . } BIND(LCASE(REPLACE(REPLACE(STR(?di),'^.*/SUDOKN/(.*)-industry-individual$','$1'),'%20','')) AS ?sec) } }\n}",
       "skeleton_verified": true
     },
@@ -1313,6 +1485,10 @@
       "verified_count": 1069,
       "hinge_note": "sockg is a THIRD spatial leaf on the SAWGraph S2 hub, alongside sawgraph (Maine PFAS, D2) and hydrologykg (Illinois wells/streams, D1). It materializes its S2 Level-13 cells as its own typed nodes in the identical KWG resource IRI form (http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.{id}), so the join to spatialkg's S2Cell_Level13 nodes is direct, no rewrite. All 1069 sockg S2 cells are present in spatialkg. Soil-carbon experiment sites are multi-state; this leaf joins to the national hub here, but it DOES additionally co-locate leaf-to-leaf with sawgraph in 2 cells via sawgraph's national US-WQP layer (see H3-s2-sockg-sawgraph) - an earlier version of this note wrongly stated it does not co-locate with the other leaves, which assumed sawgraph = Maine only.",
       "example_question": "Place SOCKG soil-organic-carbon experiment sites on the national S2 grid (spatialkg) and roll them up to county/state admin regions.",
+      "example_questions": [
+        "Place SOCKG soil-organic-carbon experiment sites on the national S2 grid (spatialkg) and roll them up to county/state admin regions.",
+        "How many distinct counties host SOCKG soil-organic-carbon experiment sites once their S2 cells are rolled up through the spatialkg admin regions?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sockg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }\n}",
       "skeleton_verified": true
     },
@@ -1336,6 +1512,10 @@
       },
       "hinge_note": "A genuine DIRECT leaf-to-leaf spatial join (most SAWGraph S2 leaves only meet THROUGH the spatialkg hub). Exactly 2 S2 Level-13 cells carry BOTH a sockg soil-organic-carbon experiment Location (USDA REAP sites Location.MNMOONFM in Minnesota and Location.ALAUTVS in Alabama, both rdfs:label 'REAP') and a sawgraph contaminant sample point. The overlap comes from sawgraph's NATIONAL US-WQP (Water Quality Portal) layer, not its Maine PFAS core - so soil-carbon experiment sites co-locate with PFAS water-monitoring samples. In both cells the co-located US-WQP sample was screened for ~22 PFAS analytes and returned non-detect, so this is a PFAS-screening co-location (a clean agricultural site) rather than a contamination hotspot. Small but real: it turns an agronomy KG and a contaminant KG into a soil-management-vs-PFAS-exposure question in the same ~1 km cell. For everything else, both roll up to the national hub via H1/D2.",
       "example_question": "Which USDA soil-organic-carbon (SOCKG) experiment sites sit in the same S2 Level-13 cell as a SAWGraph water-quality sample, and what PFAS analytes were screened there?",
+      "example_questions": [
+        "Which USDA soil-organic-carbon (SOCKG) experiment sites sit in the same S2 Level-13 cell as a SAWGraph water-quality sample, and what PFAS analytes were screened there?",
+        "Which SAWGraph water-quality samples fall in the same S2 Level-13 cell as a USDA SOCKG soil-organic-carbon site, and what soil-carbon treatments run at that site?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sockg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }\n  GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?s <http://www.w3.org/2002/07/owl#sameAs> ?cell . }\n}",
       "skeleton_verified": true
     },
@@ -1354,6 +1534,10 @@
       "verified_count": 62,
       "secondary_admin_levels": "sockg also carries 36 AdministrativeRegion_1 (state) and 2 AdministrativeRegion_0 (country) nodes in the same KWG IRI form; the county level (62) is the most specific shared rollup key.",
       "example_question": "Aggregate SOCKG soil-carbon / GHG-flux measurements to the county (FIPS) level and join them to spatialkg's admin-region hierarchy for state-level summaries.",
+      "example_questions": [
+        "Aggregate SOCKG soil-carbon / GHG-flux measurements to the county (FIPS) level and join them to spatialkg's admin-region hierarchy for state-level summaries.",
+        "Which states hold the most SOCKG soil-carbon experiment counties when the 62 counties are rolled up through the spatialkg admin hierarchy?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?reg) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sockg> { ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_2> . }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_2> . }\n}",
       "skeleton_verified": true
     },
@@ -1372,6 +1556,10 @@
       "verified_count": 16326,
       "verified_count_note": "DISTINCT Entrez gene nodes common to both graphs (of spoke-okn's 16,346 biolink:Gene nodes, 16,326 are present in spoke-genelab). spoke-genelab carries the same Entrez IRIs.",
       "example_question": "GeneLab spaceflight/omics gene observations (spoke-genelab) joined to that gene's network/disease/compound associations in spoke-okn, directly on the shared Entrez gene id.",
+      "example_questions": [
+        "GeneLab spaceflight/omics gene observations (spoke-genelab) joined to that gene's network/disease/compound associations in spoke-okn, directly on the shared Entrez gene id.",
+        "For a spoke-okn disease of interest, which of its associated genes show spaceflight expression changes in spoke-genelab on the shared Entrez id?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?gene a <https://w3id.org/biolink/vocab/Gene> . }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?gene a <https://w3id.org/biolink/vocab/Gene> . }\n}",
       "skeleton_verified": true
     },
@@ -1393,6 +1581,10 @@
         "cas": 496
       },
       "example_question": "Tie a ToxCast chemical (CAS) to spoke-okn gene/pathway/disease associations for the same compound via CHEBI.",
+      "example_questions": [
+        "Tie a ToxCast chemical (CAS) to spoke-okn gene/pathway/disease associations for the same compound via CHEBI.",
+        "Which ToxCast assays cover compounds SPOKE associates with a specific disease such as Parkinson disease, bridged CHEBI->CAS?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?c2) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?cmp <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?chebi . FILTER(STRSTARTS(STR(?chebi),'http://purl.obolibrary.org/obo/CHEBI_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?chebi <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?casCurie . FILTER(STRSTARTS(STR(?casCurie),'cas:')) }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/',SUBSTR(STR(?casCurie),5))) AS ?c2)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-toxcast> { ?t <http://edamontology.org/has_identifier> ?c2 . }\n}",
       "skeleton_verified": true
     },
@@ -1415,6 +1607,10 @@
       },
       "verified_count_note": "DISTINCT CAS reached spoke-okn CHEBI -> ubergraph hasDbXref 'cas:' -> biobricks-ice. Verified 2026-06-18. Larger than the sibling B2 (toxcast, 496) because ICE curates a broader chemical inventory. Extends the CHEBI<->CAS bridge across the full biobricks CAS cluster (ice/tox21/toxcast).",
       "example_question": "Tie an ICE curated-toxicity chemical (CAS) to spoke-okn gene/pathway/disease associations for the same compound via CHEBI.",
+      "example_questions": [
+        "Tie an ICE curated-toxicity chemical (CAS) to spoke-okn gene/pathway/disease associations for the same compound via CHEBI.",
+        "For SPOKE compounds targeting a specific gene, what ICE curated in-vivo toxicity endpoints are available via the CHEBI->CAS bridge?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?c2) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?cmp <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?chebi . FILTER(STRSTARTS(STR(?chebi),'http://purl.obolibrary.org/obo/CHEBI_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?chebi <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?casCurie . FILTER(STRSTARTS(STR(?casCurie),'cas:')) }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/',SUBSTR(STR(?casCurie),5))) AS ?c2)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?t <http://edamontology.org/has_identifier> ?c2 . }\n}",
       "skeleton_verified": true
     },
@@ -1437,6 +1633,10 @@
       },
       "verified_count_note": "DISTINCT CAS reached spoke-okn CHEBI -> ubergraph hasDbXref 'cas:' -> biobricks-tox21 node IRI. Verified 2026-06-18. Joining tox21 via edam:has_identifier (the B2/B3 right pattern) yields 0 - tox21 carries CAS as the subject node IRI, so the bridged ?c2 must be bound in subject position.",
       "example_question": "Tie a Tox21-screened chemical (CAS) to spoke-okn gene/pathway/disease associations for the same compound via CHEBI.",
+      "example_questions": [
+        "Tie a Tox21-screened chemical (CAS) to spoke-okn gene/pathway/disease associations for the same compound via CHEBI.",
+        "How many of SPOKE's disease-associated compounds have Tox21 high-throughput screening data reachable through the CHEBI->CAS bridge?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?c2) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?cmp <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?chebi . FILTER(STRSTARTS(STR(?chebi),'http://purl.obolibrary.org/obo/CHEBI_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?chebi <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?casCurie . FILTER(STRSTARTS(STR(?casCurie),'cas:')) }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/',SUBSTR(STR(?casCurie),5))) AS ?c2)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-tox21> { ?c2 ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -1455,6 +1655,10 @@
       "verified_count": 79,
       "verified_count_note": "DISTINCT DOID diseases shared (of spoke-okn's 180). Pairs with the existing biomarkerkg<->prokn DOID join (A5).",
       "example_question": "Biomarkers for a disease (BiomarkerKB) alongside that disease's spoke-okn gene/compound associations, joined on DOID.",
+      "example_questions": [
+        "Biomarkers for a disease (BiomarkerKB) alongside that disease's spoke-okn gene/compound associations, joined on DOID.",
+        "Do BiomarkerKG's biomarker genes for a disease overlap the genes spoke-okn associates with the same DOID disease, reconciling the two gene sets?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?doid a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?x ?q ?doid . }\n}",
       "skeleton_verified": true
     },
@@ -1477,6 +1681,10 @@
       },
       "hinge_note": "ALL 53 of dreamkg's (Philadelphia) ZIPs are present in spoke-okn. Small because dreamkg is a single-city homelessness-services graph; spoke-okn's national ZIP set fully contains it.",
       "example_question": "For Philadelphia ZIPs, list DREAM-KG homelessness/social services in a ZIP alongside spoke-okn's local context.",
+      "example_questions": [
+        "For Philadelphia ZIPs, list DREAM-KG homelessness/social services in a ZIP alongside spoke-okn's local context.",
+        "How many DREAM-KG social-service providers serve each Philadelphia ZIP, and which ZIPs carry spoke-okn environmental burden yet list no services?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc <http://www.w3.org/2000/01/rdf-schema#label> ?zip . FILTER(REGEX(STR(?loc),'/location/[A-Z]{2}-[0-9]+')) }\n  GRAPH <https://purl.org/okn/frink/kg/dreamkg> { ?b <http://schema.org/postalCode> ?zip . }\n}",
       "skeleton_verified": true
     },
@@ -1495,6 +1703,10 @@
       "verified_count": 20,
       "verified_count_note": "DISTINCT DOID diseases shared (of spoke-okn's 180). nde also joins oard-kg on MONDO (A4); the DOID slice is the spoke-okn-reachable subset.",
       "example_question": "Infectious/immune-mediated disease datasets (NDE) for a disease, with that disease's spoke-okn associations, joined on DOID.",
+      "example_questions": [
+        "Infectious/immune-mediated disease datasets (NDE) for a disease, with that disease's spoke-okn associations, joined on DOID.",
+        "For an NDE infectious-disease dataset (DOID), what candidate compounds does spoke-okn associate with that disease, surfacing repurposing leads?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?doid a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/nde> { ?x <http://schema.org/healthCondition> ?doid . }\n}",
       "skeleton_verified": true
     },
@@ -1513,6 +1725,10 @@
       "verified_count": 54,
       "verified_count_note": "DISTINCT DOID diseases shared between biomarkerkg and nde (nde's schema:healthCondition DOID slice). Verified 2026-06-18.",
       "example_question": "Infectious/immune-mediated disease datasets (NDE) for a disease biomarkerkg also tracks, joined directly on DOID.",
+      "example_questions": [
+        "Infectious/immune-mediated disease datasets (NDE) for a disease biomarkerkg also tracks, joined directly on DOID.",
+        "Which of the 54 shared DOID diseases have both an NIAID dataset in NDE and multiple curated biomarkers in BiomarkerKG, prioritizing data-rich infectious diseases?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/nde> { ?x <http://schema.org/healthCondition> ?doid . }\n}",
       "skeleton_verified": true
     },
@@ -1531,6 +1747,10 @@
       "verified_count": 414,
       "verified_count_note": "DISTINCT GXA diseases (direct MONDO + EFO->MONDO + Orphanet->MONDO bridged) reaching rdkg. Verified 2026-06-18 (was 382 before folding in Orphanet).",
       "example_question": "Rare-disease gene/drug associations (rdkg) for diseases GXA has differential-expression studies on, via the EFO->MONDO bridge.",
+      "example_questions": [
+        "Rare-disease gene/drug associations (rdkg) for diseases GXA has differential-expression studies on, via the EFO->MONDO bridge.",
+        "Which RDKG rare diseases with known drug treatments (MONDO) also have a GXA differential-expression study, via the EFO->MONDO bridge?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  { { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?mondo a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?efo a <https://w3id.org/biolink/vocab/Disease> . FILTER(CONTAINS(STR(?efo),'/efo/EFO_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?efo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?orph a <https://w3id.org/biolink/vocab/Disease> . FILTER(CONTAINS(STR(?orph),'Orphanet_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?orph . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?mondo ?pr ?o . }\n}",
       "skeleton_verified": true,
       "methodology_note": "GXA models the disease studied mostly as EFO (475 biolink:Disease nodes) plus 36 direct MONDO, 52 Orphanet, 13 HP, only 4 DOID, and hundreds of free-text custom IRIs. Reach the MONDO cluster by UNIONing three sources: direct MONDO; EFO->MONDO via ubergraph skos:exactMatch (401/475 map); and Orphanet->MONDO via ubergraph skos:exactMatch (50/52 map). exactMatch and hasDbXref agree, so the mapping is curated/robust, NOT fuzzy label-matching. Verified 2026-06-18."
@@ -1550,6 +1770,10 @@
       "verified_count": 325,
       "verified_count_note": "DISTINCT GXA diseases (direct MONDO + EFO->MONDO + Orphanet->MONDO bridged) reaching nde. Verified 2026-06-18 (was 292 before folding in Orphanet).",
       "example_question": "NIAID infectious/immune-disease datasets (nde) for diseases GXA profiles by differential expression, via the EFO->MONDO bridge.",
+      "example_questions": [
+        "NIAID infectious/immune-disease datasets (nde) for diseases GXA profiles by differential expression, via the EFO->MONDO bridge.",
+        "How many of NDE's NIAID disease datasets (MONDO) have a corresponding GXA differential-expression study, bridged EFO->MONDO?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  { { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?mondo a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?efo a <https://w3id.org/biolink/vocab/Disease> . FILTER(CONTAINS(STR(?efo),'/efo/EFO_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?efo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?orph a <https://w3id.org/biolink/vocab/Disease> . FILTER(CONTAINS(STR(?orph),'Orphanet_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?orph . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/nde> { ?x <http://schema.org/healthCondition> ?mondo . }\n}",
       "skeleton_verified": true,
       "methodology_note": "GXA models the disease studied mostly as EFO (475 biolink:Disease nodes) plus 36 direct MONDO, 52 Orphanet, 13 HP, only 4 DOID, and hundreds of free-text custom IRIs. Reach the MONDO cluster by UNIONing three sources: direct MONDO; EFO->MONDO via ubergraph skos:exactMatch (401/475 map); and Orphanet->MONDO via ubergraph skos:exactMatch (50/52 map). exactMatch and hasDbXref agree, so the mapping is curated/robust, NOT fuzzy label-matching. Verified 2026-06-18."
@@ -1569,6 +1793,10 @@
       "verified_count": 159,
       "verified_count_note": "DISTINCT GXA diseases (direct MONDO + EFO->MONDO + Orphanet->MONDO bridged) reaching oard-kg. Verified 2026-06-18 (was 125 before folding in Orphanet).",
       "example_question": "EHR-derived disease-phenotype associations (OARD) for diseases GXA profiles by differential expression, via the EFO->MONDO bridge.",
+      "example_questions": [
+        "EHR-derived disease-phenotype associations (OARD) for diseases GXA profiles by differential expression, via the EFO->MONDO bridge.",
+        "Which OARD diseases with the strongest EHR phenotype signals (MONDO) also have GXA transcriptomic data, via the EFO->MONDO bridge?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  { { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?mondo a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?efo a <https://w3id.org/biolink/vocab/Disease> . FILTER(CONTAINS(STR(?efo),'/efo/EFO_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?efo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?orph a <https://w3id.org/biolink/vocab/Disease> . FILTER(CONTAINS(STR(?orph),'Orphanet_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?orph . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?x <https://w3id.org/biolink/vocab/object> ?mondo } UNION { ?xs <https://w3id.org/biolink/vocab/subject> ?mondo } }\n}",
       "skeleton_verified": true,
       "methodology_note": "GXA models the disease studied mostly as EFO (475 biolink:Disease nodes) plus 36 direct MONDO, 52 Orphanet, 13 HP, only 4 DOID, and hundreds of free-text custom IRIs. Reach the MONDO cluster by UNIONing three sources: direct MONDO; EFO->MONDO via ubergraph skos:exactMatch (401/475 map); and Orphanet->MONDO via ubergraph skos:exactMatch (50/52 map). exactMatch and hasDbXref agree, so the mapping is curated/robust, NOT fuzzy label-matching. Verified 2026-06-18. oard-kg disease IRIs appear in both biolink:subject and biolink:object; UNION both."
@@ -1588,6 +1816,10 @@
       "verified_count": 54,
       "verified_count_note": "DISTINCT GXA diseases (direct MONDO + EFO->MONDO + Orphanet->MONDO bridged) reaching spoke-okn. Verified 2026-06-18 (was 52 before folding in Orphanet).",
       "example_question": "spoke-okn gene/compound/prevalence associations for diseases GXA profiles by differential expression, bridged EFO->MONDO->DOID.",
+      "example_questions": [
+        "spoke-okn gene/compound/prevalence associations for diseases GXA profiles by differential expression, bridged EFO->MONDO->DOID.",
+        "Do the genes spoke-okn associates with a disease (DOID) overlap GXA's differentially-expressed genes for the same disease, bridged EFO->MONDO->DOID?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  { { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?mondo a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?efo a <https://w3id.org/biolink/vocab/Disease> . FILTER(CONTAINS(STR(?efo),'/efo/EFO_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?efo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?orph a <https://w3id.org/biolink/vocab/Disease> . FILTER(CONTAINS(STR(?orph),'Orphanet_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?orph . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?doid a <https://w3id.org/biolink/vocab/Disease> . }\n}",
       "skeleton_verified": true,
       "methodology_note": "GXA models the disease studied mostly as EFO (475 biolink:Disease nodes) plus 36 direct MONDO, 52 Orphanet, 13 HP, only 4 DOID, and hundreds of free-text custom IRIs. Reach the MONDO cluster by UNIONing three sources: direct MONDO; EFO->MONDO via ubergraph skos:exactMatch (401/475 map); and Orphanet->MONDO via ubergraph skos:exactMatch (50/52 map). exactMatch and hasDbXref agree, so the mapping is curated/robust, NOT fuzzy label-matching. Verified 2026-06-18. spoke-okn keys diseases on DOID, so add a second ubergraph hop MONDO->DOID."
@@ -1607,6 +1839,10 @@
       "verified_count": 13,
       "verified_count_note": "All 13 GXA HP phenotype terms are present in oard-kg's EHR phenotype associations. Verified 2026-06-18.",
       "example_question": "EHR-derived phenotype co-occurrences (OARD) for the phenotypes GXA studies, joined on HP.",
+      "example_questions": [
+        "EHR-derived phenotype co-occurrences (OARD) for the phenotypes GXA studies, joined on HP.",
+        "For a phenotype GXA profiles by expression (HP), which diseases does OARD show it co-occurring with in EHR data?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?hp) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?hp a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?hp),'http://purl.obolibrary.org/obo/HP_')) }\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?x <https://w3id.org/biolink/vocab/object> ?hp } UNION { ?y <https://w3id.org/biolink/vocab/subject> ?hp } }\n}",
       "skeleton_verified": true,
       "methodology_note": "GXA stores 13 HP phenotype terms typed (loosely) as biolink:Disease (obo/HP_ IRIs). These join the phenotype layer directly on HP - no bridge. Small but near-complete (all 13 reach oard-kg; 12 reach prokn)."
@@ -1626,6 +1862,10 @@
       "verified_count": 12,
       "verified_count_note": "12 of GXA's 13 HP phenotype terms are present in prokn (which carries HP via its marker-gene/phenotype evidence, cf. A1). Verified 2026-06-18.",
       "example_question": "ProKN protein/marker-gene evidence for the phenotypes GXA studies, joined on HP.",
+      "example_questions": [
+        "ProKN protein/marker-gene evidence for the phenotypes GXA studies, joined on HP.",
+        "Do ProKN's marker genes for a phenotype (HP) coincide with the genes GXA finds differentially expressed for the same phenotype?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?hp) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?hp a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?hp),'http://purl.obolibrary.org/obo/HP_')) }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?c ?p ?hp . }\n}",
       "skeleton_verified": true,
       "methodology_note": "GXA stores 13 HP phenotype terms typed (loosely) as biolink:Disease (obo/HP_ IRIs). These join the phenotype layer directly on HP - no bridge. Small but near-complete (all 13 reach oard-kg; 12 reach prokn)."
@@ -1645,6 +1885,10 @@
       "verified_count": 40,
       "verified_count_note": "DISTINCT spoke-okn DOID diseases (of 180) that map to a MONDO present in oard-kg; the exactMatch and hasDbXref bridge routes both give 28. Attaches spoke-okn to the disease-cluster hub. (Corrects a prior 40, which no bridge route reproduces.)",
       "example_question": "EHR-derived disease-phenotype associations (OARD, MONDO) for a spoke-okn disease (DOID), bridged through ubergraph.",
+      "example_questions": [
+        "EHR-derived disease-phenotype associations (OARD, MONDO) for a spoke-okn disease (DOID), bridged through ubergraph.",
+        "For an OARD-profiled disease (MONDO), pull spoke-okn's gene and compound associations by bridging MONDO->DOID through ubergraph."
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?doid a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . }\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?x <https://w3id.org/biolink/vocab/object> ?mondo } UNION { ?xs <https://w3id.org/biolink/vocab/subject> ?mondo } }\n}",
       "skeleton_verified": true,
       "methodology_note": "oard-kg disease/phenotype IRIs appear as the object of BOTH biolink:subject and biolink:object (a reified association can carry the entity on either side); the skeleton UNIONs both positions so the join is entity-complete. Joining on one position only undercounts (was 28, now 40)."
@@ -1664,6 +1908,10 @@
       "verified_count": 595,
       "verified_count_note": "DISTINCT biomarkerkg DOID diseases whose ubergraph-equivalent MONDO term is present in rdkg. Verified 2026-06-18. biomarkerkg carries 457 DOID diseases; rdkg is rare-disease-rich, so this is its broadest disease join. Complements biomarkerkg's existing DOID joins to prokn (A5) and spoke-okn (A8); biomarkerkg was previously only a DOID-direct partner.",
       "example_question": "Rare-disease gene/drug associations (rdkg, MONDO) for a biomarkerkg disease (DOID), bridged through ubergraph DOID->MONDO.",
+      "example_questions": [
+        "Rare-disease gene/drug associations (rdkg, MONDO) for a biomarkerkg disease (DOID), bridged through ubergraph DOID->MONDO.",
+        "Do BiomarkerKG's biomarker genes for a disease (DOID) match the disease genes RDKG records for the same MONDO disease, cross-validating markers against rare-disease gene panels?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . }\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?mondo ?pr ?orx . }\n}",
       "skeleton_verified": true
     },
@@ -1682,6 +1930,10 @@
       "verified_count": 247,
       "verified_count_note": "DISTINCT biomarkerkg DOID diseases whose ubergraph-equivalent MONDO term is present in oard-kg. Verified 2026-06-18. Attaches biomarkerkg to the oard-kg MONDO/HP disease-cluster hub.",
       "example_question": "EHR-derived disease-phenotype associations (OARD, MONDO) for a biomarkerkg disease (DOID), bridged through ubergraph.",
+      "example_questions": [
+        "EHR-derived disease-phenotype associations (OARD, MONDO) for a biomarkerkg disease (DOID), bridged through ubergraph.",
+        "How many of BiomarkerKG's DOID diseases also carry OARD EHR phenotype associations, and which biomarkers map to the most clinically-documented diseases?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . }\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?x <https://w3id.org/biolink/vocab/object> ?mondo } UNION { ?xs <https://w3id.org/biolink/vocab/subject> ?mondo } }\n}",
       "skeleton_verified": true,
       "methodology_note": "oard-kg disease IRIs appear as the object of BOTH biolink:subject and biolink:object (a reified association can carry the entity on either side); the skeleton UNIONs both positions so the join is entity-complete."
@@ -1706,6 +1958,10 @@
       },
       "verified_count_note": "DISTINCT oard-kg MONDO diseases that reach a prokn curated up:Disease via the ubergraph MONDO->OMIM hasDbXref bridge to an OMIM skos:exactMatch (11 as of 2026-06-30). The OMIM mirror of the DOID<->MONDO bridges A10/A11. Complementary to A3: 2 of the reached prokn up:Disease nodes are NOT reachable via the direct MONDO route.",
       "example_question": "Cross-reference OARD drug/outcome disease associations (oard-kg, MONDO) with ProKN's OMIM-annotated disease evidence by bridging MONDO to OMIM through ubergraph's cross-references.",
+      "example_questions": [
+        "Cross-reference OARD drug/outcome disease associations (oard-kg, MONDO) with ProKN's OMIM-annotated disease evidence by bridging MONDO to OMIM through ubergraph's cross-references.",
+        "For a Mendelian disease ProKN annotates by OMIM, what EHR drug-outcome associations does OARD record, bridging OMIM->MONDO through ubergraph?"
+      ],
       "drift_note": "prokn v0.0.5 (2026-06-23) migrated its disease cross-references from rdfs:seeAlso to skos:exactMatch. The original seeAlso route returned 0 on 2026-06-30 and was briefly (incorrectly) marked non-repairable; in fact prokn still carries OMIM on skos:exactMatch, so the route was REPAIRED 2026-06-30 by swapping the prokn-side predicate seeAlso->skos:exactMatch. Count dropped 444->11 because prokn kept only 51 OMIM exactMatch ids (down from the larger seeAlso set). Still complementary to A3 (adds 2 prokn diseases the MONDO route misses). PREDICATE FLAP (issue #4, re-verified 2026-07-02): prokn's up:Disease cross-reference predicate is NOT stable across versions — it moved rdfs:seeAlso -> skos:exactMatch at v0.0.5 and has since been observed back on rdfs:seeAlso. The prokn side now matches EITHER predicate via the property-path alternation (rdfs:seeAlso|skos:exactMatch), so the join survives the flap; count unchanged at 11 (live seeAlso=0, so identical to exactMatch-only today).",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?x <https://w3id.org/biolink/vocab/object> ?mondo } UNION { ?xs <https://w3id.org/biolink/vocab/subject> ?mondo } FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?curie . FILTER(STRSTARTS(STR(?curie),'OMIM:')) }\n  BIND(IRI(CONCAT('https://www.omim.org/entry/',REPLACE(STR(?curie),'^OMIM:',''))) AS ?omim)\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?y a <http://purl.uniprot.org/core/Disease> ; (<http://www.w3.org/2000/01/rdf-schema#seeAlso>|<http://www.w3.org/2004/02/skos/core#exactMatch>) ?omim . }\n}",
       "skeleton_verified": true,
@@ -1732,6 +1988,10 @@
       },
       "verified_count_note": "DISTINCT oard-kg MONDO diseases reaching a prokn curated up:Disease via the ubergraph MONDO->Orphanet hasDbXref bridge (316 as of 2026-06-30). Strongly complementary to A3: 278 of the reached prokn up:Disease nodes are NOT reachable via the direct MONDO route — prokn diseases annotated with Orphanet but no usable MONDO xref. Orphanet membership also serves as a rare-disease filter — but as of the 2026-07-01 entities.csv update oard-kg carries a cleaner INTRINSIC rare-disease flag: every one of its 2,297 MONDO disease nodes has oboInOwl:inSubset obo:MONDO_rare (100% coverage — OARD is rare-disease-only by construction). To restrict ANY oard-kg join to rare diseases, add on the oard-kg side: ?mondo <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/MONDO_rare> . This needs no Orphanet bridge and invents no rare-disease threshold. Not a new crosswalk (single-valued intra-graph tag, no external id), just a filter/annotation.",
       "example_question": "Cross-reference OARD disease associations (oard-kg, MONDO) with ProKN's Orphanet-annotated rare-disease protein evidence by bridging MONDO to Orphanet through ubergraph.",
+      "example_questions": [
+        "Cross-reference OARD disease associations (oard-kg, MONDO) with ProKN's Orphanet-annotated rare-disease protein evidence by bridging MONDO to Orphanet through ubergraph.",
+        "How many of ProKN's Orphanet-annotated rare diseases with protein evidence also surface in OARD's EHR association data, via the MONDO<->Orphanet bridge?"
+      ],
       "drift_note": "prokn v0.0.5 (2026-06-23) migrated its disease cross-references from rdfs:seeAlso to skos:exactMatch. The original seeAlso route returned 0 on 2026-06-30 and was briefly (incorrectly) marked non-repairable; in fact prokn still carries Orphanet on skos:exactMatch (2,617 ids on 2026-06-30; ~2,192 as of 2026-07-02), so the route was REPAIRED 2026-06-30 by swapping the prokn-side predicate seeAlso->skos:exactMatch. Count is unchanged at 316 — the Orphanet axis survived the migration intact and remains the largest complementary bridge (+278 prokn diseases beyond A3). PREDICATE FLAP (issue #4, re-verified 2026-07-02): prokn's up:Disease cross-reference predicate is NOT stable across versions — it moved rdfs:seeAlso -> skos:exactMatch at v0.0.5 and has since been observed back on rdfs:seeAlso. The prokn side now matches EITHER predicate via the property-path alternation (rdfs:seeAlso|skos:exactMatch), so the join survives the flap; count unchanged at 316 (live seeAlso=0, so identical to exactMatch-only today).",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?x <https://w3id.org/biolink/vocab/object> ?mondo } UNION { ?xs <https://w3id.org/biolink/vocab/subject> ?mondo } FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?curie . FILTER(STRSTARTS(STR(?curie),'Orphanet:')) }\n  BIND(IRI(CONCAT('http://www.orpha.net/ORDO/Orphanet_',REPLACE(STR(?curie),'^Orphanet:',''))) AS ?orpha)\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?y a <http://purl.uniprot.org/core/Disease> ; (<http://www.w3.org/2000/01/rdf-schema#seeAlso>|<http://www.w3.org/2004/02/skos/core#exactMatch>) ?orpha . }\n}",
       "skeleton_verified": true,
@@ -1754,6 +2014,10 @@
       "verified_on": "2026-07-02",
       "verified_count_note": "DISTINCT DOID diseases shared (of spoke-okn's 180 biolink:Disease nodes).",
       "example_question": "spoke-okn disease associations (genes/compounds/prevalence/mortality) for diseases ProKN also describes, joined on DOID.",
+      "example_questions": [
+        "spoke-okn disease associations (genes/compounds/prevalence/mortality) for diseases ProKN also describes, joined on DOID.",
+        "For a ProKN disease with marker-gene proteins, does spoke-okn associate the same genes with the matching DOID disease, bridged MONDO->DOID?"
+      ],
       "drift_note": "PROKN-SIDE DRIFT (prokn v0.0.5, 2026-06-23): prokn no longer carries DOID (its up:Disease nodes now key on MONDO via skos:exactMatch). The original direct DOID join returns 0 as of 2026-06-30. Repaired 2026-06-30 by routing spoke-okn DOID -> ubergraph skos:exactMatch -> MONDO -> prokn skos:exactMatch MONDO; re-verified 115 (was 96 on 2026-06-27). PREDICATE FLAP (issue #4, re-verified 2026-07-02): prokn's up:Disease cross-reference predicate is NOT stable across versions — it moved rdfs:seeAlso -> skos:exactMatch at v0.0.5 and has since been observed back on rdfs:seeAlso. The prokn side now matches EITHER predicate via the property-path alternation (rdfs:seeAlso|skos:exactMatch), so the join survives the flap; count unchanged at 115 (live seeAlso=0, so identical to exactMatch-only today).",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?doid a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?d (<http://www.w3.org/2000/01/rdf-schema#seeAlso>|<http://www.w3.org/2004/02/skos/core#exactMatch>) ?mondo . }\n}",
       "skeleton_verified": true
@@ -1773,6 +2037,10 @@
       "verified_count": 149,
       "verified_count_note": "DISTINCT spoke-okn DOID diseases whose ubergraph-equivalent MONDO term is present in rdkg (149 of 180) - rdkg is rare-disease-rich, the broadest spoke-okn disease join.",
       "example_question": "Rare-disease gene/drug associations (rdkg, MONDO) for a spoke-okn disease (DOID), bridged through ubergraph DOID->MONDO.",
+      "example_questions": [
+        "Rare-disease gene/drug associations (rdkg, MONDO) for a spoke-okn disease (DOID), bridged through ubergraph DOID->MONDO.",
+        "Do spoke-okn's associated compounds for a disease (DOID) match RDKG's DrugBank treating/contraindicated drugs for the same MONDO disease?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?doid a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . }\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?x ?q ?mondo . }\n}",
       "skeleton_verified": true
     },
@@ -1795,6 +2063,10 @@
       },
       "hinge_note": "ALL 4,938 of ruralkg's ZIPs are present in spoke-okn (full containment). Separately ruralkg carries censusCounty as KWG administrativeRegion.USA.{FIPS}, so it also meets spoke-okn at the county level (see K2) and bridges to the spatialkg hub.",
       "example_question": "Combine spoke-okn ZIP-level context with ruralkg rural health/justice indicators for the same ZIP, and roll up to county via ruralkg's KWG censusCounty.",
+      "example_questions": [
+        "Combine spoke-okn ZIP-level context with ruralkg rural health/justice indicators for the same ZIP, and roll up to county via ruralkg's KWG censusCounty.",
+        "For a rural ZIP flagged by ruralkg's health indicators, what spoke-okn environmental context applies at the same ZIP5?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc <http://www.w3.org/2000/01/rdf-schema#label> ?zip . FILTER(REGEX(STR(?loc),'/location/[A-Z]{2}-[0-9]+')) }\n  GRAPH <https://purl.org/okn/frink/kg/ruralkg> { ?b ?p ?zip . FILTER(CONTAINS(STR(?p),'postalCode')) }\n}",
       "skeleton_verified": true
     },
@@ -1816,6 +2088,10 @@
       },
       "hinge_note": "All 3,196 spoke-okn county nodes are present in ruralkg's censusCounty set; ruralkg's national county coverage fully contains spoke-okn's. ruralkg thus bridges spoke-okn county data to its rural health/justice indicators and (via the shared KWG county form) onward to the spatialkg hub.",
       "example_question": "Join spoke-okn county-level environmental/health rollups with ruralkg rural-resilience (health + justice) indicators for the same county FIPS.",
+      "example_questions": [
+        "Join spoke-okn county-level environmental/health rollups with ruralkg rural-resilience (health + justice) indicators for the same county FIPS.",
+        "Which counties show both weak ruralkg rural-resilience justice indicators and elevated spoke-okn environmental burden at the same county FIPS?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . FILTER(REGEX(STR(?loc),'/location/[0-9]{5}$')) }\n  BIND(REPLACE(STR(?loc),'^.*/location/([0-9]{5})$','$1') AS ?fips)\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/ruralkg> { ?x <http://sail.ua.edu/ruralkg/settlementtype/censusCounty> ?reg . }\n}",
       "skeleton_verified": true
     },
@@ -1838,6 +2114,10 @@
       },
       "hinge_note": "31 of sockg's ~62 soil-carbon experiment counties coincide with spoke-okn counties. Small but real; lets soil-organic-carbon / GHG-flux county context (sockg) meet spoke-okn's environmental-health county data on the same KWG county key both share with the hub.",
       "example_question": "For counties with SOCKG soil-carbon experiment sites, pull spoke-okn's county-level environmental/health context.",
+      "example_questions": [
+        "For counties with SOCKG soil-carbon experiment sites, pull spoke-okn's county-level environmental/health context.",
+        "How many of the 31 SOCKG soil-carbon counties also register elevated spoke-okn environmental indicators at the matching FIPS?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . FILTER(REGEX(STR(?loc),'/location/[0-9]{5}$')) }\n  BIND(REPLACE(STR(?loc),'^.*/location/([0-9]{5})$','$1') AS ?fips)\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/sockg> { ?reg ?q ?r . }\n}",
       "skeleton_verified": true
     },
@@ -1860,6 +2140,10 @@
       },
       "hinge_note": "18 states are common to spoke-okn and sockg's multi-state soil-carbon footprint. State-level coincidence key between the two.",
       "example_question": "Compare spoke-okn state-level environmental/health summaries with the states where SOCKG runs soil-carbon experiments.",
+      "example_questions": [
+        "Compare spoke-okn state-level environmental/health summaries with the states where SOCKG runs soil-carbon experiments.",
+        "Which of the 18 states running SOCKG soil-carbon experiments rank highest on spoke-okn's state-level environmental summaries?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . FILTER(REGEX(STR(?loc),'/location/[0-9]{2}$')) }\n  BIND(REPLACE(STR(?loc),'^.*/location/([0-9]{2})$','$1') AS ?fips)\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/sockg> { ?reg ?q ?r . }\n}",
       "skeleton_verified": true
     },
@@ -1881,6 +2165,10 @@
       },
       "hinge_note": "THIS IS spoke-okn's attachment to the SAWGraph spatial hub. (It supersedes the earlier 'spoke-okn does not attach to spatialkg' non-join, which was assessed only at the ZIP/ZipCodeArea level: spoke-okn has no KWG zip node and no S2 cell, but it DOES carry county FIPS in its node IRIs.) 3,122 of spoke-okn's 3,196 county nodes match a spatialkg county (spatialkg covers the 48 contiguous states + DC; the ~74 unmatched are AK/HI/PR/territory counties spatialkg does not load). Via this key spoke-okn rolls up to spatialkg's S2 grid and AdministrativeRegion hierarchy.",
       "example_question": "Aggregate spoke-okn ZIP-level environmental/health data to the county, then place those counties on the spatialkg S2 grid / admin-region hierarchy and pull neighboring counties or state rollups.",
+      "example_questions": [
+        "Aggregate spoke-okn ZIP-level environmental/health data to the county, then place those counties on the spatialkg S2 grid / admin-region hierarchy and pull neighboring counties or state rollups.",
+        "For a given county, which neighboring counties on the spatialkg admin hierarchy carry a similar spoke-okn environmental/health profile?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  { SELECT DISTINCT ?fips WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . FILTER(REGEX(STR(?loc),'/location/[0-9]{5}$')) } BIND(REPLACE(STR(?loc),'^.*/location/([0-9]{5})$','$1') AS ?fips) } }\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg a ?t . }\n}",
       "skeleton_verified": true
     },
@@ -1902,6 +2190,10 @@
       },
       "hinge_note": "51 of spoke-okn's 52 state nodes (50 states + DC; spoke-okn additionally carries PR/territory) match spatialkg states. Coarse but complete state-level rollup key. Note spoke-okn ALSO carries a 2-letter postal state code (schema:state, e.g. 'FL') on its ZIP nodes; the 2-digit FIPS node IRI is the cleaner key for joining the KWG stack.",
       "example_question": "Roll spoke-okn data up to the state and join state-level summaries to the spatialkg admin-region hierarchy.",
+      "example_questions": [
+        "Roll spoke-okn data up to the state and join state-level summaries to the spatialkg admin-region hierarchy.",
+        "Which states, aligned to the 51 spatialkg AdministrativeRegion_1 regions, show the widest spoke-okn county-to-county spread in environmental/health indicators?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . FILTER(REGEX(STR(?loc),'/location/[0-9]{2}$')) }\n  BIND(REPLACE(STR(?loc),'^.*/location/([0-9]{2})$','$1') AS ?fips)\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_1> . }\n}",
       "skeleton_verified": true
     },
@@ -1924,6 +2216,10 @@
       },
       "hinge_note": "Joins on ZIP literals, not company/location IRIs. 12,329 of sudokn's ~12,914 U.S. ZIPs coincide with a spoke-okn ZIP (spoke-okn is a near-complete national ZIP reference, so the join is bounded by sudokn's coverage).",
       "example_question": "For a ZIP, list the SUDOKN small/medium manufacturers there (NAICS, capabilities, certificates) alongside spoke-okn's local environmental/health context.",
+      "example_questions": [
+        "For a ZIP, list the SUDOKN small/medium manufacturers there (NAICS, capabilities, certificates) alongside spoke-okn's local environmental/health context.",
+        "Which ZIPs concentrate SUDOKN metal-finishing manufacturers, and what spoke-okn environmental burden do those same ZIP5s carry?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc <http://www.w3.org/2000/01/rdf-schema#label> ?zip . FILTER(REGEX(STR(?loc),'/location/[A-Z]{2}-[0-9]+')) }\n  GRAPH <https://purl.org/okn/frink/kg/sudokn> { ?b <http://asu.edu/semantics/SUDOKN/hasZipcodeValue> ?zip . }\n}",
       "skeleton_verified": true
     },
@@ -1942,6 +2238,10 @@
       "verified_count": 212,
       "verified_against_parent": "http://purl.obolibrary.org/obo/MONDO_0004995 (cardiovascular disease)",
       "example_question": "All cardiovascular-disease subtypes (not just the parent term) present in OARD with their phenotypes.",
+      "example_questions": [
+        "All cardiovascular-disease subtypes (not just the parent term) present in OARD with their phenotypes.",
+        "Expand a MONDO parent like neoplasm via subClassOf* and count how many of its subtypes actually appear in OARD's association data."
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?disease) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?disease <http://www.w3.org/2000/01/rdf-schema#subClassOf>* <http://purl.obolibrary.org/obo/MONDO_0004995> . }\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?x <https://w3id.org/biolink/vocab/subject> ?disease } UNION { ?xo <https://w3id.org/biolink/vocab/object> ?disease } }\n}",
       "skeleton_verified": true,
       "methodology_note": "oard-kg disease/phenotype IRIs appear as the object of BOTH biolink:subject and biolink:object (a reified association can carry the entity on either side); the skeleton UNIONs both positions so the join is entity-complete. Previously subject-only (was 209, now 212)."
@@ -1972,6 +2272,10 @@
       "verified_count_note": "EXACT full level-13 join, re-derived via skeleton_query over all ufokn s2Level13 PropertyValue nodes (no sampling). Supersedes the prior 7,670 figure, which was an explicit LOWER BOUND from a 20,000-node sample; that sample showed 100% spatialkg containment, now confirmed across all 97,087 distinct level-13 cells. The full COUNT needs ~4 min, beyond a 90s tool call, so scope/paginate when querying interactively.",
       "hinge_note": "ufokn's primary - and so far only confirmed - attachment to the SAWGraph spatial hub, making it a FIFTH S2 Level-13 leaf on spatialkg alongside sawgraph (Maine PFAS, 88,007; D2), hydrologykg (Illinois wells/streams, 106,138; D1), sockg (multi-state soil carbon, 1,069; H1) and fiokg (national EPA FRS facilities, 681,045; N1). Because ufokn's coverage is the continental US, it co-occupies cells with the national leaf fiokg broadly and with the Maine/Illinois leaves within those states; like the other leaves it meets them through the hub (D1/H1 pattern), and a direct leaf-to-leaf join was NOT separately verified here (regional sampling makes a leaf-to-leaf count unreliable - assert it only via the hub). Via this key every ufokn Risk-Point / built-environment feature rolls up to spatialkg's S2 grid and AdministrativeRegion hierarchy and meets the other S2 leaves in any shared cell. ufokn ALSO carries finer S2 LEVEL-18 cells (schema:name 's2Level18'); spatialkg's grid is level-13, so level-18 cells do not attach to the hub directly (they nest inside the matched level-13 parent).",
       "example_question": "Place urban-flooding Risk-Points and built-environment features (ufokn) on the national S2 Level-13 grid (spatialkg), roll them up to county/state admin regions, and find which flood risk cells also contain EPA FRS facilities (fiokg), PFAS samples (sawgraph) or hydrologic features (hydrologykg).",
+      "example_questions": [
+        "Place urban-flooding Risk-Points and built-environment features (ufokn) on the national S2 Level-13 grid (spatialkg), roll them up to county/state admin regions, and find which flood risk cells also contain EPA FRS facilities (fiokg), PFAS samples (sawgraph) or hydrologic features (hydrologykg).",
+        "Which counties accumulate the most ufokn flood Risk-Points once their S2 Level-13 cells are rolled up through the spatialkg admin regions?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {\n  { SELECT DISTINCT ?cell WHERE {\n    GRAPH <https://purl.org/okn/frink/kg/ufokn> {\n      ?bn ?pn \"s2Level13\" .\n      ?bn ?pv ?s2id .\n      FILTER(CONTAINS(STR(?pv),'schema.org/value'))\n    }\n    BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.',STR(?s2id))) AS ?cell)\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }\n}",
       "skeleton_verified": true
     },
@@ -1999,6 +2303,10 @@
       },
       "verified_count_note": "SAMPLED LOWER BOUND (>=2,461 shared S2 L13 cells; full national count infeasible within tool limits). 58% of sampled flood cells contain an fiokg EPA facility. Verified 2026-06-19.",
       "example_question": "Which urban flood-risk cells (ufokn) contain EPA-regulated facilities (fiokg)? - flood exposure of regulated sites, co-located in the same S2 Level-13 cell.",
+      "example_questions": [
+        "Which urban flood-risk cells (ufokn) contain EPA-regulated facilities (fiokg)? - flood exposure of regulated sites, co-located in the same S2 Level-13 cell.",
+        "How many EPA-regulated facilities (fiokg) sit inside a ufokn flood-risk S2 cell, and which facility types are the most flood-exposed?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?sampleCells) (COUNT(DISTINCT ?shared) AS ?inFiokg) WHERE {\n  { SELECT ?cell WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/ufokn> { ?bn ?pn \"s2Level13\" . ?bn ?pv ?s2id . FILTER(CONTAINS(STR(?pv),'schema.org/value')) }\n      BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.',STR(?s2id))) AS ?cell)\n  } LIMIT 5000 }\n  OPTIONAL { GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?cell } BIND(?cell AS ?shared) }\n}",
       "skeleton_verified": true,
       "methodology_note": "DIRECT leaf-to-leaf S2 co-location: ufokn flood features and fiokg EPA facilities sharing the same S2 Level-13 cell (both are S2 leaves on spatialkg - ufokn O1, fiokg N1 - and share the s2.level13.{id} IRI form directly, so no spatialkg bridge is needed to meet in a cell). SAMPLED LOWER BOUND verified 2026-06-19: in the first 5,000 ufokn s2Level13 feature nodes (4,267 distinct L13 cells), 2,461 cells (58%) also contain an fiokg facility. The EXACT national count is infeasible within the 90s tool limit (ufokn carries 11.7M S2 property nodes / 97,087 distinct L13 cells; a full distinct-scan join exceeds the limit and the registry otherwise asserts leaf-to-leaf via the hub). The 58% co-location rate is high because ufokn covers dense urban areas where EPA-regulated facilities are common. NOTE: ufokn has no alternative join key - its Place names are generic geohash labels (\"building flooded {geohash}\"), its identifiers are ufokn-internal (ufokn.org/id/urmi/{geohash}), and it carries no county/ZIP/NHD/NWIS id - so S2 is its only attachment; ufokn<->hydrologykg (IL) and ufokn<->sawgraph (ME) are possible where coverage overlaps but were not separately verified (regional sampling unreliable) - assert via the hub.",
@@ -2019,6 +2327,10 @@
       "verified_count": 43,
       "verified_count_note": "Exact COUNT(DISTINCT) on 2026-06-14. rdkg 2,074 Drug nodes INTERSECT spoke-okn 175 hasDbXref drugbank = 43. Links rdkg's drug<->disease knowledge (contraindications/indications) to spoke-okn's chemical layer.",
       "example_question": "For drugs SPOKE tracks as chemicals, what disease contraindications or associations does rdkg record?",
+      "example_questions": [
+        "For drugs SPOKE tracks as chemicals, what disease contraindications or associations does rdkg record?",
+        "For an rdkg drug-disease association, which genes and pathways does SPOKE link the same DrugBank drug to?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?db) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?db a <https://w3id.org/biolink/vocab/Drug> . FILTER(STRSTARTS(STR(?db),'http://identifiers.org/drugbank/')) }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?c <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?db . }\n}",
       "skeleton_verified": true
     },
@@ -2037,6 +2349,10 @@
       "verified_count": 2,
       "verified_count_note": "Exact COUNT(DISTINCT) on 2026-06-14. ruralkg has only 7 DrugBank-linked drugs (thin thread); 2 join rdkg, 0 join spoke-okn.",
       "example_question": "Do the substance-use treatment drugs in ruralkg appear in rdkg's drug-disease graph?",
+      "example_questions": [
+        "Do the substance-use treatment drugs in ruralkg appear in rdkg's drug-disease graph?",
+        "Which two DrugBank substance-use treatment drugs from ruralkg appear in rdkg, and what diseases does rdkg attach to them?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?db) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/ruralkg> { ?s <http://www.w3.org/2002/07/owl#sameAs> ?o . FILTER(CONTAINS(STR(?o),'drugbank'))\n    BIND(IRI(CONCAT('http://identifiers.org/drugbank/',REPLACE(STR(?o),'^.*/(DB[0-9]+).*$','$1'))) AS ?db) }\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?db a <https://w3id.org/biolink/vocab/Drug> . }\n}",
       "skeleton_verified": true
     },
@@ -2060,6 +2376,10 @@
       },
       "hinge_note": "SUDOKN's first DIRECT live attachment to the spatialkg admin hierarchy (previously it reached geography only via spoke-okn ZIP5, cluster J). 42,606 of ~46,800 located sites (25,887 distinct companies) match 51 state regions (50 states + DC/PR). State-level only; for county/S2 grain use the COMPUTED crosswalk SU2 (s2_bridge).",
       "example_question": "Roll SUDOKN manufacturers up to the state and join state-level summaries (counts by NAICS, capability, certificate) to the spatialkg admin hierarchy or any state_FIPS-keyed member (spoke-okn, geoconnex, sockg). E.g. SUDOKN electroplaters (NAICS 332813) per state vs EPA-regulated facilities.",
+      "example_questions": [
+        "Roll SUDOKN manufacturers up to the state and join state-level summaries (counts by NAICS, capability, certificate) to the spatialkg admin hierarchy or any state_FIPS-keyed member (spoke-okn, geoconnex, sockg). E.g. SUDOKN electroplaters (NAICS 332813) per state vs EPA-regulated facilities.",
+        "Which states host the largest SUDOKN aerospace/metal-parts manufacturing base by NAICS when aligned to the spatialkg state admin regions?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sudokn> {\n    ?g a <http://asu.edu/semantics/SUDOKN/GeospatialSite> ; <http://asu.edu/semantics/SUDOKN/locatedInState>/<http://www.w3.org/2000/01/rdf-schema#label> ?state .\n  }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> {\n    ?r a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_1> ; <http://www.w3.org/2000/01/rdf-schema#label> ?state ; <http://stko-kwg.geog.ucsb.edu/lod/ontology/hasFIPS> ?fips .\n  }\n}",
       "skeleton_verified": true
     },
@@ -2080,6 +2400,10 @@
       "verified_count": 42560,
       "hinge_note": "COMPUTED crosswalk (no stored shared key): the S2 cell is derived from lat/long at query time by the s2_bridge tools, not stored in OKN. Reaches county/S2 grain where SU1 only reaches state. verified_count is the full measured placement — 42,560 of 46,146 coordinate-bearing SUDOKN sites land on a spatialkg S2 Level-13 cell (~92%; unplaced ~3,600 are AK/HI/PR/foreign/invalid coords outside spatialkg's 48-contiguous + DC S2 coverage). Once placed, SUDOKN co-locates with any other S2 leaf (fiokg facilities, sawgraph PFAS samples) in shared cells. Scope by NAICS/state to keep the injected VALUES set small (s2_bridge MAX_POINTS guard); a scoped query returns the subset matching its filter.",
       "example_question": "Place SUDOKN manufacturers of a NAICS on the S2 grid (computed) and find which cells also contain a sawgraph PFAS sample or an EPA facility (fiokg), with the county each sits in. E.g. SUDOKN electroplaters (332813) sharing a cell with a PFAS sample.",
+      "example_questions": [
+        "Place SUDOKN manufacturers of a NAICS on the S2 grid (computed) and find which cells also contain a sawgraph PFAS sample or an EPA facility (fiokg), with the county each sits in. E.g. SUDOKN electroplaters (332813) sharing a cell with a PFAS sample.",
+        "Aggregate computed-S2 SUDOKN manufacturer locations up to the county via spatialkg admin regions to rank counties by manufacturer density for a given NAICS."
+      ],
       "verified_count_secondary": {
         "sudokn_sites_with_coords": 46146,
         "sudokn_sites_placed_on_s2": 42560,
@@ -2102,6 +2426,10 @@
       "verified_count": 9122,
       "verified_count_note": "DISTINCT UMLS CUIs that are (a) a biohealth node, (b) the UMLS hasDbXref of a MONDO term in ubergraph, and (c) that MONDO term is referenced in rdkg. Exact COUNT(DISTINCT) on 2026-06-23. The ubergraph UMLS->MONDO bridge alone maps 10,087 MONDO terms to biohealth CUIs; rdkg (rare-disease-rich) consumes 9,122 of them — the broadest biohealth disease join.",
       "example_question": "For a disease biohealth describes (UMLS CUI, with its SDoH and clinical associations), what rare-disease gene/drug associations does rdkg record (MONDO), bridged through ubergraph UMLS->MONDO?",
+      "example_questions": [
+        "For a disease biohealth describes (UMLS CUI, with its SDoH and clinical associations), what rare-disease gene/drug associations does rdkg record (MONDO), bridged through ubergraph UMLS->MONDO?",
+        "For a rare disease RDKG has drug associations for (MONDO), what SDoH and clinical associations does biohealth attach via its UMLS CUI, bridged MONDO->UMLS?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {\n    ?mondo <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n    FILTER(STRSTARTS(STR(?mondo), 'http://purl.obolibrary.org/obo/MONDO_'))\n    FILTER(STRSTARTS(STR(?x), 'UMLS:'))\n    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)\n  }\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?mondo ?p ?o . }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
       "skeleton_verified": true,
       "methodology_note": "biohealth (~110M triples) is too large to scan unbounded; drive the join from the bounded ubergraph bridge set (UMLS-xref'd MONDO terms) and point-check each rebuilt CUI IRI in biohealth. ubergraph hasDbXref carries UMLS on MONDO (10,087 biohealth CUIs), HP (4,828) and UBERON (2,148); DOID is NOT UMLS-xref'd, so DOID-keyed KGs need a second MONDO skos:exactMatch DOID hop (see BH3)."
@@ -2121,6 +2449,10 @@
       "verified_count": 4340,
       "verified_count_note": "DISTINCT UMLS CUIs that are (a) a biohealth node, (b) the UMLS hasDbXref of an HP term in ubergraph, and (c) that HP term is referenced in prokn. Exact COUNT(DISTINCT), re-verified 2026-06-26 (was 4,284 on 2026-06-23; +56 as prokn's HP coverage grew). The ubergraph UMLS->HP bridge maps 4,828 HP terms to biohealth CUIs; prokn consumes 4,340 of them.",
       "example_question": "For a phenotype biohealth tracks (UMLS CUI), what protein / marker-gene evidence does prokn attach (HP), bridged through ubergraph UMLS->HP?",
+      "example_questions": [
+        "For a phenotype biohealth tracks (UMLS CUI), what protein / marker-gene evidence does prokn attach (HP), bridged through ubergraph UMLS->HP?",
+        "How many of ProKN's HP phenotypes with marker-gene evidence map to a biohealth UMLS concept, and which of those carry SDoH context?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {\n    ?hp <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n    FILTER(STRSTARTS(STR(?hp), 'http://purl.obolibrary.org/obo/HP_'))\n    FILTER(STRSTARTS(STR(?x), 'UMLS:'))\n    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)\n  }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?s ?p ?hp . }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
       "skeleton_verified": true
     },
@@ -2139,6 +2471,10 @@
       "verified_count": 173,
       "verified_count_note": "DISTINCT biohealth UMLS CUIs reaching a spoke-okn DOID disease via the ubergraph UMLS->MONDO->DOID two-hop bridge (173 of spoke-okn's ~180 biolink:Disease nodes — near-complete coverage). Exact COUNT(DISTINCT) on 2026-06-23.",
       "example_question": "For a disease biohealth describes (UMLS CUI), pull its spoke-okn gene / compound / prevalence associations (DOID), bridged through ubergraph UMLS->MONDO->DOID.",
+      "example_questions": [
+        "For a disease biohealth describes (UMLS CUI), pull its spoke-okn gene / compound / prevalence associations (DOID), bridged through ubergraph UMLS->MONDO->DOID.",
+        "For a spoke-okn disease with prevalence/mortality data (DOID), what social-determinant associations does biohealth carry, bridged DOID->MONDO->UMLS?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {\n    ?mondo <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n    FILTER(STRSTARTS(STR(?mondo), 'http://purl.obolibrary.org/obo/MONDO_'))\n    FILTER(STRSTARTS(STR(?x), 'UMLS:'))\n    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)\n    ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid .\n    FILTER(STRSTARTS(STR(?doid), 'http://purl.obolibrary.org/obo/DOID_'))\n  }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?doid a <https://w3id.org/biolink/vocab/Disease> . }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
       "skeleton_verified": true,
       "complementary_note": "spoke-okn also exposes diseases as DOID via the direct DOID carriers (A7-A9) and MONDO via A10/A11; BH3 is the biohealth-specific entry point, reaching spoke-okn diseases from the UMLS-keyed side. The same biohealth UMLS->MONDO bridge (BH1) reaches every other MONDO/HP-keyed disease/phenotype KG (oard-kg, nde, biomarkerkg via the MONDO<->DOID hop)."
@@ -2158,6 +2494,10 @@
       "verified_count": 1796,
       "verified_count_note": "DISTINCT UMLS CUIs that are a biohealth node AND the UMLS hasDbXref of a MONDO term used as an oard-kg disease (biolink:object OR biolink:subject). Exact COUNT(DISTINCT) on 2026-06-23. oard-kg is the federation's MONDO/HP disease-phenotype hub, so this is biohealth's richest disease attachment after rdkg.",
       "example_question": "For a disease biohealth describes (UMLS CUI, with SDoH + clinical context), what real-world EHR phenotype co-occurrences does OARD record (MONDO), bridged through ubergraph UMLS->MONDO?",
+      "example_questions": [
+        "For a disease biohealth describes (UMLS CUI, with SDoH + clinical context), what real-world EHR phenotype co-occurrences does OARD record (MONDO), bridged through ubergraph UMLS->MONDO?",
+        "For type 2 diabetes present in both graphs, contrast biohealth's SDoH determinants against OARD's EHR-derived phenotype co-occurrences for the same MONDO disease."
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {\n    ?mondo <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n    FILTER(STRSTARTS(STR(?mondo), 'http://purl.obolibrary.org/obo/MONDO_'))\n    FILTER(STRSTARTS(STR(?x), 'UMLS:'))\n    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)\n  }\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?z <https://w3id.org/biolink/vocab/object> ?mondo } UNION { ?z2 <https://w3id.org/biolink/vocab/subject> ?mondo } }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
       "skeleton_verified": true,
       "complementary_note": "oard-kg attaches to biohealth on BOTH axes: MONDO disease (this entry, 1,796) and HP phenotype (BH5, 4,549). UNION both for full oard-kg<->biohealth coverage."
@@ -2177,6 +2517,10 @@
       "verified_count": 4549,
       "verified_count_note": "DISTINCT UMLS CUIs that are a biohealth node AND the UMLS hasDbXref of an HP term used as an oard-kg phenotype (biolink:object OR biolink:subject). Exact COUNT(DISTINCT) on 2026-06-23 — biohealth's single largest phenotype attachment (oard-kg is the EHR phenotype hub).",
       "example_question": "For a phenotype biohealth tracks (UMLS CUI), what EHR-derived disease co-occurrences does OARD record (HP), bridged through ubergraph UMLS->HP?",
+      "example_questions": [
+        "For a phenotype biohealth tracks (UMLS CUI), what EHR-derived disease co-occurrences does OARD record (HP), bridged through ubergraph UMLS->HP?",
+        "Which HP phenotypes with the most OARD EHR disease co-occurrences also carry biohealth SDoH context, via the UMLS->HP bridge?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  { SELECT DISTINCT ?hp WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?z <https://w3id.org/biolink/vocab/object> ?hp } UNION { ?z2 <https://w3id.org/biolink/vocab/subject> ?hp } FILTER(STRSTARTS(STR(?hp), 'http://purl.obolibrary.org/obo/HP_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {\n    ?hp <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n    FILTER(STRSTARTS(STR(?x), 'UMLS:'))\n    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)\n  }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
       "skeleton_verified": true,
       "complementary_note": "Phenotype companion to BH4 (oard-kg MONDO disease). Together: the full oard-kg<->biohealth attachment."
@@ -2196,6 +2540,10 @@
       "verified_count": 2760,
       "verified_count_note": "DISTINCT UMLS CUIs that are a biohealth node AND the UMLS hasDbXref of a MONDO term used on nde schema:healthCondition. Exact COUNT(DISTINCT) on 2026-06-23.",
       "example_question": "For a disease biohealth describes (UMLS CUI), what NIAID infectious/immune-disease datasets exist (nde, MONDO), bridged through ubergraph UMLS->MONDO?",
+      "example_questions": [
+        "For a disease biohealth describes (UMLS CUI), what NIAID infectious/immune-disease datasets exist (nde, MONDO), bridged through ubergraph UMLS->MONDO?",
+        "For an NIAID dataset disease in NDE (MONDO), what SDoH and clinical associations does biohealth attach, bridged MONDO->UMLS?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  { SELECT DISTINCT ?mondo WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/nde> { ?s <http://schema.org/healthCondition> ?mondo . FILTER(STRSTARTS(STR(?mondo), 'http://purl.obolibrary.org/obo/MONDO_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {\n    ?mondo <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n    FILTER(STRSTARTS(STR(?x), 'UMLS:'))\n    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)\n  }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
       "skeleton_verified": true
     },
@@ -2214,6 +2562,10 @@
       "verified_count": 620,
       "verified_count_note": "DISTINCT biohealth UMLS CUIs reaching a biomarkerkg DOID disease via the ubergraph UMLS->MONDO->DOID two-hop bridge. Exact COUNT(DISTINCT) on 2026-06-23.",
       "example_question": "For a disease biohealth describes (UMLS CUI), what literature-curated biomarkers does BiomarkerKG record (DOID), bridged through ubergraph UMLS->MONDO->DOID?",
+      "example_questions": [
+        "For a disease biohealth describes (UMLS CUI), what literature-curated biomarkers does BiomarkerKG record (DOID), bridged through ubergraph UMLS->MONDO->DOID?",
+        "Which BiomarkerKG diseases with curated biomarkers (DOID) also appear in biohealth with SDoH context, bridged DOID->MONDO->UMLS?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  { SELECT DISTINCT ?doid WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid), 'http://purl.obolibrary.org/obo/DOID_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {\n    ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid .\n    ?mondo <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n    FILTER(STRSTARTS(STR(?x), 'UMLS:'))\n    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)\n  }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
       "skeleton_verified": true
     },
@@ -2232,6 +2584,10 @@
       "verified_count": 13,
       "verified_count_note": "DISTINCT UMLS CUIs that are a biohealth node AND the UMLS hasDbXref of an HP term GXA carries as a biolink:Disease node. Exact COUNT(DISTINCT) on 2026-06-23. Small — GXA carries few HP-typed nodes (cf. A24 gxa<->prokn HP = 12).",
       "example_question": "For a phenotype biohealth tracks (UMLS CUI), is there a GXA differential-expression study on it (HP), bridged through ubergraph UMLS->HP?",
+      "example_questions": [
+        "For a phenotype biohealth tracks (UMLS CUI), is there a GXA differential-expression study on it (HP), bridged through ubergraph UMLS->HP?",
+        "Which of GXA's HP-typed differential-expression studies correspond to phenotypes biohealth tracks with SDoH context, via the UMLS->HP bridge?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  { SELECT DISTINCT ?hp WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?hp a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?hp), 'http://purl.obolibrary.org/obo/HP_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {\n    ?hp <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n    FILTER(STRSTARTS(STR(?x), 'UMLS:'))\n    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)\n  }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
       "skeleton_verified": true
     },
@@ -2250,6 +2606,10 @@
       "verified_count": 249,
       "verified_count_note": "DISTINCT UMLS CUIs that are a biohealth node AND the UMLS hasDbXref of a UBERON term GXA uses (of GXA's 362 distinct UBERON tissue terms, 249 reach biohealth). Exact COUNT(DISTINCT) on 2026-06-23. This is the largest verified instance of biohealth's UBERON anatomy axis.",
       "example_question": "For a tissue/organ GXA profiles expression in (UBERON), what does biohealth know about that anatomical entity (UMLS CUI) and its disease/SDoH associations, bridged through ubergraph UMLS->UBERON?",
+      "example_questions": [
+        "For a tissue/organ GXA profiles expression in (UBERON), what does biohealth know about that anatomical entity (UMLS CUI) and its disease/SDoH associations, bridged through ubergraph UMLS->UBERON?",
+        "Across anatomical entities biohealth ties to a disease or social-determinant burden (UMLS CUI), how many map through ubergraph to a UBERON tissue that GXA actually profiles expression for?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  { SELECT DISTINCT ?t WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?s <https://w3id.org/biolink/vocab/has_attribute> ?t . FILTER(STRSTARTS(STR(?t), 'http://purl.obolibrary.org/obo/UBERON_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {\n    ?t <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n    FILTER(STRSTARTS(STR(?x), 'UMLS:'))\n    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)\n  }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
       "skeleton_verified": true,
       "methodology_note": "Closes the previously-open biohealth UBERON anatomy axis. biohealth's UMLS bridge has 2,148 UBERON CUIs available; a partner KG must store raw obo/UBERON_ terms to consume them — GXA (has_attribute) and spoke-genelab (INVESTIGATED_ASiA) do; spoke-okn does NOT (0 raw UBERON subjects/objects)."
@@ -2269,6 +2629,10 @@
       "verified_count": 35,
       "verified_count_note": "DISTINCT UMLS CUIs that are a biohealth node AND the UMLS hasDbXref of a UBERON term spoke-genelab assayed (35 of spoke-genelab's 42 anatomy terms). Exact COUNT(DISTINCT) on 2026-06-23.",
       "example_question": "For a tissue/organ a NASA GeneLab spaceflight assay examined (spoke-genelab Anatomy, UBERON), what does biohealth know about that anatomical entity (UMLS CUI), bridged through ubergraph UMLS->UBERON?",
+      "example_questions": [
+        "For a tissue/organ a NASA GeneLab spaceflight assay examined (spoke-genelab Anatomy, UBERON), what does biohealth know about that anatomical entity (UMLS CUI), bridged through ubergraph UMLS->UBERON?",
+        "Of the 35 anatomical entities biohealth characterizes (UMLS CUI), which were targeted by NASA GeneLab spaceflight assays (spoke-genelab UBERON), and does biohealth flag any of those tissues with disease/SDoH risk relevant to astronaut health?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  { SELECT DISTINCT ?t WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?s <https://purl.org/okn/frink/kg/spoke-genelab/schema/INVESTIGATED_ASiA> ?t } } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {\n    ?t <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n    FILTER(STRSTARTS(STR(?x), 'UMLS:'))\n    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)\n  }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
       "skeleton_verified": true,
       "complementary_note": "biohealth's UBERON anatomy axis also reaches GXA (BH9, 249). spoke-genelab additionally carries 7 Cell Ontology (CL) cell-type terms (INVESTIGATED_ASiCT) — but biohealth carries NO CL concepts (UMLS->CL via ubergraph = 0), so CL is not a biohealth axis."
@@ -2402,6 +2766,10 @@
       "verified_count": 27,
       "verified_count_note": "DISTINCT UBERON anatomy terms shared by spoke-genelab (42 total) and GXA (362 total) — 27 of spoke-genelab's 42 also appear in GXA. Exact COUNT(DISTINCT) on 2026-06-23. A small DIRECT anatomy cluster linking spaceflight-assay tissue (spoke-genelab) to terrestrial expression tissue (GXA).",
       "example_question": "For an anatomical entity assayed in NASA GeneLab spaceflight studies (spoke-genelab Anatomy, UBERON), what terrestrial differential-expression data does GXA hold for the same tissue?",
+      "example_questions": [
+        "For an anatomical entity assayed in NASA GeneLab spaceflight studies (spoke-genelab Anatomy, UBERON), what terrestrial differential-expression data does GXA hold for the same tissue?",
+        "For a tissue GXA holds terrestrial differential-expression data on (UBERON), was that same anatomical entity ever assayed in a NASA GeneLab spaceflight study, enabling a microgravity-vs-ground expression comparison?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?t) AS ?n) WHERE {\n  { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?s <https://purl.org/okn/frink/kg/spoke-genelab/schema/INVESTIGATED_ASiA> ?t } } }\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?s2 <https://w3id.org/biolink/vocab/has_attribute> ?t . }\n}",
       "skeleton_verified": true,
       "methodology_note": "New Anatomy (UBERON) cluster. Other anatomy carriers: biohealth (via the ubergraph UMLS bridge, 2,148 UBERON CUIs — see BH9/BH10) and ubergraph itself (the hub). spoke-okn does NOT carry these raw UBERON terms. CL (Cell Ontology) is also present in spoke-genelab (7 terms, INVESTIGATED_ASiCT) for a potential cell-type sub-axis."
@@ -2421,6 +2789,10 @@
       "verified_count": 31,
       "verified_count_note": "DISTINCT CL cell-type terms shared by GXA (223 total) and prokn. Exact COUNT(DISTINCT) on 2026-06-23. The main cell-type crosswalk: links GXA single-cell expression to ProKN's cell-type marker-gene knowledge.",
       "example_question": "For a cell type GXA has single-cell expression for (CL), what marker genes / proteins does ProKN record for that same cell type?",
+      "example_questions": [
+        "For a cell type GXA has single-cell expression for (CL), what marker genes / proteins does ProKN record for that same cell type?",
+        "Given ProKN's HuBMAP marker genes for a cell type (CL), does GXA single-cell expression corroborate those genes as enriched in the same cell type?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?t) AS ?n) WHERE {\n  { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?s <https://w3id.org/biolink/vocab/has_attribute> ?t . FILTER(STRSTARTS(STR(?t), 'http://purl.obolibrary.org/obo/CL_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?s2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> ?t . }\n}",
       "skeleton_verified": true,
       "methodology_note": "CL (Cell Ontology) sub-axis of the Anatomy cluster. Other CL carriers: spoke-genelab (7 cell types on INVESTIGATED_ASiCT; overlaps GXA on 4, prokn on 1 - too small for standalone entries). spoke-okn carries no CL (0), and biohealth carries no CL concepts (ubergraph UMLS->CL = 0), so CL - unlike UBERON - is NOT reachable from biohealth."
@@ -2440,6 +2812,10 @@
       "verified_count": 4,
       "verified_count_note": "DISTINCT CL cell-type terms shared by spoke-genelab (7 total) and GXA (223 total). Exact COUNT(DISTINCT) on 2026-06-23. Small — spoke-genelab assays few cell types.",
       "example_question": "For a cell type examined in a NASA GeneLab spaceflight assay (spoke-genelab, CL), what terrestrial single-cell expression data does GXA hold for the same cell type?",
+      "example_questions": [
+        "For a cell type examined in a NASA GeneLab spaceflight assay (spoke-genelab, CL), what terrestrial single-cell expression data does GXA hold for the same cell type?",
+        "How many of the cell types GXA profiles at single-cell resolution (CL) were also examined in a NASA GeneLab spaceflight assay, and which specific cell types are they?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?t) AS ?n) WHERE {\n  { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?s <https://purl.org/okn/frink/kg/spoke-genelab/schema/INVESTIGATED_ASiCT> ?t } } }\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?s2 <https://w3id.org/biolink/vocab/has_attribute> ?t . }\n}",
       "skeleton_verified": true
     },
@@ -2458,6 +2834,10 @@
       "verified_count": 1,
       "verified_count_note": "DISTINCT CL cell-type terms shared by spoke-genelab (7 total) and prokn. Exact COUNT(DISTINCT) on 2026-06-23. Minimal overlap — recorded for completeness of the CL sub-axis.",
       "example_question": "For a cell type examined in a NASA GeneLab spaceflight assay (spoke-genelab, CL), what marker genes/proteins does ProKN record for that same cell type?",
+      "example_questions": [
+        "For a cell type examined in a NASA GeneLab spaceflight assay (spoke-genelab, CL), what marker genes/proteins does ProKN record for that same cell type?",
+        "Which single cell type (CL) is both examined in a GeneLab spaceflight assay and cataloged with ProKN HuBMAP marker genes, and what are those marker genes?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?t) AS ?n) WHERE {\n  { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?s <https://purl.org/okn/frink/kg/spoke-genelab/schema/INVESTIGATED_ASiCT> ?t } } }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?s2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> ?t . }\n}",
       "skeleton_verified": true
     },
@@ -2476,6 +2856,10 @@
       "verified_count": 16052,
       "verified_count_note": "DISTINCT Entrez genes shared (of digcfdekg's 21,710; bounded by spoke-okn's ~16,346). Verified 2026-06-26.",
       "example_question": "CFDE REVEAL gene/trait/factor inferences enriched with that gene's network/disease/compound associations in spoke-okn.",
+      "example_questions": [
+        "CFDE REVEAL gene/trait/factor inferences enriched with that gene's network/disease/compound associations in spoke-okn.",
+        "For a spoke-okn drug's target genes, what trait and disease-mechanism factor inferences does CFDE REVEAL provide?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?g) AS ?n) WHERE {\n  { SELECT DISTINCT ?g WHERE { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?g <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?t . } } }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?g ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -2494,6 +2878,10 @@
       "verified_count": 19747,
       "verified_count_note": "DISTINCT Entrez genes shared (of digcfdekg's 21,710) - near-complete containment of digcfdekg's gene set in spoke-genelab. Verified 2026-06-26.",
       "example_question": "CFDE REVEAL gene/trait/factor inferences for genes that also have spaceflight/omics observations in spoke-genelab (NASA GeneLab).",
+      "example_questions": [
+        "CFDE REVEAL gene/trait/factor inferences for genes that also have spaceflight/omics observations in spoke-genelab (NASA GeneLab).",
+        "How many genes carry both a CFDE REVEAL trait/factor inference and a spaceflight expression change in spoke-genelab?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?g) AS ?n) WHERE {\n  { SELECT DISTINCT ?g WHERE { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?g <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?t . } } }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?g ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -2513,6 +2901,10 @@
       "verified_count_note": "DISTINCT Entrez genes shared (of rdkg's ~9,326; near-complete containment of rdkg's gene set in digcfdekg). Verified 2026-06-26.",
       "complementary_note": "Complementary with A25-mondo-digcfdekg-rdkg (same KG pair joined on MONDO disease) - UNION for full rdkg<->digcfdekg coverage.",
       "example_question": "Rare-disease genes (rdkg) with the disease-mechanism factors and trait associations CFDE REVEAL infers for them.",
+      "example_questions": [
+        "Rare-disease genes (rdkg) with the disease-mechanism factors and trait associations CFDE REVEAL infers for them.",
+        "Which CFDE REVEAL-inferred traits recur across the most rdkg rare-disease genes, and for which rare diseases?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?ng) AS ?n) WHERE {\n  { SELECT DISTINCT ?g WHERE { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?g <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?t . } } }\n  BIND(IRI(REPLACE(STR(?g),'http://www.ncbi.nlm.nih.gov/gene/','http://identifiers.org/ncbigene/')) AS ?ng)\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?ng ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -2531,6 +2923,10 @@
       "verified_count": 20783,
       "verified_count_note": "DISTINCT prokn HGNC genes reached from digcfdekg's 21,710 Entrez genes via the wikidata P351->P354 bridge. Verified 2026-06-26. Both are CFDE projects - the strongest digcfdekg crosswalk.",
       "example_question": "For genes ProKN tracks as protein marker genes (HGNC), what disease-mechanism factors and trait associations does CFDE REVEAL infer?",
+      "example_questions": [
+        "For genes ProKN tracks as protein marker genes (HGNC), what disease-mechanism factors and trait associations does CFDE REVEAL infer?",
+        "For a given CFDE REVEAL trait or disease-mechanism factor, which of the implicated genes does ProKN annotate as protein marker genes (HGNC, via Wikidata)?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?h) AS ?n) WHERE {\n  { SELECT DISTINCT ?g WHERE { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?g <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?t . } } }\n  BIND(REPLACE(STR(?g),'^.*/gene/','') AS ?entrez)\n  GRAPH <https://purl.org/okn/frink/kg/wikidata> { ?item <http://www.wikidata.org/prop/direct/P351> ?entrez ; <http://www.wikidata.org/prop/direct/P354> ?hgnc . }\n  BIND(IRI(CONCAT('http://identifiers.org/hgnc/',?hgnc)) AS ?h)\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?x ?p ?h . }\n}",
       "skeleton_verified": true
     },
@@ -2550,6 +2946,10 @@
       "verified_count_note": "DISTINCT MONDO diseases shared. Verified 2026-06-26. Direct-MONDO-only is 180; the EFO/Orphanet->MONDO bridge raises it to 1,045.",
       "complementary_note": "Complementary with C12-entrez-digcfdekg-rdkg (same KG pair joined on Entrez gene) - UNION for full rdkg<->digcfdekg coverage.",
       "example_question": "For a rare disease (rdkg, MONDO) with its gene/drug associations, what disease-mechanism factors and gene-trait probabilities does CFDE REVEAL infer?",
+      "example_questions": [
+        "For a rare disease (rdkg, MONDO) with its gene/drug associations, what disease-mechanism factors and gene-trait probabilities does CFDE REVEAL infer?",
+        "Do the genes CFDE REVEAL links to a disease trait (MONDO) match RDKG's curated disease genes, validating inferred gene-trait factors against known rare-disease genes?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  { SELECT DISTINCT ?mondo WHERE {\n    { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?efo . FILTER(STRSTARTS(STR(?efo),'http://www.ebi.ac.uk/efo/EFO_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?efo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?orph . FILTER(CONTAINS(STR(?orph),'Orphanet_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?orph . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } } }\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?mondo ?p ?o . }\n}",
       "skeleton_verified": true
     },
@@ -2568,6 +2968,10 @@
       "verified_count": 402,
       "verified_count_note": "DISTINCT MONDO diseases shared. Verified 2026-06-26. Direct-MONDO-only is 37; the EFO/Orphanet->MONDO bridge raises it to 402.",
       "example_question": "Rare-disease EHR phenotype profile (OARD) combined with the gene-trait factor inferences CFDE REVEAL records for the same disease.",
+      "example_questions": [
+        "Rare-disease EHR phenotype profile (OARD) combined with the gene-trait factor inferences CFDE REVEAL records for the same disease.",
+        "How many CFDE REVEAL disease traits (MONDO) have a matching OARD EHR phenotype profile that could support their inferred gene-trait factors?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  { SELECT DISTINCT ?mondo WHERE {\n    { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?efo . FILTER(STRSTARTS(STR(?efo),'http://www.ebi.ac.uk/efo/EFO_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?efo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?orph . FILTER(CONTAINS(STR(?orph),'Orphanet_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?orph . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } } }\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?a <https://w3id.org/biolink/vocab/object> ?mondo } UNION { ?b <https://w3id.org/biolink/vocab/subject> ?mondo } }\n}",
       "skeleton_verified": true
     },
@@ -2586,6 +2990,10 @@
       "verified_count": 123,
       "verified_count_note": "DISTINCT biomarkerkg DOID diseases whose ubergraph-equivalent MONDO term is in digcfdekg's disease set. Verified 2026-06-26.",
       "example_question": "Biomarker-disease associations (biomarkerkg, DOID) for diseases CFDE REVEAL has gene-trait factor inferences on, bridged DOID->MONDO through ubergraph.",
+      "example_questions": [
+        "Biomarker-disease associations (biomarkerkg, DOID) for diseases CFDE REVEAL has gene-trait factor inferences on, bridged DOID->MONDO through ubergraph.",
+        "Do BiomarkerKG's biomarker genes for a disease (DOID) appear among the genes CFDE REVEAL ties to the same trait (MONDO), cross-checking markers against inferred factors?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n  { SELECT DISTINCT ?mondo WHERE {\n    { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?efo . FILTER(STRSTARTS(STR(?efo),'http://www.ebi.ac.uk/efo/EFO_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?efo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?orph . FILTER(CONTAINS(STR(?orph),'Orphanet_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?orph . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } } }\n}",
       "skeleton_verified": true
     },
@@ -2604,6 +3012,10 @@
       "verified_count": 50,
       "verified_count_note": "DISTINCT spoke-okn DOID diseases (of its 180) whose ubergraph-equivalent MONDO term is in digcfdekg's disease set. Verified 2026-06-26.",
       "example_question": "spoke-okn disease associations (genes/compounds/prevalence) for diseases CFDE REVEAL has factor inferences on, bridged DOID->MONDO through ubergraph.",
+      "example_questions": [
+        "spoke-okn disease associations (genes/compounds/prevalence) for diseases CFDE REVEAL has factor inferences on, bridged DOID->MONDO through ubergraph.",
+        "For a CFDE REVEAL disease trait (MONDO), which spoke-okn genes for the matching DOID disease overlap the inferred gene-trait factors, bridged MONDO->DOID?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?doid a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n  { SELECT DISTINCT ?mondo WHERE {\n    { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?efo . FILTER(STRSTARTS(STR(?efo),'http://www.ebi.ac.uk/efo/EFO_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?efo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?orph . FILTER(CONTAINS(STR(?orph),'Orphanet_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?orph . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } } }\n}",
       "skeleton_verified": true
     },
@@ -2622,6 +3034,10 @@
       "verified_count": 33,
       "verified_count_note": "DISTINCT disease IRIs shared directly across EFO+Orphanet+MONDO. Verified 2026-06-26. EFO-only is 8; adding Orphanet+MONDO raises it to 33. Bounded by GXA's small (~475) disease set.",
       "example_question": "Differential-expression studies (GXA) for diseases CFDE REVEAL has gene-trait factor inferences on, matched on EFO/Orphanet/MONDO.",
+      "example_questions": [
+        "Differential-expression studies (GXA) for diseases CFDE REVEAL has gene-trait factor inferences on, matched on EFO/Orphanet/MONDO.",
+        "Do the genes GXA finds differentially expressed for a disease overlap the genes CFDE REVEAL ties to the same trait (EFO/Orphanet/MONDO), corroborating inferred factors with expression evidence?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?t) AS ?n) WHERE {\n  { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?t . FILTER(STRSTARTS(STR(?t),'http://www.ebi.ac.uk/efo/EFO_') || STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/MONDO_') || CONTAINS(STR(?t),'Orphanet_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?t a <https://w3id.org/biolink/vocab/Disease> . }\n}",
       "skeleton_verified": true
     },
@@ -2641,6 +3057,10 @@
       "verified_count_note": "3 of spoke-okn's 10 MeSH-tagged SDoH indicators reach a materialized biohealth UMLS concept via the wikidata MeSH(P486)->UMLS(P2892) bridge: teen_births -> C0237404 'teenage mother'; premature_death -> C1855073 'Mortality, Premature'; Social Vulnerability Index -> C4063051 'Social vulnerability'. 7 of the 10 MeSH ids resolve to a CUI in the federation's wikidata; only 3 of those CUIs exist as biohealth nodes. Precise/curated but sparse. Verified 2026-06-26.",
       "complementary_note": "Complementary with BH18-sdoh-label-biohealth-spokeokn (label bridge, 89 concepts). The MeSH route is precise and hits exactly the data-rich CHR indicators (geographic prevalence + SDoH->disease associations); the label route is broad but covers the SNOMED ontology backbone. UNION both for full SDoH coverage.",
       "example_question": "For a County Health Rankings SDoH indicator spoke-okn tracks geographically (e.g. Social Vulnerability Index), what conditions does biohealth's literature graph link it to, reached through the MeSH->UMLS wikidata bridge?",
+      "example_questions": [
+        "For a County Health Rankings SDoH indicator spoke-okn tracks geographically (e.g. Social Vulnerability Index), what conditions does biohealth's literature graph link it to, reached through the MeSH->UMLS wikidata bridge?",
+        "Starting from a condition biohealth links in its literature graph (e.g. obesity), which County Health Rankings SDoH indicators does spoke-okn track geographically for it, reached backward through the UMLS->MeSH wikidata bridge?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?bh) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?s a <https://purl.org/okn/frink/kg/spoke-okn/schema/SDoH> ; <https://purl.org/okn/frink/kg/spoke-okn/schema/mesh_ids> ?meshIri . }\n  BIND(REPLACE(STR(?meshIri),'^.*/mesh/','') AS ?meshId)\n  GRAPH <https://purl.org/okn/frink/kg/wikidata> { ?item <http://www.wikidata.org/prop/direct/P486> ?meshId ; <http://www.wikidata.org/prop/direct/P2892> ?cui . }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
       "skeleton_verified": true,
       "methodology_note": "biohealth (~110M triples) keys every node on a UMLS CUI (node IRI = .../node/C{cui}) with rdfs:label = the concept name and SemMedDB predicates (affects/causes/coexists_with/predisposes_to_condition/treats); it carries no MeSH/SNOMED/MONDO/DOID ids. spoke-okn's SDoH class (1,426 concepts) is SNOMED-CT-keyed in the node IRI; only 10 carry spoke:mesh_ids. The wikidata graph supplies the MeSH->UMLS hop (P486->P2892). The richer SNOMED->UMLS route is NOT available: the federation's wikidata subset has no P5806 (SNOMED CT id) values and no graph materializes a UMLS<->SNOMED map.",
@@ -2662,6 +3082,10 @@
       "verified_count_note": "89 of spoke-okn's 1,426 SNOMED-keyed SDoH concepts exact-match a biohealth UMLS concept by label (suffix-stripped, case-sensitive). Substantive SDoH covered: tobacco/alcohol use, household income, poor education, housing tenure, pollution, obesity, anxiety, depressive disorder, homicide/suicide, sedentary lifestyle, ethnicity/race. 8 of the 89 also carry spoke geographic prevalence (PREVALENCEIN_SpL). Verified 2026-06-26.",
       "complementary_note": "Complementary with BH17-sdoh-mesh-umls-biohealth-spokeokn (MeSH->UMLS bridge, 3 CHR indicators). The label route is the broad surrogate for the unavailable SNOMED->UMLS id mapping; UNION both for full SDoH coverage.",
       "example_question": "Which diseases does biohealth's literature graph link to a behavioural or environmental SDoH that spoke-okn catalogues (e.g. sedentary lifestyle, pollution), matched on the concept label?",
+      "example_questions": [
+        "Which diseases does biohealth's literature graph link to a behavioural or environmental SDoH that spoke-okn catalogues (e.g. sedentary lifestyle, pollution), matched on the concept label?",
+        "Of the 89 SDoH concepts whose SNOMED label matches a biohealth UMLS concept name, how many carry disease associations in biohealth's literature graph, and which behavioural determinant links to the most conditions?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?s) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?s a <https://purl.org/okn/frink/kg/spoke-okn/schema/SDoH> ; <http://www.w3.org/2000/01/rdf-schema#label> ?sl . }\n  BIND(IF(CONTAINS(?sl,' ('), STRBEFORE(?sl,' ('), STR(?sl)) AS ?clean)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh <http://www.w3.org/2000/01/rdf-schema#label> ?clean . }\n}",
       "skeleton_verified": true,
       "methodology_note": "The natural rich key is SNOMED CT (all 1,426 spoke SDoH node IRIs are SNOMED concept ids), but no federation graph materializes a SNOMED<->UMLS map (wikidata P5806 is empty here), and biohealth carries no SNOMED xref. The concept-label match is the practical surrogate. Label-bridged like BH11-BH16 (NCBITaxon) but on SDoH concept names; fragile (exact string, misses synonyms/casing) and a lower bound.",
@@ -2682,6 +3106,10 @@
       "verified_count": 205,
       "verified_count_note": "205 of biomarkerkg's 206 distinct UniProt biomarker proteins are present in ProKN (near-complete containment). Verified 2026-06-26. SUPERSEDES the base file's biomarkerkg 'no gene/protein namespace surfaced' known_non_join: biomarkerkg DOES carry proteins (UniProt via OBCI_1000009), it just exposes no standard gene IRI. This attaches biomarkerkg - previously only a DOID-disease partner - to the UniProt protein cluster (G), giving its clinical biomarkers ProKN's GO functions, Reactome pathways, OMIM links, PTM sites and drug/ChEMBL targets.",
       "example_question": "For the clinical biomarker proteins a disease has in BiomarkerKB, what GO biological processes / molecular functions and pathways does ProKN annotate them with?",
+      "example_questions": [
+        "For the clinical biomarker proteins a disease has in BiomarkerKB, what GO biological processes / molecular functions and pathways does ProKN annotate them with?",
+        "Across the 205 shared biomarker UniProt proteins, which GO biological processes and pathways does ProKN annotate most frequently, and do those processes cluster by the biomarker's disease category?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?up) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s <http://purl.obolibrary.org/obo/OBCI_1000009> ?up . FILTER(STRSTARTS(STR(?up),'http://purl.uniprot.org/uniprot/')) }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?up ?p ?o . }\n}",
       "skeleton_verified": true,
       "domain": "Proteins"
@@ -2701,6 +3129,10 @@
       "verified_count": 84,
       "verified_count_note": "84 of biomarkerkg's 206 UniProt biomarker proteins are AOP-Wiki adverse-outcome-pathway key-event targets. Verified 2026-06-26. Links clinical biomarkers to toxicological adverse-outcome pathways (e.g. EGFR is a breast-cancer biomarker AND the target in 'EGFR activation leading to decreased lung function' and AhR/estrogen->breast-cancer AOPs).",
       "example_question": "Which clinical biomarker proteins are also AOP key-event targets, and which adverse outcome pathways involve them (toxicology meets clinical biomarkers)?",
+      "example_questions": [
+        "Which clinical biomarker proteins are also AOP key-event targets, and which adverse outcome pathways involve them (toxicology meets clinical biomarkers)?",
+        "For a given AOP-Wiki adverse outcome pathway, which of its key-event target proteins (by UniProt) are validated clinical biomarkers in BiomarkerKB and for what disease?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?acc) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s <http://purl.obolibrary.org/obo/OBCI_1000009> ?up . FILTER(STRSTARTS(STR(?up),'http://purl.uniprot.org/uniprot/')) }\n  BIND(REPLACE(STR(?up),'^.*/uniprot/','') AS ?acc)\n  BIND(IRI(CONCAT('https://identifiers.org/uniprot/',?acc)) AS ?u2)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?y <http://www.w3.org/2004/02/skos/core#exactMatch> ?u2 . }\n}",
       "skeleton_verified": true,
       "domain": "Proteins"
@@ -2720,6 +3152,10 @@
       "verified_count": 8,
       "verified_count_note": "8 CL cell types shared - immune/blood cells used as cell-count biomarkers (granulocyte, platelet, lymphocyte, monocyte, leukocyte, neutrophil, CD4-positive alpha-beta T cell, regulatory T cell). Verified 2026-06-26. Attaches biomarkerkg to the Anatomy/CL cluster (AN).",
       "example_question": "Which immune/blood cell types are used as biomarkers in BiomarkerKB and also assayed at single-cell resolution in GXA?",
+      "example_questions": [
+        "Which immune/blood cell types are used as biomarkers in BiomarkerKB and also assayed at single-cell resolution in GXA?",
+        "For a cell type GXA profiles at single-cell resolution (CL), is it used as a clinical biomarker in BiomarkerKB, and for what biomarker readout?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cl) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s <http://purl.obolibrary.org/obo/OBCI_1000009> ?cl . FILTER(STRSTARTS(STR(?cl),'http://purl.obolibrary.org/obo/CL_')) }\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?a <https://w3id.org/biolink/vocab/has_attribute> ?cl . }\n}",
       "skeleton_verified": true,
       "domain": "Anatomy & cell type"
@@ -2739,6 +3175,10 @@
       "verified_count": 3,
       "verified_count_note": "3 CL cell types shared (monocyte, CD4-positive alpha-beta T cell, neutrophil) - biomarkerkg cell-count biomarkers for which ProKN supplies HuBMAP tissue-specific marker genes. Verified 2026-06-26. Small but real; the same biomarkerkg cell types reach GXA more broadly (AN5, 8).",
       "example_question": "For an immune cell type used as a biomarker in BiomarkerKB, what tissue-specific marker genes does ProKN record (HuBMAP)?",
+      "example_questions": [
+        "For an immune cell type used as a biomarker in BiomarkerKB, what tissue-specific marker genes does ProKN record (HuBMAP)?",
+        "For a cell type ProKN records tissue-specific marker genes for (CL), is that same cell type used as a biomarker in BiomarkerKB, and do its ProKN markers suggest the biomarker's molecular basis?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cl) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s <http://purl.obolibrary.org/obo/OBCI_1000009> ?cl . FILTER(STRSTARTS(STR(?cl),'http://purl.obolibrary.org/obo/CL_')) }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?st <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> ?cl . }\n}",
       "skeleton_verified": true,
       "domain": "Anatomy & cell type"
@@ -2758,6 +3198,10 @@
       "verified_count": 37835,
       "verified_count_note": "37,835 of pankgraph's ~78,687 Ensembl genes are present in prokn (after literal->IRI conversion). Verified 2026-06-27. Attaches pankgraph (PanKbase islet KG) to the gene cluster on Ensembl, giving its islet genes ProKN's pathway/GO/protein/drug-target annotation. The naive join silently returns 0 because pankgraph stores Ensembl as a literal - see iri_normalization.",
       "example_question": "For canonical pancreatic-islet genes pankgraph catalogues (INS, PDX1, MAFA, NKX6-1, GCG), what MSigDB pathways / encoded protein does ProKN annotate, joined on the Ensembl gene id?",
+      "example_questions": [
+        "For canonical pancreatic-islet genes pankgraph catalogues (INS, PDX1, MAFA, NKX6-1, GCG), what MSigDB pathways / encoded protein does ProKN annotate, joined on the Ensembl gene id?",
+        "Which MSigDB pathway in ProKN is shared by the most pankgraph-catalogued islet genes, joined on the Ensembl gene id?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?ens) AS ?n) WHERE {\n  { SELECT DISTINCT ?lit WHERE { GRAPH <https://purl.org/okn/frink/kg/pankgraph> { ?s <http://www.w3.org/2000/01/rdf-schema#seeAlso> ?lit . FILTER(STRSTARTS(STR(?lit),'https://www.ensembl.org/id/ENSG')) } } }\n  BIND(IRI(STR(?lit)) AS ?ens)\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?ens ?p ?o . }\n}",
       "skeleton_verified": true,
       "methodology_note": "pankgraph genes also carry biolink:expressed_in (islet cell types: CL_0000169 beta, CL_0000171 alpha, CL_0000173 delta...), biolink:functional_association (GO), biolink:interacts_with (gene network), and genomic location. pankgraph stores GO and dbSNP (api.ncbi.nlm.nih.gov/variation/v0/refsnp/{rsid}) the same literal way; dbSNP has no federation join partner (UniProt VAR in prokn is a different namespace), so variants remain a pankgraph island. PMID is structured only in GXA (wobd:pubmed_id, 2,630) with no structured partner.",
@@ -2778,6 +3222,10 @@
       "verified_count": 16970,
       "verified_count_note": "16,970 GO terms shared between pankgraph (gene annotations) and prokn (protein annotations) after QuickGO->obo normalization. Verified 2026-06-27. A function/ontology axis (like CL/UBERON/MONDO): it links pankgraph islet genes and ProKN proteins by shared GO function - e.g. 'insulin secretion' (GO_0030073) covers pankgraph SLC30A8/PTPRN/HNF1A/MAFA/NEUROD1 and 21 ProKN proteins; 'glucose homeostasis' (GO_0042593) covers pankgraph GCK/WFS1/TCF7L2/INS and 92 ProKN proteins. Function-similarity, not entity identity (for identity use C14, Ensembl).",
       "example_question": "Which pancreatic-islet genes (pankgraph) and ProKN proteins are annotated with the same GO function, e.g. insulin secretion or glucose homeostasis?",
+      "example_questions": [
+        "Which pancreatic-islet genes (pankgraph) and ProKN proteins are annotated with the same GO function, e.g. insulin secretion or glucose homeostasis?",
+        "Which GO terms are shared by the most pankgraph islet genes and ProKN proteins, and how many protein–gene pairs does each such term bridge across the two graphs?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?go) AS ?n) WHERE {\n  { SELECT DISTINCT ?go WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/pankgraph> { ?s <http://www.w3.org/2000/01/rdf-schema#seeAlso> ?lit . FILTER(STRSTARTS(STR(?lit),'https://www.ebi.ac.uk/QuickGO/term/GO:')) }\n      BIND(IRI(REPLACE(STR(?lit),'^.*/term/GO:','http://purl.obolibrary.org/obo/GO_')) AS ?go)\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?p ?pred ?go . }\n}",
       "skeleton_verified": true,
       "domain": "Function & Pathways"
@@ -2797,6 +3245,10 @@
       "verified_count": 1068,
       "verified_count_note": "1,068 Reactome pathways shared between GXA (differential-expression enrichment) and ProKN (protein pathway membership). Verified 2026-06-27. Complementary halves: GXA says WHICH pathways are differentially active in a disease/perturbation (with adj p), ProKN says WHICH proteins constitute the pathway. Join e.g. colon adenocarcinoma -> 'Resolution of Sister Chromatid Cohesion' (GXA adj p 3e-12) -> 127 ProKN proteins (NDC80, BIRC5/Survivin, KIF2A...). First Pathways axis in the federation.",
       "example_question": "For a disease GXA finds a Reactome pathway differentially active in, which proteins (ProKN) make up that pathway?",
+      "example_questions": [
+        "For a disease GXA finds a Reactome pathway differentially active in, which proteins (ProKN) make up that pathway?",
+        "For a Reactome pathway whose member proteins are catalogued in ProKN (via RO_0000056), in which GXA disease contrasts is that pathway reported differentially active, and in what direction?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?proknReact) AS ?n) WHERE {\n  { SELECT DISTINCT ?proknReact WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?s <http://purl.org/okn/wobd/enrichment_source> \"GXA:Reactome\" ; <https://w3id.org/biolink/vocab/object> ?gxaReact . FILTER(CONTAINS(STR(?gxaReact),'R-HSA-')) }\n      BIND(IRI(CONCAT('https://identifiers.org/reactome/',REPLACE(STR(?gxaReact),'^.*/detail/',''))) AS ?proknReact)\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?prot <http://purl.obolibrary.org/obo/RO_0000056> ?proknReact . }\n}",
       "skeleton_verified": true,
       "methodology_note": "Pathways axis. ProKN is the federation's pathway hub: Reactome (RO_0000056, joins GXA here), plus MSigDB (RO_0002431) and WikiPathways - the latter two are ProKN-internal IRIs with no second KG, so no crosswalk. GXA's other enrichment sources are GXA:GO (overlaps the GO axis) and GXA:InterPro (no partner). pankgraph carries no Reactome; spoke-okn has no pathway class.",
@@ -2817,6 +3269,10 @@
       "verified_count": 7,
       "verified_count_note": "7 of SAWGraph's 38 well-formed PFAS CAS numbers have ToxCast high-throughput screening data. Verified 2026-06-27. Each carries hundreds of ToxCast assay endpoints (e.g. GenX/HFPO-DA, CAS 13252-13-6, has 506 endpoints and 2,184 SAWGraph water-sample observations). Bridges environmental PFAS contamination (where/when measured, concentration) to toxicological screening. SAWGraph gains a chemical axis into the toxicology cluster (it was previously a geospatial-only KG, clusters D/N).",
       "example_question": "For the PFAS measured in SAWGraph's environmental water samples, how many ToxCast high-throughput assay endpoints exist, and what is each chemical's environmental footprint?",
+      "example_questions": [
+        "For the PFAS measured in SAWGraph's environmental water samples, how many ToxCast high-throughput assay endpoints exist, and what is each chemical's environmental footprint?",
+        "Ranked by ToxCast assay-endpoint hit count, which CAS contaminants detected in SAWGraph water samples show the broadest high-throughput bioactivity, and at which sampling locations do they occur?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  { SELECT DISTINCT ?cas WHERE { GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?s <http://w3id.org/coso/v1/contaminoso#casNumber> ?cas . FILTER(REGEX(STR(?cas),'^[0-9]+-[0-9]+-[0-9]$')) } } }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/', STR(?cas))) AS ?casIri)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-toxcast> { ?t <http://edamontology.org/has_identifier> ?casIri . }\n}",
       "skeleton_verified": true,
       "methodology_note": "SAWGraph (SAWGraph PFAS KG) measures PFAS in US Water Quality Portal samples; each ContaminantObservation has coso:ofSubstance (CAS + a DSSTox DTXSID), coso:hasResult (concentration), and a geoconnex sample point + observedTime. It co-locates with fiokg (EPA facilities + NAICS) on S2 cells (N6), so this CAS axis links the industrial/environmental cluster to the toxicology cluster (B/E CAS). SAWGraph also carries DSSTox DTXSID (comptox.epa.gov / w3id.org/DSSTox) - a second potential chemical key into EPA CompTox KGs.",
@@ -2837,6 +3293,10 @@
       "verified_count": 12,
       "verified_count_note": "12 of SAWGraph's 38 PFAS CAS numbers have biobricks-ICE (EPA Integrated Chemical Environment) records - PFHxS, PFOS, perfluorodecane/heptane/nonane-sulfonic acids, perfluorobutanesulfonamide, etc. Verified 2026-06-27. All 12 are covered by ICE's Chemical Functional Use Categories domain; ICE resolves each environmental contaminant to its EPA CompTox identity (DTXSID + standardized name + functional-use categorization).",
       "example_question": "For the PFAS measured in SAWGraph, what does ICE record - the standardized chemical identity (name, DTXSID) and functional-use categorization of the environmental contaminants?",
+      "example_questions": [
+        "For the PFAS measured in SAWGraph, what does ICE record - the standardized chemical identity (name, DTXSID) and functional-use categorization of the environmental contaminants?",
+        "Across the 12 CAS contaminants shared with SAWGraph, which ICE curated-data-domain records (e.g. acute toxicity, endocrine activity) are populated, and which contaminant carries the most curated toxicity endpoints?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  { SELECT DISTINCT ?cas WHERE { GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?s <http://w3id.org/coso/v1/contaminoso#casNumber> ?cas . FILTER(REGEX(STR(?cas),'^[0-9]+-[0-9]+-[0-9]$')) } } }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/', STR(?cas))) AS ?casIri)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?d <http://edamontology.org/has_identifier> ?casIri . }\n}",
       "skeleton_verified": true,
       "domain": "Environmental toxicology"
@@ -2857,6 +3317,10 @@
       "verified_count_note": "14 dreamkg audience terms exact-match a biohealth concept with only first-letter capitalization (Anxiety, Bipolar, Employed, Female, Immigrants, Mothers, Refugees, Retirement, Runaways, Substance, Teens, Underinsured, Uninsured, Veterans); a further ~10 match with light curated normalization (Depression, Bipolar Disorder, Eating Disorders, HIV, Suicide, Homelessness, Unemployment, Domestic Violence, Developmental Disabilities, Chronic disease) - ~24 of 81 total. Verified 2026-06-27. First CROSS-DOMAIN bridge from the social-services / homelessness domain (DREAM-KG, Philadelphia AuntBertha food/shelter/mental-health services) into health: it links 'what social services exist for population X' to biohealth's clinical+SDoH knowledge of X.",
       "complementary_note": "Conceptually adjacent to the SDoH cluster (BH18 spoke-okn SDoH <-> biohealth): dreamkg's social-determinant audiences (homeless, uninsured, unemployed, veterans) overlap that SDoH vocabulary, while its clinical audiences (anxiety, bipolar, hiv/aids) reach biohealth's disease concepts.",
       "example_question": "For the health conditions and social determinants that DREAM-KG provides services for, what does biohealth's clinical/SDoH graph link those concepts to?",
+      "example_questions": [
+        "For the health conditions and social determinants that DREAM-KG provides services for, what does biohealth's clinical/SDoH graph link those concepts to?",
+        "Given a condition biohealth documents in its clinical/SDoH graph (e.g. diabetes), which DREAM-KG social services list that condition as their audienceType, matched on the concept label?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?aud) AS ?n) WHERE {\n  { SELECT DISTINCT ?aud WHERE { GRAPH <https://purl.org/okn/frink/kg/dreamkg> { ?s <http://schema.org/audienceType> ?aud } } }\n  BIND(CONCAT(UCASE(SUBSTR(?aud,1,1)), SUBSTR(?aud,2)) AS ?cap)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh <http://www.w3.org/2000/01/rdf-schema#label> ?cap . }\n}",
       "skeleton_verified": true,
       "methodology_note": "Label-bridge like BH18 (SDoH) and BH11-16 (taxonomy): fragile (exact string + light normalization) and a lower bound. dreamkg is a curated Philadelphia social-services directory (Service/Organization/Place/Audience over schema.org), so its side is shallow (often one Audience node per term) - the value is the CROSS-DOMAIN link, not volume. Other social/justice/FDA KGs checked do NOT bridge: medical-device-kg is medical devices only (FDA product codes, island); scales is criminal-justice cases (attaches on county FIPS only).",
@@ -2878,6 +3342,10 @@
       "verified_count_note": "8 phaseskg psychosocial concepts label-match a connected biohealth UMLS concept (biohealth out-degree in parens): feeling of loneliness -> C0023974 Loneliness (419); self-efficacy representational pattern quality -> C0600564 Self Efficacy (406); social withdrawal disposition -> C0424095 Social withdrawal (112); reminiscence therapy process -> C0150321 Reminiscence therapy (80); social alienation -> C0870124 Alienation (70, approximate); shyness behavior disposition -> C0037020 Shyness (9); social isolation behavior disposition -> C0037421 Social isolation (9); social detachment disposition -> C0700137 Social detachment (4). Curated lower bound. Verified 2026-07-11.",
       "complementary_note": "Third biohealth label bridge into the SDoH / psychosocial layer, alongside SS1 (dreamkg social-service audiences) and BH18 (spoke-okn SDoH). phaseskg contributes the healthy-aging / loneliness ontology vocabulary; these concepts are social determinants, not diseases, so they stay in biohealth's SDoH / psychosocial layer (biohealth's UMLS->MONDO/DOID route is disease-only and does not carry them onward).",
       "example_question": "For the loneliness / social-isolation / social-withdrawal constructs the PHASES healthy-aging ontology defines, what conditions and determinants does biohealth's literature graph link them to?",
+      "example_questions": [
+        "For the loneliness / social-isolation / social-withdrawal constructs the PHASES healthy-aging ontology defines, what conditions and determinants does biohealth's literature graph link them to?",
+        "For the 8 PHASES psychosocial constructs that resolve to a biohealth UMLS concept, which single construct (e.g. social isolation) surfaces the largest set of linked conditions and determinants in the literature graph?"
+      ],
       "skeleton_query": "SELECT (COUNT(*) AS ?n) WHERE {\n  VALUES (?p ?bh) {\n    (<http://purl.obolibrary.org/obo/PHASES_0002002> <https://biohealthkg.proto-okn.net/kg/node/C0037421>)\n    (<http://purl.obolibrary.org/obo/PHASES_0002003> <https://biohealthkg.proto-okn.net/kg/node/C0023974>)\n    (<http://purl.obolibrary.org/obo/PHASES_0000011> <https://biohealthkg.proto-okn.net/kg/node/C0424095>)\n    (<http://purl.obolibrary.org/obo/PHASES_0000027> <https://biohealthkg.proto-okn.net/kg/node/C0700137>)\n    (<http://purl.obolibrary.org/obo/PHASES_0000028> <https://biohealthkg.proto-okn.net/kg/node/C0037020>)\n    (<http://purl.obolibrary.org/obo/PHASES_0000000> <https://biohealthkg.proto-okn.net/kg/node/C0150321>)\n    (<http://purl.obolibrary.org/obo/PHASES_0000007> <https://biohealthkg.proto-okn.net/kg/node/C0600564>)\n    (<http://humanbehaviourchange.org/ontology/BCIO_006014> <https://biohealthkg.proto-okn.net/kg/node/C0870124>)\n  }\n  GRAPH <https://purl.org/okn/frink/kg/phaseskg> { ?p <http://www.w3.org/2000/01/rdf-schema#label> ?pl }\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh <http://www.w3.org/2000/01/rdf-schema#label> ?bl }\n}",
       "skeleton_verified": true,
       "methodology_note": "Label-bridge like SS1 (dreamkg) and BH11-16 (taxonomy): fragile (exact concept string after suffix strip + light normalization), a curated lower bound. phaseskg is otherwise near-islanded - a pure OBO/BFO T-Box healthy-aging ontology (35 native PHASES_ terms + BCIO / BFO / IAO / GO / OGMS / MF / MFOEM imports, no instance data); its imported BFO/IAO terms reuse canonical obo/ IRIs and so identifier-join ubergraph, but only as generic upper-ontology classes (continuant / occurrent / information content entity) with no analytical payload.",
@@ -2899,6 +3367,10 @@
       "verified_count": 3,
       "verified_count_note": "COUNT(DISTINCT ?model) = climate-model Sources (cp:Source) that carry sc:dependsOn edges in securechainkg, verified 2026-06-29. The 3 models are CESM2 (18 dependencies, 12 vulnerable, 35 distinct CVEs), GFDL-ESM4 (3 deps, 14 CVEs) and GFDL-CM4 (2 deps, 11 CVEs); the vulnerable deps are the scientific-Python stack (numpy, lxml, torch, scipy, setuptools, ujson, ...). Only these 3 of climatemodelskg's 394 Sources are currently wired into securechainkg; the other Sources have no dependency edges, so absence is 'not recorded', not 'no vulnerabilities'.",
       "example_question": "Which climate models have the most vulnerable dependencies and the highest number of vulnerabilities? (CESM2, GFDL-ESM4 and GFDL-CM4 link through securechainkg sc:dependsOn to vulnerable PyPI packages and their CVEs.)",
+      "example_questions": [
+        "Which climate models have the most vulnerable dependencies and the highest number of vulnerabilities? (CESM2, GFDL-ESM4 and GFDL-CM4 link through securechainkg sc:dependsOn to vulnerable PyPI packages and their CVEs.)",
+        "Given a specific vulnerable PyPI dependency (or its CVE) surfaced through securechainkg sc:dependsOn, which of CESM2, GFDL-ESM4, or GFDL-CM4 inherit that vulnerability?"
+      ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?model) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> { ?model a <https://climatepub4kg.github.io/ontology#Source> . }\n  GRAPH <https://purl.org/okn/frink/kg/securechainkg> { ?model <https://w3id.org/secure-chain/dependsOn> ?dep . }\n}",
       "skeleton_verified": true
     }

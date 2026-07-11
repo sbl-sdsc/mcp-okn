@@ -293,6 +293,9 @@ def all_crosswalks(include_examples: bool = True) -> list[dict[str, Any]]:
         }
         if include_examples:
             row["example_question"] = e.get("example_question")
+            row["example_questions"] = e.get("example_questions") or (
+                [e["example_question"]] if e.get("example_question") else None
+            )
         rows.append(row)
 
     # One row per materialized non-zero pair. These are hub joins composed THROUGH

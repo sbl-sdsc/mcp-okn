@@ -81,17 +81,29 @@ def _num(n) -> str:
     return f"{n:,}" if isinstance(n, int) else str(n)
 
 
+def fmt_examples(r: dict) -> str:
+    """Render a row's example question(s), joined for a single Markdown cell.
+
+    Prefers the ``example_questions`` list (each crosswalk carries two — a
+    high-level and a specific/quantitative angle); falls back to the legacy
+    single ``example_question``."""
+    qs = r.get("example_questions") or (
+        [r["example_question"]] if r.get("example_question") else []
+    )
+    return "<br><br>".join(q for q in qs if q)
+
+
 def render_domain_table(domain: str, rows: list[dict]) -> list[str]:
     out = [
         f"## {domain}",
         "",
-        "| KGs | Shared key | Count | Example |",
+        "| KGs | Shared key | Count | Examples |",
         "|---|---|---|---|",
     ]
     for r in rows:
         out.append(
             f"| {fmt_kgs(r)} | {clean_key(r['shared_key'])} | "
-            f"{_num(r['verified_count'])} | {r.get('example_question', '')} |"
+            f"{_num(r['verified_count'])} | {fmt_examples(r)} |"
         )
     out.append("")
     return out
@@ -163,7 +175,7 @@ def render() -> str:
         "",
         f"Here are all {len(rows)} precomputed cross-KG crosswalks (verified through "
         f"{verified_on}), grouped by domain. Each shows the knowledge graphs joined, "
-        "the shared identifier, the verified overlap count, and an example question "
+        "the shared identifier, the verified overlap count, and example questions "
         "the join answers.",
         "",
     ]
