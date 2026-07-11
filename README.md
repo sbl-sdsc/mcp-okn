@@ -77,9 +77,9 @@ geospatial and industrial joins against their authoritative shared standard):
   key, row count, and a one-line note on what each answers. Start here to see which
   graphs connect and on what identifier.
 - **[Cross-KG crosswalk catalog](docs/crosswalks/crosswalks_example.md)** —
-  **270 example questions** drawn from the verified crosswalks — two per crosswalk,
+  **272 example questions** drawn from the verified crosswalks — two per crosswalk,
   except the spoke-genelab×spoke-okn Entrez join, illustrated twice (G10 expression +
-  G17 methylation), for 135 example pairs — across 12 domains (Anatomy & Cell Type, Chemicals, Disease & Phenotype,
+  G17 methylation), for 136 example pairs — across 12 domains (Anatomy & Cell Type, Chemicals, Disease & Phenotype,
   Environmental Toxicology, Function & Pathways, Genes, Geospatial, Industry & Supply
   Chain, Justice & Public Safety, Proteins, Social Determinants & Services, Taxonomy), each with a
   full transcript.
