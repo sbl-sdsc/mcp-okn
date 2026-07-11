@@ -141,8 +141,15 @@ def parse_dom(html: str) -> dict[str, tuple[str, str]]:
     }
 
 
-def main() -> None:
-    html = HTML.read_text(encoding="utf-8")
+def render(html: str) -> str:
+    """Splice the current crosswalk data (DOM / R / header counts) into the
+    network HTML and return the result.
+
+    A PURE function of ``(html, data/crosswalks.json)`` that only rewrites the
+    three data constants and the header line — nothing else. It is therefore
+    IDEMPOTENT on an up-to-date file (re-running is a no-op), which the freshness
+    test (``test_network_figure_matches_generator``) relies on.
+    """
     R, _rows = build_rows()
 
     # nodes shown = distinct KGs across the figure's endpoint arrays (bridges excluded)
@@ -188,14 +195,21 @@ def main() -> None:
     html = re.sub(
         r"\d+ knowledge graphs, \d+ verified crosswalks \(verified [^)]*\)", hdr, html
     )
+    return html
 
-    HTML.write_text(html, encoding="utf-8")
+
+def main() -> None:
     from collections import Counter
 
+    src = HTML.read_text(encoding="utf-8")
+    out = render(src)
+    HTML.write_text(out, encoding="utf-8")
+
+    R, _rows = build_rows()
+    nodes = sorted({kg for row in R for kg in row[1]})
     print(f"updated {HTML.relative_to(ROOT)}")
-    print(f"  crosswalks: {len(R)} | nodes: {len(nodes)} | verified_on: {verified_on}")
+    print(f"  crosswalks: {len(R)} | nodes: {len(nodes)} | verified_on: {C.verified_on()}")
     print(f"  domains: {dict(Counter(r[0] for r in R))}")
-    print(f"  DOM codes: {ordered}")
 
 
 if __name__ == "__main__":

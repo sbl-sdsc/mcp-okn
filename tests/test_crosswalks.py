@@ -418,6 +418,31 @@ def test_inventory_doc_matches_generator():
     )
 
 
+def test_network_figure_matches_generator():
+    """docs/crosswalks/crosswalk-network.html embeds the crosswalk data (the DOM /
+    R JS constants + header counts) spliced in by scripts/build_crosswalk_network.py.
+    That splice is idempotent on an up-to-date file, so re-running it must be a
+    no-op — guards against the figure silently going stale after a crosswalk edit
+    (unlike the inventory doc, it has no other guard). Regenerate with
+    build_crosswalk_network.py, then re-render crosswalk-network.png."""
+    import importlib.util
+    import pathlib
+
+    repo = pathlib.Path(__file__).resolve().parent.parent
+    html = repo / "docs" / "crosswalks" / "crosswalk-network.html"
+    gen = repo / "scripts" / "build_crosswalk_network.py"
+    if not html.exists() or not gen.exists():
+        pytest.skip("network figure or generator not present in this checkout")
+    spec = importlib.util.spec_from_file_location("_net_gen", gen)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    current = html.read_text(encoding="utf-8")
+    assert mod.render(current) == current, (
+        "crosswalk-network.html is stale — run scripts/build_crosswalk_network.py "
+        "(then re-render crosswalk-network.png)"
+    )
+
+
 def test_user_facing_crosswalk_count_is_canonical():
     """Every user-facing doc must cite len(all_crosswalks()) as THE crosswalk
     count — the single number list_crosswalks returns. Guards against the
