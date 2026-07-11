@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 134 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and an example question the join answers.
+Here are all 135 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and an example question the join answers.
 
 ## Anatomy & Cell Type
 
@@ -132,6 +132,7 @@ Here are all 134 precomputed cross-KG crosswalks (verified through 2026-06-30), 
 | fiokg ↔ spatialkg | S2_L13 | 681,045 | Place EPA FRS facilities (fiokg) on the national S2 grid (spatialkg), roll them up to county/state admin regions, and find which facilities share an S2 cell with PFAS samples (sawgraph) or hydrologic features (hydrologykg). |
 | hydrologykg ↔ spatialkg | S2_L13 | 106,138 | Place Illinois wells/streams (hydrologykg) on the national S2 grid and roll up to county via spatialkg admin regions. |
 | sawgraph ↔ spatialkg | S2_L13 | 88,007 | Aggregate Maine PFAS samples (sawgraph) to S2 cells and counties (spatialkg). |
+| sockg ↔ sawgraph | S2_L13 | 2 | Which USDA soil-organic-carbon (SOCKG) experiment sites sit in the same S2 Level-13 cell as a SAWGraph water-quality sample, and what PFAS analytes were screened there? |
 | sockg ↔ spatialkg | S2_L13 | 1,069 | Place SOCKG soil-organic-carbon experiment sites on the national S2 grid (spatialkg) and roll them up to county/state admin regions. |
 | sudokn ↔ spatialkg | S2_L13 | 42,560 | Place SUDOKN manufacturers of a NAICS on the S2 grid (computed) and find which cells also contain a sawgraph PFAS sample or an EPA facility (fiokg), with the county each sits in. E.g. SUDOKN electroplaters (332813) sharing a cell with a PFAS sample. |
 | ufokn ↔ fiokg | S2_L13 | 2,461 | Which urban flood-risk cells (ufokn) contain EPA-regulated facilities (fiokg)? - flood exposure of regulated sites, co-located in the same S2 Level-13 cell. |

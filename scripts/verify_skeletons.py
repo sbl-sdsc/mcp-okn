@@ -394,6 +394,17 @@ SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {{
   GRAPH {g("spatialkg")} {{ ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }}
 }}"""
 
+# Leaf-to-leaf: sockg soil-carbon sites and sawgraph (national US-WQP) samples in
+# the same S2 cell. sockg types its cells (a S2Cell_Level13); sawgraph carries the
+# IDENTICAL KWG cell IRI as an owl:sameAs object. Requiring the type on BOTH sides
+# returns 0 (sawgraph types these shared cells only as geo:SpatialObject/owl:Thing),
+# so scope the type on the sockg side only and match sawgraph on the raw cell IRI.
+Q["H3-s2-sockg-sawgraph"] = f"""
+SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {{
+  GRAPH {g("sockg")} {{ ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }}
+  GRAPH {g("sawgraph")} {{ ?s {SAMEAS} ?cell . }}
+}}"""
+
 # ufokn stores https://schema.org/value+name; the server rewrites a query's
 # https://schema.org/ to http://, so we cannot name the predicate IRI directly.
 # Match the distinctive "s2Level13" literal via the object index, then read the
