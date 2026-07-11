@@ -49,3 +49,6 @@ metadata/*_20[0-9][0-9]-[0-1][0-9]-*.json
 
 # Claude Code / agent local config
 .claude/
+
+# Local scratch export
+mcp.html
