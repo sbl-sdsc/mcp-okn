@@ -3551,6 +3551,13 @@
       "diagnosis": "ufokn IS an S2 Level-13 leaf (O1) and directly co-locates with the NATIONAL leaf fiokg (O2: 2,461 shared cells in a 4,267-cell sample, 58%). But against the SINGLE-STATE leaves sawgraph (Maine) and hydrologykg (Illinois) the same ufokn sample shows 0 shared cells - the sampled ufokn region (geohash 9q/9mvu) does not fall in ME/IL. A global check is INFEASIBLE within tool limits: ufokn stores S2 as 11.7M schema:value property nodes and its https-form schema.org predicates force variable-predicate scans (no object-index use), so both join directions time out; the only feasible bounded query (limit ufokn to ~5k nodes) is region-locked to wherever the scan starts. So ufokn<->sawgraph and ufokn<->hydrologykg are UNVERIFIED - they are non-zero only if ufokn happens to cover a Maine/Illinois metro; assert via the spatialkg hub. ufokn has no label/id/county key to fall back on (Place names are geohash strings, identifiers are ufokn-internal). Checked 2026-06-19."
     },
     {
+      "left_kg": "ufokn",
+      "right_kg": "hydrologykg",
+      "attempted_key": "S2 Level-13 cell (direct leaf-to-leaf)",
+      "result": "0 shared cells in a 40,000-cell sample; full check infeasible",
+      "diagnosis": "Direct S2 Level-13 leaf-to-leaf join. Both attach INDEPENDENTLY to spatialkg (ufokn O1 = 97,087 cells; hydrologykg D1 = 106,138 cells), but they do NOT share L13 cells: 0 exact matches across 40,000 sampled ufokn cells intersected against hydrologykg's FULL 106,138-cell set (also 0 in 300 / 2,000 / 3,000-cell samples, both storage orders). REFINES the ufokn<->sawgraph record's 'hydrologykg = Illinois, outside ufokn's region' note: they actually DO overlap regionally - hydrologykg is mostly S2 face 4 (85,921 of 106,138 cells; face-4 range [9.789e18, 9.936e18]) and the sampled ufokn cells are all face 4 in [9.813e18, 9.821e18], i.e. INSIDE hydrologykg's range - yet no identical L13 (~1 km2) cell coincides. ufokn maps urban-flood infrastructure and hydrologykg maps streams / waterbodies / wells: different feature types that rarely occupy the same 1 km2 cell even when co-located. A global exact count is infeasible (ufokn ~11.7M S2 schema:value nodes; its https schema.org predicates force variable-predicate scans that 429 / time out). They meet only through spatialkg on the cell TYPE, not on shared cells; use fiokg (O2, national) as ufokn's S2 partner, or route via the spatialkg hub. Checked 2026-07-11."
+    },
+    {
       "kg": "pankgraph",
       "attempted_key": "dbSNP rsID (sequence variant)",
       "result": "island",
