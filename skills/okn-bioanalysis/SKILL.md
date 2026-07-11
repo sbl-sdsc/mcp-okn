@@ -10,8 +10,9 @@ description: >-
   social determinants) via geography (county FIPS / ZIP / S2 cells). Use whenever a task involves
   genes, proteins, diseases, phenotypes, pathways, chemicals, drugs, exposures, differential
   expression, enrichment, ortholog projection, or mapping these across KGs or onto locations.
-  Triggers: "analyze these genes", "map genes to diseases / drugs", "GO / Reactome enrichment",
-  "link a disease or chemical to exposure / geography", or naming a bio KG.
+  Triggers: "analyze these genes", "map genes to diseases / drugs", "map genes / proteins / diseases
+  to phenotypes", "GO / Reactome enrichment", "link a disease or chemical to exposure / geography", or
+  naming a bio KG.
 ---
 
 # OKN bio-analysis
@@ -103,8 +104,8 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
    `get_join_strategy`, and `find_context_sources` to list *all* suppliers of an annotation (don't
    privilege one KG). Typical annotations (with example suppliers): disease↔gene, gene↔trait
    (digcfdekg), gene / protein↔pathway & GO (prokn, ncipidkg), chemical↔gene / adverse-outcome
-   (biobricks tox + aopwiki), disease↔phenotype (rdkg / oard-kg, HPO), gene↔drug & disease↔drug
-   (rdkg `treats`).
+   (biobricks tox + aopwiki), disease / gene / protein↔phenotype (HP — see step 7), gene↔drug &
+   disease↔drug (rdkg `treats`).
 4. **Differential expression / omics (optional).** Where a source has it: spoke-genelab
    (model-organism DE, reified) or gene-expression-atlas baselines. Apply that source's selection
    rules; threshold adj_p ≤ 0.05 and |log2FC| ≥ 1. See the workflow appendix for spoke-genelab.
@@ -112,10 +113,21 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
    orthologs and collapse with `collapse_orthologs.py`; carry the *ortholog-inferred* caveat.
 6. **Functional enrichment.** GO / Reactome / disease / trait / chemical-set over-representation with
    `enrichment.py` (explicit background, hypergeometric + BH FDR). See enrichment-methods.
-7. **Disease / phenotype / trait linkage.** Test the entity set for over-representation of disease /
+7. **Map entities to phenotypes (HP).** Phenotype = **HP** terms; **5 suppliers** — `oard-kg`,
+   `prokn`, `rdkg`, `gene-expression-atlas-okn`, `biohealth` (spoke-okn / pankgraph carry disease but
+   **no** phenotype — bridge them). Route by entity: **disease → phenotype** — richest is `oard-kg`
+   (EHR associations, **reified**, so the HP term can sit on `biolink:subject` *or* `biolink:object`;
+   UNION both), `rdkg` gives a cleaner direct edge; **gene → phenotype** — **no direct edge**, route
+   gene→disease→phenotype (intra-KG in `rdkg`, or get the gene's diseases then bridge disease→HP to
+   oard-kg / rdkg); **protein → phenotype** — only `prokn`, via reified marker-gene / clinical-evidence
+   statements. Disease is the pivot: **MONDO** is the hub; DOID / EFO / OMIM / Orphanet / UMLS bridge
+   to MONDO / HP via **ubergraph**. Get every cross-KG recipe from `list_crosswalks` (cluster A + BH) /
+   `get_join_strategy`; `find_context_sources(want=["phenotype"], join_key=…)` lists all suppliers.
+   These are EHR / curated **associations — observational, not causal.**
+8. **Disease / phenotype / trait linkage.** Test the entity set for over-representation of disease /
    phenotype / trait genes; distinguish a **broad** (GWAS) set (null by construction) from a
    **curated** (Mendelian) set (the discriminating test).
-8. **Drug / target / exposure linkage.**
+9. **Drug / target / exposure linkage.**
    - **Known & candidate treatments for a target (therapeutic hypotheses).** For each known or
      top-ranked target, find drugs / compounds that act on it: on a **protein (UniProt)** or **gene**
      (Ensembl; Entrez / HGNC symbol via a bridge) target, **prokn** links approved / investigational
@@ -124,7 +136,7 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
      **repurposing** angle (disease↔gene, then a drug→disease layer — **rdkg `treats`** is the clean
      curated source; **spoke-okn** also carries DrugBank drugs + a `TREATS_CtD` drug→disease layer,
      though sparser). Map every hit back onto the target; `find_context_sources(want=["drug"],
-     join_key=…)` confirms the suppliers. spoke-okn can also tie a drug to **place / SDoH** (step 9).
+     join_key=…)` confirms the suppliers. spoke-okn can also tie a drug to **place / SDoH** (step 10).
    - **Label the evidence layer honestly:** approved therapeutic > investigational > medicinal-
      chemistry probe (potential, unvalidated) > toxicogenomic perturbation — e.g. **spoke-okn's
      compound→gene layer is a toxicogenomic perturbation, not a treatment**, so check what a
@@ -133,17 +145,17 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
      CAS / CHEBI / PubChem *substance* — a med-chem probe or tox-screen chemical, i.e. a lower rung.
    - **Exposure / toxicology (environmental questions):** chemical↔gene tox screens (biobricks tox)
      and adverse outcome pathways (aopwiki) — the harmful-exposure direction, distinct from therapy.
-9. **Place-based linkage (bio ↔ geography).** When the question is spatial, get the bio entity onto a
-   **geographic key** (county FIPS / ZIP / S2) via whichever KG carries both your entity and geography
-   (use `find_context_sources` / `get_join_strategy` to pick it — e.g. spoke-okn for a gene / disease,
-   sawgraph for a chemical exposure), then join the spatial hub: environmental measurements (sawgraph,
-   hydrology), facilities (fiokg), social services (dreamkg / ruralkg), neighborhood / justice
-   (nikg / scales), soil / flood (sockg / ufokn). This turns a gene / disease / chemical result into
-   an exposure- or place-aware map.
-10. **Ranking & tiering.** Integrate the evidence axes (recurrence, effect size, disease / phenotype
+10. **Place-based linkage (bio ↔ geography).** When the question is spatial, get the bio entity onto a
+    **geographic key** (county FIPS / ZIP / S2) via whichever KG carries both your entity and geography
+    (use `find_context_sources` / `get_join_strategy` to pick it — e.g. spoke-okn for a gene / disease,
+    sawgraph for a chemical exposure), then join the spatial hub: environmental measurements (sawgraph,
+    hydrology), facilities (fiokg), social services (dreamkg / ruralkg), neighborhood / justice
+    (nikg / scales), soil / flood (sockg / ufokn). This turns a gene / disease / chemical result into
+    an exposure- or place-aware map.
+11. **Ranking & tiering.** Integrate the evidence axes (recurrence, effect size, disease / phenotype
     support, **druggability — a known or candidate drug acts on it**, curated role, specificity,
     number of corroborating KGs) into one score + A / B / C tiers.
-11. **Literature comparison (optional).** PubMed + Paperclip: supported / novel / contradicted;
+12. **Literature comparison (optional).** PubMed + Paperclip: supported / novel / contradicted;
     verify central claims against full text.
 
 ## Statistical rigor

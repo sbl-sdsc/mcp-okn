@@ -72,6 +72,32 @@ Useful chains:
   (no bio hub needed).
 - **gene / disease → SDoH**: social-determinant layers (spoke-okn / biohealth) by disease or geography.
 
+## Mapping to phenotypes (HP)
+
+Phenotype = **HP** terms (`obo/HP_`); **5 suppliers** — `oard-kg`, `prokn`, `rdkg`,
+`gene-expression-atlas-okn`, `biohealth`. spoke-okn and pankgraph carry **disease but no phenotype** —
+reach HP by bridging their disease. Disease is the pivot: **MONDO** is the hub, and DOID / EFO / OMIM /
+Orphanet / UMLS all bridge to MONDO (and onward to HP) through **ubergraph**. Route by source entity:
+
+- **disease → HP**: `oard-kg` is richest (EHR disease↔phenotype associations) but **reified** — the HP
+  (or MONDO) term can sit on `biolink:subject` *or* `biolink:object`, so **UNION both positions** or you
+  silently drop half the matches. `rdkg` gives a cleaner, more direct disease→phenotype edge.
+- **gene → HP**: **no direct edge** — route gene → disease → HP (intra-KG in `rdkg`, or get the gene's
+  diseases in pankgraph / spoke-okn / prokn / rdkg, then bridge disease → HP to `oard-kg` / `rdkg`).
+- **protein → HP**: only `prokn`, and only via reified marker-gene / clinical-evidence statements (no
+  labelled `protein has_phenotype` predicate) — HP sits in object position of those statements.
+- **biohealth → HP**: its entities are UMLS-CUI node IRIs; it reaches HP only through the ubergraph
+  **UMLS↔HP** (`oboInOwl:hasDbXref`) bridge.
+
+For a **disease category** ("all cardiovascular", "any asthma"), expand with ubergraph
+`rdfs:subClassOf*` and join to the phenotype KG in the same query (the disease-subtype expansion note
+below applies unchanged). The concrete cross-KG recipes — exact predicates, IRI normalization, verified
+counts, a runnable `skeleton_query` — are the crosswalk catalog's **disease / phenotype cluster A** and
+**biohealth BH cluster**: copy them from `list_crosswalks` / `get_join_strategy`; **don't hard-code the
+predicates here** (they drift across releases). `find_context_sources(want=["phenotype"], join_key=…)`
+lists every supplier and its key. oard-kg disease↔phenotype is EHR **co-occurrence — observational, not
+causal**.
+
 ## Within-KG recipe worth keeping: prokn GO / Reactome enrichment
 
 Cross-KG joins come from `get_join_strategy`; this is a *within-prokn traversal* the tools don't hand
