@@ -59,9 +59,9 @@ async def test_known_non_join_pair_is_flagged_not_verified():
 
 @pytest.mark.asyncio
 async def test_single_kg_non_join_blocks_any_pairing():
-    # maudekg is a profiled island (single-KG known_non_join record): nothing to
+    # medical-device-kg is a profiled island (single-KG known_non_join record): nothing to
     # join, with anything. The bare-"kg" record must block pairing it with prokn.
-    out = await get_join_strategy("maudekg", "prokn")
+    out = await get_join_strategy("medical-device-kg", "prokn")
     assert out["status"] == "known_non_join"
 
 
@@ -341,8 +341,8 @@ async def test_oardkg_prokn_disease_linkages_flagged_complementary():
 
 
 def test_island_status_for_island_kg():
-    assert cw.island_status("maudekg") is not None
-    assert cw.island_status("maudekg")["island"] is True
+    assert cw.island_status("medical-device-kg") is not None
+    assert cw.island_status("medical-device-kg")["island"] is True
     assert cw.island_status("prokn") is None  # not an island
 
 

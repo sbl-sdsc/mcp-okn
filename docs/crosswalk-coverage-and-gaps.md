@@ -62,7 +62,7 @@ yet used as a join key for that KG** (the unexplored signal).
 | geoconnex | Place, Dataset, PropertyValue | FIPS |
 | hydrologykg | Feature, Region, SpatialObject | S2 L13, KWG |
 | identifier-mappings | _(mapping table, no rdf:type)_ | _bridge table_ |
-| maudekg | MAUDEReport, MedicalDevice | _FDA product codes (island)_ |
+| medical-device-kg | MAUDEReport, MedicalDevice | _FDA product codes (island)_ |
 | nasa-gesdisc-kg | Publication, Dataset, Instrument | _GeoNames/lat-long, science keywords (island)_ |
 | ncipidkg | Statement (INDRA), pathway | UniProt, **GO** |
 | nde | Dataset, Person, DefinedTerm | DOID, MONDO, NCBITaxon, **HP** |
@@ -152,7 +152,7 @@ retry to join climatemodelskg geography to `spoke-okn`/`spatialkg` county FIPS.
   `"Homo sapiens (Human)"`, not an NCBITaxon IRI (an initial sampled signal was a false
   positive; corrected by spot-check).
 - **phaseskg** GO/OBO terms are ontology scaffolding (no instance data) — island.
-- **Islands / no public key:** maudekg (FDA product codes), nasa-gesdisc-kg
+- **Islands / no public key:** medical-device-kg (FDA product codes), nasa-gesdisc-kg
   (GeoNames/keywords), wildlifekn (species as label strings), evoweb (custom gene IRIs).
 - **Meta / bridge graphs** excluded as data endpoints: ubergraph (ontology backbone),
   okn-void (VOID metadata), identifier-mappings, wikidata.

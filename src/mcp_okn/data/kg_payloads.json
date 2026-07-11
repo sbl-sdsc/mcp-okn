@@ -136,7 +136,7 @@
     "identifier-mappings": [
       "identifier_mapping"
     ],
-    "maudekg": [
+    "medical-device-kg": [
       "adverse_event",
       "medical_device"
     ],

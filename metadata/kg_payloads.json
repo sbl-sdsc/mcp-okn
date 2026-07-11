@@ -62,7 +62,7 @@
     "geoconnex": ["hydrology", "geospatial"],
     "hydrologykg": ["hydrology", "geospatial"],
     "identifier-mappings": ["identifier_mapping"],
-    "maudekg": ["adverse_event", "medical_device"],
+    "medical-device-kg": ["adverse_event", "medical_device"],
     "nasa-gesdisc-kg": ["dataset", "publication"],
     "ncipidkg": ["pathway", "protein"],
     "nde": ["dataset", "disease", "organism"],

@@ -101,10 +101,10 @@ async def test_get_kg_version_filters_excluded_kgs(monkeypatch):
 
 async def test_get_kg_version_handles_missing_optional_dates(monkeypatch):
     fake, _ = _capturing(
-        [{"s": "https://purl.org/okn/frink/kg/maudekg", "version": "v0.0.1"}]
+        [{"s": "https://purl.org/okn/frink/kg/medical-device-kg", "version": "v0.0.1"}]
     )
     monkeypatch.setattr(void, "run_sparql", fake)
-    out = await get_kg_version("maudekg")
+    out = await get_kg_version("medical-device-kg")
     assert out["version"] == "v0.0.1"
     assert out["last_updated"] is None
     assert "modified" not in out

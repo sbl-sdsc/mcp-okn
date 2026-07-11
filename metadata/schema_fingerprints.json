@@ -958,7 +958,7 @@
       "well yield"
     ]
   },
-  "maudekg": {
+  "medical-device-kg": {
     "classes": [
       "MAUDE Report",
       "Medical Device"

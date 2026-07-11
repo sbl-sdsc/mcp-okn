@@ -126,11 +126,11 @@
     "named_graph": "https://purl.org/okn/frink/kg/identifier-mappings"
   },
   {
-    "shortname": "maudekg",
+    "shortname": "medical-device-kg",
     "title": "FDA MAUDE Adverse Event Knowledge Graph",
     "description": "Knowledge graph constructed from FDA MAUDE adverse event reports using standardized FDA product codes.",
     "homepage": "https://github.com/Prabhadeus/Proto-OKN",
-    "named_graph": "https://purl.org/okn/frink/kg/maudekg"
+    "named_graph": "https://purl.org/okn/frink/kg/medical-device-kg"
   },
   {
     "shortname": "nasa-gesdisc-kg",
