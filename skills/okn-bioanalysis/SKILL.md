@@ -3,12 +3,12 @@ name: okn-bioanalysis
 description: >-
   Methodology for biomedical knowledge-graph analysis and cross-KG hypotheses over the
   OKN federated SPARQL endpoint via the mcp-okn tools. Works across the federation's bio graphs
-  (spoke-okn, prokn, rdkg, digcfdekg, gene-expression-atlas-okn, the biobricks chemical/tox graphs,
-  biobricks-aopwiki, biomarkerkg, ncipidkg, oard-kg, pankgraph, spoke-genelab, ubergraph),
+  (spoke-okn, prokn, rdkg, digcfdekg, gene-expression-atlas-okn, biobricks-aopwiki, biomarkerkg,
+  ncipidkg, oard-kg, pankgraph, spoke-genelab, ubergraph),
   integrating on shared identifiers — gene, protein, disease (MONDO/DOID), phenotype (HP),
-  GO/Reactome, chemical/drug — and can LINK bio entities to place-based data (exposure, facilities,
+  taxon (NCBITaxon), GO/Reactome, chemical/drug — and can LINK bio entities to place-based data (exposure, facilities,
   social determinants) via geography (FIPS / ZIP / S2). Use whenever a task involves
-  genes, proteins, diseases, phenotypes, pathways, chemicals, drugs, exposures, differential
+  genes, proteins, diseases, phenotypes, organisms / taxa, pathways, chemicals, drugs, exposures, differential
   expression, enrichment, ortholog projection, or mapping these across KGs or onto locations.
   Triggers: "analyze these genes", "map genes / proteins / diseases to drugs / phenotypes",
   "GO / Reactome enrichment", "link a disease or chemical to exposure / geography", or naming a bio KG.
@@ -85,6 +85,7 @@ join keys — so you know what to ask the tools for:
 | Pathway / function | Reactome `R-HSA`, GO |
 | Chemical / drug | CHEBI / CAS / PubChem CID / MeSH / DrugBank |
 | Cell type / tissue | CL / UBERON |
+| Taxon / organism | NCBITaxon (ubergraph `subClassOf*` clade closure; some KGs organism-label only) |
 | Social determinants (SDoH) | UMLS concept |
 | Geography *(to reach place-based data)* | S2 L13 cell · county / state FIPS · ZIP |
 
@@ -123,38 +124,49 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
    to MONDO / HP via **ubergraph**. Get every cross-KG recipe from `list_crosswalks` (cluster A + BH) /
    `get_join_strategy`; `find_context_sources(want=["phenotype"], join_key=…)` lists all suppliers.
    These are EHR / curated **associations — observational, not causal.**
-8. **Disease / phenotype / trait linkage.** Test the entity set for over-representation of disease /
+8. **Map / align organisms (taxon).** Taxon = **NCBITaxon**; **8-KG hub through `ubergraph`** —
+   spoke-okn, spoke-genelab, nde, sawgraph, biobricks-aopwiki, gene-expression-atlas-okn (real ids) +
+   wildlifekn, biohealth (**label-only, fragile** — no ids, no clade expansion). Use the
+   **`taxon_overlap(kg_a, kg_b)`** tool — it returns an exact-id and a clade-membership skeleton plus a
+   verified overlap. **Exact-id match badly understates real overlap** (coarse genus vs strain) —
+   always **clade-expand** with ubergraph `rdfs:subClassOf*`. E.g. spoke-genelab's **46 microbiome
+   taxa** (bacteria / fungi; NCBITaxon id in the node IRI, e.g. `node/286` = Pseudomonas) reach
+   spoke-okn as **2 by exact-id but 33,313 by clade expansion** (96% of spoke-okn strains). This is
+   **distinct from ortholog projection (step 5)**, which collapses model-organism *genes* to human
+   genes — here you map the *organisms themselves*. Recipes from `taxon_overlap` / `list_crosswalks`
+   (cluster D + taxon_hub); clade-expanded overlap is **taxonomic containment, not identity**.
+9. **Disease / phenotype / trait linkage.** Test the entity set for over-representation of disease /
    phenotype / trait genes; distinguish a **broad** (GWAS) set (null by construction) from a
    **curated** (Mendelian) set (the discriminating test).
-9. **Drug / target / exposure linkage.**
-   - **Known & candidate treatments for a target (therapeutic hypotheses).** For each known or
-     top-ranked target, find drugs / compounds that act on it: on a **protein (UniProt)** or **gene**
-     (Ensembl; Entrez / HGNC symbol via a bridge) target, **prokn** links approved / investigational
-     **drugs** and **probe compounds** (measured bioactivity) to the target; and chain
-     **target → its diseases → drugs that treat them** for a
-     **repurposing** angle (disease↔gene, then a drug→disease layer — **rdkg `treats`** is the clean
-     curated source; **spoke-okn** also carries DrugBank drugs + a `TREATS_CtD` drug→disease layer,
-     though sparser). Map every hit back onto the target; `find_context_sources(want=["drug"],
-     join_key=…)` confirms the suppliers. spoke-okn can also tie a drug to **place / SDoH** (step 10).
-   - **Label the evidence layer honestly:** approved therapeutic > investigational > medicinal-
-     chemistry probe (potential, unvalidated) > toxicogenomic perturbation — e.g. **spoke-okn's
-     compound→gene layer is a toxicogenomic perturbation, not a treatment**, so check what a
-     compound→gene predicate means. The payload label is the fastest evidence cue: a **`drug`**
-     payload is a DrugBank therapeutic (approved / investigational); a **`chemical`** payload is a
-     CAS / CHEBI / PubChem *substance* — a med-chem probe or tox-screen chemical, i.e. a lower rung.
-   - **Exposure / toxicology (environmental questions):** chemical↔gene tox screens (biobricks tox)
-     and adverse outcome pathways (aopwiki) — the harmful-exposure direction, distinct from therapy.
-10. **Place-based linkage (bio ↔ geography).** When the question is spatial, get the bio entity onto a
+10. **Drug / target / exposure linkage.**
+    - **Known & candidate treatments for a target (therapeutic hypotheses).** For each known or
+      top-ranked target, find drugs / compounds that act on it: on a **protein (UniProt)** or **gene**
+      (Ensembl; Entrez / HGNC symbol via a bridge) target, **prokn** links approved / investigational
+      **drugs** and **probe compounds** (measured bioactivity) to the target; and chain
+      **target → its diseases → drugs that treat them** for a
+      **repurposing** angle (disease↔gene, then a drug→disease layer — **rdkg `treats`** is the clean
+      curated source; **spoke-okn** also carries DrugBank drugs + a `TREATS_CtD` drug→disease layer,
+      though sparser). Map every hit back onto the target; `find_context_sources(want=["drug"],
+      join_key=…)` confirms the suppliers. spoke-okn can also tie a drug to **place / SDoH** (step 11).
+    - **Label the evidence layer honestly:** approved therapeutic > investigational > medicinal-
+      chemistry probe (potential, unvalidated) > toxicogenomic perturbation — e.g. **spoke-okn's
+      compound→gene layer is a toxicogenomic perturbation, not a treatment**, so check what a
+      compound→gene predicate means. The payload label is the fastest evidence cue: a **`drug`**
+      payload is a DrugBank therapeutic (approved / investigational); a **`chemical`** payload is a
+      CAS / CHEBI / PubChem *substance* — a med-chem probe or tox-screen chemical, i.e. a lower rung.
+    - **Exposure / toxicology (environmental questions):** chemical↔gene tox screens (biobricks tox)
+      and adverse outcome pathways (aopwiki) — the harmful-exposure direction, distinct from therapy.
+11. **Place-based linkage (bio ↔ geography).** When the question is spatial, get the bio entity onto a
     **geographic key** (county FIPS / ZIP / S2) via whichever KG carries both your entity and geography
     (use `find_context_sources` / `get_join_strategy` to pick it — e.g. spoke-okn for a gene / disease,
     sawgraph for a chemical exposure), then join the spatial hub: environmental measurements (sawgraph,
     hydrology), facilities (fiokg), social services (dreamkg / ruralkg), neighborhood / justice
     (nikg / scales), soil / flood (sockg / ufokn). This turns a gene / disease / chemical result into
     an exposure- or place-aware map.
-11. **Ranking & tiering.** Integrate the evidence axes (recurrence, effect size, disease / phenotype
+12. **Ranking & tiering.** Integrate the evidence axes (recurrence, effect size, disease / phenotype
     support, **druggability — a known or candidate drug acts on it**, curated role, specificity,
     number of corroborating KGs) into one score + A / B / C tiers.
-12. **Literature comparison (optional).** PubMed + Paperclip: supported / novel / contradicted;
+13. **Literature comparison (optional).** PubMed + Paperclip: supported / novel / contradicted;
     verify central claims against full text.
 
 ## Statistical rigor

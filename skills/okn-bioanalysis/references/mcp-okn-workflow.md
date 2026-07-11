@@ -49,6 +49,7 @@ to ask the tools for.
 | Pathway / function | Reactome `R-HSA`, GO |
 | Chemical / drug | CHEBI / CAS / PubChem CID / MeSH / DrugBank |
 | Cell type / tissue | CL / UBERON |
+| Taxon / organism | NCBITaxon (ubergraph `subClassOf*` clade closure; some KGs organism-label only) |
 | Social determinants (SDoH) | UMLS concept |
 | Geography *(to reach place-based data)* | S2 L13 cell · county / state FIPS · ZIP |
 
@@ -98,6 +99,35 @@ predicates here** (they drift across releases). `find_context_sources(want=["phe
 lists every supplier and its key. oard-kg disease↔phenotype is EHR **co-occurrence — observational, not
 causal**.
 
+## Mapping / aligning organisms (taxon)
+
+Taxon = **NCBITaxon**; **8 KGs attach as a star hub through `ubergraph`** — spoke-okn, spoke-genelab,
+nde, sawgraph, biobricks-aopwiki, gene-expression-atlas-okn carry **real NCBITaxon ids**; wildlifekn
+(authority-stripped scientific binomial) and biohealth (UMLS concept name) are **label-only — fragile,
+and cannot clade-expand**. (`biobricks-mesh` has an organism payload but is MeSH, *not* a taxon-hub
+member.) Each KG encodes taxa differently — a node-IRI id, a string-literal IRI, a `biolink:in_taxon` /
+`schema:species` object, or a bare label — so **don't hard-code the per-KG shape**; the
+**`taxon_overlap(kg_a, kg_b)`** tool returns the normalization for both sides as two runnable skeletons
+(`exact_id_skeleton` and `clade_membership_skeleton`) plus a verified `materialized_overlap`.
+
+**The trap: an exact NCBITaxon-id match badly understates real overlap** (one side is often coarse —
+genus / family — the other fine strains). **Always clade-expand** with ubergraph `rdfs:subClassOf*`
+(the tool's clade skeleton does this; it is directional — swap args to flip the parent side).
+
+- **spoke-genelab is a dual spoke**: 9 model-organism taxa (on `Gene.taxonomy`) + **46 microbiome taxa**
+  (bacteria / fungi; NCBITaxon id embedded in the Organism node IRI, e.g. `node/286` = Pseudomonas).
+- **spoke-genelab microbiome → spoke-okn**: only **2 by exact-id**, but **33,313 by clade expansion**
+  (96% of spoke-okn's 34,570 strain taxa) — because the microbiome set includes broad clades (e.g.
+  `NCBITaxon_2` Bacteria) that contain most spoke-okn strains. This is the canonical example of the trap.
+
+This is **distinct from ortholog projection** (the spoke-genelab appendix / `collapse_orthologs.py`),
+which collapses model-organism *genes* to human genes — a gene-lane operation. Taxon mapping joins the
+*organisms themselves*. Verified recipes / counts are the crosswalk catalog's **cluster D + `taxon_hub`**
+(`hub_kg: ubergraph`, per-pair `exact_id / clade_a_in_b / clade_b_in_a`): read them via `taxon_overlap`
+/ `list_crosswalks`; `find_context_sources(want=["organism"], join_key=…)` lists suppliers. A
+clade-expanded overlap is **taxonomic containment (a coarse taxon covering many finer ones), not 1:1
+identity** — carry that caveat.
+
 ## Within-KG recipe worth keeping: prokn GO / Reactome enrichment
 
 Cross-KG joins come from `get_join_strategy`; this is a *within-prokn traversal* the tools don't hand
@@ -142,3 +172,8 @@ Its query-time contrast rules are returned by `get_schema` (`usage_notes`) and e
 `…_ASmO` analogous); call a gene differentially expressed at **adj_p ≤ 0.05 and |log2FC| ≥ 1**
 (`FILTER(?p <= 0.05 && ABS(?l) >= 1)`). Then ortholog `?gene gl:IS_ORTHOLOG_MGiG ?humanGene` →
 collapse with `scripts/collapse_orthologs.py`; then integrate on Entrez like any other gene source.
+
+Microbial-abundance (`…_ASmO`) rows carry an **organism identity** — spoke-genelab's 46 microbiome
+taxa (bacteria / fungi) — not just an abundance value. Don't discard the taxon: map those organisms
+across KGs via the taxon route ("Mapping / aligning organisms" above / `taxon_overlap`), e.g. onto
+spoke-okn's strains by ubergraph clade expansion.
