@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 135 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and an example question the join answers.
+Here are all 136 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and an example question the join answers.
 
 ## Anatomy & Cell Type
 
@@ -188,6 +188,7 @@ Here are all 135 precomputed cross-KG crosswalks (verified through 2026-06-30), 
 |---|---|---|---|
 | spoke-okn → wikidata → biohealth | MeSH→UMLS | 3 | For a County Health Rankings SDoH indicator spoke-okn tracks geographically (e.g. Social Vulnerability Index), what conditions does biohealth's literature graph link it to, reached through the MeSH->UMLS wikidata bridge? |
 | spoke-okn ↔ biohealth | concept label (SNOMED preferred term ↔ UMLS concept name) | 89 | Which diseases does biohealth's literature graph link to a behavioural or environmental SDoH that spoke-okn catalogues (e.g. sedentary lifestyle, pollution), matched on the concept label? |
+| phaseskg ↔ biohealth | concept label (psychosocial / SDoH term ↔ UMLS concept name) | 8 | For the loneliness / social-isolation / social-withdrawal constructs the PHASES healthy-aging ontology defines, what conditions and determinants does biohealth's literature graph link them to? |
 | dreamkg ↔ biohealth | concept label (social-service audience term ↔ UMLS concept name) | 14 | For the health conditions and social determinants that DREAM-KG provides services for, what does biohealth's clinical/SDoH graph link those concepts to? |
 
 ## Taxonomy
