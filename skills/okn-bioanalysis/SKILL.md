@@ -164,7 +164,11 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
     sawgraph for a chemical exposure), then join the spatial hub: environmental measurements (sawgraph,
     hydrology), facilities (fiokg), social services (dreamkg / ruralkg), neighborhood / justice
     (nikg / scales), soil / flood (sockg / ufokn). This turns a gene / disease / chemical result into
-    an exposure- or place-aware map.
+    an exposure- or place-aware map. For **climate / Earth-observation** context, a place chains
+    spoke-okn → **climatemodelskg** (climate-model output, on GeoNames) → **nasa-gesdisc-kg** (NASA GES
+    DISC satellite datasets / instruments / platforms + a 465k-publication DOI/ORCID/ROR citation
+    graph, on DOI + GCMD instrument/platform) — an **indirect, non-bio** provenance bridge (nasa-gesdisc
+    has no direct bio join); see the workflow reference. Use for environmental / climate-health framing.
 12. **Ranking & tiering.** Integrate the evidence axes (recurrence, effect size, disease / phenotype
     support, **druggability — a known or candidate drug acts on it**, curated role, specificity,
     number of corroborating KGs) into one score + A / B / C tiers.

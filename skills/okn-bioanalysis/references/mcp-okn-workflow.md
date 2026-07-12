@@ -80,6 +80,18 @@ Useful chains:
   clinical / SDoH associations for an aging / social-connection construct; get the recipe from
   `get_join_strategy` / `list_crosswalks` (cluster SS/BH), and note these are OBSERVATIONAL literature
   associations, not causal.
+- **place → climate → Earth-observation / literature** *(indirect, non-bio context)*: a location in
+  **spoke-okn** tagged with a **GeoNames** id bridges to **climatemodelskg** climate-model output for
+  that place (`climatemodelskg × spoke-okn` on GeoNames, cluster GN), which in turn bridges to
+  **nasa-gesdisc-kg** — NASA GES DISC's Earth-observation + bibliometric graph — on **DOI** (PB1, 651
+  shared publications) and on **GCMD instrument / platform name** (EO1/EO2). Use it to surface, for a
+  place or climate topic, the NASA **satellite datasets, instruments/platforms**, and the
+  **publication / citation graph** (465k publications with DOI + author **ORCID** + institution
+  **ROR** + OpenAlex). **Caveat:** nasa-gesdisc-kg has **no direct join to any bio KG** — this is
+  climate / Earth-observation context and literature provenance reached *indirectly* (GeoNames is a
+  place-id bridge; DOI and instrument/platform names are the climatemodelskg↔nasa keys, the latter a
+  label match). Not a molecular data source; use for environmental / climate-health framing, not for
+  gene / disease evidence.
 
 ## Mapping to phenotypes (HP)
 
