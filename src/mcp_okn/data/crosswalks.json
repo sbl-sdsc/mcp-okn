@@ -3483,6 +3483,28 @@
       "skeleton_query": "SELECT (COUNT(DISTINCT ?g) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> { ?c <https://climatepub4kg.github.io/ontology#geonameid> ?g . }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?s <https://purl.org/okn/frink/kg/spoke-okn/schema/code> ?g . }\n}",
       "skeleton_verified": true,
       "domain": "Geospatial"
+    },
+    {
+      "id": "C11-inchikey-spokeokn-prokn",
+      "left_kg": "spoke-okn",
+      "left_predicate": "node-iri (ChemicalEntity IS a PubChem InChIKey IRI: http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/{InChIKey})",
+      "left_role": "subject",
+      "right_kg": "prokn",
+      "right_predicate": "chemrof:inchi_key_string (InChIKey literal on a ChEMBL compound)",
+      "right_role": "subject",
+      "shared_key": "InChIKey",
+      "key_namespace": "spoke-okn ChemicalEntity node IRI .../pubchem/inchikey/{InChIKey} -> bare InChIKey <-> prokn <https://chemkg.github.io/chemrof/inchi_key_string> (InChIKey literal on ChEMBL compounds)",
+      "bridge_kg": null,
+      "iri_normalization": "spoke-okn types its 762 chemicals as biolink:ChemicalEntity whose NODE IRI IS a PubChem InChIKey IRI (http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/{InChIKey}); strip to the bare InChIKey (REPLACE '.*/inchikey/' -> ''). prokn carries the InChIKey as a plain literal on its 304,376 ChEMBL compounds via chemrof:inchi_key_string. Match the InChIKey strings directly (no bridge). NEW link (2026-07-11): connects spoke-okn's drugs/environmental chemicals to prokn's ChEMBL bioactivity + protein-target data - the FIRST chemical crosswalk for prokn (a 304k-compound ChEMBL/InChIKey hub that joined on no chemical key) and spoke-okn's first structure-based chemical join. spoke-okn also cross-references these chemicals to ChEMBL/PubChem/ChEBI/DrugBank/KEGG via oboInOwl:hasDbXref.",
+      "verified_count": 143,
+      "verified_count_note": "143 of spoke-okn's 762 distinct InChIKey chemicals are prokn ChEMBL compounds - mostly environmental toxicants + drugs (Hexachlorophene CHEMBL496, Vinyl Chloride, Pyrene, 7,12-Dimethylbenz[a]anthracene, Coumaphos, Phenacetin CHEMBL16073). Verified 2026-07-11.",
+      "example_questions": [
+        "For a chemical spoke-okn tracks (a drug or an environmental toxicant, keyed by InChIKey), what protein targets and ChEMBL bioactivity does prokn record for the same structure?",
+        "How many of spoke-okn's chemicals are also in prokn's ChEMBL bioactivity data, joined on InChIKey?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?ik) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?c a <https://w3id.org/biolink/vocab/ChemicalEntity> . FILTER(CONTAINS(STR(?c),'/inchikey/'))\n    BIND(REPLACE(STR(?c),'.*/inchikey/','') AS ?ik) }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?p <https://chemkg.github.io/chemrof/inchi_key_string> ?ik . }\n}",
+      "skeleton_verified": true,
+      "domain": "Chemicals"
     }
   ],
   "cluster_notes": {

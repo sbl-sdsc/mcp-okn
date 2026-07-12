@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 141 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
+Here are all 142 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
 
 ## Anatomy & Cell Type
 
@@ -46,6 +46,7 @@ Here are all 141 precomputed cross-KG crosswalks (verified through 2026-06-30), 
 | spoke-okn → ubergraph → biobricks-toxcast | CHEBI↔CAS | 496 | Tie a ToxCast chemical (CAS) to spoke-okn gene/pathway/disease associations for the same compound via CHEBI.<br><br>Which ToxCast assays cover compounds SPOKE associates with a specific disease such as Parkinson disease, bridged CHEBI->CAS? |
 | rdkg ↔ spoke-okn | DrugBank | 43 | For drugs SPOKE tracks as chemicals, what disease contraindications or associations does rdkg record?<br><br>For an rdkg drug-disease association, which genes and pathways does SPOKE link the same DrugBank drug to? |
 | ruralkg ↔ rdkg | DrugBank | 2 | Do the substance-use treatment drugs in ruralkg appear in rdkg's drug-disease graph?<br><br>Which two DrugBank substance-use treatment drugs from ruralkg appear in rdkg, and what diseases does rdkg attach to them? |
+| spoke-okn ↔ prokn | InChIKey | 143 | For a chemical spoke-okn tracks (a drug or an environmental toxicant, keyed by InChIKey), what protein targets and ChEMBL bioactivity does prokn record for the same structure?<br><br>How many of spoke-okn's chemicals are also in prokn's ChEMBL bioactivity data, joined on InChIKey? |
 | biobricks-pubchem-annotations ↔ spoke-okn | PubChem CID | 762 | What PubChem free-text annotations (toxicity, hazards, uses) exist for the chemicals SPOKE links to diseases and genes?<br><br>For chemicals flagged as carcinogenic or acutely toxic in PubChem free-text annotations, which diseases and genes does SPOKE connect them to (via PubChem CID)? |
 
 ## Disease & phenotype
