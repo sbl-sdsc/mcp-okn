@@ -3373,6 +3373,94 @@
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?model) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> { ?model a <https://climatepub4kg.github.io/ontology#Source> . }\n  GRAPH <https://purl.org/okn/frink/kg/securechainkg> { ?model <https://w3id.org/secure-chain/dependsOn> ?dep . }\n}",
       "skeleton_verified": true
+    },
+    {
+      "id": "ET3-cas-sockg-biobricks-ice",
+      "left_kg": "sockg",
+      "left_predicate": "contaminoso:casNumber (CAS literal on a SoilChemicalSample)",
+      "left_role": "subject",
+      "right_kg": "biobricks-ice",
+      "right_predicate": "edamontology:has_identifier (http://identifiers.org/cas/{CAS})",
+      "right_role": "subject",
+      "shared_key": "CAS",
+      "key_namespace": "sockg contaminoso:casNumber plain literal -> rebuilt to http://identifiers.org/cas/{CAS} (biobricks-ice edamontology:has_identifier IRI)",
+      "bridge_kg": null,
+      "iri_normalization": "sockg stores CAS as a plain literal on SoilChemicalSample via <http://w3id.org/coso/v1/contaminoso#casNumber>; biobricks-ice stores it as an http://identifiers.org/cas/{CAS} IRI on <http://edamontology.org/has_identifier>. Rebuild the biobricks IRI from the sockg literal with IRI(CONCAT('http://identifiers.org/cas/', ?cas)). NEW cross-domain link (2026-07-11): sockg's 82 soil/water agrochemical CAS (pesticides + amendments - glyphosate 1071-83-6, 2,4-D 94-75-7, dimethoate 60-51-5, trifluralin 1582-09-8, ...) are ICE-screened chemicals, connecting the soil-carbon / agriculture domain to chemical toxicology; sockg was previously geospatial-only.",
+      "verified_count": 68,
+      "verified_count_note": "68 of sockg's 82 distinct agrochemical CAS numbers are ICE (Integrated Chemical Environment) chemicals in biobricks-ice. Verified 2026-07-11.",
+      "example_questions": [
+        "For a pesticide sockg records applied to a field soil (by CAS), what curated toxicity / hazard data does biobricks-ICE hold for that same chemical?",
+        "How many of the agrochemicals sockg tracks in soil have ICE toxicological screening data, joined on CAS?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?cid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sockg> { ?s <http://w3id.org/coso/v1/contaminoso#casNumber> ?cas . }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/', STR(?cas))) AS ?cid)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?x <http://edamontology.org/has_identifier> ?cid . }\n}",
+      "skeleton_verified": true,
+      "domain": "Environmental toxicology"
+    },
+    {
+      "id": "ET4-cas-sockg-biobricks-toxcast",
+      "left_kg": "sockg",
+      "left_predicate": "contaminoso:casNumber (CAS literal on a SoilChemicalSample)",
+      "left_role": "subject",
+      "right_kg": "biobricks-toxcast",
+      "right_predicate": "edamontology:has_identifier (http://identifiers.org/cas/{CAS})",
+      "right_role": "subject",
+      "shared_key": "CAS",
+      "key_namespace": "sockg contaminoso:casNumber plain literal -> rebuilt to http://identifiers.org/cas/{CAS} (biobricks-toxcast edamontology:has_identifier IRI)",
+      "bridge_kg": null,
+      "iri_normalization": "Same normalization as ET3 (sockg CAS literal -> http://identifiers.org/cas/{CAS} IRI). sockg's soil agrochemical CAS matched against EPA ToxCast high-throughput screening chemicals. Complementary to ET3 (biobricks-ice); sockg reaches the whole CAS chemical clique (biobricks-ice/toxcast/tox21, sawgraph, and spoke-okn via ubergraph CHEBI<->CAS).",
+      "verified_count": 59,
+      "verified_count_note": "59 of sockg's 82 distinct agrochemical CAS numbers are EPA ToxCast-screened chemicals. Verified 2026-07-11.",
+      "example_questions": [
+        "For a soil-applied pesticide sockg tracks (by CAS), what ToxCast high-throughput assay activity is recorded for the same chemical?",
+        "Which of sockg's soil agrochemicals appear in EPA ToxCast, joined on CAS?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?cid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sockg> { ?s <http://w3id.org/coso/v1/contaminoso#casNumber> ?cas . }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/', STR(?cas))) AS ?cid)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-toxcast> { ?x <http://edamontology.org/has_identifier> ?cid . }\n}",
+      "skeleton_verified": true,
+      "domain": "Environmental toxicology"
+    },
+    {
+      "id": "C10-entrez-biobricks-ice-rdkg",
+      "left_kg": "biobricks-ice",
+      "left_predicate": "ice:assay_entrez_gene_id (https://www.ncbi.nlm.nih.gov/gene/{Entrez} - the assay's mechanistic gene target)",
+      "left_role": "subject",
+      "right_kg": "rdkg",
+      "right_predicate": "node-iri (http://identifiers.org/ncbigene/{Entrez})",
+      "right_role": "subject",
+      "shared_key": "Entrez",
+      "key_namespace": "biobricks-ice assay_entrez_gene_id ncbi.nlm.nih.gov/gene/{id} -> bare Entrez -> http://identifiers.org/ncbigene/{id} (rdkg gene node-IRI; the shared Entrez gene-cluster key, C4-C9)",
+      "bridge_kg": null,
+      "iri_normalization": "biobricks-ice carries an Entrez gene target on each tox assay via <https://ice.ntp.niehs.nih.gov/property/assay_entrez_gene_id> as an https://www.ncbi.nlm.nih.gov/gene/{Entrez} IRI (with some 'gene/None' blanks to drop). Strip to the bare Entrez id (REPLACE .../gene/ -> '') and rebuild http://identifiers.org/ncbigene/{id} to meet rdkg's gene node-IRIs (and the rest of the Entrez gene cluster). NEW link (2026-07-11): biobricks-ice was CAS/CHEBI-only; this attaches its 525 tox-assay gene targets (AR, ESR1, ...) to the gene network, connecting chemical toxicology to gene/disease. (spoke-okn uses a different Entrez IRI form and needs its own rebuild; rdkg confirms the join.)",
+      "verified_count": 358,
+      "verified_count_note": "358 of biobricks-ice's 525 distinct tox-assay Entrez gene targets are rdkg rare-disease genes. Verified 2026-07-11. The full Entrez gene cluster (spoke-okn, prokn, gene-expression-atlas-okn, biobricks-aopwiki) is reachable by the same bare-id rebuild.",
+      "example_questions": [
+        "For a gene targeted by an ICE tox assay (biobricks-ice, Entrez), what rare-disease associations does rdkg record for that same gene?",
+        "How many of the mechanistic gene targets of ICE toxicology assays are rare-disease genes in rdkg, joined on Entrez?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?a <https://ice.ntp.niehs.nih.gov/property/assay_entrez_gene_id> ?g .\n    BIND(REPLACE(STR(?g),'.*/gene/','') AS ?bare) FILTER(?bare != 'None') }\n  BIND(IRI(CONCAT('http://identifiers.org/ncbigene/', ?bare)) AS ?gene)\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?gene ?p ?o . }\n}",
+      "skeleton_verified": true,
+      "domain": "Genes"
+    },
+    {
+      "id": "BH19-umls-biobricks-ice-biohealth",
+      "left_kg": "biobricks-ice",
+      "left_predicate": "ice:throughMechanisticTarget_NCIm (identifiers.org/umls: 'CUI: C{cui}' - NCI mechanistic-target UMLS concept)",
+      "left_role": "subject",
+      "right_kg": "biohealth",
+      "right_predicate": "node-iri (https://biohealthkg.proto-okn.net/kg/node/C{cui})",
+      "right_role": "subject",
+      "shared_key": "UMLS",
+      "key_namespace": "biobricks-ice throughMechanisticTarget_NCIm identifiers.org/umls:...C{cui} -> C{cui} -> https://biohealthkg.proto-okn.net/kg/node/C{cui} (biohealth UMLS node-IRI)",
+      "bridge_kg": null,
+      "iri_normalization": "biobricks-ice tags each assay's NCI mechanistic target with a UMLS concept via <https://ice.ntp.niehs.nih.gov/property/throughMechanisticTarget_NCIm>, stored as a URL-encoded identifiers.org/umls: value carrying 'CUI: C{cui}' (e.g. .../umls:%20CUI%3AC1328723). Extract the C{cui} (REGEX C[0-9]{6,}) and rebuild the biohealth node IRI https://biohealthkg.proto-okn.net/kg/node/{cui}. NEW link (2026-07-11): connects ICE tox-assay mechanistic targets (receptors / enzymes, e.g. AR, ESR) to biohealth's UMLS concept graph and its clinical / SDoH associations.",
+      "verified_count": 46,
+      "verified_count_note": "46 of biobricks-ice's 55 distinct NCI-mechanistic-target UMLS concepts are materialized biohealth UMLS nodes. Verified 2026-07-11.",
+      "example_questions": [
+        "For the biological target of an ICE tox assay (biobricks-ice, a UMLS concept), what clinical / SDoH associations does biohealth attach to that same concept?",
+        "How many of ICE's mechanistic-target UMLS concepts does biohealth's literature graph also describe, joined on the UMLS CUI?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?bh) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?a <https://ice.ntp.niehs.nih.gov/property/throughMechanisticTarget_NCIm> ?u . FILTER(CONTAINS(STR(?u),'umls'))\n    BIND(REPLACE(STR(?u),'^.*?(C[0-9]{6,}).*$','$1') AS ?cui) }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?p ?o . }\n}",
+      "skeleton_verified": true,
+      "domain": "Disease & phenotype"
     }
   ],
   "cluster_notes": {

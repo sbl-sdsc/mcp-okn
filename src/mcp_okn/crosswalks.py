@@ -131,6 +131,7 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "MONDO<->DOID (bridged)": "Disease & phenotype",
     "EFO<->MONDO (bridged)": "Disease & phenotype",
     "MeSH_descriptor_id": "Disease & phenotype",
+    "UMLS": "Disease & phenotype",
     "UMLS<->MONDO": "Disease & phenotype",
     "UMLS<->HP": "Disease & phenotype",
     "UMLS<->MONDO<->DOID (two-hop)": "Disease & phenotype",

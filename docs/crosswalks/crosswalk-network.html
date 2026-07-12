@@ -43,7 +43,7 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>34 knowledge graphs, 136 verified crosswalks (verified 2026-06-30). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
+  <p>34 knowledge graphs, 140 verified crosswalks (verified 2026-06-30). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
   <p class="tip">&#9654; <b>Hover</b> a node or edge for detail · <b>drag</b> to rearrange · <b>scroll</b> to zoom · <b>double-click</b> a node to unpin it.<br>&#9654; <b>Click a legend item</b> &mdash; a domain (e.g. <b>Chemicals</b>) or a line style (e.g. <b>via ubergraph</b>) &mdash; to toggle those edges.</p>
 </header>
 <div class="bar" id="legend"></div>
@@ -117,6 +117,7 @@ const R=[
 ["D",["oard-kg","prokn"],11,"MONDO↔OMIM (ubergraph)"],
 ["D",["oard-kg","prokn"],316,"MONDO↔Orphanet (ubergraph)"],
 ["D",["biobricks-mesh","spoke-okn"],165,"MeSH_descriptor_id"],
+["D",["biobricks-ice","biohealth"],46,"UMLS"],
 ["D",["biohealth","gene-expression-atlas-okn"],13,"UMLS↔HP (ubergraph)"],
 ["D",["biohealth","oard-kg"],4549,"UMLS↔HP (ubergraph)"],
 ["D",["biohealth","prokn"],4340,"UMLS↔HP (ubergraph)"],
@@ -128,6 +129,8 @@ const R=[
 
 ["E",["sawgraph","biobricks-ice"],12,"CAS"],
 ["E",["sawgraph","biobricks-toxcast"],7,"CAS"],
+["E",["sockg","biobricks-ice"],68,"CAS"],
+["E",["sockg","biobricks-toxcast"],59,"CAS"],
 
 ["F",["pankgraph","prokn"],16970,"GO"],
 ["F",["gene-expression-atlas-okn","prokn"],1068,"Reactome"],
@@ -140,6 +143,7 @@ const R=[
 ["G",["pankgraph","spoke-okn"],168,"Ensembl"],
 ["G",["biobricks-aopwiki","rdkg"],1193,"Entrez"],
 ["G",["biobricks-aopwiki","spoke-genelab"],1472,"Entrez"],
+["G",["biobricks-ice","rdkg"],358,"Entrez"],
 ["G",["digcfdekg","rdkg"],8934,"Entrez"],
 ["G",["digcfdekg","spoke-genelab"],19747,"Entrez"],
 ["G",["digcfdekg","spoke-okn"],16052,"Entrez"],
