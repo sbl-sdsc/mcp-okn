@@ -3461,6 +3461,28 @@
       "skeleton_query": "SELECT (COUNT(DISTINCT ?bh) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?a <https://ice.ntp.niehs.nih.gov/property/throughMechanisticTarget_NCIm> ?u . FILTER(CONTAINS(STR(?u),'umls'))\n    BIND(REPLACE(STR(?u),'^.*?(C[0-9]{6,}).*$','$1') AS ?cui) }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?p ?o . }\n}",
       "skeleton_verified": true,
       "domain": "Disease & phenotype"
+    },
+    {
+      "id": "GN1-geonames-spokeokn-climatemodelskg",
+      "left_kg": "climatemodelskg",
+      "left_predicate": "climatepub4kg:geonameid (bare GeoNames integer id on a City node)",
+      "left_role": "subject",
+      "right_kg": "spoke-okn",
+      "right_predicate": "spoke:code (GeoNames code literal on a schema:AdministrativeArea)",
+      "right_role": "subject",
+      "shared_key": "GeoNames",
+      "key_namespace": "climatemodelskg <https://climatepub4kg.github.io/ontology#geonameid> (bare GeoNames integer) <-> spoke-okn <https://purl.org/okn/frink/kg/spoke-okn/schema/code> (GeoNames code on schema:AdministrativeArea)",
+      "bridge_kg": null,
+      "iri_normalization": "Both carry the bare GeoNames integer id as a plain literal - climatemodelskg on City nodes via #geonameid (34,498 distinct), spoke-okn on schema:AdministrativeArea nodes via spoke:code (which also holds short FIPS-style admin codes, so inner-joining the literals selects the >=6-digit GeoNames ids). No rewrite needed - match the literals directly. NEW cross-domain link (2026-07-11): connects climate-model reference locations to spoke-okn's biomedical / environmental / SDoH geographic entities by shared GeoNames place. climatemodelskg's FIRST geographic data crosswalk (it previously had only P1-climate-deps and island/non-join records). The 106 shared places are GeoNames-identified admin areas/cities (e.g. Pristina 10097360, George Town 10346796, Aitutaki 11695124) - id AND place name identical on both sides.",
+      "verified_count": 106,
+      "verified_count_note": "106 of climatemodelskg's 34,498 distinct GeoNames cities match a spoke-okn AdministrativeArea GeoNames code (identical id AND place name confirmed). Verified 2026-07-11.",
+      "example_questions": [
+        "For a location climatemodelskg holds climate-model output for (by GeoNames id), what biomedical / environmental / SDoH data does spoke-okn attach to that same place?",
+        "How many of climatemodelskg's GeoNames-identified locations are also geographic entities in spoke-okn, joined on the GeoNames place id?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?g) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> { ?c <https://climatepub4kg.github.io/ontology#geonameid> ?g . }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?s <https://purl.org/okn/frink/kg/spoke-okn/schema/code> ?g . }\n}",
+      "skeleton_verified": true,
+      "domain": "Geospatial"
     }
   ],
   "cluster_notes": {
@@ -3536,7 +3558,7 @@
       "attempted_key": "any off-the-shelf IRI join key",
       "result": "no public key",
       "diagnosis": "Climate Models KG is a self-contained custom ontology (climatepub4kg.github.io/ontology#*). Its geography is modeled as bespoke classes (City, Country, Country_Subdivision, Continent) with no KWG admin-region, S2, or FIPS IRIs, and 0 S2Cell_Level13 nodes shared with spatialkg. The only outward-facing handles are literal node properties — Variable.cf_standard_name (CF standard names) and Paper.id/title — neither an IRI join key. Effectively an island for IRI-level federation; a literal cf_standard_name match to NASA/GCMD keyword text is the only conceivable thin thread.",
-      "correction": "PARTIAL (2026-06-29): a curated cross-graph bridge to securechainkg now exists - securechainkg reuses climatemodelskg's Source IRIs (https://climatepub4kg.github.io/id/Source/{model}) as the subject of sc:dependsOn, linking 3 climate models (CESM2, GFDL-ESM4, GFDL-CM4) to their vulnerable PyPI dependencies and CVEs. See verified_crosswalks id P1-climate-deps. The no-public-IRI-key verdict still holds for climatemodelskg's geography (City/Country) and CF-variable axes against every OTHER federation KG."
+      "correction": "PARTIAL (2026-06-29): a curated cross-graph bridge to securechainkg now exists - securechainkg reuses climatemodelskg's Source IRIs (https://climatepub4kg.github.io/id/Source/{model}) as the subject of sc:dependsOn, linking 3 climate models (CESM2, GFDL-ESM4, GFDL-CM4) to their vulnerable PyPI dependencies and CVEs. See verified_crosswalks id P1-climate-deps. UPDATE (2026-07-11): the GEOGRAPHY axis now joins too - climatemodelskg City nodes carry a bare GeoNames id via <#geonameid> that spoke-okn also tags on its schema:AdministrativeArea nodes via spoke:code, giving 106 shared GeoNames places (GN1-geonames-spokeokn-climatemodelskg). So climatemodelskg is NO LONGER an island - it reaches spoke-okn's biomedical/environmental/SDoH data by GeoNames place. Only the CF-standard-name / CF-variable axis remains a thin thread (GCMD keyword text, no id partner)."
     },
     {
       "left_kg": "spoke-okn",

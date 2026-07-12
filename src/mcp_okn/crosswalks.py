@@ -153,6 +153,7 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "state_FIPS": "Geospatial",
     "KWG_county": "Geospatial",
     "ZIP5": "Geospatial",
+    "GeoNames": "Geospatial",
     "NAICS": "Industry & supply chain",
     "SUDOKN_industry_sector": "Industry & supply chain",
     "GO": "Function & Pathways",

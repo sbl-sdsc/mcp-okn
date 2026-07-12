@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 140 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
+Here are all 141 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
 
 ## Anatomy & Cell Type
 
@@ -131,6 +131,7 @@ Here are all 140 precomputed cross-KG crosswalks (verified through 2026-06-30), 
 
 | KGs | Shared key | Count | Examples |
 |---|---|---|---|
+| climatemodelskg ↔ spoke-okn | GeoNames | 106 | For a location climatemodelskg holds climate-model output for (by GeoNames id), what biomedical / environmental / SDoH data does spoke-okn attach to that same place?<br><br>How many of climatemodelskg's GeoNames-identified locations are also geographic entities in spoke-okn, joined on the GeoNames place id? |
 | sockg ↔ spatialkg | KWG_county | 62 | Aggregate SOCKG soil-carbon / GHG-flux measurements to the county (FIPS) level and join them to spatialkg's admin-region hierarchy for state-level summaries.<br><br>Which states hold the most SOCKG soil-carbon experiment counties when the 62 counties are rolled up through the spatialkg admin hierarchy? |
 | fiokg ↔ sawgraph | S2_L13 | 4,712 | In Maine, find S2 cells where a sawgraph PFAS sample co-occurs with an EPA FRS facility (fiokg) - especially EPA-PFAS-Facility-typed ones - to relate PFAS detections to nearby potentially-PFAS-handling facilities.<br><br>Across Maine, how many EPA FRS facilities (fiokg) share an S2 Level-13 cell with at least one sawgraph PFAS detection, and which FRS facility types dominate those co-located cells? |
 | fiokg ↔ spatialkg | S2_L13 | 681,045 | Place EPA FRS facilities (fiokg) on the national S2 grid (spatialkg), roll them up to county/state admin regions, and find which facilities share an S2 cell with PFAS samples (sawgraph) or hydrologic features (hydrologykg).<br><br>Which S2 Level-13 cells hold the most EPA FRS facilities (fiokg) nationally, and which county/state do those facility-dense cells roll up to on the spatialkg admin hierarchy? |
