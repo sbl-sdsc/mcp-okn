@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 142 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
+Here are all 143 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
 
 ## Anatomy & Cell Type
 
@@ -187,6 +187,12 @@ Here are all 142 precomputed cross-KG crosswalks (verified through 2026-06-30), 
 | biomarkerkg ↔ biobricks-aopwiki | UniProt | 84 | Which clinical biomarker proteins are also AOP key-event targets, and which adverse outcome pathways involve them (toxicology meets clinical biomarkers)?<br><br>For a given AOP-Wiki adverse outcome pathway, which of its key-event target proteins (by UniProt) are validated clinical biomarkers in BiomarkerKB and for what disease? |
 | biomarkerkg ↔ prokn | UniProt | 205 | For the clinical biomarker proteins a disease has in BiomarkerKB, what GO biological processes / molecular functions and pathways does ProKN annotate them with?<br><br>Across the 205 shared biomarker UniProt proteins, which GO biological processes and pathways does ProKN annotate most frequently, and do those processes cluster by the biomarker's disease category? |
 | ncipidkg ↔ prokn | UniProt | 12 | Signaling-pathway interaction proteins (NCI-PID) enriched with ProKN protein annotations.<br><br>Of the 12 shared UniProt proteins, which NCI-PID signaling hubs also carry a ProKN disease association or PTM annotation, flagging pathway nodes with therapeutic relevance? |
+
+## Publications
+
+| KGs | Shared key | Count | Examples |
+|---|---|---|---|
+| climatemodelskg ↔ nasa-gesdisc-kg | DOI | 651 | For a climate-modeling paper in climatemodelskg (by DOI), does nasa-gesdisc-kg record that same publication among the works citing or using NASA Earth-science datasets - and which NASA datasets, instruments, or platforms does it connect to?<br><br>How many of climatemodelskg's papers are also in nasa-gesdisc-kg's publication set, joined on DOI? |
 
 ## Social Determinants & Services
 

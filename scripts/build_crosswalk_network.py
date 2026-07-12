@@ -54,6 +54,7 @@ DOMAIN_CODE = {
     "Social Determinants & Services": "L",
     "Environmental toxicology": "E",
     "Justice & Public Safety": "J",
+    "Publications": "B",
     "Other": "O",
 }
 # fallback colours for domains not already present in the file's DOM
@@ -70,6 +71,7 @@ DEFAULT_COLORS = {
     "L": "#15AABF",
     "E": "#5C940D",
     "J": "#A61E4D",
+    "B": "#3B5BDB",
     "O": "#868E96",
 }
 

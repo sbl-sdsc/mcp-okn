@@ -157,6 +157,7 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "GeoNames": "Geospatial",
     "NAICS": "Industry & supply chain",
     "SUDOKN_industry_sector": "Industry & supply chain",
+    "DOI": "Publications",
     "GO": "Function & Pathways",
     "Reactome": "Function & Pathways",
     # digcfdekg multi-vocabulary disease joins (verbose composite keys)
