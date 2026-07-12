@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 143 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
+Here are all 145 precomputed cross-KG crosswalks (verified through 2026-06-30), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
 
 ## Anatomy & Cell Type
 
@@ -89,6 +89,13 @@ Here are all 143 precomputed cross-KG crosswalks (verified through 2026-06-30), 
 | biohealth → ubergraph → rdkg | UMLS↔MONDO | 9,122 | For a disease biohealth describes (UMLS CUI, with its SDoH and clinical associations), what rare-disease gene/drug associations does rdkg record (MONDO), bridged through ubergraph UMLS->MONDO?<br><br>For a rare disease RDKG has drug associations for (MONDO), what SDoH and clinical associations does biohealth attach via its UMLS CUI, bridged MONDO->UMLS? |
 | biohealth → ubergraph → biomarkerkg | UMLS↔MONDO↔DOID | 620 | For a disease biohealth describes (UMLS CUI), what literature-curated biomarkers does BiomarkerKG record (DOID), bridged through ubergraph UMLS->MONDO->DOID?<br><br>Which BiomarkerKG diseases with curated biomarkers (DOID) also appear in biohealth with SDoH context, bridged DOID->MONDO->UMLS? |
 | biohealth → ubergraph → spoke-okn | UMLS↔MONDO↔DOID | 173 | For a disease biohealth describes (UMLS CUI), pull its spoke-okn gene / compound / prevalence associations (DOID), bridged through ubergraph UMLS->MONDO->DOID.<br><br>For a spoke-okn disease with prevalence/mortality data (DOID), what social-determinant associations does biohealth carry, bridged DOID->MONDO->UMLS? |
+
+## Earth observation
+
+| KGs | Shared key | Count | Examples |
+|---|---|---|---|
+| climatemodelskg ↔ nasa-gesdisc-kg | GCMD instrument | 115 | For an Earth-observation instrument a climate-modeling paper in climatemodelskg mentions (e.g. MODIS), what NASA GES DISC datasets and platforms does nasa-gesdisc-kg catalogue for that same instrument?<br><br>How many of the instruments named in climatemodelskg's climate-modeling literature are also GCMD-catalogued instruments in nasa-gesdisc-kg, joined on the instrument name? |
+| climatemodelskg ↔ nasa-gesdisc-kg | GCMD platform | 70 | For a satellite platform a climate-modeling paper in climatemodelskg mentions (e.g. Aqua), which instruments and NASA GES DISC datasets does nasa-gesdisc-kg catalogue for that same platform?<br><br>How many of the platforms named in climatemodelskg's climate-modeling literature are also GCMD-catalogued platforms in nasa-gesdisc-kg, joined on the platform name? |
 
 ## Environmental toxicology
 
