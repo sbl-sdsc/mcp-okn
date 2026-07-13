@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 160 precomputed cross-KG crosswalks (verified through 2026-07-12), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
+Here are all 161 precomputed cross-KG crosswalks (verified through 2026-07-12), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
 
 ## Anatomy & Cell Type
 
@@ -132,6 +132,7 @@ Here are all 160 precomputed cross-KG crosswalks (verified through 2026-07-12), 
 | pankgraph ↔ gene-expression-atlas-okn | Ensembl | 38,804 | For a pancreatic-islet gene (pankgraph), what baseline tissue expression and differential-expression contrasts does GXA report?<br><br>Among pankgraph's beta-cell-expressed genes (biolink:expressed_in CL_0000169), which show the highest GXA baseline expression in pancreas, and which are differentially expressed in a diabetes contrast? |
 | pankgraph ↔ prokn | Ensembl | 37,835 | For canonical pancreatic-islet genes pankgraph catalogues (INS, PDX1, MAFA, NKX6-1, GCG), what MSigDB pathways / encoded protein does ProKN annotate, joined on the Ensembl gene id?<br><br>Which MSigDB pathway in ProKN is shared by the most pankgraph-catalogued islet genes, joined on the Ensembl gene id? |
 | pankgraph ↔ spoke-okn | Ensembl | 16,314 | For any spoke-okn gene, add pankgraph's islet context (islet cell-type expression, gene network, GO function) on the shared Ensembl id.<br><br>Of the 176 genes pankgraph associates with type 1 diabetes (MONDO_0005147), which does spoke-okn know, and what compounds target them? |
+| prokn ↔ spoke-okn | Ensembl | 16,140 | How many genes do prokn and spoke-okn share on the Ensembl id, joined DIRECTLY with no bridge graph?<br><br>For a spoke-okn disease-associated gene, pull prokn's INDRA evidence, its marker-gene role (HAS_MARKER_GENE) and its tissue expression on the shared Ensembl id — without routing through wikidata. |
 | biobricks-aopwiki ↔ rdkg | Entrez | 1,193 | AOP key-event target genes (AOP-Wiki) that are also rare-disease genes (rdkg) - toxicology pathway meets rare-disease genetics.<br><br>For a given rare disease in rdkg, which AOP-Wiki molecular initiating or key events involve its causative Entrez genes? |
 | biobricks-aopwiki ↔ spoke-genelab | Entrez | 1,472 | Gene targets of AOP molecular initiating / key events (AOP-Wiki) that have spaceflight/omics evidence in spoke-genelab.<br><br>Which AOP-Wiki adverse outcome pathways are over-represented among genes differentially expressed under spaceflight in spoke-genelab? |
 | biobricks-ice ↔ rdkg | Entrez | 358 | For a gene targeted by an ICE tox assay (biobricks-ice, Entrez), what rare-disease associations does rdkg record for that same gene?<br><br>How many of the mechanistic gene targets of ICE toxicology assays are rare-disease genes in rdkg, joined on Entrez? |
