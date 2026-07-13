@@ -3904,6 +3904,31 @@
       "skeleton_query": "SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {\n  { SELECT DISTINCT ?zip WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/dreamkg> { ?d <http://schema.org/postalCode> ?z0 . }\n      BIND(REPLACE(STR(?z0),\"[^0-9]\",\"\") AS ?a)\n      BIND(IF(STRLEN(?a)=4, CONCAT(\"0\",?a), SUBSTR(?a,1,5)) AS ?zip) } }\n  { SELECT DISTINCT ?zip WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/ruralkg> {\n        BIND(IRI(CONCAT('https://schema.org/','postalCode')) AS ?p)\n        ?r ?p ?z1 . }\n      BIND(REPLACE(STR(?z1),\"[^0-9]\",\"\") AS ?e)\n      BIND(IF(STRLEN(?e)=4, CONCAT(\"0\",?e), SUBSTR(?e,1,5)) AS ?zip) } }\n}",
       "skeleton_verified": true,
       "domain": "Geospatial"
+    },
+    {
+      "id": "PB2-authorname-climatemodelskg-nasa",
+      "left_kg": "climatemodelskg",
+      "left_predicate": "climatepub4kg:name on a cm:Author node (free-text author name; climatemodelskg carries NO orcid/openalex/ror anywhere)",
+      "left_role": "object",
+      "right_kg": "nasa-gesdisc-kg",
+      "right_predicate": "rdfs:label on a nasa-gesdisc schema:Author node (the same node also carries orcid on 60% of authors, plus openalexId and AFFILIATED_WITH -> Institution/ror)",
+      "right_role": "object",
+      "shared_key": "author name (string; NOT an ORCID — see the entry's caveat)",
+      "key_namespace": "climatemodelskg <https://climatepub4kg.github.io/ontology#name> <-> nasa-gesdisc-kg <http://www.w3.org/2000/01/rdf-schema#label>, both plain string literals. NOT an identifier join — there is no shared ORCID.",
+      "bridge_kg": null,
+      "iri_normalization": "No rewrite: both sides are plain string literals matched exactly (no LCASE needed to reach 8,391; formats are compatible - both plain 'First Last', neither uses 'Last, First'). Drive from the SMALL side (climatemodelskg's 10,029 names) into nasa's Author label - a BIND(LCASE(...)) over nasa's 905,086 Author nodes times out at 120s. Bind the SAME ?nm variable in both GRAPH blocks; never a cross-graph FILTER(STR(?a)=STR(?b)). AN ORCID JOIN IS IMPOSSIBLE: nasa carries orcid (543,086 of its authors, 60%), openalexId (100%) and ror, but climatemodelskg's Author nodes carry ONLY #name and #uuid - a full schema check confirms it has no orcid, openalexId or ror anywhere in the graph. nasa's ror and openalexId likewise have NO partner in the federation (the natural partner, semopenalex, is the one KG still on the EXCLUDED list).",
+      "verified_count": 8391,
+      "verified_count_note": "8,391 of climatemodelskg's 10,029 distinct author names (83.7%) match a nasa-gesdisc-kg Author label. Verified 2026-07-12. DO NOT READ THE 83.7% AS JOIN QUALITY - nasa's author pool is 905,086 nodes, large enough that common names match by chance. See the caveat: this is a NAME join, not an identity join.",
+      "caveat": "NAME-ONLY JOIN — HIGH FALSE-POSITIVE RISK. SAFE FOR COHORT/AGGREGATE QUESTIONS ONLY; NEVER USE IT TO ASSERT THAT A SPECIFIC PERSON AUTHORED BOTH. Quantified against nasa's orcid as ground truth for 'distinct real human' (2026-07-12): of the 8,391 matched names, 6,983 reach at least one ORCID-bearing nasa author, and 787 of those (11.3%) resolve to MORE THAN ONE distinct ORCID - i.e. the name provably belongs to several different people. 14,288 distinct ORCIDs sit behind those 6,983 names (2.05x fan-out). The tail is catastrophic for common names: 'Yang Liu' = 179 distinct ORCIDs, 'Wei Wang' = 164, 'Wei Li' = 127, 'Lei Wang' = 122, 'Yan Li' = 115. So ~89% of ORCID-checkable matches are 1:1 and defensible, but the ambiguous 11% carry enormous fan-out and are concentrated in Chinese-origin names, which also biases any naive per-author aggregate. Measure ambiguity against DISTINCT ORCIDs, not against nasa Author NODES - nasa mints an Author node per paper, so a node-level count inflates the apparent ambiguity (it reports ~28%).",
+      "example_question": "At the COHORT level, how much overlap is there between the authors of climate-modeling papers (climatemodelskg) and the authors of papers citing NASA GES DISC Earth-observation datasets - i.e. is the climate-modeling community also the EO-data-using community?",
+      "example_questions": [
+        "At the COHORT level, how much overlap is there between the authors of climate-modeling papers (climatemodelskg) and the authors of papers citing NASA GES DISC Earth-observation datasets - i.e. is the climate-modeling community also the EO-data-using community?",
+        "How many climatemodelskg author names also appear as NASA GES DISC authors (note: a name match is NOT a person match - 11.3% of matched names resolve to more than one distinct ORCID)?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?nm) AS ?n) WHERE {\n  { SELECT DISTINCT ?nm WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> {\n        ?a a <https://climatepub4kg.github.io/ontology#Author> ;\n           <https://climatepub4kg.github.io/ontology#name> ?nm . } } }\n  GRAPH <https://purl.org/okn/frink/kg/nasa-gesdisc-kg> {\n    ?b a <https://purl.org/okn/frink/kg/nasa-gesdisc/schema/Author> ;\n       <http://www.w3.org/2000/01/rdf-schema#label> ?nm . }\n}",
+      "skeleton_verified": true,
+      "domain": "Publications",
+      "methodology_note": "THIRD edge on the climatemodelskg x nasa-gesdisc-kg pair, complementing PB1 (publication DOI, 651 - an exact identifier join) and EO1/EO2 (GCMD instrument/platform labels). Surfaced by the 2026-07-12 entities.csv refresh, which exposed an Author class on BOTH sides. Unlike PB1, this is NOT an identifier join and must not be treated as one - PREFER PB1 whenever the question can be answered at the paper level, and fall back to this edge only for author-community questions PB1 cannot express. To harden a specific author claim, disambiguate on the nasa side with orcid (present on 60% of nasa authors) plus a co-author or institution (AFFILIATED_WITH -> ror) check; climatemodelskg supplies no identifier to disambiguate against."
     }
   ],
   "cluster_notes": {

@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 159 precomputed cross-KG crosswalks (verified through 2026-07-12), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
+Here are all 160 precomputed cross-KG crosswalks (verified through 2026-07-12), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
 
 ## Anatomy & Cell Type
 
@@ -219,6 +219,7 @@ Here are all 159 precomputed cross-KG crosswalks (verified through 2026-07-12), 
 | KGs | Shared key | Count | Examples |
 |---|---|---|---|
 | climatemodelskg ↔ nasa-gesdisc-kg | DOI | 651 | For a climate-modeling paper in climatemodelskg (by DOI), does nasa-gesdisc-kg record that same publication among the works citing or using NASA Earth-science datasets - and which NASA datasets, instruments, or platforms does it connect to?<br><br>How many of climatemodelskg's papers are also in nasa-gesdisc-kg's publication set, joined on DOI? |
+| climatemodelskg ↔ nasa-gesdisc-kg | author name (string; NOT an ORCID — see the entry's caveat) | 8,391 | At the COHORT level, how much overlap is there between the authors of climate-modeling papers (climatemodelskg) and the authors of papers citing NASA GES DISC Earth-observation datasets - i.e. is the climate-modeling community also the EO-data-using community?<br><br>How many climatemodelskg author names also appear as NASA GES DISC authors (note: a name match is NOT a person match - 11.3% of matched names resolve to more than one distinct ORCID)? |
 
 ## Social Determinants & Services
 

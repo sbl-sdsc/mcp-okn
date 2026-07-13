@@ -161,6 +161,7 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "NAICS": "Industry & supply chain",
     "SUDOKN_industry_sector": "Industry & supply chain",
     "DOI": "Publications",
+    "author name (string; NOT an ORCID — see the entry's caveat)": "Publications",
     "GCMD instrument": "Earth observation",
     "GCMD platform": "Earth observation",
     "GO": "Function & Pathways",
