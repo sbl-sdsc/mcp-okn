@@ -331,7 +331,7 @@ def all_crosswalks(include_examples: bool = True) -> list[dict[str, Any]]:
             row["label_match"] = rec["label_match"]
             row["kg_b_taxa"] = rec["kg_b_taxa"]
             if include_examples:
-                row["example_question"] = (
+                count_q = (
                     f"How many organisms do {a} and {b} share by name? {a} is "
                     f"label-bridged (no NCBITaxon ids), so {rec['label_match']} of "
                     f"{b}'s {rec['kg_b_taxa']} NCBITaxon organisms match a {a} "
@@ -344,12 +344,21 @@ def all_crosswalks(include_examples: bool = True) -> list[dict[str, Any]]:
             row["clade_a_in_b"] = rec["clade_a_in_b"]
             row["clade_b_in_a"] = rec["clade_b_in_a"]
             if include_examples:
-                row["example_question"] = (
+                count_q = (
                     f"How many organisms do {a} and {b} share? exact_id="
                     f"{rec['exact_id']} carry the identical NCBITaxon id; clade "
                     f"membership ({rec['clade_a_in_b']} / {rec['clade_b_in_a']}) "
                     "expands through the ubergraph hierarchy."
                 )
+        if include_examples:
+            # q1 is the generated count question (keeps the verified per-pair counts
+            # in front of the reader); q2 is the curated science question for the
+            # pair — the same [q1, q2] shape every other crosswalk row carries.
+            row["example_question"] = count_q
+            row["example_questions"] = [count_q]
+            science_q = rec.get("science_question")
+            if science_q:
+                row["example_questions"].append(science_q)
         rows.append(row)
 
     rows.sort(key=lambda r: (r["domain"], r["shared_key"] or "", r["kgs"]))

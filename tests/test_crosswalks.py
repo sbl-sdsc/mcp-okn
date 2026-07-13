@@ -219,6 +219,33 @@ async def test_list_crosswalks_examples_toggle():
     assert all("example_question" in row for row in with_ex["crosswalks"])
     without_ex = await list_crosswalks(include_examples=False)
     assert all("example_question" not in row for row in without_ex["crosswalks"])
+    assert all("example_questions" not in row for row in without_ex["crosswalks"])
+
+
+@pytest.mark.asyncio
+async def test_every_crosswalk_carries_two_example_questions():
+    """EVERY row in the listing — including the taxonomy rows, which are rendered
+    from taxon_hub.pairwise rather than from a verified_crosswalks entry — exposes
+    two example questions: q1 the count/summary question, q2 the science question.
+    `example_question` stays pinned to q1 for back-compat."""
+    out = await list_crosswalks()
+    for row in out["crosswalks"]:
+        qs = row.get("example_questions")
+        assert isinstance(qs, list) and len(qs) == 2, (row["kgs"], row["shared_key"])
+        assert all(isinstance(q, str) and q.strip() for q in qs), row["kgs"]
+        assert row["example_question"] == qs[0], row["kgs"]
+
+    # and the raw table (what get_join_strategy hands back) is complete too — the
+    # NCBITaxon entries used to carry none, so a caller joining on taxonomy got a
+    # recipe with no worked example.
+    for e in cw.load_crosswalks()["verified_crosswalks"]:
+        qs = e.get("example_questions")
+        assert isinstance(qs, list) and len(qs) == 2, e["id"]
+        assert e.get("example_question") == qs[0], e["id"]
+
+    # every materialized taxon pair supplies the curated science question q2 is built from
+    for rec in cw.taxon_hub_pairwise():
+        assert rec.get("science_question", "").strip(), (rec["kg_a"], rec["kg_b"])
 
 
 @pytest.mark.asyncio

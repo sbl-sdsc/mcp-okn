@@ -23,70 +23,80 @@
         "kg_b": "gene-expression-atlas-okn",
         "exact_id": 7,
         "clade_a_in_b": 8,
-        "clade_b_in_a": 8
+        "clade_b_in_a": 8,
+        "science_question": "For the organisms an Adverse Outcome Pathway is declared applicable to, does Expression Atlas actually profile gene expression in that same species - i.e. can an AOP's taxonomic applicability be grounded in real expression data?"
       },
       {
         "kg_a": "biobricks-aopwiki",
         "kg_b": "nde",
         "exact_id": 62,
         "clade_a_in_b": 164,
-        "clade_b_in_a": 961
+        "clade_b_in_a": 961,
+        "science_question": "Which organisms carrying an AOP taxonomic-applicability statement also appear in NIAID Data Ecosystem datasets, so a mechanistic toxicology pathway can be tied to available infectious-disease/host data for the same species?"
       },
       {
         "kg_a": "biobricks-aopwiki",
         "kg_b": "sawgraph",
         "exact_id": 7,
         "clade_a_in_b": 164,
-        "clade_b_in_a": 145
+        "clade_b_in_a": 145,
+        "science_question": "Are the species that AOPs are declared applicable to the same species SAWGraph samples for PFAS (fish and shellfish biota) - connecting mechanistic toxicology to measured environmental exposure in the same organism?"
       },
       {
         "kg_a": "biobricks-aopwiki",
         "kg_b": "spoke-genelab",
         "exact_id": 7,
         "clade_a_in_b": 8,
-        "clade_b_in_a": 8
+        "clade_b_in_a": 8,
+        "science_question": "Do the model organisms used in NASA GeneLab spaceflight experiments have Adverse Outcome Pathways declared applicable to them, so a spaceflight stressor response can be read against a known AOP?"
       },
       {
         "kg_a": "gene-expression-atlas-okn",
         "kg_b": "nde",
         "exact_id": 6,
         "clade_a_in_b": 8,
-        "clade_b_in_a": 12
+        "clade_b_in_a": 12,
+        "science_question": "For the organisms represented in NIAID Data Ecosystem datasets, what baseline or differential gene expression does Expression Atlas supply for the same species?"
       },
       {
         "kg_a": "gene-expression-atlas-okn",
         "kg_b": "sawgraph",
         "exact_id": 0,
         "clade_a_in_b": 8,
-        "clade_b_in_a": 0
+        "clade_b_in_a": 0,
+        "science_question": "Do the species SAWGraph samples for environmental contamination overlap the species Expression Atlas profiles? (exact_id = 0 - no species is directly shared; the overlap appears only under clade expansion, so treat this pair as a clade-level, not species-level, link.)"
       },
       {
         "kg_a": "gene-expression-atlas-okn",
         "kg_b": "spoke-genelab",
         "exact_id": 8,
         "clade_a_in_b": 8,
-        "clade_b_in_a": 8
+        "clade_b_in_a": 8,
+        "science_question": "For a model organism flown in a NASA GeneLab spaceflight assay, what baseline tissue expression does Expression Atlas provide for the same species, as a ground control for the spaceflight response?"
       },
       {
         "kg_a": "nde",
         "kg_b": "sawgraph",
         "exact_id": 73,
         "clade_a_in_b": 1727,
-        "clade_b_in_a": 538
+        "clade_b_in_a": 538,
+        "science_question": "Which organisms appear both in NIAID Data Ecosystem datasets and in SAWGraph's environmental and biota samples - e.g. a sampled fish species that also carries pathogen/host data?"
       },
       {
         "kg_a": "nde",
         "kg_b": "spoke-genelab",
         "exact_id": 7,
         "clade_a_in_b": 46,
-        "clade_b_in_a": 55
+        "clade_b_in_a": 55,
+        "science_question": "Which of NASA GeneLab's spaceflight model organisms also have NIAID Data Ecosystem datasets, linking spaceflight omics to immune/infectious-disease resources for the same species?"
       },
       {
         "kg_a": "nde",
         "kg_b": "spoke-okn",
         "exact_id": 23,
         "clade_a_in_b": 23,
-        "clade_b_in_a": 33601
+        "clade_b_in_a": 33601,
+        "science_question": "For an organism in a NIAID Data Ecosystem dataset, what does spoke-okn know about the same species (its genes, proteins and disease associations)? Note the large clade asymmetry: spoke-okn's taxonomy is far broader, so clade expansion pulls in 33,601 spoke-okn taxa."
       },
       {
         "kg_a": "nde",
@@ -94,14 +104,16 @@
         "exact_id": 17,
         "clade_a_in_b": 57,
         "clade_b_in_a": 339,
-        "note": "wildlifekn side is LABEL-BRIDGED (binomial -> ubergraph NCBITaxon rdfs:label); exact_id verified 2026-06-18."
+        "note": "wildlifekn side is LABEL-BRIDGED (binomial -> ubergraph NCBITaxon rdfs:label); exact_id verified 2026-06-18.",
+        "science_question": "Which wildlife species tracked in wildlifekn also appear in NIAID Data Ecosystem datasets - i.e. which monitored wild animals are also studied as zoonotic reservoirs or hosts?"
       },
       {
         "kg_a": "sawgraph",
         "kg_b": "spoke-genelab",
         "exact_id": 0,
         "clade_a_in_b": 0,
-        "clade_b_in_a": 13
+        "clade_b_in_a": 13,
+        "science_question": "Do NASA GeneLab's model organisms overlap the species SAWGraph samples for contamination? (exact_id = 0 - no species is shared directly; only clade expansion connects them, so this is a clade-level link only.)"
       },
       {
         "kg_a": "sawgraph",
@@ -109,14 +121,16 @@
         "exact_id": 2,
         "clade_a_in_b": 2,
         "clade_b_in_a": 339,
-        "note": "wildlifekn side is LABEL-BRIDGED; exact_id verified 2026-06-18."
+        "note": "wildlifekn side is LABEL-BRIDGED; exact_id verified 2026-06-18.",
+        "science_question": "Which wildlife species monitored in wildlifekn are also sampled for PFAS contamination in SAWGraph - connecting wildlife occurrence and habitat to measured chemical exposure in the same species?"
       },
       {
         "kg_a": "spoke-genelab",
         "kg_b": "spoke-okn",
         "exact_id": 2,
         "clade_a_in_b": 2,
-        "clade_b_in_a": 33313
+        "clade_b_in_a": 33313,
+        "science_question": "For a model organism used in a NASA GeneLab spaceflight experiment, what biomedical context does spoke-okn attach to the same species? Only 2 taxa match by exact id, but clade expansion through ubergraph reaches 33,313 spoke-okn taxa - so ALWAYS expand the clade here; an exact-id join badly understates this pair."
       },
       {
         "kg_a": "biohealth",
@@ -124,7 +138,8 @@
         "label_match": 112,
         "kg_b_taxa": 166,
         "match_type": "label",
-        "note": "biohealth side is LABEL-BRIDGED (UMLS concept name -> ubergraph NCBITaxon rdfs:label; biohealth carries no NCBITaxon ids). label_match = 112 of biobricks-aopwiki's 166 NCBITaxon organisms match a biohealth node by exact name. Name-based, approximate (conservative lower bound); no clade expansion. Verified 2026-06-23."
+        "note": "biohealth side is LABEL-BRIDGED (UMLS concept name -> ubergraph NCBITaxon rdfs:label; biohealth carries no NCBITaxon ids). label_match = 112 of biobricks-aopwiki's 166 NCBITaxon organisms match a biohealth node by exact name. Name-based, approximate (conservative lower bound); no clade expansion. Verified 2026-06-23.",
+        "science_question": "Which organisms named in biohealth's UMLS health concepts have an Adverse Outcome Pathway declared applicable to them? biohealth carries NO NCBITaxon ids, so this is an approximate scientific-name match - a lower bound, and not safe for exact-id reasoning."
       },
       {
         "kg_a": "biohealth",
@@ -132,7 +147,8 @@
         "label_match": 6,
         "kg_b_taxa": 8,
         "match_type": "label",
-        "note": "biohealth side is LABEL-BRIDGED (UMLS concept name -> ubergraph NCBITaxon rdfs:label; biohealth carries no NCBITaxon ids). label_match = 6 of gene-expression-atlas-okn's 8 NCBITaxon organisms match a biohealth node by exact name. Name-based, approximate (conservative lower bound); no clade expansion. Verified 2026-06-23."
+        "note": "biohealth side is LABEL-BRIDGED (UMLS concept name -> ubergraph NCBITaxon rdfs:label; biohealth carries no NCBITaxon ids). label_match = 6 of gene-expression-atlas-okn's 8 NCBITaxon organisms match a biohealth node by exact name. Name-based, approximate (conservative lower bound); no clade expansion. Verified 2026-06-23.",
+        "science_question": "For the organisms biohealth names as UMLS health concepts, does Expression Atlas profile expression in the same species? Name-bridged (no NCBITaxon ids on biohealth) - treat as an approximate lower bound."
       },
       {
         "kg_a": "biohealth",
@@ -140,7 +156,8 @@
         "label_match": 377,
         "kg_b_taxa": 538,
         "match_type": "label",
-        "note": "biohealth side is LABEL-BRIDGED (UMLS concept name -> ubergraph NCBITaxon rdfs:label; biohealth carries no NCBITaxon ids). label_match = 377 of sawgraph's 538 NCBITaxon organisms match a biohealth node by exact name. Name-based, approximate (conservative lower bound); no clade expansion. Verified 2026-06-23."
+        "note": "biohealth side is LABEL-BRIDGED (UMLS concept name -> ubergraph NCBITaxon rdfs:label; biohealth carries no NCBITaxon ids). label_match = 377 of sawgraph's 538 NCBITaxon organisms match a biohealth node by exact name. Name-based, approximate (conservative lower bound); no clade expansion. Verified 2026-06-23.",
+        "science_question": "Which organisms biohealth names as UMLS health concepts are also sampled by SAWGraph for environmental contamination - linking a health concept to measured exposure in the same species? Name-bridged, so approximate."
       },
       {
         "kg_a": "biohealth",
@@ -148,7 +165,8 @@
         "label_match": 7,
         "kg_b_taxa": 9,
         "match_type": "label",
-        "note": "biohealth side is LABEL-BRIDGED (UMLS concept name -> ubergraph NCBITaxon rdfs:label; biohealth carries no NCBITaxon ids). label_match = 7 of spoke-genelab's 9 NCBITaxon organisms match a biohealth node by exact name. Name-based, approximate (conservative lower bound); no clade expansion. Verified 2026-06-23. spoke-genelab side restricted to its 9 model-organism taxa (Gene.taxonomy)."
+        "note": "biohealth side is LABEL-BRIDGED (UMLS concept name -> ubergraph NCBITaxon rdfs:label; biohealth carries no NCBITaxon ids). label_match = 7 of spoke-genelab's 9 NCBITaxon organisms match a biohealth node by exact name. Name-based, approximate (conservative lower bound); no clade expansion. Verified 2026-06-23. spoke-genelab side restricted to its 9 model-organism taxa (Gene.taxonomy).",
+        "science_question": "Do NASA GeneLab's spaceflight model organisms appear as organism concepts in biohealth's UMLS-keyed health graph? Name-bridged (biohealth has no NCBITaxon ids) - an approximate lower bound."
       },
       {
         "kg_a": "biohealth",
@@ -156,7 +174,8 @@
         "label_match": 1052,
         "kg_b_taxa": 1808,
         "match_type": "label",
-        "note": "biohealth side is LABEL-BRIDGED (UMLS concept name -> ubergraph NCBITaxon rdfs:label; biohealth carries no NCBITaxon ids). label_match = 1052 of nde's 1808 NCBITaxon organisms match a biohealth node by exact name. Name-based, approximate (conservative lower bound); no clade expansion. Verified 2026-06-23."
+        "note": "biohealth side is LABEL-BRIDGED (UMLS concept name -> ubergraph NCBITaxon rdfs:label; biohealth carries no NCBITaxon ids). label_match = 1052 of nde's 1808 NCBITaxon organisms match a biohealth node by exact name. Name-based, approximate (conservative lower bound); no clade expansion. Verified 2026-06-23.",
+        "science_question": "Which organisms biohealth names as UMLS health concepts also appear in NIAID Data Ecosystem datasets - e.g. a named pathogen concept with real underlying data? Name-bridged, so this 1,052-organism overlap is an approximate lower bound."
       },
       {
         "kg_a": "biohealth",
@@ -164,7 +183,8 @@
         "label_match": 1603,
         "kg_b_taxa": 34570,
         "match_type": "label",
-        "note": "biohealth side is LABEL-BRIDGED (UMLS concept name -> ubergraph NCBITaxon rdfs:label; biohealth carries no NCBITaxon ids). label_match = 1603 of spoke-okn's 34570 NCBITaxon organisms match a biohealth node by exact name. Name-based, approximate (conservative lower bound); no clade expansion. Verified 2026-06-23."
+        "note": "biohealth side is LABEL-BRIDGED (UMLS concept name -> ubergraph NCBITaxon rdfs:label; biohealth carries no NCBITaxon ids). label_match = 1603 of spoke-okn's 34570 NCBITaxon organisms match a biohealth node by exact name. Name-based, approximate (conservative lower bound); no clade expansion. Verified 2026-06-23.",
+        "science_question": "For an organism biohealth names as a UMLS health concept, what does spoke-okn record about the same species? The largest label-bridged overlap (1,603 of spoke-okn's 34,570 taxa match by scientific name) - but name-matched, so verify before asserting identity."
       }
     ]
   },
@@ -1124,10 +1144,14 @@
       "iri_normalization": "Shared key NCBITaxon (obo/NCBITaxon_). sawgraph carries its taxa as the subjects of rdfs:subClassOf edges; all 538 distinct NCBITaxon terms exist in ubergraph's taxonomy (100% overlap), so the join is total. For CATEGORY questions ('all birds', 'any amphibian') expand a clade inline with ubergraph's precomputed closure: ?taxon rdfs:subClassOf* <parent NCBITaxon term>, then join the expanded set to sawgraph — that expansion is the example USE, not the join's cardinality.",
       "verified_count": 538,
       "verified_against_parent": "http://purl.obolibrary.org/obo/NCBITaxon_7898 (Actinopterygii / ray-finned fish)",
-      "example_question": "Expand a clade in ubergraph, pull SAWGraph contaminant-sampled species within it.",
+      "example_question": "Which organisms does SAWGraph sample for contamination, and where do they sit in the NCBITaxon hierarchy - so a query can roll them up to a clade (e.g. all fish) via ubergraph?",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?sup . FILTER(STRSTARTS(STR(?taxon),'http://purl.obolibrary.org/obo/NCBITaxon_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?u . }\n}",
       "skeleton_verified": true,
-      "verified_count_note": "DISTINCT sawgraph NCBITaxon terms present in ubergraph (538/538 = 100%). (Corrects a prior 77, which was a single arbitrary clade's worth of taxa, not the shared-key join.)"
+      "verified_count_note": "DISTINCT sawgraph NCBITaxon terms present in ubergraph (538/538 = 100%). (Corrects a prior 77, which was a single arbitrary clade's worth of taxa, not the shared-key join.)",
+      "example_questions": [
+        "Which organisms does SAWGraph sample for contamination, and where do they sit in the NCBITaxon hierarchy - so a query can roll them up to a clade (e.g. all fish) via ubergraph?",
+        "How many of SAWGraph's WQP biota taxa carry an NCBITaxon id resolvable in ubergraph?"
+      ]
     },
     {
       "id": "D4-ncbitaxon-spokegenelab-ubergraph",
@@ -1143,9 +1167,13 @@
       "iri_normalization": "Shared key NCBITaxon (obo/NCBITaxon_). spoke-genelab stores each gene's organism as a STRING literal holding the NCBITaxon IRI on the Gene.taxonomy node property (schema/taxonomy), NOT as a node — coerce it to an IRI with BIND(IRI(STR(?ts)) AS ?taxon) before joining ubergraph's taxonomy. All 9 distinct model-organism taxa (human 9606, mouse 10090, Arabidopsis 3702, C. elegans 6239, zebrafish 7955, Drosophila 7227, rat 10116, yeast 4932, Monodelphis domestica 13613) exist in ubergraph (9/9). For CATEGORY questions expand a clade inline via ?taxon rdfs:subClassOf* <parent NCBITaxon term> on ubergraph, then join to spoke-genelab. NOTE: this entry covers ONLY spoke-genelab's 9 model-organism taxa (Gene.taxonomy). spoke-genelab has a SECOND taxon representation — its microbiome Organism class (46 label-only genus/family NAMES e.g. 'Pseudomonas', no NCBITaxon id) — which does NOT join by id but IS reachable by resolving the name via ubergraph rdfs:label and expanding the clade; recorded as its OWN hub spoke D10 (spoke-genelab microbiome <-> ubergraph; the NCBI taxon id is embedded in the Organism node IRI .../node/{taxid}, all 46 resolve), and expanded to spoke-okn strains in D9 (33,313 shared taxa). So spoke-genelab's full taxon footprint in the hub is 9 model-organism ids (this entry) + 41 microbiome names (D10).",
       "verified_count": 9,
       "verified_count_note": "DISTINCT spoke-genelab Gene.taxonomy NCBITaxon terms present in ubergraph (9/9 = 100%). These are the model-organism taxa of the differential-expression genes; the join lets ubergraph's taxonomy lineage/clade closure be applied to spoke-genelab genes.",
-      "example_question": "Expand a clade in ubergraph (e.g. all rodents) and pull spoke-genelab spaceflight differential-expression genes whose organism falls within it.",
+      "example_question": "Which model organisms does NASA GeneLab fly in spaceflight experiments, and what are their NCBITaxon clades - letting a query select, say, all rodent or all plant assays via ubergraph?",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?gene <https://purl.org/okn/frink/kg/spoke-genelab/schema/taxonomy> ?ts . FILTER(STRSTARTS(STR(?ts),'http://purl.obolibrary.org/obo/NCBITaxon_')) }\n  BIND(IRI(STR(?ts)) AS ?taxon)\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?u . }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "example_questions": [
+        "Which model organisms does NASA GeneLab fly in spaceflight experiments, and what are their NCBITaxon clades - letting a query select, say, all rodent or all plant assays via ubergraph?",
+        "How many spoke-genelab organisms carry an NCBITaxon id resolvable in ubergraph?"
+      ]
     },
     {
       "id": "D5-ncbitaxon-spokeokn-ubergraph",
@@ -1164,9 +1192,13 @@
         "distinct_spokeokn_taxa": 34570
       },
       "verified_count_note": "DISTINCT spoke-okn organism taxa (extracted from PATRIC genome IRIs) present in ubergraph's taxonomy: 33,602 of 34,570 (97.2%). The ~968 misses are mostly strain-level PATRIC taxon ids absent from ubergraph's NCBITaxon snapshot. Mostly bacterial pathogens; complements D3 (sawgraph) and D4 (spoke-genelab) on the same ubergraph taxonomy hub.",
-      "example_question": "Expand a bacterial clade in ubergraph (e.g. all Enterobacteriaceae) and pull spoke-okn organism strains, their AMR phenotypes, and drug responses within it.",
+      "example_question": "For the organisms spoke-okn covers, what clade does each belong to - so a biomedical question can be scoped to, e.g., all bacteria or all mammals through the ubergraph hierarchy?",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  { SELECT DISTINCT ?taxon WHERE {\n    GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?o a <https://w3id.org/biolink/vocab/OrganismTaxon> . }\n    BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?o),'^.*/organism/([0-9]+).*$','$1'))) AS ?taxon)\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?u . }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "example_questions": [
+        "For the organisms spoke-okn covers, what clade does each belong to - so a biomedical question can be scoped to, e.g., all bacteria or all mammals through the ubergraph hierarchy?",
+        "How many spoke-okn organisms carry an NCBITaxon id resolvable in ubergraph?"
+      ]
     },
     {
       "right_kg": "ubergraph",
@@ -1182,9 +1214,13 @@
       "iri_normalization": "Shared key NCBITaxon (obo/NCBITaxon_). gene-expression-atlas-okn carries the taxon directly as the object of biolink:in_taxon in obo/NCBITaxon_ form — no rewrite needed; join straight to ubergraph. 8 distinct model-organism taxa, all in ubergraph. For CATEGORY questions expand a clade via ?taxon rdfs:subClassOf* <parent> on ubergraph, then join.",
       "verified_count": 8,
       "verified_count_note": "DISTINCT gene-expression-atlas-okn in_taxon NCBITaxon terms present in ubergraph (8/8). The EBI Expression Atlas study organisms.",
-      "example_question": "Restrict Expression Atlas studies to a taxonomic clade by expanding it in ubergraph.",
+      "example_question": "Which species does Expression Atlas profile expression for, and how do they roll up the NCBITaxon hierarchy in ubergraph?",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?s <https://w3id.org/biolink/vocab/in_taxon> ?taxon . FILTER(STRSTARTS(STR(?taxon),'http://purl.obolibrary.org/obo/NCBITaxon_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?u . }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "example_questions": [
+        "Which species does Expression Atlas profile expression for, and how do they roll up the NCBITaxon hierarchy in ubergraph?",
+        "How many gene-expression-atlas-okn organisms carry an NCBITaxon id resolvable in ubergraph?"
+      ]
     },
     {
       "right_kg": "ubergraph",
@@ -1200,9 +1236,13 @@
       "iri_normalization": "Shared key NCBITaxon (obo/NCBITaxon_). biobricks-aopwiki records each AOP's taxonomic applicability as an obo/NCBITaxon_ IRI on dc:identifier (dc:elements/1.1/identifier) — direct form, no rewrite. 164 of ~166 distinct taxa join ubergraph (a couple of root-level taxa via other predicates are excluded by scoping to dc:identifier). For CATEGORY questions expand a clade via ?taxon rdfs:subClassOf* <parent> on ubergraph, then join.",
       "verified_count": 164,
       "verified_count_note": "DISTINCT biobricks-aopwiki dc:identifier NCBITaxon terms present in ubergraph (164). The taxa to which AOPs apply. (An any-predicate scan reaches 165, the extra being a root taxon referenced elsewhere.)",
-      "example_question": "Find AOPs applicable to a taxonomic clade by expanding the clade in ubergraph.",
+      "example_question": "Which organisms are Adverse Outcome Pathways declared applicable to, and what clades do they belong to - so an AOP's taxonomic applicability can be expanded to related species?",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?s <http://purl.org/dc/elements/1.1/identifier> ?taxon . FILTER(STRSTARTS(STR(?taxon),'http://purl.obolibrary.org/obo/NCBITaxon_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?u . }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "example_questions": [
+        "Which organisms are Adverse Outcome Pathways declared applicable to, and what clades do they belong to - so an AOP's taxonomic applicability can be expanded to related species?",
+        "How many biobricks-aopwiki taxonomic-applicability organisms carry an NCBITaxon id resolvable in ubergraph?"
+      ]
     },
     {
       "right_kg": "ubergraph",
@@ -1221,9 +1261,13 @@
         "distinct_nde_species": 1808
       },
       "verified_count_note": "DISTINCT nde schema:species (UniProt taxonomy = NCBI taxon id) present in ubergraph: 1,797 of 1,808 (99.4%). The organisms of NIAID infectious/immune-disease datasets.",
-      "example_question": "Find NIAID datasets about organisms within a taxonomic clade by expanding the clade in ubergraph.",
+      "example_question": "Which organisms (pathogens, hosts, vectors) appear in NIAID Data Ecosystem datasets, and what are their NCBITaxon clades - so a query can ask for all viruses or all arthropod vectors?",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  { SELECT DISTINCT ?taxon WHERE {\n    GRAPH <https://purl.org/okn/frink/kg/nde> { ?s <http://schema.org/species> ?o . FILTER(CONTAINS(STR(?o),'/taxonomy/')) }\n    BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?o),'^.*/taxonomy/([0-9]+).*$','$1'))) AS ?taxon)\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?u . }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "example_questions": [
+        "Which organisms (pathogens, hosts, vectors) appear in NIAID Data Ecosystem datasets, and what are their NCBITaxon clades - so a query can ask for all viruses or all arthropod vectors?",
+        "How many nde organisms carry an NCBITaxon id resolvable in ubergraph?"
+      ]
     },
     {
       "id": "D9-ncbitaxon-spokegenelab-spokeokn-via-ubergraph",
@@ -1243,10 +1287,14 @@
         "spokeokn_total_taxa": 34570
       },
       "verified_count_note": "DISTINCT spoke-okn organism taxa nested under spoke-genelab's microbiome genus/family clades (33,313 of spoke-okn's 34,570 = 96%). High because spoke-genelab's microbiome includes broad groups (e.g. NCBITaxon_2 'Bacteria', Gammaproteobacteria) that cover most of spoke-okn's bacterial strains. The overlap an exact-id intersection misses: spoke-genelab and spoke-okn meet only via ubergraph's taxonomy closure.",
-      "example_question": "Which spoke-okn bacterial strains belong to the microbial genera spoke-genelab detected as differentially abundant in spaceflight?",
+      "example_question": "For a model organism used in a NASA GeneLab spaceflight experiment, what biomedical context does spoke-okn attach to the same species? ALWAYS expand the clade: only 2 taxa match by exact id, but clade expansion through ubergraph reaches 33,313 spoke-okn taxa.",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?desc) AS ?n) WHERE {\n  { SELECT DISTINCT ?genus WHERE {\n    GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?node a <https://purl.org/okn/frink/kg/spoke-genelab/schema/Organism> . }\n    BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?node),'^.*/node/([0-9]+).*$','$1'))) AS ?genus)\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?desc <http://www.w3.org/2000/01/rdf-schema#subClassOf>* ?genus . }\n  { SELECT DISTINCT ?desc WHERE {\n    GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?ot a <https://w3id.org/biolink/vocab/OrganismTaxon> }\n    BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?ot),'^.*/organism/([0-9]+).*$','$1'))) AS ?desc)\n  } }\n}",
       "skeleton_verified": true,
-      "methodology_note": "spoke-genelab carries taxa in TWO id forms: 9 model organisms as obo NCBITaxon IRIs on Gene.taxonomy (D4), and 46 microbiome taxa as NCBI taxon ids embedded in the Organism node IRI (D10, this entry's left side). The latter overlap spoke-okn massively but only via ubergraph clade expansion — an exact-id matrix reports a tiny count and is wrong for coarser-grained taxa."
+      "methodology_note": "spoke-genelab carries taxa in TWO id forms: 9 model organisms as obo NCBITaxon IRIs on Gene.taxonomy (D4), and 46 microbiome taxa as NCBI taxon ids embedded in the Organism node IRI (D10, this entry's left side). The latter overlap spoke-okn massively but only via ubergraph clade expansion — an exact-id matrix reports a tiny count and is wrong for coarser-grained taxa.",
+      "example_questions": [
+        "For a model organism used in a NASA GeneLab spaceflight experiment, what biomedical context does spoke-okn attach to the same species? ALWAYS expand the clade: only 2 taxa match by exact id, but clade expansion through ubergraph reaches 33,313 spoke-okn taxa.",
+        "How many organisms do spoke-genelab and spoke-okn share - by exact NCBITaxon id, and after clade expansion through ubergraph?"
+      ]
     },
     {
       "id": "D10-ncbitaxon-spokegenelab-microbiome-ubergraph",
@@ -1265,10 +1313,14 @@
         "microbiome_organisms": 46
       },
       "verified_count_note": "DISTINCT spoke-genelab microbiome taxa (NCBI taxon id extracted from the node IRI) present in ubergraph's taxonomy: 46/46 (100%). The genus/family-level bacteria from spaceflight differential-abundance analysis; the obo-id model organisms are covered separately by D4 (9). Together D4+D10 are spoke-genelab's full taxon footprint in the hub. (Corrects the prior 41, which used fragile rdfs:label resolution and lost 5 valid taxa to ontology renames.)",
-      "example_question": "Map spoke-genelab's spaceflight microbiome genera (NCBI taxon ids on the Organism node IRIs) to ubergraph, then expand each clade.",
+      "example_question": "Which microbial taxa appear in NASA GeneLab's spaceflight microbiome assays, and what higher clades do they belong to in ubergraph?",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?node a <https://purl.org/okn/frink/kg/spoke-genelab/schema/Organism> . }\n  BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?node),'^.*/node/([0-9]+).*$','$1'))) AS ?taxon)\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?u . }\n}",
       "skeleton_verified": true,
-      "methodology_note": "IRI-based id extraction, not label matching: spoke-genelab's microbiome Organism nodes carry the NCBI taxon id in the node IRI (.../node/{taxid}), like spoke-okn's PATRIC genome IRIs. This is the companion spoke to D4 (Gene.taxonomy obo ids) and the spoke-genelab side of D9."
+      "methodology_note": "IRI-based id extraction, not label matching: spoke-genelab's microbiome Organism nodes carry the NCBI taxon id in the node IRI (.../node/{taxid}), like spoke-okn's PATRIC genome IRIs. This is the companion spoke to D4 (Gene.taxonomy obo ids) and the spoke-genelab side of D9.",
+      "example_questions": [
+        "Which microbial taxa appear in NASA GeneLab's spaceflight microbiome assays, and what higher clades do they belong to in ubergraph?",
+        "How many spoke-genelab microbiome organisms resolve to an NCBITaxon clade in ubergraph?"
+      ]
     },
     {
       "id": "D11-ncbitaxon-wildlifekn-nde",
@@ -1289,10 +1341,14 @@
         "clade_nde_in_wildlife": 57
       },
       "verified_count_note": "17 exact-id shared taxa (avian-influenza reservoirs - mallard, goose, chicken, turkey, pigeon, quail, starling, kestrel - plus disease-relevant amphibians: green frog, eastern newt, cane toad). Clade membership is far larger (339 wildlife taxa nest under broad nde clades; 57 nde taxa nest under wildlife clades) - see verified_count_secondary. Verified 2026-06-18.",
-      "example_question": "One Health: which wildlifekn-observed bird/amphibian species have NIAID (nde) infectious-disease datasets, joined on shared host species?",
+      "example_question": "Which wildlife species tracked in wildlifekn also appear in NIAID Data Ecosystem datasets - i.e. which monitored wild animals are also studied as zoonotic reservoirs or hosts?",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?t) AS ?shared) WHERE {\n  { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/wildlifekn> { VALUES ?_tc { <https://wildlife.proto-okn.net/kg/Bird_name> <https://wildlife.proto-okn.net/kg/Amphibian_name> } ?_t1 a ?_tc ; <http://www.w3.org/2000/01/rdf-schema#label> ?_t2 . BIND(REPLACE(STR(?_t2),'^(\\S+\\s+\\S+).*$','$1') AS ?_t3) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label> ?_t3 . FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/NCBITaxon_')) } } }\n  { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/nde> { ?_t1 <http://schema.org/species> ?_t2 . FILTER(CONTAINS(STR(?_t2),'/taxonomy/')) } BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?_t2),'^.*/taxonomy/([0-9]+).*$','$1'))) AS ?t) } }\n}",
       "skeleton_verified": true,
-      "methodology_note": "LABEL-BRIDGED join (fragile, verified 2026-06-18): wildlifekn stores species as scientific-name label strings WITH taxonomic authority (e.g. 'Ardea alba Linnaeus, 1758'); there are NO NCBITaxon IRIs. Strip the authority to the bare binomial (first two whitespace tokens) and resolve to an NCBITaxon IRI via ubergraph rdfs:label, then intersect with the partner KG's NCBITaxon set. Unlike the IRI-based taxonomy joins (D3-D10) this depends on exact binomial/label agreement and collapses subspecies to species rank; the verified_count is the EXACT-ID overlap. 339 of wildlifekn's bird/amphibian species resolve to an NCBITaxon term this way."
+      "methodology_note": "LABEL-BRIDGED join (fragile, verified 2026-06-18): wildlifekn stores species as scientific-name label strings WITH taxonomic authority (e.g. 'Ardea alba Linnaeus, 1758'); there are NO NCBITaxon IRIs. Strip the authority to the bare binomial (first two whitespace tokens) and resolve to an NCBITaxon IRI via ubergraph rdfs:label, then intersect with the partner KG's NCBITaxon set. Unlike the IRI-based taxonomy joins (D3-D10) this depends on exact binomial/label agreement and collapses subspecies to species rank; the verified_count is the EXACT-ID overlap. 339 of wildlifekn's bird/amphibian species resolve to an NCBITaxon term this way.",
+      "example_questions": [
+        "Which wildlife species tracked in wildlifekn also appear in NIAID Data Ecosystem datasets - i.e. which monitored wild animals are also studied as zoonotic reservoirs or hosts?",
+        "How many organisms do wildlifekn and nde share, by exact NCBITaxon id and after clade expansion through ubergraph?"
+      ]
     },
     {
       "id": "D12-ncbitaxon-wildlifekn-sawgraph",
@@ -1313,10 +1369,14 @@
         "clade_sawgraph_in_wildlife": 2
       },
       "verified_count_note": "2 exact-id shared taxa between wildlifekn observations and SAWGraph PFAS-monitored species. Verified 2026-06-18. (Small: SAWGraph is fish-heavy.) Clade: 339 wildlife taxa under broad sawgraph clades; 2 sawgraph taxa under wildlife clades.",
-      "example_question": "Which wildlifekn-observed species are also PFAS-monitored in SAWGraph, joined on shared NCBITaxon?",
+      "example_question": "Which wildlife species monitored in wildlifekn are also sampled for PFAS contamination in SAWGraph - connecting wildlife occurrence and habitat to measured chemical exposure in the same species?",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?t) AS ?shared) WHERE {\n  { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/wildlifekn> { VALUES ?_tc { <https://wildlife.proto-okn.net/kg/Bird_name> <https://wildlife.proto-okn.net/kg/Amphibian_name> } ?_t1 a ?_tc ; <http://www.w3.org/2000/01/rdf-schema#label> ?_t2 . BIND(REPLACE(STR(?_t2),'^(\\S+\\s+\\S+).*$','$1') AS ?_t3) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label> ?_t3 . FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/NCBITaxon_')) } } }\n  { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?t <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?_t1 . FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/NCBITaxon_')) } } }\n}",
       "skeleton_verified": true,
-      "methodology_note": "LABEL-BRIDGED join (fragile, verified 2026-06-18): wildlifekn stores species as scientific-name label strings WITH taxonomic authority (e.g. 'Ardea alba Linnaeus, 1758'); there are NO NCBITaxon IRIs. Strip the authority to the bare binomial (first two whitespace tokens) and resolve to an NCBITaxon IRI via ubergraph rdfs:label, then intersect with the partner KG's NCBITaxon set. Unlike the IRI-based taxonomy joins (D3-D10) this depends on exact binomial/label agreement and collapses subspecies to species rank; the verified_count is the EXACT-ID overlap. 339 of wildlifekn's bird/amphibian species resolve to an NCBITaxon term this way."
+      "methodology_note": "LABEL-BRIDGED join (fragile, verified 2026-06-18): wildlifekn stores species as scientific-name label strings WITH taxonomic authority (e.g. 'Ardea alba Linnaeus, 1758'); there are NO NCBITaxon IRIs. Strip the authority to the bare binomial (first two whitespace tokens) and resolve to an NCBITaxon IRI via ubergraph rdfs:label, then intersect with the partner KG's NCBITaxon set. Unlike the IRI-based taxonomy joins (D3-D10) this depends on exact binomial/label agreement and collapses subspecies to species rank; the verified_count is the EXACT-ID overlap. 339 of wildlifekn's bird/amphibian species resolve to an NCBITaxon term this way.",
+      "example_questions": [
+        "Which wildlife species monitored in wildlifekn are also sampled for PFAS contamination in SAWGraph - connecting wildlife occurrence and habitat to measured chemical exposure in the same species?",
+        "How many organisms do wildlifekn and sawgraph share, by exact NCBITaxon id and after clade expansion through ubergraph?"
+      ]
     },
     {
       "id": "D13-ncbitaxon-wildlifekn-ubergraph",
@@ -1332,10 +1392,14 @@
       "iri_normalization": "LABEL-BRIDGED join (fragile, verified 2026-06-18): wildlifekn stores species as scientific-name label strings WITH taxonomic authority (e.g. 'Ardea alba Linnaeus, 1758'); there are NO NCBITaxon IRIs. Strip the authority to the bare binomial (first two whitespace tokens) and resolve to an NCBITaxon IRI via ubergraph rdfs:label, then intersect with the partner KG's NCBITaxon set. Unlike the IRI-based taxonomy joins (D3-D10) this depends on exact binomial/label agreement and collapses subspecies to species rank; the verified_count is the EXACT-ID overlap. 339 of wildlifekn's bird/amphibian species resolve to an NCBITaxon term this way.",
       "verified_count": 339,
       "verified_count_note": "339 of wildlifekn bird/amphibian species (303 Bird_name + 97 Amphibian_name) resolve to an ubergraph NCBITaxon term by authority-stripped binomial label match. LABEL-BRIDGED spoke (fragile); registers wildlifekn on the NCBITaxon hub. Verified 2026-06-18.",
-      "example_question": "Resolve wildlifekn observed species to NCBITaxon and expand clades via ubergraph.",
+      "example_question": "Which species does wildlifekn monitor, and how do they roll up the NCBITaxon hierarchy - so a query can ask for all birds or all mammals in the wildlife record?",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/wildlifekn> { VALUES ?cls { <https://wildlife.proto-okn.net/kg/Bird_name> <https://wildlife.proto-okn.net/kg/Amphibian_name> } ?s a ?cls ; <http://www.w3.org/2000/01/rdf-schema#label> ?l . BIND(REPLACE(?l,'^(\\\\S+\\\\s+\\\\S+).*$','$1') AS ?binom) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#label> ?binom . FILTER(STRSTARTS(STR(?taxon),'http://purl.obolibrary.org/obo/NCBITaxon_')) }\n}",
       "skeleton_verified": true,
-      "methodology_note": "LABEL-BRIDGED join (fragile, verified 2026-06-18): wildlifekn stores species as scientific-name label strings WITH taxonomic authority (e.g. 'Ardea alba Linnaeus, 1758'); there are NO NCBITaxon IRIs. Strip the authority to the bare binomial (first two whitespace tokens) and resolve to an NCBITaxon IRI via ubergraph rdfs:label, then intersect with the partner KG's NCBITaxon set. Unlike the IRI-based taxonomy joins (D3-D10) this depends on exact binomial/label agreement and collapses subspecies to species rank; the verified_count is the EXACT-ID overlap. 339 of wildlifekn's bird/amphibian species resolve to an NCBITaxon term this way."
+      "methodology_note": "LABEL-BRIDGED join (fragile, verified 2026-06-18): wildlifekn stores species as scientific-name label strings WITH taxonomic authority (e.g. 'Ardea alba Linnaeus, 1758'); there are NO NCBITaxon IRIs. Strip the authority to the bare binomial (first two whitespace tokens) and resolve to an NCBITaxon IRI via ubergraph rdfs:label, then intersect with the partner KG's NCBITaxon set. Unlike the IRI-based taxonomy joins (D3-D10) this depends on exact binomial/label agreement and collapses subspecies to species rank; the verified_count is the EXACT-ID overlap. 339 of wildlifekn's bird/amphibian species resolve to an NCBITaxon term this way.",
+      "example_questions": [
+        "Which species does wildlifekn monitor, and how do they roll up the NCBITaxon hierarchy - so a query can ask for all birds or all mammals in the wildlife record?",
+        "How many wildlifekn organisms carry an NCBITaxon id resolvable in ubergraph?"
+      ]
     },
     {
       "id": "L4-county-fips-scales-spatialkg",
@@ -2651,10 +2715,14 @@
       "iri_normalization": "biohealth carries no NCBITaxon id (every node IRI is a UMLS CUI), so it cannot join taxa by id. Take spoke-okn's OrganismTaxon node IRIs (.../organism/{id}.{assembly}; extract the NCBITaxon id), resolve each taxon's scientific name via ubergraph rdfs:label, and point-check a biohealth node carrying that exact rdfs:label. Name-based: matches only exact scientific names (misses synonyms/spelling variants) and cannot expand clades through ubergraph subClassOf*, so the count is a conservative lower bound.",
       "verified_count": 1603,
       "verified_count_note": "1603 of spoke-okn's 34570 NCBITaxon organisms match a biohealth concept by exact scientific name (biohealth rdfs:label = ubergraph NCBITaxon rdfs:label). Approximate lower bound; misses synonyms/spelling variants; no clade expansion. Exact COUNT(DISTINCT) on 2026-06-25.",
-      "example_question": "Which spoke-okn organisms (NCBITaxon) does biohealth also describe, matched by exact scientific name (biohealth has no NCBITaxon id, so the bridge is the organism label)?",
+      "example_question": "For an organism biohealth names as a UMLS health concept, what does spoke-okn record about the same species? The largest label-bridged overlap (1,603 of spoke-okn's 34,570 taxa match by scientific name) - but name-matched, so verify before asserting identity.",
       "methodology_note": "biohealth (~110M triples) carries no NCBITaxon ids; drive the join from the bounded spoke-okn taxon set, resolve names through ubergraph rdfs:label, then point-check biohealth labels. Label-bridged like wildlifekn but more fragile: name-only, so no subClassOf* clade expansion is possible.",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  { SELECT DISTINCT ?taxon WHERE {\n    GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?ot a <https://w3id.org/biolink/vocab/OrganismTaxon> }\n    BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?ot),'^.*/organism/([0-9]+).*$','$1'))) AS ?taxon)\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#label> ?name . }\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh <http://www.w3.org/2000/01/rdf-schema#label> ?name . }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "example_questions": [
+        "For an organism biohealth names as a UMLS health concept, what does spoke-okn record about the same species? The largest label-bridged overlap (1,603 of spoke-okn's 34,570 taxa match by scientific name) - but name-matched, so verify before asserting identity.",
+        "How many organisms do biohealth and spoke-okn share by exact scientific name? (biohealth carries no NCBITaxon ids, so this is an approximate lower bound with no clade expansion.)"
+      ]
     },
     {
       "id": "BH12-ncbitaxon-label-nde",
@@ -2670,10 +2738,14 @@
       "iri_normalization": "biohealth carries no NCBITaxon id (every node IRI is a UMLS CUI), so it cannot join taxa by id. Take nde's schema:species UniProt taxonomy IRIs (.../taxonomy/{id}; extract the NCBITaxon id), resolve each taxon's scientific name via ubergraph rdfs:label, and point-check a biohealth node carrying that exact rdfs:label. Name-based: matches only exact scientific names (misses synonyms/spelling variants) and cannot expand clades through ubergraph subClassOf*, so the count is a conservative lower bound.",
       "verified_count": 1052,
       "verified_count_note": "1052 of nde's 1808 NCBITaxon organisms match a biohealth concept by exact scientific name (biohealth rdfs:label = ubergraph NCBITaxon rdfs:label). Approximate lower bound; misses synonyms/spelling variants; no clade expansion. Exact COUNT(DISTINCT) on 2026-06-25.",
-      "example_question": "Which nde organisms (NCBITaxon) does biohealth also describe, matched by exact scientific name (biohealth has no NCBITaxon id, so the bridge is the organism label)?",
+      "example_question": "Which organisms biohealth names as UMLS health concepts also appear in NIAID Data Ecosystem datasets - e.g. a named pathogen concept with real underlying data?",
       "methodology_note": "biohealth (~110M triples) carries no NCBITaxon ids; drive the join from the bounded nde taxon set, resolve names through ubergraph rdfs:label, then point-check biohealth labels. Label-bridged like wildlifekn but more fragile: name-only, so no subClassOf* clade expansion is possible.",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  { SELECT DISTINCT ?taxon WHERE {\n    GRAPH <https://purl.org/okn/frink/kg/nde> { ?s <http://schema.org/species> ?o . FILTER(CONTAINS(STR(?o),'/taxonomy/')) }\n    BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?o),'^.*/taxonomy/([0-9]+).*$','$1'))) AS ?taxon)\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#label> ?name . }\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh <http://www.w3.org/2000/01/rdf-schema#label> ?name . }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "example_questions": [
+        "Which organisms biohealth names as UMLS health concepts also appear in NIAID Data Ecosystem datasets - e.g. a named pathogen concept with real underlying data?",
+        "How many organisms do biohealth and nde share by exact scientific name? (Name-bridged - an approximate lower bound, not an id join.)"
+      ]
     },
     {
       "id": "BH13-ncbitaxon-label-sawgraph",
@@ -2689,10 +2761,14 @@
       "iri_normalization": "biohealth carries no NCBITaxon id (every node IRI is a UMLS CUI), so it cannot join taxa by id. Take sawgraph's obo/NCBITaxon_ terms (subjects of rdfs:subClassOf), resolve each taxon's scientific name via ubergraph rdfs:label, and point-check a biohealth node carrying that exact rdfs:label. Name-based: matches only exact scientific names (misses synonyms/spelling variants) and cannot expand clades through ubergraph subClassOf*, so the count is a conservative lower bound.",
       "verified_count": 377,
       "verified_count_note": "377 of sawgraph's 538 NCBITaxon organisms match a biohealth concept by exact scientific name (biohealth rdfs:label = ubergraph NCBITaxon rdfs:label). Approximate lower bound; misses synonyms/spelling variants; no clade expansion. Exact COUNT(DISTINCT) on 2026-06-25.",
-      "example_question": "Which sawgraph organisms (NCBITaxon) does biohealth also describe, matched by exact scientific name (biohealth has no NCBITaxon id, so the bridge is the organism label)?",
+      "example_question": "Which organisms biohealth names as UMLS health concepts are also sampled by SAWGraph for environmental contamination - linking a health concept to measured exposure in the same species?",
       "methodology_note": "biohealth (~110M triples) carries no NCBITaxon ids; drive the join from the bounded sawgraph taxon set, resolve names through ubergraph rdfs:label, then point-check biohealth labels. Label-bridged like wildlifekn but more fragile: name-only, so no subClassOf* clade expansion is possible.",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?sup . FILTER(STRSTARTS(STR(?taxon),'http://purl.obolibrary.org/obo/NCBITaxon_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#label> ?name . }\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh <http://www.w3.org/2000/01/rdf-schema#label> ?name . }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "example_questions": [
+        "Which organisms biohealth names as UMLS health concepts are also sampled by SAWGraph for environmental contamination - linking a health concept to measured exposure in the same species?",
+        "How many organisms do biohealth and sawgraph share by exact scientific name? (Name-bridged - an approximate lower bound.)"
+      ]
     },
     {
       "id": "BH14-ncbitaxon-label-biobricks-aopwiki",
@@ -2708,10 +2784,14 @@
       "iri_normalization": "biohealth carries no NCBITaxon id (every node IRI is a UMLS CUI), so it cannot join taxa by id. Take biobricks-aopwiki's obo/NCBITaxon_ on dc:identifier (AOP taxonomic applicability), resolve each taxon's scientific name via ubergraph rdfs:label, and point-check a biohealth node carrying that exact rdfs:label. Name-based: matches only exact scientific names (misses synonyms/spelling variants) and cannot expand clades through ubergraph subClassOf*, so the count is a conservative lower bound.",
       "verified_count": 112,
       "verified_count_note": "112 of biobricks-aopwiki's 166 NCBITaxon organisms match a biohealth concept by exact scientific name (biohealth rdfs:label = ubergraph NCBITaxon rdfs:label). Approximate lower bound; misses synonyms/spelling variants; no clade expansion. Exact COUNT(DISTINCT) on 2026-06-25.",
-      "example_question": "Which biobricks-aopwiki organisms (NCBITaxon) does biohealth also describe, matched by exact scientific name (biohealth has no NCBITaxon id, so the bridge is the organism label)?",
+      "example_question": "Which organisms named in biohealth's UMLS health concepts have an Adverse Outcome Pathway declared applicable to them?",
       "methodology_note": "biohealth (~110M triples) carries no NCBITaxon ids; drive the join from the bounded biobricks-aopwiki taxon set, resolve names through ubergraph rdfs:label, then point-check biohealth labels. Label-bridged like wildlifekn but more fragile: name-only, so no subClassOf* clade expansion is possible.",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?s <http://purl.org/dc/elements/1.1/identifier> ?taxon . FILTER(STRSTARTS(STR(?taxon),'http://purl.obolibrary.org/obo/NCBITaxon_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#label> ?name . }\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh <http://www.w3.org/2000/01/rdf-schema#label> ?name . }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "example_questions": [
+        "Which organisms named in biohealth's UMLS health concepts have an Adverse Outcome Pathway declared applicable to them?",
+        "How many organisms do biohealth and biobricks-aopwiki share by exact scientific name? (Name-bridged - an approximate lower bound.)"
+      ]
     },
     {
       "id": "BH15-ncbitaxon-label-spoke-genelab",
@@ -2727,10 +2807,14 @@
       "iri_normalization": "biohealth carries no NCBITaxon id (every node IRI is a UMLS CUI), so it cannot join taxa by id. Take spoke-genelab's 9 model-organism taxa (obo/NCBITaxon_ string literal on Gene.taxonomy), resolve each taxon's scientific name via ubergraph rdfs:label, and point-check a biohealth node carrying that exact rdfs:label. Name-based: matches only exact scientific names (misses synonyms/spelling variants) and cannot expand clades through ubergraph subClassOf*, so the count is a conservative lower bound.",
       "verified_count": 7,
       "verified_count_note": "7 of spoke-genelab's 9 NCBITaxon organisms match a biohealth concept by exact scientific name (biohealth rdfs:label = ubergraph NCBITaxon rdfs:label). Approximate lower bound; misses synonyms/spelling variants; no clade expansion. Exact COUNT(DISTINCT) on 2026-06-25. spoke-genelab side restricted to its 9 model-organism taxa (Gene.taxonomy).",
-      "example_question": "Which spoke-genelab organisms (NCBITaxon) does biohealth also describe, matched by exact scientific name (biohealth has no NCBITaxon id, so the bridge is the organism label)?",
+      "example_question": "Do NASA GeneLab's spaceflight model organisms appear as organism concepts in biohealth's UMLS-keyed health graph?",
       "methodology_note": "biohealth (~110M triples) carries no NCBITaxon ids; drive the join from the bounded spoke-genelab taxon set, resolve names through ubergraph rdfs:label, then point-check biohealth labels. Label-bridged like wildlifekn but more fragile: name-only, so no subClassOf* clade expansion is possible.",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?gene <https://purl.org/okn/frink/kg/spoke-genelab/schema/taxonomy> ?ts . FILTER(STRSTARTS(STR(?ts),'http://purl.obolibrary.org/obo/NCBITaxon_')) }\n  BIND(IRI(STR(?ts)) AS ?taxon)\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#label> ?name . }\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh <http://www.w3.org/2000/01/rdf-schema#label> ?name . }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "example_questions": [
+        "Do NASA GeneLab's spaceflight model organisms appear as organism concepts in biohealth's UMLS-keyed health graph?",
+        "How many organisms do biohealth and spoke-genelab share by exact scientific name? (Name-bridged - an approximate lower bound.)"
+      ]
     },
     {
       "id": "BH16-ncbitaxon-label-gene-expression-atlas-okn",
@@ -2746,10 +2830,14 @@
       "iri_normalization": "biohealth carries no NCBITaxon id (every node IRI is a UMLS CUI), so it cannot join taxa by id. Take gene-expression-atlas-okn's obo/NCBITaxon_ on biolink:in_taxon, resolve each taxon's scientific name via ubergraph rdfs:label, and point-check a biohealth node carrying that exact rdfs:label. Name-based: matches only exact scientific names (misses synonyms/spelling variants) and cannot expand clades through ubergraph subClassOf*, so the count is a conservative lower bound.",
       "verified_count": 6,
       "verified_count_note": "6 of gene-expression-atlas-okn's 8 NCBITaxon organisms match a biohealth concept by exact scientific name (biohealth rdfs:label = ubergraph NCBITaxon rdfs:label). Approximate lower bound; misses synonyms/spelling variants; no clade expansion. Exact COUNT(DISTINCT) on 2026-06-25.",
-      "example_question": "Which gene-expression-atlas-okn organisms (NCBITaxon) does biohealth also describe, matched by exact scientific name (biohealth has no NCBITaxon id, so the bridge is the organism label)?",
+      "example_question": "For the organisms biohealth names as UMLS health concepts, does Expression Atlas profile expression in the same species?",
       "methodology_note": "biohealth (~110M triples) carries no NCBITaxon ids; drive the join from the bounded gene-expression-atlas-okn taxon set, resolve names through ubergraph rdfs:label, then point-check biohealth labels. Label-bridged like wildlifekn but more fragile: name-only, so no subClassOf* clade expansion is possible.",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?s <https://w3id.org/biolink/vocab/in_taxon> ?taxon . FILTER(STRSTARTS(STR(?taxon),'http://purl.obolibrary.org/obo/NCBITaxon_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#label> ?name . }\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh <http://www.w3.org/2000/01/rdf-schema#label> ?name . }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "example_questions": [
+        "For the organisms biohealth names as UMLS health concepts, does Expression Atlas profile expression in the same species?",
+        "How many organisms do biohealth and gene-expression-atlas-okn share by exact scientific name? (Name-bridged - an approximate lower bound.)"
+      ]
     },
     {
       "id": "AN1-uberon-spokegenelab-gxa",
@@ -3395,7 +3483,8 @@
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sockg> { ?s <http://w3id.org/coso/v1/contaminoso#casNumber> ?cas . }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/', STR(?cas))) AS ?cid)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?x <http://edamontology.org/has_identifier> ?cid . }\n}",
       "skeleton_verified": true,
-      "domain": "Environmental toxicology"
+      "domain": "Environmental toxicology",
+      "example_question": "For a pesticide sockg records applied to a field soil (by CAS), what curated toxicity / hazard data does biobricks-ICE hold for that same chemical?"
     },
     {
       "id": "ET4-cas-sockg-biobricks-toxcast",
@@ -3417,7 +3506,8 @@
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sockg> { ?s <http://w3id.org/coso/v1/contaminoso#casNumber> ?cas . }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/', STR(?cas))) AS ?cid)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-toxcast> { ?x <http://edamontology.org/has_identifier> ?cid . }\n}",
       "skeleton_verified": true,
-      "domain": "Environmental toxicology"
+      "domain": "Environmental toxicology",
+      "example_question": "For a soil-applied pesticide sockg tracks (by CAS), what ToxCast high-throughput assay activity is recorded for the same chemical?"
     },
     {
       "id": "C10-entrez-biobricks-ice-rdkg",
@@ -3439,7 +3529,8 @@
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?a <https://ice.ntp.niehs.nih.gov/property/assay_entrez_gene_id> ?g .\n    BIND(REPLACE(STR(?g),'.*/gene/','') AS ?bare) FILTER(?bare != 'None') }\n  BIND(IRI(CONCAT('http://identifiers.org/ncbigene/', ?bare)) AS ?gene)\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?gene ?p ?o . }\n}",
       "skeleton_verified": true,
-      "domain": "Genes"
+      "domain": "Genes",
+      "example_question": "For a gene targeted by an ICE tox assay (biobricks-ice, Entrez), what rare-disease associations does rdkg record for that same gene?"
     },
     {
       "id": "BH19-umls-biobricks-ice-biohealth",
@@ -3461,7 +3552,8 @@
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?bh) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?a <https://ice.ntp.niehs.nih.gov/property/throughMechanisticTarget_NCIm> ?u . FILTER(CONTAINS(STR(?u),'umls'))\n    BIND(REPLACE(STR(?u),'^.*?(C[0-9]{6,}).*$','$1') AS ?cui) }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?p ?o . }\n}",
       "skeleton_verified": true,
-      "domain": "Disease & phenotype"
+      "domain": "Disease & phenotype",
+      "example_question": "For the biological target of an ICE tox assay (biobricks-ice, a UMLS concept), what clinical / SDoH associations does biohealth attach to that same concept?"
     },
     {
       "id": "GN1-geonames-spokeokn-climatemodelskg",
@@ -3483,7 +3575,8 @@
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?g) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> { ?c <https://climatepub4kg.github.io/ontology#geonameid> ?g . }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?s <https://purl.org/okn/frink/kg/spoke-okn/schema/code> ?g . }\n}",
       "skeleton_verified": true,
-      "domain": "Geospatial"
+      "domain": "Geospatial",
+      "example_question": "For a location climatemodelskg holds climate-model output for (by GeoNames id), what biomedical / environmental / SDoH data does spoke-okn attach to that same place?"
     },
     {
       "id": "C11-inchikey-spokeokn-prokn",
@@ -3505,7 +3598,8 @@
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?ik) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?c a <https://w3id.org/biolink/vocab/ChemicalEntity> . FILTER(CONTAINS(STR(?c),'/inchikey/'))\n    BIND(REPLACE(STR(?c),'.*/inchikey/','') AS ?ik) }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?p <https://chemkg.github.io/chemrof/inchi_key_string> ?ik . }\n}",
       "skeleton_verified": true,
-      "domain": "Chemicals"
+      "domain": "Chemicals",
+      "example_question": "For a chemical spoke-okn tracks (a drug or an environmental toxicant, keyed by InChIKey), what protein targets and ChEMBL bioactivity does prokn record for the same structure?"
     },
     {
       "id": "PB1-doi-climatemodelskg-nasa",
@@ -3527,7 +3621,8 @@
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?bare) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> { ?p1 <https://climatepub4kg.github.io/ontology#doi> ?d1 .\n    BIND(LCASE(REPLACE(STR(?d1),\"^https?://(dx[.])?doi[.]org/\",\"\")) AS ?bare) }\n  GRAPH <https://purl.org/okn/frink/kg/nasa-gesdisc-kg> { ?p2 <http://purl.org/ontology/bibo/doi> ?d2 .\n    BIND(LCASE(REPLACE(STR(?d2),\"^https?://(dx[.])?doi[.]org/\",\"\")) AS ?bare) }\n}",
       "skeleton_verified": true,
-      "domain": "Publications"
+      "domain": "Publications",
+      "example_question": "For a climate-modeling paper in climatemodelskg (by DOI), does nasa-gesdisc-kg record that same publication among the works citing or using NASA Earth-science datasets - and which NASA datasets, instruments, or platforms does it connect to?"
     },
     {
       "id": "EO1-instrument-climatemodelskg-nasa",
@@ -3549,7 +3644,8 @@
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?k) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> { ?c a <https://climatepub4kg.github.io/ontology#Instrument> ; <https://climatepub4kg.github.io/ontology#name> ?cn .\n    BIND(LCASE(STR(?cn)) AS ?k) }\n  GRAPH <https://purl.org/okn/frink/kg/nasa-gesdisc-kg> { ?d <https://purl.org/okn/frink/kg/nasa-gesdisc/schema/HAS_INSTRUMENT> ?x . ?x <http://www.w3.org/2000/01/rdf-schema#label> ?nl .\n    BIND(LCASE(STR(?nl)) AS ?k) }\n}",
       "skeleton_verified": true,
-      "domain": "Earth observation"
+      "domain": "Earth observation",
+      "example_question": "For an Earth-observation instrument a climate-modeling paper in climatemodelskg mentions (e.g. MODIS), what NASA GES DISC datasets and platforms does nasa-gesdisc-kg catalogue for that same instrument?"
     },
     {
       "id": "EO2-platform-climatemodelskg-nasa",
@@ -3571,7 +3667,8 @@
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?k) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> { ?c a <https://climatepub4kg.github.io/ontology#Platform> ; <https://climatepub4kg.github.io/ontology#name> ?cn .\n    BIND(LCASE(STR(?cn)) AS ?k) }\n  GRAPH <https://purl.org/okn/frink/kg/nasa-gesdisc-kg> { ?d <https://purl.org/okn/frink/kg/nasa-gesdisc/schema/HAS_PLATFORM> ?x . ?x <http://www.w3.org/2000/01/rdf-schema#label> ?nl .\n    BIND(LCASE(STR(?nl)) AS ?k) }\n}",
       "skeleton_verified": true,
-      "domain": "Earth observation"
+      "domain": "Earth observation",
+      "example_question": "For a satellite platform a climate-modeling paper in climatemodelskg mentions (e.g. Aqua), which instruments and NASA GES DISC datasets does nasa-gesdisc-kg catalogue for that same platform?"
     },
     {
       "id": "HY1-comid-geoconnex-hydrologykg",
