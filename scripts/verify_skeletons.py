@@ -113,23 +113,32 @@ SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {{
 }}"""
 
 BL_GENE = "<https://w3id.org/biolink/vocab/Gene>"
+SPOKE_ENSEMBL = "<https://purl.org/okn/frink/kg/spoke-okn/schema/ensembl>"
 Q["C1-ensembl"] = f"""
 SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {{
   GRAPH {g("gene-expression-atlas-okn")} {{ ?gene a {BL_GENE} . }}
   {{ SELECT DISTINCT ?gene WHERE {{ GRAPH {g("spoke-okn")} {{ ?x ?q ?gene . FILTER(STRSTARTS(STR(?gene),'http://identifiers.org/ensembl/')) }} }} }}
 }}"""
 
-Q["C2-ensembl-3way"] = f"""
+# C2-ensembl-3way (GXA+pankgraph+spoke-okn clique, 15,132) was DROPPED 2026-07-13:
+# it duplicated C1's count exactly, added no key and no pair, and rendered as a bridge
+# through pankgraph. The free 3-way dossier is now an example question on C1.
+
+# C3 RESCOPED 2026-07-13. It used to drive from pankgraph's
+# biolink:gene_associated_with_condition, whose object is a SINGLE disease across the
+# whole graph (MONDO_0005147, type 1 diabetes; 176 genes) — so its 168 was T1D-list
+# coverage, not the pair's gene overlap, and it read as the latter in the inventory.
+# Now the true catalog intersection. The T1D cohort survives as C3's example question.
+Q["C3-ensembl-pankgraph-spokeokn"] = f"""
 SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {{
-  GRAPH {g("gene-expression-atlas-okn")} {{ ?gene a {BL_GENE} . }}
-  {{ SELECT DISTINCT ?gene WHERE {{ GRAPH {g("spoke-okn")} {{ ?x ?q ?gene . FILTER(STRSTARTS(STR(?gene),'http://identifiers.org/ensembl/')) }} }} }}
+  {{ SELECT DISTINCT ?gene WHERE {{ GRAPH {g("spoke-okn")} {{ ?x {SPOKE_ENSEMBL} ?gene . }} }} }}
   GRAPH {g("pankgraph")} {{ ?gene a {BL_GENE} . }}
 }}"""
 
-Q["C3-ensembl-disease"] = f"""
+Q["C15-ensembl-pankgraph-gxa"] = f"""
 SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {{
-  GRAPH {g("pankgraph")} {{ ?gene <https://w3id.org/biolink/vocab/gene_associated_with_condition> ?cond . FILTER(STRSTARTS(STR(?gene),'http://identifiers.org/ensembl/')) }}
-  GRAPH {g("spoke-okn")} {{ ?x ?q ?gene . }}
+  {{ SELECT DISTINCT ?gene WHERE {{ GRAPH {g("gene-expression-atlas-okn")} {{ ?gene a {BL_GENE} . }} }} }}
+  GRAPH {g("pankgraph")} {{ ?gene a {BL_GENE} . }}
 }}"""
 
 Q["C4-entrez-spoke"] = f"""

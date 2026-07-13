@@ -14,7 +14,8 @@ doc's counts/rows/examples are rebuilt from the source of record.
 Rendering mirrors ``list_crosswalks``: rows come from ``all_crosswalks()`` already
 sorted by ``(domain, shared_key, kgs)``, grouped into ``## Domain`` sections. The
 KGs column joins the join-order KGs with ``→`` when the row bridges through a hub
-(``bridge_kg`` set) and ``↔`` otherwise; the shared-key label is cleaned the same
+(``bridge_kg`` set), ``+ … (N-way)`` for a bridgeless clique of 3+ co-equal members,
+and ``↔`` for a plain pair; the shared-key label is cleaned the same
 way the network figure cleans it. Taxonomy is special-cased (two materialized
 counts per pair, id-rows then label-bridged ``†`` rows), matching its schema.
 """
@@ -74,7 +75,17 @@ def clean_key(shared_key: str | None) -> str:
 
 
 def fmt_kgs(row: dict) -> str:
-    """Join a row's KGs in join order: ``→`` through a bridge hub, else ``↔``."""
+    """Join a row's KGs in join order: ``→`` through a bridge hub, else ``↔``.
+
+    A 3-KG row with NO bridge is a CLIQUE — every member carries the shared key
+    natively and joins every other directly. Its members are sorted alphabetically,
+    so rendering it ``a ↔ b ↔ c`` reads as a path through whichever name happens to
+    sort in the middle (it did: pankgraph looked like a bridge between GXA and
+    spoke-okn, which it is not). Render cliques with ``+`` so no member can be
+    mistaken for a hop.
+    """
+    if not row.get("bridge_kg") and len(row["kgs"]) > 2:
+        return " + ".join(row["kgs"]) + f" ({len(row['kgs'])}-way)"
     sep = " → " if row.get("bridge_kg") else " ↔ "
     return sep.join(row["kgs"])
 
