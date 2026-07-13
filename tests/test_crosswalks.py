@@ -470,6 +470,61 @@ def test_network_figure_matches_generator():
     )
 
 
+def _png_text_chunks(data: bytes) -> dict[str, str]:
+    """The tEXt chunks of a PNG, as {key: value} (stops at the first IDAT)."""
+    import struct
+
+    out: dict[str, str] = {}
+    i = 8  # skip the 8-byte signature
+    while i + 8 <= len(data):
+        (length,) = struct.unpack(">I", data[i : i + 4])
+        ctype = data[i + 4 : i + 8]
+        if ctype == b"IDAT":
+            break
+        if ctype == b"tEXt":
+            key, _, val = data[i + 8 : i + 8 + length].partition(b"\x00")
+            out[key.decode("latin-1")] = val.decode("latin-1")
+        i += 12 + length  # len + type + data + crc
+    return out
+
+
+def test_network_png_matches_the_html_it_was_rendered_from():
+    """docs/crosswalks/crosswalk-network.png must be re-rendered whenever the figure
+    data changes. The PNG had NO guard at all (only the HTML did), so it silently went
+    stale after a crosswalk edit and shipped a figure that disagreed with the table.
+
+    Rather than byte-comparing a fresh render — which would be hostage to
+    matplotlib/freetype versions, and which was impossible anyway until the renderer
+    was made deterministic (an unsorted node set randomized the layout per process) —
+    the renderer stamps the sha256 of its SOURCE (the HTML) into a PNG tEXt chunk.
+    This asserts that stamp still matches the current HTML, so it needs no re-render
+    and no plotting dependencies. The HTML is itself generated from crosswalks.json
+    and guarded by test_network_figure_matches_generator, so this transitively binds
+    the PNG to the crosswalk data.
+    """
+    import hashlib
+    import pathlib
+
+    repo = pathlib.Path(__file__).resolve().parent.parent
+    png = repo / "docs" / "crosswalks" / "crosswalk-network.png"
+    html = repo / "docs" / "crosswalks" / "crosswalk-network.html"
+    if not png.exists() or not html.exists():
+        pytest.skip("network figure not present in this checkout")
+
+    chunks = _png_text_chunks(png.read_bytes())
+    stamped = chunks.get("Description")
+    assert stamped, (
+        "crosswalk-network.png carries no source stamp — re-render it with "
+        "scripts/render_crosswalk_network_png.py"
+    )
+    current = hashlib.sha256(html.read_bytes()).hexdigest()
+    assert stamped == current, (
+        "crosswalk-network.png is STALE: it was rendered from a different "
+        "crosswalk-network.html. Run scripts/build_crosswalk_network.py, then "
+        "scripts/render_crosswalk_network_png.py"
+    )
+
+
 def test_user_facing_crosswalk_count_is_canonical():
     """Every user-facing doc must cite len(all_crosswalks()) as THE crosswalk
     count — the single number list_crosswalks returns. Guards against the

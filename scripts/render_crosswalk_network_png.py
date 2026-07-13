@@ -13,6 +13,7 @@ stays in lock-step with the HTML.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import re
@@ -31,7 +32,14 @@ ROOT = Path(__file__).resolve().parent.parent
 HTML = ROOT / "docs" / "crosswalks" / "crosswalk-network.html"
 PNG = ROOT / "docs" / "crosswalks" / "crosswalk-network.png"
 
+#: tEXt-chunk key under which the PNG records the sha256 of the HTML it was rendered
+#: from. The HTML is itself generated from crosswalks.json (and guarded against
+#: staleness by its own test), so binding the PNG to the HTML transitively binds it
+#: to the crosswalk data.
+SOURCE_KEY = "crosswalk-network-source-sha256"
+
 html = HTML.read_text(encoding="utf-8")
+source_sha = hashlib.sha256(html.encode("utf-8")).hexdigest()
 DOM = {
     c: (label, col)
     for c, label, col in re.findall(
@@ -215,5 +223,20 @@ ax.set_title(
 ax.axis("off")
 ax.margins(0.06)
 plt.tight_layout()
-plt.savefig(PNG, dpi=150, facecolor="#faf9f5", bbox_inches="tight")
-print(f"wrote {PNG.relative_to(ROOT)} — {len(links)} edges, {len(nodeset)} nodes")
+# Stamp the SOURCE hash into the PNG so a staleness test needs no re-render (and so
+# it is not hostage to matplotlib/freetype version differences, which change the
+# pixels but not the data). SOURCE_KEY is read back by
+# tests/test_crosswalks.py::test_network_png_matches_the_html_it_was_rendered_from.
+# Note `metadata` also suppresses matplotlib's default Software/Date tEXt chunks,
+# which would otherwise make the output non-reproducible.
+plt.savefig(
+    PNG,
+    dpi=150,
+    facecolor="#faf9f5",
+    bbox_inches="tight",
+    metadata={"Software": SOURCE_KEY, "Description": source_sha},
+)
+print(
+    f"wrote {PNG.relative_to(ROOT)} — {len(links)} edges, {len(nodeset)} nodes "
+    f"(source sha256 {source_sha[:12]}…)"
+)
