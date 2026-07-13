@@ -44,7 +44,9 @@ TAXON_INTRO = (
     "is often far larger when one KG records coarser taxa (genus) and the other "
     "finer ones (strain). Rows marked **†** are label-bridged (`biohealth`, which "
     "carries no NCBITaxon ids, matched by exact scientific name) — see the note "
-    "below the table."
+    "below the table. **Example** gives the science question the pair answers; the "
+    "count question every other domain shows alongside it is simply this row's "
+    "`exact_id` / `clade` columns, so it is not repeated in the cell."
 )
 TAXON_FOOTNOTE = (
     "† **Label-bridged.** `biohealth` carries no NCBITaxon ids, so these overlaps "
@@ -93,6 +95,19 @@ def fmt_examples(r: dict) -> str:
     return "<br><br>".join(q for q in qs if q)
 
 
+def fmt_science(r: dict) -> str:
+    """Render a taxonomy row's SCIENCE question — q2 of its ``example_questions``.
+
+    Taxonomy rows carry the same two questions as every other crosswalk, but q1 is
+    the count question ("how many organisms do A and B share? exact_id=…"), which
+    this table already states as its `exact_id` / `clade` columns. Rendering it in
+    the cell too would just restate the row, so only q2 (the science question — what
+    the join actually lets you ask) goes in the Example column.
+    """
+    qs = r.get("example_questions") or []
+    return qs[1] if len(qs) > 1 else (qs[0] if qs else "")
+
+
 def render_domain_table(domain: str, rows: list[dict]) -> list[str]:
     out = [
         f"## {domain}",
@@ -122,19 +137,21 @@ def render_taxonomy(rows: list[dict]) -> list[str]:
         "",
         TAXON_INTRO,
         "",
-        "| KGs | exact_id | clade A-in-B / B-in-A |",
-        "|---|---|---|",
+        "| KGs | exact_id | clade A-in-B / B-in-A | Example |",
+        "|---|---|---|---|",
     ]
     for r in id_rows:
         a, b = r["kgs"][0], r["kgs"][-1]
         out.append(
             f"| {a} × {b} | {_num(r['exact_id'])} | "
-            f"{_num(r['clade_a_in_b'])} / {_num(r['clade_b_in_a'])} |"
+            f"{_num(r['clade_a_in_b'])} / {_num(r['clade_b_in_a'])} | "
+            f"{fmt_science(r)} |"
         )
     for r in label_rows:
         a, b = r["kgs"][0], r["kgs"][-1]
         out.append(
-            f"| {a} × {b} † | {_num(r['label_match'])} / {_num(r['kg_b_taxa'])} | — |"
+            f"| {a} × {b} † | {_num(r['label_match'])} / {_num(r['kg_b_taxa'])} | — | "
+            f"{fmt_science(r)} |"
         )
     out += ["", TAXON_FOOTNOTE, "", TAXON_CLOSING, ""]
     return out

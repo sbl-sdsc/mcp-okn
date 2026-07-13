@@ -232,30 +232,30 @@ Here are all 160 precomputed cross-KG crosswalks (verified through 2026-07-12), 
 
 ## Taxonomy
 
-These are pairwise organism overlaps composed **through the ubergraph hub**, so each carries two materialized counts rather than one. `exact_id` = taxa with the identical NCBITaxon id on both sides (symmetric). `clade_a_in_b` / `clade_b_in_a` = how many of the first / second KG's taxa fall under the other's once expanded through ubergraph's `subClassOf*` hierarchy (directional). Clade membership is the more complete biological overlap and is often far larger when one KG records coarser taxa (genus) and the other finer ones (strain). Rows marked **†** are label-bridged (`biohealth`, which carries no NCBITaxon ids, matched by exact scientific name) — see the note below the table.
+These are pairwise organism overlaps composed **through the ubergraph hub**, so each carries two materialized counts rather than one. `exact_id` = taxa with the identical NCBITaxon id on both sides (symmetric). `clade_a_in_b` / `clade_b_in_a` = how many of the first / second KG's taxa fall under the other's once expanded through ubergraph's `subClassOf*` hierarchy (directional). Clade membership is the more complete biological overlap and is often far larger when one KG records coarser taxa (genus) and the other finer ones (strain). Rows marked **†** are label-bridged (`biohealth`, which carries no NCBITaxon ids, matched by exact scientific name) — see the note below the table. **Example** gives the science question the pair answers; the count question every other domain shows alongside it is simply this row's `exact_id` / `clade` columns, so it is not repeated in the cell.
 
-| KGs | exact_id | clade A-in-B / B-in-A |
-|---|---|---|
-| biobricks-aopwiki × gene-expression-atlas-okn | 7 | 8 / 8 |
-| biobricks-aopwiki × nde | 62 | 164 / 961 |
-| biobricks-aopwiki × sawgraph | 7 | 164 / 145 |
-| biobricks-aopwiki × spoke-genelab | 7 | 8 / 8 |
-| gene-expression-atlas-okn × nde | 6 | 8 / 12 |
-| gene-expression-atlas-okn × sawgraph | 0 | 8 / 0 |
-| gene-expression-atlas-okn × spoke-genelab | 8 | 8 / 8 |
-| nde × sawgraph | 73 | 1,727 / 538 |
-| nde × spoke-genelab | 7 | 46 / 55 |
-| nde × spoke-okn | 23 | 23 / 33,601 |
-| nde × wildlifekn | 17 | 57 / 339 |
-| sawgraph × spoke-genelab | 0 | 0 / 13 |
-| sawgraph × wildlifekn | 2 | 2 / 339 |
-| spoke-genelab × spoke-okn | 2 | 2 / 33,313 |
-| biohealth × biobricks-aopwiki † | 112 / 166 | — |
-| biohealth × gene-expression-atlas-okn † | 6 / 8 | — |
-| biohealth × nde † | 1,052 / 1,808 | — |
-| biohealth × sawgraph † | 377 / 538 | — |
-| biohealth × spoke-genelab † | 7 / 9 | — |
-| biohealth × spoke-okn † | 1,603 / 34,570 | — |
+| KGs | exact_id | clade A-in-B / B-in-A | Example |
+|---|---|---|---|
+| biobricks-aopwiki × gene-expression-atlas-okn | 7 | 8 / 8 | For the organisms an Adverse Outcome Pathway is declared applicable to, does Expression Atlas actually profile gene expression in that same species - i.e. can an AOP's taxonomic applicability be grounded in real expression data? |
+| biobricks-aopwiki × nde | 62 | 164 / 961 | Which organisms carrying an AOP taxonomic-applicability statement also appear in NIAID Data Ecosystem datasets, so a mechanistic toxicology pathway can be tied to available infectious-disease/host data for the same species? |
+| biobricks-aopwiki × sawgraph | 7 | 164 / 145 | Are the species that AOPs are declared applicable to the same species SAWGraph samples for PFAS (fish and shellfish biota) - connecting mechanistic toxicology to measured environmental exposure in the same organism? |
+| biobricks-aopwiki × spoke-genelab | 7 | 8 / 8 | Do the model organisms used in NASA GeneLab spaceflight experiments have Adverse Outcome Pathways declared applicable to them, so a spaceflight stressor response can be read against a known AOP? |
+| gene-expression-atlas-okn × nde | 6 | 8 / 12 | For the organisms represented in NIAID Data Ecosystem datasets, what baseline or differential gene expression does Expression Atlas supply for the same species? |
+| gene-expression-atlas-okn × sawgraph | 0 | 8 / 0 | Do the species SAWGraph samples for environmental contamination overlap the species Expression Atlas profiles? (exact_id = 0 - no species is directly shared; the overlap appears only under clade expansion, so treat this pair as a clade-level, not species-level, link.) |
+| gene-expression-atlas-okn × spoke-genelab | 8 | 8 / 8 | For a model organism flown in a NASA GeneLab spaceflight assay, what baseline tissue expression does Expression Atlas provide for the same species, as a ground control for the spaceflight response? |
+| nde × sawgraph | 73 | 1,727 / 538 | Which organisms appear both in NIAID Data Ecosystem datasets and in SAWGraph's environmental and biota samples - e.g. a sampled fish species that also carries pathogen/host data? |
+| nde × spoke-genelab | 7 | 46 / 55 | Which of NASA GeneLab's spaceflight model organisms also have NIAID Data Ecosystem datasets, linking spaceflight omics to immune/infectious-disease resources for the same species? |
+| nde × spoke-okn | 23 | 23 / 33,601 | For an organism in a NIAID Data Ecosystem dataset, what does spoke-okn know about the same species (its genes, proteins and disease associations)? Note the large clade asymmetry: spoke-okn's taxonomy is far broader, so clade expansion pulls in 33,601 spoke-okn taxa. |
+| nde × wildlifekn | 17 | 57 / 339 | Which wildlife species tracked in wildlifekn also appear in NIAID Data Ecosystem datasets - i.e. which monitored wild animals are also studied as zoonotic reservoirs or hosts? |
+| sawgraph × spoke-genelab | 0 | 0 / 13 | Do NASA GeneLab's model organisms overlap the species SAWGraph samples for contamination? (exact_id = 0 - no species is shared directly; only clade expansion connects them, so this is a clade-level link only.) |
+| sawgraph × wildlifekn | 2 | 2 / 339 | Which wildlife species monitored in wildlifekn are also sampled for PFAS contamination in SAWGraph - connecting wildlife occurrence and habitat to measured chemical exposure in the same species? |
+| spoke-genelab × spoke-okn | 2 | 2 / 33,313 | For a model organism used in a NASA GeneLab spaceflight experiment, what biomedical context does spoke-okn attach to the same species? Only 2 taxa match by exact id, but clade expansion through ubergraph reaches 33,313 spoke-okn taxa - so ALWAYS expand the clade here; an exact-id join badly understates this pair. |
+| biohealth × biobricks-aopwiki † | 112 / 166 | — | Which organisms named in biohealth's UMLS health concepts have an Adverse Outcome Pathway declared applicable to them? biohealth carries NO NCBITaxon ids, so this is an approximate scientific-name match - a lower bound, and not safe for exact-id reasoning. |
+| biohealth × gene-expression-atlas-okn † | 6 / 8 | — | For the organisms biohealth names as UMLS health concepts, does Expression Atlas profile expression in the same species? Name-bridged (no NCBITaxon ids on biohealth) - treat as an approximate lower bound. |
+| biohealth × nde † | 1,052 / 1,808 | — | Which organisms biohealth names as UMLS health concepts also appear in NIAID Data Ecosystem datasets - e.g. a named pathogen concept with real underlying data? Name-bridged, so this 1,052-organism overlap is an approximate lower bound. |
+| biohealth × sawgraph † | 377 / 538 | — | Which organisms biohealth names as UMLS health concepts are also sampled by SAWGraph for environmental contamination - linking a health concept to measured exposure in the same species? Name-bridged, so approximate. |
+| biohealth × spoke-genelab † | 7 / 9 | — | Do NASA GeneLab's spaceflight model organisms appear as organism concepts in biohealth's UMLS-keyed health graph? Name-bridged (biohealth has no NCBITaxon ids) - an approximate lower bound. |
+| biohealth × spoke-okn † | 1,603 / 34,570 | — | For an organism biohealth names as a UMLS health concept, what does spoke-okn record about the same species? The largest label-bridged overlap (1,603 of spoke-okn's 34,570 taxa match by scientific name) - but name-matched, so verify before asserting identity. |
 
 † **Label-bridged.** `biohealth` carries no NCBITaxon ids, so these overlaps are matched by exact scientific **name**, not NCBITaxon id. For these rows the count is `label_match / partner's total taxa` — how many of the partner KG's NCBITaxon organisms have a same-name `biohealth` concept, out of that KG's total — and the `exact_id`/`clade` semantics of the other rows do not apply. Name-based and conservative (misses synonyms and spelling variants), with no `subClassOf*` clade expansion.
 
