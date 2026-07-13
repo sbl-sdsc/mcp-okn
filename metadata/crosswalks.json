@@ -2419,7 +2419,7 @@
       "key_namespace": "SUDOKN locatedInState rdfs:label (full state name, e.g. 'Ohio') == spatialkg AdministrativeRegion_1 rdfs:label; state FIPS via http://stko-kwg.geog.ucsb.edu/lod/ontology/hasFIPS",
       "bridge_kg": null,
       "iri_normalization": "SUDOKN has no FIPS or admin-region IRI; it stores the state only as a free-text label on the GeospatialSite (company -> geosite via the shared web-domain prefix -> locatedInState/rdfs:label). spatialkg's AdministrativeRegion_1 node carries the same full state-name string as rdfs:label plus kwg-ont:hasFIPS. Join on the exact label string; non-US states (Ontario, Bavaria, ...) drop out. Location lives on -geosite-N-instance nodes, NOT on -company-instance; for NAICS-scoped queries reconstruct the geosite IRI from the company's web-domain prefix.",
-      "verified_count": 12,
+      "verified_count": 51,
       "verified_count_secondary": {
         "sudokn_companies_matched": 25887,
         "sudokn_geosites_matched": 42606,
@@ -2431,9 +2431,9 @@
         "Roll SUDOKN manufacturers up to the state and join state-level summaries (counts by NAICS, capability, certificate) to the spatialkg admin hierarchy or any state_FIPS-keyed member (spoke-okn, geoconnex, sockg). E.g. SUDOKN electroplaters (NAICS 332813) per state vs EPA-regulated facilities.",
         "Which states host the largest SUDOKN aerospace/metal-parts manufacturing base by NAICS when aligned to the spatialkg state admin regions?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sudokn> {\n    ?g a <http://asu.edu/semantics/SUDOKN/GeospatialSite> ; <http://asu.edu/semantics/SUDOKN/locatedInState>/<http://www.w3.org/2000/01/rdf-schema#label> ?state .\n  }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> {\n    ?r a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_1> ; <http://www.w3.org/2000/01/rdf-schema#label> ?state ; <http://stko-kwg.geog.ucsb.edu/lod/ontology/hasFIPS> ?fips .\n  }\n}",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  { SELECT DISTINCT ?state WHERE { GRAPH <https://purl.org/okn/frink/kg/sudokn> {\n      ?a <http://asu.edu/semantics/SUDOKN/locatedInState>/<http://www.w3.org/2000/01/rdf-schema#label> ?state . } } }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> {\n    ?r a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_1> ;\n       <http://www.w3.org/2000/01/rdf-schema#label> ?state ;\n       <http://stko-kwg.geog.ucsb.edu/lod/ontology/hasFIPS> ?fips . }\n}",
       "skeleton_verified": true,
-      "verified_count_note": "Re-verified live 2026-07-12: 12 (was 51). sudokn's state coverage COLLAPSED from all 51 states to 12 - its manufacturer records now span far fewer states. Real data regression upstream, not a query bug; the state key itself still works. "
+      "verified_count_note": "51 states — the full US set. Re-verified live 2026-07-12. CORRECTS a bad re-baseline made earlier the same day, which recorded 12 and wrongly called it an upstream data regression. It was a QUERY defect, not a data one: the published skeleton scoped the sudokn side to '?g a SUDOKN:GeospatialSite', but sudokn's manufacturer ADDRESS nodes — the ones that actually carry SUDOKN:locatedInState (56,295 triples) — are typed schema:Place, not GeospatialSite. The type filter threw away nearly all the data and left 12 states. Dropping it restores all 51. Same family of false negative as the J1 ZIP join (a schema-advertised predicate that is empty, while the real data sits elsewhere): when a sudokn count looks like a collapse, suspect the query's scoping before believing the data regressed."
     },
     {
       "id": "SU2-s2computed-sudokn-spatialkg",
@@ -4014,6 +4014,29 @@
       "skeleton_verified": true,
       "domain": "Publications",
       "methodology_note": "THIRD edge on the climatemodelskg x nasa-gesdisc-kg pair, complementing PB1 (publication DOI, 651 - an exact identifier join) and EO1/EO2 (GCMD instrument/platform labels). Surfaced by the 2026-07-12 entities.csv refresh, which exposed an Author class on BOTH sides. Unlike PB1, this is NOT an identifier join and must not be treated as one - PREFER PB1 whenever the question can be answered at the paper level, and fall back to this edge only for author-community questions PB1 cannot express. To harden a specific author claim, disambiguate on the nasa side with orcid (present on 60% of nasa authors) plus a co-author or institution (AFFILIATED_WITH -> ror) check; climatemodelskg supplies no identifier to disambiguate against."
+    },
+    {
+      "id": "J1-zip",
+      "left_kg": "spoke-okn",
+      "left_predicate": "rdfs:label (the ZIP, on a /location/{ST}-{zip} node)",
+      "left_role": "object",
+      "right_kg": "sudokn",
+      "right_predicate": "schema:postalCode on the manufacturer's address node (reached via SUDOKN:organizationLocatedIn) — NOT SUDOKN:hasZipcodeValue, which is declared but EMPTY",
+      "right_role": "object",
+      "shared_key": "ZIP5",
+      "key_namespace": "spoke-okn rdfs:label on /location/{ST}-{zip} (42,724 ZIPs) <-> sudokn <https://schema.org/postalCode> (56,208 triples on the address node)",
+      "bridge_kg": null,
+      "iri_normalization": "TWO TRAPS, both of which produced a FALSE 'no join' verdict before. (1) DEPRECATED PREDICATE: sudokn declares SUDOKN:hasZipcodeValue in its entities.csv, but that predicate has ZERO triples in the deployed graph. The real ZIP lives on <https://schema.org/postalCode>, hanging off the address node reached via SUDOKN:organizationLocatedIn. Querying the schema-advertised predicate returns 0 and looks like missing data. (2) HTTPS SCHEMA.ORG: sudokn stores the HTTPS form, and the endpoint canonicalizes a BRACKETED <https://schema.org/postalCode> to http — so a bracketed IRI matches NOTHING. Bind it with BIND(IRI(CONCAT('https://schema.org/','postalCode')) AS ?p) (or a scheme-free STRENDS test). Then strip non-digits and left-pad to 5 on both sides. spoke-okn holds the ZIP as an rdfs:label on its /location/{ST}-{zip} nodes.",
+      "verified_count": 13647,
+      "verified_count_note": "13647 shared ZIPs, verified live 2026-07-12 (sudokn's manufacturer addresses vs spoke-okn's 42,724-ZIP geography). SUPERSEDES the previous count of 12,329, which was computed on SUDOKN:hasZipcodeValue — a predicate that is now EMPTY. This entry was briefly RETIRED to known_non_joins on 2026-07-12 after that dead predicate returned 0; that retirement was WRONG and is reversed here. The mistake: sudokn's SUDOKN-namespace postal constructs (hasZipcodeValue, USPostalCode, PostalAddress/hasTextValue) are all genuinely unpopulated, so checking only those makes the ZIP look absent - but the data is on schema:postalCode, in the HTTPS form. The existing worked transcripts (geospatial23_q1/q2) had it right all along: they reach the address node via SUDOKN:organizationLocatedIn.",
+      "example_question": "For a ZIP where SUDOKN lists small/medium manufacturers, what does spoke-okn record about that place - its county, air quality, and health/care context?",
+      "example_questions": [
+        "For a ZIP where SUDOKN lists small/medium manufacturers, what does spoke-okn record about that place - its county, air quality, and health/care context?",
+        "How many ZIP codes are shared between sudokn's manufacturer addresses and spoke-okn's ZIP geography?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {\n  { SELECT DISTINCT ?zip WHERE { GRAPH <https://purl.org/okn/frink/kg/sudokn> {\n      BIND(IRI(CONCAT('https://schema.org/','postalCode')) AS ?pp)\n      ?addr ?pp ?z0 . }\n      BIND(REPLACE(STR(?z0),'[^0-9]','') AS ?d)\n      BIND(IF(STRLEN(?d)=4, CONCAT('0',?d), SUBSTR(?d,1,5)) AS ?zip) } }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc <http://www.w3.org/2000/01/rdf-schema#label> ?zip .\n      FILTER(REGEX(STR(?loc),'/location/[A-Z]{2}-[0-9]+')) }\n}",
+      "skeleton_verified": true,
+      "domain": "Geospatial"
     }
   ],
   "cluster_notes": {
@@ -4290,13 +4313,6 @@
       "attempted_key": "ZIP5 (ruralkg schema:postalCode -> spatialkg kwg-ont:ZipCodeArea)",
       "result": "0 - spatialkg declares ZipCodeArea in the T-Box but materializes ZERO instances",
       "diagnosis": "Same root cause as the dreamkg x spatialkg ZIP non-join: spatialkg's kwg-ont:ZipCodeArea is a pure T-Box class with no instances, so ruralkg's 5,420 facility ZIPs have nothing to match. Verified live 2026-07-12. Reach the spatial hub on county FIPS or S2 cells instead. NOTE: ZIP-axis only - ruralkg joins scales (J4), dreamkg (J6), spoke-okn and rdkg on other keys."
-    },
-    {
-      "left_kg": "spoke-okn",
-      "right_kg": "sudokn",
-      "attempted_key": "ZIP5 (spoke-okn /location/{ST}-{zip} label -> sudokn SUDOKN:hasZipcodeValue)",
-      "result": "0 - sudokn's ENTIRE postal layer is unpopulated in the deployed graph",
-      "diagnosis": "WAS crosswalk J1 (verified_count 12,329 on 2026-06-xx); RETIRED 2026-07-12 after live re-verification returned 0. The spoke-okn side is intact - 42,724 /location/{ST}-{zip} IRIs still carry their ZIP as an rdfs:label (e.g. '20431'). The sudokn side is empty: SUDOKN:hasZipcodeValue has ZERO triples, and sudokn's other postal constructs are unpopulated too (SUDOKN:USPostalCode has no instances; SUDOKN:PostalAddress carries no hasTextValue). The predicate is still DECLARED in sudokn's entities.csv, so the schema advertises a ZIP field the deployed graph does not materialize - do not re-derive this join from the schema. NOTE: this is a ZIP-axis non-join only. spoke-okn and sudokn can still MEET THROUGH THE SAWGraph SPATIAL HUB, where both are leaves (sudokn: SU1 state-FIPS 12, SU2 S2 Level-13 42,560; spoke-okn: cluster J/K geography) - use the hub, not ZIP."
     }
   ],
   "superseded_non_joins": [

@@ -57,7 +57,7 @@ where a question one graph can't answer alone becomes answerable by combining tw
 This section catalogs the verified crosswalks and shows the queries that exercise
 them.
 
-A visual map of the whole network — all 159 crosswalks across 35 graphs, drawn as
+A visual map of the whole network — all 160 crosswalks across 35 graphs, drawn as
 direct KG-to-KG edges (edge width ∝ log of the verified join count). Each crosswalk is
 its own edge, so multiple crosswalks between the same pair of graphs fan out as parallel
 arcs. Identifier-bridged joins (e.g. `DOID↔MONDO` via `ubergraph`, `HGNC→Entrez` via
@@ -77,12 +77,13 @@ geospatial and industrial joins against their authoritative shared standard):
   key, row count, and a one-line note on what each answers. Start here to see which
   graphs connect and on what identifier.
 - **[Cross-KG crosswalk catalog](docs/crosswalks/crosswalks_example.md)** —
-  **290 example questions** drawn from the verified crosswalks — two per crosswalk,
-  except the spoke-genelab×spoke-okn Entrez join, illustrated twice (G10 expression +
-  G17 methylation), for 142 example pairs — across 12 domains (Anatomy & Cell Type, Chemicals, Disease & Phenotype,
-  Environmental Toxicology, Function & Pathways, Genes, Geospatial, Industry & Supply
-  Chain, Justice & Public Safety, Proteins, Social Determinants & Services, Taxonomy), each with a
-  full transcript.
+  **290 example questions** worked end-to-end, each with a full transcript (the live
+  SPARQL and its results), across 12 domains (Anatomy & Cell Type, Chemicals, Disease &
+  Phenotype, Environmental Toxicology, Function & Pathways, Genes, Geospatial, Industry
+  & Supply Chain, Justice & Public Safety, Proteins, Social Determinants & Services,
+  Taxonomy). These are the subset written up as transcripts; the inventory itself
+  carries **320 questions — two for every one of the 160 crosswalks** — but without a
+  worked transcript behind each.
 - **[Multi-domain integration catalog](docs/crosswalks/multi-domain-examples.md)**
   — 24 use cases that fuse *different* domains (e.g. toxicology × transcriptomics
   × clinical disease, or PFAS sampling × hydrology × public health).

@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 159 precomputed cross-KG crosswalks (verified through 2026-07-12), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
+Here are all 160 precomputed cross-KG crosswalks (verified through 2026-07-12), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
 
 ## Anatomy & Cell Type
 
@@ -164,6 +164,7 @@ Here are all 159 precomputed cross-KG crosswalks (verified through 2026-07-12), 
 | ruralkg ↔ scales | ZIP5 | 5,297 | Which federal district court has jurisdiction over the ZIP where a given opioid-treatment or rural-health facility is located, and what case activity does scales record there?<br><br>How many ruralkg facility ZIPs fall within a scales federal-district-court jurisdiction territory? |
 | spoke-okn ↔ dreamkg | ZIP5 | 53 | For Philadelphia ZIPs, list DREAM-KG homelessness/social services in a ZIP alongside spoke-okn's local context.<br><br>How many DREAM-KG social-service providers serve each Philadelphia ZIP, and which ZIPs carry spoke-okn environmental burden yet list no services? |
 | spoke-okn ↔ ruralkg | ZIP5 | 5,390 | Combine spoke-okn ZIP-level context with ruralkg rural health/justice indicators for the same ZIP, and roll up to county via ruralkg's KWG censusCounty.<br><br>For a rural ZIP flagged by ruralkg's health indicators, what spoke-okn environmental context applies at the same ZIP5? |
+| spoke-okn ↔ sudokn | ZIP5 | 13,647 | For a ZIP where SUDOKN lists small/medium manufacturers, what does spoke-okn record about that place - its county, air quality, and health/care context?<br><br>How many ZIP codes are shared between sudokn's manufacturer addresses and spoke-okn's ZIP geography? |
 | climatemodelskg → spoke-okn → spatialkg | county_FIPS | 947 | For a US county with PFAS contamination or environmental burden on the SAWGraph spatial hub, which climate-modeling publications reference places in that same county?<br><br>How many US counties on the SAWGraph spatial hub contain a location referenced by climatemodelskg, joined on the assembled county FIPS? |
 | fiokg ↔ spatialkg | county_FIPS | 3,031 | Aggregate EPA FRS facilities (fiokg) to the county, place those counties on the spatialkg admin-region hierarchy, and join to county-keyed members (e.g. SCALES federal-court activity, ruralkg rural-resilience indicators) for the same county.<br><br>For a given county, count its EPA FRS facilities (fiokg) and use the spatialkg admin hierarchy to find neighboring counties carrying a comparable facility burden. |
 | fiokg ↔ spoke-okn | county_FIPS | 3,032 | For a county, combine EPA FRS facility counts/types (fiokg) with spoke-okn's county-level environmental and health indicators, and roll up to state via the shared FIPS.<br><br>Rank counties where high EPA FRS facility density (fiokg) coincides with poor spoke-okn county health indicators at the same FIPS. |
@@ -180,7 +181,7 @@ Here are all 159 precomputed cross-KG crosswalks (verified through 2026-07-12), 
 | geoconnex ↔ spatialkg | state_FIPS | 51 | Roll geoconnex hydrologic features up to the state and join state-level summaries to the spatialkg admin-region hierarchy.<br><br>Which states have the densest geoconnex hydrologic-feature coverage per the spatialkg AdministrativeRegion_1 state regions? |
 | spoke-okn ↔ sockg | state_FIPS | 18 | Compare spoke-okn state-level environmental/health summaries with the states where SOCKG runs soil-carbon experiments.<br><br>Which of the 18 states running SOCKG soil-carbon experiments rank highest on spoke-okn's state-level environmental summaries? |
 | spoke-okn ↔ spatialkg | state_FIPS | 51 | Roll spoke-okn data up to the state and join state-level summaries to the spatialkg admin-region hierarchy.<br><br>Which states, aligned to the 51 spatialkg AdministrativeRegion_1 regions, show the widest spoke-okn county-to-county spread in environmental/health indicators? |
-| sudokn ↔ spatialkg | state_FIPS | 12 | Roll SUDOKN manufacturers up to the state and join state-level summaries (counts by NAICS, capability, certificate) to the spatialkg admin hierarchy or any state_FIPS-keyed member (spoke-okn, geoconnex, sockg). E.g. SUDOKN electroplaters (NAICS 332813) per state vs EPA-regulated facilities.<br><br>Which states host the largest SUDOKN aerospace/metal-parts manufacturing base by NAICS when aligned to the spatialkg state admin regions? |
+| sudokn ↔ spatialkg | state_FIPS | 51 | Roll SUDOKN manufacturers up to the state and join state-level summaries (counts by NAICS, capability, certificate) to the spatialkg admin hierarchy or any state_FIPS-keyed member (spoke-okn, geoconnex, sockg). E.g. SUDOKN electroplaters (NAICS 332813) per state vs EPA-regulated facilities.<br><br>Which states host the largest SUDOKN aerospace/metal-parts manufacturing base by NAICS when aligned to the spatialkg state admin regions? |
 
 ## Hydrology
 
