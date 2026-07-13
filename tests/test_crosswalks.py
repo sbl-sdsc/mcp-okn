@@ -525,6 +525,43 @@ def test_network_png_matches_the_html_it_was_rendered_from():
     )
 
 
+def test_inventory_doc_renders_two_questions_per_crosswalk():
+    """The inventory doc must render 2 questions for EVERY crosswalk — 160 rows →
+    320 questions. The taxonomy table is rendered by a separate code path, and it
+    briefly shipped only 1 question per row (the count question was suppressed as
+    redundant with the exact_id/clade columns), so the doc showed 300 while the API
+    returned 320. This pins doc and API to the same number."""
+    import pathlib
+    import re
+
+    repo = pathlib.Path(__file__).resolve().parent.parent
+    doc = repo / "docs" / "crosswalks" / "proto-okn-crosswalk-inventory.md"
+    if not doc.exists():
+        pytest.skip("inventory doc not present in this checkout")
+
+    n_rows = 0
+    n_questions = 0
+    for line in doc.read_text(encoding="utf-8").splitlines():
+        if not line.startswith("|") or line.startswith("| KGs"):
+            continue
+        if re.fullmatch(r"[|\- ]+", line):  # separator row
+            continue
+        n_rows += 1
+        cell = line.rstrip().rstrip("|").rsplit("|", 1)[-1].strip()
+        if cell and cell != "—":
+            n_questions += cell.count("<br><br>") + 1
+
+    expected_rows = len(cw.all_crosswalks(include_examples=False))
+    assert n_rows == expected_rows, (
+        f"inventory doc renders {n_rows} rows, canonical count is {expected_rows} — "
+        "run scripts/build_crosswalk_inventory.py"
+    )
+    assert n_questions == 2 * expected_rows, (
+        f"inventory doc renders {n_questions} example questions; every crosswalk must "
+        f"show 2 ({2 * expected_rows} total). Run scripts/build_crosswalk_inventory.py"
+    )
+
+
 def test_user_facing_crosswalk_count_is_canonical():
     """Every user-facing doc must cite len(all_crosswalks()) as THE crosswalk
     count — the single number list_crosswalks returns. Guards against the
