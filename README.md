@@ -77,13 +77,16 @@ geospatial and industrial joins against their authoritative shared standard):
   key, row count, and a one-line note on what each answers. Start here to see which
   graphs connect and on what identifier.
 - **[Cross-KG crosswalk catalog](docs/crosswalks/crosswalks_example.md)** —
-  **290 example questions** worked end-to-end, each with a full transcript (the live
-  SPARQL and its results), across 12 domains (Anatomy & Cell Type, Chemicals, Disease &
-  Phenotype, Environmental Toxicology, Function & Pathways, Genes, Geospatial, Industry
-  & Supply Chain, Justice & Public Safety, Proteins, Social Determinants & Services,
-  Taxonomy). These are the subset written up as transcripts; the inventory itself
-  carries **322 questions — two for every one of the 161 crosswalks** — but without a
-  worked transcript behind each.
+  **326 example questions** worked end-to-end, each with a full transcript (the live
+  SPARQL and its results), across 15 domains (Anatomy & Cell Type, Chemicals, Disease &
+  Phenotype, Earth Observation, Environmental Toxicology, Function & Pathways, Genes,
+  Geospatial, Hydrology, Industry & Supply Chain, Justice & Public Safety, Proteins,
+  Publications, Social Determinants & Services, Taxonomy). Every crosswalk is now worked
+  twice — the inventory carries
+  **322 questions — two for every one of the 161 crosswalks** — and the catalog has a
+  transcript behind each, plus four questions on two extra stems (a second example on the
+  spoke-genelab×spoke-okn Entrez axis, and the three-way gene dossier whose clique row was
+  retired).
 - **[Multi-domain integration catalog](docs/crosswalks/multi-domain-examples.md)**
   — 24 use cases that fuse *different* domains (e.g. toxicology × transcriptomics
   × clinical disease, or PFAS sampling × hydrology × public health).
