@@ -711,8 +711,9 @@
         "One-query gene dossier: expression (GXA) + associations (spoke-okn) + islet/pancreatic context (pankgraph).",
         "For INS, assemble in one Ensembl-keyed query its GXA baseline tissue expression, spoke-okn disease/compound associations, and pankgraph islet context."
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?gene a <https://w3id.org/biolink/vocab/Gene> . }\n  { SELECT DISTINCT ?gene WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?x ?q ?gene . FILTER(STRSTARTS(STR(?gene),'http://identifiers.org/ensembl/')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/pankgraph> { ?gene a <https://w3id.org/biolink/vocab/Gene> . }\n}",
-      "skeleton_verified": true
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  { SELECT DISTINCT ?gene WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?x <https://purl.org/okn/frink/kg/spoke-okn/schema/ensembl> ?gene . } } }\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?gene a <https://w3id.org/biolink/vocab/Gene> . }\n  GRAPH <https://purl.org/okn/frink/kg/pankgraph> { ?gene a <https://w3id.org/biolink/vocab/Gene> . }\n}",
+      "skeleton_verified": true,
+      "verified_count_note": "Skeleton OPTIMIZED 2026-07-12: the published query scanned an entire graph with an unbound pattern (?s ?p ?o) and then regex-filtered the subject IRI, which exceeded the endpoint's server-side operation limit (HTTP 429) and so could never be re-verified. Rewritten to drive from the SMALL, TYPED side as a DISTINCT sub-SELECT and construct the other graph's IRI, turning the full scan into an index lookup. Same count, now runnable. Same as C1, with pankgraph's typed biolink:Gene as the third leg. "
     },
     {
       "id": "C1-ensembl",
@@ -732,8 +733,9 @@
         "Baseline tissue expression (GXA) for any spoke-okn gene plus its network/disease/compound associations.",
         "Among spoke-okn genes associated with a given disease, which show the highest GXA baseline expression in the disease-relevant tissue?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?gene a <https://w3id.org/biolink/vocab/Gene> . }\n  { SELECT DISTINCT ?gene WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?x ?q ?gene . FILTER(STRSTARTS(STR(?gene),'http://identifiers.org/ensembl/')) } } }\n}",
-      "skeleton_verified": true
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  { SELECT DISTINCT ?gene WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?x <https://purl.org/okn/frink/kg/spoke-okn/schema/ensembl> ?gene . } } }\n  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?gene a <https://w3id.org/biolink/vocab/Gene> . }\n}",
+      "skeleton_verified": true,
+      "verified_count_note": "Skeleton OPTIMIZED 2026-07-12: the published query scanned an entire graph with an unbound pattern (?s ?p ?o) and then regex-filtered the subject IRI, which exceeded the endpoint's server-side operation limit (HTTP 429) and so could never be re-verified. Rewritten to drive from the SMALL, TYPED side as a DISTINCT sub-SELECT and construct the other graph's IRI, turning the full scan into an index lookup. Same count, now runnable. Drives from spoke-okn's 16,324 schema:ensembl xrefs (the blind '?x ?q ?gene' scan was hunting for that predicate) into GXA's typed biolink:Gene. "
     },
     {
       "id": "L1-county-fips-geoconnex-spatialkg",
@@ -1288,10 +1290,10 @@
         "microbiome_taxa": 46,
         "spokeokn_total_taxa": 34570
       },
-      "verified_count_note": "DISTINCT spoke-okn organism taxa nested under spoke-genelab's microbiome genus/family clades (33,313 of spoke-okn's 34,570 = 96%). High because spoke-genelab's microbiome includes broad groups (e.g. NCBITaxon_2 'Bacteria', Gammaproteobacteria) that cover most of spoke-okn's bacterial strains. The overlap an exact-id intersection misses: spoke-genelab and spoke-okn meet only via ubergraph's taxonomy closure.",
+      "verified_count_note": "SKELETON EXCEEDS THE ENDPOINT LIMIT (HTTP 429) and cannot be re-verified as written (checked 2026-07-12, including a rewrite that binds BOTH endpoint sets before the closure). The cost is irreducible: the join walks rdfs:subClassOf* over spoke-okn's ~34,570 NCBITaxon organisms against spoke-genelab's clades, and expanding a coarse clade (e.g. Bacteria) covers millions of ubergraph nodes. The stored count stands on its original verification; treat the skeleton as documentation of the join, not as a runnable check. To USE this join, scope it to a specific clade rather than materializing the whole closure. DISTINCT spoke-okn organism taxa nested under spoke-genelab's microbiome genus/family clades (33,313 of spoke-okn's 34,570 = 96%). High because spoke-genelab's microbiome includes broad groups (e.g. NCBITaxon_2 'Bacteria', Gammaproteobacteria) that cover most of spoke-okn's bacterial strains. The overlap an exact-id intersection misses: spoke-genelab and spoke-okn meet only via ubergraph's taxonomy closure.",
       "example_question": "For a model organism used in a NASA GeneLab spaceflight experiment, what biomedical context does spoke-okn attach to the same species? ALWAYS expand the clade: only 2 taxa match by exact id, but clade expansion through ubergraph reaches 33,313 spoke-okn taxa.",
       "skeleton_query": "SELECT (COUNT(DISTINCT ?desc) AS ?n) WHERE {\n  { SELECT DISTINCT ?genus WHERE {\n    GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?node a <https://purl.org/okn/frink/kg/spoke-genelab/schema/Organism> . }\n    BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?node),'^.*/node/([0-9]+).*$','$1'))) AS ?genus)\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?desc <http://www.w3.org/2000/01/rdf-schema#subClassOf>* ?genus . }\n  { SELECT DISTINCT ?desc WHERE {\n    GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?ot a <https://w3id.org/biolink/vocab/OrganismTaxon> }\n    BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?ot),'^.*/organism/([0-9]+).*$','$1'))) AS ?desc)\n  } }\n}",
-      "skeleton_verified": true,
+      "skeleton_verified": false,
       "methodology_note": "spoke-genelab carries taxa in TWO id forms: 9 model organisms as obo NCBITaxon IRIs on Gene.taxonomy (D4), and 46 microbiome taxa as NCBI taxon ids embedded in the Organism node IRI (D10, this entry's left side). The latter overlap spoke-okn massively but only via ubergraph clade expansion — an exact-id matrix reports a tiny count and is wrong for coarser-grained taxa.",
       "example_questions": [
         "For a model organism used in a NASA GeneLab spaceflight experiment, what biomedical context does spoke-okn attach to the same species? ALWAYS expand the clade: only 2 taxa match by exact id, but clade expansion through ubergraph reaches 33,313 spoke-okn taxa.",
@@ -2122,7 +2124,7 @@
       "key_namespace": "bare 5-digit U.S. ZIP code, xsd:string literal (no IRI namespace)",
       "bridge_kg": null,
       "iri_normalization": "Same shared-variable ZIP-literal join as J1. ruralkg ENDPOINT QUIRK: ruralkg stores the predicate under the non-canonical https form, and the server canonicalizes a bracketed <https://schema.org/postalCode> to http, so naming it as a bracketed IRI returns 0 even though the triples exist. Bind the predicate as a variable and match it either by suffix - FILTER(STRENDS(STR(?p),'schema.org/postalCode')) - or exactly: FILTER(?p = IRI(CONCAT('https://schema.org/','postalCode'))) (the server preserves the https string literal inside IRI(CONCAT), rewriting only bracketed IRIs). ruralkg ZIPs are clean 5-digit xsd:string.",
-      "verified_count": 4938,
+      "verified_count": 5390,
       "verified_count_secondary": {
         "spoke-okn_distinct_zips": 42724,
         "ruralkg_distinct_zips": 4938
@@ -2133,8 +2135,9 @@
         "Combine spoke-okn ZIP-level context with ruralkg rural health/justice indicators for the same ZIP, and roll up to county via ruralkg's KWG censusCounty.",
         "For a rural ZIP flagged by ruralkg's health indicators, what spoke-okn environmental context applies at the same ZIP5?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc <http://www.w3.org/2000/01/rdf-schema#label> ?zip . FILTER(REGEX(STR(?loc),'/location/[A-Z]{2}-[0-9]+')) }\n  GRAPH <https://purl.org/okn/frink/kg/ruralkg> { ?b ?p ?zip . FILTER(CONTAINS(STR(?p),'postalCode')) }\n}",
-      "skeleton_verified": true
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {\n  { SELECT DISTINCT ?zip WHERE { GRAPH <https://purl.org/okn/frink/kg/ruralkg> {\n      BIND(IRI(CONCAT('https://schema.org/','postalCode')) AS ?pp)\n      ?b ?pp ?z0 . }\n      BIND(REPLACE(STR(?z0),'[^0-9]','') AS ?d)\n      BIND(IF(STRLEN(?d)=4, CONCAT('0',?d), SUBSTR(?d,1,5)) AS ?zip) } }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc <http://www.w3.org/2000/01/rdf-schema#label> ?zip .\n      FILTER(REGEX(STR(?loc),'/location/[A-Z]{2}-[0-9]+')) }\n}",
+      "skeleton_verified": true,
+      "verified_count_note": "Count CORRECTED 4,938 -> 5,390 and skeleton optimized, 2026-07-12. The published query matched ruralkg's postalCode literal RAW against spoke-okn's ZIP label. ruralkg stores New England ZIPs as 4 digits with the leading zero dropped (and a trailing space) - e.g. '1002 ' for 01002 Amherst MA - so those silently never matched. Stripping non-digits and left-padding to 5 recovers 452 more ZIPs. (Confirmed the delta is exactly the padding: without it the query still returns the old 4,938.) Same class of bug as the sawgraph undashed-CAS undercount. The query also now drives from ruralkg's postalCode (bound via IRI(CONCAT) - ruralkg stores the HTTPS schema.org IRI) instead of scanning spoke-okn. "
     },
     {
       "id": "K2-county-fips",
@@ -2158,8 +2161,9 @@
         "Join spoke-okn county-level environmental/health rollups with ruralkg rural-resilience (health + justice) indicators for the same county FIPS.",
         "Which counties show both weak ruralkg rural-resilience justice indicators and elevated spoke-okn environmental burden at the same county FIPS?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . FILTER(REGEX(STR(?loc),'/location/[0-9]{5}$')) }\n  BIND(REPLACE(STR(?loc),'^.*/location/([0-9]{5})$','$1') AS ?fips)\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/ruralkg> { ?x <http://sail.ua.edu/ruralkg/settlementtype/censusCounty> ?reg . }\n}",
-      "skeleton_verified": true
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  { SELECT DISTINCT ?fips WHERE { GRAPH <https://purl.org/okn/frink/kg/ruralkg> {\n      ?x <http://sail.ua.edu/ruralkg/settlementtype/censusCounty> ?reg . }\n      FILTER(STRSTARTS(STR(?reg),'http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.'))\n      BIND(REPLACE(STR(?reg),'^.*administrativeRegion[.]USA[.]([0-9]{5}).*$','$1') AS ?fips)\n      FILTER(REGEX(?fips,'^[0-9]{5}$')) } }\n  BIND(IRI(CONCAT('https://purl.org/okn/frink/kg/spoke-okn/location/', ?fips)) AS ?loc)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . }\n}",
+      "skeleton_verified": true,
+      "verified_count_note": "Skeleton OPTIMIZED 2026-07-12: the published query scanned an entire graph with an unbound pattern (?s ?p ?o) and then regex-filtered the subject IRI, which exceeded the endpoint's server-side operation limit (HTTP 429) and so could never be re-verified. Rewritten to drive from the SMALL, TYPED side as a DISTINCT sub-SELECT and construct the other graph's IRI, turning the full scan into an index lookup. Same count, now runnable. Drives from ruralkg's censusCounty KWG IRIs. "
     },
     {
       "id": "K3-county-fips",
@@ -2184,8 +2188,9 @@
         "For counties with SOCKG soil-carbon experiment sites, pull spoke-okn's county-level environmental/health context.",
         "How many of the 31 SOCKG soil-carbon counties also register elevated spoke-okn environmental indicators at the matching FIPS?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . FILTER(REGEX(STR(?loc),'/location/[0-9]{5}$')) }\n  BIND(REPLACE(STR(?loc),'^.*/location/([0-9]{5})$','$1') AS ?fips)\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/sockg> { ?reg ?q ?r . }\n}",
-      "skeleton_verified": true
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  { SELECT DISTINCT ?fips WHERE { GRAPH <https://purl.org/okn/frink/kg/sockg> {\n      ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_2> . }\n      BIND(REPLACE(STR(?reg),'^.*administrativeRegion[.]USA[.]([0-9]{5}).*$','$1') AS ?fips)\n      FILTER(REGEX(?fips,'^[0-9]{5}$')) } }\n  BIND(IRI(CONCAT('https://purl.org/okn/frink/kg/spoke-okn/location/', ?fips)) AS ?loc)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . }\n}",
+      "skeleton_verified": true,
+      "verified_count_note": "Skeleton OPTIMIZED 2026-07-12: the published query scanned an entire graph with an unbound pattern (?s ?p ?o) and then regex-filtered the subject IRI, which exceeded the endpoint's server-side operation limit (HTTP 429) and so could never be re-verified. Rewritten to drive from the SMALL, TYPED side as a DISTINCT sub-SELECT and construct the other graph's IRI, turning the full scan into an index lookup. Same count, now runnable. Drives from sockg's typed AdministrativeRegion_2 nodes. "
     },
     {
       "id": "K5-state-fips",
@@ -2210,8 +2215,9 @@
         "Compare spoke-okn state-level environmental/health summaries with the states where SOCKG runs soil-carbon experiments.",
         "Which of the 18 states running SOCKG soil-carbon experiments rank highest on spoke-okn's state-level environmental summaries?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . FILTER(REGEX(STR(?loc),'/location/[0-9]{2}$')) }\n  BIND(REPLACE(STR(?loc),'^.*/location/([0-9]{2})$','$1') AS ?fips)\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/sockg> { ?reg ?q ?r . }\n}",
-      "skeleton_verified": true
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  { SELECT DISTINCT ?fips WHERE { GRAPH <https://purl.org/okn/frink/kg/sockg> {\n      ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_1> . }\n      BIND(REPLACE(STR(?reg),'^.*administrativeRegion[.]USA[.]([0-9]{2}).*$','$1') AS ?fips)\n      FILTER(REGEX(?fips,'^[0-9]{2}$')) } }\n  BIND(IRI(CONCAT('https://purl.org/okn/frink/kg/spoke-okn/location/', ?fips)) AS ?loc)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . }\n}",
+      "skeleton_verified": true,
+      "verified_count_note": "Skeleton OPTIMIZED 2026-07-12: the published query scanned an entire graph with an unbound pattern (?s ?p ?o) and then regex-filtered the subject IRI, which exceeded the endpoint's server-side operation limit (HTTP 429) and so could never be re-verified. Rewritten to drive from the SMALL, TYPED side as a DISTINCT sub-SELECT and construct the other graph's IRI, turning the full scan into an index lookup. Same count, now runnable. Drives from sockg's typed AdministrativeRegion_1 nodes. "
     },
     {
       "id": "K1-county-fips",
@@ -2235,8 +2241,9 @@
         "Aggregate spoke-okn ZIP-level environmental/health data to the county, then place those counties on the spatialkg S2 grid / admin-region hierarchy and pull neighboring counties or state rollups.",
         "For a given county, which neighboring counties on the spatialkg admin hierarchy carry a similar spoke-okn environmental/health profile?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  { SELECT DISTINCT ?fips WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . FILTER(REGEX(STR(?loc),'/location/[0-9]{5}$')) } BIND(REPLACE(STR(?loc),'^.*/location/([0-9]{5})$','$1') AS ?fips) } }\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg a ?t . }\n}",
-      "skeleton_verified": true
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  { SELECT DISTINCT ?fips WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {\n      BIND(IRI(CONCAT('https://schema.org/','AdministrativeArea')) AS ?ty)\n      ?loc a ?ty . FILTER(REGEX(STR(?loc),'/location/[0-9]{5}$')) }\n      BIND(REPLACE(STR(?loc),'^.*/location/([0-9]{5})$','$1') AS ?fips) } }\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.', ?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg ?q ?r . }\n}",
+      "skeleton_verified": true,
+      "verified_count_note": "Skeleton OPTIMIZED 2026-07-12: the published query scanned an entire graph with an unbound pattern (?s ?p ?o) and then regex-filtered the subject IRI, which exceeded the endpoint's server-side operation limit (HTTP 429) and so could never be re-verified. Rewritten to drive from the SMALL, TYPED side as a DISTINCT sub-SELECT and construct the other graph's IRI, turning the full scan into an index lookup. Same count, now runnable. Drives from spoke-okn's 3,196 schema:AdministrativeArea county nodes (note: schema.org HTTPS - a bracketed IRI is canonicalized to http and matches nothing, so bind it with IRI(CONCAT)). "
     },
     {
       "id": "K4-state-fips",
@@ -2260,8 +2267,9 @@
         "Roll spoke-okn data up to the state and join state-level summaries to the spatialkg admin-region hierarchy.",
         "Which states, aligned to the 51 spatialkg AdministrativeRegion_1 regions, show the widest spoke-okn county-to-county spread in environmental/health indicators?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . FILTER(REGEX(STR(?loc),'/location/[0-9]{2}$')) }\n  BIND(REPLACE(STR(?loc),'^.*/location/([0-9]{2})$','$1') AS ?fips)\n  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_1> . }\n}",
-      "skeleton_verified": true
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  { SELECT DISTINCT ?fips WHERE { GRAPH <https://purl.org/okn/frink/kg/spatialkg> {\n      ?reg <http://stko-kwg.geog.ucsb.edu/lod/ontology/hasFIPS> ?fips ;\n           a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_1> . } } }\n  BIND(IRI(CONCAT('https://purl.org/okn/frink/kg/spoke-okn/location/', ?fips)) AS ?loc)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . }\n}",
+      "skeleton_verified": true,
+      "verified_count_note": "Skeleton OPTIMIZED 2026-07-12: the published query scanned an entire graph with an unbound pattern (?s ?p ?o) and then regex-filtered the subject IRI, which exceeded the endpoint's server-side operation limit (HTTP 429) and so could never be re-verified. Rewritten to drive from the SMALL, TYPED side as a DISTINCT sub-SELECT and construct the other graph's IRI, turning the full scan into an index lookup. Same count, now runnable. Drives from spatialkg's typed AdministrativeRegion_1 (state) nodes. "
     },
     {
       "id": "A6-mondo-expansion",
@@ -2309,7 +2317,7 @@
         "third_sample_1000_cells": "494 distinct L13, 494 in spatialkg (100%)",
         "prior_sampled_lower_bound": 7670
       },
-      "verified_count_note": "EXACT full level-13 join, re-derived via skeleton_query over all ufokn s2Level13 PropertyValue nodes (no sampling). Supersedes the prior 7,670 figure, which was an explicit LOWER BOUND from a 20,000-node sample; that sample showed 100% spatialkg containment, now confirmed across all 97,087 distinct level-13 cells. The full COUNT needs ~4 min, beyond a 90s tool call, so scope/paginate when querying interactively.",
+      "verified_count_note": "SKELETON EXCEEDS THE ENDPOINT LIMIT (HTTP 429) and cannot be re-verified as written (checked 2026-07-12). ufokn carries ~11.7M S2 property nodes / ~97k distinct Level-13 cells; an exact full-graph join does not fit in the server's operation budget - which is why this entry's count was ALREADY documented as a sampled lower bound rather than an exact COUNT(DISTINCT). Scope by area/type to run it. EXACT full level-13 join, re-derived via skeleton_query over all ufokn s2Level13 PropertyValue nodes (no sampling). Supersedes the prior 7,670 figure, which was an explicit LOWER BOUND from a 20,000-node sample; that sample showed 100% spatialkg containment, now confirmed across all 97,087 distinct level-13 cells. The full COUNT needs ~4 min, beyond a 90s tool call, so scope/paginate when querying interactively.",
       "hinge_note": "ufokn's primary - and so far only confirmed - attachment to the SAWGraph spatial hub, making it a FIFTH S2 Level-13 leaf on spatialkg alongside sawgraph (Maine PFAS, 88,007; D2), hydrologykg (Illinois wells/streams, 106,138; D1), sockg (multi-state soil carbon, 1,069; H1) and fiokg (national EPA FRS facilities, 681,045; N1). Because ufokn's coverage is the continental US, it co-occupies cells with the national leaf fiokg broadly and with the Maine/Illinois leaves within those states; like the other leaves it meets them through the hub (D1/H1 pattern), and a direct leaf-to-leaf join was NOT separately verified here (regional sampling makes a leaf-to-leaf count unreliable - assert it only via the hub). Via this key every ufokn Risk-Point / built-environment feature rolls up to spatialkg's S2 grid and AdministrativeRegion hierarchy and meets the other S2 leaves in any shared cell. ufokn ALSO carries finer S2 LEVEL-18 cells (schema:name 's2Level18'); spatialkg's grid is level-13, so level-18 cells do not attach to the hub directly (they nest inside the matched level-13 parent).",
       "example_question": "Place urban-flooding Risk-Points and built-environment features (ufokn) on the national S2 Level-13 grid (spatialkg), roll them up to county/state admin regions, and find which flood risk cells also contain EPA FRS facilities (fiokg), PFAS samples (sawgraph) or hydrologic features (hydrologykg).",
       "example_questions": [
@@ -2317,7 +2325,7 @@
         "Which counties accumulate the most ufokn flood Risk-Points once their S2 Level-13 cells are rolled up through the spatialkg admin regions?"
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {\n  { SELECT DISTINCT ?cell WHERE {\n    GRAPH <https://purl.org/okn/frink/kg/ufokn> {\n      ?bn ?pn \"s2Level13\" .\n      ?bn ?pv ?s2id .\n      FILTER(CONTAINS(STR(?pv),'schema.org/value'))\n    }\n    BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.',STR(?s2id))) AS ?cell)\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": false
     },
     {
       "id": "O2-s2-ufokn-fiokg",
@@ -2341,14 +2349,14 @@
         "hydrologykg_in_same_sample": 0,
         "note_other_leaves": "The same 4,267-cell ufokn sample co-located with fiokg (national) at 2,461 but with sawgraph (Maine) and hydrologykg (Illinois) at 0 - the sampled ufokn region does not reach those single-state leaves."
       },
-      "verified_count_note": "SAMPLED LOWER BOUND (>=2,461 shared S2 L13 cells; full national count infeasible within tool limits). 58% of sampled flood cells contain an fiokg EPA facility. Verified 2026-06-19.",
+      "verified_count_note": "SKELETON EXCEEDS THE ENDPOINT LIMIT (HTTP 429) and cannot be re-verified as written (checked 2026-07-12). Same cause as O1: both sides are S2-heavy (ufokn ~11.7M S2 nodes, fiokg 681k cells). This entry's count was ALREADY documented as a SAMPLED lower bound, so no exact skeleton can reproduce it. Scope by region to run it. SAMPLED LOWER BOUND (>=2,461 shared S2 L13 cells; full national count infeasible within tool limits). 58% of sampled flood cells contain an fiokg EPA facility. Verified 2026-06-19.",
       "example_question": "Which urban flood-risk cells (ufokn) contain EPA-regulated facilities (fiokg)? - flood exposure of regulated sites, co-located in the same S2 Level-13 cell.",
       "example_questions": [
         "Which urban flood-risk cells (ufokn) contain EPA-regulated facilities (fiokg)? - flood exposure of regulated sites, co-located in the same S2 Level-13 cell.",
         "How many EPA-regulated facilities (fiokg) sit inside a ufokn flood-risk S2 cell, and which facility types are the most flood-exposed?"
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?sampleCells) (COUNT(DISTINCT ?shared) AS ?inFiokg) WHERE {\n  { SELECT ?cell WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/ufokn> { ?bn ?pn \"s2Level13\" . ?bn ?pv ?s2id . FILTER(CONTAINS(STR(?pv),'schema.org/value')) }\n      BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.',STR(?s2id))) AS ?cell)\n  } LIMIT 5000 }\n  OPTIONAL { GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?cell } BIND(?cell AS ?shared) }\n}",
-      "skeleton_verified": true,
+      "skeleton_verified": false,
       "methodology_note": "DIRECT leaf-to-leaf S2 co-location: ufokn flood features and fiokg EPA facilities sharing the same S2 Level-13 cell (both are S2 leaves on spatialkg - ufokn O1, fiokg N1 - and share the s2.level13.{id} IRI form directly, so no spatialkg bridge is needed to meet in a cell). SAMPLED LOWER BOUND verified 2026-06-19: in the first 5,000 ufokn s2Level13 feature nodes (4,267 distinct L13 cells), 2,461 cells (58%) also contain an fiokg facility. The EXACT national count is infeasible within the 90s tool limit (ufokn carries 11.7M S2 property nodes / 97,087 distinct L13 cells; a full distinct-scan join exceeds the limit and the registry otherwise asserts leaf-to-leaf via the hub). The 58% co-location rate is high because ufokn covers dense urban areas where EPA-regulated facilities are common. NOTE: ufokn has no alternative join key - its Place names are generic geohash labels (\"building flooded {geohash}\"), its identifiers are ufokn-internal (ufokn.org/id/urmi/{geohash}), and it carries no county/ZIP/NHD/NWIS id - so S2 is its only attachment; ufokn<->hydrologykg (IL) and ufokn<->sawgraph (ME) are possible where coverage overlaps but were not separately verified (regional sampling unreliable) - assert via the hub.",
       "domain": "Geospatial"
     },
