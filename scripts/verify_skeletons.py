@@ -922,15 +922,24 @@ async def main() -> None:
     ids = wanted or [e["id"] for e in data["verified_crosswalks"]]
     async with httpx.AsyncClient(timeout=90.0) as client:
         for cid in ids:
-            q = Q.get(cid)
             entry = by_id.get(cid)
+            # Prefer the skeleton authored in THIS script, but fall back to the one
+            # stored on the crosswalk entry. Q only ever held the skeletons authored
+            # here (~94); every crosswalk added since — by writing skeleton_query
+            # straight into crosswalks.json — was invisible to this verifier and
+            # reported "NO SKELETON AUTHORED", so its stored count was never
+            # re-checked despite carrying skeleton_verified: true. crosswalks.json is
+            # the source of record; honour it.
+            q = Q.get(cid) or (entry or {}).get("skeleton_query")
             if q is None:
                 print(f"  --   {cid}: NO SKELETON AUTHORED")
                 continue
             expected = entry.get("verified_count") if entry else None
             try:
                 r = await run_sparql(q, timeout=90.0, client=client)
-                got = r["rows"][0]["n"] if r["rows"] else 0
+                # Don't assume the count variable is named ?n — catalog-authored
+                # skeletons use their own names (?shared, ?n, ?shared_zips, …).
+                got = int(next(iter(r["rows"][0].values()))) if r["rows"] else 0
                 verified = got == expected
                 status = "OK " if verified else ("~  " if got else "ZERO")
                 print(f"  {status} {cid}: got={got} expected={expected}")
