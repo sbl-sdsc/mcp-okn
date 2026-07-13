@@ -43,7 +43,7 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>35 knowledge graphs, 145 verified crosswalks (verified 2026-06-30). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
+  <p>35 knowledge graphs, 159 verified crosswalks (verified 2026-07-12). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
   <p class="tip">&#9654; <b>Hover</b> a node or edge for detail · <b>drag</b> to rearrange · <b>scroll</b> to zoom · <b>double-click</b> a node to unpin it.<br>&#9654; <b>Click a legend item</b> &mdash; a domain (e.g. <b>Chemicals</b>) or a line style (e.g. <b>via ubergraph</b>) &mdash; to toggle those edges.</p>
 </header>
 <div class="bar" id="legend"></div>
@@ -67,7 +67,7 @@
 </script>
 <script>
 (function(){
-const DOM={A:["Anatomy & Cell Type","#0C8599"],C:["Chemicals","#E8590C"],D:["Disease & phenotype","#D6336C"],W:["Earth observation","#0B7285"],E:["Environmental toxicology","#5C940D"],F:["Function & Pathways","#9C36B5"],G:["Genes","#7048E8"],S:["Geospatial","#1C7ED6"],I:["Industry & supply chain","#C9920A"],J:["Justice & Public Safety","#A61E4D"],P:["Proteins","#2B8A3E"],B:["Publications","#3B5BDB"],L:["Social Determinants & Services","#15AABF"],T:["Taxonomy","#82C91E"]};
+const DOM={A:["Anatomy & Cell Type","#0C8599"],C:["Chemicals","#E8590C"],D:["Disease & phenotype","#D6336C"],W:["Earth observation","#0B7285"],E:["Environmental toxicology","#5C940D"],F:["Function & Pathways","#9C36B5"],G:["Genes","#7048E8"],S:["Geospatial","#1C7ED6"],H:["Hydrology","#1098AD"],I:["Industry & supply chain","#C9920A"],J:["Justice & Public Safety","#A61E4D"],P:["Proteins","#2B8A3E"],B:["Publications","#3B5BDB"],L:["Social Determinants & Services","#15AABF"],T:["Taxonomy","#82C91E"]};
 const BRIDGES=new Set();
 const R=[
 ["A",["biomarkerkg","gene-expression-atlas-okn"],8,"CL"],
@@ -81,14 +81,23 @@ const R=[
 
 ["C",["biobricks-aopwiki","biobricks-toxcast"],290,"CAS"],
 ["C",["biobricks-ice","biobricks-toxcast"],9421,"CAS"],
+["C",["biobricks-mesh","biobricks-aopwiki"],26,"CAS"],
+["C",["biobricks-mesh","biobricks-ice"],6924,"CAS"],
+["C",["biobricks-mesh","biobricks-toxcast"],1146,"CAS"],
+["C",["biobricks-mesh","sawgraph"],6,"CAS"],
+["C",["biobricks-mesh","sockg"],5,"CAS"],
 ["C",["biobricks-tox21","biobricks-ice"],8916,"CAS"],
 ["C",["biobricks-tox21","biobricks-toxcast"],8909,"CAS"],
 ["C",["spoke-okn","biobricks-ice"],712,"CHEBI↔CAS (ubergraph)"],
 ["C",["spoke-okn","biobricks-tox21"],480,"CHEBI↔CAS (ubergraph)"],
 ["C",["spoke-okn","biobricks-toxcast"],496,"CHEBI↔CAS (ubergraph)"],
+["C",["biobricks-aopwiki","spoke-okn"],75,"ChEMBL"],
+["C",["biobricks-aopwiki","spoke-okn"],27,"DrugBank"],
 ["C",["rdkg","spoke-okn"],43,"DrugBank"],
 ["C",["ruralkg","rdkg"],2,"DrugBank"],
 ["C",["spoke-okn","prokn"],143,"InChIKey"],
+["C",["biobricks-aopwiki","biobricks-pubchem-annotations"],401,"PubChem CID"],
+["C",["biobricks-aopwiki","spoke-okn"],87,"PubChem CID"],
 ["C",["biobricks-pubchem-annotations","spoke-okn"],762,"PubChem CID"],
 
 ["D",["biomarkerkg","nde"],54,"DOID"],
@@ -131,8 +140,8 @@ const R=[
 ["W",["climatemodelskg","nasa-gesdisc-kg"],115,"GCMD instrument"],
 ["W",["climatemodelskg","nasa-gesdisc-kg"],70,"GCMD platform"],
 
-["E",["sawgraph","biobricks-ice"],12,"CAS"],
-["E",["sawgraph","biobricks-toxcast"],7,"CAS"],
+["E",["sawgraph","biobricks-ice"],39,"CAS"],
+["E",["sawgraph","biobricks-toxcast"],32,"CAS"],
 ["E",["sockg","biobricks-ice"],68,"CAS"],
 ["E",["sockg","biobricks-toxcast"],59,"CAS"],
 
@@ -168,9 +177,13 @@ const R=[
 ["S",["sudokn","spatialkg"],42560,"S2_L13"],
 ["S",["ufokn","fiokg"],2461,"S2_L13"],
 ["S",["ufokn","spatialkg"],97087,"S2_L13"],
+["S",["dreamkg","ruralkg"],30,"ZIP5"],
+["S",["dreamkg","scales"],53,"ZIP5"],
+["S",["ruralkg","scales"],5297,"ZIP5"],
 ["S",["spoke-okn","dreamkg"],53,"ZIP5"],
 ["S",["spoke-okn","ruralkg"],4938,"ZIP5"],
 ["S",["spoke-okn","sudokn"],12329,"ZIP5"],
+["S",["climatemodelskg","spatialkg"],947,"county_FIPS (spoke-okn)"],
 ["S",["fiokg","spatialkg"],3031,"county_FIPS"],
 ["S",["fiokg","spoke-okn"],3032,"county_FIPS"],
 ["S",["geoconnex","spatialkg"],3114,"county_FIPS"],
@@ -187,6 +200,8 @@ const R=[
 ["S",["spoke-okn","sockg"],18,"state_FIPS"],
 ["S",["spoke-okn","spatialkg"],51,"state_FIPS"],
 ["S",["sudokn","spatialkg"],51,"state_FIPS"],
+
+["H",["geoconnex","hydrologykg"],11392,"COMID"],
 
 ["I",["fiokg","securechainkg"],301,"NAICS"],
 ["I",["fiokg","sudokn"],64,"NAICS"],

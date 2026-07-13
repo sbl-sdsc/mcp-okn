@@ -146,6 +146,7 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "CHEBI<->CAS": "Chemicals",
     "PubChem CID": "Chemicals",
     "DrugBank": "Chemicals",
+    "ChEMBL": "Chemicals",
     "InChIKey": "Chemicals",
     "NCBITaxon": "Taxonomy",
     "NCBITaxon (biohealth label)": "Taxonomy",
@@ -155,6 +156,8 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "KWG_county": "Geospatial",
     "ZIP5": "Geospatial",
     "GeoNames": "Geospatial",
+    # NHDPlus stream-reach identity (geoconnex <-> hydrologykg)
+    "COMID": "Hydrology",
     "NAICS": "Industry & supply chain",
     "SUDOKN_industry_sector": "Industry & supply chain",
     "DOI": "Publications",

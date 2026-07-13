@@ -56,6 +56,7 @@ DOMAIN_CODE = {
     "Justice & Public Safety": "J",
     "Publications": "B",
     "Earth observation": "W",
+    "Hydrology": "H",
     "Other": "O",
 }
 # fallback colours for domains not already present in the file's DOM
@@ -74,6 +75,7 @@ DEFAULT_COLORS = {
     "J": "#A61E4D",
     "B": "#3B5BDB",
     "W": "#0B7285",
+    "H": "#1098AD",
     "O": "#868E96",
 }
 

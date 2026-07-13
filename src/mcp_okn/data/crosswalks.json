@@ -2,7 +2,7 @@
   "$schema_note": "Combined verified cross-KG joins for the Proto-OKN federation. Merges the A-I clusters with the spoke-okn geolocation crosswalks: cluster J (ZIP, on spoke-okn's full ~42,724-ZIP set) and cluster K (county/state FIPS, including spoke-okn's attachment to the SAWGraph spatial hub). Duplicates removed. Counts are exact COUNT(DISTINCT) over the named graphs on the verified_on date, EXCEPT cluster O (ufokn), whose verified_count is a SAMPLED lower bound (ufokn is too large for an exact full-graph count within the 120s endpoint limit) - see its verified_count_note. A consumer keyed by KG shortname should surface, for a given shortname, every entry where it appears as left_kg, right_kg, or bridge_kg. Clusters: (A) disease/phenotype - oard-kg is the MONDO/HP hub joining prokn, rdkg, nde and ubergraph; spoke-okn attaches via its 180 DOID Disease nodes (DIRECTLY to the DOID carriers prokn/biomarkerkg/nde, A7-A9, and through an ubergraph DOID->MONDO bridge to rdkg/oard-kg, A10-A11), (B) CAS chemical, (C) gene cluster - keyed across THREE id systems: Entrez/NCBI Gene (spoke-okn, spoke-genelab, rdkg, biobricks-aopwiki; in three IRI forms - see C_gene_cluster note - joined by bare-id rebuild; C4-C8), Ensembl (gene-expression-atlas-okn, pankgraph, spoke-okn's schema/ensembl crosswalk, AOP-Wiki; C1-C3, F1-F2), and HGNC (prokn, bridged to Entrez through wikidata P354->P351; C9), (D) SAWGraph S2 spatial hub, (E) toxicology/AOP CAS, (F) AOP-Wiki gene bridge, (G) UniProt protein, (H) soil-carbon spatial leaf (sockg: H1 S2 + H2 county to the spatialkg hub, plus H3 a DIRECT leaf-to-leaf S2 co-location with sawgraph's national US-WQP samples in 2 cells), (I) manufacturing supply-chain, (J) spoke-okn ZIP geography, (K) spoke-okn county/state-FIPS geography. (L) county/state-FIPS attachments of geoconnex, scales and nikg to the SAWGraph spatial hub (spatialkg) and spoke-okn, each carrying the same KWG/FIPS county key under a different non-obvious encoding (geoconnex: geoconnex.us/ref/counties/{FIPS5} reference IRIs on the GNIS county predicate; scales: a NUMERIC hasIdbCounty literal with the leading zero dropped; nikg: a phila.gov-rewritten KWG sfWithin IRI). Cluster L SUPERSEDES three base-file verdicts: scales (was an island on the unpopulated fips:CountyCode field), nikg (was 'no geographic key at all'), and geoconnex (only non-joins were recorded - its S2-cell and SAWGraph PWS reference-IRI non-joins remain valid, but the county-FIPS key is a separate, working route to the hub). Four further KGs profiled for cluster L (medical-device-kg, phaseskg, nasa-gesdisc-kg, wildlifekn) share no materialized join key and are recorded as islands / thin threads. (M) biobricks-mesh: the NLM MeSH vocabulary attaches to ubergraph on MeSH descriptor ids (oboInOwl:hasDbXref 'MESH:{ID}'), 9,463 matches dominated by MONDO disease (8,202), making it a MeSH-keyed member of the disease cluster A; biobricks-pubchem-annotations was profiled in the same pass and is an island (keyed solely on PubChem CID, which no federation KG materializes). Additionally biobricks-mesh has a second, DIRECT MeSH route (M2): spoke-okn MeSH-tags ~165 of its Disease and SDoH nodes via mesh_ids/mesh_list (HTTPS mesh IRIs vs biobricks-mesh's HTTP), uniquely reaching spoke-okn's social-determinants layer that the MONDO route (M1) cannot. (N) fiokg (SAWGraph FRS KG): a full SAWGraph spatial leaf attaching to the spatialkg hub via owl:sameAs to native KWG IRIs - 681,045 S2 Level-13 cells (N1, the LARGEST S2 join in the federation) and 3,031 county-FIPS AdministrativeRegion_2 IRIs (N2; 3,032 to spoke-okn, N3) - and to the manufacturing cluster I on the bare 6-digit NAICS code (N4 sudokn 64/66, N5 securechainkg 301/301). fiokg and the sawgraph leaf OVERLAP directly in 4,712 Maine S2 cells (N6, leaf-to-leaf), useful because fiokg flags 188,057 EPA-PFAS-Facility instances against sawgraph's PFAS samples. fiokg attaches at the county + S2 levels only (no KWG state IRIs); 261 leading-zero-truncated admin IRIs are excluded (see known_non_joins). (O) ufokn (Urban Flooding OKN): a FIFTH SAWGraph S2-cell spatial leaf. ufokn encodes its S2 cells as BLANK NODES (typed schema:PropertyValue + its own kwg:S2Cell ontology class), not KWG resource IRIs, with the 64-bit S2 cell id held as a bare decimal string in schema:value - the IDENTICAL value spatialkg uses as the suffix of its s2.level13.{id} node IRI. Rebuilding that IRI joins ufokn DIRECTLY to spatialkg's S2Cell_Level13 nodes (O1, no value rewrite). Three type-bounded samples (1k/8k/20k cells) all show 100% containment of ufokn's level-13 cells in spatialkg, so this is a near-complete attachment whose exact cardinality is not enumerable within the endpoint limit (verified_count 7,670 is a sampled lower bound). Cluster O SUPERSEDES the base file's two ufokn non-join verdicts ('unprofiled-large' and 'S2 Level-13 = 0'): the 0 was a direct typed-NODE join against blank nodes (can never match) and the timeout was an unbounded scan of ufokn's ~11.7M S2 nodes. ufokn also carries finer S2 LEVEL-18 cells that nest inside the level-13 hub cells but do not attach to the (level-13) hub directly. (P) biobricks-pubchem-annotations PubChem CID -> spoke-okn: spoke-okn materializes the CID as oboInOwl:hasDbXref identifiers.org/pubchem.compound/{n} on its ChemicalEntity nodes (762, exact 100% join after bare-CID normalization), SUPERSEDING the base file's biobricks-pubchem-annotations island verdict - it never checked spoke-okn's hasDbXref. (BH) biohealth (Bio-Health KG, UVA): a UMLS-CUI-keyed health graph (biomedical + social determinants) whose entities ARE their own https://biohealthkg.proto-okn.net/kg/node/C{cui} IRIs and which carries no outbound xref. It attaches ONLY through ubergraph's inbound UMLS hasDbXref on MONDO (10,087 biohealth CUIs), HP (4,828) and UBERON (2,148) - no CHEBI/UniProt/NCBIGene/NCIT UMLS xref exists, so biohealth crosswalks on disease, phenotype and anatomy only (never chemicals/genes/proteins). Verified joins BH1-BH8: rdkg, prokn, spoke-okn (via MONDO->DOID), oard-kg (MONDO + HP), nde, biomarkerkg (via MONDO->DOID) and gene-expression-atlas-okn. The UBERON anatomy axis is VERIFIED (BH9 biohealth<->GXA 249, BH10 biohealth<->spoke-genelab 35); spoke-okn stores no raw obo/UBERON_ terms and chemicals/genes/proteins remain unreachable. CL is not a biohealth axis (UMLS->CL = 0). biohealth is additionally a fragile LABEL-BRIDGED organism member of the taxon_hub (no NCBITaxon ids). See cluster_notes.BH_biohealth_umls. (AN) Anatomy (UBERON): spoke-genelab (INVESTIGATED_ASiA, 42 terms; + 7 CL cell types) and gene-expression-atlas-okn (biolink:has_attribute, 362 terms) carry raw obo/UBERON_ anatomy and join directly (AN1, 27 shared); biohealth attaches via the ubergraph UMLS->UBERON bridge (BH9/BH10). See cluster_notes.AN_anatomy_uberon.",
   "$count_note": "INTERNAL maintainer note - NOT user-facing. The single user-facing crosswalk count is len(all_crosswalks()) in src/mcp_okn/crosswalks.py - exactly what the list_crosswalks tool returns and what the README, the inventory doc (docs/crosswalks/proto-okn-crosswalk-inventory.md) and the network diagram cite. Do NOT surface the raw length of this verified_crosswalks array to end users: it is an internal storage count that differs from the user-facing number because all_crosswalks() (a) drops the ubergraph hub-scaffolding rows where ubergraph is a bare endpoint (e.g. A6 MONDO-expansion, M1 MeSH<->ubergraph) plus the compressed NCBITaxon hub rows, and (b) re-expands taxon_hub.pairwise into one row per KG pair. That derivation - not any number hardcoded here - is the source of truth, so this note never needs a count update. tests/test_crosswalks.py pins the user-facing docs to len(all_crosswalks()).",
   "federation": "https://purl.org/okn/frink/kg",
-  "verified_on": "2026-06-30",
+  "verified_on": "2026-07-12",
   "taxon_hub": {
     "$note": "Materialized pairwise NCBITaxon overlaps between the hub member KGs (each maps organisms to ubergraph; crosswalks D3-D10). Each record is a non-zero pair {kg_a, kg_b, exact_id, clade_a_in_b, clade_b_in_a}: exact_id = same NCBITaxon id on both sides (symmetric); clade_a_in_b = kg_a taxa nested under kg_b's clades via ubergraph subClassOf* (directional), clade_b_in_a the reverse. Zero-overlap pairs are omitted. Regenerate with scripts/refresh_taxon_overlaps.py when a member KG is updated. UPDATE 2026-06-18: wildlifekn added as a LABEL-BRIDGED member - it has no NCBITaxon IRIs, so its bird/amphibian binomials (authority-stripped) are resolved to NCBITaxon via ubergraph rdfs:label (339 species resolve). Fragile vs the IRI-based members; exact-id pairwise overlaps verified 2026-06-18 (nde 17, sawgraph 2). UPDATE 2026-06-23: biohealth added as a LABEL-BRIDGED member - the Bio-Health KG keys every entity on a UMLS CUI (node IRI) and carries NO NCBITaxon ids, so its organism concepts are resolved to NCBITaxon by matching biohealth rdfs:label to ubergraph NCBITaxon rdfs:label (organism scientific name). Name-based and approximate (misses synonyms/spelling variants, so counts are conservative lower bounds) and CANNOT do subClassOf* clade expansion - even more fragile than wildlifekn (which at least uses cleaned binomials). Recorded as label_match counts (biohealth organisms found by name in each hub KG), NOT exact_id/clade, verified 2026-06-23: aopwiki 112/166, gene-expression-atlas-okn 6/8, sawgraph 377/538, spoke-genelab 7/9 (model organisms), nde 1052/1808, spoke-okn 1603/34570.",
     "hub_kg": "ubergraph",
@@ -3257,23 +3257,23 @@
     {
       "id": "ET1-cas-sawgraph-toxcast",
       "left_kg": "sawgraph",
-      "left_predicate": "coso:casNumber (CAS number of a contaminant Substance, stored as a dashed string LITERAL)",
+      "left_predicate": "coso:casNumber (CAS of a contaminant Substance; MOSTLY UNDASHED digit literals - only 38 of 131 are dashed)",
       "left_role": "object",
       "right_kg": "biobricks-toxcast",
       "right_predicate": "edam:has_identifier (CAS IRI); the chemical -> ro:RO_0000056 -> assay endpoint (Measure Group)",
       "right_role": "object",
       "shared_key": "CAS",
-      "key_namespace": "sawgraph coso:casNumber '{cas}' (dashed literal) -> http://identifiers.org/cas/{cas} (biobricks-toxcast edam:has_identifier IRI)",
+      "key_namespace": "sawgraph coso:casNumber (undashed OR dashed literal; dashes must be reconstructed) -> http://identifiers.org/cas/{cas} (biobricks-toxcast edam:has_identifier IRI)",
       "bridge_kg": null,
-      "iri_normalization": "SAWGraph stores the CAS as a dashed string LITERAL on coso:casNumber (filter REGEX '^[0-9]+-[0-9]+-[0-9]$' to drop malformed values); ToxCast uses the http://identifiers.org/cas/{cas} IRI. Drive from SAWGraph's distinct CAS literals, BIND(IRI(CONCAT('http://identifiers.org/cas/', STR(?cas)))), then match ToxCast. Use an INNER join - the OPTIONAL pattern silently returns 0 on this cross-graph join.",
-      "verified_count": 7,
-      "verified_count_note": "7 of SAWGraph's 38 well-formed PFAS CAS numbers have ToxCast high-throughput screening data. Verified 2026-06-27. Each carries hundreds of ToxCast assay endpoints (e.g. GenX/HFPO-DA, CAS 13252-13-6, has 506 endpoints and 2,184 SAWGraph water-sample observations). Bridges environmental PFAS contamination (where/when measured, concentration) to toxicological screening. SAWGraph gains a chemical axis into the toxicology cluster (it was previously a geospatial-only KG, clusters D/N).",
-      "example_question": "For the PFAS measured in SAWGraph's environmental water samples, how many ToxCast high-throughput assay endpoints exist, and what is each chemical's environmental footprint?",
+      "iri_normalization": "CORRECTED 2026-07-12 - THE PREVIOUS RECIPE UNDERCOUNTED BY 4.5x. SAWGraph's coso:casNumber is NOT reliably dashed: of 131 distinct CAS values only 38 are dashed, 78 are UNDASHED digit strings, 15 are non-CAS lab codes. The old skeleton's dashed-only regex saw just the 38 and reported 7 shared. Reconstruct the dashes (see the skeleton), then BIND(IRI(CONCAT('http://identifiers.org/cas/', ?cas))) and INNER-join ToxCast (the OPTIONAL pattern silently returns 0).",
+      "verified_count": 32,
+      "verified_count_note": "32 of SAWGraph's 116 well-formed CAS contaminants have ToxCast high-throughput screening data. Re-verified 2026-07-12 after fixing the undashed-literal normalization; the previous count of 7 was an artifact of a dashed-only regex. Each carries hundreds of ToxCast assay endpoints (e.g. GenX/HFPO-DA, CAS 13252-13-6, has 506 endpoints and 2,184 SAWGraph water-sample observations). Bridges environmental contamination (where/when measured, concentration) to toxicological screening.",
+      "example_question": "For the contaminants measured in SAWGraph's environmental water samples, how many ToxCast high-throughput assay endpoints exist, and what is each chemical's environmental footprint?",
       "example_questions": [
-        "For the PFAS measured in SAWGraph's environmental water samples, how many ToxCast high-throughput assay endpoints exist, and what is each chemical's environmental footprint?",
+        "For the contaminants measured in SAWGraph's environmental water samples, how many ToxCast high-throughput assay endpoints exist, and what is each chemical's environmental footprint?",
         "Ranked by ToxCast assay-endpoint hit count, which CAS contaminants detected in SAWGraph water samples show the broadest high-throughput bioactivity, and at which sampling locations do they occur?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  { SELECT DISTINCT ?cas WHERE { GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?s <http://w3id.org/coso/v1/contaminoso#casNumber> ?cas . FILTER(REGEX(STR(?cas),'^[0-9]+-[0-9]+-[0-9]$')) } } }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/', STR(?cas))) AS ?casIri)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-toxcast> { ?t <http://edamontology.org/has_identifier> ?casIri . }\n}",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  { SELECT DISTINCT ?cas WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/sawgraph> {\n        ?s <http://w3id.org/coso/v1/contaminoso#casNumber> ?raw .\n        BIND(IF(REGEX(STR(?raw),'^[0-9]{5,10}$'),\n                REPLACE(STR(?raw),'^([0-9]+)([0-9]{2})([0-9])$','$1-$2-$3'),\n                STR(?raw)) AS ?cas)\n        FILTER(REGEX(?cas,'^[0-9]{2,7}-[0-9]{2}-[0-9]$'))\n      } } }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/', ?cas)) AS ?casIri)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-toxcast> { ?t <http://edamontology.org/has_identifier> ?casIri . }\n}",
       "skeleton_verified": true,
       "methodology_note": "SAWGraph (SAWGraph PFAS KG) measures PFAS in US Water Quality Portal samples; each ContaminantObservation has coso:ofSubstance (CAS + a DSSTox DTXSID), coso:hasResult (concentration), and a geoconnex sample point + observedTime. It co-locates with fiokg (EPA facilities + NAICS) on S2 cells (N6), so this CAS axis links the industrial/environmental cluster to the toxicology cluster (B/E CAS). SAWGraph also carries DSSTox DTXSID (comptox.epa.gov / w3id.org/DSSTox) - a second potential chemical key into EPA CompTox KGs.",
       "domain": "Environmental toxicology"
@@ -3281,25 +3281,26 @@
     {
       "id": "ET2-cas-sawgraph-ice",
       "left_kg": "sawgraph",
-      "left_predicate": "coso:casNumber (CAS number of a contaminant Substance, dashed string LITERAL)",
+      "left_predicate": "coso:casNumber (CAS of a contaminant Substance; MOSTLY UNDASHED digit literals - only 38 of 131 are dashed)",
       "left_role": "object",
       "right_kg": "biobricks-ice",
       "right_predicate": "edam:has_identifier (CAS IRI); ICE chemical entity carries rdfs:label (chemical name), a DSSTox DTXSID, and curated-data-domain records",
       "right_role": "object",
       "shared_key": "CAS",
-      "key_namespace": "sawgraph coso:casNumber '{cas}' (dashed literal) -> http://identifiers.org/cas/{cas} (biobricks-ice edam:has_identifier IRI)",
+      "key_namespace": "sawgraph coso:casNumber (undashed OR dashed literal; dashes must be reconstructed) -> http://identifiers.org/cas/{cas} (biobricks-ice edam:has_identifier IRI)",
       "bridge_kg": null,
-      "iri_normalization": "Same as ET1: SAWGraph CAS is a dashed string literal on coso:casNumber; ICE uses the http://identifiers.org/cas/{cas} IRI. Build the IRI from the SAWGraph literal and INNER-join ICE (the OPTIONAL pattern returns a false 0). ICE entities also carry a DSSTox DTXSID and rdfs:label (e.g. 'Perfluorohexanesulfonate').",
-      "verified_count": 12,
-      "verified_count_note": "12 of SAWGraph's 38 PFAS CAS numbers have biobricks-ICE (EPA Integrated Chemical Environment) records - PFHxS, PFOS, perfluorodecane/heptane/nonane-sulfonic acids, perfluorobutanesulfonamide, etc. Verified 2026-06-27. All 12 are covered by ICE's Chemical Functional Use Categories domain; ICE resolves each environmental contaminant to its EPA CompTox identity (DTXSID + standardized name + functional-use categorization).",
-      "example_question": "For the PFAS measured in SAWGraph, what does ICE record - the standardized chemical identity (name, DTXSID) and functional-use categorization of the environmental contaminants?",
+      "iri_normalization": "CORRECTED 2026-07-12 - THE PREVIOUS RECIPE UNDERCOUNTED BY 3x. SAWGraph's coso:casNumber is NOT reliably dashed: of its 131 distinct CAS values only 38 are dashed, 78 are UNDASHED digit strings ('120226600'), and 15 are non-CAS lab codes ('DEP14447'). The old skeleton filtered REGEX '^[0-9]+-[0-9]+-[0-9]$', so it silently saw only the dashed 38 and reported 12 shared. RECONSTRUCT the dashes before building the IRI: match undashed with FILTER(REGEX(STR(?raw),'^[0-9]{5,10}$')) and BIND(REPLACE(STR(?raw),'^([0-9]+)([0-9]{2})([0-9])$','$1-$2-$3')), keep already-dashed values as-is, then BIND(IRI(CONCAT('http://identifiers.org/cas/', ?cas))) and INNER-join ICE (the OPTIONAL pattern returns a false 0). ICE entities also carry a DSSTox DTXSID and rdfs:label.",
+      "verified_count": 39,
+      "verified_count_note": "39 of SAWGraph's 116 well-formed CAS contaminants have biobricks-ICE (EPA Integrated Chemical Environment) records. Re-verified 2026-07-12 after fixing the undashed-literal normalization; the previous count of 12 was an artifact of a dashed-only regex that ignored 78 of SAWGraph's 131 CAS values. ICE resolves each environmental contaminant to its EPA CompTox identity (DTXSID + standardized name + functional-use categorization).",
+      "example_question": "For the contaminants measured in SAWGraph, what does ICE record - the standardized chemical identity (name, DTXSID) and functional-use categorization of the environmental contaminants?",
       "example_questions": [
-        "For the PFAS measured in SAWGraph, what does ICE record - the standardized chemical identity (name, DTXSID) and functional-use categorization of the environmental contaminants?",
-        "Across the 12 CAS contaminants shared with SAWGraph, which ICE curated-data-domain records (e.g. acute toxicity, endocrine activity) are populated, and which contaminant carries the most curated toxicity endpoints?"
+        "For the contaminants measured in SAWGraph, what does ICE record - the standardized chemical identity (name, DTXSID) and functional-use categorization of the environmental contaminants?",
+        "Across the 39 CAS contaminants shared with SAWGraph, which ICE curated-data-domain records (e.g. acute toxicity, endocrine activity) are populated, and which contaminant carries the most curated toxicity endpoints?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  { SELECT DISTINCT ?cas WHERE { GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?s <http://w3id.org/coso/v1/contaminoso#casNumber> ?cas . FILTER(REGEX(STR(?cas),'^[0-9]+-[0-9]+-[0-9]$')) } } }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/', STR(?cas))) AS ?casIri)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?d <http://edamontology.org/has_identifier> ?casIri . }\n}",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  { SELECT DISTINCT ?cas WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/sawgraph> {\n        ?s <http://w3id.org/coso/v1/contaminoso#casNumber> ?raw .\n        BIND(IF(REGEX(STR(?raw),'^[0-9]{5,10}$'),\n                REPLACE(STR(?raw),'^([0-9]+)([0-9]{2})([0-9])$','$1-$2-$3'),\n                STR(?raw)) AS ?cas)\n        FILTER(REGEX(?cas,'^[0-9]{2,7}-[0-9]{2}-[0-9]$'))\n      } } }\n  BIND(IRI(CONCAT('http://identifiers.org/cas/', ?cas)) AS ?casIri)\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?d <http://edamontology.org/has_identifier> ?casIri . }\n}",
       "skeleton_verified": true,
-      "domain": "Environmental toxicology"
+      "domain": "Environmental toxicology",
+      "methodology_note": "DSSTox is NOT a useful second axis for this pair. SAWGraph exposes coso:ofDSSToxSubstance (86 distinct DTXSIDs) and ICE/ToxCast expose DTXSID on edam:has_identifier, but the DSSTox join reaches only 35 ICE chemicals - FEWER than the 39 a correctly-normalized CAS join reaches. Of SAWGraph's 86 DSSTox substances, 80 have a CAS and the 6 without one join to ICE ZERO times. DSSTox's single unique hit (DTXSID7022546) is a SAWGraph data-quality bug: its source node is parameter.PFECHS_A (a PFAS) but it is labelled 'Acetohydroxamic acid'. Use CAS; do not add a DSSTox edge. Verified 2026-07-12."
     },
     {
       "id": "SS1-label-dreamkg-biohealth",
@@ -3571,6 +3572,338 @@
       "skeleton_query": "SELECT (COUNT(DISTINCT ?k) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> { ?c a <https://climatepub4kg.github.io/ontology#Platform> ; <https://climatepub4kg.github.io/ontology#name> ?cn .\n    BIND(LCASE(STR(?cn)) AS ?k) }\n  GRAPH <https://purl.org/okn/frink/kg/nasa-gesdisc-kg> { ?d <https://purl.org/okn/frink/kg/nasa-gesdisc/schema/HAS_PLATFORM> ?x . ?x <http://www.w3.org/2000/01/rdf-schema#label> ?nl .\n    BIND(LCASE(STR(?nl)) AS ?k) }\n}",
       "skeleton_verified": true,
       "domain": "Earth observation"
+    },
+    {
+      "id": "HY1-comid-geoconnex-hydrologykg",
+      "left_kg": "geoconnex",
+      "left_predicate": "wd:P885 (origin of watercourse) / wd:P403 (mouth of watercourse) on a ref/mainstems node; object IS the geoconnex COMID IRI",
+      "left_role": "object",
+      "right_kg": "hydrologykg",
+      "right_predicate": "node-iri (hydrologykg mints its NHDPlus reach subjects AS geoconnex COMID IRIs); nhdplusv2:hasCOMID carries the bare id",
+      "right_role": "subject",
+      "shared_key": "COMID",
+      "key_namespace": "https://geoconnex.us/nhdplusv2/comid/{COMID} - the SAME IRI on both sides (geoconnex as the object of wd:P885/P403; hydrologykg as its reach subject IRI)",
+      "bridge_kg": null,
+      "iri_normalization": "NODE-IRI JOIN, no rewrite: hydrologykg does not merely reference COMIDs, it mints its reach subjects as geoconnex's own https://geoconnex.us/nhdplusv2/comid/{id} IRIs, so geoconnex's wd:P885/P403 objects match hydrologykg subjects directly. Confirmed two independent ways (direct IRI match, and local-id extraction intersected with the nhdplusv2:hasCOMID literal) - both return exactly 11,392. GOTCHAS: (1) geoconnex's schema.org predicates are stored with the HTTPS scheme, and the endpoint canonicalizes a bracketed <https://schema.org/...> to http, so a bracketed schema.org IRI matches NOTHING - use BIND(IRI(CONCAT('https://schema.org/','head_nhdpv1_comid'))) (the STRENDS form works but times out on an unbounded scan). (2) Do NOT put the head/outlet UNION inside a single GRAPH block with bound predicate vars - the planner explodes (tried to allocate 210 GB); UNION two SELECT DISTINCT sub-queries OUTSIDE the GRAPH blocks. (3) v1-vs-v2 is a naming misnomer, not a value-space difference: geoconnex's 'head_nhdpv1_comid' literal and its wd:P885 NHDPlus-v2 COMID IRI carry the same id (verified on mainstem 356782 -> 10079250), so treat nhdpv1_comid as a v2 COMID. (4) COMID is an xsd:string on BOTH sides - bind the same variable, never a cross-graph FILTER(STR(?a)=STR(?b)).",
+      "verified_count": 11392,
+      "verified_count_secondary": {
+        "literal route (head/outlet_nhdpv1_comid x nhdplusv2:hasCOMID)": 6830
+      },
+      "verified_count_note": "11,392 shared NHDPlus reaches on the node-IRI route (geoconnex 67,734 distinct COMID IRIs; hydrologykg 507,486 distinct COMIDs). Verified 2026-07-12, surfaced by the entities.csv refresh that exposed geoconnex's head/outlet comid predicates and hydrologykg's nhdplusv2:hasCOMID. The literal route (geoconnex's head/outlet_nhdpv1_comid literals x nhdplusv2:hasCOMID) reaches only 6,830 and is a STRICT SUBSET - only some mainstems carry the literals, while nearly all carry the P885/P403 COMID IRIs, so prefer the node-IRI route. ReachCode is NOT a usable second key: geoconnex has no reach-code predicate (its head_rf1id/outlet_rf1id are RF1 ids, a different scheme).",
+      "example_question": "For a named river mainstem in geoconnex, what NHDPlus flowline attributes (reach code, feature type, flow-path length) and public-water-system context does hydrologykg record for the same reach?",
+      "example_questions": [
+        "For a named river mainstem in geoconnex, what NHDPlus flowline attributes (reach code, feature type, flow-path length) and public-water-system context does hydrologykg record for the same reach?",
+        "How many NHDPlus reaches are shared between geoconnex and hydrologykg, joined on the NHDPlus COMID?"
+      ],
+      "skeleton_query": "PREFIX nhd: <http://nhdplusv2.spatialai.org/v1/nhdplusv2#>\nPREFIX wd: <https://www.wikidata.org/wiki/Property:>\nSELECT (COUNT(DISTINCT ?reach) AS ?n) WHERE {\n  {\n    { SELECT DISTINCT ?reach WHERE {\n        GRAPH <https://purl.org/okn/frink/kg/geoconnex> { ?ms wd:P885 ?reach . } } }\n    UNION\n    { SELECT DISTINCT ?reach WHERE {\n        GRAPH <https://purl.org/okn/frink/kg/geoconnex> { ?ms wd:P403 ?reach . } } }\n  }\n  GRAPH <https://purl.org/okn/frink/kg/hydrologykg> { ?reach nhd:hasCOMID ?c . }\n}",
+      "skeleton_verified": true,
+      "domain": "Hydrology",
+      "methodology_note": "FIRST crosswalk for the geoconnex x hydrologykg pair, and the federation's first COMID join - it links geoconnex's named-river/mainstem reference layer to hydrologykg's NHDPlus flowline + public-water-system layer on the shared stream-reach identity. Does NOT conflict with the standing sawgraph x geoconnex known_non_join, which is a different key (S2 cells / SAWGraph PWS reference IRIs). Example shared reaches: COMID 10079250 = geoconnex mainstem 356782 'Vermilion River' <-> hydrologykg reach with ReachCode 05120109000164; COMID 10078782 = 'North Fork Vermilion River' <-> ReachCode 05120109000470 (same HUC8 05120109, and geoconnex independently asserts the North Fork flows downstream into the Vermilion - the correct real-world topology)."
+    },
+    {
+      "id": "M3-cas-mesh-ice",
+      "left_kg": "biobricks-mesh",
+      "left_predicate": "mesh:registryNumber (CAS Registry Number as a dashed string literal, on a mesh:Concept node)",
+      "left_role": "object",
+      "right_kg": "biobricks-ice",
+      "right_predicate": "edam:has_identifier (CAS IRI)",
+      "right_role": "object",
+      "shared_key": "CAS",
+      "key_namespace": "biobricks-mesh <http://id.nlm.nih.gov/mesh/vocab#registryNumber> (dashed literal '50-00-0') <-> biobricks-ice <http://edamontology.org/has_identifier> http://identifiers.org/cas/{cas}",
+      "bridge_kg": null,
+      "iri_normalization": "MeSH holds the CAS as a bare DASHED string literal on mesh:registryNumber. NOISE FILTER IS MANDATORY: of 385,145 registryNumber triples only 67,047 (17.4%) are CAS-shaped - 199,327 are literally '0' (51.8%) and the rest are UNII codes (37H9VM9WZL), NCBI taxids (txid11788) and EC numbers. Filter FILTER(REGEX(?rn,'^[0-9]{2,7}-[0-9]{2}-[0-9]$')). ICE carries the CAS as an http://identifiers.org/cas/ IRI on edam:has_identifier (the SAME predicate also carries CompTox DTXSID URLs, so a STRSTARTS guard is required); strip with REPLACE(STR(?ch),'^https?://identifiers.org/cas/',''). Drive from the SMALL side (ICE's distinct CAS) into an exact-literal lookup in biobricks-mesh - the symmetric two-sub-SELECT form times out (HTTP 429) on the 385k registryNumber rows. Bind the same ?cas variable across GRAPH blocks; never a cross-graph FILTER(STR(?a)=STR(?b)).",
+      "verified_count": 6924,
+      "verified_count_note": "6,924 CAS chemicals shared between the NLM MeSH vocabulary and EPA ICE (ICE carries 199,729 distinct CAS; MeSH 67,043 CAS-shaped registryNumbers). Verified 2026-07-12. Newly possible because the entities.csv refresh exposed mesh:registryNumber. relatedRegistryNumber would add ~3,612 more distinct CAS (not included in this count). Examples: 100-40-3 4-vinylcyclohexene, 10001-43-1 pimefyllin (MeSH) <-> Pimefylline (ICE) - a synonym-level match the join resolves that a label match would miss.",
+      "example_question": "For a chemical with EPA ICE toxicity/functional-use records, what MeSH indexing does it carry - and via MeSH's pharmacological-action and descriptor mappings, is its tox signal a known pharmacology or an off-target hazard?",
+      "example_questions": [
+        "For a chemical with EPA ICE toxicity/functional-use records, what MeSH indexing does it carry - and via MeSH's pharmacological-action and descriptor mappings, is its tox signal a known pharmacology or an off-target hazard?",
+        "How many of EPA ICE's CAS chemicals are indexed in the NLM MeSH vocabulary, joined on the MeSH registryNumber?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  { SELECT DISTINCT ?cas WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> {\n        ?s <http://edamontology.org/has_identifier> ?ch .\n        FILTER(STRSTARTS(STR(?ch),'http://identifiers.org/cas/'))\n        BIND(REPLACE(STR(?ch),'^https?://identifiers.org/cas/','') AS ?cas)\n      } } }\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-mesh> {\n    ?m <http://id.nlm.nih.gov/mesh/vocab#registryNumber> ?cas .\n  }\n}",
+      "skeleton_verified": true,
+      "domain": "Chemicals",
+      "methodology_note": "SUPERSEDES the M1 recipe's statement that biobricks-mesh is 'a disease/anatomy bridge, not a chemical one' (which was based on MeSH carrying 0 CHEBI xrefs). MeSH DOES have an outbound chemical xref - it is CAS on registryNumber, not an OBO id. This de-islands biobricks-mesh into the CAS chemical cluster (M3-M7), where previously it reached the federation only through disease/anatomy (ubergraph MONDO/UBERON M1, spoke-okn DOID M2). STRUCTURAL CAVEAT: CAS sits on mesh:Concept nodes whose parent record (via ^mesh:preferredConcept) is usually an SCR_Chemical (mesh/C######), not a D-descriptor - so only 299 of the 6,924 shared ICE chemicals reach a mesh:pharmacologicalAction. The broader payoff is MeSH indexing (preferredMappedTo descriptor+qualifier pairs, synonymy), which makes a tox-assay CAS literature-retrievable in PubMed and, via M1, traceable toward MONDO disease terms. Modern MeSH puts the UNII in registryNumber when one exists, so some famous chemicals (2,4-D 94-75-7, formaldehyde 50-00-0) are absent from the CAS side entirely - a UNII crosswalk would be the way to recover them."
+    },
+    {
+      "id": "M4-cas-mesh-toxcast",
+      "left_kg": "biobricks-mesh",
+      "left_predicate": "mesh:registryNumber (CAS Registry Number, dashed string literal)",
+      "left_role": "object",
+      "right_kg": "biobricks-toxcast",
+      "right_predicate": "edam:has_identifier (CAS IRI)",
+      "right_role": "object",
+      "shared_key": "CAS",
+      "key_namespace": "biobricks-mesh <http://id.nlm.nih.gov/mesh/vocab#registryNumber> (dashed literal) <-> biobricks-toxcast <http://edamontology.org/has_identifier> http://identifiers.org/cas/{cas}",
+      "bridge_kg": null,
+      "iri_normalization": "Same as M3: filter MeSH's registryNumber to CAS-shaped values (FILTER(REGEX(?rn,'^[0-9]{2,7}-[0-9]{2}-[0-9]$')) - 82.6% of values are '0'/UNII/txid noise), strip ToxCast's http://identifiers.org/cas/ IRI to the bare dashed CAS, drive from the ToxCast side into an exact-literal lookup in biobricks-mesh, and bind the same ?cas variable across GRAPH blocks.",
+      "verified_count": 1146,
+      "verified_count_note": "1,146 of ToxCast's 9,542 distinct CAS chemicals are indexed in the NLM MeSH vocabulary. Verified 2026-07-12.",
+      "example_question": "For the chemicals ToxCast screened in its high-throughput assays, which are indexed in MeSH - and what pharmacological action or disease indexing does MeSH attach to the most bioactive ones?",
+      "example_questions": [
+        "For the chemicals ToxCast screened in its high-throughput assays, which are indexed in MeSH - and what pharmacological action or disease indexing does MeSH attach to the most bioactive ones?",
+        "How many ToxCast CAS chemicals carry a MeSH record, joined on the MeSH registryNumber?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  { SELECT DISTINCT ?cas WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/biobricks-toxcast> {\n        ?s <http://edamontology.org/has_identifier> ?ch .\n        FILTER(STRSTARTS(STR(?ch),'http://identifiers.org/cas/'))\n        BIND(REPLACE(STR(?ch),'^https?://identifiers.org/cas/','') AS ?cas)\n      } } }\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-mesh> {\n    ?m <http://id.nlm.nih.gov/mesh/vocab#registryNumber> ?cas .\n  }\n}",
+      "skeleton_verified": true,
+      "domain": "Chemicals"
+    },
+    {
+      "id": "M5-cas-mesh-aopwiki",
+      "left_kg": "biobricks-mesh",
+      "left_predicate": "mesh:registryNumber (CAS Registry Number, dashed string literal)",
+      "left_role": "object",
+      "right_kg": "biobricks-aopwiki",
+      "right_predicate": "aopkb:has_chemical_entity (CAS IRI, https scheme)",
+      "right_role": "object",
+      "shared_key": "CAS",
+      "key_namespace": "biobricks-mesh <http://id.nlm.nih.gov/mesh/vocab#registryNumber> (dashed literal) <-> biobricks-aopwiki <http://aopkb.org/aop_ontology#has_chemical_entity> https://identifiers.org/cas/{cas} (NOTE the https scheme)",
+      "bridge_kg": null,
+      "iri_normalization": "AOP-Wiki's CAS IRI uses the HTTPS scheme (https://identifiers.org/cas/) where ICE/ToxCast use http - the '^https?://' in the REPLACE covers both. Otherwise identical to M3: filter MeSH's registryNumber to CAS-shaped values, drive from the small AOP-Wiki side, bind the same ?cas variable across GRAPH blocks.",
+      "verified_count": 26,
+      "verified_count_note": "26 of AOP-Wiki's 391 CAS stressor chemicals carry a MeSH record. Verified 2026-07-12. Small but high-value: these are chemicals with BOTH a mechanistic Adverse Outcome Pathway and MeSH pharmacology/indexing.",
+      "example_question": "For the chemical stressors that trigger an Adverse Outcome Pathway, what pharmacological action and disease indexing does MeSH record - i.e. is the AOP-triggering chemical a known drug class?",
+      "example_questions": [
+        "For the chemical stressors that trigger an Adverse Outcome Pathway, what pharmacological action and disease indexing does MeSH record - i.e. is the AOP-triggering chemical a known drug class?",
+        "How many AOP-Wiki chemical stressors are indexed in MeSH, joined on the MeSH registryNumber?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  { SELECT DISTINCT ?cas WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> {\n        ?s <http://aopkb.org/aop_ontology#has_chemical_entity> ?ch .\n        FILTER(STRSTARTS(STR(?ch),'https://identifiers.org/cas/'))\n        BIND(REPLACE(STR(?ch),'^https?://identifiers.org/cas/','') AS ?cas)\n      } } }\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-mesh> {\n    ?m <http://id.nlm.nih.gov/mesh/vocab#registryNumber> ?cas .\n  }\n}",
+      "skeleton_verified": true,
+      "domain": "Chemicals"
+    },
+    {
+      "id": "M6-cas-mesh-sawgraph",
+      "left_kg": "biobricks-mesh",
+      "left_predicate": "mesh:registryNumber (CAS Registry Number, dashed string literal)",
+      "left_role": "object",
+      "right_kg": "sawgraph",
+      "right_predicate": "coso:casNumber (CAS on a me-egad parameter/analyte node - MOSTLY UNDASHED digits)",
+      "right_role": "object",
+      "shared_key": "CAS",
+      "key_namespace": "biobricks-mesh <http://id.nlm.nih.gov/mesh/vocab#registryNumber> (dashed) <-> sawgraph <http://w3id.org/coso/v1/contaminoso#casNumber> (undashed digit literal - dashes must be RECONSTRUCTED)",
+      "bridge_kg": null,
+      "iri_normalization": "SAWGraph's coso:casNumber is MOSTLY UNDASHED ('120226600'), not dashed - 78 of its 131 CAS values are undashed, 38 dashed, 15 non-CAS lab codes (e.g. 'DEP14447'). Reconstruct the dashes to match MeSH's dashed literal: FILTER(REGEX(STR(?cn),'^[0-9]{5,10}$')) then BIND(REPLACE(STR(?cn),'^([0-9]+)([0-9]{2})([0-9])$','$1-$2-$3') AS ?cas). A naive dashed-literal join returns 0 and looks like a false NON_JOIN. (Note sockg uses the SAME contaminoso vocabulary but stores DASHED values - the two graphs disagree on encoding.)",
+      "verified_count": 6,
+      "verified_count_note": "WARNING - PRESENT BUT NEAR-EMPTY. Only 6 of SAWGraph's 131 CAS contaminants carry a MeSH record. Verified 2026-07-12. The cause is structural, not a query bug: SAWGraph is dominated by PFAS and pesticide active ingredients, exactly the compounds for which modern MeSH assigns a UNII and therefore DROPS the CAS from registryNumber (2,4-D 94-75-7 is the canonical miss - it is in neither registryNumber nor relatedRegistryNumber). Recorded for completeness and to stop re-derivation; do NOT build a use case on it. A UNII crosswalk, not CAS, is the way to connect MeSH to SAWGraph's chemical space.",
+      "example_question": "For the PFAS and pesticide contaminants SAWGraph measures in environmental samples, which are indexed in MeSH (note: only 6 - MeSH assigns UNII rather than CAS to most of these compounds)?",
+      "example_questions": [
+        "For the PFAS and pesticide contaminants SAWGraph measures in environmental samples, which are indexed in MeSH (note: only 6 - MeSH assigns UNII rather than CAS to most of these compounds)?",
+        "How many SAWGraph contaminant CAS numbers carry a MeSH registryNumber record?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  { SELECT DISTINCT ?cas WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/sawgraph> {\n        ?c <http://w3id.org/coso/v1/contaminoso#casNumber> ?cn .\n        FILTER(REGEX(STR(?cn),'^[0-9]{5,10}$'))\n        BIND(REPLACE(STR(?cn),'^([0-9]+)([0-9]{2})([0-9])$','$1-$2-$3') AS ?cas)\n      } } }\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-mesh> {\n    ?m <http://id.nlm.nih.gov/mesh/vocab#registryNumber> ?cas .\n  }\n}",
+      "skeleton_verified": true,
+      "domain": "Chemicals"
+    },
+    {
+      "id": "M7-cas-mesh-sockg",
+      "left_kg": "biobricks-mesh",
+      "left_predicate": "mesh:registryNumber (CAS Registry Number, dashed string literal)",
+      "left_role": "object",
+      "right_kg": "sockg",
+      "right_predicate": "coso:casNumber (CAS on a chemical entity - DASHED literal)",
+      "right_role": "object",
+      "shared_key": "CAS",
+      "key_namespace": "biobricks-mesh <http://id.nlm.nih.gov/mesh/vocab#registryNumber> (dashed) <-> sockg <http://w3id.org/coso/v1/contaminoso#casNumber> (dashed literal - use as-is)",
+      "bridge_kg": null,
+      "iri_normalization": "sockg stores the CAS DASHED (unlike sawgraph, which uses the same contaminoso vocabulary but stores undashed digits) - use the literal directly, guarded by FILTER(REGEX(STR(?cn),'^[0-9]{2,7}-[0-9]{2}-[0-9]$')). Filter MeSH's registryNumber for CAS shape as in M3.",
+      "verified_count": 5,
+      "verified_count_note": "WARNING - PRESENT BUT NEAR-EMPTY. Only 5 of sockg's 80 CAS chemicals carry a MeSH record. Verified 2026-07-12. Same structural cause as M6: sockg's agricultural chemicals are largely pesticide active ingredients for which MeSH assigns a UNII instead of a CAS. Recorded to stop re-derivation; do not build a use case on it.",
+      "example_question": "For the agricultural chemicals sockg records in soil-carbon field trials, which are indexed in MeSH (note: only 5 - MeSH assigns UNII rather than CAS to most pesticides)?",
+      "example_questions": [
+        "For the agricultural chemicals sockg records in soil-carbon field trials, which are indexed in MeSH (note: only 5 - MeSH assigns UNII rather than CAS to most pesticides)?",
+        "How many sockg CAS chemicals carry a MeSH registryNumber record?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {\n  { SELECT DISTINCT ?cas WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/sockg> {\n        ?c <http://w3id.org/coso/v1/contaminoso#casNumber> ?cn .\n        FILTER(REGEX(STR(?cn),'^[0-9]{2,7}-[0-9]{2}-[0-9]$'))\n        BIND(STR(?cn) AS ?cas)\n      } } }\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-mesh> {\n    ?m <http://id.nlm.nih.gov/mesh/vocab#registryNumber> ?cas .\n  }\n}",
+      "skeleton_verified": true,
+      "domain": "Chemicals"
+    },
+    {
+      "id": "P2-pubchem-aopwiki-pubchemannotations",
+      "left_kg": "biobricks-aopwiki",
+      "left_predicate": "CHEMINF_000140 (PubChem CID as a BARE LITERAL, on an identifiers.org/pubchem.compound/{cid} id-node reached from the CAS hub via skos:exactMatch)",
+      "left_role": "object",
+      "right_kg": "biobricks-pubchem-annotations",
+      "right_predicate": "oa:hasTarget (the annotated PubChem compound IRI)",
+      "right_role": "object",
+      "shared_key": "PubChem CID",
+      "key_namespace": "biobricks-aopwiki <http://semanticscience.org/resource/CHEMINF_000140> (bare CID literal '2244') -> http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID{cid} (biobricks-pubchem-annotations oa:hasTarget)",
+      "bridge_kg": null,
+      "iri_normalization": "AOP-Wiki's CHEMINF objects are BARE LITERALS (the scheme is encoded in the id-NODE's IRI, not the object), so CONCAT straight onto them: BIND(IRI(CONCAT('http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID', STR(?cidLit))). pubchem-annotations targets carry a 'CID' prefix and the HTTP scheme, and it also has /substance/ targets (ignore - compound only). MUST drive from the SMALL side (AOP-Wiki's 403 CIDs) - an unbounded scan of oa:hasTarget times out at 120s. STRUCTURAL NOTE: the id-nodes hang off a CAS HUB node, not off the AOP directly - aop.stressor/432 -aopkb:has_chemical_entity-> cas/50-78-2 -skos:exactMatch-> pubchem.compound/2244 -CHEMINF_000140-> '2244'. Any query wanting AOP context must traverse the CAS hub; joining on the CID alone yields an orphan id-node.",
+      "verified_count": 401,
+      "verified_count_note": "401 of AOP-Wiki's 403 distinct PubChem CIDs (99.5%) are annotated in biobricks-pubchem-annotations. Verified 2026-07-12, newly possible because the entities.csv refresh exposed AOP-Wiki's CHEMINF identifier predicates. The per-side denominator on the pubchem-annotations side is not stateable (a full oa:hasTarget scan exceeds the 120s limit), so this is '401 of AOP-Wiki's 403', not a fraction of PubChem. Examples: aspirin (CAS 50-78-2 -> CID 2244, 124 PubChem annotations), ibuprofen (CAS 15687-27-1 -> CID 3672, 96 annotations).",
+      "example_question": "For a chemical that triggers an Adverse Outcome Pathway, what curated PubChem toxicology, hazard and pharmacology annotations exist - i.e. which AOPs are triggered by chemicals carrying a given PubChem hazard class?",
+      "example_questions": [
+        "For a chemical that triggers an Adverse Outcome Pathway, what curated PubChem toxicology, hazard and pharmacology annotations exist - i.e. which AOPs are triggered by chemicals carrying a given PubChem hazard class?",
+        "How many AOP-Wiki chemical stressors carry PubChem annotations, joined on the PubChem CID?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?cid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> {\n    ?chem <http://semanticscience.org/resource/CHEMINF_000140> ?cidLit .\n    BIND(STR(?cidLit) AS ?cid)\n    BIND(IRI(CONCAT('http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID', ?cid)) AS ?t)\n  }\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-pubchem-annotations> {\n    ?anno <http://www.w3.org/ns/oa#hasTarget> ?t .\n  }\n}",
+      "skeleton_verified": true,
+      "domain": "Chemicals",
+      "methodology_note": "DE-ISLANDS biobricks-pubchem-annotations further: it is keyed SOLELY on PubChem CID, and until now its only link was P1 (spoke-okn's oboInOwl:hasDbXref). AOP-Wiki materializes a CID for nearly every stressor chemical, so at 401/403 this is close to the best possible link that graph can have. Closes the loop from chemical -> molecular initiating event -> key-event cascade -> adverse outcome (AOP-Wiki) to curated hazard/toxicity/use annotations (PubChem), enabling read-across from an annotated compound to a mechanistically-characterized pathway. CAVEAT: AOP-Wiki's chemical layer is SMALL (403 CIDs) - this is a high-precision, low-volume bridge; the value is coverage completeness, not scale. WARNING - the upstream CHEMINF descriptions in the entities.csv are WRONG for several predicates (it labels 000405=CAS, 000406=InChI, 000408=PubChem; empirically 000405=ChemSpider, 000406=DrugBank, 000408=HMDB, and 000140=PubChem CID). Trusting the published labels silently produces EMPTY joins. Empirically resolved: 000140=PubChem CID (403), 000406=DrugBank (210), 000407=ChEBI (799), 000408=HMDB (408), 000405=ChemSpider (406), 000446=CAS (391), 000567=Wikidata (402), 000568=CompTox DTXSID (391, IRI), 000059=InChIKey (375, IRI), 000412=ChEMBL (333), 000409=KEGG (302), 000564=LipidMaps (34)."
+    },
+    {
+      "id": "P3-pubchem-aopwiki-spokeokn",
+      "left_kg": "biobricks-aopwiki",
+      "left_predicate": "CHEMINF_000140 (PubChem CID, bare literal)",
+      "left_role": "object",
+      "right_kg": "spoke-okn",
+      "right_predicate": "oboInOwl:hasDbXref (http://identifiers.org/pubchem.compound/{cid}) on a ChemicalEntity/Compound node",
+      "right_role": "object",
+      "shared_key": "PubChem CID",
+      "key_namespace": "biobricks-aopwiki <http://semanticscience.org/resource/CHEMINF_000140> (bare CID literal) -> http://identifiers.org/pubchem.compound/{cid} (spoke-okn oboInOwl:hasDbXref)",
+      "bridge_kg": null,
+      "iri_normalization": "Build spoke-okn's xref IRI from AOP-Wiki's bare CID literal: BIND(IRI(CONCAT('http://identifiers.org/pubchem.compound/', STR(?cidLit))). SCHEME TRAP: spoke-okn's xref uses HTTP while AOP-Wiki's own id-node IRIs use HTTPS - the scheme mismatch alone silently zeroes a naive join. Drive from AOP-Wiki's small (403 CID) side.",
+      "verified_count": 87,
+      "verified_count_note": "87 of AOP-Wiki's 403 PubChem CIDs match a spoke-okn compound. Verified 2026-07-12. A NEW AXIS on the existing aopwiki x spoke-okn pair (which already joins on CAS and genes) - it reaches spoke-okn compounds through PubChem identity rather than CAS.",
+      "example_question": "For an AOP-Wiki chemical stressor, what does spoke-okn know about the same compound - its drug/compound identity, protein targets and disease associations?",
+      "example_questions": [
+        "For an AOP-Wiki chemical stressor, what does spoke-okn know about the same compound - its drug/compound identity, protein targets and disease associations?",
+        "How many AOP-Wiki chemical stressors are present in spoke-okn, joined on the PubChem CID?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?cid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> {\n    ?chem <http://semanticscience.org/resource/CHEMINF_000140> ?cidLit .\n    BIND(STR(?cidLit) AS ?cid)\n    BIND(IRI(CONCAT('http://identifiers.org/pubchem.compound/', ?cid)) AS ?x)\n  }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {\n    ?cmp <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n  }\n}",
+      "skeleton_verified": true,
+      "domain": "Chemicals"
+    },
+    {
+      "id": "CB1-chembl-aopwiki-spokeokn",
+      "left_kg": "biobricks-aopwiki",
+      "left_predicate": "CHEMINF_000412 (ChEMBL id, bare literal)",
+      "left_role": "object",
+      "right_kg": "spoke-okn",
+      "right_predicate": "oboInOwl:hasDbXref (http://identifiers.org/chembl.compound/{id})",
+      "right_role": "object",
+      "shared_key": "ChEMBL",
+      "key_namespace": "biobricks-aopwiki <http://semanticscience.org/resource/CHEMINF_000412> (bare ChEMBL id literal) -> http://identifiers.org/chembl.compound/{id} (spoke-okn oboInOwl:hasDbXref)",
+      "bridge_kg": null,
+      "iri_normalization": "CHEMINF_000412 is ChEMBL (the upstream entities.csv label for the CHEMINF predicates is unreliable - see P2's methodology_note). Build spoke-okn's xref IRI from AOP-Wiki's bare literal: BIND(IRI(CONCAT('http://identifiers.org/chembl.compound/', STR(?id))). Drive from the AOP-Wiki side (333 ChEMBL ids).",
+      "verified_count": 75,
+      "verified_count_note": "75 of AOP-Wiki's 333 ChEMBL ids match a spoke-okn compound. Verified 2026-07-12. NOTE: the same ChEMBL axis does NOT reach prokn - prokn is protein-centric and materializes no compound ids (its rdfs:seeAlso carries zero chemical namespaces), verified 0.",
+      "example_question": "For an AOP-Wiki chemical stressor with a ChEMBL identity, what bioactivity and drug context does spoke-okn attach to the same compound?",
+      "example_questions": [
+        "For an AOP-Wiki chemical stressor with a ChEMBL identity, what bioactivity and drug context does spoke-okn attach to the same compound?",
+        "How many AOP-Wiki chemical stressors are present in spoke-okn, joined on the ChEMBL compound id?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?id) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> {\n    ?chem <http://semanticscience.org/resource/CHEMINF_000412> ?lit .\n    BIND(STR(?lit) AS ?id)\n    BIND(IRI(CONCAT('http://identifiers.org/chembl.compound/', ?id)) AS ?x)\n  }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {\n    ?cmp <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n  }\n}",
+      "skeleton_verified": true,
+      "domain": "Chemicals"
+    },
+    {
+      "id": "DB1-drugbank-aopwiki-spokeokn",
+      "left_kg": "biobricks-aopwiki",
+      "left_predicate": "CHEMINF_000406 (DrugBank id, bare literal)",
+      "left_role": "object",
+      "right_kg": "spoke-okn",
+      "right_predicate": "oboInOwl:hasDbXref (http://identifiers.org/drugbank/{id})",
+      "right_role": "object",
+      "shared_key": "DrugBank",
+      "key_namespace": "biobricks-aopwiki <http://semanticscience.org/resource/CHEMINF_000406> (bare DrugBank id literal) -> http://identifiers.org/drugbank/{id} (spoke-okn oboInOwl:hasDbXref)",
+      "bridge_kg": null,
+      "iri_normalization": "CHEMINF_000406 is DrugBank, NOT InChI as the upstream entities.csv claims (see P2's methodology_note - trusting the published CHEMINF labels silently returns empty). Build spoke-okn's xref IRI from the bare literal: BIND(IRI(CONCAT('http://identifiers.org/drugbank/', STR(?id))). Drive from AOP-Wiki's 210 DrugBank ids.",
+      "verified_count": 27,
+      "verified_count_note": "27 of AOP-Wiki's 210 DrugBank ids match a spoke-okn compound. Verified 2026-07-12. Thin - the PubChem CID axis (P3, 87) is the more useful route into spoke-okn's compound space.",
+      "example_question": "Which approved drugs (DrugBank) are chemical stressors of an Adverse Outcome Pathway, and what does spoke-okn record about their targets and indications?",
+      "example_questions": [
+        "Which approved drugs (DrugBank) are chemical stressors of an Adverse Outcome Pathway, and what does spoke-okn record about their targets and indications?",
+        "How many AOP-Wiki chemical stressors carry a DrugBank id present in spoke-okn?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?id) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> {\n    ?chem <http://semanticscience.org/resource/CHEMINF_000406> ?lit .\n    BIND(STR(?lit) AS ?id)\n    BIND(IRI(CONCAT('http://identifiers.org/drugbank/', ?id)) AS ?x)\n  }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {\n    ?cmp <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n  }\n}",
+      "skeleton_verified": true,
+      "domain": "Chemicals"
+    },
+    {
+      "id": "L7-countyfips-climatemodelskg-spatialkg",
+      "left_kg": "climatemodelskg",
+      "left_predicate": "climatepub4kg:admin1_code + climatepub4kg:admin2_code on a cm:City (a COMPOSITE key - the 5-digit county FIPS is latent and must be assembled)",
+      "left_role": "subject",
+      "right_kg": "spatialkg",
+      "right_predicate": "kwg-ont:hasFIPS on a kwg-ont:AdministrativeRegion_2 (county) node",
+      "right_role": "object",
+      "shared_key": "county_FIPS",
+      "key_namespace": "climatemodelskg <https://climatepub4kg.github.io/ontology#admin1_code> (USPS letters 'CA') + <#admin2_code> (3-digit county suffix '075') -> assembled 5-digit FIPS '06075' <-> spatialkg <http://stko-kwg.geog.ucsb.edu/lod/ontology/hasFIPS>",
+      "bridge_kg": "spoke-okn",
+      "iri_normalization": "THE ADVERTISED #fips FIELD IS A TRAP - DO NOT USE IT. climatemodelskg's #fips is a 2-letter FIPS 10-4 COUNTRY code (FI, DA, IZ), attached to cm:Country only; joined against spatialkg:hasFIPS or spoke-okn state FIPS it returns 0. Its #equivalent_fips_code is an EMPTY column (2 distinct values, sample ''). The county key is LATENT and COMPOSITE: assemble it from admin1_code (GeoNames admin1, which for the US is USPS LETTERS 'CA', not a numeric state FIPS) + admin2_code (the 3-digit county FIPS suffix '075'). spatialkg CANNOT decode 'CA'->'06' (its state nodes carry only hasFIPS and rdfs:label, no abbreviation), so spoke-okn is a MANDATORY BRIDGE: its state node IRI .../location/06 carries spoke:abbr 'CA'. Extract the state FIPS from that IRI's local name (REPLACE(STR(?st),'^.*/location/','')) and CONCAT with admin2_code. LEADING ZEROS ARE ALREADY CORRECT AND MUST BE PRESERVED - admin2_code is a STRING '067' and the spoke-okn local name is '06', so CONCAT yields a clean '06075'; do NOT cast to integer anywhere (this KG dodges the scales leading-zero bug). Filter cm:country_code 'US' first - admin2_code is populated for all 30,062 world cities but is only a county FIPS for the US.",
+      "verified_count": 947,
+      "verified_count_secondary": {
+        "climatemodelskg <-> spoke-okn county nodes": 937
+      },
+      "verified_count_note": "947 distinct US county FIPS shared between climatemodelskg and spatialkg's AdministrativeRegion_2 county nodes (30.4% of spatialkg's 3,114 counties); 3,359 of climatemodelskg's 3,367 US cities (99.8%) resolve to a hub county. The parallel count against spoke-okn's own county nodes is 937 - the 10-county gap is counties present in spatialkg with no spoke-okn county node. Verified 2026-07-12. SEMANTICS: this is a city-in-county ATTACHMENT, not a county<->county equivalence - climatemodelskg has no county entities; its cities LAND IN 947 counties. Examples: 06075 San Francisco, 12086 Miami-Dade, 17031 Cook.",
+      "example_question": "For a US county with PFAS contamination or environmental burden on the SAWGraph spatial hub, which climate-modeling publications reference places in that same county?",
+      "example_questions": [
+        "For a US county with PFAS contamination or environmental burden on the SAWGraph spatial hub, which climate-modeling publications reference places in that same county?",
+        "How many US counties on the SAWGraph spatial hub contain a location referenced by climatemodelskg, joined on the assembled county FIPS?"
+      ],
+      "skeleton_query": "PREFIX cm: <https://climatepub4kg.github.io/ontology#>\nPREFIX so: <https://purl.org/okn/frink/kg/spoke-okn/schema/>\nPREFIX kwg: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>\nSELECT (COUNT(DISTINCT ?fips5) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> {\n    ?city cm:country_code \"US\" ; cm:admin1_code ?a1 ; cm:admin2_code ?a2 .\n  }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?st so:abbr ?a1 . }\n  BIND(CONCAT(REPLACE(STR(?st), \"^.*/location/\", \"\"), ?a2) AS ?fips5)\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> {\n    ?ar kwg:hasFIPS ?fips5 ; a kwg:AdministrativeRegion_2 .\n  }\n}",
+      "skeleton_verified": true,
+      "domain": "Geospatial",
+      "methodology_note": "Attaches climatemodelskg to the SAWGraph spatial hub (cluster D/L) for the first time, and thence to S2 cells and every other spatial leaf. Complementary to GN1 (climatemodelskg x spoke-okn on GeoNames id), which is a DIFFERENT axis and does not reach spatialkg. Surfaced by the 2026-07-12 entities.csv refresh, which exposed climatemodelskg's GeoNames geography block - but NOT via the #fips field that refresh advertised (see iri_normalization: that field is a country code and joins to nothing; cataloguing it from the schema alone would have created a phantom crosswalk)."
+    },
+    {
+      "id": "J4-zip-ruralkg-scales",
+      "left_kg": "ruralkg",
+      "left_predicate": "schema:postalCode (facility ZIP; stored with the HTTPS schema.org scheme)",
+      "left_role": "object",
+      "right_kg": "scales",
+      "right_predicate": "niem-core:AddressPostalCode on a jxdm:Court (the court's ZIP JURISDICTION TERRITORY, not a street address)",
+      "right_role": "object",
+      "shared_key": "ZIP5",
+      "key_namespace": "ruralkg <https://schema.org/postalCode> (HTTPS - see the scheme trap) <-> scales <http://release.niem.gov/niem/niem-core/5.0/#AddressPostalCode>",
+      "bridge_kg": null,
+      "iri_normalization": "SCHEME TRAP: ruralkg stores https://schema.org/postalCode, and the endpoint canonicalizes a BRACKETED <https://...> to http - so a bracketed IRI matches NOTHING. Use BIND(IRI(CONCAT('https://schema.org/','postalCode')) AS ?p) (or a var + STRENDS). LEADING ZEROS: ruralkg stores New England ZIPs as 4 digits WITH A TRAILING SPACE ('1002 ' = 01002 Amherst MA); scales mixes plain integers (30236) with strings ('00501'). Normalize on BOTH sides: strip non-digits, then left-pad to 5 (scales also needs a 3-digit pad case). Intersect two DISTINCT sub-SELECTs on a shared ?zip var; never a cross-graph FILTER(STR(?a)=STR(?b)).",
+      "verified_count": 5297,
+      "verified_count_note": "5,297 of ruralkg's 5,420 distinct ZIPs (97.7%) fall inside a scales federal-district-court ZIP territory. Verified 2026-07-12. NOTE ON SEMANTICS: scales' AddressPostalCode is NOT a court's street address - 100 Court entities carry 40,918 ZIPs, i.e. it enumerates each court's ZIP JURISDICTION TERRITORY, which makes scales a ZIP -> federal-district-court RESOLVER. NOTE ON ruralkg: despite its name ruralkg is NOT rural-scoped - its ZIP set is national (Manhattan 10001, Bronx, Yonkers).",
+      "example_question": "Which federal district court has jurisdiction over the ZIP where a given opioid-treatment or rural-health facility is located, and what case activity does scales record there?",
+      "example_questions": [
+        "Which federal district court has jurisdiction over the ZIP where a given opioid-treatment or rural-health facility is located, and what case activity does scales record there?",
+        "How many ruralkg facility ZIPs fall within a scales federal-district-court jurisdiction territory?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {\n  { SELECT DISTINCT ?zip WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/ruralkg> {\n        BIND(IRI(CONCAT('https://schema.org/','postalCode')) AS ?p)\n        ?r ?p ?z0 . }\n      BIND(REPLACE(STR(?z0),\"[^0-9]\",\"\") AS ?d)\n      BIND(IF(STRLEN(?d)=4, CONCAT(\"0\",?d), SUBSTR(?d,1,5)) AS ?zip) } }\n  { SELECT DISTINCT ?zip WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/scales> {\n        ?court <http://release.niem.gov/niem/niem-core/5.0/#AddressPostalCode> ?z1 . }\n      BIND(REPLACE(STR(?z1),\"[^0-9]\",\"\") AS ?e)\n      BIND(IF(STRLEN(?e)=3, CONCAT(\"00\",?e),\n           IF(STRLEN(?e)=4, CONCAT(\"0\",?e), SUBSTR(?e,1,5))) AS ?zip) } }\n}",
+      "skeleton_verified": true,
+      "domain": "Geospatial"
+    },
+    {
+      "id": "J5-zip-dreamkg-scales",
+      "left_kg": "dreamkg",
+      "left_predicate": "schema:postalCode (social-service location ZIP; HTTP scheme - bracketed IRI works)",
+      "left_role": "object",
+      "right_kg": "scales",
+      "right_predicate": "niem-core:AddressPostalCode on a jxdm:Court (ZIP jurisdiction territory)",
+      "right_role": "object",
+      "shared_key": "ZIP5",
+      "key_namespace": "dreamkg <http://schema.org/postalCode> (HTTP) <-> scales <http://release.niem.gov/niem/niem-core/5.0/#AddressPostalCode>",
+      "bridge_kg": null,
+      "iri_normalization": "dreamkg stores the PLAIN HTTP schema.org IRI, so a bracketed <http://schema.org/postalCode> works (unlike ruralkg/sockg, which store https - see J4). Strip non-digits and left-pad both sides to 5. Intersect two DISTINCT sub-SELECTs on a shared ?zip var.",
+      "verified_count": 53,
+      "verified_count_note": "All 53 of dreamkg's distinct ZIPs (100%) fall inside a scales federal-district-court ZIP territory. Verified 2026-07-12. dreamkg is Philadelphia-scoped (190xx-191xx), so the coverage is total but narrow. See J4 for the semantics of scales' AddressPostalCode (a court's ZIP jurisdiction territory, not a street address).",
+      "example_question": "Which federal district court has jurisdiction over the ZIPs where Philadelphia social services (shelter, food, medical care) are located?",
+      "example_questions": [
+        "Which federal district court has jurisdiction over the ZIPs where Philadelphia social services (shelter, food, medical care) are located?",
+        "How many dreamkg social-service ZIPs fall within a scales federal-district-court jurisdiction territory?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {\n  { SELECT DISTINCT ?zip WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/dreamkg> { ?d <http://schema.org/postalCode> ?z0 . }\n      BIND(REPLACE(STR(?z0),\"[^0-9]\",\"\") AS ?a)\n      BIND(IF(STRLEN(?a)=4, CONCAT(\"0\",?a), SUBSTR(?a,1,5)) AS ?zip) } }\n  { SELECT DISTINCT ?zip WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/scales> {\n        ?court <http://release.niem.gov/niem/niem-core/5.0/#AddressPostalCode> ?z1 . }\n      BIND(REPLACE(STR(?z1),\"[^0-9]\",\"\") AS ?e)\n      BIND(IF(STRLEN(?e)=3, CONCAT(\"00\",?e),\n           IF(STRLEN(?e)=4, CONCAT(\"0\",?e), SUBSTR(?e,1,5))) AS ?zip) } }\n}",
+      "skeleton_verified": true,
+      "domain": "Geospatial"
+    },
+    {
+      "id": "J6-zip-dreamkg-ruralkg",
+      "left_kg": "dreamkg",
+      "left_predicate": "schema:postalCode (social-service location ZIP; HTTP scheme)",
+      "left_role": "object",
+      "right_kg": "ruralkg",
+      "right_predicate": "schema:postalCode (treatment-facility ZIP; HTTPS scheme)",
+      "right_role": "object",
+      "shared_key": "ZIP5",
+      "key_namespace": "dreamkg <http://schema.org/postalCode> (HTTP) <-> ruralkg <https://schema.org/postalCode> (HTTPS)",
+      "bridge_kg": null,
+      "iri_normalization": "THE TWO SIDES USE DIFFERENT SCHEMES FOR THE SAME PREDICATE: dreamkg stores http://schema.org/postalCode (bracketed IRI works); ruralkg stores https://schema.org/postalCode, which the endpoint canonicalizes to http when bracketed, so it matches NOTHING - use BIND(IRI(CONCAT('https://schema.org/','postalCode'))) on the ruralkg side. Strip non-digits and left-pad to 5 on both sides (ruralkg has 4-digit ZIPs with a trailing space). Intersect two DISTINCT sub-SELECTs on a shared ?zip var.",
+      "verified_count": 30,
+      "verified_count_note": "30 shared ZIPs, linking 456 dreamkg service entities to 52 ruralkg facilities - 57% of dreamkg's 53 ZIPs (ruralkg has 5,420). Verified 2026-07-12. The overlap exists because ruralkg is NOT actually rural-scoped despite its name - its ZIP set is national and includes urban Philadelphia.",
+      "example_question": "In Philadelphia ZIPs, where do dreamkg's social services (shelter, food, medical care) co-locate with ruralkg's substance-use treatment facilities - i.e. which neighborhoods have treatment access but a social-service desert, or vice versa?",
+      "example_questions": [
+        "In Philadelphia ZIPs, where do dreamkg's social services (shelter, food, medical care) co-locate with ruralkg's substance-use treatment facilities - i.e. which neighborhoods have treatment access but a social-service desert, or vice versa?",
+        "How many ZIPs are shared between dreamkg's social-service locations and ruralkg's treatment facilities?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {\n  { SELECT DISTINCT ?zip WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/dreamkg> { ?d <http://schema.org/postalCode> ?z0 . }\n      BIND(REPLACE(STR(?z0),\"[^0-9]\",\"\") AS ?a)\n      BIND(IF(STRLEN(?a)=4, CONCAT(\"0\",?a), SUBSTR(?a,1,5)) AS ?zip) } }\n  { SELECT DISTINCT ?zip WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/ruralkg> {\n        BIND(IRI(CONCAT('https://schema.org/','postalCode')) AS ?p)\n        ?r ?p ?z1 . }\n      BIND(REPLACE(STR(?z1),\"[^0-9]\",\"\") AS ?e)\n      BIND(IF(STRLEN(?e)=4, CONCAT(\"0\",?e), SUBSTR(?e,1,5)) AS ?zip) } }\n}",
+      "skeleton_verified": true,
+      "domain": "Geospatial"
     }
   ],
   "cluster_notes": {
@@ -3826,6 +4159,27 @@
       "attempted_key": "DOI (extend the publication-DOI join PB1 to nde's 17,416 DOIs)",
       "result": "no shared DOIs (0 overlap - dataset DOIs vs publication DOIs)",
       "diagnosis": "nde carries 17,416 distinct DOIs on generic schema.org predicates (schema:identifier / schema:sameAs / schema:url), but they are DATASET DOIs from biomedical data repositories - ImmPort (10.21430/M3...), and repository prefixes 10.25934/... and 10.48050/... - a registration namespace DISJOINT from journal-article DOIs. climatemodelskg carries 1,910 publication DOIs (cpub:doi, climate-modeling papers) as https://doi.org/ literals. Normalizing both sides to the bare lowercase DOI (strip scheme+host, LCASE) and inner-joining returns 0 - nde's dataset DOIs and climatemodelskg's publication DOIs never coincide (different DOI objects: a dataset vs the paper). Verified live 2026-07-12. NOTE: this is a DOI-axis non-join only; nde joins the federation on other keys (NCBITaxon taxon hub, disease/MONDO, geography) - do NOT read this as 'nde does not join climatemodelskg'. The only DOI-based crosswalk in the federation is PB1 (climatemodelskg x nasa-gesdisc-kg, 651 publication DOIs); nde does not extend it."
+    },
+    {
+      "left_kg": "nikg",
+      "right_kg": "biobricks-mesh",
+      "attempted_key": "MeSH descriptor id (nikg declares two mesh_* classes: https://metadata.phila.gov/mesh_D000091368 and mesh_D005842)",
+      "result": "mechanically resolvable (2/2 descriptors match) but SEMANTICALLY EMPTY - not a justice<->biomedical bridge",
+      "diagnosis": "nikg's two mesh_* classes are phila.gov-namespaced LOCAL class URIs with a MeSH descriptor id baked into the local name (extract with BIND(IRI(CONCAT('http://id.nlm.nih.gov/mesh/', STRAFTER(STR(?cls),'mesh_'))))). Both resolve cleanly in biobricks-mesh - but they are D000091368 = 'Census Tract' (MeSH tree E05/N06, epidemiologic methods & health-care statistics) and D005842 = 'Geographic Locations' (tree Z01, Geographicals). NEITHER carries any disease, injury or firearm semantics: nikg simply borrowed two MeSH GEOGRAPHIC descriptors as class URIs for its census tracts (1,142 entities) and incident locations (30,089 entities) - the same things already typed by its own metadata.phila.gov/CensusTract and /Location classes. The join adds zero information (it tells you a census tract is a 'Census Tract'), and no MeSH hierarchy walk from these terms reaches anything health-related that applies to nikg's incidents. Verified live 2026-07-12. Recorded PRECISELY BECAUSE the class names look like a biomedical bridge at a glance and will otherwise be re-proposed. If nikg later adds real health descriptors, the local-name extraction rule above is the way in. NOTE: this is a MeSH-axis non-join only - nikg joins the federation on geography (county FIPS, S2), so do NOT read it as 'nikg does not join'."
+    },
+    {
+      "left_kg": "dreamkg",
+      "right_kg": "spatialkg",
+      "attempted_key": "ZIP5 (dreamkg schema:postalCode -> spatialkg kwg-ont:ZipCodeArea)",
+      "result": "0 - spatialkg declares ZipCodeArea in the T-Box but materializes ZERO instances",
+      "diagnosis": "kwg-ont:ZipCodeArea appears in spatialkg (and hydrologykg) ONLY as the subject of rdfs:subClassOf / owl:equivalentClass / owl:sameAs axioms - there are no instances, so no ZIP-keyed entity exists to join to. Verified live 2026-07-12. ZIP is therefore NOT a usable route into the SAWGraph spatial hub for ANY KG; the hub is reachable on county FIPS and S2 cells only (clusters D/K/L). NOTE: this is a ZIP-axis non-join only - dreamkg joins spoke-okn and others on other keys, so do NOT read it as 'dreamkg does not join'."
+    },
+    {
+      "left_kg": "ruralkg",
+      "right_kg": "spatialkg",
+      "attempted_key": "ZIP5 (ruralkg schema:postalCode -> spatialkg kwg-ont:ZipCodeArea)",
+      "result": "0 - spatialkg declares ZipCodeArea in the T-Box but materializes ZERO instances",
+      "diagnosis": "Same root cause as the dreamkg x spatialkg ZIP non-join: spatialkg's kwg-ont:ZipCodeArea is a pure T-Box class with no instances, so ruralkg's 5,420 facility ZIPs have nothing to match. Verified live 2026-07-12. Reach the spatial hub on county FIPS or S2 cells instead. NOTE: ZIP-axis only - ruralkg joins scales (J4), dreamkg (J6), spoke-okn and rdkg on other keys."
     }
   ],
   "superseded_non_joins": [
