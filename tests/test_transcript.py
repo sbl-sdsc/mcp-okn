@@ -87,6 +87,92 @@ def test_query_log_is_isolated_per_session(monkeypatch):
     assert [e["graphs"] for e in session.entries()] == [["spoke"]]
 
 
+def _q(kg: str) -> str:
+    return f"SELECT * WHERE {{ GRAPH <https://purl.org/okn/frink/kg/{kg}> {{ ?s ?p ?o }} }}"
+
+
+def test_query_log_is_isolated_per_scope():
+    """Concurrent analyses in ONE session must not see each other's queries.
+
+    Regression for the real bug: parallel subagents all speak over their parent's
+    single MCP client connection, so keying the log by `ServerSession` alone put
+    every agent in one log — and `create_chat_transcript` then rendered whichever
+    queries happened to be there. Each analysis names its own `scope` instead.
+    """
+    try:
+        session.record(_q("sawgraph"), "json", result=JSON_RESULT, scope="agent-a")
+        session.record_visualization(
+            "sawgraph", "classDiagram\n  class A", scope="agent-a"
+        )
+        session.record(_q("prokn"), "json", result=JSON_RESULT, scope="agent-b")
+
+        # Neither agent sees the other's work.
+        assert [e["graphs"] for e in session.entries("agent-a")] == [["sawgraph"]]
+        assert [e["graphs"] for e in session.entries("agent-b")] == [["prokn"]]
+        assert [v["shortname"] for v in session.visualizations("agent-a")] == [
+            "sawgraph"
+        ]
+        assert session.visualizations("agent-b") == []
+        # ...and the unscoped default log stays empty: scoped work never bleeds into it.
+        assert session.entries() == []
+
+        # One agent resetting its own log must not wipe a sibling's mid-run.
+        assert session.reset("agent-a") == 1
+        assert session.entries("agent-a") == []
+        assert [e["graphs"] for e in session.entries("agent-b")] == [["prokn"]]
+    finally:
+        session.reset("agent-a")
+        session.reset("agent-b")
+
+
+@pytest.mark.asyncio
+async def test_transcript_renders_only_its_own_scope():
+    """A scoped transcript carries that scope's queries and no one else's."""
+    try:
+        session.record(_q("sawgraph"), "json", result=JSON_RESULT, scope="agent-a")
+        session.record(_q("prokn"), "json", result=JSON_RESULT, scope="agent-b")
+
+        md = await create_chat_transcript(model="claude-opus-4-8", scope="agent-a")
+        assert "kg/sawgraph" in md
+        assert "kg/prokn" not in md  # the sibling agent's query must not appear
+    finally:
+        session.reset("agent-a")
+        session.reset("agent-b")
+
+
+@pytest.mark.asyncio
+async def test_transcript_drops_foreign_queries_when_kgs_used_given():
+    """Safety net: even with NO scope, a query touching none of `kgs_used` is
+    dropped and reported — never silently shipped as if it were ours.
+
+    This is what makes a forgotten `scope` a loud, recoverable mistake instead of
+    a transcript that authoritatively presents another analysis's SPARQL.
+    """
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)  # ours
+    session.record(_q("prokn"), "json", result=JSON_RESULT)  # a sibling agent's
+
+    md = await create_chat_transcript(model="claude-opus-4-8", kgs_used=["sawgraph"])
+    assert "kg/sawgraph" in md
+    assert "kg/prokn" not in md
+    assert "mcp-okn WARNING" in md
+    assert "prokn" in md.split("\n")[0]  # the warning names the foreign graph
+
+    # The warning is an HTML comment, so a transcript saved verbatim to .md is
+    # still a clean document.
+    assert md.startswith("<!--")
+
+
+@pytest.mark.asyncio
+async def test_transcript_keeps_queries_that_touch_kgs_used():
+    """The safety net must not eat legitimate queries (no false positives)."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_chat_transcript(
+        model="claude-opus-4-8", kgs_used=["sawgraph", "prokn"]
+    )
+    assert "kg/sawgraph" in md
+    assert "mcp-okn WARNING" not in md
+
+
 def test_session_skips_errored_queries():
     assert session.record("BAD QUERY", "json", error="boom") is False
     assert session.entries() == []

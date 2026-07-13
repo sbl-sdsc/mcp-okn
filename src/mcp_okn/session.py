@@ -1,19 +1,35 @@
-"""Per-session log of SPARQL queries executed during a session.
+"""Per-session, per-scope log of SPARQL queries executed during a session.
 
 Every query run through the server is appended here so `create_chat_transcript`
 can render a faithful, ground-truth record of what actually hit the endpoint —
 rather than relying on the model to re-supply queries from memory.
 
-The log is scoped to the current MCP session. Under stdio (a single local
-client) there is effectively one log; but when the server is run as a REMOTE
-(HTTP/SSE) server, several chats share one process, each on its own
-`ServerSession`. Keying the log by that session keeps one chat's queries,
-diagrams, and transcript from leaking into another's. Call `reset()` (exposed as
-the `reset_query_log` tool) at the start of a new analysis to scope a transcript
-to just that session's work so far.
+State is keyed by TWO things:
+
+1. The current MCP session. Under stdio (a single local client) there is
+   effectively one session; but when the server is run as a REMOTE (HTTP/SSE)
+   server, several chats share one process, each on its own `ServerSession`.
+   Keying by that session keeps one chat's queries out of another's.
+
+2. A caller-supplied `scope` label, defaulting to ``"default"``.
+
+The session key alone is NOT enough, which is why (2) exists. Several concurrent
+ANALYSES routinely share one `ServerSession` — most importantly parallel
+subagents, which all speak to the server over their parent's single client
+connection. To the server these are one session, so without a scope their queries
+interleave in one log and `create_chat_transcript` renders whatever happens to be
+there: an agent's transcript silently ships another agent's SPARQL and drops its
+own. (This bit us for real while authoring the crosswalk catalog on 2026-07-13 —
+every parallel authoring agent hit it independently.) MCP carries no agent
+identity, so the server cannot separate them on its own; the caller must say which
+analysis a query belongs to by passing a unique `scope`.
+
+Call `reset()` (the `reset_query_log` tool) at the start of an analysis to clear
+its scope. Scopes are independent: resetting one never touches another.
 
 State for a session is dropped automatically when its connection closes and the
-`ServerSession` is garbage-collected (the store is held in a `WeakKeyDictionary`).
+`ServerSession` is garbage-collected (the stores are held in a
+`WeakKeyDictionary`).
 """
 
 from __future__ import annotations
@@ -41,32 +57,52 @@ class _Store:
         self.last_transcript: str | None = None
 
 
-# Fallback store used when there is no active MCP request (direct calls in tests,
-# or any code path outside a request). All such callers share this one store, so
-# behavior matches the previous process-global log.
-_default_store = _Store()
+#: Scope used when the caller doesn't name one. A single (non-parallel) analysis
+#: never has to think about scopes; it just uses this one.
+DEFAULT_SCOPE = "default"
 
-# Per-session stores, keyed by the live `ServerSession` object. Weak keys so a
-# store is reclaimed when its connection closes — no manual cleanup, no unbounded
-# growth on a long-running remote server.
-_stores: weakref.WeakKeyDictionary[Any, _Store] = weakref.WeakKeyDictionary()
+# Fallback scope table used when there is no active MCP request (direct calls in
+# tests, or any code path outside a request). All such callers share this table,
+# so behavior matches the previous process-global log.
+_default_scopes: dict[str, _Store] = {}
+
+# Per-session scope tables, keyed by the live `ServerSession` object. Weak keys so
+# a session's stores are reclaimed when its connection closes — no manual cleanup,
+# no unbounded growth on a long-running remote server.
+_stores: weakref.WeakKeyDictionary[Any, dict[str, _Store]] = weakref.WeakKeyDictionary()
 
 
-def _current_store() -> _Store:
-    """Return the store for the current MCP session (or the shared fallback).
+def _scope_table() -> dict[str, _Store]:
+    """The ``{scope: _Store}`` table for the current MCP session.
 
     Resolves the active `ServerSession` via the FastMCP request context. Outside
     a request — or if the context is unavailable for any reason — falls back to a
-    single process-wide store so non-request callers (e.g. tests) keep working.
+    single process-wide table so non-request callers (e.g. tests) keep working.
     """
     session_obj = _current_session()
     if session_obj is None:
-        return _default_store
-    store = _stores.get(session_obj)
+        return _default_scopes
+    table = _stores.get(session_obj)
+    if table is None:
+        table = {}
+        _stores[session_obj] = table
+    return table
+
+
+def _current_store(scope: str | None = None) -> _Store:
+    """Return the store for ``scope`` within the current session, creating it if new."""
+    table = _scope_table()
+    key = scope or DEFAULT_SCOPE
+    store = table.get(key)
     if store is None:
         store = _Store()
-        _stores[session_obj] = store
+        table[key] = store
     return store
+
+
+def scopes() -> list[str]:
+    """Names of the scopes that currently hold state in this session."""
+    return sorted(_scope_table())
 
 
 def _current_session() -> Any | None:
@@ -107,7 +143,13 @@ def _result_row_count(result: Any) -> int:
     return 0
 
 
-def record(query: str, fmt: str, result: Any = None, error: str | None = None) -> bool:
+def record(
+    query: str,
+    fmt: str,
+    result: Any = None,
+    error: str | None = None,
+    scope: str | None = None,
+) -> bool:
     """Append one executed query to the session log if it returned results.
 
     Queries that errored or returned zero rows are NOT logged — the transcript
@@ -119,6 +161,9 @@ def record(query: str, fmt: str, result: Any = None, error: str | None = None) -
         fmt: The requested result format (``json``/``csv``/``tsv``).
         result: The value returned by ``run_sparql`` on success.
         error: The error message if the query failed.
+        scope: Which analysis this query belongs to. Concurrent analyses sharing
+            one MCP session (e.g. parallel subagents) MUST each pass their own
+            scope, or their queries interleave in one log.
 
     Returns:
         True if the query was logged, False if it was skipped (error/empty).
@@ -151,16 +196,18 @@ def record(query: str, fmt: str, result: Any = None, error: str | None = None) -
             "format": result.get("format", fmt),
             "text": result.get("text", ""),
         }
-    _current_store().log.append(entry)
+    _current_store(scope).log.append(entry)
     return True
 
 
-def entries() -> list[dict[str, Any]]:
-    """Return a shallow copy of the logged queries, in execution order."""
-    return list(_current_store().log)
+def entries(scope: str | None = None) -> list[dict[str, Any]]:
+    """Return a shallow copy of ``scope``'s logged queries, in execution order."""
+    return list(_current_store(scope).log)
 
 
-def record_visualization(shortname: str, mermaid: str) -> None:
+def record_visualization(
+    shortname: str, mermaid: str, scope: str | None = None
+) -> None:
     """Record a schema visualization (Mermaid diagram) for the transcript.
 
     Like queries, diagrams are logged automatically as they are produced so
@@ -175,7 +222,7 @@ def record_visualization(shortname: str, mermaid: str) -> None:
         "shortname": shortname,
         "mermaid": mermaid,
     }
-    visualizations = _current_store().visualizations
+    visualizations = _current_store(scope).visualizations
     for i, existing in enumerate(visualizations):
         if existing.get("shortname") == shortname:
             visualizations[i] = entry
@@ -183,32 +230,35 @@ def record_visualization(shortname: str, mermaid: str) -> None:
     visualizations.append(entry)
 
 
-def visualizations() -> list[dict[str, Any]]:
-    """Return a shallow copy of the logged schema visualizations, in order."""
-    return list(_current_store().visualizations)
+def visualizations(scope: str | None = None) -> list[dict[str, Any]]:
+    """Return a shallow copy of ``scope``'s schema visualizations, in order."""
+    return list(_current_store(scope).visualizations)
 
 
-def set_last_transcript(markdown: str) -> None:
+def set_last_transcript(markdown: str, scope: str | None = None) -> None:
     """Store the most recently rendered transcript markdown.
 
     Exposed read-only via the ``transcript://session/latest`` MCP resource so a
     client can fetch/save the document directly, independent of how (or whether)
     the model re-emits it.
     """
-    _current_store().last_transcript = markdown
+    _current_store(scope).last_transcript = markdown
 
 
-def last_transcript() -> str | None:
+def last_transcript(scope: str | None = None) -> str | None:
     """Return the most recently rendered transcript markdown, or None."""
-    return _current_store().last_transcript
+    return _current_store(scope).last_transcript
 
 
-def reset() -> int:
-    """Clear the session log (queries, visualizations, last transcript).
+def reset(scope: str | None = None) -> int:
+    """Clear ONE scope's log (queries, visualizations, last transcript).
+
+    Other scopes are untouched, so one analysis resetting its own log can never
+    wipe a concurrently-running analysis's.
 
     Returns the number of logged queries removed.
     """
-    store = _current_store()
+    store = _current_store(scope)
     n = len(store.log)
     store.log.clear()
     store.visualizations.clear()

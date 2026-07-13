@@ -41,6 +41,7 @@ async def sparql_query(
     format: str = "json",
     exploratory: bool = False,
     compact: bool = False,
+    scope: str | None = None,
 ) -> Any:
     """Run a SPARQL query against the OKN federation endpoint.
 
@@ -92,6 +93,13 @@ async def sparql_query(
             self-describing dict-row shape below. Only affects json (csv/tsv and
             errors are unchanged) and only the returned payload — the transcript
             log is unaffected.
+        scope: OPTIONAL log scope. Omit it for a normal single analysis. Pass a
+            unique label when SEVERAL ANALYSES RUN CONCURRENTLY against this
+            server — most importantly parallel subagents, which all share ONE MCP
+            session. Without it their queries interleave in a single log and one
+            agent's SPARQL ends up in another's transcript. Use the SAME scope
+            string in `reset_query_log`, `sparql_query` and
+            `create_chat_transcript` for a given analysis.
 
     Returns:
         For json (default): `{"vars": [...], "rows": [...], "row_count": N}`.
@@ -111,7 +119,7 @@ async def sparql_query(
     try:
         result = await run_sparql(query, fmt=format)
         if not exploratory:
-            session.record(query, format, result=result)
+            session.record(query, format, result=result, scope=scope)
         # Rescue the common "got lost on an empty result" failure: an
         # ontology-id join most often returns nothing because the predicate uses
         # a different namespace than assumed, or the id is only reachable via a
@@ -150,6 +158,7 @@ async def expand_ontology_term(
     direction: str = "descendants",
     include_self: bool = True,
     limit: int = 1000,
+    scope: str | None = None,
 ) -> Any:
     """Expand an ontology term to its full subtree/closure via `ubergraph`.
 
@@ -169,6 +178,11 @@ async def expand_ontology_term(
             (reflexive `*` path); if False, return only strict descendants/
             ancestors (non-reflexive `+` path).
         limit: Max rows to return.
+        scope: OPTIONAL log scope — the same string passed to `sparql_query` and
+            `create_chat_transcript`. Omit for a normal single analysis; pass a
+            unique label when several analyses run concurrently against this
+            server (parallel subagents share one MCP session, so an unscoped log
+            mixes their entries).
 
     Returns the matching terms with their `rdfs:label`.
     """
@@ -197,7 +211,7 @@ SELECT DISTINCT ?term ?label WHERE {{
 }} LIMIT {int(limit)}"""
     try:
         result = await run_sparql(query)
-        session.record(query, "json", result=result)
+        session.record(query, "json", result=result, scope=scope)
         return result
     except SparqlError as exc:
         return {"error": str(exc), "query": query}

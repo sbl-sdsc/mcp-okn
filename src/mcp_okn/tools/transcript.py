@@ -16,29 +16,51 @@ from ..sparql import FEDERATION_ENDPOINT, named_graph
 
 
 @mcp.tool()
-async def reset_query_log() -> dict[str, Any]:
-    """Clear the session's query log (and logged diagrams) for a fresh scope.
+async def reset_query_log(scope: str | None = None) -> dict[str, Any]:
+    """Clear this analysis's query log (and logged diagrams) for a fresh start.
 
     Call this at the START of a new analysis. Every subsequent `sparql_query`
     (and `expand_ontology_term`) call is logged automatically, as is every
     `visualize_schema` diagram, and `create_chat_transcript` renders them as the
     ground-truth record of what actually ran — so you don't have to re-supply
     queries or diagrams from memory.
+
+    Args:
+        scope: OPTIONAL log scope. Omit for a normal single analysis. If SEVERAL
+            ANALYSES RUN CONCURRENTLY against this server — most importantly
+            parallel subagents, which all share ONE MCP session — each MUST pass
+            its own unique scope, and pass the SAME string to `sparql_query` and
+            `create_chat_transcript`. Without it, their queries interleave in one
+            log and one agent's SPARQL lands in another's transcript. Resetting
+            one scope never touches another.
+
+    Returns:
+        `{"cleared": N, "scope": ..., "active_scopes": [...]}`. If `active_scopes`
+        shows scopes you did not create, other analyses ARE running concurrently
+        in this session — pass a `scope` from here on.
     """
-    removed = session.reset()
-    return {"cleared": removed}
+    removed = session.reset(scope)
+    return {
+        "cleared": removed,
+        "scope": scope or session.DEFAULT_SCOPE,
+        "active_scopes": session.scopes(),
+    }
 
 
 @mcp.tool()
-async def get_query_log() -> list[dict[str, Any]]:
-    """Return the SPARQL queries logged so far this session, in execution order.
+async def get_query_log(scope: str | None = None) -> list[dict[str, Any]]:
+    """Return the SPARQL queries logged so far for this analysis, in order.
 
     Only queries that returned rows and were not marked exploratory are present.
     Each entry has `timestamp`, `sparql` (verbatim), `graphs` (KG shortnames),
     `format`, `row_count`, and `results` (capped sample). Useful to inspect what
     will appear in `create_chat_transcript`.
+
+    Args:
+        scope: OPTIONAL log scope — the same one passed to `sparql_query`. Omit
+            for a normal single analysis.
     """
-    return session.entries()
+    return session.entries(scope)
 
 
 @mcp.tool()
@@ -53,6 +75,7 @@ async def create_chat_transcript(
     include_intermediate_rows: bool = False,
     include_visualizations: bool = True,
     max_result_rows: int | None = 5,
+    scope: str | None = None,
 ) -> Any:
     """Build a reproducible, detailed transcript of a Proto-OKN session.
 
@@ -113,6 +136,14 @@ async def create_chat_transcript(
             visualizations" section with every `visualize_schema` diagram logged
             this session, each in a fenced ```mermaid block. These are recorded
             automatically — you do NOT need to re-supply them.
+        scope: OPTIONAL log scope — the same string passed to `reset_query_log`
+            and `sparql_query`. Omit for a normal single analysis. Pass a unique
+            label when SEVERAL ANALYSES RUN CONCURRENTLY against this server
+            (parallel subagents share ONE MCP session, so an unscoped log mixes
+            their queries and this transcript would render whichever happened to
+            be logged). As a backstop, when `kgs_used` is given, any auto-logged
+            query touching NONE of those KGs is dropped from the transcript and
+            reported — so a forgotten scope is loud, not silent.
 
     Returns:
         For `markdown`: the transcript string. Each conversation turn is
@@ -151,8 +182,30 @@ async def create_chat_transcript(
     """
     when = date or _date.today().isoformat()
     exchanges = exchanges or []
-    log = session.entries() if include_query_log else []
-    visualizations = session.visualizations() if include_visualizations else []
+    log = session.entries(scope) if include_query_log else []
+    visualizations = session.visualizations(scope) if include_visualizations else []
+
+    # SAFETY NET against a foreign query landing in this transcript.
+    #
+    # The auto-log is per (session, scope), but concurrent subagents share ONE MCP
+    # session, so an analysis that forgets to pass `scope` sees its siblings'
+    # queries too. A transcript that ships someone else's SPARQL is worse than one
+    # with no query log at all — it looks authoritative and is wrong. So when the
+    # caller has told us which KGs this transcript is ABOUT, drop auto-logged
+    # queries that touch NONE of them, and say so in the payload rather than
+    # silently including or silently dropping. Entries whose graphs we can't
+    # determine are kept (we can't prove they're foreign).
+    dropped_foreign: list[dict[str, Any]] = []
+    if log and kgs_used:
+        wanted = set(kgs_used)
+        kept: list[dict[str, Any]] = []
+        for entry in log:
+            graphs = entry.get("graphs") or []
+            if graphs and not (set(graphs) & wanted):
+                dropped_foreign.append(entry)
+            else:
+                kept.append(entry)
+        log = kept
 
     # Infer KGs from the log (and any diagrams) when not passed explicitly.
     if kgs_used is None:
@@ -168,8 +221,25 @@ async def create_chat_transcript(
         kgs_used = names
     kgs = [{"shortname": name, "named_graph": named_graph(name)} for name in kgs_used]
 
+    warnings: list[str] = []
+    if dropped_foreign:
+        foreign_graphs = sorted(
+            {g for e in dropped_foreign for g in (e.get("graphs") or [])}
+            - set(kgs_used)
+        )
+        n = len(dropped_foreign)
+        noun = "query that touches" if n == 1 else "queries that touch"
+        warnings.append(
+            f"Dropped {n} auto-logged {noun} none of "
+            f"`kgs_used` (graphs: {', '.join(foreign_graphs)}). That is almost "
+            "certainly ANOTHER concurrently-running analysis's work — parallel "
+            "subagents share one MCP session, so an unscoped log mixes them. They "
+            "are NOT in the transcript. To make this deterministic, pass a unique "
+            "`scope` to reset_query_log / sparql_query / create_chat_transcript."
+        )
+
     if format == "json":
-        return {
+        payload: dict[str, Any] = {
             "title": title,
             "date": when,
             "model": model,
@@ -179,6 +249,9 @@ async def create_chat_transcript(
             "visualizations": visualizations,
             "sparql_endpoint": FEDERATION_ENDPOINT,
         }
+        if warnings:
+            payload["warnings"] = warnings
+        return payload
 
     if format != "markdown":
         return {"error": f"Unsupported format {format!r}; use 'markdown' or 'json'."}
@@ -257,8 +330,16 @@ async def create_chat_transcript(
             lines += ["```mermaid", (viz.get("mermaid") or "").strip(), "```", ""]
 
     markdown = "\n".join(lines)
-    # Publish for direct client fetch/save via the transcript resource.
-    session.set_last_transcript(markdown)
+    # Publish for direct client fetch/save via the transcript resource. The stored
+    # document is the clean one — warnings are for the caller, not the artifact.
+    session.set_last_transcript(markdown, scope)
+    if warnings:
+        # Surfaced as an HTML comment: the markdown path must return a plain string
+        # (that contract is what lets the caller save the result verbatim), and a
+        # comment renders invisibly if the document is written to a .md as-is —
+        # while still being right there in the tool result for the caller to act on.
+        note = "\n".join(f"<!-- mcp-okn WARNING: {w} -->" for w in warnings)
+        return f"{note}\n{markdown}"
     return markdown
 
 

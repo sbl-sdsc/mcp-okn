@@ -60,7 +60,7 @@ async def get_schema(shortname: str, compact: bool = True) -> dict[str, Any]:
 
 
 @mcp.tool()
-async def visualize_schema(shortname: str) -> dict[str, Any]:
+async def visualize_schema(shortname: str, scope: str | None = None) -> dict[str, Any]:
     """Generate a Mermaid class diagram of a KG's schema.
 
     Builds the diagram deterministically from `get_schema` (no drafting needed):
@@ -77,6 +77,11 @@ async def visualize_schema(shortname: str) -> dict[str, Any]:
     Args:
         shortname: The KG shortname (e.g. `spoke-genelab`), as returned by
             `list_kgs`.
+        scope: OPTIONAL log scope — the same string passed to `sparql_query` and
+            `create_chat_transcript`. Omit for a normal single analysis; pass a
+            unique label when several analyses run concurrently against this
+            server (parallel subagents share one MCP session, so an unscoped log
+            mixes their entries).
 
     Returns:
         `{"shortname": ..., "mermaid": ..., "mermaid_block": ...}`.
@@ -91,11 +96,14 @@ async def visualize_schema(shortname: str) -> dict[str, Any]:
     incorrect picture.
 
     The diagram is logged to the session automatically (like queries), so
-    `create_chat_transcript` renders it without you re-supplying it.
+    `create_chat_transcript` renders it without you re-supplying it. Pass the same
+    `scope` you pass to `sparql_query` / `create_chat_transcript` when several
+    analyses run concurrently against this server (e.g. parallel subagents, which
+    share one MCP session); omit it otherwise.
     """
     result = await schema.visualize_schema(shortname)
     if "mermaid" in result:
-        session.record_visualization(shortname, result["mermaid"])
+        session.record_visualization(shortname, result["mermaid"], scope=scope)
         # Pre-fenced form so the model can echo it verbatim without redrawing.
         result["mermaid_block"] = f"```mermaid\n{result['mermaid']}\n```"
     return result
