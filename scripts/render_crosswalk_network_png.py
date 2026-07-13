@@ -95,8 +95,14 @@ def nr(n):
 
 
 G = nx.Graph()
-G.add_nodes_from(nodeset)
-for pr, grp in pg.items():
+# Insert nodes and edges in a STABLE order. `nodeset` is a set, so iterating it
+# directly hands networkx a different node order on every process (str hashing is
+# randomized by PYTHONHASHSEED). spring_layout assigns its seeded starting
+# positions in node-insertion order, so an unsorted set made the layout — and thus
+# the rendered PNG — non-reproducible despite seed=11: three runs over identical
+# input produced three different images. Sorting makes the render deterministic.
+G.add_nodes_from(sorted(nodeset))
+for pr, grp in sorted(pg.items()):
     G.add_edge(pr[0], pr[1], weight=0.3 + lw(max(L[3] for L in grp)) * 0.12)
 pos = nx.spring_layout(G, k=0.62, iterations=600, weight="weight", seed=11)
 
