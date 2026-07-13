@@ -1298,7 +1298,8 @@
       "example_questions": [
         "For a model organism used in a NASA GeneLab spaceflight experiment, what biomedical context does spoke-okn attach to the same species? ALWAYS expand the clade: only 2 taxa match by exact id, but clade expansion through ubergraph reaches 33,313 spoke-okn taxa.",
         "How many organisms do spoke-genelab and spoke-okn share - by exact NCBITaxon id, and after clade expansion through ubergraph?"
-      ]
+      ],
+      "skeleton_returns": "does not complete — HTTP 429 (endpoint server-side operation timeout) on the TransitivePath; returns no count. Re-checked 2026-07-12, including a rewrite binding both endpoint sets before the closure."
     },
     {
       "id": "D10-ncbitaxon-spokegenelab-microbiome-ubergraph",
@@ -2325,7 +2326,8 @@
         "Which counties accumulate the most ufokn flood Risk-Points once their S2 Level-13 cells are rolled up through the spatialkg admin regions?"
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {\n  { SELECT DISTINCT ?cell WHERE {\n    GRAPH <https://purl.org/okn/frink/kg/ufokn> {\n      ?bn ?pn \"s2Level13\" .\n      ?bn ?pv ?s2id .\n      FILTER(CONTAINS(STR(?pv),'schema.org/value'))\n    }\n    BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.',STR(?s2id))) AS ?cell)\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }\n}",
-      "skeleton_verified": false
+      "skeleton_verified": false,
+      "skeleton_returns": "does not complete — HTTP 429 (endpoint server-side operation timeout); returns no count. The stored 97,087 is a SAMPLED lower bound, not an exact COUNT(DISTINCT), so no exact skeleton could reproduce it."
     },
     {
       "id": "O2-s2-ufokn-fiokg",
@@ -2358,7 +2360,8 @@
       "skeleton_query": "SELECT (COUNT(DISTINCT ?cell) AS ?sampleCells) (COUNT(DISTINCT ?shared) AS ?inFiokg) WHERE {\n  { SELECT ?cell WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/ufokn> { ?bn ?pn \"s2Level13\" . ?bn ?pv ?s2id . FILTER(CONTAINS(STR(?pv),'schema.org/value')) }\n      BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.',STR(?s2id))) AS ?cell)\n  } LIMIT 5000 }\n  OPTIONAL { GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?cell } BIND(?cell AS ?shared) }\n}",
       "skeleton_verified": false,
       "methodology_note": "DIRECT leaf-to-leaf S2 co-location: ufokn flood features and fiokg EPA facilities sharing the same S2 Level-13 cell (both are S2 leaves on spatialkg - ufokn O1, fiokg N1 - and share the s2.level13.{id} IRI form directly, so no spatialkg bridge is needed to meet in a cell). SAMPLED LOWER BOUND verified 2026-06-19: in the first 5,000 ufokn s2Level13 feature nodes (4,267 distinct L13 cells), 2,461 cells (58%) also contain an fiokg facility. The EXACT national count is infeasible within the 90s tool limit (ufokn carries 11.7M S2 property nodes / 97,087 distinct L13 cells; a full distinct-scan join exceeds the limit and the registry otherwise asserts leaf-to-leaf via the hub). The 58% co-location rate is high because ufokn covers dense urban areas where EPA-regulated facilities are common. NOTE: ufokn has no alternative join key - its Place names are generic geohash labels (\"building flooded {geohash}\"), its identifiers are ufokn-internal (ufokn.org/id/urmi/{geohash}), and it carries no county/ZIP/NHD/NWIS id - so S2 is its only attachment; ufokn<->hydrologykg (IL) and ufokn<->sawgraph (ME) are possible where coverage overlaps but were not separately verified (regional sampling unreliable) - assert via the hub.",
-      "domain": "Geospatial"
+      "domain": "Geospatial",
+      "skeleton_returns": "does not complete — HTTP 429 (endpoint server-side operation timeout); returns no count. The stored 2,461 is a SAMPLED lower bound, not an exact COUNT(DISTINCT), so no exact skeleton could reproduce it."
     },
     {
       "id": "Q1-drugbank-rdkg-spokeokn",
