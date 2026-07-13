@@ -282,6 +282,12 @@ git clone https://github.com/sbl-sdsc/mcp-okn.git
 
 ### Register the server
 
+**Working inside this repo?** It ships a project-scoped [`.mcp.json`](.mcp.json), so
+Claude Code offers the **local** server automatically — no registration needed. Use it
+when developing: it serves the crosswalk catalog from your working tree, whereas the
+hosted `mcp-okn-dev` endpoint serves whatever was last deployed and will not reflect
+local edits to `crosswalks.json` until it is redeployed.
+
 For Claude Code, register it from the CLI:
 
 ```bash

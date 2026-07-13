@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "mcp-okn": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        ".",
+        "mcp-okn"
+      ]
+    }
+  }
+}
