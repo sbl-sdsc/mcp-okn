@@ -43,7 +43,7 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>35 knowledge graphs, 160 verified crosswalks (verified 2026-07-12). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
+  <p>35 knowledge graphs, 159 verified crosswalks (verified 2026-07-12). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
   <p class="tip">&#9654; <b>Hover</b> a node or edge for detail · <b>drag</b> to rearrange · <b>scroll</b> to zoom · <b>double-click</b> a node to unpin it.<br>&#9654; <b>Click a legend item</b> &mdash; a domain (e.g. <b>Chemicals</b>) or a line style (e.g. <b>via ubergraph</b>) &mdash; to toggle those edges.</p>
 </header>
 <div class="bar" id="legend"></div>
@@ -100,17 +100,11 @@ const R=[
 ["C",["biobricks-aopwiki","spoke-okn"],87,"PubChem CID"],
 ["C",["biobricks-pubchem-annotations","spoke-okn"],762,"PubChem CID"],
 
-["D",["biomarkerkg","nde"],54,"DOID"],
-["D",["spoke-okn","biomarkerkg"],79,"DOID"],
 ["D",["spoke-okn","nde"],20,"DOID"],
-["D",["biomarkerkg","oard-kg"],247,"DOID↔MONDO (ubergraph)"],
-["D",["biomarkerkg","prokn"],344,"DOID↔MONDO (ubergraph)"],
-["D",["biomarkerkg","rdkg"],595,"DOID↔MONDO (ubergraph)"],
 ["D",["gene-expression-atlas-okn","spoke-okn"],54,"DOID↔MONDO (ubergraph)"],
 ["D",["spoke-okn","oard-kg"],40,"DOID↔MONDO (ubergraph)"],
 ["D",["spoke-okn","prokn"],115,"DOID↔MONDO (ubergraph)"],
 ["D",["spoke-okn","rdkg"],149,"DOID↔MONDO (ubergraph)"],
-["D",["biomarkerkg","digcfdekg"],123,"DOID↔MONDO (+ EFO/Orphanet→MONDO) (ubergraph)"],
 ["D",["spoke-okn","digcfdekg"],50,"DOID↔MONDO (+ EFO/Orphanet→MONDO) (ubergraph)"],
 ["D",["digcfdekg","gene-expression-atlas-okn"],33,"EFO / Orphanet / MONDO (direct, multi-vocabulary)"],
 ["D",["gene-expression-atlas-okn","nde"],325,"EFO↔MONDO (ubergraph)"],
@@ -119,11 +113,17 @@ const R=[
 ["D",["gene-expression-atlas-okn","oard-kg"],13,"HP"],
 ["D",["gene-expression-atlas-okn","prokn"],12,"HP"],
 ["D",["oard-kg","prokn"],4941,"HP"],
+["D",["biomarkerkg","nde"],601,"MONDO"],
+["D",["biomarkerkg","oard-kg"],290,"MONDO"],
+["D",["biomarkerkg","prokn"],263,"MONDO"],
+["D",["biomarkerkg","rdkg"],754,"MONDO"],
 ["D",["nde","oard-kg"],889,"MONDO"],
 ["D",["oard-kg","prokn"],470,"MONDO"],
 ["D",["rdkg","oard-kg"],2014,"MONDO"],
+["D",["biomarkerkg","digcfdekg"],193,"MONDO (+ EFO/Orphanet→MONDO bridged) (ubergraph)"],
 ["D",["digcfdekg","oard-kg"],402,"MONDO (+ EFO/Orphanet→MONDO bridged) (ubergraph)"],
 ["D",["digcfdekg","rdkg"],1045,"MONDO (+ EFO/Orphanet→MONDO bridged) (ubergraph)"],
+["D",["spoke-okn","biomarkerkg"],107,"MONDO↔DOID (ubergraph)"],
 ["D",["oard-kg","prokn"],11,"MONDO↔OMIM (ubergraph)"],
 ["D",["oard-kg","prokn"],316,"MONDO↔Orphanet (ubergraph)"],
 ["D",["biobricks-mesh","spoke-okn"],165,"MeSH_descriptor_id"],
@@ -131,10 +131,10 @@ const R=[
 ["D",["biohealth","gene-expression-atlas-okn"],13,"UMLS↔HP (ubergraph)"],
 ["D",["biohealth","oard-kg"],4549,"UMLS↔HP (ubergraph)"],
 ["D",["biohealth","prokn"],4340,"UMLS↔HP (ubergraph)"],
+["D",["biohealth","biomarkerkg"],835,"UMLS↔MONDO (ubergraph)"],
 ["D",["biohealth","nde"],2760,"UMLS↔MONDO (ubergraph)"],
 ["D",["biohealth","oard-kg"],1796,"UMLS↔MONDO (ubergraph)"],
 ["D",["biohealth","rdkg"],9122,"UMLS↔MONDO (ubergraph)"],
-["D",["biohealth","biomarkerkg"],620,"UMLS↔MONDO↔DOID (ubergraph)"],
 ["D",["biohealth","spoke-okn"],173,"UMLS↔MONDO↔DOID (ubergraph)"],
 
 ["W",["climatemodelskg","nasa-gesdisc-kg"],115,"GCMD instrument"],
@@ -182,7 +182,6 @@ const R=[
 ["S",["ruralkg","scales"],5297,"ZIP5"],
 ["S",["spoke-okn","dreamkg"],53,"ZIP5"],
 ["S",["spoke-okn","ruralkg"],4938,"ZIP5"],
-["S",["spoke-okn","sudokn"],12329,"ZIP5"],
 ["S",["climatemodelskg","spatialkg"],947,"county_FIPS (spoke-okn)"],
 ["S",["fiokg","spatialkg"],3031,"county_FIPS"],
 ["S",["fiokg","spoke-okn"],3032,"county_FIPS"],
@@ -199,12 +198,12 @@ const R=[
 ["S",["geoconnex","spatialkg"],51,"state_FIPS"],
 ["S",["spoke-okn","sockg"],18,"state_FIPS"],
 ["S",["spoke-okn","spatialkg"],51,"state_FIPS"],
-["S",["sudokn","spatialkg"],51,"state_FIPS"],
+["S",["sudokn","spatialkg"],12,"state_FIPS"],
 
 ["H",["geoconnex","hydrologykg"],11392,"COMID"],
 
 ["I",["fiokg","securechainkg"],301,"NAICS"],
-["I",["fiokg","sudokn"],64,"NAICS"],
+["I",["fiokg","sudokn"],60,"NAICS"],
 ["I",["securechainkg","sudokn"],35,"NAICS"],
 ["I",["securechainkg","sudokn"],58,"SUDOKN_industry_sector"],
 ["I",["climatemodelskg","securechainkg"],3,"climatemodelskg Source IRI"],
@@ -212,8 +211,8 @@ const R=[
 ["J",["scales","ruralkg"],37,"NIBRS_offense_category"],
 
 ["P",["biobricks-aopwiki","prokn"],1805,"UniProt"],
-["P",["biomarkerkg","biobricks-aopwiki"],84,"UniProt"],
-["P",["biomarkerkg","prokn"],205,"UniProt"],
+["P",["biomarkerkg","biobricks-aopwiki"],86,"UniProt"],
+["P",["biomarkerkg","prokn"],209,"UniProt"],
 ["P",["ncipidkg","prokn"],12,"UniProt"],
 
 ["B",["climatemodelskg","nasa-gesdisc-kg"],651,"DOI"],

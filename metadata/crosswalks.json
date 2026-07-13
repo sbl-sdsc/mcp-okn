@@ -513,16 +513,16 @@
     {
       "id": "A5-doid",
       "left_kg": "biomarkerkg",
-      "left_predicate": "domain-predicate (obo/OBCI_*)",
+      "left_predicate": "obo:OBCI_1000008 / obo:OBCI_1000002 (disease of a biomarker assessment; MONDO IRI)",
       "left_role": "object",
       "right_kg": "prokn",
-      "right_predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso OR http://www.w3.org/2004/02/skos/core#exactMatch (either — matched via alternation)",
+      "right_predicate": "up:Disease -> rdfs:seeAlso | skos:exactMatch (MONDO)",
       "right_role": "object",
-      "shared_key": "DOID<->MONDO",
-      "key_namespace": "http://purl.obolibrary.org/obo/DOID_ (biomarkerkg) <-> http://purl.obolibrary.org/obo/MONDO_ (prokn)",
-      "bridge_kg": "ubergraph",
-      "iri_normalization": null,
-      "verified_count": 344,
+      "shared_key": "MONDO",
+      "key_namespace": "biomarkerkg obo:OBCI_1000008 / obo:OBCI_1000002 -> http://purl.obolibrary.org/obo/MONDO_{id} (891 distinct MONDO diseases)",
+      "bridge_kg": null,
+      "iri_normalization": "Join biomarkerkg's MONDO IRIs DIRECTLY (no DOID, no ubergraph DOID->MONDO bridge): GRAPH biomarkerkg { ?s ?p ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }. Drive from biomarkerkg's SMALL side (891 MONDO) as a DISTINCT sub-SELECT - letting the planner start from the partner graph times out at 120s on nde/digcfdekg/biohealth. biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
+      "verified_count": 263,
       "verified_on": "2026-07-02",
       "hinge_note": "biomarkerkg keys disease on DOID. As of prokn v0.0.5 (pav:lastUpdatedOn 2026-06-23) ProKN NO LONGER carries DOID on rdfs:seeAlso - it has 0 rdfs:seeAlso triples, and its up:Disease nodes now cross-reference MONDO via skos:exactMatch. The join is therefore routed DOID->MONDO through ubergraph skos:exactMatch and lands on prokn's MONDO exactMatch.",
       "drift_note": "PROKN-SIDE DRIFT (prokn v0.0.5, 2026-06-23): the original recipe (biomarkerkg OBCI_* DOID <-> prokn rdfs:seeAlso DOID; verified_count 388 on 2026-06-27) returns 0 as of 2026-06-30 because prokn migrated its disease cross-references from rdfs:seeAlso/DOID to skos:exactMatch/MONDO. biomarkerkg's side is unchanged (714 DOIDs on OBCI_1000002/1000006/1000008). Repaired 2026-06-30 via the ubergraph MONDO bridge and re-verified at 344. PREDICATE FLAP (issue #4, re-verified 2026-07-02): prokn's up:Disease cross-reference predicate is NOT stable across versions — it moved rdfs:seeAlso -> skos:exactMatch at v0.0.5 and has since been observed back on rdfs:seeAlso. The prokn side now matches EITHER predicate via the property-path alternation (rdfs:seeAlso|skos:exactMatch), so the join survives the flap; count unchanged at 344 (live seeAlso=0, so identical to exactMatch-only today).",
@@ -531,8 +531,9 @@
         "Literature biomarkers for a disease (BiomarkerKG) cross-referenced to protein/marker-gene evidence (ProKN).",
         "For colorectal cancer (DOID), do BiomarkerKG's literature biomarker proteins coincide with ProKN's marker genes for the matching MONDO disease, flagging markers that lack molecular evidence?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?d (<http://www.w3.org/2000/01/rdf-schema#seeAlso>|<http://www.w3.org/2004/02/skos/core#exactMatch>) ?mondo . }\n}",
-      "skeleton_verified": true
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?bp ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?x a <http://purl.uniprot.org/core/Disease> ; (<http://www.w3.org/2000/01/rdf-schema#seeAlso>|<http://www.w3.org/2004/02/skos/core#exactMatch>) ?mondo . }\n}",
+      "skeleton_verified": true,
+      "verified_count_note": "263 shared diseases, re-keyed onto MONDO and re-verified live 2026-07-12. SUPERSEDES the previous DOID-keyed count of 344, which no longer reproduces (the old skeleton returns a near-zero remnant). biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question."
     },
     {
       "id": "N6-s2-fiokg-sawgraph",
@@ -677,7 +678,7 @@
       "key_namespace": "http://w3id.org/fio/v1/naics#NAICS-{code} (fiokg) ; http://asu.edu/semantics/SUDOKN/NAICS%20{code}-individual (sudokn)",
       "bridge_kg": null,
       "iri_normalization": "Both graphs classify facilities/manufacturers with NAICS but mint the NAICS IRI differently. fiokg: the object of ofPrimaryIndustry/ofSecondaryIndustry is http://w3id.org/fio/v1/naics#NAICS-{6-digit} (extract the bare code REPLACE(STR(?ind),'^.*naics#NAICS-([0-9]+)$','$1')). sudokn: http://asu.edu/semantics/SUDOKN/NAICS%20{code}-individual (extract REPLACE(STR(?n),'^.*NAICS%20([0-9]+)-individual$','$1') - same as base-file I1). A direct IRI join returns 0; intersect the two bare numeric codes via two DISTINCT sub-SELECTs (one per named graph).",
-      "verified_count": 64,
+      "verified_count": 60,
       "verified_count_secondary": {
         "fiokg_distinct_naics": 3842,
         "sudokn_distinct_naics": 66
@@ -689,7 +690,8 @@
         "Starting from EPA FRS facilities (fiokg) clustered in a given county via their S2/county links, which NAICS industries do they represent, and are there SUDOKN small/medium manufacturers with matching capabilities in those same NAICS codes for local sourcing?"
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?code) AS ?n) WHERE {\n  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry>|<http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry> ?ind . } BIND(REPLACE(STR(?ind),'^.*naics#NAICS-([0-9]+)$','$1') AS ?code) } }\n  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/sudokn> { ?b <http://asu.edu/semantics/SUDOKN/hasPrimaryNAICSClassifier> ?dn . } BIND(REPLACE(STR(?dn),'^.*NAICS%20([0-9]+)-individual$','$1') AS ?code) } }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "verified_count_note": "Re-verified live 2026-07-12: 60 (was 64). sudokn's NAICS coverage shrank slightly on a data refresh - not a break. "
     },
     {
       "id": "C2-ensembl-3way",
@@ -1707,23 +1709,23 @@
     {
       "id": "A8-doid-spokeokn-biomarkerkg",
       "left_kg": "spoke-okn",
-      "left_predicate": "node-iri",
+      "left_predicate": "biolink:Disease node IRI (obo/DOID_)",
       "left_role": "subject",
       "right_kg": "biomarkerkg",
-      "right_predicate": "any (object position)",
+      "right_predicate": "obo:OBCI_1000008 / obo:OBCI_1000002 (MONDO IRI)",
       "right_role": "object",
-      "shared_key": "DOID",
-      "key_namespace": "http://purl.obolibrary.org/obo/DOID_",
-      "bridge_kg": null,
-      "iri_normalization": "spoke-okn diseases are biolink:Disease nodes whose IRI IS the DOID term (http://purl.obolibrary.org/obo/DOID_{id}); biomarkerkg carries the same obo/DOID_ IRI. Join directly on the shared node IRI (bind the same term in both GRAPH blocks).",
-      "verified_count": 79,
-      "verified_count_note": "DISTINCT DOID diseases shared (of spoke-okn's 180). Pairs with the existing biomarkerkg<->prokn DOID join (A5).",
+      "shared_key": "MONDO<->DOID (bridged)",
+      "key_namespace": "biomarkerkg obo:OBCI_1000008 / obo:OBCI_1000002 -> http://purl.obolibrary.org/obo/MONDO_{id} (891 distinct MONDO diseases)",
+      "bridge_kg": "ubergraph",
+      "iri_normalization": "Join biomarkerkg's MONDO IRIs DIRECTLY (no DOID, no ubergraph DOID->MONDO bridge): GRAPH biomarkerkg { ?s ?p ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }. Drive from biomarkerkg's SMALL side (891 MONDO) as a DISTINCT sub-SELECT - letting the planner start from the partner graph times out at 120s on nde/digcfdekg/biohealth. biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
+      "verified_count": 107,
+      "verified_count_note": "107 shared diseases, re-keyed onto MONDO and re-verified live 2026-07-12. SUPERSEDES the previous DOID-keyed count of 79, which no longer reproduces (the old skeleton returns a near-zero remnant). biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
       "example_question": "Biomarkers for a disease (BiomarkerKB) alongside that disease's spoke-okn gene/compound associations, joined on DOID.",
       "example_questions": [
         "Biomarkers for a disease (BiomarkerKB) alongside that disease's spoke-okn gene/compound associations, joined on DOID.",
         "Do BiomarkerKG's biomarker genes for a disease overlap the genes spoke-okn associates with the same DOID disease, reconciling the two gene sets?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?doid a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?x ?q ?doid . }\n}",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?doid a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?bp ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n}",
       "skeleton_verified": true
     },
     {
@@ -1777,23 +1779,23 @@
     {
       "id": "A18-doid-biomarkerkg-nde",
       "left_kg": "biomarkerkg",
-      "left_predicate": "any (object position; DOID on obo:OBCI_*)",
+      "left_predicate": "obo:OBCI_1000008 / obo:OBCI_1000002 (MONDO IRI)",
       "left_role": "object",
       "right_kg": "nde",
-      "right_predicate": "schema:healthCondition (any object position)",
+      "right_predicate": "schema:healthCondition (MONDO)",
       "right_role": "object",
-      "shared_key": "DOID",
-      "key_namespace": "http://purl.obolibrary.org/obo/DOID_",
+      "shared_key": "MONDO",
+      "key_namespace": "biomarkerkg obo:OBCI_1000008 / obo:OBCI_1000002 -> http://purl.obolibrary.org/obo/MONDO_{id} (891 distinct MONDO diseases)",
       "bridge_kg": null,
-      "iri_normalization": "biomarkerkg carries DOID (obo/DOID_) as the object of its OBCI predicates; nde carries the same obo/DOID_ IRI on schema:healthCondition. Direct join on the shared DOID node IRI, no bridge. Mirrors A9 (spoke-okn<->nde) with biomarkerkg as the DOID source.",
-      "verified_count": 54,
-      "verified_count_note": "DISTINCT DOID diseases shared between biomarkerkg and nde (nde's schema:healthCondition DOID slice). Verified 2026-06-18.",
+      "iri_normalization": "Join biomarkerkg's MONDO IRIs DIRECTLY (no DOID, no ubergraph DOID->MONDO bridge): GRAPH biomarkerkg { ?s ?p ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }. Drive from biomarkerkg's SMALL side (891 MONDO) as a DISTINCT sub-SELECT - letting the planner start from the partner graph times out at 120s on nde/digcfdekg/biohealth. biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
+      "verified_count": 601,
+      "verified_count_note": "601 shared diseases, re-keyed onto MONDO and re-verified live 2026-07-12. SUPERSEDES the previous DOID-keyed count of 54, which no longer reproduces (the old skeleton returns a near-zero remnant). biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
       "example_question": "Infectious/immune-mediated disease datasets (NDE) for a disease biomarkerkg also tracks, joined directly on DOID.",
       "example_questions": [
         "Infectious/immune-mediated disease datasets (NDE) for a disease biomarkerkg also tracks, joined directly on DOID.",
         "Which of the 54 shared DOID diseases have both an NIAID dataset in NDE and multiple curated biomarkers in BiomarkerKG, prioritizing data-rich infectious diseases?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/nde> { ?x <http://schema.org/healthCondition> ?doid . }\n}",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  { SELECT DISTINCT ?mondo WHERE { GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?bp ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/nde> { ?x <http://schema.org/healthCondition> ?mondo . }\n}",
       "skeleton_verified": true
     },
     {
@@ -1960,45 +1962,45 @@
     {
       "id": "A16-doid-mondo-biomarkerkg-rdkg",
       "left_kg": "biomarkerkg",
-      "left_predicate": "any (object position; DOID on obo:OBCI_1000002 / OBCI_1000006 / OBCI_1000008)",
+      "left_predicate": "obo:OBCI_1000008 / obo:OBCI_1000002 (MONDO IRI)",
       "left_role": "object",
       "right_kg": "rdkg",
-      "right_predicate": "any (MONDO node position)",
+      "right_predicate": "node-iri (rdkg diseases ARE obo/MONDO_ IRIs)",
       "right_role": "object",
-      "shared_key": "DOID<->MONDO",
-      "key_namespace": "http://purl.obolibrary.org/obo/DOID_ (biomarkerkg) ; http://purl.obolibrary.org/obo/MONDO_ (rdkg)",
-      "bridge_kg": "ubergraph",
-      "iri_normalization": "biomarkerkg keys diseases on DOID (obo/DOID_) as the object of its OBCI predicates; rdkg on MONDO (obo/MONDO_). Bridge through ubergraph: ?mondo skos:exactMatch ?doid, then match ?mondo anywhere in rdkg. Mirrors A10 (spoke-okn<->rdkg) with biomarkerkg as the DOID source.",
-      "verified_count": 595,
-      "verified_count_note": "DISTINCT biomarkerkg DOID diseases whose ubergraph-equivalent MONDO term is present in rdkg. Verified 2026-06-18. biomarkerkg carries 457 DOID diseases; rdkg is rare-disease-rich, so this is its broadest disease join. Complements biomarkerkg's existing DOID joins to prokn (A5) and spoke-okn (A8); biomarkerkg was previously only a DOID-direct partner.",
+      "shared_key": "MONDO",
+      "key_namespace": "biomarkerkg obo:OBCI_1000008 / obo:OBCI_1000002 -> http://purl.obolibrary.org/obo/MONDO_{id} (891 distinct MONDO diseases)",
+      "bridge_kg": null,
+      "iri_normalization": "Join biomarkerkg's MONDO IRIs DIRECTLY (no DOID, no ubergraph DOID->MONDO bridge): GRAPH biomarkerkg { ?s ?p ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }. Drive from biomarkerkg's SMALL side (891 MONDO) as a DISTINCT sub-SELECT - letting the planner start from the partner graph times out at 120s on nde/digcfdekg/biohealth. biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
+      "verified_count": 754,
+      "verified_count_note": "754 shared diseases, re-keyed onto MONDO and re-verified live 2026-07-12. SUPERSEDES the previous DOID-keyed count of 595, which no longer reproduces (the old skeleton returns a near-zero remnant). biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
       "example_question": "Rare-disease gene/drug associations (rdkg, MONDO) for a biomarkerkg disease (DOID), bridged through ubergraph DOID->MONDO.",
       "example_questions": [
         "Rare-disease gene/drug associations (rdkg, MONDO) for a biomarkerkg disease (DOID), bridged through ubergraph DOID->MONDO.",
         "Do BiomarkerKG's biomarker genes for a disease (DOID) match the disease genes RDKG records for the same MONDO disease, cross-validating markers against rare-disease gene panels?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . }\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?mondo ?pr ?orx . }\n}",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?bp ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?mondo ?q ?o . }\n}",
       "skeleton_verified": true
     },
     {
       "id": "A17-doid-mondo-biomarkerkg-oardkg",
       "left_kg": "biomarkerkg",
-      "left_predicate": "any (object position; DOID on obo:OBCI_*)",
+      "left_predicate": "obo:OBCI_1000008 / obo:OBCI_1000002 (MONDO IRI)",
       "left_role": "object",
       "right_kg": "oard-kg",
-      "right_predicate": "https://w3id.org/biolink/vocab/object|subject (MONDO)",
+      "right_predicate": "biolink:subject / biolink:object (MONDO)",
       "right_role": "object",
-      "shared_key": "DOID<->MONDO",
-      "key_namespace": "http://purl.obolibrary.org/obo/DOID_ (biomarkerkg) ; http://purl.obolibrary.org/obo/MONDO_ (oard-kg)",
-      "bridge_kg": "ubergraph",
-      "iri_normalization": "biomarkerkg keys diseases on DOID (obo/DOID_) as the object of its OBCI predicates; oard-kg on MONDO (obo/MONDO_). Bridge through ubergraph: ?mondo skos:exactMatch ?doid, then match ?mondo in oard-kg. Mirrors A11 (spoke-okn<->oard-kg) with biomarkerkg as the DOID source.",
-      "verified_count": 247,
-      "verified_count_note": "DISTINCT biomarkerkg DOID diseases whose ubergraph-equivalent MONDO term is present in oard-kg. Verified 2026-06-18. Attaches biomarkerkg to the oard-kg MONDO/HP disease-cluster hub.",
+      "shared_key": "MONDO",
+      "key_namespace": "biomarkerkg obo:OBCI_1000008 / obo:OBCI_1000002 -> http://purl.obolibrary.org/obo/MONDO_{id} (891 distinct MONDO diseases)",
+      "bridge_kg": null,
+      "iri_normalization": "Join biomarkerkg's MONDO IRIs DIRECTLY (no DOID, no ubergraph DOID->MONDO bridge): GRAPH biomarkerkg { ?s ?p ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }. Drive from biomarkerkg's SMALL side (891 MONDO) as a DISTINCT sub-SELECT - letting the planner start from the partner graph times out at 120s on nde/digcfdekg/biohealth. biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
+      "verified_count": 290,
+      "verified_count_note": "290 shared diseases, re-keyed onto MONDO and re-verified live 2026-07-12. SUPERSEDES the previous DOID-keyed count of 247, which no longer reproduces (the old skeleton returns a near-zero remnant). biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
       "example_question": "EHR-derived disease-phenotype associations (OARD, MONDO) for a biomarkerkg disease (DOID), bridged through ubergraph.",
       "example_questions": [
         "EHR-derived disease-phenotype associations (OARD, MONDO) for a biomarkerkg disease (DOID), bridged through ubergraph.",
         "How many of BiomarkerKG's DOID diseases also carry OARD EHR phenotype associations, and which biomarkers map to the most clinically-documented diseases?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . }\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?x <https://w3id.org/biolink/vocab/object> ?mondo } UNION { ?xs <https://w3id.org/biolink/vocab/subject> ?mondo } }\n}",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?bp ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?x <https://w3id.org/biolink/vocab/object> ?mondo } UNION { ?xs <https://w3id.org/biolink/vocab/subject> ?mondo } }\n}",
       "skeleton_verified": true,
       "methodology_note": "oard-kg disease IRIs appear as the object of BOTH biolink:subject and biolink:object (a reified association can carry the entity on either side); the skeleton UNIONs both positions so the join is entity-complete."
     },
@@ -2262,32 +2264,6 @@
       "skeleton_verified": true
     },
     {
-      "id": "J1-zip",
-      "left_kg": "spoke-okn",
-      "left_predicate": "http://www.w3.org/2000/01/rdf-schema#label (bare 5-digit ZIP, on any .../location/{STATE}-{ZIP} schema:AdministrativeArea node)",
-      "left_role": "object",
-      "right_kg": "sudokn",
-      "right_predicate": "http://asu.edu/semantics/SUDOKN/hasZipcodeValue",
-      "right_role": "object",
-      "shared_key": "ZIP5",
-      "key_namespace": "bare 5-digit U.S. ZIP code, xsd:string literal (no IRI namespace)",
-      "bridge_kg": null,
-      "iri_normalization": "Join on the ZIP xsd:string literal. spoke-okn: the ZIP is the rdfs:label of EVERY .../location/{STATE}-{ZIP} node (~42,724 of them); identify zip nodes by the IRI pattern location/[A-Z]{2}-[0-9]+ (do NOT gate on rdfs:seeAlso 'ZipCodeArea' - only 978 nodes carry that, and it is an unusable HTML-anchor literal anyway). sudokn: SUDOKN:hasZipcodeValue mixes U.S. ZIPs with Canadian postal codes (e.g. 'M3C 1T5'); constrain to U.S. with FILTER(REGEX(STR(?z),'^[0-9]{5}$')) if needed. OKN GOTCHA: a cross-graph 'FILTER(STR(?a)=?b)' over two GRAPH blocks silently returns 0; bind the SAME variable term in both GRAPH blocks (both are xsd:string).",
-      "verified_count": 12329,
-      "verified_count_secondary": {
-        "spoke-okn_distinct_zips": 42724,
-        "sudokn_distinct_us_zips": 12914
-      },
-      "hinge_note": "Joins on ZIP literals, not company/location IRIs. 12,329 of sudokn's ~12,914 U.S. ZIPs coincide with a spoke-okn ZIP (spoke-okn is a near-complete national ZIP reference, so the join is bounded by sudokn's coverage).",
-      "example_question": "For a ZIP, list the SUDOKN small/medium manufacturers there (NAICS, capabilities, certificates) alongside spoke-okn's local environmental/health context.",
-      "example_questions": [
-        "For a ZIP, list the SUDOKN small/medium manufacturers there (NAICS, capabilities, certificates) alongside spoke-okn's local environmental/health context.",
-        "Which ZIPs concentrate SUDOKN metal-finishing manufacturers, and what spoke-okn environmental burden do those same ZIP5s carry?"
-      ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc <http://www.w3.org/2000/01/rdf-schema#label> ?zip . FILTER(REGEX(STR(?loc),'/location/[A-Z]{2}-[0-9]+')) }\n  GRAPH <https://purl.org/okn/frink/kg/sudokn> { ?b <http://asu.edu/semantics/SUDOKN/hasZipcodeValue> ?zip . }\n}",
-      "skeleton_verified": true
-    },
-    {
       "id": "A6-mondo-expansion",
       "left_kg": "ubergraph",
       "left_predicate": "rdfs:subClassOf* (category expansion)",
@@ -2432,7 +2408,7 @@
       "key_namespace": "SUDOKN locatedInState rdfs:label (full state name, e.g. 'Ohio') == spatialkg AdministrativeRegion_1 rdfs:label; state FIPS via http://stko-kwg.geog.ucsb.edu/lod/ontology/hasFIPS",
       "bridge_kg": null,
       "iri_normalization": "SUDOKN has no FIPS or admin-region IRI; it stores the state only as a free-text label on the GeospatialSite (company -> geosite via the shared web-domain prefix -> locatedInState/rdfs:label). spatialkg's AdministrativeRegion_1 node carries the same full state-name string as rdfs:label plus kwg-ont:hasFIPS. Join on the exact label string; non-US states (Ontario, Bavaria, ...) drop out. Location lives on -geosite-N-instance nodes, NOT on -company-instance; for NAICS-scoped queries reconstruct the geosite IRI from the company's web-domain prefix.",
-      "verified_count": 51,
+      "verified_count": 12,
       "verified_count_secondary": {
         "sudokn_companies_matched": 25887,
         "sudokn_geosites_matched": 42606,
@@ -2445,7 +2421,8 @@
         "Which states host the largest SUDOKN aerospace/metal-parts manufacturing base by NAICS when aligned to the spatialkg state admin regions?"
       ],
       "skeleton_query": "SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/sudokn> {\n    ?g a <http://asu.edu/semantics/SUDOKN/GeospatialSite> ; <http://asu.edu/semantics/SUDOKN/locatedInState>/<http://www.w3.org/2000/01/rdf-schema#label> ?state .\n  }\n  GRAPH <https://purl.org/okn/frink/kg/spatialkg> {\n    ?r a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_1> ; <http://www.w3.org/2000/01/rdf-schema#label> ?state ; <http://stko-kwg.geog.ucsb.edu/lod/ontology/hasFIPS> ?fips .\n  }\n}",
-      "skeleton_verified": true
+      "skeleton_verified": true,
+      "verified_count_note": "Re-verified live 2026-07-12: 12 (was 51). sudokn's state coverage COLLAPSED from all 51 states to 12 - its manufacturer records now span far fewer states. Real data regression upstream, not a query bug; the state key itself still works. "
     },
     {
       "id": "SU2-s2computed-sudokn-spatialkg",
@@ -2614,23 +2591,23 @@
     {
       "id": "BH7-umls-mondo-doid-biohealth-biomarkerkg",
       "left_kg": "biohealth",
-      "left_predicate": "node-iri (UMLS CUI; node IRI = https://biohealthkg.proto-okn.net/kg/node/C{cui})",
+      "left_predicate": "node IRI biohealthkg.proto-okn.net/kg/node/C{cui} (UMLS CUI)",
       "left_role": "subject",
       "right_kg": "biomarkerkg",
-      "right_predicate": "any (DOID node position)",
+      "right_predicate": "obo:OBCI_1000008 / obo:OBCI_1000002 (MONDO IRI)",
       "right_role": "object",
-      "shared_key": "UMLS<->MONDO<->DOID (two-hop)",
-      "key_namespace": "https://biohealthkg.proto-okn.net/kg/node/C{cui} (biohealth) ; http://purl.obolibrary.org/obo/DOID_ (biomarkerkg) — bridged through ubergraph: MONDO oboInOwl:hasDbXref 'UMLS:{cui}' AND MONDO skos:exactMatch DOID",
+      "shared_key": "UMLS<->MONDO",
+      "key_namespace": "biomarkerkg obo:OBCI_1000008 / obo:OBCI_1000002 -> http://purl.obolibrary.org/obo/MONDO_{id} (891 distinct MONDO diseases)",
       "bridge_kg": "ubergraph",
-      "iri_normalization": "biomarkerkg keys diseases on DOID (obo/DOID_). DOID is NOT UMLS-xref'd in ubergraph, so a two-hop bridge is required: a MONDO term that (a) hasDbXref 'UMLS:{cui}' and (b) skos:exactMatch a DOID term that biomarkerkg references. Collapse biomarkerkg's DOID terms with an inner DISTINCT sub-SELECT first.",
-      "verified_count": 620,
-      "verified_count_note": "DISTINCT biohealth UMLS CUIs reaching a biomarkerkg DOID disease via the ubergraph UMLS->MONDO->DOID two-hop bridge. Exact COUNT(DISTINCT) on 2026-06-23.",
+      "iri_normalization": "Join biomarkerkg's MONDO IRIs DIRECTLY (no DOID, no ubergraph DOID->MONDO bridge): GRAPH biomarkerkg { ?s ?p ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }. Drive from biomarkerkg's SMALL side (891 MONDO) as a DISTINCT sub-SELECT - letting the planner start from the partner graph times out at 120s on nde/digcfdekg/biohealth. biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
+      "verified_count": 835,
+      "verified_count_note": "835 shared diseases, re-keyed onto MONDO and re-verified live 2026-07-12. SUPERSEDES the previous DOID-keyed count of 620, which no longer reproduces (the old skeleton returns a near-zero remnant). biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
       "example_question": "For a disease biohealth describes (UMLS CUI), what literature-curated biomarkers does BiomarkerKG record (DOID), bridged through ubergraph UMLS->MONDO->DOID?",
       "example_questions": [
         "For a disease biohealth describes (UMLS CUI), what literature-curated biomarkers does BiomarkerKG record (DOID), bridged through ubergraph UMLS->MONDO->DOID?",
         "Which BiomarkerKG diseases with curated biomarkers (DOID) also appear in biohealth with SDoH context, bridged DOID->MONDO->UMLS?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  { SELECT DISTINCT ?doid WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid), 'http://purl.obolibrary.org/obo/DOID_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {\n    ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid .\n    ?mondo <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .\n    FILTER(STRSTARTS(STR(?x), 'UMLS:'))\n    BIND(STRAFTER(STR(?x), 'UMLS:') AS ?cui)\n  }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp ?bo . }\n}",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {\n  { SELECT DISTINCT ?mondo WHERE { GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?bp ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x . FILTER(STRSTARTS(STR(?x),'UMLS:')) BIND(STRAFTER(STR(?x),'UMLS:') AS ?cui) }\n  BIND(IRI(CONCAT('https://biohealthkg.proto-okn.net/kg/node/', ?cui)) AS ?bh)\n  GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh ?bp2 ?bo . }\n}",
       "skeleton_verified": true
     },
     {
@@ -3066,23 +3043,23 @@
     {
       "id": "A27-doid-mondo-biomarkerkg-digcfdekg",
       "left_kg": "biomarkerkg",
-      "left_predicate": "any (object position; DOID disease)",
+      "left_predicate": "obo:OBCI_1000008 / obo:OBCI_1000002 (MONDO IRI)",
       "left_role": "object",
       "right_kg": "digcfdekg",
-      "right_predicate": "trait object of schema/geneToTrait (MONDO direct + EFO/Orphanet bridged)",
+      "right_predicate": "digcfdekg:geneToTrait (MONDO direct, or EFO/Orphanet bridged to MONDO via ubergraph)",
       "right_role": "object",
-      "shared_key": "DOID<->MONDO (+ EFO/Orphanet -> MONDO)",
-      "key_namespace": "http://purl.obolibrary.org/obo/DOID_ (biomarkerkg) <-> http://purl.obolibrary.org/obo/MONDO_ (digcfdekg, direct+bridged)",
+      "shared_key": "MONDO (+ EFO/Orphanet -> MONDO bridged)",
+      "key_namespace": "biomarkerkg obo:OBCI_1000008 / obo:OBCI_1000002 -> http://purl.obolibrary.org/obo/MONDO_{id} (891 distinct MONDO diseases)",
       "bridge_kg": "ubergraph",
-      "iri_normalization": "Drive from biomarkerkg's DOID diseases, map DOID->MONDO via ubergraph skos:exactMatch, then check the MONDO term is in digcfdekg's (direct + EFO/Orphanet-bridged) MONDO-space disease set (materialized in an inner SELECT DISTINCT, as in A25).",
-      "verified_count": 123,
-      "verified_count_note": "DISTINCT biomarkerkg DOID diseases whose ubergraph-equivalent MONDO term is in digcfdekg's disease set. Verified 2026-06-26.",
+      "iri_normalization": "Join biomarkerkg's MONDO IRIs DIRECTLY (no DOID, no ubergraph DOID->MONDO bridge): GRAPH biomarkerkg { ?s ?p ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }. Drive from biomarkerkg's SMALL side (891 MONDO) as a DISTINCT sub-SELECT - letting the planner start from the partner graph times out at 120s on nde/digcfdekg/biohealth. biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
+      "verified_count": 193,
+      "verified_count_note": "193 shared diseases, re-keyed onto MONDO and re-verified live 2026-07-12. SUPERSEDES the previous DOID-keyed count of 123, which no longer reproduces (the old skeleton returns a near-zero remnant). biomarkerkg MIGRATED ITS DISEASE AXIS FROM DOID TO MONDO (observed 2026-07-12). Its disease-biomarker assertions - obo:OBCI_1000008 'indicates_risk_of_developing' and obo:OBCI_1000002 'diagnostic_for' - now carry MONDO objects: 891 distinct MONDO diseases across 179,972 assessments, versus only 28 DOID diseases (20,160 assessments) left as a vestige. 726 obo/DOID_ IRIs still exist in the graph but carry ONLY an rdfs:label and are referenced by nothing - orphan label stubs. The previous recipe joined DOID in OBJECT position (?s ?p ?doid), so it saw only that 28-term remnant and collapsed. Join MONDO directly instead. Do NOT 'fix' this by pointing the join at the 726 DOID node IRIs: they are label-only and reach no biomarker, so that would inflate the count with entities that answer no question.",
       "example_question": "Biomarker-disease associations (biomarkerkg, DOID) for diseases CFDE REVEAL has gene-trait factor inferences on, bridged DOID->MONDO through ubergraph.",
       "example_questions": [
         "Biomarker-disease associations (biomarkerkg, DOID) for diseases CFDE REVEAL has gene-trait factor inferences on, bridged DOID->MONDO through ubergraph.",
         "Do BiomarkerKG's biomarker genes for a disease (DOID) appear among the genes CFDE REVEAL ties to the same trait (MONDO), cross-checking markers against inferred factors?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?doid . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }\n  { SELECT DISTINCT ?mondo WHERE {\n    { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?efo . FILTER(STRSTARTS(STR(?efo),'http://www.ebi.ac.uk/efo/EFO_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?efo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?orph . FILTER(CONTAINS(STR(?orph),'Orphanet_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?orph . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } } }\n}",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {\n  { SELECT DISTINCT ?mondo WHERE { GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?bp ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } }\n  { SELECT DISTINCT ?mondo WHERE {\n    { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?efo . FILTER(STRSTARTS(STR(?efo),'http://www.ebi.ac.uk/efo/EFO_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?efo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }\n    UNION { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?orph . FILTER(CONTAINS(STR(?orph),'Orphanet_')) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?orph . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } } }\n}",
       "skeleton_verified": true
     },
     {
@@ -3191,8 +3168,8 @@
       "key_namespace": "http://purl.uniprot.org/uniprot/{acc} (identical form in both graphs; NO rewrite)",
       "bridge_kg": null,
       "iri_normalization": "biomarkerkg attaches its biomarker entities to a disease-biomarker assessment node via obo:OBCI_1000009; when that object is a protein it is a UniProt IRI in the http://purl.uniprot.org/uniprot/ form - the SAME form ProKN uses for its up:Protein nodes. Direct shared-variable join, no rewrite. (biomarkerkg's OBCI_1000009 objects also include CL cell types and PubChem genes - filter to /uniprot/.)",
-      "verified_count": 205,
-      "verified_count_note": "205 of biomarkerkg's 206 distinct UniProt biomarker proteins are present in ProKN (near-complete containment). Verified 2026-06-26. SUPERSEDES the base file's biomarkerkg 'no gene/protein namespace surfaced' known_non_join: biomarkerkg DOES carry proteins (UniProt via OBCI_1000009), it just exposes no standard gene IRI. This attaches biomarkerkg - previously only a DOID-disease partner - to the UniProt protein cluster (G), giving its clinical biomarkers ProKN's GO functions, Reactome pathways, OMIM links, PTM sites and drug/ChEMBL targets.",
+      "verified_count": 209,
+      "verified_count_note": "Re-verified live 2026-07-12: 209 (was 205). biomarkerkg's UniProt biomarker set grew slightly on a data refresh - not a break. 205 of biomarkerkg's 206 distinct UniProt biomarker proteins are present in ProKN (near-complete containment). Verified 2026-06-26. SUPERSEDES the base file's biomarkerkg 'no gene/protein namespace surfaced' known_non_join: biomarkerkg DOES carry proteins (UniProt via OBCI_1000009), it just exposes no standard gene IRI. This attaches biomarkerkg - previously only a DOID-disease partner - to the UniProt protein cluster (G), giving its clinical biomarkers ProKN's GO functions, Reactome pathways, OMIM links, PTM sites and drug/ChEMBL targets.",
       "example_question": "For the clinical biomarker proteins a disease has in BiomarkerKB, what GO biological processes / molecular functions and pathways does ProKN annotate them with?",
       "example_questions": [
         "For the clinical biomarker proteins a disease has in BiomarkerKB, what GO biological processes / molecular functions and pathways does ProKN annotate them with?",
@@ -3214,8 +3191,8 @@
       "key_namespace": "http://purl.uniprot.org/uniprot/{acc} (biomarkerkg) ; https://identifiers.org/uniprot/{acc} (biobricks-aopwiki skos:exactMatch) - rewrite purl -> identifiers.org",
       "bridge_kg": null,
       "iri_normalization": "biomarkerkg biomarker proteins are http://purl.uniprot.org/uniprot/{acc}; AOP-Wiki carries its key-event target proteins as https://identifiers.org/uniprot/{acc} on skos:exactMatch. Extract the bare accession and rebuild the identifiers.org form, then match AOP-Wiki's skos:exactMatch (its gene/protein node links to the key-event via edam:data_1025 and the AOP via aopkb has_key_event + dc:title).",
-      "verified_count": 84,
-      "verified_count_note": "84 of biomarkerkg's 206 UniProt biomarker proteins are AOP-Wiki adverse-outcome-pathway key-event targets. Verified 2026-06-26. Links clinical biomarkers to toxicological adverse-outcome pathways (e.g. EGFR is a breast-cancer biomarker AND the target in 'EGFR activation leading to decreased lung function' and AhR/estrogen->breast-cancer AOPs).",
+      "verified_count": 86,
+      "verified_count_note": "Re-verified live 2026-07-12: 86 (was 84). Small growth on a data refresh - not a break. 84 of biomarkerkg's 206 UniProt biomarker proteins are AOP-Wiki adverse-outcome-pathway key-event targets. Verified 2026-06-26. Links clinical biomarkers to toxicological adverse-outcome pathways (e.g. EGFR is a breast-cancer biomarker AND the target in 'EGFR activation leading to decreased lung function' and AhR/estrogen->breast-cancer AOPs).",
       "example_question": "Which clinical biomarker proteins are also AOP key-event targets, and which adverse outcome pathways involve them (toxicology meets clinical biomarkers)?",
       "example_questions": [
         "Which clinical biomarker proteins are also AOP key-event targets, and which adverse outcome pathways involve them (toxicology meets clinical biomarkers)?",
@@ -4302,6 +4279,13 @@
       "attempted_key": "ZIP5 (ruralkg schema:postalCode -> spatialkg kwg-ont:ZipCodeArea)",
       "result": "0 - spatialkg declares ZipCodeArea in the T-Box but materializes ZERO instances",
       "diagnosis": "Same root cause as the dreamkg x spatialkg ZIP non-join: spatialkg's kwg-ont:ZipCodeArea is a pure T-Box class with no instances, so ruralkg's 5,420 facility ZIPs have nothing to match. Verified live 2026-07-12. Reach the spatial hub on county FIPS or S2 cells instead. NOTE: ZIP-axis only - ruralkg joins scales (J4), dreamkg (J6), spoke-okn and rdkg on other keys."
+    },
+    {
+      "left_kg": "spoke-okn",
+      "right_kg": "sudokn",
+      "attempted_key": "ZIP5 (spoke-okn /location/{ST}-{zip} label -> sudokn SUDOKN:hasZipcodeValue)",
+      "result": "0 - sudokn's ENTIRE postal layer is unpopulated in the deployed graph",
+      "diagnosis": "WAS crosswalk J1 (verified_count 12,329 on 2026-06-xx); RETIRED 2026-07-12 after live re-verification returned 0. The spoke-okn side is intact - 42,724 /location/{ST}-{zip} IRIs still carry their ZIP as an rdfs:label (e.g. '20431'). The sudokn side is empty: SUDOKN:hasZipcodeValue has ZERO triples, and sudokn's other postal constructs are unpopulated too (SUDOKN:USPostalCode has no instances; SUDOKN:PostalAddress carries no hasTextValue). The predicate is still DECLARED in sudokn's entities.csv, so the schema advertises a ZIP field the deployed graph does not materialize - do not re-derive this join from the schema. NOTE: this is a ZIP-axis non-join only. spoke-okn and sudokn can still MEET THROUGH THE SAWGraph SPATIAL HUB, where both are leaves (sudokn: SU1 state-FIPS 12, SU2 S2 Level-13 42,560; spoke-okn: cluster J/K geography) - use the hub, not ZIP."
     }
   ],
   "superseded_non_joins": [

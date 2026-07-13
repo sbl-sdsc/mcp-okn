@@ -923,14 +923,18 @@ async def main() -> None:
     async with httpx.AsyncClient(timeout=90.0) as client:
         for cid in ids:
             entry = by_id.get(cid)
-            # Prefer the skeleton authored in THIS script, but fall back to the one
-            # stored on the crosswalk entry. Q only ever held the skeletons authored
-            # here (~94); every crosswalk added since — by writing skeleton_query
-            # straight into crosswalks.json — was invisible to this verifier and
-            # reported "NO SKELETON AUTHORED", so its stored count was never
-            # re-checked despite carrying skeleton_verified: true. crosswalks.json is
-            # the source of record; honour it.
-            q = Q.get(cid) or (entry or {}).get("skeleton_query")
+            # crosswalks.json is the SOURCE OF RECORD, so its skeleton_query wins; Q
+            # (the skeletons authored in this file) is only the fallback for entries
+            # that have none stored.
+            #
+            # Both halves of this matter. Q only ever held ~94 skeletons, so every
+            # crosswalk added since — which writes skeleton_query straight into
+            # crosswalks.json — used to report "NO SKELETON AUTHORED" and was never
+            # re-checked despite carrying skeleton_verified: true. And when a stored
+            # skeleton is REPAIRED (e.g. biomarkerkg re-keyed from DOID to MONDO),
+            # a stale Q entry would silently shadow the fix and keep reporting the
+            # broken count. Preferring Q got exactly that wrong for A5/A8/A16/BH7.
+            q = (entry or {}).get("skeleton_query") or Q.get(cid)
             if q is None:
                 print(f"  --   {cid}: NO SKELETON AUTHORED")
                 continue
