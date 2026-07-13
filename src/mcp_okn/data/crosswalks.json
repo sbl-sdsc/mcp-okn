@@ -1083,13 +1083,13 @@
       "bridge_kg": null,
       "iri_normalization": "As C5: strip rdkg's 'ncbigene/' prefix to the bare id, rebuild spoke-genelab's http://www.ncbi.nlm.nih.gov/gene/{id} node IRI, join on the rebuilt term.",
       "verified_count": 9034,
-      "verified_count_note": "DISTINCT Entrez genes shared (of rdkg's 9,326 genes) - near-complete containment of rdkg's gene set in spoke-genelab.",
+      "verified_count_note": "Skeleton OPTIMIZED 2026-07-12: the published query scanned ALL of rdkg with an unbound '?r ?p ?o' plus a STRSTARTS filter on the subject IRI, which sat right on the endpoint's operation limit — it FLAKED, failing with HTTP 429 in two of three runs and passing in the third. rdkg's genes are typed biolink:Gene (9,293 ncbigene nodes), so binding by type turns the scan into an index lookup. Count unchanged; now stable across repeated runs. DISTINCT Entrez genes shared (of rdkg's 9,326 genes) - near-complete containment of rdkg's gene set in spoke-genelab.",
       "example_question": "Rare-disease genes (rdkg) with their spaceflight/omics observations in spoke-genelab (NASA GeneLab).",
       "example_questions": [
         "Rare-disease genes (rdkg) with their spaceflight/omics observations in spoke-genelab (NASA GeneLab).",
         "How many spoke-genelab spaceflight differentially expressed genes are known rare-disease genes in rdkg?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?r ?p ?o . FILTER(STRSTARTS(STR(?r),'http://identifiers.org/ncbigene/')) BIND(?r AS ?src) }\n  BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',REPLACE(STR(?src),'^.*/ncbigene/',''))) AS ?gene)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?gene ?q ?r2 . }\n}",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  { SELECT DISTINCT ?gene WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?r a <https://w3id.org/biolink/vocab/Gene> .\n        FILTER(STRSTARTS(STR(?r),'http://identifiers.org/ncbigene/')) }\n      BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',REPLACE(STR(?r),'^.*/ncbigene/',''))) AS ?gene) } }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?gene ?q ?r2 . }\n}",
       "skeleton_verified": true
     },
     {
@@ -1105,13 +1105,13 @@
       "bridge_kg": null,
       "iri_normalization": "Same Entrez gene, different IRI form. Strip rdkg's node IRI to the bare id (up to and including 'ncbigene/') and rebuild spoke-okn's form: BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/', ?id))); join on the rebuilt term. Both sides type the gene as biolink:Gene.",
       "verified_count": 8475,
-      "verified_count_note": "DISTINCT Entrez genes shared (of rdkg's 9,326 biolink:Gene nodes); spoke-okn has 16,346 genes so the join is bounded by rdkg.",
+      "verified_count_note": "Skeleton OPTIMIZED 2026-07-12: the published query scanned ALL of rdkg with an unbound '?r ?p ?o' plus a STRSTARTS filter on the subject IRI, which sat right on the endpoint's operation limit — it FLAKED, failing with HTTP 429 in two of three runs and passing in the third. rdkg's genes are typed biolink:Gene (9,293 ncbigene nodes), so binding by type turns the scan into an index lookup. Count unchanged; now stable across repeated runs. DISTINCT Entrez genes shared (of rdkg's 9,326 biolink:Gene nodes); spoke-okn has 16,346 genes so the join is bounded by rdkg.",
       "example_question": "Rare-disease gene associations (rdkg: gene_associated_with_condition / has_gene) enriched with that gene's network/disease/compound associations in spoke-okn.",
       "example_questions": [
         "Rare-disease gene associations (rdkg: gene_associated_with_condition / has_gene) enriched with that gene's network/disease/compound associations in spoke-okn.",
         "For the causative genes of a specific rare disease in rdkg, which spoke-okn compounds and pathways are associated?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?r ?p ?o . FILTER(STRSTARTS(STR(?r),'http://identifiers.org/ncbigene/')) BIND(?r AS ?src) }\n  BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',REPLACE(STR(?src),'^.*/ncbigene/',''))) AS ?gene)\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?gene ?q ?r2 . }\n}",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {\n  { SELECT DISTINCT ?gene WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?r a <https://w3id.org/biolink/vocab/Gene> .\n        FILTER(STRSTARTS(STR(?r),'http://identifiers.org/ncbigene/')) }\n      BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',REPLACE(STR(?r),'^.*/ncbigene/',''))) AS ?gene) } }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?gene ?q ?r2 . }\n}",
       "skeleton_verified": true
     },
     {
