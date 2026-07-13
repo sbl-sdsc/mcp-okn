@@ -1,6 +1,6 @@
 {
   "$schema_note": "Curated 'payload' tags: WHAT each KG supplies, not just how it joins. Each tag is a controlled-vocabulary context type (see 'vocabulary'). Sourced from the registry long descriptions + each KG's curated entity schema (classes/predicates) + its verified crosswalk shared-keys. The value-add types that are NOT join keys (gene_set, trait, pathway, tox_assay, expression, biomarker, variant, ...) are the curated part this file exists to surface. Edit this file (the source of record under metadata/) and run scripts/refresh_snapshot.py to sync the bundled copy.",
-  "verified_on": "2026-06-30",
+  "verified_on": "2026-07-12",
   "vocabulary": {
     "disease": "Disease concepts or disease-entity associations (MONDO/DOID/OMIM/EFO/Orphanet)",
     "phenotype": "Phenotypes / clinical signs (HP)",
@@ -54,7 +54,9 @@
       "protein",
       "pathway",
       "disease",
-      "organism"
+      "organism",
+      "drug",
+      "identifier_mapping"
     ],
     "biobricks-ice": [
       "chemical",
@@ -65,7 +67,9 @@
       "chemical",
       "disease",
       "anatomy",
-      "organism"
+      "organism",
+      "drug",
+      "identifier_mapping"
     ],
     "biobricks-pubchem-annotations": [
       "chemical"
@@ -93,7 +97,9 @@
       "cell_type"
     ],
     "climatemodelskg": [
-      "climate"
+      "climate",
+      "publication",
+      "geospatial"
     ],
     "digcfdekg": [
       "gene",
@@ -123,11 +129,13 @@
       "cell_type",
       "pathway",
       "organism",
-      "Reactome"
+      "Reactome",
+      "gene_set"
     ],
     "geoconnex": [
       "hydrology",
-      "geospatial"
+      "geospatial",
+      "dataset"
     ],
     "hydrologykg": [
       "hydrology",
@@ -218,7 +226,8 @@
     ],
     "sockg": [
       "agriculture",
-      "geospatial"
+      "geospatial",
+      "chemical"
     ],
     "spatialkg": [
       "geospatial"

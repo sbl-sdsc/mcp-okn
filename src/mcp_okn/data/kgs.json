@@ -127,7 +127,7 @@
   },
   {
     "shortname": "medical-device-kg",
-    "title": "FDA MAUDE Adverse Event Knowledge Graph",
+    "title": "Medical Device Knowledge Graph",
     "description": "Knowledge graph constructed from FDA MAUDE adverse event reports using standardized FDA product codes.",
     "homepage": "https://github.com/Prabhadeus/Proto-OKN",
     "named_graph": "https://purl.org/okn/frink/kg/medical-device-kg"
