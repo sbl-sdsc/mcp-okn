@@ -526,11 +526,15 @@ def test_network_png_matches_the_html_it_was_rendered_from():
 
 
 def test_inventory_doc_renders_two_questions_per_crosswalk():
-    """The inventory doc must render 2 questions for EVERY crosswalk — 160 rows →
-    320 questions. The taxonomy table is rendered by a separate code path, and it
-    briefly shipped only 1 question per row (the count question was suppressed as
-    redundant with the exact_id/clade columns), so the doc showed 300 while the API
-    returned 320. This pins doc and API to the same number."""
+    """The inventory doc must render exactly 2 questions for EVERY crosswalk, i.e.
+    2 * len(all_crosswalks()) in total. (Deliberately NOT hardcoded here: the totals
+    move whenever a crosswalk is added or retired — retiring J1 took them from
+    160/320 to 159/318 — and a docstring citing fixed numbers goes stale and misleads.)
+
+    The taxonomy table is rendered by a separate code path, and it briefly shipped
+    only 1 question per row (the count question was suppressed as redundant with the
+    exact_id/clade columns), so the doc silently fell short of the API. This pins doc
+    and API to the same number."""
     import pathlib
     import re
 
