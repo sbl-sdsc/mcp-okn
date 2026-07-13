@@ -82,7 +82,7 @@ geospatial and industrial joins against their authoritative shared standard):
   Phenotype, Environmental Toxicology, Function & Pathways, Genes, Geospatial, Industry
   & Supply Chain, Justice & Public Safety, Proteins, Social Determinants & Services,
   Taxonomy). These are the subset written up as transcripts; the inventory itself
-  carries **320 questions — two for every one of the 160 crosswalks** — but without a
+  carries **322 questions — two for every one of the 161 crosswalks** — but without a
   worked transcript behind each.
 - **[Multi-domain integration catalog](docs/crosswalks/multi-domain-examples.md)**
   — 24 use cases that fuse *different* domains (e.g. toxicology × transcriptomics

@@ -579,7 +579,15 @@ def test_user_facing_crosswalk_count_is_canonical():
     n = len(cw.all_crosswalks(include_examples=False))
     checks = [
         ("README.md", r"all (\d+) crosswalks across \d+ graphs"),
+        # README also cites the count a SECOND time, in the questions blurb. It
+        # drifted (160/320 vs a 161-crosswalk table) because only the phrase above
+        # was guarded — so pin every citation, not just the first one.
+        ("README.md", r"two for every one of the (\d+) crosswalks"),
         ("docs/crosswalks/crosswalks_example.md", r"\((\d+) hand-verified crosswalks"),
+        (
+            "docs/crosswalks/crosswalks_example.md",
+            r"The catalog now stands at (\d+) crosswalks",
+        ),
         (
             "docs/crosswalks/proto-okn-crosswalk-inventory.md",
             r"Here are all (\d+) precomputed cross-KG crosswalks",
@@ -594,6 +602,15 @@ def test_user_facing_crosswalk_count_is_canonical():
         assert int(m.group(1)) == n, (
             f"{rel} cites {m.group(1)} crosswalks; canonical len(all_crosswalks()) is {n}"
         )
+
+    # The same README sentence also quotes the question TOTAL, which must stay at
+    # exactly 2 per crosswalk (the inventory renders q1+q2 for every row).
+    readme = (repo / "README.md").read_text(encoding="utf-8")
+    m = re.search(r"\*\*(\d+) questions — two for every one of the \d+ crosswalks\*\*", readme)
+    assert m, "README: '**N questions — two for every one of the M crosswalks**' not found"
+    assert int(m.group(1)) == 2 * n, (
+        f"README cites {m.group(1)} questions; must be 2 x {n} = {2 * n}"
+    )
 
 
 def test_example_question_count_matches_files():
