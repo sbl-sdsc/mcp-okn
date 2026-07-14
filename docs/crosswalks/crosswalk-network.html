@@ -259,6 +259,55 @@ const nbr={};nodeSet.forEach(n=>nbr[n]=new Set());
 links.forEach(l=>{nbr[l.source].add(l.target);nbr[l.target].add(l.source);});
 const deg={};nodeSet.forEach(n=>deg[n]=nbr[n].size);
 const nodes=[...nodeSet].map(id=>({id,bridge:BRIDGES.has(id),deg:deg[id]}));
+
+// ---- Domain clustering -------------------------------------------------------
+// A plain force layout collapses this graph into one hairball: ~15 of the 35 KGs
+// are biomedical and carry most of the 161 edges, so they clump, drift outward and
+// pile up against the viewport edge. Instead, give every DOMAIN an anchor point on
+// a ring, and pull each KG toward the WEIGHTED CENTROID of the domains it actually
+// joins on (weighted by how many crosswalks it has in each).
+//
+// This needs no special-casing for hubs, which is the point: a single-domain KG
+// (e.g. biobricks-tox21, all Chemicals) is pulled hard to one anchor and lands in
+// that cluster, while a KG spanning many domains (spoke-okn: chemicals, disease,
+// genes, geospatial…) has its anchors average out to near the centre — so the
+// connectors stay central and the specialists fan out around them, which is what
+// the topology actually is.
+const domCodes=Object.keys(DOM);
+const domCount={};nodes.forEach(n=>domCount[n.id]={});
+links.forEach(l=>{
+  domCount[l.source][l.dom]=(domCount[l.source][l.dom]||0)+1;
+  domCount[l.target][l.dom]=(domCount[l.target][l.dom]||0)+1;
+});
+// Domain anchors on a ring. Ordered so related domains sit adjacent, keeping the
+// biomedical block contiguous rather than scattered around the circle.
+const DOM_ORDER=["C","E","T","W","B","S","H","I","J","L","A","D","G","F","P"]
+  .filter(k=>domCodes.includes(k)).concat(domCodes.filter(k=>!"CETWBSHIJLADGFP".includes(k)));
+const anchor={};
+DOM_ORDER.forEach((k,i)=>{
+  const a=(i/DOM_ORDER.length)*2*Math.PI-Math.PI/2;
+  anchor[k]=[500+430*Math.cos(a),360+300*Math.sin(a)];
+});
+const CX=500,CY=360;
+nodes.forEach(n=>{
+  const counts=domCount[n.id],ks=Object.keys(counts);
+  // Dominant domain = where most of this KG's crosswalks live (ties broken by the
+  // ring order, so the choice is deterministic across reloads).
+  const dom=ks.sort((a,b)=>(counts[b]-counts[a])||(DOM_ORDER.indexOf(a)-DOM_ORDER.indexOf(b)))[0];
+  n.spread=ks.length;
+  // Blend the KG's own domain anchor toward the CENTRE in proportion to how many
+  // domains it spans. A specialist (spread 1: biobricks-tox21 = pure Chemicals)
+  // sits squarely in its cluster; a connector spanning 5+ domains (spoke-okn) is
+  // pulled to the middle, which is where it belongs — it is the thing that ties the
+  // clusters together. NB: do NOT use the weighted centroid of all its domains, as
+  // a first attempt did: every multi-domain biomedical KG then averages to nearly
+  // the SAME point and they collapse into one overlapping pile.
+  const t=Math.min(1,(n.spread-1)/4);
+  n.ax=anchor[dom][0]*(1-t)+CX*t;
+  n.ay=anchor[dom][1]*(1-t)+CY*t;
+  n.dom=dom;
+  n.anchorK=0.10+0.45*(1-t);   // specialists held firmly, hubs held loosely
+});
 const maxLog=Math.log10(681045);
 const lw=w=>0.8+6.2*(Math.log10(Math.max(w,1)))/maxLog;
 const nr=n=>n.bridge?17:Math.min(13,5+Math.sqrt(n.deg)*2);
@@ -328,16 +377,23 @@ function restore(){
   node.attr("opacity",1);label.attr("opacity",n=>n.bridge?1:0.62);
 }
 
+// Collision radius accounts for the LABEL, not just the node: the long names
+// (biobricks-pubchem-annotations, gene-expression-atlas-okn) are what actually
+// collide, so reserve horizontal room proportional to the text width.
+const labelR=d=>nr(d)+16+Math.min(40,d.id.length*1.5);
+
 const sim=d3.forceSimulation(nodes)
-  .force("link",d3.forceLink(simLinks).id(d=>d.id).distance(110).strength(0.085))
-  .force("charge",d3.forceManyBody().strength(-940))
-  .force("x",d3.forceX(W/2).strength(0.03))
-  .force("y",d3.forceY(H/2).strength(0.14))
-  .force("collide",d3.forceCollide().radius(d=>nr(d)+23))
+  .force("link",d3.forceLink(simLinks).id(d=>d.id).distance(95).strength(0.05))
+  .force("charge",d3.forceManyBody().strength(-900))
+  // Pull each KG toward its domain anchor (see "Domain clustering"). These replace
+  // the old centre-seeking x/y forces, which fought the link forces and let the
+  // dense biomedical block slide into the wall.
+  .force("x",d3.forceX(d=>d.ax).strength(d=>d.anchorK))
+  .force("y",d3.forceY(d=>d.ay).strength(d=>d.anchorK))
+  .force("collide",d3.forceCollide().radius(labelR).strength(0.9))
   .on("tick",ticked);
 
 function ticked(){
-  nodes.forEach(d=>{d.x=Math.max(30,Math.min(W-30,d.x));d.y=Math.max(24,Math.min(H-24,d.y));});
   link.attr("d",d=>{const sx=d.source.x,sy=d.source.y,tx=d.target.x,ty=d.target.y;if(!d.curv)return "M"+sx+","+sy+"L"+tx+","+ty;const dx=tx-sx,dy=ty-sy,dl=Math.hypot(dx,dy)||1,off=d.curv*(16+dl*0.10)*Math.min(3,d.par/2),mx=(sx+tx)/2,my=(sy+ty)/2,ux=-dy/dl,uy=dx/dl;return "M"+sx+","+sy+"Q"+(mx+ux*off)+","+(my+uy*off)+" "+tx+","+ty;});
   node.attr("cx",d=>d.x).attr("cy",d=>d.y);
   label.attr("x",d=>d.x).attr("y",d=>d.y-nr(d)-4);
@@ -349,7 +405,44 @@ node.call(d3.drag()
   .on("end",(ev,d)=>{if(!ev.active)sim.alphaTarget(0);}))
   .on("dblclick",(ev,d)=>{d.fx=null;d.fy=null;sim.alpha(0.3).restart();});
 
-svg.call(d3.zoom().scaleExtent([0.35,4]).on("zoom",ev=>g.attr("transform",ev.transform)));
+const zoom=d3.zoom().scaleExtent([0.35,4]).on("zoom",ev=>g.attr("transform",ev.transform));
+svg.call(zoom);
+
+// Fit the settled graph to the viewport instead of CLAMPING nodes into it.
+// The old layout forced every node inside [30, W-30] on each tick, so the dense
+// biomedical cluster — pushed outward by its own repulsion — was squashed flat
+// against the right edge with its labels running off the canvas. Now the
+// simulation is free to use whatever space it needs and we scale the RESULT to
+// fit, measuring the bounding box over label extents so no name is ever clipped.
+function fit(animate){
+  let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;
+  nodes.forEach(d=>{
+    const half=d.id.length*(d.bridge?4.2:3.5);  // approx half label width
+    x0=Math.min(x0,d.x-Math.max(nr(d),half));   x1=Math.max(x1,d.x+Math.max(nr(d),half));
+    y0=Math.min(y0,d.y-nr(d)-16);               y1=Math.max(y1,d.y+nr(d));
+  });
+  const bw=x1-x0,bh=y1-y0;
+  if(!(bw>0&&bh>0))return;
+  const pad=18,k=Math.min((W-2*pad)/bw,(H-2*pad)/bh,1.6);
+  const tx=(W-k*(x0+x1))/2,ty=(H-k*(y0+y1))/2;
+  const t=d3.zoomIdentity.translate(tx,ty).scale(k);
+  (animate?svg.transition().duration(420):svg).call(zoom.transform,t);
+}
+
+// Settle the layout SYNCHRONOUSLY, then draw and fit once.
+//
+// d3 drives the simulation from requestAnimationFrame, which the browser throttles
+// — or freezes outright — whenever the tab isn't in the foreground. So an animated
+// settle makes the graph's final geometry, and therefore the fit, depend on whether
+// anyone happened to be looking at it: the layout could be left half-cooked and
+// unfitted, with nodes off-canvas. Ticking to rest up front makes the picture
+// deterministic (identical on every load), kills the multi-second wobble, and
+// guarantees the fit runs against FINAL positions. The simulation stays live
+// afterwards, so dragging a node still re-heats and re-settles it interactively.
+sim.stop();
+for(let i=0;i<420;i++)sim.tick();
+ticked();
+fit(false);
 
 const leg=d3.select("#legend");
 Object.keys(DOM).forEach(k=>{
@@ -359,7 +452,12 @@ Object.keys(DOM).forEach(k=>{
   chip.on("click",function(){if(active.has(k)){active.delete(k);this.classList.add("off");}else{active.add(k);this.classList.remove("off");}restore();});
 });
 document.querySelectorAll(".lstyle").forEach(el=>{el.onclick=function(){const b=this.getAttribute("data-b");if(bactive.has(b)){bactive.delete(b);this.classList.add("off");}else{bactive.add(b);this.classList.remove("off");}restore();};});
-document.getElementById("reset").onclick=()=>{nodes.forEach(d=>{d.fx=null;d.fy=null;});g.attr("transform",null);sim.alpha(0.7).restart();};
+document.getElementById("reset").onclick=()=>{
+  nodes.forEach(d=>{d.fx=null;d.fy=null;});
+  sim.alpha(1).stop();
+  for(let i=0;i<420;i++)sim.tick();
+  ticked();fit(true);
+};
 })();
 </script>
 </body>

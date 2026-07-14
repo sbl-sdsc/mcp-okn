@@ -112,7 +112,40 @@ G = nx.Graph()
 G.add_nodes_from(sorted(nodeset))
 for pr, grp in sorted(pg.items()):
     G.add_edge(pr[0], pr[1], weight=0.3 + lw(max(L[3] for L in grp)) * 0.12)
-pos = nx.spring_layout(G, k=0.62, iterations=600, weight="weight", seed=11)
+
+# Domain clustering — mirrors the interactive HTML (see its "Domain clustering"
+# comment). A plain spring layout collapses this graph into one hairball: ~15 of the
+# 35 KGs are biomedical and carry most of the edges, so they clump. Instead each
+# domain gets an anchor on a ring, and a KG starts at its dominant domain's anchor,
+# blended toward the centre in proportion to how many domains it spans — so
+# specialists land in their cluster and multi-domain connectors (spoke-okn) sit
+# centrally. spring_layout has no anchor force, so the anchors are applied as the
+# INITIAL positions and the layout is relaxed from there, which preserves the
+# clustering while letting the edges do the fine placement.
+DOM_RING = ["C", "E", "T", "W", "B", "S", "H", "I", "J", "L", "A", "D", "G", "F", "P"]
+ring = [k for k in DOM_RING if k in DOM] + [k for k in DOM if k not in DOM_RING]
+anchor = {}
+for i, k in enumerate(ring):
+    a = (i / len(ring)) * 2 * math.pi - math.pi / 2
+    anchor[k] = np.array([math.cos(a), math.sin(a) * 0.72])
+
+# Count from `links` (already expanded to real node pairs), not from R: a bridged
+# R row names its hub (ubergraph/wikidata), which is not drawn as a node.
+dom_count: dict[str, dict[str, int]] = {n: {} for n in nodeset}
+for L in links:
+    for kg in (L[0], L[1]):
+        dom_count[kg][L[2]] = dom_count[kg].get(L[2], 0) + 1
+
+init = {}
+for n in sorted(nodeset):
+    counts = dom_count[n]
+    dom = sorted(counts, key=lambda k: (-counts[k], ring.index(k)))[0]
+    t = min(1.0, (len(counts) - 1) / 4)
+    init[n] = anchor[dom] * (1 - t)  # centre is the origin, so blending is a scale
+
+pos = nx.spring_layout(
+    G, k=0.62, iterations=600, weight="weight", seed=11, pos=init, center=(0, 0)
+)
 
 
 def bez(s, c, t, n=26):
