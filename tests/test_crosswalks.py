@@ -445,6 +445,52 @@ def test_inventory_doc_matches_generator():
     )
 
 
+def test_skeleton_reference_matches_generator():
+    """docs/crosswalks/crosswalks_sparql_skeletons.md is generated from the
+    crosswalk table — guard that it hasn't drifted (regenerate with
+    scripts/build_skeleton_reference.py). It shipped as a HAND-written doc and had
+    silently gone stale: 134 crosswalks, and the sawgraph×ice CAS count still at
+    its pre-correction 12."""
+    import importlib.util
+    import pathlib
+
+    repo = pathlib.Path(__file__).resolve().parent.parent
+    doc = repo / "docs" / "crosswalks" / "crosswalks_sparql_skeletons.md"
+    gen = repo / "scripts" / "build_skeleton_reference.py"
+    if not doc.exists() or not gen.exists():
+        pytest.skip("skeleton reference or generator not present in this checkout")
+    spec = importlib.util.spec_from_file_location("_skel_gen", gen)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    assert doc.read_text(encoding="utf-8") == mod.render(), (
+        "skeleton reference is stale — run scripts/build_skeleton_reference.py"
+    )
+
+
+def test_skeleton_reference_covers_every_crosswalk_skeleton():
+    """Every `skeleton_query` in the table must appear in the reference doc.
+
+    The doc deduplicates skeletons WITHIN a key family, so this pins the thing that
+    dedup could silently break: a pair whose SPARQL differs from its family-mates
+    (MeSH's registryNumber vs edam:has_identifier, say) must still get its own
+    skeleton rendered, not be collapsed into a neighbour's."""
+    import pathlib
+
+    repo = pathlib.Path(__file__).resolve().parent.parent
+    doc = repo / "docs" / "crosswalks" / "crosswalks_sparql_skeletons.md"
+    if not doc.exists():
+        pytest.skip("skeleton reference not present in this checkout")
+    text = doc.read_text(encoding="utf-8")
+    for entry in cw.load_crosswalks().get("verified_crosswalks", []):
+        skeleton = (entry.get("skeleton_query") or "").strip()
+        if not skeleton:
+            continue
+        assert skeleton in text, (
+            f"{entry['id']}: skeleton_query missing from the reference doc — "
+            "run scripts/build_skeleton_reference.py"
+        )
+
+
 def test_network_figure_matches_generator():
     """docs/crosswalks/crosswalk-network.html embeds the crosswalk data (the DOM /
     R JS constants + header counts) spliced in by scripts/build_crosswalk_network.py.
@@ -606,8 +652,12 @@ def test_user_facing_crosswalk_count_is_canonical():
     # The same README sentence also quotes the question TOTAL, which must stay at
     # exactly 2 per crosswalk (the inventory renders q1+q2 for every row).
     readme = (repo / "README.md").read_text(encoding="utf-8")
-    m = re.search(r"\*\*(\d+) questions — two for every one of the \d+ crosswalks\*\*", readme)
-    assert m, "README: '**N questions — two for every one of the M crosswalks**' not found"
+    m = re.search(
+        r"\*\*(\d+) questions — two for every one of the \d+ crosswalks\*\*", readme
+    )
+    assert m, (
+        "README: '**N questions — two for every one of the M crosswalks**' not found"
+    )
     assert int(m.group(1)) == 2 * n, (
         f"README cites {m.group(1)} questions; must be 2 x {n} = {2 * n}"
     )
