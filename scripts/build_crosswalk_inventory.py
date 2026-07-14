@@ -24,6 +24,12 @@ Markdown, so the two cannot disagree about counts, rows, or examples. It is a
 standalone page (inline CSS/JS, no external assets) with a live filter box, and is
 deliberately NOT linked from the README. Both outputs are guarded against drift by
 tests/test_crosswalks.py.
+
+The HTML additionally links every example question to the transcript of the worked
+example that answers it (``crosswalks_examples/*.md``). Those links are re-derived
+from ``crosswalks_example.md``'s catalog table on every build — see
+:func:`transcript_links` — so adding a crosswalk without working an example, or
+renaming a transcript, fails the build loudly instead of shipping a dead link.
 """
 
 from __future__ import annotations
@@ -31,11 +37,13 @@ from __future__ import annotations
 import html
 import re
 import sys
+from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DOC = ROOT / "docs" / "crosswalks" / "proto-okn-crosswalk-inventory.md"
 DOC_HTML = DOC.with_suffix(".html")
+CATALOG = ROOT / "docs" / "crosswalks" / "crosswalks_example.md"
 sys.path.insert(0, str(ROOT / "src"))
 
 from mcp_okn import crosswalks as C  # noqa: E402
@@ -112,6 +120,198 @@ def fmt_examples(r: dict) -> str:
         [r["example_question"]] if r.get("example_question") else []
     )
     return "<br><br>".join(q for q in qs if q)
+
+
+# --------------------------------------------------------------------------- #
+# Transcript links — resolved from the example catalog, not stored per row.     #
+# --------------------------------------------------------------------------- #
+#
+# Every crosswalk has a worked, transcript-backed example PAIR (q1 + q2) under
+# docs/crosswalks/crosswalks_examples/. The links live in ONE place —
+# ``crosswalks_example.md``'s per-domain catalog table — and nothing in
+# crosswalks.json points at them, so the inventory re-derives the row→transcript
+# mapping here rather than duplicating a second list of paths.
+#
+# The catalog names a stem's KGs in prose (``BioHealthKG × ubergraph × GXA``) and
+# its key descriptively (``UMLS ↔ UBERON (ubergraph)``), so a stem is matched to a
+# crosswalk row by (domain, CORE KG set, shared-key tokens): core = the row's KGs
+# minus the bridge hubs, which the catalog names inconsistently (some stems list
+# ubergraph, some elide it). Ambiguity inside a domain is broken by key tokens
+# (``MONDO<->OMIM`` vs ``MONDO<->Orphanet`` on the same KG pair).
+
+CATALOG_KG_ALIAS = {
+    "AOP-Wiki": "biobricks-aopwiki",
+    "BioHealthKG": "biohealth",
+    "BiomarkerKG": "biomarkerkg",
+    "ClimateModelsKG": "climatemodelskg",
+    "DreamKG": "dreamkg",
+    "dreamkg": "dreamkg",
+    "FIOKG": "fiokg",
+    "GXA": "gene-expression-atlas-okn",
+    "HydrologyKG": "hydrologykg",
+    "ICE": "biobricks-ice",
+    "MeSH": "biobricks-mesh",
+    "NASA-GESDISC": "nasa-gesdisc-kg",
+    "NCI-PID": "ncipidkg",
+    "NDE": "nde",
+    "NIKG": "nikg",
+    "OARD": "oard-kg",
+    "PanKgraph": "pankgraph",
+    "ProKN": "prokn",
+    "PubChem-annotations": "biobricks-pubchem-annotations",
+    "RDKG": "rdkg",
+    "RuralKG": "ruralkg",
+    "SAWGraph": "sawgraph",
+    "SCALES": "scales",
+    "SOCKG": "sockg",
+    "SPOKE": "spoke-okn",
+    "spoke-okn": "spoke-okn",
+    "SPOKE-GeneLab": "spoke-genelab",
+    "SUDOKN": "sudokn",
+    "SecureChainKG": "securechainkg",
+    "SpatialKG": "spatialkg",
+    "Tox21": "biobricks-tox21",
+    "ToxCast": "biobricks-toxcast",
+    "UFOKN": "ufokn",
+    "Wikidata": "wikidata",
+    "Wildlife-KN": "wildlifekn",
+    "digcfdekg": "digcfdekg",
+    "geoconnex": "geoconnex",
+    "phaseskg": "phaseskg",
+    "ubergraph": "ubergraph",
+    # An illustrative list of downstream KGs in a title cell, not a join member.
+    "RDKG/NDE/OARD/SPOKE": None,
+}
+
+# Bridge hubs: dropped from both sides before comparing KG sets (see above).
+BRIDGE_KGS = {"ubergraph", "wikidata"}
+
+# Catalog stem-id prefix -> crosswalk domain.
+CATALOG_DOMAIN = {
+    "AN": "Anatomy & Cell Type",
+    "C": "Chemicals",
+    "CJ": "Justice & Public Safety",
+    "D": "Disease & phenotype",
+    "EO": "Earth observation",
+    "ET": "Environmental toxicology",
+    "G": "Genes",
+    "GEO": "Geospatial",
+    "HY": "Hydrology",
+    "I": "Industry & supply chain",
+    "MF": "Function & Pathways",
+    "P": "Proteins",
+    "PUB": "Publications",
+    "PW": "Function & Pathways",
+    "SDOH": "Social Determinants & Services",
+    "T": "Taxonomy",
+}
+
+# The three stems the KG-set match cannot resolve, all documented in
+# crosswalks_example_notes.md: G03 works a 3-way clique row that was later dropped
+# from the table (no row to link it to), and GEO26/GEO28 each work the
+# sudokn×spatialkg pair from a wider transcript that also queries a third KG.
+CATALOG_OVERRIDE: dict[str, tuple[tuple[str, ...], str] | None] = {
+    "G03": None,
+    "GEO26": (("spatialkg", "sudokn"), "state_FIPS"),
+    "GEO28": (("spatialkg", "sudokn"), "S2_L13"),
+}
+
+# Words that describe HOW a key is reached, not WHICH key it is.
+_KEY_STOPWORDS = {
+    "a", "and", "assembled", "bridge", "bridged", "cell", "computed", "digit",
+    "direct", "hop", "id", "in", "iri", "level", "literal", "name", "no", "of",
+    "scoped", "the", "to", "two", "ubergraph", "via", "wikidata",
+}
+
+
+def _key_tokens(key: str | None) -> set[str]:
+    text = (key or "").lower()
+    for arrow in ("<->", "->", "↔", "→"):
+        text = text.replace(arrow, " ")
+    return {
+        t for t in re.split(r"[^a-z0-9]+", text) if t and t not in _KEY_STOPWORDS
+    }
+
+
+def _core_kgs(kgs) -> tuple[str, ...]:
+    return tuple(sorted(set(kgs) - BRIDGE_KGS))
+
+
+def _parse_catalog() -> dict[str, dict]:
+    """``{stem_id: {"domain", "kgs", "key", "paths": (q1, q2)}}`` from the catalog table."""
+    stems: dict[str, dict] = defaultdict(dict)
+    for line in CATALOG.read_text(encoding="utf-8").splitlines():
+        m = re.match(r"\|\s*([A-Z]+)(\d+)-Q(\d)\s*\|", line)
+        if not m:
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        link = re.search(r"\((crosswalks_examples/[^)]+\.md)\)", line)
+        if not link:
+            raise SystemExit(f"{CATALOG.name}: no transcript link on row {cells[0]!r}")
+        prefix, stem_id, q = m.group(1), m.group(1) + m.group(2), int(m.group(3))
+        kgs = []
+        for raw in cells[2].split("×"):
+            name = raw.strip().split("(")[0].strip().rstrip(")").strip()
+            if name not in CATALOG_KG_ALIAS:
+                raise SystemExit(f"{CATALOG.name}: unknown KG name {name!r} ({stem_id})")
+            if CATALOG_KG_ALIAS[name]:
+                kgs.append(CATALOG_KG_ALIAS[name])
+        if prefix not in CATALOG_DOMAIN:
+            raise SystemExit(f"{CATALOG.name}: unknown stem prefix {prefix!r}")
+        stem = stems[stem_id]
+        # Match on the Q1 row: a stem's Q2 row sometimes widens the KG cell to the
+        # KGs its transcript touches (D18-Q2 lists the whole disease hub), which is
+        # not the crosswalk's join membership.
+        if q == 1 or "kgs" not in stem:
+            stem.update(domain=CATALOG_DOMAIN[prefix], kgs=kgs, key=cells[3])
+        stem.setdefault("paths", {})[q] = link.group(1)
+    return dict(stems)
+
+
+def transcript_links(rows: list[dict]) -> dict[tuple, list[tuple[str, str]]]:
+    """Map each crosswalk row to its worked transcripts: ``{row_key: [(q1, q2), …]}``.
+
+    ``row_key`` is ``(core KGs, shared_key)``. The value is a LIST because a row can
+    carry more than one worked stem (spoke-genelab×spoke-okn on Entrez has two: the
+    spaceflight gene-expression and DNA-methylation examples); the first pair is the
+    row's primary example, the rest are extra worked examples.
+    """
+    by_domain_core: dict[tuple, list[dict]] = defaultdict(list)
+    for r in rows:
+        by_domain_core[(r["domain"], _core_kgs(r["kgs"]))].append(r)
+
+    links: dict[tuple, list[tuple[str, str]]] = defaultdict(list)
+    for stem_id, stem in sorted(_parse_catalog().items()):
+        paths = stem["paths"]
+        if sorted(paths) != [1, 2]:
+            raise SystemExit(f"{CATALOG.name}: {stem_id} does not have both Q1 and Q2")
+        if stem_id in CATALOG_OVERRIDE:
+            target = CATALOG_OVERRIDE[stem_id]
+            if target:
+                links[target].append((paths[1], paths[2]))
+            continue
+        cands = by_domain_core.get((stem["domain"], _core_kgs(stem["kgs"])), [])
+        if not cands:
+            raise SystemExit(
+                f"{CATALOG.name}: {stem_id} ({stem['domain']}, "
+                f"{'+'.join(_core_kgs(stem['kgs']))}) matches no crosswalk row"
+            )
+        want = _key_tokens(stem["key"])
+        best = max(cands, key=lambda r: len(_key_tokens(r["shared_key"]) & want))
+        links[(_core_kgs(best["kgs"]), best["shared_key"])].append((paths[1], paths[2]))
+
+    unlinked = [r for r in rows if (_core_kgs(r["kgs"]), r["shared_key"]) not in links]
+    if unlinked:
+        listing = "; ".join(f"{'+'.join(r['kgs'])} on {r['shared_key']}" for r in unlinked)
+        raise SystemExit(
+            f"{len(unlinked)} crosswalk(s) have no worked example in {CATALOG.name}: "
+            f"{listing}"
+        )
+    return links
+
+
+def row_links(links: dict, r: dict) -> list[tuple[str, str]]:
+    return links[(_core_kgs(r["kgs"]), r["shared_key"])]
 
 
 def render_domain_table(domain: str, rows: list[dict]) -> list[str]:
@@ -275,6 +475,12 @@ td.kgs { font-weight: 600; white-space: nowrap; }
 td.key { white-space: nowrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .87em; }
 td.count { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 td.examples { color: var(--fg); }
+a.q {
+  color: inherit; text-decoration: none;
+  border-bottom: 1px dotted color-mix(in srgb, var(--accent) 55%, transparent);
+}
+a.q:hover, a.q:focus { color: var(--accent); border-bottom-style: solid; }
+.also { color: var(--muted); font-size: .87em; }
 section[hidden], tr[hidden] { display: none; }
 """
 
@@ -311,11 +517,26 @@ def esc(text: str) -> str:
     return re.sub(r"`([^`]+)`", r"<code>\1</code>", out)
 
 
-def fmt_examples_html(r: dict) -> str:
+def fmt_examples_html(r: dict, links: dict) -> str:
+    """Each question is a link to the transcript of the worked example that answers
+    it (``crosswalks_examples/<stem>_q<n>_*.md``). A row with more than one worked
+    stem gets its extra transcripts on a trailing muted line."""
     qs = r.get("example_questions") or (
         [r["example_question"]] if r.get("example_question") else []
     )
-    return "<br><br>".join(esc(q) for q in qs if q)
+    pairs = row_links(links, r)
+    primary = pairs[0]
+    cells = [
+        f'<a class="q" href="{p}">{esc(q)}</a>'
+        for q, p in zip(qs, primary, strict=False)
+    ]
+    cells += [esc(q) for q in qs[len(primary) :] if q]  # never hit while every row is q1+q2
+    for extra in pairs[1:]:
+        also = " · ".join(
+            f'<a href="{p}">example {i}</a>' for i, p in enumerate(extra, 1)
+        )
+        cells.append(f'<span class="also">Also worked: {also}</span>')
+    return "<br><br>".join(cells)
 
 
 def slug(domain: str) -> str:
@@ -329,7 +550,7 @@ def _row_html(cells: list[str], classes: list[str]) -> str:
     return f"    <tr>{tds}</tr>"
 
 
-def render_domain_section_html(domain: str, rows: list[dict]) -> list[str]:
+def render_domain_section_html(domain: str, rows: list[dict], links: dict) -> list[str]:
     out = [
         f'<section id="{slug(domain)}">',
         f"  <h2>{esc(domain)}</h2>",
@@ -345,7 +566,7 @@ def render_domain_section_html(domain: str, rows: list[dict]) -> list[str]:
                     esc(fmt_kgs(r)),
                     esc(clean_key(r["shared_key"])),
                     _num(r["verified_count"]),
-                    fmt_examples_html(r),
+                    fmt_examples_html(r, links),
                 ],
                 ["kgs", "key", "count", "examples"],
             )
@@ -354,7 +575,7 @@ def render_domain_section_html(domain: str, rows: list[dict]) -> list[str]:
     return out
 
 
-def render_taxonomy_html(rows: list[dict]) -> list[str]:
+def render_taxonomy_html(rows: list[dict], links: dict) -> list[str]:
     id_rows = sorted(
         (r for r in rows if r.get("match_type") == "id"), key=lambda r: r["kgs"]
     )
@@ -378,7 +599,7 @@ def render_taxonomy_html(rows: list[dict]) -> list[str]:
                     esc(f"{a} × {b}"),
                     _num(r["exact_id"]),
                     f"{_num(r['clade_a_in_b'])} / {_num(r['clade_b_in_a'])}",
-                    fmt_examples_html(r),
+                    fmt_examples_html(r, links),
                 ],
                 ["kgs", "count", "count", "examples"],
             )
@@ -391,7 +612,7 @@ def render_taxonomy_html(rows: list[dict]) -> list[str]:
                     esc(f"{a} × {b} †"),
                     f"{_num(r['label_match'])} / {_num(r['kg_b_taxa'])}",
                     "—",
-                    fmt_examples_html(r),
+                    fmt_examples_html(r, links),
                 ],
                 ["kgs", "count", "count", "examples"],
             )
@@ -409,6 +630,7 @@ def render_taxonomy_html(rows: list[dict]) -> list[str]:
 def render_html() -> str:
     rows = C.all_crosswalks(include_examples=True)
     verified_on = C.verified_on() or "unknown"
+    links = transcript_links(rows)
 
     domains: list[str] = []
     by_domain: dict[str, list[dict]] = {}
@@ -444,7 +666,9 @@ def render_html() -> str:
         f'<p class="lede">All {len(rows)} precomputed cross-KG crosswalks (verified '
         f"through {esc(verified_on)}), grouped by domain. Each shows the knowledge "
         "graphs joined, the shared identifier, the verified overlap count, and "
-        "example questions the join answers.</p>",
+        "example questions the join answers. <strong>Every question links to the "
+        "transcript</strong> of the worked example that answers it — the federated "
+        "SPARQL, the rows it returned, and the reading.</p>",
         '<ul class="toc">',
         toc,
         "</ul>",
@@ -454,9 +678,9 @@ def render_html() -> str:
     ]
     for domain in domains:
         if domain == TAXON_DOMAIN:
-            lines += render_taxonomy_html(by_domain[domain])
+            lines += render_taxonomy_html(by_domain[domain], links)
         else:
-            lines += render_domain_section_html(domain, by_domain[domain])
+            lines += render_domain_section_html(domain, by_domain[domain], links)
     lines += [
         "</main>",
         "<script>",
