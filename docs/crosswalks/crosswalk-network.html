@@ -12,6 +12,11 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0;height:100%}
+  /* ?static=1 — the view scripts/render_crosswalk_network_png.py screenshots for the
+     static PNG. Hides the controls that only mean something when you can click them
+     (the interaction hint, the reset button) and gives the figure the freed height. */
+  body.static .tip,body.static #reset{display:none}
+  body.static #svg{height:82vh}
   body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6}
   header{padding:18px 22px 10px}
   h1{font-size:20px;font-weight:500;margin:0 0 4px}
@@ -67,6 +72,9 @@
 </script>
 <script>
 (function(){
+// Static-render mode (see the body.static CSS): set BEFORE the layout runs, so the
+// figure is fitted to the taller canvas the PNG uses.
+if(/[?&]static=1/.test(location.search))document.body.classList.add("static");
 const DOM={A:["Anatomy & Cell Type","#0C8599"],C:["Chemicals","#E8590C"],D:["Disease & phenotype","#D6336C"],W:["Earth observation","#0B7285"],E:["Environmental toxicology","#5C940D"],F:["Function & Pathways","#9C36B5"],G:["Genes","#7048E8"],S:["Geospatial","#1C7ED6"],H:["Hydrology","#1098AD"],I:["Industry & supply chain","#C9920A"],J:["Justice & Public Safety","#A61E4D"],P:["Proteins","#2B8A3E"],B:["Publications","#3B5BDB"],L:["Social Determinants & Services","#15AABF"],T:["Taxonomy","#82C91E"]};
 const BRIDGES=new Set();
 const R=[

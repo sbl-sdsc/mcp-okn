@@ -1,12 +1,22 @@
 #!/usr/bin/env python3
-"""Render docs/crosswalks/crosswalk-network.png from the .html (single source).
+"""Render docs/crosswalks/crosswalk-network.png by SCREENSHOTTING the D3 figure.
 
-Parses the SAME `DOM` + `R` data embedded in crosswalk-network.html and draws a
-static version with the identical visual encoding the interactive page uses:
-domain colour, edge width proportional to log10(verified count), one edge per
-crosswalk (parallel crosswalks fan out), and bridge line-style (dashed =
-ubergraph, dotted = wikidata). Run after build_crosswalk_network.py so the PNG
-stays in lock-step with the HTML.
+The PNG is now a rasterisation of `crosswalk-network.html` itself, taken in
+headless Chrome, rather than an independent redraw. It previously re-implemented
+the whole figure in matplotlib + networkx — a SECOND layout of the same data,
+which meant a second thing to keep in sync and, in practice, a worse picture: the
+networkx `spring_layout` has no notion of label collision, so the biomedical
+cluster's names printed straight through one another. The D3 page already solves
+that (label-aware collision radii, domain clustering, fit-to-viewport), so the
+honest thing is to photograph it instead of imitating it.
+
+This is only reproducible because the page settles its force simulation
+SYNCHRONOUSLY at load (see the "Settle the layout SYNCHRONOUSLY" comment there):
+the geometry does not depend on animation timing, so the same HTML always yields
+the same PNG. The page is loaded with `?static=1`, which hides the controls that
+only mean something when you can click them (the interaction hint, reset button).
+
+Requires Google Chrome. Run after build_crosswalk_network.py:
 
     python scripts/render_crosswalk_network_png.py
 """
@@ -14,262 +24,111 @@ stays in lock-step with the HTML.
 from __future__ import annotations
 
 import hashlib
-import json
-import math
-import re
-from collections import defaultdict
+import shutil
+import subprocess
+import sys
+import tempfile
 from pathlib import Path
 
-import matplotlib
-import numpy as np
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-import networkx as nx
-from matplotlib.lines import Line2D
+from PIL import Image, PngImagePlugin
 
 ROOT = Path(__file__).resolve().parent.parent
 HTML = ROOT / "docs" / "crosswalks" / "crosswalk-network.html"
 PNG = ROOT / "docs" / "crosswalks" / "crosswalk-network.png"
 
-#: tEXt-chunk key under which the PNG records the sha256 of the HTML it was rendered
-#: from. The HTML is itself generated from crosswalks.json (and guarded against
-#: staleness by its own test), so binding the PNG to the HTML transitively binds it
-#: to the crosswalk data.
-SOURCE_KEY = "crosswalk-network-source-sha256"
+# 2x device scale => a crisp retina PNG; the page is laid out for ~1500px wide.
+WIDTH, HEIGHT, SCALE = 1500, 1150, 2
 
-html = HTML.read_text(encoding="utf-8")
-source_sha = hashlib.sha256(html.encode("utf-8")).hexdigest()
-DOM = {
-    c: (label, col)
-    for c, label, col in re.findall(
-        r'(\w):\["([^"]+)","(#[0-9A-Fa-f]+)"\]',
-        re.search(r"const DOM=\{(.*?)\};", html).group(1),
-    )
-}
-i0 = html.find("const R=[")
-i1 = html.find("\n];", i0)
-R = json.loads(html[i0 + len("const R=") : i1].rstrip() + "]")
-hdr = re.search(
-    r"(\d+) knowledge graphs, (\d+) verified crosswalks \(verified ([^)]*)\)", html
-)
-n_kg, n_xw, date = hdr.group(1), hdr.group(2), hdr.group(3)
-
-
-def eff(w):
-    return max(w) if isinstance(w, list) else w
-
-
-def style(key):
-    k = (key or "").lower()
-    return (
-        (0, (6, 3)) if "ubergraph" in k else ((0, (1, 2)) if "wikidata" in k else "-")
-    )
-
-
-# one edge per crosswalk; a genuine 3-KG row (no bridge) routes as two segments
-links = []
-for dom, kgs, w, key in R:
-    st = style(key)
-    if len(kgs) == 3:
-        links.append([kgs[0], kgs[1], dom, eff(w), st])
-        links.append([kgs[1], kgs[2], dom, eff(w), st])
-    else:
-        links.append([kgs[0], kgs[1], dom, eff(w), st])
-pg = defaultdict(list)
-for L in links:
-    pg[tuple(sorted((L[0], L[1])))].append(L)
-for grp in pg.values():
-    n = len(grp)
-    for i, L in enumerate(grp):
-        L.append(0.0 if n == 1 else (i - (n - 1) / 2) / max(1, (n - 1)))  # curv
-        L.append(n)
-nodeset = {x for L in links for x in (L[0], L[1])}
-nbr = defaultdict(set)
-for L in links:
-    nbr[L[0]].add(L[1])
-    nbr[L[1]].add(L[0])
-deg = {n: len(nbr[n]) for n in nodeset}
-
-maxlog = math.log10(681045)
-
-
-def lw(w):
-    return 0.8 + 6.2 * (math.log10(max(w, 1))) / maxlog
-
-
-def nr(n):
-    return min(13, 5 + math.sqrt(deg[n]) * 2)
-
-
-G = nx.Graph()
-# Insert nodes and edges in a STABLE order. `nodeset` is a set, so iterating it
-# directly hands networkx a different node order on every process (str hashing is
-# randomized by PYTHONHASHSEED). spring_layout assigns its seeded starting
-# positions in node-insertion order, so an unsorted set made the layout — and thus
-# the rendered PNG — non-reproducible despite seed=11: three runs over identical
-# input produced three different images. Sorting makes the render deterministic.
-G.add_nodes_from(sorted(nodeset))
-for pr, grp in sorted(pg.items()):
-    G.add_edge(pr[0], pr[1], weight=0.3 + lw(max(L[3] for L in grp)) * 0.12)
-
-# Domain clustering — mirrors the interactive HTML (see its "Domain clustering"
-# comment). A plain spring layout collapses this graph into one hairball: ~15 of the
-# 35 KGs are biomedical and carry most of the edges, so they clump. Instead each
-# domain gets an anchor on a ring, and a KG starts at its dominant domain's anchor,
-# blended toward the centre in proportion to how many domains it spans — so
-# specialists land in their cluster and multi-domain connectors (spoke-okn) sit
-# centrally. spring_layout has no anchor force, so the anchors are applied as the
-# INITIAL positions and the layout is relaxed from there, which preserves the
-# clustering while letting the edges do the fine placement.
-DOM_RING = ["C", "E", "T", "W", "B", "S", "H", "I", "J", "L", "A", "D", "G", "F", "P"]
-ring = [k for k in DOM_RING if k in DOM] + [k for k in DOM if k not in DOM_RING]
-anchor = {}
-for i, k in enumerate(ring):
-    a = (i / len(ring)) * 2 * math.pi - math.pi / 2
-    anchor[k] = np.array([math.cos(a), math.sin(a) * 0.72])
-
-# Count from `links` (already expanded to real node pairs), not from R: a bridged
-# R row names its hub (ubergraph/wikidata), which is not drawn as a node.
-dom_count: dict[str, dict[str, int]] = {n: {} for n in nodeset}
-for L in links:
-    for kg in (L[0], L[1]):
-        dom_count[kg][L[2]] = dom_count[kg].get(L[2], 0) + 1
-
-init = {}
-for n in sorted(nodeset):
-    counts = dom_count[n]
-    dom = sorted(counts, key=lambda k: (-counts[k], ring.index(k)))[0]
-    t = min(1.0, (len(counts) - 1) / 4)
-    init[n] = anchor[dom] * (1 - t)  # centre is the origin, so blending is a scale
-
-pos = nx.spring_layout(
-    G, k=0.62, iterations=600, weight="weight", seed=11, pos=init, center=(0, 0)
-)
-
-
-def bez(s, c, t, n=26):
-    ts = np.linspace(0, 1, n)
-    return (
-        (1 - ts) ** 2 * s[0] + 2 * (1 - ts) * ts * c[0] + ts**2 * t[0],
-        (1 - ts) ** 2 * s[1] + 2 * (1 - ts) * ts * c[1] + ts**2 * t[1],
-    )
-
-
-fig, ax = plt.subplots(figsize=(14.5, 10.5), dpi=150)
-fig.patch.set_facecolor("#faf9f5")
-ax.set_facecolor("#faf9f5")
-for a, b, dom, w, st, curv, par in sorted(links, key=lambda L: lw(L[3])):
-    s = np.array(pos[a])
-    t = np.array(pos[b])
-    d = t - s
-    dl = np.hypot(*d) or 1
-    u = np.array([-d[1] / dl, d[0] / dl])
-    kw = {
-        "color": DOM[dom][1],
-        "lw": lw(w) * 1.2,
-        "alpha": 0.65,
-        "linestyle": st,
-        "solid_capstyle": "round",
-        "dash_capstyle": "round",
-        "zorder": 1,
-    }
-    if abs(curv) < 1e-9:
-        ax.plot([s[0], t[0]], [s[1], t[1]], **kw)
-    else:
-        c = (s + t) / 2 + u * curv * (0.10 + dl * 0.34) * min(3, par / 2)
-        bx, by = bez(s, c, t)
-        ax.plot(bx, by, **kw)
-for n in nodeset:
-    x, y = pos[n]
-    ax.scatter(
-        [x],
-        [y],
-        s=(nr(n) * 2.3) ** 2,
-        facecolor="#ffffff",
-        edgecolor="#cfccc2",
-        linewidths=1,
-        zorder=3,
-    )
-    ax.annotate(
-        n,
-        (x, y),
-        xytext=(0, nr(n) * 1.5 + 5),
-        textcoords="offset points",
-        ha="center",
-        va="bottom",
-        fontsize=9,
-        color="#1a1a18",
-        alpha=0.72,
-        zorder=4,
-    )
-dom_h = [Line2D([0], [0], color=c, lw=4, label=label) for (label, c) in DOM.values()]
-sty_h = [
-    Line2D([0], [0], color="#5f5e5a", lw=2, linestyle="-", label="direct join"),
-    Line2D(
-        [0],
-        [0],
-        color="#5f5e5a",
-        lw=2,
-        linestyle=(0, (6, 3)),
-        label="bridged via ubergraph",
-    ),
-    Line2D(
-        [0],
-        [0],
-        color="#5f5e5a",
-        lw=2,
-        linestyle=(0, (1, 2)),
-        dash_capstyle="round",
-        label="bridged via wikidata",
-    ),
+CHROME_CANDIDATES = [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "/Applications/Chromium.app/Contents/MacOS/Chromium",
+    "google-chrome",
+    "chromium",
+    "chromium-browser",
 ]
-leg1 = ax.legend(
-    handles=dom_h,
-    loc="lower center",
-    ncol=5,
-    frameon=False,
-    fontsize=9,
-    bbox_to_anchor=(0.5, -0.035),
-    handlelength=1.6,
-    columnspacing=1.4,
-)
-ax.add_artist(leg1)
-ax.legend(
-    handles=sty_h,
-    loc="lower center",
-    ncol=3,
-    frameon=False,
-    fontsize=8.5,
-    bbox_to_anchor=(0.5, -0.08),
-    handlelength=2.4,
-    columnspacing=1.8,
-)
-ax.set_title(
-    f"Proto-OKN cross-KG crosswalk network — {n_kg} knowledge graphs, {n_xw} verified crosswalks (verified {date})\n"
-    "one edge per crosswalk (parallel crosswalks fan out) · colour = domain · width ∝ log₁₀(verified count) · "
-    "dashed = ubergraph-bridged, dotted = wikidata-bridged",
-    fontsize=11.5,
-    color="#1a1a18",
-    pad=14,
-)
-ax.axis("off")
-ax.margins(0.06)
-plt.tight_layout()
-# Stamp the SOURCE hash into the PNG so a staleness test needs no re-render (and so
-# it is not hostage to matplotlib/freetype version differences, which change the
-# pixels but not the data). SOURCE_KEY is read back by
-# tests/test_crosswalks.py::test_network_png_matches_the_html_it_was_rendered_from.
-# Note `metadata` also suppresses matplotlib's default Software/Date tEXt chunks,
-# which would otherwise make the output non-reproducible.
-plt.savefig(
-    PNG,
-    dpi=150,
-    facecolor="#faf9f5",
-    bbox_inches="tight",
-    metadata={"Software": SOURCE_KEY, "Description": source_sha},
-)
-print(
-    f"wrote {PNG.relative_to(ROOT)} — {len(links)} edges, {len(nodeset)} nodes "
-    f"(source sha256 {source_sha[:12]}…)"
-)
+
+
+def find_chrome() -> str:
+    for cand in CHROME_CANDIDATES:
+        if Path(cand).exists():
+            return cand
+        found = shutil.which(cand)
+        if found:
+            return found
+    sys.exit(
+        "Google Chrome not found — needed to rasterise the D3 figure.\n"
+        "Install Chrome, or set one of: " + ", ".join(CHROME_CANDIDATES)
+    )
+
+
+def trim(im: Image.Image) -> Image.Image:
+    """Crop the uniform page-background border so the PNG is all figure."""
+    rgb = im.convert("RGB")
+    bg = Image.new("RGB", rgb.size, rgb.getpixel((0, 0)))
+    from PIL import ImageChops
+
+    box = ImageChops.difference(rgb, bg).getbbox()
+    if not box:
+        return im
+    pad = 8 * SCALE
+    x0, y0, x1, y1 = box
+    return im.crop(
+        (
+            max(0, x0 - pad),
+            max(0, y0 - pad),
+            min(im.width, x1 + pad),
+            min(im.height, y1 + pad),
+        )
+    )
+
+
+def main() -> int:
+    chrome = find_chrome()
+    with tempfile.TemporaryDirectory() as tmp:
+        shot = Path(tmp) / "shot.png"
+        # NB: do NOT pass --user-data-dir. Pointing Chrome at a fresh profile
+        # directory makes headless hang indefinitely here (it never gets past
+        # profile setup, even with --no-first-run); the default profile screenshots
+        # in ~2s. The timeout turns any future hang into a loud failure rather than
+        # a wedged build.
+        try:
+            subprocess.run(
+                [
+                    chrome,
+                    "--headless=new",
+                    "--disable-gpu",
+                    "--hide-scrollbars",
+                    f"--force-device-scale-factor={SCALE}",
+                    f"--window-size={WIDTH},{HEIGHT}",
+                    f"--screenshot={shot}",
+                    f"file://{HTML}?static=1",
+                ],
+                check=True,
+                capture_output=True,
+                timeout=120,
+            )
+        except subprocess.TimeoutExpired:
+            sys.exit("Chrome timed out rendering the figure (>120s)")
+        if not shot.exists():
+            sys.exit("Chrome produced no screenshot")
+        im = trim(Image.open(shot))
+
+        # Stamp the sha256 of the SOURCE html into a PNG tEXt chunk. A test asserts
+        # this still matches the current HTML, so a stale PNG (rendered before a
+        # crosswalk edit) fails CI instead of silently shipping a figure that
+        # disagrees with the table. Byte-comparing a fresh render would be hostage
+        # to the browser version; the stamp is not.
+        src = hashlib.sha256(HTML.read_bytes()).hexdigest()
+        meta = PngImagePlugin.PngInfo()
+        meta.add_text("Description", src)
+        im.save(PNG, optimize=True, pnginfo=meta)
+
+    print(
+        f"wrote {PNG.relative_to(ROOT)} — {im.width}x{im.height} "
+        f"(rasterised from crosswalk-network.html, sha256 {src[:12]}…)"
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
