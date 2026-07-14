@@ -445,6 +445,28 @@ def test_inventory_doc_matches_generator():
     )
 
 
+def test_inventory_html_matches_generator():
+    """docs/crosswalks/proto-okn-crosswalk-inventory.html is the HTML sibling of the
+    inventory doc, rendered from the SAME crosswalk rows by the SAME generator — so it
+    can never disagree with the .md about counts, rows, or examples. It is not linked
+    from the README and so has no reader to notice it going stale; this is that
+    reader. Regenerate with scripts/build_crosswalk_inventory.py (writes both)."""
+    import importlib.util
+    import pathlib
+
+    repo = pathlib.Path(__file__).resolve().parent.parent
+    doc = repo / "docs" / "crosswalks" / "proto-okn-crosswalk-inventory.html"
+    gen = repo / "scripts" / "build_crosswalk_inventory.py"
+    if not doc.exists() or not gen.exists():
+        pytest.skip("inventory HTML or generator not present in this checkout")
+    spec = importlib.util.spec_from_file_location("_inv_gen_html", gen)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    assert doc.read_text(encoding="utf-8") == mod.render_html(), (
+        "inventory HTML is stale — run scripts/build_crosswalk_inventory.py"
+    )
+
+
 def test_skeleton_reference_matches_generator():
     """docs/crosswalks/crosswalks_sparql_skeletons.md is generated from the
     crosswalk table — guard that it hasn't drifted (regenerate with
