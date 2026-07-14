@@ -26,7 +26,8 @@ deliberately NOT linked from the README. Both outputs are guarded against drift 
 tests/test_crosswalks.py.
 
 The HTML additionally links every example question to the transcript of the worked
-example that answers it (``crosswalks_examples/*.md``). Those links are re-derived
+example that answers it (``crosswalks_examples/*.md``, linked through GitHub's blob
+view so the Markdown RENDERS — see :func:`blob_url`). Those links are re-derived
 from ``crosswalks_example.md``'s catalog table on every build — see
 :func:`transcript_links` — so adding a crosswalk without working an example, or
 renaming a transcript, fails the build loudly instead of shipping a dead link.
@@ -314,6 +315,17 @@ def row_links(links: dict, r: dict) -> list[tuple[str, str]]:
     return links[(_core_kgs(r["kgs"]), r["shared_key"])]
 
 
+# The page's real home is GitHub Pages, which serves a .md as text/markdown — a
+# relative link there DOWNLOADS the transcript instead of showing it. Link to
+# GitHub's blob view, which renders the Markdown.
+BLOB_BASE = "https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/crosswalks/"
+
+
+def blob_url(path: str) -> str:
+    """``crosswalks_examples/x.md`` (as written in the catalog) -> its blob URL."""
+    return BLOB_BASE + path
+
+
 def render_domain_table(domain: str, rows: list[dict]) -> list[str]:
     out = [
         f"## {domain}",
@@ -527,13 +539,13 @@ def fmt_examples_html(r: dict, links: dict) -> str:
     pairs = row_links(links, r)
     primary = pairs[0]
     cells = [
-        f'<a class="q" href="{p}">{esc(q)}</a>'
+        f'<a class="q" href="{blob_url(p)}">{esc(q)}</a>'
         for q, p in zip(qs, primary, strict=False)
     ]
     cells += [esc(q) for q in qs[len(primary) :] if q]  # never hit while every row is q1+q2
     for extra in pairs[1:]:
         also = " · ".join(
-            f'<a href="{p}">example {i}</a>' for i, p in enumerate(extra, 1)
+            f'<a href="{blob_url(p)}">example {i}</a>' for i, p in enumerate(extra, 1)
         )
         cells.append(f'<span class="also">Also worked: {also}</span>')
     return "<br><br>".join(cells)
