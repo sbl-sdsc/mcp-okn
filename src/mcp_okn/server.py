@@ -29,6 +29,7 @@ from .tools.joins import (
     list_crosswalks,
     taxon_overlap,
 )
+from .tools.mermaid_tools import sparql_to_mermaid
 from .tools.probe import (
     _CROSSWALK_PREDICATES,
     _NODE_ID_IRI_PREFIXES,
@@ -99,6 +100,7 @@ __all__ = [
     "schema",
     "session",
     "sparql_query",
+    "sparql_to_mermaid",
     "spatial_bridge",
     "sudokn_spatial_join",
     "taxon_overlap",

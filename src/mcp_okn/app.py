@@ -161,6 +161,12 @@ VERBATIM and nothing else. Do NOT redraw it as SVG/PNG/HTML/an image/an artifact
 or a hand-built diagram — Mermaid clients render the fenced block natively, and
 producing your own graphic yields a messy, incorrect picture.
 
+QUERY VISUALIZATION: to show the shape of a specific SPARQL query (not a schema),
+pass its text to `sparql_to_mermaid` — it returns a `graph TD` diagram of the
+query's graph pattern (variables, triples, OPTIONAL/UNION/FILTER/BIND/VALUES/
+SERVICE/MINUS/EXISTS, property paths), pre-wrapped as `mermaid_block`. Same rule
+as above: output `mermaid_block` VERBATIM; do NOT redraw it yourself.
+
 IMPORTANT: Only the federation endpoint is used. Do not attempt to use the
 per-KG SPARQL endpoints — they are not exposed and time out on complex queries.
 """

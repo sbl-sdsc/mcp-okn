@@ -686,3 +686,45 @@ async def test_intermediate_csv_query_previews_first_three():
     md = await create_chat_transcript(model="m")
     assert "_40 row(s) — showing first 3_" in md
     assert "Q00002" in md and "Q00003" not in md
+
+
+_DIAGRAM_QUERY = (
+    "PREFIX ex: <http://example.org/>\n"
+    "SELECT ?disease ?label WHERE { "
+    "GRAPH <https://purl.org/okn/frink/kg/sawgraph> { "
+    "?x ex:linkedTo ?disease OPTIONAL { ?disease ex:label ?label } } }"
+)
+
+
+async def test_query_diagram_rendered_by_default():
+    """Each query gets a Mermaid diagram right after its sparql block."""
+    session.record(_DIAGRAM_QUERY, "json", result=JSON_RESULT)
+    md = await create_chat_transcript(model="m")
+    assert "```mermaid" in md
+    assert "graph TD" in md
+    assert "subgraph optional" in md  # the OPTIONAL block is drawn
+    # the diagram follows the query text
+    assert md.index("```sparql") < md.index("```mermaid")
+
+
+async def test_query_diagram_can_be_disabled():
+    session.record(_DIAGRAM_QUERY, "json", result=JSON_RESULT)
+    md = await create_chat_transcript(model="m", include_query_diagrams=False)
+    assert "```sparql" in md
+    assert "```mermaid" not in md
+
+
+async def test_unparseable_query_skips_diagram_but_keeps_text():
+    """A query that can't be parsed still renders its text; the diagram is skipped."""
+    md = await create_chat_transcript(
+        model="m",
+        exchanges=[
+            {
+                "prompt": "p",
+                "answer": "a",
+                "queries": [{"sparql": "this is not valid sparql"}],
+            }
+        ],
+    )
+    assert "this is not valid sparql" in md
+    assert "```mermaid" not in md

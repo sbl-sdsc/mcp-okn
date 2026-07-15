@@ -10,6 +10,8 @@ import re
 from datetime import date as _date
 from typing import Any
 
+from sparql_to_mermaid import try_to_mermaid
+
 from .. import session
 from ..app import mcp
 from ..sparql import FEDERATION_ENDPOINT, named_graph
@@ -74,6 +76,7 @@ async def create_chat_transcript(
     include_query_log: bool = True,
     include_intermediate_rows: bool = False,
     include_visualizations: bool = True,
+    include_query_diagrams: bool = True,
     max_result_rows: int | None = 5,
     scope: str | None = None,
 ) -> Any:
@@ -136,6 +139,12 @@ async def create_chat_transcript(
             visualizations" section with every `visualize_schema` diagram logged
             this session, each in a fenced ```mermaid block. These are recorded
             automatically — you do NOT need to re-supply them.
+        include_query_diagrams: If true (default), render a Mermaid `graph TD`
+            diagram of each SPARQL query directly beneath its ```sparql block
+            (both the inline queries and the "SPARQL queries executed" appendix),
+            so the transcript shows the shape of every query. A query that cannot
+            be parsed into a diagram is skipped silently (its text still shows).
+            Set false to omit the per-query diagrams.
         scope: OPTIONAL log scope — the same string passed to `reset_query_log`
             and `sparql_query`. Omit for a normal single analysis. Pass a unique
             label when SEVERAL ANALYSES RUN CONCURRENTLY against this server
@@ -149,8 +158,10 @@ async def create_chat_transcript(
         For `markdown`: the transcript string. Each conversation turn is
         rendered in the mcp-proto-okn style — a "👤 **User**" block (the prompt)
         and a "🧠 **Assistant**" block (the answer), separated by a rule — with
-        queries in fenced ```sparql blocks (plus result tables) and schema
-        diagrams in fenced ```mermaid blocks under the answer.
+        queries in fenced ```sparql blocks (each followed, by default, by a
+        Mermaid diagram of the query — see `include_query_diagrams`), their
+        result tables, and schema diagrams in fenced ```mermaid blocks under the
+        answer.
         For `json`: a dict with `title`, `date`, `model`, `exchanges`,
         `knowledge_graphs`, `query_log`, `visualizations`, and
         `sparql_endpoint`.
@@ -294,7 +305,12 @@ async def create_chat_transcript(
         # the model flagged exploratory so schema-probing never leaks in.
         shown = [q for q in (exchange.get("queries") or []) if not q.get("exploratory")]
         for j, q in enumerate(shown, start=1):
-            lines += _render_query(q, f"Query {j}", max_rows=max_result_rows)
+            lines += _render_query(
+                q,
+                f"Query {j}",
+                max_rows=max_result_rows,
+                diagram=include_query_diagrams,
+            )
         # Optional Mermaid diagram(s) attached inline to this turn.
         inline = exchange.get("mermaid")
         for diagram in [inline] if isinstance(inline, str) else (inline or []):
@@ -317,6 +333,7 @@ async def create_chat_transcript(
                 subheading=ctx,
                 show_results=show_results,
                 max_rows=max_result_rows,
+                diagram=include_query_diagrams,
             )
 
     if visualizations:
@@ -389,6 +406,7 @@ def _render_query(
     subheading: str = "",
     show_results: bool = True,
     max_rows: int | None = None,
+    diagram: bool = False,
 ) -> list[str]:
     """Render one query (verbatim text + results or error) as markdown lines.
 
@@ -398,13 +416,22 @@ def _render_query(
     the first 3 rows) instead of the full table — used for intermediate queries in
     the log appendix to keep it focused while still surfacing small results that
     cost almost no space.
+
+    When ``diagram`` is True, a Mermaid ``graph TD`` diagram of the query is
+    inserted directly beneath its ```sparql block; a query that cannot be parsed
+    is skipped silently (its text still shows).
     """
     desc = _clean_description(q.get("description"))
     heading = f"#### {label}" + (f" — {desc}" if desc else "")
     lines = [heading, ""]
     if subheading:
         lines += [f"_{subheading}_", ""]
-    lines += ["```sparql", (q.get("sparql") or "").strip(), "```", ""]
+    sparql = (q.get("sparql") or "").strip()
+    lines += ["```sparql", sparql, "```", ""]
+    if diagram and sparql:
+        mermaid = try_to_mermaid(sparql)
+        if mermaid:
+            lines += ["```mermaid", mermaid, "```", ""]
     if q.get("error"):
         lines += [f"**Error:** {q['error']}", ""]
     elif show_results:
