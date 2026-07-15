@@ -164,12 +164,60 @@ async def test_transcript_drops_foreign_queries_when_kgs_used_given():
 
 @pytest.mark.asyncio
 async def test_transcript_keeps_queries_that_touch_kgs_used():
-    """The safety net must not eat legitimate queries (no false positives)."""
+    """The safety net must not eat legitimate queries (no false positives).
+
+    Both listed KGs are actually queried, so neither the foreign-drop nor the
+    phantom-source backstop fires.
+    """
     session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    session.record(_q("prokn"), "json", result=JSON_RESULT)
     md = await create_chat_transcript(
         model="claude-opus-4-8", kgs_used=["sawgraph", "prokn"]
     )
     assert "kg/sawgraph" in md
+    assert "kg/prokn" in md
+    assert "mcp-okn WARNING" not in md
+
+
+@pytest.mark.asyncio
+async def test_transcript_flags_phantom_source():
+    """A KG named in `kgs_used` that no logged query touched is a phantom source —
+    warned about, never silently presented as if it contributed."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)  # the only query
+    md = await create_chat_transcript(
+        model="claude-opus-4-8", kgs_used=["sawgraph", "ubergraph"]
+    )
+    # the real query is kept...
+    assert "kg/sawgraph" in md
+    # ...but the un-queried KG is flagged as phantom in the warning comment
+    assert "mcp-okn WARNING" in md
+    assert "ubergraph" in md.split("\n")[0]
+    assert "sawgraph" not in md.split("\n")[0]  # the queried KG is not flagged
+    assert md.startswith("<!--")
+
+
+@pytest.mark.asyncio
+async def test_visualized_kg_is_not_a_phantom_source():
+    """A KG with a schema visualization (but no query) still counts as touched —
+    it is legitimately in the transcript, so it must not be flagged."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    session.record_visualization("spoke-genelab", "classDiagram\n  class Gene")
+    md = await create_chat_transcript(
+        model="claude-opus-4-8", kgs_used=["sawgraph", "spoke-genelab"]
+    )
+    assert "mcp-okn WARNING" not in md
+
+
+@pytest.mark.asyncio
+async def test_phantom_check_skipped_when_query_log_excluded():
+    """With the query log suppressed there is nothing to check against, so the
+    phantom backstop must not fire (avoids false positives)."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_chat_transcript(
+        model="claude-opus-4-8",
+        kgs_used=["sawgraph", "ubergraph"],
+        include_query_log=False,
+    )
     assert "mcp-okn WARNING" not in md
 
 

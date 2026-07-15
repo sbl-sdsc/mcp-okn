@@ -114,7 +114,10 @@ async def create_chat_transcript(
             "(intermediate)", or notes about logging state.
         kgs_used: Shortnames of the knowledge graphs queried. If omitted, they
             are inferred from the logged queries. Each is expanded to its
-            federation named-graph URI.
+            federation named-graph URI. As a backstop, any name you pass that no
+            logged query (or schema visualization) actually touched is flagged as
+            a phantom source in the returned warnings — credit a KG only if a
+            logged query used it.
         date: ISO date (`YYYY-MM-DD`) of the session. Defaults to today.
         format: `markdown` (default) for a rendered document string, or `json`
             for the structured fields.
@@ -193,6 +196,7 @@ async def create_chat_transcript(
     """
     when = date or _date.today().isoformat()
     exchanges = exchanges or []
+    caller_named_kgs = kgs_used is not None
     log = session.entries(scope) if include_query_log else []
     visualizations = session.visualizations(scope) if include_visualizations else []
 
@@ -248,6 +252,35 @@ async def create_chat_transcript(
             "are NOT in the transcript. To make this deterministic, pass a unique "
             "`scope` to reset_query_log / sparql_query / create_chat_transcript."
         )
+
+    # BACKSTOP against a phantom source — the reverse of the drop above. When the
+    # caller NAMES the KGs this transcript is about, a KG that no logged query (nor
+    # schema visualization) actually touched is a phantom: its "contribution" came
+    # from an exploratory/unlogged query or from prior knowledge, so the transcript
+    # cannot reproduce whatever it credits that KG for (e.g. a bridge graph that
+    # "supplied a DOID→MONDO equivalence" no logged query ever ran). Warn rather
+    # than drop — the caller may need to re-run the establishing query
+    # non-exploratory, or remove the KG from the sources. Only meaningful when the
+    # log is included; with it suppressed there is nothing to check against.
+    if caller_named_kgs and include_query_log:
+        evidenced = {g for e in log for g in (e.get("graphs") or [])}
+        evidenced |= {
+            v.get("shortname") for v in visualizations if v.get("shortname")
+        }
+        phantom = [name for name in kgs_used if name not in evidenced]
+        if phantom:
+            names = ", ".join(f"`{p}`" for p in phantom)
+            was = "was" if len(phantom) == 1 else "were"
+            warnings.append(
+                f"Named in `kgs_used` but no logged query (or visualization) in "
+                f"this transcript touched {names} — so {names} {was} NOT actually "
+                "used here as far as the record shows. Credit a KG as a source only "
+                "if a logged query used it; a 'contribution' read off an "
+                "exploratory / unlogged query or from prior knowledge is a phantom "
+                "source the transcript can't reproduce. Either re-run the "
+                "establishing query non-exploratory so it lands in the log, or drop "
+                "the KG from the sources."
+            )
 
     if format == "json":
         payload: dict[str, Any] = {
