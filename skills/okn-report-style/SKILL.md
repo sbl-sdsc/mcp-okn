@@ -67,7 +67,12 @@ Then:
    version, **last-updated date**, role, join key / confidence — `get_kg_version` supplies the
    version + last-updated date for each KG; show the date as **YYYY-MM-DD only**, truncating the
    ISO-8601 timestamp). If the analysis touched a KG, it gets a row — a report with no Sources table,
-   or one that omits a KG the queries actually hit, is incomplete.
+   or one that omits a KG the queries actually hit, is incomplete. **The rule runs both ways: a KG may
+   appear ONLY if it was actually queried** (it has logged queries in the transcript). Do not list a
+   KG — in the Sources table or as a `sources (n)` pill — whose contribution came from an
+   unlogged / exploratory query or from prior knowledge. Every source and every cross-KG claim must
+   trace to a logged query; if a bridge graph (e.g. `ubergraph` supplying a DOID→MONDO equivalence)
+   is credited, the query that used it must be in the transcript, or it is a phantom source — cut it.
 3. **Design & rules** — the exact selection rules, thresholds, join keys, and an inventory / cohort
    table rebuilt live with verified counts.
 4. **Confidence tiers** — how results are graded (A / B / C) and what evidence each tier requires.
@@ -208,6 +213,9 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
   one section; cross-reference instead of repeating.
 - **Sources used** section missing, or a queried KG absent from it → always include the table with a
   row per KG actually queried.
+- Phantom source: a KG credited in the Sources table / as a pill though no logged query touched it
+  (its "contribution" came from an exploratory or unlogged query) → drop it, or re-run the bridge
+  query non-exploratory so it's in the transcript. Every source must trace to a logged query.
 - No closing recap / limitations → end with **Summary of findings & limitations** (findings recap +
   numbered caveats).
 - Undefined acronyms → add the Abbreviations block and expand each at first use.

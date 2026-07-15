@@ -45,7 +45,8 @@ study / dataset accessions).
 ## Operating rules (non-negotiable — details in the workflow reference)
 
 1. `reset_query_log` at the start; `create_chat_transcript` + `get_kg_version` at the end (pin
-   versions + dates). Don't mark substantive queries `exploratory`.
+   versions + dates). Don't mark substantive queries `exploratory` — least of all the query that
+   establishes a cross-KG bridge; that one is the point of the analysis and MUST be logged.
 2. Before querying a KG: `get_schema`. For cross-KG joins use the **precomputed crosswalk catalog**
    first — `list_crosswalks` (the whole verified join map in one call) and `get_join_strategy(a, b)`
    (one pair's recipe; respect `known_non_join`); `find_context_sources(want, join_key)` for the
@@ -69,6 +70,13 @@ a specific pair's recipe — the exact predicates, the IRI-normalization rewrite
 a runnable `skeleton_query` to copy; `find_context_sources(want, join_key)` finds *which* KGs can
 annotate an entity. These are **live and versioned — treat them as the source of truth** (raw keys
 drift across KG releases; don't hard-code them).
+
+**Establish the join by RUNNING the `skeleton_query`, not by looking it up.** The skeleton is a
+logged, reproducible query that proves the key joins; copy it and extend it with your payload. Do
+NOT decompose the join into a couple of exploratory lookups, read an id (e.g. a MONDO IRI) off one,
+and paste it in as a constant — that hard-codes the very bridge the cross-KG claim depends on and
+leaves it out of the transcript. If a bridge graph (e.g. `ubergraph` for a DOID→MONDO equivalence)
+supplies the join, that equivalence must come from a **logged** query, not an exploratory one.
 
 The federation joins **mostly on shared identifiers** (Entrez, UniProt, MONDO, …), but **some joins
 are exact name / label matches** — a gene **symbol** on `rdfs:label`, a SNOMED / UMLS **concept

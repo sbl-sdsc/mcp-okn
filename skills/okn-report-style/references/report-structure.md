@@ -38,7 +38,12 @@ denominators), the top results / entities, and the one-line "what this adds". No
 queried (if the analysis hit a KG, it gets a row); fill `Version` + `Updated` from `get_kg_version`
 (release string + `last_updated` date). Format `Updated` as **YYYY-MM-DD only** (truncate the
 ISO-8601 timestamp), so the reader sees how current each graph is. A report with no Sources table, or
-one missing a KG the queries touched, is incomplete.
+one missing a KG the queries touched, is incomplete. **The rule is bidirectional: list a KG ONLY if
+it was actually queried** (has logged queries). Never give a row — or a `sources (n)` pill — to a KG
+whose contribution came from an unlogged / exploratory query or from prior knowledge; every source
+and every cross-KG claim must trace to a logged query. A bridge graph credited with a join (e.g.
+`ubergraph` for a DOID→MONDO equivalence) must have that query in the transcript, or it is a phantom
+source — remove it.
 
 ## 3. Design & rules
 State the exact selection rules, thresholds, and join keys, and an **inventory / cohort table

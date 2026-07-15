@@ -68,7 +68,13 @@ enumeration.
 TRANSCRIPTS: Substantive `sparql_query`/`expand_ontology_term` calls are logged
 automatically — but queries that error or return no rows are NOT logged, and you
 can pass `exploratory=True` to `sparql_query` to keep schema-probing or
-trial-and-error queries out of the record. Call `reset_query_log` at the START of
+trial-and-error queries out of the record. Reserve `exploratory=True` for
+genuinely throwaway probes — NEVER mark a substantive query exploratory. In
+particular, the query that ESTABLISHES a cross-KG bridge (the join a headline
+claim rests on) is substantive: run it non-exploratory so it lands in the log,
+and do NOT replace it with exploratory lookups whose result you then hard-code as
+a constant IRI — that leaves the transcript unable to reproduce its own join.
+Call `reset_query_log` at the START of
 an analysis to scope the log, and `create_chat_transcript` at the END to emit a
 reproducible markdown record (prompts, answers, and the verbatim queries +
 results that actually produced findings). For each turn's `answer`, paste your

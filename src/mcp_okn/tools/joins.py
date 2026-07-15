@@ -51,9 +51,14 @@ async def get_join_strategy(kg_a: str, kg_b: str | None = None) -> dict[str, Any
     identifier and its namespace, any bridge graph, and — critically — a runnable
     `skeleton_query`: a verified, minimal `COUNT(DISTINCT <shared key>)` join that
     already applies every IRI rewrite (the same id often appears in 2-3 IRI forms,
-    so a naive join silently returns nothing). Start from that query — run it to
-    confirm the key still joins, then extend it with your own payload instead of
-    rebuilding the boilerplate.
+    so a naive join silently returns nothing). Start from that query — actually
+    RUN it (non-exploratory, so it lands in the transcript) to confirm the key
+    still joins, then extend that same query with your own payload instead of
+    rebuilding the boilerplate. Do NOT decompose the join into separate
+    exploratory lookups, read an id off one, and hard-code it as a constant IRI:
+    that is the join the whole cross-KG claim rests on, so the query that
+    establishes it must be logged — otherwise the transcript can't reproduce its
+    own headline result.
 
     Args:
         kg_a: a KG shortname (as from `list_kgs`).
