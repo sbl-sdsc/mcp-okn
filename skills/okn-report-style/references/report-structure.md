@@ -6,6 +6,11 @@ illustrative — replace with the real content. The OKN federation is cross-doma
 "§7 Domain analyses" holds whatever the study needs (spatial hot-spots, category enrichment, network
 tracing, exposure modelling, …).
 
+**Group like with like.** Each kind of data belongs in exactly one section. Do not scatter the same
+data type — geolocation / spatial data is the usual offender — across several sections; put all of
+it in one place (one map section, one enrichment section, …) and cross-reference from elsewhere.
+When an analysis would touch the same data in two spots, consolidate rather than duplicate.
+
 ## Title block (before §1)
 
 ```
@@ -28,10 +33,12 @@ Headline result in 2–4 short paragraphs: the defining finding, the key quantit
 denominators), the top results / entities, and the one-line "what this adds". No bullet dumps.
 
 ## 2. Sources used
-Table: `| KG | Version | Updated | Role in this study | Join key / confidence |`. One row per KG
-actually queried; fill `Version` + `Updated` from `get_kg_version` (release string + `last_updated`
-date). Format `Updated` as **YYYY-MM-DD only** (truncate the ISO-8601 timestamp), so the reader sees
-how current each graph is.
+**Required in every report — never omit this section.** Table:
+`| KG | Version | Updated | Role in this study | Join key / confidence |`. One row per KG actually
+queried (if the analysis hit a KG, it gets a row); fill `Version` + `Updated` from `get_kg_version`
+(release string + `last_updated` date). Format `Updated` as **YYYY-MM-DD only** (truncate the
+ISO-8601 timestamp), so the reader sees how current each graph is. A report with no Sources table, or
+one missing a KG the queries touched, is incomplete.
 
 ## 3. Design & rules
 State the exact selection rules, thresholds, and join keys, and an **inventory / cohort table
@@ -73,8 +80,14 @@ column** (how many federation KGs support each row, with one pill per source), a
 or any key flag). Add a one-line tip above it explaining sort / filter / paging and what each source
 contributes, and **follow the table with a short interpretation** of what the ranking shows.
 
-## 10. Caveats, uncertainties, likely undercounts
-Numbered list; be explicit about what the data cannot support.
+## 10. Summary of findings & limitations
+**The closing narrative section — always end the report here** (Reproducibility and References are
+back-matter that follow). Two parts:
+- **Findings recap** — 1–3 short paragraphs restating the headline result, the key quantities, and
+  the top entities, so a reader who jumps to the end gets the whole story without re-reading.
+- **Limitations** — a numbered list of the caveats, uncertainties, and likely undercounts; be
+  explicit about what the data cannot support. This is the single home for the caveats list — do not
+  duplicate it elsewhere in the report.
 
 ## 11. Reproducibility
 Pointers to the appendix, the verbatim query transcript, the scripts, and the pinned KG versions.

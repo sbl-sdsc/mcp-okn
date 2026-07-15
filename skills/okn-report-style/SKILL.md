@@ -49,6 +49,13 @@ the HTML, MD and XLSX with the user via the file-presentation tool.
 Use this section order; **adapt headings and the analysis sections to the domain**. Full template +
 example legends: **`references/report-structure.md`** (read it before writing the report).
 
+**One kind of data, one place.** Group all results of the same kind into a *single* section — never
+scatter the same data type across the report. A common mistake is splitting **geolocation / spatial
+data** (or the same entity type, the same enrichment family, the same network output) across two or
+three sections; consolidate it so the reader sees all of it together, then cross-reference from
+elsewhere instead of repeating it. Before finalising, scan the section headings and figures: if two
+sections plot or tabulate the same kind of thing (e.g. two maps, two enrichment tables), merge them.
+
 Begin with a **title block** — a blockquote stating the non-negotiable framing for the domain (unit
 of analysis, spatial / temporal coverage, level of inference, and the key caveat, e.g. *"hypothesis
 generation, not causal / clinical inference"*, *"observational associations over county-level
@@ -56,9 +63,11 @@ data"*, *"model output, not measurements"*) and an **Abbreviations** line defini
 Then:
 
 1. **Executive summary** — the headline result, the key numbers, the top results / entities.
-2. **Sources used** — table of KGs queried (name, version, **last-updated date**, role, join key /
-   confidence — `get_kg_version` supplies the version + last-updated date for each KG; show the
-   date as **YYYY-MM-DD only**, truncating the ISO-8601 timestamp).
+2. **Sources used** — **REQUIRED in every report; never omit it.** Table of KGs queried (name,
+   version, **last-updated date**, role, join key / confidence — `get_kg_version` supplies the
+   version + last-updated date for each KG; show the date as **YYYY-MM-DD only**, truncating the
+   ISO-8601 timestamp). If the analysis touched a KG, it gets a row — a report with no Sources table,
+   or one that omits a KG the queries actually hit, is incomplete.
 3. **Design & rules** — the exact selection rules, thresholds, join keys, and an inventory / cohort
    table rebuilt live with verified counts.
 4. **Confidence tiers** — how results are graded (A / B / C) and what evidence each tier requires.
@@ -78,7 +87,12 @@ Then:
    and mark which central claims were **verified against full text**.
 9. **Full ranked results** — pointer to xlsx / tsv + the interactive HTML table + a representative
    slice in the prose.
-10. **Caveats, uncertainties, likely undercounts.**
+10. **Summary of findings & limitations** — **the closing narrative section; always end the report
+    here.** Two parts: (a) a concise recap of the key findings — the headline result and the top
+    entities, restated in a few sentences so a reader who skips to the end gets the whole story; and
+    (b) the caveats, uncertainties, and likely undercounts as a numbered list, explicit about what
+    the data cannot support. This is where the standalone caveats list lives — do not also put one
+    elsewhere.
 11. **Reproducibility** — pointers to the appendix, the query transcript, the scripts, and the
     pinned KG versions + update dates.
 12. **References** — numbered; attribute the retrieval tool, give a **DOI link** per literature item
@@ -190,6 +204,12 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
 - Geographic points plotted as a bare lon/lat scatter on empty axes → put them on an OpenStreetMap
   basemap (static: `contextily`; interactive: `folium`) so the geography is legible.
 - Figures out of numerical order after inserting a new one → renumber captions + files.
+- Same kind of data split across two+ sections (e.g. geolocation in two places) → consolidate into
+  one section; cross-reference instead of repeating.
+- **Sources used** section missing, or a queried KG absent from it → always include the table with a
+  row per KG actually queried.
+- No closing recap / limitations → end with **Summary of findings & limitations** (findings recap +
+  numbered caveats).
 - Undefined acronyms → add the Abbreviations block and expand each at first use.
 - 900-row HTML table → paginate, and add the subset pull-downs + a search box.
 - Numbers drifting between .md / .html / .xlsx after an edit → keep a single `stats.json` and
