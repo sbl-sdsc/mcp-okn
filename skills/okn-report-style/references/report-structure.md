@@ -83,6 +83,7 @@ contributes, and **follow the table with a short interpretation** of what the ra
 ## 10. Summary of findings & limitations
 **The closing narrative section — always end the report here** (Reproducibility and References are
 back-matter that follow). Two parts:
+
 - **Findings recap** — 1–3 short paragraphs restating the headline result, the key quantities, and
   the top entities, so a reader who jumps to the end gets the whole story without re-reading.
 - **Limitations** — a numbered list of the caveats, uncertainties, and likely undercounts; be
