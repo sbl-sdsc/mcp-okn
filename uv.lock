@@ -661,7 +661,7 @@ requires-dist = [
     { name = "mcp", specifier = ">=1.2.0" },
     { name = "pyyaml", specifier = ">=6.0" },
     { name = "s2sphere", specifier = ">=0.2.5" },
-    { name = "sparql-to-mermaid", git = "https://github.com/sbl-sdsc/sparql-to-mermaid.git?tag=v0.1.0" },
+    { name = "sparql-to-mermaid", git = "https://github.com/sbl-sdsc/sparql-to-mermaid.git?tag=v0.2.0" },
 ]
 
 [package.metadata.requires-dev]
@@ -1435,8 +1435,8 @@ wheels = [
 
 [[package]]
 name = "sparql-to-mermaid"
-version = "0.1.0"
-source = { git = "https://github.com/sbl-sdsc/sparql-to-mermaid.git?tag=v0.1.0#92bcdfba7e6db983ae5f6bf5b5fbb7ab82c0409a" }
+version = "0.2.0"
+source = { git = "https://github.com/sbl-sdsc/sparql-to-mermaid.git?tag=v0.2.0#5f47fcf3ac8030401727a696356823e5d4c4b91b" }
 dependencies = [
     { name = "rdflib" },
 ]
