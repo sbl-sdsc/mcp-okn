@@ -47,8 +47,8 @@ study / dataset accessions).
 The **literature comparison** (workflow step 13; report §8 *Comparison with prior work*) needs two MCP
 connectors — **PubMed** (`https://pubmed.mcp.claude.com/mcp`) and **Paperclip**
 (`https://paperclip.gxl.ai/mcp`). They are **user-managed configuration — a skill cannot enable or
-install them** — so check for them at the **START of a run**, not at step 13, so the user can turn
-them on before the analysis is already finished.
+install them.** Check for them at the **START of a run**, not at step 13 — otherwise the gap only
+surfaces after the whole analysis is done and there's no time left to turn them on.
 
 - **Detect.** Look in your available tools for names containing `pubmed` and `paperclip` (the server
   prefix varies by host). Both present → literature comparison is on; proceed normally.
