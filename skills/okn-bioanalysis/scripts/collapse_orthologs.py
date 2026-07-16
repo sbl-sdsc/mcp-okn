@@ -18,9 +18,11 @@ the human analysis (report how many were dropped). Output columns:
   n_mouse_map (ambiguity), sign_flip (True if the max-rule and mean-rule disagree in sign).
 CLI demo: `python collapse_orthologs.py --demo`.
 """
+
 from __future__ import annotations
-import pandas as pd
+
 import numpy as np
+import pandas as pd
 
 
 def collapse(rows, col_map=None):
@@ -38,35 +40,70 @@ def collapse(rows, col_map=None):
 
     out = []
     for h, g in df.groupby("hEntrez"):
-        top = g.loc[g.absl.idxmax()]                 # max |log2FC| representative
-        mean_l = g.log2fc.mean()                     # mean-rule sensitivity
-        out.append({
-            "hEntrez": h,
-            "humanSymbol": top.get("humanSymbol"),
-            "mouse_symbols": "|".join(sorted(set(g.symbol.dropna().astype(str)))),
-            "log2fc": round(float(top.log2fc), 4),
-            "log2fc_mean": round(float(mean_l), 4),
-            "adj_p_value": float(top.adj_p_value),
-            "n_mouse_map": int(g.symbol.nunique()),
-            "sign_flip": bool(np.sign(top.log2fc) != np.sign(mean_l) and mean_l != 0),
-        })
-    res = pd.DataFrame(out).sort_values("log2fc", key=lambda s: s.abs(), ascending=False).reset_index(drop=True)
+        top = g.loc[g.absl.idxmax()]  # max |log2FC| representative
+        mean_l = g.log2fc.mean()  # mean-rule sensitivity
+        out.append(
+            {
+                "hEntrez": h,
+                "humanSymbol": top.get("humanSymbol"),
+                "mouse_symbols": "|".join(sorted(set(g.symbol.dropna().astype(str)))),
+                "log2fc": round(float(top.log2fc), 4),
+                "log2fc_mean": round(float(mean_l), 4),
+                "adj_p_value": float(top.adj_p_value),
+                "n_mouse_map": int(g.symbol.nunique()),
+                "sign_flip": bool(
+                    np.sign(top.log2fc) != np.sign(mean_l) and mean_l != 0
+                ),
+            }
+        )
+    res = (
+        pd.DataFrame(out)
+        .sort_values("log2fc", key=lambda s: s.abs(), ascending=False)
+        .reset_index(drop=True)
+    )
     nflip = int(res.sign_flip.sum()) if len(res) else 0
-    print(f"[collapse_orthologs] {len(res)} human genes; {res.n_mouse_map.gt(1).sum() if len(res) else 0} "
-          f"ambiguous (>=2 mouse genes); mean-rule sign flips: {nflip}")
+    print(
+        f"[collapse_orthologs] {len(res)} human genes; {res.n_mouse_map.gt(1).sum() if len(res) else 0} "
+        f"ambiguous (>=2 mouse genes); mean-rule sign flips: {nflip}"
+    )
     return res
 
 
 def _demo():
     rows = [
-        {"hEntrez": "249", "humanSymbol": "ALPL", "symbol": "Alpl", "log2fc": -1.09, "adj_p_value": 0.0009},
-        {"hEntrez": "2920", "humanSymbol": "CXCL1", "symbol": "Cxcl2", "log2fc": 1.90, "adj_p_value": 0.005},
-        {"hEntrez": "2920", "humanSymbol": "CXCL1", "symbol": "Cxcl1", "log2fc": 1.20, "adj_p_value": 0.02},
-        {"hEntrez": "", "humanSymbol": "", "symbol": "Gm12345", "log2fc": -2.3, "adj_p_value": 0.01},
+        {
+            "hEntrez": "249",
+            "humanSymbol": "ALPL",
+            "symbol": "Alpl",
+            "log2fc": -1.09,
+            "adj_p_value": 0.0009,
+        },
+        {
+            "hEntrez": "2920",
+            "humanSymbol": "CXCL1",
+            "symbol": "Cxcl2",
+            "log2fc": 1.90,
+            "adj_p_value": 0.005,
+        },
+        {
+            "hEntrez": "2920",
+            "humanSymbol": "CXCL1",
+            "symbol": "Cxcl1",
+            "log2fc": 1.20,
+            "adj_p_value": 0.02,
+        },
+        {
+            "hEntrez": "",
+            "humanSymbol": "",
+            "symbol": "Gm12345",
+            "log2fc": -2.3,
+            "adj_p_value": 0.01,
+        },
     ]
     print(collapse(rows).to_string(index=False))
 
 
 if __name__ == "__main__":
     import sys
+
     _demo() if "--demo" in sys.argv else print(__doc__)

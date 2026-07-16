@@ -219,9 +219,31 @@ CATALOG_OVERRIDE: dict[str, tuple[tuple[str, ...], str] | None] = {
 
 # Words that describe HOW a key is reached, not WHICH key it is.
 _KEY_STOPWORDS = {
-    "a", "and", "assembled", "bridge", "bridged", "cell", "computed", "digit",
-    "direct", "hop", "id", "in", "iri", "level", "literal", "name", "no", "of",
-    "scoped", "the", "to", "two", "ubergraph", "via", "wikidata",
+    "a",
+    "and",
+    "assembled",
+    "bridge",
+    "bridged",
+    "cell",
+    "computed",
+    "digit",
+    "direct",
+    "hop",
+    "id",
+    "in",
+    "iri",
+    "level",
+    "literal",
+    "name",
+    "no",
+    "of",
+    "scoped",
+    "the",
+    "to",
+    "two",
+    "ubergraph",
+    "via",
+    "wikidata",
 }
 
 
@@ -229,9 +251,7 @@ def _key_tokens(key: str | None) -> set[str]:
     text = (key or "").lower()
     for arrow in ("<->", "->", "↔", "→"):
         text = text.replace(arrow, " ")
-    return {
-        t for t in re.split(r"[^a-z0-9]+", text) if t and t not in _KEY_STOPWORDS
-    }
+    return {t for t in re.split(r"[^a-z0-9]+", text) if t and t not in _KEY_STOPWORDS}
 
 
 def _core_kgs(kgs) -> tuple[str, ...]:
@@ -254,7 +274,9 @@ def _parse_catalog() -> dict[str, dict]:
         for raw in cells[2].split("×"):
             name = raw.strip().split("(")[0].strip().rstrip(")").strip()
             if name not in CATALOG_KG_ALIAS:
-                raise SystemExit(f"{CATALOG.name}: unknown KG name {name!r} ({stem_id})")
+                raise SystemExit(
+                    f"{CATALOG.name}: unknown KG name {name!r} ({stem_id})"
+                )
             if CATALOG_KG_ALIAS[name]:
                 kgs.append(CATALOG_KG_ALIAS[name])
         if prefix not in CATALOG_DOMAIN:
@@ -303,7 +325,9 @@ def transcript_links(rows: list[dict]) -> dict[tuple, list[tuple[str, str]]]:
 
     unlinked = [r for r in rows if (_core_kgs(r["kgs"]), r["shared_key"]) not in links]
     if unlinked:
-        listing = "; ".join(f"{'+'.join(r['kgs'])} on {r['shared_key']}" for r in unlinked)
+        listing = "; ".join(
+            f"{'+'.join(r['kgs'])} on {r['shared_key']}" for r in unlinked
+        )
         raise SystemExit(
             f"{len(unlinked)} crosswalk(s) have no worked example in {CATALOG.name}: "
             f"{listing}"
@@ -542,7 +566,9 @@ def fmt_examples_html(r: dict, links: dict) -> str:
         f'<a class="q" href="{blob_url(p)}">{esc(q)}</a>'
         for q, p in zip(qs, primary, strict=False)
     ]
-    cells += [esc(q) for q in qs[len(primary) :] if q]  # never hit while every row is q1+q2
+    cells += [
+        esc(q) for q in qs[len(primary) :] if q
+    ]  # never hit while every row is q1+q2
     for extra in pairs[1:]:
         also = " · ".join(
             f'<a href="{blob_url(p)}">example {i}</a>' for i, p in enumerate(extra, 1)

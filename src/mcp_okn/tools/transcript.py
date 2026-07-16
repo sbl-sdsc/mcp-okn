@@ -66,8 +66,11 @@ async def get_query_log(scope: str | None = None) -> list[dict[str, Any]]:
 
 
 def _plural(count: int, singular: str, plural: str | None = None) -> str:
-    """Format a count with its noun for the header manifest ("1 query" /
-    "3 queries"). Pass `plural` for irregular forms; defaults to `singular + 's'`."""
+    """Format a count with its noun for the header manifest.
+
+    E.g. "1 query" / "3 queries". Pass `plural` for irregular forms; defaults to
+    `singular + 's'`.
+    """
     word = singular if count == 1 else (plural or f"{singular}s")
     return f"{count} {word}"
 
@@ -83,10 +86,12 @@ def _render_stub(
     n_queries: int,
     n_viz: int,
 ) -> str:
-    """Compact stand-in returned when the full transcript is too large to hand back
-    inline (see `max_inline_chars`). The complete document is published verbatim at
-    the resource `transcript://session/latest`; this stub carries the provenance +
-    size and points the caller there, so it never reconstructs a truncated one."""
+    """Return a compact stand-in when the full transcript is too large to hand back.
+
+    Over `max_inline_chars`, the complete document is published verbatim at the
+    resource `transcript://session/latest`; this stub carries the provenance + size
+    and points the caller there, so it never reconstructs a truncated one.
+    """
     kg_list = ", ".join(f"`{k['shortname']}`" for k in kgs) or "_none_"
     return "\n".join(
         [

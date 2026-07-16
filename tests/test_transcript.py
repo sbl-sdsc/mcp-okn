@@ -310,7 +310,7 @@ async def test_manifest_bullet_matches_rendered_counts():
 
 
 def _contents_line(md: str) -> str:
-    return next(l for l in md.splitlines() if l.startswith("- **Contents:**"))
+    return next(ln for ln in md.splitlines() if ln.startswith("- **Contents:**"))
 
 
 @pytest.mark.asyncio

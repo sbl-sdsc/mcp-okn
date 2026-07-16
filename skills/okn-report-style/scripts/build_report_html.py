@@ -35,8 +35,14 @@ carries a `sources (n)` corroboration column (count of federation KGs supporting
 one pill per source). Run `python build_report_html.py --demo-md` for the render-from-Markdown demo
 (or `--demo` for the low-level path).
 """
+
 from __future__ import annotations
-import base64, html, json, os, re
+
+import base64
+import html
+import json
+import re
+from pathlib import Path
 
 CSS = """
 :root{--accent:#c0392b;--ink:#1f2a37;--muted:#667085;--line:#e5e7eb;--bg:#f7f8fa}
@@ -78,7 +84,7 @@ footer{color:var(--muted);font-size:12px;text-align:center;padding:24px}
 
 def embed_img(path):
     """Return a base64 data URI for a PNG so it can be inlined in the HTML."""
-    with open(path, "rb") as f:
+    with Path(path).open("rb") as f:
         return "data:image/png;base64," + base64.b64encode(f.read()).decode()
 
 
@@ -89,13 +95,24 @@ def figure_block(img_path, caption_html, alt="figure"):
 
 
 def kpi_row(kpis):
-    cells = "".join(f'<div class="kpi"><div class="n">{html.escape(str(v))}</div>'
-                    f'<div class="l">{html.escape(str(l))}</div></div>' for v, l in kpis)
+    cells = "".join(
+        f'<div class="kpi"><div class="n">{html.escape(str(v))}</div>'
+        f'<div class="l">{html.escape(str(label))}</div></div>'
+        for v, label in kpis
+    )
     return f'<div class="kpis">{cells}</div>'
 
 
-def candidate_table(rows, columns, search_keys=None, numeric_keys=None, page_size=25,
-                    default_sort=None, extra_filters=None, sources_col=None):
+def candidate_table(
+    rows,
+    columns,
+    search_keys=None,
+    numeric_keys=None,
+    page_size=25,
+    default_sort=None,
+    extra_filters=None,
+    sources_col=None,
+):
     """
     Build a sortable / filterable / paginated table.
     rows: list of dicts. columns: list of (key, header). search_keys: keys the search box scans.
@@ -109,23 +126,36 @@ def candidate_table(rows, columns, search_keys=None, numeric_keys=None, page_siz
     numeric_keys = list(numeric_keys or [])
     src_count, src_list = sources_col if sources_col else (None, None)
     if src_count and src_count not in numeric_keys:
-        numeric_keys.append(src_count)        # rank by cross-KG support
+        numeric_keys.append(src_count)  # rank by cross-KG support
     default_sort = default_sort or columns[0][0]
     tid = "tbl"
-    filt_html = ('<input id="q" placeholder="search…" oninput="resetPage()">')
-    for key, label in (extra_filters or []):
+    filt_html = '<input id="q" placeholder="search…" oninput="resetPage()">'
+    for key, label in extra_filters or []:
         vals = sorted({str(r.get(key, "")) for r in rows if r.get(key, "") != ""})
         opts = "".join(f"<option>{html.escape(v)}</option>" for v in vals)
         filt_html += f'<select id="f_{key}" onchange="resetPage()"><option value="">{html.escape(label)}: all</option>{opts}</select>'
     sizes = sorted({25, 50, 100, int(page_size)} - {0})
-    psize_opts = "".join(f'<option value="{s}"{" selected" if s == page_size else ""}>{s} / page</option>'
-                         for s in sizes)
-    psize_opts += f'<option value="0"{" selected" if not page_size else ""}>show all</option>'
-    filt_html += (f'<select id="psize" onchange="resetPage()">{psize_opts}</select>'
-                  '<span class="muted" id="count"></span>')
-    cfg = json.dumps({"columns": columns, "search": search_keys, "numeric": numeric_keys,
-                      "sort": default_sort, "filters": [f[0] for f in (extra_filters or [])],
-                      "sources": ({"count": src_count, "list": src_list} if src_count else None)})
+    psize_opts = "".join(
+        f'<option value="{s}"{" selected" if s == page_size else ""}>{s} / page</option>'
+        for s in sizes
+    )
+    psize_opts += (
+        f'<option value="0"{" selected" if not page_size else ""}>show all</option>'
+    )
+    filt_html += (
+        f'<select id="psize" onchange="resetPage()">{psize_opts}</select>'
+        '<span class="muted" id="count"></span>'
+    )
+    cfg = json.dumps(
+        {
+            "columns": columns,
+            "search": search_keys,
+            "numeric": numeric_keys,
+            "sort": default_sort,
+            "filters": [f[0] for f in (extra_filters or [])],
+            "sources": ({"count": src_count, "list": src_list} if src_count else None),
+        }
+    )
     data = json.dumps(rows)
     js = """
 <script>
@@ -172,14 +202,18 @@ window.resetPage=function(){page=1;render();}; window.go=function(d){page+=d;ren
 render();
 })();
 </script>"""
-    js = (js.replace("__DATA__", data.replace("</", "<\\/"))
-            .replace("__CFG__", cfg.replace("</", "<\\/"))
-            .replace("__TID__", tid))
-    return (f'<div class="controls">{filt_html}</div>'
-            f'<div style="overflow-x:auto"><table id="{tid}"><thead><tr id="hdr"></tr></thead><tbody></tbody></table></div>'
-            f'<div class="pager"><button id="prev" onclick="go(-1)">&lsaquo; Prev</button>'
-            f'<span class="muted" id="pageinfo"></span><button id="next" onclick="go(1)">Next &rsaquo;</button></div>'
-            + js)
+    js = (
+        js.replace("__DATA__", data.replace("</", "<\\/"))
+        .replace("__CFG__", cfg.replace("</", "<\\/"))
+        .replace("__TID__", tid)
+    )
+    return (
+        f'<div class="controls">{filt_html}</div>'
+        f'<div style="overflow-x:auto"><table id="{tid}"><thead><tr id="hdr"></tr></thead><tbody></tbody></table></div>'
+        f'<div class="pager"><button id="prev" onclick="go(-1)">&lsaquo; Prev</button>'
+        f'<span class="muted" id="pageinfo"></span><button id="next" onclick="go(1)">Next &rsaquo;</button></div>'
+        + js
+    )
 
 
 def build_report(title, subtitle, meta, kpis, body_blocks, out, table=None, footer=""):
@@ -194,7 +228,7 @@ def build_report(title, subtitle, meta, kpis, body_blocks, out, table=None, foot
 {tbl}
 </div>
 <footer>{footer}</footer></body></html>"""
-    with open(out, "w", encoding="utf-8") as f:
+    with Path(out).open("w", encoding="utf-8") as f:
         f.write(page)
     print(f"[build_report_html] wrote {out} ({len(page):,} bytes)")
     return out
@@ -209,13 +243,14 @@ def build_report(title, subtitle, meta, kpis, body_blocks, out, table=None, foot
 # that is the prose-drift failure mode this path exists to make impossible.
 # ---------------------------------------------------------------------------
 
+
 def _img_tag(src, alt, base_dir=""):
     """<img> for a Markdown image ref. Local PNGs are base64-embedded so the page
     stays self-contained; data:/http(s) URIs pass through unchanged."""
     if src.startswith(("data:", "http://", "https://")):
         uri = src
     else:
-        uri = embed_img(os.path.join(base_dir, src) if base_dir else src)
+        uri = embed_img(str(Path(base_dir) / src) if base_dir else src)
     return f'<img src="{uri}" alt="{html.escape(alt)}">'
 
 
@@ -224,17 +259,27 @@ def _inline(text, base_dir=""):
     HTML-escaped first so literals like `FDR < 0.05` render correctly; the markup
     tags are inserted after escaping."""
     codes = []
-    text = re.sub(r"`([^`]+)`", lambda m: (codes.append(m.group(1)), f"\x00{len(codes) - 1}\x00")[1], text)
+    text = re.sub(
+        r"`([^`]+)`",
+        lambda m: (codes.append(m.group(1)), f"\x00{len(codes) - 1}\x00")[1],
+        text,
+    )
     text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-    text = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", lambda m: _img_tag(m.group(2), m.group(1), base_dir), text)
+    text = re.sub(
+        r"!\[([^\]]*)\]\(([^)]+)\)",
+        lambda m: _img_tag(m.group(2), m.group(1), base_dir),
+        text,
+    )
     text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', text)
     text = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
     text = re.sub(r"__([^_]+)__", r"<strong>\1</strong>", text)
     text = re.sub(r"(?<![\*\w])\*([^*\n]+)\*(?!\*)", r"<em>\1</em>", text)
     text = re.sub(r"(?<![_\w])_([^_\n]+)_(?![_\w])", r"<em>\1</em>", text)
-    text = re.sub(r"\x00(\d+)\x00",
-                  lambda m: "<code>" + html.escape(codes[int(m.group(1))]) + "</code>", text)
-    return text
+    return re.sub(
+        r"\x00(\d+)\x00",
+        lambda m: "<code>" + html.escape(codes[int(m.group(1))]) + "</code>",
+        text,
+    )
 
 
 def md_to_html(md, base_dir=""):
@@ -244,43 +289,55 @@ def md_to_html(md, base_dir=""):
     A line that begins with `<` is passed through as raw HTML (so an inline
     `<!-- RESULTS_TABLE -->` marker or a hand-written callout survives verbatim).
     A standalone image followed by a blockquote becomes an <img> + `figcap` legend."""
+
+    def is_li(s):
+        return bool(re.match(r"^[-*+]\s+", s) or re.match(r"^\d+\.\s+", s))
+
+    def is_hr(s):
+        return bool(re.match(r"^(-{3,}|\*{3,}|_{3,})$", s))
+
     lines = md.split("\n")
     n = len(lines)
     out = []
     i = 0
-    is_li = lambda s: bool(re.match(r"^[-*+]\s+", s) or re.match(r"^\d+\.\s+", s))
-    is_hr = lambda s: bool(re.match(r"^(-{3,}|\*{3,}|_{3,})$", s))
     while i < n:
         raw = lines[i]
         s = raw.strip()
         if not s:
             i += 1
             continue
-        if s.startswith("```"):                                   # fenced code
+        if s.startswith("```"):  # fenced code
             i += 1
             code = []
             while i < n and not lines[i].strip().startswith("```"):
                 code.append(lines[i])
                 i += 1
             i += 1
-            esc = "\n".join(code).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            esc = (
+                "\n".join(code)
+                .replace("&", "&amp;")
+                .replace("<", "&lt;")
+                .replace(">", "&gt;")
+            )
             out.append(f"<pre><code>{esc}</code></pre>")
             continue
-        m = re.match(r"^(#{1,6})\s+(.*)$", s)                     # heading
+        m = re.match(r"^(#{1,6})\s+(.*)$", s)  # heading
         if m:
             lvl = len(m.group(1))
             out.append(f"<h{lvl}>{_inline(m.group(2), base_dir)}</h{lvl}>")
             i += 1
             continue
-        if is_hr(s):                                              # horizontal rule
+        if is_hr(s):  # horizontal rule
             out.append("<hr>")
             i += 1
             continue
-        if s.startswith("<"):                                     # raw HTML / table marker
+        if s.startswith("<"):  # raw HTML / table marker
             out.append(raw)
             i += 1
             continue
-        mi = re.match(r"^!\[([^\]]*)\]\(([^)]+)\)\s*$", s)        # standalone image (+ legend)
+        mi = re.match(
+            r"^!\[([^\]]*)\]\(([^)]+)\)\s*$", s
+        )  # standalone image (+ legend)
         if mi:
             img = _img_tag(mi.group(2), mi.group(1), base_dir)
             i += 1
@@ -298,8 +355,12 @@ def md_to_html(md, base_dir=""):
             else:
                 out.append(img)
             continue
-        if "|" in s and i + 1 < n and "-" in lines[i + 1] \
-                and re.match(r"^\s*\|?[\s:|-]+\|?\s*$", lines[i + 1]):   # GFM table
+        if (
+            "|" in s
+            and i + 1 < n
+            and "-" in lines[i + 1]
+            and re.match(r"^\s*\|?[\s:|-]+\|?\s*$", lines[i + 1])
+        ):  # GFM table
             header = [c.strip() for c in s.strip("|").split("|")]
             i += 2
             body = []
@@ -307,33 +368,51 @@ def md_to_html(md, base_dir=""):
                 body.append([c.strip() for c in lines[i].strip().strip("|").split("|")])
                 i += 1
             th = "".join(f"<th>{_inline(h, base_dir)}</th>" for h in header)
-            trs = "".join("<tr>" + "".join(f"<td>{_inline(c, base_dir)}</td>" for c in r) + "</tr>"
-                          for r in body)
-            out.append(f'<div style="overflow-x:auto"><table><thead><tr>{th}</tr>'
-                       f'</thead><tbody>{trs}</tbody></table></div>')
+            trs = "".join(
+                "<tr>"
+                + "".join(f"<td>{_inline(c, base_dir)}</td>" for c in r)
+                + "</tr>"
+                for r in body
+            )
+            out.append(
+                f'<div style="overflow-x:auto"><table><thead><tr>{th}</tr>'
+                f"</thead><tbody>{trs}</tbody></table></div>"
+            )
             continue
-        if s.startswith(">"):                                    # blockquote
+        if s.startswith(">"):  # blockquote
             bq = []
             while i < n and lines[i].strip().startswith(">"):
                 bq.append(re.sub(r"^\s*>\s?", "", lines[i]))
                 i += 1
-            out.append(f'<blockquote>{_inline(" ".join(x.strip() for x in bq), base_dir)}</blockquote>')
+            out.append(
+                f"<blockquote>{_inline(' '.join(x.strip() for x in bq), base_dir)}</blockquote>"
+            )
             continue
-        if is_li(s):                                             # list
+        if is_li(s):  # list
             ordered = bool(re.match(r"^\d+\.\s+", s))
             items = []
             while i < n and lines[i].strip() and is_li(lines[i].strip()):
-                items.append("<li>" + _inline(re.sub(r"^([-*+]|\d+\.)\s+", "", lines[i].strip()),
-                                               base_dir) + "</li>")
+                items.append(
+                    "<li>"
+                    + _inline(
+                        re.sub(r"^([-*+]|\d+\.)\s+", "", lines[i].strip()), base_dir
+                    )
+                    + "</li>"
+                )
                 i += 1
             tag = "ol" if ordered else "ul"
             out.append(f"<{tag}>{''.join(items)}</{tag}>")
             continue
-        buf = []                                                 # paragraph
+        buf = []  # paragraph
         while i < n:
             t = lines[i].strip()
-            if not t or t.startswith(("#", ">", "```", "<", "|")) or is_hr(t) or is_li(t) \
-                    or re.match(r"^!\[([^\]]*)\]\(([^)]+)\)\s*$", t):
+            if (
+                not t
+                or t.startswith(("#", ">", "```", "<", "|"))
+                or is_hr(t)
+                or is_li(t)
+                or re.match(r"^!\[([^\]]*)\]\(([^)]+)\)\s*$", t)
+            ):
                 break
             buf.append(t)
             i += 1
@@ -349,16 +428,17 @@ def md_to_html(md, base_dir=""):
 # updates the .md prose, the .html, and the KPI cards at once.
 # ---------------------------------------------------------------------------
 
+
 def load_stats(path="stats.json"):
     """Load the canonical numbers for a report from a single stats.json."""
-    with open(path, encoding="utf-8") as f:
+    with Path(path).open(encoding="utf-8") as f:
         return json.load(f)
 
 
 def _stat_lookup(stats, key):
     if key in stats:
         return stats[key]
-    val = stats                                  # dotted path into nested dicts (a.b.c)
+    val = stats  # dotted path into nested dicts (a.b.c)
     for part in key.split("."):
         val = val[part]
     return val
@@ -373,15 +453,19 @@ def fill_stats(text, stats, strict=True):
     Nested keys use dots (`{{cohort.n}}`). An unknown key raises KeyError under the
     default strict=True (a silent miss would defeat the single-source guarantee);
     set strict=False to leave unmatched tokens in place."""
+
     def sub(m):
         key, fmt = m.group(1), m.group(2)
         try:
             val = _stat_lookup(stats, key)
         except (KeyError, TypeError):
             if strict:
-                raise KeyError(f"stats.json has no key {key!r} for placeholder {m.group(0)!r}")
+                raise KeyError(
+                    f"stats.json has no key {key!r} for placeholder {m.group(0)!r}"
+                ) from None
             return m.group(0)
         return format(val, fmt) if fmt else str(val)
+
     return _STAT_TOKEN.sub(sub, text)
 
 
@@ -397,9 +481,18 @@ def kpis_from_stats(stats, spec):
     return out
 
 
-def build_report_from_markdown(md_path, out, kpis=None, table=None, stats=None,
-                               table_marker="<!-- RESULTS_TABLE -->",
-                               title=None, subtitle=None, meta=None, footer=""):
+def build_report_from_markdown(
+    md_path,
+    out,
+    kpis=None,
+    table=None,
+    stats=None,
+    table_marker="<!-- RESULTS_TABLE -->",
+    title=None,
+    subtitle=None,
+    meta=None,
+    footer="",
+):
     """Render a self-contained interactive HTML report FROM the Markdown report.
 
     The Markdown IS the single source of the prose — pass the finished
@@ -421,18 +514,18 @@ def build_report_from_markdown(md_path, out, kpis=None, table=None, stats=None,
     Title / subtitle / meta are lifted from the .md title block (the first `# `,
     the first `### `, and the `**Date:** …` line) unless overridden.
     """
-    with open(md_path, encoding="utf-8") as f:
+    with Path(md_path).open(encoding="utf-8") as f:
         md = f.read()
-    base_dir = os.path.dirname(os.path.abspath(md_path))
+    base_dir = str(Path(md_path).resolve().parent)
     if stats is not None:
         if isinstance(stats, str):
             stats = load_stats(stats)
-        md = fill_stats(md, stats)               # single-source the numbers
+        md = fill_stats(md, stats)  # single-source the numbers
     lines = md.split("\n")
 
     def _pop(pattern):
-        for idx, l in enumerate(lines):
-            m = re.match(pattern, l.strip())
+        for idx, line in enumerate(lines):
+            m = re.match(pattern, line.strip())
             if m:
                 del lines[idx]
                 return m
@@ -453,8 +546,10 @@ def build_report_from_markdown(md_path, out, kpis=None, table=None, stats=None,
         if table_marker in body_html:
             body_html = body_html.replace(table_marker, table)
         else:
-            print(f"[build_report_html] WARNING: table_marker {table_marker!r} not found in "
-                  f"{os.path.basename(md_path)}; appending the results table at the end.")
+            print(
+                f"[build_report_html] WARNING: table_marker {table_marker!r} not found in "
+                f"{Path(md_path).name}; appending the results table at the end."
+            )
             body_html += "\n" + table
 
     page = f"""<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -465,9 +560,11 @@ def build_report_from_markdown(md_path, out, kpis=None, table=None, stats=None,
 {body_html}
 </div>
 <footer>{footer}</footer></body></html>"""
-    with open(out, "w", encoding="utf-8") as f:
+    with Path(out).open("w", encoding="utf-8") as f:
         f.write(page)
-    print(f"[build_report_html] wrote {out} ({len(page):,} bytes) from {os.path.basename(md_path)}")
+    print(
+        f"[build_report_html] wrote {out} ({len(page):,} bytes) from {Path(md_path).name}"
+    )
     return out
 
 
@@ -475,34 +572,74 @@ def _demo():
     # Example is a water / PFAS site ranking, but the builder is domain-neutral — swap in any
     # entities, columns, subset filters, and source KGs (justice, supply chain, biomedicine, …).
     raw = [  # site, state, medium, priority score, tier, corroborating KGs
-        ("Wellfield A-12", "ME", "groundwater",   63.3, "A", ["sawgraph", "hydrologykg", "spatialkg"]),
-        ("Intake B-4",     "NH", "surface water", 57.6, "A", ["sawgraph", "spatialkg"]),
-        ("Lagoon C-1",     "ME", "sediment",      54.1, "A", ["sawgraph", "fiokg", "spatialkg"]),
-        ("Spring D-7",     "VT", "groundwater",   52.0, "B", ["sawgraph", "hydrologykg"]),
-        ("Reservoir E-2",  "MA", "surface water", 49.8, "B", ["sawgraph"]),
-        ("Field F-9",      "NH", "soil",          47.2, "B", ["sawgraph", "fiokg"]),
-        ("Creek G-3",      "ME", "surface water", 44.9, "C", ["sawgraph"]),
-        ("Well H-6",       "VT", "groundwater",   41.5, "C", ["sawgraph", "spatialkg"]),
+        (
+            "Wellfield A-12",
+            "ME",
+            "groundwater",
+            63.3,
+            "A",
+            ["sawgraph", "hydrologykg", "spatialkg"],
+        ),
+        ("Intake B-4", "NH", "surface water", 57.6, "A", ["sawgraph", "spatialkg"]),
+        ("Lagoon C-1", "ME", "sediment", 54.1, "A", ["sawgraph", "fiokg", "spatialkg"]),
+        ("Spring D-7", "VT", "groundwater", 52.0, "B", ["sawgraph", "hydrologykg"]),
+        ("Reservoir E-2", "MA", "surface water", 49.8, "B", ["sawgraph"]),
+        ("Field F-9", "NH", "soil", 47.2, "B", ["sawgraph", "fiokg"]),
+        ("Creek G-3", "ME", "surface water", 44.9, "C", ["sawgraph"]),
+        ("Well H-6", "VT", "groundwater", 41.5, "C", ["sawgraph", "spatialkg"]),
     ]
-    rows = [{"name": s, "region": st, "medium": md, "score": sc, "tier": t,
-             "sources": src, "nsrc": len(src)} for s, st, md, sc, t, src in raw]
+    rows = [
+        {
+            "name": s,
+            "region": st,
+            "medium": md,
+            "score": sc,
+            "tier": t,
+            "sources": src,
+            "nsrc": len(src),
+        }
+        for s, st, md, sc, t, src in raw
+    ]
     tbl = candidate_table(
         rows,
-        columns=[("name", "site"), ("region", "state"), ("medium", "medium"),
-                 ("nsrc", "sources (n)"), ("score", "priority"), ("tier", "tier")],
-        search_keys=["name", "region", "medium"], numeric_keys=["score"], default_sort="score",
-        extra_filters=[("tier", "tier"), ("region", "state"), ("medium", "medium")],  # subset pull-downs
-        sources_col=("nsrc", "sources"))                                              # count + source pills
-    tip = ('<div class="muted" style="margin:8px 0 2px"><b>Tip:</b> click a header to sort; use the '
-           'pull-down menus to filter by tier, state, or medium; <b>sources (n)</b> = number of '
-           'federation KGs corroborating each row (pills show which).</div>')
-    build_report("Demo OKN Report", "self-contained interactive report (example: PFAS in water)",
-                 "Date · OKN federated SPARQL · Model",
-                 kpis=[("8", "priority sites"), ("3", "media"), ("4", "source KGs")],
-                 body_blocks=['<div class="note"><b>Framing.</b> observational; hypothesis generation, '
-                              'not a regulatory determination.</div>',
-                              "<h2>Ranked results</h2>", tip],
-                 table=tbl, out="demo_report.html", footer="OKN federation · demo")
+        columns=[
+            ("name", "site"),
+            ("region", "state"),
+            ("medium", "medium"),
+            ("nsrc", "sources (n)"),
+            ("score", "priority"),
+            ("tier", "tier"),
+        ],
+        search_keys=["name", "region", "medium"],
+        numeric_keys=["score"],
+        default_sort="score",
+        extra_filters=[
+            ("tier", "tier"),
+            ("region", "state"),
+            ("medium", "medium"),
+        ],  # subset pull-downs
+        sources_col=("nsrc", "sources"),
+    )  # count + source pills
+    tip = (
+        '<div class="muted" style="margin:8px 0 2px"><b>Tip:</b> click a header to sort; use the '
+        "pull-down menus to filter by tier, state, or medium; <b>sources (n)</b> = number of "
+        "federation KGs corroborating each row (pills show which).</div>"
+    )
+    build_report(
+        "Demo OKN Report",
+        "self-contained interactive report (example: PFAS in water)",
+        "Date · OKN federated SPARQL · Model",
+        kpis=[("8", "priority sites"), ("3", "media"), ("4", "source KGs")],
+        body_blocks=[
+            '<div class="note"><b>Framing.</b> observational; hypothesis generation, '
+            "not a regulatory determination.</div>",
+            "<h2>Ranked results</h2>",
+            tip,
+        ],
+        table=tbl,
+        out="demo_report.html",
+        footer="OKN federation · demo",
+    )
 
 
 def _demo_md():
@@ -511,25 +648,56 @@ def _demo_md():
     # stands in for `<study>_report.md`; only the KPI cards and the interactive table
     # are supplied separately (they are not prose).
     raw = [
-        ("Wellfield A-12", "ME", "groundwater",   63.3, "A", ["sawgraph", "hydrologykg", "spatialkg"]),
-        ("Intake B-4",     "NH", "surface water", 57.6, "A", ["sawgraph", "spatialkg"]),
-        ("Lagoon C-1",     "ME", "sediment",      54.1, "A", ["sawgraph", "fiokg", "spatialkg"]),
-        ("Spring D-7",     "VT", "groundwater",   52.0, "B", ["sawgraph", "hydrologykg"]),
+        (
+            "Wellfield A-12",
+            "ME",
+            "groundwater",
+            63.3,
+            "A",
+            ["sawgraph", "hydrologykg", "spatialkg"],
+        ),
+        ("Intake B-4", "NH", "surface water", 57.6, "A", ["sawgraph", "spatialkg"]),
+        ("Lagoon C-1", "ME", "sediment", 54.1, "A", ["sawgraph", "fiokg", "spatialkg"]),
+        ("Spring D-7", "VT", "groundwater", 52.0, "B", ["sawgraph", "hydrologykg"]),
     ]
-    rows = [{"name": s, "region": st, "medium": md, "score": sc, "tier": t,
-             "sources": src, "nsrc": len(src)} for s, st, md, sc, t, src in raw]
+    rows = [
+        {
+            "name": s,
+            "region": st,
+            "medium": md,
+            "score": sc,
+            "tier": t,
+            "sources": src,
+            "nsrc": len(src),
+        }
+        for s, st, md, sc, t, src in raw
+    ]
     tbl = candidate_table(
         rows,
-        columns=[("name", "site"), ("region", "state"), ("medium", "medium"),
-                 ("nsrc", "sources (n)"), ("score", "priority"), ("tier", "tier")],
-        search_keys=["name", "region", "medium"], numeric_keys=["score"], default_sort="score",
+        columns=[
+            ("name", "site"),
+            ("region", "state"),
+            ("medium", "medium"),
+            ("nsrc", "sources (n)"),
+            ("score", "priority"),
+            ("tier", "tier"),
+        ],
+        search_keys=["name", "region", "medium"],
+        numeric_keys=["score"],
+        default_sort="score",
         extra_filters=[("tier", "tier"), ("region", "state"), ("medium", "medium")],
-        sources_col=("nsrc", "sources"))
+        sources_col=("nsrc", "sources"),
+    )
     # Canonical numbers live in one stats.json; the Markdown references them as {{key}}
     # placeholders and the KPI cards are built from the same dict — edit a number once.
-    stats = {"n_sites": 4, "n_media": 3, "n_source_kgs": 4, "n_rows_scanned": 1240,
-             "top_site": "Wellfield A-12"}
-    with open("demo_stats.json", "w", encoding="utf-8") as f:
+    stats = {
+        "n_sites": 4,
+        "n_media": 3,
+        "n_source_kgs": 4,
+        "n_rows_scanned": 1240,
+        "top_site": "Wellfield A-12",
+    }
+    with Path("demo_stats.json").open("w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2)
     md = """# Demo OKN Report
 ### self-contained interactive report, rendered from Markdown (example: PFAS in water)
@@ -556,17 +724,28 @@ The tier-A sites cluster in northern New England, consistent with the sampling d
 """
     md_path = "demo_report_from_md.md"
     # The delivered .md must read standalone → fill its placeholders from stats too.
-    with open(md_path, "w", encoding="utf-8") as f:
+    with Path(md_path).open("w", encoding="utf-8") as f:
         f.write(fill_stats(md, stats))
     build_report_from_markdown(
-        md_path, out="demo_report_from_md.html", stats=stats,
-        kpis=kpis_from_stats(stats, [("n_sites", "priority sites"), ("n_media", "media"),
-                                     ("n_source_kgs", "source KGs")]),
-        table=tbl, footer="OKN federation · demo (rendered from Markdown)")
+        md_path,
+        out="demo_report_from_md.html",
+        stats=stats,
+        kpis=kpis_from_stats(
+            stats,
+            [
+                ("n_sites", "priority sites"),
+                ("n_media", "media"),
+                ("n_source_kgs", "source KGs"),
+            ],
+        ),
+        table=tbl,
+        footer="OKN federation · demo (rendered from Markdown)",
+    )
 
 
 if __name__ == "__main__":
     import sys
+
     if "--demo-md" in sys.argv:
         _demo_md()
     elif "--demo" in sys.argv:

@@ -198,10 +198,9 @@ def render(html: str) -> str:
 
     # --- header counts ---
     hdr = f"{len(nodes)} knowledge graphs, {len(R)} verified crosswalks (verified {verified_on})"
-    html = re.sub(
+    return re.sub(
         r"\d+ knowledge graphs, \d+ verified crosswalks \(verified [^)]*\)", hdr, html
     )
-    return html
 
 
 def main() -> None:
@@ -214,7 +213,9 @@ def main() -> None:
     R, _rows = build_rows()
     nodes = sorted({kg for row in R for kg in row[1]})
     print(f"updated {HTML.relative_to(ROOT)}")
-    print(f"  crosswalks: {len(R)} | nodes: {len(nodes)} | verified_on: {C.verified_on()}")
+    print(
+        f"  crosswalks: {len(R)} | nodes: {len(nodes)} | verified_on: {C.verified_on()}"
+    )
     print(f"  domains: {dict(Counter(r[0] for r in R))}")
 
 
