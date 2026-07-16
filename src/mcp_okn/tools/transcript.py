@@ -233,6 +233,18 @@ async def create_chat_transcript(
     the file is the goal — a sentence describing or summarizing the transcript
     is NOT a substitute.
 
+    COPY THE RETURN VALUE BYTE-FOR-BYTE — DO NOT RETYPE IT. Pass this tool's exact
+    returned string to your file/artifact writer. Do NOT re-type it, restructure
+    it, reorder or rename sections, tidy the formatting, or regenerate it from your
+    understanding of what it said. This transcript is already the final, formatted
+    deliverable; it needs no editing. Every query carries a fenced ```mermaid
+    diagram and a result table directly beneath its ```sparql block — a hand-typed
+    "cleaned up" version silently DROPS exactly those diagrams and tables, which is
+    the whole point of the transcript. If you find yourself reading the transcript
+    and re-emitting it, stop: write the original string instead. When in doubt the
+    canonical copy is the resource `transcript://session/latest` (below) — deliver
+    from there.
+
     IF THIS RESULT IS SPILLED TO A FILE (it is large and often exceeds the
     harness result-size limit, so the harness may save it to a temp file and hand
     you a notice instead of the text): this output is a DELIVERABLE ARTIFACT, not
