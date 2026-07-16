@@ -409,6 +409,22 @@ print(asyncio.run(run_sparql('SELECT ?s WHERE { ?s ?p ?o } LIMIT 3')))"
 CI (`.github/workflows/ci.yml`) runs ruff lint, ruff format-check, and mypy on
 every push/PR, plus the offline test suite on Python 3.10 and 3.12.
 
+### Lint & formatting conventions
+
+`ruff` is pinned in `uv.lock`, and CI lints/format-checks the **whole tree**, so a
+ruff version bump can surface new findings across the repo — reconcile them in one
+pass when bumping. Scope (see `[tool.ruff]` in `pyproject.toml`):
+
+- **Excluded** (`extend-exclude`): `docs/reproduction/` and `docs/examples/` — one-off,
+  throwaway figure/PDF/reproduction scripts, not maintained tooling.
+- **Docstrings not required** (`D` ignored via `per-file-ignores`): `tests/`, `scripts/`,
+  `benchmark/`, and the bundled `skills/*/scripts/` helpers. Everything else — chiefly
+  `src/mcp_okn/` — is held to the full rule set.
+
+When committing, **stage explicit paths** (`git add <path> …`), not `git add -A`: the
+working tree often carries untracked worked-example artifacts under `docs/reproduction/`
+that should not be swept into an unrelated commit.
+
 Deferred improvements are tracked in [BACKLOG.md](BACKLOG.md) — currently empty.
 
 ### Verification notes
