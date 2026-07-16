@@ -148,11 +148,15 @@ which collapses model-organism *genes* to human genes — a gene-lane operation.
 clade-expanded overlap is **taxonomic containment (a coarse taxon covering many finer ones), not 1:1
 identity** — carry that caveat.
 
-## Within-KG recipe worth keeping: prokn GO / Reactome enrichment
+## Within-KG recipes worth keeping: prokn enrichment — GO **and** Reactome (two families, run BOTH)
 
-Cross-KG joins come from `get_join_strategy`; this is a *within-prokn traversal* the tools don't hand
-you. prokn genes are HGNC-keyed with the **symbol on `rdfs:label`**; GO / Reactome sit on the encoded
-UniProt protein:
+Cross-KG joins come from `get_join_strategy`; these are *within-prokn traversals* the tools don't hand
+you. prokn genes are HGNC-keyed with the **symbol on `rdfs:label`**; both GO terms and Reactome
+pathways hang off the encoded UniProt protein. **These are two SEPARATE enrichment families — running
+GO does NOT cover Reactome. Do both, and see the declaration rule in step 6.** Each recipe below is
+standalone (repeat the gene→protein preamble); don't read the second as a variant of the first.
+
+**(a) GO enrichment** — gene → protein → GO term:
 
 ```
 ?gene rdfs:label ?sym ;                                             # match your gene symbol
@@ -160,8 +164,17 @@ UniProt protein:
 ?prot <http://purl.obolibrary.org/obo/RO_0002331> ?go .             # involved in -> GO (BP)
 #  or <http://purl.obolibrary.org/obo/RO_0002327> ?go               # enables -> GO (MF)
 #  or <http://purl.uniprot.org/core/partOf> ?go                     # part of -> GO (CC)
+```
+
+**(b) Reactome pathway enrichment** — gene → protein → pathway (a DISTINCT deliverable, not a GO
+variant):
+
+```
+?gene rdfs:label ?sym ;                                             # match your gene symbol
+      <http://semanticscience.org/resource/SIO_010078> ?prot .      # encodes -> UniProt protein
 ?prot <http://purl.obolibrary.org/obo/RO_0000056> ?pw .             # participates in -> pathway
-?pw a <http://purl.uniprot.org/core/Pathway> . FILTER(CONTAINS(STR(?pw),"R-HSA"))  # human Reactome
+?pw a <http://purl.uniprot.org/core/Pathway> .
+FILTER(CONTAINS(STR(?pw), "R-HSA"))                                 # human Reactome
 ```
 
 For disease **subtype** expansion ("any asthma", "all cardiovascular disease"), expand inline with

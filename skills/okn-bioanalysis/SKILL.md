@@ -121,8 +121,13 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
    rules; threshold adj_p ≤ 0.05 and |log2FC| ≥ 1. See the workflow appendix for spoke-genelab.
 5. **Cross-species projection (optional).** If the source is a model organism, project to human
    orthologs and collapse with `collapse_orthologs.py`; carry the *ortholog-inferred* caveat.
-6. **Functional enrichment.** GO / Reactome / disease / trait / chemical-set over-representation with
-   `enrichment.py` (explicit background, hypergeometric + BH FDR). See enrichment-methods.
+6. **Functional enrichment.** Over-representation with `enrichment.py` (explicit background,
+   hypergeometric + BH FDR). **GO and Reactome are two SEPARATE families — run BOTH; doing GO does not
+   cover Reactome** (see the two standalone prokn recipes in the workflow reference). Add disease /
+   trait / chemical-set enrichment where the question calls for it. **Declare, in the report, which
+   enrichment families you RAN and which you deliberately SKIPPED, each with a one-line reason** — a
+   silently omitted family is a bug, not a choice; if you'd have to write "Reactome: skipped — no
+   reason", you should have run it. See enrichment-methods.
 7. **Map entities to phenotypes (HP).** Phenotype = **HP** terms; **5 suppliers** — `oard-kg`,
    `prokn`, `rdkg`, `gene-expression-atlas-okn`, `biohealth` (spoke-okn / pankgraph carry disease but
    **no** phenotype — bridge them). Route by entity: **disease → phenotype** — richest is `oard-kg`
@@ -199,6 +204,9 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
 
 - Joining across KGs on study / dataset accessions (island) → integrate on entity IDs / geography.
 - Enrichment against an implicit / all-genome background → inflated significance.
+- Doing GO enrichment and silently skipping Reactome (or half of any compound deliverable) → they are
+  separate families; run both and declare run-vs-skipped with reasons. A missing analysis has no
+  loud tripwire (unlike an absurd result), so the report must make the omission explicit.
 - Reaching place-based data by name instead of a geographic key → join on FIPS / ZIP / S2 (find the
   bridge KG with `find_context_sources` / `get_join_strategy`).
 - A single combined query pushing a big reified pattern + OPTIONAL joins → timeout; go one piece at a

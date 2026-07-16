@@ -61,10 +61,16 @@ group specificity; cross-KG corroboration; network centrality or dependency dept
 exposure↔outcome linkage.
 
 ## 6. Domain analyses
-The domain-specific deep dives, each with a figure. Include only those that apply. Examples across
+The domain-specific deep dives, each with a figure. Include those that apply. Examples across
 the federation: category / functional enrichment; pathway or network analysis; geospatial
 clustering; supply-chain or dependency tracing; flood / exposure modelling; facility or provider
 inventories.
+
+**When an analysis is a family, run every member or declare the skips.** If a deliverable has natural
+members (GO *and* Reactome enrichment; several exposure media; multiple centralities), either run all
+of them or **state which you RAN and which you deliberately SKIPPED, each with a one-line reason**.
+"Include only those that apply" must not become a silent half-completion — a missing sub-analysis has
+no loud tripwire, so an unstated omission reads as full coverage. Make it explicit.
 
 ## 7. Discussion
 Synthesise the axes into a coherent picture; state the implications / recommendations / targets

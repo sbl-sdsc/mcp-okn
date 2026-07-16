@@ -80,10 +80,15 @@ Then:
    interpretation of the result. The axes depend on the domain (e.g. per-group signal, spatial
    clustering / hot-spots, temporal trend, cross-KG corroboration, category enrichment, network
    centrality, exposure↔outcome linkage).
-6. **Domain analyses** — the domain-specific deep dives with figures. Include only those the
-   question needs; examples across the federation: category / functional enrichment; pathway or
+6. **Domain analyses** — the domain-specific deep dives with figures. Include those the question
+   needs; examples across the federation: category / functional enrichment; pathway or
    network analysis; geospatial hot-spot mapping; supply-chain or dependency tracing; exposure or
-   flood modelling; facility / provider inventories.
+   flood modelling; facility / provider inventories. **When an analysis has a natural family of
+   members** (e.g. GO *and* Reactome enrichment; multiple exposure media; several network centralities),
+   **run all of them, or state explicitly which you RAN and which you deliberately SKIPPED, each with a
+   one-line reason.** "Include only those that apply" is not a license to silently drop half a
+   deliverable — a missing sub-analysis has no loud tripwire, so make the omission explicit or it reads
+   as "covered everything."
 7. **Discussion** — synthesise the axes into a coherent picture; state the **implications /
    recommendations / targets** (interventions, priority sites, candidate targets, mitigations,
    at-risk entities — flagged by evidence strength); and name the testable predictions.
