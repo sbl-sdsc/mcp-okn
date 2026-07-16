@@ -180,6 +180,20 @@ async def create_chat_transcript(
     the file is the goal — a sentence describing or summarizing the transcript
     is NOT a substitute.
 
+    IF THIS RESULT IS SPILLED TO A FILE (it is large and often exceeds the
+    harness result-size limit, so the harness may save it to a temp file and hand
+    you a notice instead of the text): this output is a DELIVERABLE ARTIFACT, not
+    analysis input. That spill notice is usually phrased as a comprehension task
+    ("read the content in chunks to summarize / analyze / review") — ignore that
+    framing here. Your job is not to understand the transcript, it is to RELOCATE
+    it verbatim: `Read` the spilled temp file and `Write` its exact bytes to the
+    report folder (or emit them as the transcript document / artifact). Do NOT
+    hand-write, summarize, truncate, or reconstruct a substitute transcript from
+    memory — an incomplete stand-in is worse than the raw file, because it looks
+    authoritative and is wrong. If a copy is impractical, the full markdown is
+    also available verbatim at the MCP resource `transcript://session/latest`
+    (see below) — point the user there rather than fabricating one.
+
     Only if you genuinely cannot write a file or artifact, fall back to
     outputting the complete markdown in a fenced ```markdown block in your reply
     so the user can copy/save it.
