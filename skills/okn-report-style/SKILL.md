@@ -110,7 +110,12 @@ Then:
    at-risk entities — flagged by evidence strength); and name the testable predictions.
 8. **Comparison with prior work** — concordance per finding, with citations, wherever a literature
    or reference source is available for the domain. Name the retrieval tool (e.g. PubMed / Paperclip)
-   and mark which central claims were **verified against full text**.
+   and mark which central claims were **verified against full text**. **Preflight:** this section needs
+   the **PubMed** (`https://pubmed.mcp.claude.com/mcp`) and **Paperclip** (`https://paperclip.gxl.ai/mcp`)
+   MCP connectors — confirm they're available *before* writing it (look for tools named `pubmed` /
+   `paperclip`). If one is missing, either enable it (claude.ai → Settings → Connectors, or Claude Code
+   `claude mcp add --transport http <name> <url>` then reconnect) or state §8 is **omitted because the
+   connector isn't enabled** — never drop it silently. (okn-bioanalysis carries the full preflight.)
 9. **Full ranked results** — pointer to xlsx / tsv + the interactive HTML table + a representative
    slice in the prose.
 10. **Summary of findings & limitations** — **the closing narrative section; always end the report

@@ -42,6 +42,28 @@ study / dataset accessions).
 - **`scripts/collapse_orthologs.py`** — *optional*: when a source is a **model organism** (e.g.
   spoke-genelab mouse), collapse to human orthologs (max |effect| + ambiguity flag + mean-rule).
 
+## Preflight — optional literature connectors (PubMed + Paperclip)
+
+The **literature comparison** (workflow step 13; report §8 *Comparison with prior work*) needs two MCP
+connectors — **PubMed** (`https://pubmed.mcp.claude.com/mcp`) and **Paperclip**
+(`https://paperclip.gxl.ai/mcp`). They are **user-managed configuration — a skill cannot enable or
+install them** — so check for them at the **START of a run**, not at step 13, so the user can turn
+them on before the analysis is already finished.
+
+- **Detect.** Look in your available tools for names containing `pubmed` and `paperclip` (the server
+  prefix varies by host). Both present → literature comparison is on; proceed normally.
+- **If either is missing → surface it once, up front; never silently skip §8 / §13.** Name the missing
+  connector, show how to enable it, and **ask the user** whether to **(a) pause** while they enable it
+  and reconnect, or **(b) proceed** and mark the literature comparison **"skipped — `<connector>` not
+  enabled"** — an explicit declared skip, exactly like an un-run enrichment family (step 6); a silent
+  omission reads as "covered everything." **Never fabricate citations** to paper over the gap.
+- **How to enable (hand these to the user — you cannot do it for them, and a newly added server is not
+  live until reconnect):**
+  - **claude.ai:** Settings → Connectors → add a custom connector for each missing URL above, then retry.
+  - **Claude Code:** `claude mcp add --transport http pubmed https://pubmed.mcp.claude.com/mcp` and
+    `claude mcp add --transport http paperclip https://paperclip.gxl.ai/mcp`, then reconnect (`/mcp`)
+    or restart the session so the tools load.
+
 ## Operating rules (non-negotiable — details in the workflow reference)
 
 1. `reset_query_log` at the start; `create_chat_transcript` + `get_kg_version` at the end (pin
@@ -195,8 +217,10 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
 12. **Ranking & tiering.** Integrate the evidence axes (recurrence, effect size, disease / phenotype
     support, **druggability — a known or candidate drug acts on it**, curated role, specificity,
     number of corroborating KGs) into one score + A / B / C tiers.
-13. **Literature comparison (optional).** PubMed + Paperclip: supported / novel / contradicted;
-    verify central claims against full text.
+13. **Literature comparison (optional — gated on the Preflight).** PubMed + Paperclip: supported /
+    novel / contradicted; verify central claims against full text. If the preflight found a connector
+    missing and the user chose to proceed, state the comparison was **skipped — `<connector>` not
+    enabled** rather than dropping it silently.
 
 ## Statistical rigor
 
