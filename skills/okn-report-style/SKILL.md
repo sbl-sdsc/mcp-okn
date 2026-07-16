@@ -31,8 +31,9 @@ A complete report is a **folder**, not one file:
 
 ```
 <study>/
-├── <study>_report.md            # the written report (prose, tables, figure legends)
-├── <study>_report.html          # self-contained interactive version (embedded figures + table + maps)
+├── <study>_report.md            # the written report — the SINGLE source of the prose
+├── <study>_report.html          # self-contained interactive version, RENDERED FROM the .md
+│                                 #   (same prose + KPI cards, embedded figures, interactive table, maps)
 ├── <study>_results.xlsx         # machine-readable multi-sheet workbook
 ├── figures/  fig1_*.png …        # one PNG per figure, numbered in document order
 ├── data/     *.tsv / *.json      # intermediate extracts (for reproducibility)
@@ -43,6 +44,19 @@ A complete report is a **folder**, not one file:
 
 Write working files to a scratch dir, then copy final artifacts into the delivered folder. Share
 the HTML, MD and XLSX with the user via the file-presentation tool.
+
+**One argument, authored once.** The `.md` is the single source of the report's *prose*; the `.html`
+is **rendered from it**, never re-authored (see *Interactive HTML report*). Numbers likewise have a
+single source: keep every volatile / headline figure in one **`stats.json`**, write it into the `.md`
+as a **`{{key}}` placeholder**, and let the tooling fill it — `fill_stats(text, stats)` fills the
+delivered `.md` (so it reads standalone), `build_report_from_markdown(..., stats=…)` fills the same
+placeholders when rendering the `.html`, and `kpis_from_stats(stats, spec)` builds the KPI cards from
+that dict. One edit in `stats.json` then updates the prose, the HTML, and the KPI cards at once. The
+remaining
+artifacts are deliberately **not** retellings of the report and must not be collapsed into it: the
+`_reproducibility_transcript.md` carries the **verbatim SPARQL queries** (its unique payload, from
+`create_chat_transcript`, exists nowhere else and lets the analysis audit standalone), and the
+`.xlsx` is the **data**, not a narrative. Don't "deduplicate" either away.
 
 ## Report structure (Markdown)
 
@@ -73,8 +87,10 @@ Then:
    unlogged / exploratory query or from prior knowledge. Every source and every cross-KG claim must
    trace to a logged query; if a bridge graph (e.g. `ubergraph` supplying a DOID→MONDO equivalence)
    is credited, the query that used it must be in the transcript, or it is a phantom source — cut it.
-3. **Design & rules** — the exact selection rules, thresholds, join keys, and an inventory / cohort
-   table rebuilt live with verified counts.
+3. **Design & rules** — *narrate* the selection rules, headline thresholds, and join keys for a
+   reader, plus an inventory / cohort table rebuilt live with verified counts. Keep the exact
+   replicator-grade specification (every join key, exact backgrounds, scoring formulas) in the
+   reproducibility appendix and cross-reference it — don't restate the thresholds in both places.
 4. **Confidence tiers** — how results are graded (A / B / C) and what evidence each tier requires.
 5. **Findings by axis** — one subsection per analysis axis, each with its figure + legend + a short
    interpretation of the result. The axes depend on the domain (e.g. per-group signal, spatial
@@ -166,13 +182,26 @@ figure consistent and prevents the overlap / font mistakes. Run `python scripts/
 
 ## Interactive HTML report
 
-Build a **single self-contained `.html`** (inline CSS + JS, figures embedded as base64 — no
-external files). Structure: a coloured header with **KPI cards**, `card`/`note` callout boxes,
-each figure as `<img>` + a `figcap` legend div **followed by a short interpretation paragraph**, any
-maps embedded inline, and the ranked results as
-an **interactive table** that is **sortable (click headers), filterable, and paginated** (default
+**Render the HTML *from* the Markdown report — never re-author the prose.** `report.md` is the single
+source of the narrative; the `.html` is generated from it and adds only what Markdown can't express:
+**KPI cards, base64-embedded figures, and the interactive results table.** Restating the report's
+sections, figure legends, or interpretations as hand-written HTML is the **prose-drift** failure mode
+— edit one file and the other silently disagrees. Rendering makes that drift structurally impossible.
+
+Use **`build_report_from_markdown(md_path, out, kpis=…, table=…)`** in
+`scripts/build_report_html.py`. It lifts the title / subtitle / date line from the `.md` title block,
+renders the body (headings, tables, lists, blockquotes, inline markup), **base64-embeds every figure**
+(a `![alt](figures/figN.png)` line followed by a blockquote becomes an `<img>` + `figcap` legend), and
+**splices the interactive table** in wherever the `.md` contains a `<!-- RESULTS_TABLE -->` marker
+(put that marker in §9). KPI cards and any maps' inline HTML are passed in / embedded — they are
+chrome, not prose, so build the KPI cards from `stats.json` with `kpis_from_stats(stats, spec)` (never
+retype the numbers) and pass `stats=` so any `{{key}}` placeholders in the prose are filled too. The result is a
+**single self-contained `.html`** (inline CSS + JS, no external files) with a coloured header of **KPI
+cards**, every figure as `<img>` + its `figcap` legend, maps embedded inline, and the ranked results
+as an **interactive table** that is **sortable (click headers), filterable, and paginated** (default
 25 rows/page with Prev/Next) — a 900-row table dumped in full is unreadable, so always paginate long
-tables.
+tables. (For a one-off HTML page with *no* Markdown source, the low-level `build_report(...)` /
+`figure_block(...)` helpers remain — but a report always has a `.md`, so a report always renders from it.)
 
 The results table has two required features:
 
@@ -192,12 +221,14 @@ it inline with `m.get_root().render()` rather than plotting bare coordinates —
 clickable** (a popup showing that point's attributes + source) and a legend below stating the
 coordinate source.
 
-**Use the bundled builder `scripts/build_report_html.py`** — pass a title, KPI list, section
-HTML blocks (figures auto-embedded as base64), and the result rows (list of dicts) + column spec.
-Use **`extra_filters=[(key, label), …]`** to generate the **subset pull-down menus** and
+**Use the bundled builder `scripts/build_report_html.py`.** Build the table fragment with
+**`candidate_table(rows, columns, …)`** — the result rows (list of dicts) + column spec — then pass
+it to **`build_report_from_markdown(md_path, out, kpis=…, table=…)`**, which renders the report body
+from the `.md` and splices the table in at the `<!-- RESULTS_TABLE -->` marker. For the table, use
+**`extra_filters=[(key, label), …]`** to generate the **subset pull-down menus** and
 **`sources_col=(count_key, list_key)`** to render the **`sources (n)`** column (count + pills,
 sorted by the count). It emits the sortable / filterable / paginated table and the whole page; see
-`python scripts/build_report_html.py --demo`.
+`python scripts/build_report_html.py --demo-md` (render-from-Markdown) or `--demo` (low-level path).
 
 ## Excel workbook
 
@@ -225,5 +256,11 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
   numbered caveats).
 - Undefined acronyms → add the Abbreviations block and expand each at first use.
 - 900-row HTML table → paginate, and add the subset pull-downs + a search box.
-- Numbers drifting between .md / .html / .xlsx after an edit → keep a single `stats.json` and
-  regenerate; grep the three artifacts for the key figures to confirm they match.
+- **Prose drifting between .md and .html** because the HTML re-states the report instead of rendering
+  it (a section, figure legend, or interpretation edited in one file and now disagreeing with the
+  other) → generate the `.html` FROM the `.md` with `build_report_from_markdown(...)`; never
+  hand-author HTML prose that duplicates the Markdown. The `.md` is the single source of the prose.
+- Numbers drifting between .md / .html / .xlsx after an edit → keep a single `stats.json`, reference
+  each figure as a `{{key}}` placeholder, and let the tooling fill it (`fill_stats` for the delivered
+  `.md`, `build_report_from_markdown(stats=…)` for the `.html`, `kpis_from_stats` for the KPI cards) so
+  one edit propagates everywhere. Grep the three artifacts for the key figures to confirm they match.

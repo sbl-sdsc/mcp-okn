@@ -11,6 +11,11 @@ data type — geolocation / spatial data is the usual offender — across severa
 it in one place (one map section, one enrichment section, …) and cross-reference from elsewhere.
 When an analysis would touch the same data in two spots, consolidate rather than duplicate.
 
+**Numbers come from `stats.json`, not your keyboard.** Write every volatile / headline figure (counts,
+denominators, thresholds, the tier distribution) as a `{{key}}` placeholder sourced from one
+`stats.json`; the tooling fills it into the delivered `.md`, the `.html`, and the KPI cards (see the
+SKILL's *Interactive HTML report* + failure-mode notes). Author the number once, in `stats.json`.
+
 ## Title block (before §1)
 
 ```
@@ -46,8 +51,14 @@ and every cross-KG claim must trace to a logged query. A bridge graph credited w
 source — remove it.
 
 ## 3. Design & rules
-State the exact selection rules, thresholds, and join keys, and an **inventory / cohort table
-rebuilt live** with verified counts. Add the main design / overview figure here (Figure 1).
+**Narrate** the selection logic for a *reader*: what was included / excluded and why, the headline
+thresholds, and the join keys in plain terms — plus an **inventory / cohort table rebuilt live** with
+verified counts. Add the main design / overview figure here (Figure 1). **Do not restate the exact
+specification here** — the replicator-grade detail (every join key, the exact backgrounds, scoring
+formulas such as `1/sqrt(fanout)`) lives *only* in the **reproducibility appendix**; cross-reference
+it ("full specification in the reproducibility appendix") rather than duplicating it. §3 is for a
+reader; the appendix is for a replicator — the same thresholds spelled out in both is drift waiting
+to happen.
 
 ## 4. Confidence tiers
 A small table defining tiers A / B / C and what evidence each requires. Give the tier distribution.
