@@ -307,22 +307,27 @@ async def test_manifest_bullet_matches_rendered_counts():
     assert "- **Contents:** 2 queries · 2 query diagrams · 1 schema diagram" in md
 
 
+def _contents_line(md: str) -> str:
+    return next(l for l in md.splitlines() if l.startswith("- **Contents:**"))
+
+
 @pytest.mark.asyncio
-async def test_manifest_singular_forms():
-    """One query, one diagram, zero schema diagrams — singular/zero wording."""
+async def test_manifest_singular_forms_and_suppresses_zero_schema():
+    """One query, one diagram, no schema visualizations — singular wording, and the
+    zero schema-diagram component is omitted (not shown as '· 0 schema diagrams')."""
     session.record(_q("sawgraph"), "json", result=JSON_RESULT)
     md = await create_chat_transcript(
         model="claude-opus-4-8", exchanges=[{"prompt": "q", "answer": "a"}]
     )
     assert md.count("```sparql") == 1
     assert md.count("```mermaid") == 1
-    assert "- **Contents:** 1 query · 1 query diagram · 0 schema diagrams" in md
+    assert _contents_line(md) == "- **Contents:** 1 query · 1 query diagram"
+    assert "schema diagram" not in md  # zero component suppressed
 
 
 @pytest.mark.asyncio
-async def test_manifest_counts_zero_diagrams_when_disabled():
-    """With query diagrams disabled the manifest reflects zero — it tracks what is
-    actually rendered, not what could be."""
+async def test_manifest_suppresses_zero_query_diagrams_when_disabled():
+    """With query diagrams disabled, only the query count remains — no zeros."""
     session.record(_q("sawgraph"), "json", result=JSON_RESULT)
     md = await create_chat_transcript(
         model="claude-opus-4-8",
@@ -330,7 +335,18 @@ async def test_manifest_counts_zero_diagrams_when_disabled():
         include_query_diagrams=False,
     )
     assert md.count("```mermaid") == 0
-    assert "- **Contents:** 1 query · 0 query diagrams · 0 schema diagrams" in md
+    assert _contents_line(md) == "- **Contents:** 1 query"
+
+
+@pytest.mark.asyncio
+async def test_manifest_all_zero_fallback():
+    """A prose-only transcript with nothing to count gets a readable fallback."""
+    md = await create_chat_transcript(
+        model="claude-opus-4-8",
+        exchanges=[{"prompt": "q", "answer": "a"}],
+        include_query_log=False,
+    )
+    assert _contents_line(md) == "- **Contents:** no queries or diagrams"
 
 
 def test_session_skips_errored_queries():

@@ -476,10 +476,16 @@ async def create_chat_transcript(
     n_queries = body_md.count("```sparql")
     n_schema_diagrams = len(visualizations)
     n_query_diagrams = body_md.count("```mermaid") - n_schema_diagrams
-    contents = (
-        f"- **Contents:** {_plural(n_queries, 'query', 'queries')} · "
-        f"{_plural(n_query_diagrams, 'query diagram')} · "
-        f"{_plural(n_schema_diagrams, 'schema diagram')}"
+    # Only list components that are actually present — a trailing "· 0 schema
+    # diagrams" reads like something is missing rather than absent.
+    parts = [
+        _plural(n_queries, "query", "queries") if n_queries else "",
+        _plural(n_query_diagrams, "query diagram") if n_query_diagrams else "",
+        _plural(n_schema_diagrams, "schema diagram") if n_schema_diagrams else "",
+    ]
+    parts = [p for p in parts if p]
+    contents = "- **Contents:** " + (
+        " · ".join(parts) if parts else "no queries or diagrams"
     )
 
     header = [
