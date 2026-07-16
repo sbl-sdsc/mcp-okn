@@ -50,7 +50,11 @@ study / dataset accessions).
 2. Before querying a KG: `get_schema`. For cross-KG joins use the **precomputed crosswalk catalog**
    first — `list_crosswalks` (the whole verified join map in one call) and `get_join_strategy(a, b)`
    (one pair's recipe; respect `known_non_join`); `find_context_sources(want, join_key)` for the
-   reverse ("who annotates this entity?"). If a KG *seems* to lack an id you need, run
+   reverse ("who annotates this entity?"). **Reconcile with what these tools RETURN — don't just call
+   them.** `find_context_sources` is a capability index, not a single-answer lookup: for each `want`,
+   enumerate EVERY supplier it names and state why each was used or dropped (coverage, id scheme,
+   redundancy). Using one and ignoring the rest complies with "call the tools" while defeating their
+   purpose — a dropped supplier needs a reason, exactly like a skipped enrichment family (step 6). If a KG *seems* to lack an id you need, run
    `find_crosswalks(kg)` before giving up — the id is usually just encoded non-obviously (a buried
    mapping predicate, the node's own IRI, or an arbitrary domain predicate). Before joining on
    ontology-term objects: `probe_namespaces` — pick the richest id scheme, don't guess.
@@ -110,8 +114,10 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
    curated set, a disease's genes, a pathway's members, an exposure's targets) as raw rows.
 3. **Cross-KG annotation.** Add context by joining on shared IDs — get each recipe from
    `get_join_strategy`, and `find_context_sources` to list *all* suppliers of an annotation (don't
-   privilege one KG). Typical annotations (with example suppliers): disease↔gene, gene↔trait
-   (digcfdekg), gene / protein↔pathway & GO (prokn, ncipidkg), chemical↔gene / adverse-outcome
+   privilege one KG). Typical annotations (with example suppliers): disease↔gene;
+   **gene↔trait / gene-set — `digcfdekg`** (GWAS-style trait associations; the broad-set supplier for
+   enrichment in step 9 — easy to miss, so check it explicitly); gene / protein↔pathway & GO (prokn,
+   ncipidkg), chemical↔gene / adverse-outcome
    (biobricks tox + aopwiki), disease / gene / protein↔phenotype (HP — see step 7), gene↔drug &
    disease↔drug (rdkg `treats`), disease / concept↔SDoH (`biohealth` is the UMLS-keyed SDoH hub;
    `dreamkg` social-service audiences and `phaseskg` healthy-aging / loneliness / social-isolation
@@ -151,8 +157,12 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
    genes — here you map the *organisms themselves*. Recipes from `taxon_overlap` / `list_crosswalks`
    (cluster D + taxon_hub); clade-expanded overlap is **taxonomic containment, not identity**.
 9. **Disease / phenotype / trait linkage.** Test the entity set for over-representation of disease /
-   phenotype / trait genes; distinguish a **broad** (GWAS) set (null by construction) from a
-   **curated** (Mendelian) set (the discriminating test).
+   phenotype / trait genes (see enrichment-methods, *Disease / trait / phenotype gene-set*). Pair each
+   set type with its supplier so the choice is forced, not left to notice: **broad** (GWAS / polygenic)
+   sets — **`digcfdekg`** `geneToTrait` / gene_set, PIGEAN — are null by construction; **curated**
+   (rare / Mendelian) sets — **`rdkg`** disease→gene — are the discriminating test. Run both and name
+   which supplier fed each; `find_context_sources(want=["trait","disease"], join_key="gene")` lists
+   all suppliers to reconcile against (rule 2).
 10. **Drug / target / exposure linkage.**
     - **Known & candidate treatments for a target (therapeutic hypotheses).** For each known or
       top-ranked target, find drugs / compounds that act on it: on a **protein (UniProt)** or **gene**
@@ -207,6 +217,10 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
 - Doing GO enrichment and silently skipping Reactome (or half of any compound deliverable) → they are
   separate families; run both and declare run-vs-skipped with reasons. A missing analysis has no
   loud tripwire (unlike an absurd result), so the report must make the omission explicit.
+- Using only the KGs with prominent write-ups here and missing one named in a parenthetical (e.g.
+  `digcfdekg`) → that is pattern-matching on this doc's layout, not reading the capability index.
+  Reconcile against what `find_context_sources` RETURNS: list every supplier per `want`, use-or-drop
+  each with a reason.
 - Reaching place-based data by name instead of a geographic key → join on FIPS / ZIP / S2 (find the
   bridge KG with `find_context_sources` / `get_join_strategy`).
 - A single combined query pushing a big reified pattern + OPTIONAL joins → timeout; go one piece at a
