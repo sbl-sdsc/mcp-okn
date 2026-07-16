@@ -290,6 +290,49 @@ async def test_stub_still_carries_warnings():
     assert "transcript://session/latest" in md  # stub body follows
 
 
+@pytest.mark.asyncio
+async def test_manifest_bullet_matches_rendered_counts():
+    """The header Contents bullet must match the document's actual ```sparql /
+    ```mermaid block counts — it's the invariant a reader checks against."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    session.record(_q("prokn"), "json", result=JSON_RESULT)  # two distinct queries
+    session.record_visualization("spoke-genelab", "classDiagram\n  class Gene")
+    md = await create_chat_transcript(
+        model="claude-opus-4-8", exchanges=[{"prompt": "q", "answer": "a"}]
+    )
+    # ground-truth fence counts
+    assert md.count("```sparql") == 2
+    assert md.count("```mermaid") == 3  # 2 query diagrams + 1 schema diagram
+    # the manifest reports exactly those, with correct plurals
+    assert "- **Contents:** 2 queries · 2 query diagrams · 1 schema diagram" in md
+
+
+@pytest.mark.asyncio
+async def test_manifest_singular_forms():
+    """One query, one diagram, zero schema diagrams — singular/zero wording."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_chat_transcript(
+        model="claude-opus-4-8", exchanges=[{"prompt": "q", "answer": "a"}]
+    )
+    assert md.count("```sparql") == 1
+    assert md.count("```mermaid") == 1
+    assert "- **Contents:** 1 query · 1 query diagram · 0 schema diagrams" in md
+
+
+@pytest.mark.asyncio
+async def test_manifest_counts_zero_diagrams_when_disabled():
+    """With query diagrams disabled the manifest reflects zero — it tracks what is
+    actually rendered, not what could be."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_chat_transcript(
+        model="claude-opus-4-8",
+        exchanges=[{"prompt": "q", "answer": "a"}],
+        include_query_diagrams=False,
+    )
+    assert md.count("```mermaid") == 0
+    assert "- **Contents:** 1 query · 0 query diagrams · 0 schema diagrams" in md
+
+
 def test_session_skips_errored_queries():
     assert session.record("BAD QUERY", "json", error="boom") is False
     assert session.entries() == []

@@ -90,7 +90,10 @@ THE RETURNED STRING BYTE-FOR-BYTE — do NOT retype, restructure, reorder sectio
 or reformat it: every query carries a ```mermaid diagram + a result table beneath
 its ```sparql block, and a hand-typed "cleaned up" version silently DROPS those
 diagrams and tables. Pass the exact return value to your writer; never regenerate
-it from memory. Only
+it from memory. The header's `- **Contents:**` bullet lists how many queries and
+diagrams the document has — after saving, confirm your file has that many
+```mermaid blocks; if fewer, you dropped some, so rewrite from the exact output.
+Only
 if you cannot write a file, output the complete markdown in a fenced ```markdown
 block. NEVER say the transcript is "ready", "in the preview panel", or "saved"
 unless you actually wrote the file or emitted its full content — do not fabricate
