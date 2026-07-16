@@ -221,6 +221,75 @@ async def test_phantom_check_skipped_when_query_log_excluded():
     assert "mcp-okn WARNING" not in md
 
 
+@pytest.mark.asyncio
+async def test_large_transcript_returns_stub_pointing_at_resource():
+    """When the rendered body exceeds max_inline_chars, return a compact stub —
+    not the full body — so the harness can't spill it into a fabricated substitute.
+    The complete transcript is still published verbatim to the resource."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_chat_transcript(
+        model="claude-opus-4-8",
+        exchanges=[
+            {
+                "prompt": "Which diseases relate to PFAS?",
+                "answer": "Two cancers are associated.",
+            }
+        ],
+        max_inline_chars=50,  # tiny threshold -> force the stub
+    )
+    # a compact stub, not the full document
+    assert "transcript://session/latest" in md
+    assert "characters" in md  # the size line
+    assert "## Conversation" not in md
+    assert "Two cancers are associated." not in md
+    # ...but the resource holds the complete transcript verbatim
+    full = session.last_transcript()
+    assert "## Conversation" in full
+    assert "Two cancers are associated." in full
+    assert "GRAPH <https://purl.org/okn/frink/kg/sawgraph>" in full
+
+
+@pytest.mark.asyncio
+async def test_small_transcript_stays_inline():
+    """A normal-sized transcript (under the default threshold) is returned in full."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_chat_transcript(
+        model="claude-opus-4-8", exchanges=[{"prompt": "q", "answer": "a"}]
+    )
+    assert "## Conversation" in md
+    assert "delivered via resource" not in md  # not the stub
+
+
+@pytest.mark.asyncio
+async def test_max_inline_chars_none_forces_full_body():
+    """max_inline_chars=None disables stubbing — the same input that stubs at a
+    tiny threshold is returned in full."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_chat_transcript(
+        model="claude-opus-4-8",
+        exchanges=[{"prompt": "q", "answer": "a"}],
+        max_inline_chars=None,
+    )
+    assert "## Conversation" in md
+    assert "delivered via resource" not in md
+
+
+@pytest.mark.asyncio
+async def test_stub_still_carries_warnings():
+    """A stubbed result must still surface warnings (e.g. a phantom source)."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_chat_transcript(
+        model="claude-opus-4-8",
+        exchanges=[{"prompt": "q", "answer": "a"}],
+        kgs_used=["sawgraph", "ubergraph"],  # ubergraph un-queried -> phantom warning
+        max_inline_chars=50,  # -> stub
+    )
+    assert md.startswith("<!--")  # warning comment leads
+    assert "mcp-okn WARNING" in md
+    assert "ubergraph" in md.split("\n")[0]
+    assert "transcript://session/latest" in md  # stub body follows
+
+
 def test_session_skips_errored_queries():
     assert session.record("BAD QUERY", "json", error="boom") is False
     assert session.entries() == []
