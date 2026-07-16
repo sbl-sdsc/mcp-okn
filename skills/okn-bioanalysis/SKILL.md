@@ -66,9 +66,12 @@ surfaces after the whole analysis is done and there's no time left to turn them 
 
 ## Operating rules (non-negotiable — details in the workflow reference)
 
-1. `reset_query_log` at the start; `create_chat_transcript` + `get_kg_version` at the end (pin
-   versions + dates). Don't mark substantive queries `exploratory` — least of all the query that
-   establishes a cross-KG bridge; that one is the point of the analysis and MUST be logged.
+1. `reset_query_log` at the start; `create_reproducibility_record` + `get_kg_version` at the end (pin
+   versions + dates). `create_reproducibility_record` emits the lean deliverable — header + the
+   verbatim supporting queries + row counts — which fits inline and saves directly (use
+   `create_chat_transcript` only when you also need the conversation prose + result tables). Don't
+   mark substantive queries `exploratory` — least of all the query that establishes a cross-KG
+   bridge; that one is the point of the analysis and MUST be logged.
 2. Before querying a KG: `get_schema`. For cross-KG joins use the **precomputed crosswalk catalog**
    first — `list_crosswalks` (the whole verified join map in one call) and `get_join_strategy(a, b)`
    (one pair's recipe; respect `known_non_join`); `find_context_sources(want, join_key)` for the

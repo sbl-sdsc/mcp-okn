@@ -346,12 +346,13 @@ query → record**. The single table below is grouped in that order.
 | `reset_query_log()` | Clear the session query log. Call at the **start** of an analysis to scope a transcript. |
 | `get_query_log()` | Return the queries logged so far this session (only those that returned rows and weren't exploratory). |
 | `create_chat_transcript(model, exchanges, ...)` | Emit a reproducible markdown (or JSON) record of a session — prompts, answers, the verbatim queries + results that produced findings, and any `visualize_schema` diagrams. Call at the **end** of an analysis. |
+| `create_reproducibility_record(model, supporting, ...)` | Emit a **lean** reproducibility record — header + the verbatim supporting queries + row counts + per-query diagrams (gated by size), no conversation prose or result tables. Small enough to return **inline** so it saves directly; use it for the reproducibility deliverable. `supporting` optionally curates the log to the queries that underpin the findings. |
 
 ### Resources
 
 | Resource | Purpose |
 | --- | --- |
-| `transcript://session/latest` (`text/markdown`) | The most recent transcript rendered by `create_chat_transcript`, so a client can fetch/save the document directly (transport-agnostic; works for remote servers). Cleared by `reset_query_log`. |
+| `transcript://session/latest` (`text/markdown`) | The most recent record rendered by `create_chat_transcript` **or** `create_reproducibility_record`, so a client can fetch/save the document directly (transport-agnostic; works for remote servers). Cleared by `reset_query_log`. |
 
 ---
 
@@ -392,7 +393,7 @@ src/mcp_okn/
     ├── probe.py          # probe_namespaces, find_crosswalks
     ├── joins.py          # get_join_strategy, taxon_overlap, list_crosswalks, find_context_sources
     ├── query.py          # sparql_query, expand_ontology_term
-    └── transcript.py     # reset/get_query_log, create_chat_transcript, resource
+    └── transcript.py     # reset/get_query_log, create_chat_transcript, create_reproducibility_record, resource
 ```
 
 ```bash

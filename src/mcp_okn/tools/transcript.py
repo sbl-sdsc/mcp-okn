@@ -111,6 +111,200 @@ def _render_stub(
     )
 
 
+def _resolve_sources(
+    log: list[dict[str, Any]],
+    visualizations: list[dict[str, Any]],
+    kgs_used: list[str] | None,
+    *,
+    check_phantom: bool,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[str]]:
+    """Resolve the KGs a transcript is about and guard its provenance.
+
+    Shared by ``create_chat_transcript`` and ``create_reproducibility_record``.
+    Returns ``(log, kgs, warnings)`` where ``log`` has any FOREIGN auto-logged
+    queries removed (entries touching none of an explicitly named ``kgs_used`` —
+    almost always another concurrent subagent's work leaking through a shared,
+    unscoped session), ``kgs`` is the ``[{shortname, named_graph}]`` list (inferred
+    from the log + visualizations when ``kgs_used`` is None), and ``warnings`` holds
+    any foreign-drop or phantom-source notices.
+
+    A phantom source — a KG named in ``kgs_used`` that no kept query or
+    visualization actually touched — is flagged (not dropped) only when
+    ``check_phantom`` is True; its "contribution" came from an unlogged/exploratory
+    query the record cannot reproduce, so the caller must re-run it non-exploratory
+    or drop the KG from the sources.
+    """
+    caller_named_kgs = kgs_used is not None
+    warnings: list[str] = []
+
+    # Drop foreign queries: entries touching none of the named KGs (a sibling
+    # subagent's work in a shared, unscoped session), warning rather than silently
+    # including/dropping. Entries whose graphs we can't determine are kept.
+    dropped_foreign: list[dict[str, Any]] = []
+    if log and kgs_used:
+        wanted = set(kgs_used)
+        kept: list[dict[str, Any]] = []
+        for entry in log:
+            graphs = entry.get("graphs") or []
+            if graphs and not (set(graphs) & wanted):
+                dropped_foreign.append(entry)
+            else:
+                kept.append(entry)
+        log = kept
+
+    # Infer KGs from the log (and any diagrams) when not passed explicitly.
+    if kgs_used is None:
+        names: list[str] = []
+        for entry in log:
+            for name in entry.get("graphs", []):
+                if name not in names:
+                    names.append(name)
+        for viz in visualizations:
+            name = viz.get("shortname")
+            if name and name not in names:
+                names.append(name)
+        kgs_used = names
+    kgs = [{"shortname": name, "named_graph": named_graph(name)} for name in kgs_used]
+
+    if dropped_foreign:
+        foreign_graphs = sorted(
+            {g for e in dropped_foreign for g in (e.get("graphs") or [])}
+            - set(kgs_used)
+        )
+        n = len(dropped_foreign)
+        noun = "query that touches" if n == 1 else "queries that touch"
+        warnings.append(
+            f"Dropped {n} auto-logged {noun} none of "
+            f"`kgs_used` (graphs: {', '.join(foreign_graphs)}). That is almost "
+            "certainly ANOTHER concurrently-running analysis's work — parallel "
+            "subagents share one MCP session, so an unscoped log mixes them. They "
+            "are NOT in the transcript. To make this deterministic, pass a unique "
+            "`scope` to reset_query_log / sparql_query / the transcript tool."
+        )
+
+    if caller_named_kgs and check_phantom:
+        evidenced = {g for e in log for g in (e.get("graphs") or [])}
+        evidenced |= {v.get("shortname") for v in visualizations if v.get("shortname")}
+        phantom = [name for name in kgs_used if name not in evidenced]
+        if phantom:
+            named = ", ".join(f"`{p}`" for p in phantom)
+            was = "was" if len(phantom) == 1 else "were"
+            warnings.append(
+                f"Named in `kgs_used` but no logged query (or visualization) in "
+                f"this transcript touched {named} — so {named} {was} NOT actually "
+                "used here as far as the record shows. Credit a KG as a source only "
+                "if a logged query used it; a 'contribution' read off an "
+                "exploratory / unlogged query or from prior knowledge is a phantom "
+                "source the transcript can't reproduce. Either re-run the "
+                "establishing query non-exploratory so it lands in the log, or drop "
+                "the KG from the sources."
+            )
+
+    return log, kgs, warnings
+
+
+def _finalize_document(
+    *,
+    title: str,
+    when: str,
+    model: str,
+    kgs: list[dict[str, Any]],
+    body: list[str],
+    warnings: list[str],
+    n_schema_diagrams: int,
+    n_queries_for_stub: int,
+    n_viz_for_stub: int,
+    scope: str | None,
+    max_inline_chars: int | None,
+) -> str:
+    """Assemble header + Contents manifest + body, publish, and return the document.
+
+    Shared by ``create_chat_transcript`` and ``create_reproducibility_record``. The
+    Contents manifest is derived from what actually rendered (fenced-block counts),
+    so it is a checkable invariant. The full markdown is always published to the
+    ``transcript://session/latest`` resource; the return value is that markdown, or
+    a compact stub when it exceeds ``max_inline_chars`` (the full body still on the
+    resource), with any ``warnings`` prepended as HTML comments.
+
+    Args:
+        title: Document title (H1).
+        when: Date string for the header.
+        model: Model id for the header.
+        kgs: ``[{shortname, named_graph}]`` for the "Knowledge graphs used" list.
+        body: The rendered body lines (queries, and for the full transcript any
+            conversation and schema diagrams).
+        warnings: Provenance warnings to prepend as HTML comments (may be empty).
+        n_schema_diagrams: How many ```mermaid blocks are schema diagrams (the rest
+            are per-query diagrams); 0 for the lean record.
+        n_queries_for_stub: Query count reported in the stub.
+        n_viz_for_stub: Visualization count reported in the stub.
+        scope: Log scope the document is published under.
+        max_inline_chars: Return a stub above this size (None = never).
+    """
+    body_md = "\n".join(body)
+    n_queries = body_md.count("```sparql")
+    n_query_diagrams = body_md.count("```mermaid") - n_schema_diagrams
+    # Only list components that are actually present — a trailing "· 0 schema
+    # diagrams" reads like something is missing rather than absent.
+    parts = [
+        _plural(n_queries, "query", "queries") if n_queries else "",
+        _plural(n_query_diagrams, "query diagram") if n_query_diagrams else "",
+        _plural(n_schema_diagrams, "schema diagram") if n_schema_diagrams else "",
+    ]
+    parts = [p for p in parts if p]
+    contents = "- **Contents:** " + (
+        " · ".join(parts) if parts else "no queries or diagrams"
+    )
+
+    header = [
+        f"# {title}",
+        "",
+        f"- **Date:** {when}",
+        f"- **Model:** {model}",
+        f"- **SPARQL endpoint:** {FEDERATION_ENDPOINT}",
+        f"- **Generated by:** {mcp.name} v{__version__}",
+        contents,
+        "",
+        "## Knowledge graphs used",
+        "",
+    ]
+    if kgs:
+        header += [f"- `{kg['shortname']}` — <{kg['named_graph']}>" for kg in kgs]
+    else:
+        header.append("- _None queried._")
+
+    markdown = "\n".join([*header, "", *body])
+    # Publish for direct client fetch/save via the transcript resource. The stored
+    # document is the clean one — warnings are for the caller, not the artifact.
+    session.set_last_transcript(markdown, scope)
+
+    # If the rendered body is large enough that the harness would spill/truncate it
+    # (which invites a fabricated substitute), return a compact STUB instead. Nothing
+    # is lost: the full markdown was just published verbatim to the resource.
+    if max_inline_chars is not None and len(markdown) > max_inline_chars:
+        out = _render_stub(
+            title=title,
+            when=when,
+            model=model,
+            kgs=kgs,
+            n_chars=len(markdown),
+            n_lines=markdown.count("\n") + 1,
+            n_queries=n_queries_for_stub,
+            n_viz=n_viz_for_stub,
+        )
+    else:
+        out = markdown
+
+    if warnings:
+        # Surfaced as an HTML comment: the markdown path must return a plain string
+        # (that contract is what lets the caller save the result verbatim), and a
+        # comment renders invisibly if the document is written to a .md as-is — while
+        # still being right there in the tool result for the caller to act on.
+        note = "\n".join(f"<!-- mcp-okn WARNING: {w} -->" for w in warnings)
+        return f"{note}\n{out}"
+    return out
+
+
 @mcp.tool()
 async def create_chat_transcript(
     model: str,
@@ -123,6 +317,7 @@ async def create_chat_transcript(
     include_intermediate_rows: bool = False,
     include_visualizations: bool = True,
     include_query_diagrams: bool = True,
+    diagram_max_chars: int | None = None,
     max_result_rows: int | None = 5,
     scope: str | None = None,
     max_inline_chars: int | None = 100_000,
@@ -195,6 +390,10 @@ async def create_chat_transcript(
             so the transcript shows the shape of every query. A query that cannot
             be parsed into a diagram is skipped silently (its text still shows).
             Set false to omit the per-query diagrams.
+        diagram_max_chars: OPTIONAL cap on a per-query diagram's size. When set,
+            a diagram longer than this many characters is dropped (its query text
+            still shows) so a huge diagram never bloats the transcript. Default
+            None = no cap.
         scope: OPTIONAL log scope — the same string passed to `reset_query_log`
             and `sparql_query`. Omit for a normal single analysis. Pass a unique
             label when SEVERAL ANALYSES RUN CONCURRENTLY against this server
@@ -294,91 +493,12 @@ async def create_chat_transcript(
     """
     when = date or _date.today().isoformat()
     exchanges = exchanges or []
-    caller_named_kgs = kgs_used is not None
     log = session.entries(scope) if include_query_log else []
     visualizations = session.visualizations(scope) if include_visualizations else []
-
-    # SAFETY NET against a foreign query landing in this transcript.
-    #
-    # The auto-log is per (session, scope), but concurrent subagents share ONE MCP
-    # session, so an analysis that forgets to pass `scope` sees its siblings'
-    # queries too. A transcript that ships someone else's SPARQL is worse than one
-    # with no query log at all — it looks authoritative and is wrong. So when the
-    # caller has told us which KGs this transcript is ABOUT, drop auto-logged
-    # queries that touch NONE of them, and say so in the payload rather than
-    # silently including or silently dropping. Entries whose graphs we can't
-    # determine are kept (we can't prove they're foreign).
-    dropped_foreign: list[dict[str, Any]] = []
-    if log and kgs_used:
-        wanted = set(kgs_used)
-        kept: list[dict[str, Any]] = []
-        for entry in log:
-            graphs = entry.get("graphs") or []
-            if graphs and not (set(graphs) & wanted):
-                dropped_foreign.append(entry)
-            else:
-                kept.append(entry)
-        log = kept
-
-    # Infer KGs from the log (and any diagrams) when not passed explicitly.
-    if kgs_used is None:
-        names: list[str] = []
-        for entry in log:
-            for name in entry.get("graphs", []):
-                if name not in names:
-                    names.append(name)
-        for viz in visualizations:
-            name = viz.get("shortname")
-            if name and name not in names:
-                names.append(name)
-        kgs_used = names
-    kgs = [{"shortname": name, "named_graph": named_graph(name)} for name in kgs_used]
-
-    warnings: list[str] = []
-    if dropped_foreign:
-        foreign_graphs = sorted(
-            {g for e in dropped_foreign for g in (e.get("graphs") or [])}
-            - set(kgs_used)
-        )
-        n = len(dropped_foreign)
-        noun = "query that touches" if n == 1 else "queries that touch"
-        warnings.append(
-            f"Dropped {n} auto-logged {noun} none of "
-            f"`kgs_used` (graphs: {', '.join(foreign_graphs)}). That is almost "
-            "certainly ANOTHER concurrently-running analysis's work — parallel "
-            "subagents share one MCP session, so an unscoped log mixes them. They "
-            "are NOT in the transcript. To make this deterministic, pass a unique "
-            "`scope` to reset_query_log / sparql_query / create_chat_transcript."
-        )
-
-    # BACKSTOP against a phantom source — the reverse of the drop above. When the
-    # caller NAMES the KGs this transcript is about, a KG that no logged query (nor
-    # schema visualization) actually touched is a phantom: its "contribution" came
-    # from an exploratory/unlogged query or from prior knowledge, so the transcript
-    # cannot reproduce whatever it credits that KG for (e.g. a bridge graph that
-    # "supplied a DOID→MONDO equivalence" no logged query ever ran). Warn rather
-    # than drop — the caller may need to re-run the establishing query
-    # non-exploratory, or remove the KG from the sources. Only meaningful when the
-    # log is included; with it suppressed there is nothing to check against.
-    if caller_named_kgs and include_query_log:
-        evidenced = {g for e in log for g in (e.get("graphs") or [])}
-        evidenced |= {
-            v.get("shortname") for v in visualizations if v.get("shortname")
-        }
-        phantom = [name for name in kgs_used if name not in evidenced]
-        if phantom:
-            names = ", ".join(f"`{p}`" for p in phantom)
-            was = "was" if len(phantom) == 1 else "were"
-            warnings.append(
-                f"Named in `kgs_used` but no logged query (or visualization) in "
-                f"this transcript touched {names} — so {names} {was} NOT actually "
-                "used here as far as the record shows. Credit a KG as a source only "
-                "if a logged query used it; a 'contribution' read off an "
-                "exploratory / unlogged query or from prior knowledge is a phantom "
-                "source the transcript can't reproduce. Either re-run the "
-                "establishing query non-exploratory so it lands in the log, or drop "
-                "the KG from the sources."
-            )
+    # Drop foreign queries, infer/verify the KGs, and collect provenance warnings.
+    log, kgs, warnings = _resolve_sources(
+        log, visualizations, kgs_used, check_phantom=include_query_log
+    )
 
     if format == "json":
         payload: dict[str, Any] = {
@@ -433,6 +553,7 @@ async def create_chat_transcript(
                 f"Query {j}",
                 max_rows=max_result_rows,
                 diagram=include_query_diagrams,
+                diagram_max_chars=diagram_max_chars,
             )
         # Optional Mermaid diagram(s) attached inline to this turn.
         inline = exchange.get("mermaid")
@@ -457,6 +578,7 @@ async def create_chat_transcript(
                 show_results=show_results,
                 max_rows=max_result_rows,
                 diagram=include_query_diagrams,
+                diagram_max_chars=diagram_max_chars,
             )
 
     if visualizations:
@@ -469,73 +591,167 @@ async def create_chat_transcript(
                 body += [f"_{ctx}_", ""]
             body += ["```mermaid", (viz.get("mermaid") or "").strip(), "```", ""]
 
-    # Manifest counts, derived from what actually rendered. Each schema
-    # visualization emits exactly one ```mermaid block, so query diagrams are the
-    # remaining Mermaid blocks (a query's own diagram, or one attached inline).
-    body_md = "\n".join(body)
-    n_queries = body_md.count("```sparql")
-    n_schema_diagrams = len(visualizations)
-    n_query_diagrams = body_md.count("```mermaid") - n_schema_diagrams
-    # Only list components that are actually present — a trailing "· 0 schema
-    # diagrams" reads like something is missing rather than absent.
-    parts = [
-        _plural(n_queries, "query", "queries") if n_queries else "",
-        _plural(n_query_diagrams, "query diagram") if n_query_diagrams else "",
-        _plural(n_schema_diagrams, "schema diagram") if n_schema_diagrams else "",
-    ]
-    parts = [p for p in parts if p]
-    contents = "- **Contents:** " + (
-        " · ".join(parts) if parts else "no queries or diagrams"
+    return _finalize_document(
+        title=title,
+        when=when,
+        model=model,
+        kgs=kgs,
+        body=body,
+        warnings=warnings,
+        n_schema_diagrams=len(visualizations),
+        n_queries_for_stub=len(log),
+        n_viz_for_stub=len(visualizations),
+        scope=scope,
+        max_inline_chars=max_inline_chars,
     )
 
-    header = [
-        f"# {title}",
-        "",
-        f"- **Date:** {when}",
-        f"- **Model:** {model}",
-        f"- **SPARQL endpoint:** {FEDERATION_ENDPOINT}",
-        f"- **Generated by:** {mcp.name} v{__version__}",
-        contents,
-        "",
-        "## Knowledge graphs used",
-        "",
-    ]
-    if kgs:
-        header += [f"- `{kg['shortname']}` — <{kg['named_graph']}>" for kg in kgs]
+
+@mcp.tool()
+async def create_reproducibility_record(
+    model: str,
+    kgs_used: list[str] | None = None,
+    supporting: list[dict[str, Any]] | None = None,
+    date: str | None = None,
+    format: str = "markdown",
+    title: str = "Proto-OKN Reproducibility Record",
+    include_query_diagrams: bool = True,
+    diagram_max_chars: int = 1500,
+    scope: str | None = None,
+    max_inline_chars: int | None = 100_000,
+) -> Any:
+    """Build a LEAN reproducibility record: header + supporting queries + counts.
+
+    A compact alternative to `create_chat_transcript` for the reproducibility
+    deliverable (`<study>_reproducibility_transcript.md`). It keeps only what lets
+    someone RE-RUN the analysis — a provenance header, the SPARQL queries that
+    support the reported findings (verbatim, pulled from the session log, NOT
+    re-typed), each query's row COUNT, and a per-query diagram when it fits — and
+    drops the conversation prose, the full result tables, and schema visualizations.
+    That keeps it small enough to return INLINE in the common case, so you save the
+    returned string DIRECTLY to the `.md` file — no resource round-trip, no stub.
+
+    Run the analysis first: the queries come from the auto-log (every
+    non-exploratory, row-returning `sparql_query`), so DO NOT hand-write this record.
+    The full result data belongs in the workbook / `data/` extracts, not here.
+
+    Args:
+        model: The exact model id producing the analysis (e.g. `claude-opus-4-8`).
+        kgs_used: Shortnames of the knowledge graphs this record is about. If
+            omitted, inferred from the selected queries. When given, drives the same
+            guards as `create_chat_transcript`: a logged query touching none of them
+            is dropped as foreign (a concurrent subagent's leak — pass a unique
+            `scope`), and a named KG that no selected query touched is flagged a
+            phantom source (its contribution cannot be reproduced — re-run the
+            establishing query non-exploratory, or drop the KG).
+        supporting: OPTIONAL curation. None = all logged queries in log order.
+            Otherwise a list of `{"index": int, "description": str | None}`, where
+            `index` is 1-based into the log (the order `get_query_log` shows) and
+            `description` is an optional heading label. Use it to keep only the
+            queries that underpin reported findings, in the order given — the lever
+            for shrinking a large log so the record fits inline. An out-of-range
+            index is skipped with a warning.
+        date: ISO date for the header; defaults to today.
+        format: `markdown` (default) or `json`.
+        title: Document title.
+        include_query_diagrams: If true (default), render a Mermaid `graph TD`
+            diagram beneath each query, subject to `diagram_max_chars`.
+        diagram_max_chars: Drop a per-query diagram longer than this many characters
+            (default 1500) so an oversized diagram never bloats the record; the
+            query's SPARQL text still shows.
+        scope: OPTIONAL log scope — the same string passed to `reset_query_log` /
+            `sparql_query`. Pass a unique label when parallel subagents share one
+            MCP session.
+        max_inline_chars: Return a compact stub above this size (default 100_000),
+            with the full body published to `transcript://session/latest`. A record
+            of many verbatim queries with large `VALUES` lists can still exceed this
+            — curate `supporting` to fewer queries, or raise this on a client that
+            can handle a larger inline result.
+
+    Returns:
+        A Markdown string (or a dict when `format="json"`): the header, a
+        `## SPARQL queries` section (one verbatim query + row count + optional
+        diagram each), and a Contents manifest. Provenance warnings, if any, are
+        prepended as HTML comments (invisible in a saved `.md`).
+    """
+    when = date or _date.today().isoformat()
+    log = session.entries(scope)
+
+    # Curate to the supporting subset (1-based indices into the log), in the order
+    # given, attaching any per-item heading label. None -> the whole log in order.
+    warnings: list[str] = []
+    if supporting is None:
+        selected = list(log)
     else:
-        header.append("- _None queried._")
+        selected = []
+        for item in supporting:
+            idx = item.get("index")
+            if not isinstance(idx, int) or not (1 <= idx <= len(log)):
+                plural = "y" if len(log) == 1 else "ies"
+                warnings.append(
+                    f"`supporting` index {idx!r} is out of range for a log of "
+                    f"{len(log)} quer{plural} — skipped."
+                )
+                continue
+            entry = dict(log[idx - 1])
+            desc = item.get("description")
+            if desc:
+                entry["description"] = desc
+            selected.append(entry)
 
-    markdown = "\n".join([*header, "", *body])
-    # Publish for direct client fetch/save via the transcript resource. The stored
-    # document is the clean one — warnings are for the caller, not the artifact.
-    session.set_last_transcript(markdown, scope)
+    # Same foreign-drop / KG-inference / phantom guards as the full transcript, run
+    # against the SELECTED queries (the record is about those). No visualizations.
+    selected, kgs, guard_warnings = _resolve_sources(
+        selected, [], kgs_used, check_phantom=True
+    )
+    warnings += guard_warnings
 
-    # If the rendered body is large enough that the harness would spill/truncate
-    # it (which invites a fabricated substitute), return a compact STUB instead.
-    # Nothing is lost: the full markdown was just published verbatim to
-    # `transcript://session/latest`, and the stub points the caller there.
-    if max_inline_chars is not None and len(markdown) > max_inline_chars:
-        body = _render_stub(
-            title=title,
-            when=when,
-            model=model,
-            kgs=kgs,
-            n_chars=len(markdown),
-            n_lines=markdown.count("\n") + 1,
-            n_queries=len(log),
-            n_viz=len(visualizations),
+    if format == "json":
+        payload: dict[str, Any] = {
+            "title": title,
+            "date": when,
+            "model": model,
+            "knowledge_graphs": kgs,
+            "query_log": selected,
+            "sparql_endpoint": FEDERATION_ENDPOINT,
+            "generated_by": {"service": mcp.name, "version": __version__},
+        }
+        if warnings:
+            payload["warnings"] = warnings
+        return payload
+
+    if format != "markdown":
+        return {"error": f"Unsupported format {format!r}; use 'markdown' or 'json'."}
+
+    body: list[str] = ["## SPARQL queries", ""]
+    if not selected:
+        body += ["_No queries logged._", ""]
+    for k, entry in enumerate(selected, start=1):
+        ctx = entry.get("timestamp", "")
+        graphs = entry.get("graphs") or []
+        if graphs:
+            ctx += " · " + ", ".join(f"`{g}`" for g in graphs)
+        body += _render_query(
+            entry,
+            f"Query {k}",
+            subheading=ctx,
+            counts_only=True,
+            diagram=include_query_diagrams,
+            diagram_max_chars=diagram_max_chars,
         )
-    else:
-        body = markdown
 
-    if warnings:
-        # Surfaced as an HTML comment: the markdown path must return a plain string
-        # (that contract is what lets the caller save the result verbatim), and a
-        # comment renders invisibly if the document is written to a .md as-is —
-        # while still being right there in the tool result for the caller to act on.
-        note = "\n".join(f"<!-- mcp-okn WARNING: {w} -->" for w in warnings)
-        return f"{note}\n{body}"
-    return body
+    return _finalize_document(
+        title=title,
+        when=when,
+        model=model,
+        kgs=kgs,
+        body=body,
+        warnings=warnings,
+        n_schema_diagrams=0,
+        n_queries_for_stub=len(selected),
+        n_viz_for_stub=0,
+        scope=scope,
+        max_inline_chars=max_inline_chars,
+    )
 
 
 @mcp.resource(
@@ -588,19 +804,24 @@ def _render_query(
     show_results: bool = True,
     max_rows: int | None = None,
     diagram: bool = False,
+    diagram_max_chars: int | None = None,
+    counts_only: bool = False,
 ) -> list[str]:
     """Render one query (verbatim text + results or error) as markdown lines.
 
-    When ``show_results`` is True the result table is rendered, capped at
-    ``max_rows`` (``None`` = uncapped). When ``show_results`` is False, only a
-    compact PREVIEW of the rows is shown (a single-row result in full, otherwise
-    the first 3 rows) instead of the full table — used for intermediate queries in
-    the log appendix to keep it focused while still surfacing small results that
-    cost almost no space.
+    When ``counts_only`` is True, no result table or preview is rendered — only a
+    ``_N row(s)_`` line from the entry's ``row_count`` — for a lean reproducibility
+    record where the queries (not their data) are the point. Otherwise, when
+    ``show_results`` is True the result table is rendered, capped at ``max_rows``
+    (``None`` = uncapped); when False, a compact PREVIEW of the rows is shown (a
+    single-row result in full, otherwise the first 3 rows) — used for intermediate
+    queries in the log appendix.
 
     When ``diagram`` is True, a Mermaid ``graph TD`` diagram of the query is
     inserted directly beneath its ```sparql block; a query that cannot be parsed
-    is skipped silently (its text still shows).
+    is skipped silently (its text still shows). ``diagram_max_chars`` (``None`` =
+    no limit) drops the diagram when it would exceed that many characters — the
+    "diagram only if it fits" gate — so an oversized diagram never bloats the record.
     """
     desc = _clean_description(q.get("description"))
     heading = f"#### {label}" + (f" — {desc}" if desc else "")
@@ -611,10 +832,13 @@ def _render_query(
     lines += ["```sparql", sparql, "```", ""]
     if diagram and sparql:
         mermaid = try_to_mermaid(sparql)
-        if mermaid:
+        if mermaid and (diagram_max_chars is None or len(mermaid) <= diagram_max_chars):
             lines += ["```mermaid", mermaid, "```", ""]
     if q.get("error"):
         lines += [f"**Error:** {q['error']}", ""]
+    elif counts_only:
+        count = q.get("row_count")
+        lines += [f"_{count} row(s)_" if count is not None else "_results omitted_", ""]
     elif show_results:
         lines += _render_results(q.get("results"), max_rows=max_rows)
     else:

@@ -24,7 +24,8 @@ analyses to run, what to integrate on, and how to interpret.
   CHEBI vs CAS…). Pick the richest; don't infer from the name.
 - **Clean model-organism contrasts** (spoke-genelab) → `get_valid_contrasts`.
 - **Logging / versions / transcript** → `reset_query_log` (start); `get_kg_version` +
-  `create_chat_transcript` (end).
+  `create_reproducibility_record` (end; lean header + supporting queries + row counts — or
+  `create_chat_transcript` for the full prose+results transcript).
 
 Dedicated bridge graphs the tools route through: **`ubergraph`** (ontology `skos:exactMatch` +
 `subClassOf*` closure) and **`identifier-mappings` / `wikidata`** (Wikidata ↔ external-id, e.g.

@@ -39,7 +39,7 @@ A complete report is a **folder**, not one file:
 ├── data/     *.tsv / *.json      # intermediate extracts (for reproducibility)
 ├── scripts/  *.py                # the exact scripts used (for reproducibility)
 ├── <study>_reproducibility_appendix.md   # rules, thresholds, joins, verified quantities
-└── <study>_reproducibility_transcript.md # verbatim queries (from create_chat_transcript)
+└── <study>_reproducibility_transcript.md # verbatim supporting queries + row counts (from create_reproducibility_record)
 ```
 
 Write working files to a scratch dir, then copy final artifacts into the delivered folder. Share
@@ -54,9 +54,10 @@ placeholders when rendering the `.html`, and `kpis_from_stats(stats, spec)` buil
 that dict. One edit in `stats.json` then updates the prose, the HTML, and the KPI cards at once. The
 remaining
 artifacts are deliberately **not** retellings of the report and must not be collapsed into it: the
-`_reproducibility_transcript.md` carries the **verbatim SPARQL queries** (its unique payload, from
-`create_chat_transcript`, exists nowhere else and lets the analysis audit standalone), and the
-`.xlsx` is the **data**, not a narrative. Don't "deduplicate" either away.
+`_reproducibility_transcript.md` carries the **verbatim SPARQL query text** that supports the findings,
+each with its row count (its unique payload, from `create_reproducibility_record` — the queries exist
+nowhere else and let the analysis audit standalone; full result data stays in the `.xlsx` / `data/`),
+and the `.xlsx` is the **data**, not a narrative. Don't "deduplicate" either away.
 
 ## Report structure (Markdown)
 
@@ -87,6 +88,8 @@ Then:
    unlogged / exploratory query or from prior knowledge. Every source and every cross-KG claim must
    trace to a logged query; if a bridge graph (e.g. `ubergraph` supplying a DOID→MONDO equivalence)
    is credited, the query that used it must be in the transcript, or it is a phantom source — cut it.
+   (When you curate `create_reproducibility_record`'s `supporting` set, keep every query a credited
+   source depends on — leaving one out trips the same phantom-source guard.)
 3. **Design & rules** — *narrate* the selection rules, headline thresholds, and join keys for a
    reader, plus an inventory / cohort table rebuilt live with verified counts. Keep the exact
    replicator-grade specification (every join key, exact backgrounds, scoring formulas) in the

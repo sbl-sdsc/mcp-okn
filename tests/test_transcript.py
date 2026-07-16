@@ -5,9 +5,11 @@ from mcp_okn.server import (
     _clean_description,
     _rows_to_table,
     create_chat_transcript,
+    create_reproducibility_record,
     latest_transcript_resource,
 )
 from mcp_okn.sparql import FEDERATION_ENDPOINT
+from mcp_okn.tools.transcript import _render_query
 
 
 @pytest.fixture(autouse=True)
@@ -906,3 +908,161 @@ async def test_unparseable_query_skips_diagram_but_keeps_text():
     )
     assert "this is not valid sparql" in md
     assert "```mermaid" not in md
+
+
+# --- create_reproducibility_record (the lean record) --------------------------
+
+
+@pytest.mark.asyncio
+async def test_record_fits_inline_with_counts_not_tables():
+    """The lean record returns an inline string with row COUNTS, not result tables
+    or conversation prose."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    session.record(_q("prokn"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(model="claude-opus-4-8")
+    assert isinstance(md, str)
+    assert "# Proto-OKN Reproducibility Record" in md
+    assert "## SPARQL queries" in md
+    assert "## Conversation" not in md
+    # row counts kept, full result table + its cell values dropped
+    assert "_2 row(s)_" in md
+    assert "| disease |" not in md
+    assert "kidney cancer" not in md
+    assert "**Contents:** 2 queries" in md
+
+
+@pytest.mark.asyncio
+async def test_record_diagram_gate_drops_and_keeps():
+    """`diagram_max_chars` drops an oversized query diagram (its SPARQL still shows)
+    and keeps one under a large budget."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    tiny = await create_reproducibility_record(model="m", diagram_max_chars=10)
+    assert "```mermaid" not in tiny
+    assert "query diagram" not in tiny  # manifest reflects the drop
+    assert "```sparql" in tiny  # the query text still shows
+    big = await create_reproducibility_record(model="m", diagram_max_chars=100_000)
+    assert "```mermaid" in big
+    assert "1 query diagram" in big
+
+
+@pytest.mark.asyncio
+async def test_record_curation_subset_and_order():
+    """`supporting` selects a subset by 1-based index, in the order given."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)  # 1
+    session.record(_q("prokn"), "json", result=JSON_RESULT)  # 2
+    session.record(_q("hydrologykg"), "json", result=JSON_RESULT)  # 3
+    md = await create_reproducibility_record(
+        model="m", supporting=[{"index": 3}, {"index": 1}]
+    )
+    assert md.count("```sparql") == 2
+    assert "kg/prokn" not in md  # index 2 excluded
+    # order honored: hydrologykg (3) appears before sawgraph (1)
+    assert md.index("kg/hydrologykg") < md.index("kg/sawgraph")
+
+
+@pytest.mark.asyncio
+async def test_record_curation_description_label():
+    """A `supporting` item's `description` becomes the query heading label."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(
+        model="m", supporting=[{"index": 1, "description": "the disease join"}]
+    )
+    assert "#### Query 1 — the disease join" in md
+
+
+@pytest.mark.asyncio
+async def test_record_out_of_range_index_warns():
+    """An out-of-range `supporting` index is skipped with a warning, not an error."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(model="m", supporting=[{"index": 9}])
+    assert md.startswith("<!--")
+    assert "out of range" in md.split("\n")[0]
+    assert md.count("```sparql") == 0  # nothing selected
+
+
+@pytest.mark.asyncio
+async def test_record_stub_when_oversized_publishes_full_to_resource():
+    """Over `max_inline_chars`, the record returns a stub; the full body is on the
+    resource (the delivery path that survives a size limit)."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(model="m", max_inline_chars=50)
+    assert "delivered via resource" in md
+    assert "transcript://session/latest" in md
+    assert "kg/sawgraph" not in md  # body withheld inline
+    full = latest_transcript_resource()
+    assert "kg/sawgraph" in full  # ...but present on the resource
+
+
+@pytest.mark.asyncio
+async def test_record_empty_log_placeholder():
+    """An empty log renders a placeholder and an empty Contents manifest."""
+    md = await create_reproducibility_record(model="m")
+    assert "_No queries logged._" in md
+    assert "**Contents:** no queries or diagrams" in md
+
+
+@pytest.mark.asyncio
+async def test_record_manifest_matches_fence_counts():
+    """The Contents manifest is a checkable invariant: its counts equal the actual
+    fenced-block counts in the document."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    session.record(_q("prokn"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(model="m")
+    assert f"**Contents:** {md.count('```sparql')} queries" in md
+    assert f"{md.count('```mermaid')} query diagrams" in md
+
+
+@pytest.mark.asyncio
+async def test_record_publishes_to_resource():
+    """A normal (inline) run still publishes the full markdown to the resource."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(model="m")
+    assert latest_transcript_resource() == md
+
+
+@pytest.mark.asyncio
+async def test_record_json_format():
+    """`format='json'` returns a structured payload (queries + KGs), no tables."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    out = await create_reproducibility_record(model="m", format="json")
+    assert isinstance(out, dict)
+    assert out["model"] == "m"
+    assert [e["graphs"] for e in out["query_log"]] == [["sawgraph"]]
+    assert out["knowledge_graphs"][0]["shortname"] == "sawgraph"
+    assert out["generated_by"]["version"] == __version__
+
+
+@pytest.mark.asyncio
+async def test_record_drops_foreign_and_flags_phantom():
+    """The shared provenance guards apply: a foreign query is dropped, and a named
+    KG no selected query touched is flagged phantom."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    session.record(_q("prokn"), "json", result=JSON_RESULT)  # foreign
+    md = await create_reproducibility_record(
+        model="m", kgs_used=["sawgraph", "ubergraph"]
+    )
+    warn_block = md.split("# Proto-OKN")[0]  # the HTML-comment warnings, one per line
+    assert "prokn" in warn_block  # foreign-drop warning names it
+    assert "ubergraph" in warn_block  # phantom warning names it
+    assert "kg/prokn" not in md  # dropped from the body
+
+
+def test_render_query_counts_only_unit():
+    """`_render_query(counts_only=True)` emits a row-count line and no table."""
+    lines = _render_query(
+        {"sparql": _q("sawgraph"), "row_count": 7, "results": JSON_RESULT},
+        "Query 1",
+        counts_only=True,
+    )
+    text = "\n".join(lines)
+    assert "_7 row(s)_" in text
+    assert "| disease |" not in text
+
+
+@pytest.mark.asyncio
+async def test_chat_transcript_diagram_gate():
+    """Step 4: create_chat_transcript honors `diagram_max_chars` too."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_chat_transcript(model="m", diagram_max_chars=10)
+    assert "```mermaid" not in md
+    assert "```sparql" in md
