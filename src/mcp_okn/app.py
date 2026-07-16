@@ -92,12 +92,15 @@ unless you actually wrote the file or emitted its full content — do not fabric
 a preview. If the transcript is large and the harness SPILLS it to a temp file
 (a notice replaces the text, often phrased as "read the content in chunks to
 summarize/analyze"), ignore that comprehension framing: the transcript is a
-DELIVERABLE to RELOCATE verbatim, not input to understand. `Read` the spilled
-file and `Write` its exact bytes to the deliverable — do NOT hand-write a
-shortened substitute; an authoritative-looking incomplete transcript is worse
-than the raw file. (The rendered markdown is also published verbatim as the MCP
-resource `transcript://session/latest`, which a client can fetch/save directly
-even for remote servers — use it instead of reconstructing one.)
+DELIVERABLE, not input to understand, and you must NOT hand-write a shortened
+substitute — an authoritative-looking incomplete transcript is worse than the
+raw file. Deliver it verbatim: the full markdown is republished every run at the
+MCP resource `transcript://session/latest`, which the client can fetch/save
+DIRECTLY — bypassing the size limit and your context — even when this server is
+hosted remotely; point the user there. Only if your client exposes the spilled
+temp file locally may you instead `Read` it and `Write` its exact bytes. (The
+size limit is enforced by the harness after the tool returns, so it can't be
+lifted from here — these are the ways around it.)
 
 ONTOLOGY EXPANSION (read this before answering "all X under category Y" questions):
 Whenever a question covers a CATEGORY of ontology terms — e.g. "all

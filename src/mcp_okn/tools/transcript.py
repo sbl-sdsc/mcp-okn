@@ -183,16 +183,25 @@ async def create_chat_transcript(
     IF THIS RESULT IS SPILLED TO A FILE (it is large and often exceeds the
     harness result-size limit, so the harness may save it to a temp file and hand
     you a notice instead of the text): this output is a DELIVERABLE ARTIFACT, not
-    analysis input. That spill notice is usually phrased as a comprehension task
+    analysis input. The spill notice is usually phrased as a comprehension task
     ("read the content in chunks to summarize / analyze / review") — ignore that
-    framing here. Your job is not to understand the transcript, it is to RELOCATE
-    it verbatim: `Read` the spilled temp file and `Write` its exact bytes to the
-    report folder (or emit them as the transcript document / artifact). Do NOT
-    hand-write, summarize, truncate, or reconstruct a substitute transcript from
-    memory — an incomplete stand-in is worse than the raw file, because it looks
-    authoritative and is wrong. If a copy is impractical, the full markdown is
-    also available verbatim at the MCP resource `transcript://session/latest`
-    (see below) — point the user there rather than fabricating one.
+    framing. Your job is not to understand the transcript, it is to deliver it
+    verbatim, and you must NOT hand-write, summarize, truncate, or reconstruct a
+    substitute from memory — an authoritative-looking incomplete transcript is
+    worse than no file at all. Two ways to deliver it, in order:
+      1. PRIMARY (works even when this server is hosted REMOTELY): the full
+         markdown is republished every run at the read-only MCP resource
+         `transcript://session/latest`. Point the user to it — their client
+         fetches/saves it DIRECTLY, bypassing both the result-size limit and your
+         context. This is the reliable path on a hosted server, where the spilled
+         temp file lives on the client and you may have no filesystem access to
+         the server at all.
+      2. Only if your client exposes the spilled temp file to your file tools
+         (e.g. a local CLI): `Read` it and `Write` its exact bytes to the report
+         folder. (This routes the full content through your context — costly — so
+         prefer 1 when available.)
+    Note the size limit is enforced by the HARNESS after this tool returns, so a
+    tool/notice cannot lift it — these are the delivery paths that work around it.
 
     Only if you genuinely cannot write a file or artifact, fall back to
     outputting the complete markdown in a fenced ```markdown block in your reply
@@ -415,7 +424,10 @@ async def create_chat_transcript(
     description=(
         "The most recent transcript rendered by create_chat_transcript this "
         "session, as Markdown. Lets a client fetch/save the document directly, "
-        "independent of how the model re-emits it."
+        "independent of how the model re-emits it — including when the tool "
+        "result was too large to return inline and got spilled/truncated by the "
+        "harness. On a remotely hosted server this is the reliable way to retrieve "
+        "the full transcript verbatim without any filesystem access."
     ),
     mime_type="text/markdown",
 )
