@@ -632,7 +632,10 @@ def check_report_parity(md_path, html_path, min_word_ratio=0.85, ignore_sections
         heading = m.group(2).strip()
         if heading in ignore_sections:
             continue
-        needle = _norm(heading)
+        # Match on the heading TEXT, ignoring its section number, so a section that
+        # is present but renumbered (e.g. `## 2. Sources used` -> `1. Sources used`)
+        # is not falsely reported missing — only genuinely absent content is flagged.
+        needle = _norm(re.sub(r"^\d+(?:\.\d+)*\.?\s+", "", heading))
         if needle and needle not in html_norm:
             missing.append(heading)
 
