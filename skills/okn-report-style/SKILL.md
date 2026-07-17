@@ -238,6 +238,24 @@ from the `.md` and splices the table in at the `<!-- RESULTS_TABLE -->` marker. 
 sorted by the count). It emits the sortable / filterable / paginated table and the whole page; see
 `python scripts/build_report_html.py --demo-md` (render-from-Markdown) or `--demo` (low-level path).
 
+**Call `build_report_from_markdown` — do not write your own HTML builder.** The single most common
+way this goes wrong is *not* editing the `.md` and `.html` out of sync, but bypassing the renderer
+entirely: hand-authoring the HTML body, or writing a one-off script that takes report sections as
+**raw HTML strings** and filling in a condensed version from memory. That silently ships a
+"highlights reel" — the interesting claims kept, and the unglamorous-but-mandatory parts dropped
+(the **§2 Sources** table, the **§10 Limitations** list, Discussion, Reproducibility, References,
+Abbreviations). The artifact everyone opens then lacks exactly the provenance and caveats. If you
+must customise, still render the prose from the `.md`; never retype it.
+
+**Verify completeness — the required final gate.** After building the `.html`, run
+**`check_report_parity(md_path, html_path)`** (or `python scripts/build_report_html.py --check
+report.md report.html`). It confirms the HTML is the *same report*: every `##` / `###` section
+heading from the `.md` is present, and the visible word count is within `min_word_ratio` (default
+0.85) of the `.md`. It **FAILS**, naming the missing sections, on a dropped-section / condensed
+build. This is a distinct check from self-containment, numbers, and markup — those can all pass on an
+HTML that is only a quarter of the report. A completeness check against the source is the one that
+catches it, so it is not optional: treat a FAIL as blocking and rebuild from the `.md`.
+
 ## Excel workbook
 
 One workbook, multiple sheets: **Ranked Results** (the full table, tier-coloured, autofilter,
@@ -268,6 +286,12 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
   it (a section, figure legend, or interpretation edited in one file and now disagreeing with the
   other) → generate the `.html` FROM the `.md` with `build_report_from_markdown(...)`; never
   hand-author HTML prose that duplicates the Markdown. The `.md` is the single source of the prose.
+- **HTML is a "highlights reel" missing whole sections** — a hand-authored HTML (or a custom builder
+  fed raw HTML sections) that keeps the interesting claims but silently drops the mandatory,
+  unglamorous ones (**§2 Sources**, **§10 Limitations**, Discussion, Reproducibility, References,
+  Abbreviations). Self-containment / numbers / markup checks all pass on it — none asks whether it is
+  the *same report* → render from the `.md`, and run **`check_report_parity(md, html)`** as the final
+  gate (it FAILS naming the dropped sections when the HTML is shorter than the source).
 - Numbers drifting between .md / .html / .xlsx after an edit → keep a single `stats.json`, reference
   each figure as a `{{key}}` placeholder, and let the tooling fill it (`fill_stats` for the delivered
   `.md`, `build_report_from_markdown(stats=…)` for the `.html`, `kpis_from_stats` for the KPI cards) so

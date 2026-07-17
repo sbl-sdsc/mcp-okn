@@ -25,9 +25,16 @@ base64-embedded figures, and the interactive results table:
     # standalone; the .html then inherits those numbers by rendering it, and the KPI cards come from
     # the same `stats` dict — one edit in stats.json updates all three.
 
-Do NOT re-author the report's prose as HTML `body_blocks` — that is the prose-drift failure mode.
-The low-level `build_report(...)` / `figure_block(...)` path below still exists for HTML-only
-one-offs that have no Markdown source, but reports must use the render-from-Markdown path above.
+Then VERIFY the .html is the whole report — not a highlights reel — with
+`check_report_parity("study_report.md", "study_report.html")` (or `--check report.md report.html`):
+it FAILS, naming the sections, if any `##`/`###` heading is missing or the HTML is much shorter
+than the .md. Run it as the final gate; self-containment/numbers/markup checks do not catch a
+dropped-section build.
+
+Do NOT re-author the report's prose as HTML `body_blocks`, and do NOT write your own builder that
+takes raw HTML sections — that is the prose-drift / highlights-reel failure mode. The low-level
+`build_report(...)` / `figure_block(...)` path below still exists for HTML-only one-offs that have no
+Markdown source, but reports must use the render-from-Markdown path above.
 
 The candidate table is sortable (click any header), filterable (search box + subset pull-down
 menus), and PAGINATED (default 25/page, Prev/Next) — never dump a 900-row table in full. It also
@@ -568,6 +575,90 @@ def build_report_from_markdown(
     return out
 
 
+# ---------------------------------------------------------------------------
+# Completeness gate: is the delivered .html the SAME report as the .md?
+#
+# Rendering from the .md (build_report_from_markdown) guarantees parity — but only
+# if it is actually used. A model that hand-authors the HTML, or writes its own
+# builder that takes raw HTML sections, can quietly ship a "highlights" version
+# that drops whole sections (typically the unglamorous mandatory ones: §2 Sources,
+# §10 Limitations) while keeping the interesting claims. A self-containment / markup
+# / numbers check passes on such a file — it never asks whether the HTML contains
+# the same report. This check does, independent of how the HTML was built.
+# ---------------------------------------------------------------------------
+
+
+def _visible_text(html_str):
+    """Approximate the visible text of an HTML document: drop <script>/<style>
+    payloads (JS/CSS, embedded table JSON), then all tags and entities."""
+    s = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", html_str)
+    s = re.sub(r"(?s)<[^>]+>", " ", s)
+    return re.sub(r"&[a-zA-Z#0-9]+;", " ", s)
+
+
+def _word_count(text):
+    return len(re.findall(r"\w+", text))
+
+
+def _norm(text):
+    """Lowercase and reduce to words + single spaces, so heading matching is robust
+    to punctuation and entities (e.g. `&` vs `&amp;` vs a stripped entity)."""
+    return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", " ", text)).strip().lower()
+
+
+def check_report_parity(md_path, html_path, min_word_ratio=0.85, ignore_sections=()):
+    """Verify the delivered `.html` is the SAME report as `.md` — the completeness gate.
+
+    Method-independent (works whether the HTML was rendered or hand-authored), it
+    catches the "condensed highlights" failure: an HTML that drops sections or shrinks
+    the prose. Two checks — (1) every Markdown section heading (`##` / `###`) appears
+    in the HTML's visible text, and (2) the HTML's visible word count is at least
+    `min_word_ratio` of the Markdown's. Prints a PASS/FAIL summary and returns a dict
+    `{ok, missing_sections, md_words, html_words, word_ratio, min_word_ratio}`. Run it
+    as the final step before delivering — passing self-containment/markup/number checks
+    is NOT enough; this confirms the HTML is the whole report. `ignore_sections` skips
+    heading texts you deliberately omit (rare).
+    """
+    md = Path(md_path).read_text(encoding="utf-8")
+    html_str = Path(html_path).read_text(encoding="utf-8")
+    html_text = _visible_text(html_str)
+    html_norm = _norm(html_text)
+
+    missing = []
+    for line in md.split("\n"):
+        m = re.match(r"^(#{2,3})\s+(.*\S)\s*$", line.strip())
+        if not m:
+            continue
+        heading = m.group(2).strip()
+        if heading in ignore_sections:
+            continue
+        needle = _norm(heading)
+        if needle and needle not in html_norm:
+            missing.append(heading)
+
+    md_plain = re.sub(r"<!--.*?-->", " ", md, flags=re.S)  # drop the table marker etc.
+    md_plain = re.sub(r"[#>*_`|\-]", " ", md_plain)
+    md_words = _word_count(md_plain)
+    html_words = _word_count(html_text)
+    ratio = html_words / md_words if md_words else 1.0
+
+    ok = not missing and ratio >= min_word_ratio
+    print(
+        f"[check_report_parity] {'PASS' if ok else 'FAIL'}: "
+        f"{html_words}/{md_words} words (ratio {ratio:.2f}, min {min_word_ratio}); "
+        f"{len(missing)} missing section(s)"
+        + (": " + "; ".join(missing) if missing else "")
+    )
+    return {
+        "ok": ok,
+        "missing_sections": missing,
+        "md_words": md_words,
+        "html_words": html_words,
+        "word_ratio": round(ratio, 3),
+        "min_word_ratio": min_word_ratio,
+    }
+
+
 def _demo():
     # Example is a water / PFAS site ranking, but the builder is domain-neutral — swap in any
     # entities, columns, subset filters, and source KGs (justice, supply chain, biomedicine, …).
@@ -750,5 +841,13 @@ if __name__ == "__main__":
         _demo_md()
     elif "--demo" in sys.argv:
         _demo()
+    elif "--check" in sys.argv:
+        # python build_report_html.py --check report.md report.html
+        args = [a for a in sys.argv[1:] if a != "--check"]
+        if len(args) != 2:
+            print("usage: build_report_html.py --check <report.md> <report.html>")
+            sys.exit(2)
+        result = check_report_parity(args[0], args[1])
+        sys.exit(0 if result["ok"] else 1)
     else:
         print(__doc__)
