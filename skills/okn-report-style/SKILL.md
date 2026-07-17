@@ -278,6 +278,12 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
 - Phantom source: a KG credited in the Sources table / as a pill though no logged query touched it
   (its "contribution" came from an exploratory or unlogged query) → drop it, or re-run the bridge
   query non-exploratory so it's in the transcript. Every source must trace to a logged query.
+- **Reproducibility transcript left missing because `create_reproducibility_record` returned a stub**
+  (the log was too large to return inline) → a stub is a next step, not a stopping point. Re-call with
+  `supporting=[1, 5, 9, …]` (bare 1-based indices from `get_query_log`) to curate to the
+  findings-supporting queries, or batch them (`list(range(1, 41))`, then `range(41, 81)`, …). Curating
+  the real logged queries is not the forbidden fabrication — never ship the report with an empty or
+  placeholder transcript.
 - No closing recap / limitations → end with **Summary of findings & limitations** (findings recap +
   numbered caveats).
 - Undefined acronyms → add the Abbreviations block and expand each at first use.

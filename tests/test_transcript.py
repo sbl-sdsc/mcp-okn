@@ -1066,3 +1066,28 @@ async def test_chat_transcript_diagram_gate():
     md = await create_chat_transcript(model="m", diagram_max_chars=10)
     assert "```mermaid" not in md
     assert "```sparql" in md
+
+
+@pytest.mark.asyncio
+async def test_record_supporting_accepts_bare_ints():
+    """`supporting` accepts bare 1-based indices (easy batching), not only dicts."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)  # 1
+    session.record(_q("prokn"), "json", result=JSON_RESULT)  # 2
+    session.record(_q("hydrologykg"), "json", result=JSON_RESULT)  # 3
+    md = await create_reproducibility_record(model="m", supporting=[3, 1])
+    assert md.count("```sparql") == 2
+    assert md.index("kg/hydrologykg") < md.index("kg/sawgraph")  # order honored
+    assert "kg/prokn" not in md
+
+
+@pytest.mark.asyncio
+async def test_record_stub_surfaces_supporting_recovery():
+    """An over-size record's stub must be actionable — it points to the `supporting`
+    recovery (curate / batch), not just the resource, so the caller never gives up."""
+    for _ in range(3):
+        session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    stub = await create_reproducibility_record(model="m", max_inline_chars=50)
+    assert "transcript://session/latest" in stub  # still points to the resource
+    assert "supporting=" in stub  # ...but also the actionable recovery
+    assert "get_query_log" in stub
+    assert "missing" in stub.lower()  # framed as "never leave it missing"
