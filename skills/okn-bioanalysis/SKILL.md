@@ -28,19 +28,23 @@ geospatial / environmental / social layers you can bridge into. There is **no si
 source** — pick the KGs the question needs and **integrate on shared entity identifiers** (never on
 study / dataset accessions).
 
-**Two references (progressive disclosure):**
+**Three references (progressive disclosure):**
 - **`references/mcp-okn-workflow.md`** — how to let the mcp-okn **server tools** drive discovery and
   joins (`list_crosswalks` / `get_join_strategy` / `find_context_sources` / `find_crosswalks` /
   `get_valid_contrasts`), the identifier types you join on, the **bio↔geography bridge**, and the
   endpoint quirks that shape your code. **Read this first.**
 - **`references/enrichment-methods.md`** — over-representation (GO, Reactome, disease / trait /
   phenotype / chemical sets) done right: explicit background, hypergeometric + FDR, interpretation.
+- **`references/mechanistic-map.md`** — *when the question is "map the biology of X":* how to build the
+  **anchor → module → gene → drug mechanistic map** (the synthesis network figure) honestly.
 
-**Two scripts:**
+**Three scripts:**
 - **`scripts/enrichment.py`** — hypergeometric over-representation + Benjamini–Hochberg FDR against
   an explicit background; reuse for any category → gene / entity set.
 - **`scripts/collapse_orthologs.py`** — *optional*: when a source is a **model organism** (e.g.
   spoke-genelab mouse), collapse to human orthologs (max |effect| + ambiguity flag + mean-rule).
+- **`scripts/mechanistic_map.py`** — *optional*: render the radial anchor → module → gene → drug
+  mechanistic map from `modules={label:[genes]}` + `drugs={label:[drugs]}` (see the reference).
 
 ## Preflight — optional literature connectors (PubMed + Paperclip)
 
@@ -227,6 +231,14 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
     novel / contradicted; verify central claims against full text. If the preflight found a connector
     missing and the user chose to proceed, state the comparison was **skipped — `<connector>` not
     enabled** rather than dropping it silently.
+14. **Mechanistic map (synthesis — when the question is "map the biology of X").** When the analysis
+    yields a tiered gene/protein core (step 12) that groups into a few mechanistic themes (enrichment,
+    step 6, or curated pathway membership) plus a drug/target layer (step 10), synthesize them into a
+    **radial anchor → module → gene → drug map** — the payoff figure that shows the mechanism at a
+    glance (T2D example: `docs/examples/Diabetes2`, report §6). Render it with
+    `scripts/mechanistic_map.py`; **`references/mechanistic-map.md`** has the structure and the honesty
+    rules (every node was actually retrieved; modules are a declared synthesis; label the drug evidence
+    layer; carry the standing caveats). Skip it for a purely geospatial or module-less result.
 
 ## Statistical rigor
 
