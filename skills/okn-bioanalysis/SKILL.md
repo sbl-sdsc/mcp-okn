@@ -77,8 +77,12 @@ surfaces after the whole analysis is done and there's no time left to turn them 
    comes back as a stub (log too large to return inline), that is NOT a stopping point:** you know how
    many queries there are, so re-call with `supporting=[1, 5, 9, …]` (bare 1-based indices from
    `get_query_log`) to curate to the findings-supporting queries, or batch them — never leave the
-   transcript missing. Don't mark substantive queries `exploratory` — least of all the query that
-   establishes a cross-KG bridge; that one is the point of the analysis and MUST be logged.
+   transcript missing. **A frequent cause of the stub/spill is the per-query mermaid diagrams** (each
+   duplicates its SPARQL and they are 25–50%+ of the bytes): pass **`include_query_diagrams=False`**
+   for a lean return, then add the diagrams back as a postprocessing step on the saved file with
+   report-style's `scripts/expand_query_diagrams.py` (byte-identical, idempotent). Don't mark
+   substantive queries `exploratory` — least of all the query that establishes a cross-KG bridge; that
+   one is the point of the analysis and MUST be logged.
 2. Before querying a KG: `get_schema`. For cross-KG joins use the **precomputed crosswalk catalog**
    first — `list_crosswalks` (the whole verified join map in one call) and `get_join_strategy(a, b)`
    (one pair's recipe; respect `known_non_join`); `find_context_sources(want, join_key)` for the

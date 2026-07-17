@@ -290,6 +290,15 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
   findings-supporting queries, or batch them (`list(range(1, 41))`, then `range(41, 81)`, …). Curating
   the real logged queries is not the forbidden fabrication — never ship the report with an empty or
   placeholder transcript.
+- **Transcript bloated / spilling because of the per-query mermaid diagrams** — each ` ```sparql `
+  block is followed by a ` ```mermaid ` diagram that duplicates it, and those diagrams are 25–50%+ of
+  the bytes, which is often what pushes the return over the inline limit → **generate diagram-free,
+  then add the diagrams as a local postprocessing step**: call `create_chat_transcript` /
+  `create_reproducibility_record` with **`include_query_diagrams=False`** (lean return, no stub/spill),
+  save the markdown, then run **`.venv/bin/python scripts/expand_query_diagrams.py <transcript.md>`** —
+  it injects each ` ```mermaid ` block back from the retained SPARQL (byte-identical to inline
+  generation, idempotent). The large blob never rides the tool round-trip. Don't rasterize the mermaid
+  to SVG/PNG — leave it as source; the markdown/HTML client renders it.
 - No closing recap / limitations → end with **Summary of findings & limitations** (findings recap +
   numbered caveats).
 - Undefined acronyms → add the Abbreviations block and expand each at first use.
