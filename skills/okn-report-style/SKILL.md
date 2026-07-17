@@ -251,6 +251,15 @@ reason to hand-build:** `build_report_from_markdown` renders the *entire* `.md` 
 **self-verifies** (below), which a hand-built page does not. If you catch yourself writing `<h2>` tags
 or a custom build script for a report, stop — you are about to ship a highlights reel.
 
+> **Do NOT copy the `docs/examples/*/build_html.py` scripts — they are the anti-pattern, not the
+> template.** Every one of them predates this renderer, hand-authors the HTML, and **FAILS
+> `check_report_parity`** (the shipped example `.html`s carry only 22–71% of their `.md` and each drops
+> 4–17 sections — including the mandatory Limitations / Caveats and the contradicting-evidence
+> sections). A model that reads `docs/examples/` for a build template learns exactly the failure mode
+> above — which is why this recurs. Ignore those `build_html.py` files; the **only** supported way to
+> build a report's `.html` is `build_report_from_markdown`, and the same `.md` that fails parity
+> hand-built **passes** (0 missing sections) when rendered through it.
+
 **Completeness gate — the report is not "delivered" until you have seen `[check_report_parity] PASS`.**
 `build_report_from_markdown` runs **`check_report_parity(md_path, html_path)`** automatically after
 writing (it prints `[check_report_parity] PASS …`) — so if you used it, read that line before
