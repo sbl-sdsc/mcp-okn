@@ -50,9 +50,9 @@ import networkx as nx
 from matplotlib.lines import Line2D
 
 # Okabe–Ito, colour-vision-deficiency-safe. Shape is the primary cue; colour is redundant.
-GENE = "#0072B2"   # blue circle
+GENE = "#0072B2"  # blue circle
 MODULE = "#009E73"  # bluish-green square
-DRUG = "#E69F00"   # orange triangle
+DRUG = "#E69F00"  # orange triangle
 ANCHOR = "#D55E00"  # vermillion star
 EDGE = "#cccccc"
 
@@ -89,9 +89,9 @@ def render_mechanistic_map(
     G.add_node(anchor, kind="anchor")
     pos[anchor] = (0.0, 0.0)
 
-    r_mod = 2.6          # module ring radius
-    r_gene = 1.5         # gene fan radius (from its module)
-    r_drug = 2.6         # drug radius (from its module, beyond the genes)
+    r_mod = 2.6  # module ring radius
+    r_gene = 1.5  # gene fan radius (from its module)
+    r_drug = 2.6  # drug radius (from its module, beyond the genes)
     for i, (mod, members) in enumerate(modules.items()):
         a = math.radians(90 - i * 360.0 / n_mod)  # start at top, go clockwise
         mx, my = r_mod * math.cos(a), r_mod * math.sin(a)
@@ -124,8 +124,15 @@ def render_mechanistic_map(
         nl = [n for n, d in G.nodes(data=True) if d["kind"] == kind]
         if nl:
             nx.draw_networkx_nodes(
-                G, pos, nodelist=nl, node_shape=shape, node_color=color,
-                node_size=size, edgecolors="#222", linewidths=1, ax=ax,
+                G,
+                pos,
+                nodelist=nl,
+                node_shape=shape,
+                node_color=color,
+                node_size=size,
+                edgecolors="#222",
+                linewidths=1,
+                ax=ax,
             )
 
     _draw("gene", "o", GENE, 900)
@@ -142,16 +149,56 @@ def render_mechanistic_map(
     full_title = title if not subtitle else f"{title}\n{subtitle}"
     ax.set_title(full_title, fontsize=14, fontweight="bold")
     legend = [
-        Line2D([0], [0], marker="o", color="w", markerfacecolor=GENE, markersize=13, label=gene_legend),
-        Line2D([0], [0], marker="s", color="w", markerfacecolor=MODULE, markersize=13, label=module_legend),
-        Line2D([0], [0], marker="^", color="w", markerfacecolor=DRUG, markersize=13, label=drug_legend),
-        Line2D([0], [0], marker="*", color="w", markerfacecolor=ANCHOR, markersize=17, label=anchor_kind),
+        Line2D(
+            [0],
+            [0],
+            marker="o",
+            color="w",
+            markerfacecolor=GENE,
+            markersize=13,
+            label=gene_legend,
+        ),
+        Line2D(
+            [0],
+            [0],
+            marker="s",
+            color="w",
+            markerfacecolor=MODULE,
+            markersize=13,
+            label=module_legend,
+        ),
+        Line2D(
+            [0],
+            [0],
+            marker="^",
+            color="w",
+            markerfacecolor=DRUG,
+            markersize=13,
+            label=drug_legend,
+        ),
+        Line2D(
+            [0],
+            [0],
+            marker="*",
+            color="w",
+            markerfacecolor=ANCHOR,
+            markersize=17,
+            label=anchor_kind,
+        ),
     ]
     if not drugs:
         legend = [h for h in legend if h.get_label() != drug_legend]
     ax.legend(handles=legend, loc="lower left", fontsize=10, frameon=True)
     if footnote:
-        ax.text(0.99, 0.01, footnote, transform=ax.transAxes, ha="right", fontsize=8, style="italic")
+        ax.text(
+            0.99,
+            0.01,
+            footnote,
+            transform=ax.transAxes,
+            ha="right",
+            fontsize=8,
+            style="italic",
+        )
 
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     plt.tight_layout()
@@ -165,16 +212,52 @@ def _demo():
         anchor="Type 2 diabetes",
         modules={
             "β-cell K_ATP / insulin secretion": [
-                "ABCC8", "KCNJ11", "GCK", "SLC30A8", "G6PC2", "ADCY5", "KCNQ1", "SLC2A2", "INS", "IAPP",
+                "ABCC8",
+                "KCNJ11",
+                "GCK",
+                "SLC30A8",
+                "G6PC2",
+                "ADCY5",
+                "KCNQ1",
+                "SLC2A2",
+                "INS",
+                "IAPP",
             ],
             "MODY / islet transcription factors": [
-                "HNF1A", "HNF4A", "HNF1B", "PDX1", "NEUROD1", "PAX4", "WFS1", "RFX6", "MAFA", "NKX6-1",
+                "HNF1A",
+                "HNF4A",
+                "HNF1B",
+                "PDX1",
+                "NEUROD1",
+                "PAX4",
+                "WFS1",
+                "RFX6",
+                "MAFA",
+                "NKX6-1",
             ],
             "Insulin signaling / resistance": [
-                "IRS1", "IRS2", "INSR", "PIK3R1", "AKT2", "PTEN", "ENPP1", "SLC2A4", "PPARG", "TBC1D4",
+                "IRS1",
+                "IRS2",
+                "INSR",
+                "PIK3R1",
+                "AKT2",
+                "PTEN",
+                "ENPP1",
+                "SLC2A4",
+                "PPARG",
+                "TBC1D4",
             ],
             "Incretin / GPCR axis": ["GLP1R", "GIPR", "GCGR", "GCG", "DPP4", "FFAR1"],
-            "Obesity / adipo-lipid": ["FTO", "MC4R", "LEP", "LEPR", "ADIPOQ", "PPARGC1A", "LPL", "CEBPA"],
+            "Obesity / adipo-lipid": [
+                "FTO",
+                "MC4R",
+                "LEP",
+                "LEPR",
+                "ADIPOQ",
+                "PPARGC1A",
+                "LPL",
+                "CEBPA",
+            ],
         },
         drugs={
             "β-cell K_ATP / insulin secretion": ["Glimepiride", "Repaglinide"],
@@ -200,7 +283,11 @@ if __name__ == "__main__":
         _demo()
     elif len(sys.argv) >= 2 and sys.argv[1].endswith(".json"):
         spec = json.loads(Path(sys.argv[1]).read_text())
-        out = sys.argv[2] if len(sys.argv) >= 3 else spec.get("out_path", "fig_mechanistic_map.png")
+        out = (
+            sys.argv[2]
+            if len(sys.argv) >= 3
+            else spec.get("out_path", "fig_mechanistic_map.png")
+        )
         spec.pop("out_path", None)
         print("wrote", render_mechanistic_map(out_path=out, **spec))
     else:
