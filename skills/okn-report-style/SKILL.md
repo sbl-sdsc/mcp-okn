@@ -298,7 +298,10 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
   save the markdown, then run **`.venv/bin/python scripts/expand_query_diagrams.py <transcript.md>`** —
   it injects each ` ```mermaid ` block back from the retained SPARQL (byte-identical to inline
   generation, idempotent). The large blob never rides the tool round-trip. Don't rasterize the mermaid
-  to SVG/PNG — leave it as source; the markdown/HTML client renders it.
+  to SVG/PNG — leave it as source; the markdown/HTML client renders it. **This defer-and-re-add flow
+  applies only when you still want the diagrams in the final file.** If the user asks for **no** query
+  diagrams at all, pass `include_query_diagrams=False` (and `include_visualizations=False` for the
+  schema classDiagrams) and **skip the expand step** — don't re-inject what they asked to omit.
 - No closing recap / limitations → end with **Summary of findings & limitations** (findings recap +
   numbered caveats).
 - Undefined acronyms → add the Abbreviations block and expand each at first use.
