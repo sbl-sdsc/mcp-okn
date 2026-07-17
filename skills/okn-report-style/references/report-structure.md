@@ -131,12 +131,15 @@ and a **full-text, line-anchored link** (e.g. Paperclip `citations.gxl.ai/…#Lx
 
 The `.html` is rendered from this Markdown (`build_report_from_markdown`) and is the artifact readers
 actually open — so **every section above must appear in it**, especially the unglamorous mandatory
-ones (§2 Sources, §10 Limitations) that a condensed or hand-authored HTML tends to drop. As the final
-step, run **`check_report_parity(report_md, report_html)`** (or `python
-scripts/build_report_html.py --check report.md report.html`): it FAILS, naming the missing sections,
-if any `##`/`###` heading is absent from the HTML or the HTML is much shorter than the `.md`. Passing
-self-containment / numbers / markup checks is **not** enough — only this confirms the HTML is the
-same report. Treat a FAIL as blocking and rebuild from the `.md`.
+ones (§2 Sources, §8 Comparison with prior work, §10 Limitations) that a condensed or hand-authored
+HTML tends to drop. `build_report_from_markdown` **self-verifies** — it runs
+`check_report_parity(report_md, report_html)` automatically and prints `[check_report_parity] PASS …`
+— so read that line before presenting. If you built the HTML any other way, run it yourself (`python
+scripts/build_report_html.py --check report.md report.html`) and see PASS first. It FAILS, naming the
+missing sections, if any `##`/`###` heading is absent or the HTML is much shorter than the `.md`.
+Passing self-containment / numbers / markup checks is **not** enough — only this confirms the HTML is
+the same report. **The report is not delivered until parity PASSES:** treat a FAIL as blocking and
+rebuild from the `.md`.
 
 ---
 

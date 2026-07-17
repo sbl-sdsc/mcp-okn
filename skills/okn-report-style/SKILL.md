@@ -238,23 +238,29 @@ from the `.md` and splices the table in at the `<!-- RESULTS_TABLE -->` marker. 
 sorted by the count). It emits the sortable / filterable / paginated table and the whole page; see
 `python scripts/build_report_html.py --demo-md` (render-from-Markdown) or `--demo` (low-level path).
 
-**Call `build_report_from_markdown` — do not write your own HTML builder.** The single most common
-way this goes wrong is *not* editing the `.md` and `.html` out of sync, but bypassing the renderer
-entirely: hand-authoring the HTML body, or writing a one-off script that takes report sections as
-**raw HTML strings** and filling in a condensed version from memory. That silently ships a
-"highlights reel" — the interesting claims kept, and the unglamorous-but-mandatory parts dropped
-(the **§2 Sources** table, the **§10 Limitations** list, Discussion, Reproducibility, References,
-Abbreviations). The artifact everyone opens then lacks exactly the provenance and caveats. If you
-must customise, still render the prose from the `.md`; never retype it.
+**Call `build_report_from_markdown` — do not write your own HTML builder.** This has been the single
+most common — and most recurrent — way the deliverable breaks: not editing the `.md` and `.html` out
+of sync, but bypassing the renderer entirely — hand-authoring the HTML body, or writing a one-off
+script that takes report sections as **raw HTML strings** and fills in a condensed version from
+memory. That silently ships a "highlights reel" — the interesting claims kept, and the
+unglamorous-but-mandatory parts dropped (the **§2 Sources** table, **§3 Design & rules**, **§4
+Confidence tiers**, **§7 Discussion**, **§8 Comparison with prior work** — the whole literature
+validation — **§10 Limitations**, **§11 Reproducibility**, **§12 References**). The artifact everyone
+opens then lacks exactly the provenance, the adversarial evidence, and the caveats. **There is never a
+reason to hand-build:** `build_report_from_markdown` renders the *entire* `.md` faithfully and also
+**self-verifies** (below), which a hand-built page does not. If you catch yourself writing `<h2>` tags
+or a custom build script for a report, stop — you are about to ship a highlights reel.
 
-**Verify completeness — the required final gate.** After building the `.html`, run
-**`check_report_parity(md_path, html_path)`** (or `python scripts/build_report_html.py --check
-report.md report.html`). It confirms the HTML is the *same report*: every `##` / `###` section
-heading from the `.md` is present, and the visible word count is within `min_word_ratio` (default
-0.85) of the `.md`. It **FAILS**, naming the missing sections, on a dropped-section / condensed
-build. This is a distinct check from self-containment, numbers, and markup — those can all pass on an
-HTML that is only a quarter of the report. A completeness check against the source is the one that
-catches it, so it is not optional: treat a FAIL as blocking and rebuild from the `.md`.
+**Completeness gate — the report is not "delivered" until you have seen `[check_report_parity] PASS`.**
+`build_report_from_markdown` runs **`check_report_parity(md_path, html_path)`** automatically after
+writing (it prints `[check_report_parity] PASS …`) — so if you used it, read that line before
+presenting the report. If you built the HTML any other way, you MUST run it yourself
+(`check_report_parity(md, html)` or `python scripts/build_report_html.py --check report.md
+report.html`) and see PASS first. It confirms the HTML is the *same report*: every `##`/`###` heading
+from the `.md` is present and the visible word count is within `min_word_ratio` (default 0.85). It
+**FAILS**, naming the missing sections, on a dropped-section / condensed build — a check distinct from
+self-containment / numbers / markup, all of which pass on an HTML that is a quarter of the report.
+Treat a FAIL (or never having run it) as blocking: do not present the `.html` until parity PASSES.
 
 ## Excel workbook
 

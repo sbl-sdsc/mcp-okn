@@ -25,11 +25,12 @@ base64-embedded figures, and the interactive results table:
     # standalone; the .html then inherits those numbers by rendering it, and the KPI cards come from
     # the same `stats` dict — one edit in stats.json updates all three.
 
-Then VERIFY the .html is the whole report — not a highlights reel — with
-`check_report_parity("study_report.md", "study_report.html")` (or `--check report.md report.html`):
-it FAILS, naming the sections, if any `##`/`###` heading is missing or the HTML is much shorter
-than the .md. Run it as the final gate; self-containment/numbers/markup checks do not catch a
-dropped-section build.
+`build_report_from_markdown` SELF-VERIFIES: after writing it runs
+`check_report_parity(md, html)` and prints `[check_report_parity] PASS …` — the report is not
+delivered until you have seen that PASS. It FAILS, naming the sections, if any `##`/`###` heading is
+missing or the HTML is much shorter than the .md (self-containment/numbers/markup checks do not catch
+a dropped-section build). If you build the HTML any other way, run the check yourself
+(`check_report_parity(md, html)` or `--check report.md report.html`) and see PASS before delivering.
 
 Do NOT re-author the report's prose as HTML `body_blocks`, and do NOT write your own builder that
 takes raw HTML sections — that is the prose-drift / highlights-reel failure mode. The low-level
@@ -499,6 +500,7 @@ def build_report_from_markdown(
     subtitle=None,
     meta=None,
     footer="",
+    verify=True,
 ):
     """Render a self-contained interactive HTML report FROM the Markdown report.
 
@@ -520,6 +522,11 @@ def build_report_from_markdown(
     base64 <img>; a blockquote right after it becomes the figure's `figcap` legend.
     Title / subtitle / meta are lifted from the .md title block (the first `# `,
     the first `### `, and the `**Date:** …` line) unless overridden.
+
+    Self-verifies by default (`verify=True`): after writing, it runs
+    `check_report_parity(md_path, out)` and prints PASS/FAIL, so the completeness gate
+    is not a separate step to forget. A faithful render always PASSES; a FAIL warns
+    that content was dropped and the page must not be shipped.
     """
     with Path(md_path).open(encoding="utf-8") as f:
         md = f.read()
@@ -572,6 +579,18 @@ def build_report_from_markdown(
     print(
         f"[build_report_html] wrote {out} ({len(page):,} bytes) from {Path(md_path).name}"
     )
+    # Self-verify: a report is not delivered until it is the WHOLE report. Running
+    # the completeness gate here means no separate "remember to check" step to skip —
+    # a rendered-from-Markdown page always passes; a FAIL means something dropped
+    # content (bad marker, wrong source) and the page must NOT be shipped.
+    if verify:
+        parity = check_report_parity(md_path, out)
+        if not parity["ok"]:
+            print(
+                "[build_report_html] WARNING: the rendered HTML is NOT a faithful copy "
+                "of the Markdown (see the check_report_parity FAIL above). Do NOT deliver "
+                "it — fix the source/marker and rebuild."
+            )
     return out
 
 
