@@ -1091,3 +1091,46 @@ async def test_record_stub_surfaces_supporting_recovery():
     assert "supporting=" in stub  # ...but also the actionable recovery
     assert "get_query_log" in stub
     assert "missing" in stub.lower()  # framed as "never leave it missing"
+
+
+def test_active_window_elapsed_from_timestamps():
+    """`_active_window` reports first→last span + elapsed from the log timestamps, and
+    is empty when no timestamp is present (so no header line is emitted)."""
+    from datetime import datetime, timedelta, timezone
+
+    from mcp_okn.tools.transcript import _active_window
+
+    assert _active_window([]) == ""
+    assert _active_window([{"sparql": "x"}]) == ""  # no timestamp -> no window
+    start = datetime(2026, 7, 17, 14, 2, 0, tzinfo=timezone.utc)
+    entries = [
+        {"timestamp": start.isoformat(timespec="seconds")},
+        {
+            "timestamp": (start + timedelta(hours=1, minutes=45)).isoformat(
+                timespec="seconds"
+            )
+        },
+    ]
+    win = _active_window(entries)
+    assert win == "2026-07-17 14:02–15:47 UTC (1h 45m)"
+
+
+@pytest.mark.asyncio
+async def test_record_header_has_study_active_window():
+    """The reproducibility record's header carries the study active window, spanning the
+    WHOLE scoped log even when `supporting` curates the shown queries to a subset."""
+    from datetime import datetime, timedelta, timezone
+
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    session.record(_q("prokn"), "json", result=JSON_RESULT)
+    ents = session.entries()
+    base = datetime(2026, 7, 17, 9, 0, 0, tzinfo=timezone.utc)
+    ents[0]["timestamp"] = base.isoformat(timespec="seconds")
+    ents[1]["timestamp"] = (base + timedelta(minutes=30)).isoformat(timespec="seconds")
+    md = await create_reproducibility_record(
+        model="m", supporting=[1], max_inline_chars=None
+    )
+    assert "- **Study active window:** 2026-07-17 09:00–09:30 UTC (30m 0s)" in md
+    assert (
+        "**Contents:** 1 query" in md
+    )  # window spans the log; contents is the curated subset

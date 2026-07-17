@@ -128,7 +128,12 @@ Then:
     the data cannot support. This is where the standalone caveats list lives — do not also put one
     elsewhere.
 11. **Reproducibility** — pointers to the appendix, the query transcript, the scripts, and the
-    pinned KG versions + update dates.
+    pinned KG versions + update dates. Include the **study active window** — the `- **Study active
+    window:**` line `create_reproducibility_record` puts in the record header (first→last logged-query
+    wall-clock; a lower bound, it excludes framing before the first query and writing after the last).
+    Token/cost usage is **not** visible to the tooling (the server only sees tool calls), so if you
+    report it, take the figures from the client (Claude Code `/cost` / the API `usage`) and label them
+    as client-measured — never fabricate a token count.
 12. **References** — numbered; attribute the retrieval tool, give a **DOI link** per literature item
     (e.g. PubMed) and a **full-text, line-anchored link** (e.g. Paperclip `citations.gxl.ai/…#Lxx`)
     for anything verified against full text.

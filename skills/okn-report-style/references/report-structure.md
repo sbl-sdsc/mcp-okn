@@ -119,6 +119,11 @@ back-matter that follow). Two parts:
 
 ## 11. Reproducibility
 Pointers to the appendix, the verbatim query transcript, the scripts, and the pinned KG versions.
+State the **study active window** — the `**Study active window:**` header line from
+`create_reproducibility_record` (first→last logged-query wall-clock, UTC; a lower bound that excludes
+pre-first-query framing and post-last-query writing). Token/cost is not captured by the tooling (the
+server sees only tool calls); if you cite it, use client figures (Claude Code `/cost` / API `usage`),
+labelled as client-measured — do not invent a number.
 
 ## 12. References
 Numbered. Attribute the retrieval tool. Give a **DOI link** for each literature item (e.g. PubMed),
