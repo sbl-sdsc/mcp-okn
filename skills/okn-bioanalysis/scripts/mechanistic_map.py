@@ -45,9 +45,9 @@ from pathlib import Path
 import matplotlib
 
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt  # noqa: E402
-import networkx as nx  # noqa: E402
-from matplotlib.lines import Line2D  # noqa: E402
+import matplotlib.pyplot as plt
+import networkx as nx
+from matplotlib.lines import Line2D
 
 # Okabe–Ito, colour-vision-deficiency-safe. Shape is the primary cue; colour is redundant.
 GENE = "#0072B2"   # blue circle
@@ -116,7 +116,7 @@ def render_mechanistic_map(
             pos[dn] = (mx + r_drug * math.cos(da), my + r_drug * math.sin(da))
             G.add_edge(mod, dn)
 
-    fig, ax = plt.subplots(figsize=(15.5, 11))
+    _fig, ax = plt.subplots(figsize=(15.5, 11))
     ax.axis("off")
     nx.draw_networkx_edges(G, pos, edge_color=EDGE, width=1.1, ax=ax)
 
