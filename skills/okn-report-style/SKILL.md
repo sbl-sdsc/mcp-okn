@@ -302,15 +302,25 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
 - **Transcript bloated / spilling because of the per-query mermaid diagrams** — each ` ```sparql `
   block is followed by a ` ```mermaid ` diagram that duplicates it, and those diagrams are 25–50%+ of
   the bytes, which is often what pushes the return over the inline limit → **generate diagram-free,
-  then add the diagrams as a local postprocessing step**: call `create_chat_transcript` /
-  `create_reproducibility_record` with **`include_query_diagrams=False`** (lean return, no stub/spill),
-  save the markdown, then run **`.venv/bin/python scripts/expand_query_diagrams.py <transcript.md>`** —
-  it injects each ` ```mermaid ` block back from the retained SPARQL (byte-identical to inline
-  generation, idempotent). The large blob never rides the tool round-trip. Don't rasterize the mermaid
-  to SVG/PNG — leave it as source; the markdown/HTML client renders it. **This defer-and-re-add flow
-  applies only when you still want the diagrams in the final file.** If the user asks for **no** query
-  diagrams at all, pass `include_query_diagrams=False` (and `include_visualizations=False` for the
-  schema classDiagrams) and **skip the expand step** — don't re-inject what they asked to omit.
+  then re-add the diagrams as a postprocessing step** (both halves — generating lean and *not*
+  re-adding silently drops the diagrams; that is an omission, not a choice):
+  1. Call `create_chat_transcript` / `create_reproducibility_record` with
+     **`include_query_diagrams=False`** (lean return, no stub/spill) and save the markdown.
+  2. Re-add the diagrams with **`scripts/expand_query_diagrams.py`**. The `sparql-to-mermaid` package
+     is mcp-okn-internal (**not pip-installable**), so it usually can't be imported where you build the
+     report — but the **`sparql_to_mermaid` TOOL** is available over MCP. For **each logged query**
+     call that tool on the **verbatim** query (never a shortened copy — a diagram under a SPARQL block
+     it doesn't match is a fidelity break), collect `[{sparql, mermaid}, …]` into `diagrams.json`, then
+     `python scripts/expand_query_diagrams.py <transcript.md> --diagrams diagrams.json --max-chars 4000`
+     (dependency-free injection, idempotent).
+  **Cap the diagrams** (`--max-chars 4000`, mirroring the server's `diagram_max_chars`): a gene-**symbol
+  `VALUES` list** renders one literal node per symbol — a 250-symbol query → a ~28K-char diagram of ~280
+  meaningless nodes, which is exactly what spills the record — so those are skipped; **note the skipped
+  queries in the transcript** (a one-line table), the same rule the server applies inline. Don't
+  rasterize the mermaid to SVG/PNG — leave it as source. **This defer-and-re-add flow applies only when
+  you still want the diagrams in the final file.** If the user asks for **no** query diagrams at all,
+  pass `include_query_diagrams=False` (and `include_visualizations=False` for the schema classDiagrams)
+  and **skip the re-add step** — don't re-inject what they asked to omit.
 - No closing recap / limitations → end with **Summary of findings & limitations** (findings recap +
   numbered caveats).
 - Undefined acronyms → add the Abbreviations block and expand each at first use.

@@ -79,10 +79,14 @@ surfaces after the whole analysis is done and there's no time left to turn them 
    `get_query_log`) to curate to the findings-supporting queries, or batch them — never leave the
    transcript missing. **A frequent cause of the stub/spill is the per-query mermaid diagrams** (each
    duplicates its SPARQL and they are 25–50%+ of the bytes): pass **`include_query_diagrams=False`**
-   for a lean return, then add the diagrams back as a postprocessing step on the saved file with
-   report-style's `scripts/expand_query_diagrams.py` (byte-identical, idempotent) — that re-add step
-   applies only when you still want them in the final file; if the user asks for **no** diagrams, pass
-   the flag and skip the expand step. Don't mark
+   for a lean return, then **re-add** the diagrams as a postprocessing step (do BOTH halves — generating
+   lean and not re-adding silently drops them). Since the `sparql-to-mermaid` package isn't installable
+   in a report session, generate each diagram with the **`sparql_to_mermaid` TOOL** on the verbatim
+   logged query, collect them into `diagrams.json`, and inject with report-style's
+   `scripts/expand_query_diagrams.py --diagrams diagrams.json --max-chars 4000` (skips the oversized
+   symbol-list diagrams; see report-style for the full recipe). The re-add applies only when you still
+   want them in the final file; if the user asks for **no** diagrams, pass the flag and skip re-add.
+   Don't mark
    substantive queries `exploratory` — least of all the query that establishes a cross-KG bridge; that
    one is the point of the analysis and MUST be logged.
 2. Before querying a KG: `get_schema`. For cross-KG joins use the **precomputed crosswalk catalog**
