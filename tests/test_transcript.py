@@ -1035,6 +1035,72 @@ async def test_record_elapsed_window_in_json_payload():
 
 
 @pytest.mark.asyncio
+async def test_record_prompt_renders_at_top():
+    """`prompt` renders a `## Prompt` section at the top — above Notes, KGs, and queries."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(
+        model="m",
+        prompt="Which proteins are shared between kidney cancer and SPOKE?",
+        notes="a note",
+    )
+    assert "## Prompt" in md
+    assert "Which proteins are shared between kidney cancer and SPOKE?" in md
+    assert md.index("## Prompt") < md.index("## Notes")
+    assert md.index("## Prompt") < md.index("## Knowledge graphs used")
+
+
+@pytest.mark.asyncio
+async def test_record_prompt_omitted_when_absent_and_in_json():
+    """No `## Prompt` when unset; present (stripped) on the JSON payload when given."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(model="m")
+    assert "## Prompt" not in md
+    payload = await create_reproducibility_record(
+        model="m", format="json", prompt="  do the thing  "
+    )
+    assert payload["prompt"] == "do the thing"
+
+
+@pytest.mark.asyncio
+async def test_record_appendix_merges_before_queries():
+    """`appendix` renders the replicator spec (verbatim, own headings) between the
+    header and the `## SPARQL queries` record — one combined file."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(
+        model="m",
+        appendix="## Rules, thresholds and joins\n- FDR < 0.05.",
+    )
+    assert "## Rules, thresholds and joins" in md
+    assert "- FDR < 0.05." in md
+    # placed after the header/KG list and before the query record
+    assert md.index("## Rules, thresholds and joins") < md.index("## SPARQL queries")
+    assert md.index("## Knowledge graphs used") < md.index("## Rules, thresholds and joins")
+
+
+@pytest.mark.asyncio
+async def test_record_appendix_omitted_when_absent():
+    """No appendix section is emitted when `appendix` is unset or blank."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(model="m")
+    assert "## SPARQL queries" in md
+    blank = await create_reproducibility_record(model="m", appendix="  ")
+    # blank appendix adds nothing before the query section
+    assert blank.count("##") == md.count("##")
+
+
+@pytest.mark.asyncio
+async def test_record_appendix_in_json_payload():
+    """`appendix` is carried on the JSON payload too (stripped)."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    payload = await create_reproducibility_record(
+        model="m", format="json", appendix="  ## Spec\n- x  "
+    )
+    assert payload["appendix"] == "## Spec\n- x"
+    bare = await create_reproducibility_record(model="m", format="json")
+    assert "appendix" not in bare
+
+
+@pytest.mark.asyncio
 async def test_record_diagram_gate_drops_and_keeps():
     """`diagram_max_chars` drops an oversized query diagram (its SPARQL still shows)
     and keeps one under a large budget."""

@@ -55,10 +55,10 @@ source — remove it.
 thresholds, and the join keys in plain terms — plus an **inventory / cohort table rebuilt live** with
 verified counts. Add the main design / overview figure here (Figure 1). **Do not restate the exact
 specification here** — the replicator-grade detail (every join key, the exact backgrounds, scoring
-formulas such as `1/sqrt(fanout)`) lives *only* in the **reproducibility appendix**; cross-reference
-it ("full specification in the reproducibility appendix") rather than duplicating it. §3 is for a
-reader; the appendix is for a replicator — the same thresholds spelled out in both is drift waiting
-to happen.
+formulas such as `1/sqrt(fanout)`) lives *only* in the **reproducibility file's spec section** (the
+`appendix=` block of `create_reproducibility_record`); cross-reference it ("full specification in the
+reproducibility file") rather than duplicating it. §3 is for a reader; the spec section is for a
+replicator — the same thresholds spelled out in both is drift waiting to happen.
 
 ## 4. Confidence tiers
 A small table defining tiers A / B / C and what evidence each requires. Give the tier distribution.
@@ -118,8 +118,9 @@ back-matter that follow). Two parts:
   duplicate it elsewhere in the report.
 
 ## 11. Reproducibility
-Pointers to the appendix, the verbatim query transcript, the scripts, and the pinned KG versions.
-State a timing line from `create_reproducibility_record`'s header: by default the **study active
+Pointers to the single `_reproducibility.md` (the replicator spec plus the verbatim query record —
+`create_reproducibility_record` with the spec passed as `appendix=`), the scripts, and the pinned KG
+versions. State a timing line from `create_reproducibility_record`'s header: by default the **study active
 window** (`**Study active window:**`, first→last logged-query wall-clock, UTC; a lower bound that
 excludes pre-first-query framing and post-last-query writing, and collapses when large extraction
 queries went unlogged). For **whole-chat elapsed time** instead, pass `chat_started` (ISO-8601, when

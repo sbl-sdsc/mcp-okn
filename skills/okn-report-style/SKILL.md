@@ -38,8 +38,9 @@ A complete report is a **folder**, not one file:
 ├── figures/  fig1_*.png …        # one PNG per figure, numbered in document order
 ├── data/     *.tsv / *.json      # intermediate extracts (for reproducibility)
 ├── scripts/  *.py                # the exact scripts used (for reproducibility)
-├── <study>_reproducibility_appendix.md   # rules, thresholds, joins, verified quantities
-└── <study>_reproducibility_transcript.md # verbatim supporting queries + row counts (from create_reproducibility_record)
+└── <study>_reproducibility.md            # ONE file: replicator spec (rules, thresholds, joins,
+                                  #   verified quantities, limitations) + verbatim supporting queries
+                                  #   & row counts — from create_reproducibility_record (spec via appendix=)
 ```
 
 Write working files to a scratch dir, then copy final artifacts into the delivered folder. Share
@@ -54,10 +55,13 @@ placeholders when rendering the `.html`, and `kpis_from_stats(stats, spec)` buil
 that dict. One edit in `stats.json` then updates the prose, the HTML, and the KPI cards at once. The
 remaining
 artifacts are deliberately **not** retellings of the report and must not be collapsed into it: the
-`_reproducibility_transcript.md` carries the **verbatim SPARQL query text** that supports the findings,
-each with its row count (its unique payload, from `create_reproducibility_record` — the queries exist
-nowhere else and let the analysis audit standalone; full result data stays in the `.xlsx` / `data/`),
-and the `.xlsx` is the **data**, not a narrative. Don't "deduplicate" either away.
+`_reproducibility.md` leads with the **originating user prompt** (pass it VERBATIM as
+`create_reproducibility_record`'s `prompt=`), then the replicator SPEC (rules, thresholds, joins,
+verified quantities, limitations — passed as `appendix=`), then the **verbatim
+SPARQL query text** that supports the findings, each with its row count (its unique payload — the
+queries exist nowhere else and let the analysis audit standalone; full result data stays in the
+`.xlsx` / `data/`), and the `.xlsx` is the **data**, not a narrative. Don't "deduplicate" either away.
+The spec and the queries live in this ONE file — do not split them back into two.
 
 ## Report structure (Markdown)
 
@@ -93,7 +97,8 @@ Then:
 3. **Design & rules** — *narrate* the selection rules, headline thresholds, and join keys for a
    reader, plus an inventory / cohort table rebuilt live with verified counts. Keep the exact
    replicator-grade specification (every join key, exact backgrounds, scoring formulas) in the
-   reproducibility appendix and cross-reference it — don't restate the thresholds in both places.
+   reproducibility file's spec section (`create_reproducibility_record`'s `appendix=`) and
+   cross-reference it — don't restate the thresholds in both places.
 4. **Confidence tiers** — how results are graded (A / B / C) and what evidence each tier requires.
 5. **Findings by axis** — one subsection per analysis axis, each with its figure + legend + a short
    interpretation of the result. The axes depend on the domain (e.g. per-group signal, spatial
@@ -127,8 +132,8 @@ Then:
     (b) the caveats, uncertainties, and likely undercounts as a numbered list, explicit about what
     the data cannot support. This is where the standalone caveats list lives — do not also put one
     elsewhere.
-11. **Reproducibility** — pointers to the appendix, the query transcript, the scripts, and the
-    pinned KG versions + update dates. Include a timing line from
+11. **Reproducibility** — pointers to the single `_reproducibility.md` (spec + query record), the
+    scripts, and the pinned KG versions + update dates. Include a timing line from
     `create_reproducibility_record`'s header. By default that is the **study active window** (`- **Study
     active window:**`, the first→last logged-query wall-clock) — a lower bound that excludes framing
     before the first query and writing after the last, and that collapses badly when large extraction

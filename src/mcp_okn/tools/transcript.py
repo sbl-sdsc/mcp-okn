@@ -333,6 +333,7 @@ def _finalize_document(
     stub_recovery: str = "",
     active_window: str = "",
     window_label: str = "Study active window",
+    prompt: str = "",
     notes: str = "",
 ) -> str:
     """Assemble header + Contents manifest + body, publish, and return the document.
@@ -366,6 +367,8 @@ def _finalize_document(
             ``_active_window``) or the whole-chat window (from ``_chat_window``).
         window_label: Header label for ``active_window`` (default "Study active
             window"); pass "Elapsed time" when ``active_window`` is the whole-chat span.
+        prompt: Optional originating user prompt, rendered as a ``## Prompt`` section
+            at the TOP of the content (above ``notes``). Empty = omitted.
         notes: Optional caller-supplied methodology note. Rendered as a visible
             ``## Notes`` section between the header and "Knowledge graphs used" —
             the legitimate home for context a caller would otherwise be tempted to
@@ -397,6 +400,7 @@ def _finalize_document(
         *([f"- **{window_label}:** {active_window}"] if active_window else []),
         contents,
         "",
+        *(["## Prompt", "", prompt.strip(), ""] if prompt.strip() else []),
         *(["## Notes", "", notes.strip(), ""] if notes.strip() else []),
         "## Knowledge graphs used",
         "",
@@ -758,17 +762,22 @@ async def create_reproducibility_record(
     notes: str | None = None,
     chat_started: str | None = None,
     chat_ended: str | None = None,
+    appendix: str | None = None,
+    prompt: str | None = None,
 ) -> Any:
-    """Build a LEAN reproducibility record: header + supporting queries + counts.
+    """Build the reproducibility record: header + replicator spec + supporting queries.
 
-    A compact alternative to `create_chat_transcript` for the reproducibility
-    deliverable (`<study>_reproducibility_transcript.md`). It keeps only what lets
-    someone RE-RUN the analysis — a provenance header, the SPARQL queries that
-    support the reported findings (verbatim, pulled from the session log, NOT
-    re-typed), each query's row COUNT, and a per-query diagram when it fits — and
-    drops the conversation prose, the full result tables, and schema visualizations.
-    That keeps it small enough to return INLINE in the common case, so you save the
-    returned string DIRECTLY to the `.md` file — no resource round-trip, no stub.
+    The SINGLE reproducibility deliverable (`<study>_reproducibility.md`): it merges
+    what were two files — the replicator SPEC (rules, thresholds, joins, verified
+    quantities, limitations) you pass as `appendix`, and the verbatim query record
+    this tool generates. A compact alternative to `create_chat_transcript`, it keeps
+    only what lets someone RE-RUN the analysis — a provenance header, your `appendix`
+    spec, and the SPARQL queries that support the reported findings (verbatim, pulled
+    from the session log, NOT re-typed), each query's row COUNT, and a per-query
+    diagram when it fits — and drops the conversation prose, the full result tables,
+    and schema visualizations. That keeps it small enough to return INLINE in the
+    common case, so you save the returned string DIRECTLY to the `.md` file — no
+    resource round-trip, no stub.
 
     Run the analysis first: the queries come from the auto-log (every
     non-exploratory, row-returning `sparql_query`), so DO NOT hand-write this record.
@@ -831,10 +840,25 @@ async def create_reproducibility_record(
             must be saved exactly as returned, so any note added outside the tool
             (e.g. an HTML-comment preamble) both breaks that contract and, being an
             HTML comment, is invisible to a reader anyway.
+        prompt: OPTIONAL originating user prompt — the request that kicked off the
+            study — rendered as a `## Prompt` section at the TOP of the record so the
+            document is self-contained (a replicator sees the question the analysis
+            answered). Paste the user's prompt VERBATIM; don't paraphrase it.
+        appendix: OPTIONAL replicator SPEC in Markdown — the rules, thresholds, join
+            definitions, key verified quantities, downstream computation, and
+            reproducibility limitations that used to be a SEPARATE
+            `<study>_reproducibility_appendix.md`. Passing it here merges the two
+            reproducibility files into ONE: the content is rendered as its own
+            section(s) between the header and the `## SPARQL queries` record (author
+            it with your own `##` headings; it is inserted verbatim). This is the
+            human-readable spec; the queries below are the machine-checkable evidence.
+            Unlike `notes` (a short caption), this is the full multi-section document.
+            It is authored by you (the queries can't express thresholds/limitations),
+            so — like `notes` — put it here, never by hand-editing the saved file.
 
     Returns:
-        A Markdown string (or a dict when `format="json"`): the header, a
-        `## SPARQL queries` section (one verbatim query + row count + optional
+        A Markdown string (or a dict when `format="json"`): the header, any `appendix`
+        spec, a `## SPARQL queries` section (one verbatim query + row count + optional
         diagram each), and a Contents manifest. Provenance warnings, if any, are
         prepended as HTML comments (invisible in a saved `.md`).
     """
@@ -905,10 +929,14 @@ async def create_reproducibility_record(
             "sparql_endpoint": FEDERATION_ENDPOINT,
             "generated_by": {"service": mcp.name, "version": __version__},
         }
+        if prompt and prompt.strip():
+            payload["prompt"] = prompt.strip()
         if window:
             payload["elapsed_window"] = {"label": window_label, "value": window}
         if notes and notes.strip():
             payload["notes"] = notes.strip()
+        if appendix and appendix.strip():
+            payload["appendix"] = appendix.strip()
         if warnings:
             payload["warnings"] = warnings
         return payload
@@ -919,7 +947,12 @@ async def create_reproducibility_record(
     if format != "markdown":
         return {"error": f"Unsupported format {format!r}; use 'markdown' or 'json'."}
 
-    body: list[str] = ["## SPARQL queries", ""]
+    # The authored replicator spec (former separate appendix file) leads, then the
+    # machine-checkable query record. Inserted verbatim, with the author's own headings.
+    body: list[str] = []
+    if appendix and appendix.strip():
+        body += [appendix.strip(), ""]
+    body += ["## SPARQL queries", ""]
     if not selected:
         body += ["_No queries logged._", ""]
     for k, entry in enumerate(selected, start=1):
@@ -950,6 +983,7 @@ async def create_reproducibility_record(
         max_inline_chars=max_inline_chars,
         active_window=window,
         window_label=window_label,
+        prompt=prompt or "",
         notes=notes or "",
         stub_recovery=(
             "a too-large record is NOT a reason to leave the transcript missing. "
