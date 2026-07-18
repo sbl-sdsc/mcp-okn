@@ -112,42 +112,22 @@ surfaces after the whole analysis is done and there's no time left to turn them 
 ## Integrating across KGs — ask the join tools, don't plan from a table
 
 **Get the join recipe from the tools, not from memory.** `list_crosswalks` returns every verified
-cross-KG join the federation ships (grouped by domain + shared id); `get_join_strategy(a, b)` returns
-a specific pair's recipe — the exact predicates, the IRI-normalization rewrite, a verified count, and
-a runnable `skeleton_query` to copy; `find_context_sources(want, join_key)` finds *which* KGs can
-annotate an entity. These are **live and versioned — treat them as the source of truth** (raw keys
-drift across KG releases; don't hard-code them).
+cross-KG join the federation ships; `get_join_strategy(a, b)` returns a pair's recipe — exact
+predicates, IRI-normalization rewrite, a verified count, and a runnable `skeleton_query` to copy;
+`find_context_sources(want, join_key)` finds *which* KGs annotate an entity. Treat them as the source
+of truth — raw keys drift across releases, so don't hard-code them.
 
-**Establish the join by RUNNING the `skeleton_query`, not by looking it up.** The skeleton is a
-logged, reproducible query that proves the key joins; copy it and extend it with your payload. Do
-NOT decompose the join into a couple of exploratory lookups, read an id (e.g. a MONDO IRI) off one,
-and paste it in as a constant — that hard-codes the very bridge the cross-KG claim depends on and
-leaves it out of the transcript. If a bridge graph (e.g. `ubergraph` for a DOID→MONDO equivalence)
-supplies the join, that equivalence must come from a **logged** query, not an exploratory one.
+**Establish the join by RUNNING the `skeleton_query`, not by looking it up.** Copy it and extend it
+with your payload. Do NOT decompose the join into exploratory lookups, read an id (e.g. a MONDO IRI)
+off one, and paste it in as a constant — that hard-codes the very bridge the cross-KG claim depends on
+and leaves it out of the transcript. A bridge-graph equivalence (e.g. `ubergraph` DOID→MONDO) must
+come from a **logged** query.
 
-The federation joins **mostly on shared identifiers** (Entrez, UniProt, MONDO, …), but **some joins
-are exact name / label matches** — a gene **symbol** on `rdfs:label`, a SNOMED / UMLS **concept
-name**, an organism **label** where a KG has no taxon id. Label matches are more fragile (exact,
-case-sensitive); `get_join_strategy` tells you which key a given pair actually uses. The recurring
-join keys — so you know what to ask the tools for:
-
-| Entity | Join key(s) |
-|---|---|
-| Gene | Entrez / Ensembl (+ HGNC symbol) |
-| Protein | UniProt |
-| Disease | MONDO / DOID |
-| Phenotype | HP (HPO) |
-| Pathway / function | Reactome `R-HSA`, GO |
-| Chemical / drug | CHEBI / CAS / PubChem CID / MeSH / DrugBank |
-| Cell type / tissue | CL / UBERON |
-| Taxon / organism | NCBITaxon (ubergraph `subClassOf*` clade closure; some KGs organism-label only) |
-| Social determinants (SDoH) | UMLS concept |
-| Geography *(to reach place-based data)* | S2 L13 cell · county / state FIPS · ZIP |
-
-To reach **place-based data**, join on a geographic key (S2 / FIPS / ZIP). Several bio-carrying KGs
-also carry geography — e.g. spoke-okn (gene / disease / chemical + geo / SDoH / environmental),
-biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find_context_sources` /
-`get_join_strategy` which bridge fits your entity rather than assuming one.
+The federation joins mostly on shared identifiers, but **some joins are exact name / label matches** (a
+gene symbol on `rdfs:label`, a SNOMED / UMLS concept name, an organism label) — more fragile, and
+`get_join_strategy` tells you which key a pair uses. The recurring join keys per entity, the
+label-match cases, and the bio↔geography bridges are tabulated in **`references/mcp-okn-workflow.md`**
+("What to integrate on" + "Bio ↔ place-based data") — ask the tools for the actual recipe.
 
 ## Analysis menu (run the ones the question needs)
 
@@ -177,28 +157,20 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
    enrichment families you RAN and which you deliberately SKIPPED, each with a one-line reason** — a
    silently omitted family is a bug, not a choice; if you'd have to write "Reactome: skipped — no
    reason", you should have run it. See enrichment-methods.
-7. **Map entities to phenotypes (HP).** Phenotype = **HP** terms; **5 suppliers** — `oard-kg`,
-   `prokn`, `rdkg`, `gene-expression-atlas-okn`, `biohealth` (spoke-okn / pankgraph carry disease but
-   **no** phenotype — bridge them). Route by entity: **disease → phenotype** — richest is `oard-kg`
-   (EHR associations, **reified**, so the HP term can sit on `biolink:subject` *or* `biolink:object`;
-   UNION both), `rdkg` gives a cleaner direct edge; **gene → phenotype** — **no direct edge**, route
-   gene→disease→phenotype (intra-KG in `rdkg`, or get the gene's diseases then bridge disease→HP to
-   oard-kg / rdkg); **protein → phenotype** — only `prokn`, via reified marker-gene / clinical-evidence
-   statements. Disease is the pivot: **MONDO** is the hub; DOID / EFO / OMIM / Orphanet / UMLS bridge
-   to MONDO / HP via **ubergraph**. Get every cross-KG recipe from `list_crosswalks` (cluster A + BH) /
-   `get_join_strategy`; `find_context_sources(want=["phenotype"], join_key=…)` lists all suppliers.
-   These are EHR / curated **associations — observational, not causal.**
-8. **Map / align organisms (taxon).** Taxon = **NCBITaxon**; **8-KG hub through `ubergraph`** —
-   spoke-okn, spoke-genelab, nde, sawgraph, biobricks-aopwiki, gene-expression-atlas-okn (real ids) +
-   wildlifekn, biohealth (**label-only, fragile** — no ids, no clade expansion). Use the
-   **`taxon_overlap(kg_a, kg_b)`** tool — it returns an exact-id and a clade-membership skeleton plus a
-   verified overlap. **Exact-id match badly understates real overlap** (coarse genus vs strain) —
-   always **clade-expand** with ubergraph `rdfs:subClassOf*`. E.g. spoke-genelab's **46 microbiome
-   taxa** (bacteria / fungi; NCBITaxon id in the node IRI, e.g. `node/286` = Pseudomonas) reach
-   spoke-okn as **2 by exact-id but 33,313 by clade expansion** (96% of spoke-okn strains). This is
-   **distinct from ortholog projection (step 5)**, which collapses model-organism *genes* to human
-   genes — here you map the *organisms themselves*. Recipes from `taxon_overlap` / `list_crosswalks`
-   (cluster D + taxon_hub); clade-expanded overlap is **taxonomic containment, not identity**.
+7. **Map entities to phenotypes (HP).** Phenotype = **HP**; route by entity — **disease→HP** richest
+   via `oard-kg`, **gene→HP** has **no direct edge** (go gene→disease→HP), **protein→HP** only `prokn` —
+   with **MONDO** the disease hub (DOID / EFO / OMIM / Orphanet / UMLS bridge via ubergraph). **`oard-kg`
+   is reified — the HP term sits on `biolink:subject` OR `biolink:object`, so UNION both or you silently
+   drop half.** These are observational, not causal. Full 5-supplier routing + recipes:
+   **`references/mcp-okn-workflow.md`** "Mapping to phenotypes"; `find_context_sources(want=
+   ["phenotype"], …)` lists every supplier.
+8. **Map / align organisms (taxon).** Taxon = **NCBITaxon**; use the **`taxon_overlap(kg_a, kg_b)`**
+   tool (returns exact-id + clade-membership skeletons + a verified overlap). **Exact-id match badly
+   understates real overlap** (coarse genus vs fine strain) — always **clade-expand** with ubergraph
+   `rdfs:subClassOf*` (e.g. spoke-genelab's 46 microbiome taxa reach spoke-okn as **2 by exact-id but
+   33,313 by clade expansion**). **Distinct from ortholog projection (step 5)** — here you map the
+   *organisms themselves*, not genes, and the result is taxonomic containment, not identity. 8-KG hub +
+   per-pair recipes: **`references/mcp-okn-workflow.md`** "Mapping / aligning organisms".
 9. **Disease / phenotype / trait linkage.** Test the entity set for over-representation of disease /
    phenotype / trait genes (see enrichment-methods, *Disease / trait / phenotype gene-set*). Pair each
    set type with its supplier so the choice is forced, not left to notice: **broad** (GWAS / polygenic)
@@ -225,16 +197,12 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
     - **Exposure / toxicology (environmental questions):** chemical↔gene tox screens (biobricks tox)
       and adverse outcome pathways (aopwiki) — the harmful-exposure direction, distinct from therapy.
 11. **Place-based linkage (bio ↔ geography).** When the question is spatial, get the bio entity onto a
-    **geographic key** (county FIPS / ZIP / S2) via whichever KG carries both your entity and geography
-    (use `find_context_sources` / `get_join_strategy` to pick it — e.g. spoke-okn for a gene / disease,
-    sawgraph for a chemical exposure), then join the spatial hub: environmental measurements (sawgraph,
-    hydrology), facilities (fiokg), social services (dreamkg / ruralkg), neighborhood / justice
-    (nikg / scales), soil / flood (sockg / ufokn). This turns a gene / disease / chemical result into
-    an exposure- or place-aware map. For **climate / Earth-observation** context, a place chains
-    spoke-okn → **climatemodelskg** (climate-model output, on GeoNames) → **nasa-gesdisc-kg** (NASA GES
-    DISC satellite datasets / instruments / platforms + a 465k-publication DOI/ORCID/ROR citation
-    graph, on DOI + GCMD instrument/platform) — an **indirect, non-bio** provenance bridge (nasa-gesdisc
-    has no direct bio join); see the workflow reference. Use for environmental / climate-health framing.
+    **geographic key** (county FIPS / ZIP / S2) — never a name — via whichever KG carries both your
+    entity and geography (pick it with `find_context_sources` / `get_join_strategy` — e.g. spoke-okn for
+    a gene / disease, sawgraph for a chemical), then join the spatial hub (environmental, facilities,
+    social services, neighborhood / justice, soil / flood). For **climate / Earth-observation** context,
+    a place chains spoke-okn → climatemodelskg → nasa-gesdisc-kg (indirect, non-bio provenance). Bridges,
+    spatial hubs + the climate chain: **`references/mcp-okn-workflow.md`** "Bio ↔ place-based data".
 12. **Ranking & tiering.** Integrate the evidence axes (recurrence, effect size, disease / phenotype
     support, **druggability — a known or candidate drug acts on it**, curated role, specificity,
     number of corroborating KGs) into one score + A / B / C tiers.
@@ -253,15 +221,15 @@ biohealth (disease + SDoH), sawgraph (chemical + environmental) — so ask `find
 
 ## Statistical rigor
 
-- Over-representation uses an **explicit** background (all entities annotated in the target KG,
-  restricted to real ids of the right scheme) — never an implicit "all genes / all of the genome".
-- Hypergeometric test + **Benjamini–Hochberg FDR**; report fold = observed / expected, k / K, and FDR.
-- A **broad, permissive** set (e.g. a GWAS set covering ~15 % of the genome) will look null even for
-  a real signal — expected, not a negative result. A **small, curated** set is the discriminating
-  test. Report both and interpret accordingly.
-- Enrichment is **descriptive, not causal.** Verify counts live (re-run; expect zero drift), and keep
-  the appropriate caveat (species / ortholog for model-organism data; observational for associations)
-  attached to every claim.
+- Over-representation uses an **explicit** background (all entities annotated in the target KG, right
+  id scheme) — never an implicit "all genes / whole genome". Hypergeometric + **Benjamini–Hochberg
+  FDR**; report fold = observed / expected, k / K, and FDR.
+- A **broad, permissive** set (e.g. a GWAS set covering ~15% of the genome) looks null even for a real
+  signal — expected, not a negative; a **small, curated** set is the discriminating test. Report both.
+- Enrichment is **descriptive, not causal.** Verify counts live (expect zero drift) and carry the
+  right caveat (species / ortholog for model-organism data; observational for associations).
+- Full method — backgrounds, disease / trait gene-set enrichment, interpretation:
+  **`references/enrichment-methods.md`**.
 
 ## Common failure modes
 
