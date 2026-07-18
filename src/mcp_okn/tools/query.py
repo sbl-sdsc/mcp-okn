@@ -118,8 +118,12 @@ async def sparql_query(
     query = normalize_schema_org(query)
     try:
         result = await run_sparql(query, fmt=format)
-        if not exploratory:
-            session.record(query, format, result=result, scope=scope)
+        # Always hand the query to the logger: it adds a productive query to the
+        # log and files an exploratory/empty one into the skipped list (tagged
+        # with the reason) so it is visible rather than silently dropped.
+        session.record(
+            query, format, result=result, exploratory=exploratory, scope=scope
+        )
         # Rescue the common "got lost on an empty result" failure: an
         # ontology-id join most often returns nothing because the predicate uses
         # a different namespace than assumed, or the id is only reachable via a
@@ -148,6 +152,10 @@ async def sparql_query(
             result = _compact(result)
         return result
     except SparqlError as exc:
+        # Retain the failed query (with its error) in the skipped list so it is
+        # not lost — this is the read-only-filesystem / oversized-sort case that
+        # silently vanished before.
+        session.record(query, format, error=str(exc), scope=scope)
         return {"error": str(exc)}
 
 
@@ -214,4 +222,5 @@ SELECT DISTINCT ?term ?label WHERE {{
         session.record(query, "json", result=result, scope=scope)
         return result
     except SparqlError as exc:
+        session.record(query, "json", error=str(exc), scope=scope)
         return {"error": str(exc), "query": query}

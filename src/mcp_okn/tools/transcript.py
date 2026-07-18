@@ -72,11 +72,37 @@ async def get_query_log(scope: str | None = None) -> list[dict[str, Any]]:
     `format`, `row_count`, and `results` (capped sample). Useful to inspect what
     will appear in `create_chat_transcript`.
 
+    A query that ran but is ABSENT here (it errored, returned zero rows, or was
+    marked exploratory) is NOT lost — call `get_skipped_queries` to see it with
+    the reason it was skipped.
+
     Args:
         scope: OPTIONAL log scope — the same one passed to `sparql_query`. Omit
             for a normal single analysis.
     """
     return session.entries(scope)
+
+
+@mcp.tool()
+async def get_skipped_queries(scope: str | None = None) -> list[dict[str, Any]]:
+    """Return queries that RAN but were kept OUT of the transcript log, in order.
+
+    The counterpart to `get_query_log`: a query is skipped — and appears here
+    instead of in the log — when it errored, returned zero rows, or was marked
+    `exploratory`. This is where an "empty auto-log" gets explained: if your
+    substantive pulls hit the endpoint's read-only-filesystem / oversized-sort
+    error, they land here with `reason: "error"` rather than in the log.
+
+    Each entry has `timestamp`, `sparql` (verbatim), `graphs` (KG shortnames),
+    `format`, `reason` (`error` / `empty` / `exploratory`), `error` (the endpoint
+    message when `reason == "error"`, else null), and `row_count`. These entries
+    never enter `create_chat_transcript` — they are diagnostic only.
+
+    Args:
+        scope: OPTIONAL log scope — the same one passed to `sparql_query`. Omit
+            for a normal single analysis.
+    """
+    return session.skipped(scope)
 
 
 def _plural(count: int, singular: str, plural: str | None = None) -> str:

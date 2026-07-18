@@ -119,6 +119,53 @@ async def test_sparql_query_wraps_sparql_error(monkeypatch):
     assert session.entries() == []
 
 
+# --- skipped-query retention -------------------------------------------------
+
+
+async def test_sparql_query_error_retained_in_skipped(monkeypatch):
+    async def boom(q, fmt="json", **kw):
+        raise SparqlError("read-only filesystem")
+
+    monkeypatch.setattr(query_mod, "run_sparql", boom)
+    await sparql_query("SELECT ?x { GRAPH <https://purl.org/okn/frink/kg/prokn> {} }")
+    assert session.entries() == []
+    [skip] = session.skipped()
+    assert skip["reason"] == "error"
+    assert "read-only filesystem" in skip["error"]
+    assert skip["graphs"] == ["prokn"]
+
+
+async def test_sparql_query_empty_result_retained_in_skipped(monkeypatch):
+    fake, _ = _capturing({"vars": ["s"], "rows": [], "row_count": 0})
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    await sparql_query("SELECT ?s {}")
+    assert session.entries() == []
+    [skip] = session.skipped()
+    assert skip["reason"] == "empty"
+    assert skip["error"] is None
+
+
+async def test_sparql_query_exploratory_retained_in_skipped_not_logged(monkeypatch):
+    fake, _ = _capturing({"vars": ["s"], "rows": [{"s": "x"}], "row_count": 1})
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    await sparql_query("SELECT ?s {}", exploratory=True)
+    # Productive rows, but exploratory -> kept out of the log, filed under skipped.
+    assert session.entries() == []
+    [skip] = session.skipped()
+    assert skip["reason"] == "exploratory"
+
+
+async def test_reset_clears_skipped(monkeypatch):
+    async def boom(q, fmt="json", **kw):
+        raise SparqlError("boom")
+
+    monkeypatch.setattr(query_mod, "run_sparql", boom)
+    await sparql_query("SELECT ?x {}")
+    assert len(session.skipped()) == 1
+    session.reset()
+    assert session.skipped() == []
+
+
 async def test_sparql_query_logs_and_detects_graphs(monkeypatch):
     fake, _ = _capturing({"vars": ["s"], "rows": [{"s": "x"}], "row_count": 1})
     monkeypatch.setattr(query_mod, "run_sparql", fake)

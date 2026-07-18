@@ -49,10 +49,15 @@ _GRAPH_RE = re.compile(r"GRAPH\s*<https://purl\.org/okn/frink/kg/([^>]+)>")
 class _Store:
     """The mutable per-session state: query log, diagrams, last transcript."""
 
-    __slots__ = ("last_transcript", "log", "visualizations")
+    __slots__ = ("last_transcript", "log", "skipped", "visualizations")
 
     def __init__(self) -> None:
         self.log: list[dict[str, Any]] = []
+        # Queries that ran but were NOT added to `log` (errored / empty / marked
+        # exploratory), each tagged with the reason. Purely diagnostic — never
+        # rendered into a transcript — so a caller can see WHY a query is missing
+        # from the log instead of it vanishing silently.
+        self.skipped: list[dict[str, Any]] = []
         self.visualizations: list[dict[str, Any]] = []
         self.last_transcript: str | None = None
 
@@ -148,27 +153,53 @@ def record(
     fmt: str,
     result: Any = None,
     error: str | None = None,
+    exploratory: bool = False,
     scope: str | None = None,
 ) -> bool:
     """Append one executed query to the session log if it returned results.
 
-    Queries that errored or returned zero rows are NOT logged — the transcript
-    is meant to record only the queries that produced findings. Exploratory
-    queries are skipped at the call site (they are never passed here).
+    Queries that errored, returned zero rows, or were marked ``exploratory`` are
+    NOT logged — the transcript is meant to record only the queries that produced
+    findings. Such queries are still retained in the ``skipped`` list (tagged with
+    the reason) so a caller can see WHY a query is absent from the log; call
+    :func:`skipped` to read them.
 
     Args:
         query: The exact SPARQL text that was sent.
         fmt: The requested result format (``json``/``csv``/``tsv``).
         result: The value returned by ``run_sparql`` on success.
         error: The error message if the query failed.
+        exploratory: True if the caller marked this query exploratory (schema
+            probing / sampling). Recorded as a skip with reason ``exploratory``.
         scope: Which analysis this query belongs to. Concurrent analyses sharing
             one MCP session (e.g. parallel subagents) MUST each pass their own
             scope, or their queries interleave in one log.
 
     Returns:
-        True if the query was logged, False if it was skipped (error/empty).
+        True if the query was logged, False if it was skipped
+        (error/empty/exploratory).
     """
-    if error is not None or _result_row_count(result) == 0:
+    # Precedence: an error is the most diagnostic reason, then the caller's
+    # exploratory intent, then an empty result. Anything else gets logged.
+    reason: str | None = None
+    if error is not None:
+        reason = "error"
+    elif exploratory:
+        reason = "exploratory"
+    elif _result_row_count(result) == 0:
+        reason = "empty"
+    if reason is not None:
+        _current_store(scope).skipped.append(
+            {
+                "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "sparql": query,
+                "graphs": graphs_in(query),
+                "format": fmt,
+                "reason": reason,
+                "error": error,
+                "row_count": _result_row_count(result),
+            }
+        )
         return False
 
     entry: dict[str, Any] = {
@@ -203,6 +234,17 @@ def record(
 def entries(scope: str | None = None) -> list[dict[str, Any]]:
     """Return a shallow copy of ``scope``'s logged queries, in execution order."""
     return list(_current_store(scope).log)
+
+
+def skipped(scope: str | None = None) -> list[dict[str, Any]]:
+    """Return ``scope``'s skipped queries (error/empty/exploratory), in order.
+
+    Each entry carries ``sparql``, ``graphs``, ``format``, ``reason``
+    (``error``/``exploratory``/``empty``), ``error`` (the message when
+    ``reason == "error"``, else None), and ``row_count``. Diagnostic only — these
+    never enter a transcript.
+    """
+    return list(_current_store(scope).skipped)
 
 
 def record_visualization(
@@ -261,6 +303,7 @@ def reset(scope: str | None = None) -> int:
     store = _current_store(scope)
     n = len(store.log)
     store.log.clear()
+    store.skipped.clear()
     store.visualizations.clear()
     store.last_transcript = None
     return n

@@ -55,6 +55,7 @@ from .tools.transcript import (
     create_chat_transcript,
     create_reproducibility_record,
     get_query_log,
+    get_skipped_queries,
     latest_transcript_resource,
     reset_query_log,
 )
@@ -89,6 +90,7 @@ __all__ = [
     "get_kg_version",
     "get_query_log",
     "get_schema",
+    "get_skipped_queries",
     "get_valid_contrasts",
     "latest_transcript_resource",
     "list_crosswalks",
