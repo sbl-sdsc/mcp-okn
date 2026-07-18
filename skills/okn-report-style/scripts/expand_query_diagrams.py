@@ -97,6 +97,38 @@ def _map_generate(diagrams_path: str):
     return lambda sparql: table.get(_normalize(sparql))
 
 
+def queries_needing_diagrams(text: str) -> list[str]:
+    """Return the verbatim SPARQL of every ```sparql block NOT already followed by a ```mermaid block.
+
+    This is the work-list to hand to the `sparql_to_mermaid` TOOL when the `sparql-to-mermaid` package
+    can't be imported locally (the report-session case): generate a diagram per query, collect them into
+    diagrams.json, then inject with :func:`expand`. Uses the same fence walk and already-present rule as
+    :func:`expand`, so a block that already carries a diagram is never listed.
+    """
+    lines = text.split("\n")
+    todo: list[str] = []
+    i, n = 0, len(lines)
+    while i < n:
+        if _fence_kind(lines[i]) == "sparql":
+            body: list[str] = []
+            j = i + 1
+            while j < n and lines[j].strip() != "```":
+                body.append(lines[j])
+                j += 1
+            i = j + 1
+            k = i  # already followed by a ```mermaid block (allowing blank lines)?
+            while k < n and lines[k].strip() == "":
+                k += 1
+            if k < n and _fence_kind(lines[k]) == "mermaid":
+                continue
+            sparql = "\n".join(body).strip()
+            if sparql:
+                todo.append(sparql)
+        else:
+            i += 1
+    return todo
+
+
 def _fence_kind(line: str) -> str | None:
     """Return the language of an opening code fence (e.g. 'sparql', 'mermaid'), else None."""
     s = line.strip()

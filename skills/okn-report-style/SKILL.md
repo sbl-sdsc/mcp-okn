@@ -311,13 +311,17 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
   re-adding silently drops the diagrams; that is an omission, not a choice):
   1. Call `create_chat_transcript` / `create_reproducibility_record` with
      **`include_query_diagrams=False`** (lean return, no stub/spill) and save the markdown.
-  2. Re-add the diagrams with **`scripts/expand_query_diagrams.py`**. The `sparql-to-mermaid` package
-     is mcp-okn-internal (**not pip-installable**), so it usually can't be imported where you build the
-     report — but the **`sparql_to_mermaid` TOOL** is available over MCP. For **each logged query**
-     call that tool on the **verbatim** query (never a shortened copy — a diagram under a SPARQL block
-     it doesn't match is a fidelity break), collect `[{sparql, mermaid}, …]` into `diagrams.json`, then
-     `python scripts/expand_query_diagrams.py <transcript.md> --diagrams diagrams.json --max-chars 4000`
-     (dependency-free injection, idempotent).
+  2. Re-add the diagrams with **`scripts/readd_query_diagrams.py <transcript.md>`** — the ONE-command
+     front door for this half. It auto-selects the path: if `sparql-to-mermaid` is importable (a dev
+     checkout) it generates every diagram and injects them in that single call; if not (the usual
+     report session, since the package is mcp-okn-internal and **not pip-installable**) it writes the
+     exact WORK-LIST of un-diagrammed queries to `<transcript.md>.queries.json` and exits non-zero so
+     you can't mistake it for done. Turn that list into diagrams by calling the **`sparql_to_mermaid`
+     TOOL** (available over MCP) on **each verbatim** query (never a shortened copy — a diagram under a
+     SPARQL block it doesn't match is a fidelity break), save `[{sparql, mermaid}, …]` as
+     `diagrams.json`, then re-run `python scripts/readd_query_diagrams.py <transcript.md> --diagrams
+     diagrams.json --max-chars 4000` (dependency-free injection, idempotent). (The injection engine is
+     `scripts/expand_query_diagrams.py`; the helper is a thin front door over it.)
   **Cap the diagrams** (`--max-chars 4000`, mirroring the server's `diagram_max_chars`): as of
   `sparql-to-mermaid` **v0.4.1** a long `VALUES` list collapses to "3 values + `+N more`" (the
   `max_values` default), so the old symbol-list blowup — a 250-symbol query → a ~28K-char diagram of
