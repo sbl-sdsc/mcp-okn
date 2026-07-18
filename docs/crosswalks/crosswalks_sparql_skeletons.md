@@ -56,7 +56,7 @@ For each crosswalk, list the join key and the SPARQL skeleton
 
 🧠 **Assistant**
 
-The OKN federation has **161 crosswalks**, which collapse into **54 join-key families** (a domain + a shared identifier). They are grouped below by domain and key family — each entry lists every KG pair sharing that key (with its verified `COUNT(DISTINCT)`), the identifier scheme/namespace, and a runnable `COUNT(DISTINCT)` skeleton with the IRI normalization already applied (a naive join on the raw id usually returns 0 rows).
+The OKN federation has **162 crosswalks**, which collapse into **55 join-key families** (a domain + a shared identifier). They are grouped below by domain and key family — each entry lists every KG pair sharing that key (with its verified `COUNT(DISTINCT)`), the identifier scheme/namespace, and a runnable `COUNT(DISTINCT)` skeleton with the IRI normalization already applied (a naive join on the raw id usually returns 0 rows).
 
 **Pairs in one family often need different SPARQL**, so where a family's members diverge, every distinct skeleton is shown and labelled with the pairs it applies to. The CAS family is the clearest case: the biobricks graphs hang the id off `edam:has_identifier`, MeSH exposes it as `meshv:registryNumber`, and SAWGraph/SOCKG store it as a bare literal that must be rebuilt into an IRI. Copy the skeleton for YOUR pair, then extend it with your payload.
 
@@ -1165,6 +1165,18 @@ SELECT (COUNT(DISTINCT ?h) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/wikidata> { ?item <http://www.wikidata.org/prop/direct/P351> ?entrez ; <http://www.wikidata.org/prop/direct/P354> ?hgnc . }
   BIND(IRI(CONCAT('http://identifiers.org/hgnc/',?hgnc)) AS ?h)
   GRAPH <https://purl.org/okn/frink/kg/prokn> { ?x ?p ?h . }
+}
+```
+
+**Entrez→Ensembl (bridged)** — `http://www.ncbi.nlm.nih.gov/gene/{entrez} (digcfdekg) -> https://www.ensembl.org/id/{ENSG} (prokn gene node IRI)`: digcfdekg → wikidata → prokn(7,965).
+
+```sparql
+SELECT (COUNT(DISTINCT ?g2) AS ?n) WHERE {
+  { SELECT DISTINCT ?g WHERE { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?g <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?t . } } }
+  BIND(REPLACE(STR(?g),'^.*/gene/','') AS ?entrez)
+  GRAPH <https://purl.org/okn/frink/kg/wikidata> { ?item <http://www.wikidata.org/prop/direct/P351> ?entrez ; <http://www.wikidata.org/prop/direct/P594> ?ensg . }
+  BIND(IRI(CONCAT('https://www.ensembl.org/id/', ?ensg)) AS ?g2)
+  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?g2 <http://semanticscience.org/resource/SIO_010078> ?p . }
 }
 ```
 

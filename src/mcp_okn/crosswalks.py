@@ -171,6 +171,7 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "MONDO (+ EFO/Orphanet -> MONDO bridged)": "Disease & phenotype",
     "EFO / Orphanet / MONDO (direct, multi-vocabulary)": "Disease & phenotype",
     "Entrez -> HGNC (bridged)": "Genes",
+    "Entrez -> Ensembl (bridged)": "Genes",
 }
 
 # Canonical spelling for explicit per-row ``domain`` values that vary only by

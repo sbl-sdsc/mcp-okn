@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 161 precomputed cross-KG crosswalks (verified through 2026-07-12), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
+Here are all 162 precomputed cross-KG crosswalks (verified through 2026-07-12), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
 
 ## Anatomy & Cell Type
 
@@ -142,6 +142,7 @@ Here are all 161 precomputed cross-KG crosswalks (verified through 2026-07-12), 
 | rdkg ↔ spoke-genelab | Entrez | 9,034 | Rare-disease genes (rdkg) with their spaceflight/omics observations in spoke-genelab (NASA GeneLab).<br><br>How many spoke-genelab spaceflight differentially expressed genes are known rare-disease genes in rdkg? |
 | rdkg ↔ spoke-okn | Entrez | 8,475 | Rare-disease gene associations (rdkg: gene_associated_with_condition / has_gene) enriched with that gene's network/disease/compound associations in spoke-okn.<br><br>For the causative genes of a specific rare disease in rdkg, which spoke-okn compounds and pathways are associated? |
 | spoke-genelab ↔ spoke-okn | Entrez | 16,326 | GeneLab spaceflight/omics gene observations (spoke-genelab) joined to that gene's network/disease/compound associations in spoke-okn, directly on the shared Entrez gene id.<br><br>For a spoke-okn disease of interest, which of its associated genes show spaceflight expression changes in spoke-genelab on the shared Entrez id? |
+| digcfdekg → wikidata → prokn | Entrez→Ensembl | 7,965 | For genes CFDE REVEAL implicates in a trait, what GO functions, pathways and reified protein evidence does ProKN annotate on the shared gene (Entrez->Ensembl via Wikidata)?<br><br>Starting from a ProKN gene's GO / pathway annotation, which CFDE REVEAL traits is that gene associated with, joined on the Ensembl id bridged from Entrez through Wikidata? |
 | digcfdekg → wikidata → prokn | Entrez→HGNC | 20,783 | For genes ProKN tracks as protein marker genes (HGNC), what disease-mechanism factors and trait associations does CFDE REVEAL infer?<br><br>For a given CFDE REVEAL trait or disease-mechanism factor, which of the implicated genes does ProKN annotate as protein marker genes (HGNC, via Wikidata)? |
 | prokn → wikidata → spoke-okn | HGNC→Entrez | 16,298 | Protein marker genes for a cell type / tissue (ProKN HAS_MARKER_GENE, HGNC) mapped via Wikidata to their spoke-okn network/disease/compound associations.<br><br>For a spoke-okn disease-associated gene, which cell type or tissue does ProKN flag it as a protein marker of (HGNC, via Wikidata)? |
 
