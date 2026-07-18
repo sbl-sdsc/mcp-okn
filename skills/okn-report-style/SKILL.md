@@ -274,6 +274,13 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
   you still want the diagrams in the final file.** If the user asks for **no** query diagrams at all,
   pass `include_query_diagrams=False` (and `include_visualizations=False` for the schema classDiagrams)
   and **skip the re-add step** — don't re-inject what they asked to omit.
+  **Completeness gate — the transcript is not "delivered" until `readd_query_diagrams.py --check
+  <transcript.md>` prints `[readd_query_diagrams] PASS`** (every ```sparql block has a diagram). This
+  mirrors the HTML's `check_report_parity` gate: `--check` verifies WITHOUT modifying and needs no
+  package, so run it as the last step — a **FAIL means you generated lean and skipped the re-add**, the
+  exact silent-drop this guards against. Treat FAIL (or never having run it) as blocking. (The only
+  clean way to skip the gate is the user asking for no diagrams — then there are no ```sparql-without-
+  diagram blocks to flag anyway.)
 - No closing recap / limitations → end with **Summary of findings & limitations** (findings recap +
   numbered caveats).
 - Undefined acronyms → add the Abbreviations block and expand each at first use.

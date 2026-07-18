@@ -80,14 +80,16 @@ surfaces after the whole analysis is done and there's no time left to turn them 
    transcript missing. **A frequent cause of the stub/spill is the per-query mermaid diagrams** (each
    duplicates its SPARQL and they are 25–50%+ of the bytes): pass **`include_query_diagrams=False`**
    for a lean return, then **re-add** the diagrams as a postprocessing step (do BOTH halves — generating
-   lean and not re-adding silently drops them). Since the `sparql-to-mermaid` package isn't installable
-   in a report session, generate each diagram with the **`sparql_to_mermaid` TOOL** on the verbatim
-   logged query, collect them into `diagrams.json`, and inject with report-style's
-   `scripts/expand_query_diagrams.py --diagrams diagrams.json --max-chars 4000` (a backstop cap for
-   still-huge diagrams — v0.4.1 already collapses long `VALUES` lists (to 3 + `+N more`); see report-style for the full
-   recipe). The re-add applies only when you still
-   want them in the final file; if the user asks for **no** diagrams, pass the flag and skip re-add.
-   Don't mark
+   lean and not re-adding silently drops them). Use report-style's one-command front door
+   **`scripts/readd_query_diagrams.py <transcript.md>`**: in a report session (where the
+   `sparql-to-mermaid` package isn't importable) it emits a work-list of the un-diagrammed queries —
+   generate each with the **`sparql_to_mermaid` TOOL** on the verbatim logged query, save
+   `[{sparql, mermaid}, …]` as `diagrams.json`, then re-run with `--diagrams diagrams.json --max-chars
+   4000` (see report-style for the full recipe). **Completeness gate — the transcript is not delivered
+   until `readd_query_diagrams.py --check <transcript.md>` prints `PASS`** (every ```sparql block has a
+   diagram); `--check` verifies without modifying and needs no package, so a FAIL is your tripwire that
+   the re-add was skipped — treat it as blocking. The re-add applies only when you still want them in
+   the final file; if the user asks for **no** diagrams, pass the flag and skip re-add. Don't mark
    substantive queries `exploratory` — least of all the query that establishes a cross-KG bridge; that
    one is the point of the analysis and MUST be logged.
 2. Before querying a KG: `get_schema`. For cross-KG joins use the **precomputed crosswalk catalog**

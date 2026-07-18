@@ -30,6 +30,13 @@ the query EXACTLY as logged; a too-big diagram is skipped (see --max-chars), nev
     python readd_query_diagrams.py transcript.md                          # dev checkout: one and done
     python readd_query_diagrams.py transcript.md --diagrams diagrams.json # report session: inject
     python readd_query_diagrams.py transcript.md --out out.md --max-chars 4000
+    python readd_query_diagrams.py transcript.md --check                  # DELIVERY GATE (verify only)
+
+DELIVERY GATE: `--check` verifies WITHOUT modifying — PASS if every ```sparql block already has a
+diagram, else FAIL + exit 1. It needs no package and no diagrams.json, so run it as the last step
+before delivering: a FAIL means the re-add half was skipped. This mirrors report-style's
+`check_report_parity` gate for the HTML — the transcript is not delivered until `--check` PASSes
+(unless the user asked for no diagrams).
 """
 
 from __future__ import annotations
@@ -87,9 +94,38 @@ def _emit_worklist(src: Path, text: str) -> int:
     return 2
 
 
+def check(src: Path, text: str) -> int:
+    """Completeness gate: verify every ```sparql block already has a diagram, WITHOUT modifying.
+
+    Mirrors report-style's `check_report_parity` gate for the HTML: prints a single PASS/FAIL line and
+    exits 0 (all diagrammed) or 1 (some ```sparql blocks lack a ```mermaid). Works in ANY environment —
+    it never generates, so it needs neither the sparql-to-mermaid package nor a diagrams.json. Run it
+    as the last step before delivering a transcript; a FAIL means the re-add half was skipped.
+    """
+    missing = queries_needing_diagrams(text)
+    total = text.count("```sparql")
+    if not missing:
+        print(f"[readd_query_diagrams] PASS — all {total} sparql block(s) have a diagram: {src}")
+        return 0
+    print(
+        f"[readd_query_diagrams] FAIL — {len(missing)} of {total} sparql block(s) have NO diagram: "
+        f"{src}\n  The diagram re-add step was skipped. Run "
+        f"`python {Path(__file__).name} {src}` (no --check) to add them; do NOT deliver until PASS."
+    )
+    for q in missing[:5]:
+        print(f"  missing: {' '.join(q.split())[:70]}…")
+    return 1
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("path", help="transcript markdown file to re-add diagrams to")
+    ap.add_argument(
+        "--check",
+        action="store_true",
+        help="VERIFY only (never modify): PASS if every sparql block has a diagram, else FAIL + exit 1. "
+        "Works with no package / no diagrams.json. Use as the delivery gate.",
+    )
     ap.add_argument("--out", help="write result here (default: edit PATH in place)")
     ap.add_argument(
         "--diagrams",
@@ -109,6 +145,9 @@ def main(argv: list[str] | None = None) -> int:
     src = Path(args.path)
     text = src.read_text()
     cap = None if args.max_chars == 0 else args.max_chars
+
+    if args.check:
+        return check(src, text)
 
     if args.diagrams:
         generate = _map_generate(args.diagrams)  # path 1: inject supplied diagrams
