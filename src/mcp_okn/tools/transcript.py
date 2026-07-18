@@ -296,6 +296,7 @@ def _finalize_document(
     max_inline_chars: int | None,
     stub_recovery: str = "",
     active_window: str = "",
+    notes: str = "",
 ) -> str:
     """Assemble header + Contents manifest + body, publish, and return the document.
 
@@ -325,6 +326,11 @@ def _finalize_document(
             a next step rather than a dead end.
         active_window: Optional "first → last (elapsed)" study active-query-window
             string (from ``_active_window``); added as a header line when non-empty.
+        notes: Optional caller-supplied methodology note. Rendered as a visible
+            ``## Notes`` section between the header and "Knowledge graphs used" —
+            the legitimate home for context a caller would otherwise be tempted to
+            hand-edit into the saved ``.md`` (e.g. why the logged queries are compact
+            re-registrations and where the full extractions live). Empty = omitted.
     """
     body_md = "\n".join(body)
     n_queries = body_md.count("```sparql")
@@ -351,6 +357,7 @@ def _finalize_document(
         *([f"- **Study active window:** {active_window}"] if active_window else []),
         contents,
         "",
+        *(["## Notes", "", notes.strip(), ""] if notes.strip() else []),
         "## Knowledge graphs used",
         "",
     ]
@@ -708,6 +715,7 @@ async def create_reproducibility_record(
     diagram_max_chars: int = 1500,
     scope: str | None = None,
     max_inline_chars: int | None = 100_000,
+    notes: str | None = None,
 ) -> Any:
     """Build a LEAN reproducibility record: header + supporting queries + counts.
 
@@ -761,6 +769,15 @@ async def create_reproducibility_record(
             of many verbatim queries with large `VALUES` lists can still exceed this
             — curate `supporting` to fewer queries, or raise this on a client that
             can handle a larger inline result.
+        notes: OPTIONAL methodology note, rendered as a VISIBLE `## Notes` section
+            just under the header. This is the SANCTIONED place for provenance
+            context — e.g. that the logged queries are compact COUNT/aggregate
+            re-registrations while the full extraction SELECTs (auto-saved to
+            tool-result files, hence unlogged) live in `scripts/`. Put such context
+            HERE rather than hand-editing the saved `.md` after the fact: the record
+            must be saved exactly as returned, so any note added outside the tool
+            (e.g. an HTML-comment preamble) both breaks that contract and, being an
+            HTML comment, is invisible to a reader anyway.
 
     Returns:
         A Markdown string (or a dict when `format="json"`): the header, a
@@ -819,6 +836,8 @@ async def create_reproducibility_record(
             "sparql_endpoint": FEDERATION_ENDPOINT,
             "generated_by": {"service": mcp.name, "version": __version__},
         }
+        if notes and notes.strip():
+            payload["notes"] = notes.strip()
         if warnings:
             payload["warnings"] = warnings
         return payload
@@ -861,6 +880,7 @@ async def create_reproducibility_record(
         # Span the whole scoped log (not just the curated `supporting` subset) — the
         # study took that long regardless of which queries the record keeps.
         active_window=_active_window(log),
+        notes=notes or "",
         stub_recovery=(
             "a too-large record is NOT a reason to leave the transcript missing. "
             "The queries are all logged, so CURATE (not fabricate) an inline-fitting "

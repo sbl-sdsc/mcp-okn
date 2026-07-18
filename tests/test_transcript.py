@@ -950,6 +950,44 @@ async def test_record_fits_inline_with_counts_not_tables():
 
 
 @pytest.mark.asyncio
+async def test_record_notes_render_as_visible_section():
+    """`notes` renders a visible `## Notes` section under the header, before the
+    knowledge-graphs list — not an HTML comment."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(
+        model="m", notes="Compact COUNT re-registrations; full SELECTs in scripts/."
+    )
+    assert "## Notes" in md
+    assert "Compact COUNT re-registrations; full SELECTs in scripts/." in md
+    # visible markdown, not smuggled into an HTML comment
+    assert "<!-- Compact" not in md
+    # placed between the header and the KG list
+    assert md.index("## Notes") < md.index("## Knowledge graphs used")
+
+
+@pytest.mark.asyncio
+async def test_record_notes_omitted_when_absent():
+    """No `## Notes` section is emitted when `notes` is unset or blank."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(model="m")
+    assert "## Notes" not in md
+    blank = await create_reproducibility_record(model="m", notes="   ")
+    assert "## Notes" not in blank
+
+
+@pytest.mark.asyncio
+async def test_record_notes_in_json_payload():
+    """`notes` is carried on the JSON payload too (stripped), and absent when unset."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    payload = await create_reproducibility_record(
+        model="m", format="json", notes="  see scripts/  "
+    )
+    assert payload["notes"] == "see scripts/"
+    bare = await create_reproducibility_record(model="m", format="json")
+    assert "notes" not in bare
+
+
+@pytest.mark.asyncio
 async def test_record_diagram_gate_drops_and_keeps():
     """`diagram_max_chars` drops an oversized query diagram (its SPARQL still shows)
     and keeps one under a large budget."""
