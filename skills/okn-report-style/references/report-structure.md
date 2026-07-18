@@ -48,7 +48,8 @@ it was actually queried** (has logged queries). Never give a row — or a `sourc
 whose contribution came from an unlogged / exploratory query or from prior knowledge; every source
 and every cross-KG claim must trace to a logged query. A bridge graph credited with a join (e.g.
 `ubergraph` for a DOID→MONDO equivalence) must have that query in the transcript, or it is a phantom
-source — remove it.
+source — remove it. (When you curate `create_reproducibility_record`'s `supporting` set, keep every
+query a credited source depends on — leaving one out trips the same phantom-source guard.)
 
 ## 3. Design & rules
 **Narrate** the selection logic for a *reader*: what was included / excluded and why, the headline

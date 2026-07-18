@@ -65,135 +65,67 @@ The spec and the queries live in this ONE file — do not split them back into t
 
 ## Report structure (Markdown)
 
-Use this section order; **adapt headings and the analysis sections to the domain**. Full template +
-example legends: **`references/report-structure.md`** (read it before writing the report).
+Use this section order; **adapt headings and the analysis sections to the domain**. The full
+section-by-section template — what each section must contain, the Sources/interactive-table specs, the
+title block, and example figure legends — is **`references/report-structure.md`**; **read it before
+writing the report.** Begin with a **title block** (a blockquote stating the domain framing — unit of
+analysis, coverage, level of inference, the key caveat — plus an **Abbreviations** line). Then this
+order, with the rules that must not be skipped:
+
+1. **Executive summary** — headline result, key numbers, top entities.
+2. **Sources used** — **REQUIRED in every report; never omit it.** One row per KG *actually queried*,
+   and *only* those: a KG credited from an unlogged / exploratory / prior-knowledge source is a
+   **phantom — cut it**. Every source must trace to a logged query.
+3. **Design & rules** — narrate the selection rules / thresholds / joins for a reader; keep the exact
+   replicator spec in the reproducibility file, not restated here.
+4. **Confidence tiers** — how results are graded (A / B / C) and the tier distribution.
+5. **Findings by axis** — one subsection per analysis axis, each with figure + legend + interpretation.
+6. **Domain analyses** — the domain deep dives. **When an analysis is a family (e.g. GO *and* Reactome
+   enrichment; several media / centralities), run every member OR state which you RAN vs deliberately
+   SKIPPED, each with a one-line reason** — a silently dropped sub-analysis reads as full coverage.
+7. **Discussion** — synthesise the axes; state implications / targets and the testable predictions.
+8. **Comparison with prior work** — per-finding concordance with citations; needs the PubMed /
+   Paperclip connectors (preflight them, or state §8 is omitted — never drop it silently).
+9. **Full ranked results** — pointer to xlsx / tsv + the interactive HTML table + a prose slice.
+10. **Summary of findings & limitations** — **always end the report here**: a findings recap, then the
+    caveats as a numbered list. **This is the single home for the caveats list — don't duplicate it.**
+11. **Reproducibility** — pointers to the single `_reproducibility.md`, the scripts, and pinned KG
+    versions, plus the header timing line (pass `chat_started=` for whole-chat elapsed, else the
+    active-query window). Token/cost isn't visible to the tooling — cite client figures or omit.
+12. **References** — numbered; DOI link per literature item, line-anchored full-text link for anything
+    verified against full text.
 
 **One kind of data, one place.** Group all results of the same kind into a *single* section — never
-scatter the same data type across the report. A common mistake is splitting **geolocation / spatial
-data** (or the same entity type, the same enrichment family, the same network output) across two or
-three sections; consolidate it so the reader sees all of it together, then cross-reference from
-elsewhere instead of repeating it. Before finalising, scan the section headings and figures: if two
-sections plot or tabulate the same kind of thing (e.g. two maps, two enrichment tables), merge them.
+scatter the same data type (geolocation, an entity type, an enrichment family, a network output)
+across sections; consolidate and cross-reference instead. Before finalising, scan the headings/figures
+and merge any two that plot or tabulate the same kind of thing.
 
-Begin with a **title block** — a blockquote stating the non-negotiable framing for the domain (unit
-of analysis, spatial / temporal coverage, level of inference, and the key caveat, e.g. *"hypothesis
-generation, not causal / clinical inference"*, *"observational associations over county-level
-data"*, *"model output, not measurements"*) and an **Abbreviations** line defining every acronym.
-Then:
-
-1. **Executive summary** — the headline result, the key numbers, the top results / entities.
-2. **Sources used** — **REQUIRED in every report; never omit it.** Table of KGs queried (name,
-   version, **last-updated date**, role, join key / confidence — `get_kg_version` supplies the
-   version + last-updated date for each KG; show the date as **YYYY-MM-DD only**, truncating the
-   ISO-8601 timestamp). If the analysis touched a KG, it gets a row — a report with no Sources table,
-   or one that omits a KG the queries actually hit, is incomplete. **The rule runs both ways: a KG may
-   appear ONLY if it was actually queried** (it has logged queries in the transcript). Do not list a
-   KG — in the Sources table or as a `sources (n)` pill — whose contribution came from an
-   unlogged / exploratory query or from prior knowledge. Every source and every cross-KG claim must
-   trace to a logged query; if a bridge graph (e.g. `ubergraph` supplying a DOID→MONDO equivalence)
-   is credited, the query that used it must be in the transcript, or it is a phantom source — cut it.
-   (When you curate `create_reproducibility_record`'s `supporting` set, keep every query a credited
-   source depends on — leaving one out trips the same phantom-source guard.)
-3. **Design & rules** — *narrate* the selection rules, headline thresholds, and join keys for a
-   reader, plus an inventory / cohort table rebuilt live with verified counts. Keep the exact
-   replicator-grade specification (every join key, exact backgrounds, scoring formulas) in the
-   reproducibility file's spec section (`create_reproducibility_record`'s `appendix=`) and
-   cross-reference it — don't restate the thresholds in both places.
-4. **Confidence tiers** — how results are graded (A / B / C) and what evidence each tier requires.
-5. **Findings by axis** — one subsection per analysis axis, each with its figure + legend + a short
-   interpretation of the result. The axes depend on the domain (e.g. per-group signal, spatial
-   clustering / hot-spots, temporal trend, cross-KG corroboration, category enrichment, network
-   centrality, exposure↔outcome linkage).
-6. **Domain analyses** — the domain-specific deep dives with figures. Include those the question
-   needs; examples across the federation: category / functional enrichment; pathway or
-   network analysis; geospatial hot-spot mapping; supply-chain or dependency tracing; exposure or
-   flood modelling; facility / provider inventories. **When an analysis has a natural family of
-   members** (e.g. GO *and* Reactome enrichment; multiple exposure media; several network centralities),
-   **run all of them, or state explicitly which you RAN and which you deliberately SKIPPED, each with a
-   one-line reason.** "Include only those that apply" is not a license to silently drop half a
-   deliverable — a missing sub-analysis has no loud tripwire, so make the omission explicit or it reads
-   as "covered everything."
-7. **Discussion** — synthesise the axes into a coherent picture; state the **implications /
-   recommendations / targets** (interventions, priority sites, candidate targets, mitigations,
-   at-risk entities — flagged by evidence strength); and name the testable predictions.
-8. **Comparison with prior work** — concordance per finding, with citations, wherever a literature
-   or reference source is available for the domain. Name the retrieval tool (e.g. PubMed / Paperclip)
-   and mark which central claims were **verified against full text**. **Preflight:** this section needs
-   the **PubMed** (`https://pubmed.mcp.claude.com/mcp`) and **Paperclip** (`https://paperclip.gxl.ai/mcp`)
-   MCP connectors — confirm they're available *before* writing it (look for tools named `pubmed` /
-   `paperclip`). If one is missing, either enable it (claude.ai → Settings → Connectors, or Claude Code
-   `claude mcp add --transport http <name> <url>` then reconnect) or state §8 is **omitted because the
-   connector isn't enabled** — never drop it silently. (okn-bioanalysis carries the full preflight.)
-9. **Full ranked results** — pointer to xlsx / tsv + the interactive HTML table + a representative
-   slice in the prose.
-10. **Summary of findings & limitations** — **the closing narrative section; always end the report
-    here.** Two parts: (a) a concise recap of the key findings — the headline result and the top
-    entities, restated in a few sentences so a reader who skips to the end gets the whole story; and
-    (b) the caveats, uncertainties, and likely undercounts as a numbered list, explicit about what
-    the data cannot support. This is where the standalone caveats list lives — do not also put one
-    elsewhere.
-11. **Reproducibility** — pointers to the single `_reproducibility.md` (spec + query record), the
-    scripts, and the pinned KG versions + update dates. Include a timing line from
-    `create_reproducibility_record`'s header. By default that is the **study active window** (`- **Study
-    active window:**`, the first→last logged-query wall-clock) — a lower bound that excludes framing
-    before the first query and writing after the last, and that collapses badly when large extraction
-    queries went unlogged (only the compact re-registration COUNTs carry timestamps). To report the
-    **whole-chat elapsed time** instead, pass `chat_started` (ISO-8601, when the conversation began;
-    the server can't know it) and optionally `chat_ended` (defaults to the record's generation moment)
-    — the header then shows `- **Elapsed time:** <start>–<end> UTC (<elapsed>)`.
-    Token/cost usage is **not** visible to the tooling (the server only sees tool calls), so if you
-    report it, take the figures from the client (Claude Code `/cost` / the API `usage`) and label them
-    as client-measured — never fabricate a token count.
-12. **References** — numbered; attribute the retrieval tool, give a **DOI link** per literature item
-    (e.g. PubMed) and a **full-text, line-anchored link** (e.g. Paperclip `citations.gxl.ai/…#Lxx`)
-    for anything verified against full text.
-
-**Prose tone:** precise and hedged; attribute data sources; keep the framing caveat attached to
-every downstream claim; prefer paragraphs over bullet-dumps in the narrative. **Cross-reference**
-sections and figures ("see §5.6", "consistent with Figure 3") so the report reads as one connected
-argument, not disconnected sections. Use **emphasis sparingly and consistently** — bold key entities
-(e.g. genes, sites, chemicals, categories) and headline numbers so they are scannable, but never
-bold running prose or whole sentences.
+**Prose tone:** precise and hedged; attribute data sources; keep the framing caveat attached to every
+downstream claim; prefer paragraphs over bullet-dumps. **Cross-reference** sections and figures ("see
+§5.6", "consistent with Figure 3") so the report reads as one connected argument. Bold key entities and
+headline numbers for scannability; never bold running prose.
 
 ## Figures — the rules that matter
 
-Read **`references/figure-checklist.md`** for the complete checklist. The essentials, and *why*:
+The complete checklist is **`references/figure-checklist.md`** — run it for every figure. The
+essentials:
 
-- **Every figure gets a legend BELOW it**, not inside it. Reference each panel — **(A)**, **(B)**,
-  **(C)** — describe what is plotted, and state **provenance** (which KG / predicate / table the
-  data came from). Figures are viewed standalone, so the legend must stand alone too.
-- **Do not put explanatory text inside the figure.** A short title + axis labels + a color/marker
-  key belong in the plot; the *description + provenance* go in the legend beneath it; the
-  *interpretation* goes in a short paragraph after the legend (see next rule). If you catch yourself
-  adding a footnote sentence to the PNG, move it out.
-- **Interpret every figure and every table.** Immediately after a figure's legend — and immediately
-  after every table — add a short interpretation (1–3 sentences) saying what the result *means*: the
-  takeaway, the pattern to notice, and any caveat. The legend / caption says *what is shown and where
-  it came from*; the interpretation says *what to conclude*. Keep the two separate, and keep
-  interpretation out of the PNG.
-- **In-plot keys/legends must never overlap the plot.** Anchor legends outside the axes
-  (`loc=..., bbox_to_anchor=...`), shrink/shift pies & donuts (`radius`, `center`), widen panels
-  (`width_ratios`, `wspace`), and leave margins. After drawing, look at the rendered PNG and fix
-  any overlap — don't trust the first layout.
-- **Fonts must be readable.** Floors: ticks/annotations ≥ 8 pt, axis labels ≥ 9 pt, titles ≥ 11 pt.
-  Small multiples shrink text fast — check the rendered image at final size.
-- **Number figures in document order** (Figure 1, 2, 3 … as they appear top-to-bottom) and make the
-  **filename match** (`fig1_…`, `fig2_…`). If you reorder sections, renumber the figures and files.
-- **Consistent conventions:** for **signed values** (e.g. log2 fold-change, change-vs-baseline,
-  anomalies, z-scores) use a diverging map centred at zero (negative = blue, positive = red); for
-  sequential magnitudes use a single-hue ramp; label colorbars with units; colour grouped bars by
-  category with a legend; annotate bars with the value + counts.
-- **Show uncertainty and stay colourblind-safe.** Put error bars / CIs and the sample size **n** on
-  estimates; use the colourblind-safe `THEME` palette (Okabe–Ito) for categories and never encode a
-  category by colour alone — pair colour with a label, marker, or order.
-- **Geographic / spatial data → a real map on an OpenStreetMap basemap, never a bare lat/long
-  scatter** (many OKN domains are geospatial). Plot points/polygons over OSM tiles so place context
-  is legible: static PNG via `osm_basemap(...)` (`geopandas` + `contextily`, reprojected to Web
-  Mercator EPSG:3857), interactive via `folium_osm_map(...)`, whose markers are **clickable** by
-  default (a popup of the point's attributes + a hover tooltip). Fit the extent to the data and keep
-  the OSM attribution. Full detail: the maps section of `references/figure-checklist.md`.
-- **Verify.** Always `Read` the rendered PNG back and confirm no overlaps, legible fonts, correct
-  panel letters, and sequential numbers before embedding it.
+- **Legend BELOW the figure, not inside the PNG** — reference each panel **(A)/(B)/(C)**, describe
+  what's plotted, and state **provenance** (which KG / predicate / table). The PNG holds only a title,
+  axis labels, and a compact color/marker key.
+- **Interpret every figure and every table** — a 1–3 sentence takeaway after the legend. Legend =
+  *what is shown and where from*; interpretation = *what to conclude*; keep it out of the PNG.
+- **No in-plot overlap; readable fonts** (ticks ≥ 8 pt, axis labels ≥ 9 pt, titles ≥ 11 pt) — anchor
+  legends outside the axes, then look at the rendered PNG and fix any collision.
+- **Consistent, accessible encodings** — signed values → diverging map centred at zero (negative =
+  blue, positive = red); sequential → single-hue ramp; colourblind-safe Okabe–Ito palette, never
+  colour alone; show uncertainty (error bars / CI + sample size **n**).
+- **Number figures in document order and match the filename** (`fig1_…`); renumber + rename on reorder.
+- **Geographic data → a real OpenStreetMap-tiled map, never a bare lat/long scatter** — static via
+  `osm_basemap(...)` (reproject to Web Mercator EPSG:3857), interactive via `folium_osm_map(...)`
+  (clickable markers); keep the OSM attribution.
+- **Verify:** always `Read` the rendered PNG back before embedding — the first matplotlib layout is
+  often wrong.
 
 **Use the bundled helper `scripts/okn_figstyle.py`** — call **`apply_style()`** first (it sets the
 rcParams / font floors — importing alone does nothing), then use `legend_outside(ax, ...)`,
