@@ -119,9 +119,12 @@ back-matter that follow). Two parts:
 
 ## 11. Reproducibility
 Pointers to the appendix, the verbatim query transcript, the scripts, and the pinned KG versions.
-State the **study active window** — the `**Study active window:**` header line from
-`create_reproducibility_record` (first→last logged-query wall-clock, UTC; a lower bound that excludes
-pre-first-query framing and post-last-query writing). Token/cost is not captured by the tooling (the
+State a timing line from `create_reproducibility_record`'s header: by default the **study active
+window** (`**Study active window:**`, first→last logged-query wall-clock, UTC; a lower bound that
+excludes pre-first-query framing and post-last-query writing, and collapses when large extraction
+queries went unlogged). For **whole-chat elapsed time** instead, pass `chat_started` (ISO-8601, when
+the chat began — the server can't know it) and optionally `chat_ended`; the header then reads
+`**Elapsed time:** <start>–<end> UTC (<elapsed>)`. Token/cost is not captured by the tooling (the
 server sees only tool calls); if you cite it, use client figures (Claude Code `/cost` / API `usage`),
 labelled as client-measured — do not invent a number.
 

@@ -128,9 +128,14 @@ Then:
     the data cannot support. This is where the standalone caveats list lives — do not also put one
     elsewhere.
 11. **Reproducibility** — pointers to the appendix, the query transcript, the scripts, and the
-    pinned KG versions + update dates. Include the **study active window** — the `- **Study active
-    window:**` line `create_reproducibility_record` puts in the record header (first→last logged-query
-    wall-clock; a lower bound, it excludes framing before the first query and writing after the last).
+    pinned KG versions + update dates. Include a timing line from
+    `create_reproducibility_record`'s header. By default that is the **study active window** (`- **Study
+    active window:**`, the first→last logged-query wall-clock) — a lower bound that excludes framing
+    before the first query and writing after the last, and that collapses badly when large extraction
+    queries went unlogged (only the compact re-registration COUNTs carry timestamps). To report the
+    **whole-chat elapsed time** instead, pass `chat_started` (ISO-8601, when the conversation began;
+    the server can't know it) and optionally `chat_ended` (defaults to the record's generation moment)
+    — the header then shows `- **Elapsed time:** <start>–<end> UTC (<elapsed>)`.
     Token/cost usage is **not** visible to the tooling (the server only sees tool calls), so if you
     report it, take the figures from the client (Claude Code `/cost` / the API `usage`) and label them
     as client-measured — never fabricate a token count.

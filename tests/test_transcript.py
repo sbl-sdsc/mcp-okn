@@ -988,6 +988,53 @@ async def test_record_notes_in_json_payload():
 
 
 @pytest.mark.asyncio
+async def test_record_default_timing_is_active_query_window():
+    """Without chat timestamps, the header shows the first→last logged-query window."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(model="m")
+    assert "**Study active window:**" in md
+    assert "**Elapsed time:**" not in md
+
+
+@pytest.mark.asyncio
+async def test_record_chat_started_shows_whole_chat_elapsed():
+    """`chat_started`/`chat_ended` replace the active-query window with the whole-chat
+    elapsed time, labelled 'Elapsed time'."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(
+        model="m",
+        chat_started="2026-07-18T09:03:00Z",
+        chat_ended="2026-07-18T11:47:00Z",
+    )
+    assert "**Study active window:**" not in md
+    assert "**Elapsed time:** 2026-07-18 09:03–11:47 UTC (2h 44m)" in md
+
+
+@pytest.mark.asyncio
+async def test_record_bad_chat_timestamp_warns_and_falls_back():
+    """An unparseable `chat_started` warns and falls back to the active-query window."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    md = await create_reproducibility_record(model="m", chat_started="not-a-date")
+    assert "**Elapsed time:**" not in md
+    assert "**Study active window:**" in md
+    assert "not a parseable ISO-8601 timestamp" in md  # warning comment present
+
+
+@pytest.mark.asyncio
+async def test_record_elapsed_window_in_json_payload():
+    """The chosen timing window rides along on the JSON payload with its label."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    payload = await create_reproducibility_record(
+        model="m",
+        format="json",
+        chat_started="2026-07-18T09:03:00Z",
+        chat_ended="2026-07-18T09:05:00Z",
+    )
+    assert payload["elapsed_window"]["label"] == "Elapsed time"
+    assert "09:03–09:05 UTC (2m 0s)" in payload["elapsed_window"]["value"]
+
+
+@pytest.mark.asyncio
 async def test_record_diagram_gate_drops_and_keeps():
     """`diagram_max_chars` drops an oversized query diagram (its SPARQL still shows)
     and keeps one under a large budget."""
