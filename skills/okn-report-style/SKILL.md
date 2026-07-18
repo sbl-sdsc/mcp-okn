@@ -319,7 +319,7 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
      `python scripts/expand_query_diagrams.py <transcript.md> --diagrams diagrams.json --max-chars 4000`
      (dependency-free injection, idempotent).
   **Cap the diagrams** (`--max-chars 4000`, mirroring the server's `diagram_max_chars`): as of
-  `sparql-to-mermaid` **v0.4.0** a long `VALUES` list collapses to "5 values + `+N more`" (the
+  `sparql-to-mermaid` **v0.4.1** a long `VALUES` list collapses to "3 values + `+N more`" (the
   `max_values` default), so the old symbol-list blowup — a 250-symbol query → a ~28K-char diagram of
   ~280 meaningless nodes — no longer happens; the cap stays as a backstop for any diagram that is still
   huge (e.g. very many distinct triples). Skipped diagrams get **noted in the transcript** (a one-line
