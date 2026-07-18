@@ -47,8 +47,12 @@ scripts/.skeleton_results.json
 # preserves prior versions)
 metadata/*_20[0-9][0-9]-[0-1][0-9]-*.json
 
-# Claude Code / agent local config
-.claude/
+# Claude Code / agent local config — ignore everything under .claude/ EXCEPT the
+# committed, team-wide project settings and hook scripts (settings.local.json etc. stay ignored).
+.claude/*
+!.claude/settings.json
+!.claude/hooks/
+!.claude/hooks/**
 
 # Local scratch export
 mcp.html
