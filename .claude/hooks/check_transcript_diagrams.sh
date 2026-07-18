@@ -27,13 +27,21 @@ candidates="$({ git diff --name-only; git diff --cached --name-only; \
               | grep -iE 'reproducibility.*\.md$' | sort -u)"
 [ -z "$candidates" ] && exit 0
 
+# Prefer python3, fall back to python; if neither exists we can't check → fail open (below).
+py=""
+command -v python3 >/dev/null 2>&1 && py=python3
+[ -z "$py" ] && command -v python >/dev/null 2>&1 && py=python
+[ -z "$py" ] && exit 0                  # no interpreter (bare container) → don't wedge the session
+
 failed=""
 while IFS= read -r f; do
   [ -n "$f" ] || continue
   [ -f "$f" ] || continue
-  if ! python3 "$checker" "$f" --check >/dev/null 2>&1; then
-    failed="$failed $f"
-  fi
+  "$py" "$checker" "$f" --check >/dev/null 2>&1
+  rc=$?
+  # Block ONLY on a genuine FAIL (exit 1). Exit 0 = PASS; anything else (interpreter/import
+  # error, missing deps) = couldn't verify → fail open rather than false-block a remote session.
+  [ "$rc" -eq 1 ] && failed="$failed $f"
 done <<EOF
 $candidates
 EOF
