@@ -894,6 +894,24 @@ async def test_query_diagram_can_be_disabled():
     assert "```mermaid" not in md
 
 
+@pytest.mark.asyncio
+async def test_diagrams_off_reminds_to_readd():
+    """Turning per-query diagrams OFF (right for keeping a large record from spilling) is only HALF
+    the flow — the tool nudges the caller to re-add them, as a caller-facing comment kept OUT of the
+    stored artifact. Fires only when diagrams are off, so a normal (diagrams-on) call never nags."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    off = await create_reproducibility_record(model="m", include_query_diagrams=False)
+    assert "include_query_diagrams=False" in off and "expand_query_diagrams" in off
+    assert off.startswith("<!--")  # a caller-facing comment, not body prose
+    # ...but the reminder is NOT baked into the canonical stored transcript
+    assert "OMITTED" not in (session.last_transcript() or "")
+
+    session.reset()
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    on = await create_reproducibility_record(model="m")  # diagrams on by default
+    assert "OMITTED" not in on  # no spurious nag
+
+
 async def test_unparseable_query_skips_diagram_but_keeps_text():
     """A query that can't be parsed still renders its text; the diagram is skipped."""
     md = await create_chat_transcript(

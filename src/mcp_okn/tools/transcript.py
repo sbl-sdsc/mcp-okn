@@ -17,6 +17,19 @@ from .. import __version__, session
 from ..app import mcp
 from ..sparql import FEDERATION_ENDPOINT, named_graph
 
+# Surfaced (as a caller-facing warning, NOT baked into the stored artifact) whenever a transcript is
+# built with per-query diagrams turned OFF while queries exist. Turning them off is the right move to
+# keep a large record from spilling, but it is only HALF the flow — the diagrams must then be re-added,
+# and skipping that silently ships a diagram-free transcript. This is the just-in-time nudge for the
+# second half, at the exact moment it is owed.
+_DIAGRAM_REMINDER = (
+    "per-query diagrams were OMITTED (include_query_diagrams=False), so they are NOT in this "
+    "document yet. If you turned them off to keep the record small, RE-ADD them before delivering: "
+    "generate one per logged query with the `sparql_to_mermaid` tool (verbatim query) and inject with "
+    "report-style's scripts/expand_query_diagrams.py. Skip the re-add ONLY if the user asked for no "
+    "diagrams."
+)
+
 
 @mcp.tool()
 async def reset_query_log(scope: str | None = None) -> dict[str, Any]:
@@ -564,6 +577,9 @@ async def create_chat_transcript(
             payload["warnings"] = warnings
         return payload
 
+    if not include_query_diagrams and log:
+        warnings.append(_DIAGRAM_REMINDER)
+
     if format != "markdown":
         return {"error": f"Unsupported format {format!r}; use 'markdown' or 'json'."}
 
@@ -780,6 +796,9 @@ async def create_reproducibility_record(
         if warnings:
             payload["warnings"] = warnings
         return payload
+
+    if not include_query_diagrams and selected:
+        warnings.append(_DIAGRAM_REMINDER)
 
     if format != "markdown":
         return {"error": f"Unsupported format {format!r}; use 'markdown' or 'json'."}
