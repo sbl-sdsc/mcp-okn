@@ -30,11 +30,13 @@ FIDELITY: generate every diagram from the query EXACTLY as logged. Do not strip 
 otherwise shorten the query to make the diagram smaller — a diagram that sits under a ```sparql block
 it does not match misrepresents it. If a diagram is too big, SKIP it (below), don't fake a small one.
 
-SIZE CAP (`--max-chars`, default 4000, mirroring the server's `diagram_max_chars`): a gene-**symbol
-VALUES list** renders one literal node per symbol — a 250-symbol query becomes a ~28,000-char diagram
-of ~280 meaningless nodes (this is what spills a record). Diagrams over the cap are skipped; informative
-multi-graph diagrams (~500–3,500 chars) are kept. The script prints which queries were skipped so you
-can note them in the transcript, exactly as the server does inline.
+SIZE CAP (`--max-chars`, default 4000, mirroring the server's `diagram_max_chars`): as of
+`sparql-to-mermaid` v0.4.0 a long `VALUES` list collapses to "5 values + `+N more`" (the `max_values`
+default), so the old symbol-list blowup — a 250-symbol query → a ~28,000-char diagram of ~280 useless
+nodes — no longer happens. The cap stays as a general backstop for any diagram that is still huge (e.g.
+a query with very many distinct triples); over-cap diagrams are skipped, informative ones
+(~500–3,500 chars) kept. The script prints which queries were skipped so you can note them in the
+transcript, exactly as the server does inline.
 
 Idempotent: a ```sparql block already immediately followed by a ```mermaid block is left alone, so
 re-running (or expanding a partially-expanded file) never double-injects.

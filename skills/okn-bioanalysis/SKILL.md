@@ -83,8 +83,9 @@ surfaces after the whole analysis is done and there's no time left to turn them 
    lean and not re-adding silently drops them). Since the `sparql-to-mermaid` package isn't installable
    in a report session, generate each diagram with the **`sparql_to_mermaid` TOOL** on the verbatim
    logged query, collect them into `diagrams.json`, and inject with report-style's
-   `scripts/expand_query_diagrams.py --diagrams diagrams.json --max-chars 4000` (skips the oversized
-   symbol-list diagrams; see report-style for the full recipe). The re-add applies only when you still
+   `scripts/expand_query_diagrams.py --diagrams diagrams.json --max-chars 4000` (a backstop cap for
+   still-huge diagrams — v0.4.0 already collapses long `VALUES` lists; see report-style for the full
+   recipe). The re-add applies only when you still
    want them in the final file; if the user asks for **no** diagrams, pass the flag and skip re-add.
    Don't mark
    substantive queries `exploratory` — least of all the query that establishes a cross-KG bridge; that
