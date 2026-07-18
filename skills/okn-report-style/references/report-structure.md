@@ -95,10 +95,13 @@ wherever a literature or authoritative reference source exists for the domain. *
 tool up front** (e.g. *"According to PubMed and the Paperclip corpus…"*) and **mark which central
 claims were verified against full text**. Flag discrepancies as testable predictions.
 
-**Preflight:** this section needs the PubMed / Paperclip MCP connectors. Confirm they're available
-before writing it; if one is missing, enable it (claude.ai → Settings → Connectors, or Claude Code
-`claude mcp add --transport http <name> <url>` then reconnect) or state §8 is **omitted because the
-connector isn't enabled** — do not drop it silently. (The full preflight lives in okn-bioanalysis.)
+**Preflight:** this section needs the **PubMed** (`https://pubmed.mcp.claude.com/mcp`) and
+**Paperclip** (`https://paperclip.gxl.ai/mcp`) MCP connectors (look for tools named `pubmed` /
+`paperclip`). Confirm they're available before writing it; if one is missing, enable it (claude.ai →
+Settings → Connectors, or Claude Code `claude mcp add --transport http pubmed
+https://pubmed.mcp.claude.com/mcp` / `claude mcp add --transport http paperclip
+https://paperclip.gxl.ai/mcp`, then reconnect) or state §8 is **omitted because the connector isn't
+enabled** — do not drop it silently. (The full preflight lives in okn-bioanalysis.)
 
 ## 9. Full ranked results
 Pointer to the xlsx / tsv + the interactive HTML table, and a representative slice table in the
