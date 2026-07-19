@@ -10,7 +10,9 @@ from ..app import mcp
 
 
 @mcp.tool()
-async def sparql_to_mermaid(query: str, well_known: bool = True) -> dict[str, Any]:
+async def sparql_to_mermaid(
+    query: str, well_known: bool = True, portable: bool = False
+) -> dict[str, Any]:
     """Render a SPARQL query as a Mermaid flowchart diagram of its graph pattern.
 
     Turns the query's WHERE clause into a `graph TD` diagram: variables and
@@ -32,6 +34,13 @@ async def sparql_to_mermaid(query: str, well_known: bool = True) -> dict[str, An
         well_known: If True (default), also shorten common bio/semantic-web IRIs
             the query did not declare a prefix for. Set False to shorten only
             against the query's own `PREFIX` declarations.
+        portable: If True, emit a stricter-renderer-compatible diagram — any IRI
+            with no known prefix is compacted to a synthetic `segment:local` CURIE
+            (e.g. `kg:spoke-genelab`, `reactome:R-HSA-163210`) instead of a raw
+            `https://…` in a node or `GRAPH` title, and the aggregate edge uses the
+            conventional pipe-label form. Default False; the default output already
+            renders in Claude's Artifact renderer and current Mermaid, so only set
+            this if a specific viewer rejects a diagram.
 
     Returns:
         `{"mermaid": ..., "mermaid_block": ...}`, where `mermaid_block` is the
@@ -45,7 +54,7 @@ async def sparql_to_mermaid(query: str, well_known: bool = True) -> dict[str, An
     producing your own graphic yields a messy, incorrect picture.
     """
     try:
-        diagram = to_mermaid(query, well_known=well_known)
+        diagram = to_mermaid(query, well_known=well_known, portable=portable)
     except SparqlToMermaidError as exc:
         return {"error": f"Could not render query as a Mermaid diagram: {exc}"}
     return {"mermaid": diagram, "mermaid_block": f"```mermaid\n{diagram}\n```"}
