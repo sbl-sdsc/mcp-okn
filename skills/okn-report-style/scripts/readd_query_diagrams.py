@@ -30,6 +30,7 @@ the query EXACTLY as logged; a too-big diagram is skipped (see --max-chars), nev
     python readd_query_diagrams.py transcript.md                          # dev checkout: one and done
     python readd_query_diagrams.py transcript.md --diagrams diagrams.json # report session: inject
     python readd_query_diagrams.py transcript.md --out out.md --max-chars 4000
+    python readd_query_diagrams.py transcript.md --portable              # dev checkout, portable mode
     python readd_query_diagrams.py transcript.md --check                  # DELIVERY GATE (verify only)
 
 DELIVERY GATE: `--check` verifies WITHOUT modifying — PASS if every ```sparql block already has a
@@ -56,17 +57,19 @@ from expand_query_diagrams import (
 )
 
 
-def _try_library():
-    """Return the `try_to_mermaid` callable if `sparql-to-mermaid` is importable here, else None.
+def _try_library(portable: bool = False):
+    """Return a `sparql -> mermaid|None` callable if `sparql-to-mermaid` is importable here, else None.
 
     The package is mcp-okn-internal and NOT on PyPI, so it is importable in a dev checkout but usually
-    NOT where a report is built — that split is exactly why path 3 (the work-list) exists.
+    NOT where a report is built — that split is exactly why path 3 (the work-list) exists. ``portable``
+    is forwarded to ``try_to_mermaid`` (unknown IRIs -> ``segment:local`` CURIEs, pipe-label aggregate
+    edges) for stricter/older Mermaid renderers.
     """
     try:
         from sparql_to_mermaid import try_to_mermaid
     except ModuleNotFoundError:
         return None
-    return try_to_mermaid
+    return lambda sparql: try_to_mermaid(sparql, portable=portable)
 
 
 def _emit_worklist(src: Path, text: str) -> int:
@@ -140,6 +143,13 @@ def main(argv: list[str] | None = None) -> int:
         help=f"skip any diagram whose mermaid text exceeds this (default {DEFAULT_MAX_CHARS}; mirrors "
         "the server's diagram_max_chars). Pass 0 for no cap.",
     )
+    ap.add_argument(
+        "--portable",
+        action="store_true",
+        help="generate stricter-renderer-compatible diagrams (unknown IRIs -> segment:local CURIEs, "
+        "pipe-label aggregate edges). Only affects LOCAL generation (path 2); ignored with --diagrams "
+        "(pass portable=True to the sparql_to_mermaid tool when building diagrams.json instead).",
+    )
     args = ap.parse_args(argv)
 
     src = Path(args.path)
@@ -150,9 +160,14 @@ def main(argv: list[str] | None = None) -> int:
         return check(src, text)
 
     if args.diagrams:
+        if args.portable:
+            print(
+                "note: --portable is ignored with --diagrams (supplied diagrams are used as-is; pass "
+                "portable=True to the sparql_to_mermaid tool when building diagrams.json)."
+            )
         generate = _map_generate(args.diagrams)  # path 1: inject supplied diagrams
     else:
-        library = _try_library()
+        library = _try_library(portable=args.portable)
         if library is None:
             return _emit_worklist(src, text)  # path 3: no package, no diagrams.json → work-list
         generate = library  # path 2: generate locally AND inject in this call

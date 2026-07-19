@@ -43,9 +43,10 @@ transcript, exactly as the server does inline.
 Idempotent: a ```sparql block already immediately followed by a ```mermaid block is left alone, so
 re-running (or expanding a partially-expanded file) never double-injects.
 
-    python expand_query_diagrams.py transcript.md --diagrams diagrams.json   # portable, edit in place
+    python expand_query_diagrams.py transcript.md --diagrams diagrams.json   # dependency-free inject
     python expand_query_diagrams.py transcript.md --diagrams d.json --out o.md
     python expand_query_diagrams.py transcript.md                            # dev checkout only
+    python expand_query_diagrams.py transcript.md --portable                 # dev checkout, portable mode
 """
 
 from __future__ import annotations
@@ -65,19 +66,24 @@ def _normalize(sparql: str) -> str:
     return re.sub(r"\s+", " ", sparql).strip()
 
 
-def _library_generate():
+def _library_generate(portable: bool = False):
     """Return a `sparql -> mermaid|None` callable backed by the local sparql-to-mermaid package,
-    or exit with guidance if it (the dev-only, non-PyPI package) is not importable."""
+    or exit with guidance if it (the dev-only, non-PyPI package) is not importable.
+
+    ``portable`` is forwarded to ``try_to_mermaid`` — when True, IRIs with no known prefix compact to a
+    synthetic ``segment:local`` CURIE (e.g. ``kg:spoke-genelab``) and the aggregate edge uses pipe-label
+    form, for stricter/older Mermaid renderers."""
     try:
         from sparql_to_mermaid import try_to_mermaid
     except ModuleNotFoundError:
         sys.exit(
             "sparql-to-mermaid is not importable (it is mcp-okn-internal, not on PyPI), so diagrams "
             "cannot be generated here.\nGenerate them with the mcp-okn `sparql_to_mermaid` TOOL on "
-            "each verbatim logged query, write [{'sparql':…,'mermaid':…}, …] to diagrams.json, and "
-            "re-run with:\n  python expand_query_diagrams.py <transcript.md> --diagrams diagrams.json"
+            "each verbatim logged query (pass portable=True for portable output), write "
+            "[{'sparql':…,'mermaid':…}, …] to diagrams.json, and re-run with:\n"
+            "  python expand_query_diagrams.py <transcript.md> --diagrams diagrams.json"
         )
-    return try_to_mermaid
+    return lambda sparql: try_to_mermaid(sparql, portable=portable)
 
 
 def _map_generate(diagrams_path: str):
@@ -213,8 +219,24 @@ def main(argv: list[str] | None = None) -> int:
         "mirrors the server's diagram_max_chars — drops the uninformative symbol-list monsters). "
         "Pass 0 for no cap.",
     )
+    ap.add_argument(
+        "--portable",
+        action="store_true",
+        help="generate stricter-renderer-compatible diagrams (unknown IRIs -> segment:local CURIEs, "
+        "pipe-label aggregate edges). Only affects LOCAL generation; ignored with --diagrams (those "
+        "diagrams were already rendered by the tool, where you'd pass portable=True instead).",
+    )
     args = ap.parse_args(argv)
-    generate = _map_generate(args.diagrams) if args.diagrams else _library_generate()
+    if args.portable and args.diagrams:
+        print(
+            "note: --portable is ignored with --diagrams (the supplied diagrams are used as-is; "
+            "pass portable=True to the sparql_to_mermaid tool when generating diagrams.json instead)."
+        )
+    generate = (
+        _map_generate(args.diagrams)
+        if args.diagrams
+        else _library_generate(portable=args.portable)
+    )
     cap = None if args.max_chars == 0 else args.max_chars
     src = Path(args.path)
     new_text, st = expand(src.read_text(), generate, max_chars=cap)
