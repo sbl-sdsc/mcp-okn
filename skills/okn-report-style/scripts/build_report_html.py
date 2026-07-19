@@ -66,6 +66,7 @@ h3{margin:22px 0 6px;font-size:16px}h4{margin:16px 0 4px;font-size:14px}
 blockquote{background:#fff8f5;border-left:4px solid var(--accent);border-radius:9px;padding:10px 15px;margin:12px 0;font-size:13.5px;color:#3a4452}
 blockquote p{margin:0}a{color:var(--accent)}
 code{background:#eef2f7;border-radius:5px;padding:1px 5px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px}
+header code{background:rgba(255,255,255,.18);color:#fff}
 pre{background:#1f2a37;color:#e5e7eb;border-radius:9px;padding:12px 15px;overflow-x:auto;font-size:12.5px}
 pre code{background:none;color:inherit;padding:0}
 ul,ol{margin:8px 0;padding-left:24px}li{margin:3px 0}
