@@ -265,10 +265,12 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
      diagrams.json --max-chars 4000` (dependency-free injection, idempotent). (The injection engine is
      `scripts/expand_query_diagrams.py`; the helper is a thin front door over it.)
   **Cap the diagrams** (`--max-chars 4000`, mirroring the server's `diagram_max_chars`): as of
-  `sparql-to-mermaid` **v0.4.1** a long `VALUES` list collapses to "3 values + `+N more`" (the
+  `sparql-to-mermaid` **v0.4.2** a long `VALUES` list collapses to "3 values + `+N more`" (the
   `max_values` default), so the old symbol-list blowup — a 250-symbol query → a ~28K-char diagram of
   ~280 meaningless nodes — no longer happens; the cap stays as a backstop for any diagram that is still
-  huge (e.g. very many distinct triples). Skipped diagrams get **noted in the transcript** (a one-line
+  huge (e.g. very many distinct triples). v0.4.2 also **quotes node labels**, so an IRI with special
+  characters (e.g. a Reactome / PubChem id containing `(`) no longer breaks Mermaid parsing and drops
+  the diagram to raw text. Skipped diagrams get **noted in the transcript** (a one-line
   table), the same rule the server applies inline. Don't
   rasterize the mermaid to SVG/PNG — leave it as source. **This defer-and-re-add flow applies only when
   you still want the diagrams in the final file.** If the user asks for **no** query diagrams at all,

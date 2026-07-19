@@ -31,9 +31,11 @@ otherwise shorten the query to make the diagram smaller — a diagram that sits 
 it does not match misrepresents it. If a diagram is too big, SKIP it (below), don't fake a small one.
 
 SIZE CAP (`--max-chars`, default 4000, mirroring the server's `diagram_max_chars`): as of
-`sparql-to-mermaid` v0.4.1 a long `VALUES` list collapses to "3 values + `+N more`" (the `max_values`
+`sparql-to-mermaid` v0.4.2 a long `VALUES` list collapses to "3 values + `+N more`" (the `max_values`
 default), so the old symbol-list blowup — a 250-symbol query → a ~28,000-char diagram of ~280 useless
-nodes — no longer happens. The cap stays as a general backstop for any diagram that is still huge (e.g.
+nodes — no longer happens. (v0.4.2 also quotes node labels, so an IRI containing special characters —
+e.g. a Reactome/PubChem id with `(` — no longer breaks Mermaid parsing.) The cap stays as a general
+backstop for any diagram that is still huge (e.g.
 a query with very many distinct triples); over-cap diagrams are skipped, informative ones
 (~500–3,500 chars) kept. The script prints which queries were skipped so you can note them in the
 transcript, exactly as the server does inline.

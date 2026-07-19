@@ -24,7 +24,7 @@ Repository = "https://github.com/sbl-sdsc/mcp-okn"
 # publish sparql-to-mermaid to PyPI, then delete this [tool.uv.sources] block —
 # the "sparql-to-mermaid>=0.1" dependency above then resolves from PyPI.
 [tool.uv.sources]
-sparql-to-mermaid = { git = "https://github.com/sbl-sdsc/sparql-to-mermaid.git", tag = "v0.4.1" }
+sparql-to-mermaid = { git = "https://github.com/sbl-sdsc/sparql-to-mermaid.git", tag = "v0.4.2" }
 
 [project.scripts]
 mcp-okn = "mcp_okn.server:main"
