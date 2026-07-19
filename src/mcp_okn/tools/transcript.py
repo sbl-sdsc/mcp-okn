@@ -15,6 +15,7 @@ from sparql_to_mermaid import try_to_mermaid
 
 from .. import __version__, session
 from ..app import mcp
+from ..mermaid_namespace import namespace_document
 from ..sparql import FEDERATION_ENDPOINT, named_graph
 
 # Surfaced (as a caller-facing warning, NOT baked into the stored artifact) whenever a transcript is
@@ -375,7 +376,10 @@ def _finalize_document(
             hand-edit into the saved ``.md`` (e.g. why the logged queries are compact
             re-registrations and where the full extractions live). Empty = omitted.
     """
-    body_md = "\n".join(body)
+    # Give each embedded query diagram a unique node-id namespace so many `graph TD`
+    # blocks on one page don't collide on shared ids (graph0, v1, bind0, …) and stop
+    # rendering. Fence lines are preserved, so the block counts below are unaffected.
+    body_md = namespace_document("\n".join(body))
     n_queries = body_md.count("```sparql")
     n_query_diagrams = body_md.count("```mermaid") - n_schema_diagrams
     # Only list components that are actually present — a trailing "· 0 schema
@@ -410,7 +414,7 @@ def _finalize_document(
     else:
         header.append("- _None queried._")
 
-    markdown = "\n".join([*header, "", *body])
+    markdown = "\n".join([*header, "", body_md])
     # Publish for direct client fetch/save via the transcript resource. The stored
     # document is the clean one — warnings are for the caller, not the artifact.
     session.set_last_transcript(markdown, scope)

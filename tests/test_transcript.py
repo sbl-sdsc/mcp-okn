@@ -882,9 +882,24 @@ async def test_query_diagram_rendered_by_default():
     md = await create_chat_transcript(model="m")
     assert "```mermaid" in md
     assert "graph TD" in md
-    assert "subgraph optional" in md  # the OPTIONAL block is drawn
+    # the OPTIONAL block is drawn — ids are namespaced per query (q0…) so many
+    # diagrams on one page don't collide, so it's `subgraph q0optional…` now.
+    assert "subgraph q0optional" in md
     # the diagram follows the query text
     assert md.index("```sparql") < md.index("```mermaid")
+
+
+async def test_query_diagrams_namespaced_uniquely():
+    """Multiple query diagrams in one transcript must not share node ids, or later
+    diagrams collide on `graph0`/`v1`/`bind0` and stop rendering. Each block gets a
+    distinct `q<N>` id namespace."""
+    session.record(_DIAGRAM_QUERY, "json", result=JSON_RESULT)
+    session.record(_DIAGRAM_QUERY.replace("?disease", "?d2"), "json", result=JSON_RESULT)
+    md = await create_chat_transcript(model="m")
+    # No diagram uses the bare, collision-prone ids...
+    assert "subgraph graph0[" not in md
+    # ...and the two diagrams carry different namespaces.
+    assert "q0graph0" in md and "q1graph0" in md
 
 
 async def test_query_diagram_can_be_disabled():

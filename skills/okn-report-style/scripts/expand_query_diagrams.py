@@ -59,6 +59,67 @@ from pathlib import Path
 
 DEFAULT_MAX_CHARS = 4000
 
+# --- per-diagram id namespacing (self-contained copy of mcp_okn.mermaid_namespace) ---
+# `sparql_to_mermaid` renders every diagram with the SAME node ids (graph0, v1, bind0,
+# …), so N diagrams in ONE transcript collide on those ids and later ones stop
+# rendering. Prefix each block's ids with a per-block `q<N>` namespace as it is
+# injected. Kept inline (not imported) because these scripts run in report sessions
+# where the mcp-okn package is NOT importable; the canonical copy is
+# src/mcp_okn/mermaid_namespace.py — keep the two in sync.
+_QUOTED = re.compile(r'"(?:[^"\\]|\\.)*"')
+_NODE_DECL = re.compile(r"^\s*([A-Za-z]\w*)(?:\(|\[|\{)")
+_SUBGRAPH_DECL = re.compile(r"^\s*subgraph\s+([A-Za-z]\w*)")
+_STYLE_DECL = re.compile(r"^\s*style\s+([A-Za-z]\w*)")
+_KEYWORDS = frozenset({"subgraph", "end", "style", "classDef", "graph", "linkStyle", "click"})
+
+
+def _first_directive(mermaid: str) -> str:
+    for line in mermaid.split("\n"):
+        if line.strip():
+            return line.strip()
+    return ""
+
+
+def _collect_ids(mermaid: str) -> set:
+    ids = set()
+    for line in mermaid.split("\n"):
+        for pat in (_SUBGRAPH_DECL, _STYLE_DECL):
+            m = pat.match(line)
+            if m:
+                ids.add(m.group(1))
+        m = _NODE_DECL.match(line)
+        if m and m.group(1) not in _KEYWORDS:
+            ids.add(m.group(1))
+    return ids
+
+
+def namespace_diagram(mermaid: str, prefix: str) -> str:
+    """Prefix every node id in a `graph TD` diagram with ``prefix`` (label text
+    untouched); return it unchanged when ``prefix`` is empty or it is not `graph TD`."""
+    if not prefix or _first_directive(mermaid) != "graph TD":
+        return mermaid
+    ids = _collect_ids(mermaid)
+    if not ids:
+        return mermaid
+    alt = "|".join(re.escape(i) for i in sorted(ids, key=len, reverse=True))
+    id_re = re.compile(rf"(?<![A-Za-z0-9])(?:{alt})(?![A-Za-z0-9])")
+    sub = lambda m: prefix + m.group(0)  # noqa: E731
+
+    def rewrite(line: str) -> str:
+        out, pos = [], 0
+        for m in _QUOTED.finditer(line):
+            out.append(id_re.sub(sub, line[pos : m.start()]))
+            out.append(m.group(0))
+            pos = m.end()
+        out.append(id_re.sub(sub, line[pos:]))
+        return "".join(out)
+
+    result = []
+    for line in mermaid.split("\n"):
+        s = line.strip()
+        result.append(line if s == "graph TD" or s.startswith("classDef ") else rewrite(line))
+    return "\n".join(result)
+
 
 def _normalize(sparql: str) -> str:
     """Whitespace-normalized key so a ```sparql block matches its diagrams.json entry regardless of
@@ -194,7 +255,10 @@ def expand(
                 stats["oversized"] += 1
                 stats["oversized_queries"].append((snippet, len(mermaid)))
                 continue
-            out.extend(["", "```mermaid", mermaid.strip(), "```"])
+            # Namespace this diagram's ids by its sparql-block ordinal so it can't
+            # collide with the other diagrams once they share one rendered page.
+            mermaid = namespace_diagram(mermaid.strip(), f"q{stats['sparql']}")
+            out.extend(["", "```mermaid", mermaid, "```"])
             stats["added"] += 1
         else:
             out.append(lines[i])
