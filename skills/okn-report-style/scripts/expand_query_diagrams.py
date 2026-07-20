@@ -127,6 +127,21 @@ def _normalize(sparql: str) -> str:
     return re.sub(r"\s+", " ", sparql).strip()
 
 
+# `create_chat_transcript` / `create_reproducibility_record` prepend a caller-facing
+# `<!-- mcp-okn WARNING: … -->` HTML comment to their RETURN value (e.g. "per-query diagrams were
+# OMITTED — re-add them"). It is a nudge for the caller, NOT part of the artifact; when the caller
+# saves the tool result verbatim it lands at the top of the .md. Re-adding the diagrams is exactly what
+# the notice asks for, so once this script does that the notice is stale and must be stripped.
+_MCP_NOTICE_RE = re.compile(r"[ \t]*<!--\s*mcp-okn WARNING:.*?-->[ \t]*\n?", re.S)
+
+
+def strip_mcp_notices(text: str) -> tuple[str, int]:
+    """Remove any `<!-- mcp-okn WARNING: … -->` notice the transcript tools prepended. Returns
+    (cleaned_text, count_removed); leaves all other HTML comments untouched."""
+    cleaned, n = _MCP_NOTICE_RE.subn("", text)
+    return cleaned.lstrip("\n") if n else cleaned, n
+
+
 def _library_generate(portable: bool = False):
     """Return a `sparql -> mermaid|None` callable backed by the local sparql-to-mermaid package,
     or exit with guidance if it (the dev-only, non-PyPI package) is not importable.
@@ -215,12 +230,17 @@ def expand(
     diagram (generate returns falsy) is skipped like the server skips an unparseable one; a diagram
     over `max_chars` is skipped and recorded. Returns (new_text, stats); stats['oversized_queries'] and
     ['absent_queries'] carry a short SPARQL snippet per skip so you can log them in the transcript.
+
+    Also strips any stale `<!-- mcp-okn WARNING: … -->` notice the transcript tool prepended (re-adding
+    the diagrams is what the notice asked for), so it never stays baked into the saved artifact.
     """
+    text, n_notices = strip_mcp_notices(text)
     lines = text.split("\n")
     out: list[str] = []
     stats = {
         "sparql": 0,
         "added": 0,
+        "notices_stripped": n_notices,
         "already": 0,
         "absent": 0,
         "oversized": 0,
@@ -310,6 +330,7 @@ def main(argv: list[str] | None = None) -> int:
         f"{dst}: {st['sparql']} sparql blocks → {st['added']} diagrams added, "
         f"{st['already']} already present, {st['absent']} absent-skipped, "
         f"{st['oversized']} oversized-skipped (>{cap})"
+        + (f"; stripped {st['notices_stripped']} stale mcp-okn notice(s)" if st["notices_stripped"] else "")
     )
     for snip, ln in st["oversized_queries"]:
         print(f"  oversized ({ln} chars, skipped): {snip}…")

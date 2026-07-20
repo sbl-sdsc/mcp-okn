@@ -50,10 +50,12 @@ from pathlib import Path
 # Single-source the injection logic: reuse expand_query_diagrams.py rather than reimplement it.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from expand_query_diagrams import (
+    _MCP_NOTICE_RE,
     DEFAULT_MAX_CHARS,
     _map_generate,
     expand,
     queries_needing_diagrams,
+    strip_mcp_notices,
 )
 
 
@@ -107,16 +109,27 @@ def check(src: Path, text: str) -> int:
     """
     missing = queries_needing_diagrams(text)
     total = text.count("```sparql")
-    if not missing:
+    # Backstop: a stale `<!-- mcp-okn WARNING: … -->` notice must never ship in the artifact. The
+    # re-add pass strips it, but a file that already had its diagrams (so re-add was skipped) can still
+    # carry it — catch that here, at the last gate before delivery.
+    stale_notice = bool(_MCP_NOTICE_RE.search(text))
+    if not missing and not stale_notice:
         print(f"[readd_query_diagrams] PASS — all {total} sparql block(s) have a diagram: {src}")
         return 0
-    print(
-        f"[readd_query_diagrams] FAIL — {len(missing)} of {total} sparql block(s) have NO diagram: "
-        f"{src}\n  The diagram re-add step was skipped. Run "
-        f"`python {Path(__file__).name} {src}` (no --check) to add them; do NOT deliver until PASS."
-    )
-    for q in missing[:5]:
-        print(f"  missing: {' '.join(q.split())[:70]}…")
+    if missing:
+        print(
+            f"[readd_query_diagrams] FAIL — {len(missing)} of {total} sparql block(s) have NO diagram: "
+            f"{src}\n  The diagram re-add step was skipped. Run "
+            f"`python {Path(__file__).name} {src}` (no --check) to add them; do NOT deliver until PASS."
+        )
+        for q in missing[:5]:
+            print(f"  missing: {' '.join(q.split())[:70]}…")
+    if stale_notice:
+        print(
+            f"[readd_query_diagrams] FAIL — a stale `<!-- mcp-okn WARNING: … -->` notice is baked into "
+            f"{src}\n  That caller-facing nudge must not ship in the artifact. Run "
+            f"`python {Path(__file__).name} {src}` (no --check) to strip it; do NOT deliver until PASS."
+        )
     return 1
 
 
@@ -159,6 +172,15 @@ def main(argv: list[str] | None = None) -> int:
     if args.check:
         return check(src, text)
 
+    # Strip any stale `<!-- mcp-okn WARNING: … -->` notice up front and persist it now, so it is
+    # removed even when the paths below write nothing (all diagrams already present, or the work-list
+    # branch). expand() also strips, so the injection paths stay correct on their own.
+    dst = Path(args.out) if args.out else src
+    text, n_notices = strip_mcp_notices(text)
+    if n_notices:
+        dst.write_text(text)
+        print(f"{dst}: stripped {n_notices} stale mcp-okn notice(s).")
+
     if args.diagrams:
         if args.portable:
             print(
@@ -173,7 +195,6 @@ def main(argv: list[str] | None = None) -> int:
         generate = library  # path 2: generate locally AND inject in this call
 
     new_text, st = expand(text, generate, max_chars=cap)
-    dst = Path(args.out) if args.out else src
     dst.write_text(new_text)
     print(
         f"{dst}: {st['sparql']} sparql blocks → {st['added']} diagrams added, "
