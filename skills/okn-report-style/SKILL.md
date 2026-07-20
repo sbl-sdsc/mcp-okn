@@ -235,7 +235,9 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
 - Figure caption text baked into the PNG → move to the legend below.
 - Geographic points plotted as a bare lon/lat scatter on empty axes → put them on an OpenStreetMap
   basemap (static: `contextily`; interactive: `folium`) so the geography is legible.
-- Figures out of numerical order after inserting a new one → renumber captions + files.
+- Figures out of numerical order after inserting a new one → renumber captions + files (enforced by
+  `check_figure_numbering` inside the `check_report_parity` delivery gate — it FAILs on non-consecutive
+  captions or filenames, so this can't ship silently).
 - Same kind of data split across two+ sections (e.g. geolocation in two places) → consolidate into
   one section; cross-reference instead of repeating.
 - **Sources used** section missing, or a queried KG absent from it → always include the table with a

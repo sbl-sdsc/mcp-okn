@@ -666,22 +666,58 @@ def check_html_structure(html_path):
     return {"ok": ok, "counts": counts}
 
 
+def _figure_numbers(md_text):
+    """Return (caption_numbers, file_numbers) in document order: the N of each ``***Figure N.***``
+    caption, and the N of each ``figures/figN_*`` image. The caption regex anchors on ``***`` so a
+    mid-caption cross-reference (``…a separate family from Figure 3``) is NOT counted; ``figures/map_*``
+    and other non ``figN`` assets are ignored."""
+    caps = [int(n) for n in re.findall(r"\*\*\*Figures?\s+(\d+)", md_text)]
+    files = [int(n) for n in re.findall(r"figures/fig(\d+)", md_text)]
+    return caps, files
+
+
+def check_figure_numbering(md_path):
+    """Verify figures are numbered CONSECUTIVELY (1..N) in document order and that each figure's
+    filename number matches its caption number — the skill's figure-numbering rule
+    (references/figure-checklist.md). Reordering a figure for narrative flow without renumbering
+    leaves captions like ``1, 2, 5, 7, 3, 4, …`` (and files to match), which every other gate passes
+    because headings, word count and structure are all fine. Returns {ok, captions, files, issues}.
+    """
+    caps, files = _figure_numbers(Path(md_path).read_text(encoding="utf-8"))
+    issues = []
+    if caps != list(range(1, len(caps) + 1)):
+        issues.append(f"caption numbers {caps} are not consecutive 1..{len(caps)}")
+    if files != list(range(1, len(files) + 1)):
+        issues.append(
+            f"filename numbers {files} are not consecutive 1..{len(files)} "
+            "— renumber captions AND rename files on reorder"
+        )
+    ok = not issues
+    print(
+        f"[check_figure_numbering] {'PASS' if ok else 'FAIL'}: {len(caps)} figure(s)"
+        + ("" if ok else " — " + "; ".join(issues))
+    )
+    return {"ok": ok, "captions": caps, "files": files, "issues": issues}
+
+
 def check_report_parity(md_path, html_path, min_word_ratio=0.85, ignore_sections=()):
     """Verify the delivered `.html` is the SAME report as `.md` — the completeness gate.
 
     Method-independent (works whether the HTML was rendered or hand-authored), it
     catches the "condensed highlights" failure: an HTML that drops sections or shrinks
-    the prose. Three checks — (1) every Markdown section heading (`##` / `###`) appears
+    the prose. Four checks — (1) every Markdown section heading (`##` / `###`) appears
     in the HTML's visible text, (2) the HTML's visible word count is at least
-    `min_word_ratio` of the Markdown's, and (3) the HTML is ONE well-formed document
+    `min_word_ratio` of the Markdown's, (3) the HTML is ONE well-formed document
     (via `check_html_structure` — a single `<html>`/`<head>`/`<body>`), so a
     self-contained widget inlined raw (a folium map's full document) that blanks the
-    page downstream is caught even though the visible text still matches. Prints a
-    PASS/FAIL summary and returns a dict `{ok, missing_sections, md_words, html_words,
-    word_ratio, min_word_ratio, structure}`. Run it as the final step before delivering
-    — passing self-containment/markup/number checks is NOT enough; this confirms the
-    HTML is the whole report AND structurally valid. `ignore_sections` skips heading
-    texts you deliberately omit (rare).
+    page downstream is caught even though the visible text still matches, and
+    (4) figures are numbered consecutively 1..N in document order with filenames to
+    match (via `check_figure_numbering`), so reordering a figure without renumbering is
+    caught. Prints a PASS/FAIL summary and returns a dict `{ok, missing_sections,
+    md_words, html_words, word_ratio, min_word_ratio, structure, figures}`. Run it as
+    the final step before delivering — passing self-containment/markup/number checks is
+    NOT enough; this confirms the HTML is the whole report AND structurally valid.
+    `ignore_sections` skips heading texts you deliberately omit (rare).
     """
     md = Path(md_path).read_text(encoding="utf-8")
     html_str = Path(html_path).read_text(encoding="utf-8")
@@ -689,6 +725,12 @@ def check_report_parity(md_path, html_path, min_word_ratio=0.85, ignore_sections
     html_norm = _norm(html_text)
     tag_counts = _doc_tag_counts(html_str)
     structure_ok = all(c == 1 for c in tag_counts.values())
+    fig_caps, fig_files = _figure_numbers(md)
+    fig_issues = []
+    if fig_caps != list(range(1, len(fig_caps) + 1)):
+        fig_issues.append(f"captions {fig_caps}")
+    if fig_files != list(range(1, len(fig_files) + 1)):
+        fig_issues.append(f"files {fig_files}")
 
     missing = []
     for line in md.split("\n"):
@@ -711,7 +753,8 @@ def check_report_parity(md_path, html_path, min_word_ratio=0.85, ignore_sections
     html_words = _word_count(html_text)
     ratio = html_words / md_words if md_words else 1.0
 
-    ok = not missing and ratio >= min_word_ratio and structure_ok
+    figures_ok = not fig_issues
+    ok = not missing and ratio >= min_word_ratio and structure_ok and figures_ok
     struct_note = (
         ""
         if structure_ok
@@ -720,12 +763,19 @@ def check_report_parity(md_path, html_path, min_word_ratio=0.85, ignore_sections
         + ") — a self-contained widget (e.g. a folium map) was likely inlined raw; "
         "wrap it in <iframe srcdoc> (okn_figstyle.folium_map_iframe)"
     )
+    fig_note = (
+        ""
+        if figures_ok
+        else "; FIGURES NOT CONSECUTIVE (" + "; ".join(fig_issues) + ") — number figures 1..N in "
+        "document order and rename files to match (renumber captions + files on reorder)"
+    )
     print(
         f"[check_report_parity] {'PASS' if ok else 'FAIL'}: "
         f"{html_words}/{md_words} words (ratio {ratio:.2f}, min {min_word_ratio}); "
         f"{len(missing)} missing section(s)"
         + (": " + "; ".join(missing) if missing else "")
         + struct_note
+        + fig_note
     )
     return {
         "ok": ok,
@@ -735,6 +785,7 @@ def check_report_parity(md_path, html_path, min_word_ratio=0.85, ignore_sections
         "word_ratio": round(ratio, 3),
         "min_word_ratio": min_word_ratio,
         "structure": {"ok": structure_ok, "counts": tag_counts},
+        "figures": {"ok": figures_ok, "captions": fig_caps, "files": fig_files},
     }
 
 

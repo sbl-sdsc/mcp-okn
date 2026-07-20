@@ -25,6 +25,10 @@ code can't predict.
 - [ ] **Filename matches the number** (`fig1_overview.png`, `fig2_map.png` …).
 - [ ] If you insert or reorder a figure, **renumber captions AND rename files** (and delete the old
       ones — you may need the file-delete permission tool if a delete is refused).
+- [ ] **ENFORCED:** `build_report_html.check_figure_numbering` (folded into `check_report_parity`, the
+      delivery gate) FAILs unless both the `***Figure N.***` captions and the `figures/figN_*` filenames
+      read `1, 2, 3 … N` in document order. Reordering for narrative flow without renumbering — captions
+      like `1, 2, 5, 7, 3, 4 …` — is caught there, not by eyeballing.
 
 ## Conventions
 - [ ] **Signed values** (log2 fold-change, change-vs-baseline, anomaly, z-score) → diverging map
