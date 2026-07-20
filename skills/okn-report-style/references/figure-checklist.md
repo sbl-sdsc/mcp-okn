@@ -52,7 +52,10 @@ code can't predict.
       points/choropleth, then add the basemap (`geopandas` + `contextily`;
       `osm_basemap(ax, ...)` does this). Do not draw lon/lat degrees straight onto a Mercator basemap.
 - [ ] **Interactive (HTML report):** use `folium` (Leaflet + OSM tiles); `folium_osm_map(rows, ...)`
-      returns the map. Embed it inline in the HTML (`m.get_root().render()`), don't link a file.
+      returns the map. Inline it with `folium_map_iframe(m)` (an `<iframe srcdoc>` wrapper), don't link
+      a file. NEVER splice `m.get_root().render()` in raw — it's a full `<!DOCTYPE><html>…</html>`
+      document; a second `<html>`/`<body>` in the report blanks every section below it (a browser
+      drops it silently, and `check_report_parity` FAILS on the duplicate document tags).
 - [ ] **Every mapped point is clickable.** Each marker carries a popup showing the point's id / name
       and key attributes (+ source), plus a hover tooltip — so a reader can click any point to see
       what it is. `folium_osm_map` adds a popup built from all fields by default.

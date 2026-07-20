@@ -626,23 +626,69 @@ def _norm(text):
     return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", " ", text)).strip().lower()
 
 
+#: The tags that must appear EXACTLY ONCE in a single well-formed HTML document.
+_DOC_TAGS = ("<!doctype", "<html", "<head", "<body")
+
+
+def _doc_tag_counts(html_str):
+    """Count top-level document tags, ignoring <script>/<style>/comment payloads (which
+    legitimately contain tag-like text) and escaped `<iframe srcdoc>` content (where the
+    inner document's `<` are `&lt;`, so they don't match). `\\b` keeps `<head` from
+    matching `<header>` and only counts opening tags (not `</head>`)."""
+    s = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", html_str)
+    s = re.sub(r"(?s)<!--.*?-->", " ", s).lower()
+    return {t: len(re.findall(re.escape(t) + r"\b", s)) for t in _DOC_TAGS}
+
+
+def check_html_structure(html_path):
+    """Verify the delivered `.html` is ONE well-formed document (a structural gate).
+
+    Catches the "self-contained widget inlined raw" break: folium's
+    `map.get_root().render()` returns a COMPLETE `<!DOCTYPE><html>…</html>` document,
+    and splicing that into the report body gives the file a second `<html>`/`<head>`/
+    `<body>` — browsers then silently drop everything downstream, so the map's section
+    and every section below it render blank. `check_report_parity` can't see this (the
+    visible text still matches), which is exactly how such a report ships broken. Each
+    of `<!doctype>`, `<html>`, `<head>`, `<body>` must appear exactly once; the safe way
+    to inline a full document is `<iframe srcdoc>` (see okn_figstyle.folium_map_iframe),
+    whose escaped inner markup is not counted here. Returns `{ok, counts}`.
+    """
+    counts = _doc_tag_counts(Path(html_path).read_text(encoding="utf-8"))
+    ok = all(c == 1 for c in counts.values())
+    detail = ", ".join(f"{t}×{c}" for t, c in counts.items())
+    hint = (
+        ""
+        if ok
+        else "  ← each must appear once; a self-contained widget (e.g. a folium map) was "
+        "likely inlined raw — wrap it in <iframe srcdoc> (okn_figstyle.folium_map_iframe)."
+    )
+    print(f"[check_html_structure] {'PASS' if ok else 'FAIL'}: {detail}{hint}")
+    return {"ok": ok, "counts": counts}
+
+
 def check_report_parity(md_path, html_path, min_word_ratio=0.85, ignore_sections=()):
     """Verify the delivered `.html` is the SAME report as `.md` — the completeness gate.
 
     Method-independent (works whether the HTML was rendered or hand-authored), it
     catches the "condensed highlights" failure: an HTML that drops sections or shrinks
-    the prose. Two checks — (1) every Markdown section heading (`##` / `###`) appears
-    in the HTML's visible text, and (2) the HTML's visible word count is at least
-    `min_word_ratio` of the Markdown's. Prints a PASS/FAIL summary and returns a dict
-    `{ok, missing_sections, md_words, html_words, word_ratio, min_word_ratio}`. Run it
-    as the final step before delivering — passing self-containment/markup/number checks
-    is NOT enough; this confirms the HTML is the whole report. `ignore_sections` skips
-    heading texts you deliberately omit (rare).
+    the prose. Three checks — (1) every Markdown section heading (`##` / `###`) appears
+    in the HTML's visible text, (2) the HTML's visible word count is at least
+    `min_word_ratio` of the Markdown's, and (3) the HTML is ONE well-formed document
+    (via `check_html_structure` — a single `<html>`/`<head>`/`<body>`), so a
+    self-contained widget inlined raw (a folium map's full document) that blanks the
+    page downstream is caught even though the visible text still matches. Prints a
+    PASS/FAIL summary and returns a dict `{ok, missing_sections, md_words, html_words,
+    word_ratio, min_word_ratio, structure}`. Run it as the final step before delivering
+    — passing self-containment/markup/number checks is NOT enough; this confirms the
+    HTML is the whole report AND structurally valid. `ignore_sections` skips heading
+    texts you deliberately omit (rare).
     """
     md = Path(md_path).read_text(encoding="utf-8")
     html_str = Path(html_path).read_text(encoding="utf-8")
     html_text = _visible_text(html_str)
     html_norm = _norm(html_text)
+    tag_counts = _doc_tag_counts(html_str)
+    structure_ok = all(c == 1 for c in tag_counts.values())
 
     missing = []
     for line in md.split("\n"):
@@ -665,12 +711,21 @@ def check_report_parity(md_path, html_path, min_word_ratio=0.85, ignore_sections
     html_words = _word_count(html_text)
     ratio = html_words / md_words if md_words else 1.0
 
-    ok = not missing and ratio >= min_word_ratio
+    ok = not missing and ratio >= min_word_ratio and structure_ok
+    struct_note = (
+        ""
+        if structure_ok
+        else "; INVALID STRUCTURE ("
+        + ", ".join(f"{t}×{c}" for t, c in tag_counts.items() if c != 1)
+        + ") — a self-contained widget (e.g. a folium map) was likely inlined raw; "
+        "wrap it in <iframe srcdoc> (okn_figstyle.folium_map_iframe)"
+    )
     print(
         f"[check_report_parity] {'PASS' if ok else 'FAIL'}: "
         f"{html_words}/{md_words} words (ratio {ratio:.2f}, min {min_word_ratio}); "
         f"{len(missing)} missing section(s)"
         + (": " + "; ".join(missing) if missing else "")
+        + struct_note
     )
     return {
         "ok": ok,
@@ -679,6 +734,7 @@ def check_report_parity(md_path, html_path, min_word_ratio=0.85, ignore_sections
         "html_words": html_words,
         "word_ratio": round(ratio, 3),
         "min_word_ratio": min_word_ratio,
+        "structure": {"ok": structure_ok, "counts": tag_counts},
     }
 
 

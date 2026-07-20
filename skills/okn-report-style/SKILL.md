@@ -171,8 +171,11 @@ The results table has two required features:
   category / type, region or state, direction / sign, or any key flag. Each dropdown offers "all" +
   the distinct values and re-filters the table on change.
 
-For **geographic data**, embed an interactive `folium` map (Leaflet + OpenStreetMap tiles) — write
-it inline with `m.get_root().render()` rather than plotting bare coordinates — with **every point
+For **geographic data**, embed an interactive `folium` map (Leaflet + OpenStreetMap tiles) rather than
+plotting bare coordinates — inline it with `folium_map_iframe(m)` (an `<iframe srcdoc>` wrapper), NOT
+`m.get_root().render()` inlined raw: `render()` returns a whole `<!DOCTYPE><html>…</html>` document,
+and splicing that into the body gives the file a second `<html>`/`<body>` that blanks every section
+below it (`check_report_parity` now fails on that). Keep **every point
 clickable** (a popup showing that point's attributes + source) and a legend below stating the
 coordinate source.
 

@@ -291,7 +291,8 @@ def folium_osm_map(
     - value_key: optional numeric field that scales the marker radius.
 
     Fits the view to the data's bounding box; keeps the © OpenStreetMap attribution and a scale bar.
-    Embed inline with `map.get_root().render()` (don't link a separate file). Needs `pip install folium`.
+    Embed it in the report with `folium_map_iframe(map)` — NOT `map.get_root().render()` inlined raw,
+    which injects a second <html>/<body> and blanks the page from there down. Needs `pip install folium`.
     """
     try:
         import folium
@@ -341,10 +342,32 @@ def folium_osm_map(
 
 
 def save_map_html(m, path):
-    """Save a folium map to a standalone HTML file (for embedding, use m.get_root().render())."""
+    """Save a folium map to a standalone HTML file (to embed in a report, use folium_map_iframe(m))."""
     m.save(path)
     print(f"[okn_figstyle] saved interactive OSM map: {path}")
     return path
+
+
+def folium_map_iframe(m, height=520, title="Interactive map"):
+    """Return a self-contained ``<iframe srcdoc="…">`` that inlines a folium/Leaflet map SAFELY.
+
+    folium's ``m.get_root().render()`` returns a COMPLETE HTML document (``<!DOCTYPE>``,
+    ``<html>``, ``<head>``, ``<body>``). Splicing that straight into the report body gives the
+    file a SECOND ``<html>``/``<head>``/``<body>``, and browsers silently drop everything after
+    it — the map's section, and every section below, renders blank. An ``<iframe srcdoc>`` is the
+    one correct way to inline a full self-contained document: the map's markup lives HTML-escaped
+    inside the attribute, isolated from the surrounding page. Drop the returned string on its OWN
+    line in the Markdown body (``md_to_html`` passes a line that begins with ``<`` through verbatim).
+    Every marker stays clickable. ``build_report_html.check_report_parity`` now also fails a report
+    whose HTML has duplicate document tags, so a raw-inlined map is caught before delivery.
+    """
+    doc = m.get_root().render()
+    srcdoc = html.escape(doc, quote=True)  # escape < > & " ' for the double-quoted attribute
+    return (
+        f'<iframe title="{html.escape(title)}" srcdoc="{srcdoc}" loading="lazy" '
+        f'style="width:100%;height:{int(height)}px;border:1px solid #e5e7eb;'
+        f'border-radius:9px;margin:10px 0"></iframe>'
+    )
 
 
 def finalize(fig, number, path, tight=True):
