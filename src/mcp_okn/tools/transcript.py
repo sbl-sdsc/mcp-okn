@@ -18,18 +18,11 @@ from ..app import mcp
 from ..mermaid_namespace import namespace_document
 from ..sparql import FEDERATION_ENDPOINT, named_graph
 
-# Surfaced (as a caller-facing warning, NOT baked into the stored artifact) whenever a transcript is
-# built with per-query diagrams turned OFF while queries exist. Turning them off is the right move to
-# keep a large record from spilling, but it is only HALF the flow — the diagrams must then be re-added,
-# and skipping that silently ships a diagram-free transcript. This is the just-in-time nudge for the
-# second half, at the exact moment it is owed.
-_DIAGRAM_REMINDER = (
-    "per-query diagrams were OMITTED (include_query_diagrams=False), so they are NOT in this "
-    "document yet. If you turned them off to keep the record small, RE-ADD them before delivering: "
-    "generate one per logged query with the `sparql_to_mermaid` tool (verbatim query) and inject with "
-    "report-style's scripts/expand_query_diagrams.py. Skip the re-add ONLY if the user asked for no "
-    "diagrams."
-)
+# NOTE: turning per-query diagrams OFF (include_query_diagrams=False) is only HALF the defer-and-re-add
+# flow — the diagrams must be re-added before delivering (see the `include_query_diagrams` arg doc and
+# report-style's expand_query_diagrams.py / `readd_query_diagrams.py --check` delivery gate). The server
+# deliberately does NOT prepend a re-add reminder to the returned document: it was an HTML comment the
+# caller saved verbatim, so it stayed baked into the artifact (and read stale once diagrams were added).
 
 
 @mcp.tool()
@@ -531,7 +524,12 @@ async def create_chat_transcript(
             (both the inline queries and the "SPARQL queries executed" appendix),
             so the transcript shows the shape of every query. A query that cannot
             be parsed into a diagram is skipped silently (its text still shows).
-            Set false to omit the per-query diagrams.
+            Set false to omit the per-query diagrams (right when a large record
+            would otherwise spill) — but that is only HALF the flow: RE-ADD the
+            diagrams before delivering, via report-style's
+            `scripts/expand_query_diagrams.py`, and verify with
+            `readd_query_diagrams.py --check` (the delivery gate). Skip the re-add
+            only if the user asked for no diagrams.
         diagram_max_chars: OPTIONAL cap on a per-query diagram's size. When set,
             a diagram longer than this many characters is dropped (its query text
             still shows) so a huge diagram never bloats the transcript. Default
@@ -657,9 +655,6 @@ async def create_chat_transcript(
         if warnings:
             payload["warnings"] = warnings
         return payload
-
-    if not include_query_diagrams and log:
-        warnings.append(_DIAGRAM_REMINDER)
 
     if format != "markdown":
         return {"error": f"Unsupported format {format!r}; use 'markdown' or 'json'."}
@@ -812,7 +807,10 @@ async def create_reproducibility_record(
         format: `markdown` (default) or `json`.
         title: Document title.
         include_query_diagrams: If true (default), render a Mermaid `graph TD`
-            diagram beneath each query, subject to `diagram_max_chars`.
+            diagram beneath each query, subject to `diagram_max_chars`. Set false
+            when a large record would spill — but then RE-ADD the diagrams before
+            delivering (report-style's `scripts/expand_query_diagrams.py`; verify
+            with `readd_query_diagrams.py --check`), unless the user asked for none.
         diagram_max_chars: Drop a per-query diagram longer than this many characters
             (default 1500) so an oversized diagram never bloats the record; the
             query's SPARQL text still shows.
@@ -944,9 +942,6 @@ async def create_reproducibility_record(
         if warnings:
             payload["warnings"] = warnings
         return payload
-
-    if not include_query_diagrams and selected:
-        warnings.append(_DIAGRAM_REMINDER)
 
     if format != "markdown":
         return {"error": f"Unsupported format {format!r}; use 'markdown' or 'json'."}

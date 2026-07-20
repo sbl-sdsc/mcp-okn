@@ -910,21 +910,19 @@ async def test_query_diagram_can_be_disabled():
 
 
 @pytest.mark.asyncio
-async def test_diagrams_off_reminds_to_readd():
-    """Turning per-query diagrams OFF (right for keeping a large record from spilling) is only HALF
-    the flow — the tool nudges the caller to re-add them, as a caller-facing comment kept OUT of the
-    stored artifact. Fires only when diagrams are off, so a normal (diagrams-on) call never nags."""
+async def test_diagrams_off_does_not_bake_a_reminder():
+    """Turning per-query diagrams OFF must NOT prepend a re-add reminder to the returned document.
+
+    The reminder used to be a leading `<!-- mcp-okn WARNING: … -->` comment, but callers save the
+    tool result verbatim, so it stayed baked into the artifact and read stale once the diagrams were
+    re-added. The re-add is now driven by the `include_query_diagrams` arg doc and enforced by the
+    `readd_query_diagrams.py --check` delivery gate instead, so the returned document stays clean."""
     session.record(_q("sawgraph"), "json", result=JSON_RESULT)
     off = await create_reproducibility_record(model="m", include_query_diagrams=False)
-    assert "include_query_diagrams=False" in off and "expand_query_diagrams" in off
-    assert off.startswith("<!--")  # a caller-facing comment, not body prose
-    # ...but the reminder is NOT baked into the canonical stored transcript
+    assert not off.startswith("<!--")  # no leading reminder comment
+    assert "OMITTED" not in off and "mcp-okn WARNING" not in off
+    # ...and nothing stale in the stored transcript either.
     assert "OMITTED" not in (session.last_transcript() or "")
-
-    session.reset()
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    on = await create_reproducibility_record(model="m")  # diagrams on by default
-    assert "OMITTED" not in on  # no spurious nag
 
 
 async def test_unparseable_query_skips_diagram_but_keeps_text():
