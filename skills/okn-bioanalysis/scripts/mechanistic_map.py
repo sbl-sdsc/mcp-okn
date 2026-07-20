@@ -2,7 +2,7 @@
 mechanistic_map.py — render an anchor→module→gene→drug **mechanistic map**: a radial network that
 places the entities you actually retrieved (genes, pathway/mechanistic modules, drugs) around a
 central disease/anchor, so a reader sees the mechanism at a glance. Generalises the hand-built T2D
-fig3 (docs/examples/Diabetes2). Use it for a "map the biology of X" synthesis (see
+fig8 (docs/examples/Diabetes3). Use it for a "map the biology of X" synthesis (see
 references/mechanistic-map.md); it is a SYNTHESIS view, not a query result.
 
     from mechanistic_map import render_mechanistic_map

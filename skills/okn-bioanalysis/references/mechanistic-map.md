@@ -3,7 +3,7 @@
 When the question is **"map the biology of X"** — a disease, a gene, a chemical — the payoff figure is
 a **mechanistic map**: a radial network that places the entities you *retrieved from the federation*
 around the anchor so a reader sees the mechanism at a glance. It is the synthesis view that ties the
-analysis together; the T2D example (`docs/examples/Diabetes2`, report §6, fig3) is the model.
+analysis together; the T2D example (`docs/examples/Diabetes3`, report §7, fig8) is the model.
 
 Build it with **`scripts/mechanistic_map.py`** (`render_mechanistic_map(...)`, or a JSON spec) — don't
 hand-write the layout each time. `python scripts/mechanistic_map.py --demo` renders the T2D example.
