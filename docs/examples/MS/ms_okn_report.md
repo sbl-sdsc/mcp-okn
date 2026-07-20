@@ -107,7 +107,7 @@ Organised by entity class, the retrieved profile is:
 
 GXA supplies 9 MS studies and 19 MS-specific contrasts, which between them resolve the axes the objectives asked for: **immune compartment** (whole blood, peripheral blood, cerebrospinal fluid), **cell type** (CD4 T cells, CD8 T cells, B cells, monocytes, neutrophils), **CNS tissue** (cortical tissue in SPMS), **subtype** (RRMS in E-GEOD-66573; SPMS in E-GEOD-32645; PPMS in E-GEOD-23205) and **treatment status** (before versus after IFN-β, in five paired cell-type contrasts of E-GEOD-60424).
 
-![Figure 3](figures/fig5_expression_context.png)
+![Figure 3](figures/fig3_expression_context.png)
 
 > ***Figure 3. Differential expression by compartment, cell type, subtype and treatment status (gene-expression-atlas-okn).*** **(A)** All 19 MS-specific contrasts, showing up-regulated (red) and down-regulated (blue) gene counts, grouped by compartment and annotated with subtype and with the number of enriched terms where gene-level rows were absent. Contrasts labelled *no DE genes retrieved* carry only contrast-level enrichment in the federated copy. **(B)** The 13 genes recurring in ≥ 2 MS contrasts, as a gene × contrast panel coloured by direction. Provenance: GXA `biolink:GeneExpressionMixin` associations whose subject assay belongs to a study `biolink:studies` an MS disease node, restricted to assays whose contrast name names MS.
 
@@ -117,7 +117,7 @@ Two things are visible and both are important. The signal that recurs across com
 
 spoke-okn carries MS prevalence for 200 countries (IHME, GBD 2019, expressed as percent of population with 95 % uncertainty intervals) and all-cause MS mortality for 178 countries (WHO Global Health Estimates). Neither carries coordinates, so the geography was obtained by a **cross-KG join to Wikidata** on ISO-3166 alpha-3 (`wdt:P298`) retrieving country centroids (`wdt:P625`) — the single query that makes the spatial analysis possible, and one that is logged in full.
 
-![Figure 4](figures/fig7_epidemiology.png)
+![Figure 4](figures/fig4_epidemiology.png)
 
 > ***Figure 4. Global MS prevalence and the latitude gradient (spoke-okn × wikidata).*** **(A)** 200 country centroids on a reprojected (EPSG:3857) basemap, marker colour and size encoding MS prevalence per 100,000 on a log scale. **(B)** Absolute latitude versus prevalence per 100,000 (log y), coloured by hemisphere, with a fitted trend and Spearman ρ = 0.836, p = 2.1e-53, n = 200. **(C)** Prevalence per 100,000 by 10° absolute-latitude band, with n per band. Provenance: prevalence from spoke-okn `PREVALENCE_DpL` reified statements on `DOID:2377` (`so:value` as percent, `so:lower`/`so:upper` as the 95 % UI, `dct:source` = IHME, `so:year` = 2019); coordinates from wikidata `wdt:P625` joined on `wdt:P298`. *Basemap note:* the static panel uses an offline Natural Earth 1:110 m coastline because the analysis sandbox blocks tile hosts; the interactive map below uses live OpenStreetMap tiles.
 
@@ -143,13 +143,13 @@ The EBV link is the one environmental factor the federation supports with a data
 
 **Families run: GO biological process, GO molecular function, GO cellular component, Reactome pathway, and the disease/trait gene-set family (both its broad and its curated arms).** Families deliberately **skipped**: chemical / adverse-outcome-pathway set enrichment (`biobricks-*`, `biobricks-aopwiki`) — skipped because no chemical-exposure question was posed for MS and the curated chemical risk factors were already obtained from rdkg; and phenotype (HP) set enrichment — skipped because, as §6.3 shows, adult MS has no HP annotation in the federation to enrich against, so the test is undefined rather than negative.
 
-![Figure 5](figures/fig3_go_enrichment.png)
+![Figure 5](figures/fig5_go_enrichment.png)
 
 > ***Figure 5. Gene Ontology enrichment of the curated MS gene set (prokn, symbol-bridged).*** **(A)** Top 20 biological-process terms at FDR < 0.05 of 135 tested (118 significant), ranked by −log₁₀(FDR) and annotated with fold enrichment and (k/K). **(B)** Top 10 molecular-function terms (24 of 43 significant). **(C)** Top 10 cellular-component terms (12 of 32 significant). Foreground: the spoke-okn curated MS gene set (86 genes mapped into ProKN for BP, 65 for MF, 66 for CC). Background: all ProKN gene symbols carrying that annotation type (7663 / 8033 / 8094). One-sided hypergeometric + Benjamini–Hochberg FDR. Provenance: prokn Gene →`SIO_010078` encodes→ Protein →`RO_0002331` involved in / `RO_0002327` enables / `up:partOf`→ GO. Symbol-bridged, therefore lower-confidence than an id-keyed join.
 
 The BP result is not merely "immune": it is specifically a **receptor-proximal cytokine-signalling** result. *cell surface receptor signaling pathway via JAK-STAT* leads at 30.33-fold, followed by immune response (9.4-fold), positive regulation of T-cell proliferation (22.3-fold), cytokine-mediated signalling (13.7-fold), IL-2-mediated signalling (44.6-fold) and **T-helper 17 cell lineage commitment** (4/8, 44.6-fold, FDR 1.2 × 10⁻⁵). Alongside these sit three terms that carry the disease-specific content: **response to vitamin D** (4/15, 23.8-fold, FDR 1.2 × 10⁻⁴), **microglial cell activation** (4/20, 17.8-fold, FDR 2.6 × 10⁻⁴) and **macrophage differentiation** (4/16, 22.3-fold). The MF panel localises the mechanism to **cytokine activity** (10/83, 14.9-fold) and **coreceptor activity** (6/50, 14.8-fold) with **peptide antigen binding** (3/22, 16.9-fold) capturing the MHC contribution; the CC panel puts it on the **external side of the plasma membrane** (15/183, 10.1-fold, FDR 3.6 × 10⁻¹⁰) and the **cell surface** (19/498). Read together, the three aspects say the same thing in three vocabularies: MS risk genes encode *cell-surface receptors and their immediate signalling partners*, which is precisely the compartment that biologic DMTs act on.
 
-![Figure 6](figures/fig4_reactome.png)
+![Figure 6](figures/fig6_reactome.png)
 
 > ***Figure 6. Reactome pathway enrichment (prokn, symbol-bridged) — a separate family from Figure 5.*** Top 20 of 47 pathways tested (43 significant at FDR < 0.05), ranked by −log₁₀(FDR), annotated with fold and (k/K), bars coloured by manually assigned theme. Foreground 71 genes; background 6032 ProKN genes with a human (R-HSA) Reactome pathway. One-sided hypergeometric + Benjamini–Hochberg FDR. Provenance: prokn Gene →`SIO_010078`→ Protein →`RO_0000056` participates in→ `up:Pathway`, filtered to R-HSA.
 
@@ -183,7 +183,7 @@ Three layers, at three different evidence grades, and they must not be flattened
 
 **Layer 3 — target-anchored pipeline and repurposing.** Inverting the target→drug relation over the MS target set returns 4507 rows and 4075 distinct compounds, of which the phase ≥ 3 agents cluster on exactly the targets Layer 2 identified: S1PR1 (ponesimod, siponimod, ozanimod, etrasimod, cenerimod, mocravimod), BTK (13 agents), MS4A1 (12), DHODH (teriflunomide, leflunomide, vidofludimus), KEAP1/NFE2L2 (fumarates, omaveloxolone), CD80 (galiximab), IL2RA (inolimomab). The **repurposing signal** is where the same target is already drugged for another indication: *etrasimod*, *cenerimod* and *mocravimod* on S1PR1 (developed for ulcerative colitis, lupus and graft-versus-host disease respectively); *omaveloxolone* on the NRF2 axis (approved for Friedreich ataxia); *leflunomide* on DHODH (rheumatoid arthritis); *galiximab* on CD80. Each is a **mechanistic-similarity hypothesis, not a clinical recommendation** — the evidence layer is "acts on a target that an approved MS drug also acts on", which is the weakest rung that still deserves the name.
 
-![Figure 7](figures/fig8_therapeutics.png)
+![Figure 7](figures/fig7_therapeutics.png)
 
 > ***Figure 7. Therapeutic landscape.*** **(A)** Drug × MS subtype matrix from rdkg: squares mark asserted `treats` edges against the four MONDO subtypes rdkg models (MS, RRMS, PRMS, pediatric MS); the two `contraindicated_for` entries (ascorbic acid, zinc gluconate) are marked distinctly. Trial-arm variants have been normalised to a single agent. **(B)** Top 20 molecular targets by number of MS-indicated ProKN drugs acting on them, with the eight key MS targets highlighted. Provenance: rdkg `biolink:treats` / `contraindicated_for` on the MONDO subtree; prokn `NCIT_C41184` (Indication) plus `up:activity` / `RO_0002436` target wiring.
 
@@ -191,7 +191,7 @@ Panel (A) also exposes an ontology artefact worth naming: the BTK inhibitors lan
 
 ### 6.6 The mechanistic synthesis
 
-![Figure 8](figures/fig9_mechanistic_map.png)
+![Figure 8](figures/fig8_mechanistic_map.png)
 
 > ***Figure 8. Radial anchor → module → gene → drug mechanistic map of multiple sclerosis.*** Anchor: multiple sclerosis. The eight modules are a **declared synthesis** over the enrichment output of §6.1 and curated pathway membership — they are an interpretive grouping, not a retrieved object. Every one of the 63 genes shown was verified present in the retrieved evidence set (`gene_evidence_master.csv`); none was added for narrative convenience. Drug nodes are labelled by evidence layer: approved DMT, investigational, or symptomatic. Provenance: genes from spoke-okn `ASSOCIATES_DaG` + digcfdekg `geneToTrait` + GXA MS contrasts; module assignment from prokn GO/Reactome enrichment; drugs from rdkg `treats` and prokn target wiring.
 
@@ -199,7 +199,7 @@ The map's value is that the drug layer attaches to only a subset of the modules.
 
 ### 6.7 The interferon signature across MS contrasts
 
-![Figure 9](figures/fig6_gxa_enrichment_themes.png)
+![Figure 9](figures/fig9_gxa_enrichment_themes.png)
 
 > ***Figure 9. Contrast-level enrichment across MS studies (gene-expression-atlas-okn).*** **(A)** Top 20 GO terms and **(B)** top 20 Reactome pathways, ranked by the number of MS-specific contrasts in which they are enriched, coloured by theme (type I IFN / type II IFN / antiviral–ISG / translation–ribosome / other). Provenance: GXA associations carrying `wobd:enrichment_source` `GXA:GO` / `GXA:Reactome`, restricted to MS-named contrasts (332 rows over 13 contrasts).
 
