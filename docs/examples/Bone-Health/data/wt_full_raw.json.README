@@ -1,6 +1,0 @@
-Raw SPARQL results (spoke-genelab v0.0.2, OKN federation) for the OSD-690 bone-marrow
-Space-Flight-vs-Ground-Control significant signatures (adj_p_value <= 0.05), projected to
-human orthologs via IS_ORTHOLOG_MGiG. wt_full_raw.json = Wild Type arm (assay
-OSD-690-f82a89dc82f2903149d2d11cbd6a130d); ko_full_raw.json = Nrf2KO arm
-(assay OSD-690-d89cbb20c4b7855f3f955e4adbb6515d). Columns: mEntrez, symbol (mouse),
-hEntrez, humanSymbol, log2fc (>0 = up in spaceflight), adj_p_value.
