@@ -1,0 +1,1 @@
+TR=/sessions/cool-peaceful-ritchie/mnt/.claude/projects/-Users-peter-Library-Application-Support-Claude-local-agent-mode-sessions-add4cb4c-ea1e-402a-94dc-95fef2a8a1da-a3f85abe-537c-4d9f-9d6d-83586c51feaa-local-c7cfba1c-ec68-4427-9cfe-31d478a8d42c-outputs/010cd1ec-89c7-4b99-a7b0-f408ca7eab4a/tool-results

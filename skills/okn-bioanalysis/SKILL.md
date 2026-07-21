@@ -216,7 +216,7 @@ label-match cases, and the bio↔geography bridges are tabulated in **`reference
     yields a tiered gene/protein core (step 12) that groups into a few mechanistic themes (enrichment,
     step 6, or curated pathway membership) plus a drug/target layer (step 10), synthesize them into a
     **radial anchor → module → gene → drug map** — the payoff figure that shows the mechanism at a
-    glance (T2D example: `docs/examples/Diabetes3`, report §7). Render it with
+    glance (T2D example: `docs/examples/Diabetes`, report §7). Render it with
     `scripts/mechanistic_map.py`; **`references/mechanistic-map.md`** has the structure and the honesty
     rules (every node was actually retrieved; modules are a declared synthesis; label the drug evidence
     layer; carry the standing caveats). Skip it for a purely geospatial or module-less result.
