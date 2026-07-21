@@ -1,0 +1,1325 @@
+{
+  "vars": [
+    "mondo",
+    "doid",
+    "doidLabel",
+    "gene",
+    "geneSymbol",
+    "ensembl"
+  ],
+  "rows": [
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/1001",
+      "geneSymbol": "CDH3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000062038"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10019",
+      "geneSymbol": "SH2B3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000111252"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/100287898",
+      "geneSymbol": "TTC34",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000215912"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10055",
+      "geneSymbol": "SAE1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000142230"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10102",
+      "geneSymbol": "TSFM",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000123297"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10154",
+      "geneSymbol": "PLXNC1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000136040"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10410",
+      "geneSymbol": "IFITM3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000142089"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10437",
+      "geneSymbol": "IFI30",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000216490"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10461",
+      "geneSymbol": "MERTK",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000153208"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10538",
+      "geneSymbol": "BATF",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000156127"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10636",
+      "geneSymbol": "RGS14",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000169220"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10665",
+      "geneSymbol": "TSBP1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000204296"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10666",
+      "geneSymbol": "CD226",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000150637"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10892",
+      "geneSymbol": "MALT1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000172175"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/109",
+      "geneSymbol": "ADCY3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000138031"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/10956",
+      "geneSymbol": "OS9",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000135506"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/11262",
+      "geneSymbol": "SP140",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000079263"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/115350",
+      "geneSymbol": "FCRL1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000163534"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/115701",
+      "geneSymbol": "ALPK2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000198796"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/116028",
+      "geneSymbol": "RMI2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000175643"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/116986",
+      "geneSymbol": "AGAP2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000135439"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/117289",
+      "geneSymbol": "TAGAP",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000164691"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/127281",
+      "geneSymbol": "PRXL2B",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000157870"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/1437",
+      "geneSymbol": "CSF2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000164400"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/1439",
+      "geneSymbol": "CSF2RB",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000100368"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/148867",
+      "geneSymbol": "SLC30A7",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000162695"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/150159",
+      "geneSymbol": "SLC9B1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000164037"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/150962",
+      "geneSymbol": "PUS10",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000162927"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/158358",
+      "geneSymbol": "BRD10",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000183354"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/1591",
+      "geneSymbol": "CYP24A1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000019186"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/1594",
+      "geneSymbol": "CYP27B1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000111012"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/199",
+      "geneSymbol": "AIF1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000204472"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/2078",
+      "geneSymbol": "ERG",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000157554"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/2113",
+      "geneSymbol": "ETS1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000134954"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/221895",
+      "geneSymbol": "JAZF1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000153814"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/222659",
+      "geneSymbol": "PXT1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000179165"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/22806",
+      "geneSymbol": "IKZF3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000161405"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/23095",
+      "geneSymbol": "KIF1B",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000054523"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/2315",
+      "geneSymbol": "MLANA",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000120215"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/23187",
+      "geneSymbol": "PHLDB1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000019144"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/23274",
+      "geneSymbol": "CLEC16A",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000038532"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/23315",
+      "geneSymbol": "SLC9A8",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000197818"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/23338",
+      "geneSymbol": "JADE2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000043143"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/23576",
+      "geneSymbol": "DDAH1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000153904"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/253461",
+      "geneSymbol": "ZBTB38",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000177311"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/2581",
+      "geneSymbol": "GALC",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000054983"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/25816",
+      "geneSymbol": "TNFAIP8",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000145779"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/26227",
+      "geneSymbol": "PHGDH",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000092621"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/2625",
+      "geneSymbol": "GATA3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000107485"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/2670",
+      "geneSymbol": "GFAP",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000131095"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/2672",
+      "geneSymbol": "GFI1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000162676"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/27086",
+      "geneSymbol": "FOXP1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000114861"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/27120",
+      "geneSymbol": "DKKL1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000104901"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/2885",
+      "geneSymbol": "GRB2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000177885"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3117",
+      "geneSymbol": "HLA-DQA1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000196735"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3123",
+      "geneSymbol": "HLA-DRB1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000196126"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3134",
+      "geneSymbol": "HLA-F",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000204642"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3198",
+      "geneSymbol": "HOXA1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000105991"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/344657",
+      "geneSymbol": "LRRIQ4",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000188306"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3456",
+      "geneSymbol": "IFNB1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000171855"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3458",
+      "geneSymbol": "IFNG",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000111537"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3460",
+      "geneSymbol": "IFNGR2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000159128"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3552",
+      "geneSymbol": "IL1A",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000115008"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3553",
+      "geneSymbol": "IL1B",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000125538"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3558",
+      "geneSymbol": "IL2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000109471"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3559",
+      "geneSymbol": "IL2RA",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000134460"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3565",
+      "geneSymbol": "IL4",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000113520"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3569",
+      "geneSymbol": "IL6",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000136244"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3575",
+      "geneSymbol": "IL7R",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000168685"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3586",
+      "geneSymbol": "IL10",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000136634"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3592",
+      "geneSymbol": "IL12A",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000168811"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3605",
+      "geneSymbol": "IL17A",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000112115"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3684",
+      "geneSymbol": "ITGAM",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000169896"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3716",
+      "geneSymbol": "JAK1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000162434"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/388650",
+      "geneSymbol": "DIPK1A",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000154511"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/3985",
+      "geneSymbol": "LIMK2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000182541"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/4026",
+      "geneSymbol": "LPP",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000145012"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/4155",
+      "geneSymbol": "MBP",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000197971"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/4234",
+      "geneSymbol": "METTL1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000037897"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/4299",
+      "geneSymbol": "AFF1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000172493"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/4340",
+      "geneSymbol": "MOG",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000204655"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/4524",
+      "geneSymbol": "MTHFR",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000177000"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/4607",
+      "geneSymbol": "MYBPC3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000134571"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/4689",
+      "geneSymbol": "NCF4",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000100365"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/4747",
+      "geneSymbol": "NEFL",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000277586"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/50943",
+      "geneSymbol": "FOXP3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000049768"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/51176",
+      "geneSymbol": "LEF1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000138795"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/51300",
+      "geneSymbol": "TIMMDC1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000113845"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/51513",
+      "geneSymbol": "ETV7",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000010030"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/51741",
+      "geneSymbol": "WWOX",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000186153"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/54331",
+      "geneSymbol": "GNG2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000186469"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/54790",
+      "geneSymbol": "TET2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000168769"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/54806",
+      "geneSymbol": "AHI1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000135541"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/55016",
+      "geneSymbol": "MARCHF1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000145416"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/55501",
+      "geneSymbol": "CHST12",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000136213"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/55765",
+      "geneSymbol": "INAVA",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000163362"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/5594",
+      "geneSymbol": "MAPK1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000100030"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/56244",
+      "geneSymbol": "BTNL2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000204290"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/56731",
+      "geneSymbol": "SLC2A4RG",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000125520"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/56829",
+      "geneSymbol": "ZC3HAV1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000105939"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/57153",
+      "geneSymbol": "SLC44A2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000129353"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/57178",
+      "geneSymbol": "ZMIZ1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000108175"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/57216",
+      "geneSymbol": "VANGL2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000162738"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/57449",
+      "geneSymbol": "PLEKHG5",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000171680"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/57605",
+      "geneSymbol": "PITPNM2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000090975"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/57727",
+      "geneSymbol": "NCOA5",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000124160"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/57823",
+      "geneSymbol": "SLAMF7",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000026751"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/5788",
+      "geneSymbol": "PTPRC",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000081237"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/58513",
+      "geneSymbol": "EPS15L1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000127527"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/5996",
+      "geneSymbol": "RGS1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000090104"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/60468",
+      "geneSymbol": "BACH2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000112182"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/627",
+      "geneSymbol": "BDNF",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000176697"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/6302",
+      "geneSymbol": "TSPAN31",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000135452"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/6310",
+      "geneSymbol": "ATXN1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000124788"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/6311",
+      "geneSymbol": "ATXN2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000204842"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/6347",
+      "geneSymbol": "CCL2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000108691"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/643",
+      "geneSymbol": "CXCR5",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000160683"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/6565",
+      "geneSymbol": "SLC15A2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000163406"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/6597",
+      "geneSymbol": "SMARCA4",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000127616"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/677",
+      "geneSymbol": "ZFP36L1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000185650"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/6774",
+      "geneSymbol": "STAT3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000168610"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/6775",
+      "geneSymbol": "STAT4",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000138378"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/6911",
+      "geneSymbol": "TBX6",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000149922"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/7040",
+      "geneSymbol": "TGFB1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000105329"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/7049",
+      "geneSymbol": "TGFBR3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000069702"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/7099",
+      "geneSymbol": "TLR4",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000136869"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/7124",
+      "geneSymbol": "TNF",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000232810"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/7132",
+      "geneSymbol": "TNFRSF1A",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000067182"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/7156",
+      "geneSymbol": "TOP3A",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000177302"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/7187",
+      "geneSymbol": "TRAF3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000131323"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/7294",
+      "geneSymbol": "TXK",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000074966"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/7297",
+      "geneSymbol": "TYK2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000105397"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/7813",
+      "geneSymbol": "EVI5",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000067208"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/79172",
+      "geneSymbol": "CENPO",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000138092"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/79258",
+      "geneSymbol": "MMEL1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000142606"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/79722",
+      "geneSymbol": "ANKRD55",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000164512"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/79841",
+      "geneSymbol": "AGBL2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000165923"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/79899",
+      "geneSymbol": "PRR5L",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000135362"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/79931",
+      "geneSymbol": "TNIP3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000050730"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/80762",
+      "geneSymbol": "NDFIP1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000131507"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/81606",
+      "geneSymbol": "LBH",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000213626"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/81671",
+      "geneSymbol": "VMP1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000062716"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/83715",
+      "geneSymbol": "ESPN",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000187017"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/84166",
+      "geneSymbol": "NLRC5",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000140853"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/84769",
+      "geneSymbol": "MPV17L2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000254858"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/84969",
+      "geneSymbol": "TOX2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000124191"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/864",
+      "geneSymbol": "RUNX3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000020633"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/868",
+      "geneSymbol": "CBLB",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000114423"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/8740",
+      "geneSymbol": "TNFSF14",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000125735"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/8826",
+      "geneSymbol": "IQGAP1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000140575"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/8935",
+      "geneSymbol": "SKAP2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000005020"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/920",
+      "geneSymbol": "CD4",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000010610"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/923",
+      "geneSymbol": "CD6",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000013725"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/925",
+      "geneSymbol": "CD8A",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000153563"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/9326",
+      "geneSymbol": "ZNHIT3",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000273611"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/942",
+      "geneSymbol": "CD86",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000114013"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/9572",
+      "geneSymbol": "NR1D1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000126368"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/958",
+      "geneSymbol": "CD40",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000101017"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/965",
+      "geneSymbol": "CD58",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000116815"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/9657",
+      "geneSymbol": "IQCB1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000173226"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/969",
+      "geneSymbol": "CD69",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000110848"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/9749",
+      "geneSymbol": "PHACTR2",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000112419"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/9830",
+      "geneSymbol": "TRIM14",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000106785"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "doid": "http://purl.obolibrary.org/obo/DOID_2377",
+      "doidLabel": "multiple sclerosis",
+      "gene": "http://www.ncbi.nlm.nih.gov/gene/9844",
+      "geneSymbol": "ELMO1",
+      "ensembl": "http://identifiers.org/ensembl/ENSG00000155849"
+    }
+  ],
+  "row_count": 164
+}

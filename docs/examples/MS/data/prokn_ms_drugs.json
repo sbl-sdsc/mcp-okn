@@ -1,0 +1,7003 @@
+{
+ "task": "A \u2014 prokn MS drug indications + drug targets",
+ "kg": "prokn (https://purl.org/okn/frink/kg/prokn)",
+ "method": {
+  "indication_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184 (NCIT Indication)",
+  "ms_terms_queried": "DOID_2377/2378/0050783/0050784/0050785, MONDO_0005301 subtree, NCIT_C3243, MeSH D009103/D020529/D020528, EFO_0003929/0008520/0008522, ICD10 G35, SNOMEDCT 24700007",
+  "target_predicates_found": [
+   "http://purl.uniprot.org/core/activity (Compound->UniProt, IDG/DDKG source)",
+   "http://purl.obolibrary.org/obo/RO_0002436 molecularly interacts with (Compound->UniProt, ChEMBL/DrugCentral source)"
+  ],
+  "target_predicates_absent": [
+   "biolink:target_for is Disease->Gene in prokn, NOT drug->target",
+   "http://schema.org/target does not exist in prokn"
+  ],
+  "symbol_mapping": "?gene SIO_010078 ?protein ; rdfs:label ?symbol",
+  "phase_property": "https://w3id.org/reproduceme#Phase (ChEMBL max phase)",
+  "approval_property": "http://purl.obolibrary.org/obo/NCIT_C25425 (approval year)"
+ },
+ "counts": {
+  "ms_indicated_drugs": 249,
+  "drugs_with_targets": 147,
+  "distinct_targets": 130,
+  "distinct_target_symbols": 94,
+  "indication_rows": 945,
+  "target_rows": 1002,
+  "reified_statements": 17,
+  "ms_term_hit_counts": {
+   "http://purl.obolibrary.org/obo/DOID_2378": 8,
+   "http://purl.obolibrary.org/obo/DOID_2377": 26,
+   "http://purl.obolibrary.org/obo/DOID_0050783": 1,
+   "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103": 514,
+   "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529": 243,
+   "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528": 153
+  }
+ },
+ "target_ranking": [
+  {
+   "target": "NR3C1",
+   "n_drugs": 17
+  },
+  {
+   "target": "S1PR1",
+   "n_drugs": 8
+  },
+  {
+   "target": "S1PR5",
+   "n_drugs": 5
+  },
+  {
+   "target": "CHEMBL2331043",
+   "n_drugs": 5
+  },
+  {
+   "target": "CHEMBL2094253",
+   "n_drugs": 5
+  },
+  {
+   "target": "HRH1",
+   "n_drugs": 5
+  },
+  {
+   "target": "SLC6A3",
+   "n_drugs": 5
+  },
+  {
+   "target": "BTK",
+   "n_drugs": 5
+  },
+  {
+   "target": "S1PR4",
+   "n_drugs": 4
+  },
+  {
+   "target": "S1PR3",
+   "n_drugs": 4
+  },
+  {
+   "target": "SLC6A2",
+   "n_drugs": 4
+  },
+  {
+   "target": "MS4A1",
+   "n_drugs": 4
+  },
+  {
+   "target": "DHODH",
+   "n_drugs": 3
+  },
+  {
+   "target": "NR3C2",
+   "n_drugs": 3
+  },
+  {
+   "target": "SERPINA6",
+   "n_drugs": 3
+  },
+  {
+   "target": "KEAP1",
+   "n_drugs": 3
+  },
+  {
+   "target": "CHEMBL2362996",
+   "n_drugs": 3
+  },
+  {
+   "target": "CHEMBL2363041",
+   "n_drugs": 3
+  },
+  {
+   "target": "TOP2A",
+   "n_drugs": 2
+  },
+  {
+   "target": "DHFR",
+   "n_drugs": 2
+  },
+  {
+   "target": "VDR",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2095215",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2363042",
+   "n_drugs": 2
+  },
+  {
+   "target": "PGR",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2111462",
+   "n_drugs": 2
+  },
+  {
+   "target": "FKBP1A",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL1907599",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2095184",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2364153",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2364154",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2111369",
+   "n_drugs": 2
+  },
+  {
+   "target": "KIT",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2094255",
+   "n_drugs": 2
+  },
+  {
+   "target": "Q9Y275",
+   "n_drugs": 2
+  },
+  {
+   "target": "CNR1",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2093866",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2093863",
+   "n_drugs": 2
+  },
+  {
+   "target": "CA2",
+   "n_drugs": 2
+  },
+  {
+   "target": "CA4",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2111463",
+   "n_drugs": 2
+  },
+  {
+   "target": "DRD2",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2093872",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2096670",
+   "n_drugs": 2
+  },
+  {
+   "target": "CHEMBL2109241",
+   "n_drugs": 2
+  },
+  {
+   "target": "CCR2",
+   "n_drugs": 2
+  },
+  {
+   "target": "TRPM7",
+   "n_drugs": 1
+  },
+  {
+   "target": "CYP2D6",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCNA2",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCNA4",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCNA5",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCNC1",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCNC3",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCNB1",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCNA10",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCNB2",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCNC2",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCNA7",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCND1",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCND2",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCND3",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHRM2",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHRM4",
+   "n_drugs": 1
+  },
+  {
+   "target": "ABCC1",
+   "n_drugs": 1
+  },
+  {
+   "target": "KCNH2",
+   "n_drugs": 1
+  },
+  {
+   "target": "SLC47A2",
+   "n_drugs": 1
+  },
+  {
+   "target": "SLC47A1",
+   "n_drugs": 1
+  },
+  {
+   "target": "ABCG2",
+   "n_drugs": 1
+  },
+  {
+   "target": "S1PR2",
+   "n_drugs": 1
+  },
+  {
+   "target": "HCAR2",
+   "n_drugs": 1
+  },
+  {
+   "target": "NR1I2",
+   "n_drugs": 1
+  },
+  {
+   "target": "SHBG",
+   "n_drugs": 1
+  },
+  {
+   "target": "IL6",
+   "n_drugs": 1
+  },
+  {
+   "target": "GLUL",
+   "n_drugs": 1
+  },
+  {
+   "target": "ADAM17",
+   "n_drugs": 1
+  },
+  {
+   "target": "TRPC5",
+   "n_drugs": 1
+  },
+  {
+   "target": "HMGCR",
+   "n_drugs": 1
+  },
+  {
+   "target": "FAAH",
+   "n_drugs": 1
+  },
+  {
+   "target": "TRPV1",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHEMBL2111329",
+   "n_drugs": 1
+  },
+  {
+   "target": "PTGS2",
+   "n_drugs": 1
+  },
+  {
+   "target": "SLC6A4",
+   "n_drugs": 1
+  },
+  {
+   "target": "P20711",
+   "n_drugs": 1
+  },
+  {
+   "target": "IMPA1",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHEMBL2095188",
+   "n_drugs": 1
+  },
+  {
+   "target": "P31358",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHEMBL2364167",
+   "n_drugs": 1
+  },
+  {
+   "target": "PPARG",
+   "n_drugs": 1
+  },
+  {
+   "target": "ESR1",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHEMBL2095173",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHEMBL2094124",
+   "n_drugs": 1
+  },
+  {
+   "target": "ABL1",
+   "n_drugs": 1
+  },
+  {
+   "target": "PDGFRB",
+   "n_drugs": 1
+  },
+  {
+   "target": "GPD2",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHEMBL2363065",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHEMBL2364168",
+   "n_drugs": 1
+  },
+  {
+   "target": "IL17A",
+   "n_drugs": 1
+  },
+  {
+   "target": "ITGA2",
+   "n_drugs": 1
+  },
+  {
+   "target": "HRH2",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHEMBL2095181",
+   "n_drugs": 1
+  },
+  {
+   "target": "FGFR3",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHEMBL2095189",
+   "n_drugs": 1
+  },
+  {
+   "target": "PDE5A",
+   "n_drugs": 1
+  },
+  {
+   "target": "PDE3A",
+   "n_drugs": 1
+  },
+  {
+   "target": "PDE10A",
+   "n_drugs": 1
+  },
+  {
+   "target": "CA12",
+   "n_drugs": 1
+  },
+  {
+   "target": "CA1",
+   "n_drugs": 1
+  },
+  {
+   "target": "RTN4",
+   "n_drugs": 1
+  },
+  {
+   "target": "HLA-DRB1",
+   "n_drugs": 1
+  },
+  {
+   "target": "CD19",
+   "n_drugs": 1
+  },
+  {
+   "target": "CSF2",
+   "n_drugs": 1
+  },
+  {
+   "target": "HRH3",
+   "n_drugs": 1
+  },
+  {
+   "target": "HTR2A",
+   "n_drugs": 1
+  },
+  {
+   "target": "HTR2C",
+   "n_drugs": 1
+  },
+  {
+   "target": "LINGO1",
+   "n_drugs": 1
+  },
+  {
+   "target": "AR",
+   "n_drugs": 1
+  },
+  {
+   "target": "P55017",
+   "n_drugs": 1
+  },
+  {
+   "target": "ITGA4",
+   "n_drugs": 1
+  },
+  {
+   "target": "RGMA",
+   "n_drugs": 1
+  },
+  {
+   "target": "SEMA4D",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHEMBL2094268",
+   "n_drugs": 1
+  },
+  {
+   "target": "PPARA",
+   "n_drugs": 1
+  },
+  {
+   "target": "TNFRSF13C",
+   "n_drugs": 1
+  },
+  {
+   "target": "Q9UQF0",
+   "n_drugs": 1
+  },
+  {
+   "target": "GSR",
+   "n_drugs": 1
+  },
+  {
+   "target": "ADRB2",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHEMBL2094251",
+   "n_drugs": 1
+  },
+  {
+   "target": "SLC18A2",
+   "n_drugs": 1
+  },
+  {
+   "target": "RYR1",
+   "n_drugs": 1
+  },
+  {
+   "target": "RYR3",
+   "n_drugs": 1
+  },
+  {
+   "target": "CHEMBL2363032",
+   "n_drugs": 1
+  }
+ ],
+ "drugs": [
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/107970",
+   "labels": [
+    "fingolimod_107970"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2378"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/O95977",
+     "gene_symbols": [
+      "S1PR4"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P21453",
+     "gene_symbols": [
+      "S1PR1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q96QT4",
+     "gene_symbols": [
+      "TRPM7"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q99500",
+     "gene_symbols": [
+      "S1PR3"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9H228",
+     "gene_symbols": [
+      "S1PR5"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/11363176",
+   "labels": [
+    "ponesimod_11363176"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/O95977",
+     "gene_symbols": [
+      "S1PR4"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P21453",
+     "gene_symbols": [
+      "S1PR1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q99500",
+     "gene_symbols": [
+      "S1PR3"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9H228",
+     "gene_symbols": [
+      "S1PR5"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/16623",
+   "labels": [
+    "Hydrocortisone hemisuccinate",
+    "cortisol succinate_16623.0"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/1727",
+   "labels": [
+    "SID11113806_1727",
+    "dalfampridine_1727.0"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P10635",
+     "gene_symbols": [
+      "CYP2D6"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P16389",
+     "gene_symbols": [
+      "KCNA2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P22459",
+     "gene_symbols": [
+      "KCNA4"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P22460",
+     "gene_symbols": [
+      "KCNA5"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P48547",
+     "gene_symbols": [
+      "KCNC1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q14003",
+     "gene_symbols": [
+      "KCNC3"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q14721",
+     "gene_symbols": [
+      "KCNB1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q16322",
+     "gene_symbols": [
+      "KCNA10"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q92953",
+     "gene_symbols": [
+      "KCNB2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q96PR1",
+     "gene_symbols": [
+      "KCNC2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q96RP8",
+     "gene_symbols": [
+      "KCNA7"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9NSA2",
+     "gene_symbols": [
+      "KCND1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9NZV8",
+     "gene_symbols": [
+      "KCND2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9UK17",
+     "gene_symbols": [
+      "KCND3"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/3081884",
+   "labels": [
+    "Glatiramer acetate"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/31307",
+   "labels": [
+    "triamcinolone_31307"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/4212",
+   "labels": [
+    "mitoxantrone_4212",
+    "mitoxantrone_4212.0"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2378"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P08172",
+     "gene_symbols": [
+      "CHRM2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P08173",
+     "gene_symbols": [
+      "CHRM4"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P11388",
+     "gene_symbols": [
+      "TOP2A"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P33527",
+     "gene_symbols": [
+      "ABCC1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q12809",
+     "gene_symbols": [
+      "KCNH2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q86VL8",
+     "gene_symbols": [
+      "SLC47A2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q96FL8",
+     "gene_symbols": [
+      "SLC47A1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9UNQ0",
+     "gene_symbols": [
+      "ABCG2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/443967",
+   "labels": [
+    "Betamethasone acetate"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/44599207",
+   "labels": [
+    "Siponimod_44599207"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2378"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/O95977",
+     "gene_symbols": [
+      "S1PR4"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P21453",
+     "gene_symbols": [
+      "S1PR1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q99500",
+     "gene_symbols": [
+      "S1PR3"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9H228",
+     "gene_symbols": [
+      "S1PR5"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/52938427",
+   "labels": [
+    "ozanimod_52938427"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/O95136",
+     "gene_symbols": [
+      "S1PR2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/O95977",
+     "gene_symbols": [
+      "S1PR4"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P21453",
+     "gene_symbols": [
+      "S1PR1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q99500",
+     "gene_symbols": [
+      "S1PR3"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9H228",
+     "gene_symbols": [
+      "S1PR5"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/5369209",
+   "labels": [
+    "monomethyl fumarate_5369209"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2378"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q8TDS4",
+     "gene_symbols": [
+      "HCAR2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/54677946",
+   "labels": [
+    "Laquinimod"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2378"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/54684141",
+   "labels": [
+    "Teriflunomide_54684141"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P00374",
+     "gene_symbols": [
+      "DHFR"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q02127",
+     "gene_symbols": [
+      "DHODH"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/5743",
+   "labels": [
+    "DEXAMETHASONE",
+    "Dexamethasone_5743",
+    "dexamethasone_5743.0"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/O75469",
+     "gene_symbols": [
+      "NR1I2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P08235",
+     "gene_symbols": [
+      "NR3C2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/5744",
+   "labels": [
+    "Acetic acid 2-((8S,9S,10R,11S,13S,14S,17R)-11,17-dihydroxy-10,13-dimethyl-3-oxo-2,3,6,7,8,9,10,11,12,13,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-17-yl)-2-oxo-ethyl ester_5744"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P08185",
+     "gene_symbols": [
+      "SERPINA6"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/5754",
+   "labels": [
+    "Cortisol Measurement_5754.0",
+    "Hydrocortisone_5754"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04278",
+     "gene_symbols": [
+      "SHBG"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P08185",
+     "gene_symbols": [
+      "SERPINA6"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P08235",
+     "gene_symbols": [
+      "NR3C2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/5755",
+   "labels": [
+    "prednisolone_5755",
+    "prednisolone_5755.0"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P05231",
+     "gene_symbols": [
+      "IL6"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P08185",
+     "gene_symbols": [
+      "SERPINA6"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P08235",
+     "gene_symbols": [
+      "NR3C2"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P15104",
+     "gene_symbols": [
+      "GLUL"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P78536",
+     "gene_symbols": [
+      "ADAM17"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/5865",
+   "labels": [
+    "prednisone_5865",
+    "prednisone_5865.0"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/6216",
+   "labels": [
+    "Triamcinolone diacetate"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/6436",
+   "labels": [
+    "Triamcinolone Acetonide_6436",
+    "triamcinolone acetonide_6436.0"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/6741",
+   "labels": [
+    "methylprednisolone_6741"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9UL62",
+     "gene_symbols": [
+      "TRPC5"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/73330464",
+   "labels": [
+    "Diroximel fumarate"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2378"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/8254",
+   "labels": [
+    "Dimethyl Ether"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_0050783",
+    "http://purl.obolibrary.org/obo/DOID_2378"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://pubchem.ncbi.nlm.nih.gov/compound/9782",
+   "labels": [
+    "betamethasone_9782",
+    "betamethasone_9782.0"
+   ],
+   "ms_indication_terms": [
+    "http://purl.obolibrary.org/obo/DOID_2377"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "up:activity"
+     ]
+    }
+   ],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1000",
+   "labels": [
+    "CETIRIZINE",
+    "CHEMBL1000",
+    "DRUG_CHEMBL1000"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1042",
+   "labels": [
+    "CHEMBL1042",
+    "CHOLECALCIFEROL",
+    "DRUG_CHEMBL1042"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P11473",
+     "gene_symbols": [
+      "VDR"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1999.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1064",
+   "labels": [
+    "CHEMBL1064",
+    "DRUG_CHEMBL1064",
+    "SIMVASTATIN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04035",
+     "gene_symbols": [
+      "HMGCR"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1991.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1068",
+   "labels": [
+    "CHEMBL1068",
+    "DRUG_CHEMBL1068",
+    "OXCARBAZEPINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2331043",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2000.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1096146",
+   "labels": [
+    "CHEMBL1096146",
+    "DRUG_CHEMBL1096146",
+    "PONESIMOD"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P21453",
+     "gene_symbols": [
+      "S1PR1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2021.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1096882",
+   "labels": [
+    "CHEMBL1096882",
+    "DRUG_CHEMBL1096882",
+    "FLUDARABINE PHOSPHATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095215",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2363042",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1991.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL112",
+   "labels": [
+    "ACETAMINOPHEN",
+    "CHEMBL112",
+    "DRUG_CHEMBL112"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/O00519",
+     "gene_symbols": [
+      "FAAH"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q8NER1",
+     "gene_symbols": [
+      "TRPV1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094253",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1968.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL113",
+   "labels": [
+    "CAFFEINE",
+    "CHEMBL113",
+    "DRUG_CHEMBL113"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2111329",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1948.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1140",
+   "labels": [
+    "CHEMBL1140",
+    "DRUG_CHEMBL1140",
+    "NIACINAMIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1144",
+   "labels": [
+    "CHEMBL1144",
+    "DRUG_CHEMBL1144",
+    "PRAVASTATIN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1149",
+   "labels": [
+    "CHEMBL1149",
+    "DRUG_CHEMBL1149",
+    "LEVOCARNITINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1152",
+   "labels": [
+    "CHEMBL1152",
+    "DRUG_CHEMBL1152",
+    "PREDNISOLONE ACETATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1955.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1162",
+   "labels": [
+    "CHEMBL1162",
+    "DRUG_CHEMBL1162",
+    "NORETHINDRONE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P06401",
+     "gene_symbols": [
+      "PGR"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1962.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1172",
+   "labels": [
+    "CHEMBL1172",
+    "DESLORATADINE",
+    "DRUG_CHEMBL1172"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P35367",
+     "gene_symbols": [
+      "HRH1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2001.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1175",
+   "labels": [
+    "CHEMBL1175",
+    "DRUG_CHEMBL1175",
+    "DULOXETINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL118",
+   "labels": [
+    "CELECOXIB",
+    "CHEMBL118",
+    "DRUG_CHEMBL118"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P35354",
+     "gene_symbols": [
+      "PTGS2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1998.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200328",
+   "labels": [
+    "CHEMBL1200328",
+    "DRUG_CHEMBL1200328",
+    "DULOXETINE HYDROCHLORIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P23975",
+     "gene_symbols": [
+      "SLC6A2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P31645",
+     "gene_symbols": [
+      "SLC6A4"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2004.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200380",
+   "labels": [
+    "ACYCLOVIR SODIUM",
+    "CHEMBL1200380",
+    "DRUG_CHEMBL1200380"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200574",
+   "labels": [
+    "CHEMBL1200574",
+    "DRUG_CHEMBL1200574",
+    "SODIUM CHLORIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200593",
+   "labels": [
+    "CHEMBL1200593",
+    "DRUG_CHEMBL1200593",
+    "GADOTERIDOL"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200748",
+   "labels": [
+    "CARBIDOPA",
+    "CHEMBL1200748",
+    "DRUG_CHEMBL1200748"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P20711",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1975.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200795",
+   "labels": [
+    "CHEMBL1200795",
+    "CLEMASTINE FUMARATE",
+    "DRUG_CHEMBL1200795"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P35367",
+     "gene_symbols": [
+      "HRH1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1977.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200796",
+   "labels": [
+    "CHEMBL1200796",
+    "CYCLOPHOSPHAMIDE",
+    "DRUG_CHEMBL1200796"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200826",
+   "labels": [
+    "CHEMBL1200826",
+    "DRUG_CHEMBL1200826",
+    "LITHIUM CARBONATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P29218",
+     "gene_symbols": [
+      "IMPA1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095188",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1970.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200927",
+   "labels": [
+    "CHEMBL1200927",
+    "DEXCHLORPHENIRAMINE MALEATE",
+    "DRUG_CHEMBL1200927"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P35367",
+     "gene_symbols": [
+      "HRH1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1981.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201014",
+   "labels": [
+    "CHEMBL1201014",
+    "DRUG_CHEMBL1201014",
+    "PREDNISOLONE SODIUM PHOSPHATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1973.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201081",
+   "labels": [
+    "CHEMBL1201081",
+    "DRUG_CHEMBL1201081",
+    "METHYLPREDNISOLONE SODIUM SUCCINATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1959.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201119",
+   "labels": [
+    "CHEMBL1201119",
+    "DRUG_CHEMBL1201119",
+    "LIOTHYRONINE SODIUM"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2111462",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1956.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201182",
+   "labels": [
+    "CHEMBL1201182",
+    "DRUG_CHEMBL1201182",
+    "TEMSIROLIMUS"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P62942",
+     "gene_symbols": [
+      "FKBP1A"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2007.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201192",
+   "labels": [
+    "ARMODAFINIL",
+    "CHEMBL1201192",
+    "DRUG_CHEMBL1201192"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q01959",
+     "gene_symbols": [
+      "SLC6A3"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2007.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201222",
+   "labels": [
+    "CHEMBL1201222",
+    "DRUG_CHEMBL1201222",
+    "LISDEXAMFETAMINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201265",
+   "labels": [
+    "CHEMBL1201265",
+    "DRUG_CHEMBL1201265",
+    "METHYLPREDNISOLONE HEMISUCCINATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201288",
+   "labels": [
+    "CHEMBL1201288",
+    "DANTROLENE",
+    "DRUG_CHEMBL1201288"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201507",
+   "labels": [
+    "CHEMBL1201507",
+    "DRUG_CHEMBL1201507",
+    "GLATIRAMER ACETATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201576",
+   "labels": [
+    "CHEMBL1201576",
+    "DRUG_CHEMBL1201576",
+    "RITUXIMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P11836",
+     "gene_symbols": [
+      "MS4A1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1997.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201587",
+   "labels": [
+    "ALEMTUZUMAB",
+    "CHEMBL1201587",
+    "DRUG_CHEMBL1201587"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P31358",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2001.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201605",
+   "labels": [
+    "CHEMBL1201605",
+    "DACLIZUMAB",
+    "DRUG_CHEMBL1201605"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2364167",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1997.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201607",
+   "labels": [
+    "CHEMBL1201607",
+    "DRUG_CHEMBL1201607",
+    "NATALIZUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1907599",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095184",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2004.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201835",
+   "labels": [
+    "CHEMBL1201835",
+    "DRUG_CHEMBL1201835",
+    "USTEKINUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2364153",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2364154",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2009.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201836",
+   "labels": [
+    "CHEMBL1201836",
+    "DRUG_CHEMBL1201836",
+    "OFATUMUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P11836",
+     "gene_symbols": [
+      "MS4A1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2009.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1222250",
+   "labels": [
+    "CHEMBL1222250",
+    "DEXTROSE",
+    "DRUG_CHEMBL1222250"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1236924",
+   "labels": [
+    "CHEMBL1236924",
+    "INT131"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P37231",
+     "gene_symbols": [
+      "PPARG"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1248",
+   "labels": [
+    "CHEMBL1248",
+    "DRUG_CHEMBL1248",
+    "FLUORIDE ION F-18"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1256391",
+   "labels": [
+    "CHEMBL1256391",
+    "DRUG_CHEMBL1256391",
+    "PIRFENIDONE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1294",
+   "labels": [
+    "CHEMBL1294",
+    "DRUG_CHEMBL1294",
+    "QUINIDINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL131",
+   "labels": [
+    "CHEMBL131",
+    "DRUG_CHEMBL131",
+    "PREDNISOLONE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1955.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL135",
+   "labels": [
+    "CHEMBL135",
+    "DRUG_CHEMBL135",
+    "ESTRADIOL"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P03372",
+     "gene_symbols": [
+      "ESR1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1975.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1373",
+   "labels": [
+    "CHEMBL1373",
+    "DRUG_CHEMBL1373",
+    "MODAFINIL"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q01959",
+     "gene_symbols": [
+      "SLC6A3"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1998.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL140",
+   "labels": [
+    "CHEMBL140",
+    "CURCUMIN",
+    "DRUG_CHEMBL140"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1406148",
+   "labels": [
+    "CHEMBL1406148",
+    "DRUG_CHEMBL1406148",
+    "TRICAPRILIN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1417019",
+   "labels": [
+    "CHEMBL1417019",
+    "DRUG_CHEMBL1417019",
+    "MITOXANTRONE HYDROCHLORIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P11388",
+     "gene_symbols": [
+      "TOP2A"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1987.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1431",
+   "labels": [
+    "CHEMBL1431",
+    "DRUG_CHEMBL1431",
+    "METFORMIN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1434",
+   "labels": [
+    "CHEMBL1434",
+    "DRUG_CHEMBL1434",
+    "MINOCYCLINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1440",
+   "labels": [
+    "CHEMBL1440",
+    "DRUG_CHEMBL1440",
+    "TETRACYCLINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1447",
+   "labels": [
+    "CHEMBL1447",
+    "DRUG_CHEMBL1447",
+    "LINCOMYCIN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1456",
+   "labels": [
+    "CHEMBL1456",
+    "DRUG_CHEMBL1456",
+    "MYCOPHENOLATE MOFETIL"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2111369",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1995.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL146",
+   "labels": [
+    "BUTYLATED HYDROXYTOLUENE",
+    "CHEMBL146"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1464",
+   "labels": [
+    "CHEMBL1464",
+    "DRUG_CHEMBL1464",
+    "WARFARIN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1476022",
+   "labels": [
+    "CHEMBL1476022",
+    "DRUG_CHEMBL1476022",
+    "NOMEGESTROL ACETATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P06401",
+     "gene_symbols": [
+      "PGR"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1486",
+   "labels": [
+    "CHEMBL1486",
+    "DRUG_CHEMBL1486",
+    "TENOFOVIR DISOPROXIL FUMARATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1487",
+   "labels": [
+    "ATORVASTATIN",
+    "CHEMBL1487",
+    "DRUG_CHEMBL1487"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1502",
+   "labels": [
+    "CHEMBL1502",
+    "DRUG_CHEMBL1502",
+    "PANTOPRAZOLE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1503",
+   "labels": [
+    "CHEMBL1503",
+    "DRUG_CHEMBL1503",
+    "OMEPRAZOLE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095173",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1989.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1504",
+   "labels": [
+    "CHEMBL1504",
+    "DRUG_CHEMBL1504",
+    "TRIAMCINOLONE ACETONIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1960.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1534",
+   "labels": [
+    "CHEMBL1534",
+    "DRUG_CHEMBL1534",
+    "RIBOFLAVIN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1535",
+   "labels": [
+    "CHEMBL1535",
+    "DRUG_CHEMBL1535",
+    "HYDROXYCHLOROQUINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1536",
+   "labels": [
+    "CHEMBL1536",
+    "DRUG_CHEMBL1536",
+    "ERGOCALCIFEROL"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P11473",
+     "gene_symbols": [
+      "VDR"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1941.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL154",
+   "labels": [
+    "CHEMBL154",
+    "DRUG_CHEMBL154",
+    "NAPROXEN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094253",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1976.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1544",
+   "labels": [
+    "CHEMBL1544",
+    "DRUG_CHEMBL1544",
+    "LIOTHYRONINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2111462",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1956.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1556",
+   "labels": [
+    "CHEMBL1556",
+    "DRUG_CHEMBL1556",
+    "INOSINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1568",
+   "labels": [
+    "CHEMBL1568",
+    "DRUG_CHEMBL1568",
+    "FLUDARABINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1569",
+   "labels": [
+    "AMANTADINE HYDROCHLORIDE",
+    "CHEMBL1569",
+    "DRUG_CHEMBL1569"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094124",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1968.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL157101",
+   "labels": [
+    "CHEMBL157101",
+    "DRUG_CHEMBL157101",
+    "KETOCONAZOLE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1588",
+   "labels": [
+    "CHEMBL1588",
+    "DRUG_CHEMBL1588",
+    "THIAMINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1619",
+   "labels": [
+    "CHEMBL1619",
+    "CLADRIBINE",
+    "DRUG_CHEMBL1619"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1626",
+   "labels": [
+    "CHEMBL1626",
+    "CLEMASTINE",
+    "DRUG_CHEMBL1626"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1642",
+   "labels": [
+    "CHEMBL1642",
+    "DRUG_CHEMBL1642",
+    "IMATINIB MESYLATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P00519",
+     "gene_symbols": [
+      "ABL1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P09619",
+     "gene_symbols": [
+      "PDGFRB"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P10721",
+     "gene_symbols": [
+      "KIT"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2001.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1703",
+   "labels": [
+    "CHEMBL1703",
+    "DRUG_CHEMBL1703",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P43304",
+     "gene_symbols": [
+      "GPD2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2363065",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1995.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL17157",
+   "labels": [
+    "CHEMBL17157",
+    "DRUG_CHEMBL17157",
+    "TERFENADINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P35367",
+     "gene_symbols": [
+      "HRH1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1985.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1722",
+   "labels": [
+    "CHEMBL1722",
+    "DRUG_CHEMBL1722",
+    "METHYLPHENIDATE HYDROCHLORIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P23975",
+     "gene_symbols": [
+      "SLC6A2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q01959",
+     "gene_symbols": [
+      "SLC6A3"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1955.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1738",
+   "labels": [
+    "CHEMBL1738",
+    "DEXRAZOXANE",
+    "DRUG_CHEMBL1738"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094255",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1995.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1742995",
+   "labels": [
+    "BRIAKINUMAB",
+    "CHEMBL1742995",
+    "DRUG_CHEMBL1742995"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2364153",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2364154",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1743020",
+   "labels": [
+    "CHEMBL1743020",
+    "FORALUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2364168",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1743068",
+   "labels": [
+    "CHEMBL1743068",
+    "DRUG_CHEMBL1743068",
+    "SECUKINUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q16552",
+     "gene_symbols": [
+      "IL17A"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2015.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1743075",
+   "labels": [
+    "CHEMBL1743075",
+    "DRUG_CHEMBL1743075",
+    "TABALUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9Y275",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1743086",
+   "labels": [
+    "CHEMBL1743086",
+    "VATELIZUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P17301",
+     "gene_symbols": [
+      "ITGA2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1774461",
+   "labels": [
+    "CHEMBL1774461",
+    "DRUG_CHEMBL1774461",
+    "FLORBETAPIR F 18"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1789843",
+   "labels": [
+    "BELIMUMAB",
+    "CHEMBL1789843",
+    "DRUG_CHEMBL1789843"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9Y275",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2011.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1790041",
+   "labels": [
+    "CHEMBL1790041",
+    "DRUG_CHEMBL1790041",
+    "RANITIDINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P25021",
+     "gene_symbols": [
+      "HRH2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1983.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL17962",
+   "labels": [
+    "CHEMBL17962",
+    "HISTIDINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL186141",
+   "labels": [
+    "ANDROGRAPHOLIDE",
+    "CHEMBL186141",
+    "DRUG_CHEMBL186141"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL19019",
+   "labels": [
+    "CHEMBL19019",
+    "DRUG_CHEMBL19019",
+    "NALTREXONE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095181",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1984.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL190461",
+   "labels": [
+    "CANNABIDIOL",
+    "CHEMBL190461",
+    "DRUG_CHEMBL190461"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P21554",
+     "gene_symbols": [
+      "CNR1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2018.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1908391",
+   "labels": [
+    "CHEMBL1908391",
+    "DRUG_CHEMBL1908391",
+    "MASITINIB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P10721",
+     "gene_symbols": [
+      "KIT"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P22607",
+     "gene_symbols": [
+      "FGFR3"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095189",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL193482",
+   "labels": [
+    "CHEMBL193482",
+    "DRUG_CHEMBL193482",
+    "ESTRIOL"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2093866",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2000.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL19449",
+   "labels": [
+    "CHEMBL19449",
+    "DRUG_CHEMBL19449",
+    "IBUDILAST"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/O76074",
+     "gene_symbols": [
+      "PDE5A"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q14432",
+     "gene_symbols": [
+      "PDE3A"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9Y233",
+     "gene_symbols": [
+      "PDE10A"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2093863",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1989.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL197194",
+   "labels": [
+    "CHEMBL197194",
+    "DRUG_CHEMBL197194",
+    "VIDOFLUDIMUS"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q02127",
+     "gene_symbols": [
+      "DHODH"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL20",
+   "labels": [
+    "ACETAZOLAMIDE",
+    "CHEMBL20",
+    "DRUG_CHEMBL20"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/O43570",
+     "gene_symbols": [
+      "CA12"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P00915",
+     "gene_symbols": [
+      "CA1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P00918",
+     "gene_symbols": [
+      "CA2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P22748",
+     "gene_symbols": [
+      "CA4"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1953.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2021430",
+   "labels": [
+    "CHEMBL2021430",
+    "DEXAMETHASONE SODIUM PHOSPHATE",
+    "DRUG_CHEMBL2021430"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1959.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL207456",
+   "labels": [
+    "CHEMBL207456",
+    "PITTSBURGH COMPOUND B"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2104967",
+   "labels": [
+    "CHEMBL2104967",
+    "FIRATEGRAST"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1907599",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095184",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2106049",
+   "labels": [
+    "CHARCOAL, ACTIVATED",
+    "CHEMBL2106049",
+    "DRUG_CHEMBL2106049"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2106615",
+   "labels": [
+    "BAZEDOXIFENE ACETATE",
+    "CHEMBL2106615",
+    "DRUG_CHEMBL2106615"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2093866",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2009.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2106643",
+   "labels": [
+    "CHEMBL2106643",
+    "DRUG_CHEMBL2106643",
+    "MYCOPHENOLATE SODIUM"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2111369",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2004.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2107312",
+   "labels": [
+    "ARBACLOFEN PLACARBIL",
+    "CHEMBL2107312",
+    "DRUG_CHEMBL2107312"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2111463",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2107333",
+   "labels": [
+    "CHEMBL2107333",
+    "DIMETHYL FUMARATE",
+    "DRUG_CHEMBL2107333"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q14145",
+     "gene_symbols": [
+      "KEAP1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2013.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2107762",
+   "labels": [
+    "CHEMBL2107762",
+    "NERISPIRDINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2331043",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2362996",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2108041",
+   "labels": [
+    "CHEMBL2108041",
+    "DRUG_CHEMBL2108041",
+    "OCRELIZUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P11836",
+     "gene_symbols": [
+      "MS4A1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2017.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2108354",
+   "labels": [
+    "CHEMBL2108354",
+    "DRUG_CHEMBL2108354",
+    "UBLITUXIMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P11836",
+     "gene_symbols": [
+      "MS4A1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2022.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2108679",
+   "labels": [
+    "CHEMBL2108679",
+    "OZANEZUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9NQC3",
+     "gene_symbols": [
+      "RTN4"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2108712",
+   "labels": [
+    "CHEMBL2108712",
+    "PLOVAMER ACETATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P01911",
+     "gene_symbols": [
+      "HLA-DRB1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2109334",
+   "labels": [
+    "CHEMBL2109334",
+    "DRUG_CHEMBL2109334",
+    "INEBILIZUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P15391",
+     "gene_symbols": [
+      "CD19"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2020.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2109433",
+   "labels": [
+    "CHEMBL2109433",
+    "DRUG_CHEMBL2109433",
+    "OTILIMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04141",
+     "gene_symbols": [
+      "CSF2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL219916",
+   "labels": [
+    "CHEMBL219916",
+    "DOMPERIDONE",
+    "DRUG_CHEMBL219916"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P14416",
+     "gene_symbols": [
+      "DRD2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL220492",
+   "labels": [
+    "CHEMBL220492",
+    "DRUG_CHEMBL220492",
+    "TOPIRAMATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P00918",
+     "gene_symbols": [
+      "CA2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P22748",
+     "gene_symbols": [
+      "CA4"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2093872",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2096670",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2109241",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2331043",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1996.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2336071",
+   "labels": [
+    "CHEMBL2336071",
+    "DRUG_CHEMBL2336071",
+    "SIPONIMOD"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P21453",
+     "gene_symbols": [
+      "S1PR1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2019.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL239243",
+   "labels": [
+    "CHEMBL239243",
+    "DRUG_CHEMBL239243",
+    "TAURINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL25",
+   "labels": [
+    "ASPIRIN",
+    "CHEMBL25",
+    "DRUG_CHEMBL25"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094253",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1950.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL252556",
+   "labels": [
+    "CHEMBL252556",
+    "DRUG_CHEMBL252556",
+    "IDEBENONE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL254316",
+   "labels": [
+    "CHEMBL254316",
+    "DRUG_CHEMBL254316",
+    "RALTEGRAVIR"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL255044",
+   "labels": [
+    "CHEMBL255044",
+    "DRUG_CHEMBL255044",
+    "FLUPIRTINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL262777",
+   "labels": [
+    "CHEMBL262777",
+    "DRUG_CHEMBL262777",
+    "VANCOMYCIN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL267225",
+   "labels": [
+    "BOSWELLIC ACID",
+    "CHEMBL267225"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL269732",
+   "labels": [
+    "CHEMBL269732",
+    "DRUG_CHEMBL269732",
+    "TACROLIMUS ANHYDROUS"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL283800",
+   "labels": [
+    "CHEMBL283800",
+    "CREATINE",
+    "DRUG_CHEMBL283800"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL284348",
+   "labels": [
+    "CHEMBL284348",
+    "DALFAMPRIDINE",
+    "DRUG_CHEMBL284348"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2362996",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2010.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL297453",
+   "labels": [
+    "CHEMBL297453",
+    "DRUG_CHEMBL297453",
+    "EPIGALOCATECHIN GALLATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL29757",
+   "labels": [
+    "CHEMBL29757",
+    "D-ASPARTATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL305187",
+   "labels": [
+    "CHEMBL305187",
+    "IFENPRODIL"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3092650",
+   "labels": [
+    "CHEMBL3092650",
+    "GSK239512"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9Y5N1",
+     "gene_symbols": [
+      "HRH3"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3137693",
+   "labels": [
+    "CHEMBL3137693",
+    "GOLD"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL314854",
+   "labels": [
+    "CHEMBL314854",
+    "DRUG_CHEMBL314854",
+    "FINGOLIMOD"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3188993",
+   "labels": [
+    "CHEMBL3188993",
+    "DRUG_CHEMBL3188993",
+    "QUETIAPINE FUMARATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P14416",
+     "gene_symbols": [
+      "DRD2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P28223",
+     "gene_symbols": [
+      "HTR2A"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/P28335",
+     "gene_symbols": [
+      "HTR2C"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1997.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3305901",
+   "labels": [
+    "CHEMBL3305901",
+    "MK-0812"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P41597",
+     "gene_symbols": [
+      "CCR2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL33864",
+   "labels": [
+    "CHEMBL33864",
+    "DRUG_CHEMBL33864",
+    "LIPOIC ACID, ALPHA"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL34259",
+   "labels": [
+    "CHEMBL34259",
+    "DRUG_CHEMBL34259",
+    "METHOTREXATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P00374",
+     "gene_symbols": [
+      "DHFR"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1953.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL354077",
+   "labels": [
+    "AMIFAMPRIDINE",
+    "CHEMBL354077",
+    "DRUG_CHEMBL354077"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2362996",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2009.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3544922",
+   "labels": [
+    "CHEMBL3544922",
+    "OPICINUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q96FE5",
+     "gene_symbols": [
+      "LINGO1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3545042",
+   "labels": [
+    "CHEMBL3545042",
+    "SELURAMPANEL"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2096670",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2109241",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3545254",
+   "labels": [
+    "CHEMBL3545254",
+    "DRUG_CHEMBL3545254",
+    "OLESOXIME"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3707228",
+   "labels": [
+    "CHEMBL3707228",
+    "PLOZALIZUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P41597",
+     "gene_symbols": [
+      "CCR2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3707246",
+   "labels": [
+    "CHEMBL3707246",
+    "DRUG_CHEMBL3707246",
+    "OZANIMOD HYDROCHLORIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P21453",
+     "gene_symbols": [
+      "S1PR1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2020.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3707247",
+   "labels": [
+    "CHEMBL3707247",
+    "DRUG_CHEMBL3707247",
+    "OZANIMOD"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9H228",
+     "gene_symbols": [
+      "S1PR5"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2020.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3707374",
+   "labels": [
+    "AMISELIMOD HYDROCHLORIDE",
+    "CHEMBL3707374"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2363041",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL374478",
+   "labels": [
+    "CHEMBL374478",
+    "DRUG_CHEMBL374478",
+    "RIFAMPIN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3833333",
+   "labels": [
+    "CHEMBL3833333",
+    "DRUG_CHEMBL3833333",
+    "NABIXIMOLS"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL384467",
+   "labels": [
+    "CHEMBL384467",
+    "DEXAMETHASONE",
+    "DRUG_CHEMBL384467"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1958.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL386630",
+   "labels": [
+    "CHEMBL386630",
+    "DRUG_CHEMBL386630",
+    "TESTOSTERONE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P10275",
+     "gene_symbols": [
+      "AR"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1972.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3989944",
+   "labels": [
+    "CHEMBL3989944",
+    "DIROXIMEL FUMARATE",
+    "DRUG_CHEMBL3989944"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q14145",
+     "gene_symbols": [
+      "KEAP1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2019.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL406",
+   "labels": [
+    "CHEMBL406",
+    "DRUG_CHEMBL406",
+    "INDAPAMIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P55017",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1983.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4065122",
+   "labels": [
+    "CHEMBL4065122",
+    "DRUG_CHEMBL4065122",
+    "FENEBRUTINIB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q06187",
+     "gene_symbols": [
+      "BTK"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4072833",
+   "labels": [
+    "CHEMBL4072833",
+    "DRUG_CHEMBL4072833",
+    "EVOBRUTINIB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q06187",
+     "gene_symbols": [
+      "BTK"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL408701",
+   "labels": [
+    "CHEMBL408701",
+    "DRUG_CHEMBL408701",
+    "TAUROLITHOCHOLIC ACID"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL41",
+   "labels": [
+    "CHEMBL41",
+    "DRUG_CHEMBL41",
+    "FLUOXETINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL413",
+   "labels": [
+    "CHEMBL413",
+    "DRUG_CHEMBL413",
+    "SIROLIMUS"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P62942",
+     "gene_symbols": [
+      "FKBP1A"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1999.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL415768",
+   "labels": [
+    "CHEMBL415768",
+    "DEOXYANDROGRAPHOLIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL420",
+   "labels": [
+    "CHEMBL420",
+    "DRUG_CHEMBL420",
+    "GUANABENZ"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297363",
+   "labels": [
+    "CHEMBL4297363",
+    "UCB-1184197"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P13612",
+     "gene_symbols": [
+      "ITGA4"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297542",
+   "labels": [
+    "CHEMBL4297542",
+    "GSK-2018682"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297672",
+   "labels": [
+    "CHEMBL4297672",
+    "METHYLCOBALAMIN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297743",
+   "labels": [
+    "CHEMBL4297743",
+    "ELEZANUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q96B86",
+     "gene_symbols": [
+      "RGMA"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297884",
+   "labels": [
+    "CHEMBL4297884",
+    "PEPINEMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q92854",
+     "gene_symbols": [
+      "SEMA4D"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4298150",
+   "labels": [
+    "CHEMBL4298150",
+    "DRUG_CHEMBL4298150",
+    "SIPONIMOD FUMARIC ACID"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P21453",
+     "gene_symbols": [
+      "S1PR1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2019.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL44657",
+   "labels": [
+    "CHEMBL44657",
+    "DRUG_CHEMBL44657",
+    "ETOPOSIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094255",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1983.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4483575",
+   "labels": [
+    "CHEMBL4483575",
+    "DRUG_CHEMBL4483575",
+    "REMIBRUTINIB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL449158",
+   "labels": [
+    "BRYOSTATIN 1",
+    "CHEMBL449158"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL45",
+   "labels": [
+    "CHEMBL45",
+    "DRUG_CHEMBL45",
+    "MELATONIN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094268",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2007.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL457",
+   "labels": [
+    "CHEMBL457",
+    "DRUG_CHEMBL457",
+    "GEMFIBROZIL"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q07869",
+     "gene_symbols": [
+      "PPARA"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1981.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4594357",
+   "labels": [
+    "CHEMBL4594357",
+    "DRUG_CHEMBL4594357",
+    "IANALUMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q96RJ3",
+     "gene_symbols": [
+      "TNFRSF13C"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4594547",
+   "labels": [
+    "CHEMBL4594547",
+    "TEMELIMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q9UQF0",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL460026",
+   "labels": [
+    "CHEMBL460026",
+    "DRUG_CHEMBL460026",
+    "ICOSAPENT"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4649457",
+   "labels": [
+    "CHEMBL4649457",
+    "UDIFITIMOD"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL465",
+   "labels": [
+    "CHEMBL465",
+    "DRONABINOL",
+    "DRUG_CHEMBL465"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P21554",
+     "gene_symbols": [
+      "CNR1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1985.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4650321",
+   "labels": [
+    "CHEMBL4650321",
+    "DRUG_CHEMBL4650321",
+    "ORELABRUTINIB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q06187",
+     "gene_symbols": [
+      "BTK"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4650323",
+   "labels": [
+    "CHEMBL4650323",
+    "DRUG_CHEMBL4650323",
+    "TOLEBRUTINIB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q06187",
+     "gene_symbols": [
+      "BTK"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "3",
+    "3.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4650485",
+   "labels": [
+    "CHEMBL4650485",
+    "DRUG_CHEMBL4650485",
+    "PIRTOBRUTINIB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q06187",
+     "gene_symbols": [
+      "BTK"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2023.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL467",
+   "labels": [
+    "CHEMBL467",
+    "DRUG_CHEMBL467",
+    "HYDROXYUREA"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095215",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1967.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL480853",
+   "labels": [
+    "CHEMBL480853",
+    "NEOANDROGRAPHOLIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL502",
+   "labels": [
+    "CHEMBL502",
+    "DONEPEZIL",
+    "DRUG_CHEMBL502"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL5083772",
+   "labels": [
+    "BIIB-091",
+    "CHEMBL5083772"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL5095050",
+   "labels": [
+    "CHEMBL5095050",
+    "DRUG_CHEMBL5095050",
+    "FINGOLIMOD LAURYL SULFATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2363041",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2021.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL5095122",
+   "labels": [
+    "CHEMBL5095122",
+    "DRUG_CHEMBL5095122",
+    "FREXALIMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL5095416",
+   "labels": [
+    "CHEMBL5095416",
+    "UDIFITIMOD HYDROCHLORIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL513",
+   "labels": [
+    "CARMUSTINE",
+    "CHEMBL513",
+    "DRUG_CHEMBL513"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P00390",
+     "gene_symbols": [
+      "GSR"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1977.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL521",
+   "labels": [
+    "CHEMBL521",
+    "DRUG_CHEMBL521",
+    "IBUPROFEN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094253",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1974.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL52440",
+   "labels": [
+    "CHEMBL52440",
+    "DEXTROMETHORPHAN",
+    "DRUG_CHEMBL52440"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL529",
+   "labels": [
+    "AZITHROMYCIN",
+    "CHEMBL529",
+    "DRUG_CHEMBL529"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL5314474",
+   "labels": [
+    "CHEMBL5314474",
+    "ODITRASERTIB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL544665",
+   "labels": [
+    "CHEMBL544665",
+    "DRUG_CHEMBL544665",
+    "FINGOLIMOD HYDROCHLORIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2363041",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2010.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL559180",
+   "labels": [
+    "CHEMBL559180",
+    "ISOXSUPRINE HYDROCHLORIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P07550",
+     "gene_symbols": [
+      "ADRB2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094251",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "1.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL571",
+   "labels": [
+    "CHEMBL571",
+    "DRUG_CHEMBL571",
+    "KETOPROFEN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094253",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1986.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL58",
+   "labels": [
+    "CHEMBL58",
+    "DRUG_CHEMBL58",
+    "MITOXANTRONE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL589586",
+   "labels": [
+    "CHEMBL589586",
+    "DRUG_CHEMBL589586",
+    "MONOMETHYL FUMARATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q14145",
+     "gene_symbols": [
+      "KEAP1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2020.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL595",
+   "labels": [
+    "CHEMBL595",
+    "DRUG_CHEMBL595",
+    "PIOGLITAZONE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL600",
+   "labels": [
+    "ACETYLCYSTEINE",
+    "CHEMBL600",
+    "DRUG_CHEMBL600"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL6068609",
+   "labels": [
+    "CHEMBL6068609",
+    "GATRALIMAB"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL612",
+   "labels": [
+    "CHEMBL612",
+    "DEXTROAMPHETAMINE",
+    "DRUG_CHEMBL612"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P23975",
+     "gene_symbols": [
+      "SLC6A2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q01959",
+     "gene_symbols": [
+      "SLC6A3"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q05940",
+     "gene_symbols": [
+      "SLC18A2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1955.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL63",
+   "labels": [
+    "CHEMBL63",
+    "ROLIPRAM"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2093863",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "2.0"
+   ],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL635",
+   "labels": [
+    "CHEMBL635",
+    "DRUG_CHEMBL635",
+    "PREDNISONE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1955.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL650",
+   "labels": [
+    "CHEMBL650",
+    "DRUG_CHEMBL650",
+    "METHYLPREDNISOLONE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P04150",
+     "gene_symbols": [
+      "NR3C1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1957.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL655",
+   "labels": [
+    "CHEMBL655",
+    "DRUG_CHEMBL655",
+    "MIDAZOLAM"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2093872",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1985.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL657",
+   "labels": [
+    "CHEMBL657",
+    "DIPHENHYDRAMINE",
+    "DRUG_CHEMBL657"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL660",
+   "labels": [
+    "AMANTADINE",
+    "CHEMBL660",
+    "DRUG_CHEMBL660"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL66092",
+   "labels": [
+    "CHEMBL66092",
+    "DRUG_CHEMBL66092",
+    "LAQUINIMOD"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL701",
+   "labels": [
+    "BACLOFEN",
+    "CHEMBL701",
+    "DRUG_CHEMBL701"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2111463",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1977.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL709",
+   "labels": [
+    "ALFUZOSIN",
+    "CHEMBL709",
+    "DRUG_CHEMBL709"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL741",
+   "labels": [
+    "CHEMBL741",
+    "DRUG_CHEMBL741",
+    "LAMOTRIGINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2331043",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1994.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL742",
+   "labels": [
+    "CHEMBL742",
+    "DRUG_CHEMBL742",
+    "KETAMINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL744",
+   "labels": [
+    "CHEMBL744",
+    "DRUG_CHEMBL744",
+    "RILUZOLE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2331043",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1995.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL74415",
+   "labels": [
+    "CANNABINOL",
+    "CHEMBL74415",
+    "DRUG_CHEMBL74415"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL796",
+   "labels": [
+    "CHEMBL796",
+    "DRUG_CHEMBL796",
+    "METHYLPHENIDATE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P23975",
+     "gene_symbols": [
+      "SLC6A2"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q01959",
+     "gene_symbols": [
+      "SLC6A3"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1955.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL803",
+   "labels": [
+    "CHEMBL803",
+    "CYTARABINE",
+    "DRUG_CHEMBL803"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2363042",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1969.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL807",
+   "labels": [
+    "CHEMBL807",
+    "DRUG_CHEMBL807",
+    "MEMANTINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL852",
+   "labels": [
+    "CHEMBL852",
+    "DRUG_CHEMBL852",
+    "MELPHALAN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL857",
+   "labels": [
+    "BIOTIN",
+    "CHEMBL857",
+    "DRUG_CHEMBL857"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL8659",
+   "labels": [
+    "CHEMBL8659",
+    "OLEIC ACID"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL880",
+   "labels": [
+    "CHEMBL880",
+    "DRUG_CHEMBL880",
+    "FAMCICLOVIR"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL885",
+   "labels": [
+    "CHEMBL885",
+    "DRUG_CHEMBL885",
+    "EMTRICITABINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL90",
+   "labels": [
+    "CHEMBL90",
+    "DRUG_CHEMBL90",
+    "HISTAMINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL928",
+   "labels": [
+    "CHEMBL928",
+    "DANTROLENE SODIUM",
+    "DRUG_CHEMBL928"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P21817",
+     "gene_symbols": [
+      "RYR1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    },
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q15413",
+     "gene_symbols": [
+      "RYR3"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1974.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL940",
+   "labels": [
+    "CHEMBL940",
+    "DRUG_CHEMBL940",
+    "GABAPENTIN"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2363032",
+     "gene_symbols": [],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1993.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL945",
+   "labels": [
+    "AMILORIDE",
+    "CHEMBL945",
+    "DRUG_CHEMBL945"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL973",
+   "labels": [
+    "CHEMBL973",
+    "DRUG_CHEMBL973",
+    "TERIFLUNOMIDE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020528",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/Q02127",
+     "gene_symbols": [
+      "DHODH"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "2012.0"
+   ]
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL975",
+   "labels": [
+    "CHEMBL975",
+    "DRUG_CHEMBL975",
+    "MESNA"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103",
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D020529"
+   ],
+   "targets": [],
+   "phase": [],
+   "approval_year": []
+  },
+  {
+   "drug": "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL998",
+   "labels": [
+    "CHEMBL998",
+    "DRUG_CHEMBL998",
+    "LORATADINE"
+   ],
+   "ms_indication_terms": [
+    "https://www.ncbi.nlm.nih.gov/mesh/?term=D009103"
+   ],
+   "targets": [
+    {
+     "target": "http://purl.uniprot.org/uniprot/P35367",
+     "gene_symbols": [
+      "HRH1"
+     ],
+     "relations": [
+      "RO_0002436"
+     ]
+    }
+   ],
+   "phase": [
+    "4",
+    "4.0"
+   ],
+   "approval_year": [
+    "1993.0"
+   ]
+  }
+ ],
+ "reified_statements": [
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_6bd86584-c30e-51c8-85f0-221299fef292",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/11363176",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "ponesimod_11363176"
+   ],
+   "props": {
+    "http://schema.org/provider": [
+     "IDG"
+    ],
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_24c8df34-fdef-5928-b5ef-9d13c4d0ed78",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/16623",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "Hydrocortisone hemisuccinate",
+    "cortisol succinate_16623.0"
+   ],
+   "props": {
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ],
+    "http://schema.org/provider": [
+     "IDG"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_68d5f0e9-2fd3-5b4a-9085-8a0267948af6",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/1727",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "SID11113806_1727",
+    "dalfampridine_1727.0"
+   ],
+   "props": {
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ],
+    "http://schema.org/provider": [
+     "IDG"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_34148b67-7ba5-535a-9787-71893b4f4689",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/3081884",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "Glatiramer acetate"
+   ],
+   "props": {
+    "http://schema.org/provider": [
+     "IDG"
+    ],
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_265dd37a-0486-5490-ae67-27a0cae703b7",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/31307",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "triamcinolone_31307"
+   ],
+   "props": {
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ],
+    "http://schema.org/provider": [
+     "IDG"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_3df9ed8b-46b1-569b-9d22-626b972f80d1",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/443967",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "Betamethasone acetate"
+   ],
+   "props": {
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ],
+    "http://schema.org/provider": [
+     "IDG"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_5db9a860-e212-5858-a8f7-45b063b91544",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/52938427",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "ozanimod_52938427"
+   ],
+   "props": {
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ],
+    "http://schema.org/provider": [
+     "IDG"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_f38d9eb1-baa4-5505-ab65-cd9d1ab8caa9",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/54684141",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "Teriflunomide_54684141"
+   ],
+   "props": {
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ],
+    "http://schema.org/provider": [
+     "IDG"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_1db97d0a-7c60-5e70-a1f1-b14233fafe01",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/5743",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "DEXAMETHASONE",
+    "Dexamethasone_5743",
+    "dexamethasone_5743.0"
+   ],
+   "props": {
+    "http://schema.org/provider": [
+     "IDG"
+    ],
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_5f31f034-ffee-5d1f-991c-cea0f3c5f2a6",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/5744",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "Acetic acid 2-((8S,9S,10R,11S,13S,14S,17R)-11,17-dihydroxy-10,13-dimethyl-3-oxo-2,3,6,7,8,9,10,11,12,13,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-17-yl)-2-oxo-ethyl ester_5744"
+   ],
+   "props": {
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ],
+    "http://schema.org/provider": [
+     "IDG"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_0680a3ad-7ed1-5a02-9044-9f6cda8be610",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/5754",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "Cortisol Measurement_5754.0",
+    "Hydrocortisone_5754"
+   ],
+   "props": {
+    "http://schema.org/provider": [
+     "IDG"
+    ],
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_139087de-34c7-5193-91f8-43bb7fb1e6e3",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/5755",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "prednisolone_5755",
+    "prednisolone_5755.0"
+   ],
+   "props": {
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ],
+    "http://schema.org/provider": [
+     "IDG"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_1ad31be4-faec-5f67-9ecd-67b3320b856b",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/5865",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "prednisone_5865",
+    "prednisone_5865.0"
+   ],
+   "props": {
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ],
+    "http://schema.org/provider": [
+     "IDG"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_fac9d5f1-0e94-5501-ba9a-8eb301957859",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/6216",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "Triamcinolone diacetate"
+   ],
+   "props": {
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ],
+    "http://schema.org/provider": [
+     "IDG"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_0bb69e18-9f99-5aa3-87e2-37545b62fc63",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/6436",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "Triamcinolone Acetonide_6436",
+    "triamcinolone acetonide_6436.0"
+   ],
+   "props": {
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ],
+    "http://schema.org/provider": [
+     "IDG"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_592ae15e-ef45-5494-843e-0f27962c6018",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/6741",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "methylprednisolone_6741"
+   ],
+   "props": {
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ],
+    "http://schema.org/provider": [
+     "IDG"
+    ]
+   }
+  },
+  {
+   "statement": "https://research.bioinformatics.udel.edu/ProKN/rdf/stmt_77e17696-f8d7-5c7e-9a58-8acc8cf0571c",
+   "rdf_subject": "https://pubchem.ncbi.nlm.nih.gov/compound/9782",
+   "rdf_predicate": "http://purl.obolibrary.org/obo/NCIT_C41184",
+   "rdf_object": "http://purl.obolibrary.org/obo/DOID_2377",
+   "subject_labels": [
+    "betamethasone_9782",
+    "betamethasone_9782.0"
+   ],
+   "props": {
+    "http://schema.org/provider": [
+     "IDG"
+    ],
+    "http://purl.org/dc/terms/source": [
+     "DDKG_IDGD"
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,2821 @@
+{
+  "vars": [
+    "mondo",
+    "rel",
+    "biomarker",
+    "bmLabel",
+    "assessed",
+    "assessedLabel",
+    "sample",
+    "sampleLabel"
+  ],
+  "rows": [
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID1901",
+      "assessedLabel": "sphingosine-1-phosphate receptor 1"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID335",
+      "assessedLabel": "apolipoprotein A1"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID3458",
+      "assessedLabel": "interferon gamma"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID3605",
+      "assessedLabel": "interleukin 17A"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID53637",
+      "assessedLabel": "sphingosine-1-phosphate receptor 5"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID56848",
+      "assessedLabel": "sphingosine kinase 2"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID6023",
+      "assessedLabel": "RNA component of mitochondrial RNA processing endoribonuclease"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID8877",
+      "assessedLabel": "sphingosine kinase 1"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1932-1",
+      "bmLabel": "Increased level of metabolite igG/LOINC:100755-8",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001969",
+      "sampleLabel": "blood plasma"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1932-1",
+      "bmLabel": "Increased level of metabolite igG/LOINC:100755-8",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001977",
+      "sampleLabel": "blood serum"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1933-1",
+      "bmLabel": "Increased level of metabolite igA/LOINC:100755-8",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001969",
+      "sampleLabel": "blood plasma"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1933-1",
+      "bmLabel": "Increased level of metabolite igA/LOINC:100755-8",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001977",
+      "sampleLabel": "blood serum"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1934-1",
+      "bmLabel": "Increased level of metabolite igM/LOINC:100755-8",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001969",
+      "sampleLabel": "blood plasma"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1934-1",
+      "bmLabel": "Increased level of metabolite igM/LOINC:100755-8",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001977",
+      "sampleLabel": "blood serum"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1935-1",
+      "bmLabel": "Increased level of metabolite igG/LOINC:100756-6",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001359",
+      "sampleLabel": "cerebrospinal fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1936-1",
+      "bmLabel": "Increased level of metabolite igA/LOINC:100756-6",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001359",
+      "sampleLabel": "cerebrospinal fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1937-1",
+      "bmLabel": "Increased level of metabolite igM/LOINC:100756-6",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001359",
+      "sampleLabel": "cerebrospinal fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1976-5",
+      "bmLabel": "Increased Quinolinic acid [biomarker_term_in_review]",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001088",
+      "sampleLabel": "urine"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2161-1",
+      "bmLabel": "Increased Immunoglobulins (gamma fraction) [biomarker_term_in_review]",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0006314",
+      "sampleLabel": "bodily fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2220-1",
+      "bmLabel": "Increased Immunoglobulins (IgG, IgA, and IgM) [biomarker_term_in_review]",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001359",
+      "sampleLabel": "cerebrospinal fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2221-1",
+      "bmLabel": "Increased Immunoglobulins (IgG, IgA, and IgM) [biomarker_term_in_review]",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001969",
+      "sampleLabel": "blood plasma"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2221-1",
+      "bmLabel": "Increased Immunoglobulins (IgG, IgA, and IgM) [biomarker_term_in_review]",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001977",
+      "sampleLabel": "blood serum"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2246-1",
+      "bmLabel": "Decreased level of metabolite urate/LOINC:12980-9",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0006314",
+      "sampleLabel": "bodily fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2314-1",
+      "bmLabel": "Increased level of metabolite immunoglobulins/LOINC:13536-8",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001969",
+      "sampleLabel": "blood plasma"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2504-1",
+      "bmLabel": "Decreased level of metabolite urate/LOINC:13820-6",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001088",
+      "sampleLabel": "urine"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2521-1",
+      "bmLabel": "Decreased level of metabolite urate/LOINC:13902-2",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001359",
+      "sampleLabel": "cerebrospinal fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2564-1",
+      "bmLabel": "Increased level of metabolite igG/LOINC:14117-6",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001359",
+      "sampleLabel": "cerebrospinal fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2564-1",
+      "bmLabel": "Increased level of metabolite igG/LOINC:14117-6",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001977",
+      "sampleLabel": "blood serum"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2602-1",
+      "bmLabel": "Increased level of metabolite globulin/LOINC:14341-2",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001088",
+      "sampleLabel": "urine"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2625-1",
+      "bmLabel": "Increased level of metabolite immunoglobulins/LOINC:14425-3",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0000173",
+      "sampleLabel": "amniotic fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2626-1",
+      "bmLabel": "Increased level of metabolite immunoglobulins/LOINC:14426-1",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001359",
+      "sampleLabel": "cerebrospinal fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2627-1",
+      "bmLabel": "Increased level of metabolite immunoglobulins/LOINC:14427-9",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001087",
+      "sampleLabel": "pleural fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2628-1",
+      "bmLabel": "Increased level of metabolite immunoglobulins/LOINC:14428-7",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001268",
+      "sampleLabel": "peritoneal fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2629-1",
+      "bmLabel": "Increased level of metabolite immunoglobulins/LOINC:14429-5",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001968",
+      "sampleLabel": "semen"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2630-1",
+      "bmLabel": "Increased level of metabolite immunoglobulins/LOINC:14430-3",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001090",
+      "sampleLabel": "synovial fluid"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2631-1",
+      "bmLabel": "Increased level of metabolite immunoglobulins/LOINC:14431-1",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001088",
+      "sampleLabel": "urine"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2757-1",
+      "bmLabel": "Decreased level of metabolite urate/LOINC:14932-8"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2759-1",
+      "bmLabel": "Decreased level of metabolite urate/LOINC:14933-6",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001969",
+      "sampleLabel": "blood plasma"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2759-1",
+      "bmLabel": "Decreased level of metabolite urate/LOINC:14933-6",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001977",
+      "sampleLabel": "blood serum"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2761-1",
+      "bmLabel": "Decreased level of metabolite urate/LOINC:14934-4",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001088",
+      "sampleLabel": "urine"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2763-1",
+      "bmLabel": "Decreased level of metabolite urate/LOINC:14935-1",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001088",
+      "sampleLabel": "urine"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000002",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB2863-1",
+      "bmLabel": "Increased level of metabolite immunoglobulins/LOINC:15356-9",
+      "sample": "http://purl.obolibrary.org/obo/UBERON_0001088",
+      "sampleLabel": "urine"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000006",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID1901",
+      "assessedLabel": "sphingosine-1-phosphate receptor 1"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000006",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID335",
+      "assessedLabel": "apolipoprotein A1"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000006",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID3458",
+      "assessedLabel": "interferon gamma"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000006",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID3605",
+      "assessedLabel": "interleukin 17A"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000006",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID53637",
+      "assessedLabel": "sphingosine-1-phosphate receptor 5"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000006",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID56848",
+      "assessedLabel": "sphingosine kinase 2"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000006",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID6023",
+      "assessedLabel": "RNA component of mitochondrial RNA processing endoribonuclease"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000006",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6263-1",
+      "bmLabel": "Increased expression of gene APOA1/NCBI:335",
+      "assessed": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID8877",
+      "assessedLabel": "sphingosine kinase 1"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/AN6830-3",
+      "bmLabel": "Presence of dbSNP:rs3830041 sequence variation in gene NOTCH4/NCBI:4855",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3830041"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/AO1336-2",
+      "bmLabel": "Presence of dbSNP:rs1801133 sequence variation in gene MTHFR/NCBI:4524",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1801133"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BA6820-4",
+      "bmLabel": "Presence of dbSNP:rs72928038 sequence variation in gene BACH2/NCBI:60468",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs72928038"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BA6971-6",
+      "bmLabel": "Presence of dbSNP:rs10936599 sequence variation in gene MYNN/NCBI:55892",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10936599"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BA7163-2",
+      "bmLabel": "Presence of dbSNP:rs72709458 sequence variation in gene TERT/NCBI:7015",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs72709458"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BA8254-2",
+      "bmLabel": "Presence of dbSNP:rs10936602 sequence variation in gene LRRIQ4/NCBI:344657",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10936602"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BA8738-3",
+      "bmLabel": "Presence of dbSNP:rs13254990 sequence variation in gene PVT1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs13254990"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BA9144-2",
+      "bmLabel": "Presence of dbSNP:rs2019960 sequence variation in gene PVT1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2019960"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BA9317-3",
+      "bmLabel": "Presence of dbSNP:rs6793295 sequence variation in gene LRRC34/NCBI:151827",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6793295"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BA9321-2",
+      "bmLabel": "Presence of dbSNP:rs16917546 sequence variation in gene LINC02929/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs16917546"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB0047-3",
+      "bmLabel": "Presence of dbSNP:rs2425752 sequence variation in gene NCOA5/NCBI:57727",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2425752"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB0476-2",
+      "bmLabel": "Presence of dbSNP:rs11066320 sequence variation in gene PTPN11/NCBI:5781",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11066320"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1158-2",
+      "bmLabel": "Presence of dbSNP:rs11755724 sequence variation in gene RREB1/NCBI:6239",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11755724"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1159-2",
+      "bmLabel": "Presence of dbSNP:rs806321 sequence variation in gene DLEU1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs806321"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1160-2",
+      "bmLabel": "Presence of dbSNP:rs2777899 sequence variation in gene VMP1/NCBI:81671",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2777899"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1161-2",
+      "bmLabel": "Presence of dbSNP:rs1292034 sequence variation in gene RPS6KB1/NCBI:6198",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1292034"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1162-2",
+      "bmLabel": "Presence of dbSNP:rs16978630 sequence variation in gene TNPO2/NCBI:30000",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs16978630"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1163-2",
+      "bmLabel": "Presence of dbSNP:rs1107345 sequence variation in gene IL2RA/NCBI:3559",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1107345"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1164-2",
+      "bmLabel": "Presence of dbSNP:rs1250550 sequence variation in gene ZMIZ1/NCBI:57178",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1250550"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1165-2",
+      "bmLabel": "Presence of dbSNP:rs6062314 sequence variation in gene ZBTB46/NCBI:140685",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6062314"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB1189-3",
+      "bmLabel": "Presence of dbSNP:rs9878602 sequence variation in gene FOXP1/NCBI:27086",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9878602"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB3893-2",
+      "bmLabel": "Presence of dbSNP:rs8112449 sequence variation in gene CDC37/NCBI:11140",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs8112449"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4055-3",
+      "bmLabel": "Presence of dbSNP:rs744166 sequence variation in gene STAT3/NCBI:6774",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs744166"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4161-4",
+      "bmLabel": "Presence of dbSNP:rs4728142 sequence variation in gene IRF5/NCBI:3663",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4728142"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4207-2",
+      "bmLabel": "Presence of dbSNP:rs2546890 sequence variation in gene IL12B-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2546890"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4208-2",
+      "bmLabel": "Presence of dbSNP:rs9591325 sequence variation in gene DLEU1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9591325"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4217-2",
+      "bmLabel": "Presence of dbSNP:rs1800693 sequence variation in gene TNFRSF1A/NCBI:7132",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1800693"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4223-2",
+      "bmLabel": "Presence of dbSNP:rs2293370 sequence variation in gene TIMMDC1/NCBI:51300",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2293370"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4489-2",
+      "bmLabel": "Presence of dbSNP:rs2469434 sequence variation in gene CD226/NCBI:10666",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2469434"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4499-2",
+      "bmLabel": "Presence of dbSNP:rs7731626 sequence variation in gene ANKRD55/NCBI:79722",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7731626"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4513-2",
+      "bmLabel": "Presence of dbSNP:rs793108 sequence variation in gene LINC02664/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs793108"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4542-1",
+      "bmLabel": "Presence of dbSNP:rs733724 sequence variation in gene HACE1/NCBI:57531",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs733724"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4543-1",
+      "bmLabel": "Presence of dbSNP:rs17267338 sequence variation in gene VTI1A/NCBI:143187",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs17267338"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4544-1",
+      "bmLabel": "Presence of dbSNP:rs17749211 sequence variation in gene SAMD12/NCBI:401474",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs17749211"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4545-1",
+      "bmLabel": "Presence of dbSNP:rs1821625 sequence variation in gene NCKAP5/NCBI:344148",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1821625"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4546-1",
+      "bmLabel": "Presence of dbSNP:rs12513380 sequence variation in gene TLL1/NCBI:7092",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12513380"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4547-1",
+      "bmLabel": "Presence of dbSNP:rs533259 sequence variation in gene RNASEL/NCBI:6041",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs533259"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4548-1",
+      "bmLabel": "Presence of dbSNP:rs2920001 sequence variation in gene DSCAS/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2920001"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4549-1",
+      "bmLabel": "Presence of dbSNP:rs5978649 sequence variation in gene EGFL6/NCBI:25975",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs5978649"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4550-1",
+      "bmLabel": "Presence of dbSNP:rs4916321 sequence variation in gene TNFSF4/NCBI:7292",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4916321"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4602-1",
+      "bmLabel": "Presence of dbSNP:rs4364506 sequence variation in gene L3MBTL3/NCBI:84456",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4364506"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4603-1",
+      "bmLabel": "Presence of dbSNP:rs2812197 sequence variation in gene DLEU1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2812197"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4604-1",
+      "bmLabel": "Presence of dbSNP:rs4925166 sequence variation in gene TOP3A/NCBI:7156",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4925166"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4605-1",
+      "bmLabel": "Presence of dbSNP:rs2836425 sequence variation in gene ERG/NCBI:2078",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2836425"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4606-1",
+      "bmLabel": "Presence of dbSNP:rs6689470 sequence variation in gene GFI1/NCBI:2672",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6689470"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4607-1",
+      "bmLabel": "Presence of dbSNP:rs2300747 sequence variation in gene CD58/NCBI:965",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2300747"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4608-1",
+      "bmLabel": "Presence of dbSNP:rs6859219 sequence variation in gene ANKRD55/NCBI:79722",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6859219"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4609-1",
+      "bmLabel": "Presence of dbSNP:rs3104373 sequence variation in gene HLA-DQA1/NCBI:3117",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3104373"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4610-1",
+      "bmLabel": "Presence of dbSNP:rs1891621 sequence variation in gene LINC02664/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1891621"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4611-1",
+      "bmLabel": "Presence of dbSNP:rs6498168 sequence variation in gene CLEC16A/NCBI:23274",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6498168"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4614-2",
+      "bmLabel": "Presence of dbSNP:rs59655222 sequence variation in gene INAVA/NCBI:55765",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs59655222"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB4932-4",
+      "bmLabel": "Presence of dbSNP:rs9461856 sequence variation in gene SYNGAP1/NCBI:8831",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9461856"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5113-1",
+      "bmLabel": "Presence of dbSNP:rs4953911 sequence variation in gene MGAT5/NCBI:4249",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4953911"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5123-1",
+      "bmLabel": "Presence of dbSNP:rs1335532 sequence variation in gene CD58/NCBI:965",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1335532"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5124-1",
+      "bmLabel": "Presence of dbSNP:rs2104286 sequence variation in gene IL2RA/NCBI:3559",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2104286"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5125-1",
+      "bmLabel": "Presence of dbSNP:rs6984045 sequence variation in gene ASAP1/NCBI:50807",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6984045"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5214-1",
+      "bmLabel": "Presence of dbSNP:rs4680534 sequence variation in gene IL12A-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4680534"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5215-1",
+      "bmLabel": "Presence of dbSNP:rs4149584 sequence variation in gene TNFRSF1A/NCBI:7132",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4149584"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5216-1",
+      "bmLabel": "Presence of dbSNP:rs11865121 sequence variation in gene CLEC16A/NCBI:23274",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11865121"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5217-1",
+      "bmLabel": "Presence of dbSNP:rs6897932 sequence variation in gene IL7R/NCBI:3575",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6897932"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5218-1",
+      "bmLabel": "Presence of dbSNP:rs17824933 sequence variation in gene CD6/NCBI:923",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs17824933"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5219-1",
+      "bmLabel": "Presence of dbSNP:rs1790100 sequence variation in gene MPHOSPH9/NCBI:10198",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1790100"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5220-1",
+      "bmLabel": "Presence of dbSNP:rs1250540 sequence variation in gene ZMIZ1/NCBI:57178",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1250540"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5253-2",
+      "bmLabel": "Presence of dbSNP:rs9891119 sequence variation in gene STAT3/NCBI:6774",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9891119"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5263-1",
+      "bmLabel": "Presence of dbSNP:rs6718520 sequence variation in gene LINC02580/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6718520"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5264-1",
+      "bmLabel": "Presence of dbSNP:rs2293152 sequence variation in gene STAT3/NCBI:6774",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2293152"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5265-1",
+      "bmLabel": "Presence of dbSNP:rs1250542 sequence variation in gene ZMIZ1/NCBI:57178",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1250542"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5266-1",
+      "bmLabel": "Presence of dbSNP:rs7191700 sequence variation in gene RMI2/NCBI:116028",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7191700"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5267-1",
+      "bmLabel": "Presence of dbSNP:rs9596270 sequence variation in gene DLEU1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9596270"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5268-1",
+      "bmLabel": "Presence of dbSNP:rs10866713 sequence variation in gene IL12B-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10866713"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5269-1",
+      "bmLabel": "Presence of dbSNP:rs170934 sequence variation in gene LINC01967/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs170934"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5270-1",
+      "bmLabel": "Presence of dbSNP:rs12722489 sequence variation in gene IL2RA/NCBI:3559",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12722489"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5271-1",
+      "bmLabel": "Presence of dbSNP:rs10411936 sequence variation in gene EPS15L1/NCBI:58513",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10411936"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5426-1",
+      "bmLabel": "Presence of dbSNP:rs11154801 sequence variation in gene AHI1/NCBI:54806",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11154801"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5427-1",
+      "bmLabel": "Presence of dbSNP:rs7238078 sequence variation in gene MALT1/NCBI:10892",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7238078"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5428-1",
+      "bmLabel": "Presence of dbSNP:rs12212193 sequence variation in gene BACH2/NCBI:60468",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12212193"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5429-1",
+      "bmLabel": "Presence of dbSNP:rs2300603 sequence variation in gene BATF/NCBI:10538",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2300603"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5430-1",
+      "bmLabel": "Presence of dbSNP:rs7522462 sequence variation in gene INAVA/NCBI:55765",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7522462"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5431-1",
+      "bmLabel": "Presence of dbSNP:rs650258 sequence variation in gene LINC02954/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs650258"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5432-1",
+      "bmLabel": "Presence of dbSNP:rs12466022 sequence variation in gene LINC02580/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12466022"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5433-1",
+      "bmLabel": "Presence of dbSNP:rs7200786 sequence variation in gene CLEC16A/NCBI:23274",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7200786"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5434-1",
+      "bmLabel": "Presence of dbSNP:rs669607 sequence variation in gene LINC01967/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs669607"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5435-1",
+      "bmLabel": "Presence of dbSNP:rs1062158 sequence variation in gene NDFIP1/NCBI:80762",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1062158"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5436-1",
+      "bmLabel": "Presence of dbSNP:rs1520333 sequence variation in gene PKIA-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1520333"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5437-1",
+      "bmLabel": "Presence of dbSNP:rs9821630 sequence variation in gene PLCL2/NCBI:23228",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9821630"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5438-1",
+      "bmLabel": "Presence of dbSNP:rs7255066 sequence variation in gene CEACAM16-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7255066"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5439-1",
+      "bmLabel": "Presence of dbSNP:rs180515 sequence variation in gene RPS6KB1/NCBI:6198",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs180515"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5440-1",
+      "bmLabel": "Presence of dbSNP:rs1077667 sequence variation in gene TNFSF14/NCBI:8740",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1077667"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5441-1",
+      "bmLabel": "Presence of dbSNP:rs354033 sequence variation in gene ZNF767P/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs354033"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5442-1",
+      "bmLabel": "Presence of dbSNP:rs3761959 sequence variation in gene FCRL3/NCBI:115352",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3761959"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5443-1",
+      "bmLabel": "Presence of dbSNP:rs386965 sequence variation in gene MAFTRR/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs386965"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5444-1",
+      "bmLabel": "Presence of dbSNP:rs874628 sequence variation in gene MPV17L2/NCBI:84769",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs874628"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5445-1",
+      "bmLabel": "Presence of dbSNP:rs1323292 sequence variation in gene RGS2-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1323292"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5446-1",
+      "bmLabel": "Presence of dbSNP:rs307896 sequence variation in gene SAE1/NCBI:10055",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs307896"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5447-1",
+      "bmLabel": "Presence of dbSNP:rs10201872 sequence variation in gene SP140/NCBI:11262",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10201872"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5448-1",
+      "bmLabel": "Presence of dbSNP:rs12456021 sequence variation in gene ALPK2/NCBI:115701",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12456021"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5449-1",
+      "bmLabel": "Presence of dbSNP:rs228614 sequence variation in gene MANBA/NCBI:4126",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs228614"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5450-1",
+      "bmLabel": "Presence of dbSNP:rs2283792 sequence variation in gene MAPK1/NCBI:5594",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2283792"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5451-1",
+      "bmLabel": "Presence of dbSNP:rs17174870 sequence variation in gene MERTK/NCBI:10461",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs17174870"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5452-1",
+      "bmLabel": "Presence of dbSNP:rs4648356 sequence variation in gene TTC34/NCBI:100287898",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4648356"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5453-1",
+      "bmLabel": "Presence of dbSNP:rs9282641 sequence variation in gene CD86/NCBI:942",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9282641"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5454-1",
+      "bmLabel": "Presence of dbSNP:rs4410871 sequence variation in gene PVT1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4410871"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5455-1",
+      "bmLabel": "Presence of dbSNP:rs6952809 sequence variation in gene CHST12/NCBI:55501",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6952809"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5456-1",
+      "bmLabel": "Presence of dbSNP:rs10466829 sequence variation in gene CLECL1P/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10466829"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5457-1",
+      "bmLabel": "Presence of dbSNP:rs233100 sequence variation in gene BCL10-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs233100"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5458-1",
+      "bmLabel": "Presence of dbSNP:rs2303759 sequence variation in gene DKKL1/NCBI:27120",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2303759"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5459-1",
+      "bmLabel": "Presence of dbSNP:rs11810217 sequence variation in gene EVI5/NCBI:7813",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11810217"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5460-1",
+      "bmLabel": "Presence of dbSNP:rs2119704 sequence variation in gene LINC01147/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2119704"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5461-1",
+      "bmLabel": "Presence of dbSNP:rs4285028 sequence variation in gene SLC15A2/NCBI:6565",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4285028"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5462-1",
+      "bmLabel": "Presence of dbSNP:rs4308217 sequence variation in gene CD86/NCBI:942",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4308217"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5463-1",
+      "bmLabel": "Presence of dbSNP:rs3118470 sequence variation in gene IL2RA/NCBI:3559",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3118470"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5654-1",
+      "bmLabel": "Presence of dbSNP:rs931555 sequence variation in gene SPEF2/NCBI:79925",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs931555"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5753-1",
+      "bmLabel": "Presence of dbSNP:rs10984447 sequence variation in gene BRINP1/NCBI:1620",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10984447"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5754-1",
+      "bmLabel": "Presence of dbSNP:rs6498169 sequence variation in gene CLEC16A/NCBI:23274",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6498169"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5782-2",
+      "bmLabel": "Presence of dbSNP:rs10965250 sequence variation in gene CDKN2B-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10965250"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5844-1",
+      "bmLabel": "Presence of dbSNP:rs10492972 sequence variation in gene KIF1B/NCBI:23095",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10492972"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5845-1",
+      "bmLabel": "Presence of dbSNP:rs1458175 sequence variation in gene PDZRN4/NCBI:29951",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1458175"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5846-1",
+      "bmLabel": "Presence of dbSNP:rs7253363 sequence variation in gene ZNF627/NCBI:199692",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7253363"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5847-1",
+      "bmLabel": "Presence of dbSNP:rs9523762 sequence variation in gene GPC5/NCBI:2262",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9523762"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5848-1",
+      "bmLabel": "Presence of dbSNP:rs1529316 sequence variation in gene CSMD1/NCBI:64478",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1529316"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5849-1",
+      "bmLabel": "Presence of dbSNP:rs1755289 sequence variation in gene ADAMTSL1/NCBI:92949",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1755289"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5850-1",
+      "bmLabel": "Presence of dbSNP:rs12638253 sequence variation in gene LEKR1/NCBI:389170",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12638253"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5851-1",
+      "bmLabel": "Presence of dbSNP:rs1841770 sequence variation in gene LINC02032/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1841770"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5852-1",
+      "bmLabel": "Presence of dbSNP:rs17157903 sequence variation in gene RELN/NCBI:5649",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs17157903"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5853-1",
+      "bmLabel": "Presence of dbSNP:rs4704970 sequence variation in gene SGCD/NCBI:6444",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4704970"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5854-1",
+      "bmLabel": "Presence of dbSNP:rs2842483 sequence variation in gene PCSK5/NCBI:5125",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2842483"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5855-1",
+      "bmLabel": "Presence of dbSNP:rs12047808 sequence variation in gene AXDND1/NCBI:126859",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12047808"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5856-1",
+      "bmLabel": "Presence of dbSNP:rs299175 sequence variation in gene NLRP11/NCBI:204801",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs299175"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5857-1",
+      "bmLabel": "Presence of dbSNP:rs10259085 sequence variation in gene C1GALT1/NCBI:56913",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10259085"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5858-1",
+      "bmLabel": "Presence of dbSNP:rs7191888 sequence variation in gene ZFHX3/NCBI:463",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7191888"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5859-1",
+      "bmLabel": "Presence of dbSNP:rs1437898 sequence variation in gene NCKAP5/NCBI:344148",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1437898"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5949-1",
+      "bmLabel": "Presence of dbSNP:rs7779014 sequence variation in gene YWHAG/NCBI:7532",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7779014"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5950-1",
+      "bmLabel": "Presence of dbSNP:rs17149161 sequence variation in gene YWHAG/NCBI:7532",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs17149161"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5951-1",
+      "bmLabel": "Presence of dbSNP:rs12644284 sequence variation in gene TRIM2/NCBI:23321",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12644284"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5952-1",
+      "bmLabel": "Presence of dbSNP:rs7789940 sequence variation in gene FPASL/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7789940"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5953-1",
+      "bmLabel": "Presence of dbSNP:rs758944 sequence variation in gene FPASL/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs758944"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB5968-2",
+      "bmLabel": "Presence of dbSNP:rs13428812 sequence variation in gene DNMT3A/NCBI:1788",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs13428812"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB6198-1",
+      "bmLabel": "Presence of dbSNP:rs6659742 sequence variation in gene SNHG28/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6659742"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB6199-1",
+      "bmLabel": "Presence of dbSNP:rs17411949 sequence variation in gene CLSTN2/NCBI:64084",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs17411949"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB6262-1",
+      "bmLabel": "Presence of dbSNP:rs2503875 sequence variation in gene LINC02633/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2503875"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB6263-1",
+      "bmLabel": "Presence of dbSNP:rs3780792 sequence variation in gene VAV2/NCBI:7410",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3780792"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB6289-1",
+      "bmLabel": "Presence of dbSNP:rs9657904 sequence variation in gene CBLB/NCBI:868",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9657904"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB6290-1",
+      "bmLabel": "Presence of dbSNP:rs2040406 sequence variation in gene HLA-DQA1/NCBI:3117",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2040406"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB6454-1",
+      "bmLabel": "Presence of dbSNP:rs2935183 sequence variation in gene NPEPPS/NCBI:9520",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2935183"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB6793-2",
+      "bmLabel": "Presence of dbSNP:rs438613 sequence variation in gene LINC01967/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs438613"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB7019-3",
+      "bmLabel": "Presence of dbSNP:rs2523589 sequence variation in gene HLA-B/NCBI:3106",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2523589"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB7087-2",
+      "bmLabel": "Presence of dbSNP:rs13037326 sequence variation in gene NCOA5/NCBI:57727",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs13037326"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB7553-3",
+      "bmLabel": "Presence of dbSNP:rs10245867 sequence variation in gene JAZF1/NCBI:221895",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10245867"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB7711-2",
+      "bmLabel": "Presence of dbSNP:rs60600003 sequence variation in gene ELMO1/NCBI:9844",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs60600003"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB7825-4",
+      "bmLabel": "Presence of dbSNP:rs34536443 sequence variation in gene TYK2/NCBI:7297",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs34536443"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BB8474-2",
+      "bmLabel": "Presence of dbSNP:rs4796224 sequence variation in gene ZNHIT3/NCBI:9326",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4796224"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0271-4",
+      "bmLabel": "Presence of dbSNP:rs6881270 sequence variation in gene IL7R/NCBI:3575",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6881270"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0288-1",
+      "bmLabel": "Presence of dbSNP:rs2253675 sequence variation in gene RFT1/NCBI:91869",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2253675"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0289-1",
+      "bmLabel": "Presence of dbSNP:rs10931933 sequence variation in gene CASP8/NCBI:841",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10931933"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0290-1",
+      "bmLabel": "Presence of dbSNP:rs12609500 sequence variation in gene SMARCA4/NCBI:6597",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12609500"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0291-1",
+      "bmLabel": "Presence of dbSNP:rs2811727 sequence variation in gene LCN6/NCBI:158062",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2811727"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0292-1",
+      "bmLabel": "Presence of dbSNP:rs12909611 sequence variation in gene RORA/NCBI:6095",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12909611"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0293-1",
+      "bmLabel": "Presence of dbSNP:rs566267 sequence variation in gene PDE4B/NCBI:5142",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs566267"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0294-1",
+      "bmLabel": "Presence of dbSNP:rs2420518 sequence variation in gene REL-DT/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2420518"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0295-1",
+      "bmLabel": "Presence of dbSNP:rs7565445 sequence variation in gene MIR4435-2HG/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7565445"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0296-1",
+      "bmLabel": "Presence of dbSNP:rs1152430 sequence variation in gene RPS6KA5/NCBI:9252",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1152430"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0297-1",
+      "bmLabel": "Presence of dbSNP:rs2505509 sequence variation in gene RASGEF1A/NCBI:221002",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2505509"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0298-1",
+      "bmLabel": "Presence of dbSNP:rs8078776 sequence variation in gene MINK1/NCBI:50488",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs8078776"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0299-1",
+      "bmLabel": "Presence of dbSNP:rs1567526 sequence variation in gene MYO5B/NCBI:4645",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1567526"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0300-1",
+      "bmLabel": "Presence of dbSNP:rs929566 sequence variation in gene NAB1/NCBI:4664",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs929566"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0301-1",
+      "bmLabel": "Presence of dbSNP:rs4940730 sequence variation in gene ALPK2/NCBI:115701",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4940730"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0302-1",
+      "bmLabel": "Presence of dbSNP:rs71545193 sequence variation in gene EXOC2/NCBI:55770",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs71545193"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0303-1",
+      "bmLabel": "Presence of dbSNP:rs35280661 sequence variation in gene SGSM2/NCBI:9905",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs35280661"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0304-1",
+      "bmLabel": "Presence of dbSNP:rs62088246 sequence variation in gene UNK/NCBI:85451",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs62088246"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0305-1",
+      "bmLabel": "Presence of dbSNP:rs17591266 sequence variation in gene COG6/NCBI:57511",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs17591266"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0306-1",
+      "bmLabel": "Presence of dbSNP:rs3783196 sequence variation in gene RGCC/NCBI:28984",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3783196"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0307-1",
+      "bmLabel": "Presence of dbSNP:rs6789653 sequence variation in gene ZBTB38/NCBI:253461",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6789653"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0308-1",
+      "bmLabel": "Presence of dbSNP:rs10789825 sequence variation in gene POU2AF1/NCBI:5450",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10789825"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0339-1",
+      "bmLabel": "Presence of dbSNP:rs3747562 sequence variation in gene PRICKLE1/NCBI:144165",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3747562"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0340-1",
+      "bmLabel": "Presence of dbSNP:rs3809627 sequence variation in gene TBX6/NCBI:6911",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3809627"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0341-1",
+      "bmLabel": "Presence of dbSNP:rs408667 sequence variation in gene GALC/NCBI:2581",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs408667"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0342-1",
+      "bmLabel": "Presence of dbSNP:rs4262739 sequence variation in gene ETS1/NCBI:2113",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4262739"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0343-1",
+      "bmLabel": "Presence of dbSNP:rs4765569 sequence variation in gene NCOR2/NCBI:9612",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4765569"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0344-1",
+      "bmLabel": "Presence of dbSNP:rs4812492 sequence variation in gene ZHX3/NCBI:23051",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4812492"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0345-1",
+      "bmLabel": "Presence of dbSNP:rs483180 sequence variation in gene PHGDH/NCBI:26227",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs483180"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0346-1",
+      "bmLabel": "Presence of dbSNP:rs4834222 sequence variation in gene FAM241A/NCBI:132720",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4834222"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0347-1",
+      "bmLabel": "Presence of dbSNP:rs4896153 sequence variation in gene AHI1-DT/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4896153"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0348-1",
+      "bmLabel": "Presence of dbSNP:rs55858457 sequence variation in gene CHST12/NCBI:55501",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs55858457"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0349-1",
+      "bmLabel": "Presence of dbSNP:rs56376240 sequence variation in gene HTR3A/NCBI:3359",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs56376240"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0350-1",
+      "bmLabel": "Presence of dbSNP:rs57116599 sequence variation in gene MERTK/NCBI:10461",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs57116599"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0351-1",
+      "bmLabel": "Presence of dbSNP:rs58394161 sequence variation in gene GFI1/NCBI:2672",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs58394161"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0352-1",
+      "bmLabel": "Presence of dbSNP:rs61909096 sequence variation in gene ETS1/NCBI:2113",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs61909096"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0353-1",
+      "bmLabel": "Presence of dbSNP:rs2242508 sequence variation in gene PHKG1/NCBI:5260",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2242508"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0354-1",
+      "bmLabel": "Presence of dbSNP:rs2248137 sequence variation in gene CYP24A1/NCBI:1591",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2248137"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0355-1",
+      "bmLabel": "Presence of dbSNP:rs2269434 sequence variation in gene MYBPC3/NCBI:4607",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2269434"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0356-1",
+      "bmLabel": "Presence of dbSNP:rs2273215 sequence variation in gene LINC01624/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2273215"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0357-1",
+      "bmLabel": "Presence of dbSNP:rs2286974 sequence variation in gene CLEC16A/NCBI:23274",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2286974"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0358-1",
+      "bmLabel": "Presence of dbSNP:rs2618101 sequence variation in gene LINC01980/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2618101"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0359-1",
+      "bmLabel": "Presence of dbSNP:rs27002 sequence variation in gene MCTP1/NCBI:79772",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs27002"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0360-1",
+      "bmLabel": "Presence of dbSNP:rs2705616 sequence variation in gene AFF1/NCBI:4299",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2705616"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0361-1",
+      "bmLabel": "Presence of dbSNP:rs2724416 sequence variation in gene LINC02732/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2724416"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0362-1",
+      "bmLabel": "Presence of dbSNP:rs2726479 sequence variation in gene TET2-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2726479"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0363-1",
+      "bmLabel": "Presence of dbSNP:rs2836438 sequence variation in gene ERG/NCBI:2078",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2836438"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0364-1",
+      "bmLabel": "Presence of dbSNP:rs28703878 sequence variation in gene PKIA-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs28703878"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0365-1",
+      "bmLabel": "Presence of dbSNP:rs2986736 sequence variation in gene ESPN/NCBI:83715",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2986736"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0366-1",
+      "bmLabel": "Presence of dbSNP:rs32658 sequence variation in gene TNFAIP8/NCBI:25816",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs32658"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0367-1",
+      "bmLabel": "Presence of dbSNP:rs34026809 sequence variation in gene PHLDB1/NCBI:23187",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs34026809"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0978-1",
+      "bmLabel": "Presence of dbSNP:rs1026916 sequence variation in gene STAT3/NCBI:6774",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1026916"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0979-1",
+      "bmLabel": "Presence of dbSNP:rs10271373 sequence variation in gene ZC3HAV1/NCBI:56829",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10271373"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0980-1",
+      "bmLabel": "Presence of dbSNP:rs1076928 sequence variation in gene ETV7/NCBI:51513",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1076928"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0981-1",
+      "bmLabel": "Presence of dbSNP:rs10853845 sequence variation in gene FPR1/NCBI:2357",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10853845"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0982-1",
+      "bmLabel": "Presence of dbSNP:rs1087056 sequence variation in gene LINC02664/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1087056"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0983-1",
+      "bmLabel": "Presence of dbSNP:rs10891261 sequence variation in gene POU2AF1/NCBI:5450",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10891261"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0984-1",
+      "bmLabel": "Presence of dbSNP:rs10918297 sequence variation in gene UCK2/NCBI:7371",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10918297"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0985-1",
+      "bmLabel": "Presence of dbSNP:rs11125803 sequence variation in gene ADCY3/NCBI:109",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11125803"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0986-1",
+      "bmLabel": "Presence of dbSNP:rs11150602 sequence variation in gene SETD1A/NCBI:9739",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11150602"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0987-1",
+      "bmLabel": "Presence of dbSNP:rs1129183 sequence variation in gene LZTFL1/NCBI:54585",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1129183"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0988-1",
+      "bmLabel": "Presence of dbSNP:rs11578655 sequence variation in gene SLC30A7/NCBI:148867",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11578655"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0989-1",
+      "bmLabel": "Presence of dbSNP:rs11809700 sequence variation in gene EVI5/NCBI:7813",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11809700"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0990-1",
+      "bmLabel": "Presence of dbSNP:rs11852059 sequence variation in gene GNG2/NCBI:54331",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11852059"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0991-1",
+      "bmLabel": "Presence of dbSNP:rs11899404 sequence variation in gene MIR3681HG/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11899404"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0992-1",
+      "bmLabel": "Presence of dbSNP:rs12094392 sequence variation in gene PHGDH/NCBI:26227",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12094392"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0993-1",
+      "bmLabel": "Presence of dbSNP:rs12147246 sequence variation in gene TRAF3/NCBI:7187",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12147246"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0994-1",
+      "bmLabel": "Presence of dbSNP:rs1250551 sequence variation in gene ZMIZ1/NCBI:57178",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1250551"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0995-1",
+      "bmLabel": "Presence of dbSNP:rs12722574 sequence variation in gene IL2RA/NCBI:3559",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12722574"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0996-1",
+      "bmLabel": "Presence of dbSNP:rs1365120 sequence variation in gene PRR5L/NCBI:79899",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1365120"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0997-1",
+      "bmLabel": "Presence of dbSNP:rs1415069 sequence variation in gene DIPK1A/NCBI:388650",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1415069"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0998-1",
+      "bmLabel": "Presence of dbSNP:rs17051321 sequence variation in gene TNIP3/NCBI:79931",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs17051321"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC0999-1",
+      "bmLabel": "Presence of dbSNP:rs12133753 sequence variation in gene TGFBR3/NCBI:7049",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12133753"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1000-1",
+      "bmLabel": "Presence of dbSNP:rs35540610 sequence variation in gene SP140/NCBI:11262",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs35540610"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1001-1",
+      "bmLabel": "Presence of dbSNP:rs34947566 sequence variation in gene RMI2/NCBI:116028",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs34947566"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1002-1",
+      "bmLabel": "Presence of dbSNP:rs6742 sequence variation in gene SLC2A4RG/NCBI:56731",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6742"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1003-1",
+      "bmLabel": "Presence of dbSNP:rs72855540 sequence variation in gene GTDC1/NCBI:79712",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs72855540"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1004-1",
+      "bmLabel": "Presence of dbSNP:rs9843355 sequence variation in gene TIMMDC1/NCBI:51300",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9843355"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1005-1",
+      "bmLabel": "Presence of dbSNP:rs72922276 sequence variation in gene JAK1/NCBI:3716",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs72922276"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1006-1",
+      "bmLabel": "Presence of dbSNP:rs12832171 sequence variation in gene TNFRSF1A/NCBI:7132",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12832171"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1007-1",
+      "bmLabel": "Presence of dbSNP:rs10801908 sequence variation in gene CD58/NCBI:965",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10801908"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1008-1",
+      "bmLabel": "Presence of dbSNP:rs10063294 sequence variation in gene IL7R/NCBI:3575",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10063294"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1015-1",
+      "bmLabel": "Presence of dbSNP:rs9568402 sequence variation in gene DLEU1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9568402"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1016-1",
+      "bmLabel": "Presence of dbSNP:rs9844930 sequence variation in gene ARHGEF3/NCBI:50650",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9844930"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1017-1",
+      "bmLabel": "Presence of dbSNP:rs9863496 sequence variation in gene SATB1-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9863496"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1018-1",
+      "bmLabel": "Presence of dbSNP:rs9909593 sequence variation in gene IKZF3/NCBI:22806",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9909593"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1019-1",
+      "bmLabel": "Presence of dbSNP:rs9955954 sequence variation in gene MALT1/NCBI:10892",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9955954"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1020-1",
+      "bmLabel": "Presence of dbSNP:rs9992763 sequence variation in gene LEF1/NCBI:51176",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9992763"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1021-1",
+      "bmLabel": "Presence of dbSNP:rs8062446 sequence variation in gene NLRC5/NCBI:84166",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs8062446"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1022-1",
+      "bmLabel": "Presence of dbSNP:rs9610458 sequence variation in gene MAPK1/NCBI:5594",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9610458"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1023-1",
+      "bmLabel": "Presence of dbSNP:rs13414105 sequence variation in gene LBH/NCBI:81606",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs13414105"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1024-1",
+      "bmLabel": "Presence of dbSNP:rs6533052 sequence variation in gene SLC9B1/NCBI:150159",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6533052"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1025-1",
+      "bmLabel": "Presence of dbSNP:rs2331964 sequence variation in gene IQCB1/NCBI:9657",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2331964"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1026-1",
+      "bmLabel": "Presence of dbSNP:rs1177228 sequence variation in gene PUS10/NCBI:150962",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1177228"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1027-1",
+      "bmLabel": "Presence of dbSNP:rs134490 sequence variation in gene TTC28/NCBI:23331",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs134490"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1028-1",
+      "bmLabel": "Presence of dbSNP:rs17780048 sequence variation in gene WAKMAR2/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs17780048"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1029-1",
+      "bmLabel": "Presence of dbSNP:rs67111717 sequence variation in gene RGS14/NCBI:10636",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs67111717"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1030-1",
+      "bmLabel": "Presence of dbSNP:rs12925972 sequence variation in gene WWOX/NCBI:51741",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12925972"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1031-1",
+      "bmLabel": "Presence of dbSNP:rs11079784 sequence variation in gene KPNB1-DT/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11079784"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1032-1",
+      "bmLabel": "Presence of dbSNP:rs58166386 sequence variation in gene EPS15L1/NCBI:58513",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs58166386"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1033-1",
+      "bmLabel": "Presence of dbSNP:rs62208470 sequence variation in gene ZHX3/NCBI:23051",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs62208470"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1034-1",
+      "bmLabel": "Presence of dbSNP:rs1014486 sequence variation in gene IL12A-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1014486"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1035-1",
+      "bmLabel": "Presence of dbSNP:rs2150879 sequence variation in gene VMP1/NCBI:81671",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2150879"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1036-1",
+      "bmLabel": "Presence of dbSNP:rs12478539 sequence variation in gene LINC02580/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12478539"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1062-1",
+      "bmLabel": "Presence of dbSNP:rs719316 sequence variation in gene ATXN1/NCBI:6310",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs719316"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1063-1",
+      "bmLabel": "Presence of dbSNP:rs3737798 sequence variation in gene VANGL2/NCBI:57216",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3737798"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1064-1",
+      "bmLabel": "Presence of dbSNP:rs6738544 sequence variation in gene STAT4/NCBI:6775",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6738544"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1065-1",
+      "bmLabel": "Presence of dbSNP:rs4812772 sequence variation in gene TOX2/NCBI:84969",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4812772"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1066-1",
+      "bmLabel": "Presence of dbSNP:rs11083862 sequence variation in gene SAE1/NCBI:10055",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11083862"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1067-1",
+      "bmLabel": "Presence of dbSNP:rs34299154 sequence variation in gene LINC02929/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs34299154"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1068-1",
+      "bmLabel": "Presence of dbSNP:rs3845959 sequence variation in gene ALDH1L1/NCBI:10840",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3845959"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1069-1",
+      "bmLabel": "Presence of dbSNP:rs2187163 sequence variation in gene BCL2/NCBI:596",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2187163"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1070-1",
+      "bmLabel": "Presence of dbSNP:rs72989863 sequence variation in gene MARCHF1/NCBI:55016",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs72989863"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1071-1",
+      "bmLabel": "Presence of dbSNP:rs13066789 sequence variation in gene LPP/NCBI:4026",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs13066789"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1072-1",
+      "bmLabel": "Presence of dbSNP:rs2289746 sequence variation in gene CBLB/NCBI:868",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2289746"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1073-1",
+      "bmLabel": "Presence of dbSNP:rs1857996 sequence variation in gene DOCK10/NCBI:55619",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1857996"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1074-1",
+      "bmLabel": "Presence of dbSNP:rs7855251 sequence variation in gene TRIM14/NCBI:9830",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7855251"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1075-1",
+      "bmLabel": "Presence of dbSNP:rs5756405 sequence variation in gene CSF2RB/NCBI:1439",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs5756405"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1076-1",
+      "bmLabel": "Presence of dbSNP:rs7620803 sequence variation in gene SIDT1/NCBI:54847",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7620803"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1077-1",
+      "bmLabel": "Presence of dbSNP:rs9900529 sequence variation in gene GRB2/NCBI:2885",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9900529"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1078-1",
+      "bmLabel": "Presence of dbSNP:rs4820955 sequence variation in gene LIMK2/NCBI:3985",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4820955"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1079-1",
+      "bmLabel": "Presence of dbSNP:rs9808753 sequence variation in gene IFNGR2/NCBI:3460",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9808753"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1080-1",
+      "bmLabel": "Presence of dbSNP:rs2084007 sequence variation in gene JADE2/NCBI:23338",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2084007"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1081-1",
+      "bmLabel": "Presence of dbSNP:rs1442118 sequence variation in gene NIHCOLE/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1442118"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1082-1",
+      "bmLabel": "Presence of dbSNP:rs6433892 sequence variation in gene LINC01934/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6433892"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1083-1",
+      "bmLabel": "Presence of dbSNP:rs7525478 sequence variation in gene CR1L/NCBI:1379",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7525478"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1084-1",
+      "bmLabel": "Presence of dbSNP:rs4392367 sequence variation in gene CRTAP/NCBI:10491",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs4392367"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1085-1",
+      "bmLabel": "Presence of dbSNP:rs61708525 sequence variation in gene PLXNC1/NCBI:10154",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs61708525"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1086-1",
+      "bmLabel": "Presence of dbSNP:rs6495124 sequence variation in gene SCAMP2/NCBI:10066",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6495124"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1087-1",
+      "bmLabel": "Presence of dbSNP:rs6564681 sequence variation in gene MAFTRR/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6564681"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1088-1",
+      "bmLabel": "Presence of dbSNP:rs6670198 sequence variation in gene PRXL2B/NCBI:127281",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6670198"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1089-1",
+      "bmLabel": "Presence of dbSNP:rs6672420 sequence variation in gene RUNX3/NCBI:864",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6672420"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1090-1",
+      "bmLabel": "Presence of dbSNP:rs6837324 sequence variation in gene TXK/NCBI:7294",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6837324"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1091-1",
+      "bmLabel": "Presence of dbSNP:rs6911131 sequence variation in gene PHACTR2/NCBI:9749",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6911131"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1092-1",
+      "bmLabel": "Presence of dbSNP:rs6990534 sequence variation in gene PVT1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6990534"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1093-1",
+      "bmLabel": "Presence of dbSNP:rs7260482 sequence variation in gene CEACAM16-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7260482"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1094-1",
+      "bmLabel": "Presence of dbSNP:rs72665771 sequence variation in gene MAPK10/NCBI:5602",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs72665771"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1095-1",
+      "bmLabel": "Presence of dbSNP:rs73277163 sequence variation in gene ETV6/NCBI:2120",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs73277163"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1096-1",
+      "bmLabel": "Presence of dbSNP:rs7975763 sequence variation in gene PITPNM2/NCBI:57605",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7975763"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC1097-1",
+      "bmLabel": "Presence of dbSNP:rs883871 sequence variation in gene NR1D1/NCBI:9572",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs883871"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2085-1",
+      "bmLabel": "Presence of dbSNP:rs11873030 sequence variation in gene MALT1/NCBI:10892",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs11873030"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2086-1",
+      "bmLabel": "Presence of dbSNP:rs8102445 sequence variation in gene SAE1/NCBI:10055",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs8102445"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2087-1",
+      "bmLabel": "Presence of dbSNP:rs3935549 sequence variation in gene PREX1/NCBI:57580",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3935549"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2088-1",
+      "bmLabel": "Presence of dbSNP:rs2259735 sequence variation in gene CYP24A1/NCBI:1591",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2259735"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2113-1",
+      "bmLabel": "Presence of dbSNP:rs6701238 sequence variation in gene PRXL2B/NCBI:127281",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6701238"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2114-1",
+      "bmLabel": "Presence of dbSNP:rs10873698 sequence variation in gene BCL10-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10873698"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2144-1",
+      "bmLabel": "Presence of dbSNP:rs17124032 sequence variation in gene HISLA/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs17124032"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2145-1",
+      "bmLabel": "Presence of dbSNP:rs7216796 sequence variation in gene MAP3K14/NCBI:9020",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7216796"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2146-1",
+      "bmLabel": "Presence of dbSNP:rs10754324 sequence variation in gene CD58/NCBI:965",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs10754324"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2147-1",
+      "bmLabel": "Presence of dbSNP:rs532303 sequence variation in gene PHGDH/NCBI:26227",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs532303"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2148-1",
+      "bmLabel": "Presence of dbSNP:rs28411734 sequence variation in gene LINC02580/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs28411734"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2149-1",
+      "bmLabel": "Presence of dbSNP:rs7584894 sequence variation in gene SP140/NCBI:11262",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7584894"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2150-1",
+      "bmLabel": "Presence of dbSNP:rs34844599 sequence variation in gene CD80/NCBI:941",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs34844599"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2151-1",
+      "bmLabel": "Presence of dbSNP:rs6854803 sequence variation in gene LEF1-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6854803"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2830-1",
+      "bmLabel": "Presence of dbSNP:rs1870071 sequence variation in gene EPS15L1/NCBI:58513",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1870071"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2852-1",
+      "bmLabel": "Presence of dbSNP:rs13263145 sequence variation in gene CDH17/NCBI:1015",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs13263145"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2853-1",
+      "bmLabel": "Presence of dbSNP:rs3796336 sequence variation in gene ITPR1/NCBI:3708",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3796336"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2854-1",
+      "bmLabel": "Presence of dbSNP:rs1028803 sequence variation in gene LINC00865/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1028803"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2855-1",
+      "bmLabel": "Presence of dbSNP:rs1110056 sequence variation in gene LRRC56/NCBI:115399",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1110056"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2856-1",
+      "bmLabel": "Presence of dbSNP:rs2304674 sequence variation in gene PER2/NCBI:8864",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2304674"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2857-1",
+      "bmLabel": "Presence of dbSNP:rs2655067 sequence variation in gene PRR16/NCBI:51334",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2655067"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC2858-1",
+      "bmLabel": "Presence of dbSNP:rs2688883 sequence variation in gene SGMS1/NCBI:259230",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2688883"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4659-3",
+      "bmLabel": "Presence of dbSNP:rs144595899 sequence variation in gene ATF6B/NCBI:1388",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs144595899"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4661-2",
+      "bmLabel": "Presence of dbSNP:rs2859448 sequence variation in gene HCP5/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2859448"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4662-2",
+      "bmLabel": "Presence of dbSNP:rs2284178 sequence variation in gene HCP5/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2284178"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4663-2",
+      "bmLabel": "Presence of dbSNP:rs115277907 sequence variation in gene C2/NCBI:717",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs115277907"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4664-2",
+      "bmLabel": "Presence of dbSNP:rs9273011 sequence variation in gene HLA-DQA1/NCBI:3117",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9273011"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4665-2",
+      "bmLabel": "Presence of dbSNP:rs9261425 sequence variation in gene TRIM31-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9261425"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4666-2",
+      "bmLabel": "Presence of dbSNP:rs8283 sequence variation in gene ATF6B/NCBI:1388",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs8283"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4667-2",
+      "bmLabel": "Presence of dbSNP:rs41288889 sequence variation in gene HLA-DQA2/NCBI:3118",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs41288889"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4668-2",
+      "bmLabel": "Presence of dbSNP:rs112586220 sequence variation in gene H2BC15/NCBI:8341",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs112586220"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4669-2",
+      "bmLabel": "Presence of dbSNP:rs13190937 sequence variation in gene ZSCAN23/NCBI:222696",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs13190937"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4670-2",
+      "bmLabel": "Presence of dbSNP:rs1055569 sequence variation in gene HCP5/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1055569"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4671-2",
+      "bmLabel": "Presence of dbSNP:rs213204 sequence variation in gene RPS18/NCBI:6222",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs213204"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4672-2",
+      "bmLabel": "Presence of dbSNP:rs417812 sequence variation in gene HLA-DOA/NCBI:3111",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs417812"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4673-2",
+      "bmLabel": "Presence of dbSNP:rs3763354 sequence variation in gene HLA-DOB/NCBI:3112",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3763354"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4674-2",
+      "bmLabel": "Presence of dbSNP:rs2157338 sequence variation in gene HLA-DRB9/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2157338"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4675-2",
+      "bmLabel": "Presence of dbSNP:rs2269423 sequence variation in gene AGPAT1/NCBI:10554",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2269423"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4676-2",
+      "bmLabel": "Presence of dbSNP:rs3134931 sequence variation in gene NOTCH4/NCBI:4855",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3134931"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4677-2",
+      "bmLabel": "Presence of dbSNP:rs465151 sequence variation in gene WDR46/NCBI:9277",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs465151"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4678-2",
+      "bmLabel": "Presence of dbSNP:rs2523545 sequence variation in gene HLA-B/NCBI:3106",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2523545"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4679-2",
+      "bmLabel": "Presence of dbSNP:rs9273529 sequence variation in gene HLA-DQB1/NCBI:3119",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9273529"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4680-2",
+      "bmLabel": "Presence of dbSNP:rs16870908 sequence variation in gene TAP2/NCBI:6891",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs16870908"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4681-2",
+      "bmLabel": "Presence of dbSNP:rs2239707 sequence variation in gene NFKBIL1/NCBI:4795",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2239707"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4682-2",
+      "bmLabel": "Presence of dbSNP:rs1264372 sequence variation in gene LINC00243/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs1264372"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4683-2",
+      "bmLabel": "Presence of dbSNP:rs2534671 sequence variation in gene MICB/NCBI:4277",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs2534671"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4684-2",
+      "bmLabel": "Presence of dbSNP:rs17208314 sequence variation in gene TSBP1-AS1/NCBI:",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs17208314"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4685-2",
+      "bmLabel": "Presence of dbSNP:rs7743807 sequence variation in gene EHMT2/NCBI:10919",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs7743807"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4686-2",
+      "bmLabel": "Presence of dbSNP:rs3819715 sequence variation in gene TAP2/NCBI:6891",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3819715"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4687-2",
+      "bmLabel": "Presence of dbSNP:rs3218816 sequence variation in gene GTF2H4/NCBI:2968",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs3218816"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC4688-2",
+      "bmLabel": "Presence of dbSNP:rs9267821 sequence variation in gene NOTCH4/NCBI:4855",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs9267821"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC8301-1",
+      "bmLabel": "Presence of dbSNP:rs6498160 sequence variation in gene CLEC16A/NCBI:23274",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs6498160"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+      "rel": "http://purl.obolibrary.org/obo/OBCI_1000008",
+      "biomarker": "https://biomarkerkb.org/biomarker/BC8302-1",
+      "bmLabel": "Presence of dbSNP:rs12253981 sequence variation in gene IL2RA/NCBI:3559",
+      "assessed": "https://www.ncbi.nlm.nih.gov/snp/rs12253981"
+    }
+  ],
+  "row_count": 394
+}

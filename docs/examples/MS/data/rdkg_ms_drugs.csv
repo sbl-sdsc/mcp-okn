@@ -1,0 +1,94 @@
+mondo,mondoLabel,rel,drugLabel,drugId
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Rituximab,DrugBank:DB00073
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Biotin,DrugBank:DB00121
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Liothyronine,DrugBank:DB00279
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Cyclophosphamide,DrugBank:DB00531
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Teriflunomide,DrugBank:DB08880
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Acth,CTDRUG:acth
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Biib041 (fampridine),CTDRUG:biib041_fampridine_
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Cc-97540,CTDRUG:cc_97540
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Clemastine Fumarate,CTDRUG:clemastine_fumarate
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Diroximel Fumarate,CTDRUG:diroximel_fumarate
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Disease-modifying Therapies,CTDRUG:disease_modifying_therapies
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Elnd002,CTDRUG:elnd002
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Extended-release Quetiapine Fumarate,CTDRUG:extended_release_quetiapine_fumarate
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Fludarabine,CTDRUG:fludarabine
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Glatiramer Acetate,CTDRUG:glatiramer_acetate
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Insulin,CTDRUG:insulin
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,"Interferon Beta-1b (betaseron, Bay86-5046)",CTDRUG:interferon_beta_1b_betaseron_bay86_5046_
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Nbi-5788,CTDRUG:nbi_5788
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Ocrelizumab Dose 1,CTDRUG:ocrelizumab_dose_1
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Ocrelizumab Dose 2 And Dose 3,CTDRUG:ocrelizumab_dose_2_and_dose_3
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Remibrutinib,CTDRUG:remibrutinib
+MONDO_0000452,progressive relapsing multiple sclerosis,treats,Tolebrutinib,CTDRUG:tolebrutinib
+MONDO_0005301,multiple sclerosis,contraindicated_for,Ascorbic acid,DrugBank:DB00126
+MONDO_0005301,multiple sclerosis,contraindicated_for,Zinc gluconate,DrugBank:DB11248
+MONDO_0005301,multiple sclerosis,treats,Natalizumab,DrugBank:DB00108
+MONDO_0005301,multiple sclerosis,treats,Betamethasone,DrugBank:DB00443
+MONDO_0005301,multiple sclerosis,treats,Triamcinolone,DrugBank:DB00620
+MONDO_0005301,multiple sclerosis,treats,Prednisone,DrugBank:DB00635
+MONDO_0005301,multiple sclerosis,treats,Hydrocortisone,DrugBank:DB00741
+MONDO_0005301,multiple sclerosis,treats,Prednisolone,DrugBank:DB00860
+MONDO_0005301,multiple sclerosis,treats,Methylprednisolone,DrugBank:DB00959
+MONDO_0005301,multiple sclerosis,treats,Dexamethasone,DrugBank:DB01234
+MONDO_0005301,multiple sclerosis,treats,Cortisone acetate,DrugBank:DB01380
+MONDO_0005301,multiple sclerosis,treats,Dalfampridine,DrugBank:DB06637
+MONDO_0005301,multiple sclerosis,treats,Teriflunomide,DrugBank:DB08880
+MONDO_0005301,multiple sclerosis,treats,Ozanimod,DrugBank:DB12612
+MONDO_0005301,multiple sclerosis,treats,Hydrocortisone acetate,DrugBank:DB14539
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Interferon beta-1a,DrugBank:DB00060
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Interferon beta-1b,DrugBank:DB00068
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Alemtuzumab,DrugBank:DB00087
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Daclizumab,DrugBank:DB00111
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Cladribine,DrugBank:DB00242
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Clemastine,DrugBank:DB00283
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Methylprednisolone,DrugBank:DB00959
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Mitoxantrone,DrugBank:DB01204
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Ofatumumab,DrugBank:DB06650
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Raltegravir,DrugBank:DB06817
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Fingolimod,DrugBank:DB08868
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Belimumab,DrugBank:DB08879
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Dimethyl fumarate,DrugBank:DB08908
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Peginterferon beta-1a,DrugBank:DB09122
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Bg00012,CTDRUG:bg00012
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Continued Ocrelizumab,CTDRUG:continued_ocrelizumab
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Copaxone®,CTDRUG:copaxone_
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Dietary Supplement: Vitamin A,CTDRUG:dietary_supplement_vitamin_a
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Glatiramer Acetate,CTDRUG:glatiramer_acetate
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Gnbac1,CTDRUG:gnbac1
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Imu-838 (10 Mg/day),CTDRUG:imu_838_10_mg_day_
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Imu-838 (30 Mg/day),CTDRUG:imu_838_30_mg_day_
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Imu-838 (45 Mg/day),CTDRUG:imu_838_45_mg_day_
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Peg-liposomal Prednisolone Sodium Phosphate,CTDRUG:peg_liposomal_prednisolone_sodium_phosphate
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Perfusion Of Treatment Ocrelizumab,CTDRUG:perfusion_of_treatment_ocrelizumab
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Perfusion Of Treatment Rituximab,CTDRUG:perfusion_of_treatment_rituximab
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Rebif®,CTDRUG:rebif_
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Rg2077 (ctla4-igg4m),CTDRUG:rg2077_ctla4_igg4m_
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Short-course Ocrelizumab,CTDRUG:short_course_ocrelizumab
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Tysabri,CTDRUG:tysabri
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Ublituximab,CTDRUG:ublituximab
+MONDO_0005314,relapsing-remitting multiple sclerosis,treats,Vay736,CTDRUG:vay736
+MONDO_0018784,pediatric multiple sclerosis,treats,Interferon beta-1a,DrugBank:DB00060
+MONDO_0018784,pediatric multiple sclerosis,treats,Natalizumab,DrugBank:DB00108
+MONDO_0018784,pediatric multiple sclerosis,treats,Ranitidine,DrugBank:DB00863
+MONDO_0018784,pediatric multiple sclerosis,treats,Methylprednisolone,DrugBank:DB00959
+MONDO_0018784,pediatric multiple sclerosis,treats,Ofatumumab,DrugBank:DB06650
+MONDO_0018784,pediatric multiple sclerosis,treats,Fingolimod,DrugBank:DB08868
+MONDO_0018784,pediatric multiple sclerosis,treats,Teriflunomide,DrugBank:DB08880
+MONDO_0018784,pediatric multiple sclerosis,treats,Dimethyl fumarate,DrugBank:DB08908
+MONDO_0018784,pediatric multiple sclerosis,treats,Peginterferon beta-1a,DrugBank:DB09122
+MONDO_0018784,pediatric multiple sclerosis,treats,Ocrelizumab,DrugBank:DB11988
+MONDO_0018784,pediatric multiple sclerosis,treats,Alemtuzumab Gz402673,CTDRUG:alemtuzumab_gz402673
+MONDO_0018784,pediatric multiple sclerosis,treats,Beta-interferon,CTDRUG:beta_interferon
+MONDO_0018784,pediatric multiple sclerosis,treats,Biib017 (peginterferon Beta-1a),CTDRUG:biib017_peginterferon_beta_1a_
+MONDO_0018784,pediatric multiple sclerosis,treats,Bioactivated Gra For Adult Patients,CTDRUG:bioactivated_gra_for_adult_patients
+MONDO_0018784,pediatric multiple sclerosis,treats,Bioactivated Gra For Pediatric Patients,CTDRUG:bioactivated_gra_for_pediatric_patients
+MONDO_0018784,pediatric multiple sclerosis,treats,Fenebrutinib,CTDRUG:fenebrutinib
+MONDO_0018784,pediatric multiple sclerosis,treats,Fingolimod 0.5mg,CTDRUG:fingolimod_0_5mg
+MONDO_0018784,pediatric multiple sclerosis,treats,Glatiramer Acetate,CTDRUG:glatiramer_acetate
+MONDO_0018784,pediatric multiple sclerosis,treats,Interferon Β-1a,CTDRUG:interferon_1a
+MONDO_0018784,pediatric multiple sclerosis,treats,"Interferon Beta-1b (betaseron, Bay86-5046)",CTDRUG:interferon_beta_1b_betaseron_bay86_5046_
+MONDO_0018784,pediatric multiple sclerosis,treats,Interferon Beta Type 1a,CTDRUG:interferon_beta_type_1a
+MONDO_0018784,pediatric multiple sclerosis,treats,Rebif®,CTDRUG:rebif_
+MONDO_0018784,pediatric multiple sclerosis,treats,Siponimod,CTDRUG:siponimod
+MONDO_0018784,pediatric multiple sclerosis,treats,Ublituximab,CTDRUG:ublituximab

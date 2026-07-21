@@ -1,0 +1,945 @@
+{
+ "vars": [
+  "mondo",
+  "mondoLabel",
+  "rel",
+  "drug",
+  "drugLabel",
+  "drugPref",
+  "drugCat",
+  "drugId"
+ ],
+ "rows": [
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00073",
+   "drugLabel": "Rituximab",
+   "drugPref": "Rituximab",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00073"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00121",
+   "drugLabel": "Biotin",
+   "drugPref": "Biotin",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00121"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00279",
+   "drugLabel": "Liothyronine",
+   "drugPref": "Liothyronine",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00279"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00531",
+   "drugLabel": "Cyclophosphamide",
+   "drugPref": "Cyclophosphamide",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00531"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB08880",
+   "drugLabel": "Teriflunomide",
+   "drugPref": "Teriflunomide",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB08880"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_acth",
+   "drugLabel": "Acth",
+   "drugPref": "Acth",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:acth"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_biib041_fampridine_",
+   "drugLabel": "Biib041 (fampridine)",
+   "drugPref": "Biib041 (fampridine)",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:biib041_fampridine_"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_cc_97540",
+   "drugLabel": "Cc-97540",
+   "drugPref": "Cc-97540",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:cc_97540"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_clemastine_fumarate",
+   "drugLabel": "Clemastine Fumarate",
+   "drugPref": "Clemastine Fumarate",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:clemastine_fumarate"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_diroximel_fumarate",
+   "drugLabel": "Diroximel Fumarate",
+   "drugPref": "Diroximel Fumarate",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:diroximel_fumarate"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_disease_modifying_therapies",
+   "drugLabel": "Disease-modifying Therapies",
+   "drugPref": "Disease-modifying Therapies",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:disease_modifying_therapies"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_elnd002",
+   "drugLabel": "Elnd002",
+   "drugPref": "Elnd002",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:elnd002"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_extended_release_quetiapine_fumarate",
+   "drugLabel": "Extended-release Quetiapine Fumarate",
+   "drugPref": "Extended-release Quetiapine Fumarate",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:extended_release_quetiapine_fumarate"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_fludarabine",
+   "drugLabel": "Fludarabine",
+   "drugPref": "Fludarabine",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:fludarabine"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_glatiramer_acetate",
+   "drugLabel": "Glatiramer Acetate",
+   "drugPref": "Glatiramer Acetate",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:glatiramer_acetate"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_insulin",
+   "drugLabel": "Insulin",
+   "drugPref": "Insulin",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:insulin"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_interferon_beta_1b_betaseron_bay86_5046_",
+   "drugLabel": "Interferon Beta-1b (betaseron, Bay86-5046)",
+   "drugPref": "Interferon Beta-1b (betaseron, Bay86-5046)",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:interferon_beta_1b_betaseron_bay86_5046_"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_nbi_5788",
+   "drugLabel": "Nbi-5788",
+   "drugPref": "Nbi-5788",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:nbi_5788"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_ocrelizumab_dose_1",
+   "drugLabel": "Ocrelizumab Dose 1",
+   "drugPref": "Ocrelizumab Dose 1",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:ocrelizumab_dose_1"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_ocrelizumab_dose_2_and_dose_3",
+   "drugLabel": "Ocrelizumab Dose 2 And Dose 3",
+   "drugPref": "Ocrelizumab Dose 2 And Dose 3",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:ocrelizumab_dose_2_and_dose_3"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_remibrutinib",
+   "drugLabel": "Remibrutinib",
+   "drugPref": "Remibrutinib",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:remibrutinib"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0000452",
+   "mondoLabel": "progressive relapsing multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_tolebrutinib",
+   "drugLabel": "Tolebrutinib",
+   "drugPref": "Tolebrutinib",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:tolebrutinib"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "contraindicated_for",
+   "drug": "http://identifiers.org/drugbank/DB00126",
+   "drugLabel": "Ascorbic acid",
+   "drugPref": "Ascorbic acid",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00126"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "contraindicated_for",
+   "drug": "http://identifiers.org/drugbank/DB11248",
+   "drugLabel": "Zinc gluconate",
+   "drugPref": "Zinc gluconate",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB11248"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00108",
+   "drugLabel": "Natalizumab",
+   "drugPref": "Natalizumab",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00108"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00443",
+   "drugLabel": "Betamethasone",
+   "drugPref": "Betamethasone",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00443"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00620",
+   "drugLabel": "Triamcinolone",
+   "drugPref": "Triamcinolone",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00620"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00635",
+   "drugLabel": "Prednisone",
+   "drugPref": "Prednisone",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00635"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00741",
+   "drugLabel": "Hydrocortisone",
+   "drugPref": "Hydrocortisone",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00741"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00860",
+   "drugLabel": "Prednisolone",
+   "drugPref": "Prednisolone",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00860"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00959",
+   "drugLabel": "Methylprednisolone",
+   "drugPref": "Methylprednisolone",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00959"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB01234",
+   "drugLabel": "Dexamethasone",
+   "drugPref": "Dexamethasone",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB01234"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB01380",
+   "drugLabel": "Cortisone acetate",
+   "drugPref": "Cortisone acetate",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB01380"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB06637",
+   "drugLabel": "Dalfampridine",
+   "drugPref": "Dalfampridine",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB06637"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB08880",
+   "drugLabel": "Teriflunomide",
+   "drugPref": "Teriflunomide",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB08880"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB12612",
+   "drugLabel": "Ozanimod",
+   "drugPref": "Ozanimod",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB12612"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005301",
+   "mondoLabel": "multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB14539",
+   "drugLabel": "Hydrocortisone acetate",
+   "drugPref": "Hydrocortisone acetate",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB14539"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00060",
+   "drugLabel": "Interferon beta-1a",
+   "drugPref": "Interferon beta-1a",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00060"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00068",
+   "drugLabel": "Interferon beta-1b",
+   "drugPref": "Interferon beta-1b",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00068"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00087",
+   "drugLabel": "Alemtuzumab",
+   "drugPref": "Alemtuzumab",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00087"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00111",
+   "drugLabel": "Daclizumab",
+   "drugPref": "Daclizumab",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00111"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00242",
+   "drugLabel": "Cladribine",
+   "drugPref": "Cladribine",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00242"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00283",
+   "drugLabel": "Clemastine",
+   "drugPref": "Clemastine",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00283"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00959",
+   "drugLabel": "Methylprednisolone",
+   "drugPref": "Methylprednisolone",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00959"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB01204",
+   "drugLabel": "Mitoxantrone",
+   "drugPref": "Mitoxantrone",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB01204"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB06650",
+   "drugLabel": "Ofatumumab",
+   "drugPref": "Ofatumumab",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB06650"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB06817",
+   "drugLabel": "Raltegravir",
+   "drugPref": "Raltegravir",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB06817"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB08868",
+   "drugLabel": "Fingolimod",
+   "drugPref": "Fingolimod",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB08868"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB08879",
+   "drugLabel": "Belimumab",
+   "drugPref": "Belimumab",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB08879"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB08908",
+   "drugLabel": "Dimethyl fumarate",
+   "drugPref": "Dimethyl fumarate",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB08908"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB09122",
+   "drugLabel": "Peginterferon beta-1a",
+   "drugPref": "Peginterferon beta-1a",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB09122"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_bg00012",
+   "drugLabel": "Bg00012",
+   "drugPref": "Bg00012",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:bg00012"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_continued_ocrelizumab",
+   "drugLabel": "Continued Ocrelizumab",
+   "drugPref": "Continued Ocrelizumab",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:continued_ocrelizumab"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_copaxone_",
+   "drugLabel": "Copaxone®",
+   "drugPref": "Copaxone®",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:copaxone_"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_dietary_supplement_vitamin_a",
+   "drugLabel": "Dietary Supplement: Vitamin A",
+   "drugPref": "Dietary Supplement: Vitamin A",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:dietary_supplement_vitamin_a"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_glatiramer_acetate",
+   "drugLabel": "Glatiramer Acetate",
+   "drugPref": "Glatiramer Acetate",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:glatiramer_acetate"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_gnbac1",
+   "drugLabel": "Gnbac1",
+   "drugPref": "Gnbac1",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:gnbac1"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_imu_838_10_mg_day_",
+   "drugLabel": "Imu-838 (10 Mg/day)",
+   "drugPref": "Imu-838 (10 Mg/day)",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:imu_838_10_mg_day_"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_imu_838_30_mg_day_",
+   "drugLabel": "Imu-838 (30 Mg/day)",
+   "drugPref": "Imu-838 (30 Mg/day)",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:imu_838_30_mg_day_"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_imu_838_45_mg_day_",
+   "drugLabel": "Imu-838 (45 Mg/day)",
+   "drugPref": "Imu-838 (45 Mg/day)",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:imu_838_45_mg_day_"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_peg_liposomal_prednisolone_sodium_phosphate",
+   "drugLabel": "Peg-liposomal Prednisolone Sodium Phosphate",
+   "drugPref": "Peg-liposomal Prednisolone Sodium Phosphate",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:peg_liposomal_prednisolone_sodium_phosphate"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_perfusion_of_treatment_ocrelizumab",
+   "drugLabel": "Perfusion Of Treatment Ocrelizumab",
+   "drugPref": "Perfusion Of Treatment Ocrelizumab",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:perfusion_of_treatment_ocrelizumab"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_perfusion_of_treatment_rituximab",
+   "drugLabel": "Perfusion Of Treatment Rituximab",
+   "drugPref": "Perfusion Of Treatment Rituximab",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:perfusion_of_treatment_rituximab"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_rebif_",
+   "drugLabel": "Rebif®",
+   "drugPref": "Rebif®",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:rebif_"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_rg2077_ctla4_igg4m_",
+   "drugLabel": "Rg2077 (ctla4-igg4m)",
+   "drugPref": "Rg2077 (ctla4-igg4m)",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:rg2077_ctla4_igg4m_"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_short_course_ocrelizumab",
+   "drugLabel": "Short-course Ocrelizumab",
+   "drugPref": "Short-course Ocrelizumab",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:short_course_ocrelizumab"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_tysabri",
+   "drugLabel": "Tysabri",
+   "drugPref": "Tysabri",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:tysabri"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_ublituximab",
+   "drugLabel": "Ublituximab",
+   "drugPref": "Ublituximab",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:ublituximab"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0005314",
+   "mondoLabel": "relapsing-remitting multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_vay736",
+   "drugLabel": "Vay736",
+   "drugPref": "Vay736",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:vay736"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00060",
+   "drugLabel": "Interferon beta-1a",
+   "drugPref": "Interferon beta-1a",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00060"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00108",
+   "drugLabel": "Natalizumab",
+   "drugPref": "Natalizumab",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00108"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00863",
+   "drugLabel": "Ranitidine",
+   "drugPref": "Ranitidine",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00863"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB00959",
+   "drugLabel": "Methylprednisolone",
+   "drugPref": "Methylprednisolone",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB00959"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB06650",
+   "drugLabel": "Ofatumumab",
+   "drugPref": "Ofatumumab",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB06650"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB08868",
+   "drugLabel": "Fingolimod",
+   "drugPref": "Fingolimod",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB08868"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB08880",
+   "drugLabel": "Teriflunomide",
+   "drugPref": "Teriflunomide",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB08880"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB08908",
+   "drugLabel": "Dimethyl fumarate",
+   "drugPref": "Dimethyl fumarate",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB08908"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB09122",
+   "drugLabel": "Peginterferon beta-1a",
+   "drugPref": "Peginterferon beta-1a",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB09122"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "http://identifiers.org/drugbank/DB11988",
+   "drugLabel": "Ocrelizumab",
+   "drugPref": "Ocrelizumab",
+   "drugCat": "biolink:Drug",
+   "drugId": "DrugBank:DB11988"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_alemtuzumab_gz402673",
+   "drugLabel": "Alemtuzumab Gz402673",
+   "drugPref": "Alemtuzumab Gz402673",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:alemtuzumab_gz402673"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_beta_interferon",
+   "drugLabel": "Beta-interferon",
+   "drugPref": "Beta-interferon",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:beta_interferon"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_biib017_peginterferon_beta_1a_",
+   "drugLabel": "Biib017 (peginterferon Beta-1a)",
+   "drugPref": "Biib017 (peginterferon Beta-1a)",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:biib017_peginterferon_beta_1a_"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_bioactivated_gra_for_adult_patients",
+   "drugLabel": "Bioactivated Gra For Adult Patients",
+   "drugPref": "Bioactivated Gra For Adult Patients",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:bioactivated_gra_for_adult_patients"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_bioactivated_gra_for_pediatric_patients",
+   "drugLabel": "Bioactivated Gra For Pediatric Patients",
+   "drugPref": "Bioactivated Gra For Pediatric Patients",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:bioactivated_gra_for_pediatric_patients"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_fenebrutinib",
+   "drugLabel": "Fenebrutinib",
+   "drugPref": "Fenebrutinib",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:fenebrutinib"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_fingolimod_0_5mg",
+   "drugLabel": "Fingolimod 0.5mg",
+   "drugPref": "Fingolimod 0.5mg",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:fingolimod_0_5mg"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_glatiramer_acetate",
+   "drugLabel": "Glatiramer Acetate",
+   "drugPref": "Glatiramer Acetate",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:glatiramer_acetate"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_interferon_1a",
+   "drugLabel": "Interferon Β-1a",
+   "drugPref": "Interferon Β-1a",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:interferon_1a"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_interferon_beta_1b_betaseron_bay86_5046_",
+   "drugLabel": "Interferon Beta-1b (betaseron, Bay86-5046)",
+   "drugPref": "Interferon Beta-1b (betaseron, Bay86-5046)",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:interferon_beta_1b_betaseron_bay86_5046_"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_interferon_beta_type_1a",
+   "drugLabel": "Interferon Beta Type 1a",
+   "drugPref": "Interferon Beta Type 1a",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:interferon_beta_type_1a"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_rebif_",
+   "drugLabel": "Rebif®",
+   "drugPref": "Rebif®",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:rebif_"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_siponimod",
+   "drugLabel": "Siponimod",
+   "drugPref": "Siponimod",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:siponimod"
+  },
+  {
+   "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+   "mondoLabel": "pediatric multiple sclerosis",
+   "rel": "treats",
+   "drug": "https://rdaccelerate.org/resource/CTDRUG_ublituximab",
+   "drugLabel": "Ublituximab",
+   "drugPref": "Ublituximab",
+   "drugCat": "biolink:Drug",
+   "drugId": "CTDRUG:ublituximab"
+  }
+ ],
+ "row_count": 93
+}

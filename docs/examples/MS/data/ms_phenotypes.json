@@ -1,0 +1,1489 @@
+{
+  "vars": [
+    "mondo",
+    "mondoLabel",
+    "hp",
+    "hpLabel",
+    "src"
+  ],
+  "rows": [
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0016429",
+      "mondoLabel": "Marburg acute multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001426",
+      "hpLabel": "Non-Mendelian inheritance",
+      "src": "rdkg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0016429",
+      "mondoLabel": "Marburg acute multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0011460",
+      "hpLabel": "Embryonal onset",
+      "src": "rdkg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000103",
+      "hpLabel": "Polyuria",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000126",
+      "hpLabel": "Hydronephrosis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000218",
+      "hpLabel": "High palate",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000234",
+      "hpLabel": "Abnormality of the head",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000252",
+      "hpLabel": "Microcephaly",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000365",
+      "hpLabel": "Hearing impairment",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000369",
+      "hpLabel": "Low-set ears",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000371",
+      "hpLabel": "Acute otitis media",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000388",
+      "hpLabel": "Otitis media",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000421",
+      "hpLabel": "Epistaxis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000473",
+      "hpLabel": "Torticollis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000486",
+      "hpLabel": "Strabismus",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000508",
+      "hpLabel": "Ptosis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000545",
+      "hpLabel": "Myopia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000613",
+      "hpLabel": "Photophobia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000639",
+      "hpLabel": "Nystagmus",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000708",
+      "hpLabel": "Atypical behavior",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000709",
+      "hpLabel": "Psychosis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000716",
+      "hpLabel": "Depression",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000729",
+      "hpLabel": "Autistic behavior",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000737",
+      "hpLabel": "Irritability",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000739",
+      "hpLabel": "Anxiety",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000750",
+      "hpLabel": "Delayed speech and language development",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000805",
+      "hpLabel": "Enuresis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000820",
+      "hpLabel": "Abnormality of the thyroid gland",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000843",
+      "hpLabel": "Hyperparathyroidism",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000858",
+      "hpLabel": "Irregular menstruation",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000867",
+      "hpLabel": "Secondary hyperparathyroidism",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000952",
+      "hpLabel": "Jaundice",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000956",
+      "hpLabel": "Acanthosis nigricans",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000961",
+      "hpLabel": "Cyanosis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000964",
+      "hpLabel": "Eczematoid dermatitis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000967",
+      "hpLabel": "Petechiae",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000973",
+      "hpLabel": "Cutis laxa",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000975",
+      "hpLabel": "Hyperhidrosis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000978",
+      "hpLabel": "Bruising susceptibility",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000980",
+      "hpLabel": "Pallor",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0000989",
+      "hpLabel": "Pruritus",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001047",
+      "hpLabel": "Atopic dermatitis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001065",
+      "hpLabel": "Striae distensae",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001249",
+      "hpLabel": "Intellectual disability",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001250",
+      "hpLabel": "Seizure",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001252",
+      "hpLabel": "Hypotonia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001254",
+      "hpLabel": "Lethargy",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001257",
+      "hpLabel": "Spasticity",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001263",
+      "hpLabel": "Global developmental delay",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001270",
+      "hpLabel": "Motor delay",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001276",
+      "hpLabel": "Hypertonia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001279",
+      "hpLabel": "Syncope",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001288",
+      "hpLabel": "Gait disturbance",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001298",
+      "hpLabel": "Encephalopathy",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001324",
+      "hpLabel": "Muscle weakness",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001337",
+      "hpLabel": "Tremor",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001370",
+      "hpLabel": "Rheumatoid arthritis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001371",
+      "hpLabel": "Flexion contracture",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001386",
+      "hpLabel": "Joint swelling",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001387",
+      "hpLabel": "Joint stiffness",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001392",
+      "hpLabel": "Abnormality of the liver",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001397",
+      "hpLabel": "Hepatic steatosis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001433",
+      "hpLabel": "Hepatosplenomegaly",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001508",
+      "hpLabel": "Failure to thrive",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001510",
+      "hpLabel": "Growth delay",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001511",
+      "hpLabel": "Intrauterine growth retardation",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001513",
+      "hpLabel": "Obesity",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001596",
+      "hpLabel": "Alopecia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001609",
+      "hpLabel": "Hoarse voice",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001611",
+      "hpLabel": "Hypernasal speech",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001627",
+      "hpLabel": "Abnormal heart morphology",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001629",
+      "hpLabel": "Ventricular septal defect",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001631",
+      "hpLabel": "Atrial septal defect",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001635",
+      "hpLabel": "Congestive heart failure",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001638",
+      "hpLabel": "Cardiomyopathy",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001639",
+      "hpLabel": "Hypertrophic cardiomyopathy",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001642",
+      "hpLabel": "Pulmonic stenosis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001643",
+      "hpLabel": "Patent ductus arteriosus",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001644",
+      "hpLabel": "Dilated cardiomyopathy",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001649",
+      "hpLabel": "Tachycardia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001655",
+      "hpLabel": "Patent foramen ovale",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001657",
+      "hpLabel": "Prolonged QT interval",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001662",
+      "hpLabel": "Bradycardia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001667",
+      "hpLabel": "Right ventricular hypertrophy",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001698",
+      "hpLabel": "Pericardial effusion",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001699",
+      "hpLabel": "Sudden death",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001712",
+      "hpLabel": "Left ventricular hypertrophy",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001714",
+      "hpLabel": "Ventricular hypertrophy",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001742",
+      "hpLabel": "Nasal congestion",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001762",
+      "hpLabel": "Talipes equinovarus",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001824",
+      "hpLabel": "Weight loss",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001891",
+      "hpLabel": "Iron deficiency anemia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001903",
+      "hpLabel": "Anemia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001944",
+      "hpLabel": "Dehydration",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001945",
+      "hpLabel": "Fever",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001959",
+      "hpLabel": "Polydipsia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0001962",
+      "hpLabel": "Palpitations",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002013",
+      "hpLabel": "Vomiting",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002014",
+      "hpLabel": "Diarrhea",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002015",
+      "hpLabel": "Dysphagia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002018",
+      "hpLabel": "Nausea",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002019",
+      "hpLabel": "Constipation",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002020",
+      "hpLabel": "Gastroesophageal reflux",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002024",
+      "hpLabel": "Malabsorption",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002027",
+      "hpLabel": "Abdominal pain",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002039",
+      "hpLabel": "Anorexia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002088",
+      "hpLabel": "Abnormal lung morphology",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002094",
+      "hpLabel": "Dyspnea",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002098",
+      "hpLabel": "Respiratory distress",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002099",
+      "hpLabel": "Asthma",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002104",
+      "hpLabel": "Apnea",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002105",
+      "hpLabel": "Hemoptysis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002119",
+      "hpLabel": "Ventriculomegaly",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002169",
+      "hpLabel": "Clonus",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002172",
+      "hpLabel": "Postural instability",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002194",
+      "hpLabel": "Delayed gross motor development",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002240",
+      "hpLabel": "Hepatomegaly",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002242",
+      "hpLabel": "Abnormal intestine morphology",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002248",
+      "hpLabel": "Hematemesis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002315",
+      "hpLabel": "Headache",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002321",
+      "hpLabel": "Vertigo",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002329",
+      "hpLabel": "Drowsiness",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002353",
+      "hpLabel": "EEG abnormality",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002360",
+      "hpLabel": "Sleep disturbance",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002527",
+      "hpLabel": "Falls",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002540",
+      "hpLabel": "Inability to walk",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002574",
+      "hpLabel": "Episodic abdominal pain",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002591",
+      "hpLabel": "Polyphagia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002650",
+      "hpLabel": "Scoliosis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002653",
+      "hpLabel": "Bone pain",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002789",
+      "hpLabel": "Tachypnea",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002791",
+      "hpLabel": "Hypoventilation",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002829",
+      "hpLabel": "Arthralgia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002870",
+      "hpLabel": "Obstructive sleep apnea",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0002910",
+      "hpLabel": "Elevated circulating hepatic transaminase concentration",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0003119",
+      "hpLabel": "Abnormal circulating lipid concentration",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0003233",
+      "hpLabel": "Decreased HDL cholesterol concentration",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0003270",
+      "hpLabel": "Abdominal distention",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0003307",
+      "hpLabel": "Hyperlordosis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0003326",
+      "hpLabel": "Myalgia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0003470",
+      "hpLabel": "Paralysis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0003546",
+      "hpLabel": "Exercise intolerance",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0003581",
+      "hpLabel": "Adult onset",
+      "src": "rdkg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0004322",
+      "hpLabel": "Short stature",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0004324",
+      "hpLabel": "Increased body weight",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0004325",
+      "hpLabel": "Decreased body weight",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0004379",
+      "hpLabel": "Abnormality of alkaline phosphatase level",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0004395",
+      "hpLabel": "Malnutrition",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0004396",
+      "hpLabel": "Poor appetite",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0004905",
+      "hpLabel": "Reduced circulating vitamin A concentration",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0005135",
+      "hpLabel": "Abnormal T-wave",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0005162",
+      "hpLabel": "Abnormal left ventricular function",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0006380",
+      "hpLabel": "Knee flexion contracture",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0006528",
+      "hpLabel": "Chronic lung disease",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0007018",
+      "hpLabel": "Attention deficit hyperactivity disorder",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0008936",
+      "hpLabel": "Axial hypotonia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0009763",
+      "hpLabel": "Limb pain",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0010535",
+      "hpLabel": "Sleep apnea",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0010872",
+      "hpLabel": "T-wave inversion",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0011227",
+      "hpLabel": "Elevated circulating C-reactive protein concentration",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0011273",
+      "hpLabel": "Anisocytosis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0011461",
+      "hpLabel": "Fetal onset",
+      "src": "rdkg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0011675",
+      "hpLabel": "Arrhythmia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0011876",
+      "hpLabel": "Abnormal platelet volume",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0011889",
+      "hpLabel": "Bleeding with minor or no trauma",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0011947",
+      "hpLabel": "Respiratory tract infection",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0011951",
+      "hpLabel": "Aspiration pneumonia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0011967",
+      "hpLabel": "Decreased circulating copper concentration",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0011968",
+      "hpLabel": "Feeding difficulties",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0012116",
+      "hpLabel": "Abnormal circulating albumin concentration",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0012378",
+      "hpLabel": "Fatigue",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0012393",
+      "hpLabel": "Allergy",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0012450",
+      "hpLabel": "Chronic constipation",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0012587",
+      "hpLabel": "Macroscopic hematuria",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0012722",
+      "hpLabel": "Heart block",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0012735",
+      "hpLabel": "Cough",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0012743",
+      "hpLabel": "Abdominal obesity",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0012764",
+      "hpLabel": "Orthopnea",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0025066",
+      "hpLabel": "Decreased mean corpuscular volume",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0025075",
+      "hpLabel": "Increased QRS voltage",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0025092",
+      "hpLabel": "Epidermal acanthosis",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0025168",
+      "hpLabel": "Left ventricular diastolic dysfunction",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0025169",
+      "hpLabel": "Left ventricular systolic dysfunction",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0025267",
+      "hpLabel": "Snoring",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0025406",
+      "hpLabel": "Asthenia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0025501",
+      "hpLabel": "Class III obesity",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0025502",
+      "hpLabel": "Overweight",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0030148",
+      "hpLabel": "Heart murmur",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0030157",
+      "hpLabel": "Flank pain",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0030718",
+      "hpLabel": "Right atrial enlargement",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0030766",
+      "hpLabel": "Ear pain",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0030812",
+      "hpLabel": "Enlarged tonsils",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0030828",
+      "hpLabel": "Wheezing",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0031284",
+      "hpLabel": "Flushing",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0031295",
+      "hpLabel": "Left atrial enlargement",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0031417",
+      "hpLabel": "Rhinorrhea",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0031589",
+      "hpLabel": "Suicidal ideation",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0032254",
+      "hpLabel": "Increased circulating copper concentration",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0033050",
+      "hpLabel": "Pharyngalgia",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0033212",
+      "hpLabel": "Abnormal total iron binding capacity",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0033454",
+      "hpLabel": "Tube feeding",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0033567",
+      "hpLabel": "Right axis deviation",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0033568",
+      "hpLabel": "Left axis deviation",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0040135",
+      "hpLabel": "Abnormal transferrin saturation",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0040303",
+      "hpLabel": "Decreased circulating iron concentration",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0100033",
+      "hpLabel": "Tics",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0100503",
+      "hpLabel": "Decreased circulating vitamin B1 concentration",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0100512",
+      "hpLabel": "Decreased circulating vitamin D concentration",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0100518",
+      "hpLabel": "Dysuria",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0100716",
+      "hpLabel": "Self-injurious behavior",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0100749",
+      "hpLabel": "Chest pain",
+      "src": "oard-kg"
+    },
+    {
+      "mondo": "http://purl.obolibrary.org/obo/MONDO_0018784",
+      "mondoLabel": "pediatric multiple sclerosis",
+      "hp": "http://purl.obolibrary.org/obo/HP_0200128",
+      "hpLabel": "Biventricular hypertrophy",
+      "src": "oard-kg"
+    }
+  ],
+  "row_count": 211
+}

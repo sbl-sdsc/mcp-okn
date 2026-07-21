@@ -1,0 +1,2015 @@
+{
+  "vars": [
+    "iso3",
+    "locLabel",
+    "country",
+    "value",
+    "lower",
+    "upper",
+    "year",
+    "wkt"
+  ],
+  "rows": [
+    {
+      "iso3": "AFG",
+      "locLabel": "Afghanistan",
+      "country": "http://www.wikidata.org/entity/Q889",
+      "value": "0.027611578973949998",
+      "lower": 0.0228253,
+      "upper": 0.0335479,
+      "year": "2019",
+      "wkt": "POINT(66.000000 33.000000)"
+    },
+    {
+      "iso3": "AGO",
+      "locLabel": "Angola",
+      "country": "http://www.wikidata.org/entity/Q916",
+      "value": "0.0035667707667832713",
+      "lower": 0.00267396,
+      "upper": 0.00447981,
+      "year": "2019",
+      "wkt": "POINT(17.350000 -12.350000)"
+    },
+    {
+      "iso3": "ALB",
+      "locLabel": "Albania",
+      "country": "http://www.wikidata.org/entity/Q222",
+      "value": "0.09735713810934",
+      "lower": 0.0885403,
+      "upper": 0.106425,
+      "year": "2019",
+      "wkt": "POINT(20.000000 41.000000)"
+    },
+    {
+      "iso3": "AND",
+      "locLabel": "Andorra",
+      "country": "http://www.wikidata.org/entity/Q228",
+      "value": "0.09189002039274",
+      "lower": 0.0796111,
+      "upper": 0.106875,
+      "year": "2019",
+      "wkt": "POINT(1.555278 42.558333)"
+    },
+    {
+      "iso3": "ARE",
+      "locLabel": "United Arab Emirates",
+      "country": "http://www.wikidata.org/entity/Q878",
+      "value": "0.034529551728810004",
+      "lower": 0.0288217,
+      "upper": 0.0410747,
+      "year": "2019",
+      "wkt": "POINT(54.300000 24.400000)"
+    },
+    {
+      "iso3": "ARG",
+      "locLabel": "Argentina",
+      "country": "http://www.wikidata.org/entity/Q414",
+      "value": "0.028794617111539998",
+      "lower": 0.0237702,
+      "upper": 0.0343574,
+      "year": "2019",
+      "wkt": "POINT(-64.000000 -34.000000)"
+    },
+    {
+      "iso3": "ARM",
+      "locLabel": "Armenia",
+      "country": "http://www.wikidata.org/entity/Q399",
+      "value": "0.04411056307408",
+      "lower": 0.0377829,
+      "upper": 0.050505,
+      "year": "2019",
+      "wkt": "POINT(44.950000 40.383333)"
+    },
+    {
+      "iso3": "ASM",
+      "locLabel": "American Samoa",
+      "country": "http://www.wikidata.org/entity/Q16641",
+      "value": "0.00233145458024232",
+      "lower": 0.00178218,
+      "upper": 0.00294343,
+      "year": "2019",
+      "wkt": "POINT(-170.707500 -14.295833)"
+    },
+    {
+      "iso3": "ATG",
+      "locLabel": "Antigua and Barbuda",
+      "country": "http://www.wikidata.org/entity/Q781",
+      "value": "0.02142019363288",
+      "lower": 0.0179147,
+      "upper": 0.0249235,
+      "year": "2019",
+      "wkt": "POINT(-61.850000 17.116667)"
+    },
+    {
+      "iso3": "AUS",
+      "locLabel": "Australia",
+      "country": "http://www.wikidata.org/entity/Q408",
+      "value": "0.08353451786514",
+      "lower": 0.070957,
+      "upper": 0.0951013,
+      "year": "2019",
+      "wkt": "POINT(133.000000 -25.000000)"
+    },
+    {
+      "iso3": "AUT",
+      "locLabel": "Austria",
+      "country": "http://www.wikidata.org/entity/Q40",
+      "value": "0.11154776852269001",
+      "lower": 0.0964801,
+      "upper": 0.129143,
+      "year": "2019",
+      "wkt": "POINT(14.000000 48.000000)"
+    },
+    {
+      "iso3": "AZE",
+      "locLabel": "Azerbaijan",
+      "country": "http://www.wikidata.org/entity/Q227",
+      "value": "0.024412106658849998",
+      "lower": 0.019936,
+      "upper": 0.0290153,
+      "year": "2019",
+      "wkt": "POINT(47.700000 40.300000)"
+    },
+    {
+      "iso3": "BDI",
+      "locLabel": "Burundi",
+      "country": "http://www.wikidata.org/entity/Q967",
+      "value": "0.0025211311415561438",
+      "lower": 0.00188333,
+      "upper": 0.0032654,
+      "year": "2019",
+      "wkt": "POINT(29.816667 -3.666667)"
+    },
+    {
+      "iso3": "BEL",
+      "locLabel": "Belgium",
+      "country": "http://www.wikidata.org/entity/Q31",
+      "value": "0.10266020896642",
+      "lower": 0.0879898,
+      "upper": 0.121393,
+      "year": "2019",
+      "wkt": "POINT(4.668056 50.641111)"
+    },
+    {
+      "iso3": "BEN",
+      "locLabel": "Benin",
+      "country": "http://www.wikidata.org/entity/Q962",
+      "value": "0.0043200895108675185",
+      "lower": 0.00331024,
+      "upper": 0.00547297,
+      "year": "2019",
+      "wkt": "POINT(2.183333 8.833333)"
+    },
+    {
+      "iso3": "BFA",
+      "locLabel": "Burkina Faso",
+      "country": "http://www.wikidata.org/entity/Q965",
+      "value": "0.004691291574713176",
+      "lower": 0.00361138,
+      "upper": 0.0059188,
+      "year": "2019",
+      "wkt": "POINT(-2.066667 12.266667)"
+    },
+    {
+      "iso3": "BGD",
+      "locLabel": "Bangladesh",
+      "country": "http://www.wikidata.org/entity/Q902",
+      "value": "0.007468727742849954",
+      "lower": 0.00584175,
+      "upper": 0.00927395,
+      "year": "2019",
+      "wkt": "POINT(89.866667 24.016667)"
+    },
+    {
+      "iso3": "BGR",
+      "locLabel": "Bulgaria",
+      "country": "http://www.wikidata.org/entity/Q219",
+      "value": "0.0627059357313",
+      "lower": 0.0561028,
+      "upper": 0.0697852,
+      "year": "2019",
+      "wkt": "POINT(25.500000 42.750000)"
+    },
+    {
+      "iso3": "BHR",
+      "locLabel": "Bahrain",
+      "country": "http://www.wikidata.org/entity/Q398",
+      "value": "0.04222526885912",
+      "lower": 0.0334702,
+      "upper": 0.0524104,
+      "year": "2019",
+      "wkt": "POINT(50.551111 26.067500)"
+    },
+    {
+      "iso3": "BHS",
+      "locLabel": "Bahamas",
+      "country": "http://www.wikidata.org/entity/Q778",
+      "value": "0.01471944653156",
+      "lower": 0.0115777,
+      "upper": 0.0176653,
+      "year": "2019",
+      "wkt": "POINT(-77.400000 25.000000)"
+    },
+    {
+      "iso3": "BIH",
+      "locLabel": "Bosnia and Herzegovina",
+      "country": "http://www.wikidata.org/entity/Q225",
+      "value": "0.03676313009234",
+      "lower": 0.0326282,
+      "upper": 0.0408937,
+      "year": "2019",
+      "wkt": "POINT(18.000000 44.000000)"
+    },
+    {
+      "iso3": "BLR",
+      "locLabel": "Belarus",
+      "country": "http://www.wikidata.org/entity/Q184",
+      "value": "0.026689233764790002",
+      "lower": 0.0217649,
+      "upper": 0.0318047,
+      "year": "2019",
+      "wkt": "POINT(28.046667 53.528333)"
+    },
+    {
+      "iso3": "BLZ",
+      "locLabel": "Belize",
+      "country": "http://www.wikidata.org/entity/Q242",
+      "value": "0.00752160595584342",
+      "lower": 0.00581082,
+      "upper": 0.00942451,
+      "year": "2019",
+      "wkt": "POINT(-88.700000 17.066667)"
+    },
+    {
+      "iso3": "BMU",
+      "locLabel": "Bermuda",
+      "country": "http://www.wikidata.org/entity/Q23635",
+      "value": "0.02391636318468",
+      "lower": 0.0193582,
+      "upper": 0.0284424,
+      "year": "2019",
+      "wkt": "POINT(-64.740000 32.320000)"
+    },
+    {
+      "iso3": "BOL",
+      "locLabel": "Bolivia",
+      "country": "http://www.wikidata.org/entity/Q750",
+      "value": "0.00772371177529707",
+      "lower": 0.00596982,
+      "upper": 0.00952751,
+      "year": "2019",
+      "wkt": "POINT(-64.991229 -17.056870)"
+    },
+    {
+      "iso3": "BRA",
+      "locLabel": "Brazil",
+      "country": "http://www.wikidata.org/entity/Q155",
+      "value": "0.02234446689936",
+      "lower": 0.018011,
+      "upper": 0.0267346,
+      "year": "2019",
+      "wkt": "POINT(-53.000000 -14.000000)"
+    },
+    {
+      "iso3": "BRB",
+      "locLabel": "Barbados",
+      "country": "http://www.wikidata.org/entity/Q244",
+      "value": "0.02142124658336",
+      "lower": 0.0178376,
+      "upper": 0.0250884,
+      "year": "2019",
+      "wkt": "POINT(-59.552500 13.170000)"
+    },
+    {
+      "iso3": "BRN",
+      "locLabel": "Brunei",
+      "country": "http://www.wikidata.org/entity/Q921",
+      "value": "0.003689159374852396",
+      "lower": 0.00274552,
+      "upper": 0.00459611,
+      "year": "2019",
+      "wkt": "POINT(114.566667 4.400000)"
+    },
+    {
+      "iso3": "BTN",
+      "locLabel": "Bhutan",
+      "country": "http://www.wikidata.org/entity/Q917",
+      "value": "0.008404280142079919",
+      "lower": 0.00653508,
+      "upper": 0.0104106,
+      "year": "2019",
+      "wkt": "POINT(90.500000 27.450000)"
+    },
+    {
+      "iso3": "BWA",
+      "locLabel": "Botswana",
+      "country": "http://www.wikidata.org/entity/Q963",
+      "value": "0.006318935145284283",
+      "lower": 0.00487777,
+      "upper": 0.00798651,
+      "year": "2019",
+      "wkt": "POINT(23.700000 -22.200000)"
+    },
+    {
+      "iso3": "CAF",
+      "locLabel": "Central African Republic",
+      "country": "http://www.wikidata.org/entity/Q929",
+      "value": "0.0029972072593629183",
+      "lower": 0.00226333,
+      "upper": 0.0037816,
+      "year": "2019",
+      "wkt": "POINT(20.900000 6.700000)"
+    },
+    {
+      "iso3": "CAN",
+      "locLabel": "Canada",
+      "country": "http://www.wikidata.org/entity/Q16",
+      "value": "0.19546752514729002",
+      "lower": 0.190191,
+      "upper": 0.201411,
+      "year": "2019",
+      "wkt": "POINT(-109.000000 56.000000)"
+    },
+    {
+      "iso3": "CHE",
+      "locLabel": "Switzerland",
+      "country": "http://www.wikidata.org/entity/Q39",
+      "value": "0.13253818770450002",
+      "lower": 0.115773,
+      "upper": 0.151461,
+      "year": "2019",
+      "wkt": "POINT(8.231973 46.798562)"
+    },
+    {
+      "iso3": "CHL",
+      "locLabel": "Chile",
+      "country": "http://www.wikidata.org/entity/Q298",
+      "value": "0.02704962533067",
+      "lower": 0.0215533,
+      "upper": 0.032806,
+      "year": "2019",
+      "wkt": "POINT(-71.000000 -33.000000)"
+    },
+    {
+      "iso3": "CHN",
+      "locLabel": "China",
+      "country": "http://www.wikidata.org/entity/Q148",
+      "value": "0.003123728725380308",
+      "lower": 0.00242422,
+      "upper": 0.00390679,
+      "year": "2019",
+      "wkt": "POINT(103.451944 35.844722)"
+    },
+    {
+      "iso3": "CMR",
+      "locLabel": "Cameroon",
+      "country": "http://www.wikidata.org/entity/Q1009",
+      "value": "0.0043539475164101615",
+      "lower": 0.00330655,
+      "upper": 0.00542792,
+      "year": "2019",
+      "wkt": "POINT(12.650000 5.133333)"
+    },
+    {
+      "iso3": "COD",
+      "locLabel": "Democratic Republic of the Congo",
+      "country": "http://www.wikidata.org/entity/Q974",
+      "value": "0.0025674790770168726",
+      "lower": 0.0019249,
+      "upper": 0.00323821,
+      "year": "2019",
+      "wkt": "POINT(23.656111 -2.880000)"
+    },
+    {
+      "iso3": "COK",
+      "locLabel": "Cook Islands",
+      "country": "http://www.wikidata.org/entity/Q26988",
+      "value": "0.0034512633848944887",
+      "lower": 0.00268256,
+      "upper": 0.0043277,
+      "year": "2019",
+      "wkt": "POINT(-159.783333 -21.233333)"
+    },
+    {
+      "iso3": "COL",
+      "locLabel": "Colombia",
+      "country": "http://www.wikidata.org/entity/Q739",
+      "value": "0.0054572631107058555",
+      "lower": 0.00420261,
+      "upper": 0.00674292,
+      "year": "2019",
+      "wkt": "POINT(-73.250000 4.000000)"
+    },
+    {
+      "iso3": "COM",
+      "locLabel": "Comoros",
+      "country": "http://www.wikidata.org/entity/Q970",
+      "value": "0.005011286684910235",
+      "lower": 0.00387896,
+      "upper": 0.00620658,
+      "year": "2019",
+      "wkt": "POINT(43.700000 -12.300000)"
+    },
+    {
+      "iso3": "CPV",
+      "locLabel": "Cabo Verde",
+      "country": "http://www.wikidata.org/entity/Q1011",
+      "value": "0.008151193033149805",
+      "lower": 0.00634338,
+      "upper": 0.0101786,
+      "year": "2019",
+      "wkt": "POINT(-23.700000 15.300000)"
+    },
+    {
+      "iso3": "CRI",
+      "locLabel": "Costa Rica",
+      "country": "http://www.wikidata.org/entity/Q800",
+      "value": "0.008675486918622324",
+      "lower": 0.00680599,
+      "upper": 0.010438,
+      "year": "2019",
+      "wkt": "POINT(-84.000000 10.000000)"
+    },
+    {
+      "iso3": "CUB",
+      "locLabel": "Cuba",
+      "country": "http://www.wikidata.org/entity/Q241",
+      "value": "0.01811013430448",
+      "lower": 0.0146756,
+      "upper": 0.021456,
+      "year": "2019",
+      "wkt": "POINT(-79.500000 22.000000)"
+    },
+    {
+      "iso3": "CYP",
+      "locLabel": "Cyprus",
+      "country": "http://www.wikidata.org/entity/Q229",
+      "value": "0.05803330515414",
+      "lower": 0.0485409,
+      "upper": 0.0693953,
+      "year": "2019",
+      "wkt": "POINT(33.000000 35.000000)"
+    },
+    {
+      "iso3": "CZE",
+      "locLabel": "Czechia",
+      "country": "http://www.wikidata.org/entity/Q213",
+      "value": "0.04293781573799",
+      "lower": 0.0369327,
+      "upper": 0.0494204,
+      "year": "2019",
+      "wkt": "POINT(15.000000 50.000000)"
+    },
+    {
+      "iso3": "DEU",
+      "locLabel": "Germany",
+      "country": "http://www.wikidata.org/entity/Q183",
+      "value": "0.12533587533865",
+      "lower": 0.109365,
+      "upper": 0.14674,
+      "year": "2019",
+      "wkt": "POINT(10.000000 51.000000)"
+    },
+    {
+      "iso3": "DJI",
+      "locLabel": "Djibouti",
+      "country": "http://www.wikidata.org/entity/Q977",
+      "value": "0.004824747812835389",
+      "lower": 0.00368303,
+      "upper": 0.006106,
+      "year": "2019",
+      "wkt": "POINT(42.433333 11.800000)"
+    },
+    {
+      "iso3": "DMA",
+      "locLabel": "Dominica",
+      "country": "http://www.wikidata.org/entity/Q784",
+      "value": "0.0090905297926216",
+      "lower": 0.00714222,
+      "upper": 0.0110173,
+      "year": "2019",
+      "wkt": "POINT(-61.333333 15.416667)"
+    },
+    {
+      "iso3": "DNK",
+      "locLabel": "Denmark",
+      "country": "http://www.wikidata.org/entity/Q35",
+      "value": "0.16081292092433",
+      "lower": 0.141834,
+      "upper": 0.182982,
+      "year": "2019",
+      "wkt": "POINT(10.000000 56.000000)"
+    },
+    {
+      "iso3": "DOM",
+      "locLabel": "Dominican Republic",
+      "country": "http://www.wikidata.org/entity/Q786",
+      "value": "0.008543098110054376",
+      "lower": 0.00660634,
+      "upper": 0.0105469,
+      "year": "2019",
+      "wkt": "POINT(-70.200000 18.800000)"
+    },
+    {
+      "iso3": "DZA",
+      "locLabel": "Algeria",
+      "country": "http://www.wikidata.org/entity/Q262",
+      "value": "0.04447603502858",
+      "lower": 0.03631,
+      "upper": 0.0540937,
+      "year": "2019",
+      "wkt": "POINT(1.000000 28.000000)"
+    },
+    {
+      "iso3": "ECU",
+      "locLabel": "Ecuador",
+      "country": "http://www.wikidata.org/entity/Q736",
+      "value": "0.005256763529880163",
+      "lower": 0.00403534,
+      "upper": 0.00643462,
+      "year": "2019",
+      "wkt": "POINT(-78.000000 -1.000000)"
+    },
+    {
+      "iso3": "EGY",
+      "locLabel": "Egypt",
+      "country": "http://www.wikidata.org/entity/Q79",
+      "value": "0.01890763322712",
+      "lower": 0.0149396,
+      "upper": 0.0229644,
+      "year": "2019",
+      "wkt": "POINT(29.000000 27.000000)"
+    },
+    {
+      "iso3": "ERI",
+      "locLabel": "Eritrea",
+      "country": "http://www.wikidata.org/entity/Q986",
+      "value": "0.0045953535704223334",
+      "lower": 0.00353937,
+      "upper": 0.00586139,
+      "year": "2019",
+      "wkt": "POINT(38.250000 15.483333)"
+    },
+    {
+      "iso3": "ESP",
+      "locLabel": "Spain",
+      "country": "http://www.wikidata.org/entity/Q29",
+      "value": "0.11524853805192001",
+      "lower": 0.105684,
+      "upper": 0.125232,
+      "year": "2019",
+      "wkt": "POINT(-3.500000 40.200000)"
+    },
+    {
+      "iso3": "EST",
+      "locLabel": "Estonia",
+      "country": "http://www.wikidata.org/entity/Q191",
+      "value": "0.03043431461817",
+      "lower": 0.0257638,
+      "upper": 0.0355885,
+      "year": "2019",
+      "wkt": "POINT(26.000000 59.000000)"
+    },
+    {
+      "iso3": "ETH",
+      "locLabel": "Ethiopia",
+      "country": "http://www.wikidata.org/entity/Q115",
+      "value": "0.0032131151501936187",
+      "lower": 0.00243623,
+      "upper": 0.00409558,
+      "year": "2019",
+      "wkt": "POINT(40.000000 9.000000)"
+    },
+    {
+      "iso3": "FIN",
+      "locLabel": "Finland",
+      "country": "http://www.wikidata.org/entity/Q33",
+      "value": "0.11418606153088",
+      "lower": 0.104134,
+      "upper": 0.12547,
+      "year": "2019",
+      "wkt": "POINT(27.000000 65.000000)"
+    },
+    {
+      "iso3": "FJI",
+      "locLabel": "Fiji",
+      "country": "http://www.wikidata.org/entity/Q712",
+      "value": "0.002613706867099673",
+      "lower": 0.00196785,
+      "upper": 0.00329706,
+      "year": "2019",
+      "wkt": "POINT(178.000000 -18.000000)"
+    },
+    {
+      "iso3": "FRA",
+      "locLabel": "France",
+      "country": "http://www.wikidata.org/entity/Q142",
+      "value": "0.12388732915118",
+      "lower": 0.109578,
+      "upper": 0.139304,
+      "year": "2019",
+      "wkt": "POINT(2.000000 47.000000)"
+    },
+    {
+      "iso3": "FSM",
+      "locLabel": "Micronesia",
+      "country": "http://www.wikidata.org/entity/Q702",
+      "value": "0.0017629995230290174",
+      "lower": 0.00132443,
+      "upper": 0.00224953,
+      "year": "2019",
+      "wkt": "POINT(158.183333 6.916667)"
+    },
+    {
+      "iso3": "GAB",
+      "locLabel": "Gabon",
+      "country": "http://www.wikidata.org/entity/Q1000",
+      "value": "0.0032697288123204084",
+      "lower": 0.00249034,
+      "upper": 0.00408684,
+      "year": "2019",
+      "wkt": "POINT(11.500000 -0.683331)"
+    },
+    {
+      "iso3": "GBR",
+      "locLabel": "United Kingdom",
+      "country": "http://www.wikidata.org/entity/Q145",
+      "value": "0.15875103997535",
+      "lower": 0.137809,
+      "upper": 0.182019,
+      "year": "2019",
+      "wkt": "POINT(-2.000000 54.600000)"
+    },
+    {
+      "iso3": "GEO",
+      "locLabel": "Georgia",
+      "country": "http://www.wikidata.org/entity/Q230",
+      "value": "0.03594097541022",
+      "lower": 0.0296019,
+      "upper": 0.0419026,
+      "year": "2019",
+      "wkt": "POINT(44.000000 42.000000)"
+    },
+    {
+      "iso3": "GHA",
+      "locLabel": "Ghana",
+      "country": "http://www.wikidata.org/entity/Q117",
+      "value": "0.014967281148099998",
+      "lower": 0.0129192,
+      "upper": 0.0174221,
+      "year": "2019",
+      "wkt": "POINT(-1.023200 7.946500)"
+    },
+    {
+      "iso3": "GIN",
+      "locLabel": "Guinea",
+      "country": "http://www.wikidata.org/entity/Q1006",
+      "value": "0.004556038158036718",
+      "lower": 0.00353288,
+      "upper": 0.00572552,
+      "year": "2019",
+      "wkt": "POINT(-11.000000 10.000000)"
+    },
+    {
+      "iso3": "GMB",
+      "locLabel": "Gambia",
+      "country": "http://www.wikidata.org/entity/Q1005",
+      "value": "0.005354818839261189",
+      "lower": 0.00411473,
+      "upper": 0.00669912,
+      "year": "2019",
+      "wkt": "POINT(-15.500000 13.500000)"
+    },
+    {
+      "iso3": "GNB",
+      "locLabel": "Guinea-Bissau",
+      "country": "http://www.wikidata.org/entity/Q1007",
+      "value": "0.005212531483280044",
+      "lower": 0.00397805,
+      "upper": 0.00653566,
+      "year": "2019",
+      "wkt": "POINT(-15.000000 12.000000)"
+    },
+    {
+      "iso3": "GNQ",
+      "locLabel": "Equatorial Guinea",
+      "country": "http://www.wikidata.org/entity/Q983",
+      "value": "0.0024846202286671303",
+      "lower": 0.00186816,
+      "upper": 0.00317821,
+      "year": "2019",
+      "wkt": "POINT(10.000000 1.500000)"
+    },
+    {
+      "iso3": "GRC",
+      "locLabel": "Greece",
+      "country": "http://www.wikidata.org/entity/Q41",
+      "value": "0.048499248501230004",
+      "lower": 0.0406482,
+      "upper": 0.0569358,
+      "year": "2019",
+      "wkt": "POINT(23.000000 38.500000)"
+    },
+    {
+      "iso3": "GRD",
+      "locLabel": "Grenada",
+      "country": "http://www.wikidata.org/entity/Q769",
+      "value": "0.012686457720570001",
+      "lower": 0.0101812,
+      "upper": 0.0150858,
+      "year": "2019",
+      "wkt": "POINT(-61.700000 12.100000)"
+    },
+    {
+      "iso3": "GRL",
+      "locLabel": "Greenland",
+      "country": "http://www.wikidata.org/entity/Q223",
+      "value": "0.10018419768675998",
+      "lower": 0.0813337,
+      "upper": 0.122018,
+      "year": "2019",
+      "wkt": "POINT(-40.000000 72.000000)"
+    },
+    {
+      "iso3": "GTM",
+      "locLabel": "Guatemala",
+      "country": "http://www.wikidata.org/entity/Q774",
+      "value": "0.005482074683200199",
+      "lower": 0.00422664,
+      "upper": 0.00684868,
+      "year": "2019",
+      "wkt": "POINT(-90.250000 15.500000)"
+    },
+    {
+      "iso3": "GUM",
+      "locLabel": "Guam",
+      "country": "http://www.wikidata.org/entity/Q16635",
+      "value": "0.0024997898126248048",
+      "lower": 0.00187176,
+      "upper": 0.00317489,
+      "year": "2019",
+      "wkt": "POINT(144.800000 13.500000)"
+    },
+    {
+      "iso3": "GUY",
+      "locLabel": "Guyana",
+      "country": "http://www.wikidata.org/entity/Q734",
+      "value": "0.005410375338629429",
+      "lower": 0.00415015,
+      "upper": 0.00671317,
+      "year": "2019",
+      "wkt": "POINT(-59.316667 5.733333)"
+    },
+    {
+      "iso3": "HND",
+      "locLabel": "Honduras",
+      "country": "http://www.wikidata.org/entity/Q783",
+      "value": "0.004861244631662891",
+      "lower": 0.00372357,
+      "upper": 0.00608419,
+      "year": "2019",
+      "wkt": "POINT(-86.816667 14.633333)"
+    },
+    {
+      "iso3": "HRV",
+      "locLabel": "Croatia",
+      "country": "http://www.wikidata.org/entity/Q224",
+      "value": "0.03687986842413",
+      "lower": 0.0316487,
+      "upper": 0.0422889,
+      "year": "2019",
+      "wkt": "POINT(15.466667 45.250000)"
+    },
+    {
+      "iso3": "HTI",
+      "locLabel": "Haiti",
+      "country": "http://www.wikidata.org/entity/Q790",
+      "value": "0.008177991288265171",
+      "lower": 0.00629184,
+      "upper": 0.0100318,
+      "year": "2019",
+      "wkt": "POINT(-72.800000 19.000000)"
+    },
+    {
+      "iso3": "HUN",
+      "locLabel": "Hungary",
+      "country": "http://www.wikidata.org/entity/Q28",
+      "value": "0.04762651532779",
+      "lower": 0.0410251,
+      "upper": 0.0550047,
+      "year": "2019",
+      "wkt": "POINT(19.000000 47.000000)"
+    },
+    {
+      "iso3": "IDN",
+      "locLabel": "Indonesia",
+      "country": "http://www.wikidata.org/entity/Q252",
+      "value": "0.0024685363206922275",
+      "lower": 0.001864,
+      "upper": 0.0031277,
+      "year": "2019",
+      "wkt": "POINT(118.000000 -2.000000)"
+    },
+    {
+      "iso3": "IND",
+      "locLabel": "India",
+      "country": "http://www.wikidata.org/entity/Q668",
+      "value": "0.0078514124047769",
+      "lower": 0.0061708,
+      "upper": 0.00960392,
+      "year": "2019",
+      "wkt": "POINT(83.000000 22.800000)"
+    },
+    {
+      "iso3": "IRL",
+      "locLabel": "Ireland",
+      "country": "http://www.wikidata.org/entity/Q27",
+      "value": "0.16732057983314",
+      "lower": 0.141576,
+      "upper": 0.19706,
+      "year": "2019",
+      "wkt": "POINT(-8.000000 53.000000)"
+    },
+    {
+      "iso3": "IRN",
+      "locLabel": "Iran",
+      "country": "http://www.wikidata.org/entity/Q794",
+      "value": "0.057902020867149996",
+      "lower": 0.049446,
+      "upper": 0.0665548,
+      "year": "2019",
+      "wkt": "POINT(53.000000 32.000000)"
+    },
+    {
+      "iso3": "IRQ",
+      "locLabel": "Iraq",
+      "country": "http://www.wikidata.org/entity/Q796",
+      "value": "0.03214980838711",
+      "lower": 0.0253809,
+      "upper": 0.0404379,
+      "year": "2019",
+      "wkt": "POINT(43.000000 33.000000)"
+    },
+    {
+      "iso3": "ISL",
+      "locLabel": "Iceland",
+      "country": "http://www.wikidata.org/entity/Q189",
+      "value": "0.13946153619082",
+      "lower": 0.11922,
+      "upper": 0.165388,
+      "year": "2019",
+      "wkt": "POINT(-19.000000 65.000000)"
+    },
+    {
+      "iso3": "ISR",
+      "locLabel": "Israel",
+      "country": "http://www.wikidata.org/entity/Q801",
+      "value": "0.03835120532911",
+      "lower": 0.0314116,
+      "upper": 0.0458482,
+      "year": "2019",
+      "wkt": "POINT(35.000000 31.000000)"
+    },
+    {
+      "iso3": "ITA",
+      "locLabel": "Italy",
+      "country": "http://www.wikidata.org/entity/Q38",
+      "value": "0.12627574067626",
+      "lower": 0.106409,
+      "upper": 0.148667,
+      "year": "2019",
+      "wkt": "POINT(12.500000 42.500000)"
+    },
+    {
+      "iso3": "JAM",
+      "locLabel": "Jamaica",
+      "country": "http://www.wikidata.org/entity/Q766",
+      "value": "0.00926947167457816",
+      "lower": 0.00724154,
+      "upper": 0.0114638,
+      "year": "2019",
+      "wkt": "POINT(-77.400000 18.180000)"
+    },
+    {
+      "iso3": "JOR",
+      "locLabel": "Jordan",
+      "country": "http://www.wikidata.org/entity/Q810",
+      "value": "0.04231508700825",
+      "lower": 0.0335321,
+      "upper": 0.0515054,
+      "year": "2019",
+      "wkt": "POINT(36.500000 31.200000)"
+    },
+    {
+      "iso3": "JPN",
+      "locLabel": "Japan",
+      "country": "http://www.wikidata.org/entity/Q17",
+      "value": "0.01400435801052",
+      "lower": 0.0111752,
+      "upper": 0.0169487,
+      "year": "2019",
+      "wkt": "POINT(136.000000 35.000000)"
+    },
+    {
+      "iso3": "KAZ",
+      "locLabel": "Kazakhstan",
+      "country": "http://www.wikidata.org/entity/Q232",
+      "value": "0.06846567624675",
+      "lower": 0.0600019,
+      "upper": 0.0773268,
+      "year": "2019",
+      "wkt": "POINT(68.000000 48.000000)"
+    },
+    {
+      "iso3": "KEN",
+      "locLabel": "Kenya",
+      "country": "http://www.wikidata.org/entity/Q114",
+      "value": "0.003051351775431621",
+      "lower": 0.00231761,
+      "upper": 0.00384585,
+      "year": "2019",
+      "wkt": "POINT(38.000000 0.100000)"
+    },
+    {
+      "iso3": "KGZ",
+      "locLabel": "Kyrgyzstan",
+      "country": "http://www.wikidata.org/entity/Q813",
+      "value": "0.01861888279465",
+      "lower": 0.0148722,
+      "upper": 0.0223944,
+      "year": "2019",
+      "wkt": "POINT(75.000000 41.000000)"
+    },
+    {
+      "iso3": "KHM",
+      "locLabel": "Cambodia",
+      "country": "http://www.wikidata.org/entity/Q424",
+      "value": "0.002341481098640471",
+      "lower": 0.00177435,
+      "upper": 0.00296609,
+      "year": "2019",
+      "wkt": "POINT(105.000000 12.500000)"
+    },
+    {
+      "iso3": "KIR",
+      "locLabel": "Kiribati",
+      "country": "http://www.wikidata.org/entity/Q710",
+      "value": "0.0014850800552471744",
+      "lower": 0.00110263,
+      "upper": 0.00192009,
+      "year": "2019",
+      "wkt": "POINT(173.033333 1.466667)"
+    },
+    {
+      "iso3": "KNA",
+      "locLabel": "Saint Kitts and Nevis",
+      "country": "http://www.wikidata.org/entity/Q763",
+      "value": "0.02069405650825",
+      "lower": 0.0171338,
+      "upper": 0.0242264,
+      "year": "2019",
+      "wkt": "POINT(-62.666669 17.271667)"
+    },
+    {
+      "iso3": "KOR",
+      "locLabel": "South Korea",
+      "country": "http://www.wikidata.org/entity/Q884",
+      "value": "0.01297354761463",
+      "lower": 0.0101439,
+      "upper": 0.0158898,
+      "year": "2019",
+      "wkt": "POINT(128.000000 36.000000)"
+    },
+    {
+      "iso3": "KWT",
+      "locLabel": "Kuwait",
+      "country": "http://www.wikidata.org/entity/Q817",
+      "value": "0.0646144708079",
+      "lower": 0.0529439,
+      "upper": 0.0783654,
+      "year": "2019",
+      "wkt": "POINT(47.600000 29.166667)"
+    },
+    {
+      "iso3": "LAO",
+      "locLabel": "Laos",
+      "country": "http://www.wikidata.org/entity/Q819",
+      "value": "0.0027073834776280108",
+      "lower": 0.0020271,
+      "upper": 0.00346516,
+      "year": "2019",
+      "wkt": "POINT(104.100000 18.200000)"
+    },
+    {
+      "iso3": "LBN",
+      "locLabel": "Lebanon",
+      "country": "http://www.wikidata.org/entity/Q822",
+      "value": "0.05965257693138001",
+      "lower": 0.0483595,
+      "upper": 0.0718714,
+      "year": "2019",
+      "wkt": "POINT(35.766667 33.833333)"
+    },
+    {
+      "iso3": "LBR",
+      "locLabel": "Liberia",
+      "country": "http://www.wikidata.org/entity/Q1014",
+      "value": "0.004271543416393227",
+      "lower": 0.00327681,
+      "upper": 0.00530641,
+      "year": "2019",
+      "wkt": "POINT(-9.750000 6.533333)"
+    },
+    {
+      "iso3": "LBY",
+      "locLabel": "Libya",
+      "country": "http://www.wikidata.org/entity/Q1016",
+      "value": "0.04577108169945",
+      "lower": 0.037683,
+      "upper": 0.0548446,
+      "year": "2019",
+      "wkt": "POINT(17.000000 27.000000)"
+    },
+    {
+      "iso3": "LCA",
+      "locLabel": "Saint Lucia",
+      "country": "http://www.wikidata.org/entity/Q760",
+      "value": "0.0100911396241",
+      "lower": 0.00782004,
+      "upper": 0.0123764,
+      "year": "2019",
+      "wkt": "POINT(-60.966667 13.883333)"
+    },
+    {
+      "iso3": "LKA",
+      "locLabel": "Sri Lanka",
+      "country": "http://www.wikidata.org/entity/Q854",
+      "value": "0.002789310550882809",
+      "lower": 0.00215112,
+      "upper": 0.00348307,
+      "year": "2019",
+      "wkt": "POINT(81.000000 7.000000)"
+    },
+    {
+      "iso3": "LSO",
+      "locLabel": "Lesotho",
+      "country": "http://www.wikidata.org/entity/Q1013",
+      "value": "0.007195405447266627",
+      "lower": 0.00555184,
+      "upper": 0.0090446,
+      "year": "2019",
+      "wkt": "POINT(28.250000 -29.550000)"
+    },
+    {
+      "iso3": "LTU",
+      "locLabel": "Lithuania",
+      "country": "http://www.wikidata.org/entity/Q37",
+      "value": "0.03101269899704",
+      "lower": 0.0259675,
+      "upper": 0.0361098,
+      "year": "2019",
+      "wkt": "POINT(24.000000 55.200000)"
+    },
+    {
+      "iso3": "LUX",
+      "locLabel": "Luxembourg",
+      "country": "http://www.wikidata.org/entity/Q32",
+      "value": "0.12005791889102",
+      "lower": 0.10405,
+      "upper": 0.14079,
+      "year": "2019",
+      "wkt": "POINT(6.130000 49.770000)"
+    },
+    {
+      "iso3": "LVA",
+      "locLabel": "Latvia",
+      "country": "http://www.wikidata.org/entity/Q211",
+      "value": "0.03286456932852",
+      "lower": 0.0279369,
+      "upper": 0.0380122,
+      "year": "2019",
+      "wkt": "POINT(25.000000 57.000000)"
+    },
+    {
+      "iso3": "MAR",
+      "locLabel": "Morocco",
+      "country": "http://www.wikidata.org/entity/Q1028",
+      "value": "0.04359414086977",
+      "lower": 0.0355236,
+      "upper": 0.0532117,
+      "year": "2019",
+      "wkt": "POINT(-6.000000 32.000000)"
+    },
+    {
+      "iso3": "MCO",
+      "locLabel": "Monaco",
+      "country": "http://www.wikidata.org/entity/Q235",
+      "value": "0.08620250906526",
+      "lower": 0.0722919,
+      "upper": 0.100659,
+      "year": "2019",
+      "wkt": "POINT(7.420000 43.731111)"
+    },
+    {
+      "iso3": "MDA",
+      "locLabel": "Moldova",
+      "country": "http://www.wikidata.org/entity/Q217",
+      "value": "0.01959844187697",
+      "lower": 0.0164574,
+      "upper": 0.0229942,
+      "year": "2019",
+      "wkt": "POINT(28.516667 47.250000)"
+    },
+    {
+      "iso3": "MDG",
+      "locLabel": "Madagascar",
+      "country": "http://www.wikidata.org/entity/Q1019",
+      "value": "0.005031698186487606",
+      "lower": 0.00384619,
+      "upper": 0.00646235,
+      "year": "2019",
+      "wkt": "POINT(47.000000 -20.000000)"
+    },
+    {
+      "iso3": "MDV",
+      "locLabel": "Maldives",
+      "country": "http://www.wikidata.org/entity/Q826",
+      "value": "0.0019290065960587649",
+      "lower": 0.00140475,
+      "upper": 0.00248423,
+      "year": "2019",
+      "wkt": "POINT(73.510000 4.180000)"
+    },
+    {
+      "iso3": "MEX",
+      "locLabel": "Mexico",
+      "country": "http://www.wikidata.org/entity/Q96",
+      "value": "0.01239789014837",
+      "lower": 0.00988805,
+      "upper": 0.0148734,
+      "year": "2019",
+      "wkt": "POINT(-102.000000 23.000000)"
+    },
+    {
+      "iso3": "MHL",
+      "locLabel": "Marshall Islands",
+      "country": "http://www.wikidata.org/entity/Q709",
+      "value": "0.001848552864503499",
+      "lower": 0.00139974,
+      "upper": 0.00236769,
+      "year": "2019",
+      "wkt": "POINT(169.290000 9.820000)"
+    },
+    {
+      "iso3": "MKD",
+      "locLabel": "North Macedonia",
+      "country": "http://www.wikidata.org/entity/Q221",
+      "value": "0.051378630053779996",
+      "lower": 0.0444944,
+      "upper": 0.0588149,
+      "year": "2019",
+      "wkt": "POINT(21.716667 41.650000)"
+    },
+    {
+      "iso3": "MLI",
+      "locLabel": "Mali",
+      "country": "http://www.wikidata.org/entity/Q912",
+      "value": "0.005131600550981434",
+      "lower": 0.00399672,
+      "upper": 0.00641599,
+      "year": "2019",
+      "wkt": "POINT(-4.000000 17.000000)"
+    },
+    {
+      "iso3": "MLT",
+      "locLabel": "Malta",
+      "country": "http://www.wikidata.org/entity/Q233",
+      "value": "0.0349352163486",
+      "lower": 0.0287888,
+      "upper": 0.0410152,
+      "year": "2019",
+      "wkt": "POINT(14.500000 35.883333)"
+    },
+    {
+      "iso3": "MMR",
+      "locLabel": "Myanmar",
+      "country": "http://www.wikidata.org/entity/Q836",
+      "value": "0.00354989566125974",
+      "lower": 0.00273034,
+      "upper": 0.00442739,
+      "year": "2019",
+      "wkt": "POINT(96.000000 22.000000)"
+    },
+    {
+      "iso3": "MNE",
+      "locLabel": "Montenegro",
+      "country": "http://www.wikidata.org/entity/Q236",
+      "value": "0.06286137638454",
+      "lower": 0.0564057,
+      "upper": 0.0708711,
+      "year": "2019",
+      "wkt": "POINT(19.216667 42.766667)"
+    },
+    {
+      "iso3": "MNG",
+      "locLabel": "Mongolia",
+      "country": "http://www.wikidata.org/entity/Q711",
+      "value": "0.023642344352559998",
+      "lower": 0.0189373,
+      "upper": 0.0285121,
+      "year": "2019",
+      "wkt": "POINT(105.000000 46.000000)"
+    },
+    {
+      "iso3": "MNP",
+      "locLabel": "Northern Mariana Islands",
+      "country": "http://www.wikidata.org/entity/Q16644",
+      "value": "0.0033050381065672057",
+      "lower": 0.00253246,
+      "upper": 0.00411783,
+      "year": "2019",
+      "wkt": "POINT(145.780000 16.705000)"
+    },
+    {
+      "iso3": "MOZ",
+      "locLabel": "Mozambique",
+      "country": "http://www.wikidata.org/entity/Q1029",
+      "value": "0.0041365419352135885",
+      "lower": 0.00318646,
+      "upper": 0.00522789,
+      "year": "2019",
+      "wkt": "POINT(35.000000 -19.000000)"
+    },
+    {
+      "iso3": "MRT",
+      "locLabel": "Mauritania",
+      "country": "http://www.wikidata.org/entity/Q1025",
+      "value": "0.007335698974901728",
+      "lower": 0.00576909,
+      "upper": 0.00903386,
+      "year": "2019",
+      "wkt": "POINT(-11.000000 21.000000)"
+    },
+    {
+      "iso3": "MUS",
+      "locLabel": "Mauritius",
+      "country": "http://www.wikidata.org/entity/Q1027",
+      "value": "0.004124826901767636",
+      "lower": 0.00316924,
+      "upper": 0.00516425,
+      "year": "2019",
+      "wkt": "POINT(57.500000 -20.200000)"
+    },
+    {
+      "iso3": "MWI",
+      "locLabel": "Malawi",
+      "country": "http://www.wikidata.org/entity/Q1020",
+      "value": "0.0037600928150264903",
+      "lower": 0.00286849,
+      "upper": 0.00479817,
+      "year": "2019",
+      "wkt": "POINT(34.000000 -13.000000)"
+    },
+    {
+      "iso3": "MYS",
+      "locLabel": "Malaysia",
+      "country": "http://www.wikidata.org/entity/Q833",
+      "value": "0.0020548756816484437",
+      "lower": 0.0015629,
+      "upper": 0.00257731,
+      "year": "2019",
+      "wkt": "POINT(102.314362 3.780511)"
+    },
+    {
+      "iso3": "NER",
+      "locLabel": "Niger",
+      "country": "http://www.wikidata.org/entity/Q1032",
+      "value": "0.004539987504234297",
+      "lower": 0.00352044,
+      "upper": 0.00564168,
+      "year": "2019",
+      "wkt": "POINT(10.000000 17.000000)"
+    },
+    {
+      "iso3": "NGA",
+      "locLabel": "Nigeria",
+      "country": "http://www.wikidata.org/entity/Q1033",
+      "value": "0.004379612330842075",
+      "lower": 0.00337284,
+      "upper": 0.00550264,
+      "year": "2019",
+      "wkt": "POINT(8.000000 9.000000)"
+    },
+    {
+      "iso3": "NIC",
+      "locLabel": "Nicaragua",
+      "country": "http://www.wikidata.org/entity/Q811",
+      "value": "0.005523102954947308",
+      "lower": 0.00427311,
+      "upper": 0.00686619,
+      "year": "2019",
+      "wkt": "POINT(-85.000000 13.000000)"
+    },
+    {
+      "iso3": "NIU",
+      "locLabel": "Niue",
+      "country": "http://www.wikidata.org/entity/Q34020",
+      "value": "0.003223948402630285",
+      "lower": 0.00248199,
+      "upper": 0.00402961,
+      "year": "2019",
+      "wkt": "POINT(-169.916667 -19.050000)"
+    },
+    {
+      "iso3": "NLD",
+      "locLabel": "The Netherlands",
+      "country": "http://www.wikidata.org/entity/Q29999",
+      "value": "0.12542569549793",
+      "lower": 0.107235,
+      "upper": 0.146378,
+      "year": "2019",
+      "wkt": "POINT(4.883333 52.366667)"
+    },
+    {
+      "iso3": "NOR",
+      "locLabel": "Norway",
+      "country": "http://www.wikidata.org/entity/Q20",
+      "value": "0.19276747721082998",
+      "lower": 0.162547,
+      "upper": 0.225463,
+      "year": "2019",
+      "wkt": "POINT(10.683333 59.933333)"
+    },
+    {
+      "iso3": "NPL",
+      "locLabel": "Nepal",
+      "country": "http://www.wikidata.org/entity/Q837",
+      "value": "0.008137469071280903",
+      "lower": 0.00632401,
+      "upper": 0.0100447,
+      "year": "2019",
+      "wkt": "POINT(84.000000 28.000000)"
+    },
+    {
+      "iso3": "NRU",
+      "locLabel": "Nauru",
+      "country": "http://www.wikidata.org/entity/Q697",
+      "value": "0.0012877247822620456",
+      "lower": 0.000932218,
+      "upper": 0.00168287,
+      "year": "2019",
+      "wkt": "POINT(166.935000 -0.527500)"
+    },
+    {
+      "iso3": "NZL",
+      "locLabel": "New Zealand",
+      "country": "http://www.wikidata.org/entity/Q664",
+      "value": "0.04591886541749",
+      "lower": 0.038535,
+      "upper": 0.0532872,
+      "year": "2019",
+      "wkt": "POINT(174.000000 -41.200000)"
+    },
+    {
+      "iso3": "OMN",
+      "locLabel": "Oman",
+      "country": "http://www.wikidata.org/entity/Q842",
+      "value": "0.03360779666193",
+      "lower": 0.0272728,
+      "upper": 0.0416174,
+      "year": "2019",
+      "wkt": "POINT(57.000000 21.000000)"
+    },
+    {
+      "iso3": "PAK",
+      "locLabel": "Pakistan",
+      "country": "http://www.wikidata.org/entity/Q843",
+      "value": "0.007510332484675708",
+      "lower": 0.00585412,
+      "upper": 0.00932995,
+      "year": "2019",
+      "wkt": "POINT(71.000000 30.000000)"
+    },
+    {
+      "iso3": "PAN",
+      "locLabel": "Panama",
+      "country": "http://www.wikidata.org/entity/Q804",
+      "value": "0.005551066347009498",
+      "lower": 0.00441021,
+      "upper": 0.00665105,
+      "year": "2019",
+      "wkt": "POINT(-80.366667 8.616667)"
+    },
+    {
+      "iso3": "PER",
+      "locLabel": "Peru",
+      "country": "http://www.wikidata.org/entity/Q419",
+      "value": "0.007466394921192356",
+      "lower": 0.00578608,
+      "upper": 0.00903453,
+      "year": "2019",
+      "wkt": "POINT(-76.000000 -9.400000)"
+    },
+    {
+      "iso3": "PHL",
+      "locLabel": "Philippines",
+      "country": "http://www.wikidata.org/entity/Q928",
+      "value": "0.0026451195196453524",
+      "lower": 0.00201272,
+      "upper": 0.00334286,
+      "year": "2019",
+      "wkt": "POINT(123.000000 12.000000)"
+    },
+    {
+      "iso3": "PLW",
+      "locLabel": "Palau",
+      "country": "http://www.wikidata.org/entity/Q695",
+      "value": "0.002418859236744264",
+      "lower": 0.00184694,
+      "upper": 0.00301524,
+      "year": "2019",
+      "wkt": "POINT(134.550000 7.466667)"
+    },
+    {
+      "iso3": "PNG",
+      "locLabel": "Papua New Guinea",
+      "country": "http://www.wikidata.org/entity/Q691",
+      "value": "0.0013976089110130034",
+      "lower": 0.00103195,
+      "upper": 0.00180013,
+      "year": "2019",
+      "wkt": "POINT(147.000000 -6.300000)"
+    },
+    {
+      "iso3": "POL",
+      "locLabel": "Poland",
+      "country": "http://www.wikidata.org/entity/Q36",
+      "value": "0.07849048938365001",
+      "lower": 0.0698449,
+      "upper": 0.0882512,
+      "year": "2019",
+      "wkt": "POINT(19.000000 52.000000)"
+    },
+    {
+      "iso3": "PRI",
+      "locLabel": "Puerto Rico",
+      "country": "http://www.wikidata.org/entity/Q1183",
+      "value": "0.01599032414213",
+      "lower": 0.0127568,
+      "upper": 0.0191796,
+      "year": "2019",
+      "wkt": "POINT(-66.500000 18.250000)"
+    },
+    {
+      "iso3": "PRK",
+      "locLabel": "North Korea",
+      "country": "http://www.wikidata.org/entity/Q423",
+      "value": "0.005316815673332605",
+      "lower": 0.00416096,
+      "upper": 0.00660284,
+      "year": "2019",
+      "wkt": "POINT(127.000000 40.000000)"
+    },
+    {
+      "iso3": "PRT",
+      "locLabel": "Portugal",
+      "country": "http://www.wikidata.org/entity/Q45",
+      "value": "0.04599693089897",
+      "lower": 0.0421423,
+      "upper": 0.0499317,
+      "year": "2019",
+      "wkt": "POINT(-9.183333 38.700000)"
+    },
+    {
+      "iso3": "PRY",
+      "locLabel": "Paraguay",
+      "country": "http://www.wikidata.org/entity/Q733",
+      "value": "0.01434244198704",
+      "lower": 0.0111683,
+      "upper": 0.0175145,
+      "year": "2019",
+      "wkt": "POINT(-58.000000 -23.500000)"
+    },
+    {
+      "iso3": "QAT",
+      "locLabel": "Qatar",
+      "country": "http://www.wikidata.org/entity/Q846",
+      "value": "0.06517329472576",
+      "lower": 0.0567762,
+      "upper": 0.0731125,
+      "year": "2019",
+      "wkt": "POINT(51.212767 25.269535)"
+    },
+    {
+      "iso3": "ROU",
+      "locLabel": "Romania",
+      "country": "http://www.wikidata.org/entity/Q218",
+      "value": "0.02154804014853",
+      "lower": 0.017725,
+      "upper": 0.0255915,
+      "year": "2019",
+      "wkt": "POINT(25.000000 46.000000)"
+    },
+    {
+      "iso3": "RUS",
+      "locLabel": "Russia",
+      "country": "http://www.wikidata.org/entity/Q159",
+      "value": "0.025340360823120002",
+      "lower": 0.0208223,
+      "upper": 0.0299398,
+      "year": "2019",
+      "wkt": "POINT(94.250000 66.416667)"
+    },
+    {
+      "iso3": "RWA",
+      "locLabel": "Rwanda",
+      "country": "http://www.wikidata.org/entity/Q1037",
+      "value": "0.0029511635757385893",
+      "lower": 0.00223469,
+      "upper": 0.00379617,
+      "year": "2019",
+      "wkt": "POINT(30.000000 -2.000000)"
+    },
+    {
+      "iso3": "SAU",
+      "locLabel": "Saudi Arabia",
+      "country": "http://www.wikidata.org/entity/Q851",
+      "value": "0.03126391770715",
+      "lower": 0.0242594,
+      "upper": 0.0397193,
+      "year": "2019",
+      "wkt": "POINT(44.116667 23.716667)"
+    },
+    {
+      "iso3": "SDN",
+      "locLabel": "Sudan",
+      "country": "http://www.wikidata.org/entity/Q1049",
+      "value": "0.01734842683091",
+      "lower": 0.0137108,
+      "upper": 0.0214121,
+      "year": "2019",
+      "wkt": "POINT(32.000000 15.000000)"
+    },
+    {
+      "iso3": "SEN",
+      "locLabel": "Senegal",
+      "country": "http://www.wikidata.org/entity/Q1041",
+      "value": "0.005776564711885774",
+      "lower": 0.00449687,
+      "upper": 0.00721694,
+      "year": "2019",
+      "wkt": "POINT(-14.283333 14.366667)"
+    },
+    {
+      "iso3": "SGP",
+      "locLabel": "Singapore",
+      "country": "http://www.wikidata.org/entity/Q334",
+      "value": "0.0041971567840622896",
+      "lower": 0.00316481,
+      "upper": 0.00513194,
+      "year": "2019",
+      "wkt": "POINT(103.800000 1.300000)"
+    },
+    {
+      "iso3": "SLB",
+      "locLabel": "Solomon Islands",
+      "country": "http://www.wikidata.org/entity/Q685",
+      "value": "0.0016068880213066373",
+      "lower": 0.00121006,
+      "upper": 0.00205365,
+      "year": "2019",
+      "wkt": "POINT(159.816667 -9.466667)"
+    },
+    {
+      "iso3": "SLE",
+      "locLabel": "Sierra Leone",
+      "country": "http://www.wikidata.org/entity/Q1044",
+      "value": "0.004361501470318887",
+      "lower": 0.00331825,
+      "upper": 0.00558543,
+      "year": "2019",
+      "wkt": "POINT(-12.100000 8.500000)"
+    },
+    {
+      "iso3": "SLV",
+      "locLabel": "El Salvador",
+      "country": "http://www.wikidata.org/entity/Q792",
+      "value": "0.005921883993205763",
+      "lower": 0.00460243,
+      "upper": 0.00728658,
+      "year": "2019",
+      "wkt": "POINT(-88.866111 13.668889)"
+    },
+    {
+      "iso3": "SMR",
+      "locLabel": "San Marino",
+      "country": "http://www.wikidata.org/entity/Q238",
+      "value": "0.058062765221400005",
+      "lower": 0.0468251,
+      "upper": 0.0704739,
+      "year": "2019",
+      "wkt": "POINT(12.466667 43.933333)"
+    },
+    {
+      "iso3": "SOM",
+      "locLabel": "Somalia",
+      "country": "http://www.wikidata.org/entity/Q1045",
+      "value": "0.002629723672892631",
+      "lower": 0.00196169,
+      "upper": 0.00335364,
+      "year": "2019",
+      "wkt": "POINT(47.000000 6.000000)"
+    },
+    {
+      "iso3": "SRB",
+      "locLabel": "Serbia",
+      "country": "http://www.wikidata.org/entity/Q403",
+      "value": "0.06251444699617",
+      "lower": 0.0554431,
+      "upper": 0.0695419,
+      "year": "2019",
+      "wkt": "POINT(20.933333 43.950000)"
+    },
+    {
+      "iso3": "SSD",
+      "locLabel": "South Sudan",
+      "country": "http://www.wikidata.org/entity/Q958",
+      "value": "0.0030529757860017315",
+      "lower": 0.00232612,
+      "upper": 0.00385646,
+      "year": "2019",
+      "wkt": "POINT(30.000000 7.000000)"
+    },
+    {
+      "iso3": "STP",
+      "locLabel": "Sao Tome and Principe",
+      "country": "http://www.wikidata.org/entity/Q1039",
+      "value": "0.0038594442608920667",
+      "lower": 0.00292286,
+      "upper": 0.0048126,
+      "year": "2019",
+      "wkt": "POINT(6.600000 0.316667)"
+    },
+    {
+      "iso3": "SUR",
+      "locLabel": "Suriname",
+      "country": "http://www.wikidata.org/entity/Q730",
+      "value": "0.006236923634844981",
+      "lower": 0.00480593,
+      "upper": 0.00766303,
+      "year": "2019",
+      "wkt": "POINT(-56.000000 4.000000)"
+    },
+    {
+      "iso3": "SVK",
+      "locLabel": "Slovakia",
+      "country": "http://www.wikidata.org/entity/Q214",
+      "value": "0.03600699800114",
+      "lower": 0.0303449,
+      "upper": 0.0418889,
+      "year": "2019",
+      "wkt": "POINT(19.700000 48.700000)"
+    },
+    {
+      "iso3": "SVN",
+      "locLabel": "Slovenia",
+      "country": "http://www.wikidata.org/entity/Q215",
+      "value": "0.05563654614243999",
+      "lower": 0.0492893,
+      "upper": 0.0629973,
+      "year": "2019",
+      "wkt": "POINT(15.000000 46.000000)"
+    },
+    {
+      "iso3": "SWE",
+      "locLabel": "Sweden",
+      "country": "http://www.wikidata.org/entity/Q34",
+      "value": "0.21652860321509002",
+      "lower": 0.188699,
+      "upper": 0.245818,
+      "year": "2019",
+      "wkt": "POINT(15.000000 61.000000)"
+    },
+    {
+      "iso3": "SWZ",
+      "locLabel": "Eswatini",
+      "country": "http://www.wikidata.org/entity/Q1050",
+      "value": "0.006169017904044503",
+      "lower": 0.00474902,
+      "upper": 0.00784681,
+      "year": "2019",
+      "wkt": "POINT(31.433333 -26.483333)"
+    },
+    {
+      "iso3": "SYC",
+      "locLabel": "Seychelles",
+      "country": "http://www.wikidata.org/entity/Q1042",
+      "value": "0.0034810958090955735",
+      "lower": 0.0027074,
+      "upper": 0.00424308,
+      "year": "2019",
+      "wkt": "POINT(52.766667 -7.100000)"
+    },
+    {
+      "iso3": "SYR",
+      "locLabel": "Syria",
+      "country": "http://www.wikidata.org/entity/Q858",
+      "value": "0.04286062819648",
+      "lower": 0.0339495,
+      "upper": 0.0524673,
+      "year": "2019",
+      "wkt": "POINT(38.583333 35.216667)"
+    },
+    {
+      "iso3": "TCD",
+      "locLabel": "Chad",
+      "country": "http://www.wikidata.org/entity/Q657",
+      "value": "0.0043918018454147485",
+      "lower": 0.00338362,
+      "upper": 0.00556239,
+      "year": "2019",
+      "wkt": "POINT(19.400000 15.466667)"
+    },
+    {
+      "iso3": "TGO",
+      "locLabel": "Togo",
+      "country": "http://www.wikidata.org/entity/Q945",
+      "value": "0.0050523179506341805",
+      "lower": 0.00386653,
+      "upper": 0.00628269,
+      "year": "2019",
+      "wkt": "POINT(1.183333 8.250000)"
+    },
+    {
+      "iso3": "THA",
+      "locLabel": "Thailand",
+      "country": "http://www.wikidata.org/entity/Q869",
+      "value": "0.003727579019950972",
+      "lower": 0.0029045,
+      "upper": 0.00466384,
+      "year": "2019",
+      "wkt": "POINT(101.000000 14.000000)"
+    },
+    {
+      "iso3": "TJK",
+      "locLabel": "Tajikistan",
+      "country": "http://www.wikidata.org/entity/Q863",
+      "value": "0.01560898411692",
+      "lower": 0.0125556,
+      "upper": 0.0189361,
+      "year": "2019",
+      "wkt": "POINT(71.366667 38.583333)"
+    },
+    {
+      "iso3": "TKL",
+      "locLabel": "Tokelau",
+      "country": "http://www.wikidata.org/entity/Q36823",
+      "value": "0.001860580245535177",
+      "lower": 0.00141817,
+      "upper": 0.00235552,
+      "year": "2019",
+      "wkt": "POINT(-171.833333 -9.166667)"
+    },
+    {
+      "iso3": "TKM",
+      "locLabel": "Turkmenistan",
+      "country": "http://www.wikidata.org/entity/Q874",
+      "value": "0.03488263398715",
+      "lower": 0.0304183,
+      "upper": 0.0393943,
+      "year": "2019",
+      "wkt": "POINT(60.000000 39.000000)"
+    },
+    {
+      "iso3": "TLS",
+      "locLabel": "Timor Leste",
+      "country": "http://www.wikidata.org/entity/Q574",
+      "value": "0.0016452922500715527",
+      "lower": 0.00124214,
+      "upper": 0.00209199,
+      "year": "2019",
+      "wkt": "POINT(125.750000 -8.966667)"
+    },
+    {
+      "iso3": "TON",
+      "locLabel": "Tonga",
+      "country": "http://www.wikidata.org/entity/Q678",
+      "value": "0.002597595581737317",
+      "lower": 0.00197003,
+      "upper": 0.00328315,
+      "year": "2019",
+      "wkt": "POINT(-174.810278 -20.587778)"
+    },
+    {
+      "iso3": "TTO",
+      "locLabel": "Trinidad and Tobago",
+      "country": "http://www.wikidata.org/entity/Q754",
+      "value": "0.008935450839941898",
+      "lower": 0.00703726,
+      "upper": 0.0110308,
+      "year": "2019",
+      "wkt": "POINT(-61.516667 10.666667)"
+    },
+    {
+      "iso3": "TUN",
+      "locLabel": "Tunisia",
+      "country": "http://www.wikidata.org/entity/Q948",
+      "value": "0.059476663562500004",
+      "lower": 0.0487523,
+      "upper": 0.0717251,
+      "year": "2019",
+      "wkt": "POINT(10.000000 34.000000)"
+    },
+    {
+      "iso3": "TUR",
+      "locLabel": "Turkey",
+      "country": "http://www.wikidata.org/entity/Q43",
+      "value": "0.058608823885779995",
+      "lower": 0.056178,
+      "upper": 0.0613808,
+      "year": "2019",
+      "wkt": "POINT(36.000000 39.000000)"
+    },
+    {
+      "iso3": "TUV",
+      "locLabel": "Tuvalu",
+      "country": "http://www.wikidata.org/entity/Q672",
+      "value": "0.0017039603980211525",
+      "lower": 0.00130501,
+      "upper": 0.00216272,
+      "year": "2019",
+      "wkt": "POINT(178.005556 -7.475000)"
+    },
+    {
+      "iso3": "TWN",
+      "locLabel": "Taiwan",
+      "country": "http://www.wikidata.org/entity/Q865",
+      "value": "0.008569219061646286",
+      "lower": 0.00723312,
+      "upper": 0.0100702,
+      "year": "2019",
+      "wkt": "POINT(121.000000 24.000000)"
+    },
+    {
+      "iso3": "TZA",
+      "locLabel": "Tanzania",
+      "country": "http://www.wikidata.org/entity/Q924",
+      "value": "0.0030610361153021667",
+      "lower": 0.00232846,
+      "upper": 0.00387748,
+      "year": "2019",
+      "wkt": "POINT(34.853889 -6.306945)"
+    },
+    {
+      "iso3": "UGA",
+      "locLabel": "Uganda",
+      "country": "http://www.wikidata.org/entity/Q1036",
+      "value": "0.0021931371360399358",
+      "lower": 0.00162915,
+      "upper": 0.00276891,
+      "year": "2019",
+      "wkt": "POINT(32.390000 1.280000)"
+    },
+    {
+      "iso3": "UKR",
+      "locLabel": "Ukraine",
+      "country": "http://www.wikidata.org/entity/Q212",
+      "value": "0.04039560354366",
+      "lower": 0.0340484,
+      "upper": 0.0470886,
+      "year": "2019",
+      "wkt": "POINT(32.000000 49.000000)"
+    },
+    {
+      "iso3": "URY",
+      "locLabel": "Uruguay",
+      "country": "http://www.wikidata.org/entity/Q77",
+      "value": "0.02959188136308",
+      "lower": 0.0244652,
+      "upper": 0.0348282,
+      "year": "2019",
+      "wkt": "POINT(-56.000000 -33.000000)"
+    },
+    {
+      "iso3": "USA",
+      "locLabel": "United States of America",
+      "country": "http://www.wikidata.org/entity/Q30",
+      "value": "0.13156102934714",
+      "lower": 0.12022,
+      "upper": 0.143714,
+      "year": "2019",
+      "wkt": "POINT(-98.579500 39.828175)"
+    },
+    {
+      "iso3": "UZB",
+      "locLabel": "Uzbekistan",
+      "country": "http://www.wikidata.org/entity/Q265",
+      "value": "0.02158199159368",
+      "lower": 0.017576,
+      "upper": 0.0259577,
+      "year": "2019",
+      "wkt": "POINT(66.000000 41.000000)"
+    },
+    {
+      "iso3": "VCT",
+      "locLabel": "Saint Vincent and the Grenadines",
+      "country": "http://www.wikidata.org/entity/Q757",
+      "value": "0.009218017340705771",
+      "lower": 0.00724034,
+      "upper": 0.0111412,
+      "year": "2019",
+      "wkt": "POINT(-61.229600 13.013900)"
+    },
+    {
+      "iso3": "VEN",
+      "locLabel": "Venezuela",
+      "country": "http://www.wikidata.org/entity/Q717",
+      "value": "0.006576963205050873",
+      "lower": 0.00514177,
+      "upper": 0.00800356,
+      "year": "2019",
+      "wkt": "POINT(-67.000000 8.000000)"
+    },
+    {
+      "iso3": "VIR",
+      "locLabel": "U.S. Virgin Islands",
+      "country": "http://www.wikidata.org/entity/Q11703",
+      "value": "0.014515769941860001",
+      "lower": 0.0116022,
+      "upper": 0.0170953,
+      "year": "2019",
+      "wkt": "POINT(-64.833333 18.333333)"
+    },
+    {
+      "iso3": "VNM",
+      "locLabel": "Vietnam",
+      "country": "http://www.wikidata.org/entity/Q881",
+      "value": "0.003532209146652521",
+      "lower": 0.00269597,
+      "upper": 0.00443613,
+      "year": "2019",
+      "wkt": "POINT(108.000000 16.000000)"
+    },
+    {
+      "iso3": "VUT",
+      "locLabel": "Vanuatu",
+      "country": "http://www.wikidata.org/entity/Q686",
+      "value": "0.002002251384101518",
+      "lower": 0.00150069,
+      "upper": 0.00259934,
+      "year": "2019",
+      "wkt": "POINT(168.016669 -16.633331)"
+    },
+    {
+      "iso3": "WSM",
+      "locLabel": "Samoa",
+      "country": "http://www.wikidata.org/entity/Q683",
+      "value": "0.0020583664761191704",
+      "lower": 0.00156284,
+      "upper": 0.00259679,
+      "year": "2019",
+      "wkt": "POINT(-172.217500 -13.745000)"
+    },
+    {
+      "iso3": "YEM",
+      "locLabel": "Yemen",
+      "country": "http://www.wikidata.org/entity/Q805",
+      "value": "0.01665220807079",
+      "lower": 0.013224,
+      "upper": 0.0205321,
+      "year": "2019",
+      "wkt": "POINT(48.000000 15.500000)"
+    },
+    {
+      "iso3": "ZAF",
+      "locLabel": "South Africa",
+      "country": "http://www.wikidata.org/entity/Q258",
+      "value": "0.008470289031880868",
+      "lower": 0.00660405,
+      "upper": 0.0105095,
+      "year": "2019",
+      "wkt": "POINT(24.000000 -29.000000)"
+    },
+    {
+      "iso3": "ZMB",
+      "locLabel": "Zambia",
+      "country": "http://www.wikidata.org/entity/Q953",
+      "value": "0.003923496968899927",
+      "lower": 0.00299208,
+      "upper": 0.00498697,
+      "year": "2019",
+      "wkt": "POINT(28.000000 -14.000000)"
+    },
+    {
+      "iso3": "ZWE",
+      "locLabel": "Zimbabwe",
+      "country": "http://www.wikidata.org/entity/Q954",
+      "value": "0.004526528256501977",
+      "lower": 0.00344898,
+      "upper": 0.00580524,
+      "year": "2019",
+      "wkt": "POINT(30.000000 -19.000000)"
+    }
+  ],
+  "row_count": 200
+}
