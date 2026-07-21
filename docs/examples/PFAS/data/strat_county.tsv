@@ -1,0 +1,132 @@
+stateName	countyName	nCells	nTierA	medScore	maxNgL	nPfasFac	nRingPfasFac
+Arizona	Maricopa County	29	11	46.97578703025852	225.0	35	216
+Maine	Cumberland County	34	10	48.392120213718655	104265.0	14	62
+Minnesota	Hennepin County	29	9	41.60643685248067	213.0	12	99
+Arizona	Pima County	20	9	49.533855835897164	641.0	13	68
+Maine	York County	27	8	46.526710948607736	3376.4	10	61
+Maine	Penobscot County	23	8	52.897788735234606	53040.8	11	40
+Maine	Androscoggin County	19	8	47.44241687276508	11204.5	8	20
+Maine	Aroostook County	31	7	50.20521104871667	4200.0	9	35
+Minnesota	Anoka County	12	6	34.68031111544795	281.0	8	19
+Minnesota	Washington County	29	5	29.36807601943967	254.0	7	34
+Indiana	Marion County	10	5	44.761505788560484		6	40
+Indiana	Lake County	9	5	56.06309803103599		9	37
+Maine	Oxford County	9	5	44.1873069401705	282.0	5	9
+Minnesota	Dakota County	20	4	35.26280870619139	922.0	6	41
+Maine	Kennebec County	16	4	47.74669456519291	9190.0	5	15
+Maine	Franklin County	12	4	39.4931895574278	24800.0	6	15
+Maine	Somerset County	12	4	50.524785601499346	70800.0	5	15
+Indiana	Porter County	9	4	43.14001122618267		5	19
+Maine	Sagadahoc County	6	4	52.4589820606614	5495.2	5	3
+Massachusetts	Essex County	5	4	52.579863882591184		5	47
+Maine	Knox County	6	3	62.565332973382404	1180.0	6	11
+Maine	Washington County	5	3	54.94002525659659	686.0	4	3
+Arizona	Mohave County	4	2	39.28626927171437	908.0	3	12
+Maine	Hancock County	4	2	50.4716169736687	284.0	2	4
+Maine	Waldo County	4	2	49.423193882736655	132.0	2	9
+Indiana	Kosciusko County	3	2	42.76146433761195		2	11
+Indiana	Wayne County	3	2	35.95789290904052		2	3
+Massachusetts	Hampden County	3	2	34.84453881247676		2	22
+Massachusetts	Middlesex County	3	2	63.333333333333336		7	17
+Minnesota	Itasca County	2	2	40.71469791784715	6.57	4	8
+South Carolina	Anderson County	2	2	46.04090950045228		2	4
+Indiana	Elkhart County	10	1	43.303160997610384		1	49
+Minnesota	Crow Wing County	9	1	28.38824165424949	25.2	1	11
+Minnesota	St. Louis County	8	1	33.44945357514604	1960.0	1	9
+Minnesota	Stearns County	8	1	32.86308653040466	16.3	1	12
+Indiana	LaPorte County	5	1	39.4729860165773		1	15
+Minnesota	Sherburne County	5	1	28.772879197645405	15.7	1	10
+Indiana	Blackford County	4	1	47.91078026454575		2	11
+Maine	Lincoln County	4	1	38.52486577988508	280.0	1	3
+Indiana	DeKalb County	3	1	46.243607194754794		1	6
+Indiana	Howard County	3	1	44.37659009452804		1	9
+Indiana	Johnson County	3	1	44.29244724359484		1	3
+Indiana	Monroe County	3	1	32.855719898805624		1	2
+Indiana	Vigo County	3	1	30.744129814330027		2	5
+Arizona	Yuma County	2	1	49.17149221854626	291.0	1	2
+Illinois	Cook County	2	1	39.546566528220794	1.81	1	3
+Indiana	Allen County	2	1	66.03992321571306		2	15
+Indiana	Hendricks County	2	1	44.2656847252275		1	5
+Indiana	Huntington County	2	1	41.91051203977662		1	10
+Indiana	Miami County	2	1	39.21486501198167		1	2
+Minnesota	McLeod County	2	1	45.02425517632196		1	7
+Minnesota	Mille Lacs County	2	1	34.34151827992557	65.8	1	3
+Minnesota	Scott County	2	1	18.837242103145943		1	1
+Arizona	Yavapai County	1	1	44.457744495231175	18.0	1	3
+Illinois	Lawrence County	1	1	35.642874594022196		1	0
+Illinois	Winnebago County	1	1	44.97620792735554		1	1
+Indiana	Boone County	1	1	44.246021286612496		1	6
+Indiana	Dearborn County	1	1	54.708773757626155		2	6
+Indiana	Pike County	1	1	34.01734896098081		1	0
+Indiana	St. Joseph County	1	1	43.22773417888178		1	1
+Massachusetts	Barnstable County	1	1	46.21515115878301		1	1
+Minnesota	Mower County	1	1	37.07798407377305	9.71	1	0
+Minnesota	Otter Tail County	1	1	32.94108974562958	6.65	1	0
+Minnesota	Wadena County	1	1	34.63567416216085	2.32	2	0
+New Hampshire	Rockingham County	1	1	63.946868995721395		2	6
+South Carolina	Georgetown County	1	1	33.374914472392476		1	0
+Wisconsin	Milwaukee County	1	1	64.61353566238806		2	25
+Minnesota	Ramsey County	11	0	40.2804362483742	279.0	0	36
+Indiana	Hamilton County	3	0	35.0		0	5
+Indiana	Noble County	3	0	44.634526602464554		0	10
+Indiana	Wabash County	3	0	42.91172681309047		0	4
+Minnesota	Beltrami County	3	0	35.01164218146191	33.0	0	5
+Minnesota	Carlton County	3	0	31.175284594789375	5.47	0	7
+Minnesota	Lake County	3	0	17.550605260357646		0	3
+Indiana	Cass County	2	0	36.47008713187175		0	2
+Indiana	Clinton County	2	0	25.78894377380532		0	2
+Indiana	Knox County	2	0	32.531306565711034		0	2
+Indiana	LaGrange County	2	0	36.42714847023419		0	2
+Indiana	Montgomery County	2	0	31.71015279632424		0	6
+Indiana	Tippecanoe County	2	0	29.80225777190344		0	3
+Massachusetts	Franklin County	2	0	30.56589891217782		0	4
+Minnesota	Benton County	2	0	22.89771180502315	7.89	0	2
+Minnesota	Blue Earth County	2	0	27.442469812652856	3.05	0	5
+Minnesota	Hubbard County	2	0	23.073024274755646	23.3	0	3
+Minnesota	Morrison County	2	0	31.686489287869016	7.73	0	3
+Vermont	Windsor County	2	0	25.555353598439318		0	2
+Alabama	Jefferson County	1	0	30.116677791328158		0	2
+Alabama	Russell County	1	0	37.033521684885336		0	2
+Alabama	Tuscaloosa County	1	0	21.074181825755268		0	2
+Arkansas	Lee County	1	0	29.580994624080347		0	1
+Illinois	Alexander County	1	0	33.22512826821399		0	1
+Illinois	Lake County	1	0	34.84453881247676		0	4
+Illinois	Whiteside County	1	0	19.548807675445047		0	1
+Indiana	Adams County	1	0	39.5902982416619		0	2
+Indiana	Carroll County	1	0	29.933333333333334		0	1
+Indiana	Clark County	1	0	29.681116724202443		0	1
+Indiana	Dubois County	1	0	46.317066285004245		0	4
+Indiana	Fulton County	1	0	29.635481803567526		0	1
+Indiana	Grant County	1	0	19.71728236864602		0	2
+Indiana	Harrison County	1	0	25.712643839281213		0	1
+Indiana	Morgan County	1	0	34.28429132737705		0	1
+Indiana	Orange County	1	0	31.04619608928181		0	1
+Indiana	Owen County	1	0	38.221828189766136		0	4
+Indiana	Parke County	1	0	25.34907039215611		0	1
+Indiana	Perry County	1	0	46.50754247548042		0	4
+Indiana	Randolph County	1	0	39.55413259721832		0	1
+Indiana	Ripley County	1	0	29.52238656547229		0	1
+Indiana	Shelby County	1	0	55.07651916269061		0	3
+Indiana	Starke County	1	0	31.805526848612573		0	1
+Indiana	Steuben County	1	0	24.61206502877874		0	1
+Kansas	Doniphan County	1	0	26.590990278143796		0	1
+Maine	Piscataquis County	1	0	46.09616980131194	68.2	0	1
+Massachusetts	Bristol County	1	0	38.77349381408502		0	6
+Massachusetts	Hampshire County	1	0	48.70707070707072		0	15
+Minnesota	Aitkin County	1	0	20.78555442559234	6.88	0	1
+Minnesota	Big Stone County	1	0	18.7820471984544	5.47	0	1
+Minnesota	Chippewa County	1	0	24.737279421908855	4.4	0	1
+Minnesota	Chisago County	1	0	37.3284010777601	66.8	0	1
+Minnesota	Goodhue County	1	0	36.29254138081897	87.5	0	1
+Minnesota	Houston County	1	0	32.95806024337521	12.2	0	2
+Minnesota	Kanabec County	1	0	15.5604310903061	4.1	0	1
+Minnesota	Lincoln County	1	0	18.20670921968324	6.11	0	1
+Minnesota	Lyon County	1	0	25.784264468438412	0.818	0	2
+Minnesota	Martin County	1	0	26.975204282896584		0	1
+Minnesota	Redwood County	1	0	31.1923145637818	27.5	0	1
+Minnesota	Rice County	1	0	23.177969124102002	14.3	0	1
+Minnesota	Todd County	1	0	42.92819225163496	45.7	0	1
+Minnesota	Winona County	1	0	25.86623167217882	12.1	0	1
+New Hampshire	Cheshire County	1	0	37.95970661107027		0	2
+New Hampshire	Merrimack County	1	0	47.47927390969562		0	6
+Vermont	Chittenden County	1	0	28.879675531039183		0	2

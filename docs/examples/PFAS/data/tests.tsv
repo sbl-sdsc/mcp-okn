@@ -1,0 +1,12 @@
+test	statistic	p	n	effect
+Kruskal-Wallis, max ng/L across tiers A/B/C/D	53.7	1.30e-11	112/235/708/294	
+Mann-Whitney one-sided, max ng/L  A > C	49212.0	2.01e-05	112/708	rank-biserial 0.241
+Mann-Whitney one-sided, max ng/L  A > D	22359.0	1.22e-08	112/294	rank-biserial 0.358
+Mann-Whitney one-sided, max ng/L  B > D	45070.5	8.45e-10	235/294	rank-biserial 0.305
+Mann-Whitney one-sided, max ng/L  A > B	14094.0	0.1426	112/235	rank-biserial 0.071
+Mann-Whitney one-sided, max ng/L  C > D	117433.5	6.82e-04	708/294	rank-biserial 0.128
+Kruskal-Wallis, detection frequency across tiers A/B/C/D	79.6	3.73e-17	184/414/1061/443	
+Kruskal-Wallis, distinct analytes detected across tiers A/B/C/D	17.85	4.73e-04	184/414/1061/443	
+Fisher exact, P(detection) | PFAS-flagged facility within 1-ring	OR 2.15	5.81e-09	2537 evaluable cells	det rate 89.8% vs 80.4%
+Permutation (10,000x), tier-A median max ng/L vs shuffled labels	observed 36.8 ng/L, null median 17.0	3.00e-04	112 tier-A / 1349 scored cells with ng/L	
+Spearman, co-location score vs max ng/L (scored cells)	rho 0.817	0.00e+00	1349	

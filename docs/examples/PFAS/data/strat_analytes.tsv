@@ -1,0 +1,176 @@
+param	nObs	nDet	nCells	paramLabel	dtxsid	dssLabel	cas	detFreq	iceLabel	nAssayEndpoints	functionalUse	inICE	inToxCast
+parameter.SUM_PFOA_PFOS	19000	13459	942	TOTAL PFOA AND PFOS				0.7083684210526315				False	False
+parameter.PFOA_A	20387	11581	903	PERFLUOROOCTANOIC ACID	DTXSID8031865	Perfluorooctanoic acid	335-67-1	0.5680580762250453	Perfluorooctanoic acid	1396.0	Emulsion stabilizer	True	True
+parameter.PFOS_A	19940	11519	792	PERFLUOROOCTANE SULFONIC ACID	DTXSID3031864	Perfluorooctanesulfonic acid	1763-23-1	0.5776830491474423	Perfluorooctanesulfonic acid	1510.0	Emulsion stabilizer; Flame retardant	True	True
+parameter.SUM_OF_6_PFAS	17016	11472	884	SUM OF 6 PFAS (PFHPA + PFHXS + PFOA + PFNA + PFOS + PFDA)				0.6741889985895627				False	False
+parameter.PFBA_A	18395	9885	768	PERFLUOROBUTANOIC ACID	DTXSID4059916	Perfluorobutanoic acid	375-22-4	0.5373742864908942		506.0		False	True
+parameter.PFPEA_A	18570	9807	761	PERFLUOROPENTANOIC ACID	DTXSID6062599	Perfluoropentanoic acid	2706-90-3	0.5281098546042003	Perfluoropentanoic acid	461.0	Emulsion stabilizer	True	True
+parameter.PFHPA_A	19523	9712	767	PERFLUOROHEPTANOIC ACID	DTXSID1037303	Perfluoroheptanoic acid	375-85-9	0.4974645290170568	Perfluoroheptanoic acid	1038.0	Emulsion stabilizer	True	True
+parameter.PFHXA_A	19013	9636	754	PERFLUOROHEXANOIC ACID	DTXSID3031862	Perfluorohexanoic acid	307-24-4	0.5068111292273707	Perfluorohexanoic acid	1098.0	Emulsion stabilizer	True	True
+parameter.PFNA_A	19688	7758	547	PERFLUORONONANOIC ACID	DTXSID8031863	Perfluorononanoic acid	375-95-1	0.39404713531084923	Perfluorononanoic acid	1124.0	Emulsion stabilizer	True	True
+parameter.PFBS_A	19799	7308	753	PERFLUOROBUTANE SULFONIC ACID	DTXSID5030030	Perfluorobutanesulfonic acid	375-73-5	0.3691095509874236	Perfluorobutanesulfonic acid	504.0	Emulsion stabilizer; Flame retardant	True	True
+parameter.PFHXS_A	19234	6575	622	PERFLUOROHEXANE SULFONIC ACID	DTXSID7040150	Perfluorohexanesulfonic acid	355-46-4	0.3418425704481647	Perfluorohexanesulfonic acid	461.0	Emulsion stabilizer; Flame retardant	True	True
+parameter.PFDA_A	19254	4871	345	PERFLUORODECANOIC ACID	DTXSID3031860	Perfluorodecanoic acid	335-76-2	0.25298639243793497	Perfluorodecanoic acid	1075.0	Emulsion stabilizer	True	True
+parameter.6-2_FTS_A	16592	2714	397	6:2 FLUOROTELOMER SULFONIC ACID	DTXSID6067331	6:2 Fluorotelomer sulfonic acid	27619-97-2	0.163572806171649	6:2 Fluorotelomer sulfonic acid	461.0	Surfactant	True	True
+parameter.PFPES_A	17372	2549	366	PERFLUOROPENTANE SULFONIC ACID	DTXSID8062600	Perfluoropentanesulfonic acid	2706-91-4	0.14673037071148975	Perfluoropentanesulfonic acid		Emulsion stabilizer; Flame retardant	True	False
+parameter.PFUNDA_A	18894	2358	163	PERFLUOROUNDECANOIC ACID	DTXSID8047553	Perfluoroundecanoic acid	2058-94-8	0.12480152429342649	Perfluoroundecanoic acid	1123.0	Emulsion stabilizer	True	True
+parameter.N-EtFOSAA_A	18834	2061	221	N-ETHYL PERFLUOROOCTANE SULFONAMIDOACETIC ACID	DTXSID5062760	2-(N-Ethylperfluorooctanesulfonamido)acetic acid	2991-50-6	0.10942975469894871				False	False
+parameter.PFHPS_A	17937	2048	204	PERFLUOROHEPTANE SULFONIC ACID	DTXSID8059920	Perfluoroheptanesulfonic acid	375-92-8	0.11417739867313374	Perfluoroheptanesulfonic acid	464.0	Emulsion stabilizer; Flame retardant	True	True
+characteristic.19762	4341	1940	548	10-H-Perfluorodecanoic acid	DTXSID10630918		112823-28-6	0.4469016355678415				False	False
+characteristic.3281	3134	1837	200	Perfluorooctanesulfonate	DTXSID3031864	Perfluorooctanesulfonic acid	45298-90-6	0.5861518825781749	Perfluorooctanesulfonate		Emulsion stabilizer; Flame retardant	True	False
+parameter.PFTEA_A	19038	1812	214	PERFLUOROTETRADECANOIC ACID	DTXSID3059921	Perfluorotetradecanoic acid	376-06-7	0.09517806492278601	Perfluorotetradecanoic acid	463.0	Emulsion stabilizer	True	True
+parameter.PFHXDA_A	14283	1735	295	PERFLUOROHEXADECANOIC ACID	DTXSID1070800		67905-19-5	0.12147307988517818	Perfluorohexadecanoic acid		Emulsion stabilizer	True	False
+parameter.PFOSA	16788	1648	179	PERFLUOROOCTANE SULFONAMIDE	DTXSID3038939	Perfluorooctanesulfonamide	754-91-6	0.0981653562068144	Perfluorooctanesulfonamide	1071.0	Emulsion stabilizer; Flame retardant	True	True
+characteristic.19467	2241	1575	651					0.7028112449799196				False	False
+parameter.PFDOA_A	18917	1459	79	PERFLUORODODECANOIC ACID	DTXSID8031861	Perfluorododecanoic acid	307-55-1	0.0771263942485595	Perfluorododecanoic acid		Emulsion stabilizer	True	False
+parameter.SUM_OF_5_PFAS	1653	1320	186	SUM OF 5 PFAS (PFHPA + PFHXS + PFOA + PFNA + PFOS)				0.7985480943738656				False	False
+parameter.8-2_FTS_A	16391	1281	110	8:2 FLUOROTELOMER SULFONIC ACID	DTXSID00192353	8:2 Fluorotelomer sulfonic acid	39108-34-4	0.07815264474406687		506.0		False	True
+characteristic.9364	5338	1262	382	2H,2H,3H,3H-Perfluorooctanoic acid	DTXSID20874028	2H,2H,3H,3H-Perfluorooctanoic acid	914637-49-3	0.23641813413263393		497.0		False	True
+characteristic.3292	3075	1197	359	Perfluorobutanoate	DTXSID4059916	Perfluorobutanoic acid	45048-62-2	0.38926829268292684				False	False
+characteristic.19698	2974	1153	377	12-Cl-Perfluorododecanoic acid	DTXSID90892618		574715-87-0	0.38769334229993274				False	False
+parameter.N-MeFOSAA_A	18783	1022	177	N-METHYL PERFLUOROOCTANE SULFONAMIDOACETIC ACID	DTXSID10624392	2-(N-Methylperfluorooctanesulfonamido)acetic acid	2355-31-9	0.054410903476547944				False	False
+characteristic.19684	1339	964	363	11-Chloro-Perfluoroundecanoic acid	DTXSID10892918		2823-49-6	0.7199402539208365				False	False
+characteristic.64478	4535	935	400	2H-Perfluorononanoic acid	DTXSID001035129			0.2061742006615215				False	False
+characteristic.64483	4991	860	317	2H-Perfluorohexanoic acid	DTXSID301035178			0.17231015828491283				False	False
+parameter.PFDS_A	17349	854	40	PERFLUORODECANESULFONIC ACID	DTXSID3040148	Perfluorodecanesulfonic acid	335-77-3	0.049224739178050606	Perfluorodecanesulfonic acid		Emulsion stabilizer; Flame retardant	True	False
+characteristic.20426	2671	843	322	13-H-Perfluorotridecanoic acid	DTXSID40892941		423-73-4	0.31561213028828156				False	False
+parameter.PFOS	1152	811	189	PERFLUOROOCTANE SULFONATE	DTXSID80108992		45298-90-6	0.7039930555555556	Perfluorooctanesulfonate		Emulsion stabilizer; Flame retardant	True	False
+characteristic.20794	2825	790	294	14-H-Perfluorotetradecanoic acid				0.27964601769911507				False	False
+characteristic.20865	2929	790	181	11-H-Perfluoroundecanoate	DTXSID5061954		69681-37-4	0.2697166268350973				False	False
+parameter.PFTRIA_A	18642	786	56	PERFLUOROTRIDECANOIC ACID	DTXSID90868151	Perfluorotridecanoic acid	72629-94-8	0.042162858062439655	Perfluorotridecanoic acid	465.0	Emulsion stabilizer	True	True
+characteristic.64556	4333	773	260	2H-Perfluoroheptanoic acid	DTXSID401035226			0.178398338333718				False	False
+characteristic.19292	4929	727	286					0.14749442077500508				False	False
+characteristic.3113	2720	698	245	1-Decanesulfonic acid, 1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,10-heneicosafluoro-	DTXSID3040148	Perfluorodecanesulfonic acid	335-77-3	0.2566176470588235	Perfluorodecanesulfonic acid		Emulsion stabilizer; Flame retardant	True	False
+characteristic.18521	3946	675	234					0.1710593005575266				False	False
+characteristic.18078	2214	648	311					0.2926829268292683				False	False
+characteristic.62959	2213	588	290	5H-Perfluorohexanesulfonic acid	DTXSID101032330		2089109-56-6	0.2657026660641663				False	False
+parameter.PFUNDA	733	430	137	PERFLUOROUNDECANOATE	DTXSID30892475		196859-54-8	0.5866302864938608				False	False
+characteristic.3282	2895	401	77	Perfluorohexanesulfonate	DTXSID7040150	Perfluorohexanesulfonic acid	108427-53-8	0.1385146804835924	Perfluorohexanesulfonate		Emulsion stabilizer; Flame retardant	True	False
+parameter.PFHXS	1035	380	80	PERFLUOROHEXANE SULFONATE	DTXSID80873012		108427-53-8	0.3671497584541063	Perfluorohexanesulfonate		Emulsion stabilizer; Flame retardant	True	False
+parameter.PFDA	736	356	123	PERFLUORODECANOATE	DTXSID40892481		73829-36-4	0.483695652173913				False	False
+parameter.PFDOA	736	326	114	PERFLUORODODECANOATE	DTXSID00892482		171978-95-3	0.4429347826086957				False	False
+parameter.PFTRDA_A	731	300	92	PERFLUOROTRIDECANOATE	DTXSID20892489		862374-87-6	0.4103967168262654				False	False
+characteristic.18574	2891	269	56					0.09304738844690419				False	False
+characteristic.19383	1861	267	140					0.14347125201504568				False	False
+parameter.6-2_FTS	1717	266	37	6:2 FLUOROTELOMER SULFONATE	DTXSID6067331	6:2 Fluorotelomer sulfonic acid	425670-75-3	0.15492137449039023				False	False
+parameter.PFNA	741	257	90	PERFLUORONONANOATE	DTXSID80892485		72007-68-2	0.3468286099865047				False	False
+characteristic.3117	1165	226	95					0.19399141630901287				False	False
+characteristic.19482	2255	226	84					0.10022172949002217				False	False
+parameter.PFTEA	324	211	77	PERFLUOROTETRADECANOATE	DTXSID60892488		365971-87-5	0.6512345679012346				False	False
+parameter.8-2_FTS	1894	206	25	8:2 FLUOROTELOMER SULFONATE	DTXSID00192353	8:2 Fluorotelomer sulfonic acid	481071-78-7	0.10876451953537487				False	False
+parameter.PFOA	697	205	69	PERFLUOROOCTANOATE	DTXSID40892486		45285-51-6	0.29411764705882354				False	False
+parameter.PFNS_A	17287	179	17	PERFLUORONONANE SULFONIC ACID	DTXSID60873010		68259-12-1	0.010354601723838723	Perfluorononanesulfonic acid		Emulsion stabilizer; Flame retardant	True	False
+characteristic.18456	2774	155	74					0.055875991348233595				False	False
+parameter.PFHPA	740	145	46	PERFLUOROHEPTANOATE	DTXSID60892483		120885-29-2	0.19594594594594594				False	False
+parameter.PFHXA	740	136	46	PERFLUOROHEXANOATE	DTXSID20892484		92612-52-7	0.1837837837837838				False	False
+characteristic.3114	569	132	52					0.23198594024604569				False	False
+characteristic.3112	1868	129	84	1-Heptanesulfonic acid, 1,1,2,2,3,3,4,4,5,5,6,6,7,7,7-pentadecafluoro-	DTXSID8059920	Perfluoroheptanesulfonic acid	375-92-8	0.0690578158458244	Perfluoroheptanesulfonic acid	464.0	Emulsion stabilizer; Flame retardant	True	True
+parameter.4-2_FTS_A	17272	118	32	4:2-FLUOROTELOMER SULFONIC ACID	DTXSID30891564	4:2 Fluorotelomer sulfonic acid	757124-72-4	0.00683186660490968		497.0		False	True
+characteristic.31056	967	108	50	3H-Perfluorobutanoic acid	DTXSID90626970		379-90-8	0.11168562564632885	3H-Perfluorobutanoic acid		Foamer	True	False
+characteristic.18755	106	106	1	6-H-Perfluorohexanoate	DTXSID20880169		1696259-63-8	1.0				False	False
+characteristic.21754	541	90	48					0.16635859519408502				False	False
+parameter.PFBS	648	78	18	PERFLUOROBUTANE SULFONATE	DTXSID60873015		45187-15-3	0.12037037037037036	Perfluorobutanesulfonate		Emulsion stabilizer; Flame retardant	True	False
+characteristic.19823	2699	72	37					0.02667654686921082				False	False
+characteristic.22572	1762	70	41	Perfluoro-3-methoxypropanoic acid	DTXSID70191136	Perfluoro-3-methoxypropanoic acid	377-73-1	0.039727582292849034		470.0		False	True
+parameter.PFODA_A	13501	66	18	PERFLUOROOCTADECANOIC ACID	DTXSID1066071		16517-11-6	0.004888526775794386	Perfluorooctadecanoic acid		Emulsion stabilizer	True	False
+characteristic.6680	1863	66	49					0.03542673107890499				False	False
+characteristic.19579	942	65	31					0.06900212314225053				False	False
+parameter.ADONA_A	16394	51	26	4,8-DIOXA-3H-PERFLUORONONANOIC ACID	DTXSID40881350	4,8-Dioxa-3H-perfluorononanoic acid	919005-14-4	0.0031108942295961935				False	False
+parameter.PFDS	1001	48	23	PERFLUORODECANE SULFONATE			126105-34-8	0.04795204795204795	Perfluorodecanesulfonate		Emulsion stabilizer; Flame retardant	True	False
+parameter.N-EtFOSE	874	47	18	N-ETHYL PERFLUOROOCTANE SULFONAMIDOETHANOL	DTXSID6027426	N-Ethyl-N-(2-hydroxyethyl)perfluorooctane sulfonamide	1691-99-2	0.05377574370709382		505.0		False	True
+characteristic.8095	942	45	19	Perfluoroheptanesulfonate	DTXSID8059920	Perfluoroheptanesulfonic acid	146689-46-5	0.04777070063694268				False	False
+characteristic.64488	60	43	14	2H-Perfluoropentanoic acid	DTXSID601035165			0.7166666666666667				False	False
+parameter.7-3_FTC_A	643	41	10	7:3 FLUOROTELOMER CARBOXYLIC ACID	DTXSID90382620	3-(Perfluoroheptyl)propanoic acid	812-70-4	0.06376360808709176		472.0		False	True
+characteristic.17614	513	41	26	10:2 Fluorotelomer sulfonic acid	DTXSID50892578		120226-60-0	0.07992202729044834				False	False
+characteristic.6681	1751	37	16					0.0211307824100514				False	False
+characteristic.9368	2284	36	14					0.01576182136602452				False	False
+characteristic.8097	975	31	20	Perfluoropentanesulfonate	DTXSID8062600	Perfluoropentanesulfonic acid	175905-36-9	0.031794871794871796				False	False
+characteristic.22803	1882	30	17					0.015940488841657812				False	False
+parameter.PFBA	504	30	15	PERFLUOROBUTANOATE	DTXSID80892480		45048-62-2	0.05952380952380952				False	False
+parameter.PFHPS	327	28	13	PERFLUOROHEPTANE SULFONATE	DTXSID20892505		146689-46-5	0.0856269113149847				False	False
+parameter.PFPEA	497	25	12	PERFLUOROPENTANOATE	DTXSID00892487		45167-47-3	0.05030181086519115				False	False
+parameter.N-MEFOSA	1709	24	5	N-METHYL PERFLUOROOCTANE SULFONAMIDE	DTXSID1067629	N-Methylperfluorooctanesulfonamide	31506-32-8	0.014043300175541252	N-Methylperfluorooctanesulfonamide	497.0	Emulsion stabilizer; Flame retardant	True	True
+characteristic.8173	26	24	1	Sodium perfluoro-1-hexane[18O2]sulfonate				0.9230769230769231				False	False
+characteristic.8168	26	24	1	Perfluoro[1,2-13C2]hexanoic acid	DTXSID901028086			0.9230769230769231				False	False
+characteristic.8169	26	24	1	Perfluoro[1,2-13C2]tetradecanoic acid	DTXSID301028088			0.9230769230769231				False	False
+parameter.PFOS_A_BR	24	24	3	PERFLUOROOCTANE SULFONIC ACID-BRANCHED				1.0				False	False
+characteristic.8170	26	24	1	Perfluoro[1,2-13C2]undecanoic acid			960315-51-9	0.9230769230769231				False	False
+parameter.HFPO-DA_A	16709	22	6	HEXAFLUOROPROPYLENE OXIDE DIMER ACID	DTXSID70880215	Perfluoro-2-methyl-3-oxahexanoic acid	13252-13-6	0.0013166556945358788		506.0		False	True
+characteristic.19256	1321	21	8	Decanoic acid, 4,4,5,5,6,6,7,7,8,8,9,9,10,10,10-pentadecafluoro-	DTXSID90382620	3-(Perfluoroheptyl)propanoic acid	812-70-4	0.015897047691143074		472.0		False	True
+characteristic.16351	1825	19	10	Perfluorododecanesulfonic acid	DTXSID20873011	Perfluorododecanesulfonic acid	79780-39-5	0.010410958904109589	Perfluorododecanesulfonic acid		Emulsion stabilizer; Flame retardant	True	False
+characteristic.8091	2184	17	5	Hexafluoropropylene oxide dimer acid	DTXSID70880215	Perfluoro-2-methyl-3-oxahexanoic acid	13252-13-6	0.007783882783882784		506.0		False	True
+characteristic.9611	1753	16	8					0.00912721049629207				False	False
+characteristic.22382	1762	16	4	Perfluoro(4-methoxybutanoic) acid	DTXSID60500450	Perfluoro(4-methoxybutanoic acid)	863090-89-5	0.009080590238365494		506.0		False	True
+characteristic.8096	942	16	9	Perfluorononanesulfonate	DTXSID8071356	Perfluorononanesulfonic acid	474511-07-4	0.016985138004246284	Perfluorononanesulfonate		Emulsion stabilizer; Flame retardant	True	False
+characteristic.19739	2441	14	9					0.005735354362965997				False	False
+characteristic.8084	186	14	2					0.07526881720430108				False	False
+parameter.5-3_FTC_A	643	14	14	5:3 FLUOROTELOMER CARBOXYLIC ACID	DTXSID20874028	2H,2H,3H,3H-Perfluorooctanoic acid	914637-49-3	0.02177293934681182		497.0		False	True
+characteristic.16586	41	13	1	Perfluorobutylsulfonamide	DTXSID30880251		30334-69-1	0.3170731707317073	Perfluorobutanesulfonamide		Emulsion stabilizer; Flame retardant	True	False
+characteristic.18897	2200	12	7	4,8-Dioxa-3H-perfluorononanoic acid	DTXSID40881350	4,8-Dioxa-3H-perfluorononanoic acid	919005-14-4	0.005454545454545455				False	False
+parameter.PFOS_A_L	12	12	3	PERFLUOROOCTANE SULFONIC ACID-LINEAR	DTXSID3031864	Perfluorooctanesulfonic acid		1.0				False	False
+characteristic.18785	1658	11	6					0.0066344993968636915				False	False
+parameter.FHXSA	421	10	2	PERFLUOROHEXANE SULFONAMIDE	DTXSID50469320		41997-13-1	0.023752969121140142	Perfluorohexanesulfonamide	462.0	Emulsion stabilizer; Flame retardant	True	True
+parameter.N-ETFOSA	879	9	0	N-ETHYL PERFLUOROOCTANE SULFONAMIDE	DTXSID1032646	N-Ethylperfluorooctane sulfonamide	4151-50-2	0.010238907849829351	N-Ethylperfluorooctanesulfonamide	1152.0	Emulsion stabilizer; Flame retardant	True	True
+parameter.10-2_FTS_A	53	9	2	10:2 FLUOROTELOMER SULFONIC ACID	DTXSID50892578		120226-60-0	0.16981132075471697				False	False
+characteristic.9458	2446	9	4					0.003679476696647588				False	False
+characteristic.18826	147	9	3	12-H-Perfluorododecanoate	DTXSID60892923		1696259-75-2	0.061224489795918366				False	False
+parameter.PFNS	327	8	4	PERFLUORONONANE SULFONATE	DTXSID60873010		474511-07-4	0.024464831804281346	Perfluorononanesulfonate		Emulsion stabilizer; Flame retardant	True	False
+parameter.9CL-PF3ONS_A	2147	8	6	9-CHOLOROHEXADECAFLUORO-3-OXANONANE-1-SULFONIC ACID	DTXSID80892506	Perfluoro(2-((6-chlorohexyl)oxy)ethanesulfonic acid)	756426-58-1	0.0037261294829995344				False	False
+characteristic.9409	1099	8	3					0.007279344858962694				False	False
+characteristic.8086	2700	8	3	9-Chlorohexadecafluoro-3-oxanone-1-sulfonic acid	DTXSID80892506	Perfluoro(2-((6-chlorohexyl)oxy)ethanesulfonic acid)	756426-58-1	0.002962962962962963				False	False
+characteristic.21871	1762	7	2	Perfluoro(2-ethoxyethane)sulfonic acid	DTXSID50379814	Perfluoro-2-ethoxyethanesulfonic acid	113507-82-7	0.003972758229284903	Perfluoro-2-ethoxyethanesulfonic acid	299.0	Flame retardant	True	True
+parameter.N-MEFOSE	857	7	0	N-METHYL PERFLUOROOCTANE SULFONAMIDOETHANOL	DTXSID7027831	N-Methyl-N-(2-hydroxyethyl)perfluorooctanesulfonamide	24448-09-7	0.008168028004667444		496.0		False	True
+characteristic.8083	2762	7	2	11-chloroeicosafluoro-3-oxaundecane-1-sulfonic acid	DTXSID40892507	11-Chloroperfluoro-3-oxaundecanesulfonic acid	763051-92-9	0.0025343953656770456				False	False
+parameter.FBSA	404	6	4	PERFLUOROBUTANE SULFONAMIDE	DTXSID30880251		30334-69-1	0.01485148514851485	Perfluorobutanesulfonamide		Emulsion stabilizer; Flame retardant	True	False
+parameter.PFPES	347	6	3	PERFLUOROPENTANE SULFONATE	DTXSID70892479		175905-36-9	0.01729106628242075				False	False
+parameter.PFOA_A_L	12	6	3	PERFLUOROOCTANOIC ACID-LINEAR	DTXSID8031865	Perfluorooctanoic acid		0.5				False	False
+parameter.3-3_FTC_A	631	5	5	3:3 FLUOROTELOMER CARBOXYLIC ACID	DTXSID00379268	3:3 Fluorotelomer carboxylic acid	356-02-5	0.00792393026941363		470.0		False	True
+parameter.TOTAL-PFC_A	8	5	1	TOTAL PERFLUOROCARBOXYLIC ACIDS				0.625				False	False
+parameter.PFMB_A	1169	4	2	PERFLUORO-4-METHOXYBUTANOIC ACID	DTXSID60500450	Perfluoro(4-methoxybutanoic acid)	863090-89-5	0.003421727972626176		506.0		False	True
+parameter.PFMP_A	1093	4	3	PERFLUORO-3-METHOXYPROPANOIC ACID	DTXSID70191136	Perfluoro-3-methoxypropanoic acid	377-73-1	0.0036596523330283625		470.0		False	True
+parameter.PFOA_A_BR	24	3	3	PERFLUOROOCTANOIC ACID-BRANCHED				0.125				False	False
+parameter.PFHXS_A_BR	3	3	3	PERFLUOROHEXANE SULFONIC ACID-BRANCHED				1.0				False	False
+parameter.PFHXS_A_L	3	3	3	PERFLUOROHEXANE SULFONIC ACID-LINEAR	DTXSID7040150	Perfluorohexanesulfonic acid		1.0				False	False
+characteristic.20082	513	3	1					0.005847953216374269				False	False
+characteristic.19577	596	3	1	2H,2H,3H,3H-Perfluorooctanoate	DTXSID20874028	2H,2H,3H,3H-Perfluorooctanoic acid	1799325-94-2	0.0050335570469798654				False	False
+parameter.PFDH_A	1170	3	1	PERFLUORO-3,6-DIOXAHEPTANOIC ACID	DTXSID30382063	Perfluoro-3,6-dioxaheptanoic acid	151772-58-6	0.002564102564102564		506.0		False	True
+characteristic.19556	942	3	2					0.0031847133757961785				False	False
+parameter.11CL-PF3OUDS_A	2315	2	0	11-CHLOROEICOSAFLUORO-3-OXAUNDECANE-1-SULFONIC ACID	DTXSID40892507	11-Chloroperfluoro-3-oxaundecanesulfonic acid	763051-92-9	0.0008639308855291577				False	False
+parameter.N-MeFOSAA_A_L	3	2	2	N-METHYL PERFLUOROOCTANE SULFONAMIDOACETIC ACID-LINEAR	DTXSID10624392	2-(N-Methylperfluorooctanesulfonamido)acetic acid		0.6666666666666666				False	False
+parameter.N-EtFOSAA_A_L	3	2	2	N-ETHYL PERFLUOROOCTANE SULFONAMIDOACETIC ACID-LINEAR	DTXSID5062760	2-(N-Ethylperfluorooctanesulfonamido)acetic acid		0.6666666666666666				False	False
+parameter.N-EtFOSAA_A_BR	3	2	2	N-ETHYL PERFLUOROOCTANE SULFONAMIDOACETIC ACID-BRANCHED				0.6666666666666666				False	False
+parameter.PFEES_A	1169	2	1	PERFLUORO(2-ETHOXYETHANE)SULFONIC ACID	DTXSID50379814	Perfluoro-2-ethoxyethanesulfonic acid	113507-82-7	0.001710863986313088	Perfluoro-2-ethoxyethanesulfonic acid	299.0	Flame retardant	True	True
+characteristic.9361	182	1	1					0.005494505494505495				False	False
+parameter.N-MeFOSAA_A_BR	3	1	1	N-METHYL PERFLUOROOCTANE SULFONAMIDOACETIC ACID-BRANCHED				0.3333333333333333				False	False
+parameter.9CL-PF3ONS	505	1	0	9-CHOLOROHEXADECAFLUORO-3-OXANONANE-1-SULFONATE	DTXSID101348698			0.0019801980198019802				False	False
+parameter.8-2_FTC_A	12	0	0	8:2 FLUOROTELOMER CARBOXYLIC ACID			27854-31-5	0.0	2-(Perfluorooctyl)ethanoic acid		Emulsion stabilizer	True	False
+parameter.PFECHS	12	0	0	PERFLUOROETHYLCYCLOHEXANE SULFONATE			133201-07-7	0.0				False	False
+parameter.6-2_FTC_A	12	0	0	6:2 FLUOROTELOMER CARBOXYLIC ACID			53826-12-3	0.0	2-(Perfluorohexyl)ethanoic acid		Emulsion stabilizer	True	False
+parameter.6-2_FTUC_A	12	0	0	6:2 FLUOROTELOMER UNSATURATED CARBOXYLIC ACID			70887-88-6	0.0				False	False
+parameter.PFDOS_A	234	0	0	PERFLUORODODECANE SULFONIC ACID	DTXSID20873011	Perfluorododecanesulfonic acid	79780-39-5	0.0	Perfluorododecanesulfonic acid		Emulsion stabilizer; Flame retardant	True	False
+parameter.8-2_FTUC_A	12	0	0	8:2 FLUOROTELOMER UNSATURATED CARBOXYLIC ACID			70887-84-2	0.0				False	False
+parameter.PFEC_A	12	0	0	PERFLUORO-4-ISOPROPOXYBUTANOIC ACID			801212-59-9	0.0		470.0		False	True
+parameter.PF05DOD_A	12	0	0	PERFLUORO-3,5,7,9,11-PENTAOXADODECANOIC ACID			39492-91-6	0.0	Perfluoro-3,5,7,9,11-pentaoxadodecanoic acid		Antimicrobial	True	False
+parameter.PFRPS_A	3	0	0	PERFLUOROPROPANE SULFONIC ACID	DTXSID30870531		423-41-6	0.0	Perfluoropropanesulfonic acid		Flame retardant	True	False
+parameter.PFECHS_A	3	0	0	ACETOHYDROXAMIC ACID	DTXSID7022546		646-83-3	0.0				False	False
+parameter.PFESA_A_BP2	12	0	0	7H-PERFLUORO-4-METHYL-3,6-DIOXAOCTANESULFONIC ACID			749836-20-2	0.0				False	False
+characteristic.16771	596	0	0	3:3 Fluorotelomer carboxylate, ion(1-)	DTXSID00379268	3:3 Fluorotelomer carboxylic acid	1169706-83-5	0.0				False	False
+characteristic.8094	942	0	0	Perfluorododecanesulfonate	DTXSID20873011	Perfluorododecanesulfonic acid	343629-43-6	0.0				False	False
+characteristic.18587	39	0	0					0.0				False	False
+parameter.4-2_FTS	342	0	0	4:2 FLUOROTELOMER SULFONATE	DTXSID90891565		414911-30-1	0.0				False	False
+characteristic.9388	122	0	0					0.0				False	False
+parameter.ADONA	350	0	0	4,8-DIOXA-3H-PERFLUORONONANOATE	DTXSID80893154		958445-44-8	0.0				False	False
+characteristic.9410	89	0	0					0.0				False	False
+characteristic.19926	67	0	0					0.0				False	False
+characteristic.18191	62	0	0	Potassium 9-chlorohexadecafluoro-3-oxanonane-1-sulfonate			73606-19-6	0.0	Potassium 9-chlorohexadecafluoro-3-oxanonane-1-sulfonate		Flame retardant	True	False
+characteristic.2180	433	0	0	CFC-114	DTXSID8026434		76-14-2	0.0	1,2-Dichloro-1,1,2,2-tetrafluoroethane		Foamer	True	False
+characteristic.17683	35	0	0	Potassium 11-chloroeicosafluoro-3-oxaundecane-1-sulfonate			83329-89-9	0.0				False	False
+characteristic.18912	725	0	0	Octanoic acid, 4,4,5,5,6,6,7,7,8,8,8-undecafluoro-	DTXSID20874028	2H,2H,3H,3H-Perfluorooctanoic acid	914637-49-3	0.0		497.0		False	True
+characteristic.9007	30	0	0	9-Chlorohexadecafluoro-3-oxanonane-1-sulfonate			756426-58-1	0.0				False	False
+characteristic.9235	30	0	0	N-Methylperfluorooctanesulfonamidoacetate				0.0				False	False
+characteristic.9450	30	0	0	N-Ethylperfluorooctanesulfonamidoacetate				0.0				False	False
+characteristic.19594	28	0	0	1-Propanesulfonic acid, 1,1,2,2,3,3,3-heptafluoro-	DTXSID30870531		423-41-6	0.0	Perfluoropropanesulfonic acid		Flame retardant	True	False
+parameter.PFDOS	546	0	0	PERFLUORODODECANE SULFONATE	DTXSID00904574		343629-43-6	0.0				False	False
+characteristic.8087	592	0	0	Ammonium 4,8-dioxa-3H-perfluorononanoate	DTXSID00874026		958445-44-8	0.0				False	False
+parameter.11CL-PF3OUDS	327	0	0	11-CHLOROEICOSAFLUORO-3-OXAUNDECANE-1-SULFONATE	DTXSID401348697			0.0				False	False
+characteristic.19505	975	0	0					0.0				False	False

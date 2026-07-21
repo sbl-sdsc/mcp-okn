@@ -1,0 +1,138 @@
+interest,interestLabel,interestClass,nFacilities
+Statemaster,STATE MASTER,FacilitySiteIdentification,4650
+Unspecifieduniverse,UNSPECIFIED UNIVERSE,HazardousWasteProgram,2256
+Hazardouswasteprogram,HAZARDOUS WASTE PROGRAM,HazardousWasteProgram,2239
+Enforcement-Complianceactivity,ENFORCEMENT/COMPLIANCE ACTIVITY,EnforcementInterest,1199
+Enforcement-Complianceactivity,ENFORCEMENT/COMPLIANCE ACTIVITY,LegalEnforcementActivities,1199
+Undergroundstoragetankprogram,UNDERGROUND STORAGE TANK PROGRAM,UndergroundStorageTankProgram,1116
+CESQG,CESQG,HazardousWasteProgram,806
+VSQG,VSQG,HazardousWasteProgram,773
+Icis-Npdesnon-Major,ICIS-NPDES NON-MAJOR,WasteWaterProgram,694
+Icis-Npdesnon-Major,ICIS-NPDES NON-MAJOR,PermitInterest,694
+Airprogram,AIR PROGRAM,AirProgram,553
+Airminor,AIR MINOR,AirProgram,552
+Leakingstoragetank,LEAKING STORAGE TANK,UndergroundStorageTankProgram,460
+Brownfieldsproperty,BROWNFIELDS PROPERTY,RemediationRedevelopmentProgram,378
+Brownfieldsproperty,BROWNFIELDS PROPERTY,SiteInterest,378
+Solidwasteprogram,SOLID WASTE PROGRAM,SiteInterest,357
+Solidwasteprogram,SOLID WASTE PROGRAM,SolidWasteProgram,357
+Formalenforcementaction,FORMAL ENFORCEMENT ACTION,EnforcementInterest,339
+Formalenforcementaction,FORMAL ENFORCEMENT ACTION,LegalEnforcementActivities,339
+Npdespermit,NPDES PERMIT,PermitInterest,321
+Npdespermit,NPDES PERMIT,WasteWaterProgram,321
+SQG,SQG,HazardousWasteProgram,319
+Trireporter,TRI REPORTER,ChemicalReleaseProgram,309
+Stormwaterindustrial,STORM WATER INDUSTRIAL,WasteWaterProgram,272
+Stormwaterindustrial,STORM WATER INDUSTRIAL,PermitInterest,272
+Oshaestablishment,OSHA ESTABLISHMENT,HealthSafetyProgram,259
+Hazardouswastebiennialreporter,HAZARDOUS WASTE BIENNIAL REPORTER,HazardousWasteProgram,245
+Complianceactivity,COMPLIANCE ACTIVITY,LegalEnforcementActivities,243
+Complianceactivity,COMPLIANCE ACTIVITY,ComplianceInterest,243
+Infectiouswaste,INFECTIOUS WASTE,HazardousWasteProgram,238
+Airemissionsclassificationunknown,AIR EMISSIONS CLASSIFICATION UNKNOWN,,228
+Refusedisposal,REFUSE DISPOSAL,SolidWasteProgram,215
+Refusedisposal,REFUSE DISPOSAL,PermitInterest,215
+Airstationarypointsource,AIR STATIONARY POINT SOURCE,AirProgram,199
+EPCRA,EPCRA,RiskInterest,197
+EPCRA,EPCRA,ChemicalStorageProgram,197
+Npdesstormwaterpermit,NPDES STORMWATER PERMIT,WasteWaterProgram,185
+Npdesstormwaterpermit,NPDES STORMWATER PERMIT,PermitInterest,185
+Airsyntheticminor,AIR SYNTHETIC MINOR,AirProgram,160
+Airmonitoringsite,AIR MONITORING SITE,SiteInterest,152
+Airmonitoringsite,AIR MONITORING SITE,AirProgram,152
+Criteriaandhazardousairpollutantinventory,CRITERIA AND HAZARDOUS AIR POLLUTANT INVENTORY,AirProgram,139
+Drinkingwaterprogram,DRINKING WATER PROGRAM,ReportingInterest,137
+Drinkingwaterprogram,DRINKING WATER PROGRAM,DrinkingWaterProgram,137
+Potw,Publicly Owned Treatment Works,,122
+None,,,117
+Wastewaterprogram,WASTEWATER PROGRAM,WasteWaterProgram,111
+Icis-Npdesmajor,ICIS-NPDES MAJOR,PermitInterest,108
+Icis-Npdesmajor,ICIS-NPDES MAJOR,WasteWaterProgram,108
+LQG,LQG,HazardousWasteProgram,96
+Watertreatmentplant,WATER TREATMENT PLANT,DrinkingWaterProgram,96
+Airmajor,AIR MAJOR,AirProgram,96
+Biosolids,BIOSOLIDS,WasteWaterProgram,71
+Superfund-Non-Npl,SUPERFUND (NON-NPL),SiteInterest,68
+Superfund-Non-Npl,SUPERFUND (NON-NPL),RemediationRedevelopmentProgram,68
+Electricgenerator,ELECTRIC GENERATOR,AirProgram,63
+Brownfieldssite,BROWNFIELDS SITE,RemediationRedevelopmentProgram,60
+Brownfieldssite,BROWNFIELDS SITE,SiteInterest,60
+Icis-Npdesunpermitted,ICIS-NPDES UNPERMITTED,WasteWaterProgram,60
+Wastewatertreatmentfacility,,,53
+Transporter,TRANSPORTER,HazardousWasteProgram,50
+Transporter,TRANSPORTER,RegistryInterest,50
+Complianceandemissionsreporting,COMPLIANCE AND EMISSIONS REPORTING,EnforcementInterest,49
+Complianceandemissionsreporting,COMPLIANCE AND EMISSIONS REPORTING,ReportingInterest,49
+Complianceandemissionsreporting,COMPLIANCE AND EMISSIONS REPORTING,AirProgram,49
+Stormwaterconstruction,STORM WATER CONSTRUCTION,WasteWaterProgram,48
+Stormwaterconstruction,STORM WATER CONSTRUCTION,PermitInterest,48
+Scraptiremanagement,SCRAP TIRE MANAGEMENT,SolidWasteProgram,47
+Tscasubmitter,TSCA SUBMITTER,ChemicalReleaseProgram,46
+Greenhousegasreporter,GREENHOUSE GAS REPORTER,AirProgram,38
+Groundwaterprogram,GROUND WATER PROGRAM,PermitInterest,38
+Groundwaterprogram,GROUND WATER PROGRAM,GroundWaterProgram,38
+Greenhousegasreporter,GREENHOUSE GAS REPORTER,ReportingInterest,38
+Npdespretreatmentprogram,NPDES PRETREATMENT PROGRAM,WasteWaterProgram,36
+Pesticides-General,PESTICIDES - GENERAL,PesticidesProgram,36
+Combinedseweroverflow,COMBINED SEWER OVERFLOW,WasteWaterProgram,33
+Pesticideproducer,PESTICIDE PRODUCER,PesticidesProgram,33
+Superfund,SUPERFUND,SiteInterest,29
+Superfund,SUPERFUND,RemediationRedevelopmentProgram,29
+Releaseassessment,RELEASE ASSESSMENT,ChemicalReleaseProgram,27
+Statecleanupsite,STATE CLEANUP SITE,RemediationRedevelopmentProgram,27
+Otherhazardouswasteactivities,OTHER HAZARDOUS WASTE ACTIVITIES,HazardousWasteProgram,26
+Criteriaairpollutantmajor,CRITERIA AIR POLLUTANT MAJOR,AirProgram,23
+Electricpowergenerator-Waterbased,ELECTRIC POWER GENERATOR (WATER BASED),AirProgram,21
+Asbestosabatementprogram,ASBESTOS ABATEMENT PROGRAM,AirProgram,15
+Ethanolfacility,ETHANOL FACILITY,AirProgram,15
+Landfillgas-Lfgrecovery,LANDFILL GAS (LFG) RECOVERY,AirProgram,14
+Icis-Npdesminor,ICIS-NPDES MINOR,WasteWaterProgram,12
+Icis-Npdesminor,ICIS-NPDES MINOR,PermitInterest,12
+Ethanolfacility-Gasolineanddieselproducers,ETHANOL FACILITY/GASOLINE AND DIESEL PRODUCERS,AirProgram,12
+Superfundnpl,SUPERFUND NPL,RemediationRedevelopmentProgram,11
+Superfundnpl,SUPERFUND NPL,SiteInterest,11
+Hazardousandcriteriaairpollutantmajor,HAZARDOUS AND CRITERIA AIR POLLUTANT MAJOR,AirProgram,11
+Facility,FACILITY,FacilitySiteIdentification,10
+Electricpowergenerator-Gasbased,ELECTRIC POWER GENERATOR (GAS BASED),AirProgram,10
+Gasolineanddieselproducers,GASOLINE AND DIESEL PRODUCERS,AirProgram,10
+Gasolineanddieselproducers,GASOLINE AND DIESEL PRODUCERS,RegistryInterest,10
+Hazardousairpollutantmajor,HAZARDOUS AIR POLLUTANT MAJOR,AirProgram,10
+Voluntarycleanupprogram,VOLUNTARY CLEAN UP PROGRAM,RemediationRedevelopmentProgram,9
+Riskandtechnologyreview,,,9
+Electricpowergenerator-Biomassbased,ELECTRIC POWER GENERATOR (BIOMASS BASED),AirProgram,8
+Usedoilprogram,USED OIL PROGRAM,HazardousWasteProgram,6
+TSD,TSD,HazardousWasteProgram,6
+Phaseiims4,PHASE II MS4,PermitInterest,5
+Leakingundergroundstoragetank-Arra,LEAKING UNDERGROUND STORAGE TANK - ARRA,UndergroundStorageTankProgram,5
+Drinkingwatersystem,DRINKING WATER SYSTEM,DrinkingWaterProgram,4
+Drinkingwatersystem,DRINKING WATER SYSTEM,ReportingInterest,4
+Sewagesludgeutilization,SEWAGE SLUDGE UTILIZATION,SolidWasteProgram,3
+Confinedanimalfeedingoperation,,,3
+Air-Other,AIR - OTHER,,3
+Non-Communitywatersystem,NON-COMMUNITY WATER SYSTEM,DrinkingWaterProgram,2
+Transferfacility,TRANSFER FACILITY,HazardousWasteProgram,2
+Brownfieldsfacility,,,2
+Animalfeedingoperation,ANIMAL FEEDING OPERATION,AnimalOperation,2
+X-Rayequipment,X-RAY EQUIPMENT,RadiationProtectionProgram,1
+Aces,,,1
+Electricpowergenerator-Windbased,ELECTRIC POWER GENERATOR (WIND BASED),AirProgram,1
+Air-Notapplicable,AIR - NOT APPLICABLE,,1
+BRAC,BRAC,RemediationRedevelopmentProgram,1
+Complianceassistance,COMPLIANCE ASSISTANCE,AssistanceSupportProgram,1
+Complianceassistance,COMPLIANCE ASSISTANCE,ComplianceInterest,1
+Compostingfacility,,,1
+Damsite,DAM SITE,SiteInterest,1
+Damsite,DAM SITE,WaterResourcesProgram,1
+E-Waste,E-WASTE,SolidWasteProgram,1
+Electricpowergenerator-Oilbased,ELECTRIC POWER GENERATOR (OIL BASED),AirProgram,1
+Electricpowergenerator-Otherfossilfuelbased,ELECTRIC POWER GENERATOR (OTHER FOSSIL FUEL BASED),AirProgram,1
+Siteinvestigation,,,1
+Hazardouswaste,,,1
+Livestockwastecontrol,LIVESTOCK WASTE CONTROL,AnimalOperation,1
+Mineoperatingpermit,MINE OPERATING PERMIT,PermitInterest,1
+Mineoperatingpermit,MINE OPERATING PERMIT,SolidWasteProgram,1
+Multi-Permittedsite,MULTI-PERMITTED SITE,,1
+Notinauniverse,NOT IN A UNIVERSE,HazardousWasteProgram,1
+Notinauniverse,NOT IN A UNIVERSE,RegistryInterest,1
+Oaqstationarysourceid,,,1
+Radneshaps,RAD NESHAPS,RadiationProtectionProgram,1

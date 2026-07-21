@@ -1,0 +1,66 @@
+industryGroup	nFacilities	nCells	window	priorClass
+Airport operations (AFFF fire training)	11	11	same-cell	High
+Basic chemical manufacturing	13	12	same-cell	High
+Chemical & allied products wholesalers	10	8	same-cell	Moderate
+Electric power generation	6	5	same-cell	Moderate
+Fabric mills	5	5	same-cell	High
+Leather & hide tanning and finishing	5	5	same-cell	High
+Metal coating & electroplating	27	24	same-cell	High
+National security / military installation (AFFF)	8	7	same-cell	High
+No NAICS on record	113	84	same-cell	Low
+Other EPA PFAS-flagged industry	78	66	same-cell	Low
+Other chemical product manufacturing	15	13	same-cell	High
+Other electrical equipment manufacturing	6	4	same-cell	Moderate
+Other fabricated metal product manufacturing	16	15	same-cell	Moderate
+Other miscellaneous manufacturing	6	5	same-cell	Moderate
+Other textile product mills	3	3	same-cell	High
+Paint, coating & adhesive manufacturing	8	7	same-cell	High
+Paper coating & laminating	4	4	same-cell	High
+Petroleum & coal products manufacturing	7	6	same-cell	Moderate
+Petroleum bulk stations & terminals	19	14	same-cell	Moderate
+Plastics & rubber products manufacturing	18	18	same-cell	Moderate
+Plastics material & resin manufacturing	11	10	same-cell	High
+Printing & related support activities	13	10	same-cell	Moderate
+Pulp, paper & paperboard mills	17	15	same-cell	High
+Remediation & other waste services	5	5	same-cell	Moderate
+Semiconductor & electronic component manufacturing	15	13	same-cell	Moderate
+Sewage treatment (effluent & biosolids)	48	47	same-cell	High
+Textile & fabric finishing / coating	6	4	same-cell	High
+Textile fibre & yarn mills	1	1	same-cell	High
+Textile furnishings mills	1	1	same-cell	High
+Waste collection	3	3	same-cell	High
+Waste treatment & disposal (landfill, hazardous waste)	34	22	same-cell	High
+Water supply systems	4	4	same-cell	Moderate
+Airport operations (AFFF fire training)	76	89	1-ring	High
+Basic chemical manufacturing	60	55	1-ring	High
+Chemical & allied products wholesalers	28	28	1-ring	Moderate
+Electric power generation	12	17	1-ring	Moderate
+Fabric mills	13	21	1-ring	High
+Instrument manufacturing	11	12	1-ring	Moderate
+Leather & hide tanning and finishing	13	18	1-ring	High
+Metal coating & electroplating	149	122	1-ring	High
+National security / military installation (AFFF)	29	44	1-ring	High
+Other EPA PFAS-flagged industry	349	285	1-ring	Low
+Other chemical product manufacturing	71	69	1-ring	High
+Other electrical equipment manufacturing	27	37	1-ring	Moderate
+Other fabricated metal product manufacturing	41	52	1-ring	Moderate
+Other miscellaneous manufacturing	26	26	1-ring	Moderate
+Other textile product mills	9	12	1-ring	High
+Paint, coating & adhesive manufacturing	45	46	1-ring	High
+Paper coating & laminating	20	21	1-ring	High
+Petroleum & coal products manufacturing	30	39	1-ring	Moderate
+Petroleum bulk stations & terminals	82	59	1-ring	Moderate
+Petroleum merchant wholesalers	2	2	1-ring	Moderate
+Plastics & rubber products manufacturing	94	94	1-ring	Moderate
+Plastics material & resin manufacturing	36	34	1-ring	High
+Printing & related support activities	83	89	1-ring	Moderate
+Pulp, paper & paperboard mills	44	47	1-ring	High
+Remediation & other waste services	18	26	1-ring	Moderate
+Semiconductor & electronic component manufacturing	79	76	1-ring	Moderate
+Sewage treatment (effluent & biosolids)	91	121	1-ring	High
+Textile & fabric finishing / coating	16	16	1-ring	High
+Textile fibre & yarn mills	3	4	1-ring	High
+Textile furnishings mills	3	7	1-ring	High
+Waste collection	25	31	1-ring	High
+Waste treatment & disposal (landfill, hazardous waste)	93	86	1-ring	High
+Water supply systems	4	5	1-ring	Moderate

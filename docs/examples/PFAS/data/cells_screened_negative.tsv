@@ -1,0 +1,436 @@
+cid	lat	lon	nPtsGeo	layers	nPts	nObs	nAnalytes	nDet	nDetAnalytes	maxNgL	nFac	nPfasFac	nRingFac	nRingPfasFac	stateFips	stateName	countyFips	countyName	nCounties	sameTopWeight	sameTopIndustry	sameTopNaics	sameTopFacilityName	ringTopWeight	ringTopIndustry	ringTopNaics	ringTopFacilityName	c_proximity	detFreq	c_detFreq	c_detIntensity	c_analyteBreadth	c_industryPrior	score	scoreComponentsUsed	tier	window	sourceList	nSources
+5526677862528057344	43.4023375	-70.706574	2	EGAD	2	12	4	0	0		14	2	24	4	23	Maine	23031	York County	1	1.0	Plastics material & resin manufacturing	325211	ROEHM AMERICA LLC - SANFORD	1.0	Fabric mills	313210	US FELT MANUFACTURING CO INC	0.6131471927654584	0.0	0.0		0.0	1.0		4	N	same-cell	sawgraph;spatialkg;fiokg	3
+5960154858580344832	46.381389	-94.178889	1	WQP	1	13	13	0	0		12	2	31	0	27	Minnesota	27035	Crow Wing County	1	1.0	Pulp, paper & paperboard mills	322120	WAUSAU PAPER MILLS LLC					0.6131471927654584	0.0	0.0		0.0	1.0		4	N	same-cell	sawgraph;spatialkg;fiokg	3
+5525435964144484352	44.807527	-68.839865	1	EGAD	1	4	4	0	0		2	1	19	3	23	Maine	23019	Penobscot County	1	1.0	National security / military installation (AFFF)	928110	U.S. ARMY MAINE NATIONAL GUARD BANGOR TRAINING SITE RANGE	1.0	National security / military installation (AFFF)	928110	AIR NATIONAL GUARD 101ST AIR REFUEL WING	0.3868528072345416	0.0	0.0		0.0	1.0		4	N	same-cell	sawgraph;spatialkg;fiokg	3
+9797534380359417856	44.945153	-93.047766	2	WQP	2	14	7	0	0		16	1	100	2	27	Minnesota	27123	Ramsey County	1	1.0	Basic chemical manufacturing	325180	HAWKINS CHEMICAL - NO OIL STORED	1.0	Airport operations (AFFF fire training)	488119	ST PAUL DOWNTOWN HOLMAN FLD	0.3868528072345416	0.0	0.0		0.0	1.0		4	N	same-cell	sawgraph;spatialkg;fiokg	3
+5960564461021429760	47.467732	-94.876947	1	WQP	1	13	13	0	0		90	1	74	1	27	Minnesota	27007	Beltrami County	1	1.0	Sewage treatment (effluent & biosolids)	221320	BEMIDJI WWTP					0.3868528072345416	0.0	0.0		0.0	1.0		4	N	same-cell	sawgraph;spatialkg;fiokg	3
+9740502677866938368	34.7842	-112.442689	1	WQP	1	76	37	0	0		2	1	36	1	04	Arizona	04025	Yavapai County	1	1.0	Metal coating & electroplating	332813	FRONTIER TECHNI-KOTE INC	1.0	Metal coating & electroplating	332813	CHINO VALLEY SITE	0.3868528072345416	0.0	0.0		0.0	1.0		4	N	same-cell	sawgraph;spatialkg;fiokg	3
+5955987022316306432	47.74764	-90.324037	1	WQP	1	27	27	0	0		4	1	85	0	27	Minnesota	27031	Cook County	1									0.3868528072345416	0.0	0.0		0.0			3	N	same-cell	sawgraph;spatialkg;fiokg	3
+5959040572265070592	45.21765	-92.8893	1	WQP	1	2	2	0	0		2	1	9	0	27	Minnesota	27163	Washington County	1	1.0	Sewage treatment (effluent & biosolids)	221320	BLISS COLLECTOR WWTP					0.3868528072345416	0.0	0.0		0.0	1.0		4	N	same-cell	sawgraph;spatialkg;fiokg	3
+9739898496227475456	33.461025	-112.060818	2	WQP	2	76	38	0	0		51	0	392	9	04	Arizona	04013	Maricopa County	1					1.0	Airport operations (AFFF fire training)	488119	GOOD SAMARITAN MEDICAL CENTER	0.5761515406734765	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5959171242350084096	45.10461	-93.2785	1	WQP	1	13	13	0	0		4	0	278	8	27	Minnesota	27003	Anoka County	2					1.0	Metal coating & electroplating	332812	ELO ENGINEERING	0.5497882919895914	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9716077576811708416	32.240711	-110.97223066666668	6	WQP	6	12	1	0	0		34	0	297	6	04	Arizona	04019	Pima County	1					1.0	Waste treatment & disposal (landfill, hazardous waste)	562212	CATALINA MSW LANDFILL	0.48690453777434933	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5960157847877582848	46.362597	-94.192657	1	WQP	1	40	40	0	0		26	0	186	4	27	Minnesota	27035	Crow Wing County	1					1.0	Metal coating & electroplating	332813	ACROMETAL - BRAINERD	0.4027126448827438	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9935251132316123136	42.84932	-72.55309	1	WQP	1	13	13	0	0		4	0	127	4	33	New Hampshire	33005	Cheshire County	2					1.0	Sewage treatment (effluent & biosolids)	221320	BRATTLEBORO WASTEWATER TREATMENT FACILITY	0.4027126448827438	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9796962153276637184	44.34015	-93.9394	1	WQP	1	13	13	0	0		1	0	79	4	27	Minnesota	27079	Le Sueur County	2					1.0	Sewage treatment (effluent & biosolids)	221320	SAINT PETER WWTP	0.4027126448827438	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5959056927500533760	44.963152	-92.953835	1	WQP	1	7	7	0	0		28	0	92	3	27	Minnesota	27163	Washington County	1					0.6	Printing & related support activities	323111	RR DONNELLEY	0.34687779158146537	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5526598251014258688	44.097779	-70.23262	1	EGAD	1	28	7	0	0		22	0	244	3	23	Maine	23001	Androscoggin County	1					1.0	Textile & fabric finishing / coating	313311	W. S. LIBBY COMPANY	0.34687779158146537	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5525465822757126144	44.446833	-68.890217	4	WQP	4	156	13	0	0		0	0	8	3	23	Maine	23027	Waldo County	1					0.6	Petroleum bulk stations & terminals	424710	SPRAGUE ENERGY - SEARSPORT TERMINAL	0.34687779158146537	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5525465994555817984	44.4513765	-68.8885975	4	EGAD	4	52	13	0	0		0	0	11	3	23	Maine	23027	Waldo County	1					0.6	Petroleum bulk stations & terminals	424710	SPRAGUE ENERGY - SEARSPORT TERMINAL	0.34687779158146537	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9716512261861801984	32.841147	-109.692482	1	WQP	1	2	1	0	0		0	0	36	3	04	Arizona	04009	Graham County	1					1.0	Waste treatment & disposal (landfill, hazardous waste)	562212	EDEN MSW LANDFILLL	0.34687779158146537	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9785113025701740544	35.40392	-94.33819	1	WQP	1	13	13	0	0		0	0	38	3	05	Arkansas	05033	Crawford County	2					1.0	Sewage treatment (effluent & biosolids)	221320	VAN BUREN - MAIN WWTP	0.34687779158146537	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5958609735505674240	46.5405	-93.7072	1	WQP	1	13	13	0	0		30	0	99	2	27	Minnesota	27001	Aitkin County	1									0.27489414599479567	0.0	0.0		0.0			3	N	1-ring	sawgraph;spatialkg;fiokg	3
+9797535892187906048	44.919625	-92.986891	1	WQP	1	7	7	0	0		23	0	91	2	27	Minnesota	27123	Ramsey County	2					0.6	Other miscellaneous manufacturing	339999	AVEKA INC	0.27489414599479567	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5529497353939058688	46.873179	-68.015068	1	EGAD	1	34	17	0	0		7	0	34	2	23	Maine	23003	Aroostook County	1					0.6	Other electrical equipment manufacturing	335999	FIRST TECHNOLOGY	0.27489414599479567	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5959057271097917440	44.9961716	-92.984566	5	WQP	5	10	2	0	0		5	0	65	2	27	Minnesota	27123	Ramsey County	2					1.0	Other chemical product manufacturing	325998	3M PUMPOUT SYSTEM	0.27489414599479567	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5526559596308594688	44.134623	-70.486088	1	EGAD	1	17	17	0	0		0	0	10	2	23	Maine	23017	Oxford County	1					1.0	Fabric mills	313210	ROBINSON MANUFACTURING COMPANY	0.27489414599479567	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5526604882443763712	44.0376055	-70.107091	2	EGAD	2	12	6	0	0		0	0	8	2	23	Maine	23001	Androscoggin County	1					0.6	Printing & related support activities	323111	THE DINGLEY PRESS, INC. - LISBON	0.27489414599479567	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5527502049572290560	44.31823	-72.72694	1	WQP	1	13	13	0	0		0	0	4	2	50	Vermont	50023	Washington County	1					1.0	Waste treatment & disposal (landfill, hazardous waste)	562212	MORETOWN LANDFILL INC.	0.27489414599479567	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9935712892840050688	43.1153515	-70.79820575	4	EGAD	4	52	13	0	0		0	0	33	2	23	Maine	23031	York County	2					0.6	Petroleum bulk stations & terminals	424710	SEA-3	0.27489414599479567	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9741189357238222848	34.90073278571429	-110.15910071428571	14	WQP	14	46	1	0	0		33	0	54	1	04	Arizona	04017	Navajo County	1					0.6	Petroleum bulk stations & terminals	424710	BRADCO INC	0.25	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9281428776242118656	35.15629	-114.57068	1	WQP	1	38	38	0	0		25	0	42	1	04	Arizona	04015	Mohave County	2					1.0	Airport operations (AFFF fire training)	488119	LAUGHLIN/BULLHEAD INTER	0.25	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5526484107963400192	44.313384	-69.812375	1	EGAD	1	3	3	0	0		13	0	42	1	23	Maine	23011	Kennebec County	1					1.0	National security / military installation (AFFF)	928110	ME ARMY NATL GUARD CAMP KEYES	0.21670536049560574	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5965307307507056640	46.561806	-96.09155	1	WQP	1	40	40	0	0		12	0	54	1	27	Minnesota	27111	Otter Tail County	1					1.0	Sewage treatment (effluent & biosolids)	221320	PELICAN RAPIDS WWTP	0.21062000772931627	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9797529947953168384	44.834689	-92.997568	1	WQP	1	7	7	0	0		6	0	75	1	27	Minnesota	27163	Washington County	1									0.17343889579073268	0.0	0.0		0.0			3	N	1-ring	sawgraph;spatialkg;fiokg	3
+9797530051032383488	44.847331	-92.977743	1	WQP	1	7	7	0	0		6	0	73	1	27	Minnesota	27163	Washington County	1					0.6	Petroleum & coal products manufacturing	324110	MARATHON SAINT PAUL PARK REFINERY	0.17343889579073268	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5573318286784856064	47.963683	-89.683683	1	WQP	1	15	3	0	0		5	0	10	1	27	Minnesota	27031	Cook County	1					1.0	Sewage treatment (effluent & biosolids)	221320	GRAND PORTAGE WASTEWATER STABILIZATION LAGOON	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5525963695366078464	44.9096845	-69.26567299999999	2	EGAD	2	70	35	0	0		3	0	7	1	23	Maine	23019	Penobscot County	1					1.0	Fabric mills	313210	EASTLAND WOOLEN MILLS INC	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5960533640336113664	47.532095	-95.350846	1	WQP	1	40	40	0	0		3	0	3	1	27	Minnesota	27029	Clearwater County	1					1.0	Airport operations (AFFF fire training)	488119	BAGLEY MUNI	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9739901657323405312	33.468928	-112.174211	1	WQP	1	38	38	0	0		3	0	89	1	04	Arizona	04013	Maricopa County	1					0.6	Other fabricated metal product manufacturing	332999	SOUTHWEST PRODUCTS	0.17343889579073268	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9767139206043271168	44.013713	-96.32483333333332	3	WQP	3	24	3	0	0		3	0	84	1	27	Minnesota	27117	Pipestone County	1									0.17343889579073268	0.0	0.0		0.0			3	N	1-ring	sawgraph;spatialkg;fiokg	3
+9797535479871045632	44.9051415	-93.011116	2	WQP	2	14	7	0	0		3	0	33	1	27	Minnesota	27123	Ramsey County	1					1.0	Other chemical product manufacturing	325998	HAWKINS INDUSTRIAL GROUP - RED ROCK	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5526670646983000064	43.361095	-70.559142	1	EGAD	1	28	7	0	0		2	0	4	1	23	Maine	23031	York County	1					1.0	Metal coating & electroplating	332812	NORTHEAST COATING TECHNOLOGIES	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5958421684657586176	47.215072	-93.57234	1	WQP	1	80	53	0	0		2	0	7	1	27	Minnesota	27061	Itasca County	1					1.0	Sewage treatment (effluent & biosolids)	221320	GRAND RAPIDS WWTP	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9797530188471336960	44.824213	-92.983847	1	WQP	1	7	7	0	0		2	0	39	1	27	Minnesota	27163	Washington County	1					0.6	Petroleum & coal products manufacturing	324110	WESTERN REFINING TERMINALS LLC - COTTAGE GROVE	0.17343889579073268	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9797545306756218880	44.962817	-92.799472	1	WQP	1	40	40	0	0		2	0	12	1	27	Minnesota	27163	Washington County	1									0.17343889579073268	0.0	0.0		0.0			3	N	1-ring	sawgraph;spatialkg;fiokg	3
+5525220562944655360	43.8889025	-69.93814649999999	2	EGAD	2	7	4	0	0		1	0	9	1	23	Maine	23005	Cumberland County	1					1.0	National security / military installation (AFFF)	928110	US NAVY NAVAL AIR STATION BRUNSWICK 2	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5526635015934312448	43.775147	-70.499297	1	EGAD	1	28	7	0	0		1	0	3	1	23	Maine	23005	Cumberland County	1					1.0	Sewage treatment (effluent & biosolids)	221320	PORTLAND WATER DISTRICT	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5526946109005496320	44.002448	-70.965565	1	EGAD	1	34	17	0	0		1	0	13	1	23	Maine	23017	Oxford County	1									0.17343889579073268	0.0	0.0		0.0			3	N	1-ring	sawgraph;spatialkg;fiokg	3
+9742149265249009664	36.085303	-112.121498	1	WQP	1	15	3	0	0		1	0	7	1	04	Arizona	04005	Coconino County	1					0.6	Water supply systems	221310	USDOI- NPS -INDIAN GARDENS PUMP STATION	0.17343889579073268	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9767141989182078976	44.015132	-96.319882	4	WQP	4	39	3	0	0		1	0	116	1	27	Minnesota	27117	Pipestone County	1									0.17343889579073268	0.0	0.0		0.0			3	N	1-ring	sawgraph;spatialkg;fiokg	3
+9796441156563763200	43.638114	-94.06571	1	WQP	1	40	40	0	0		1	0	8	1	27	Minnesota	27043	Faribault County	1									0.17343889579073268	0.0	0.0		0.0			3	N	1-ring	sawgraph;spatialkg;fiokg	3
+9797526271461163008	44.800953	-92.994359	1	WQP	1	7	7	0	0		1	0	4	1	27	Minnesota	27163	Washington County	1									0.17343889579073268	0.0	0.0		0.0			3	N	1-ring	sawgraph;spatialkg;fiokg	3
+9797542970294009856	44.842189	-92.79764	1	WQP	1	7	7	0	0		1	0	8	1	27	Minnesota	27163	Washington County	1									0.17343889579073268	0.0	0.0		0.0			3	N	1-ring	sawgraph;spatialkg;fiokg	3
+9798178625453817856	43.75086	-92.14643	1	WQP	1	13	13	0	0		1	0	13	1	27	Minnesota	27045	Fillmore County	1					1.0	Sewage treatment (effluent & biosolids)	221320	FOUNTAIN WWTP	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9935712755401097216	43.121017	-70.804833	4	WQP	4	156	13	0	0		1	0	9	1	23	Maine	23031	York County	1					0.6	Petroleum bulk stations & terminals	424710	SAFETY-KLEEN SYSTEMS	0.17343889579073268	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5522795830567763968	46.111214	-67.794627	1	EGAD	1	27	27	0	0		0	0	6	1	23	Maine	23003	Aroostook County	1					0.6	Other fabricated metal product manufacturing	332994	SMITH & WESSON DIVISION	0.17343889579073268	0.0	0.0		0.0	0.6		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5525224995350904832	44.077121	-69.811992	1	EGAD	1	35	35	0	0		0	0	5	1	23	Maine	23023	Sagadahoc County	1					1.0	Sewage treatment (effluent & biosolids)	221320	RICHMOND WASTEWATER TREATMENT FACILITY	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5525225304588550144	44.076625	-69.8115858	5	EGAD	5	175	35	0	0		0	0	5	1	23	Maine	23023	Sagadahoc County	1					1.0	Sewage treatment (effluent & biosolids)	221320	RICHMOND WASTEWATER TREATMENT FACILITY	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5525405590135767040	44.778281	-69.199306	1	EGAD	1	87	29	0	0		0	0	2	1	23	Maine	23019	Penobscot County	1					1.0	Waste treatment & disposal (landfill, hazardous waste)	562219	SOIL PREPARATION, INC.	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5525836426895163392	44.902846	-68.724388	1	EGAD	1	29	29	0	0		0	0	1	1	23	Maine	23019	Penobscot County	1					1.0	Waste treatment & disposal (landfill, hazardous waste)	562212	ORONO CDD LANDFILL	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5526560901978652672	44.205925	-70.517423	1	EGAD	1	29	29	0	0		0	0	39	1	23	Maine	23017	Oxford County	1					1.0	Leather & hide tanning and finishing	316110	AC LAWRENCE LEATHER	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5526650477816578048	43.705959	-70.25012	1	EGAD	1	13	13	0	0		0	0	20	1	23	Maine	23005	Cumberland County	1					1.0	Sewage treatment (effluent & biosolids)	221320	FALMOUTH WASTE WATER TREATMENT FACILITY	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5529480345868566528	46.632225	-68.052734	1	EGAD	1	9	9	0	0		0	0	1	1	23	Maine	23003	Aroostook County	1					1.0	Waste treatment & disposal (landfill, hazardous waste)	562212	AROOSTOOK WASTE SOLUTIONS	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5573318355504332800	47.958833	-89.672067	1	WQP	1	9	3	0	0		0	0	8	1	27	Minnesota	27031	Cook County	1					1.0	Sewage treatment (effluent & biosolids)	221320	GRAND PORTAGE WASTEWATER STABILIZATION LAGOON	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5958602176363233280	46.487358	-93.93031	1	WQP	1	2	2	0	0		0	0	11	1	27	Minnesota	27035	Crow Wing County	1					1.0	Airport operations (AFFF fire training)	488119	MAL'S SERPENT LAKE	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+5959080807518699520	45.284945	-92.95513	1	WQP	1	2	2	0	0		0	0	6	1	27	Minnesota	27163	Washington County	1					1.0	Airport operations (AFFF fire training)	488119	MATTISON'S	0.17343889579073268	0.0	0.0		0.0	1.0		4	N	1-ring	sawgraph;spatialkg;fiokg	3
+9796575778018689024	43.891236	-94.135244	1	WQP	1	40	40	0	0		0	0	5	1	27	Minnesota	27013	Blue Earth County	1									0.17343889579073268	0.0	0.0		0.0			3	N	1-ring	sawgraph;spatialkg;fiokg	3
+9797514760948809728	44.75595275	-92.83350125	4	WQP	4	28	7	0	0		0	0	13	1	27	Minnesota	27037	Dakota County	2									0.17343889579073268	0.0	0.0		0.0			3	N	1-ring	sawgraph;spatialkg;fiokg	3
+9797526202741686272	44.809222	-92.984124	1	WQP	1	7	7	0	0		0	0	13	1	27	Minnesota	27163	Washington County	1									0.17343889579073268	0.0	0.0		0.0			3	N	1-ring	sawgraph;spatialkg;fiokg	3
+5960435612002549760	46.921108	-95.067583	1	WQP	1	13	13	0	0		27	0	93	0	27	Minnesota	27057	Hubbard County	1									0.25	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5526596601746817024	44.123895	-70.226888	1	EGAD	1	3	3	0	0		24	0	43	0	23	Maine	23001	Androscoggin County	1									0.25	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5960187362892840960	46.681513	-94.10434	1	WQP	1	2	2	0	0		17	0	38	0	27	Minnesota	27035	Crow Wing County	1									0.23734196553150333	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9283706620737486848	32.587472	-114.709952	1	WQP	1	2	1	0	0		15	0	40	0	04	Arizona	04027	Yuma County	1									0.227670248696953	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5965498107134214144	46.658164	-95.800881	1	WQP	1	80	40	0	0		10	0	8	0	27	Minnesota	27111	Otter Tail County	1									0.19690241424131405	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797543726208253952	44.908785	-92.784604	1	WQP	1	7	7	0	0		10	0	10	0	27	Minnesota	27163	Washington County	1									0.19690241424131405	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5955893563827945472	47.805391	-90.303739	1	WQP	1	135	27	0	0		8	0	0	0	27	Minnesota	27031	Cook County	1									0.1804244033572651	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5959056790061580288	44.988044	-92.959387	1	WQP	1	2	2	0	0		8	0	100	0	27	Minnesota	27163	Washington County	1									0.1804244033572651	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9740620016373465088	34.90988	-111.72787	1	WQP	1	38	38	0	0		8	0	10	0	04	Arizona	04005	Coconino County	1									0.1804244033572651	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5957753868782665728	46.708067	-92.419721	2	WQP	1	135	27	0	0		6	0	35	0	27	Minnesota	27017	Carlton County	1									0.15978779832136744	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9740447633566072832	34.724044	-111.997249	1	WQP	1	40	40	0	0		6	0	48	0	04	Arizona	04025	Yavapai County	1									0.15978779832136744	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5525220872182300672	43.9072155	-69.94250299999999	2	EGAD	2	8	4	0	0		5	0	20	0	23	Maine	23005	Cumberland County	1									0.1471297638528708	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5957988270917812224	46.903889	-91.901	1	WQP	1	135	27	0	0		5	0	8	0	27	Minnesota	27137	St. Louis County	1									0.1471297638528708	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5959056755701841920	44.990239	-92.953823	1	WQP	1	7	7	0	0		5	0	95	0	27	Minnesota	27163	Washington County	1									0.1471297638528708	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5960187706490224640	46.687283	-94.11996	1	WQP	1	2	2	0	0		5	0	37	0	27	Minnesota	27035	Crow Wing County	1									0.1471297638528708	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5960208425412460544	46.518348	-94.3055	1	WQP	1	2	2	0	0		5	0	12	0	27	Minnesota	27035	Crow Wing County	1									0.1471297638528708	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797529501276569600	44.88017299999999	-92.98172033333331	3	WQP	3	21	7	0	0		5	0	31	0	27	Minnesota	27163	Washington County	1									0.1471297638528708	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797536235785289728	44.890787	-92.953891	1	WQP	1	7	7	0	0		5	0	31	0	27	Minnesota	27163	Washington County	1									0.1471297638528708	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797539396881219584	44.883352	-92.903426	1	WQP	1	7	7	0	0		5	0	18	0	27	Minnesota	27163	Washington County	1									0.1471297638528708	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797544344683544576	44.890742	-92.85571	1	WQP	1	7	7	0	0		5	0	4	0	27	Minnesota	27163	Washington County	1									0.1471297638528708	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5573317874467995648	47.97975	-89.698483	1	WQP	1	3	3	0	0		4	0	6	0	27	Minnesota	27031	Cook County	1									0.13215848670486202	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9795560379030437888	43.702791000000005	-92.9664995	2	WQP	2	42	41	0	0		4	0	20	0	27	Minnesota	27099	Mower County	1									0.13215848670486202	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797513695796920320	44.812927	-92.803053	1	WQP	1	7	7	0	0		4	0	5	0	27	Minnesota	27163	Washington County	1									0.13215848670486202	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797529295118139392	44.849821	-92.977326	1	WQP	1	7	7	0	0		4	0	24	0	27	Minnesota	27163	Washington County	1									0.13215848670486202	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5523992855133028352	44.5549801	-67.5784251	10	EGAD	10	232	27	0	0		3	0	0	0	23	Maine	23029	Washington County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5525342196418478080	44.119043	-69.821609	1	EGAD	1	29	29	0	0		3	0	0	0	23	Maine	23023	Sagadahoc County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5526462358249013248	44.533016	-69.792168	1	EGAD	1	29	29	0	0		3	0	1	0	23	Maine	23011	Kennebec County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5526547501680689152	44.270921	-70.218146	1	EGAD	1	42	21	0	0		3	0	3	0	23	Maine	23001	Androscoggin County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5526597288941584384	44.13267	-70.238879	1	EGAD	1	29	29	0	0		3	0	45	0	23	Maine	23001	Androscoggin County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5960164479307087872	46.514835	-94.29629	1	WQP	1	2	2	0	0		3	0	30	0	27	Minnesota	27035	Crow Wing County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5961472142229897216	48.59014	-93.156142	1	WQP	1	9	3	0	0		3	0	4	0	27	Minnesota	27071	Koochiching County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9283272416723730432	33.278821	-112.781131	1	WQP	1	2	1	0	0		3	0	1	0	04	Arizona	04013	Maricopa County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9283703700159725568	32.5816995	-114.718048	2	WQP	2	3	1	0	0		3	0	53	0	04	Arizona	04027	Yuma County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9716511712105988096	32.815107	-109.680934	1	WQP	1	3	1	0	0		3	0	6	0	04	Arizona	04009	Graham County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797535445511307264	44.9088385	-93.00566	2	WQP	2	14	7	0	0		3	0	18	0	27	Minnesota	27123	Ramsey County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797536132706074624	44.890787	-92.965335	1	WQP	1	7	7	0	0		3	0	15	0	27	Minnesota	27163	Washington County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797537953772208128	44.934074	-92.873014	1	WQP	1	7	7	0	0		3	0	18	0	27	Minnesota	27163	Washington County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797539225082527744	44.882083	-92.936619	1	WQP	1	7	7	0	0		3	0	31	0	27	Minnesota	27163	Washington County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797539534320173056	44.8639335	-92.9031625	2	WQP	2	14	7	0	0		3	0	9	0	27	Minnesota	27163	Washington County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797544447762759680	44.908826	-92.84279	1	WQP	1	7	7	0	0		3	0	8	0	27	Minnesota	27163	Washington County	1									0.1138351243484765	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5525479016896659456	44.39773	-69.0392	1	EGAD	1	16	16	0	0		2	0	1	0	23	Maine	23027	Waldo County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5525612779358126080	44.468083	-68.32461	1	EGAD	1	29	29	0	0		2	0	3	0	23	Maine	23009	Hancock County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5526432808874016768	44.89604366666666	-69.26992766666666	3	EGAD	3	106	36	0	0		2	0	1	0	23	Maine	23019	Penobscot County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5528928803348283392	45.650417	-68.724757	1	EGAD	1	42	21	0	0		2	0	31	0	23	Maine	23019	Penobscot County	1									0.09332620561947169	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5958591009448263680	46.734975	-93.94705	1	WQP	1	2	2	0	0		2	0	13	0	27	Minnesota	27035	Crow Wing County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5959024904224374784	45.018384	-92.765004	1	WQP	1	12	3	0	0		2	0	46	0	27	Minnesota	27163	Washington County	2									0.1	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5960115173082529792	46.425529	-94.324982	1	WQP	1	40	40	0	0		2	0	8	0	27	Minnesota	27021	Cass County	2									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9283706242780364800	32.621526	-114.671215	1	WQP	1	3	1	0	0		2	0	2	0	04	Arizona	04027	Yuma County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797013830323142656	44.856	-93.7852	1	WQP	1	130	13	0	0		2	0	116	0	27	Minnesota	27019	Carver County	1									0.1	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797513146041106432	44.76388	-92.817148	2	WQP	2	14	7	0	0		2	0	5	0	27	Minnesota	27163	Washington County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797513867595612160	44.78620566666666	-92.80261033333332	3	WQP	3	21	7	0	0		2	0	4	0	27	Minnesota	27163	Washington County	2									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797515516863053824	44.767431	-92.860346	1	WQP	1	7	7	0	0		2	0	30	0	27	Minnesota	27037	Dakota County	2									0.0924712687084787	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797515688661745664	44.7947054	-92.8644832	5	WQP	5	35	7	0	0		2	0	17	0	27	Minnesota	27163	Washington County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797516822533111808	44.771777	-92.914737	1	WQP	1	7	7	0	0		2	0	1	0	27	Minnesota	27037	Dakota County	2									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797528917161017344	44.876421	-92.9388	1	WQP	1	7	7	0	0		2	0	15	0	27	Minnesota	27163	Washington County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797529020240232448	44.8750665	-92.955221	2	WQP	2	14	7	0	0		2	0	14	0	27	Minnesota	27163	Washington County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797529054599970816	44.876905	-92.958341	1	WQP	1	7	7	0	0		2	0	8	0	27	Minnesota	27163	Washington County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797535720389214208	44.886713	-92.986172	1	WQP	1	7	7	0	0		2	0	15	0	27	Minnesota	27123	Ramsey County	2									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797538572247498752	44.902223	-92.88638	1	WQP	1	7	7	0	0		2	0	19	0	27	Minnesota	27163	Washington County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797539603039649792	44.85738	-92.916574	1	WQP	1	7	7	0	0		2	0	17	0	27	Minnesota	27163	Washington County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797539637399388160	44.858558	-92.918505	1	WQP	1	7	7	0	0		2	0	10	0	27	Minnesota	27163	Washington County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797540427673370624	44.833505	-92.890596	1	WQP	1	7	7	0	0		2	0	19	0	27	Minnesota	27163	Washington County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797541183587614720	44.87655	-92.894577	1	WQP	1	7	7	0	0		2	0	12	0	27	Minnesota	27163	Washington County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797544413403021312	44.902291000000005	-92.8449965	2	WQP	2	14	7	0	0		2	0	11	0	27	Minnesota	27163	Washington County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9935685370689617920	43.190068	-70.647076	1	EGAD	1	28	7	0	0		2	0	0	0	23	Maine	23031	York County	1									0.09021220167863253	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5523895239116324864	44.66387	-67.456356	1	EGAD	1	58	29	0	0		1	0	0	0	23	Maine	23029	Washington County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5525341921540571136	44.098289	-69.816844	1	EGAD	1	29	29	0	0		1	0	8	0	23	Maine	23023	Sagadahoc County	1									0.059167414496581874	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5525378583381409792	44.540935	-69.21089033333334	3	EGAD	3	87	29	0	0		1	0	0	0	23	Maine	23027	Waldo County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5525382981427920896	44.497151	-69.348196	1	EGAD	1	29	29	0	0		1	0	0	0	23	Maine	23027	Waldo County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5526027467040489472	45.441879	-69.629553	1	EGAD	1	21	21	0	0		1	0	1	0	23	Maine	23021	Piscataquis County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5526441536247562240	44.678481	-69.639184	1	EGAD	1	31	31	0	0		1	0	1	0	23	Maine	23011	Kennebec County	2									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5526475655467761664	44.468888	-69.647218	1	EGAD	1	35	35	0	0		1	0	3	0	23	Maine	23011	Kennebec County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5526681916977184768	43.479321	-70.717484	1	EGAD	1	42	21	0	0		1	0	9	0	23	Maine	23031	York County	1									0.06200458888731158	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5959207560593539072	45.137233	-93.66037	1	WQP	1	40	40	0	0		1	0	3	0	27	Minnesota	27053	Hennepin County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5959915302484443136	46.096536	-94.87041	1	WQP	1	2	2	0	0		1	0	11	0	27	Minnesota	27153	Todd County	1									0.0669141894960796	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5960454990894989312	46.7714	-95.075	1	WQP	1	53	44	0	0		1	0	3	0	27	Minnesota	27159	Wadena County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5964899766650273792	47.631022	-95.87096	1	WQP	1	40	40	0	0		1	0	5	0	27	Minnesota	27119	Polk County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5965597784735219712	45.913109	-95.38961	1	WQP	1	2	2	0	0		1	0	12	0	27	Minnesota	27041	Douglas County	1									0.06906959960353908	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9282663287281942528	34.92425	-112.843	1	WQP	1	76	37	0	0		1	0	1	0	04	Arizona	04025	Yavapai County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9283268912030416896	33.334058	-112.710663	1	WQP	1	2	1	0	0		1	0	5	0	04	Arizona	04013	Maricopa County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9740235256023220224	34.403359	-111.617486	1	WQP	1	38	38	0	0		1	0	0	0	04	Arizona	04007	Gila County	2									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9740397468348055552	34.469417	-112.443972	1	WQP	1	76	37	0	0		1	0	6	0	04	Arizona	04025	Yavapai County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9740397502707793920	34.460167	-112.449833	1	WQP	1	76	37	0	0		1	0	4	0	04	Arizona	04025	Yavapai County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9740457185573339136	34.766399	-112.025298	1	WQP	1	9	3	0	0		1	0	8	0	04	Arizona	04025	Yavapai County	1									0.059167414496581874	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9742532616849981440	36.8433	-111.54888	1	WQP	1	38	38	0	0		1	0	0	0	04	Arizona	04005	Coconino County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9766980326613057536	43.915779	-95.189051	1	WQP	1	13	13	0	0		1	0	4	0	27	Minnesota	27033	Cottonwood County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797513661437181952	44.803127	-92.806328	1	WQP	1	7	7	0	0		1	0	8	0	27	Minnesota	27163	Washington County	1									0.059167414496581874	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797513833235873792	44.791864	-92.8018275	2	WQP	2	14	7	0	0		1	0	6	0	27	Minnesota	27163	Washington County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797514039394304000	44.789386	-92.822203	1	WQP	1	7	7	0	0		1	0	1	0	27	Minnesota	27163	Washington County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797514245552734208	44.807693	-92.84182633333334	3	WQP	3	21	7	0	0		1	0	2	0	27	Minnesota	27163	Washington County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797514348631949312	44.790188	-92.851036	1	WQP	1	7	7	0	0		1	0	15	0	27	Minnesota	27163	Washington County	1									0.07466096449557734	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797515723021484032	44.80464	-92.861401	1	WQP	1	7	7	0	0		1	0	5	0	27	Minnesota	27163	Washington County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797520189787471872	44.734083	-92.95606	1	WQP	1	2	2	0	0		1	0	4	0	27	Minnesota	27037	Dakota County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797535651669737472	44.89940133333334	-92.991	3	WQP	3	21	7	0	0		1	0	23	0	27	Minnesota	27123	Ramsey County	1									0.08557943061997395	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797535823468429312	44.904912	-92.994285	1	WQP	1	7	7	0	0		1	0	40	0	27	Minnesota	27123	Ramsey County	1									0.1	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797535857828167680	44.919595	-92.988973	1	WQP	1	7	7	0	0		1	0	56	0	27	Minnesota	27123	Ramsey County	1									0.1	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797538331729330176	44.916524	-92.859765	1	WQP	1	7	7	0	0		1	0	8	0	27	Minnesota	27163	Washington County	1									0.059167414496581874	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797539431240957952	44.8754694	-92.903626	10	WQP	10	77	7	0	0		1	0	13	0	27	Minnesota	27163	Washington County	1									0.07106519766445112	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797541389746044928	44.886523	-92.865121	1	WQP	1	7	7	0	0		1	0	8	0	27	Minnesota	27163	Washington County	1									0.059167414496581874	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797542180020027392	44.822383333333335	-92.84144233333332	3	WQP	3	21	7	0	0		1	0	2	0	27	Minnesota	27163	Washington County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9797542867214794752	44.825796	-92.780454	1	WQP	1	7	7	0	0		1	0	2	0	27	Minnesota	27163	Washington County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+9798211370284482560	43.61272	-92.14297	1	WQP	1	13	13	0	0		1	0	6	0	27	Minnesota	27045	Fillmore County	1									0.05691756217423825	0.0	0.0		0.0	0.0		4	N	same-cell (unflagged)	sawgraph;spatialkg;fiokg	3
+5522342419460259840	46.7227675	-67.813995	2	EGAD	2	56	29	0	0		0	0	1	0	23	Maine	23003	Aroostook County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5522730925021986816	46.433121	-67.920036	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23003	Aroostook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5522749101323583488	46.223403	-67.80236	1	EGAD	1	25	25	0	0		0	0	1	0	23	Maine	23003	Aroostook County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5522752743455850496	46.101003	-67.873645	1	EGAD	1	9	9	0	0		0	0	2	0	23	Maine	23003	Aroostook County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5522753087053234176	46.063407	-67.876577	1	EGAD	1	9	9	0	0		0	0	5	0	23	Maine	23003	Aroostook County	1									0.04824894837218527	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5522781158959480832	46.014917	-67.976345	1	EGAD	1	28	28	0	0		0	0	0	0	23	Maine	23003	Aroostook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5522924164190568448	45.424321	-68.417356	1	EGAD	1	30	30	0	0		0	0	0	0	23	Maine	23019	Penobscot County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5522924954464550912	45.420478	-68.446915	1	EGAD	1	29	29	0	0		0	0	1	0	23	Maine	23019	Penobscot County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5523871015500775424	44.905547	-67.061069	1	EGAD	1	60	30	0	0		0	0	0	0	23	Maine	23029	Washington County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5523872355530571776	44.90953	-67.0200445	2	EGAD	2	58	29	0	0		0	0	9	0	23	Maine	23029	Washington County	1									0.06200458888731158	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5523889157442633728	44.7816105	-67.399662	2	EGAD	2	58	29	0	0		0	0	0	0	23	Maine	23029	Washington County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5523992717694074880	44.5567	-67.569996	1	EGAD	1	27	27	0	0		0	0	3	0	23	Maine	23029	Washington County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5524834771802259456	44.168959	-68.663603	1	EGAD	1	17	17	0	0		0	0	6	0	23	Maine	23009	Hancock County	1									0.05239995654055677	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525203864111808512	43.7553675	-69.848274	2	EGAD	2	71	36	0	0		0	0	0	0	23	Maine	23023	Sagadahoc County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525211869930848256	43.77211	-70.0138265	2	EGAD	2	48	24	0	0		0	0	5	0	23	Maine	23005	Cumberland County	1									0.04824894837218527	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525214343832010752	43.88174833333333	-69.94495166666667	3	EGAD	3	12	4	0	0		0	0	1	0	23	Maine	23005	Cumberland County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525225132789858304	44.0562925	-69.837576	2	EGAD	2	60	30	0	0		0	0	0	0	23	Maine	23023	Sagadahoc County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525311513172115456	44.193365	-69.146326	1	EGAD	1	28	7	0	0		0	0	1	0	23	Maine	23013	Knox County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525325909902491648	44.228175	-69.413191	1	EGAD	1	30	30	0	0		0	0	2	0	23	Maine	23013	Knox County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525326597097259008	44.217607	-69.341655	2	EGAD	2	60	30	0	0		0	0	2	0	23	Maine	23013	Knox County	2									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525342230778216448	44.120595	-69.82212233333333	3	EGAD	3	87	29	0	0		0	0	4	0	23	Maine	23023	Sagadahoc County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525344945197547520	44.223274	-69.733921	1	EGAD	1	29	29	0	0		0	0	4	0	23	Maine	23011	Kennebec County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525345254435192832	44.23683	-69.711174	1	EGAD	1	36	36	0	0		0	0	1	0	23	Maine	23011	Kennebec County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525350442755686400	44.2871995	-69.5441975	2	EGAD	2	108	36	0	0		0	0	0	0	23	Maine	23011	Kennebec County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525354050528215040	44.379444500000005	-69.62222	2	EGAD+WQP	2	104	26	0	0		0	0	0	0	23	Maine	23011	Kennebec County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525358482934464512	44.426584	-69.463866	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23011	Kennebec County	2									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525359032690278400	44.464512	-69.432028	1	EGAD	1	35	35	0	0		0	0	0	0	23	Maine	23011	Kennebec County	2									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525359101409755136	44.470212	-69.418667	1	EGAD	1	36	36	0	0		0	0	0	0	23	Maine	23011	Kennebec County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525360235281121280	44.4065445	-69.4408445	2	EGAD	2	58	29	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525362434304376832	44.346574	-69.453247	1	EGAD	1	30	30	0	0		0	0	1	0	23	Maine	23027	Waldo County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525369203172835328	44.437968	-69.268766	1	EGAD	1	17	17	0	0		0	0	1	0	23	Maine	23027	Waldo County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525374254054375424	44.435571333333336	-69.184854	3	EGAD	3	85	29	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525376590516584448	44.503708	-69.11715	2	EGAD	2	58	29	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525376624876322816	44.516	-69.10601633333333	3	EGAD	3	88	30	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525376796675014656	44.521308	-69.121558	1	EGAD	1	30	30	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525377724387950592	44.557423	-69.156402	1	EGAD	1	29	29	0	0		0	0	2	0	23	Maine	23027	Waldo County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525379236216438784	44.537001	-69.246748	1	EGAD	1	29	29	0	0		0	0	1	0	23	Maine	23027	Waldo County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525380576246235136	44.57983	-69.314956	1	EGAD	1	65	38	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525381607038386176	44.560998	-69.382055	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525381641398124544	44.54763	-69.393764	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23011	Kennebec County	2									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525382809629229056	44.5002725	-69.3441115	2	EGAD	2	58	29	0	0		0	0	1	0	23	Maine	23027	Waldo County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525384561975885824	44.545167	-69.394573	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23011	Kennebec County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525385730206990336	44.520165	-69.508591	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23011	Kennebec County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525390678009315328	44.6362088	-69.3504136	5	EGAD	5	145	29	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525392877032570880	44.670497	-69.271712	1	EGAD	1	29	29	0	0		0	0	1	0	23	Maine	23027	Waldo County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525394938616872960	44.721342	-69.1939655	2	EGAD	2	58	29	0	0		0	0	1	0	23	Maine	23019	Penobscot County	2									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525415932417015808	44.655131	-68.991966	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525416001136492544	44.653681	-69.004722	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525420983298555904	44.623671	-69.196215	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525422082810183680	44.577931	-69.139869	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525458332334161920	44.539213	-68.658792	1	EGAD	1	58	29	0	0		0	0	1	0	23	Maine	23009	Hancock County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525458504132853760	44.5397535	-68.652934	2	EGAD	2	56	29	0	0		0	0	1	0	23	Maine	23009	Hancock County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525474275252764672	44.42803	-69.079453	1	EGAD	1	27	27	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525474447051456512	44.428944	-69.0743665	2	EGAD	2	108	27	0	0		0	0	0	0	23	Maine	23027	Waldo County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525474618850148352	44.42176	-69.06139325	4	EGAD	4	134	27	0	0		0	0	1	0	23	Maine	23027	Waldo County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525475546563084288	44.456306	-68.995877	1	EGAD	1	30	30	0	0		0	0	5	0	23	Maine	23027	Waldo County	1									0.04824894837218527	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525475649642299392	44.45714	-68.976694	1	EGAD	1	29	29	0	0		0	0	5	0	23	Maine	23027	Waldo County	1									0.04824894837218527	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525475684002037760	44.456318	-68.978994	1	EGAD	1	29	29	0	0		0	0	4	0	23	Maine	23027	Waldo County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525497433716424704	44.1809265	-68.686328	2	EGAD	2	59	30	0	0		0	0	3	0	23	Maine	23009	Hancock County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525622193926438912	44.531342	-68.528805	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23009	Hancock County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525671190913351680	44.657964	-67.947999	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23029	Washington County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525864808039055360	44.993521	-69.048102	1	EGAD	1	29	29	0	0		0	0	3	0	23	Maine	23019	Penobscot County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525869274805043200	44.896382	-69.187789	1	EGAD	1	33	33	0	0		0	0	0	0	23	Maine	23019	Penobscot County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525869824560857088	44.904598	-69.23767	1	EGAD	1	35	35	0	0		0	0	2	0	23	Maine	23019	Penobscot County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525871233310130176	44.96847	-69.129169	1	EGAD	1	29	29	0	0		0	0	3	0	23	Maine	23019	Penobscot County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5525871473828298752	44.983182	-69.0882525	2	EGAD	2	57	29	0	0		0	0	0	0	23	Maine	23019	Penobscot County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5525986269714186240	45.189929	-69.453026	2	EGAD	2	60	30	0	0		0	0	0	0	23	Maine	23021	Piscataquis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526025955212001280	45.443567	-69.654087	1	EGAD	1	30	30	0	0		0	0	0	0	23	Maine	23021	Piscataquis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526219641057181696	44.858203	-70.516187	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23007	Franklin County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526262590730141696	44.9891745	-70.7422205	2	EGAD+WQP	2	104	26	0	0		0	0	0	0	23	Maine	23007	Franklin County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526264446156013568	44.946793	-70.656512	1	EGAD	1	26	13	0	0		0	0	2	0	23	Maine	23007	Franklin County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526297225346416640	44.689689	-70.971093	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23017	Oxford County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526349520868212736	44.48458	-70.152487	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23001	Androscoggin County	2									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526350242422718464	44.47122	-70.095573	2	EGAD	2	57	29	0	0		0	0	0	0	23	Maine	23011	Kennebec County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526360378545537024	44.647856	-69.94606	1	EGAD	1	30	30	0	0		0	0	0	0	23	Maine	23007	Franklin County	2									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526361374977949696	44.666788	-69.94751	1	EGAD	1	30	30	0	0		0	0	0	0	23	Maine	23025	Somerset County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526361409337688064	44.66608	-69.95484350000001	2	EGAD	2	59	30	0	0		0	0	0	0	23	Maine	23007	Franklin County	2									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526369518235942912	44.672074	-70.158483	1	EGAD	1	17	17	0	0		0	0	24	0	23	Maine	23007	Franklin County	1									0.08667869552683445	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526415044889280512	44.78957533333334	-69.576811	3	EGAD	3	87	29	0	0		0	0	0	0	23	Maine	23025	Somerset County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526415216687972352	44.801057	-69.572049	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23025	Somerset County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526418824460500992	44.829126	-69.669831	1	EGAD	1	28	28	0	0		0	0	0	0	23	Maine	23025	Somerset County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526430128814424064	44.911148	-69.433542	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23025	Somerset County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526430197533900800	44.9088	-69.42364	1	EGAD	1	29	29	0	0		0	0	2	0	23	Maine	23025	Somerset County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526439990059335680	44.730615	-69.503502	1	EGAD	1	35	35	0	0		0	0	0	0	23	Maine	23025	Somerset County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526453390357299200	44.65836	-69.677954	1	EGAD	1	28	28	0	0		0	0	1	0	23	Maine	23025	Somerset County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526460227945234432	44.566557	-69.797762	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23011	Kennebec County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526462255169798144	44.534508	-69.79209666666667	3	EGAD	3	87	29	0	0		0	0	4	0	23	Maine	23011	Kennebec County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526462323889274880	44.532402	-69.80812	1	EGAD	1	29	29	0	0		0	0	4	0	23	Maine	23011	Kennebec County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526469573794070528	44.473357	-69.880775	1	EGAD	1	30	30	0	0		0	0	0	0	23	Maine	23011	Kennebec County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526475689827500032	44.469817000000006	-69.648493	2	EGAD	2	70	35	0	0		0	0	2	0	23	Maine	23011	Kennebec County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526477648332587008	44.413597	-69.6242565	2	EGAD	2	72	36	0	0		0	0	0	0	23	Maine	23011	Kennebec County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526487921894359040	44.265534	-69.740645	1	EGAD	1	48	31	0	0		0	0	0	0	23	Maine	23011	Kennebec County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526487956254097408	44.265019	-69.741642	1	EGAD	1	29	29	0	0		0	0	1	0	23	Maine	23011	Kennebec County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526488024973574144	44.25892	-69.760753	1	EGAD	1	29	29	0	0		0	0	9	0	23	Maine	23011	Kennebec County	1									0.06200458888731158	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526490945551335424	44.151192	-69.843562	2	EGAD	2	60	30	0	0		0	0	0	0	23	Maine	23023	Sagadahoc County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526511870632001536	44.3910235	-69.880176	2	EGAD	2	72	36	0	0		0	0	0	0	23	Maine	23011	Kennebec County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526524858613104640	44.435386	-70.352182	1	EGAD	1	30	30	0	0		0	0	0	0	23	Maine	23017	Oxford County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526548395033886720	44.23673233333333	-70.24147033333334	3	EGAD	3	87	29	0	0		0	0	2	0	23	Maine	23001	Androscoggin County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526549528905252864	44.174309	-70.287506	1	EGAD	1	29	29	0	0		0	0	1	0	23	Maine	23001	Androscoggin County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526573099685773312	44.008433	-70.751588	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23005	Cumberland County	2									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526584129161789440	43.94655	-70.457418	1	EGAD	1	30	30	0	0		0	0	2	0	23	Maine	23005	Cumberland County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526585056874725376	43.930856	-70.422021	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23005	Cumberland County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526590898030247936	43.973104000000006	-70.18841	2	EGAD	2	59	30	0	0		0	0	0	0	23	Maine	23001	Androscoggin County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526592031901614080	44.020648666666666	-70.28273533333333	3	EGAD	3	85	29	0	0		0	0	12	0	23	Maine	23001	Androscoggin County	2									0.06906959960353908	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526601961866002432	44.030689	-70.223721	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23001	Androscoggin County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526615362163965952	43.926818	-70.16318	1	EGAD	1	19	19	0	0		0	0	0	0	23	Maine	23001	Androscoggin County	2									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526616118078210048	43.898952	-70.123824	1	EGAD	1	29	29	0	0		0	0	1	0	23	Maine	23005	Cumberland County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526642643796230144	43.6575372	-70.5243022	5	EGAD	2	48	24	0	0		0	0	3	0	23	Maine	23031	York County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526687174017155072	43.540485	-70.484934	1	EGAD	1	29	29	0	0		0	0	1	0	23	Maine	23031	York County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526698925047676928	43.541041	-70.697403	1	EGAD	1	29	29	0	0		0	0	3	0	23	Maine	23031	York County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526746478925578240	43.77261	-70.54642	1	EGAD	1	30	30	0	0		0	0	0	0	23	Maine	23005	Cumberland County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526763109038948352	43.92346	-70.866022	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23017	Oxford County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5526763143398686720	43.925477	-70.864044	1	EGAD	1	28	28	0	0		0	0	1	0	23	Maine	23017	Oxford County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5526953908666105856	44.066843	-70.952238	1	EGAD	1	30	30	0	0		0	0	2	0	23	Maine	23017	Oxford County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5528964881073569792	45.967178	-68.510872	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23019	Penobscot County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5529374346075701248	47.209421	-68.793448	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23003	Aroostook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5529383657564798976	47.20904	-68.553749	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23003	Aroostook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5529383691924537344	47.208607	-68.552139	1	EGAD	1	58	29	0	0		0	0	0	0	23	Maine	23003	Aroostook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5529388021251571712	47.275025	-68.40901266666667	3	EGAD	3	116	29	0	0		0	0	5	0	23	Maine	23003	Aroostook County	1									0.04824894837218527	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5529491340984844288	46.7441845	-67.840558	2	EGAD	2	57	29	0	0		0	0	0	0	23	Maine	23003	Aroostook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5529491615862751232	46.759921	-67.803571	1	EGAD	1	29	29	0	0		0	0	1	0	23	Maine	23003	Aroostook County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5529492852813332480	46.77744	-67.857756	1	EGAD	1	29	29	0	0		0	0	9	0	23	Maine	23003	Aroostook County	1									0.06200458888731158	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5529540990806786048	47.196196	-67.96963	1	EGAD	1	29	29	0	0		0	0	1	0	23	Maine	23003	Aroostook County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5529568375518265344	47.188976	-68.365851	1	EGAD	1	29	29	0	0		0	0	0	0	23	Maine	23003	Aroostook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5573302927981805568	48.004567	-89.547667	1	WQP	1	6	3	0	0		0	0	0	0	27	Minnesota	27031	Cook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5573305882919305216	47.991117	-89.616233	1	WQP	1	9	3	0	0		0	0	0	0	27	Minnesota	27031	Cook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5573307875784130560	47.99145	-89.65765	1	WQP	1	3	3	0	0		0	0	0	0	27	Minnesota	27031	Cook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5573311002520322048	48.005767	-89.704817	1	WQP	1	3	3	0	0		0	0	0	0	27	Minnesota	27031	Cook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5573316431358984192	47.94455	-89.763267	1	WQP	1	6	3	0	0		0	0	0	0	27	Minnesota	27031	Cook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5573317324712181760	47.972667	-89.73825	1	WQP	1	9	3	0	0		0	0	0	0	27	Minnesota	27031	Cook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5573319626814652416	47.917833	-89.744983	1	WQP	1	9	3	0	0		0	0	0	0	27	Minnesota	27031	Cook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5573339521103167488	47.94865	-89.85015	1	WQP	1	9	3	0	0		0	0	0	0	27	Minnesota	27031	Cook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5573339624182382592	47.9515	-89.845	1	WQP	1	135	27	0	0		0	0	0	0	27	Minnesota	27031	Cook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5573339692901859328	47.9499	-89.8559	1	WQP	1	12	3	0	0		0	0	0	0	27	Minnesota	27031	Cook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5955080371899990016	48.519029	-92.707722	1	WQP	1	9	3	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5955087759243739136	48.39864	-92.524838	1	WQP	1	9	3	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5955178881269891072	47.787593	-92.07917	1	WQP	1	40	40	0	0		0	0	2	0	27	Minnesota	27137	St. Louis County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5955332469300396032	47.671205	-91.839881	1	WQP	1	40	40	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5955484957819273216	47.5286	-90.9807	1	WQP	1	13	13	0	0		0	0	3	0	27	Minnesota	27031	Cook County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5955894354101927936	47.86304	-90.291319	1	WQP	1	405	27	0	0		0	0	0	0	27	Minnesota	27031	Cook County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5957689822230347776	46.0272	-92.473567	1	WQP	1	40	40	0	0		0	0	4	0	27	Minnesota	27115	Pine County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5957725144041390080	46.447648	-92.409767	1	WQP	1	40	40	0	0		0	0	0	0	27	Minnesota	27017	Carlton County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5957734386811011072	46.462014	-92.581747	1	WQP	1	40	40	0	0		0	0	1	0	27	Minnesota	27017	Carlton County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5957748543023218688	46.787496	-92.524715	1	WQP	1	135	27	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5958049603050799104	47.06219	-91.591	1	WQP	1	81	27	0	0		0	0	4	0	27	Minnesota	27075	Lake County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5958107327411257344	47.156625	-91.870811	1	WQP	1	40	40	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5958109766952681472	47.130295	-91.955499	1	WQP	1	40	40	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5958160207048605696	47.077178	-92.123656	1	WQP	1	113	51	0	0		0	0	1	0	27	Minnesota	27137	St. Louis County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5958215251349471232	46.799241	-92.592146	1	WQP	1	135	27	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5958270433089290240	47.410294	-92.78814	1	WQP	1	2	2	0	0		0	0	4	0	27	Minnesota	27137	St. Louis County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5958310084227366912	46.832186	-92.694736	1	WQP	1	135	27	0	0		0	0	2	0	27	Minnesota	27137	St. Louis County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5958590872009310208	46.723377	-93.97892	1	WQP	1	2	2	0	0		0	0	2	0	27	Minnesota	27035	Crow Wing County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5958778166943154176	46.788902	-92.654432	1	WQP	1	135	27	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5958779472613212160	46.693817	-92.644524	1	WQP	1	162	27	0	0		0	0	3	0	27	Minnesota	27017	Carlton County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5958780091088502784	46.688338	-92.671866	1	WQP	1	135	27	0	0		0	0	0	0	27	Minnesota	27017	Carlton County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5958782668068880384	46.576988	-92.667375	1	WQP	1	80	40	0	0		0	0	1	0	27	Minnesota	27017	Carlton County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5958838914960588800	45.925861	-92.63865	1	WQP	1	12	3	0	0		0	0	0	0	27	Minnesota	27115	Pine County	2									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5959211821201096704	45.2168	-93.7605	1	WQP	1	221	13	0	0		0	0	1	0	27	Minnesota	27171	Wright County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5959460963664003072	45.746	-94.222064	1	WQP	1	13	13	0	0		0	0	38	0	27	Minnesota	27009	Benton County	1									0.09865330685183002	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5959564901872566272	45.1659	-93.7908	1	WQP	1	78	13	0	0		0	0	4	0	27	Minnesota	27171	Wright County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5959872352811483136	45.7694	-94.734	1	WQP	1	40	40	0	0		0	0	4	0	27	Minnesota	27145	Stearns County	2									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5960028071145766912	46.556465	-94.905424	1	WQP	1	40	40	0	0		0	0	1	0	27	Minnesota	27159	Wadena County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5960094763397939200	46.123824	-94.447181	1	WQP	1	80	40	0	0		0	0	0	0	27	Minnesota	27097	Morrison County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5960099195804188672	46.211481	-94.515933	1	WQP	1	80	40	0	0		0	0	4	0	27	Minnesota	27097	Morrison County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5960118024940814336	46.303312	-94.28517	1	WQP	1	2	2	0	0		0	0	2	0	27	Minnesota	27035	Crow Wing County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5960179425793277952	46.559394	-94.121734	1	WQP	1	40	40	0	0		0	0	7	0	27	Minnesota	27035	Crow Wing County	1									0.05599572337168301	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5960186332100689920	46.738268	-94.0687	1	WQP	1	2	2	0	0		0	0	0	0	27	Minnesota	27035	Crow Wing County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5960209215686443008	46.438053	-94.31174	1	WQP	1	2	2	0	0		0	0	17	0	27	Minnesota	27035	Crow Wing County	1									0.0778326556204762	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5960414961799790592	46.913567	-94.815456	1	WQP	1	40	40	0	0		0	0	3	0	27	Minnesota	27057	Hubbard County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5960421077833220096	46.747824	-94.769498	1	WQP	1	40	40	0	0		0	0	0	0	27	Minnesota	27021	Cass County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5960489247554142208	47.071909	-95.196887	1	WQP	1	40	40	0	0		0	0	0	0	27	Minnesota	27005	Becker County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5960555802367361024	47.4367	-95.0042	1	WQP	1	13	13	0	0		0	0	0	0	27	Minnesota	27007	Beltrami County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5960558344988000256	47.358009	-94.941674	1	WQP	1	40	40	0	0		0	0	0	0	27	Minnesota	27057	Hubbard County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5960582912200933376	47.584034	-95.124984	1	WQP	1	40	40	0	0		0	0	1	0	27	Minnesota	27007	Beltrami County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5960739249010507776	48.583796	-95.25561	1	WQP	1	80	40	0	0		0	0	0	0	27	Minnesota	27077	Lake of the Woods County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5961020861426171904	47.5507	-94.80014	1	WQP	1	40	40	0	0		0	0	5	0	27	Minnesota	27007	Beltrami County	1									0.04824894837218527	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5961028798525734912	47.416598	-94.718244	1	WQP	1	40	40	0	0		0	0	3	0	27	Minnesota	27007	Beltrami County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+5961031100628205568	47.36649	-94.66187	1	WQP	1	80	40	0	0		0	0	0	0	27	Minnesota	27021	Cass County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5961040102879657984	47.42519	-94.47934	1	WQP	1	40	40	0	0		0	0	0	0	27	Minnesota	27007	Beltrami County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5961043848091140096	47.38286	-94.38861	1	WQP	1	40	40	0	0		0	0	0	0	27	Minnesota	27021	Cass County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5961062161831690240	47.629072	-94.292043	1	WQP	1	80	53	0	0		0	0	0	0	27	Minnesota	27061	Itasca County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5961210355383271424	47.447986	-93.48797	1	WQP	1	80	53	0	0		0	0	0	0	27	Minnesota	27061	Itasca County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5961435446029320192	48.458192	-92.965117	1	WQP	1	9	3	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5961441665141964800	48.428316	-92.82693	1	WQP	1	9	3	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5961442489775685632	48.46981	-92.834717	1	WQP	1	15	3	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5961443280049668096	48.498935	-92.813235	1	WQP	1	9	3	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5961444757518417920	48.497556	-92.887838	1	WQP	1	9	3	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5961458467054026752	48.540631	-93.004552	1	WQP	1	12	3	0	0		0	0	0	0	27	Minnesota	27137	St. Louis County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5965342320080453632	46.615404	-96.571843	1	WQP	1	13	13	0	0		0	0	0	0	27	Minnesota	27167	Wilkin County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5965627196671262720	46.022175	-95.915289	1	WQP	1	26	13	0	0		0	0	0	0	27	Minnesota	27051	Grant County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5965889567633440768	45.167169	-95.919809	1	WQP	1	26	13	0	0		0	0	0	0	27	Minnesota	27151	Swift County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5965895202630533120	45.209381	-95.821291	1	WQP	1	13	13	0	0		0	0	0	0	27	Minnesota	27151	Swift County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+5966048928099991552	45.453103	-95.952343	1	WQP	1	13	13	0	0		0	0	2	0	27	Minnesota	27149	Stevens County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9282260625508007936	33.48702	-114.5986	1	WQP	1	76	38	0	0		0	0	0	0	04	Arizona	04012	La Paz County	2									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9282662978044297216	34.8938	-112.88126	1	WQP	1	76	38	0	0		0	0	0	0	04	Arizona	04025	Yavapai County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9283266128891609088	33.334071	-112.726817	1	WQP	1	2	1	0	0		0	0	5	0	04	Arizona	04013	Maricopa County	1									0.04824894837218527	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9283268224835649536	33.357131	-112.642515	1	WQP	1	4	1	0	0		0	0	7	0	04	Arizona	04013	Maricopa County	1									0.05599572337168301	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9283272554162683904	33.304995	-112.781081	1	WQP	1	3	1	0	0		0	0	0	0	04	Arizona	04013	Maricopa County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9283525922873409536	32.824333	-113.730265	1	WQP	1	2	1	0	0		0	0	0	0	04	Arizona	04027	Yuma County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9283562172397387776	32.703479	-114.073819	1	WQP	1	1	1	0	0		0	0	2	0	04	Arizona	04027	Yuma County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9283696553334145024	32.567208	-114.752833	1	WQP	1	2	1	0	0		0	0	1	0	04	Arizona	04027	Yuma County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9283703906318155776	32.625683	-114.725861	1	WQP	1	2	1	0	0		0	0	1	0	04	Arizona	04027	Yuma County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9283740843036901376	32.662652	-114.193101	1	WQP	1	1	1	0	0		0	0	0	0	04	Arizona	04027	Yuma County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9283741083555069952	32.678028	-114.228413	1	WQP	1	1	1	0	0		0	0	0	0	04	Arizona	04027	Yuma County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9283760909124108288	32.787366	-114.509438	1	WQP	1	2	1	0	0		0	0	0	0	04	Arizona	04027	Yuma County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9283771423204048896	32.98995	-114.49694	1	WQP	1	152	38	0	0		0	0	1	0	04	Arizona	04027	Yuma County	2									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9283877113759268864	32.72092	-114.56576	1	WQP	1	76	38	0	0		0	0	2	0	04	Arizona	04027	Yuma County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9283877251198222336	32.74077	-114.53131	1	WQP	1	76	38	0	0		0	0	7	0	04	Arizona	04027	Yuma County	1									0.05599572337168301	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9716062527246303232	32.108178	-110.875164	1	WQP	1	68	34	0	0		0	0	13	0	04	Arizona	04019	Pima County	1									0.07106519766445112	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9716286999417061376	31.611559	-110.166736	1	WQP	1	38	38	0	0		0	0	0	0	04	Arizona	04003	Cochise County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9716290538470113280	31.47057	-110.10894	1	WQP	1	37	37	0	0		0	0	0	0	04	Arizona	04003	Cochise County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9739403647275499520	33.91355	-110.90587	1	WQP	1	37	37	0	0		0	0	0	0	04	Arizona	04007	Gila County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9740186465194737664	34.350617	-111.28508	1	WQP	1	38	38	0	0		0	0	1	0	04	Arizona	04007	Gila County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9740196601317556224	34.46157	-111.15572	1	WQP	1	38	38	0	0		0	0	0	0	04	Arizona	04005	Coconino County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9740249549674381312	34.518278	-111.74195	1	WQP	1	38	38	0	0		0	0	0	0	04	Arizona	04025	Yavapai County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9740250374308102144	34.538406	-111.684595	1	WQP	1	38	38	0	0		0	0	0	0	04	Arizona	04025	Yavapai County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9740254497476706304	34.512099	-111.822384	1	WQP	1	38	38	0	0		0	0	4	0	04	Arizona	04025	Yavapai County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9740425231016656896	34.351569	-111.969746	1	WQP	1	76	37	0	0		0	0	1	0	04	Arizona	04025	Yavapai County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9740468180689616896	34.677139	-112.192078	1	WQP	1	76	37	0	0		0	0	1	0	04	Arizona	04025	Yavapai County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9740476461386563584	34.541992	-112.212964	1	WQP	1	76	37	0	0		0	0	1	0	04	Arizona	04025	Yavapai County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9740477148581330944	34.533047	-112.280637	1	WQP	1	76	37	0	0		0	0	2	0	04	Arizona	04025	Yavapai County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9740480275317522432	34.662275	-112.301794	1	WQP	1	76	37	0	0		0	0	0	0	04	Arizona	04025	Yavapai County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9740496390034817024	34.634792	-112.499319	1	WQP	1	76	37	0	0		0	0	3	0	04	Arizona	04025	Yavapai County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9740629121704132608	34.615299	-111.837225	1	WQP	1	12	3	0	0		0	0	2	0	04	Arizona	04025	Yavapai County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9740631252007911424	34.6473075	-111.7520545	2	WQP	2	49	38	0	0		0	0	14	0	04	Arizona	04025	Yavapai County	1									0.07292305501170816	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9744255895168090112	36.270132	-109.21232	1	WQP	1	3	3	0	0		0	0	0	0	04	Arizona	04001	Apache County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9766795265062207488	44.864556	-95.343011	1	WQP	1	13	13	0	0		0	0	1	0	27	Minnesota	27129	Renville County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9795562406255001600	43.676931	-93.029944	1	WQP	1	40	40	0	0		0	0	12	0	27	Minnesota	27099	Mower County	1									0.06906959960353908	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797512252687908864	44.738553	-92.820778	1	WQP	1	7	7	0	0		0	0	11	0	27	Minnesota	27037	Dakota County	1									0.0669141894960796	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797514589150117888	44.774397	-92.841008	2	WQP	2	14	7	0	0		0	0	5	0	27	Minnesota	27163	Washington County	1									0.04824894837218527	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797514795308548096	44.754381	-92.825918	1	WQP	1	7	7	0	0		0	0	9	0	27	Minnesota	27037	Dakota County	2									0.06200458888731158	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797515448143577088	44.7769015	-92.873948	2	WQP	2	14	7	0	0		0	0	34	0	27	Minnesota	27037	Dakota County	2									0.095739304303974	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797515654302007296	44.792499	-92.86845	1	WQP	1	7	7	0	0		0	0	21	0	27	Minnesota	27163	Washington County	1									0.08323636643738358	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797515963539652608	44.80079006666666	-92.89410153333333	15	WQP	15	112	7	0	0		0	0	7	0	27	Minnesota	27163	Washington County	1									0.05599572337168301	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797516066618867712	44.783906	-92.885831	1	WQP	1	7	7	0	0		0	0	6	0	27	Minnesota	27163	Washington County	1									0.05239995654055677	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797516100978606080	44.785841	-92.891199	1	WQP	1	7	7	0	0		0	0	3	0	27	Minnesota	27163	Washington County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797516856892850176	44.769794	-92.90231475	4	WQP	4	28	7	0	0		0	0	3	0	27	Minnesota	27037	Dakota County	2									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797528882801278976	44.860266	-92.943971	1	WQP	1	7	7	0	0		0	0	15	0	27	Minnesota	27163	Washington County	1									0.07466096449557734	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797529088959709184	44.879243	-92.96189	2	WQP	2	14	7	0	0		0	0	17	0	27	Minnesota	27163	Washington County	1									0.0778326556204762	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797538228650115072	44.919789	-92.879729	1	WQP	1	7	7	0	0		0	0	24	0	27	Minnesota	27163	Washington County	1									0.08667869552683445	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797538297369591808	44.92144366666667	-92.865496	3	WQP	3	21	7	0	0		0	0	12	0	27	Minnesota	27163	Washington County	1									0.06906959960353908	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797538469168283648	44.896072	-92.86251	2	WQP	2	14	7	0	0		0	0	8	0	27	Minnesota	27163	Washington County	1									0.059167414496581874	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797538503528022016	44.8910605	-92.871716	2	WQP	2	14	7	0	0		0	0	11	0	27	Minnesota	27163	Washington County	1									0.0669141894960796	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797539293802004480	44.876244	-92.922259	1	WQP	1	7	7	0	0		0	0	7	0	27	Minnesota	27163	Washington County	1									0.05599572337168301	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797540496392847360	44.81866233333333	-92.891826	3	WQP	3	21	7	0	0		0	0	9	0	27	Minnesota	27163	Washington County	1									0.06200458888731158	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797540668191539200	44.818856	-92.8583255	2	WQP	2	14	7	0	0		0	0	3	0	27	Minnesota	27163	Washington County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797540908709707776	44.862956	-92.862549	1	WQP	1	7	7	0	0		0	0	3	0	27	Minnesota	27163	Washington County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797541149227876352	44.87650666666667	-92.88442166666668	3	WQP	3	21	7	0	0		0	0	5	0	27	Minnesota	27163	Washington County	1									0.04824894837218527	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797541321026568192	44.8766185	-92.872305	4	WQP	4	42	7	0	0		0	0	6	0	27	Minnesota	27163	Washington County	1									0.05239995654055677	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797541492825260032	44.880307	-92.842631	1	WQP	1	7	7	0	0		0	0	3	0	27	Minnesota	27163	Washington County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797541527184998400	44.888918	-92.8427095	2	WQP	2	14	7	0	0		0	0	6	0	27	Minnesota	27163	Washington County	1									0.05239995654055677	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797541664623951872	44.876318	-92.836041	1	WQP	1	7	7	0	0		0	0	2	0	27	Minnesota	27163	Washington County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797542008221335552	44.846646	-92.84198	1	WQP	1	7	7	0	0		0	0	1	0	27	Minnesota	27163	Washington County	1									0.018665241123894335	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797542042581073920	44.838596	-92.841796	1	WQP	1	7	7	0	0		0	0	0	0	27	Minnesota	27163	Washington County	1									0.0	0.0	0.0		0.0	0.0		4	N	none	sawgraph;spatialkg	2
+9797542248739504128	44.833461	-92.834488	2	WQP	2	14	7	0	0		0	0	4	0	27	Minnesota	27163	Washington County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797542283099242496	44.818855	-92.836687	1	WQP	1	7	7	0	0		0	0	4	0	27	Minnesota	27163	Washington County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797542420538195968	44.834969	-92.836078	2	WQP	2	14	7	0	0		0	0	2	0	27	Minnesota	27163	Washington County	1									0.02958370724829093	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797542764135579648	44.833378	-92.807119	1	WQP	1	7	7	0	0		0	0	5	0	27	Minnesota	27163	Washington County	1									0.04824894837218527	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797543485690085376	44.8855445	-92.797155	2	WQP	2	14	7	0	0		0	0	4	0	27	Minnesota	27163	Washington County	1									0.043339347763417226	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797544241604329472	44.90069	-92.829995	1	WQP	1	7	7	0	0		0	0	7	0	27	Minnesota	27163	Washington County	1									0.05599572337168301	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797544275964067840	44.896253	-92.83025	1	WQP	1	7	7	0	0		0	0	3	0	27	Minnesota	27163	Washington County	1									0.03733048224778867	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797544310323806208	44.891953	-92.842848	1	WQP	1	7	7	0	0		0	0	8	0	27	Minnesota	27163	Washington County	1									0.059167414496581874	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9797990505886253056	44.027869	-91.763514	1	WQP	1	40	40	0	0		0	0	22	0	27	Minnesota	27169	Winona County	1									0.08443337464867927	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9935526113302282240	43.25604	-71.6225	1	WQP	1	13	13	0	0		0	0	8	0	33	New Hampshire	33013	Merrimack County	1									0.059167414496581874	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3
+9935709388146737152	43.162558	-70.692166	1	EGAD	1	28	7	0	0		0	0	8	0	23	Maine	23031	York County	1									0.059167414496581874	0.0	0.0		0.0	0.0		4	N	1-ring (unflagged)	sawgraph;spatialkg;fiokg	3

@@ -1,0 +1,22 @@
+{
+  "sample_points_with_coords": 6992,
+  "sample_points_egad": 4511,
+  "sample_points_wqp": 2481,
+  "universe_cells": 2949,
+  "cells_with_observations": 2537,
+  "cells_with_detection_any_unit": 2102,
+  "maxNgL_sentinel_rows": 26,
+  "cells_with_geography": 2949,
+  "colocated_facility_rows": 13646,
+  "colocated_facilities_distinct": 12977,
+  "colocated_facilities_with_naics": 2611,
+  "ring_pfas_facility_rows": 2779,
+  "ring_pfas_facilities_distinct": 1304,
+  "cells_with_same_cell_facility": 1297,
+  "cells_with_same_cell_pfas_facility": 255,
+  "cells_with_ring_facility": 2234,
+  "cells_with_ring_pfas_facility": 735,
+  "cells_with_detection": 2102,
+  "total_observations": 567538,
+  "total_detections": 128343
+}
