@@ -1,0 +1,45 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v7("?bh")
+  v2("?direction"):::projected 
+  v1("?nPartners"):::projected 
+  v9("?other")
+  v3("?rel"):::projected 
+  v8("?stmt")
+  bind0[/"VALUES ?bh"/]
+  bind0-->v7
+  bind00(["https://biohealthkg.proto-okn.net/kg/node/C0002395"])
+  bind00 --> bind0
+  bind01(["https://biohealthkg.proto-okn.net/kg/node/C0276496"])
+  bind01 --> bind0
+  bind02(["https://biohealthkg.proto-okn.net/kg/node/C1863052"])
+  bind02 --> bind0
+  bind03(["https://biohealthkg.proto-okn.net/kg/node/C1863051"])
+  bind03 --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/biohealth"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    subgraph uniongraph00[" Union "]
+    style uniongraph00 color:#000;
+    subgraph uniongraph00l[" "]
+      style uniongraph00l fill:#abf,stroke-dasharray: 3 3;
+      v8 --"rdf:object"--> v9
+      v8 --"rdf:predicate"--> v3
+      v8 --"rdf:subject"--> v7
+      graph0bind1[/"'AD_to_X'"/]
+      graph0bind1 --as--o v2
+    end
+    subgraph uniongraph00r[" "]
+      style uniongraph00r fill:#abf,stroke-dasharray: 3 3;
+      v8 --"rdf:object"--> v7
+      v8 --"rdf:predicate"--> v3
+      v8 --"rdf:subject"--> v9
+      graph0bind2[/"'X_to_AD'"/]
+      graph0bind2 --as--o v2
+    end
+    uniongraph00r <== or ==> uniongraph00l
+    end
+  end
+  bind3[/"count(?other)"/]
+  bind3 --as--o v1

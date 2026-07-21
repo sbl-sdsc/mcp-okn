@@ -1,0 +1,13 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v3("?rel"):::projected 
+  v2("?tLabel"):::projected 
+  v1("?target")
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/rdkg"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_adf40956bb2a8f82"]):::iri 
+    v1 --"rdfs:label"--> v2
+    graph0c2 -->v3--> v1
+  end

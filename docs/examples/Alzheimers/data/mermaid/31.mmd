@@ -1,0 +1,29 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v7("?d")
+  v2("?dLabel"):::projected 
+  v1("?n"):::projected 
+  v3("?pred"):::projected 
+  v8("?stmt")
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/spoke-okn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["biolink:Disease"]):::iri 
+    graph0f0[["(contains(lcase(str(?dLabel)),'alzheimer') || contains(lcase(str(?dLabel)),'dementia'))"]]
+    graph0f0 --> v2
+    v7 --"a"--> graph0c2
+    v7 --"rdfs:label"--> v2
+    subgraph uniongraph00[" Union "]
+    style uniongraph00 color:#000;
+      v8 --"rdf:object"--> v7
+      v8 --"rdf:predicate"--> v3
+    subgraph uniongraph00r[" "]
+      style uniongraph00r fill:#abf,stroke-dasharray: 3 3;
+      v8 --"rdf:predicate"--> v3
+      v8 --"rdf:subject"--> v7
+    end
+    end
+  end
+  bind0[/"count(*)"/]
+  bind0 --as--o v1

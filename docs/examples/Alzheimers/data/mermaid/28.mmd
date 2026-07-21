@@ -1,0 +1,21 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v1("?K"):::projected 
+  v5("?gene")
+  v6("?prot")
+  v2("?pw"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["up:Gene"]):::iri 
+    graph0c3(["up:Pathway"]):::iri 
+    graph0f0[["contains(str(?pw),'R-HSA')"]]
+    graph0f0 --> v2
+    v5 --"a"--> graph0c2
+    v2 --"a"--> graph0c3
+    v5 --"sio:SIO_010078"--> v6
+    v6 --"obo:RO_0000056"--> v2
+  end
+  bind0[/"count(?gene)"/]
+  bind0 --as--o v1

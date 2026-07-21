@@ -1,0 +1,68 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v9("?abbr"):::projected 
+  v12("?cityFips"):::projected 
+  v11("?countyFips"):::projected 
+  v7("?label"):::projected 
+  v13("?lat"):::projected 
+  v2("?loc"):::projected 
+  v14("?long"):::projected 
+  v3("?lower"):::projected 
+  v6("?metric"):::projected 
+  v10("?stateFips"):::projected 
+  v8("?stateName"):::projected 
+  v1("?stmt")
+  v4("?upper"):::projected 
+  v5("?year"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/spoke-okn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c4(["DOID:10652"]):::iri 
+    graph0c2(["spoke:PREVALENCE_DpL"]):::iri 
+    v1 --"rdf:predicate"--> graph0c2
+    v1 --"rdf:subject"--> graph0c4
+    v1 --"rdf:object"--> v2
+    v1 --"spoke:lower"--> v3
+    v1 --"spoke:upper"--> v4
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:year".-> v5
+    end
+    subgraph optionalgraph01["(optional)"]
+    style optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:metric_name".-> v6
+    end
+    subgraph optionalgraph02["(optional)"]
+    style optionalgraph02 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."rdfs:label".-> v7
+    end
+    subgraph optionalgraph03["(optional)"]
+    style optionalgraph03 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."spoke:state_name".-> v8
+    end
+    subgraph optionalgraph04["(optional)"]
+    style optionalgraph04 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."spoke:abbr".-> v9
+    end
+    subgraph optionalgraph05["(optional)"]
+    style optionalgraph05 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."spoke:state_fips".-> v10
+    end
+    subgraph optionalgraph06["(optional)"]
+    style optionalgraph06 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."spoke:county_fips".-> v11
+    end
+    subgraph optionalgraph07["(optional)"]
+    style optionalgraph07 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."spoke:city_fips".-> v12
+    end
+    subgraph optionalgraph08["(optional)"]
+    style optionalgraph08 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."spoke:latitude".-> v13
+    end
+    subgraph optionalgraph09["(optional)"]
+    style optionalgraph09 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."spoke:longitude".-> v14
+    end
+  end

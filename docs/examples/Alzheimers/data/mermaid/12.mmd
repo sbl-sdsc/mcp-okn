@@ -1,0 +1,75 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v6("?adLabel"):::projected 
+  v2("?adTerm"):::projected 
+  v4("?assoc")
+  v11("?ci"):::projected 
+  v10("?lnOR"):::projected 
+  v1("?mondo")
+  v12("?n"):::projected 
+  v5("?other"):::projected 
+  v7("?otherLabel"):::projected 
+  v13("?pairCount"):::projected 
+  v3("?position"):::projected 
+  v9("?res")
+  v8("?study")
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/ubergraph"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c1(["MONDO:0004975"]):::iri 
+    v1 --"rdfs:subClassOf*"--> graph0c1
+  end
+  subgraph graph1["GRAPH https://purl.org/okn/frink/kg/oard-kg"]
+    style graph1 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    subgraph uniongraph10[" Union "]
+    style uniongraph10 color:#000;
+    subgraph uniongraph10l[" "]
+      style uniongraph10l fill:#abf,stroke-dasharray: 3 3;
+      v4 --"bl:object"--> v1
+      v4 --"bl:subject"--> v5
+      graph1bind0[/"'AD_as_object'"/]
+      graph1bind0 --as--o v3
+    end
+    subgraph uniongraph10r[" "]
+      style uniongraph10r fill:#abf,stroke-dasharray: 3 3;
+      v4 --"bl:object"--> v5
+      v4 --"bl:subject"--> v1
+      graph1bind1[/"'AD_as_subject'"/]
+      graph1bind1 --as--o v3
+    end
+    uniongraph10r <== or ==> uniongraph10l
+    end
+    graph1bind2[/"?mondo"/]
+    v1 --o graph1bind2
+    graph1bind2 --as--o v2
+    subgraph optionalgraph10["(optional)"]
+    style optionalgraph10 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."rdfs:label".-> v6
+    end
+    subgraph optionalgraph11["(optional)"]
+    style optionalgraph11 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v5 -."rdfs:label".-> v7
+    end
+    subgraph optionalgraph12["(optional)"]
+    style optionalgraph12 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v4 -."bl:has_supporting_studies".-> v8
+      v8 --"bl:has_study_results"--> v9
+      subgraph optionalgraph13["(optional)"]
+      style optionalgraph13 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v9 -."bl:log_odds_ratio".-> v10
+      end
+      subgraph optionalgraph14["(optional)"]
+      style optionalgraph14 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v9 -."bl:log_odds_ratio_95_ci".-> v11
+      end
+      subgraph optionalgraph15["(optional)"]
+      style optionalgraph15 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v9 -."bl:total_sample_size".-> v12
+      end
+      subgraph optionalgraph16["(optional)"]
+      style optionalgraph16 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v9 -."bl:concept_pair_count".-> v13
+      end
+    end
+  end

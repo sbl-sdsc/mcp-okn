@@ -1,0 +1,89 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v15("?countyFips"):::projected 
+  v3("?dataValue"):::projected 
+  v4("?dataValueType"):::projected 
+  v16("?lat"):::projected 
+  v2("?loc")
+  v12("?locName"):::projected 
+  v17("?long"):::projected 
+  v7("?lower"):::projected 
+  v6("?metric"):::projected 
+  v9("?pop"):::projected 
+  v11("?question"):::projected 
+  v13("?stateAbbr"):::projected 
+  v14("?stateFips"):::projected 
+  v1("?stmt")
+  v5("?unit"):::projected 
+  v8("?upper"):::projected 
+  v10("?year"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/spoke-okn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c4(["DOID:10652"]):::iri 
+    graph0c2(["spoke:PREVALENCE_DpL"]):::iri 
+    v1 --"rdf:predicate"--> graph0c2
+    v1 --"rdf:subject"--> graph0c4
+    v1 --"rdf:object"--> v2
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:data_value".-> v3
+    end
+    subgraph optionalgraph01["(optional)"]
+    style optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:data_value_type".-> v4
+    end
+    subgraph optionalgraph02["(optional)"]
+    style optionalgraph02 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:data_value_unit".-> v5
+    end
+    subgraph optionalgraph03["(optional)"]
+    style optionalgraph03 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:metric_name".-> v6
+    end
+    subgraph optionalgraph04["(optional)"]
+    style optionalgraph04 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:lower".-> v7
+    end
+    subgraph optionalgraph05["(optional)"]
+    style optionalgraph05 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:upper".-> v8
+    end
+    subgraph optionalgraph06["(optional)"]
+    style optionalgraph06 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:total_population".-> v9
+    end
+    subgraph optionalgraph07["(optional)"]
+    style optionalgraph07 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:year".-> v10
+    end
+    subgraph optionalgraph08["(optional)"]
+    style optionalgraph08 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:short_question_text".-> v11
+    end
+    subgraph optionalgraph09["(optional)"]
+    style optionalgraph09 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:location_name".-> v12
+    end
+    subgraph optionalgraph010["(optional)"]
+    style optionalgraph010 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."spoke:state_abbr".-> v13
+    end
+    subgraph optionalgraph011["(optional)"]
+    style optionalgraph011 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."spoke:state_fips".-> v14
+    end
+    subgraph optionalgraph012["(optional)"]
+    style optionalgraph012 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."spoke:county_fips".-> v15
+    end
+    subgraph optionalgraph013["(optional)"]
+    style optionalgraph013 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."spoke:latitude".-> v16
+    end
+    subgraph optionalgraph014["(optional)"]
+    style optionalgraph014 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."spoke:longitude".-> v17
+    end
+  end

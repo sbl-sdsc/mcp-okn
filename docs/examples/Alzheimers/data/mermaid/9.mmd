@@ -1,0 +1,19 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v2("?d"):::projected 
+  v1("?dLabel"):::projected 
+  v3("?xm"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["up:Disease"]):::iri 
+    graph0f0[["contains(lcase(str(?dLabel)),'alzheimer')"]]
+    graph0f0 --> v1
+    v2 --"a"--> graph0c2
+    v2 --"rdfs:label"--> v1
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."skos:exactMatch".-> v3
+    end
+  end

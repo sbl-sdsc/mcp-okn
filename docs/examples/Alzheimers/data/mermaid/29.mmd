@@ -1,0 +1,33 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v4("?gene")
+  v3("?prot")
+  v2("?pw"):::projected 
+  v5("?pwLabel"):::projected 
+  v1("?sym"):::projected 
+  bind0[/"VALUES ?sym"/]
+  bind0-->v1
+  bind00(["SORL1"])
+  bind00 --> bind0
+  bind01(["ABCA7"])
+  bind01 --> bind0
+  bind02(["ADAM10"])
+  bind02 --> bind0
+  bind0more([+289 more])
+  bind0more --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["up:Pathway"]):::iri 
+    graph0f0[["contains(str(?pw),'R-HSA')"]]
+    graph0f0 --> v2
+    v2 --"a"--> graph0c2
+    v3 --"obo:RO_0000056"--> v2
+    v4 --"sio:SIO_010078"--> v3
+    v4 --"rdfs:label"--> v1
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."rdfs:label".-> v5
+    end
+  end

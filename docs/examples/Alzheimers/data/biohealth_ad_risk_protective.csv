@@ -1,0 +1,2294 @@
+rel,otherLabel,cat,source,nStatements
+predisposes_to_condition,Peptides,aapp_gngm_aapp,PubMed,1
+preventative_for_condition,Peptides,aapp_gngm_aapp,PubMed,1
+predisposes_to_condition,vascular factor,aapp_gngm_aapp,PubMed,1
+predisposes_to_condition,S-Adenosylhomocysteine,aapp_gngm_bacs_aapp_6296_ACSM3,PubMed,1
+predisposes_to_condition,insulin-like growth factor 2,aapp_gngm_bacs_aapp_6606_SMN1,PubMed,1
+preventative_for_condition,insulin-like growth factor 2,aapp_gngm_bacs_aapp_6606_SMN1,PubMed,1
+predisposes_to_condition,Abnormal Hemoglobins,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Acute-Phase Proteins,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Albumins,aapp_gngm_bacs_aapp,PubMed,1
+NEG_PREVENTS,Amyloid,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Amyloid,aapp_gngm_bacs_aapp,PubMed,1
+preventative_for_condition,Amyloid,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Aspartate,aapp_gngm_bacs_aapp,PubMed,1
+preventative_for_condition,Aspartate,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,beta-2 Microglobulin,aapp_gngm_bacs_aapp,PubMed,1
+preventative_for_condition,Binding Proteins,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Blood Proteins,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Cysteine,aapp_gngm_bacs_aapp,PubMed,1
+preventative_for_condition,Cysteine,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Growth Factor,aapp_gngm_bacs_aapp,PubMed,1
+preventative_for_condition,Growth Factor,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Haptoglobins,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Hemoglobin,aapp_gngm_bacs_aapp,PubMed,1
+preventative_for_condition,Hemoglobin,aapp_gngm_bacs_aapp,PubMed,1
+NEG_PREDISPOSES,homocysteine,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,homocysteine,aapp_gngm_bacs_aapp,PubMed,1
+preventative_for_condition,homocysteine,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Insulin-Like Growth Factor I,aapp_gngm_bacs_aapp,PubMed,1
+preventative_for_condition,Insulin-Like Growth Factor I,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,L-Type Calcium Channels,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Membrane Proteins,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,N-acetylaspartate,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Presenilin-1,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Proteins,aapp_gngm_bacs_aapp,PubMed,1
+preventative_for_condition,Proteins,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Serum Proteins,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Synaptophysin,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Transferrin,aapp_gngm_bacs_aapp,PubMed,1
+predisposes_to_condition,Glycoproteins,aapp_gngm_bacs_bacs,PubMed,1
+preventative_for_condition,Glycoproteins,aapp_gngm_bacs_bacs,PubMed,1
+predisposes_to_condition,HMGB1 Protein,aapp_gngm_bacs_bacs,PubMed,1
+predisposes_to_condition,link protein,aapp_gngm_bacs_bacs,PubMed,1
+predisposes_to_condition,Synapsin I,aapp_gngm_bacs_bacs,PubMed,1
+predisposes_to_condition,Bacterial Proteins,aapp_gngm_bacs_gngm,PubMed,1
+predisposes_to_condition,Prealbumin,aapp_gngm_bacs_gngm,PubMed,1
+preventative_for_condition,Prealbumin,aapp_gngm_bacs_gngm,PubMed,1
+predisposes_to_condition,alpha 1-Antitrypsin,aapp_gngm_bacs_phsu_aapp,PubMed,1
+preventative_for_condition,Antithrombins,aapp_gngm_bacs_phsu_aapp,PubMed,1
+preventative_for_condition,Ferritin,aapp_gngm_bacs_phsu_aapp,PubMed,1
+predisposes_to_condition,Fibrinogen,aapp_gngm_bacs_phsu_aapp,PubMed,1
+predisposes_to_condition,Glutamine,aapp_gngm_bacs_phsu_aapp,PubMed,1
+predisposes_to_condition,Methionine,aapp_gngm_bacs_phsu_aapp,PubMed,1
+predisposes_to_condition,Protein C,aapp_gngm_bacs_phsu_aapp,PubMed,1
+predisposes_to_condition,Isoleucine,aapp_gngm_bacs_phsu_bacs,PubMed,1
+predisposes_to_condition,Amino Acids,aapp_gngm_bacs_phsu_gngm,PubMed,1
+preventative_for_condition,Amino Acids,aapp_gngm_bacs_phsu_gngm,PubMed,1
+predisposes_to_condition,Arginine,aapp_gngm_bacs_phsu_gngm,PubMed,1
+predisposes_to_condition,Angiotensins,aapp_gngm_bacs_phsu_phsu,PubMed,1
+preventative_for_condition,S-Adenosylmethionine,aapp_gngm_bacs_phsu_phsu,PubMed,1
+predisposes_to_condition,Enzymes,aapp_gngm_enzy_aapp,PubMed,1
+preventative_for_condition,Enzymes,aapp_gngm_enzy_aapp,PubMed,1
+predisposes_to_condition,GTP-Binding Proteins,aapp_gngm_enzy_aapp,PubMed,1
+predisposes_to_condition,Lactate Dehydrogenase,aapp_gngm_enzy_aapp,PubMed,1
+predisposes_to_condition,Matrix Metalloproteinases,aapp_gngm_enzy_aapp,PubMed,1
+predisposes_to_condition,Phosphotransferases,aapp_gngm_enzy_aapp,PubMed,1
+predisposes_to_condition,alteplase,aapp_gngm_enzy_phsu_aapp_5327_PLAT,PubMed,1
+preventative_for_condition,alteplase,aapp_gngm_enzy_phsu_aapp_5327_PLAT,PubMed,1
+predisposes_to_condition,Endopeptidases,aapp_gngm_enzy_phsu_aapp,PubMed,1
+preventative_for_condition,Endopeptidases,aapp_gngm_enzy_phsu_aapp,PubMed,1
+predisposes_to_condition,Lipase,aapp_gngm_enzy_phsu_aapp,PubMed,1
+predisposes_to_condition,Thrombin,aapp_gngm_enzy_phsu_aapp,PubMed,1
+predisposes_to_condition,Urokinase,aapp_gngm_enzy_phsu_aapp,PubMed,1
+predisposes_to_condition,Plasminogen Activator,aapp_gngm_enzy_phsu_phsu,PubMed,1
+preventative_for_condition,Plasminogen Activator,aapp_gngm_enzy_phsu_phsu,PubMed,1
+predisposes_to_condition,Nesiritide,aapp_gngm_horm_phsu_aapp_4879_NPPB,PubMed,1
+predisposes_to_condition,Cholecystokinin,aapp_gngm_horm_phsu_aapp,PubMed,1
+preventative_for_condition,Erythropoietin,aapp_gngm_horm_phsu_aapp,PubMed,1
+predisposes_to_condition,Human Chorionic Gonadotropin,aapp_gngm_horm_phsu_aapp,PubMed,1
+NEG_PREDISPOSES,Insulin,aapp_gngm_horm_phsu_aapp,PubMed,1
+predisposes_to_condition,Insulin,aapp_gngm_horm_phsu_aapp,PubMed,1
+preventative_for_condition,Insulin,aapp_gngm_horm_phsu_aapp,PubMed,1
+predisposes_to_condition,Pramlintide,aapp_gngm_horm_phsu_aapp,PubMed,1
+predisposes_to_condition,Thyrotropin,aapp_gngm_horm_phsu_aapp,PubMed,1
+preventative_for_condition,Somatostatin,aapp_gngm_horm_phsu_phsu,PubMed,1
+preventative_for_condition,Interleukin-3,aapp_gngm_imft_aapp_1437_3918_CSF2_LAMC2,PubMed,1
+preventative_for_condition,Granulocyte-Macrophage Colony-Stimulating Factor,aapp_gngm_imft_aapp_1437_CSF2,PubMed,1
+preventative_for_condition,Anti-Antibodies,aapp_gngm_imft_aapp,PubMed,1
+NEG_PREDISPOSES,Antibodies,aapp_gngm_imft_aapp,PubMed,1
+predisposes_to_condition,Antibodies,aapp_gngm_imft_aapp,PubMed,1
+preventative_for_condition,Antibodies,aapp_gngm_imft_aapp,PubMed,1
+predisposes_to_condition,Autoantibodies,aapp_gngm_imft_aapp,PubMed,1
+preventative_for_condition,Autoantibodies,aapp_gngm_imft_aapp,PubMed,1
+predisposes_to_condition,Complement System Proteins,aapp_gngm_imft_aapp,PubMed,1
+predisposes_to_condition,cytokine,aapp_gngm_imft_aapp,PubMed,1
+preventative_for_condition,cytokine,aapp_gngm_imft_aapp,PubMed,1
+predisposes_to_condition,Interleukins,aapp_gngm_imft_aapp,PubMed,1
+NEG_PREDISPOSES,Monoclonal Antibodies,aapp_gngm_imft_aapp,PubMed,1
+predisposes_to_condition,Monoclonal Antibodies,aapp_gngm_imft_aapp,PubMed,1
+predisposes_to_condition,"Antibodies, Anti-Idiotypic",aapp_gngm_imft_gngm,PubMed,1
+preventative_for_condition,"Antibodies, Anti-Idiotypic",aapp_gngm_imft_gngm,PubMed,1
+predisposes_to_condition,Interleukin-2,aapp_gngm_imft_gngm,PubMed,1
+preventative_for_condition,NF-kappa B,aapp_gngm_imft_gngm,PubMed,1
+predisposes_to_condition,Immunoglobulins,aapp_gngm_imft_imft,PubMed,1
+predisposes_to_condition,Purified Protein Derivative of Tuberculin,aapp_gngm_imft_irda_aapp_3242_8838_27161_30813_HPD_WISP3_AGO2_VSX1,PubMed,1
+preventative_for_condition,adalimumab,aapp_gngm_imft_phsu_aapp,PubMed,1
+predisposes_to_condition,"Immunoglobulins, Intravenous",aapp_gngm_imft_phsu_phsu,PubMed,1
+preventative_for_condition,"Immunoglobulins, Intravenous",aapp_gngm_imft_phsu_phsu,PubMed,1
+predisposes_to_condition,Complement 3b Receptor,aapp_gngm_imft_rcpt_aapp_1378_CR1,PubMed,1
+preventative_for_condition,Acetylcysteine,aapp_gngm_phsu_aapp,PubMed,1
+preventative_for_condition,Etanercept,aapp_gngm_phsu_aapp,PubMed,1
+preventative_for_condition,exenatide,aapp_gngm_phsu_aapp,PubMed,1
+predisposes_to_condition,Carnitine,aapp_gngm_phsu_phsu,PubMed,1
+predisposes_to_condition,Opioid Receptor,aapp_gngm_rcpt_aapp,PubMed,1
+predisposes_to_condition,receptor,aapp_gngm_rcpt_aapp,PubMed,1
+predisposes_to_condition,Angiotensin Receptor,aapp_gngm_rcpt_gngm,PubMed,1
+predisposes_to_condition,N-Methyl-D-Aspartate Receptors,aapp_gngm_rcpt_gngm,PubMed,1
+predisposes_to_condition,5-Methyltetrahydrofolate-Homocysteine S-Methyltransferase,aapp,PubMed,1
+preventative_for_condition,acetylcholine transporter,aapp,PubMed,1
+predisposes_to_condition,Activated-Leukocyte Cell Adhesion Molecule,aapp,PubMed,1
+preventative_for_condition,Activins,aapp,PubMed,1
+predisposes_to_condition,AD7c-NTP,aapp,PubMed,1
+predisposes_to_condition,"AD7c-NTP protein, human",aapp,PubMed,1
+predisposes_to_condition,Adipokines,aapp,PubMed,1
+predisposes_to_condition,Adiponectin,aapp,PubMed,1
+preventative_for_condition,Adiponectin,aapp,PubMed,1
+predisposes_to_condition,Alanine,aapp,PubMed,1
+NEG_PREDISPOSES,alpha 1-Antichymotrypsin,aapp,PubMed,1
+predisposes_to_condition,alpha 1-Antichymotrypsin,aapp,PubMed,1
+NEG_PREDISPOSES,alpha-Synuclein,aapp,PubMed,1
+predisposes_to_condition,alpha-Synuclein,aapp,PubMed,1
+predisposes_to_condition,alpha2 macroglobulin receptor,aapp,PubMed,1
+predisposes_to_condition,"Amino Acids, Branched-Chain",aapp,PubMed,1
+predisposes_to_condition,Amino-terminal pro-brain natriuretic peptide,aapp,PubMed,1
+NEG_PREDISPOSES,aminopeptidase B,aapp,PubMed,1
+predisposes_to_condition,Amylin,aapp,PubMed,1
+preventative_for_condition,Amylin,aapp,PubMed,1
+predisposes_to_condition,Amylin analog,aapp,PubMed,1
+predisposes_to_condition,Amyloid beta-Protein,aapp,PubMed,1
+NEG_PREDISPOSES,Amyloid beta-Protein Precursor,aapp,PubMed,1
+predisposes_to_condition,Amyloid beta-Protein Precursor,aapp,PubMed,1
+preventative_for_condition,Amyloid beta-Protein Precursor,aapp,PubMed,1
+predisposes_to_condition,Amyloid Proteins,aapp,PubMed,1
+predisposes_to_condition,Angiostatins,aapp,PubMed,1
+preventative_for_condition,Angiotensin II,aapp,PubMed,1
+NEG_PREDISPOSES,anti-IgG,aapp,PubMed,1
+preventative_for_condition,"Antibodies, Blocking",aapp,PubMed,1
+predisposes_to_condition,Apolipoprotein A-II,aapp,PubMed,1
+predisposes_to_condition,apolipoprotein C-I,aapp,PubMed,1
+predisposes_to_condition,apolipoprotein C-III,aapp,PubMed,1
+predisposes_to_condition,Apolipoprotein E isoform,aapp,PubMed,1
+predisposes_to_condition,apolipoprotein E-3,aapp,PubMed,1
+preventative_for_condition,apolipoprotein E-3,aapp,PubMed,1
+NEG_PREDISPOSES,apolipoprotein E-4,aapp,PubMed,1
+predisposes_to_condition,apolipoprotein E-4,aapp,PubMed,2
+predisposes_to_condition,Apolipoprotein gene,aapp,PubMed,1
+NEG_PREDISPOSES,Apolipoproteins,aapp,PubMed,1
+predisposes_to_condition,Apolipoproteins,aapp,PubMed,1
+preventative_for_condition,Apolipoproteins,aapp,PubMed,1
+predisposes_to_condition,Apolipoproteins B,aapp,PubMed,1
+predisposes_to_condition,Apolipoproteins C,aapp,PubMed,1
+predisposes_to_condition,"APP protein, human",aapp,PubMed,1
+preventative_for_condition,"APP protein, human",aapp,PubMed,1
+preventative_for_condition,Argipressin,aapp,PubMed,1
+predisposes_to_condition,Arylesterase,aapp,PubMed,1
+predisposes_to_condition,asparaginylendopeptidase,aapp,PubMed,1
+predisposes_to_condition,Aspartic Endopeptidases,aapp,PubMed,1
+predisposes_to_condition,beta-Actin,aapp,PubMed,1
+predisposes_to_condition,beta-secretase,aapp,PubMed,1
+predisposes_to_condition,beta-Synuclein,aapp,PubMed,1
+preventative_for_condition,beta-Synuclein,aapp,PubMed,1
+preventative_for_condition,beta-Tubulin,aapp,PubMed,1
+predisposes_to_condition,biglycan,aapp,PubMed,1
+predisposes_to_condition,Biliverdin reductase,aapp,PubMed,1
+predisposes_to_condition,BIN1 protein,aapp,PubMed,1
+predisposes_to_condition,bleomycin hydrolase,aapp,PubMed,1
+NEG_PREDISPOSES,Brain-Derived Neurotrophic Factor,aapp,PubMed,1
+predisposes_to_condition,Brain-Derived Neurotrophic Factor,aapp,PubMed,1
+preventative_for_condition,Brain-Derived Neurotrophic Factor,aapp,PubMed,1
+predisposes_to_condition,C-reactive protein,aapp,PubMed,1
+predisposes_to_condition,Carrier Proteins,aapp,PubMed,1
+preventative_for_condition,caspase-3,aapp,PubMed,1
+NEG_PREDISPOSES,Catechol O-Methyltransferase,aapp,PubMed,1
+predisposes_to_condition,Catechol O-Methyltransferase,aapp,PubMed,1
+predisposes_to_condition,Cathepsins B,aapp,PubMed,1
+preventative_for_condition,caveolin 1,aapp,PubMed,1
+preventative_for_condition,Caveolins,aapp,PubMed,1
+predisposes_to_condition,CCAAT-Enhancer-Binding Protein-delta,aapp,PubMed,1
+predisposes_to_condition,Cell Adhesion Molecules,aapp,PubMed,1
+preventative_for_condition,Cell Adhesion Molecules,aapp,PubMed,1
+preventative_for_condition,cerebrolysin,aapp,PubMed,1
+predisposes_to_condition,Cerebrospinal Fluid Proteins,aapp,PubMed,1
+predisposes_to_condition,chemokine,aapp,PubMed,1
+preventative_for_condition,chemokine,aapp,PubMed,1
+predisposes_to_condition,Cholesterol Ester Transfer Proteins,aapp,PubMed,1
+predisposes_to_condition,Choline O-Acetyltransferase,aapp,PubMed,1
+preventative_for_condition,Choline O-Acetyltransferase,aapp,PubMed,1
+predisposes_to_condition,Chylomicrons,aapp,PubMed,1
+predisposes_to_condition,Clathrin Adaptors,aapp,PubMed,1
+preventative_for_condition,Clathrin Adaptors,aapp,PubMed,1
+NEG_PREDISPOSES,Clusterin,aapp,PubMed,1
+predisposes_to_condition,Clusterin,aapp,PubMed,1
+NEG_PREDISPOSES,COIL gene,aapp,PubMed,1
+predisposes_to_condition,Complement 3,aapp,PubMed,1
+preventative_for_condition,Complement 3,aapp,PubMed,1
+predisposes_to_condition,Complement component,aapp,PubMed,1
+predisposes_to_condition,COMPLEMENT FACTOR H,aapp,PubMed,1
+predisposes_to_condition,Complement Receptor Type 1,aapp,PubMed,1
+predisposes_to_condition,Connexins,aapp,PubMed,1
+predisposes_to_condition,Contact factor,aapp,PubMed,1
+predisposes_to_condition,Corticotropin-Releasing Hormone,aapp,PubMed,1
+preventative_for_condition,Corticotropin-Releasing Hormone,aapp,PubMed,1
+predisposes_to_condition,Cyclin-Dependent Kinase 5,aapp,PubMed,1
+predisposes_to_condition,Cyclin-Dependent Kinases,aapp,PubMed,1
+predisposes_to_condition,cyclooxygenase 1,aapp,PubMed,1
+predisposes_to_condition,cyclooxygenase 2,aapp,PubMed,1
+predisposes_to_condition,Cysteine Protease,aapp,PubMed,1
+NEG_PREDISPOSES,Cytochrome P-450 CYP2D6,aapp,PubMed,1
+NEG_PREDISPOSES,Cytomegalovirus IgG Antibody,aapp,PubMed,1
+predisposes_to_condition,dihydrolipoamide succinyltransferase,aapp,PubMed,1
+predisposes_to_condition,dopamine D4 receptor,aapp,PubMed,1
+NEG_PREDISPOSES,Dopamine Receptor,aapp,PubMed,1
+predisposes_to_condition,dopamine transporter,aapp,PubMed,1
+predisposes_to_condition,ELAV-Like Protein 2,aapp,PubMed,1
+predisposes_to_condition,"estrogen receptor alpha, human",aapp,PubMed,1
+predisposes_to_condition,Estrogen Receptor beta,aapp,PubMed,1
+predisposes_to_condition,Extracellular Matrix Proteins,aapp,PubMed,1
+predisposes_to_condition,Extracellular Protein,aapp,PubMed,1
+predisposes_to_condition,Extracellular Signal Regulated Kinases,aapp,PubMed,1
+predisposes_to_condition,Fatty Acid-Binding Proteins,aapp,PubMed,1
+preventative_for_condition,fibrinopeptides gamma,aapp,PubMed,1
+preventative_for_condition,fibroblast growth factor 21,aapp,PubMed,1
+predisposes_to_condition,Fibronectins,aapp,PubMed,1
+predisposes_to_condition,flotillin,aapp,PubMed,1
+preventative_for_condition,Free triiodothyronine,aapp,PubMed,1
+preventative_for_condition,GABA transporter,aapp,PubMed,1
+preventative_for_condition,Galanin,aapp,PubMed,1
+predisposes_to_condition,Galectin 3,aapp,PubMed,1
+preventative_for_condition,gamma-Aminobutyric Acid,aapp,PubMed,1
+predisposes_to_condition,gastric inhibitory polypeptide receptor,aapp,PubMed,1
+NEG_PREDISPOSES,Gelatinase B,aapp,PubMed,1
+predisposes_to_condition,Gelatinases,aapp,PubMed,1
+predisposes_to_condition,"Gene Products, Protein",aapp,PubMed,1
+NEG_PREDISPOSES,ghrelin,aapp,PubMed,1
+NEG_PREVENTS,ghrelin,aapp,PubMed,1
+preventative_for_condition,ghrelin,aapp,PubMed,1
+predisposes_to_condition,Glia Maturation Factor,aapp,PubMed,1
+preventative_for_condition,Glia Maturation Factor,aapp,PubMed,1
+predisposes_to_condition,Glial Fibrillary Acidic Protein,aapp,PubMed,1
+preventative_for_condition,Glial Fibrillary Acidic Protein,aapp,PubMed,1
+predisposes_to_condition,Glutamate,aapp,PubMed,1
+preventative_for_condition,Glutamate,aapp,PubMed,1
+preventative_for_condition,Glutamate Transporter,aapp,PubMed,1
+predisposes_to_condition,Glutamates,aapp,PubMed,1
+preventative_for_condition,Glutamates,aapp,PubMed,1
+predisposes_to_condition,glutaminyl-peptide cyclotransferase,aapp,PubMed,1
+predisposes_to_condition,Glutathione,aapp,PubMed,1
+preventative_for_condition,Glutathione,aapp,PubMed,1
+predisposes_to_condition,Glutathione S-Transferase,aapp,PubMed,1
+predisposes_to_condition,Glycogen Synthase Kinase 3,aapp,PubMed,1
+predisposes_to_condition,glycogen synthase kinase 3 beta,aapp,PubMed,1
+predisposes_to_condition,glycosylated serum albumin,aapp,PubMed,1
+predisposes_to_condition,GNB3 protein,aapp,PubMed,1
+predisposes_to_condition,Gonadotropins,aapp,PubMed,1
+predisposes_to_condition,granulin,aapp,PubMed,1
+predisposes_to_condition,Growth Associated Protein 43,aapp,PubMed,1
+preventative_for_condition,Growth Associated Protein 43,aapp,PubMed,1
+predisposes_to_condition,growth factor receptor-bound protein 2,aapp,PubMed,1
+predisposes_to_condition,GTPase-Activating Proteins,aapp,PubMed,1
+preventative_for_condition,GTPase-Activating Proteins,aapp,PubMed,1
+predisposes_to_condition,Guanosine Triphosphate Phosphohydrolases,aapp,PubMed,1
+preventative_for_condition,GVS 111,aapp,PubMed,1
+preventative_for_condition,Heat shock proteins,aapp,PubMed,1
+predisposes_to_condition,High Density Lipoproteins,aapp,PubMed,1
+preventative_for_condition,High Density Lipoproteins,aapp,PubMed,1
+predisposes_to_condition,Histone H1,aapp,PubMed,1
+predisposes_to_condition,HLA Antigens,aapp,PubMed,1
+predisposes_to_condition,Hormone Receptor,aapp,PubMed,1
+predisposes_to_condition,HSP90 Heat-Shock Proteins,aapp,PubMed,1
+predisposes_to_condition,Human Microbiome,aapp,PubMed,1
+predisposes_to_condition,Human serum albumin,aapp,PubMed,1
+preventative_for_condition,humanin,aapp,PubMed,1
+predisposes_to_condition,Inositol Polyphosphate 5-Phosphatases,aapp,PubMed,1
+predisposes_to_condition,Insulin-Like Growth Factor Binding Protein 3,aapp,PubMed,1
+predisposes_to_condition,Insulin-Like Growth Factor Binding Protein 5,aapp,PubMed,1
+predisposes_to_condition,insulin-like growth factor binding protein-related protein 1,aapp,PubMed,1
+preventative_for_condition,Insulin-Like-Growth Factor I Receptor,aapp,PubMed,1
+predisposes_to_condition,Insulinase,aapp,PubMed,1
+NEG_PREDISPOSES,Intercellular adhesion molecule 1,aapp,PubMed,1
+predisposes_to_condition,Interleukin-1,aapp,PubMed,1
+predisposes_to_condition,Interleukin-1 alpha,aapp,PubMed,1
+predisposes_to_condition,Interleukin-1 beta,aapp,PubMed,1
+preventative_for_condition,Interleukin-1 beta,aapp,PubMed,1
+predisposes_to_condition,Interleukin-10,aapp,PubMed,1
+preventative_for_condition,Interleukin-10,aapp,PubMed,1
+predisposes_to_condition,Interleukin-12,aapp,PubMed,1
+predisposes_to_condition,Interleukin-15,aapp,PubMed,1
+predisposes_to_condition,Interleukin-4,aapp,PubMed,1
+preventative_for_condition,Interleukin-4,aapp,PubMed,1
+NEG_PREDISPOSES,Interleukin-8,aapp,PubMed,1
+predisposes_to_condition,Interleukin-8,aapp,PubMed,1
+predisposes_to_condition,Kv Channel-Interacting Protein 3,aapp,PubMed,1
+predisposes_to_condition,kyotorphin,aapp,PubMed,1
+preventative_for_condition,L-Selectin,aapp,PubMed,1
+predisposes_to_condition,Lactoferrin,aapp,PubMed,1
+predisposes_to_condition,LDL-Receptor Related Protein 1,aapp,PubMed,1
+predisposes_to_condition,Luteinizing Hormone,aapp,PubMed,1
+predisposes_to_condition,Lymphocyte Specific Protein Tyrosine Kinase p56(lck),aapp,PubMed,1
+preventative_for_condition,Lysine,aapp,PubMed,1
+predisposes_to_condition,lysosomal proteins,aapp,PubMed,1
+predisposes_to_condition,Macroglobulins,aapp,PubMed,1
+preventative_for_condition,Macrophage Colony-Stimulating Factor Receptor,aapp,PubMed,1
+predisposes_to_condition,Membrane Transport Proteins,aapp,PubMed,1
+predisposes_to_condition,Methyltransferase,aapp,PubMed,1
+predisposes_to_condition,Mitogen-Activated Protein Kinase 14,aapp,PubMed,1
+preventative_for_condition,Molecular Chaperones,aapp,PubMed,1
+predisposes_to_condition,Monoacylglycerol Lipases,aapp,PubMed,1
+predisposes_to_condition,Monoamine Oxidase A,aapp,PubMed,1
+predisposes_to_condition,Monoamine Oxidase B,aapp,PubMed,1
+predisposes_to_condition,mortalin,aapp,PubMed,1
+predisposes_to_condition,Muscarinic Acetylcholine Receptor,aapp,PubMed,1
+predisposes_to_condition,Mutant Proteins,aapp,PubMed,1
+predisposes_to_condition,myocyte enhancer factor 2C,aapp,PubMed,1
+NEG_PREDISPOSES,"N,N-dimethylarginine",aapp,PubMed,1
+predisposes_to_condition,NADPH Oxidase,aapp,PubMed,1
+predisposes_to_condition,Neprilysin,aapp,PubMed,1
+preventative_for_condition,Neprilysin,aapp,PubMed,1
+preventative_for_condition,Nerve Growth Factors,aapp,PubMed,1
+predisposes_to_condition,Nerve Tissue Proteins,aapp,PubMed,1
+preventative_for_condition,netrin-1,aapp,PubMed,1
+predisposes_to_condition,Neurofilament Proteins,aapp,PubMed,1
+NEG_PREDISPOSES,Neurogranin,aapp,PubMed,1
+predisposes_to_condition,Neurogranin,aapp,PubMed,1
+preventative_for_condition,Neurogranin,aapp,PubMed,1
+predisposes_to_condition,Neuronal Calcium-Sensor Proteins,aapp,PubMed,1
+predisposes_to_condition,neuronal pentraxin receptor,aapp,PubMed,1
+predisposes_to_condition,Neuropeptides,aapp,PubMed,1
+preventative_for_condition,Neuropeptides,aapp,PubMed,1
+predisposes_to_condition,NGFR Protein,aapp,PubMed,1
+predisposes_to_condition,NIMA,aapp,PubMed,1
+predisposes_to_condition,nuclear receptor coactivator 1,aapp,PubMed,1
+predisposes_to_condition,orexin,aapp,PubMed,1
+predisposes_to_condition,orexin A,aapp,PubMed,1
+predisposes_to_condition,osteopontin,aapp,PubMed,1
+predisposes_to_condition,oxidized low density lipoprotein,aapp,PubMed,1
+predisposes_to_condition,P-Glycoprotein,aapp,PubMed,1
+preventative_for_condition,P-Glycoprotein,aapp,PubMed,1
+preventative_for_condition,P-Selectin,aapp,PubMed,1
+preventative_for_condition,Parvalbumins,aapp,PubMed,1
+predisposes_to_condition,Peptide Fragments,aapp,PubMed,1
+predisposes_to_condition,Peptide Hydrolases,aapp,PubMed,1
+predisposes_to_condition,peptide P3,aapp,PubMed,1
+NEG_PREDISPOSES,Peptidyl-Dipeptidase A,aapp,PubMed,1
+NEG_PREVENTS,Peptidyl-Dipeptidase A,aapp,PubMed,1
+predisposes_to_condition,Peptidyl-Dipeptidase A,aapp,PubMed,1
+preventative_for_condition,Peptidyl-Dipeptidase A,aapp,PubMed,1
+predisposes_to_condition,phenylpyruvate tautomerase,aapp,PubMed,1
+predisposes_to_condition,Phosphocreatine,aapp,PubMed,1
+predisposes_to_condition,pigment epithelium-derived factor,aapp,PubMed,1
+preventative_for_condition,pituitary adenylate cyclase activating polypeptide,aapp,PubMed,1
+predisposes_to_condition,Plasma Proteins,aapp,PubMed,1
+preventative_for_condition,Plasmin,aapp,PubMed,1
+predisposes_to_condition,Plasminogen Activator Inhibitor 1,aapp,PubMed,1
+predisposes_to_condition,Platelet-Derived Growth Factor beta Receptor,aapp,PubMed,1
+predisposes_to_condition,PPAR alpha,aapp,PubMed,1
+predisposes_to_condition,presenilin,aapp,PubMed,1
+preventative_for_condition,presenilin,aapp,PubMed,1
+preventative_for_condition,presynaptic density protein 95,aapp,PubMed,1
+NEG_PREDISPOSES,Prions,aapp,PubMed,1
+predisposes_to_condition,Prions,aapp,PubMed,1
+predisposes_to_condition,Prostate-Specific Antigen,aapp,PubMed,1
+predisposes_to_condition,Protein complex,aapp,PubMed,1
+predisposes_to_condition,Protein Isoforms,aapp,PubMed,1
+predisposes_to_condition,Protein Kinase C-epsilon,aapp,PubMed,1
+predisposes_to_condition,Protein phosphatase,aapp,PubMed,1
+predisposes_to_condition,PS2 protein (alzheimer-associated),aapp,PubMed,1
+predisposes_to_condition,Qa-SNARE Proteins,aapp,PubMed,1
+predisposes_to_condition,"Receptor, Angiotensin, Type 1",aapp,PubMed,1
+preventative_for_condition,"Receptors, IgG",aapp,PubMed,1
+NEG_PREDISPOSES,"Receptors, Immunologic",aapp,PubMed,1
+predisposes_to_condition,"Receptors, Immunologic",aapp,PubMed,1
+predisposes_to_condition,reduced folate carrier,aapp,PubMed,1
+preventative_for_condition,Reduced Glutathione,aapp,PubMed,1
+preventative_for_condition,Scaffold protein,aapp,PubMed,1
+NEG_PREDISPOSES,Serine,aapp,PubMed,1
+predisposes_to_condition,Serine,aapp,PubMed,1
+predisposes_to_condition,serine racemase,aapp,PubMed,1
+predisposes_to_condition,serotonin receptor,aapp,PubMed,1
+predisposes_to_condition,Sex Hormone-Binding Globulin,aapp,PubMed,1
+predisposes_to_condition,Sialic Acid Binding Immunoglobulin-like Lectins,aapp,PubMed,1
+predisposes_to_condition,STAR gene,aapp,PubMed,1
+NEG_PREDISPOSES,Synaptosomal-Associated Protein 25,aapp,PubMed,1
+predisposes_to_condition,Synaptosomal-Associated Protein 25,aapp,PubMed,1
+predisposes_to_condition,synaptotagmin I,aapp,PubMed,1
+preventative_for_condition,synaptotagmin I,aapp,PubMed,1
+predisposes_to_condition,syntaxin 6,aapp,PubMed,1
+predisposes_to_condition,synthetic peptide,aapp,PubMed,1
+predisposes_to_condition,tau Proteins,aapp,PubMed,1
+preventative_for_condition,Taurine,aapp,PubMed,1
+predisposes_to_condition,thimet oligopeptidase,aapp,PubMed,1
+predisposes_to_condition,TRANSCRIPTION FACTOR,aapp,PubMed,1
+predisposes_to_condition,Transcription factor genes,aapp,PubMed,1
+predisposes_to_condition,Transforming Growth Factor beta,aapp,PubMed,1
+preventative_for_condition,Transforming Growth Factor beta,aapp,PubMed,1
+predisposes_to_condition,Transgenes,aapp,PubMed,1
+predisposes_to_condition,Transglutaminases,aapp,PubMed,1
+predisposes_to_condition,Tryptophan,aapp,PubMed,1
+predisposes_to_condition,Tumor Necrosis Factors,aapp,PubMed,1
+predisposes_to_condition,Ubiquitin,aapp,PubMed,1
+preventative_for_condition,Ubiquitin,aapp,PubMed,1
+predisposes_to_condition,valylvaline,aapp,PubMed,1
+predisposes_to_condition,Vascular Cell Adhesion Molecule-1,aapp,PubMed,1
+predisposes_to_condition,Vascular Endothelial Growth Factor A,aapp,PubMed,1
+predisposes_to_condition,Vascular Endothelial Growth Factors,aapp,PubMed,1
+preventative_for_condition,Vascular Endothelial Growth Factors,aapp,PubMed,1
+predisposes_to_condition,Vesicle-Associated Membrane Protein 1,aapp,PubMed,1
+NEG_PREDISPOSES,Vesicle-Associated Membrane Protein 2,aapp,PubMed,1
+predisposes_to_condition,Vitamin D-Binding Protein,aapp,PubMed,1
+predisposes_to_condition,Cataract,acab_acab,PubMed,1
+predisposes_to_condition,Tooth Loss,acab_acab,PubMed,1
+NEG_PREDISPOSES,Neurofibrillary Tangles,acab,PubMed,1
+predisposes_to_condition,Neurofibrillary Tangles,acab,PubMed,1
+predisposes_to_condition,Nonexudative age-related macular degeneration,acab,PubMed,1
+predisposes_to_condition,Antibiotics,antb_antb,PubMed,1
+preventative_for_condition,Antibiotics,antb_antb,PubMed,1
+predisposes_to_condition,A/T/S,antb_orch_antb,PubMed,1
+preventative_for_condition,Rifampin,antb_orch_antb,PubMed,1
+predisposes_to_condition,Today,antb_orch_antb,PubMed,1
+preventative_for_condition,Today,antb_orch_antb,PubMed,1
+preventative_for_condition,Sirolimus,antb_orch_orch,PubMed,1
+predisposes_to_condition,Metabolite,bacs_bacs,PubMed,1
+preventative_for_condition,Metabolite,bacs_bacs,PubMed,1
+predisposes_to_condition,Magnesium,bacs_elii_bacs,PubMed,1
+preventative_for_condition,Magnesium,bacs_elii_bacs,PubMed,1
+predisposes_to_condition,Copper,bacs_elii_phsu_bacs,PubMed,1
+preventative_for_condition,Copper,bacs_elii_phsu_bacs,PubMed,1
+preventative_for_condition,Potassium,bacs_elii_phsu_bacs,PubMed,1
+predisposes_to_condition,Selenium,bacs_elii_phsu_bacs,PubMed,1
+preventative_for_condition,Selenium,bacs_elii_phsu_bacs,PubMed,1
+NEG_PREDISPOSES,Zinc,bacs_elii_phsu_bacs,PubMed,1
+predisposes_to_condition,Zinc,bacs_elii_phsu_bacs,PubMed,1
+preventative_for_condition,Zinc,bacs_elii_phsu_bacs,PubMed,1
+predisposes_to_condition,Calcium,bacs_elii_phsu_phsu,PubMed,1
+predisposes_to_condition,Iron,bacs_elii_phsu_phsu,PubMed,1
+predisposes_to_condition,Oxygen,bacs_elii_phsu_phsu,PubMed,1
+preventative_for_condition,Oxygen,bacs_elii_phsu_phsu,PubMed,1
+predisposes_to_condition,Toxin,bacs_hops_bacs,PubMed,1
+preventative_for_condition,Toxin,bacs_hops_bacs,PubMed,1
+predisposes_to_condition,Nitric Oxide,bacs_inch_phsu_bacs,PubMed,1
+preventative_for_condition,Nitric Oxide,bacs_inch_phsu_bacs,PubMed,1
+predisposes_to_condition,Nitrous Oxide,bacs_inch_phsu_bacs,PubMed,1
+NEG_PREDISPOSES,DNA,bacs_nnon_bacs,PubMed,1
+predisposes_to_condition,DNA,bacs_nnon_bacs,PubMed,1
+preventative_for_condition,DNA,bacs_nnon_bacs,PubMed,1
+predisposes_to_condition,Nucleic Acids,bacs_nnon_bacs,PubMed,1
+NEG_PREVENTS,Urate,bacs_nnon_bacs,PubMed,1
+predisposes_to_condition,Urate,bacs_nnon_bacs,PubMed,1
+preventative_for_condition,Adenosine,bacs_nnon_phsu_bacs,PubMed,1
+predisposes_to_condition,Nicotinamide adenine dinucleotide (NAD),bacs_nnon_phsu_bacs,PubMed,1
+predisposes_to_condition,3-Hydroxybutyrate,bacs_orch_bacs,PubMed,1
+preventative_for_condition,3-Hydroxybutyrate,bacs_orch_bacs,PubMed,1
+predisposes_to_condition,Bilirubin,bacs_orch_bacs,PubMed,1
+preventative_for_condition,Bilirubin,bacs_orch_bacs,PubMed,1
+predisposes_to_condition,Cholesterol,bacs_orch_bacs,PubMed,1
+preventative_for_condition,Cholesterol,bacs_orch_bacs,PubMed,1
+preventative_for_condition,"Fatty Acids, Volatile",bacs_orch_bacs,PubMed,1
+predisposes_to_condition,Heme,bacs_orch_bacs,PubMed,1
+preventative_for_condition,Histamine,bacs_orch_bacs,PubMed,1
+predisposes_to_condition,Long chain fatty acid,bacs_orch_bacs,PubMed,1
+predisposes_to_condition,Low-Density Lipoproteins,bacs_orch_bacs,PubMed,1
+predisposes_to_condition,Palmitic Acid,bacs_orch_bacs,PubMed,1
+preventative_for_condition,phosphoethanolamine,bacs_orch_bacs,PubMed,1
+predisposes_to_condition,Phospholipids,bacs_orch_bacs,PubMed,1
+preventative_for_condition,Phospholipids,bacs_orch_bacs,PubMed,1
+predisposes_to_condition,Serotonin,bacs_orch_bacs,PubMed,1
+preventative_for_condition,Serotonin,bacs_orch_bacs,PubMed,1
+predisposes_to_condition,Triglycerides,bacs_orch_bacs,PubMed,1
+predisposes_to_condition,Uric Acid,bacs_orch_bacs,PubMed,1
+preventative_for_condition,Uric Acid,bacs_orch_bacs,PubMed,1
+predisposes_to_condition,Choline,bacs_orch_phsu_bacs,PubMed,1
+preventative_for_condition,Chondroitin Sulfates,bacs_orch_phsu_bacs,PubMed,1
+preventative_for_condition,Dopamine,bacs_orch_phsu_bacs,PubMed,1
+NEG_PREVENTS,Omega-3 Fatty Acids,bacs_orch_phsu_bacs,PubMed,1
+predisposes_to_condition,Omega-3 Fatty Acids,bacs_orch_phsu_bacs,PubMed,1
+preventative_for_condition,Omega-3 Fatty Acids,bacs_orch_phsu_bacs,PubMed,1
+predisposes_to_condition,Acetylcholine,bacs_orch_phsu_orch,PubMed,1
+preventative_for_condition,Acetylcholine,bacs_orch_phsu_orch,PubMed,1
+preventative_for_condition,Eicosapentaenoic Acid,bacs_orch_phsu_phsu,PubMed,1
+predisposes_to_condition,Glucose,bacs_orch_phsu_phsu,PubMed,1
+preventative_for_condition,Glucose,bacs_orch_phsu_phsu,PubMed,1
+predisposes_to_condition,Glycosaminoglycans,bacs_orch_phsu_phsu,PubMed,1
+preventative_for_condition,Ursodiol,bacs_orch_phsu_phsu,PubMed,1
+predisposes_to_condition,Catecholamines,bacs_phsu_phsu,PubMed,1
+predisposes_to_condition,3' Untranslated Regions,bacs,PubMed,1
+preventative_for_condition,3' Untranslated Regions,bacs,PubMed,1
+preventative_for_condition,Abnormal protein,bacs,PubMed,1
+preventative_for_condition,Abscisic Acid,bacs,PubMed,1
+predisposes_to_condition,Acetylglucosamine,bacs,PubMed,1
+preventative_for_condition,Activator,bacs,PubMed,1
+preventative_for_condition,Acyl Coenzyme A,bacs,PubMed,1
+NEG_PREDISPOSES,alpha 2-Glucoproteins,bacs,PubMed,1
+predisposes_to_condition,alpha 2-Glucoproteins,bacs,PubMed,1
+predisposes_to_condition,alpha-carotene,bacs,PubMed,1
+predisposes_to_condition,alpha-Linolenic Acid,bacs,PubMed,1
+predisposes_to_condition,Angiogenesis Factor,bacs,PubMed,1
+preventative_for_condition,apolipoprotein D,bacs,PubMed,1
+predisposes_to_condition,Bile Acids,bacs,PubMed,1
+preventative_for_condition,Bile Acids,bacs,PubMed,1
+preventative_for_condition,Biopterin,bacs,PubMed,1
+predisposes_to_condition,Carotenoids,bacs,PubMed,1
+preventative_for_condition,Carotenoids,bacs,PubMed,1
+predisposes_to_condition,Cholesterol Esters,bacs,PubMed,1
+preventative_for_condition,Cholesterol Esters,bacs,PubMed,1
+predisposes_to_condition,cholinergic system,bacs,PubMed,1
+preventative_for_condition,cholinergic system,bacs,PubMed,1
+NEG_PREVENTS,Cobalamins,bacs,PubMed,1
+predisposes_to_condition,"Codon, Nonsense",bacs,PubMed,1
+predisposes_to_condition,CpG Islands,bacs,PubMed,1
+predisposes_to_condition,Dehydroepiandrosterone Sulfate,bacs,PubMed,1
+preventative_for_condition,Dehydroepiandrosterone Sulfate,bacs,PubMed,1
+preventative_for_condition,Desmosterol,bacs,PubMed,1
+predisposes_to_condition,"DNA, Mitochondrial",bacs,PubMed,1
+preventative_for_condition,"DNA, Mitochondrial",bacs,PubMed,1
+predisposes_to_condition,Docosahexaenoic Acids,bacs,PubMed,1
+preventative_for_condition,Docosahexaenoic Acids,bacs,PubMed,1
+NEG_PREDISPOSES,Endocannabinoids,bacs,PubMed,1
+predisposes_to_condition,Endocannabinoids,bacs,PubMed,1
+preventative_for_condition,Endocannabinoids,bacs,PubMed,1
+preventative_for_condition,Ergothioneine,bacs,PubMed,1
+predisposes_to_condition,Fatty Acids,bacs,PubMed,1
+preventative_for_condition,Fatty Acids,bacs,PubMed,1
+preventative_for_condition,"Fatty Acids, Essential",bacs,PubMed,1
+preventative_for_condition,"Fatty Acids, Monounsaturated",bacs,PubMed,1
+predisposes_to_condition,Flavin-Adenine Dinucleotide,bacs,PubMed,1
+predisposes_to_condition,Free Radicals,bacs,PubMed,1
+preventative_for_condition,Genistein,bacs,PubMed,1
+preventative_for_condition,Glucosylceramides,bacs,PubMed,1
+predisposes_to_condition,Glutamine-Specific tRNA,bacs,PubMed,1
+preventative_for_condition,Hesperidin,bacs,PubMed,1
+preventative_for_condition,Homovanillic Acid,bacs,PubMed,1
+preventative_for_condition,huang-lien-chieh-tu-tang,bacs,PubMed,1
+predisposes_to_condition,Indican,bacs,PubMed,1
+preventative_for_condition,Inhibitor,bacs,PubMed,1
+predisposes_to_condition,Ion Channel,bacs,PubMed,1
+predisposes_to_condition,Isoprostanes,bacs,PubMed,1
+predisposes_to_condition,Linoleic Acid,bacs,PubMed,1
+predisposes_to_condition,Lipofuscin,bacs,PubMed,1
+predisposes_to_condition,Lipoproteins,bacs,PubMed,1
+preventative_for_condition,lipoxin A4,bacs,PubMed,1
+preventative_for_condition,loganin,bacs,PubMed,1
+predisposes_to_condition,Lutein,bacs,PubMed,1
+preventative_for_condition,Lutein,bacs,PubMed,1
+predisposes_to_condition,Manganese,bacs,PubMed,1
+predisposes_to_condition,Metabolic Marker,bacs,PubMed,1
+preventative_for_condition,Micronutrients,bacs,PubMed,1
+NEG_PREDISPOSES,MicroRNAs,bacs,PubMed,1
+predisposes_to_condition,MicroRNAs,bacs,PubMed,1
+preventative_for_condition,MicroRNAs,bacs,PubMed,1
+predisposes_to_condition,Minisatellite Repeats,bacs,PubMed,1
+preventative_for_condition,Minisatellite Repeats,bacs,PubMed,1
+predisposes_to_condition,Mitochondrial Proteins,bacs,PubMed,1
+preventative_for_condition,Mitochondrial Proteins,bacs,PubMed,1
+predisposes_to_condition,Natural Products,bacs,PubMed,1
+preventative_for_condition,Natural Products,bacs,PubMed,1
+predisposes_to_condition,Neopterin,bacs,PubMed,1
+preventative_for_condition,Nuclear Proteins,bacs,PubMed,1
+preventative_for_condition,Phytochemical,bacs,PubMed,1
+preventative_for_condition,Phytosterols,bacs,PubMed,1
+preventative_for_condition,Plant Extracts,bacs,PubMed,1
+predisposes_to_condition,Polyunsaturated Fatty Acids,bacs,PubMed,1
+preventative_for_condition,Polyunsaturated Fatty Acids,bacs,PubMed,1
+NEG_PREDISPOSES,Promoter Regions (Genetics),bacs,PubMed,1
+predisposes_to_condition,Promoter Regions (Genetics),bacs,PubMed,1
+predisposes_to_condition,Reactive Oxygen Species,bacs,PubMed,1
+preventative_for_condition,Reactive Oxygen Species,bacs,PubMed,1
+predisposes_to_condition,Recombinant DNA,bacs,PubMed,1
+predisposes_to_condition,"Regulatory Sequences, Nucleic Acid",bacs,PubMed,1
+preventative_for_condition,"Regulatory Sequences, Nucleic Acid",bacs,PubMed,1
+predisposes_to_condition,Ribosomal RNA,bacs,PubMed,1
+predisposes_to_condition,"RNA, Messenger",bacs,PubMed,1
+preventative_for_condition,"RNA, Messenger",bacs,PubMed,1
+NEG_PREDISPOSES,serotonin transporter,bacs,PubMed,1
+predisposes_to_condition,serotonin transporter,bacs,PubMed,1
+preventative_for_condition,serotonin transporter,bacs,PubMed,1
+predisposes_to_condition,Sphingomyelins,bacs,PubMed,1
+preventative_for_condition,Sphingomyelins,bacs,PubMed,1
+preventative_for_condition,Sphingosine,bacs,PubMed,1
+predisposes_to_condition,Splice Donor Site,bacs,PubMed,1
+preventative_for_condition,sulphoraphene,bacs,PubMed,1
+predisposes_to_condition,Tissue Extracts,bacs,PubMed,1
+predisposes_to_condition,Transfer RNA,bacs,PubMed,1
+predisposes_to_condition,Trehalose,bacs,PubMed,1
+predisposes_to_condition,Untranslated Regions,bacs,PubMed,1
+predisposes_to_condition,Virulence Factors,bacs,PubMed,1
+preventative_for_condition,Virulence Factors,bacs,PubMed,1
+preventative_for_condition,Xanthophylls,bacs,PubMed,1
+predisposes_to_condition,Xenobiotics,bacs,PubMed,1
+predisposes_to_condition,Behavior,bhvr_bhvr,PubMed,1
+predisposes_to_condition,protective factors,biof,PubMed,1
+predisposes_to_condition,Silicon Dioxide,bodm_inch_inch,PubMed,1
+predisposes_to_condition,Diethylhexyl Phthalate,bodm,PubMed,1
+predisposes_to_condition,Galactose,carb,PubMed,1
+predisposes_to_condition,Inositol,carb,PubMed,1
+preventative_for_condition,Inositol,carb,PubMed,1
+preventative_for_condition,maysin,carb,PubMed,1
+preventative_for_condition,Oligosaccharides,carb,PubMed,1
+predisposes_to_condition,Polysaccharides,carb,PubMed,1
+preventative_for_condition,Polysaccharides,carb,PubMed,1
+predisposes_to_condition,Refined carbohydrate,carb,PubMed,1
+preventative_for_condition,scyllitol,carb,PubMed,1
+predisposes_to_condition,Congenital heart disease,cgab_cgab,PubMed,1
+preventative_for_condition,Molecular Target,chvf,PubMed,1
+preventative_for_condition,Particle,chvs_chvs,PubMed,1
+preventative_for_condition,Analog,chvs,PubMed,1
+preventative_for_condition,derivatives,chvs,PubMed,1
+preventative_for_condition,Lead compound,chvs,PubMed,1
+preventative_for_condition,macromolecule,chvs,PubMed,1
+preventative_for_condition,monomer,chvs,PubMed,1
+preventative_for_condition,"Nanotubes, Carbon",chvs,PubMed,1
+NEG_PREDISPOSES,Biological Markers,clna_clna,PubMed,1
+predisposes_to_condition,Biological Markers,clna_clna,PubMed,1
+predisposes_to_condition,Cardiac Output,clna_clna,PubMed,1
+predisposes_to_condition,Challenge:Type:Point in time:^Patient:Nominal,clna_clna,PubMed,1
+predisposes_to_condition,clinical aspects,clna_clna,PubMed,1
+predisposes_to_condition,Complaint:Find:Pt:^Patient:Nom,clna_clna,PubMed,1
+NEG_PREDISPOSES,Diastolic blood pressure,clna_clna,PubMed,1
+predisposes_to_condition,Diastolic blood pressure,clna_clna,PubMed,1
+predisposes_to_condition,Evaluation and management note:Finding:Point in time:{Setting}:Document:{Provider},clna_clna,PubMed,1
+predisposes_to_condition,Intravascular systolic:Pressure:Point in time:Arterial system:Quantitative,clna_clna,PubMed,1
+predisposes_to_condition,Left ventricular ejection fraction,clna_clna,PubMed,1
+predisposes_to_condition,Multiple markers,clna_clna,PubMed,1
+predisposes_to_condition,Precipitating Factors,clna_clna,PubMed,1
+predisposes_to_condition,"Range of Motion, Articular",clna_clna,PubMed,1
+predisposes_to_condition,Therapeutic Effect,clna_clna,PubMed,1
+NEG_PREDISPOSES,Body mass index,clna,PubMed,1
+predisposes_to_condition,Body mass index,clna,PubMed,1
+predisposes_to_condition,Clinical information:Finding:Point in time:^Patient:Narrative,clna,PubMed,1
+predisposes_to_condition,Composition,clna,PubMed,1
+predisposes_to_condition,Condition status,clna,PubMed,1
+predisposes_to_condition,Detectable,clna,PubMed,1
+predisposes_to_condition,Diagnostic Factor,clna,PubMed,1
+predisposes_to_condition,Disease susceptibility,clna,PubMed,1
+predisposes_to_condition,Head circumference,clna,PubMed,1
+predisposes_to_condition,Lean body mass,clna,PubMed,1
+predisposes_to_condition,Molecular Fingerprint of Tumor,clna,PubMed,1
+predisposes_to_condition,Oxygen Consumption,clna,PubMed,1
+predisposes_to_condition,Pathologic stage,clna,PubMed,1
+predisposes_to_condition,patient characteristics,clna,PubMed,1
+predisposes_to_condition,preference,clna,PubMed,1
+predisposes_to_condition,QUINTILE,clna,PubMed,1
+predisposes_to_condition,risk and protective factors,clna,PubMed,1
+predisposes_to_condition,Vascular function,clna,PubMed,1
+predisposes_to_condition,neuron loss,comd,PubMed,1
+preventative_for_condition,Diagnosis,diap_diap,PubMed,1
+predisposes_to_condition,Imaging Techniques,diap_diap,PubMed,1
+predisposes_to_condition,disease stage,diap,PubMed,1
+NEG_PREDISPOSES,Exercise,dora_dora,PubMed,1
+predisposes_to_condition,Exercise,dora_dora,PubMed,1
+preventative_for_condition,Exercise,dora_dora,PubMed,1
+predisposes_to_condition,Rest,dora_dora,PubMed,1
+preventative_for_condition,Running (physical activity),dora_dora,PubMed,1
+predisposes_to_condition,Walking (activity),dora_dora,PubMed,1
+predisposes_to_condition,Cigarette Smoking,dora,PubMed,1
+preventative_for_condition,Daily Activities,dora,PubMed,1
+preventative_for_condition,Exercise Training,dora,PubMed,1
+predisposes_to_condition,Fitness,dora,PubMed,1
+preventative_for_condition,Fitness,dora,PubMed,1
+predisposes_to_condition,game,dora,PubMed,1
+predisposes_to_condition,Leisure Activities,dora,PubMed,1
+preventative_for_condition,Leisure Activities,dora,PubMed,1
+predisposes_to_condition,Leisure physical activity,dora,PubMed,1
+preventative_for_condition,Leisure physical activity,dora,PubMed,1
+predisposes_to_condition,Physical activity,dora,PubMed,1
+preventative_for_condition,Physical activity,dora,PubMed,1
+predisposes_to_condition,Regular exercise,dora,PubMed,1
+preventative_for_condition,Regular exercise,dora,PubMed,1
+predisposes_to_condition,regular physical activity,dora,PubMed,1
+preventative_for_condition,regular physical activity,dora,PubMed,1
+predisposes_to_condition,Television Viewing,dora,PubMed,1
+predisposes_to_condition,Adrenal Gland Hyperfunction,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Amyloidosis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Amyotrophic Lateral Sclerosis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Anemia,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Arthritis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Asthma,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Asymptomatic Infections,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Atherosclerosis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Atrial Fibrillation,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Avitaminosis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,"BESTROPHINOPATHY, AUTOSOMAL RECESSIVE",dsyn_dsyn,PubMed,1
+predisposes_to_condition,Brain Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Brain Edema,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Brain Ischemia,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Cardiovascular Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Cardiovascular Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,cardiovascular risk factor,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Carotid Atherosclerosis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Cerebral Amyloid Angiopathy,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Cerebral Atherosclerosis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Cerebral atrophy,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Cerebral disorder,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Cerebral dysfunction,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Cerebral Infarction,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Cerebrovascular accident,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Cerebrovascular Disorders,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Chronic cerebral ischemia,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Chronic disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Chronic heart failure,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Chronic infectious disease,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Chronic inflammatory disorder,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Chronic Kidney Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Chronic Obstructive Airway Disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Cirrhosis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Common wart,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Communicable Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Congestive heart failure,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Coronary Arteriosclerosis,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Coronary heart disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Coronary heart disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Crohn Disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Cytomegalovirus Infections,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Degenerative polyarthritis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Dehydration,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,"Dementia, Vascular",dsyn_dsyn,PubMed,1
+predisposes_to_condition,"Dementia, Vascular",dsyn_dsyn,PubMed,1
+predisposes_to_condition,Dentatorubral-Pallidoluysian Atrophy,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Diabetes,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Diabetes,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Diabetes Mellitus,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Diabetes Mellitus,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,"Diabetes Mellitus, Non-Insulin-Dependent",dsyn_dsyn,PubMed,1
+predisposes_to_condition,"Diabetes Mellitus, Non-Insulin-Dependent",dsyn_dsyn,PubMed,1
+predisposes_to_condition,Diabetic Retinopathy,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Disease,dsyn_dsyn,PubMed,2
+predisposes_to_condition,Disorder of eye,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Down Syndrome,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Dyslipidemias,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Dyssomnias,dsyn_dsyn,PubMed,1
+predisposes_to_condition,early disease onset,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Encephalitis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Encephalopathies,dsyn_dsyn,PubMed,1
+predisposes_to_condition,end organ damage,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Epilepsy,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Essential Hypertension,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Essential Tremor,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Fatty Liver,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Folic Acid Deficiency,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Fragile X Syndrome,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Glaucoma,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Glaucoma,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Gout,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Gout,dsyn_dsyn,PubMed,1
+predisposes_to_condition,hearing impairment,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Heart Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Heart Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Heart failure,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Hemochromatosis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Heparin-induced thrombocytopenia,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Herpes Labialis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Herpes Simplex Infections,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Herpesviridae Infections,dsyn_dsyn,PubMed,1
+predisposes_to_condition,"Hydrocephalus, Normal Pressure",dsyn_dsyn,PubMed,1
+predisposes_to_condition,Hyperammonemia,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Hyperbilirubinemia,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,hypercholesterolemia,dsyn_dsyn,PubMed,1
+predisposes_to_condition,hypercholesterolemia,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Hyperglycemia,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Hyperhomocysteinemia,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Hyperinsulinism,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Hyperlipidemia,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Hypertensive disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Hypertensive disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Hyperthyroidism,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Hypertriglyceridemia,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Hypoglycemia,dsyn_dsyn,PubMed,1
+predisposes_to_condition,"Hypotension, Orthostatic",dsyn_dsyn,PubMed,1
+predisposes_to_condition,Hypothyroidism,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Idiopathic disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Infantile Neuroaxonal Dystrophy,dsyn_dsyn,PubMed,1
+predisposes_to_condition,"Infarction, Lacunar",dsyn_dsyn,PubMed,1
+predisposes_to_condition,Infection of tooth,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Infectious disease of lung,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Inflammatory Bowel Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Iron deficiency,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Iron Overload,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Ischemic stroke,dsyn_dsyn,PubMed,1
+predisposes_to_condition,"Kidney Failure, Chronic",dsyn_dsyn,PubMed,1
+predisposes_to_condition,Leprosy,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Leukoencephalopathies,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Low Vision,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Lyme Disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Malnutrition,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Metabolic Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,metabolic disturbance,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Migraine Disorders,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Mitochondrial Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Motor Neuron Disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Multiple Sclerosis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Myocardial Infarction,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Myocardial Ischemia,dsyn_dsyn,PubMed,1
+predisposes_to_condition,nervous system disorder,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Neuritis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Neurodegenerative Disorders,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Non-alcoholic Fatty Liver Disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Obesity,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Oral infection,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Osteoporosis,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Parkinson Disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Parkinson Disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Parkinsonian Disorders,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Pick Disease of the Brain,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Pneumonia,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Prediabetes syndrome,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Psoriasis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Rheumatoid Arthritis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Rickets,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Sepsis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Septicemia,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Siderosis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Sleep Apnea Syndromes,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,"Sleep Apnea, Obstructive",dsyn_dsyn,PubMed,1
+predisposes_to_condition,"Sleep Apnea, Obstructive",dsyn_dsyn,PubMed,1
+predisposes_to_condition,Syndrome,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Systemic disease,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Systolic hypertension,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Thyroid Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Toxic Epidermal Necrolysis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Transient hypertension,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Ulcerative Colitis,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Urinary tract infection,dsyn_dsyn,PubMed,1
+predisposes_to_condition,varicella zoster,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Vascular Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Vascular Diseases,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Virus Diseases,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Vitamin D Deficiency,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Vitamin D Deficiency,dsyn_dsyn,PubMed,1
+predisposes_to_condition,Wernicke Encephalopathy,dsyn_dsyn,PubMed,1
+NEG_PREDISPOSES,Age related macular degeneration,dsyn,PubMed,1
+predisposes_to_condition,Age related macular degeneration,dsyn,PubMed,1
+predisposes_to_condition,Allergic rhinitis NOS,dsyn,PubMed,1
+predisposes_to_condition,"Alzheimer Disease, Early Onset",dsyn,PubMed,1
+predisposes_to_condition,Amyloidosis cutis dyschromia,dsyn,PubMed,1
+predisposes_to_condition,Anosognosia,dsyn,PubMed,1
+predisposes_to_condition,"Auditory Diseases, Central",dsyn,PubMed,1
+predisposes_to_condition,Cerebral Ischemia,dsyn,PubMed,1
+predisposes_to_condition,Cerebral Small Vessel Diseases,dsyn,PubMed,1
+predisposes_to_condition,Cerebrovascular Insufficiency,dsyn,PubMed,1
+predisposes_to_condition,Chronic metabolic disorder,dsyn,PubMed,1
+predisposes_to_condition,Chronic Traumatic Encephalopathy,dsyn,PubMed,1
+predisposes_to_condition,Clonal Hematopoiesis,dsyn,PubMed,1
+predisposes_to_condition,Corticobasal degeneration,dsyn,PubMed,1
+NEG_PREDISPOSES,COVID-19,dsyn,PubMed,1
+predisposes_to_condition,COVID-19,dsyn,PubMed,1
+predisposes_to_condition,Degenerative brain disorder,dsyn,PubMed,1
+predisposes_to_condition,DISEASES/DIAGNOSES,dsyn,PubMed,1
+predisposes_to_condition,Disorder of lipoid metabolism NOS,dsyn,PubMed,1
+predisposes_to_condition,Endothelial dysfunction,dsyn,PubMed,1
+predisposes_to_condition,Familial Alzheimer's disease,dsyn,PubMed,1
+predisposes_to_condition,Headache Disorders,dsyn,PubMed,1
+predisposes_to_condition,Hippocampal atrophy,dsyn,PubMed,1
+predisposes_to_condition,Huntington Disease,dsyn,PubMed,1
+predisposes_to_condition,Hyperlipoproteinemia Type III,dsyn,PubMed,1
+predisposes_to_condition,Immune reconstitution inflammatory syndrome,dsyn,PubMed,1
+predisposes_to_condition,Incurable diseases,dsyn,PubMed,1
+predisposes_to_condition,Inflammatory disease of the central nervous system,dsyn,PubMed,1
+predisposes_to_condition,Kwashiorkor,dsyn,PubMed,1
+NEG_PREDISPOSES,Lewy Body Disease,dsyn,PubMed,1
+predisposes_to_condition,Lewy Body Disease,dsyn,PubMed,1
+predisposes_to_condition,Little's Disease,dsyn,PubMed,1
+predisposes_to_condition,Livedoid vasculitis,dsyn,PubMed,1
+NEG_PREDISPOSES,Low tension glaucoma,dsyn,PubMed,1
+predisposes_to_condition,Low tension glaucoma,dsyn,PubMed,1
+predisposes_to_condition,Magnesium Deficiency,dsyn,PubMed,1
+predisposes_to_condition,Membranous lipodystrophy,dsyn,PubMed,1
+predisposes_to_condition,Metabolic Syndrome X,dsyn,PubMed,1
+predisposes_to_condition,Neurological muscle weakness,dsyn,PubMed,1
+predisposes_to_condition,Oestrogen deficiency,dsyn,PubMed,1
+predisposes_to_condition,Periodontal Diseases,dsyn,PubMed,1
+NEG_PREDISPOSES,Periodontitis,dsyn,PubMed,1
+predisposes_to_condition,Periodontitis,dsyn,PubMed,1
+predisposes_to_condition,Prieto X-linked mental retardation syndrome,dsyn,PubMed,1
+NEG_PREDISPOSES,Primary open angle glaucoma,dsyn,PubMed,1
+predisposes_to_condition,Primary open angle glaucoma,dsyn,PubMed,1
+predisposes_to_condition,Primary Sjogren's syndrome,dsyn,PubMed,1
+predisposes_to_condition,Retinitis Pigmentosa,dsyn,PubMed,1
+predisposes_to_condition,Senile dementia,dsyn,PubMed,1
+predisposes_to_condition,Sleep Disorders,dsyn,PubMed,1
+predisposes_to_condition,Spinocerebellar Ataxias,dsyn,PubMed,1
+NEG_PREDISPOSES,"Supranuclear Palsy, Progressive",dsyn,PubMed,1
+predisposes_to_condition,Tangier Disease,dsyn,PubMed,1
+predisposes_to_condition,Tauopathies,dsyn,PubMed,1
+predisposes_to_condition,Trisomy,dsyn,PubMed,1
+predisposes_to_condition,Vascular inflammations,dsyn,PubMed,1
+predisposes_to_condition,Zinc deficiency,dsyn,PubMed,1
+predisposes_to_condition,Arachidonic Acid,eico,PubMed,1
+preventative_for_condition,Dinoprostone,eico,PubMed,1
+predisposes_to_condition,F2-Isoprostanes,eico,PubMed,1
+NEG_PREDISPOSES,Aluminum,elii_elii,PubMed,1
+predisposes_to_condition,Aluminum,elii_elii,PubMed,1
+predisposes_to_condition,Elements,elii_elii,PubMed,1
+predisposes_to_condition,Ions,elii_elii,PubMed,1
+NEG_PREDISPOSES,Mercury,elii_hops_elii,PubMed,1
+predisposes_to_condition,Mercury,elii_hops_elii,PubMed,1
+preventative_for_condition,Lithium,elii_phsu_elii,PubMed,1
+predisposes_to_condition,Calcium ion,elii_phsu_phsu,PubMed,1
+predisposes_to_condition,^18^Fluorine,elii,PubMed,1
+predisposes_to_condition,Cadmium,elii,PubMed,1
+predisposes_to_condition,Carbon,elii,PubMed,1
+predisposes_to_condition,Hydroxide Ion,elii,PubMed,1
+predisposes_to_condition,Metalloids,elii,PubMed,1
+predisposes_to_condition,"Metals, Heavy",elii,PubMed,1
+predisposes_to_condition,Neuregulin 1,enzy,PubMed,1
+predisposes_to_condition,Protein Kinase C Alpha,enzy,PubMed,1
+predisposes_to_condition,1/3 meter (distance vision finding),fndg_fndg,PubMed,1
+predisposes_to_condition,Ability to communicate,fndg_fndg,PubMed,1
+predisposes_to_condition,Abnormal,fndg_fndg,PubMed,1
+predisposes_to_condition,Abnormality,fndg_fndg,PubMed,1
+predisposes_to_condition,Abnormality of the vasculature,fndg_fndg,PubMed,1
+predisposes_to_condition,Accumulation,fndg_fndg,PubMed,1
+predisposes_to_condition,activity level,fndg_fndg,PubMed,1
+predisposes_to_condition,Alcohol intake above recommended sensible limits,fndg_fndg,PubMed,1
+predisposes_to_condition,Anosmia,fndg_fndg,PubMed,1
+predisposes_to_condition,Asymptomatic,fndg_fndg,PubMed,1
+predisposes_to_condition,Behavior showing increased motor activity,fndg_fndg,PubMed,1
+predisposes_to_condition,Blindness,fndg_fndg,PubMed,1
+predisposes_to_condition,Blood pressure finding,fndg_fndg,PubMed,1
+predisposes_to_condition,brazilian,fndg_fndg,PubMed,1
+predisposes_to_condition,ca increase,fndg_fndg,PubMed,1
+predisposes_to_condition,Cardiac Arrhythmia,fndg_fndg,PubMed,1
+predisposes_to_condition,Chief complaint (finding),fndg_fndg,PubMed,1
+predisposes_to_condition,Clinical Significance,fndg_fndg,PubMed,1
+predisposes_to_condition,Close Relationship,fndg_fndg,PubMed,1
+predisposes_to_condition,Co-morbid conditions,fndg_fndg,PubMed,1
+predisposes_to_condition,Cognition.status,fndg_fndg,PubMed,1
+predisposes_to_condition,Coherent,fndg_fndg,PubMed,1
+predisposes_to_condition,Comorbidity,fndg_fndg,PubMed,1
+predisposes_to_condition,Confirmation,fndg_fndg,PubMed,1
+predisposes_to_condition,Consequent,fndg_fndg,PubMed,1
+predisposes_to_condition,consideration,fndg_fndg,PubMed,1
+predisposes_to_condition,Contraindicated,fndg_fndg,PubMed,1
+predisposes_to_condition,Convergent gaze,fndg_fndg,PubMed,1
+predisposes_to_condition,Deafness,fndg_fndg,PubMed,1
+predisposes_to_condition,Depressed mood,fndg_fndg,PubMed,1
+predisposes_to_condition,Detected (finding),fndg_fndg,PubMed,1
+NEG_PREDISPOSES,diabetic,fndg_fndg,PubMed,1
+predisposes_to_condition,Disability,fndg_fndg,PubMed,1
+predisposes_to_condition,Disconnection Medical Device Problem,fndg_fndg,PubMed,1
+predisposes_to_condition,Discrepancy,fndg_fndg,PubMed,1
+predisposes_to_condition,Does communicate,fndg_fndg,PubMed,1
+predisposes_to_condition,Does stand,fndg_fndg,PubMed,1
+predisposes_to_condition,Drowsiness,fndg_fndg,PubMed,1
+predisposes_to_condition,Dysequilibrium,fndg_fndg,PubMed,1
+predisposes_to_condition,Elevated C-reactive protein,fndg_fndg,PubMed,1
+predisposes_to_condition,Engaged to be married,fndg_fndg,PubMed,1
+predisposes_to_condition,Falls,fndg_fndg,PubMed,1
+predisposes_to_condition,Family history,fndg_fndg,PubMed,1
+predisposes_to_condition,Fasting,fndg_fndg,PubMed,1
+predisposes_to_condition,Fatty deposition,fndg_fndg,PubMed,1
+predisposes_to_condition,Feeling hopeless,fndg_fndg,PubMed,1
+predisposes_to_condition,Florid red complexion (finding),fndg_fndg,PubMed,1
+predisposes_to_condition,Form of muscle,fndg_fndg,PubMed,1
+predisposes_to_condition,Functional Status,fndg_fndg,PubMed,1
+NEG_PREDISPOSES,Gait,fndg_fndg,PubMed,1
+predisposes_to_condition,Gait,fndg_fndg,PubMed,1
+predisposes_to_condition,Genetic Carriers,fndg_fndg,PubMed,1
+predisposes_to_condition,glucose high,fndg_fndg,PubMed,1
+predisposes_to_condition,Handling,fndg_fndg,PubMed,1
+predisposes_to_condition,Has difficulty doing (qualifier value),fndg_fndg,PubMed,1
+predisposes_to_condition,High Level,fndg_fndg,PubMed,1
+predisposes_to_condition,Household composition,fndg_fndg,PubMed,1
+predisposes_to_condition,Hypometabolism,fndg_fndg,PubMed,1
+predisposes_to_condition,Hypotension,fndg_fndg,PubMed,1
+predisposes_to_condition,"Hypothermia, natural",fndg_fndg,PubMed,1
+predisposes_to_condition,Illiteracy,fndg_fndg,PubMed,1
+predisposes_to_condition,Immune,fndg_fndg,PubMed,1
+predisposes_to_condition,In further education,fndg_fndg,PubMed,1
+predisposes_to_condition,Incidental Findings,fndg_fndg,PubMed,1
+predisposes_to_condition,Increase in blood pressure,fndg_fndg,PubMed,1
+predisposes_to_condition,Increased apoptosis,fndg_fndg,PubMed,1
+predisposes_to_condition,Increased serum calcium,fndg_fndg,PubMed,1
+predisposes_to_condition,Increased systolic arterial pressure,fndg_fndg,PubMed,1
+NEG_PREDISPOSES,Increased uric acid level,fndg_fndg,PubMed,1
+predisposes_to_condition,Increased uric acid level,fndg_fndg,PubMed,1
+predisposes_to_condition,Instability,fndg_fndg,PubMed,1
+predisposes_to_condition,Instrumental activities of daily living,fndg_fndg,PubMed,1
+predisposes_to_condition,Intermediate Risk,fndg_fndg,PubMed,1
+predisposes_to_condition,Late Onset Disorders,fndg_fndg,PubMed,1
+NEG_PREDISPOSES,Lens Opacities,fndg_fndg,PubMed,1
+predisposes_to_condition,Lens Opacities,fndg_fndg,PubMed,1
+NEG_PREDISPOSES,Lesion,fndg_fndg,PubMed,1
+predisposes_to_condition,Lesion,fndg_fndg,PubMed,1
+predisposes_to_condition,lithium use,fndg_fndg,PubMed,1
+predisposes_to_condition,Loneliness,fndg_fndg,PubMed,1
+predisposes_to_condition,maternal history,fndg_fndg,PubMed,1
+predisposes_to_condition,Mean blood pressure,fndg_fndg,PubMed,1
+predisposes_to_condition,Medical History,fndg_fndg,PubMed,1
+predisposes_to_condition,medication use,fndg_fndg,PubMed,1
+predisposes_to_condition,Metabolic Response,fndg_fndg,PubMed,1
+predisposes_to_condition,Moderate Level,fndg_fndg,PubMed,1
+predisposes_to_condition,Molecular Abnormality,fndg_fndg,PubMed,1
+predisposes_to_condition,Multifactorial,fndg_fndg,PubMed,1
+predisposes_to_condition,Negative,fndg_fndg,PubMed,1
+predisposes_to_condition,Negative Finding,fndg_fndg,PubMed,1
+predisposes_to_condition,Negative Surgical Margin,fndg_fndg,PubMed,1
+predisposes_to_condition,Neurological observations,fndg_fndg,PubMed,1
+predisposes_to_condition,New finding since previous mammogram,fndg_fndg,PubMed,1
+predisposes_to_condition,Newly Diagnosed Disease,fndg_fndg,PubMed,1
+predisposes_to_condition,No incoordination,fndg_fndg,PubMed,1
+predisposes_to_condition,No past history,fndg_fndg,PubMed,1
+predisposes_to_condition,Normal general body function,fndg_fndg,PubMed,1
+predisposes_to_condition,Not significant,fndg_fndg,PubMed,1
+predisposes_to_condition,Nutritional status,fndg_fndg,PubMed,1
+predisposes_to_condition,Overweight,fndg_fndg,PubMed,1
+predisposes_to_condition,patient condition,fndg_fndg,PubMed,1
+predisposes_to_condition,Personality Traits,fndg_fndg,PubMed,1
+NEG_PREDISPOSES,Physical findings,fndg_fndg,PubMed,1
+predisposes_to_condition,Physical findings,fndg_fndg,PubMed,1
+NEG_PREDISPOSES,Physical function,fndg_fndg,PubMed,1
+predisposes_to_condition,Physically active,fndg_fndg,PubMed,1
+predisposes_to_condition,Planning suicide,fndg_fndg,PubMed,1
+predisposes_to_condition,Plaque (lesion),fndg_fndg,PubMed,1
+predisposes_to_condition,poor health,fndg_fndg,PubMed,1
+predisposes_to_condition,Positive Finding,fndg_fndg,PubMed,1
+predisposes_to_condition,Possible,fndg_fndg,PubMed,1
+predisposes_to_condition,Pre-op diagnosis,fndg_fndg,PubMed,1
+predisposes_to_condition,Present,fndg_fndg,PubMed,1
+predisposes_to_condition,Problem,fndg_fndg,PubMed,1
+predisposes_to_condition,Psychological Well Being,fndg_fndg,PubMed,1
+predisposes_to_condition,Readiness,fndg_fndg,PubMed,1
+predisposes_to_condition,Recurrent infections,fndg_fndg,PubMed,1
+predisposes_to_condition,regional difference,fndg_fndg,PubMed,1
+predisposes_to_condition,research results,fndg_fndg,PubMed,1
+preventative_for_condition,restricted diet,fndg_fndg,PubMed,1
+predisposes_to_condition,Rhythm,fndg_fndg,PubMed,1
+predisposes_to_condition,risk factor (of) disease,fndg_fndg,PubMed,1
+predisposes_to_condition,risk factors,fndg_fndg,PubMed,1
+predisposes_to_condition,Sedentary lifestyle,fndg_fndg,PubMed,1
+predisposes_to_condition,Senility,fndg_fndg,PubMed,1
+predisposes_to_condition,Severe (severity modifier),fndg_fndg,PubMed,2
+predisposes_to_condition,Sleep behavior finding,fndg_fndg,PubMed,1
+predisposes_to_condition,Sleep Deprivation,fndg_fndg,PubMed,1
+predisposes_to_condition,Slow gait,fndg_fndg,PubMed,1
+NEG_PREDISPOSES,Smoker,fndg_fndg,PubMed,1
+predisposes_to_condition,Smoker,fndg_fndg,PubMed,1
+predisposes_to_condition,Stable Disease,fndg_fndg,PubMed,1
+predisposes_to_condition,Stress,fndg_fndg,PubMed,1
+predisposes_to_condition,Symptom mild,fndg_fndg,PubMed,1
+NEG_PREDISPOSES,Systemic arterial pressure,fndg_fndg,PubMed,1
+predisposes_to_condition,Systemic arterial pressure,fndg_fndg,PubMed,1
+predisposes_to_condition,Uncertainty,fndg_fndg,PubMed,1
+NEG_PREDISPOSES,Unconscious State,fndg_fndg,PubMed,1
+predisposes_to_condition,Unconscious State,fndg_fndg,PubMed,1
+predisposes_to_condition,Underweight,fndg_fndg,PubMed,1
+predisposes_to_condition,Unlikely,fndg_fndg,PubMed,1
+preventative_for_condition,Vegetarian diet,fndg_fndg,PubMed,1
+predisposes_to_condition,Vitality,fndg_fndg,PubMed,1
+predisposes_to_condition,wave slowing,fndg_fndg,PubMed,1
+predisposes_to_condition,Weight decreased,fndg_fndg,PubMed,1
+predisposes_to_condition,Weight Gain,fndg_fndg,PubMed,1
+predisposes_to_condition,Well adult,fndg_fndg,PubMed,1
+predisposes_to_condition,White matter changes,fndg_fndg,PubMed,1
+predisposes_to_condition,Widowhood,fndg_fndg,PubMed,1
+predisposes_to_condition,Worried,fndg_fndg,PubMed,1
+predisposes_to_condition,1+ Score,fndg,PubMed,1
+predisposes_to_condition,AA genotype,fndg,PubMed,1
+predisposes_to_condition,Abnormal metabolism,fndg,PubMed,1
+predisposes_to_condition,Abnormality of mitochondrial metabolism,fndg,PubMed,1
+predisposes_to_condition,Abnormality of red blood cells,fndg,PubMed,1
+predisposes_to_condition,Andropause,fndg,PubMed,1
+predisposes_to_condition,Asymmetric Chest Appearance,fndg,PubMed,1
+predisposes_to_condition,At risk of disease,fndg,PubMed,1
+predisposes_to_condition,birth control pill use,fndg,PubMed,1
+predisposes_to_condition,Cardiovascular Risk Score,fndg,PubMed,1
+NEG_PREDISPOSES,Carrier of disorder,fndg,PubMed,1
+predisposes_to_condition,Carrier of disorder,fndg,PubMed,1
+NEG_PREDISPOSES,Carrier status,fndg,PubMed,1
+predisposes_to_condition,Carrier status,fndg,PubMed,1
+predisposes_to_condition,Causative_agents,fndg,PubMed,1
+predisposes_to_condition,Cerebral microbleeds,fndg,PubMed,1
+predisposes_to_condition,Coffee intake,fndg,PubMed,1
+predisposes_to_condition,Confirmed case,fndg,PubMed,1
+predisposes_to_condition,Consanguinity,fndg,PubMed,1
+predisposes_to_condition,Death (finding),fndg,PubMed,1
+predisposes_to_condition,Death of relative,fndg,PubMed,1
+predisposes_to_condition,Depression score,fndg,PubMed,1
+predisposes_to_condition,Diet high in saturated fats,fndg,PubMed,1
+predisposes_to_condition,Dietary fat intake,fndg,PubMed,1
+predisposes_to_condition,Discordance,fndg,PubMed,1
+predisposes_to_condition,Disrupted sleep,fndg,PubMed,1
+predisposes_to_condition,Drug Exposure,fndg,PubMed,1
+predisposes_to_condition,Early disease stage,fndg,PubMed,1
+predisposes_to_condition,Early Life Stress,fndg,PubMed,1
+predisposes_to_condition,Educational Status,fndg,PubMed,1
+predisposes_to_condition,Egg intake,fndg,PubMed,1
+predisposes_to_condition,Employed,fndg,PubMed,1
+predisposes_to_condition,EPISTASIS,fndg,PubMed,1
+predisposes_to_condition,ESTROGEN USE,fndg,PubMed,1
+predisposes_to_condition,Exogenous Factors,fndg,PubMed,1
+predisposes_to_condition,Fat-free mass,fndg,PubMed,1
+predisposes_to_condition,Fish intake,fndg,PubMed,1
+predisposes_to_condition,Folate intake,fndg,PubMed,1
+predisposes_to_condition,Follow-up 1 year,fndg,PubMed,1
+predisposes_to_condition,Food Consumption,fndg,PubMed,1
+NEG_PREDISPOSES,Frailty,fndg,PubMed,1
+predisposes_to_condition,Frailty,fndg,PubMed,1
+predisposes_to_condition,functional disability,fndg,PubMed,1
+predisposes_to_condition,genetic risk factors,fndg,PubMed,1
+predisposes_to_condition,Grand multiparity,fndg,PubMed,1
+predisposes_to_condition,High fat diet NOS,fndg,PubMed,1
+predisposes_to_condition,hormonal changes,fndg,PubMed,1
+predisposes_to_condition,Household income,fndg,PubMed,1
+predisposes_to_condition,Hypohomocysteinemia,fndg,PubMed,1
+predisposes_to_condition,Increased risk,fndg,PubMed,1
+predisposes_to_condition,Iron accumulation,fndg,PubMed,1
+predisposes_to_condition,Iterations,fndg,PubMed,1
+preventative_for_condition,Ketogenic diet,fndg,PubMed,1
+predisposes_to_condition,Low expression,fndg,PubMed,1
+predisposes_to_condition,Low Level,fndg,PubMed,1
+predisposes_to_condition,Magnetic resonance imaging of brain abnormal,fndg,PubMed,1
+predisposes_to_condition,May-Hegglin anomaly,fndg,PubMed,1
+predisposes_to_condition,MEDITERRANEAN,fndg,PubMed,1
+predisposes_to_condition,Mini-mental state examination score,fndg,PubMed,1
+predisposes_to_condition,Multiple autoantibodies,fndg,PubMed,1
+predisposes_to_condition,N-3 fatty acid intake,fndg,PubMed,1
+predisposes_to_condition,Negative Test Result,fndg,PubMed,1
+predisposes_to_condition,Neuroinflammation,fndg,PubMed,1
+NEG_PREDISPOSES,Onset of illness,fndg,PubMed,1
+predisposes_to_condition,Oral health.status,fndg,PubMed,1
+predisposes_to_condition,Peripheral vascular alteration,fndg,PubMed,1
+predisposes_to_condition,Personal Satisfaction,fndg,PubMed,1
+predisposes_to_condition,Physical activity decreased,fndg,PubMed,1
+predisposes_to_condition,Physical Inactivity,fndg,PubMed,1
+predisposes_to_condition,Platelet volume,fndg,PubMed,1
+predisposes_to_condition,Polyunsaturated fatty acid intake,fndg,PubMed,1
+predisposes_to_condition,Poor cognition,fndg,PubMed,1
+predisposes_to_condition,Poor education,fndg,PubMed,1
+predisposes_to_condition,"Potentials, Event-Related",fndg,PubMed,1
+predisposes_to_condition,Progressive Disease,fndg,PubMed,1
+predisposes_to_condition,PSS (Perceived Stress Scale) score,fndg,PubMed,1
+predisposes_to_condition,Pulse pressure increased,fndg,PubMed,1
+predisposes_to_condition,racial differences,fndg,PubMed,1
+predisposes_to_condition,Reported physical well-being,fndg,PubMed,1
+predisposes_to_condition,Reproductive History,fndg,PubMed,1
+predisposes_to_condition,Responsive Disease,fndg,PubMed,1
+predisposes_to_condition,Risk Scores,fndg,PubMed,1
+predisposes_to_condition,Sedentary,fndg,PubMed,1
+predisposes_to_condition,Semantic memory performance,fndg,PubMed,1
+predisposes_to_condition,Serum cholesterol raised,fndg,PubMed,1
+predisposes_to_condition,Sexual intercourse - finding,fndg,PubMed,1
+predisposes_to_condition,Shortened sleep cycle,fndg,PubMed,1
+predisposes_to_condition,Sleep loss,fndg,PubMed,1
+NEG_PREDISPOSES,SLOPE,fndg,PubMed,1
+predisposes_to_condition,SLOPE,fndg,PubMed,1
+predisposes_to_condition,Social withdrawal,fndg,PubMed,1
+predisposes_to_condition,Spouse Abuse,fndg,PubMed,1
+predisposes_to_condition,stressor,fndg,PubMed,1
+predisposes_to_condition,Sucrose intake,fndg,PubMed,1
+predisposes_to_condition,Tea intake,fndg,PubMed,1
+predisposes_to_condition,Testosterone increased,fndg,PubMed,1
+predisposes_to_condition,Topographical memory,fndg,PubMed,1
+predisposes_to_condition,Underlying,fndg,PubMed,1
+predisposes_to_condition,Visuospatial memory deficit,fndg,PubMed,1
+predisposes_to_condition,Vitamin intake,fndg,PubMed,1
+predisposes_to_condition,Vulnerability,fndg,PubMed,1
+predisposes_to_condition,Waist circumference,fndg,PubMed,1
+predisposes_to_condition,Well elder,fndg,PubMed,1
+predisposes_to_condition,Beverages,food_food,PubMed,1
+predisposes_to_condition,Coffee,food_food,PubMed,1
+predisposes_to_condition,Dairy Products,food_food,PubMed,1
+NEG_PREDISPOSES,Diet,food_food,PubMed,1
+predisposes_to_condition,Diet,food_food,PubMed,1
+predisposes_to_condition,Dietary Supplements,food_food,PubMed,1
+predisposes_to_condition,Egg Food Product,food_food,PubMed,1
+predisposes_to_condition,Food,food_food,PubMed,1
+predisposes_to_condition,Fruit,food_food,PubMed,1
+predisposes_to_condition,Meat,food_food,PubMed,1
+NEG_PREDISPOSES,Red wine,food_food,PubMed,1
+predisposes_to_condition,Strawberries,food_food,PubMed,1
+predisposes_to_condition,Tea,food_food,PubMed,1
+predisposes_to_condition,Wine,food_food,PubMed,1
+preventative_for_condition,Wine,food_food,PubMed,1
+predisposes_to_condition,Black tea,food,PubMed,1
+predisposes_to_condition,Enrich,food,PubMed,1
+predisposes_to_condition,Fatty fish,food,PubMed,1
+predisposes_to_condition,Health Food,food,PubMed,1
+predisposes_to_condition,Nutrients,food,PubMed,1
+predisposes_to_condition,Okra,food,PubMed,1
+predisposes_to_condition,Olives - dietary,food,PubMed,1
+predisposes_to_condition,Peanut butter,food,PubMed,1
+predisposes_to_condition,Rich food,food,PubMed,1
+predisposes_to_condition,Soybeans,food,PubMed,1
+predisposes_to_condition,Vegetables,food,PubMed,1
+predisposes_to_condition,Homologous Gene,gngm_aapp_aapp,PubMed,1
+NEG_PREDISPOSES,Alleles,gngm_aapp_gngm,PubMed,1
+predisposes_to_condition,Alleles,gngm_aapp_gngm,PubMed,1
+predisposes_to_condition,EHD1 wt Allele,gngm_aapp_gngm,PubMed,1
+NEG_PREDISPOSES,Genes,gngm_aapp_gngm,PubMed,1
+predisposes_to_condition,Genes,gngm_aapp_gngm,PubMed,2
+predisposes_to_condition,IMPACT gene,gngm_aapp_gngm,PubMed,1
+NEG_PREDISPOSES,Acetylcholinesterase,gngm,PubMed,1
+predisposes_to_condition,Acetylcholinesterase,gngm,PubMed,1
+predisposes_to_condition,alpha-bungarotoxin receptor,gngm,PubMed,1
+predisposes_to_condition,alpha-secretase,gngm,PubMed,1
+predisposes_to_condition,amphiphysin 2,gngm,PubMed,1
+predisposes_to_condition,amyloid beta-protein (1-42),gngm,PubMed,1
+predisposes_to_condition,APOE*4 Allele,gngm,PubMed,1
+predisposes_to_condition,Apolipoprotein A-I,gngm,PubMed,1
+predisposes_to_condition,Apolipoprotein E,gngm,PubMed,1
+preventative_for_condition,Apolipoprotein E,gngm,PubMed,1
+preventative_for_condition,apolipoprotein E-2,gngm,PubMed,1
+NEG_PREDISPOSES,APP gene,gngm,PubMed,1
+predisposes_to_condition,APP gene,gngm,PubMed,2
+preventative_for_condition,APP gene,gngm,PubMed,1
+preventative_for_condition,aquaporin 4,gngm,PubMed,1
+preventative_for_condition,beta catenin,gngm,PubMed,1
+predisposes_to_condition,BETA-N-ACETYLHEXOSAMINIDASE,gngm,PubMed,1
+predisposes_to_condition,beta-N-methylamino-L-alanine,gngm,PubMed,1
+predisposes_to_condition,Butyrylcholinesterase,gngm,PubMed,1
+predisposes_to_condition,c-Mer Tyrosine Kinase,gngm,PubMed,1
+predisposes_to_condition,Calmodulin,gngm,PubMed,1
+predisposes_to_condition,Cancer-Predisposing Gene,gngm,PubMed,1
+preventative_for_condition,Cancer-Predisposing Gene,gngm,PubMed,1
+predisposes_to_condition,Candidate Disease Gene,gngm,PubMed,1
+predisposes_to_condition,CATHEPSIN D,gngm,PubMed,1
+predisposes_to_condition,Cholinesterase genes,gngm,PubMed,1
+predisposes_to_condition,Cytokine Gene,gngm,PubMed,1
+preventative_for_condition,Cytoskeletal Proteins,gngm,PubMed,1
+predisposes_to_condition,Dipeptidyl-Peptidase IV,gngm,PubMed,1
+predisposes_to_condition,dityrosine,gngm,PubMed,1
+predisposes_to_condition,Enzyme Gene,gngm,PubMed,1
+predisposes_to_condition,Estrogen Receptor alpha,gngm,PubMed,1
+predisposes_to_condition,Exome,gngm,PubMed,1
+predisposes_to_condition,gamma-secretase,gngm,PubMed,1
+predisposes_to_condition,Gelatinase A,gngm,PubMed,1
+predisposes_to_condition,Gene Clusters,gngm,PubMed,1
+predisposes_to_condition,"Genes, Mitochondrial",gngm,PubMed,1
+predisposes_to_condition,"Genes, Regulator",gngm,PubMed,1
+predisposes_to_condition,"Genes, Spliced",gngm,PubMed,1
+predisposes_to_condition,genetic locus,gngm,PubMed,1
+predisposes_to_condition,Genome,gngm,PubMed,1
+predisposes_to_condition,"Genome, Human",gngm,PubMed,1
+preventative_for_condition,glial cell-line derived neurotrophic factor,gngm,PubMed,1
+preventative_for_condition,Glucose Transporter,gngm,PubMed,1
+NEG_PREDISPOSES,Glutamate-Ammonia Ligase,gngm,PubMed,1
+predisposes_to_condition,Glutamate-Ammonia Ligase,gngm,PubMed,1
+predisposes_to_condition,Glyceraldehyde-3-Phosphate Dehydrogenases,gngm,PubMed,1
+predisposes_to_condition,Glycopeptides,gngm,PubMed,1
+predisposes_to_condition,Growth Factor Receptors,gngm,PubMed,1
+predisposes_to_condition,Heme Oxygenase-1,gngm,PubMed,1
+predisposes_to_condition,human leukocyte antigen gene,gngm,PubMed,1
+predisposes_to_condition,Interleukin-5,gngm,PubMed,1
+NEG_PREDISPOSES,Interleukin-6,gngm,PubMed,1
+predisposes_to_condition,Interleukin-6,gngm,PubMed,1
+preventative_for_condition,Interleukin-6,gngm,PubMed,1
+predisposes_to_condition,Ir Genes,gngm,PubMed,1
+predisposes_to_condition,LARGE gene,gngm,PubMed,1
+predisposes_to_condition,Lipoprotein Receptor,gngm,PubMed,1
+predisposes_to_condition,marenostrin,gngm,PubMed,1
+predisposes_to_condition,metabotropic glutamate receptor 5,gngm,PubMed,1
+predisposes_to_condition,Microtubule-Associated Proteins,gngm,PubMed,1
+predisposes_to_condition,MIR373 wt Allele,gngm,PubMed,1
+predisposes_to_condition,MMP,gngm,PubMed,1
+predisposes_to_condition,multicatalytic endopeptidase complex,gngm,PubMed,1
+predisposes_to_condition,mutant gene,gngm,PubMed,1
+preventative_for_condition,mutant gene,gngm,PubMed,1
+preventative_for_condition,NFAT Transcription Factor 2,gngm,PubMed,1
+predisposes_to_condition,NPPA wt Allele,gngm,PubMed,1
+predisposes_to_condition,Open Reading Frames,gngm,PubMed,1
+predisposes_to_condition,ORNITHINE CARBAMOYLTRANSFERASE,gngm,PubMed,1
+predisposes_to_condition,Orthologous Gene,gngm,PubMed,1
+predisposes_to_condition,Oxidoreductase,gngm,PubMed,1
+predisposes_to_condition,Plasminogen,gngm,PubMed,1
+predisposes_to_condition,PPAR gamma,gngm,PubMed,1
+predisposes_to_condition,PROTEIN KINASE,gngm,PubMed,1
+predisposes_to_condition,Protein Kinase C,gngm,PubMed,1
+predisposes_to_condition,Proteome,gngm,PubMed,1
+predisposes_to_condition,receptor for advanced glycation endproducts,gngm,PubMed,1
+predisposes_to_condition,Receptor Gene,gngm,PubMed,1
+predisposes_to_condition,secretase,gngm,PubMed,1
+predisposes_to_condition,Signaling Protein,gngm,PubMed,1
+preventative_for_condition,Signaling Protein,gngm,PubMed,1
+preventative_for_condition,Somatomedins,gngm,PubMed,1
+preventative_for_condition,Somatostatin Receptor,gngm,PubMed,1
+predisposes_to_condition,Sterol O-Acyltransferase,gngm,PubMed,1
+preventative_for_condition,Superoxide Dismutase,gngm,PubMed,1
+predisposes_to_condition,syntaxin 8,gngm,PubMed,1
+predisposes_to_condition,Tissue-Inhibitor of Metalloproteinase-1,gngm,PubMed,1
+predisposes_to_condition,Translocase Gene,gngm,PubMed,1
+predisposes_to_condition,Vitamin D3 Receptor,gngm,PubMed,1
+preventative_for_condition,Challenge,hlca_hlca,PubMed,1
+preventative_for_condition,co-treatment,hlca_hlca,PubMed,1
+preventative_for_condition,Evaluation,hlca_hlca,PubMed,1
+preventative_for_condition,Evaluation procedure,hlca_hlca,PubMed,1
+preventative_for_condition,follow-up,hlca_hlca,PubMed,1
+preventative_for_condition,Health Services,hlca_hlca,PubMed,1
+NEG_PREVENTS,Intervention regimes,hlca_hlca,PubMed,1
+preventative_for_condition,Intervention regimes,hlca_hlca,PubMed,1
+preventative_for_condition,long-term care,hlca_hlca,PubMed,1
+preventative_for_condition,Medical service,hlca_hlca,PubMed,1
+predisposes_to_condition,Medication dosage tapering,hlca_hlca,PubMed,1
+preventative_for_condition,Patient referral,hlca_hlca,PubMed,1
+preventative_for_condition,Risk Assessment,hlca_hlca,PubMed,1
+preventative_for_condition,Screening procedure,hlca_hlca,PubMed,1
+predisposes_to_condition,Spinal Puncture,hlca_hlca,PubMed,1
+preventative_for_condition,case control,hlca,PubMed,1
+preventative_for_condition,Health Planning,hlca,PubMed,1
+preventative_for_condition,Health Promotion,hlca,PubMed,1
+preventative_for_condition,Nutritional Intervention,hlca,PubMed,1
+predisposes_to_condition,Cigarette smoke (substance),hops_hops,PubMed,1
+predisposes_to_condition,Insecticides,hops_hops,PubMed,1
+predisposes_to_condition,Pesticides,hops_hops,PubMed,1
+predisposes_to_condition,Poisons,hops_hops,PubMed,1
+predisposes_to_condition,Sulfur Dioxide,hops_inch_hops,PubMed,1
+predisposes_to_condition,Carbon Monoxide,hops_inch_inch,PubMed,1
+preventative_for_condition,Alar,hops_orch_hops,PubMed,1
+predisposes_to_condition,Dichlorodiphenyl Dichloroethylene,hops_orch_hops,PubMed,1
+predisposes_to_condition,Endotoxins,hops_orch_hops,PubMed,1
+preventative_for_condition,Hydroxyindoleacetic Acid,hops_orch_orch,PubMed,1
+NEG_PREVENTS,Nicotine,hops_orch_orch,PubMed,1
+predisposes_to_condition,Nicotine,hops_orch_orch,PubMed,1
+preventative_for_condition,Nicotine,hops_orch_orch,PubMed,1
+preventative_for_condition,Tobacco,hops_orch_orch,PubMed,1
+predisposes_to_condition,Formaldehyde,hops_orch_phsu_hops,PubMed,1
+predisposes_to_condition,Warfarin,hops_orch_phsu_hops,PubMed,1
+predisposes_to_condition,Air Pollutants,hops,PubMed,1
+predisposes_to_condition,beta-hexachlorocyclohexane,hops,PubMed,1
+predisposes_to_condition,Chlorpyrifos,hops,PubMed,1
+predisposes_to_condition,DDT (Insecticide),hops,PubMed,1
+predisposes_to_condition,Dieldrin,hops,PubMed,1
+predisposes_to_condition,Diesel Exhaust,hops,PubMed,1
+predisposes_to_condition,Environmental Pollutants,hops,PubMed,1
+predisposes_to_condition,Herbicides,hops,PubMed,1
+preventative_for_condition,Hydrogen Sulfide,hops,PubMed,1
+predisposes_to_condition,Neurotoxins,hops,PubMed,1
+preventative_for_condition,psychoactive substances,hops,PubMed,1
+preventative_for_condition,Smoking tobacco,hops,PubMed,1
+predisposes_to_condition,Uremic Toxins,hops,PubMed,1
+predisposes_to_condition,Hormones,horm_horm,PubMed,1
+predisposes_to_condition,Thyroid Hormones,horm_horm,PubMed,1
+predisposes_to_condition,Glucocorticoids,horm_orch_horm,PubMed,1
+NEG_PREVENTS,Estradiol,horm_orch_phsu_horm,PubMed,1
+predisposes_to_condition,Estradiol,horm_orch_phsu_horm,PubMed,1
+preventative_for_condition,Estradiol,horm_orch_phsu_horm,PubMed,1
+NEG_PREVENTS,Estrogens,horm_orch_phsu_horm,PubMed,1
+predisposes_to_condition,Estrogens,horm_orch_phsu_horm,PubMed,1
+preventative_for_condition,Estrogens,horm_orch_phsu_horm,PubMed,1
+NEG_PREDISPOSES,Hydrocortisone,horm_orch_phsu_horm,PubMed,1
+predisposes_to_condition,Hydrocortisone,horm_orch_phsu_horm,PubMed,1
+NEG_PREVENTS,Progesterone,horm_orch_phsu_horm,PubMed,1
+predisposes_to_condition,Progesterone,horm_orch_phsu_horm,PubMed,1
+preventative_for_condition,Prostaglandins,horm_orch_phsu_horm,PubMed,1
+predisposes_to_condition,Tace,horm_orch_phsu_horm,PubMed,1
+predisposes_to_condition,Testosterone,horm_orch_phsu_horm,PubMed,1
+preventative_for_condition,Testosterone,horm_orch_phsu_horm,PubMed,1
+predisposes_to_condition,Melatonin,horm_orch_phsu_orch,PubMed,1
+preventative_for_condition,Melatonin,horm_orch_phsu_orch,PubMed,1
+predisposes_to_condition,Androgens,horm,PubMed,1
+preventative_for_condition,Androgens,horm,PubMed,1
+NEG_PREDISPOSES,dehydroepiandrosterone,horm,PubMed,1
+preventative_for_condition,dehydroepiandrosterone,horm,PubMed,1
+preventative_for_condition,estradiol 3-benzoate,horm,PubMed,1
+preventative_for_condition,Estrogenic,horm,PubMed,1
+predisposes_to_condition,Free testosterone,horm,PubMed,1
+preventative_for_condition,Free testosterone,horm,PubMed,1
+preventative_for_condition,GLP-1 Receptor Agonist [EPC],horm,PubMed,1
+predisposes_to_condition,Gonadal Steroid Hormones,horm,PubMed,1
+predisposes_to_condition,Leptin,horm,PubMed,1
+preventative_for_condition,Leptin,horm,PubMed,1
+preventative_for_condition,liraglutide,horm,PubMed,1
+preventative_for_condition,Neurohormones,horm,PubMed,1
+preventative_for_condition,Phytoestrogens,horm,PubMed,1
+predisposes_to_condition,reproductive hormone,horm,PubMed,1
+predisposes_to_condition,Steroidal Estrogen,horm,PubMed,1
+predisposes_to_condition,neuronal,imft_imft,PubMed,1
+preventative_for_condition,neuronal,imft_imft,PubMed,1
+preventative_for_condition,BCG Vaccine,imft_phsu_imft,PubMed,1
+preventative_for_condition,dendritic cell vaccine,imft_phsu_imft,PubMed,1
+predisposes_to_condition,"Immunoglobulin A, Human",imft_phsu_imft,PubMed,1
+preventative_for_condition,Immunologic Adjuvants,imft_phsu_imft,PubMed,1
+predisposes_to_condition,Vaccines,imft_phsu_imft,PubMed,1
+preventative_for_condition,Vaccines,imft_phsu_imft,PubMed,1
+preventative_for_condition,Immunosuppressive Agents,imft_phsu_phsu,PubMed,1
+predisposes_to_condition,Agglutinins,imft,PubMed,1
+preventative_for_condition,anti-leprosy vaccine,imft,PubMed,1
+preventative_for_condition,Choleragenoid,imft,PubMed,1
+predisposes_to_condition,Epitopes,imft,PubMed,1
+preventative_for_condition,Epitopes,imft,PubMed,1
+NEG_PREDISPOSES,Human leukocyte antigen allele,imft,PubMed,1
+predisposes_to_condition,Immunomodulators,imft,PubMed,1
+preventative_for_condition,"Vaccines, Edible",imft,PubMed,1
+preventative_for_condition,Zostavax,imft,PubMed,1
+predisposes_to_condition,Alcohol consumption,inbe_inbe,PubMed,1
+predisposes_to_condition,Behavioral change,inbe_inbe,PubMed,1
+predisposes_to_condition,Behaviorial Habits,inbe_inbe,PubMed,1
+predisposes_to_condition,Conflict (Psychology),inbe_inbe,PubMed,1
+predisposes_to_condition,Curiosity,inbe_inbe,PubMed,1
+predisposes_to_condition,Dietary Habits,inbe_inbe,PubMed,1
+predisposes_to_condition,Female Homosexuality,inbe_inbe,PubMed,1
+NEG_PREDISPOSES,Performance,inbe_inbe,PubMed,1
+predisposes_to_condition,Performance,inbe_inbe,PubMed,1
+predisposes_to_condition,skill,inbe_inbe,PubMed,1
+NEG_PREDISPOSES,Smoking,inbe_inbe,PubMed,1
+predisposes_to_condition,Smoking,inbe_inbe,PubMed,1
+predisposes_to_condition,Tobacco use,inbe_inbe,PubMed,1
+NEG_PREDISPOSES,Academic achievement,inbe,PubMed,1
+predisposes_to_condition,Academic achievement,inbe,PubMed,1
+NEG_PREDISPOSES,Achievement,inbe,PubMed,1
+predisposes_to_condition,Achievement,inbe,PubMed,1
+NEG_PREDISPOSES,Cigarette smoker,inbe,PubMed,1
+predisposes_to_condition,defensiveness,inbe,PubMed,1
+predisposes_to_condition,Disclosure,inbe,PubMed,1
+predisposes_to_condition,Health behavior,inbe,PubMed,1
+predisposes_to_condition,Healthy Lifestyle,inbe,PubMed,1
+predisposes_to_condition,impression,inbe,PubMed,1
+predisposes_to_condition,membership,inbe,PubMed,1
+predisposes_to_condition,Milk intake,inbe,PubMed,1
+predisposes_to_condition,moderate drinking,inbe,PubMed,1
+predisposes_to_condition,participation,inbe,PubMed,1
+predisposes_to_condition,planned behavior,inbe,PubMed,1
+predisposes_to_condition,Sexism,inbe,PubMed,1
+predisposes_to_condition,Metals,inch_inch,PubMed,1
+preventative_for_condition,Hydrogen Peroxide,inch_irda_phsu_phsu,PubMed,1
+predisposes_to_condition,Cisplatin,inch_phsu_inch,PubMed,1
+predisposes_to_condition,Water,inch_phsu_inch,PubMed,1
+predisposes_to_condition,Aluminum salts,inch,PubMed,1
+predisposes_to_condition,COLLOIDAL SILVER,inch,PubMed,1
+preventative_for_condition,Lithium salt,inch,PubMed,1
+predisposes_to_condition,ORALIT,inch,PubMed,1
+predisposes_to_condition,Fluorodeoxyglucose F18,irda_orch_orch,PubMed,1
+preventative_for_condition,Fluorodeoxyglucose F18,irda_orch_orch,PubMed,1
+preventative_for_condition,Methylene blue,irda_orch_phsu_orch,PubMed,1
+predisposes_to_condition,Radiopharmaceuticals,irda_phsu_phsu,PubMed,1
+predisposes_to_condition,Acrolein,irda,PubMed,1
+predisposes_to_condition,Curcumin,irda,PubMed,1
+preventative_for_condition,Curcumin,irda,PubMed,1
+preventative_for_condition,"ethyl 4-azidophenyl-1,4-dithiobutyrimidate",irda,PubMed,1
+predisposes_to_condition,GL 2,irda,PubMed,1
+predisposes_to_condition,False Positive,lbtr_lbtr,PubMed,1
+predisposes_to_condition,Finding of blood glucose level,lbtr_lbtr,PubMed,1
+predisposes_to_condition,serum glucose level,lbtr_lbtr,PubMed,1
+predisposes_to_condition,Test Result,lbtr_lbtr,PubMed,1
+predisposes_to_condition,Bone Density,lbtr,PubMed,1
+predisposes_to_condition,Cortisol level,lbtr,PubMed,1
+predisposes_to_condition,Fasting blood sugar result,lbtr,PubMed,1
+predisposes_to_condition,"Genetic Information, Personal",lbtr,PubMed,1
+predisposes_to_condition,Helicobacter pylori Positive,lbtr,PubMed,1
+predisposes_to_condition,Plasma glucose result,lbtr,PubMed,1
+predisposes_to_condition,Proteomic Profile,lbtr,PubMed,1
+predisposes_to_condition,Serum Calcium Level,lbtr,PubMed,1
+predisposes_to_condition,Vascular measure,lbtr,PubMed,1
+predisposes_to_condition,adrenic acid,lipd,PubMed,1
+predisposes_to_condition,alpha Tocopherol,lipd,PubMed,1
+preventative_for_condition,alpha Tocopherol,lipd,PubMed,1
+predisposes_to_condition,blood lipid,lipd,PubMed,1
+preventative_for_condition,branched chain fatty acid,lipd,PubMed,1
+predisposes_to_condition,Ceramides,lipd,PubMed,1
+predisposes_to_condition,cholinephospholipids,lipd,PubMed,1
+preventative_for_condition,Coconut Oil,lipd,PubMed,1
+predisposes_to_condition,Dietary Fats,lipd,PubMed,1
+predisposes_to_condition,dihydroceramide,lipd,PubMed,1
+predisposes_to_condition,"Fatty Acids, Unsaturated",lipd,PubMed,1
+predisposes_to_condition,Glycosphingolipids,lipd,PubMed,1
+preventative_for_condition,linoleates,lipd,PubMed,1
+predisposes_to_condition,Lysophosphatidylcholines,lipd,PubMed,1
+predisposes_to_condition,Lysophospholipids,lipd,PubMed,1
+preventative_for_condition,monophosphoryl lipid A,lipd,PubMed,1
+predisposes_to_condition,Phosphatidylserines,lipd,PubMed,1
+predisposes_to_condition,Plasmalogens,lipd,PubMed,1
+preventative_for_condition,Plasmalogens,lipd,PubMed,1
+predisposes_to_condition,saturated fat,lipd,PubMed,1
+predisposes_to_condition,Sphingolipids,lipd,PubMed,1
+predisposes_to_condition,stearic acid,lipd,PubMed,1
+predisposes_to_condition,Tocotrienols,lipd,PubMed,1
+preventative_for_condition,Tocotrienols,lipd,PubMed,1
+preventative_for_condition,Bands,medd_medd,PubMed,1
+preventative_for_condition,Cup Device Component,medd_medd,PubMed,1
+preventative_for_condition,Implants,medd_medd,PubMed,1
+preventative_for_condition,Probes,medd_medd,PubMed,1
+preventative_for_condition,Stimulator,medd_medd,PubMed,1
+preventative_for_condition,Advance,medd,PubMed,1
+preventative_for_condition,Drug Delivery Systems,medd,PubMed,1
+preventative_for_condition,Maxillary left second premolar abutment,medd,PubMed,1
+preventative_for_condition,Screens,medd,PubMed,1
+preventative_for_condition,"Sensors, Oxygen",medd,PubMed,1
+predisposes_to_condition,desire,menp_menp,PubMed,1
+predisposes_to_condition,impulse control,menp,PubMed,1
+predisposes_to_condition,Apathy,mobd_mobd,PubMed,1
+predisposes_to_condition,Dementia,mobd_mobd,PubMed,1
+predisposes_to_condition,Depressive disorder,mobd_mobd,PubMed,1
+predisposes_to_condition,Hyperactive behavior,mobd_mobd,PubMed,1
+NEG_PREDISPOSES,Impaired cognition,mobd_mobd,PubMed,1
+predisposes_to_condition,Impaired cognition,mobd_mobd,PubMed,1
+NEG_PREDISPOSES,opioid use,mobd_mobd,PubMed,1
+predisposes_to_condition,opioid use,mobd_mobd,PubMed,1
+predisposes_to_condition,"Alzheimer Disease, Late Onset",mobd,PubMed,1
+predisposes_to_condition,Neurotic Disorders,mobd,PubMed,1
+predisposes_to_condition,RNA,nnon_nnon,PubMed,1
+preventative_for_condition,Acyclovir,nnon_phsu_nnon,PubMed,1
+predisposes_to_condition,8-hydroxy-2'-deoxyguanosine,nnon,PubMed,1
+NEG_PREVENTS,adenosine receptor antagonist,nnon,PubMed,1
+preventative_for_condition,adenosine receptor antagonist,nnon,PubMed,1
+predisposes_to_condition,Cell-Free RNA,nnon,PubMed,1
+predisposes_to_condition,RNA Sequence,nnon,PubMed,1
+predisposes_to_condition,Flow,npop_npop,PubMed,1
+NEG_PREDISPOSES,Neurotransmitters,nsba,PubMed,1
+preventative_for_condition,Neurotransmitters,nsba,PubMed,1
+predisposes_to_condition,Quinolinic Acid,nsba,PubMed,1
+preventative_for_condition,Spermidine,nsba,PubMed,1
+preventative_for_condition,Spermine,nsba,PubMed,1
+predisposes_to_condition,DNA Sequence,nusq_nusq,PubMed,1
+NEG_PREDISPOSES,Single Nucleotide Polymorphism,nusq_nusq,PubMed,1
+predisposes_to_condition,Single Nucleotide Polymorphism,nusq_nusq,PubMed,1
+predisposes_to_condition,12p13,nusq,PubMed,1
+predisposes_to_condition,chromosome 11q,nusq,PubMed,1
+predisposes_to_condition,Regulatory sequence,nusq,PubMed,1
+predisposes_to_condition,Single Nucleotide Variant,nusq,PubMed,1
+predisposes_to_condition,Transcriptome,nusq,PubMed,1
+NEG_PREDISPOSES,Phosphorylcholine,opco,PubMed,1
+predisposes_to_condition,Blood Glucose,orch_orch,PubMed,1
+predisposes_to_condition,Epoxyeicosatrienoic Acid,orch_orch,PubMed,1
+predisposes_to_condition,Ketones,orch_orch,PubMed,1
+preventative_for_condition,Ketones,orch_orch,PubMed,1
+predisposes_to_condition,Lipids,orch_orch,PubMed,1
+preventative_for_condition,Lipids,orch_orch,PubMed,1
+predisposes_to_condition,Lipopolysaccharides,orch_orch,PubMed,1
+predisposes_to_condition,Nonesterified Fatty Acids,orch_orch,PubMed,1
+preventative_for_condition,Oils,orch_orch,PubMed,1
+predisposes_to_condition,sphingosine 1-phosphate,orch_orch,PubMed,1
+predisposes_to_condition,Steroids,orch_orch,PubMed,1
+preventative_for_condition,Steroids,orch_orch,PubMed,1
+predisposes_to_condition,Aspirin,orch_phsu_orch,PubMed,1
+preventative_for_condition,Aspirin,orch_phsu_orch,PubMed,1
+preventative_for_condition,Atenolol,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Atropine,orch_phsu_orch,PubMed,1
+NEG_PREDISPOSES,Benzodiazepines,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Benzodiazepines,orch_phsu_orch,PubMed,1
+preventative_for_condition,Bumetanide,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Caffeine,orch_phsu_orch,PubMed,1
+preventative_for_condition,Caffeine,orch_phsu_orch,PubMed,1
+preventative_for_condition,candesartan,orch_phsu_orch,PubMed,1
+preventative_for_condition,Cannabinoids,orch_phsu_orch,PubMed,1
+preventative_for_condition,Capsaicin,orch_phsu_orch,PubMed,1
+preventative_for_condition,Cardiac Glycosides,orch_phsu_orch,PubMed,1
+preventative_for_condition,Cholinesterase Inhibitors,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Codeine,orch_phsu_orch,PubMed,1
+preventative_for_condition,cyclen,orch_phsu_orch,PubMed,1
+preventative_for_condition,Cyclooxygenase 2 Inhibitors,orch_phsu_orch,PubMed,1
+preventative_for_condition,Diclofenac,orch_phsu_orch,PubMed,1
+preventative_for_condition,donepezil,orch_phsu_orch,PubMed,1
+preventative_for_condition,Doxazosin,orch_phsu_orch,PubMed,1
+NEG_PREDISPOSES,Ethanol,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Ethanol,orch_phsu_orch,PubMed,1
+preventative_for_condition,Ethanol,orch_phsu_orch,PubMed,1
+preventative_for_condition,ezetimibe,orch_phsu_orch,PubMed,1
+preventative_for_condition,febuxostat,orch_phsu_orch,PubMed,1
+preventative_for_condition,Fluoxetine,orch_phsu_orch,PubMed,1
+NEG_PREVENTS,Hydroxymethylglutaryl-CoA Reductase Inhibitors,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Hydroxymethylglutaryl-CoA Reductase Inhibitors,orch_phsu_orch,PubMed,1
+preventative_for_condition,Hydroxymethylglutaryl-CoA Reductase Inhibitors,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Ibuprofen,orch_phsu_orch,PubMed,1
+preventative_for_condition,Ibuprofen,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Marihuana,orch_phsu_orch,PubMed,1
+preventative_for_condition,Marihuana,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Memantine,orch_phsu_orch,PubMed,1
+preventative_for_condition,Memantine,orch_phsu_orch,PubMed,1
+NEG_PREVENTS,Metformin,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Metformin,orch_phsu_orch,PubMed,1
+preventative_for_condition,Metformin,orch_phsu_orch,PubMed,1
+preventative_for_condition,Metformin hydrochloride,orch_phsu_orch,PubMed,1
+preventative_for_condition,montelukast,orch_phsu_orch,PubMed,1
+NEG_PREDISPOSES,Naproxen,orch_phsu_orch,PubMed,1
+NEG_PREVENTS,Naproxen,orch_phsu_orch,PubMed,1
+preventative_for_condition,Naproxen,orch_phsu_orch,PubMed,1
+preventative_for_condition,Naproxen sodium,orch_phsu_orch,PubMed,1
+predisposes_to_condition,octanoic acid,orch_phsu_orch,PubMed,1
+preventative_for_condition,Phenytoin,orch_phsu_orch,PubMed,1
+preventative_for_condition,pioglitazone,orch_phsu_orch,PubMed,1
+preventative_for_condition,Pravastatin,orch_phsu_orch,PubMed,1
+preventative_for_condition,Procaine,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Raloxifene,orch_phsu_orch,PubMed,1
+preventative_for_condition,Raloxifene,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Ramipril,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Risperidone,orch_phsu_orch,PubMed,1
+predisposes_to_condition,rivastigmine,orch_phsu_orch,PubMed,1
+preventative_for_condition,rosiglitazone,orch_phsu_orch,PubMed,1
+preventative_for_condition,rosuvastatin,orch_phsu_orch,PubMed,1
+predisposes_to_condition,sevoflurane,orch_phsu_orch,PubMed,1
+preventative_for_condition,silybin,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Simvastatin,orch_phsu_orch,PubMed,1
+predisposes_to_condition,sitagliptin,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Sugars,orch_phsu_orch,PubMed,1
+predisposes_to_condition,tenocyclidine,orch_phsu_orch,PubMed,1
+predisposes_to_condition,Tetrahydrocannabinol,orch_phsu_orch,PubMed,1
+preventative_for_condition,Thiazide Diuretics,orch_phsu_orch,PubMed,1
+preventative_for_condition,Thiazides,orch_phsu_orch,PubMed,1
+preventative_for_condition,Valproic Acid,orch_phsu_orch,PubMed,1
+predisposes_to_condition,valsartan,orch_phsu_orch,PubMed,1
+predisposes_to_condition,zolpidem,orch_phsu_orch,PubMed,1
+preventative_for_condition,Cannabidiol,orch_phsu_phsu,PubMed,1
+preventative_for_condition,Dapsone,orch_phsu_phsu,PubMed,1
+preventative_for_condition,Fish Oils,orch_phsu_phsu,PubMed,1
+preventative_for_condition,Indomethacin,orch_phsu_phsu,PubMed,1
+preventative_for_condition,Low-Dose Aspirin,orch_phsu_phsu,PubMed,1
+NEG_PREDISPOSES,Methotrexate,orch_phsu_phsu,PubMed,1
+predisposes_to_condition,Metric,orch_phsu_phsu,PubMed,1
+predisposes_to_condition,Propofol,orch_phsu_phsu,PubMed,1
+preventative_for_condition,rasagiline,orch_phsu_phsu,PubMed,1
+predisposes_to_condition,Scopolamine,orch_phsu_phsu,PubMed,1
+preventative_for_condition,sildenafil,orch_phsu_phsu,PubMed,1
+NEG_PREVENTS,Ascorbic Acid,orch_phsu_vita_orch,PubMed,1
+predisposes_to_condition,Ascorbic Acid,orch_phsu_vita_orch,PubMed,1
+preventative_for_condition,Ascorbic Acid,orch_phsu_vita_orch,PubMed,1
+NEG_PREDISPOSES,Folate,orch_phsu_vita_orch,PubMed,1
+predisposes_to_condition,Folate,orch_phsu_vita_orch,PubMed,1
+preventative_for_condition,Folate,orch_phsu_vita_orch,PubMed,1
+predisposes_to_condition,Folic Acid,orch_phsu_vita_orch,PubMed,1
+predisposes_to_condition,Multivitamin preparation,orch_phsu_vita_orch,PubMed,1
+NEG_PREDISPOSES,Niacin,orch_phsu_vita_orch,PubMed,1
+preventative_for_condition,Niacin,orch_phsu_vita_orch,PubMed,1
+NEG_PREDISPOSES,Vitamin B 12,orch_phsu_vita_orch,PubMed,1
+predisposes_to_condition,Vitamin B 12,orch_phsu_vita_orch,PubMed,1
+preventative_for_condition,Vitamin B 12,orch_phsu_vita_orch,PubMed,1
+NEG_PREDISPOSES,Vitamin B6,orch_phsu_vita_orch,PubMed,1
+predisposes_to_condition,Vitamin B6,orch_phsu_vita_orch,PubMed,1
+preventative_for_condition,Vitamin B6,orch_phsu_vita_orch,PubMed,1
+predisposes_to_condition,Vitamins,orch_phsu_vita_orch,PubMed,1
+preventative_for_condition,Vitamins,orch_phsu_vita_orch,PubMed,1
+predisposes_to_condition,Ergocalciferol,orch_phsu_vita_phsu,PubMed,1
+preventative_for_condition,Ergocalciferol,orch_phsu_vita_phsu,PubMed,1
+NEG_PREVENTS,Vitamin A,orch_phsu_vita_phsu,PubMed,1
+predisposes_to_condition,Vitamin A,orch_phsu_vita_phsu,PubMed,1
+preventative_for_condition,Vitamin A,orch_phsu_vita_phsu,PubMed,1
+NEG_PREDISPOSES,Vitamin D,orch_phsu_vita_phsu,PubMed,1
+predisposes_to_condition,Vitamin D,orch_phsu_vita_phsu,PubMed,1
+preventative_for_condition,Vitamin D,orch_phsu_vita_phsu,PubMed,1
+NEG_PREVENTS,Vitamin E,orch_phsu_vita_phsu,PubMed,1
+predisposes_to_condition,Vitamin E,orch_phsu_vita_phsu,PubMed,1
+preventative_for_condition,Vitamin E,orch_phsu_vita_phsu,PubMed,1
+predisposes_to_condition,Thiamine Pyrophosphate,orch_phsu_vita_vita,PubMed,1
+preventative_for_condition,Thiamine,orch_vita_orch,PubMed,1
+predisposes_to_condition,Vitamin B Complex,orch_vita_orch,PubMed,1
+preventative_for_condition,Vitamin B Complex,orch_vita_orch,PubMed,1
+preventative_for_condition,1-methylpyridinium,orch,PubMed,1
+predisposes_to_condition,1-piperidinocyclohexanecarbonitrile,orch,PubMed,1
+predisposes_to_condition,"1,2-di-(4-sulfamidophenyl)-4-butylpyrazolidine-3,5-dione",orch,PubMed,1
+preventative_for_condition,2-Oxoglutarate,orch,PubMed,1
+preventative_for_condition,"3,3',4,5'-tetrahydroxystilbene",orch,PubMed,1
+preventative_for_condition,4-(4-(3-adamantan-1-ylureido)cyclohexyloxy)benzoic acid,orch,PubMed,1
+predisposes_to_condition,4-iodobenzenesulfonamide,orch,PubMed,1
+preventative_for_condition,abiraterone acetate,orch,PubMed,1
+preventative_for_condition,albiflorin,orch,PubMed,1
+preventative_for_condition,Alkaloids,orch,PubMed,1
+predisposes_to_condition,Amides,orch,PubMed,1
+preventative_for_condition,Angelica sinensis preparation,orch,PubMed,1
+preventative_for_condition,Anthocyanidins,orch,PubMed,1
+predisposes_to_condition,Anthocyanins,orch,PubMed,1
+preventative_for_condition,Anthocyanins,orch,PubMed,1
+preventative_for_condition,Anthraquinones,orch,PubMed,1
+preventative_for_condition,Aromatic Compounds,orch,PubMed,1
+NEG_PREVENTS,ascorbate,orch,PubMed,1
+predisposes_to_condition,ascorbate,orch,PubMed,1
+preventative_for_condition,astaxanthine,orch,PubMed,1
+preventative_for_condition,Berberine,orch,PubMed,1
+NEG_PREVENTS,Beta Carotene,orch,PubMed,1
+predisposes_to_condition,Beta Carotene,orch,PubMed,1
+preventative_for_condition,Beta Carotene,orch,PubMed,1
+preventative_for_condition,Betaine,orch,PubMed,1
+preventative_for_condition,bexarotene,orch,PubMed,1
+preventative_for_condition,bilobalide,orch,PubMed,1
+preventative_for_condition,Biotin,orch,PubMed,1
+preventative_for_condition,Bran,orch,PubMed,1
+preventative_for_condition,brazilin,orch,PubMed,1
+predisposes_to_condition,BUTYROLACTONE,orch,PubMed,1
+preventative_for_condition,caffeoylquinic acid,orch,PubMed,1
+predisposes_to_condition,Carboxylic Acids,orch,PubMed,1
+preventative_for_condition,Carboxylic Acids,orch,PubMed,1
+preventative_for_condition,carveol,orch,PubMed,1
+NEG_PREVENTS,celecoxib,orch,PubMed,1
+preventative_for_condition,celecoxib,orch,PubMed,1
+preventative_for_condition,chrysin,orch,PubMed,1
+predisposes_to_condition,Compete,orch,PubMed,1
+preventative_for_condition,CP 113818,orch,PubMed,1
+preventative_for_condition,crocin,orch,PubMed,1
+preventative_for_condition,cryptotanshinone,orch,PubMed,1
+preventative_for_condition,cyanidin 3-O-glucoside,orch,PubMed,1
+preventative_for_condition,cyclam,orch,PubMed,1
+predisposes_to_condition,daphnetin,orch,PubMed,1
+NEG_PREDISPOSES,Debrisoquin,orch,PubMed,1
+predisposes_to_condition,decanoylcarnitine,orch,PubMed,1
+preventative_for_condition,dexibuprofen,orch,PubMed,1
+preventative_for_condition,dihydromyricetin,orch,PubMed,1
+predisposes_to_condition,dihydropyridine,orch,PubMed,1
+preventative_for_condition,dihydropyridine,orch,PubMed,1
+preventative_for_condition,dihydroxyacetone sulfate,orch,PubMed,1
+preventative_for_condition,Diterpenes,orch,PubMed,1
+preventative_for_condition,EGb 761,orch,PubMed,1
+preventative_for_condition,Epicatechin,orch,PubMed,1
+preventative_for_condition,epicatechin gallate,orch,PubMed,1
+preventative_for_condition,epigallocatechin gallate,orch,PubMed,1
+predisposes_to_condition,esculetin,orch,PubMed,1
+predisposes_to_condition,Esters,orch,PubMed,1
+preventative_for_condition,Esters,orch,PubMed,1
+preventative_for_condition,ethanolamine,orch,PubMed,1
+preventative_for_condition,fasudil,orch,PubMed,1
+preventative_for_condition,ferulic acid,orch,PubMed,1
+preventative_for_condition,fisetin,orch,PubMed,1
+preventative_for_condition,Flavonoids,orch,PubMed,1
+preventative_for_condition,Flavonols,orch,PubMed,1
+predisposes_to_condition,formic acid,orch,PubMed,1
+preventative_for_condition,formononetin,orch,PubMed,1
+preventative_for_condition,fucoidan,orch,PubMed,1
+preventative_for_condition,geniposide,orch,PubMed,1
+preventative_for_condition,geranylgeranylacetone,orch,PubMed,1
+preventative_for_condition,gingerol,orch,PubMed,1
+preventative_for_condition,ginsenoside M1,orch,PubMed,1
+predisposes_to_condition,"Glycosylation End Products, Advanced",orch,PubMed,1
+preventative_for_condition,"Glycosylation End Products, Advanced",orch,PubMed,1
+preventative_for_condition,H 89,orch,PubMed,1
+preventative_for_condition,hesperetin,orch,PubMed,1
+preventative_for_condition,hexahydrocurcumin,orch,PubMed,1
+predisposes_to_condition,homocysteic acid,orch,PubMed,1
+predisposes_to_condition,homoorientin,orch,PubMed,1
+preventative_for_condition,hydroxybenzoic acid,orch,PubMed,1
+preventative_for_condition,hydroxysafflor yellow A,orch,PubMed,1
+predisposes_to_condition,icariin,orch,PubMed,1
+preventative_for_condition,icariin,orch,PubMed,1
+preventative_for_condition,idebenone,orch,PubMed,1
+preventative_for_condition,Imidazolines,orch,PubMed,1
+preventative_for_condition,isoastilbin,orch,PubMed,1
+preventative_for_condition,Isoflavones,orch,PubMed,1
+preventative_for_condition,Isoquercetin,orch,PubMed,1
+preventative_for_condition,Ketone Bodies,orch,PubMed,1
+predisposes_to_condition,Lasso,orch,PubMed,1
+preventative_for_condition,ligustilide,orch,PubMed,1
+preventative_for_condition,limonene,orch,PubMed,1
+preventative_for_condition,linalool,orch,PubMed,1
+preventative_for_condition,Luteolin,orch,PubMed,1
+preventative_for_condition,lycopene,orch,PubMed,1
+preventative_for_condition,macelignan,orch,PubMed,1
+predisposes_to_condition,Malondialdehyde,orch,PubMed,1
+preventative_for_condition,methyl 4-azidophenylacetimidate,orch,PubMed,1
+preventative_for_condition,methyl gallate,orch,PubMed,1
+predisposes_to_condition,monoamine,orch,PubMed,1
+preventative_for_condition,monoamine,orch,PubMed,1
+preventative_for_condition,morin,orch,PubMed,1
+predisposes_to_condition,N-methyl-(11C)2-(4'-(methylamino)phenyl)-6-hydroxybenzothiazole,orch,PubMed,1
+preventative_for_condition,N-methyl-(11C)2-(4'-(methylamino)phenyl)-6-hydroxybenzothiazole,orch,PubMed,1
+preventative_for_condition,naringenin,orch,PubMed,1
+preventative_for_condition,neohesperidin,orch,PubMed,1
+preventative_for_condition,nerolidol,orch,PubMed,1
+predisposes_to_condition,Niacinamide,orch,PubMed,1
+preventative_for_condition,nicotinamide-beta-riboside,orch,PubMed,1
+preventative_for_condition,nobiletin,orch,PubMed,1
+preventative_for_condition,obovatol,orch,PubMed,1
+preventative_for_condition,Okadaic Acid,orch,PubMed,1
+predisposes_to_condition,OPC-13015,orch,PubMed,1
+preventative_for_condition,orange peel extract,orch,PubMed,1
+predisposes_to_condition,Organic solvent product,orch,PubMed,1
+predisposes_to_condition,Organochlorine pesticide,orch,PubMed,1
+preventative_for_condition,pelargonidin,orch,PubMed,1
+preventative_for_condition,Phenolics,orch,PubMed,1
+preventative_for_condition,phenserine,orch,PubMed,1
+predisposes_to_condition,phenylacetate,orch,PubMed,1
+preventative_for_condition,phycocyanobilin,orch,PubMed,1
+predisposes_to_condition,Polychlorinated Biphenyls,orch,PubMed,1
+preventative_for_condition,polydatin,orch,PubMed,1
+preventative_for_condition,polyphenols,orch,PubMed,1
+preventative_for_condition,Probucol,orch,PubMed,1
+preventative_for_condition,propylparaben,orch,PubMed,1
+preventative_for_condition,pterostilbene,orch,PubMed,1
+preventative_for_condition,Pyridoxine Hydrochloride,orch,PubMed,1
+preventative_for_condition,Pyrones,orch,PubMed,1
+predisposes_to_condition,Pyruvaldehyde,orch,PubMed,1
+preventative_for_condition,Pyruvaldehyde,orch,PubMed,1
+preventative_for_condition,Quercetin,orch,PubMed,1
+preventative_for_condition,quercetin 3-O-glucuronide,orch,PubMed,1
+preventative_for_condition,Quinones,orch,PubMed,1
+preventative_for_condition,Relate,orch,PubMed,1
+predisposes_to_condition,resveratrol,orch,PubMed,1
+preventative_for_condition,resveratrol,orch,PubMed,1
+preventative_for_condition,Rhodiola extract,orch,PubMed,1
+preventative_for_condition,rhyncophylline,orch,PubMed,1
+preventative_for_condition,rivaroxaban,orch,PubMed,1
+preventative_for_condition,rosmarinic acid,orch,PubMed,1
+preventative_for_condition,Rutin,orch,PubMed,1
+preventative_for_condition,safranal,orch,PubMed,1
+preventative_for_condition,salvin,orch,PubMed,1
+preventative_for_condition,SB 258585,orch,PubMed,1
+preventative_for_condition,scutellarin,orch,PubMed,1
+preventative_for_condition,Silymarin,orch,PubMed,1
+predisposes_to_condition,small molecule,orch,PubMed,1
+preventative_for_condition,small molecule,orch,PubMed,1
+NEG_PREDISPOSES,SPAD,orch,PubMed,1
+preventative_for_condition,sulforafan,orch,PubMed,1
+preventative_for_condition,suvorexant,orch,PubMed,1
+preventative_for_condition,T-817MA,orch,PubMed,1
+preventative_for_condition,tangeretin,orch,PubMed,1
+preventative_for_condition,tanshinone II A,orch,PubMed,1
+preventative_for_condition,tanshinone II A sodium sulfonate,orch,PubMed,1
+predisposes_to_condition,tauroursodeoxycholic acid,orch,PubMed,1
+preventative_for_condition,tauroursodeoxycholic acid,orch,PubMed,1
+preventative_for_condition,taxifolin,orch,PubMed,1
+preventative_for_condition,tele-methylhistamine,orch,PubMed,1
+preventative_for_condition,telmisartan,orch,PubMed,1
+preventative_for_condition,tenuifolin,orch,PubMed,1
+preventative_for_condition,Thiadiazoles,orch,PubMed,1
+predisposes_to_condition,Thiazolidinediones,orch,PubMed,1
+predisposes_to_condition,Thioctic Acid,orch,PubMed,1
+preventative_for_condition,Thioctic Acid,orch,PubMed,1
+preventative_for_condition,Thiones,orch,PubMed,1
+preventative_for_condition,thymoquinone,orch,PubMed,1
+predisposes_to_condition,TimeLine,orch,PubMed,1
+predisposes_to_condition,"tocotrienol, alpha",orch,PubMed,1
+predisposes_to_condition,"tocotrienol, beta",orch,PubMed,1
+preventative_for_condition,Triazoles,orch,PubMed,1
+predisposes_to_condition,Triclosan,orch,PubMed,1
+preventative_for_condition,triheptanoin,orch,PubMed,1
+preventative_for_condition,triptolide,orch,PubMed,1
+predisposes_to_condition,Tropicamide,orch,PubMed,1
+predisposes_to_condition,Turpentine,orch,PubMed,1
+preventative_for_condition,Ubiquinone,orch,PubMed,1
+preventative_for_condition,Urolithin,orch,PubMed,1
+preventative_for_condition,ursolic acid,orch,PubMed,1
+preventative_for_condition,withaferin A,orch,PubMed,1
+preventative_for_condition,xanthohumol,orch,PubMed,1
+predisposes_to_condition,zeaxanthin,orch,PubMed,1
+preventative_for_condition,zeaxanthin,orch,PubMed,1
+NEG_PREDISPOSES,Ability,orga_orga,PubMed,1
+predisposes_to_condition,Ability,orga_orga,PubMed,1
+NEG_PREDISPOSES,Age,orga_orga,PubMed,1
+predisposes_to_condition,Age,orga_orga,PubMed,1
+predisposes_to_condition,Body Temperature,orga_orga,PubMed,1
+predisposes_to_condition,Body Weight,orga_orga,PubMed,1
+predisposes_to_condition,Females,orga_orga,PubMed,1
+predisposes_to_condition,Height,orga_orga,PubMed,1
+predisposes_to_condition,Males,orga_orga,PubMed,1
+predisposes_to_condition,Predisposition -- attribute,orga_orga,PubMed,1
+NEG_PREDISPOSES,Response process,orga_orga,PubMed,1
+predisposes_to_condition,Response process,orga_orga,PubMed,1
+predisposes_to_condition,adiposity,orga,PubMed,1
+predisposes_to_condition,Apparent age,orga,PubMed,1
+predisposes_to_condition,Body Composition,orga,PubMed,1
+predisposes_to_condition,CROSS SECTION,orga,PubMed,1
+NEG_PREDISPOSES,Gender,orga,PubMed,1
+predisposes_to_condition,Gender,orga,PubMed,1
+NEG_PREDISPOSES,Genetic Heterogeneity,orga,PubMed,1
+predisposes_to_condition,Genetic Heterogeneity,orga,PubMed,1
+predisposes_to_condition,Genetic Predisposition to Disease,orga,PubMed,1
+predisposes_to_condition,Genetic Status,orga,PubMed,1
+NEG_PREDISPOSES,Genotype,orga,PubMed,1
+predisposes_to_condition,Genotype,orga,PubMed,1
+predisposes_to_condition,Haplotypes,orga,PubMed,1
+predisposes_to_condition,"Immunity, Natural",orga,PubMed,1
+predisposes_to_condition,Life event observable,orga,PubMed,1
+predisposes_to_condition,Mosaicism,orga,PubMed,1
+predisposes_to_condition,Phenotype,orga,PubMed,1
+predisposes_to_condition,POLARIZATION,orga,PubMed,1
+predisposes_to_condition,Proband,orga,PubMed,1
+NEG_PREDISPOSES,sex,orga,PubMed,1
+predisposes_to_condition,sex,orga,PubMed,1
+predisposes_to_condition,Sex Characteristics,orga,PubMed,2
+NEG_PREDISPOSES,trait,orga,PubMed,1
+predisposes_to_condition,trait,orga,PubMed,1
+predisposes_to_condition,Walking Speed,orga,PubMed,1
+predisposes_to_condition,Webbing,orga,PubMed,1
+predisposes_to_condition,Dietary intake,orgf_orgf,PubMed,1
+predisposes_to_condition,Heterozygote,orgm,PubMed,1
+predisposes_to_condition,Homozygote,orgm,PubMed,1
+predisposes_to_condition,Abnormal degeneration,patf_patf,PubMed,1
+predisposes_to_condition,Abnormal renal function,patf_patf,PubMed,1
+predisposes_to_condition,Adverse effects,patf_patf,PubMed,1
+predisposes_to_condition,Amyloid deposition,patf_patf,PubMed,1
+predisposes_to_condition,associated disease,patf_patf,PubMed,1
+predisposes_to_condition,Atopy,patf_patf,PubMed,1
+NEG_PREDISPOSES,Atrophic,patf_patf,PubMed,1
+predisposes_to_condition,Atrophic,patf_patf,PubMed,1
+predisposes_to_condition,Brain hemorrhage,patf_patf,PubMed,1
+predisposes_to_condition,Brain Pathology,patf_patf,PubMed,1
+predisposes_to_condition,Chronic inflammation,patf_patf,PubMed,1
+predisposes_to_condition,Complication,patf_patf,PubMed,1
+predisposes_to_condition,Decreased vascular flow,patf_patf,PubMed,1
+predisposes_to_condition,Diastasis,patf_patf,PubMed,1
+predisposes_to_condition,Discordant Twin,patf_patf,PubMed,1
+predisposes_to_condition,Disease Progression,patf_patf,PubMed,1
+predisposes_to_condition,Dystrophy,patf_patf,PubMed,1
+predisposes_to_condition,Extended Rotated Sidebent,patf_patf,PubMed,1
+predisposes_to_condition,Extravasation,patf_patf,PubMed,1
+predisposes_to_condition,Functional disorder,patf_patf,PubMed,1
+predisposes_to_condition,Hyperintensity of cerebral white matter on MRI,patf_patf,PubMed,1
+predisposes_to_condition,Hypersensitivity,patf_patf,PubMed,1
+predisposes_to_condition,Hypertrophy,patf_patf,PubMed,1
+predisposes_to_condition,hypofunction,patf_patf,PubMed,1
+predisposes_to_condition,Hypoperfusion,patf_patf,PubMed,1
+predisposes_to_condition,Hypoxia,patf_patf,PubMed,1
+predisposes_to_condition,Infarction,patf_patf,PubMed,1
+predisposes_to_condition,Infection,patf_patf,PubMed,1
+predisposes_to_condition,Inflammation,patf_patf,PubMed,1
+predisposes_to_condition,inflammatory response,patf_patf,PubMed,1
+NEG_PREDISPOSES,Insulin Resistance,patf_patf,PubMed,1
+predisposes_to_condition,Insulin Resistance,patf_patf,PubMed,1
+predisposes_to_condition,Insulin Sensitivity,patf_patf,PubMed,1
+predisposes_to_condition,Ischemia,patf_patf,PubMed,1
+NEG_PREDISPOSES,Leukoaraiosis,patf_patf,PubMed,1
+predisposes_to_condition,Leukoaraiosis,patf_patf,PubMed,1
+predisposes_to_condition,Obstruction,patf_patf,PubMed,1
+predisposes_to_condition,Pathologic Processes,patf_patf,PubMed,1
+NEG_PREDISPOSES,Pre-Eclampsia,patf_patf,PubMed,1
+predisposes_to_condition,Progressive atrophy,patf_patf,PubMed,1
+predisposes_to_condition,Sequela of disorder,patf_patf,PubMed,1
+predisposes_to_condition,Thyroid dysfunction,patf_patf,PubMed,1
+predisposes_to_condition,Tissue Adhesions,patf_patf,PubMed,1
+predisposes_to_condition,Chronic hyperglycemia,patf,PubMed,1
+predisposes_to_condition,Drug effect disorder,patf,PubMed,1
+predisposes_to_condition,Dysbiosis,patf,PubMed,1
+predisposes_to_condition,Female infertility,patf,PubMed,1
+predisposes_to_condition,Histopathology,patf,PubMed,1
+predisposes_to_condition,neuropathology disease,patf,PubMed,1
+predisposes_to_condition,Pathogenesis,patf,PubMed,1
+predisposes_to_condition,Presbycusis,patf,PubMed,1
+predisposes_to_condition,Protein deposition,patf,PubMed,1
+predisposes_to_condition,Pseudoexfoliation,patf,PubMed,1
+predisposes_to_condition,Sleep Fragmentation,patf,PubMed,1
+predisposes_to_condition,arterial stiffness,phsf,PubMed,1
+predisposes_to_condition,Adrenergic beta-Antagonists,phsu_phsu,PubMed,1
+preventative_for_condition,Adrenergic beta-Antagonists,phsu_phsu,PubMed,1
+preventative_for_condition,agonists,phsu_phsu,PubMed,1
+predisposes_to_condition,Anesthetics,phsu_phsu,PubMed,1
+predisposes_to_condition,Angiotensin-Converting Enzyme Inhibitors,phsu_phsu,PubMed,1
+preventative_for_condition,Angiotensin-Converting Enzyme Inhibitors,phsu_phsu,PubMed,1
+predisposes_to_condition,Anti-Anxiety Agents,phsu_phsu,PubMed,1
+preventative_for_condition,Anti-Anxiety Agents,phsu_phsu,PubMed,1
+predisposes_to_condition,Anti-Inflammatory Agents,phsu_phsu,PubMed,1
+preventative_for_condition,Anti-Inflammatory Agents,phsu_phsu,PubMed,1
+NEG_PREVENTS,"Anti-Inflammatory Agents, Non-Steroidal",phsu_phsu,PubMed,1
+predisposes_to_condition,"Anti-Inflammatory Agents, Non-Steroidal",phsu_phsu,PubMed,1
+preventative_for_condition,"Anti-Inflammatory Agents, Non-Steroidal",phsu_phsu,PubMed,1
+predisposes_to_condition,Anticholesteremic Agents,phsu_phsu,PubMed,1
+preventative_for_condition,Anticholesteremic Agents,phsu_phsu,PubMed,1
+NEG_PREVENTS,Anticholinergic Agents,phsu_phsu,PubMed,1
+predisposes_to_condition,Anticholinergic Agents,phsu_phsu,PubMed,1
+preventative_for_condition,Anticoagulants,phsu_phsu,PubMed,1
+preventative_for_condition,Anticonvulsants,phsu_phsu,PubMed,1
+preventative_for_condition,Antidepressive Agents,phsu_phsu,PubMed,1
+predisposes_to_condition,Antidiabetics,phsu_phsu,PubMed,1
+preventative_for_condition,Antidiabetics,phsu_phsu,PubMed,1
+predisposes_to_condition,Antiepileptic Agents,phsu_phsu,PubMed,1
+predisposes_to_condition,Antihypertensive Agents,phsu_phsu,PubMed,1
+preventative_for_condition,Antihypertensive Agents,phsu_phsu,PubMed,1
+preventative_for_condition,Antiviral Agents,phsu_phsu,PubMed,1
+preventative_for_condition,Atypical antipsychotic,phsu_phsu,PubMed,1
+predisposes_to_condition,Calcium Channel Blockers,phsu_phsu,PubMed,1
+preventative_for_condition,Calcium Channel Blockers,phsu_phsu,PubMed,1
+preventative_for_condition,Cardiovascular Agents,phsu_phsu,PubMed,1
+predisposes_to_condition,channel blockers,phsu_phsu,PubMed,1
+predisposes_to_condition,Diuretics,phsu_phsu,PubMed,1
+preventative_for_condition,Diuretics,phsu_phsu,PubMed,1
+preventative_for_condition,Experimental drug,phsu_phsu,PubMed,1
+predisposes_to_condition,Histamine H2 Antagonists,phsu_phsu,PubMed,1
+predisposes_to_condition,Hypnotics and Sedatives,phsu_phsu,PubMed,1
+preventative_for_condition,Hypoglycemic Agents,phsu_phsu,PubMed,1
+preventative_for_condition,Laxatives,phsu_phsu,PubMed,1
+preventative_for_condition,Microbicides,phsu_phsu,PubMed,1
+predisposes_to_condition,Muscle relaxants,phsu_phsu,PubMed,1
+preventative_for_condition,New medications,phsu_phsu,PubMed,1
+preventative_for_condition,NMDA receptor antagonist,phsu_phsu,PubMed,1
+NEG_PREDISPOSES,Pharmaceutical Preparations,phsu_phsu,PubMed,1
+NEG_PREVENTS,Pharmaceutical Preparations,phsu_phsu,PubMed,1
+predisposes_to_condition,Pharmaceutical Preparations,phsu_phsu,PubMed,1
+preventative_for_condition,Pharmaceutical Preparations,phsu_phsu,PubMed,1
+preventative_for_condition,Pharmacologic Substance,phsu_phsu,PubMed,1
+preventative_for_condition,Phosphodiesterase Inhibitors,phsu_phsu,PubMed,1
+predisposes_to_condition,Potassium Sparing Diuretics,phsu_phsu,PubMed,1
+preventative_for_condition,Potassium Sparing Diuretics,phsu_phsu,PubMed,1
+NEG_PREDISPOSES,Proton Pump Inhibitors,phsu_phsu,PubMed,1
+predisposes_to_condition,Proton Pump Inhibitors,phsu_phsu,PubMed,1
+preventative_for_condition,Psychotropic Drugs,phsu_phsu,PubMed,1
+predisposes_to_condition,Serotonin Uptake Inhibitors,phsu_phsu,PubMed,1
+preventative_for_condition,Serotonin Uptake Inhibitors,phsu_phsu,PubMed,1
+NEG_PREDISPOSES,Vitamin supplementation,phsu_phsu,PubMed,1
+preventative_for_condition,Vitamin supplementation,phsu_phsu,PubMed,1
+preventative_for_condition,CALCIUM SUPPLEMENTS,phsu_vita_phsu,PubMed,1
+preventative_for_condition,(3H)2-carbomethoxy-3-(4-fluorophenyl)tropane,phsu,PubMed,1
+preventative_for_condition,Acetylcholinesterase Inhibitors,phsu,PubMed,1
+preventative_for_condition,aducanumab,phsu,PubMed,1
+predisposes_to_condition,Aluminum-based antacid,phsu,PubMed,1
+NEG_PREDISPOSES,"Anesthetics, Inhalation",phsu,PubMed,1
+predisposes_to_condition,"Anesthetics, Inhalation",phsu,PubMed,1
+predisposes_to_condition,Angiotensin II receptor antagonist,phsu,PubMed,1
+predisposes_to_condition,Antioxidants,phsu,PubMed,1
+preventative_for_condition,Antioxidants,phsu,PubMed,1
+predisposes_to_condition,Antiperspirants,phsu,PubMed,1
+preventative_for_condition,Apple Cider Vinegar,phsu,PubMed,1
+preventative_for_condition,beta Sitosterol,phsu,PubMed,1
+preventative_for_condition,Biological Response Modifiers,phsu,PubMed,1
+preventative_for_condition,boswellic acid,phsu,PubMed,1
+preventative_for_condition,CALCIUM HOMEOSTASIS,phsu,PubMed,1
+preventative_for_condition,Carbenoxolone,phsu,PubMed,1
+preventative_for_condition,Central Nervous System Agents,phsu,PubMed,1
+preventative_for_condition,Chelating Agents,phsu,PubMed,1
+preventative_for_condition,Chemotherapeutic agent,phsu,PubMed,1
+preventative_for_condition,Chinese herbs,phsu,PubMed,1
+NEG_PREVENTS,Cholinergic Agents,phsu,PubMed,1
+predisposes_to_condition,Cholinergic Agents,phsu,PubMed,1
+predisposes_to_condition,Cholinergic Antagonists,phsu,PubMed,1
+predisposes_to_condition,Cupric,phsu,PubMed,1
+preventative_for_condition,Cyclooxygenase Inhibitors,phsu,PubMed,1
+preventative_for_condition,Cytidine Diphosphate Choline,phsu,PubMed,1
+preventative_for_condition,Cytostatic Agents,phsu,PubMed,1
+preventative_for_condition,deferiprone,phsu,PubMed,1
+predisposes_to_condition,Dipeptidyl-Peptidase IV Inhibitors,phsu,PubMed,1
+preventative_for_condition,Docosahexanoic acid,phsu,PubMed,1
+preventative_for_condition,embelin,phsu,PubMed,1
+predisposes_to_condition,Endostatins,phsu,PubMed,1
+predisposes_to_condition,fluorophore,phsu,PubMed,1
+preventative_for_condition,genipin,phsu,PubMed,1
+NEG_PREVENTS,Ginkgo biloba extract,phsu,PubMed,1
+preventative_for_condition,Ginkgo biloba extract,phsu,PubMed,1
+preventative_for_condition,Herbal Drugs,phsu,PubMed,1
+predisposes_to_condition,Hypnotics,phsu,PubMed,1
+predisposes_to_condition,Inflammation Mediators,phsu,PubMed,1
+predisposes_to_condition,Isoflurane,phsu,PubMed,1
+preventative_for_condition,Isoflurane,phsu,PubMed,1
+predisposes_to_condition,Kainic Acid,phsu,PubMed,1
+predisposes_to_condition,Lipoprotein Lipase Activators,phsu,PubMed,1
+predisposes_to_condition,long-acting benzodiazepines,phsu,PubMed,1
+preventative_for_condition,mTOR Inhibitor,phsu,PubMed,1
+predisposes_to_condition,N(4)-oleylcytosine arabinoside,phsu,PubMed,1
+preventative_for_condition,Neuroprotective Agents,phsu,PubMed,1
+preventative_for_condition,Olive oil preparation,phsu,PubMed,1
+predisposes_to_condition,Orphenadrine,phsu,PubMed,1
+preventative_for_condition,palmidrol,phsu,PubMed,1
+preventative_for_condition,phenylbutyrate,phsu,PubMed,1
+NEG_PREDISPOSES,sacubitril / valsartan,phsu,PubMed,1
+predisposes_to_condition,Selective Estrogen Receptor Modulators,phsu,PubMed,1
+preventative_for_condition,Selective Estrogen Receptor Modulators,phsu,PubMed,1
+preventative_for_condition,semaglutide,phsu,PubMed,1
+preventative_for_condition,Tannic Acid,phsu,PubMed,1
+preventative_for_condition,Therapeutic agent (substance),phsu,PubMed,1
+predisposes_to_condition,TNFR-Fc fusion protein,phsu,PubMed,1
+preventative_for_condition,triacetyluridine,phsu,PubMed,1
+predisposes_to_condition,trimethyloxamine,phsu,PubMed,1
+predisposes_to_condition,Tumor Necrosis Factor Inhibitors,phsu,PubMed,1
+predisposes_to_condition,Valine,phsu,PubMed,1
+predisposes_to_condition,Vitamin K antagonists,phsu,PubMed,1
+predisposes_to_condition,Maximum,qnco_qnco,PubMed,1
+predisposes_to_condition,Score,qnco,PubMed,1
+predisposes_to_condition,Life Style,socb,PubMed,1
+predisposes_to_condition,Absence of sensation,sosy_sosy,PubMed,1
+predisposes_to_condition,Ache,sosy_sosy,PubMed,1
+predisposes_to_condition,acute stress,sosy_sosy,PubMed,1
+predisposes_to_condition,Agitation,sosy_sosy,PubMed,1
+predisposes_to_condition,Asthenia,sosy_sosy,PubMed,1
+predisposes_to_condition,Ataxia,sosy_sosy,PubMed,1
+predisposes_to_condition,Constipation,sosy_sosy,PubMed,1
+NEG_PREDISPOSES,Depressive Symptoms,sosy_sosy,PubMed,1
+predisposes_to_condition,Depressive Symptoms,sosy_sosy,PubMed,1
+predisposes_to_condition,Difficulty sleeping,sosy_sosy,PubMed,1
+predisposes_to_condition,Edema,sosy_sosy,PubMed,1
+predisposes_to_condition,Fever,sosy_sosy,PubMed,1
+NEG_PREDISPOSES,Fluctuation,sosy_sosy,PubMed,1
+predisposes_to_condition,Fluctuation,sosy_sosy,PubMed,1
+predisposes_to_condition,"Hallucinations, Visual",sosy_sosy,PubMed,1
+predisposes_to_condition,Headache,sosy_sosy,PubMed,1
+predisposes_to_condition,Imbalance,sosy_sosy,PubMed,1
+predisposes_to_condition,Malaise,sosy_sosy,PubMed,1
+predisposes_to_condition,Muscle Rigidity,sosy_sosy,PubMed,1
+predisposes_to_condition,Myoclonus,sosy_sosy,PubMed,1
+predisposes_to_condition,Neurobehavioral Manifestations,sosy_sosy,PubMed,1
+predisposes_to_condition,Neurologic Symptoms,sosy_sosy,PubMed,1
+predisposes_to_condition,Pain,sosy_sosy,PubMed,1
+predisposes_to_condition,Prodromal Symptoms,sosy_sosy,PubMed,1
+NEG_PREDISPOSES,Prodrome,sosy_sosy,PubMed,1
+predisposes_to_condition,Prodrome,sosy_sosy,PubMed,1
+predisposes_to_condition,Seizures,sosy_sosy,PubMed,1
+predisposes_to_condition,Signs and Symptoms,sosy_sosy,PubMed,1
+predisposes_to_condition,Single organ dysfunction,sosy_sosy,PubMed,1
+predisposes_to_condition,Sleep disturbances,sosy_sosy,PubMed,1
+predisposes_to_condition,Sleeplessness,sosy_sosy,PubMed,1
+predisposes_to_condition,Stiffness,sosy_sosy,PubMed,1
+NEG_PREDISPOSES,Symptoms,sosy_sosy,PubMed,1
+predisposes_to_condition,Symptoms,sosy_sosy,PubMed,1
+predisposes_to_condition,Affective Symptoms,sosy,PubMed,1
+predisposes_to_condition,Behavioral and psychological symptoms of dementia,sosy,PubMed,1
+predisposes_to_condition,Behavioral Symptoms,sosy,PubMed,1
+predisposes_to_condition,Complaint (finding),sosy,PubMed,1
+predisposes_to_condition,Memory Loss,sosy,PubMed,1
+predisposes_to_condition,Motor symptoms,sosy,PubMed,1
+predisposes_to_condition,"Obesity, Visceral",sosy,PubMed,1
+predisposes_to_condition,Paraosmia,sosy,PubMed,1
+predisposes_to_condition,Sensory Change,sosy,PubMed,1
+predisposes_to_condition,Sexual symptom,sosy,PubMed,1
+predisposes_to_condition,View,spco_spco,PubMed,1
+NEG_PREDISPOSES,24-hydroxycholesterol,strd,PubMed,1
+predisposes_to_condition,24-hydroxycholesterol,strd,PubMed,1
+preventative_for_condition,24-hydroxycholesterol,strd,PubMed,1
+predisposes_to_condition,27-hydroxycholesterol,strd,PubMed,1
+predisposes_to_condition,"Cholesterol, Dietary",strd,PubMed,1
+preventative_for_condition,fucosterol,strd,PubMed,1
+preventative_for_condition,ginsenoside Rg1,strd,PubMed,1
+predisposes_to_condition,High Density Lipoprotein Cholesterol,strd,PubMed,1
+preventative_for_condition,High Density Lipoprotein Cholesterol,strd,PubMed,1
+predisposes_to_condition,lathosterol,strd,PubMed,1
+predisposes_to_condition,neurosteroids,strd,PubMed,1
+preventative_for_condition,neurosteroids,strd,PubMed,1
+predisposes_to_condition,Total cholesterol,strd,PubMed,1
+predisposes_to_condition,Shift worker,tmco,PubMed,1
+predisposes_to_condition,Ablation,topp_topp,PubMed,1
+preventative_for_condition,Ablation,topp_topp,PubMed,1
+preventative_for_condition,Acoustic Stimulation,topp_topp,PubMed,1
+preventative_for_condition,Acupuncture procedure,topp_topp,PubMed,1
+predisposes_to_condition,Administration of medication,topp_topp,PubMed,1
+preventative_for_condition,Administration of vaccine to produce active immunity,topp_topp,PubMed,1
+predisposes_to_condition,"Administration, Intranasal",topp_topp,PubMed,1
+preventative_for_condition,"Administration, Intranasal",topp_topp,PubMed,1
+preventative_for_condition,Alternative Therapies,topp_topp,PubMed,1
+NEG_PREDISPOSES,androgen therapy,topp_topp,PubMed,1
+NEG_PREVENTS,androgen therapy,topp_topp,PubMed,1
+predisposes_to_condition,androgen therapy,topp_topp,PubMed,1
+predisposes_to_condition,Anesthesia procedures,topp_topp,PubMed,1
+preventative_for_condition,Antihypertensive therapy,topp_topp,PubMed,1
+predisposes_to_condition,Aspiration-action,topp_topp,PubMed,1
+preventative_for_condition,Bariatric Surgery,topp_topp,PubMed,1
+preventative_for_condition,Behavior Therapy,topp_topp,PubMed,1
+predisposes_to_condition,Bilateral oophorectomy,topp_topp,PubMed,1
+preventative_for_condition,blood medications,topp_topp,PubMed,1
+NEG_PREDISPOSES,Blood Transfusion,topp_topp,PubMed,1
+predisposes_to_condition,Blood Transfusion,topp_topp,PubMed,1
+preventative_for_condition,blood treatment,topp_topp,PubMed,1
+preventative_for_condition,Brain stimulation,topp_topp,PubMed,1
+predisposes_to_condition,Bypass,topp_topp,PubMed,1
+preventative_for_condition,cancer therapy,topp_topp,PubMed,1
+predisposes_to_condition,Circumferential Supracrestal Fiberotomy,topp_topp,PubMed,1
+preventative_for_condition,Cognitive Therapy,topp_topp,PubMed,1
+preventative_for_condition,Cold Therapy,topp_topp,PubMed,1
+predisposes_to_condition,Combined Modality Therapy,topp_topp,PubMed,1
+preventative_for_condition,Combined Modality Therapy,topp_topp,PubMed,1
+preventative_for_condition,Contraceptive methods,topp_topp,PubMed,1
+predisposes_to_condition,Current Therapy,topp_topp,PubMed,1
+preventative_for_condition,cytarabine/daunorubicin protocol,topp_topp,PubMed,1
+preventative_for_condition,Deep Brain Stimulation,topp_topp,PubMed,1
+predisposes_to_condition,Detection,topp_topp,PubMed,1
+preventative_for_condition,Detection,topp_topp,PubMed,1
+predisposes_to_condition,Dietary Modification,topp_topp,PubMed,1
+preventative_for_condition,Dietary Modification,topp_topp,PubMed,1
+preventative_for_condition,Dietary Supplementation,topp_topp,PubMed,1
+predisposes_to_condition,doxorubicin/prednisone/vincristine protocol,topp_topp,PubMed,1
+preventative_for_condition,Early Therapy,topp_topp,PubMed,1
+predisposes_to_condition,early/brief intervention/therapy (treatment),topp_topp,PubMed,1
+preventative_for_condition,early/brief intervention/therapy (treatment),topp_topp,PubMed,1
+NEG_PREDISPOSES,Estrogen Replacement Therapy,topp_topp,PubMed,1
+NEG_PREVENTS,Estrogen Replacement Therapy,topp_topp,PubMed,1
+predisposes_to_condition,Estrogen Replacement Therapy,topp_topp,PubMed,1
+preventative_for_condition,Estrogen Replacement Therapy,topp_topp,PubMed,1
+preventative_for_condition,estrogen therapy,topp_topp,PubMed,1
+predisposes_to_condition,Excision,topp_topp,PubMed,1
+preventative_for_condition,Excision,topp_topp,PubMed,1
+predisposes_to_condition,"Exercise, Aerobic",topp_topp,PubMed,1
+preventative_for_condition,"Exercise, Aerobic",topp_topp,PubMed,1
+predisposes_to_condition,Exploration procedure,topp_topp,PubMed,1
+preventative_for_condition,Exploration procedure,topp_topp,PubMed,1
+predisposes_to_condition,Extraction,topp_topp,PubMed,1
+predisposes_to_condition,Functional modification,topp_topp,PubMed,1
+preventative_for_condition,Functional modification,topp_topp,PubMed,1
+NEG_PREDISPOSES,gene therapy,topp_topp,PubMed,1
+predisposes_to_condition,gene therapy,topp_topp,PubMed,1
+preventative_for_condition,gene therapy,topp_topp,PubMed,1
+NEG_PREDISPOSES,General Anesthesia,topp_topp,PubMed,1
+predisposes_to_condition,General Anesthesia,topp_topp,PubMed,1
+preventative_for_condition,Healthy Diet,topp_topp,PubMed,1
+preventative_for_condition,Hemodialysis,topp_topp,PubMed,1
+predisposes_to_condition,High-Frequency Oscillation Ventilation,topp_topp,PubMed,1
+predisposes_to_condition,hip fracture repair,topp_topp,PubMed,1
+NEG_PREVENTS,Hormone replacement therapy,topp_topp,PubMed,1
+predisposes_to_condition,Hormone replacement therapy,topp_topp,PubMed,1
+preventative_for_condition,Hormone replacement therapy,topp_topp,PubMed,1
+NEG_PREDISPOSES,Hormone Therapy,topp_topp,PubMed,1
+NEG_PREVENTS,Hormone Therapy,topp_topp,PubMed,1
+predisposes_to_condition,Hormone Therapy,topp_topp,PubMed,1
+preventative_for_condition,Hormone Therapy,topp_topp,PubMed,1
+predisposes_to_condition,Hydrotherapy,topp_topp,PubMed,1
+preventative_for_condition,Hydrotherapy,topp_topp,PubMed,1
+predisposes_to_condition,Hysterectomy,topp_topp,PubMed,1
+preventative_for_condition,Immunization,topp_topp,PubMed,1
+preventative_for_condition,Immunotherapy,topp_topp,PubMed,1
+NEG_PREDISPOSES,Implantation procedure,topp_topp,PubMed,1
+predisposes_to_condition,Implantation procedure,topp_topp,PubMed,1
+preventative_for_condition,Injection procedure,topp_topp,PubMed,1
+predisposes_to_condition,Interventional procedure,topp_topp,PubMed,1
+preventative_for_condition,Interventional procedure,topp_topp,PubMed,1
+predisposes_to_condition,Isolation procedure,topp_topp,PubMed,1
+preventative_for_condition,Manipulation procedure,topp_topp,PubMed,1
+predisposes_to_condition,MCC protocol,topp_topp,PubMed,1
+predisposes_to_condition,Medical counseling,topp_topp,PubMed,1
+predisposes_to_condition,Operative Surgical Procedures,topp_topp,PubMed,1
+preventative_for_condition,Operative Surgical Procedures,topp_topp,PubMed,1
+predisposes_to_condition,oral medication,topp_topp,PubMed,1
+predisposes_to_condition,oscillations,topp_topp,PubMed,1
+preventative_for_condition,oscillations,topp_topp,PubMed,1
+predisposes_to_condition,Ovariectomy,topp_topp,PubMed,1
+preventative_for_condition,passive immunization procedure,topp_topp,PubMed,1
+preventative_for_condition,Perfusion (procedure),topp_topp,PubMed,1
+predisposes_to_condition,Pharmacotherapy,topp_topp,PubMed,1
+preventative_for_condition,Pharmacotherapy,topp_topp,PubMed,1
+preventative_for_condition,Phototherapy,topp_topp,PubMed,1
+preventative_for_condition,Physical therapy,topp_topp,PubMed,1
+NEG_PREDISPOSES,Placebos,topp_topp,PubMed,1
+preventative_for_condition,Placebos,topp_topp,PubMed,1
+predisposes_to_condition,Plication,topp_topp,PubMed,1
+predisposes_to_condition,Polypharmacy,topp_topp,PubMed,1
+predisposes_to_condition,Primary Prevention,topp_topp,PubMed,1
+predisposes_to_condition,Procedure on spinal cord (procedure),topp_topp,PubMed,1
+predisposes_to_condition,Prophylactic treatment,topp_topp,PubMed,1
+preventative_for_condition,Prophylactic treatment,topp_topp,PubMed,1
+preventative_for_condition,Replacement therapy,topp_topp,PubMed,1
+preventative_for_condition,Secondary Prevention,topp_topp,PubMed,1
+predisposes_to_condition,Surgical Replantation,topp_topp,PubMed,1
+preventative_for_condition,Surgical Replantation,topp_topp,PubMed,1
+preventative_for_condition,systemic administration,topp_topp,PubMed,1
+predisposes_to_condition,systemic therapy,topp_topp,PubMed,1
+predisposes_to_condition,Therapeutic Intervention,topp_topp,PubMed,1
+preventative_for_condition,Therapeutic Intervention,topp_topp,PubMed,1
+preventative_for_condition,Therapeutic Mobilization,topp_topp,PubMed,1
+NEG_PREDISPOSES,Therapeutic procedure,topp_topp,PubMed,1
+NEG_PREVENTS,Therapeutic procedure,topp_topp,PubMed,1
+predisposes_to_condition,Therapeutic procedure,topp_topp,PubMed,1
+preventative_for_condition,Therapeutic procedure,topp_topp,PubMed,2
+preventative_for_condition,Therapeutic regimen,topp_topp,PubMed,1
+predisposes_to_condition,"Therapies, Investigational",topp_topp,PubMed,1
+predisposes_to_condition,Total excision of stomach,topp_topp,PubMed,1
+predisposes_to_condition,Traction,topp_topp,PubMed,1
+predisposes_to_condition,Transplantation,topp_topp,PubMed,1
+predisposes_to_condition,treatment options,topp_topp,PubMed,1
+predisposes_to_condition,Treatment Protocols,topp_topp,PubMed,1
+preventative_for_condition,Treatment Protocols,topp_topp,PubMed,1
+preventative_for_condition,Vaccination,topp_topp,PubMed,1
+preventative_for_condition,Weight maintenance regimen,topp_topp,PubMed,1
+preventative_for_condition,Active monitoring,topp,PubMed,1
+predisposes_to_condition,"Administration, Intravesical",topp,PubMed,1
+NEG_PREVENTS,Alzheimer's disease treatment,topp,PubMed,1
+preventative_for_condition,Alzheimer's disease treatment,topp,PubMed,1
+predisposes_to_condition,Antiandrogen therapy,topp,PubMed,1
+preventative_for_condition,Antiandrogen therapy,topp,PubMed,1
+predisposes_to_condition,Caloric Restriction,topp,PubMed,1
+preventative_for_condition,Cardiovascular therapy,topp,PubMed,1
+predisposes_to_condition,Cerebrospinal fluid collection,topp,PubMed,1
+preventative_for_condition,Chinese herbal medicine,topp,PubMed,1
+preventative_for_condition,cisplatin/cyclophosphamide/doxorubicin/etoposide chemotherapy protocol,topp,PubMed,1
+preventative_for_condition,Cognitive Remediation,topp,PubMed,1
+preventative_for_condition,Cognitive stimulation,topp,PubMed,1
+predisposes_to_condition,Derivation procedure,topp,PubMed,1
+preventative_for_condition,"Diet, Carbohydrate-Restricted",topp,PubMed,1
+predisposes_to_condition,"Diet, Mediterranean",topp,PubMed,1
+preventative_for_condition,"Diet, Mediterranean",topp,PubMed,1
+predisposes_to_condition,"Diet, Western",topp,PubMed,1
+preventative_for_condition,Dietary Approaches To Stop Hypertension,topp,PubMed,1
+predisposes_to_condition,early identification,topp,PubMed,1
+predisposes_to_condition,Early Intervention (Education),topp,PubMed,1
+predisposes_to_condition,educational intervention,topp,PubMed,1
+preventative_for_condition,Electroacupuncture,topp,PubMed,1
+predisposes_to_condition,Estrogen hormone therapy,topp,PubMed,1
+preventative_for_condition,Estrogen hormone therapy,topp,PubMed,1
+NEG_PREVENTS,Estrogen Replacements,topp,PubMed,1
+preventative_for_condition,Estrogen Replacements,topp,PubMed,1
+predisposes_to_condition,Exercise Intervention,topp,PubMed,1
+predisposes_to_condition,Family psychotherapy,topp,PubMed,1
+predisposes_to_condition,fragmentation procedure,topp,PubMed,1
+preventative_for_condition,fragmentation procedure,topp,PubMed,1
+predisposes_to_condition,guided discovery,topp,PubMed,1
+predisposes_to_condition,Harm Reduction,topp,PubMed,1
+predisposes_to_condition,hyperthermia treatment,topp,PubMed,1
+preventative_for_condition,"Immunotherapy, Active",topp,PubMed,1
+predisposes_to_condition,Increased calorie diet,topp,PubMed,1
+preventative_for_condition,Increased calorie diet,topp,PubMed,1
+predisposes_to_condition,Induction,topp,PubMed,1
+preventative_for_condition,Induction,topp,PubMed,1
+predisposes_to_condition,"Injections, Intraperitoneal",topp,PubMed,1
+preventative_for_condition,Intramuscular injection,topp,PubMed,1
+preventative_for_condition,Magnesium supplementation,topp,PubMed,1
+preventative_for_condition,Moxibustion,topp,PubMed,1
+predisposes_to_condition,Palatopharyngoplasty,topp,PubMed,1
+preventative_for_condition,Phytotherapy,topp,PubMed,1
+preventative_for_condition,Procedural learning,topp,PubMed,1
+preventative_for_condition,Removes,topp,PubMed,1
+predisposes_to_condition,Risk Reduction,topp,PubMed,1
+preventative_for_condition,Risk Reduction,topp,PubMed,1
+predisposes_to_condition,Social network analysis,topp,PubMed,1
+predisposes_to_condition,Structural modification,topp,PubMed,1
+preventative_for_condition,Task Performance,topp,PubMed,1
+predisposes_to_condition,Total intravenous anesthesia,topp,PubMed,1
+preventative_for_condition,"Transcranial Magnetic Stimulation, Repetitive",topp,PubMed,1
+preventative_for_condition,Transcutaneous Electric Nerve Stimulation,topp,PubMed,1
+preventative_for_condition,tumor necrosis factor therapy,topp,PubMed,1
+predisposes_to_condition,Whole-Body Irradiation,topp,PubMed,1

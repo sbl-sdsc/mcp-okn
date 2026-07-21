@@ -1,0 +1,35 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v2("?d")
+  v1("?dLabel"):::projected 
+  v6("?gene"):::projected 
+  v4("?prot"):::projected 
+  v5("?protLabel"):::projected 
+  v7("?sym"):::projected 
+  v8("?varComment"):::projected 
+  v3("?variant"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["up:Disease"]):::iri 
+    graph0f0[["contains(lcase(str(?dLabel)),'alzheimer')"]]
+    graph0f0 --> v1
+    v2 --"a"--> graph0c2
+    v3 --"RO:0002410"--> v2
+    v2 --"rdfs:label"--> v1
+    v4 --"bl:has_sequence_variant"--> v3
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v4 -."rdfs:label".-> v5
+    end
+    subgraph optionalgraph01["(optional)"]
+    style optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v6 -."sio:SIO_010078".-> v4
+      v6 --"rdfs:label"--> v7
+    end
+    subgraph optionalgraph02["(optional)"]
+    style optionalgraph02 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."rdfs:comment".-> v8
+    end
+  end

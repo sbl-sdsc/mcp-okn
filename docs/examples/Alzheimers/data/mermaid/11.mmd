@@ -1,0 +1,104 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v8("?aLabel"):::projected 
+  v7("?assessed"):::projected 
+  v5("?bLabel"):::projected 
+  v4("?biomarker"):::projected 
+  v2("?dLabel"):::projected 
+  v6("?dir")
+  v1("?mondo"):::projected 
+  v3("?rel"):::projected 
+  v10("?sLabel"):::projected 
+  v9("?sample"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/ubergraph"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c1(["obci:MONDO_0004975"]):::iri 
+    v1 --"rdfs:subClassOf*"--> graph0c1
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."rdfs:label".-> v2
+    end
+  end
+  subgraph graph1["GRAPH https://purl.org/okn/frink/kg/biomarkerkg"]
+    style graph1 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    subgraph uniongraph10[" Union "]
+    style uniongraph10 color:#000;
+    subgraph uniongraph10l[" "]
+      style uniongraph10l fill:#abf,stroke-dasharray: 3 3;
+      v4 --"obci:OBCI_1000008"--> v1
+      graph1bind0[/"'indicates_risk_of_developing'"/]
+      graph1bind0 --as--o v3
+    end
+      subgraph uniongraph11[" Union "]
+      style uniongraph11 color:#000;
+      subgraph uniongraph11l[" "]
+        style uniongraph11l fill:#abf,stroke-dasharray: 3 3;
+        v4 --"obci:OBCI_1000006"--> v1
+        graph1bind1[/"'prognostic_for'"/]
+        graph1bind1 --as--o v3
+      end
+        subgraph uniongraph12[" Union "]
+        style uniongraph12 color:#000;
+        subgraph uniongraph12l[" "]
+          style uniongraph12l fill:#abf,stroke-dasharray: 3 3;
+          v4 --"obci:OBCI_1000003"--> v1
+          graph1bind2[/"'monitors_status_of'"/]
+          graph1bind2 --as--o v3
+        end
+        subgraph uniongraph12r[" "]
+          style uniongraph12r fill:#abf,stroke-dasharray: 3 3;
+          v4 --"obci:OBCI_1000002"--> v1
+          graph1bind3[/"'diagnostic_for'"/]
+          graph1bind3 --as--o v3
+        end
+        uniongraph12r <== or ==> uniongraph12l
+        end
+      end
+    end
+    subgraph optionalgraph11["(optional)"]
+    style optionalgraph11 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v4 -."rdfs:label".-> v5
+    end
+    subgraph optionalgraph12["(optional)"]
+    style optionalgraph12 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      subgraph uniongraph13[" Union "]
+      style uniongraph13 color:#000;
+      subgraph uniongraph13l[" "]
+        style uniongraph13l fill:#abf,stroke-dasharray: 3 3;
+        v4 -."obci:OBCI_1000016".-> v7
+        graph1bind4[/"'presence_of'"/]
+        graph1bind4 --as--o v6
+      end
+        subgraph uniongraph14[" Union "]
+        style uniongraph14 color:#000;
+        subgraph uniongraph14l[" "]
+          style uniongraph14l fill:#abf,stroke-dasharray: 3 3;
+          v4 --"obci:OBCI_1000015"--> v7
+          graph1bind5[/"'below_normal'"/]
+          graph1bind5 --as--o v6
+        end
+        subgraph uniongraph14r[" "]
+          style uniongraph14r fill:#abf,stroke-dasharray: 3 3;
+          v4 --"obci:OBCI_1000009"--> v7
+          graph1bind6[/"'above_normal'"/]
+          graph1bind6 --as--o v6
+        end
+        uniongraph14r <== or ==> uniongraph14l
+        end
+      end
+      subgraph optionalgraph13["(optional)"]
+      style optionalgraph13 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v7 -."rdfs:label".-> v8
+      end
+    end
+    subgraph optionalgraph14["(optional)"]
+    style optionalgraph14 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v4 -."obci:OBCI_1000018".-> v9
+      subgraph optionalgraph15["(optional)"]
+      style optionalgraph15 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v9 -."rdfs:label".-> v10
+      end
+    end
+  end

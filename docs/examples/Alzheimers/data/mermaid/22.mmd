@@ -1,0 +1,36 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v7("?approval"):::projected 
+  v4("?cName"):::projected 
+  v5("?cType"):::projected 
+  v3("?compound"):::projected 
+  v2("?d")
+  v1("?dLabel"):::projected 
+  v6("?status"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["up:Disease"]):::iri 
+    graph0f0[["contains(lcase(str(?dLabel)),'alzheimer')"]]
+    graph0f0 --> v1
+    v2 --"a"--> graph0c2
+    v3 --"ncit:NCIT_C41184"--> v2
+    v2 --"rdfs:label"--> v1
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."schema:name".-> v4
+    end
+    subgraph optionalgraph01["(optional)"]
+    style optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."a".-> v5
+    end
+    subgraph optionalgraph02["(optional)"]
+    style optionalgraph02 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."schema:status".-> v6
+    end
+    subgraph optionalgraph03["(optional)"]
+    style optionalgraph03 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."ncit:NCIT_C25425".-> v7
+    end
+  end

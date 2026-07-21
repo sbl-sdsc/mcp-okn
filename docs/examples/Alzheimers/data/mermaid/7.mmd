@@ -1,0 +1,17 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v7("?gene")
+  v1("?nGenes"):::projected 
+  v3("?trait"):::projected 
+  v2("?traitLabel"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/digcfdekg"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0f0[["(contains(lcase(str(?traitLabel)),'alzheimer') || contains(lcase(str(?traitLabel)),'dementia') || contains(lcase(str(?traitLabel)),'amyloid') || contains(lcase(str(?traitLabel)),'cognitive') || contains(lcase(str(?traitLabel)),'neurofibrillary'))"]]
+    graph0f0 --> v2
+    v7 --"dig:geneToTrait"--> v3
+    v3 --"rdfs:label"--> v2
+  end
+  bind0[/"count(?gene)"/]
+  bind0 --as--o v1

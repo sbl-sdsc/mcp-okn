@@ -1,0 +1,45 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v2("?gene")
+  v4("?go"):::projected 
+  v5("?goLabel"):::projected 
+  v6("?ns"):::projected 
+  v3("?prot")
+  v1("?sym"):::projected 
+  bind0[/"VALUES ?sym"/]
+  bind0-->v1
+  bind00(["SORL1"])
+  bind00 --> bind0
+  bind01(["ABCA7"])
+  bind01 --> bind0
+  bind02(["ADAM10"])
+  bind02 --> bind0
+  bind0more([+289 more])
+  bind0more --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v2 --"sio:SIO_010078"--> v3
+    v2 --"rdfs:label"--> v1
+    subgraph uniongraph00[" Union "]
+    style uniongraph00 color:#000;
+      v3 --"up:partOf"--> v4
+      subgraph uniongraph01[" Union "]
+      style uniongraph01 color:#000;
+        v3 --"obo:RO_0002327"--> v4
+      subgraph uniongraph01r[" "]
+        style uniongraph01r fill:#abf,stroke-dasharray: 3 3;
+        v3 --"obo:RO_0002331"--> v4
+      end
+      end
+    end
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v4 -."rdfs:label".-> v5
+    end
+    subgraph optionalgraph01["(optional)"]
+    style optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v4 -."oio:hasOBONamespace".-> v6
+    end
+  end

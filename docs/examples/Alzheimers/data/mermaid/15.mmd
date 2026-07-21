@@ -1,0 +1,26 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v2("?assay")
+  v4("?assayName"):::projected 
+  v3("?attr"):::projected 
+  v6("?attrLabel"):::projected 
+  v5("?attrType"):::projected 
+  v1("?study")
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/gene-expression-atlas-okn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["MONDO:0004975"]):::iri 
+    v1 --"bl:studies"--> graph0c2
+    v1 --"bl:has_output"--> v2
+    v2 --"bl:has_attribute"--> v3
+    v2 --"bl:name"--> v4
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."a".-> v5
+    end
+    subgraph optionalgraph01["(optional)"]
+    style optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."rdfs:label".-> v6
+    end
+  end

@@ -1,0 +1,44 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v2("?entrez"):::projected 
+  v3("?gene")
+  v7("?method"):::projected 
+  v6("?scoreType"):::projected 
+  v4("?stmt")
+  v8("?sym"):::projected 
+  v1("?trait")
+  v9("?traitLabel"):::projected 
+  v5("?weight"):::projected 
+  bind0[/"VALUES ?trait"/]
+  bind0-->v1
+  bind00(["https://purl.org/okn/frink/kg/digcfdekg/node/trait/e021329febca767bbb43"])
+  bind00 --> bind0
+  bind01(["https://purl.org/okn/frink/kg/digcfdekg/node/trait/81ade4d08175c6695c5e"])
+  bind01 --> bind0
+  bind02(["efo:1001870"])
+  bind02 --> bind0
+  bind0more([+18 more])
+  bind0more --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/digcfdekg"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["dig:geneToTrait"]):::iri 
+    v4 --"rdf:predicate"--> graph0c2
+    v4 --"rdf:object"--> v1
+    v4 --"rdf:subject"--> v3
+    v4 --"dig:weight"--> v5
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v4 -."dig:scoreType/rdfs:label".-> v6
+    end
+    subgraph optionalgraph01["(optional)"]
+    style optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v4 -."prov:wasGeneratedBy/rdfs:label".-> v7
+    end
+    v3 --"rdfs:label"--> v8
+    v1 --"rdfs:label"--> v9
+    graph0bind1[/"replace(str(?gene),'^.*/gene/','')"/]
+    v3 --o graph0bind1
+    graph0bind1 --as--o v2
+  end

@@ -1,0 +1,269 @@
+label,approval,maxPhase,isDrug,tier
+ABT-126,,2.0,,investigational / trial-stage
+ABT-288,,2.0,,investigational / trial-stage
+ABT-384,,2.0,,investigational / trial-stage
+ACETYLCYSTEINE,1963.0,4.0,True,approved (FDA year on record)
+ACITRETIN,1996.0,4.0,True,approved (FDA year on record)
+ADENOSINE TRIPHOSPHATE,,2.0,,investigational / trial-stage
+ADUCANUMAB,2021.0,4.0,True,approved (FDA year on record)
+ALANINE,,3.0,True,investigational / trial-stage
+ALEPLASININ,,2.0,,investigational / trial-stage
+APP-311,,2.0,,investigational / trial-stage
+AQW051,,2.0,,investigational / trial-stage
+ARGININE,,3.0,True,investigational / trial-stage
+ARIPIPRAZOLE,2002.0,4.0,True,approved (FDA year on record)
+ARUNDIC ACID,,2.0,,investigational / trial-stage
+ATABECESTAT,,2.0,,investigational / trial-stage
+ATOMOXETINE HYDROCHLORIDE,2002.0,4.0,True,approved (FDA year on record)
+ATORVASTATIN,1996.0,4.0,True,approved (FDA year on record)
+ATORVASTATIN CALCIUM,1996.0,4.0,True,approved (FDA year on record)
+ATUZAGINSTAT,,2.0,,investigational / trial-stage
+AUS-131,,2.0,,investigational / trial-stage
+AVAGACESTAT,,2.0,,investigational / trial-stage
+AZD-3839,,1.0,,investigational / trial-stage
+AZD0328,,2.0,,investigational / trial-stage
+AZD1446,,2.0,,investigational / trial-stage
+AZELIRAGON,,3.0,True,investigational / trial-stage
+BAPINEUZUMAB,,3.0,True,investigational / trial-stage
+BEGACESTAT,,2.0,,investigational / trial-stage
+BENFOTIAMINE,,3.0,True,investigational / trial-stage
+BENZGALANTAMINE,2024.0,4.0,True,approved (FDA year on record)
+BENZGALANTAMINE GLUCONATE,2024.0,4.0,True,approved (FDA year on record)
+BEPRANEMAB,,2.0,,investigational / trial-stage
+BEXAROTENE,1999.0,4.0,True,approved (FDA year on record)
+BIFEPRUNOX,,3.0,True,investigational / trial-stage
+BILIRUBIN,,1.0,,investigational / trial-stage
+BLARCAMESINE HYDROCHLORIDE,,3.0,True,investigational / trial-stage
+BMS-984923,,1.0,,investigational / trial-stage
+BREXANOLONE,2019.0,4.0,True,approved (FDA year on record)
+BREXPIPRAZOLE,2015.0,4.0,True,approved (FDA year on record)
+BROMOCRIPTINE,1978.0,4.0,True,approved (FDA year on record)
+BRYOSTATIN 1,,2.0,,investigational / trial-stage
+BUMETANIDE,1983.0,4.0,True,approved (FDA year on record)
+BUNTANETAP,,3.0,True,investigational / trial-stage
+BUNTANETAP TARTRATE,,3.0,True,investigational / trial-stage
+BUPROPION,1985.0,4.0,True,approved (FDA year on record)
+CAFFEINE,1948.0,4.0,True,approved (FDA year on record)
+CANNABIDIOL,2018.0,4.0,True,approved (FDA year on record)
+CELECOXIB,1998.0,4.0,True,approved (FDA year on record)
+CEPEROGNASTAT,,2.0,,investigational / trial-stage
+CERLAPIRDINE,,2.0,,investigational / trial-stage
+CMS-121,,1.0,,investigational / trial-stage
+COPPER,1982.0,4.0,True,approved (FDA year on record)
+CP-609754,,1.0,,investigational / trial-stage
+CRENEZUMAB,,3.0,True,investigational / trial-stage
+CROMOLYN,1982.0,4.0,True,approved (FDA year on record)
+CURCUMIN,,3.0,True,investigational / trial-stage
+CYANOCOBALAMIN,1982.0,4.0,True,approved (FDA year on record)
+DAPAGLIFLOZIN,2012.0,4.0,True,approved (FDA year on record)
+DARATUMUMAB,2015.0,4.0,True,approved (FDA year on record)
+DASATINIB ANHYDROUS,2006.0,4.0,True,approved (FDA year on record)
+DEXMEDETOMIDINE,1999.0,4.0,True,approved (FDA year on record)
+DEXTROMETHORPHAN,1982.0,4.0,True,approved (FDA year on record)
+DIVALPROEX SODIUM,1983.0,4.0,True,approved (FDA year on record)
+DOCONEXENT,,3.0,True,investigational / trial-stage
+DONANEMAB,,4.0,True,investigational / trial-stage
+DONEPEZIL,1996.0,4.0,True,approved (FDA year on record)
+DONEPEZIL HYDROCHLORIDE,1996.0,4.0,True,approved (FDA year on record)
+DOXYCYCLINE,1967.0,4.0,True,approved (FDA year on record)
+DRINABANT,,3.0,True,investigational / trial-stage
+E-2212,,1.0,,investigational / trial-stage
+EDELINONTRINE,,2.0,,investigational / trial-stage
+ELENBECESTAT,,3.0,True,investigational / trial-stage
+ENCENICLINE,,3.0,True,investigational / trial-stage
+ENCENICLINE HYDROCHLORIDE,,3.0,True,investigational / trial-stage
+EPIGALOCATECHIN GALLATE,,3.0,True,investigational / trial-stage
+ERGOCALCIFEROL,1941.0,4.0,True,approved (FDA year on record)
+ESCITALOPRAM,2002.0,4.0,True,approved (FDA year on record)
+ESTRADIOL,1975.0,4.0,True,approved (FDA year on record)
+ESTROGEN,,3.0,True,investigational / trial-stage
+ETALANETUG,,2.0,,investigational / trial-stage
+ETAZOLATE,,2.0,,investigational / trial-stage
+FACINICLINE HYDROCHLORIDE,,2.0,,investigational / trial-stage
+FK-962,,2.0,,investigational / trial-stage
+FLORBETABEN,2014.0,4.0,True,approved (FDA year on record)
+FLORBETABEN F18,2014.0,4.0,True,approved (FDA year on record)
+FLORBETAPIR F 18,2012.0,4.0,True,approved (FDA year on record)
+FLORQUINITAU,,3.0,True,investigational / trial-stage
+FLORQUINITAU F18,,2.0,,investigational / trial-stage
+FLORTAUCIPIR,2020.0,4.0,True,approved (FDA year on record)
+FLORTAUCIPIR F 18,2020.0,4.0,True,approved (FDA year on record)
+FLUCONAZOLE,1990.0,4.0,True,approved (FDA year on record)
+FLUDEOXYGLUCOSE F 18,1994.0,4.0,True,approved (FDA year on record)
+FLUTAFURANOL F 18,,3.0,True,investigational / trial-stage
+FLUTEMETAMOL,2013.0,4.0,True,approved (FDA year on record)
+FLUTEMETAMOL F 18,2013.0,4.0,True,approved (FDA year on record)
+FOLIC ACID,1982.0,4.0,True,approved (FDA year on record)
+FORMOTEROL,2001.0,4.0,True,approved (FDA year on record)
+FOSGONIMETON,,3.0,True,investigational / trial-stage
+FOSGONIMETON SODIUM,,3.0,True,investigational / trial-stage
+GALANTAMINE,2001.0,4.0,True,approved (FDA year on record)
+GALANTAMINE HYDROBROMIDE,2001.0,4.0,True,approved (FDA year on record)
+GANTENERUMAB,,3.0,True,investigational / trial-stage
+GEMFIBROZIL,1981.0,4.0,True,approved (FDA year on record)
+GLYCINE,1982.0,4.0,True,approved (FDA year on record)
+GOSURANEMAB,,2.0,,investigational / trial-stage
+GSI-136,,1.0,,investigational / trial-stage
+GSK-2647544,,1.0,,investigational / trial-stage
+GSK239512,,2.0,,investigational / trial-stage
+GTS-21,,2.0,,investigational / trial-stage
+GUANFACINE,1986.0,4.0,True,approved (FDA year on record)
+HALOPERIDOL,1967.0,4.0,True,approved (FDA year on record)
+HTL-9936,,1.0,,investigational / trial-stage
+HUPERZINE A,,2.0,,investigational / trial-stage
+HYDRALAZINE HYDROCHLORIDE,1953.0,4.0,True,approved (FDA year on record)
+HYDROMETHYLTHIONINE MESYLATE,,3.0,True,investigational / trial-stage
+IBUPROFEN,1974.0,4.0,True,approved (FDA year on record)
+ICLEPERTIN,,3.0,True,investigational / trial-stage
+ICOSAPENT ETHYL,2012.0,4.0,True,approved (FDA year on record)
+IDALOPIRDINE,,3.0,True,investigational / trial-stage
+IDAZOXAN,,3.0,True,investigational / trial-stage
+INDOMETHACIN,1965.0,4.0,True,approved (FDA year on record)
+INOSITOL,,3.0,True,investigational / trial-stage
+INTEPIRDINE,,3.0,True,investigational / trial-stage
+IOFLUPANE I 123,2000.0,4.0,True,approved (FDA year on record)
+ISMIDENON,,2.0,,investigational / trial-stage
+ISOCARBOXAZID,1959.0,4.0,True,approved (FDA year on record)
+ISOTRETINOIN,1982.0,4.0,True,approved (FDA year on record)
+ISPRONICLINE,,2.0,,investigational / trial-stage
+ITRACONAZOLE,1992.0,4.0,True,approved (FDA year on record)
+J147,,1.0,,investigational / trial-stage
+KETOCONAZOLE,1981.0,4.0,True,approved (FDA year on record)
+LAMIVUDINE,1995.0,4.0,True,approved (FDA year on record)
+LANABECESTAT,,3.0,True,investigational / trial-stage
+LATREPIRDINE,,3.0,True,investigational / trial-stage
+LAZUCIRNON,,2.0,,investigational / trial-stage
+LAZUCIRNON HYDROCHLORIDE,,1.0,,investigational / trial-stage
+LECANEMAB,2023.0,4.0,True,approved (FDA year on record)
+LECOZOTAN,,3.0,True,investigational / trial-stage
+LECOZOTAN HYDROCHLORIDE,,3.0,True,investigational / trial-stage
+LEMBOREXANT,2020.0,4.0,True,approved (FDA year on record)
+LEVETIRACETAM,1999.0,4.0,True,approved (FDA year on record)
+"LIPOIC ACID, ALPHA",,3.0,True,investigational / trial-stage
+LITHIUM CARBONATE,1970.0,4.0,True,approved (FDA year on record)
+LORAZEPAM,1977.0,4.0,True,approved (FDA year on record)
+LORNOXICAM,,3.0,True,investigational / trial-stage
+LUMATEPERONE,2019.0,4.0,True,approved (FDA year on record)
+LY-2811376,,1.0,,investigational / trial-stage
+LY-2886721,,1.0,,investigational / trial-stage
+MASITINIB,,3.0,True,investigational / trial-stage
+MASUPIRDINE,,3.0,True,investigational / trial-stage
+MEDROXYPROGESTERONE ACETATE,1959.0,4.0,True,approved (FDA year on record)
+MEMANTINE,2002.0,4.0,True,approved (FDA year on record)
+MEMANTINE HYDROCHLORIDE,2002.0,4.0,True,approved (FDA year on record)
+METHYLENE BLUE ANHYDROUS,2011.0,4.0,True,approved (FDA year on record)
+METHYLPHENIDATE,1955.0,4.0,True,approved (FDA year on record)
+MEVIDALEN,,2.0,,investigational / trial-stage
+MEVIDALEN HYDROXYBENZOATE,,1.0,,investigational / trial-stage
+MIBAMPATOR,,2.0,,investigational / trial-stage
+MIDAZOLAM,1985.0,4.0,True,approved (FDA year on record)
+MIFEPRISTONE,2000.0,4.0,True,approved (FDA year on record)
+MITOGLITAZONE,,2.0,,investigational / trial-stage
+MK-0249,,2.0,,investigational / trial-stage
+MK-7622,,2.0,,investigational / trial-stage
+MK-8189,,2.0,,investigational / trial-stage
+MODAFINIL,1998.0,4.0,True,approved (FDA year on record)
+MONTELUKAST,1998.0,4.0,True,approved (FDA year on record)
+MOXIFLOXACIN,1999.0,4.0,True,approved (FDA year on record)
+MW-150,,2.0,,investigational / trial-stage
+NAPROXEN,1976.0,4.0,True,approved (FDA year on record)
+NAPROXEN SODIUM,1980.0,4.0,True,approved (FDA year on record)
+NEFIRACETAM,,2.0,,investigational / trial-stage
+NEFLAMAPIMOD,,2.0,,investigational / trial-stage
+NERAMEXANE,,3.0,True,investigational / trial-stage
+NIACINAMIDE,1982.0,4.0,True,approved (FDA year on record)
+NILOTINIB,2007.0,4.0,True,approved (FDA year on record)
+NILVADIPINE,,3.0,True,investigational / trial-stage
+OBICETRAPIB,,3.0,True,investigational / trial-stage
+OCTAHYDROAMINOACRIDINE SUCCINATE,,3.0,True,investigational / trial-stage
+OMEGA-3-ACID ETHYL ESTERS,2004.0,4.0,True,approved (FDA year on record)
+OMEPRAZOLE,1989.0,4.0,True,approved (FDA year on record)
+ORM-12741,,2.0,,investigational / trial-stage
+OSORESNONTRINE,,2.0,,investigational / trial-stage
+OXALOACETATE,,2.0,,investigational / trial-stage
+PALIRODEN,,2.0,,investigational / trial-stage
+PEPINEMAB,,2.0,,investigational / trial-stage
+PERINDOPRIL,1993.0,4.0,True,approved (FDA year on record)
+PF-03654746,,2.0,,investigational / trial-stage
+PF-05212377,,2.0,,investigational / trial-stage
+PIMAVANSERIN TARTRATE,2016.0,4.0,True,approved (FDA year on record)
+PIOGLITAZONE,1999.0,4.0,True,approved (FDA year on record)
+PIROMELATINE,,2.0,,investigational / trial-stage
+PONEZUMAB,,2.0,,investigational / trial-stage
+POSDINEMAB,,2.0,,investigational / trial-stage
+POZANICLINE,,2.0,,investigational / trial-stage
+PRAMIPEXOLE,1997.0,4.0,True,approved (FDA year on record)
+PREDNISONE,1955.0,4.0,True,approved (FDA year on record)
+PROGESTERONE,1976.0,4.0,True,approved (FDA year on record)
+PRX-03140,,2.0,,investigational / trial-stage
+PYRIDOXINE,1982.0,4.0,True,approved (FDA year on record)
+QUERCETIN,,3.0,True,investigational / trial-stage
+RALOXIFENE,1997.0,4.0,True,approved (FDA year on record)
+RASAGILINE,2005.0,4.0,True,approved (FDA year on record)
+RAZPIPADON,,2.0,,investigational / trial-stage
+REMTERNETUG,,3.0,True,investigational / trial-stage
+RESEQUINIL,,2.0,,investigational / trial-stage
+RESVERATROL,,3.0,True,investigational / trial-stage
+RIFAMPIN,1971.0,4.0,True,approved (FDA year on record)
+RIFAXIMIN,2004.0,4.0,True,approved (FDA year on record)
+RILAPLADIB,,2.0,,investigational / trial-stage
+RILUZOLE,1995.0,4.0,True,approved (FDA year on record)
+RISPERIDONE,1993.0,4.0,True,approved (FDA year on record)
+RIVASTIGMINE,1998.0,4.0,True,approved (FDA year on record)
+RIVASTIGMINE TARTRATE,1998.0,4.0,True,approved (FDA year on record)
+ROFECOXIB,1999.0,4.0,True,approved (FDA year on record)
+ROSIGLITAZONE,1999.0,4.0,True,approved (FDA year on record)
+ROTIGOTINE,2006.0,4.0,True,approved (FDA year on record)
+SABIRNETUG,,2.0,,investigational / trial-stage
+SALSALATE,,2.0,,investigational / trial-stage
+SAPROPTERIN,2007.0,4.0,True,approved (FDA year on record)
+SARACATINIB,,3.0,True,investigational / trial-stage
+SCOPOLAMINE,1979.0,4.0,True,approved (FDA year on record)
+SCYLLITOL,,2.0,,investigational / trial-stage
+SELEGILINE HYDROCHLORIDE,1989.0,4.0,True,approved (FDA year on record)
+SELENIUM,,3.0,True,investigational / trial-stage
+SELTOREXANT,,3.0,True,investigational / trial-stage
+SEMAGACESTAT,,3.0,True,investigational / trial-stage
+SEMORINEMAB,,2.0,,investigational / trial-stage
+SERINE,,3.0,True,investigational / trial-stage
+SGS-742,,2.0,,investigational / trial-stage
+SIMUFILAM,,3.0,True,investigational / trial-stage
+SIMUFILAM HYDROCHLORIDE,,1.0,,investigational / trial-stage
+SIMVASTATIN,1991.0,4.0,True,approved (FDA year on record)
+SIROLIMUS,1999.0,4.0,True,approved (FDA year on record)
+SODIUM CHLORIDE,1982.0,4.0,True,approved (FDA year on record)
+SOLANEZUMAB,,3.0,True,investigational / trial-stage
+SPG-302,,2.0,,investigational / trial-stage
+SSR180711,,2.0,,investigational / trial-stage
+SUVOREXANT,2014.0,4.0,True,approved (FDA year on record)
+T-817 MALEATE,,2.0,,investigational / trial-stage
+TAK-071,,2.0,,investigational / trial-stage
+TALSACLIDINE,,2.0,,investigational / trial-stage
+TAMIBAROTENE,2005.0,4.0,True,approved (FDA year on record)
+TARENFLURBIL,,3.0,True,investigational / trial-stage
+TELMISARTAN,1998.0,4.0,True,approved (FDA year on record)
+TESOFENSINE,,2.0,,investigational / trial-stage
+THALIDOMIDE,1956.0,4.0,True,approved (FDA year on record)
+THIETHYLPERAZINE,1961.0,4.0,True,approved (FDA year on record)
+TIDEGLUSIB,,2.0,,investigational / trial-stage
+TILAVONEMAB,,2.0,,investigational / trial-stage
+TRAMIPROSATE,,3.0,True,investigational / trial-stage
+TRAZODONE,1981.0,4.0,True,approved (FDA year on record)
+TRICAPRILIN,,3.0,True,investigational / trial-stage
+TRONTINEMAB,,2.0,,investigational / trial-stage
+UDENAFIL,,3.0,True,investigational / trial-stage
+VAFIDEMSTAT,,2.0,,investigational / trial-stage
+VALILTRAMIPROSATE,,3.0,True,investigational / trial-stage
+VALPROIC ACID,1978.0,4.0,True,approved (FDA year on record)
+VARENICLINE,2006.0,4.0,True,approved (FDA year on record)
+VAROGLUTAMSTAT,,2.0,,investigational / trial-stage
+VELUSETRAG,,2.0,,investigational / trial-stage
+VENLAFAXINE HYDROCHLORIDE,1993.0,4.0,True,approved (FDA year on record)
+VERUBECESTAT,,3.0,True,investigational / trial-stage
+VORINOSTAT,2006.0,4.0,True,approved (FDA year on record)
+WARFARIN,1954.0,4.0,True,approved (FDA year on record)
+XALIPRODEN,,3.0,True,investigational / trial-stage
+"XENON XE-129, HYPERPOLARIZED",2022.0,4.0,True,approved (FDA year on record)
+ZAGOCIGUAT,,2.0,,investigational / trial-stage
+ZAGOTENEMAB,,2.0,,investigational / trial-stage
+ZATOLMILAST,,3.0,True,investigational / trial-stage

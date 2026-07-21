@@ -1,0 +1,65 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v2("?dLabel"):::projected 
+  v4("?hp"):::projected 
+  v5("?hpLabel"):::projected 
+  v1("?mondo")
+  v3("?rel"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/ubergraph"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c1(["MONDO:0004975"]):::iri 
+    v1 --"rdfs:subClassOf*"--> graph0c1
+  end
+  subgraph graph1["GRAPH https://purl.org/okn/frink/kg/rdkg"]
+    style graph1 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v1 --"rdfs:label"--> v2
+    subgraph uniongraph10[" Union "]
+    style uniongraph10 color:#000;
+    subgraph uniongraph10l[" "]
+      style uniongraph10l fill:#abf,stroke-dasharray: 3 3;
+      v1 --"bl:related_to"--> v4
+      graph1bind0[/"'related_to'"/]
+      graph1bind0 --as--o v3
+    end
+      subgraph uniongraph11[" Union "]
+      style uniongraph11 color:#000;
+      subgraph uniongraph11l[" "]
+        style uniongraph11l fill:#abf,stroke-dasharray: 3 3;
+        v1 --"bl:contraindicated_for"--> v4
+        graph1bind1[/"'contraindicated_drug'"/]
+        graph1bind1 --as--o v3
+      end
+        subgraph uniongraph12[" Union "]
+        style uniongraph12 color:#000;
+        subgraph uniongraph12l[" "]
+          style uniongraph12l fill:#abf,stroke-dasharray: 3 3;
+          v1 --"bl:has_mode_of_inheritance"--> v4
+          graph1bind2[/"'has_mode_of_inheritance'"/]
+          graph1bind2 --as--o v3
+        end
+          subgraph uniongraph13[" Union "]
+          style uniongraph13 color:#000;
+          subgraph uniongraph13l[" "]
+            style uniongraph13l fill:#abf,stroke-dasharray: 3 3;
+            v1 --"bl:has_onset"--> v4
+            graph1bind3[/"'has_onset'"/]
+            graph1bind3 --as--o v3
+          end
+          subgraph uniongraph13r[" "]
+            style uniongraph13r fill:#abf,stroke-dasharray: 3 3;
+            v1 --"bl:has_phenotype"--> v4
+            graph1bind4[/"'has_phenotype'"/]
+            graph1bind4 --as--o v3
+          end
+          uniongraph13r <== or ==> uniongraph13l
+          end
+        end
+      end
+    end
+    subgraph optionalgraph10["(optional)"]
+    style optionalgraph10 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v4 -."rdfs:label".-> v5
+    end
+  end

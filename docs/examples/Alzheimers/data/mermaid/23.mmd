@@ -1,0 +1,53 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v6("?approval"):::projected 
+  v8("?blackBox"):::projected 
+  v3("?compound"):::projected 
+  v2("?d")
+  v1("?dLabel")
+  v9("?g")
+  v5("?isDrug"):::projected 
+  v4("?label"):::projected 
+  v7("?maxPhase"):::projected 
+  v10("?prot")
+  v11("?targetSym"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["up:Disease"]):::iri 
+    graph0c5(["schema:Drug"]):::iri 
+    graph0f0[["contains(lcase(str(?dLabel)),'alzheimer')"]]
+    graph0f0 --> v1
+    v2 --"a"--> graph0c2
+    v3 --"ncit:NCIT_C41184"--> v2
+    v2 --"rdfs:label"--> v1
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."rdfs:label".-> v4
+    end
+    subgraph optionalgraph01["(optional)"]
+    style optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."a".-> graph0c5
+      graph0bind0[/"'true^^xsd:boolean'"/]
+      graph0bind0 --as--o v5
+    end
+    subgraph optionalgraph02["(optional)"]
+    style optionalgraph02 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."ncit:NCIT_C25425".-> v6
+    end
+    subgraph optionalgraph03["(optional)"]
+    style optionalgraph03 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."https://w3id.org/reproduceme#Phase".-> v7
+    end
+    subgraph optionalgraph04["(optional)"]
+    style optionalgraph04 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."bl:black_box_warning".-> v8
+    end
+    subgraph optionalgraph05["(optional)"]
+    style optionalgraph05 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v9 -."sio:010078".-> v10
+      v3 --"ncit:RO_0002436"--> v10
+      v9 --"rdfs:label"--> v11
+    end
+  end

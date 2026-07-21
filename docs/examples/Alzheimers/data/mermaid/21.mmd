@@ -1,0 +1,37 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v5("?cLabel"):::projected 
+  v4("?compound")
+  v1("?gene")
+  v6("?maxPhase"):::projected 
+  v3("?rel"):::projected 
+  v2("?sym"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/spoke-okn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c1(["DOID:10652"]):::iri 
+    graph0c1 --"spoke:ASSOCIATES_DaG"--> v1
+    v1 --"rdfs:label"--> v2
+    subgraph uniongraph00[" Union "]
+    style uniongraph00 color:#000;
+    subgraph uniongraph00l[" "]
+      style uniongraph00l fill:#abf,stroke-dasharray: 3 3;
+      v4 --"spoke:DOWNREGULATES_CdG"--> v1
+      graph0bind0[/"'DOWNREGULATES'"/]
+      graph0bind0 --as--o v3
+    end
+    subgraph uniongraph00r[" "]
+      style uniongraph00r fill:#abf,stroke-dasharray: 3 3;
+      v4 --"spoke:UPREGULATES_CuG"--> v1
+      graph0bind1[/"'UPREGULATES'"/]
+      graph0bind1 --as--o v3
+    end
+    uniongraph00r <== or ==> uniongraph00l
+    end
+    v4 --"rdfs:label"--> v5
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v4 -."spoke:max_phase".-> v6
+    end
+  end

@@ -1,0 +1,32 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v3("?assay")
+  v5("?assayName"):::projected 
+  v4("?attr"):::projected 
+  v1("?attrClass"):::projected 
+  v6("?attrLabel"):::projected 
+  v2("?study")
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/gene-expression-atlas-okn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c4(["MONDO:0004975"]):::iri 
+    graph0c1(["bl:AnatomicalEntity"]):::iri 
+    graph0c2(["bl:Cell"]):::iri 
+    graph0f0[["?attrClass in ('bl:AnatomicalEntity', 'bl:Cell')"]]
+    graph0c1 --o graph0f0
+    graph0c2 --o graph0f0
+    graph0f0 --> v1
+    v2 --"bl:studies"--> graph0c4
+    v2 --"bl:has_output"--> v3
+    v3 --"bl:has_attribute"--> v4
+    v3 --"bl:name"--> v5
+    v4 --"a"--> v1
+  end
+  subgraph optional0["(optional)"]
+  style optional0 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+    subgraph graph1["GRAPH https://purl.org/okn/frink/kg/ubergraph"]
+      style graph1 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+      v4 --"rdfs:label"--> v6
+    end
+  end

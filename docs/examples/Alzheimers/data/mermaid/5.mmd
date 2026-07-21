@@ -1,0 +1,34 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v4("?dLabel"):::projected 
+  v1("?doid"):::projected 
+  v6("?ensembl"):::projected 
+  v3("?gene")
+  v2("?mondo")
+  v5("?sym"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/ubergraph"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c1(["MONDO:0004975"]):::iri 
+    graph0f0[["strstarts(str(?doid),'http://purl.obolibrary.org/obo/DOID_')"]]
+    graph0f0 --> v1
+    v2 --"rdfs:subClassOf*"--> graph0c1
+    v2 --"skos:exactMatch"--> v1
+  end
+  subgraph graph1["GRAPH https://purl.org/okn/frink/kg/spoke-okn"]
+    style graph1 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v1 --"spoke:ASSOCIATES_DaG"--> v3
+    subgraph optionalgraph10["(optional)"]
+    style optionalgraph10 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."rdfs:label".-> v4
+    end
+    subgraph optionalgraph11["(optional)"]
+    style optionalgraph11 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."rdfs:label".-> v5
+    end
+    subgraph optionalgraph12["(optional)"]
+    style optionalgraph12 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."spoke:ensembl".-> v6
+    end
+  end

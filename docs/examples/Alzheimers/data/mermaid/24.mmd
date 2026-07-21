@@ -1,0 +1,25 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v4("?compound")
+  v3("?d")
+  v1("?dLabel")
+  v2("?drugLabel"):::projected 
+  v6("?g")
+  v5("?prot")
+  v7("?targetSym"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["up:Disease"]):::iri 
+    graph0f0[["contains(lcase(str(?dLabel)),'alzheimer') && not strstarts(str(?drugLabel),'CHEMBL') && not strstarts(str(?drugLabel),'DRUG_')"]]
+    graph0f0 --> v1
+    graph0f0 --> v2
+    v3 --"a"--> graph0c2
+    v4 --"obo:NCIT_C41184"--> v3
+    v3 --"rdfs:label"--> v1
+    v4 --"obo:RO_0002436"--> v5
+    v4 --"rdfs:label"--> v2
+    v6 --"sio:SIO_010078"--> v5
+    v6 --"rdfs:label"--> v7
+  end

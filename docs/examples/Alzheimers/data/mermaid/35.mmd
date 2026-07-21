@@ -1,0 +1,46 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v11("?bh")
+  v3("?cat"):::projected 
+  v1("?nStatements"):::projected 
+  v13("?other")
+  v4("?otherLabel"):::projected 
+  v5("?rel"):::projected 
+  v2("?source"):::projected 
+  v12("?stmt")
+  bind0[/"VALUES ?bh"/]
+  bind0-->v11
+  bind00(["https://biohealthkg.proto-okn.net/kg/node/C0002395"])
+  bind00 --> bind0
+  bind01(["https://biohealthkg.proto-okn.net/kg/node/C0276496"])
+  bind01 --> bind0
+  bind02(["https://biohealthkg.proto-okn.net/kg/node/C1863052"])
+  bind02 --> bind0
+  bind03(["https://biohealthkg.proto-okn.net/kg/node/C1863051"])
+  bind03 --> bind0
+  bind1[/"VALUES ?rel"/]
+  bind1-->v5
+  bind10(["bl:predisposes_to_condition"])
+  bind10 --> bind1
+  bind11(["bl:preventative_for_condition"])
+  bind11 --> bind1
+  bind12(["bh:NEG_PREDISPOSES"])
+  bind12 --> bind1
+  bind13(["bh:NEG_PREVENTS"])
+  bind13 --> bind1
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/biohealth"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v12 --"rdf:subject"--> v13
+    v13 --"rdfs:label"--> v4
+    v13 --"bl:category"--> v3
+    v12 --"rdf:object"--> v11
+    v12 --"rdf:predicate"--> v5
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v12 -."dct:source".-> v2
+    end
+  end
+  bind2[/"count(*)"/]
+  bind2 --as--o v1

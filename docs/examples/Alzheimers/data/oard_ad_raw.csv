@@ -1,0 +1,690 @@
+adTerm,adLabel,position,other,otherLabel,lnOR,ci,n,pairCount
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100309,Subdural hemorrhage,2.4335,2.74159,42.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0008765,Auditory hallucinations,1.81521,1.30487,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002362,Shuffling gait,3.04835,2.76874,52.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002362,Shuffling gait,3.04835,3.32796,52.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002362,Shuffling gait,,,,52.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002427,Expressive aphasia,2.45346,2.82326,29.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030891,Periventricular white matter hyperintensities,3.33454,3.71578,28.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030891,Periventricular white matter hyperintensities,3.33454,2.9533,28.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030891,Periventricular white matter hyperintensities,,,,28.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002427,Expressive aphasia,2.45346,2.08365,29.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003228,Hypernatremia,2.29185,1.74219,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100309,Subdural hemorrhage,,,,42.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0008765,Auditory hallucinations,1.81521,2.32556,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0032262,Pulmonary tuberculosis,,,,11.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0015567,cataract-glaucoma syndrome,,,,16.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0015567,cataract-glaucoma syndrome,1.6662,1.1723,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0015567,cataract-glaucoma syndrome,1.6662,2.1601,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000713,Agitation,,,,372.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000713,Agitation,3.44537,3.55853,372.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000713,Agitation,3.44537,3.33221,372.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0022687,cerebellar degeneration,3.47638,3.99765,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0022687,cerebellar degeneration,3.47638,2.95511,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0022687,cerebellar degeneration,,,,15.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019956,encephalitis,1.5373,2.03093,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033051,Impaired executive functioning,4.10948,4.48127,31.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033051,Impaired executive functioning,4.10948,3.73769,31.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002465,Poor speech,,,,21.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002465,Poor speech,1.59945,2.03091,21.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002465,Poor speech,1.59945,1.16799,21.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002283,Global brain atrophy,3.78304,4.19129,25.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002283,Global brain atrophy,,,,25.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000746,Delusions,4.22357,4.08982,265.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033705,Tearfulness,,,,17.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033705,Tearfulness,2.30062,2.78173,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033705,Tearfulness,2.30062,1.81951,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0004610,Lumbar spinal canal stenosis,,,,47.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019956,encephalitis,1.5373,1.04366,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019956,encephalitis,,,,16.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002343,Normal pressure hydrocephalus,,,,49.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002343,Normal pressure hydrocephalus,3.79561,3.50252,49.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002343,Normal pressure hydrocephalus,3.79561,4.0887,49.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003228,Hypernatremia,,,,13.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003228,Hypernatremia,2.29185,2.84151,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001944,Dehydration,1.36263,1.55646,108.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001944,Dehydration,1.36263,1.1688,108.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0008765,Auditory hallucinations,,,,15.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012520,Dilation of Virchow-Robin spaces,5.94055,5.81884,458.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001334,Communicating hydrocephalus,3.63473,3.07256,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001334,Communicating hydrocephalus,3.63473,4.1969,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002446,Astrocytosis,4.68915,4.92492,84.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002446,Astrocytosis,4.68915,4.45337,84.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0009831,Mononeuropathy,,,,11.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0009831,Mononeuropathy,1.88159,2.47723,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0009831,Mononeuropathy,1.88159,1.28594,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002446,Astrocytosis,,,,84.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012520,Dilation of Virchow-Robin spaces,5.94055,6.06225,458.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001347,Hyperreflexia,1.78819,1.40686,27.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002357,Dysphasia,2.23267,1.73713,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001334,Communicating hydrocephalus,,,,13.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002357,Dysphasia,2.23267,2.72822,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002357,Dysphasia,,,,16.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001347,Hyperreflexia,1.78819,2.16952,27.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001347,Hyperreflexia,,,,27.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003077,Hyperlipidemia,1.12938,1.02622,452.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003077,Hyperlipidemia,,,,452.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002080,Intention tremor,,,,17.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000746,Delusions,4.22357,4.35732,265.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0007803,multiple system atrophy,,,,56.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0007803,multiple system atrophy,1.87113,1.60454,56.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0007185,Loss of consciousness,1.62547,1.33538,47.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0004610,Lumbar spinal canal stenosis,1.57701,1.86704,47.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0032262,Pulmonary tuberculosis,1.73583,2.33103,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0032262,Pulmonary tuberculosis,1.73583,1.14062,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100309,Subdural hemorrhage,2.4335,2.12541,42.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0040197,Encephalomalacia,1.73716,1.2431,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0040197,Encephalomalacia,1.73716,2.23121,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0040197,Encephalomalacia,,,,16.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0007185,Loss of consciousness,1.62547,1.91556,47.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002352,Leukoencephalopathy,2.34525,2.94281,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002352,Leukoencephalopathy,2.34525,1.7477,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002352,Leukoencephalopathy,,,,11.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001944,Dehydration,,,,108.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0007185,Loss of consciousness,,,,47.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002145,Frontotemporal dementia,,,,80.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0006824,Cranial nerve paralysis,,,,27.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002080,Intention tremor,1.66101,2.14025,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002145,Frontotemporal dementia,4.47532,4.2373,80.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0004610,Lumbar spinal canal stenosis,1.57701,1.28698,47.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002145,Frontotemporal dementia,4.47532,4.71334,80.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002080,Intention tremor,1.66101,1.18176,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003077,Hyperlipidemia,1.12938,1.23255,452.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012520,Dilation of Virchow-Robin spaces,,,,458.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000238,Hydrocephalus,,,,103.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001291,Abnormal cranial nerve morphology,4.88097,5.21741,42.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001291,Abnormal cranial nerve morphology,,,,42.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002180,Neurodegeneration,,,,93.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002180,Neurodegeneration,4.32667,4.54609,93.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011951,Aspiration pneumonia,2.37082,2.05923,41.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011951,Aspiration pneumonia,2.37082,2.6824,41.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011951,Aspiration pneumonia,,,,41.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002180,Neurodegeneration,4.32667,4.10726,93.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002621,Atherosclerosis,1.5756,1.41338,158.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000737,Irritability,1.5737,1.43693,230.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000737,Irritability,1.5737,1.71047,230.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001291,Abnormal cranial nerve morphology,4.88097,4.54452,42.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000737,Irritability,,,,230.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002621,Atherosclerosis,,,,158.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0005305,Cerebral venous thrombosis,1.84549,1.29745,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000238,Hydrocephalus,2.76955,2.56948,103.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0005305,Cerebral venous thrombosis,,,,13.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002500,Abnormal cerebral white matter morphology,3.15124,3.624,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019065,amyloidosis,,,,21.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002500,Abnormal cerebral white matter morphology,3.15124,2.67849,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002495,Impaired vibratory sensation,,,,14.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002059,Cerebral atrophy,5.77016,5.67281,753.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002059,Cerebral atrophy,5.77016,5.86751,753.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000711,Restlessness,3.87924,3.73621,222.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100785,Insomnia,,,,258.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0032200,Perivascular fibrosis,,,,16.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0032200,Perivascular fibrosis,2.25648,1.76084,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000980,Pallor,,,,98.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0032200,Perivascular fibrosis,2.25648,2.75211,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030904,Glabellar reflex,4.54787,4.38811,186.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030904,Glabellar reflex,4.54787,4.70763,186.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030904,Glabellar reflex,,,,186.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002283,Global brain atrophy,3.78304,3.37479,25.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0006824,Cranial nerve paralysis,3.21572,3.60291,27.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000711,Restlessness,3.87924,4.02226,222.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002059,Cerebral atrophy,,,,753.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0006824,Cranial nerve paralysis,3.21572,2.82852,27.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000980,Pallor,1.38817,1.18514,98.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000980,Pallor,1.38817,1.5912,98.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0005305,Cerebral venous thrombosis,1.84549,2.39354,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000746,Delusions,,,,265.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002936,Distal sensory impairment,,,,17.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002936,Distal sensory impairment,1.86751,2.34724,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000711,Restlessness,,,,222.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002936,Distal sensory impairment,1.86751,1.38779,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002621,Atherosclerosis,1.5756,1.73782,158.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019037,progressive supranuclear palsy,4.53401,4.28907,76.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0008711,Benign prostatic hyperplasia,1.39101,1.57398,122.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0008711,Benign prostatic hyperplasia,1.39101,1.20804,122.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000338,Hypomimic face,1.90421,2.26643,30.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000338,Hypomimic face,1.90421,1.542,30.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002326,Transient ischemic attack,1.59935,1.41184,116.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031258,Delirium,2.9625,2.73324,78.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031258,Delirium,,,,78.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000218,High palate,,,,11.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012399,Pressure ulcer,,,,35.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019037,progressive supranuclear palsy,,,,76.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012399,Pressure ulcer,2.07875,1.74269,35.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019037,progressive supranuclear palsy,4.53401,4.77894,76.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000338,Hypomimic face,,,,30.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0018155,lateral sclerosis,1.78741,2.35754,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0007803,multiple system atrophy,1.87113,2.13772,56.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000218,High palate,1.72201,2.31718,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000218,High palate,1.72201,1.12684,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0018155,lateral sclerosis,1.78741,1.21728,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0018155,lateral sclerosis,,,,12.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012399,Pressure ulcer,2.07875,2.41482,35.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002427,Expressive aphasia,,,,29.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033051,Impaired executive functioning,,,,31.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019065,amyloidosis,1.46253,1.89377,21.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019065,amyloidosis,1.46253,1.0313,21.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002326,Transient ischemic attack,,,,116.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002500,Abnormal cerebral white matter morphology,,,,18.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002326,Transient ischemic attack,1.59935,1.78687,116.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002495,Impaired vibratory sensation,2.3858,1.8556,14.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002495,Impaired vibratory sensation,2.3858,2.916,14.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000238,Hydrocephalus,2.76955,2.96963,103.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0008711,Benign prostatic hyperplasia,,,,122.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003416,Spinal canal stenosis,,,,102.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003416,Spinal canal stenosis,1.26337,1.46249,102.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031258,Delirium,2.9625,3.19175,78.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100785,Insomnia,1.6455,1.77555,258.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100785,Insomnia,1.6455,1.51546,258.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003416,Spinal canal stenosis,1.26337,1.06426,102.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002926,Abnormality of thyroid physiology,1.61094,1.04126,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0016644,logopenic progressive aphasia,4.93806,4.37429,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002858,Meningioma,,,,47.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002858,Meningioma,1.84868,2.13906,47.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001344,Absent speech,2.43254,2.6796,66.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001278,Orthostatic hypotension,1.82013,2.09391,53.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002926,Abnormality of thyroid physiology,1.61094,2.18062,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000751,Personality changes,3.24254,3.47289,78.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001350,Slurred speech,1.79374,1.48333,41.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011704,Sick sinus syndrome,1.51416,1.97973,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001350,Slurred speech,1.79374,2.10415,41.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002858,Meningioma,1.84868,1.55829,47.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002637,Cerebral ischemia,1.57656,1.09748,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000751,Personality changes,3.24254,3.01219,78.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002511,Alzheimer disease,inf,inf,2263.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011704,Sick sinus syndrome,1.51416,1.0486,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011999,Paranoia,3.09296,3.37545,51.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011704,Sick sinus syndrome,,,,18.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001288,Gait disturbance,,,,123.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002381,Aphasia,2.75627,2.57968,134.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002067,Bradykinesia,2.68347,2.85297,146.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011999,Paranoia,,,,51.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001288,Gait disturbance,1.73941,1.92191,123.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002067,Bradykinesia,2.68347,2.51398,146.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001344,Absent speech,,,,66.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001288,Gait disturbance,1.73941,1.55692,123.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100543,Cognitive impairment,3.53569,3.63383,541.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0016644,logopenic progressive aphasia,4.93806,5.50182,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002637,Cerebral ischemia,,,,17.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001344,Absent speech,2.43254,2.18549,66.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011999,Paranoia,3.09296,2.81047,51.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100543,Cognitive impairment,,,,541.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002381,Aphasia,2.75627,2.93286,134.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002637,Cerebral ischemia,1.57656,2.05564,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100543,Cognitive impairment,3.53569,3.43755,541.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002138,Subarachnoid hemorrhage,,,,17.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030902,Palmomental reflex,4.74864,4.55092,122.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0009783,Biceps aplasia,2.86095,3.43649,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031967,Cloudy urine,1.42438,1.05039,28.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031967,Cloudy urine,1.42438,1.79836,28.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025356,Psychomotor retardation,,,,18.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012444,Brain atrophy,3.82641,4.15464,39.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012444,Brain atrophy,3.82641,3.49817,39.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012444,Brain atrophy,,,,39.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002072,Chorea,,,,11.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000738,Hallucinations,,,,322.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000738,Hallucinations,3.12825,3.24781,322.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025356,Psychomotor retardation,2.51958,2.05099,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002345,Action tremor,2.72151,2.53177,115.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000608,Macular degeneration,1.81464,2.14115,37.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000020,Urinary incontinence,,,,340.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000020,Urinary incontinence,1.79985,1.68416,340.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000020,Urinary incontinence,1.79985,1.91554,340.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000738,Hallucinations,3.12825,3.00869,322.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030902,Palmomental reflex,4.74864,4.94636,122.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001348,Brisk reflexes,,,,19.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025356,Psychomotor retardation,2.51958,2.98817,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002120,Cerebral cortical atrophy,,,,742.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001278,Orthostatic hypotension,,,,53.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002511,Alzheimer disease,,,,2263.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001348,Brisk reflexes,1.63276,1.17929,19.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030223,Perseveration,3.05999,3.51947,19.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030223,Perseveration,3.05999,2.6005,19.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0043224,multi-infarct dementia,3.36551,3.76125,26.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0043224,multi-infarct dementia,3.36551,2.96976,26.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0043224,multi-infarct dementia,,,,26.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002138,Subarachnoid hemorrhage,2.04811,2.52834,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002138,Subarachnoid hemorrhage,2.04811,1.56788,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0016644,logopenic progressive aphasia,,,,15.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033715,Hippocampal sclerosis,6.3143,6.46206,347.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0007328,Impaired pain sensation,1.71997,1.17226,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031967,Cloudy urine,,,,28.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030223,Perseveration,,,,19.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0007328,Impaired pain sensation,1.71997,2.26767,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033715,Hippocampal sclerosis,6.3143,6.16654,347.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002186,Apraxia,3.67268,3.80299,270.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002186,Apraxia,3.67268,3.54237,270.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002186,Apraxia,,,,270.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0007328,Impaired pain sensation,,,,13.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000751,Personality changes,,,,78.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001348,Brisk reflexes,1.63276,2.08622,19.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030902,Palmomental reflex,,,,122.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001350,Slurred speech,,,,41.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000518,Cataract,1.6791,1.79785,319.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001621,Weak voice,1.83134,2.16231,36.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025268,Stuttering,1.74106,2.33628,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025268,Stuttering,1.74106,1.14584,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002072,Chorea,1.91638,1.32062,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001621,Weak voice,1.83134,1.50037,36.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002174,Postural tremor,2.91305,2.71709,108.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000733,Stereotypy,,,,12.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002174,Postural tremor,2.91305,3.10901,108.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000518,Cataract,,,,319.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000518,Cataract,1.6791,1.56035,319.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025268,Stuttering,,,,11.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002120,Cerebral cortical atrophy,5.98498,5.88483,742.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002345,Action tremor,2.72151,2.91126,115.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000324,Facial asymmetry,1.78119,2.37652,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000324,Facial asymmetry,1.78119,1.18585,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002925,Elevated circulating thyroid-stimulating hormone concentration,1.63704,2.10284,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002925,Elevated circulating thyroid-stimulating hormone concentration,,,,18.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000324,Facial asymmetry,,,,11.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000608,Macular degeneration,1.81464,1.48813,37.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001278,Orthostatic hypotension,1.82013,1.54636,53.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100256,Senile plaques,6.86305,6.98969,611.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012493,Middle cerebral artery stenosis,3.64127,3.05614,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000718,Aggressive behavior,2.67776,2.92014,69.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0005133,Right ventricular dilatation,2.07638,2.53092,19.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001297,Stroke,1.24341,1.35715,353.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0009783,Biceps aplasia,,,,12.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001297,Stroke,1.24341,1.12967,353.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000718,Aggressive behavior,2.67776,2.43538,69.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000718,Aggressive behavior,,,,69.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000608,Macular degeneration,,,,37.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012493,Middle cerebral artery stenosis,3.64127,4.2264,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000733,Stereotypy,1.63083,1.06111,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100256,Senile plaques,6.86305,6.73641,611.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012493,Middle cerebral artery stenosis,,,,12.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0005133,Right ventricular dilatation,2.07638,1.62185,19.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001298,Encephalopathy,,,,632.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002120,Cerebral cortical atrophy,5.98498,6.08512,742.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001297,Stroke,,,,353.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001298,Encephalopathy,4.35612,4.45096,632.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002925,Elevated circulating thyroid-stimulating hormone concentration,1.63704,1.17125,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001298,Encephalopathy,4.35612,4.26127,632.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001621,Weak voice,,,,36.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000709,Psychosis,,,,62.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033715,Hippocampal sclerosis,,,,347.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033675,Frailty,,,,16.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033688,Long term memory impairment,3.71334,4.1683,20.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002381,Aphasia,,,,134.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033688,Long term memory impairment,3.71334,3.25839,20.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033688,Long term memory impairment,,,,20.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011970,Cerebral amyloid angiopathy,,,,75.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011970,Cerebral amyloid angiopathy,4.83586,5.08789,75.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011970,Cerebral amyloid angiopathy,4.83586,4.58383,75.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002378,Hand tremor,,,,61.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033675,Frailty,1.63118,2.125,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000709,Psychosis,1.56,1.30665,62.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000709,Psychosis,1.56,1.81334,62.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030784,Anomic aphasia,,,,199.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0009783,Biceps aplasia,2.86095,2.28541,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012089,Arteritis,,,,23.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012089,Arteritis,1.68459,1.27198,23.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012089,Arteritis,1.68459,2.09719,23.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002926,Abnormality of thyroid physiology,,,,12.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030784,Anomic aphasia,3.62327,3.47402,199.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030784,Anomic aphasia,3.62327,3.77251,199.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000194,Open mouth,1.84284,1.36317,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100256,Senile plaques,,,,611.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002067,Bradykinesia,,,,146.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002019,Constipation,1.11114,1.0101,478.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002345,Action tremor,,,,115.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000733,Stereotypy,1.63083,2.20056,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002019,Constipation,1.11114,1.21218,478.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002019,Constipation,,,,478.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000194,Open mouth,,,,17.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000194,Open mouth,1.84284,2.3225,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002072,Chorea,1.91638,2.51214,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002378,Hand tremor,1.83888,1.58321,61.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002378,Hand tremor,1.83888,2.09455,61.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002528,Granulovacuolar degeneration,5.96265,6.16969,151.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002528,Granulovacuolar degeneration,5.96265,5.75561,151.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002174,Postural tremor,,,,108.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002528,Granulovacuolar degeneration,,,,151.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0005133,Right ventricular dilatation,,,,19.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033675,Frailty,1.63118,1.13735,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100022,Abnormality of movement,,,,42.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0025514,livedoid vasculopathy,5.50344,5.24697,84.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033687,Short term memory impairment,3.61558,3.43164,127.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001337,Tremor,1.66569,1.77386,401.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025402,Square-wave jerks,1.81878,2.36675,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002063,Rigidity,2.03361,1.83923,108.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031908,Micrographia,,,,13.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001342,Cerebral hemorrhage,1.98855,2.3851,25.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031659,Fourth heart sound,2.22811,2.31614,740.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001342,Cerebral hemorrhage,1.98855,1.592,25.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031659,Fourth heart sound,,,,740.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031908,Micrographia,2.42162,1.87134,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100022,Abnormality of movement,1.60493,1.91143,42.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002063,Rigidity,,,,108.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031908,Micrographia,2.42162,2.97189,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000726,Dementia,,,,1611.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000726,Dementia,4.89833,4.98944,1611.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0025514,livedoid vasculopathy,5.50344,5.75992,84.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000726,Dementia,4.89833,4.80723,1611.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001342,Cerebral hemorrhage,,,,25.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031659,Fourth heart sound,2.22811,2.14009,740.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0010760,Absent toe,,,,18.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033687,Short term memory impairment,3.61558,3.79953,127.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033687,Short term memory impairment,,,,127.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100022,Abnormality of movement,1.60493,1.29842,42.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002329,Drowsiness,,,,167.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002329,Drowsiness,1.84529,1.687,167.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002329,Drowsiness,1.84529,2.00358,167.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0025514,livedoid vasculopathy,,,,84.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001260,Dysarthria,2.94814,2.80924,227.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002136,Broad-based gait,,,,45.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002367,Visual hallucinations,2.88152,3.12625,68.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002367,Visual hallucinations,2.88152,2.63679,68.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002463,Language impairment,2.84122,2.54523,46.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002170,Intracranial hemorrhage,1.79583,2.36599,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002367,Visual hallucinations,,,,68.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002170,Intracranial hemorrhage,1.79583,1.22568,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002170,Intracranial hemorrhage,,,,12.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012154,Anhedonia,,,,34.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025402,Square-wave jerks,,,,13.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000741,Apathy,3.42933,3.71106,52.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000741,Apathy,3.42933,3.14759,52.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001260,Dysarthria,2.94814,3.08704,227.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001268,Mental deterioration,,,,365.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0040113,Old-aged sensorineural hearing impairment,1.90338,1.55779,33.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0410170,Hippocampal atrophy,,,,236.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0410170,Hippocampal atrophy,6.12923,5.95749,236.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001268,Mental deterioration,4.17287,4.2891,365.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0410170,Hippocampal atrophy,6.12923,6.30097,236.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001268,Mental deterioration,4.17287,4.05665,365.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025058,Hypothalamic atrophy,7.07129,6.64263,62.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025058,Hypothalamic atrophy,7.07129,7.49995,62.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025058,Hypothalamic atrophy,,,,62.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0009366,normal pressure hydrocephalus,,,,51.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100316,Hirano bodies,,,,49.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100316,Hirano bodies,5.39051,5.72003,49.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100316,Hirano bodies,5.39051,5.061,49.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100710,Impulsivity,1.62185,1.22603,25.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100710,Impulsivity,1.62185,2.01767,25.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100710,Impulsivity,,,,25.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0020144,cerebrovascular dementia,4.67415,5.31751,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002119,Ventriculomegaly,2.65896,2.86666,95.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002119,Ventriculomegaly,2.65896,2.45126,95.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002119,Ventriculomegaly,,,,95.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002185,Neurofibrillary tangles,,,,543.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012154,Anhedonia,2.40538,2.74713,34.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0009366,normal pressure hydrocephalus,3.80104,4.08849,51.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0009366,normal pressure hydrocephalus,3.80104,3.51359,51.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0020144,cerebrovascular dementia,4.67415,4.03079,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002185,Neurofibrillary tangles,6.67644,6.80499,543.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002185,Neurofibrillary tangles,6.67644,6.54789,543.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0007366,Atrophy/Degeneration affecting the brainstem,5.41634,4.85683,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0020144,cerebrovascular dementia,,,,11.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0007366,Atrophy/Degeneration affecting the brainstem,5.41634,5.97584,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0007366,Atrophy/Degeneration affecting the brainstem,,,,17.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002136,Broad-based gait,1.80272,2.09929,45.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002136,Broad-based gait,1.80272,1.50615,45.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012581,Simple renal cyst,1.69683,1.12694,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012377,Hemianopia,1.97105,2.54175,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012495,Posterior cerebral artery stenosis,5.16419,5.62095,24.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002355,Difficulty walking,,,,129.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002355,Difficulty walking,1.5591,1.38078,129.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002355,Difficulty walking,1.5591,1.73742,129.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012377,Hemianopia,,,,12.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0008249,Thyroid hyperplasia,1.66292,1.09311,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000743,Frontal release signs,4.97743,4.53849,25.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000743,Frontal release signs,4.97743,5.41637,25.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012581,Simple renal cyst,,,,12.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012581,Simple renal cyst,1.69683,2.26671,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012377,Hemianopia,1.97105,1.40035,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001254,Lethargy,,,,62.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030903,Grasp reflex,3.23677,3.08294,183.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030903,Grasp reflex,3.23677,3.39059,183.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030903,Grasp reflex,,,,183.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001254,Lethargy,1.46541,1.71867,62.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0017276,frontotemporal dementia,4.63409,4.85203,98.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0017276,frontotemporal dementia,4.63409,4.41615,98.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0017276,frontotemporal dementia,,,,98.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001254,Lethargy,1.46541,1.21215,62.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002463,Language impairment,,,,46.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002463,Language impairment,2.84122,3.13721,46.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_object,http://purl.obolibrary.org/obo/MONDO_0004976,amyotrophic lateral sclerosis,1.5942,1.02456,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001260,Dysarthria,,,,227.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0040113,Old-aged sensorineural hearing impairment,1.90338,2.24896,33.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0040113,Old-aged sensorineural hearing impairment,,,,33.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000741,Apathy,,,,52.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001300,Parkinsonism,,,,173.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001009,Telangiectasia,1.85707,1.55373,43.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001300,Parkinsonism,3.15299,3.31062,173.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001300,Parkinsonism,3.15299,2.99536,173.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001009,Telangiectasia,1.85707,2.16041,43.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001009,Telangiectasia,,,,43.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025402,Square-wave jerks,1.81878,1.27081,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002063,Rigidity,2.03361,2.22799,108.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_object,http://purl.obolibrary.org/obo/MONDO_0004976,amyotrophic lateral sclerosis,1.5942,2.16383,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_object,http://purl.obolibrary.org/obo/MONDO_0004976,amyotrophic lateral sclerosis,,,,12.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002141,Gait imbalance,2.26395,2.55509,47.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002141,Gait imbalance,2.26395,1.9728,47.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002141,Gait imbalance,,,,47.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0008249,Thyroid hyperplasia,,,,12.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0008249,Thyroid hyperplasia,1.66292,2.23272,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012495,Posterior cerebral artery stenosis,,,,24.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000743,Frontal release signs,,,,25.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012495,Posterior cerebral artery stenosis,5.16419,4.70744,24.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012154,Anhedonia,2.40538,2.06364,34.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002506,Diffuse cerebral atrophy,4.30268,4.69065,29.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_object,http://purl.obolibrary.org/obo/MONDO_0006663,perinatal asphyxia,,,,161.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002318,Cervical myelopathy,,,,18.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0200042,Skin ulcer,1.68437,2.13794,19.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0005145,Coronary artery stenosis,,,,50.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0005145,Coronary artery stenosis,1.65531,1.93678,50.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002318,Cervical myelopathy,1.66482,1.19896,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0200042,Skin ulcer,,,,19.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002318,Cervical myelopathy,1.66482,2.13067,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002902,Hyponatremia,1.35748,1.69724,34.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0005145,Coronary artery stenosis,1.65531,1.37384,50.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002902,Hyponatremia,1.35748,1.01772,34.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000736,Short attention span,,,,12.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011034,Amyloidosis,1.46634,1.89758,21.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002172,Postural instability,1.67918,1.51189,148.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100660,Dyskinesia,,,,35.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002902,Hyponatremia,,,,34.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030906,Suck reflex,2.28602,2.5581,54.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002506,Diffuse cerebral atrophy,4.30268,3.9147,29.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019806,primary progressive aphasia,4.24649,4.69007,22.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_object,http://purl.obolibrary.org/obo/MONDO_0005620,cerebral amyloid angiopathy,4.83586,4.58383,75.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011034,Amyloidosis,1.46634,1.0351,21.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_object,http://purl.obolibrary.org/obo/MONDO_0005620,cerebral amyloid angiopathy,4.83586,5.08789,75.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031953,Cautious gait,,,,17.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0010760,Absent toe,1.54263,2.00825,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0200042,Skin ulcer,1.68437,1.2308,19.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0010857,semantic dementia,,,,100.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100660,Dyskinesia,1.34537,1.6803,35.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003808,Abnormal muscle tone,,,,46.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002011,Morphological central nervous system abnormality,3.5928,4.01576,23.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002011,Morphological central nervous system abnormality,3.5928,3.16984,23.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031953,Cautious gait,3.05937,3.54492,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003808,Abnormal muscle tone,2.23149,1.93734,46.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001337,Tremor,1.66569,1.55751,401.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0031953,Cautious gait,3.05937,2.57381,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002172,Postural instability,,,,148.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100660,Dyskinesia,1.34537,1.01043,35.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002011,Morphological central nervous system abnormality,,,,23.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0008223,Compensated hypothyroidism,1.5712,1.14961,22.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0008223,Compensated hypothyroidism,1.5712,1.99278,22.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0008223,Compensated hypothyroidism,,,,22.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001337,Tremor,,,,401.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003808,Abnormal muscle tone,2.23149,2.52565,46.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000501,Glaucoma,,,,125.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001272,Cerebellar atrophy,,,,31.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0011034,Amyloidosis,,,,21.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002172,Postural instability,1.67918,1.84647,148.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0010760,Absent toe,1.54263,1.07701,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100502,Vitamin B12 deficiency,1.65221,1.91401,58.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019806,primary progressive aphasia,4.24649,3.80292,22.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030906,Suck reflex,,,,54.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030906,Suck reflex,2.28602,2.01394,54.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000736,Short attention span,2.67368,2.09953,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000736,Short attention span,2.67368,3.24782,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001272,Cerebellar atrophy,3.22688,2.86515,31.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_object,http://purl.obolibrary.org/obo/MONDO_0005620,cerebral amyloid angiopathy,,,,75.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019806,primary progressive aphasia,,,,22.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002506,Diffuse cerebral atrophy,,,,29.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003651,Foam cells,1.81465,1.61963,107.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003651,Foam cells,1.81465,2.00966,107.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001272,Cerebellar atrophy,3.22688,3.58861,31.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000501,Glaucoma,1.45239,1.27147,125.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0010857,semantic dementia,4.43332,4.64643,100.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000501,Glaucoma,1.45239,1.63331,125.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030905,Snout reflex,,,,188.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030905,Snout reflex,4.69736,4.53688,188.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030905,Snout reflex,4.69736,4.85784,188.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003651,Foam cells,,,,107.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_object,http://purl.obolibrary.org/obo/MONDO_0006663,perinatal asphyxia,4.88099,4.70599,161.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0010857,semantic dementia,4.43332,4.22021,100.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_object,http://purl.obolibrary.org/obo/MONDO_0006663,perinatal asphyxia,4.88099,5.05598,161.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100502,Vitamin B12 deficiency,,,,58.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100502,Vitamin B12 deficiency,1.65221,1.39041,58.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0004396,Poor appetite,1.28359,1.15935,286.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019434,systemic-onset juvenile idiopathic arthritis,,,,13.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002311,Incoordination,2.67527,3.13224,19.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001332,Dystonia,2.75892,2.5817,133.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000763,Sensory neuropathy,1.43944,1.08376,31.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000763,Sensory neuropathy,1.43944,1.79512,31.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001336,Myoclonus,,,,155.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001336,Myoclonus,3.4292,3.26245,155.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001336,Myoclonus,3.4292,3.59594,155.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000763,Sensory neuropathy,,,,31.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002311,Incoordination,,,,19.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0009025,Increased connective tissue,,,,537.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002311,Incoordination,2.67527,2.21831,19.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002066,Gait ataxia,,,,26.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002282,Gray matter heterotopia,2.02175,2.57035,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002615,Hypotension,1.30141,1.46349,158.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0010628,Facial palsy,,,,25.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0008538,temporal arteritis,1.73478,2.05283,39.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000618,Blindness,1.38657,1.00585,27.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0010628,Facial palsy,1.50205,1.10642,25.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0008538,temporal arteritis,1.73478,1.41674,39.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0008538,temporal arteritis,,,,39.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002615,Hypotension,1.30141,1.13932,158.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002066,Gait ataxia,1.93288,1.54408,26.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002066,Gait ataxia,1.93288,2.32169,26.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001315,Reduced tendon reflexes,1.9792,2.45923,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002615,Hypotension,,,,158.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019735,polymyalgia rheumatica,1.87088,1.40456,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0010628,Facial palsy,1.50205,1.89769,25.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002322,Resting tremor,,,,216.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002322,Resting tremor,3.03845,3.18065,216.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002380,Fasciculations,,,,30.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002380,Fasciculations,1.87465,1.51249,30.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002380,Fasciculations,1.87465,2.23682,30.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025324,Arterial occlusion,1.61558,2.16303,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025324,Arterial occlusion,1.61558,1.06812,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025324,Arterial occlusion,,,,13.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000978,Bruising susceptibility,1.7061,1.86344,169.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019434,systemic-onset juvenile idiopathic arthritis,2.13012,2.67912,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001332,Dystonia,2.75892,2.93614,133.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003698,Difficulty standing,1.61186,2.12173,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003698,Difficulty standing,1.61186,1.10199,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0003698,Difficulty standing,,,,15.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0410279,Atrophic pituitary gland,6.4009,5.97119,42.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0410279,Atrophic pituitary gland,6.4009,6.83062,42.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0410279,Atrophic pituitary gland,,,,42.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0020128,motor neuron disease,,,,20.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0020128,motor neuron disease,1.61701,1.17496,20.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000978,Bruising susceptibility,,,,169.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019434,systemic-onset juvenile idiopathic arthritis,2.13012,1.58113,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000978,Bruising susceptibility,1.7061,1.54877,169.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002354,Memory impairment,,,,798.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002171,Gliosis,,,,459.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002354,Memory impairment,3.49285,3.40574,798.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002171,Gliosis,4.75925,4.6506,459.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002354,Memory impairment,3.49285,3.57996,798.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002171,Gliosis,4.75925,4.8679,459.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001315,Reduced tendon reflexes,,,,17.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001315,Reduced tendon reflexes,1.9792,1.49917,17.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002282,Gray matter heterotopia,,,,13.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002282,Gray matter heterotopia,2.02175,1.47315,13.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019735,polymyalgia rheumatica,1.87088,2.3372,18.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0007354,Amyotrophic lateral sclerosis,1.89165,1.3212,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0007354,Amyotrophic lateral sclerosis,1.89165,2.46209,12.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0007354,Amyotrophic lateral sclerosis,,,,12.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0022308,corticobasal degeneration disorder,4.31816,4.67199,35.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000648,Optic atrophy,,,,23.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000648,Optic atrophy,3.05979,2.64183,23.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000648,Optic atrophy,3.05979,3.47776,23.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002346,Head tremor,,,,15.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0022308,corticobasal degeneration disorder,4.31816,3.96433,35.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000734,Disinhibition,,,,32.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0022308,corticobasal degeneration disorder,,,,35.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0010625,Anterior pituitary dysgenesis,4.97942,4.63991,42.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0020128,motor neuron disease,1.61701,2.05906,20.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002015,Dysphagia,1.14578,1.277,252.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002317,Unsteady gait,2.09359,1.91861,135.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002015,Dysphagia,1.14578,1.01456,252.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002346,Head tremor,2.41053,2.92298,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000734,Disinhibition,3.78884,4.15025,32.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/MONDO_0019735,polymyalgia rheumatica,,,,18.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000618,Blindness,1.38657,1.76728,27.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002317,Unsteady gait,2.09359,2.26858,135.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0004673,Decreased facial expression,,,,16.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0004673,Decreased facial expression,2.86446,3.36333,16.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000505,Visual impairment,,,,39.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030186,Kinetic tremor,1.96997,2.24653,52.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002346,Head tremor,2.41053,1.89808,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002322,Resting tremor,3.03845,2.89625,216.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033848,Receptive aphasia,3.21619,2.69798,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025403,Stooped posture,,,,84.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033848,Receptive aphasia,3.21619,3.73439,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0033848,Receptive aphasia,,,,15.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001332,Dystonia,,,,133.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030186,Kinetic tremor,1.96997,1.69342,52.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000505,Visual impairment,1.91417,2.2325,39.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000505,Visual impairment,1.91417,1.59584,39.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0009025,Increased connective tissue,6.82081,6.95438,537.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025403,Stooped posture,3.41342,3.19037,84.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0030186,Kinetic tremor,,,,52.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0025403,Stooped posture,3.41342,3.63647,84.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002529,Neuronal loss in central nervous system,5.61628,5.48563,355.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012477,Vocal tremor,,,,11.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002529,Neuronal loss in central nervous system,5.61628,5.74694,355.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012477,Vocal tremor,3.61445,3.00391,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012477,Vocal tremor,3.61445,4.22499,11.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002529,Neuronal loss in central nervous system,,,,355.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0010625,Anterior pituitary dysgenesis,4.97942,5.31893,42.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002071,Abnormality of extrapyramidal motor function,,,,15.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012762,Cerebral white matter atrophy,6.67073,6.78512,695.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002157,Azotemia,1.6337,1.106,14.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002157,Azotemia,1.6337,2.1614,14.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012762,Cerebral white matter atrophy,,,,695.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002157,Azotemia,,,,14.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001640,Cardiomegaly,1.33636,1.05242,49.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001640,Cardiomegaly,1.33636,1.6203,49.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100315,Lewy bodies,6.1902,6.30015,629.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000716,Depression,,,,658.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002359,Frequent falls,2.22725,1.886,34.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000734,Disinhibition,3.78884,3.42744,32.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002071,Abnormality of extrapyramidal motor function,4.14812,3.61422,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000716,Depression,1.3864,1.29561,658.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002359,Frequent falls,2.22725,2.56849,34.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002071,Abnormality of extrapyramidal motor function,4.14812,4.68203,15.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000708,Behavioral abnormality,,,,254.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0004396,Poor appetite,1.28359,1.40784,286.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0004396,Poor appetite,,,,286.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000708,Behavioral abnormality,2.50173,2.37018,254.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000708,Behavioral abnormality,2.50173,2.63328,254.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002359,Frequent falls,,,,34.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001640,Cardiomegaly,,,,49.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0010625,Anterior pituitary dysgenesis,,,,42.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002317,Unsteady gait,,,,135.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001289,Confusion,,,,398.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0009025,Increased connective tissue,6.82081,6.68723,537.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002527,Falls,,,,513.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002527,Falls,2.16892,2.07015,513.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001289,Confusion,2.43387,2.32499,398.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002527,Falls,2.16892,2.26769,513.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100315,Lewy bodies,6.1902,6.08024,629.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000618,Blindness,,,,27.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0012762,Cerebral white matter atrophy,6.67073,6.55635,695.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0100315,Lewy bodies,,,,629.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0000716,Depression,1.3864,1.47718,658.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0001289,Confusion,2.43387,2.54274,398.0,
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0002015,Dysphagia,,,,252.0
+http://purl.obolibrary.org/obo/MONDO_0007088,Alzheimer disease type 1,AD_as_subject,http://purl.obolibrary.org/obo/HP_0004673,Decreased facial expression,2.86446,2.36558,16.0,

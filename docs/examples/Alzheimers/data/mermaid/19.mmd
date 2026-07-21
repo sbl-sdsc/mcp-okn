@@ -1,0 +1,68 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v8("?cLabel"):::projected 
+  v5("?compound")
+  v1("?doid")
+  v10("?drugbank"):::projected 
+  v9("?maxPhase"):::projected 
+  v2("?mondo")
+  v6("?phase"):::projected 
+  v3("?rel"):::projected 
+  v7("?sources"):::projected 
+  v4("?stmt")
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/ubergraph"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c1(["MONDO:0004975"]):::iri 
+    graph0f0[["strstarts(str(?doid),'http://purl.obolibrary.org/obo/DOID_')"]]
+    graph0f0 --> v1
+    v2 --"rdfs:subClassOf*"--> graph0c1
+    v2 --"skos:exactMatch"--> v1
+  end
+  subgraph graph1["GRAPH https://purl.org/okn/frink/kg/spoke-okn"]
+    style graph1 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph1c7(["spoke:CONTRAINDICATES_CcD"]):::iri 
+    graph1c2(["spoke:TREATS_CtD"]):::iri 
+    subgraph uniongraph10[" Union "]
+    style uniongraph10 color:#000;
+    subgraph uniongraph10l[" "]
+      style uniongraph10l fill:#abf,stroke-dasharray: 3 3;
+      v4 --"rdf:predicate"--> graph1c7
+      v4 --"rdf:object"--> v1
+      v4 --"rdf:subject"--> v5
+      graph1bind0[/"'CONTRAINDICATES'"/]
+      graph1bind0 --as--o v3
+      subgraph optionalgraph10["(optional)"]
+      style optionalgraph10 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v4 -."spoke:act_sources".-> v7
+      end
+    end
+    subgraph uniongraph10r[" "]
+      style uniongraph10r fill:#abf,stroke-dasharray: 3 3;
+      v4 --"rdf:predicate"--> graph1c2
+      v4 --"rdf:object"--> v1
+      v4 --"rdf:subject"--> v5
+      graph1bind1[/"'TREATS'"/]
+      graph1bind1 --as--o v3
+      subgraph optionalgraph11["(optional)"]
+      style optionalgraph11 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v4 -."spoke:phase".-> v6
+      end
+      subgraph optionalgraph12["(optional)"]
+      style optionalgraph12 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v4 -."spoke:act_sources".-> v7
+      end
+    end
+    uniongraph10r <== or ==> uniongraph10l
+    end
+    v5 --"rdfs:label"--> v8
+    subgraph optionalgraph13["(optional)"]
+    style optionalgraph13 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v5 -."spoke:max_phase".-> v9
+    end
+    subgraph optionalgraph14["(optional)"]
+    style optionalgraph14 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v5 -."oboInOwl:hasDbXref".-> v10
+    end
+  end

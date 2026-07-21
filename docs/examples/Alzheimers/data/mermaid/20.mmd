@@ -1,0 +1,63 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v6("?compound")
+  v7("?g")
+  v1("?nCompounds"):::projected 
+  v2("?rel"):::projected 
+  v5("?stmt")
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/spoke-okn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["DOID:10652"]):::iri 
+    graph0c6(["spoke:CONTRAINDICATES_CcD"]):::iri 
+    graph0c9(["spoke:DOWNREGULATES_CdG"]):::iri 
+    graph0c4(["spoke:TREATS_CtD"]):::iri 
+    graph0c7(["spoke:UPREGULATES_CuG"]):::iri 
+    subgraph uniongraph00[" Union "]
+    style uniongraph00 color:#000;
+    subgraph uniongraph00l[" "]
+      style uniongraph00l fill:#abf,stroke-dasharray: 3 3;
+      v5 --"rdf:predicate"--> graph0c9
+      v5 --"rdf:object"--> v7
+      graph0c2 --"spoke:ASSOCIATES_DaG"--> v7
+      v5 --"rdf:subject"--> v6
+      graph0bind0[/"'DOWNREGULATES_CdG (AD gene)'"/]
+      graph0bind0 --as--o v2
+    end
+      subgraph uniongraph01[" Union "]
+      style uniongraph01 color:#000;
+      subgraph uniongraph01l[" "]
+        style uniongraph01l fill:#abf,stroke-dasharray: 3 3;
+        v5 --"rdf:predicate"--> graph0c7
+        v5 --"rdf:object"--> v7
+        graph0c2 --"spoke:ASSOCIATES_DaG"--> v7
+        v5 --"rdf:subject"--> v6
+        graph0bind1[/"'UPREGULATES_CuG (AD gene)'"/]
+        graph0bind1 --as--o v2
+      end
+        subgraph uniongraph02[" Union "]
+        style uniongraph02 color:#000;
+        subgraph uniongraph02l[" "]
+          style uniongraph02l fill:#abf,stroke-dasharray: 3 3;
+          v5 --"rdf:object"--> graph0c2
+          v5 --"rdf:predicate"--> graph0c6
+          v5 --"rdf:subject"--> v6
+          graph0bind2[/"'CONTRAINDICATES_CcD'"/]
+          graph0bind2 --as--o v2
+        end
+        subgraph uniongraph02r[" "]
+          style uniongraph02r fill:#abf,stroke-dasharray: 3 3;
+          v5 --"rdf:object"--> graph0c2
+          v5 --"rdf:predicate"--> graph0c4
+          v5 --"rdf:subject"--> v6
+          graph0bind3[/"'TREATS_CtD'"/]
+          graph0bind3 --as--o v2
+        end
+        uniongraph02r <== or ==> uniongraph02l
+        end
+      end
+    end
+  end
+  bind4[/"count(?compound)"/]
+  bind4 --as--o v1
