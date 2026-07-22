@@ -143,6 +143,13 @@ so a reader can scan every result at once instead of mining paragraphs for them:
   cell that names a study in prose without a marker leaves the reader no route from the verdict
   to the paper. Derive the mapping from the companion document's per-claim PMIDs rather than from
   memory, and never cite a PMID that has no §12 entry.
+- **Reconcile the count with the rows.** If the section states a tally ("47 checkable claims"), the
+  table must either have that many rows or say explicitly how they relate — *"those 47 claims bear
+  on the 16 findings tabulated below"*. A stated total that does not match the visible row count
+  reads as an arithmetic error and costs the section its credibility.
+- **Never write "linked above" / "see the link"** about a companion document. The `.html` *names*
+  those files rather than linking them (see *Linking between deliverables*), so navigational
+  phrasing is false in exactly the rendering most readers get. Refer to the document by name.
 - **Number the rows.** The prose, the divergence paragraph and
   `<study>_literature_comparison.md` all cite claims by number ("Claim 7"), which only works if
   the table numbers them.
