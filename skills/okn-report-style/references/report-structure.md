@@ -239,6 +239,15 @@ server sees only tool calls); if you cite it, use client figures (Claude Code `/
 `usage`), labelled as client-measured — do not invent a number.
 
 ## 12. References
+Open with **exactly this one-line attribution**, then the numbered list — no other preamble:
+
+> Retrieved via the **PubMed** MCP connector. Full-text verification via the **Paperclip** MCP connector.
+
+Use a different line **only** when the analysis genuinely used different tools — e.g. a
+regulatory/spatial study that pulled primary documents by WebSearch rather than PubMed/Paperclip
+names those instead. Do not add a legend for the `full-text-verified` marker (each entry carries it
+inline).
+
 Numbered, and **every literature entry in exactly this shape**:
 
 ```

@@ -304,7 +304,7 @@ Everything needed to replicate this analysis — the originating prompt, the rep
 
 ## 12. References
 
-Retrieved via the **PubMed** MCP connector and the **Paperclip** full-text corpus.
+Retrieved via the **PubMed** MCP connector. Full-text verification via the **Paperclip** MCP connector.
 
 1. Suzuki K, et al. Genetic drivers of heterogeneity in type 2 diabetes pathophysiology. *Nature*. 2024. PMID:38374256 · [doi:10.1038/s41586-024-07019-6](https://doi.org/10.1038/s41586-024-07019-6) — full-text-verified ([PMC10937372](https://pmc.ncbi.nlm.nih.gov/articles/PMC10937372/))
 2. Mahajan A, et al. Fine-mapping type 2 diabetes loci to single-variant resolution using high-density imputation and islet-specific epigenome maps. *Nat Genet*. 2018. PMID:30297969 · [doi:10.1038/s41588-018-0241-6](https://doi.org/10.1038/s41588-018-0241-6)

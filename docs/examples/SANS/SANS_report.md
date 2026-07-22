@@ -194,7 +194,7 @@ Everything needed to replicate this analysis — the originating prompt, the rep
 
 ## 12. References
 
-Retrieved via the PubMed MCP connector and the Paperclip full-text corpus.
+Retrieved via the **PubMed** MCP connector. Full-text verification via the **Paperclip** MCP connector.
 
 1. Mao XW, et al. Spaceflight environment induces mitochondrial oxidative damage in ocular tissue. *Radiat Res*. 2013. PMID:24033191 · [doi:10.1667/RR3309.1](https://doi.org/10.1667/RR3309.1)
 2. Overbey EG, et al. Spaceflight influences gene expression, photoreceptor integrity, and oxidative stress-related damage in the murine retina. *Sci Rep*. 2019. PMID:31527661 · [doi:10.1038/s41598-019-49453-x](https://doi.org/10.1038/s41598-019-49453-x) — full-text-verified ([PMC6746706](https://pmc.ncbi.nlm.nih.gov/articles/PMC6746706/))

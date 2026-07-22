@@ -302,7 +302,7 @@ Everything needed to replicate this analysis — the originating prompt, the rep
 
 ## 12. References
 
-Bibliographic records were retrieved via the **PubMed** MCP connector.
+Retrieved via the **PubMed** MCP connector. Full-text verification via the **Paperclip** MCP connector.
 
 1. International Multiple Sclerosis Genetics Consortium. Multiple sclerosis genomic map implicates peripheral immune cells and microglia in susceptibility. *Science*. 2019. PMID:31604244 · [doi:10.1126/science.aav7188](https://doi.org/10.1126/science.aav7188)
 2. Sawcer S, et al. Genetic risk and a primary role for cell-mediated immune mechanisms in multiple sclerosis. *Nature*. 2011. PMID:21833088 · [doi:10.1038/nature10251](https://doi.org/10.1038/nature10251)
