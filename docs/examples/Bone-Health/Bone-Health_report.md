@@ -200,8 +200,8 @@ Literature comparison used **PubMed** (via its MCP connector) and the **Papercli
 | 5 | Sclerostin's central role, and calvarial structure | **PARTIALLY SUPPORTED / CONTRADICTED** — the disuse-osteoporosis literature places sclerostin at the centre [11], but SOST is entirely absent from the signature because the OKN GeneLab subset holds no bone or osteocyte tissue; more sharply, 30 days of spaceflight did not alter murine calvarial structure despite significantly increased *Sost* mRNA [12] |
 | 6 | Mitochondrial suppression | **SUPPORTED** — astronaut skeletal-muscle proteomics from two ISS crew show the mitochondrial proteome dramatically downregulated after flight [13] (full-text-verified) |
 | 7 | Quantitative enrichment of an unloading transcriptome for human BMD GWAS gene sets across every skeletal site simultaneously | **NOVEL IN THIS FRAMING** — not stated in this form in the prior literature |
-| 8 | Simultaneous positivity of the permissive GWAS and the curated Mendelian tests | **NOVEL IN THIS FRAMING** — the strongest available argument that the flight signature is bone-genetic rather than generically stress-related |
-| 9 | Explicit negative inventory of what the federation cannot see (RANKL/OPG, SOST, PIEZO1, YAP/TAZ, NFATC1) | **NOVEL IN THIS FRAMING** — presented as a specification for the next data release rather than as an absence of biology |
+| 8 | Simultaneous positivity of the permissive GWAS and the curated Mendelian tests | **NOVEL IN THIS FRAMING** — not stated in this form in the prior literature; the strongest available argument that the flight signature is bone-genetic rather than generically stress-related |
+| 9 | Explicit negative inventory of what the federation cannot see (RANKL/OPG, SOST, PIEZO1, YAP/TAZ, NFATC1) | **NOVEL IN THIS FRAMING** — not stated in this form in the prior literature; presented as a specification for the next data release rather than as an absence of biology |
 
 ---
 

@@ -260,7 +260,7 @@ According to **PubMed** and the **Paperclip** full-text corpus, this analysis's 
 | 12 | PM₂.₅ null | **CONTRADICTED** — conflicts with global-burden estimates attributing roughly 20 % of diabetes burden to particulate exposure [20]; the county-mean ecological design is the likely explanation |
 | 13 | Statins in the repurposing shortlist | **CONTRADICTED** — statins *raise* new-onset diabetes by about 10 % [21]; a failure of graph-distance repurposing, retained deliberately |
 | 14 | Sirolimus and everolimus in the repurposing shortlist | **CONTRADICTED** — both are directly β-cell toxic and diabetogenic [22]; likewise retained as a repurposing failure mode |
-| 15 | Tier-A symbols ANKH and TLE1, adjacent to the better-known ANK1 and TLE4 | **FLAGGED FOR AUDIT** — genuinely distinct genes with distinct rsIDs, so not a mapping error but nearest-gene variant-to-gene attribution propagating into a knowledge graph |
+| 15 | Tier-A symbols ANKH and TLE1, adjacent to the better-known ANK1 and TLE4 | **FLAGGED FOR AUDIT** — checked in the source data rather than against the literature: both are genuinely distinct genes with distinct rsIDs, so not a mapping error but nearest-gene variant-to-gene attribution propagating into a knowledge graph |
 | 16 | GO terms *cholesterol homeostasis* and *cellular response to hypoxia*; internal statistics (folds, FDRs, R², β) | **NOT CHECKED** — the GO terms were not checked against primary sources; internal statistics are not literature-checkable by construction |
 
 ---
