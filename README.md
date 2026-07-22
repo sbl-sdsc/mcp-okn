@@ -111,23 +111,17 @@ verify each as live SPARQL, and validate the findings against the literature.
 
 ### Case studies
 
-Eight end-to-end analyses that federate many Proto-OKN graphs into a single
+Six end-to-end analyses that federate many Proto-OKN graphs into a single
 evidence-backed map — five of a disease's biology (genes, variants,
 pathways/gene sets, drugs, altered-activity signatures, and clinical/biomarker
-features), one of environmental PFAS source attribution (detections
+features), and one of environmental PFAS source attribution (detections
 co-located with regulated facilities, resolved to chemical identity, functional
-use, and toxicological coverage), one of the chemical exposome of bisphenols
-(exposure and industrial use → adverse outcome pathways → molecular targets →
-assay activity → disease), and one of cumulative environmental-justice burden
-across U.S. counties (PFAS, regulated facilities, social vulnerability, court
-activity, rurality, and treatment-service scarcity, ranked by cross-source
-agreement) — each finding tagged with its source(s) and
-evidence kind, then ranked by cross-source agreement. Every case study ships a
-full report — interactive HTML where the renderer produced one, Markdown
-otherwise — and a replayable analysis transcript (each verbatim SPARQL query
-preserved).
+use, and toxicological coverage) — each finding tagged with its source(s) and
+evidence kind, then ranked by cross-source agreement. Every case study ships an
+interactive HTML report, a reproducibility record preserving every verbatim
+SPARQL query, and an Excel workbook.
 
-| Case study | Report | Analysis transcript | Data (Excel) |
+| Case study | Report | Reproducibility | Data (Excel) |
 |---|---|---|---|
 | **Type 2 diabetes** — 16 KGs, 2,117 genes (381 multi-source) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Diabetes/Diabetes_report.html) | [Reproducibility](docs/examples/Diabetes/Diabetes_reproducibility.md) | [Excel](docs/examples/Diabetes/Diabetes_results.xlsx) |
 | **Alzheimer's disease** — 8 KGs, 2,662 genes (318 multi-source) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Alzheimers/Alzheimers_report.html) | [Reproducibility](docs/examples/Alzheimers/Alzheimers_reproducibility.md) | [Excel](docs/examples/Alzheimers/Alzheimers_results.xlsx) |
@@ -135,8 +129,6 @@ preserved).
 | **Spaceflight-induced bone loss** — 8 KGs, 2,686-gene flight signature (777 core) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Bone-Health/Bone-Health_report.html) | [Reproducibility](docs/examples/Bone-Health/Bone-Health_reproducibility.md) | [Excel](docs/examples/Bone-Health/Bone-Health_results.xlsx) |
 | **Spaceflight-associated neuro-ocular syndrome (SANS)** — 6 KGs, 169-gene cross-species core | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/SANS/SANS_report.html) | [Reproducibility](docs/examples/SANS/SANS_reproducibility.md) | [Excel](docs/examples/SANS/SANS_results.xlsx) |
 | **PFAS source prioritization** — 5 KGs, 2,949 S2 cells, 12,714 co-located facilities | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/PFAS/PFAS_report.html) | [Reproducibility](docs/examples/PFAS/PFAS_reproducibility.md) | [Excel](docs/examples/PFAS/PFAS_results.xlsx) |
-| **Chemical exposome of bisphenols** — 14 KGs, 216 findings | [Report](docs/examples/Exposome/bisphenol_exposome_report.md) | [Transcript](docs/examples/Exposome/bisphenol_exposome_transcript.md) | — |
-| **Cumulative environmental-justice burden** — 12 KGs, 70,839 findings | [Report](docs/examples/Environmental-Justice/report.md) | [Transcript](docs/examples/Environmental-Justice/transcript.md) | — |
 
 Each report's Markdown source sits beside it in `docs/examples/`.
 
