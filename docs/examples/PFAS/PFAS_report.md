@@ -379,21 +379,21 @@ available internal control on the ascertainment bias described in §10.
 
 ## 8. Comparison with prior work
 
-Validation used **WebSearch and direct retrieval of primary regulatory documents** (Maine DEP, EPA,
-ATSDR, ITRC, National Guard/Air Force records) rather than the PubMed/Paperclip connectors, which
-were not reachable in this session; forty-two sources were collected and are listed in §12. Claims
-below were verified against the retrieved sources' own text; none was verified against a paywalled
-full text, and figures that could not be independently confirmed are marked Unresolved rather than
-asserted.
+The comparison used **WebSearch and direct retrieval of primary regulatory documents** (Maine DEP,
+EPA, ATSDR, ITRC, National Guard/Air Force records) rather than the PubMed/Paperclip connectors,
+which were not reachable in this session; the sources are listed in §12. Each finding was checked
+against the retrieved sources' own text; none against a paywalled full text, and figures that could
+not be independently confirmed are marked *Unresolved* rather than asserted. The per-finding detail
+behind each row is in [PFAS_literature_comparison.md](PFAS_literature_comparison.md).
 
-| # | Finding | Concordance | Basis |
-|---|---|---|---|
-| F1 | Contamination declines with facility proximity | **Supported** | Watershed-scale UCMR3 analysis finds industrial/military/WWTP site counts predict PFAS detection and concentration [1]; ML models of well PFAS rank distance-to-source among top predictors [2][3]; European surface-water study derives a ~4–5 km critical distance with the steepest gradient in the first few km [5]; California Bayesian model uses 1-km facility buffers as predictors [8]. Caveat: most effects are demonstrated at watershed or multi-km scales, and one small-sample study found no significant <2 km vs ≥2 km difference [7] |
-| F2 | Sector list matches known PFAS sources | **Supported, with a gap** | EPA's Multi-Industry PFAS Study targets OCPSF, metal finishing, pulp/paper, textiles and airports; landfills and leather tanning are priority categories for revised effluent guidelines [9][11]; a 2025 national inventory finds AFFF sites have the highest average detections and metal plating the largest industrial share [6]. **Missing from our list: fluorochemical/PFAS manufacturing itself** (EPA's largest category), and textile/carpet treatment [9][6] |
-| F3 | Top-ranked cells are documented PFAS sites | **Supported (identity); partly Unresolved (magnitudes)** | NAS Brunswick is an EPA NPL site with monitoring-well PFOS to 170,000 ppt and a 2024 AFFF spill driving stormwater to ~1.2 million ng/L — our 104,265 ng/L sits well inside that range [12][13][14]. Loring AFB: 2018 Air Force testing found on-base PFOS 8,770–11,000 ppt; our 340 ng/L is plausible off-base [22][23]. Bangor ANG, Jay/Pixelle and Tasman/Hartland are confirmed documented PFAS sources [15][16][17][18][19][20][21], but **no public figure matching our specific maxima could be located** — those three magnitudes are Unresolved |
-| F4 | Maine sampling is risk-targeted | **Confirmed — a real confound** | Maine P.L. 2021 c.478 restricts DEP investigation to "locations associated with a source or suspected source of PFAS"; sludge/septage sites were tiered by historical licensing records, not sampled at random [26][27]. Maine's DEP commissioner: "I can't help but suspect that we may appear to have a bigger problem, in part, because we have been proactive in looking for it" [17] |
-| F5 | ICE predicted functional use is a usable source axis | **Partially supported** | The QSUR models are peer-reviewed (Phillips et al. 2017, 41 random-forest classifiers on EPA's FUse/CPDat database) and underlie the CompTox and ICE tools [28][29][30][31]; but EPA maintains a hard distinction between **curated** and **predicted** use, the latter being an analogy-based inference [32]. Defensible as hypothesis generation only — which is how §6.2 uses it |
-| F6 | Facility proximity alone is sufficient | **Contradicted** | Atmospheric deposition contaminates wells miles downwind of fluoropolymer plants (Chemours Fayetteville Works; Saint-Gobain, NH) [34][35][36]; **biosolids/septage land application** produces hotspots with no facility nearby — Maine's own Fairfield wells at 12,910–30,000+ ppt [17][41][42]; septic systems are a diffuse source [37][38]; ITRC documents dilute plumes extending for **miles**, with short-chain PFAS travelling farthest [33]; precursor transformation shifts analyte ratios during transport, which is why forensic attribution needs the TOP assay and isomer ratios rather than proximity [39][40] |
+| # | Claim | Concordance |
+|---|---|---|
+| F1 | Contamination declines with facility proximity | **SUPPORTED** — Watershed-scale UCMR3 analysis finds industrial/military/WWTP site counts predict PFAS detection and concentration [1]; ML models of well PFAS rank distance-to-source among top predictors [2][3]; European surface-water study derives a ~4–5 km critical distance with the steepest gradient in the first few km [5]; California Bayesian model uses 1-km facility buffers as predictors [8]. Caveat: most effects are demonstrated at watershed or multi-km scales, and one small-sample study found no significant <2 km vs ≥2 km difference [7] |
+| F2 | Sector list matches known PFAS sources | **SUPPORTED**, with a gap — EPA's Multi-Industry PFAS Study targets OCPSF, metal finishing, pulp/paper, textiles and airports; landfills and leather tanning are priority categories for revised effluent guidelines [9][11]; a 2025 national inventory finds AFFF sites have the highest average detections and metal plating the largest industrial share [6]. **Missing from our list: fluorochemical/PFAS manufacturing itself** (EPA's largest category), and textile/carpet treatment [9][6] |
+| F3 | Top-ranked cells are documented PFAS sites | **SUPPORTED** (identity); partly **UNRESOLVED** (magnitudes) — NAS Brunswick is an EPA NPL site with monitoring-well PFOS to 170,000 ppt and a 2024 AFFF spill driving stormwater to ~1.2 million ng/L — our 104,265 ng/L sits well inside that range [12][13][14]. Loring AFB: 2018 Air Force testing found on-base PFOS 8,770–11,000 ppt; our 340 ng/L is plausible off-base [22][23]. Bangor ANG, Jay/Pixelle and Tasman/Hartland are confirmed documented PFAS sources [15][16][17][18][19][20][21], but **no public figure matching our specific maxima could be located** — those three magnitudes are Unresolved |
+| F4 | Maine sampling is risk-targeted | **CONFIRMED** — a real confound — Maine P.L. 2021 c.478 restricts DEP investigation to "locations associated with a source or suspected source of PFAS"; sludge/septage sites were tiered by historical licensing records, not sampled at random [26][27]. Maine's DEP commissioner: "I can't help but suspect that we may appear to have a bigger problem, in part, because we have been proactive in looking for it" [17] |
+| F5 | ICE predicted functional use is a usable source axis | **PARTIALLY SUPPORTED** — The QSUR models are peer-reviewed (Phillips et al. 2017, 41 random-forest classifiers on EPA's FUse/CPDat database) and underlie the CompTox and ICE tools [28][29][30][31]; but EPA maintains a hard distinction between **curated** and **predicted** use, the latter being an analogy-based inference [32]. Defensible as hypothesis generation only — which is how §6.2 uses it |
+| F6 | Facility proximity alone is sufficient | **CONTRADICTED** — Atmospheric deposition contaminates wells miles downwind of fluoropolymer plants (Chemours Fayetteville Works; Saint-Gobain, NH) [34][35][36]; **biosolids/septage land application** produces hotspots with no facility nearby — Maine's own Fairfield wells at 12,910–30,000+ ppt [17][41][42]; septic systems are a diffuse source [37][38]; ITRC documents dilute plumes extending for **miles**, with short-chain PFAS travelling farthest [33]; precursor transformation shifts analyte ratios during transport, which is why forensic attribution needs the TOP assay and isomer ratios rather than proximity [39][40] |
 
 F6 is the finding that matters most, and our own data are consistent with it: the 68% of
 extreme-value cells that no facility explains (§7) is exactly the gap a diffuse, non-facility pathway
@@ -408,7 +408,7 @@ sited monitoring network would show, and the effect size should not be transport
 
 The complete ranked table — 2,102 scored cells with all five score components,
 tier, geography, facility counts, industry attribution and named facilities — is in
-**`pfas_source_attribution_results.xlsx`** (sheet *Ranked Results*, tier-coloured with autofilter),
+**`PFAS_results.xlsx`** (sheet *Ranked Results*, tier-coloured with autofilter),
 alongside the screened-negative control, per-analyte chemistry, industry and NAICS detail, regional
 tables, statistical tests and a Methods & Rules sheet. The machine-readable extracts and every
 intermediate are in `data/`.
@@ -529,69 +529,55 @@ represent — a structural blind spot rather than a tuning problem.
 
 ## 11. Reproducibility
 
-The single reproducibility deliverable is **[pfas_source_attribution_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/PFAS/pfas_source_attribution_reproducibility.md)**: it opens
-with the originating prompt, then the replicator specification (every join key, window definition,
-score weight, saturation constant and NAICS prior), then the verbatim SPARQL of every logged query
-with its row count. The analysis scripts are in `scripts/` and run in order —
-`01_consolidate.py` (extract consolidation), `02_score.py` (tiers, score, stratifications),
-`03_tests.py` (statistics), `04_figures.py` (all figures), `05_map_and_workbook.py` (interactive map
-and workbook), `06_build_html.py` (HTML render). `basemap_vector.py` supplies the offline vector
-basemap. Intermediate extracts are in `data/`; headline numbers live in one `data/stats.json` and are
-substituted into this report, the HTML and the KPI cards from that single source.
-
-KG versions are pinned in §2 (`sawgraph` v0.0.15, `fiokg` v0.0.11, `spatialkg` v0.0.6,
-`biobricks-ice` v0.0.3, `biobricks-toxcast` v0.0.2), read from the federation's VoID metadata at run
-time. The study active window is recorded in the reproducibility file's header. Token and cost figures
-are not visible to the tooling and are therefore not reported.
+Everything needed to replicate this analysis — the originating prompt, the replicator specification (join keys, window definitions, score weights, the NAICS prior), every supporting SPARQL query verbatim with its row count, the verified quantities, the pinned KG versions and the timing — is in **[PFAS_reproducibility.md](PFAS_reproducibility.md)**, with the analysis scripts in `scripts/` and the intermediate extracts in `data/`.
 
 ---
-
 ## 12. References
 
 Retrieved by WebSearch and direct fetch of primary regulatory documents; the full annotated set with
 per-finding mapping is in
-[pfas_source_attribution_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/PFAS/pfas_source_attribution_literature_comparison.md).
+[PFAS_literature_comparison.md](PFAS_literature_comparison.md).
 None was verified against paywalled full text.
 
-1. Hu X.C. et al. (2016). Detection of poly- and perfluoroalkyl substances (PFASs) in US drinking water linked to industrial sites, military fire training areas, and wastewater treatment plants. *Environmental Science & Technology Letters*. https://doi.org/10.1021/acs.estlett.6b00260
-2. Tokranov A.K. et al. / USGS (2024). Predictions of groundwater PFAS occurrence at drinking water supply depths in the United States. *Science*. https://doi.org/10.1126/science.ado6638
-3. Breitmeyer S.E. et al. (2023). Predicting PFAS occurrence in private wells using machine learning. *Science of the Total Environment*. https://doi.org/10.1016/j.scitotenv.2023.167839
-4. Chen Q. et al. (2023). Spatial distribution and attenuation of PFAS in soil and groundwater around a fluorochemical industrial park. *Journal of Hazardous Materials*. https://doi.org/10.1016/j.jhazmat.2023.131372
-5. Sunderland-style EU surface-water ML study (2025). Critical distance thresholds for point-source PFAS influence in European surface waters. *Environment International*. https://doi.org/10.1016/j.envint.2025.109312
-6. Garrett J. et al. (2025). A national inventory of confirmed and presumptive PFAS contamination sites by category. *Environmental Science & Technology*. https://doi.org/10.1021/acs.est.4c11919
-7. Anderson R.H. et al. (2016). Occurrence of select PFAAs at US Air Force AFFF-impacted sites. *Chemosphere*. https://doi.org/10.1016/j.chemosphere.2016.01.014
-8. California Bayesian spatial PFAS model (2024). Facility-buffer predictors of PFAS in California drinking-water sources. *Environmental Research*. https://doi.org/10.1016/j.envres.2024.118762
-9. US EPA (2021–2024). Multi-Industry PFAS Study — Preliminary and Final Reports. https://www.epa.gov/eg/multi-industry-pfas-study
-10. National Academies of Sciences, Engineering, and Medicine (2022). *Guidance on PFAS Exposure, Testing, and Clinical Follow-Up*. https://doi.org/10.17226/26156
-11. US EPA (2024). Effluent Guidelines Program Plan 15 — PFAS priority categories (landfills, leather tanning). https://www.epa.gov/eg/effluent-guidelines-plan
-12. Maine DEP (2024–2025). Naval Air Station Brunswick PFAS response and monitoring results. https://www.maine.gov/dep/spills/topics/pfas/
-13. US EPA (n.d.). Brunswick Naval Air Station Superfund site profile (NPL). https://cumulis.epa.gov/supercpad/SiteProfiles/index.cfm?fuseaction=second.Cleanup&id=0101039
-14. US Navy / MRRA (2024). Hangar 4 AFFF release — incident and sampling reports, Brunswick Landing. https://www.brunswicklanding.us/pfas
-15. Maine ANG / 101st Air Refueling Wing (2018–2024). PFAS site investigation, Bangor ANGB. https://www.101arw.ang.af.mil/
-16. Maine CDC / DEP (2019–2024). Bangor-area private well PFAS sampling results. https://www.maine.gov/dhhs/mecdc/environmental-health/eohp/wells/pfas.shtml
-17. Maine DEP (2021–2024). PFAS in Maine — programme background, sludge land-application history and commissioner statements. https://www.maine.gov/dep/spills/topics/pfas/
-18. Maine Superior Court (2024). *State of Maine v. paper-mill defendants* — PFAS biosolids litigation filings. https://www.maine.gov/ag/
-19. Maine DEP (2022). PFAS in wastewater treatment facility effluent and landfill leachate — statewide screening. https://www.maine.gov/dep/water/wwtp/
-20. US EPA ECHO / NPDES (n.d.). Tasman Leather Group, Hartland ME — permit record. https://echo.epa.gov/
-21. Town of Hartland / Maine DEP (2022). Hartland WWTF and landfill leachate PFAS results. https://www.maine.gov/dep/
-22. US Air Force Civil Engineer Center (2018). Former Loring AFB PFAS site inspection report. https://www.afcec.af.mil/
-23. Maine DEP (2024). Statewide PFAS residential well testing results table. https://www.maine.gov/dep/spills/topics/pfas/
-24. Maine DEP (n.d.). Environmental and Geographic Analysis Database (EGAD). https://www.maine.gov/dep/maps-data/egad/
-25. National Water Quality Monitoring Council (n.d.). Water Quality Portal. https://www.waterqualitydata.us/
-26. Maine DEP (2022). PFAS sludge and septage land-application site prioritisation — tiering methodology. https://www.maine.gov/dep/spills/topics/pfas/
-27. State of Maine (2021). Public Law 2021 c.478 — An Act To Investigate PFAS Contamination of Land and Groundwater. https://legislature.maine.gov/legis/bills/getPDF.asp?paper=HP1189&item=1
-28. Phillips K.A. et al. (2017). Suspect screening analysis of chemicals in consumer products / QSUR models for functional use. *Environmental Science & Technology*. https://doi.org/10.1021/acs.est.7b04781
-29. Isaacs K.K. et al. (2016). Chemical Product and Function Database (CPDat). *Journal of Exposure Science & Environmental Epidemiology*. https://doi.org/10.1038/jes.2015.72
-30. US EPA (n.d.). CompTox Chemicals Dashboard — Functional Use and Predicted Functional Use. https://comptox.epa.gov/dashboard/
-31. NIEHS/NICEATM (n.d.). Integrated Chemical Environment (ICE) — Functional Use Explorer. https://ice.ntp.niehs.nih.gov/
-32. US EPA (n.d.). CPDat / Factotum documentation — curated vs predicted functional use. https://www.epa.gov/chemical-research/chemicals-and-products-database-cpdat
-33. ITRC (2023). *PFAS Technical and Regulatory Guidance Document* — fate and transport, plume length. https://pfas-1.itrcweb.org/
-34. Chemours Fayetteville Works air-deposition studies (2019–2023). NC DEQ consent-order sampling. https://www.deq.nc.gov/news/key-issues/genx-investigation
-35. Sunderland E.M. et al. (2019). A review of the pathways of human exposure to PFAS and present understanding of health effects. *Journal of Exposure Science & Environmental Epidemiology*. https://doi.org/10.1038/s41370-018-0094-1
-36. NH DES (2018–2022). Saint-Gobain Performance Plastics, Merrimack NH — air-deposition PFAS investigation. https://www.des.nh.gov/land/waste/contaminated-sites/pfas
-37. Schaider L.A. et al. (2016). Septic systems as sources of organic wastewater compounds including PFAS. *Science of the Total Environment*. https://doi.org/10.1016/j.scitotenv.2016.04.104
-38. Wisconsin DNR (2022–2024). PFAS in private wells and septic-influenced groundwater. https://dnr.wisconsin.gov/topic/PFAS
-39. Houtz E.F. & Sedlak D.L. (2012). Oxidative conversion as a means of detecting precursors to PFAAs in urban runoff (TOP assay). *Environmental Science & Technology*. https://doi.org/10.1021/es302274g
-40. Benskin J.P. et al. (2012). Isomer profiling of PFAS for source attribution. *Environmental Science & Technology*. https://doi.org/10.1021/es302348p
-41. Maine DEP (2021–2023). Fairfield-area PFAS investigation — residential well results. https://www.maine.gov/dep/spills/topics/pfas/
-42. Maine Department of Agriculture, Conservation and Forestry (2022–2024). PFAS in agricultural soils from biosolids land application. https://www.maine.gov/dacf/ag/pfas/
+1. Hu X.C. et al. (2016). Detection of poly- and perfluoroalkyl substances (PFASs) in US drinking water linked to industrial sites, military fire training areas, and wastewater treatment plants. *Environmental Science & Technology Letters*. [doi:10.1021/acs.estlett.6b00260](https://doi.org/10.1021/acs.estlett.6b00260)
+2. Tokranov A.K. et al. / USGS (2024). Predictions of groundwater PFAS occurrence at drinking water supply depths in the United States. *Science*. [doi:10.1126/science.ado6638](https://doi.org/10.1126/science.ado6638)
+3. Breitmeyer S.E. et al. (2023). Predicting PFAS occurrence in private wells using machine learning. *Science of the Total Environment*. [doi:10.1016/j.scitotenv.2023.167839](https://doi.org/10.1016/j.scitotenv.2023.167839)
+4. Chen Q. et al. (2023). Spatial distribution and attenuation of PFAS in soil and groundwater around a fluorochemical industrial park. *Journal of Hazardous Materials*. [doi:10.1016/j.jhazmat.2023.131372](https://doi.org/10.1016/j.jhazmat.2023.131372)
+5. Sunderland-style EU surface-water ML study (2025). Critical distance thresholds for point-source PFAS influence in European surface waters. *Environment International*. [doi:10.1016/j.envint.2025.109312](https://doi.org/10.1016/j.envint.2025.109312)
+6. Garrett J. et al. (2025). The Landscape of PFAS Contamination in the United States: Sources and Spatial Patterns. *Environmental Science & Technology*. [doi:10.1021/acs.est.4c14474](https://doi.org/10.1021/acs.est.4c14474)
+7. Anderson R.H. et al. (2016). Occurrence of select PFAAs at US Air Force AFFF-impacted sites. *Chemosphere*. [doi:10.1016/j.chemosphere.2016.01.014](https://doi.org/10.1016/j.chemosphere.2016.01.014)
+8. California Bayesian spatial PFAS model (2024). Facility-buffer predictors of PFAS in California drinking-water sources. *Environmental Research*. [doi:10.1016/j.envres.2024.118762](https://doi.org/10.1016/j.envres.2024.118762)
+9. US EPA (2021–2024). Multi-Industry PFAS Study — Preliminary and Final Reports. [link](https://www.epa.gov/system/files/documents/2021-09/multi-industry-pfas-study_preliminary-2021-report_508_2021.09.08.pdf)
+10. National Academies of Sciences, Engineering, and Medicine (2022). *Guidance on PFAS Exposure, Testing, and Clinical Follow-Up*. [doi:10.17226/26156](https://doi.org/10.17226/26156)
+11. US EPA (2024). Effluent Guidelines Program Plan 15 — PFAS priority categories (landfills, leather tanning). [link](https://www.epa.gov/eg/effluent-guidelines-plan)
+12. Maine DEP (2024–2025). Naval Air Station Brunswick PFAS response and monitoring results. [link](https://www.maine.gov/dep/spills/topics/pfas/)
+13. US EPA (n.d.). Brunswick Naval Air Station Superfund site profile (NPL). [link](https://cumulis.epa.gov/supercpad/SiteProfiles/index.cfm?fuseaction=second.Cleanup&id=0101039)
+14. US Navy / MRRA (2024). Hangar 4 AFFF release — incident and sampling reports, Brunswick Landing. [link](https://www.brunswicklanding.us/pfas)
+15. Maine ANG / 101st Air Refueling Wing (2018–2024). PFAS site investigation, Bangor ANGB. [link](https://www.101arw.ang.af.mil/)
+16. Maine CDC / DEP (2019–2024). Bangor-area private well PFAS sampling results. [link](https://www.maine.gov/dhhs/mecdc/healthy-living/health-and-safety/pfas-in-maine/pfas-and-well-water)
+17. Maine DEP (2021–2024). PFAS in Maine — programme background, sludge land-application history and commissioner statements. [link](https://www.maine.gov/dep/spills/topics/pfas/)
+18. Maine Superior Court (2024). *State of Maine v. paper-mill defendants* — PFAS biosolids litigation filings. [link](https://www.maine.gov/ag/)
+19. Maine DEP (2022). PFAS in wastewater treatment facility effluent and landfill leachate — statewide screening. [link](https://www.maine.gov/dep/spills/topics/pfas/maine-pfas.html)
+20. US EPA ECHO / NPDES (n.d.). Tasman Leather Group, Hartland ME — permit record. [link](https://echo.epa.gov/)
+21. Town of Hartland / Maine DEP (2022). Hartland WWTF and landfill leachate PFAS results. [link](https://www.maine.gov/dep/)
+22. US Air Force Civil Engineer Center (2018). Former Loring AFB PFAS site inspection report. [link](https://www.afcec.af.mil/)
+23. Maine DEP (2024). Statewide PFAS residential well testing results table. [link](https://www.maine.gov/dep/spills/topics/pfas/)
+24. Maine DEP (n.d.). Environmental and Geographic Analysis Database (EGAD). [link](https://www.maine.gov/dep/maps-data/egad/)
+25. National Water Quality Monitoring Council (n.d.). Water Quality Portal. [link](https://www.waterqualitydata.us/)
+26. Maine DEP (2022). PFAS sludge and septage land-application site prioritisation — tiering methodology. [link](https://www.maine.gov/dep/spills/topics/pfas/)
+27. State of Maine (2021). Public Law 2021 c.478 — An Act To Investigate PFAS Contamination of Land and Groundwater. [link](https://legislature.maine.gov/legis/bills/getPDF.asp?paper=HP1189&item=1)
+28. Phillips K.A. et al. (2017). Suspect screening analysis of chemicals in consumer products / QSUR models for functional use. *Environmental Science & Technology*. [doi:10.1021/acs.est.7b04781](https://doi.org/10.1021/acs.est.7b04781)
+29. Isaacs K.K. et al. (2016). Chemical Product and Function Database (CPDat). *Journal of Exposure Science & Environmental Epidemiology*. [doi:10.1038/jes.2015.72](https://doi.org/10.1038/jes.2015.72)
+30. US EPA (n.d.). CompTox Chemicals Dashboard — Functional Use and Predicted Functional Use. [link](https://comptox.epa.gov/dashboard/)
+31. NIEHS/NICEATM (n.d.). Integrated Chemical Environment (ICE) — Functional Use Explorer. [link](https://ice.ntp.niehs.nih.gov/)
+32. US EPA (n.d.). CPDat / Factotum documentation — curated vs predicted functional use. [link](https://www.epa.gov/chemical-research/chemical-and-products-database-cpdat)
+33. ITRC (2023). *PFAS Technical and Regulatory Guidance Document* — fate and transport, plume length. [link](https://pfas-1.itrcweb.org/)
+34. Chemours Fayetteville Works air-deposition studies (2019–2023). NC DEQ consent-order sampling. [link](https://www.deq.nc.gov/news/key-issues/genx-investigation)
+35. Sunderland E.M. et al. (2019). A review of the pathways of human exposure to PFAS and present understanding of health effects. *Journal of Exposure Science & Environmental Epidemiology*. [doi:10.1038/s41370-018-0094-1](https://doi.org/10.1038/s41370-018-0094-1)
+36. NH DES (2018–2022). Saint-Gobain Performance Plastics, Merrimack NH — air-deposition PFAS investigation. [link](https://www.des.nh.gov/land/waste/contaminated-sites/pfas)
+37. Schaider L.A. et al. (2016). Septic systems as sources of organic wastewater compounds including PFAS. *Science of the Total Environment*. [doi:10.1016/j.scitotenv.2016.04.104](https://doi.org/10.1016/j.scitotenv.2016.04.104)
+38. Wisconsin DNR (2022–2024). PFAS in private wells and septic-influenced groundwater. [link](https://dnr.wisconsin.gov/topic/PFAS)
+39. Houtz E.F. & Sedlak D.L. (2012). Oxidative conversion as a means of detecting precursors to PFAAs in urban runoff (TOP assay). *Environmental Science & Technology*. [doi:10.1021/es302274g](https://doi.org/10.1021/es302274g)
+40. Benskin J.P. et al. (2010). Perfluorinated acid isomer profiling in water and quantitative assessment of manufacturing source. *Environmental Science & Technology*. [doi:10.1021/es102582x](https://doi.org/10.1021/es102582x)
+41. Maine DEP (2021–2023). Fairfield-area PFAS investigation — residential well results. [link](https://www.maine.gov/dep/spills/topics/pfas/)
+42. Maine Department of Agriculture, Conservation and Forestry (2022–2024). PFAS in agricultural soils from biosolids land application. [link](https://www.maine.gov/dacf/ag/pfas/)

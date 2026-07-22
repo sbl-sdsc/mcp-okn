@@ -178,6 +178,6 @@ meth = pd.DataFrame([
 sheet("Methods & Rules", meth, widths={"Rule": 26, "Definition": 110})
 
 del wb["Sheet"]
-out = os.path.join(ROOT, "pfas_source_attribution_results.xlsx")
+out = os.path.join(ROOT, "PFAS_results.xlsx")
 wb.save(out)
 print("workbook:", out, os.path.getsize(out), "bytes;", len(wb.sheetnames), "sheets")

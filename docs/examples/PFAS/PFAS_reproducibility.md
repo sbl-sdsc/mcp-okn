@@ -22,7 +22,7 @@ PFAS source attribution by integrating environmental samples, regulated faciliti
 ## Replicator specification
 
 Everything a replicator needs to reproduce the analysis exactly. The narrative version for a reader
-is in §3–§4 of `pfas_source_attribution_report.md`; this section is the authoritative specification
+is in §3–§4 of `PFAS_report.md`; this section is the authoritative specification
 and the report deliberately does not restate it.
 
 ### S1. Knowledge graphs and pinned versions
@@ -248,7 +248,7 @@ ordering, not a screen.
 the HTML report's interactive map uses real OpenStreetMap tiles, loaded client-side by folium/Leaflet.
 Headline numbers live in `data/stats.json` and are substituted into the report, the HTML and the KPI
 cards from that single source. The literature comparison is in
-[pfas_source_attribution_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/PFAS/pfas_source_attribution_literature_comparison.md).
+[PFAS_literature_comparison.md](PFAS_literature_comparison.md).
 
 ## SPARQL queries
 

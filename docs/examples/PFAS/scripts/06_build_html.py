@@ -20,8 +20,8 @@ from build_report_html import (build_report_from_markdown, candidate_table, chec
 
 ROOT = os.path.abspath(os.path.join(HERE, ".."))
 D = os.path.join(ROOT, "data")
-MD = os.path.join(ROOT, "pfas_source_attribution_report.md")
-HTML = os.path.join(ROOT, "pfas_source_attribution_report.html")
+MD = os.path.join(ROOT, "PFAS_report.md")
+HTML = os.path.join(ROOT, "PFAS_report.html")
 
 S = load_stats(os.path.join(D, "stats.json"))
 ranked = pd.read_csv(os.path.join(D, "cells_ranked.tsv"), sep="\t", dtype={"cid": str})
