@@ -102,8 +102,11 @@ come between them, and nothing follows References:
    paragraph. Head the column *Concordance*, never *Verdict*: the report is not passing judgement.
    Prose-only §8s hide the distribution; see `references/report-structure.md`. The
    full per-claim record goes in `<study>_literature_comparison.md`; §8 summarises it and
-   **links to it** (absolute `https://github.com/<org>/<repo>/blob/main/…` URL — a relative
-   link dies once the self-contained `.html` travels away from the repo).
+   **links to it** — a **relative sibling link by default**, since the folder is what gets
+   delivered. Only use an absolute URL when the study is genuinely published somewhere a relative
+   link can't work (e.g. GitHub Pages, where a sibling `.md` is served raw), and build it from that
+   publication's base — never hard-code someone else's repo. See `references/report-structure.md`
+   → *Linking between deliverables*.
 9. **Full ranked results** — pointer to xlsx / tsv + the interactive HTML table + a prose slice.
 10. **Summary of findings & limitations** — **always end the report here**: a findings recap, then the
     caveats as a numbered list. **This is the single home for the caveats list — don't duplicate it.**

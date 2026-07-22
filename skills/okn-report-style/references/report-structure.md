@@ -16,6 +16,31 @@ denominators, thresholds, the tier distribution) as a `{{key}}` placeholder sour
 `stats.json`; the tooling fills it into the delivered `.md`, the `.html`, and the KPI cards (see the
 SKILL's *Interactive HTML report* + failure-mode notes). Author the number once, in `stats.json`.
 
+## Linking between deliverables
+
+§8 links the literature comparison and §11 links the reproducibility record. **Default to a
+relative sibling link — `[<study>_reproducibility.md](<study>_reproducibility.md)`.** The report
+folder is the unit of delivery: the target travels with the `.html`, so the link works from a
+local folder, a zip, a shared drive, any repo, and offline. **Never hard-code a repository URL by
+default** — a link to `github.com/<someone-else>/<repo>` is dead for anyone who did not commit the
+study to that repo, and worse, it silently points at a *different* study's file if that path
+happens to exist.
+
+Use an **absolute URL only when the study is published somewhere the relative link cannot work**,
+and build it from that publication's own base:
+
+- **GitHub Pages** (or any static host serving the folder): the `.html` renders, but a sibling
+  `.md` is served as raw text or downloaded rather than rendered. If the same study is also on
+  GitHub, link the blob URL (`https://github.com/<org>/<repo>/blob/<branch>/<path>`) so the target
+  renders as Markdown. This is the case for the shipped `docs/examples/` reports.
+- **Distributed as a lone `.html`** (emailed, no folder): a relative link necessarily dies, because
+  the target is not travelling with it — an absolute URL is the only thing that can work, and only
+  if the study is genuinely published at it. If it is not published, keep the relative link and
+  accept that a reader who takes the file out of its folder has to ask for the folder.
+
+Whichever form you use, the target must exist at that address: check the relative path on disk, or
+fetch the absolute URL, before delivering.
+
 ## Title block (before §1)
 
 ```
@@ -138,10 +163,8 @@ arbiter and the KG as the defendant, which misreports what the section does.
 **Where it lives.** §8 in the report is the *summary* — the claim table, the divergences, and
 what was full-text verified. The complete per-claim record with citations goes in a sibling
 deliverable, **`<study>_literature_comparison.md`** (not under `data/`, which is for machine
-extracts). §8 must **link** to it using an absolute
-`https://github.com/<org>/<repo>/blob/main/…` URL: these reports are read from the rendered
-`.md`, from GitHub Pages, and from the `.html` shared as a standalone file, and a relative link
-only survives the first.
+extracts), and §8 **links** to it. Choose the link form by where the report will actually be read —
+see *Linking between deliverables* below.
 
 **Preflight:** this section needs the **PubMed** (`https://pubmed.mcp.claude.com/mcp`) and
 **Paperclip** (`https://paperclip.gxl.ai/mcp`) MCP connectors (look for tools named `pubmed` /
@@ -179,7 +202,7 @@ prose; §11 and §12 are back-matter and stay in that order.
 **One sentence, then the link. This section is a signpost, not a summary.** Say that everything
 needed to replicate the analysis — originating prompt, replicator specification, every supporting
 SPARQL query verbatim with its row count, verified quantities, pinned KG versions and timing — is
-in **`<study>_reproducibility.md`** (absolute `https://github.com/<org>/<repo>/blob/main/…` URL),
+in **`<study>_reproducibility.md`** (link form per *Linking between deliverables*),
 with scripts in `scripts/` and intermediate extracts in `data/`.
 
 Do **not** restate the spec here: no enumerated script filenames (`scripts/` is its own listing),
