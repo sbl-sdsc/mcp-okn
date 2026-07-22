@@ -116,7 +116,10 @@ come between them, and nothing follows References:
     [doi:…](https://doi.org/…)`, plus ` — full-text-verified ([PMC…](https://pmc.ncbi.nlm.nih.gov/articles/PMC…/))`
     on entries actually read in full. Fields come from the NCBI `esummary` record, not from memory;
     percent-encode `(`/`)` in DOI links (Lancet-style DOIs break Markdown otherwise); test the links —
-    403 is a publisher bot-block, 404 is a defect. See `references/report-structure.md`.
+    403 is a publisher bot-block, 404 is a defect. **Preprints**: label them
+    `*<Server>* (preprint — not peer-reviewed)` using the server's full name, never the `Res Sq`-style
+    abbreviation; a missing PMID/PMC is normal for them and the DOI alone is enough — check first
+    whether a peer-reviewed version now exists. See `references/report-structure.md`.
 
 **One kind of data, one place.** Group all results of the same kind into a *single* section — never
 scatter the same data type (geolocation, an entity type, an enrichment family, a network output)

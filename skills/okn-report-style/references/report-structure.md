@@ -221,6 +221,21 @@ Numbered, and **every literature entry in exactly this shape**:
 - **Test the links before delivering.** A 403 is normal — publishers (NEJM, Lancet, Science, MDPI)
   block automated agents, and `doi.org` still redirects correctly; a **404 or a DNS failure is a
   real defect**, and that is what the check is for.
+- **Preprints must be labelled as preprints**, because the entry is also an evidence-quality claim:
+  `Author, et al. Title. *Research Square* (preprint — not peer-reviewed). 2023. PMID:… · [doi:…](…)`.
+  Use the server's full name (`fulljournalname`, e.g. *Research square*, *bioRxiv*), **never the
+  cryptic `source` abbreviation** (`Res Sq`), which reads like an ordinary journal and hides the
+  status. NCBI marks them: `pubtype` contains `Preprint`; the DOI prefix is another tell
+  (`10.1101` bioRxiv/medRxiv, `10.21203` Research Square, `10.48550` arXiv).
+- **A preprint may legitimately have no PMID and no PMC** — only some are in the NIH pilot, and one
+  that isn't appears in no NCBI record at all. **The DOI is then the only identifier, and that is
+  not a defect**: cite `*<Server>* (preprint — not peer-reviewed). <year>. [doi:…](https://doi.org/…)`
+  and stop. Never invent a PMID, and never drop the reference for lacking one.
+- **Before citing a preprint, check whether it has since been published** (title search against
+  PubMed). If it has, cite the peer-reviewed version; cite the preprint as well only when the claim
+  genuinely rests on it, and say which.
+- Where a finding depends on preprint-only evidence, **the §8 Concordance cell must say so** — the
+  reference's label is not enough on its own, since a reader scanning verdicts never reaches §12.
 - Non-paper entries (a search-strategy note, the endpoint/tool citation) stay prose: no PMID, no DOI,
   no invented identifiers.
 
