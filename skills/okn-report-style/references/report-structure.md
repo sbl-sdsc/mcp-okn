@@ -95,6 +95,20 @@ wherever a literature or authoritative reference source exists for the domain. *
 tool up front** (e.g. *"According to PubMed and the Paperclip corpus…"*) and **mark which central
 claims were verified against full text**. Flag discrepancies as testable predictions.
 
+**Call this a literature *comparison*, never a *validation*.** The verdict is four-way, so
+**NOVEL is a finding, not a failure to validate** — and the comparison runs both ways: it just as
+often exposes an error in the *graphs* (a mis-assigned drug target, an entity-resolution
+collision) as it corroborates a claim. Naming it "validation" casts the literature as the
+arbiter and the KG as the defendant, which misreports what the section does.
+
+**Where it lives.** §8 in the report is the *summary* — the claim table, the divergences, and
+what was full-text verified. The complete per-claim record with citations goes in a sibling
+deliverable, **`<study>_literature_comparison.md`** (not under `data/`, which is for machine
+extracts). §8 must **link** to it using an absolute
+`https://github.com/<org>/<repo>/blob/main/…` URL: these reports are read from the rendered
+`.md`, from GitHub Pages, and from the `.html` shared as a standalone file, and a relative link
+only survives the first.
+
 **Preflight:** this section needs the **PubMed** (`https://pubmed.mcp.claude.com/mcp`) and
 **Paperclip** (`https://paperclip.gxl.ai/mcp`) MCP connectors (look for tools named `pubmed` /
 `paperclip`). Confirm they're available before writing it; if one is missing, enable it (claude.ai →

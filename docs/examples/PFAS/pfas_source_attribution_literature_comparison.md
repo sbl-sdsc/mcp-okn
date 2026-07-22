@@ -1,4 +1,4 @@
-# Literature Validation — PFAS Source-Attribution Knowledge-Graph Analysis
+# Literature Comparison — PFAS Source-Attribution Knowledge-Graph Analysis
 
 Each finding (F1–F6) from the analysis is checked against peer-reviewed literature, EPA/ATSDR/ITRC technical guidance, and primary site documentation (Maine DEP, EPA Superfund, National Guard/Air Force records, court filings). Claims that could not be independently verified within the search budget are labeled Unresolved rather than asserted. Bracketed numbers refer to the numbered reference list at the end of the file.
 

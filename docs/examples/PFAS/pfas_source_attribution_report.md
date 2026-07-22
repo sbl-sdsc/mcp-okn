@@ -550,7 +550,7 @@ are not visible to the tooling and are therefore not reported.
 
 Retrieved by WebSearch and direct fetch of primary regulatory documents; the full annotated set with
 per-finding mapping is in
-[pfas_source_attribution_literature_validation.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/PFAS/pfas_source_attribution_literature_validation.md).
+[pfas_source_attribution_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/PFAS/pfas_source_attribution_literature_comparison.md).
 None was verified against paywalled full text.
 
 1. Hu X.C. et al. (2016). Detection of poly- and perfluoroalkyl substances (PFASs) in US drinking water linked to industrial sites, military fire training areas, and wastewater treatment plants. *Environmental Science & Technology Letters*. https://doi.org/10.1021/acs.estlett.6b00260

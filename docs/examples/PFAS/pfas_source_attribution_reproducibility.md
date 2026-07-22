@@ -247,8 +247,8 @@ ordering, not a screen.
 (GSHHS/WDBII via `basemap-data`) because the execution sandbox has no egress to raster-tile hosts;
 the HTML report's interactive map uses real OpenStreetMap tiles, loaded client-side by folium/Leaflet.
 Headline numbers live in `data/stats.json` and are substituted into the report, the HTML and the KPI
-cards from that single source. Literature validation is in
-[pfas_source_attribution_literature_validation.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/PFAS/pfas_source_attribution_literature_validation.md).
+cards from that single source. The literature comparison is in
+[pfas_source_attribution_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/PFAS/pfas_source_attribution_literature_comparison.md).
 
 ## SPARQL queries
 

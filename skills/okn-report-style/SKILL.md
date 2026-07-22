@@ -38,6 +38,10 @@ A complete report is a **folder**, not one file:
 ├── figures/  fig1_*.png …        # one PNG per figure, numbered in document order
 ├── data/     *.tsv / *.json      # intermediate extracts (for reproducibility)
 ├── scripts/  *.py                # the exact scripts used (for reproducibility)
+├── <study>_literature_comparison.md      # §8's per-claim record: one entry per checked claim,
+│                                  #   its verdict (supported / partially / novel / contradicted)
+│                                  #   and citations. A SIBLING deliverable — never inside data/,
+│                                  #   which holds machine extracts, not prose.
 └── <study>_reproducibility.md            # ONE file: replicator spec (rules, thresholds, joins,
                                   #   verified quantities, limitations) + verbatim supporting queries
                                   #   & row counts — from create_reproducibility_record (spec via appendix=)
@@ -85,7 +89,10 @@ order, with the rules that must not be skipped:
    SKIPPED, each with a one-line reason** — a silently dropped sub-analysis reads as full coverage.
 7. **Discussion** — synthesise the axes; state implications / targets and the testable predictions.
 8. **Comparison with prior work** — per-finding concordance with citations; needs the PubMed /
-   Paperclip connectors (preflight them, or state §8 is omitted — never drop it silently).
+   Paperclip connectors (preflight them, or state §8 is omitted — never drop it silently). The
+   full per-claim record goes in `<study>_literature_comparison.md`; §8 summarises it and
+   **links to it** (absolute `https://github.com/<org>/<repo>/blob/main/…` URL — a relative
+   link dies once the self-contained `.html` travels away from the repo).
 9. **Full ranked results** — pointer to xlsx / tsv + the interactive HTML table + a prose slice.
 10. **Summary of findings & limitations** — **always end the report here**: a findings recap, then the
     caveats as a numbered list. **This is the single home for the caveats list — don't duplicate it.**

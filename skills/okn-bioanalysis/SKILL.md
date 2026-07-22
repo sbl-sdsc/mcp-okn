@@ -209,9 +209,12 @@ label-match cases, and the bio↔geography bridges are tabulated in **`reference
     support, **druggability — a known or candidate drug acts on it**, curated role, specificity,
     number of corroborating KGs) into one score + A / B / C tiers.
 13. **Literature comparison (optional — gated on the Preflight).** PubMed + Paperclip: supported /
-    novel / contradicted; verify central claims against full text. If the preflight found a connector
-    missing and the user chose to proceed, state the comparison was **skipped — `<connector>` not
-    enabled** rather than dropping it silently.
+    novel / contradicted; verify central claims against full text. Write the full per-claim record
+    to **`<study>_literature_comparison.md`** (a sibling deliverable, not under `data/`) and link
+    it from report §8. Never call this step a *validation* — NOVEL is a finding, and the check
+    exposes errors in the graphs as often as it corroborates a claim. If the preflight found a
+    connector missing and the user chose to proceed, state the comparison was **skipped —
+    `<connector>` not enabled** rather than dropping it silently.
 14. **Mechanistic map (synthesis — when the question is "map the biology of X").** When the analysis
     yields a tiered gene/protein core (step 12) that groups into a few mechanistic themes (enrichment,
     step 6, or curated pathway membership) plus a drug/target layer (step 10), synthesize them into a
