@@ -529,7 +529,7 @@ represent — a structural blind spot rather than a tuning problem.
 
 ## 11. Reproducibility
 
-The single reproducibility deliverable is **`pfas_source_attribution_reproducibility.md`**: it opens
+The single reproducibility deliverable is **[pfas_source_attribution_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/PFAS/pfas_source_attribution_reproducibility.md)**: it opens
 with the originating prompt, then the replicator specification (every join key, window definition,
 score weight, saturation constant and NAICS prior), then the verbatim SPARQL of every logged query
 with its row count. The analysis scripts are in `scripts/` and run in order —
