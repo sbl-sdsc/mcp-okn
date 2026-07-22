@@ -198,9 +198,31 @@ server sees only tool calls); if you cite it, use client figures (Claude Code `/
 `usage`), labelled as client-measured — do not invent a number.
 
 ## 12. References
-Numbered. Attribute the retrieval tool. Give a **DOI link** for each literature item (e.g. PubMed),
-and a **full-text, line-anchored link** (e.g. Paperclip `citations.gxl.ai/…#Lxx`) for any item
-**verified against full text** — mark those as full-text-verified.
+Numbered, and **every literature entry in exactly this shape**:
+
+```
+1. Suzuki K, et al. Genetic drivers of heterogeneity in type 2 diabetes pathophysiology. *Nature*. 2024. PMID:38374256 · [doi:10.1038/s41586-024-07019-6](https://doi.org/10.1038/s41586-024-07019-6) — full-text-verified ([PMC10937372](https://pmc.ncbi.nlm.nih.gov/articles/PMC10937372/))
+2. Mahajan A, et al. Fine-mapping type 2 diabetes loci to single-variant resolution. *Nat Genet*. 2018. PMID:30297969 · [doi:10.1038/s41588-018-0241-6](https://doi.org/10.1038/s41588-018-0241-6)
+```
+
+- `Author, et al.` (first author only; the collective name for a consortium paper) · title · `*Journal*` ·
+  year · `PMID:…` · **DOI as a live link**, never bare text.
+- **Only** entries actually read in full text get the ` — full-text-verified (PMC…)` suffix, with the
+  PMC id linked to `https://pmc.ncbi.nlm.nih.gov/articles/PMC…/`. If such an entry has no PMC
+  record, write `— full-text-verified` with no id rather than inventing one.
+- **Take every field from the NCBI record**, not from memory or from the prose that cited it:
+  `esummary.fcgi?db=pubmed&id=<pmids>&retmode=json` returns title, journal, year, and the `articleids`
+  carrying both `doi` and `pmc` in one call. Resolve a missing PMID from the DOI (`"<doi>"[AID]`) or
+  the title before writing the entry.
+- **Percent-encode `(` and `)` in the DOI link destination** — `%28` / `%29`. Elsevier/Lancet DOIs
+  (`10.1016/S1474-4422(08)70173-X`) otherwise terminate the Markdown link at the first `)` and
+  silently produce a broken URL, while the same DOI is fine in the HTML `href`. Keep the literal
+  parentheses in the visible link text.
+- **Test the links before delivering.** A 403 is normal — publishers (NEJM, Lancet, Science, MDPI)
+  block automated agents, and `doi.org` still redirects correctly; a **404 or a DNS failure is a
+  real defect**, and that is what the check is for.
+- Non-paper entries (a search-strategy note, the endpoint/tool citation) stay prose: no PMID, no DOI,
+  no invented identifiers.
 
 ---
 

@@ -112,8 +112,11 @@ come between them, and nothing follows References:
     script filenames, repeat KG versions or give a timing line — the record holds all of it (it
     carries the header timing; pass `chat_started=` for whole-chat elapsed, else the active-query
     window). Token/cost isn't visible to the tooling — cite client figures or omit.
-12. **References** — numbered; DOI link per literature item, line-anchored full-text link for anything
-    verified against full text.
+12. **References** — numbered, one fixed shape: `Author, et al. Title. *Journal*. Year. PMID:… ·
+    [doi:…](https://doi.org/…)`, plus ` — full-text-verified ([PMC…](https://pmc.ncbi.nlm.nih.gov/articles/PMC…/))`
+    on entries actually read in full. Fields come from the NCBI `esummary` record, not from memory;
+    percent-encode `(`/`)` in DOI links (Lancet-style DOIs break Markdown otherwise); test the links —
+    403 is a publisher bot-block, 404 is a defect. See `references/report-structure.md`.
 
 **One kind of data, one place.** Group all results of the same kind into a *single* section — never
 scatter the same data type (geolocation, an entity type, an enrichment family, a network output)
