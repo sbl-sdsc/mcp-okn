@@ -149,9 +149,11 @@ so a reader can scan every result at once instead of mining paragraphs for them:
   full-text line, the divergences paragraph, evidence gaps, an overall-confidence summary. Per-row
   supporting detail — the individual studies, their numbers, the caveats — belongs in
   `<study>_literature_comparison.md`, which is what that deliverable is for.
-- **Keep the intro generic — no tallies.** Name the retrieval tools, say the claims were checked
-  against the primary literature, explain the full-text-verified marker, and point at
-  `<study>_literature_comparison.md`. Do **not** open with counts ("47 checkable claims: 28
+- **Keep the intro generic — no tallies, no marker legend.** Name the retrieval tools, say the
+  claims were checked against the primary literature, and point at `<study>_literature_comparison.md`.
+  Do **not** explain the full-text-verified marker ("claims marked *full-text-verified* were checked
+  against the article text") — every marked entry already carries it inline, so the sentence just
+  duplicates it, here and in §12. Do **not** open with counts ("47 checkable claims: 28
   supported, 15 novel, 4 contradicted… 74 unique PMIDs"): the reader has to reconcile them against a
   table with a different number of rows, and every one is a number to re-verify whenever the
   analysis changes. **The table is the count**, and the companion document is the per-claim record.
@@ -286,6 +288,10 @@ Numbered, and **every literature entry in exactly this shape**:
   reference's label is not enough on its own, since a reader scanning verdicts never reaches §12.
 - Non-paper entries (a search-strategy note, the endpoint/tool citation) stay prose: no PMID, no DOI,
   no invented identifiers.
+- **No preamble explaining the marker.** Do not open §12 with a sentence like *"Items marked † (or
+  full-text-verified) were checked against full text"* — every entry already carries the marker
+  inline, so the sentence only duplicates it (and the retrieval tools are already named in §8). A
+  one-line retrieval attribution is fine; a legend for the marker is not.
 
 ---
 

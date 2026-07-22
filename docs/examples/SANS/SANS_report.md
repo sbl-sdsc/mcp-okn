@@ -143,7 +143,7 @@ For countermeasure prioritisation we would rank: **(1) artificial gravity or int
 
 ## 8. Comparison with prior work
 
-According to PubMed and the Paperclip full-text corpus, the findings sit as follows. Claims marked **full-text-verified** were checked against the paper text, not the abstract. The supporting detail behind each row is in [SANS_literature_comparison.md](SANS_literature_comparison.md).
+According to PubMed and the Paperclip full-text corpus, the findings sit as follows. The supporting detail behind each row is in [SANS_literature_comparison.md](SANS_literature_comparison.md).
 
 | # | Claim | Concordance |
 |---|---|---|
@@ -194,7 +194,7 @@ Everything needed to replicate this analysis — the originating prompt, the rep
 
 ## 12. References
 
-Retrieved via the PubMed MCP connector and the Paperclip full-text corpus. According to PubMed, DOI links are given for every literature item; items verified against full text carry a Paperclip link.
+Retrieved via the PubMed MCP connector and the Paperclip full-text corpus.
 
 1. Mao XW, et al. Spaceflight environment induces mitochondrial oxidative damage in ocular tissue. *Radiat Res*. 2013. PMID:24033191 · [doi:10.1667/RR3309.1](https://doi.org/10.1667/RR3309.1)
 2. Overbey EG, et al. Spaceflight influences gene expression, photoreceptor integrity, and oxidative stress-related damage in the murine retina. *Sci Rep*. 2019. PMID:31527661 · [doi:10.1038/s41598-019-49453-x](https://doi.org/10.1038/s41598-019-49453-x) — full-text-verified ([PMC6746706](https://pmc.ncbi.nlm.nih.gov/articles/PMC6746706/))

@@ -258,7 +258,7 @@ Everything needed to replicate this analysis — the originating prompt, the rep
 
 ## 12. References
 
-Literature was retrieved with the **PubMed** MCP connector and the **Paperclip** full-text corpus. Items marked *(full-text-verified)* were checked against full text through Paperclip.
+Literature was retrieved with the **PubMed** MCP connector and the **Paperclip** full-text corpus.
 
 1. Smith JK. Osteoclasts and Microgravity. *Life (Basel)*. 2020. PMID:32947946 · [doi:10.3390/life10090207](https://doi.org/10.3390/life10090207)
 2. Chatziravdeli V, et al. Gene Expression in Osteoblasts and Osteoclasts Under Microgravity Conditions: A Systematic Review. *Curr Genomics*. 2019. PMID:31929726 · [doi:10.2174/1389202920666190422142053](https://doi.org/10.2174/1389202920666190422142053) — full-text-verified ([PMC6935951](https://pmc.ncbi.nlm.nih.gov/articles/PMC6935951/))

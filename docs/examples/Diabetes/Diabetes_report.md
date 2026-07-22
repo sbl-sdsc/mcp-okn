@@ -242,7 +242,7 @@ The population axis adds a dimension the molecular axes cannot. A two-fold preva
 
 ## 8. Comparison with prior work
 
-According to **PubMed** and the **Paperclip** full-text corpus, this analysis's claims were checked against the primary literature; the findings and their concordance are tabulated below. Claims marked *full-text-verified* were checked against the article text, not the abstract. The per-claim record, with the citations behind each row, is in [Diabetes_literature_comparison.md](Diabetes_literature_comparison.md).
+According to **PubMed** and the **Paperclip** full-text corpus, this analysis's claims were checked against the primary literature; the findings and their concordance are tabulated below. The per-claim record, with the citations behind each row, is in [Diabetes_literature_comparison.md](Diabetes_literature_comparison.md).
 
 | # | Claim | Concordance |
 |---|---|---|
@@ -304,7 +304,7 @@ Everything needed to replicate this analysis — the originating prompt, the rep
 
 ## 12. References
 
-Retrieved via the **PubMed** MCP connector and the **Paperclip** full-text corpus; items marked *full-text-verified* were checked against the article text.
+Retrieved via the **PubMed** MCP connector and the **Paperclip** full-text corpus.
 
 1. Suzuki K, et al. Genetic drivers of heterogeneity in type 2 diabetes pathophysiology. *Nature*. 2024. PMID:38374256 · [doi:10.1038/s41586-024-07019-6](https://doi.org/10.1038/s41586-024-07019-6) — full-text-verified ([PMC10937372](https://pmc.ncbi.nlm.nih.gov/articles/PMC10937372/))
 2. Mahajan A, et al. Fine-mapping type 2 diabetes loci to single-variant resolution using high-density imputation and islet-specific epigenome maps. *Nat Genet*. 2018. PMID:30297969 · [doi:10.1038/s41588-018-0241-6](https://doi.org/10.1038/s41588-018-0241-6)

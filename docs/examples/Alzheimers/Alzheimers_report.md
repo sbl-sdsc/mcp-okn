@@ -266,7 +266,7 @@ Everything needed to replicate this analysis — the originating prompt, the rep
 
 ## 12. References
 
-Literature retrieved via the **PubMed** MCP connector and the **Paperclip** full-text corpus; items marked *full-text-verified* were checked against the full text rather than the abstract.
+Literature retrieved via the **PubMed** MCP connector and the **Paperclip** full-text corpus.
 
 1. Jansen IE, et al. Genome-wide meta-analysis identifies new loci and functional pathways influencing Alzheimer's disease risk. *Nat Genet*. 2019. PMID:30617256 · [doi:10.1038/s41588-018-0311-9](https://doi.org/10.1038/s41588-018-0311-9)
 2. Bellenguez C, et al. New insights into the genetic etiology of Alzheimer's disease and related dementias. *Nat Genet*. 2022. PMID:35379992 · [doi:10.1038/s41588-022-01024-z](https://doi.org/10.1038/s41588-022-01024-z)
