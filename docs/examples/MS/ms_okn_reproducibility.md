@@ -212,6 +212,10 @@ Tier A = ≥ 4 distinct evidence types (n = 52); Tier B = exactly 3 (n = 80); Ti
 ### 10. Limitations carried into every downstream claim
 Associational not causal; KG-coverage-bounded not literature-bounded; no variant-level analysis possible (dbSNP ids appear only as strings inside biomarker labels); no protein-interaction layer obtainable; ncRNAs effectively absent; CIS unanalysable (no MONDO term); DE coverage thin (5/19 contrasts with gene rows) and interferon signature confounded by IFN-β treatment; enrichment symbol-bridged and descriptive; epidemiology ecological over modelled GBD estimates with latitude collinear with ancestry, UV, EBV timing and ascertainment; no sub-national MS geography so no join to US county-level SDoH/environmental graphs; SDoH layer is SemMedDB co-occurrence with no effect sizes; age/sex/ancestry stratification unavailable in any graph.
 
+## Literature comparison
+
+Ten headline claims from this analysis were checked against the primary literature (PubMed via the PubMed MCP connector, full text via Paperclip): **7 SUPPORTED, 3 PARTIALLY SUPPORTED** (claims 2, 5 and 9). The per-claim record with citations — including the four graph errors it surfaced (recorded in §9 above) and two further divergences that are scope rather than error — is in [ms_okn_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/ms_okn_literature_comparison.md).
+
 ## SPARQL queries
 
 #### Query 1
