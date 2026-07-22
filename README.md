@@ -425,7 +425,8 @@ When committing, **stage explicit paths** (`git add <path> …`), not `git add -
 working tree often carries untracked worked-example artifacts under `docs/reproduction/`
 that should not be swept into an unrelated commit.
 
-Deferred improvements are tracked in [BACKLOG.md](BACKLOG.md) — currently empty.
+Deferred improvements are tracked as
+[GitHub issues](https://github.com/sbl-sdsc/mcp-okn/issues).
 
 ### Verification notes
 
