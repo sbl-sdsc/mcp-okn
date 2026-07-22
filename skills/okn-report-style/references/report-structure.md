@@ -246,9 +246,18 @@ Numbered, and **every literature entry in exactly this shape**:
 
 - `Author, et al.` (first author only; the collective name for a consortium paper) · title · `*Journal*` ·
   year · `PMID:…` · **DOI as a live link**, never bare text.
-- **Only** entries actually read in full text get the ` — full-text-verified (PMC…)` suffix, with the
-  PMC id linked to `https://pmc.ncbi.nlm.nih.gov/articles/PMC…/`. If such an entry has no PMC
-  record, write `— full-text-verified` with no id rather than inventing one.
+- **`— full-text-verified` marks only entries actually read in full, and always carries a live link
+  to the full text that was read** — the marker without a link claims a verification the reader
+  cannot reach. Pick the link by what the full text came from:
+  - **In PMC** → the PMC id, linked: `— full-text-verified ([PMC10937372](https://pmc.ncbi.nlm.nih.gov/articles/PMC10937372/))`.
+  - **Read through Paperclip** (paywalled journals — *Science*, *NEJM*, *Lancet*, *JNNP* — are
+    rarely in PMC) → the Paperclip line-anchored URL the verification produced:
+    `— full-text-verified ([full text](https://citations.gxl.ai/…#Lxx))`. **Preserve this URL when you
+    mark the entry** — it is the evidence, and it cannot be reconstructed after the fact.
+  - Never invent a PMC id, and never downgrade a Paperclip-verified entry to a bare marker because it
+    has no PMC — use its Paperclip link. If an entry genuinely has neither (no PMC, no Paperclip
+    record), it was not verified against a reachable full text: drop the marker rather than leave it
+    linkless.
 - **Take every field from the NCBI record**, not from memory or from the prose that cited it:
   `esummary.fcgi?db=pubmed&id=<pmids>&retmode=json` returns title, journal, year, and the `articleids`
   carrying both `doi` and `pmc` in one call. Resolve a missing PMID from the DOI (`"<doi>"[AID]`) or

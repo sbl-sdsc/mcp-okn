@@ -115,8 +115,10 @@ come between them, and nothing follows References:
     carries the header timing; pass `chat_started=` for whole-chat elapsed, else the active-query
     window). Token/cost isn't visible to the tooling — cite client figures or omit.
 12. **References** — numbered, one fixed shape: `Author, et al. Title. *Journal*. Year. PMID:… ·
-    [doi:…](https://doi.org/…)`, plus ` — full-text-verified ([PMC…](https://pmc.ncbi.nlm.nih.gov/articles/PMC…/))`
-    on entries actually read in full. Fields come from the NCBI `esummary` record, not from memory;
+    [doi:…](https://doi.org/…)`, plus ` — full-text-verified (<link>)` on entries actually read in
+    full, where `<link>` is the **PMC** id (`[PMC…](…)`) or, for a paywalled paper read through
+    Paperclip, the **Paperclip line-anchored URL** (`[full text](https://citations.gxl.ai/…#Lxx)`) —
+    never a bare marker with no link. Fields come from the NCBI `esummary` record, not from memory;
     percent-encode `(`/`)` in DOI links (Lancet-style DOIs break Markdown otherwise); test the links —
     403 is a publisher bot-block, 404 is a defect. **Preprints**: label them
     `*<Server>* (preprint — not peer-reviewed)` using the server's full name, never the `Res Sq`-style
