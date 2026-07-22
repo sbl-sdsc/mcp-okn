@@ -113,6 +113,11 @@ so a reader can scan every result at once instead of mining paragraphs for them:
   enough: the reader must see *why* without opening the companion document. Where a study draws a
   distinction the four labels don't carry (e.g. *novel in this framing*, *supported by analogy*),
   keep its own label rather than flattening it.
+- **Every Concordance cell carries a citation** — `[n]` markers resolving to §12 — or says in
+  words why it has none (*"no source found"*, which is itself a NOVEL-OR-UNVERIFIED result). A
+  cell that names a study in prose without a marker leaves the reader no route from the verdict
+  to the paper. Derive the mapping from the companion document's per-claim PMIDs rather than from
+  memory, and never cite a PMID that has no §12 entry.
 - **Number the rows.** The prose, the divergence paragraph and
   `<study>_literature_comparison.md` all cite claims by number ("Claim 7"), which only works if
   the table numbers them.
