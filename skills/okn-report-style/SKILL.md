@@ -78,7 +78,9 @@ section-by-section template — what each section must contain, the Sources/inte
 title block, and example figure legends — is **`references/report-structure.md`**; **read it before
 writing the report.** Begin with a **title block** (a blockquote stating the domain framing — unit of
 analysis, coverage, level of inference, the key caveat — plus an **Abbreviations** line). Then this
-order, with the rules that must not be skipped:
+order, with the rules that must not be skipped. **The last two sections are always Reproducibility
+then References, in that order** — Reproducibility sits immediately before References, nothing may
+come between them, and nothing follows References:
 
 1. **Executive summary** — headline result, key numbers, top entities.
 2. **Sources used** — **REQUIRED in every report; never omit it.** One row per KG *actually queried*,

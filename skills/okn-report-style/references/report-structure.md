@@ -170,6 +170,12 @@ back-matter that follow). Two parts:
   duplicate it elsewhere in the report.
 
 ## 11. Reproducibility
+**Placement is fixed: Reproducibility goes immediately before References, and those two are the
+final sections of the report.** Nothing may sit between them, and nothing follows References — a
+Reproducibility section that ends the document (with References earlier, or absent) is wrong, as is
+a "Sources"/"Deliverables" section appended after them. §10 is the last section a reader reads as
+prose; §11 and §12 are back-matter and stay in that order.
+
 **One sentence, then the link. This section is a signpost, not a summary.** Say that everything
 needed to replicate the analysis — originating prompt, replicator specification, every supporting
 SPARQL query verbatim with its row count, verified quantities, pinned KG versions and timing — is
