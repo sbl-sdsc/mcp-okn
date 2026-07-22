@@ -95,6 +95,30 @@ wherever a literature or authoritative reference source exists for the domain. *
 tool up front** (e.g. *"According to PubMed and the Paperclip corpus…"*) and **mark which central
 claims were verified against full text**. Flag discrepancies as testable predictions.
 
+**Required: a numbered per-claim table.** §8 leads with a table — one row per checked claim —
+so a reader can scan every verdict at once instead of mining paragraphs for them:
+
+```
+| # | Claim | Verdict |
+|---|---|---|
+| 1 | <the claim as this analysis stated it>   | **SUPPORTED** — <what the literature shows, plus the caveat that qualifies it> |
+| 2 | <…>                                      | **PARTIALLY SUPPORTED** — <which half holds, which half doesn't> |
+```
+
+- The **Verdict** cell opens with the bolded label — **SUPPORTED** / **PARTIALLY SUPPORTED** /
+  **NOVEL-OR-UNVERIFIED** / **CONTRADICTED** — then an em-dash and the reason. A bare label is not
+  a verdict: the reader must see *why* without opening the companion document.
+- **Number the rows.** The prose, the divergence paragraph and
+  `<study>_literature_comparison.md` all cite claims by number ("Claim 7"), which only works if
+  the table numbers them.
+- Follow the table with (a) one line naming **which central claims were checked against full
+  text** rather than abstracts, and (b) a short **"Where the KG evidence diverges from the
+  literature"** paragraph that separates outright **errors in the graphs** from differences of
+  **scope**.
+
+Worked example: MS §8 — ten numbered claims, 7 SUPPORTED / 3 PARTIALLY SUPPORTED, followed by the
+full-text line and four graph errors called out by claim number.
+
 **Call this a literature *comparison*, never a *validation*.** The verdict is four-way, so
 **NOVEL is a finding, not a failure to validate** — and the comparison runs both ways: it just as
 often exposes an error in the *graphs* (a mis-assigned drug target, an entity-resolution
