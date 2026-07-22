@@ -204,7 +204,7 @@ Sorting by cross-KG support rather than by score reorders the list usefully: gen
 
 ## 11. Reproducibility
 
-The single reproducibility deliverable is [SANS_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/SANS/SANS_reproducibility.md). It leads with the verbatim originating prompt, then the replicator specification (contrast rules, thresholds, join keys, backgrounds, the scoring formula and the ortholog fan-out penalty, and the declared deviations), then every logged, non-exploratory SPARQL query verbatim with its row count and a Mermaid diagram of its graph pattern. The analysis scripts are in `scripts/` (`make_stats.py`, `make_figures.py`, `make_fig6_map.py`, `make_workbook.py`, plus the skill helpers `collapse_orthologs.py`, `enrichment.py`, `mechanistic_map.py`, `okn_figstyle.py`, `build_report_html.py`), and all intermediate extracts are in `data/`. Knowledge-graph versions and load dates are pinned in §2 from `get_kg_version`. The timing line in the reproducibility header gives the study active window (first to last logged query, UTC). Token and cost figures are not captured by the tooling and are therefore not reported.
+Everything needed to replicate this analysis — the originating prompt, the replicator specification, every supporting SPARQL query verbatim with its row count, the verified quantities, the pinned KG versions and the timing — is in **[SANS_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/SANS/SANS_reproducibility.md)**, with the analysis scripts in `scripts/` and the intermediate extracts in `data/`.
 
 ## 12. References
 

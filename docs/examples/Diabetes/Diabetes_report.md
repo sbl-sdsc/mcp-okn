@@ -308,7 +308,7 @@ Reading down the table, the top is dominated by genes with the *curated + geneti
 
 ## 11. Reproducibility
 
-The complete replicator record — the originating prompt verbatim, the replicator specification (identifier scope, evidence-stream definitions, scoring weights, tier rules, enrichment backgrounds and thresholds, join recipes, verified quantities and limitations), and every supporting SPARQL query verbatim with its row count and a Mermaid diagram of its graph pattern — is in **[Diabetes_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/Diabetes/Diabetes_reproducibility.md)**. The analysis scripts are in `scripts/` (`make_figures.py`, `make_map.py`, `make_figures2.py`, `build_counties.py`, `build_xlsx.py`, `build_html.py`, `enrichment.py`, `mechanistic_map.py`, `build_report_html.py`); intermediate extracts are in `data/`; headline figures are sourced from a single `stats.json`. KG versions and update dates are pinned in §2 from `get_kg_version`. Timing is reported in the reproducibility record's header. Token and cost figures are not captured by the tooling and are therefore not cited.
+Everything needed to replicate this analysis — the originating prompt, the replicator specification, every supporting SPARQL query verbatim with its row count, the verified quantities, the pinned KG versions and the timing — is in **[Diabetes_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/Diabetes/Diabetes_reproducibility.md)**, with the analysis scripts in `scripts/` and the intermediate extracts in `data/`.
 
 ---
 

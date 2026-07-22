@@ -170,16 +170,26 @@ back-matter that follow). Two parts:
   duplicate it elsewhere in the report.
 
 ## 11. Reproducibility
-Pointers to the single `_reproducibility.md` (the replicator spec plus the verbatim query record —
-`create_reproducibility_record` with the spec passed as `appendix=`), the scripts, and the pinned KG
-versions. State a timing line from `create_reproducibility_record`'s header: by default the **study active
-window** (`**Study active window:**`, first→last logged-query wall-clock, UTC; a lower bound that
-excludes pre-first-query framing and post-last-query writing, and collapses when large extraction
-queries went unlogged). For **whole-chat elapsed time** instead, pass `chat_started` (ISO-8601, when
-the chat began — the server can't know it) and optionally `chat_ended`; the header then reads
+**One sentence, then the link. This section is a signpost, not a summary.** Say that everything
+needed to replicate the analysis — originating prompt, replicator specification, every supporting
+SPARQL query verbatim with its row count, verified quantities, pinned KG versions and timing — is
+in **`<study>_reproducibility.md`** (absolute `https://github.com/<org>/<repo>/blob/main/…` URL),
+with scripts in `scripts/` and intermediate extracts in `data/`.
+
+Do **not** restate the spec here: no enumerated script filenames (`scripts/` is its own listing),
+no repeated KG versions (§2 pins them), no timing line, no re-derived counts. Every one of those
+already lives in the record this section points at, and a second copy is a second thing to keep in
+sync. If a fact exists *only* in §11 — a post-hoc re-verification, a corrected quantity — it
+belongs in `_reproducibility.md`; move it there rather than keeping the section long.
+
+The record itself still carries the timing, written by `create_reproducibility_record` (the spec
+passed as `appendix=`): by default the **study active window** (first→last logged-query wall-clock,
+UTC — a lower bound that excludes pre-first-query framing and post-last-query writing, and
+collapses when large extraction queries went unlogged); for **whole-chat elapsed time** instead,
+pass `chat_started` (ISO-8601 — the server can't know it) and optionally `chat_ended`, giving
 `**Elapsed time:** <start>–<end> UTC (<elapsed>)`. Token/cost is not captured by the tooling (the
-server sees only tool calls); if you cite it, use client figures (Claude Code `/cost` / API `usage`),
-labelled as client-measured — do not invent a number.
+server sees only tool calls); if you cite it, use client figures (Claude Code `/cost` / API
+`usage`), labelled as client-measured — do not invent a number.
 
 ## 12. References
 Numbered. Attribute the retrieval tool. Give a **DOI link** for each literature item (e.g. PubMed),

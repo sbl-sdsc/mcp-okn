@@ -105,9 +105,11 @@ order, with the rules that must not be skipped:
 9. **Full ranked results** — pointer to xlsx / tsv + the interactive HTML table + a prose slice.
 10. **Summary of findings & limitations** — **always end the report here**: a findings recap, then the
     caveats as a numbered list. **This is the single home for the caveats list — don't duplicate it.**
-11. **Reproducibility** — pointers to the single `_reproducibility.md`, the scripts, and pinned KG
-    versions, plus the header timing line (pass `chat_started=` for whole-chat elapsed, else the
-    active-query window). Token/cost isn't visible to the tooling — cite client figures or omit.
+11. **Reproducibility** — **one sentence and a link** to the single `_reproducibility.md`, naming
+    what it contains; scripts in `scripts/`, extracts in `data/`. Do not restate the spec, list
+    script filenames, repeat KG versions or give a timing line — the record holds all of it (it
+    carries the header timing; pass `chat_started=` for whole-chat elapsed, else the active-query
+    window). Token/cost isn't visible to the tooling — cite client figures or omit.
 12. **References** — numbered; DOI link per literature item, line-anchored full-text link for anything
     verified against full text.
 

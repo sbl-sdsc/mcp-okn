@@ -296,7 +296,7 @@ Adversarial literature checking supported six claims outright, partially support
 
 ## 11. Reproducibility
 
-The complete replicator specification — every join recipe and predicate IRI, the enrichment backgrounds and their construction, the tiering rule, the DE filtering rule, the verified quantities and the limitations — together with the **verbatim text of every supporting SPARQL query and its row count**, is in **[MS_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/MS_reproducibility.md)**. Analysis and figure scripts are in `scripts/`; intermediate extracts in `data/`. Knowledge-graph versions and last-updated dates are pinned in §2 and repeated in the workbook's `Source Inventory` sheet, taken live from `get_kg_version`. The study active window (first to last logged query, UTC) is stated in the reproducibility record header. Token and cost figures are not captured by the tooling and are not cited.
+Everything needed to replicate this analysis — the originating prompt, the replicator specification, every supporting SPARQL query verbatim with its row count, the verified quantities, the pinned KG versions and the timing — is in **[MS_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/MS_reproducibility.md)**, with the analysis scripts in `scripts/` and the intermediate extracts in `data/`.
 
 ---
 

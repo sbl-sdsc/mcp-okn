@@ -262,7 +262,7 @@ The ranking behaves as intended: the head is occupied by genes that are simultan
 
 ## 11. Reproducibility
 
-The single reproducibility deliverable is **[Alzheimers_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/Alzheimers/Alzheimers_reproducibility.md)**, which contains the originating prompt verbatim, the replicator specification (join recipes, IRI rewrites, thresholds, scoring formula, verified quantities and limitations), and every supporting SPARQL query verbatim with its row count and a query-shape diagram. All headline counts were re-verified live against the endpoint at the close of the study with zero drift (22 MONDO AD terms; 180 spoke-okn AD genes). Analysis code is in `scripts/` — `ad_enrichment.py` (hypergeometric ORA + BH FDR), `make_figures.py`, `make_mechmap.py`, `build_stats_and_xlsx.py` — and all intermediate extracts are in `data/`, with every headline number sourced from a single `data/stats.json`. KG versions and update dates are pinned in §2. Timing is reported in the reproducibility record's header as the study active window (first→last logged query, UTC); token and cost figures are not visible to the tooling and are therefore not cited.
+Everything needed to replicate this analysis — the originating prompt, the replicator specification, every supporting SPARQL query verbatim with its row count, the verified quantities, the pinned KG versions and the timing — is in **[Alzheimers_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/Alzheimers/Alzheimers_reproducibility.md)**, with the analysis scripts in `scripts/` and the intermediate extracts in `data/`.
 
 ## 12. References
 
