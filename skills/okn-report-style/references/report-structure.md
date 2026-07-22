@@ -143,6 +143,12 @@ so a reader can scan every result at once instead of mining paragraphs for them:
   cell that names a study in prose without a marker leaves the reader no route from the verdict
   to the paper. Derive the mapping from the companion document's per-claim PMIDs rather than from
   memory, and never cite a PMID that has no §12 entry.
+- **Do not restate the table in prose.** A paragraph per verdict group ("**Supported.** …",
+  "**Contradicted.** …") that walks the same findings again doubles the section's length and adds
+  nothing a reader of the table needs. Everything below the table must be **cross-cutting**: the
+  full-text line, the divergences paragraph, evidence gaps, an overall-confidence summary. Per-row
+  supporting detail — the individual studies, their numbers, the caveats — belongs in
+  `<study>_literature_comparison.md`, which is what that deliverable is for.
 - **Reconcile the count with the rows.** If the section states a tally ("47 checkable claims"), the
   table must either have that many rows or say explicitly how they relate — *"those 47 claims bear
   on the 16 findings tabulated below"*. A stated total that does not match the visible row count
