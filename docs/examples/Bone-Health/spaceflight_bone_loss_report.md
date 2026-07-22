@@ -191,7 +191,7 @@ Four testable predictions follow. (1) A GeneLab bone-tissue release (femur, calv
 
 Literature comparison used **PubMed** (via its MCP connector) and the **Paperclip** full-text corpus; both were confirmed available before the analysis began. Findings are graded supported / partially supported / novel-in-this-framing / contradicted.
 
-| # | Claim | Verdict |
+| # | Claim | Concordance |
 |---|---|---|
 | 1 | Formation/resorption dissociation and the osteoclast axis (M-CSF, RANKL, calcineurin→NFATc1) | **SUPPORTED** — astronauts lose 1.0–1.5 % of bone mass per month through impaired osteoblast function with upregulated resorption [1]; microgravity impairs osteoblast differentiation and enhances osteoclast maturation [2] (full-text-verified); muscle–bone crosstalk justifies the antigravity-muscle surrogate [3] (full-text-verified) |
 | 2 | Countermeasure hierarchy — ARED alone versus ARED plus bisphosphonate | **SUPPORTED** — ARED alone does not suppress resorption biomarkers or prevent trabecular loss, whereas alendronate + ARED prevents all hip declines [4]; sclerostin rose 10–15 % and renal-stone risk rose in every group [5]; only ARED + bisphosphonate maintained lumbar-spine BMD in 51 ISS crew [6] |

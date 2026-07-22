@@ -96,18 +96,23 @@ tool up front** (e.g. *"According to PubMed and the Paperclip corpus…"*) and *
 claims were verified against full text**. Flag discrepancies as testable predictions.
 
 **Required: a numbered per-claim table.** §8 leads with a table — one row per checked claim —
-so a reader can scan every verdict at once instead of mining paragraphs for them:
+so a reader can scan every result at once instead of mining paragraphs for them:
 
 ```
-| # | Claim | Verdict |
+| # | Claim | Concordance |
 |---|---|---|
 | 1 | <the claim as this analysis stated it>   | **SUPPORTED** — <what the literature shows, plus the caveat that qualifies it> |
 | 2 | <…>                                      | **PARTIALLY SUPPORTED** — <which half holds, which half doesn't> |
 ```
 
-- The **Verdict** cell opens with the bolded label — **SUPPORTED** / **PARTIALLY SUPPORTED** /
+- Head the third column **Concordance**, not *Verdict*: the row records how this finding and the
+  prior work relate, and the same courtroom framing ruled out below for *validation* is wrong in
+  a column header too.
+- The **Concordance** cell opens with the bolded label — **SUPPORTED** / **PARTIALLY SUPPORTED** /
   **NOVEL-OR-UNVERIFIED** / **CONTRADICTED** — then an em-dash and the reason. A bare label is not
-  a verdict: the reader must see *why* without opening the companion document.
+  enough: the reader must see *why* without opening the companion document. Where a study draws a
+  distinction the four labels don't carry (e.g. *novel in this framing*, *supported by analogy*),
+  keep its own label rather than flattening it.
 - **Number the rows.** The prose, the divergence paragraph and
   `<study>_literature_comparison.md` all cite claims by number ("Claim 7"), which only works if
   the table numbers them.

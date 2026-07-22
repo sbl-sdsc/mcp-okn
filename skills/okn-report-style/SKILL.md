@@ -90,10 +90,11 @@ order, with the rules that must not be skipped:
 7. **Discussion** — synthesise the axes; state implications / targets and the testable predictions.
 8. **Comparison with prior work** — per-finding concordance with citations; needs the PubMed /
    Paperclip connectors (preflight them, or state §8 is omitted — never drop it silently).
-   **Lead with a numbered `| # | Claim | Verdict |` table** — one row per checked claim, each
-   verdict a bolded label (**SUPPORTED** / **PARTIALLY SUPPORTED** / **NOVEL-OR-UNVERIFIED** /
+   **Lead with a numbered `| # | Claim | Concordance |` table** — one row per checked claim, each
+   cell a bolded label (**SUPPORTED** / **PARTIALLY SUPPORTED** / **NOVEL-OR-UNVERIFIED** /
    **CONTRADICTED**) followed by its reason — then the full-text line and the divergences
-   paragraph. Prose-only §8s hide the verdict distribution; see `references/report-structure.md`. The
+   paragraph. Head the column *Concordance*, never *Verdict*: the report is not passing judgement.
+   Prose-only §8s hide the distribution; see `references/report-structure.md`. The
    full per-claim record goes in `<study>_literature_comparison.md`; §8 summarises it and
    **links to it** (absolute `https://github.com/<org>/<repo>/blob/main/…` URL — a relative
    link dies once the self-contained `.html` travels away from the repo).

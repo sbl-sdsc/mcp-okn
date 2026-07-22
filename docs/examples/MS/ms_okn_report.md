@@ -223,7 +223,7 @@ Finally, a methodological implication. Three of the fourteen graphs queried retu
 
 According to **PubMed** (via the PubMed MCP connector) and full-text sources retrieved through **Paperclip**, ten headline claims from this analysis were checked against the primary literature; every PMID below was resolved and its metadata verified, and claims that could not be corroborated are marked as such. The full per-claim document with citations is [ms_okn_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/ms_okn_literature_comparison.md).
 
-| # | Claim | Verdict |
+| # | Claim | Concordance |
 |---|---|---|
 | 1 | Consensus gene core is the canonical MS GWAS immune set | **SUPPORTED** — every gene falls inside IMSGC 2011 / 2013 / 2019 sets. Caveat: the flat ranking hides that HLA-DRB1\*15:01 dwarfs all non-MHC effects |
 | 2 | JAK-STAT / interleukin signalling as core mechanism | **PARTIALLY SUPPORTED** — biology canonical; therapeutic inference half wrong. No JAK inhibitor is in late-stage MS development; the IL-12/23 arm was tested and **failed** (ustekinumab); the IL-2R arm was drugged then withdrawn (daclizumab). BTK acts on BCR/Fc/TLR signalling, not JAK-STAT |

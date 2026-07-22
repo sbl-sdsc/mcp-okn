@@ -145,7 +145,7 @@ For countermeasure prioritisation we would rank: **(1) artificial gravity or int
 
 According to PubMed and the Paperclip full-text corpus, the findings sit as follows. Claims marked **full-text-verified** were checked against the paper text, not the abstract.
 
-| # | Claim | Verdict |
+| # | Claim | Concordance |
 |---|---|---|
 | 1 | Mitochondrial and oxidative damage in the spaceflight eye | **SUPPORTED** — STS-135 mice showed altered mitochondria-associated apoptotic and ROS genes, elevated 4-hydroxynonenal and apoptosis in the inner nuclear and ganglion cell layers [1] — a different mission, by protein/histological rather than transcriptomic means |
 | 2 | ER stress / chaperone induction in the spaceflight retina | **SUPPORTED (full-text-verified)** — *Hsp90aa1*, *Hsp90b1* and *Hspa4l* up in spaceflight retina [2]; HSP90AA1 and HSP90B1 are both in our conserved core |

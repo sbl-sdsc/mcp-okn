@@ -203,7 +203,7 @@ Three results survive the caveats and are worth carrying forward.
 
 According to **PubMed** and the **Paperclip** full-text corpus, the central findings are largely *supported*, with the value added being reconstruction from independent graph sources rather than novelty.
 
-| # | Claim | Verdict |
+| # | Claim | Concordance |
 |---|---|---|
 | 1 | Consensus core (APOE, APP, PSEN1/2, SORL1, ABCA7, ABCA1, ADAM10, CD2AP, CLU, CR1, PICALM, TREM2, BIN1, MS4A, EPHA1, CASS4, INPP5D) | **SUPPORTED** — Jansen *et al.* 2019 (29 loci, 215 genes) [1] and Bellenguez *et al.* 2022 (75 loci, 42 new) [2] recover essentially this panel from GWAS alone. |
 | 2 | Microglia + lipid metabolism + APP degradation as the dominant enriched processes | **SUPPORTED** — [1] reports associated genes "strongly expressed in immune-related tissues and cell types (spleen, liver, and **microglia**)" and gene-set analyses implicating "**lipid-related processes and degradation of amyloid precursor proteins**" — the same three axes this study recovers at 15.4×, 15.5× and 30.7×. [2] independently confirms "amyloid/tau pathways and highlighted **microglia** implication". |

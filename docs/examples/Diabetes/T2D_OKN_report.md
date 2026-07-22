@@ -246,7 +246,7 @@ According to **PubMed** and the **Paperclip** full-text corpus, 47 checkable cla
 
 The 47 checkable claims group as follows; the complete per-claim record is in the companion document linked above.
 
-| # | Claim | Verdict |
+| # | Claim | Concordance |
 |---|---|---|
 | 1 | Tier-A core is the established T2D core (TCF7L2, HNF1A/B, HNF4A, KCNJ11, ABCC8, GCK, FTO, IRS1, PPARG, SLC30A8, IGF2BP2, HMGA2 — plus ZMIZ1 and JAZF1) | **SUPPORTED** — confirmed against the loci list in the *full text* of the largest multi-ancestry T2D GWAS to date [1], cross-checked against [2] |
 | 2 | Ancestry-specific entries GP2 and SLC16A11 are genuine rather than noise | **SUPPORTED** — GP2 is a Japanese-enriched missense T2D variant [3]; SLC16A11 replicates in Mexican-origin cohorts [4] |
