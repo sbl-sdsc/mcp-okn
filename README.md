@@ -122,20 +122,23 @@ assay activity → disease), and one of cumulative environmental-justice burden
 across U.S. counties (PFAS, regulated facilities, social vulnerability, court
 activity, rurality, and treatment-service scarcity, ranked by cross-source
 agreement) — each finding tagged with its source(s) and
-evidence kind, then ranked by cross-source agreement. Every case study ships an
-interactive HTML report, a Markdown report, and a replayable analysis transcript
-(each verbatim SPARQL query preserved).
+evidence kind, then ranked by cross-source agreement. Every case study ships a
+full report — interactive HTML where the renderer produced one, Markdown
+otherwise — and a replayable analysis transcript (each verbatim SPARQL query
+preserved).
 
-| Case study | Report (HTML) | Report (Markdown) | Analysis transcript | Data (Excel) |
-|---|---|---|---|---|
-| **Type 2 diabetes** — 16 KGs, 2,117 genes (381 multi-source) | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Diabetes/T2D_OKN_report.html) | [Markdown](docs/examples/Diabetes/T2D_OKN_report.md) | [Reproducibility](docs/examples/Diabetes/T2D_OKN_reproducibility.md) | [Excel](docs/examples/Diabetes/T2D_OKN_results.xlsx) |
-| **Alzheimer's disease** — 8 KGs, 2,662 genes (318 multi-source) | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Alzheimers/alzheimers_okn_report.html) | [Markdown](docs/examples/Alzheimers/alzheimers_okn_report.md) | [Reproducibility](docs/examples/Alzheimers/alzheimers_okn_reproducibility.md) | [Excel](docs/examples/Alzheimers/alzheimers_okn_results.xlsx) |
-| **Multiple sclerosis** — 14 KGs, 2,397 genes (52 Tier A) | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/MS/ms_okn_report.html) | [Markdown](docs/examples/MS/ms_okn_report.md) | [Reproducibility](docs/examples/MS/ms_okn_reproducibility.md) | [Excel](docs/examples/MS/ms_okn_results.xlsx) |
-| **Spaceflight-induced bone loss** — 8 KGs, 2,686-gene flight signature (777 core) | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Bone-Health/spaceflight_bone_loss_report.html) | [Markdown](docs/examples/Bone-Health/spaceflight_bone_loss_report.md) | [Reproducibility](docs/examples/Bone-Health/spaceflight_bone_loss_reproducibility.md) | [Excel](docs/examples/Bone-Health/spaceflight_bone_loss_results.xlsx) |
-| **Spaceflight-associated neuro-ocular syndrome (SANS)** — 6 KGs, 169-gene cross-species core | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/SANS/SANS_cross_species_transcriptomics_report.html) | [Markdown](docs/examples/SANS/SANS_cross_species_transcriptomics_report.md) | [Reproducibility](docs/examples/SANS/SANS_cross_species_transcriptomics_reproducibility.md) | [Excel](docs/examples/SANS/SANS_cross_species_transcriptomics_results.xlsx) |
-| **PFAS source prioritization** — 5 KGs, 2,949 S2 cells, 12,714 co-located facilities | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/PFAS/pfas_source_attribution_report.html) | [Markdown](docs/examples/PFAS/pfas_source_attribution_report.md) | [Reproducibility](docs/examples/PFAS/pfas_source_attribution_reproducibility.md) | [Excel](docs/examples/PFAS/pfas_source_attribution_results.xlsx) |
-| **Chemical exposome of bisphenols** — 14 KGs, 216 findings | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Exposome/bisphenol_exposome_report.html) | [Markdown](docs/examples/Exposome/bisphenol_exposome_report.md) | [Transcript](docs/examples/Exposome/bisphenol_exposome_transcript.md) | — |
-| **Cumulative environmental-justice burden** — 12 KGs, 70,839 findings | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Environmental-Justice/report.html) | [Markdown](docs/examples/Environmental-Justice/report.md) | [Transcript](docs/examples/Environmental-Justice/transcript.md) | — |
+| Case study | Report | Analysis transcript | Data (Excel) |
+|---|---|---|---|
+| **Type 2 diabetes** — 16 KGs, 2,117 genes (381 multi-source) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Diabetes/T2D_OKN_report.html) | [Reproducibility](docs/examples/Diabetes/T2D_OKN_reproducibility.md) | [Excel](docs/examples/Diabetes/T2D_OKN_results.xlsx) |
+| **Alzheimer's disease** — 8 KGs, 2,662 genes (318 multi-source) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Alzheimers/alzheimers_okn_report.html) | [Reproducibility](docs/examples/Alzheimers/alzheimers_okn_reproducibility.md) | [Excel](docs/examples/Alzheimers/alzheimers_okn_results.xlsx) |
+| **Multiple sclerosis** — 14 KGs, 2,397 genes (52 Tier A) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/MS/ms_okn_report.html) | [Reproducibility](docs/examples/MS/ms_okn_reproducibility.md) | [Excel](docs/examples/MS/ms_okn_results.xlsx) |
+| **Spaceflight-induced bone loss** — 8 KGs, 2,686-gene flight signature (777 core) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Bone-Health/spaceflight_bone_loss_report.html) | [Reproducibility](docs/examples/Bone-Health/spaceflight_bone_loss_reproducibility.md) | [Excel](docs/examples/Bone-Health/spaceflight_bone_loss_results.xlsx) |
+| **Spaceflight-associated neuro-ocular syndrome (SANS)** — 6 KGs, 169-gene cross-species core | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/SANS/SANS_cross_species_transcriptomics_report.html) | [Reproducibility](docs/examples/SANS/SANS_cross_species_transcriptomics_reproducibility.md) | [Excel](docs/examples/SANS/SANS_cross_species_transcriptomics_results.xlsx) |
+| **PFAS source prioritization** — 5 KGs, 2,949 S2 cells, 12,714 co-located facilities | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/PFAS/pfas_source_attribution_report.html) | [Reproducibility](docs/examples/PFAS/pfas_source_attribution_reproducibility.md) | [Excel](docs/examples/PFAS/pfas_source_attribution_results.xlsx) |
+| **Chemical exposome of bisphenols** — 14 KGs, 216 findings | [Report](docs/examples/Exposome/bisphenol_exposome_report.md) | [Transcript](docs/examples/Exposome/bisphenol_exposome_transcript.md) | — |
+| **Cumulative environmental-justice burden** — 12 KGs, 70,839 findings | [Report](docs/examples/Environmental-Justice/report.md) | [Transcript](docs/examples/Environmental-Justice/transcript.md) | — |
+
+Each report's Markdown source sits beside it in `docs/examples/`.
 
 ---
 
