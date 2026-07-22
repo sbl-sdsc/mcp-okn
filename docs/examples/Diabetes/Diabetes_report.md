@@ -242,9 +242,7 @@ The population axis adds a dimension the molecular axes cannot. A two-fold preva
 
 ## 8. Comparison with prior work
 
-According to **PubMed** and the **Paperclip** full-text corpus, 47 checkable claims were classified: **28 supported, 15 novel or under-studied, 4 contradicted**. Claims marked *full-text-verified* were checked against the article text, not the abstract. The complete per-claim record with 74 unique PMIDs is in [Diabetes_literature_comparison.md](Diabetes_literature_comparison.md).
-
-Those 47 claims bear on the **16 findings** tabulated below; the companion document records each claim individually.
+According to **PubMed** and the **Paperclip** full-text corpus, this analysis's claims were checked against the primary literature; the findings and their concordance are tabulated below. Claims marked *full-text-verified* were checked against the article text, not the abstract. The per-claim record, with the citations behind each row, is in [Diabetes_literature_comparison.md](Diabetes_literature_comparison.md).
 
 | # | Claim | Concordance |
 |---|---|---|

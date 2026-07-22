@@ -149,10 +149,13 @@ so a reader can scan every result at once instead of mining paragraphs for them:
   full-text line, the divergences paragraph, evidence gaps, an overall-confidence summary. Per-row
   supporting detail — the individual studies, their numbers, the caveats — belongs in
   `<study>_literature_comparison.md`, which is what that deliverable is for.
-- **Reconcile the count with the rows.** If the section states a tally ("47 checkable claims"), the
-  table must either have that many rows or say explicitly how they relate — *"those 47 claims bear
-  on the 16 findings tabulated below"*. A stated total that does not match the visible row count
-  reads as an arithmetic error and costs the section its credibility.
+- **Keep the intro generic — no tallies.** Name the retrieval tools, say the claims were checked
+  against the primary literature, explain the full-text-verified marker, and point at
+  `<study>_literature_comparison.md`. Do **not** open with counts ("47 checkable claims: 28
+  supported, 15 novel, 4 contradicted… 74 unique PMIDs"): the reader has to reconcile them against a
+  table with a different number of rows, and every one is a number to re-verify whenever the
+  analysis changes. **The table is the count**, and the companion document is the per-claim record.
+  Referring to a specific row by number ("Claim 7") is fine — that is a cross-reference, not a tally.
 - **Never write "linked above" / "see the link"** about a companion document. The `.html` *names*
   those files rather than linking them (see *Linking between deliverables*), so navigational
   phrasing is false in exactly the rendering most readers get. Refer to the document by name.
