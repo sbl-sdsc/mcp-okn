@@ -53,7 +53,7 @@ Objectives
 
 ## Notes
 
-Deliverables: spaceflight_bone_loss_report.md / .html (rendered from the .md, check_report_parity PASS), spaceflight_bone_loss_results.xlsx (11 sheets), figures/fig1–fig9, data/ extracts, scripts/. Literature comparison used the PubMed and Paperclip MCP connectors (both confirmed available at preflight); items marked full-text-verified were checked against Paperclip full text.
+Deliverables: Bone-Health_report.md / .html (rendered from the .md, check_report_parity PASS), Bone-Health_results.xlsx (11 sheets), figures/fig1–fig9, data/ extracts, scripts/. Literature comparison used the PubMed and Paperclip MCP connectors (both confirmed available at preflight); items marked full-text-verified were checked against Paperclip full text.
 
 ## Knowledge graphs used
 

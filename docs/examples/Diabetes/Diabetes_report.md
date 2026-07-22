@@ -242,7 +242,7 @@ The population axis adds a dimension the molecular axes cannot. A two-fold preva
 
 ## 8. Comparison with prior work
 
-According to **PubMed** and the **Paperclip** full-text corpus, 47 checkable claims were classified: **28 supported, 15 novel or under-studied, 4 contradicted**. Claims marked *full-text-verified* were checked against the article text, not the abstract. The complete per-claim record with 74 unique PMIDs is in [T2D_OKN_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/Diabetes/T2D_OKN_literature_comparison.md).
+According to **PubMed** and the **Paperclip** full-text corpus, 47 checkable claims were classified: **28 supported, 15 novel or under-studied, 4 contradicted**. Claims marked *full-text-verified* were checked against the article text, not the abstract. The complete per-claim record with 74 unique PMIDs is in [Diabetes_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/Diabetes/Diabetes_literature_comparison.md).
 
 The 47 checkable claims group as follows; the complete per-claim record is in the companion document linked above.
 
@@ -277,7 +277,7 @@ The 47 checkable claims group as follows; the complete per-claim record is in th
 
 ## 9. Full ranked results
 
-The complete ranked gene table (2117 rows, all evidence axes preserved separately), together with 21 supporting sheets — GO and Reactome enrichment, trait gene-set enrichment, coding and non-coding variant layers, phenotypes, drugs and drug targets, target-anchored candidates, the repurposing shortlist, islet expression and chromatin, exposure–gene convergence, adverse outcome pathways, the county prevalence/SDoH matrix, correlations, the multivariable model, the complication inventory, the KG reconciliation ledger, and a Methods & Rules sheet — is in **`T2D_OKN_results.xlsx`**. Intermediate extracts are in `data/`, the exact scripts in `scripts/`.
+The complete ranked gene table (2117 rows, all evidence axes preserved separately), together with 21 supporting sheets — GO and Reactome enrichment, trait gene-set enrichment, coding and non-coding variant layers, phenotypes, drugs and drug targets, target-anchored candidates, the repurposing shortlist, islet expression and chromatin, exposure–gene convergence, adverse outcome pathways, the county prevalence/SDoH matrix, correlations, the multivariable model, the complication inventory, the KG reconciliation ledger, and a Methods & Rules sheet — is in **`Diabetes_results.xlsx`**. Intermediate extracts are in `data/`, the exact scripts in `scripts/`.
 
 The interactive table below shows the Tier A and B genes. **Click a column header to sort** (including `sources (n)`, so the table can be ranked by cross-KG corroboration); use the **search box** for a gene symbol and the **drop-downs** to restrict to a tier, a druggability status or an evidence type. Each pill names a contributing graph: `digcfdekg` = PIGEAN statistical score, `spoke-okn` = curated disease–gene edge, `biomarkerkg` = dbSNP risk variant, `prokn` = ClinVar curation, `GXA` = differential expression, `pankgraph` = islet eQTL or chromatin.
 
@@ -308,7 +308,7 @@ Reading down the table, the top is dominated by genes with the *curated + geneti
 
 ## 11. Reproducibility
 
-The complete replicator record — the originating prompt verbatim, the replicator specification (identifier scope, evidence-stream definitions, scoring weights, tier rules, enrichment backgrounds and thresholds, join recipes, verified quantities and limitations), and every supporting SPARQL query verbatim with its row count and a Mermaid diagram of its graph pattern — is in **[T2D_OKN_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/Diabetes/T2D_OKN_reproducibility.md)**. The analysis scripts are in `scripts/` (`make_figures.py`, `make_map.py`, `make_figures2.py`, `build_counties.py`, `build_xlsx.py`, `build_html.py`, `enrichment.py`, `mechanistic_map.py`, `build_report_html.py`); intermediate extracts are in `data/`; headline figures are sourced from a single `stats.json`. KG versions and update dates are pinned in §2 from `get_kg_version`. Timing is reported in the reproducibility record's header. Token and cost figures are not captured by the tooling and are therefore not cited.
+The complete replicator record — the originating prompt verbatim, the replicator specification (identifier scope, evidence-stream definitions, scoring weights, tier rules, enrichment backgrounds and thresholds, join recipes, verified quantities and limitations), and every supporting SPARQL query verbatim with its row count and a Mermaid diagram of its graph pattern — is in **[Diabetes_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/Diabetes/Diabetes_reproducibility.md)**. The analysis scripts are in `scripts/` (`make_figures.py`, `make_map.py`, `make_figures2.py`, `build_counties.py`, `build_xlsx.py`, `build_html.py`, `enrichment.py`, `mechanistic_map.py`, `build_report_html.py`); intermediate extracts are in `data/`; headline figures are sourced from a single `stats.json`. KG versions and update dates are pinned in §2 from `get_kg_version`. Timing is reported in the reproducibility record's header. Token and cost figures are not captured by the tooling and are therefore not cited.
 
 ---
 

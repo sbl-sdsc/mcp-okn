@@ -3,7 +3,7 @@ from openpyxl.styles import Font, PatternFill, Alignment
 from openpyxl.utils import get_column_letter
 D='data'; S=json.load(open('stats.json'))
 rd=lambda f,**k: pd.read_csv(D+'/'+f,low_memory=False,**k)
-out='T2D_OKN_results.xlsx'
+out='Diabetes_results.xlsx'
 sheets={}
 g=rd('ranked_genes_tiered.csv')
 sheets['Ranked Results']=g

@@ -27,7 +27,11 @@ numbers.
 
 ## Deliverable set
 
-A complete report is a **folder**, not one file:
+A complete report is a **folder**, not one file. **`<study>` is the folder's own name**, and every
+file in it starts with that same token — `MS/MS_report.md`, `Bone-Health/Bone-Health_report.md` —
+so the prefix is never something to look up, and a study is renamed by renaming one directory and
+its files' first token. Do not use a descriptive variant (`spaceflight_bone_loss_…`) or an
+abbreviation (`T2D_…`) that disagrees with the folder.
 
 ```
 <study>/

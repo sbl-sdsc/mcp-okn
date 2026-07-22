@@ -214,7 +214,7 @@ Associational not causal; KG-coverage-bounded not literature-bounded; no variant
 
 ## Literature comparison
 
-Ten headline claims from this analysis were checked against the primary literature (PubMed via the PubMed MCP connector, full text via Paperclip): **7 SUPPORTED, 3 PARTIALLY SUPPORTED** (claims 2, 5 and 9). The per-claim record with citations — including the four graph errors it surfaced (recorded in §9 above) and two further divergences that are scope rather than error — is in [ms_okn_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/ms_okn_literature_comparison.md).
+Ten headline claims from this analysis were checked against the primary literature (PubMed via the PubMed MCP connector, full text via Paperclip): **7 SUPPORTED, 3 PARTIALLY SUPPORTED** (claims 2, 5 and 9). The per-claim record with citations — including the four graph errors it surfaced (recorded in §9 above) and two further divergences that are scope rather than error — is in [MS_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/MS_literature_comparison.md).
 
 ## SPARQL queries
 

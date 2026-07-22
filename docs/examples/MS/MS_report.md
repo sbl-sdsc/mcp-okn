@@ -221,7 +221,7 @@ Finally, a methodological implication. Three of the fourteen graphs queried retu
 
 ## 8. Comparison with prior work
 
-According to **PubMed** (via the PubMed MCP connector) and full-text sources retrieved through **Paperclip**, ten headline claims from this analysis were checked against the primary literature; every PMID below was resolved and its metadata verified, and claims that could not be corroborated are marked as such. The full per-claim document with citations is [ms_okn_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/ms_okn_literature_comparison.md).
+According to **PubMed** (via the PubMed MCP connector) and full-text sources retrieved through **Paperclip**, ten headline claims from this analysis were checked against the primary literature; every PMID below was resolved and its metadata verified, and claims that could not be corroborated are marked as such. The full per-claim document with citations is [MS_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/MS_literature_comparison.md).
 
 | # | Claim | Concordance |
 |---|---|---|
@@ -244,7 +244,7 @@ Central claims verified against full text: the latitude meta-analyses (Claim 7),
 
 ## 9. Full ranked results
 
-The complete ranked gene table (2397 rows), the three enrichment tables, the differential-expression rows, the biomarker table, the therapeutics merge, the epidemiology table, the identifier crosswalk, the source inventory and the methods sheet are in **`ms_okn_results.xlsx`** (12 sheets). Intermediate extracts are in `data/`, figure and query scripts in `scripts/`.
+The complete ranked gene table (2397 rows), the three enrichment tables, the differential-expression rows, the biomarker table, the therapeutics merge, the epidemiology table, the identifier crosswalk, the source inventory and the methods sheet are in **`MS_results.xlsx`** (12 sheets). Intermediate extracts are in `data/`, figure and query scripts in `scripts/`.
 
 *Tip: click a column header to sort; type in the box to search; use the pull-downs to restrict to a confidence tier or an evidence type. The `sources (n)` column counts how many federation knowledge graphs support each gene, one pill per graph — `spoke-okn` contributes curated disease–gene associations, `digcfdekg` PIGEAN genetic inference, `gene-expression-atlas-okn` differential expression, `biomarkerkg` clinical biomarker records, and `prokn` GO/Reactome pathway membership. Sort by that column to rank by cross-graph corroboration.*
 
@@ -296,7 +296,7 @@ Adversarial literature checking supported six claims outright, partially support
 
 ## 11. Reproducibility
 
-The complete replicator specification — every join recipe and predicate IRI, the enrichment backgrounds and their construction, the tiering rule, the DE filtering rule, the verified quantities and the limitations — together with the **verbatim text of every supporting SPARQL query and its row count**, is in **[ms_okn_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/ms_okn_reproducibility.md)**. Analysis and figure scripts are in `scripts/`; intermediate extracts in `data/`. Knowledge-graph versions and last-updated dates are pinned in §2 and repeated in the workbook's `Source Inventory` sheet, taken live from `get_kg_version`. The study active window (first to last logged query, UTC) is stated in the reproducibility record header. Token and cost figures are not captured by the tooling and are not cited.
+The complete replicator specification — every join recipe and predicate IRI, the enrichment backgrounds and their construction, the tiering rule, the DE filtering rule, the verified quantities and the limitations — together with the **verbatim text of every supporting SPARQL query and its row count**, is in **[MS_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/MS_reproducibility.md)**. Analysis and figure scripts are in `scripts/`; intermediate extracts in `data/`. Knowledge-graph versions and last-updated dates are pinned in §2 and repeated in the workbook's `Source Inventory` sheet, taken live from `get_kg_version`. The study active window (first to last logged query, UTC) is stated in the reproducibility record header. Token and cost figures are not captured by the tooling and are not cited.
 
 ---
 

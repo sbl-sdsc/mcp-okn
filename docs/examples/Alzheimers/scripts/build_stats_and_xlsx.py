@@ -115,5 +115,5 @@ meth=pd.DataFrame({"item":[
  "HYPOTHESIS GENERATION. Observational and curatorial associations, not causal or clinical inference.",
  "AD Alzheimer's disease; Ab amyloid-beta; APP amyloid precursor protein; BBB blood-brain barrier; CAA cerebral amyloid angiopathy; CI confidence interval; CL Cell Ontology; DE differential expression; DOID Disease Ontology; EFO Experimental Factor Ontology; EOAD early-onset AD; FDR false-discovery rate; GO Gene Ontology; GWAS genome-wide association study; HP Human Phenotype Ontology; KG knowledge graph; LOAD late-onset AD; LUBAC linear ubiquitin chain assembly complex; MCI mild cognitive impairment; MONDO Mondo Disease Ontology; NFT neurofibrillary tangle; ORA over-representation analysis; PIGEAN CFDE REVEAL gene-trait scoring method; SDoH social determinants of health; UBERON Uber-anatomy ontology; UMLS Unified Medical Language System"]})
 sheet(wb,"Methods & Rules", meth, widths={"item":30,"value":110})
-out="/sessions/focused-magical-ramanujan/mnt/outputs/Alzheimers_OKN/alzheimers_okn_results.xlsx"
+out="/sessions/focused-magical-ramanujan/mnt/outputs/Alzheimers_OKN/Alzheimers_results.xlsx"
 wb.save(out); print("\nworkbook:", out, "| sheets:", len(wb.sheetnames))

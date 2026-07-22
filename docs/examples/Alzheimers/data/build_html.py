@@ -71,12 +71,12 @@ map_html = ('<div class="figure"><div style="border:1px solid #ddd;border-radius
             '<code>PREVALENCE_DpL</code> statements for <code>DOID:10652</code>. '
             'Tiles © OpenStreetMap contributors.</div></div>')
 
-md = ROOT+"alzheimers_okn_report.md"
+md = ROOT+"Alzheimers_report.md"
 # keep the delivered .md standalone (numbers filled in place)
 raw = open(md).read()
 open(md,"w").write(fill_stats(raw, stats))
 
-out = ROOT+"alzheimers_okn_report.html"
+out = ROOT+"Alzheimers_report.html"
 html = build_report_from_markdown(md, out, kpis=kpis, table=table, stats=stats)
 # splice the interactive map right after Figure 8's caption
 s = open(out).read()

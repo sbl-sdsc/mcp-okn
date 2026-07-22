@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build study/ms_okn_results.xlsx — the 12-sheet results workbook for the OKN MS study.
+"""Build study/MS_results.xlsx — the 12-sheet results workbook for the OKN MS study.
 
 Arial throughout, filled + frozen + auto-filtered header row, wrapped text, sized columns.
 Run:  python3 make_workbook.py
@@ -21,7 +21,7 @@ from make_figures import band_label, contrast_meta, normalise_drug  # noqa: E402
 
 WD = "/sessions/vibrant-kind-heisenberg/mnt/outputs/ms_work"
 DATA = f"{WD}/data"
-OUT = f"{WD}/study/ms_okn_results.xlsx"
+OUT = f"{WD}/study/MS_results.xlsx"
 
 FONT = "Arial"
 HDR_FILL = PatternFill("solid", fgColor="1F3864")

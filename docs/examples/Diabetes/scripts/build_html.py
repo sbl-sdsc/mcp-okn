@@ -50,22 +50,22 @@ kpis=kpis_from_stats(S,[
  ('counties','US counties mapped',''),
  ('model_r2','County model R²',''),
 ])
-build_report_from_markdown('T2D_OKN_report.md','T2D_OKN_report.html',kpis=kpis,table=table,stats=S,
+build_report_from_markdown('Diabetes_report.md','Diabetes_report.html',kpis=kpis,table=table,stats=S,
    footer='OKN federated SPARQL via mcp-okn · hypothesis generation, not causal or clinical inference.')
 
 # splice the interactive OpenStreetMap choropleth in as chrome (not prose) at the marker
 iframe=open('data/county_map_iframe.html').read()
-html=open('T2D_OKN_report.html').read()
+html=open('Diabetes_report.html').read()
 n=0
 for marker in ('<!-- INTERACTIVE_MAP -->','&lt;!-- INTERACTIVE_MAP --&gt;','<p><!-- INTERACTIVE_MAP --></p>'):
     if marker in html:
         html=html.replace(marker,'<div class="mapwrap">'+iframe+'</div>'); n+=1; break
-open('T2D_OKN_report.html','w').write(html)
+open('Diabetes_report.html','w').write(html)
 print('map spliced:',n)
 
 # fill {{key}} placeholders in the DELIVERED markdown (read first, then write)
-md=open('T2D_OKN_report.md').read()
-open('T2D_OKN_report.md','w').write(fill_stats(md,S))
+md=open('Diabetes_report.md').read()
+open('Diabetes_report.md','w').write(fill_stats(md,S))
 from build_report_html import check_report_parity
-print(check_report_parity('T2D_OKN_report.md','T2D_OKN_report.html'))
+print(check_report_parity('Diabetes_report.md','Diabetes_report.html'))
 print('done')
