@@ -221,7 +221,7 @@ Finally, a methodological implication. Three of the fourteen graphs queried retu
 
 ## 8. Comparison with prior work
 
-According to **PubMed** (via the PubMed MCP connector) and full-text sources retrieved through **Paperclip**, ten headline claims from this analysis were checked against the primary literature; every PMID below was resolved and its metadata verified, and claims that could not be corroborated are marked as such. The full per-claim document with citations is [MS_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/MS_literature_comparison.md).
+According to **PubMed** (via the PubMed MCP connector) and full-text sources retrieved through **Paperclip**, ten headline claims from this analysis were checked against the primary literature; every PMID below was resolved and its metadata verified, and claims that could not be corroborated are marked as such. The full per-claim document with citations is [MS_literature_comparison.md](MS_literature_comparison.md).
 
 | # | Claim | Concordance |
 |---|---|---|
@@ -296,7 +296,7 @@ Adversarial literature checking supported six claims outright, partially support
 
 ## 11. Reproducibility
 
-Everything needed to replicate this analysis — the originating prompt, the replicator specification, every supporting SPARQL query verbatim with its row count, the verified quantities, the pinned KG versions and the timing — is in **[MS_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/MS_reproducibility.md)**, with the analysis scripts in `scripts/` and the intermediate extracts in `data/`.
+Everything needed to replicate this analysis — the originating prompt, the replicator specification, every supporting SPARQL query verbatim with its row count, the verified quantities, the pinned KG versions and the timing — is in **[MS_reproducibility.md](MS_reproducibility.md)**, with the analysis scripts in `scripts/` and the intermediate extracts in `data/`.
 
 ---
 

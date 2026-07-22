@@ -266,7 +266,7 @@ The ranking is dominated by genes that are strong on *two different kinds* of ev
 
 ## 11. Reproducibility
 
-Everything needed to replicate this analysis — the originating prompt, the replicator specification, every supporting SPARQL query verbatim with its row count, the verified quantities, the pinned KG versions and the timing — is in **[Bone-Health_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/Bone-Health/Bone-Health_reproducibility.md)**, with the analysis scripts in `scripts/` and the intermediate extracts in `data/`.
+Everything needed to replicate this analysis — the originating prompt, the replicator specification, every supporting SPARQL query verbatim with its row count, the verified quantities, the pinned KG versions and the timing — is in **[Bone-Health_reproducibility.md](Bone-Health_reproducibility.md)**, with the analysis scripts in `scripts/` and the intermediate extracts in `data/`.
 
 ---
 

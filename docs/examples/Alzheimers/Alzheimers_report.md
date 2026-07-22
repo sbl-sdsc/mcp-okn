@@ -262,7 +262,7 @@ The ranking behaves as intended: the head is occupied by genes that are simultan
 
 ## 11. Reproducibility
 
-Everything needed to replicate this analysis — the originating prompt, the replicator specification, every supporting SPARQL query verbatim with its row count, the verified quantities, the pinned KG versions and the timing — is in **[Alzheimers_reproducibility.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/Alzheimers/Alzheimers_reproducibility.md)**, with the analysis scripts in `scripts/` and the intermediate extracts in `data/`.
+Everything needed to replicate this analysis — the originating prompt, the replicator specification, every supporting SPARQL query verbatim with its row count, the verified quantities, the pinned KG versions and the timing — is in **[Alzheimers_reproducibility.md](Alzheimers_reproducibility.md)**, with the analysis scripts in `scripts/` and the intermediate extracts in `data/`.
 
 ## 12. References
 

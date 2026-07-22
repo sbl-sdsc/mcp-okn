@@ -263,6 +263,20 @@ def _img_tag(src, alt, base_dir=""):
     return f'<img src="{uri}" alt="{html.escape(alt)}">'
 
 
+def _link_tag(m):
+    """A Markdown link → `<a>` only when the destination is absolute.
+
+    The HTML report is self-contained and gets copied around on its own, so a
+    RELATIVE destination (a sibling `_reproducibility.md`, something under
+    `data/`) is a link that breaks the moment the file leaves its folder. Name
+    the target instead of promising navigation to it — the `.md` beside it keeps
+    the working relative link."""
+    text, dest = m.group(1), m.group(2).strip()
+    if re.match(r"(?:https?:|mailto:|#)", dest, re.I):
+        return f'<a href="{dest}">{text}</a>'
+    return f"<code>{text}</code>"
+
+
 def _inline(text, base_dir=""):
     """Inline Markdown → HTML: code spans, images, links, bold, italic. Text is
     HTML-escaped first so literals like `FDR < 0.05` render correctly; the markup
@@ -279,7 +293,7 @@ def _inline(text, base_dir=""):
         lambda m: _img_tag(m.group(2), m.group(1), base_dir),
         text,
     )
-    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', text)
+    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", _link_tag, text)
     text = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
     text = re.sub(r"__([^_]+)__", r"<strong>\1</strong>", text)
     text = re.sub(r"(?<![\*\w])\*([^*\n]+)\*(?!\*)", r"<em>\1</em>", text)

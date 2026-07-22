@@ -18,28 +18,28 @@ SKILL's *Interactive HTML report* + failure-mode notes). Author the number once,
 
 ## Linking between deliverables
 
-§8 links the literature comparison and §11 links the reproducibility record. **Default to a
-relative sibling link — `[<study>_reproducibility.md](<study>_reproducibility.md)`.** The report
-folder is the unit of delivery: the target travels with the `.html`, so the link works from a
-local folder, a zip, a shared drive, any repo, and offline. **Never hard-code a repository URL by
-default** — a link to `github.com/<someone-else>/<repo>` is dead for anyone who did not commit the
-study to that repo, and worse, it silently points at a *different* study's file if that path
-happens to exist.
+§8 points at the literature comparison and §11 at the reproducibility record. Write both as
+**relative sibling links in the `.md`** — `[<study>_reproducibility.md](<study>_reproducibility.md)`.
+The folder is the unit of delivery, so the target travels with the report: the link works from a
+local folder, a zip, a shared drive, any repo, and offline.
 
-Use an **absolute URL only when the study is published somewhere the relative link cannot work**,
-and build it from that publication's own base:
+**The `.html` does not link companion documents at all** — it names them. The HTML report is
+self-contained *by design* and is the artifact people copy and email; the moment it leaves its
+folder, any link to a sibling file is broken, and a reader who clicks it gets an error rather than
+the document. A filename they can ask for is more useful than a dead link.
 
-- **GitHub Pages** (or any static host serving the folder): the `.html` renders, but a sibling
-  `.md` is served as raw text or downloaded rather than rendered. If the same study is also on
-  GitHub, link the blob URL (`https://github.com/<org>/<repo>/blob/<branch>/<path>`) so the target
-  renders as Markdown. This is the case for the shipped `docs/examples/` reports.
-- **Distributed as a lone `.html`** (emailed, no folder): a relative link necessarily dies, because
-  the target is not travelling with it — an absolute URL is the only thing that can work, and only
-  if the study is genuinely published at it. If it is not published, keep the relative link and
-  accept that a reader who takes the file out of its folder has to ask for the folder.
+This is automatic, not something to hand-manage: `_inline` in `build_report_html.py` emits `<a>`
+only for **absolute** destinations (`http(s):`, `mailto:`, in-page `#anchor`) and renders any
+**relative** destination as `<code>text</code>`. So the same `.md` link gives a working link in
+Markdown and a plain filename in HTML, and a rebuild can never reintroduce the broken link.
+External links — DOIs, PMC, KG project pages — are absolute and stay live in both.
 
-Whichever form you use, the target must exist at that address: check the relative path on disk, or
-fetch the absolute URL, before delivering.
+**Never hard-code a repository URL to dodge this.** `github.com/<org>/<repo>/blob/…` is dead for
+anyone who did not commit the study to that exact repo, and if the path happens to exist there it
+silently resolves to a *different* study's file.
+
+Whichever form is used, check the target exists before delivering: the relative path on disk, and
+absolute URLs by fetching them.
 
 ## Title block (before §1)
 
