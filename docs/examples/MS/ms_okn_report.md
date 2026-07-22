@@ -221,7 +221,7 @@ Finally, a methodological implication. Three of the fourteen graphs queried retu
 
 ## 8. Comparison with prior work
 
-According to **PubMed** (via the PubMed MCP connector) and full-text sources retrieved through **Paperclip**, ten headline claims from this analysis were checked against the primary literature; every PMID below was resolved and its metadata verified, and claims that could not be corroborated are marked as such. The full per-claim document with citations is `data/literature_comparison.md`.
+According to **PubMed** (via the PubMed MCP connector) and full-text sources retrieved through **Paperclip**, ten headline claims from this analysis were checked against the primary literature; every PMID below was resolved and its metadata verified, and claims that could not be corroborated are marked as such. The full per-claim document with citations is [ms_okn_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/MS/ms_okn_literature_comparison.md).
 
 | # | Claim | Verdict |
 |---|---|---|

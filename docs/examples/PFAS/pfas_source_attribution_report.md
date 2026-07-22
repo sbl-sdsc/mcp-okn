@@ -549,8 +549,9 @@ are not visible to the tooling and are therefore not reported.
 ## 12. References
 
 Retrieved by WebSearch and direct fetch of primary regulatory documents; the full annotated set with
-per-finding mapping is in `data/literature_validation.md`. None was verified against paywalled full
-text.
+per-finding mapping is in
+[pfas_source_attribution_literature_validation.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/PFAS/pfas_source_attribution_literature_validation.md).
+None was verified against paywalled full text.
 
 1. Hu X.C. et al. (2016). Detection of poly- and perfluoroalkyl substances (PFASs) in US drinking water linked to industrial sites, military fire training areas, and wastewater treatment plants. *Environmental Science & Technology Letters*. https://doi.org/10.1021/acs.estlett.6b00260
 2. Tokranov A.K. et al. / USGS (2024). Predictions of groundwater PFAS occurrence at drinking water supply depths in the United States. *Science*. https://doi.org/10.1126/science.ado6638

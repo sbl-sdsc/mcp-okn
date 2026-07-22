@@ -90,8 +90,9 @@ queries could not be re-logged before this record was generated; their exact SPA
 identifying predicates are transcribed in spec §9 so the analysis remains auditable end to end.
 
 Deliverables: `T2D_OKN_report.md` / `.html` (`check_report_parity` PASS), `T2D_OKN_results.xlsx`
-(22 sheets), `figures/fig1`–`fig8`, `data/` extracts, `scripts/`. Literature comparison in
-`data/literature_comparison.md` (28 supported / 15 novel / 4 contradicted, 74 unique PMIDs).
+(22 sheets), `figures/fig1`–`fig8`, `scripts/`. Literature comparison in
+[T2D_OKN_literature_comparison.md](https://github.com/sbl-sdsc/mcp-okn/blob/main/docs/examples/Diabetes/T2D_OKN_literature_comparison.md)
+(28 supported / 15 novel / 4 contradicted, 74 unique PMIDs).
 
 ## Knowledge graphs used
 
