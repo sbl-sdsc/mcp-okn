@@ -151,14 +151,14 @@ report and its deliverables sit alongside the `figures/`, `scripts/`, and `data/
 that produced them, so every analysis is inspectable and re-runnable:
 
 ```
-docs/examples/Diabetes/
-├── Diabetes_report.html / .md         # interactive report + Markdown source
-├── Diabetes_literature_comparison.md  # per-finding PubMed / Paperclip check
-├── Diabetes_reproducibility.md        # every verbatim SPARQL query
-├── Diabetes_results.xlsx              # multi-sheet data workbook
-├── figures/                           # publication figures (PNG)
-├── scripts/                           # figure / report / analysis build code
-└── data/                              # intermediate result tables (CSV)
+docs/examples/MS/
+├── MS_report.html / .md         # interactive report + Markdown source
+├── MS_literature_comparison.md  # per-finding PubMed / Paperclip check
+├── MS_reproducibility.md        # every verbatim SPARQL query
+├── MS_results.xlsx              # multi-sheet data workbook
+├── figures/                     # publication figures (PNG)
+├── scripts/                     # figure / report / analysis build code
+└── data/                        # intermediate result tables (CSV)
 ```
 
 `figures/` ships with every study; `scripts/` and `data/` accompany most of them
