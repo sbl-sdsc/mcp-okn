@@ -99,9 +99,11 @@ come between them, and nothing follows References:
 8. **Comparison with prior work** — per-finding concordance with citations; needs the PubMed /
    Paperclip connectors (preflight them, or state §8 is omitted — never drop it silently).
    **Lead with a numbered `| # | Claim | Concordance |` table** — one row per checked claim, each
-   cell a bolded label (**SUPPORTED** / **PARTIALLY SUPPORTED** / **NOVEL-OR-UNVERIFIED** /
-   **CONTRADICTED**) followed by its reason — then the full-text line and the divergences
-   paragraph. Head the column *Concordance*, never *Verdict*: the report is not passing judgement.
+   cell a bolded label from the **closed six-term set** (**SUPPORTED** / **PARTIALLY SUPPORTED** /
+   **CONTRADICTED** / **MIXED** / **NOVEL** / **UNRESOLVED** — no custom or compound labels; every
+   qualifier goes in the description) followed by its reason — then the full-text line and the
+   divergences paragraph. Head the column *Concordance*, never *Verdict*: the report is not passing
+   judgement.
    Prose-only §8s hide the distribution; see `references/report-structure.md`. The
    full per-claim record goes in `<study>_literature_comparison.md`; §8 points at it with a
    **relative sibling link in the `.md`**. The **`.html` names companion documents rather than

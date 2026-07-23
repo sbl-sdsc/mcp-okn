@@ -133,13 +133,21 @@ so a reader can scan every result at once instead of mining paragraphs for them:
 - Head the third column **Concordance**, not *Verdict*: the row records how this finding and the
   prior work relate, and the same courtroom framing ruled out below for *validation* is wrong in
   a column header too.
-- The **Concordance** cell opens with the bolded label — **SUPPORTED** / **PARTIALLY SUPPORTED** /
-  **NOVEL-OR-UNVERIFIED** / **CONTRADICTED** — then an em-dash and the reason. A bare label is not
-  enough: the reader must see *why* without opening the companion document. Where a study draws a
-  distinction the four labels don't carry (e.g. *novel in this framing*, *supported by analogy*),
-  keep its own label rather than flattening it.
+- The **Concordance** cell opens with a bolded label from this **closed set of six — no other
+  value, and no custom or compound label**. Every qualifier (analogy, framing, full-text status, a
+  caveat, "with a gap", "in this framing") goes in the description after the em-dash, never in the
+  label:
+  - **SUPPORTED** — the prior literature agrees with the finding.
+  - **PARTIALLY SUPPORTED** — agrees in part; the exceptions or caveats go in the description.
+  - **CONTRADICTED** — the prior literature disagrees.
+  - **MIXED** — the literature is itself divided, and the KG reproduces that disagreement.
+  - **NOVEL** — no prior literature for the specific claim (incl. a KG-only data-quality observation).
+  - **UNRESOLVED** — could not be verified within the search.
+
+  Then an em-dash and the reason — a bare label is not enough; the reader must see *why* without
+  opening the companion document.
 - **Every Concordance cell carries a citation** — `[n]` markers resolving to §12 — or says in
-  words why it has none (*"no source found"*, which is itself a NOVEL-OR-UNVERIFIED result). A
+  words why it has none (*"no source found"*, which is itself a NOVEL result). A
   cell that names a study in prose without a marker leaves the reader no route from the verdict
   to the paper. Derive the mapping from the companion document's per-claim PMIDs rather than from
   memory, and never cite a PMID that has no §12 entry.
@@ -196,7 +204,10 @@ preprints labelled).
 
 **Label each finding's outcome *Concordance*, never *Verdict*** — the same word §8's column uses,
 for the same reason (the report compares, it does not pass judgement). Write it as
-`**Concordance: SUPPORTED.**` (etc.), not `**Verdict: …**`.
+`**Concordance: SUPPORTED.**` (etc.), not `**Verdict: …**`, and **the value is one of the same
+closed six** (SUPPORTED / PARTIALLY SUPPORTED / CONTRADICTED / MIXED / NOVEL / UNRESOLVED) — any
+per-finding legend the companion carries lists exactly those, and every qualifier lives in the
+prose, never in the label.
 
 **Preflight:** this section needs the **PubMed** (`https://pubmed.mcp.claude.com/mcp`) and
 **Paperclip** (`https://paperclip.gxl.ai/mcp`) MCP connectors (look for tools named `pubmed` /

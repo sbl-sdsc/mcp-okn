@@ -11,7 +11,7 @@ document is inferred or reconstructed from memory.
 
 Classification key:
 - **SUPPORTED** — the finding reproduces an established, independently published result.
-- **NOVEL / UNDER-STUDIED** — plausible and consistent with adjacent biology, but no direct
+- **NOVEL** — plausible and consistent with adjacent biology, but no direct
   published evidence for the specific claim; treat as hypothesis-generating.
 - **CONTRADICTED** — published evidence points the other way.
 
@@ -39,7 +39,7 @@ genes, and Suzuki 2019 shows "monogenic diabetes" as an enriched pathway in T2D 
 - Mahajan A, et al. Fine-mapping type 2 diabetes loci to single-variant resolution using high-density imputation and islet-specific epigenome maps. *Nat Genet*. 2018. PMID:30297969 · [doi:10.1038/s41588-018-0241-6](https://doi.org/10.1038/s41588-018-0241-6)
 - Suzuki K, et al. Identification of 28 new susceptibility loci for type 2 diabetes in the Japanese population. *Nat Genet*. 2019. PMID:30718926 · [doi:10.1038/s41588-018-0332-4](https://doi.org/10.1038/s41588-018-0332-4)
 
-### A3. **CASR** — **NOVEL / UNDER-STUDIED**
+### A3. **CASR** — **NOVEL**
 
 CASR has genuine, well-described β-cell biology (regulation of insulin exocytosis, cell–cell
 adhesion and coupling in islets, and increased islet expression under compensatory secretory
@@ -49,7 +49,7 @@ reported for it. Its Tier-A rank is best read as mechanistic/curation-driven, no
 - Squires PE, et al. The calcium-sensing receptor and β-cell function. *Vitam Horm*. 2014. PMID:24559921 · [doi:10.1016/B978-0-12-800174-5.00010-7](https://doi.org/10.1016/B978-0-12-800174-5.00010-7)
 - Oh YS, et al. Increase of Calcium Sensing Receptor Expression Is Related to Compensatory Insulin Secretion during Aging in Mice. *PLoS One*. 2016. PMID:27441644 · [doi:10.1371/journal.pone.0159689](https://doi.org/10.1371/journal.pone.0159689)
 
-### A4. **BRAF** — **NOVEL / UNDER-STUDIED (probable KG hub artefact)**
+### A4. **BRAF** — **NOVEL**
 
 No supporting citation found linking BRAF to type 2 diabetes risk or β-cell/insulin
 physiology. BRAF does not appear in the Suzuki 2024 loci list. BRAF is an extremely
@@ -57,7 +57,7 @@ high-degree node in most biomedical KGs (oncology curation), so a high cross-KG 
 score for BRAF most likely reflects graph topology rather than T2D biology. **Recommend
 demoting or annotating as a hub-bias candidate.**
 
-### A5. **RPS6KB1 (S6K1)** — **SUPPORTED (mechanistic), not a T2D risk locus**
+### A5. **RPS6KB1 (S6K1)** — **SUPPORTED**
 
 S6K1 is a well-established node of nutrient-driven insulin resistance: loss of S6K1 in mice
 improves glucose tolerance and reduces muscle oxidative stress, phenocopying endurance
@@ -66,7 +66,7 @@ not appear in the Suzuki 2024 T2D loci list.
 
 - Binsch C, et al. Absence of the kinase S6k1 mimics the effect of chronic endurance exercise on glucose tolerance and muscle oxidative stress. *Mol Metab*. 2017. PMID:29107291 · [doi:10.1016/j.molmet.2017.08.008](https://doi.org/10.1016/j.molmet.2017.08.008)
 
-### A6. **BCL2** — **SUPPORTED (mechanistic), not a T2D risk locus**
+### A6. **BCL2** — **SUPPORTED**
 
 BCL2-family control of β-cell apoptosis and ER-stress-induced β-cell death is a large,
 well-established literature (>300 PubMed records for BCL2 + β-cell + apoptosis + diabetes).
@@ -90,12 +90,12 @@ the Suzuki 2024 locus list (verified in full text).
 - Suzuki K, et al. Genetic drivers of heterogeneity in type 2 diabetes pathophysiology. *Nature*. 2024. PMID:38374256 · [doi:10.1038/s41586-024-07019-6](https://doi.org/10.1038/s41586-024-07019-6) — full-text-verified ([PMC10937372](https://pmc.ncbi.nlm.nih.gov/articles/PMC10937372/))
 - Mahajan A, et al. Fine-mapping type 2 diabetes loci to single-variant resolution using high-density imputation and islet-specific epigenome maps. *Nat Genet*. 2018. PMID:30297969 · [doi:10.1038/s41588-018-0241-6](https://doi.org/10.1038/s41588-018-0241-6)
 
-### A9. **POC5** — **NOVEL / UNDER-STUDIED**
+### A9. **POC5** — **NOVEL**
 
 No supporting citation found for a POC5–T2D link. POC5 is primarily reported in
 height/idiopathic-scoliosis genetics. Not present in the Suzuki 2024 loci list.
 
-### A10. **ANKH** — **NOVEL / UNDER-STUDIED — and check for a symbol-mapping error**
+### A10. **ANKH** — **NOVEL**
 
 No supporting citation found for ANKH (progressive ankylosis protein homolog, pyrophosphate
 transporter) in T2D. **Important caveat: ANK1 — a different gene — *is* an established T2D
@@ -104,7 +104,7 @@ list via a symbol crosswalk, verify it is not an ANK1 mis-mapping.
 
 - Chalhoub N, et al. Genome writing and Targeted Delivery of the NKX6-3/ANK1 gene cluster and its Type 2 Diabetes GWAS Variants to Human iPSCs. *bioRxiv*. 2026. PMID:41509304 · [doi:10.64898/2026.01.04.697539](https://doi.org/10.64898/2026.01.04.697539)
 
-### A11. **TLE1** — **NOVEL / UNDER-STUDIED (paralog substitution likely)**
+### A11. **TLE1** — **NOVEL**
 
 No direct TLE1–T2D publication found. The T2D-annotated Groucho/TLE family member in the
 literature is **TLE4** (WNT-signalling annotation, chr9 T2D locus region). As with ANKH,
@@ -112,7 +112,7 @@ check whether TLE1 is a paralog/mapping substitution for TLE4.
 
 - Hindy G, et al. Several type 2 diabetes-associated variants in genes annotated to WNT signaling interact with dietary fiber in relation to incidence of type 2 diabetes. *Genes Nutr*. 2016. PMID:27551309 · [doi:10.1186/s12263-016-0524-4](https://doi.org/10.1186/s12263-016-0524-4)
 
-### A12. **KL (klotho)** — **NOVEL / UNDER-STUDIED**
+### A12. **KL (klotho)** — **NOVEL**
 
 Klotho has emerging diabetes-relevant biology — protection of INS-1 β-cells from senescence,
 and a proposed role in diabetic retinopathy — but it is not an established T2D susceptibility
@@ -129,7 +129,7 @@ replicate in non-Mexican Hispanic/Latino groups — a genuine ancestry-specific 
 
 - Hidalgo BA, et al. Associations between SLC16A11 variants and diabetes in the Hispanic Community Health Study/Study of Latinos (HCHS/SOL). *Sci Rep*. 2019. PMID:30696834 · [doi:10.1038/s41598-018-35707-7](https://doi.org/10.1038/s41598-018-35707-7)
 
-### A14. **SLC16A13** — **NOVEL / UNDER-STUDIED**
+### A14. **SLC16A13** — **NOVEL**
 
 Only sparse evidence: a single reported variant association (rs312457) and characterisation of
 the transporter (MCT13) as a ketone-body transporter. It is adjacent to SLC16A11 on 17p13, so
@@ -138,7 +138,7 @@ the KG signal may be linkage/annotation spillover from the SLC16A11 locus.
 - Zheng H, et al. The Association between the rs312457 Genotype of the SLC16a13 Gene and Diabetes Mellitus in a Chinese Population. *Comput Math Methods Med*. 2021. PMID:34257700 · [doi:10.1155/2021/9918055](https://doi.org/10.1155/2021/9918055)
 - Higuchi K, et al. Monocarboxylate Transporter 13 (MCT13/SLC16A13) Functions as a Novel Plasma Membrane Oligopeptide Transporter. *Nutrients*. 2023. PMID:37630718 · [doi:10.3390/nu15163527](https://doi.org/10.3390/nu15163527)
 
-### A15. **ERO1B** — **NOVEL / UNDER-STUDIED**
+### A15. **ERO1B** — **NOVEL**
 
 ERO1B (ERO1β) is an islet/β-cell-enriched oxidoreductase relevant to proinsulin disulphide
 folding and appears in recent single-cell islet transcriptomic profiling, but there is no
@@ -156,7 +156,7 @@ missense variant. GP2 also appears in the Suzuki 2024 full text.
 - Suzuki K, et al. Identification of 28 new susceptibility loci for type 2 diabetes in the Japanese population. *Nat Genet*. 2019. PMID:30718926 · [doi:10.1038/s41588-018-0332-4](https://doi.org/10.1038/s41588-018-0332-4)
 - Zhang T, et al. Common Variants in NUS1 and GP2 Genes Contributed to the Risk of Gestational Diabetes Mellitus. *Front Endocrinol (Lausanne)*. 2021. PMID:34326813 · [doi:10.3389/fendo.2021.685524](https://doi.org/10.3389/fendo.2021.685524)
 
-### A17. **MANF** — **SUPPORTED (mechanistic)**
+### A17. **MANF** — **SUPPORTED**
 
 MANF deficiency causes diabetes in mice through ER stress, β-cell death and impaired β-cell
 proliferation, and exogenous MANF protects human β-cells against cytokine- and ER-stress-induced
@@ -189,7 +189,7 @@ during adipogenesis, i.e. they are bona-fide co-activators of the PPARG adipocyt
 - Lai B, et al. MLL3/MLL4 are required for CBP/p300 binding on enhancers and super-enhancer formation in brown adipogenesis. *Nucleic Acids Res*. 2017. PMID:28398509 · [doi:10.1093/nar/gkx234](https://doi.org/10.1093/nar/gkx234)
 - Lee JE, et al. H3K4 mono- and di-methyltransferase MLL4 is required for enhancer activation during cell differentiation. *Elife*. 2013. PMID:24368734 · [doi:10.7554/eLife.01503](https://doi.org/10.7554/eLife.01503)
 
-### B3. **IL-4 / IL-13 signalling (fold 5.3, FDR 7e-7)** — **NOVEL / EMERGING, not a canonical T2D axis**
+### B3. **IL-4 / IL-13 signalling (fold 5.3, FDR 7e-7)** — **NOVEL**
 
 This is a genuine but non-canonical result. Type-2 (Th2) cytokine signalling is an established
 part of obesity-associated immunometabolism — IL-4 improves insulin sensitivity and drives
@@ -203,7 +203,7 @@ that standard T2D GWAS enrichment recovers, so this should be reported as an
 - Hernandez JD, et al. Linking adipose tissue eosinophils, IL-4, and leptin in human obesity and insulin resistance. *JCI Insight*. 2024. PMID:38206766 · [doi:10.1172/jci.insight.170772](https://doi.org/10.1172/jci.insight.170772)
 - Kubota T, et al. Downregulation of macrophage Irs2 by hyperinsulinemia impairs IL-4-indeuced M2a-subtype macrophage activation in obesity. *Nat Commun*. 2018. PMID:30451856 · [doi:10.1038/s41467-018-07358-9](https://doi.org/10.1038/s41467-018-07358-9)
 
-### B4. **Positive regulation of cold-induced thermogenesis (fold 6.9)** — **SUPPORTED as biology, NOVEL as a T2D enrichment result**
+### B4. **Positive regulation of cold-induced thermogenesis (fold 6.9)** — **SUPPORTED**
 
 Brown-adipose/cold-induced thermogenesis is causally linked to whole-body glucose disposal and
 insulin sensitivity in humans (cold-activated BAT improves whole-body glucose homeostasis and
@@ -248,7 +248,7 @@ changes concentrated in β cells.
 - Hunter CS, et al. Evidence for Loss in Identity, De-Differentiation, and Trans-Differentiation of Islet β-Cells in Type 2 Diabetes. *Front Genet*. 2017. PMID:28424732 · [doi:10.3389/fgene.2017.00035](https://doi.org/10.3389/fgene.2017.00035)
 - Elgamal RM, et al. An Integrated Map of Cell Type-Specific Gene Expression in Pancreatic Islets. *Diabetes*. 2023. PMID:37582230 · [doi:10.2337/db23-0130](https://doi.org/10.2337/db23-0130)
 
-### C4. NKX6-3 down in T2D islets — **SUPPORTED (locus-level), plausible (expression-level)**
+### C4. NKX6-3 down in T2D islets — **SUPPORTED**
 
 The NKX6-3/ANK1 cluster carries T2D GWAS variants and is being functionally dissected in hiPSC
 models; the closely related NKX6.1 is the canonical β-cell identity factor whose loss defines
@@ -268,7 +268,7 @@ multiome and sex-stratified islet atlases confirm cell-type-specific regulatory 
 - Rai V, et al. Single-cell ATAC-Seq in human pancreatic islets and deep learning upscaling of rare cells reveals cell-specific type 2 diabetes regulatory signatures. *Mol Metab*. 2020. PMID:32029221 · [doi:10.1016/j.molmet.2019.12.006](https://doi.org/10.1016/j.molmet.2019.12.006)
 - Qadir MMF, et al. Sex-specific regulatory architecture of pancreatic islets from subjects with and without type 2 diabetes. *EMBO J*. 2024. PMID:39567827 · [doi:10.1038/s44318-024-00313-z](https://doi.org/10.1038/s44318-024-00313-z)
 
-### C6. The specific gene-level accessibility calls — **NOVEL / no supporting citation found**
+### C6. The specific gene-level accessibility calls — **NOVEL**
 
 No supporting citation found for reduced β-cell accessibility at **A1CF, RASSF10, TMED6,
 ST8SIA4, FOXE1, DACT2**; increased ductal accessibility at **CCDC9, MAP2K7, LMF2, NCF1**;
@@ -282,7 +282,7 @@ hypothesis-generating, ideally with replication in an independent islet snATAC c
 
 ## D. Non-coding RNA layer
 
-### D0. "184 non-coding/lncRNA loci carry T2D risk variants" — **SUPPORTED in principle**
+### D0. "184 non-coding/lncRNA loci carry T2D risk variants" — **SUPPORTED**
 
 The great majority of T2D GWAS signals are non-coding and regulatory, which is the core premise
 of the islet-epigenome fine-mapping work; lncRNA involvement in diabetes is a recognised field
@@ -316,14 +316,14 @@ variants have been associated with diabetic kidney disease and HbA1c in T2D pati
 - Kameswaran V, et al. The Missing lnc(RNA) between the pancreatic β-cell and diabetes. *Front Genet*. 2014. PMID:25071830 · [doi:10.3389/fgene.2014.00200](https://doi.org/10.3389/fgene.2014.00200)
 - Ting KH, et al. Correlations between the long noncoding RNA MEG3 and clinical characteristics for diabetic kidney disease in type 2 diabetes mellitus. *Diabetol Metab Syndr*. 2024. PMID:39487551 · [doi:10.1186/s13098-024-01502-w](https://doi.org/10.1186/s13098-024-01502-w)
 
-### D4. **HNF1A-AS1** — **NOVEL / UNDER-STUDIED for T2D**
+### D4. **HNF1A-AS1** — **NOVEL**
 
 HNF1A-AS1 has a substantial literature, but predominantly in oesophageal/gastric cancer and
 mucosal inflammation, not T2D. No supporting citation found for a functional HNF1A-AS1 role in
 β-cell failure or insulin resistance. Its presence in the layer is best explained as an
 antisense transcript at the HNF1A (MODY3) locus.
 
-### D5. **LINC01122, PROX1-AS1, ADAMTS9-AS2, CCND2-AS1, MIR4435-2HG, SOX2-OT** — **NOVEL / no supporting citation found**
+### D5. **LINC01122, PROX1-AS1, ADAMTS9-AS2, CCND2-AS1, MIR4435-2HG, SOX2-OT** — **NOVEL**
 
 These are antisense/lincRNA transcripts at *bona-fide* T2D GWAS loci (PROX1, ADAMTS9, CCND2 are
 established T2D genes), but no published functional T2D evidence was found for the non-coding
@@ -336,7 +336,7 @@ Genetic regulation of RNA processing in human islets is an appropriate follow-up
 
 ## E. Exposure convergence (PFAS)
 
-### E1. A PFAS→T2D / insulin-resistance link is reported epidemiologically — **SUPPORTED, with an important caveat**
+### E1. A PFAS→T2D / insulin-resistance link is reported epidemiologically — **SUPPORTED**
 
 Prospective evidence exists: higher plasma PFOS and PFOA were associated with increased T2D risk
 in U.S. women; in the Diabetes Prevention Program baseline PFOS/PFOA were associated with worse
@@ -404,7 +404,7 @@ predicts prevalent diabetes in both urban and rural strata.
 - Alemi F, et al. Social and Medical Determinants of Diabetes: A Time-Constrained Multiple Mediator Analysis. *Cureus*. 2023. PMID:37905243 · [doi:10.7759/cureus.46227](https://doi.org/10.7759/cureus.46227)
 - Uddin J, et al. The association between neighborhood social and economic environment and prevalent diabetes in urban and rural communities: The Reasons for Geographic and Racial Differences in Stroke (REGARDS) study. *SSM Popul Health*. 2022. PMID:35295743 · [doi:10.1016/j.ssmph.2022.101050](https://doi.org/10.1016/j.ssmph.2022.101050)
 
-### F3. Short sleep (<7 h) as an independent risk factor — **SUPPORTED (at individual level); population-level extension is an extrapolation**
+### F3. Short sleep (<7 h) as an independent risk factor — **SUPPORTED**
 
 Short sleep duration is an established independent predictor of incident T2D in prospective
 meta-analyses (RR ≈ 1.3 for <5–6 h/night), confirmed in updated meta-analyses and in large
@@ -417,7 +417,7 @@ but not the same as the published designs.
 - Liu H, et al. Sleep features and the risk of type 2 diabetes mellitus: a systematic review and meta-analysis. *Ann Med*. 2025. PMID:39748566 · [doi:10.1080/07853890.2024.2447422](https://doi.org/10.1080/07853890.2024.2447422)
 - Nôga DA, et al. Habitual Short Sleep Duration, Diet, and Development of Type 2 Diabetes in Adults. *JAMA Netw Open*. 2024. PMID:38441893 · [doi:10.1001/jamanetworkopen.2024.1147](https://doi.org/10.1001/jamanetworkopen.2024.1147)
 
-### F4. Rurality reverses sign after adjustment (crude ≈ 0 / slightly positive → adjusted β = −0.25) — **SUPPORTED, with one dissenting analysis**
+### F4. Rurality reverses sign after adjustment (crude ≈ 0 / slightly positive → adjusted β = −0.25) — **SUPPORTED**
 
 This is a published phenomenon. O'Connor & Wellenius found that at national level, after
 adjusting for household income, education, age, sex, BMI, race and ethnicity, the likelihood of
@@ -457,7 +457,7 @@ cannot detect the PM2.5 effect rather than that PM2.5 is unrelated to diabetes.
 
 ## G. Repurposing shortlist (weak evidence layer)
 
-### G1. Statins (pravastatin, LPL/PPARG rationale) — **CONTRADICTED as a naive repurposing read**
+### G1. Statins (pravastatin, LPL/PPARG rationale) — **CONTRADICTED**
 
 Statins **increase** the risk of new-onset diabetes. The Cholesterol Treatment Trialists'
 individual-participant-data meta-analysis of large blinded randomised statin trials found
@@ -496,7 +496,7 @@ hypogonadal men with T2D on testosterone undecanoate (observational, lower evide
 - Wittert G, et al. Testosterone treatment to prevent or revert type 2 diabetes in men enrolled in a lifestyle programme (T4DM): a randomised, double-blind, placebo-controlled, 2-year, phase 3b trial. *Lancet Diabetes Endocrinol*. 2021. PMID:33338415 · [doi:10.1016/S2213-8587(20)30367-3](https://doi.org/10.1016/S2213-8587%2820%2930367-3)
 - Haider KS, et al. Remission of type 2 diabetes following long-term treatment with injectable testosterone undecanoate in patients with hypogonadism and type 2 diabetes: 11-year data from a real-world registry study. *Diabetes Obes Metab*. 2020. PMID:32558149 · [doi:10.1111/dom.14122](https://doi.org/10.1111/dom.14122)
 
-### G4. Spironolactone (ESR1 rationale) — **NOVEL / no supporting glycaemic citation found; mechanistic rationale questionable**
+### G4. Spironolactone (ESR1 rationale) — **NOVEL**
 
 No supporting citation found for spironolactone improving glycaemia or preventing T2D.
 Mineralocorticoid-receptor antagonists in diabetes have an established **renal and blood-pressure**
@@ -508,7 +508,7 @@ attribution.
 
 - Takahashi S, et al. Effects of mineralocorticoid receptor antagonists in patients with hypertension and diabetes mellitus: a systematic review and meta-analysis. *J Hum Hypertens*. 2016. PMID:26674759 · [doi:10.1038/jhh.2015.119](https://doi.org/10.1038/jhh.2015.119)
 
-### G5. Celecoxib — **NOVEL / no supporting citation found**
+### G5. Celecoxib — **NOVEL**
 
 No supporting citation found for celecoxib improving glycaemia or diabetes outcomes. The
 class-adjacent evidence is for **salicylates**, not COX-2-selective inhibitors: salsalate lowers
@@ -517,7 +517,7 @@ action via mitochondrial uncoupling / AMPK / NF-κB. Do not present celecoxib as
 
 - Rena G, et al. Salicylic acid: old and new implications for the treatment of type 2 diabetes?. *Diabetol Int*. 2014. PMID:27656338 · [doi:10.1007/s13340-014-0177-8](https://doi.org/10.1007/s13340-014-0177-8)
 
-### G6. Colchicine — **NOVEL / UNDER-STUDIED**
+### G6. Colchicine — **NOVEL**
 
 Colchicine reduces systemic inflammation in obesity/metabolic syndrome and improves some
 lipolysis measures, but a pilot randomised trial found **no significant improvement in insulin
@@ -530,7 +530,7 @@ not established.
 
 ## Summary table
 
-| Group | SUPPORTED | NOVEL / UNDER-STUDIED | CONTRADICTED |
+| Group | SUPPORTED | NOVEL | CONTRADICTED |
 |---|---|---|---|
 | A. Consensus gene core | A1, A2, A5*, A6*, A7, A8, A13, A16, A17 (9) | A3, A4, A9, A10, A11, A12, A14, A15 (8) | – |
 | B. Pathways | B1, B2, B4† (3) | B3 (1) | – |

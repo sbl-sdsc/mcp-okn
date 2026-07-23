@@ -4,7 +4,7 @@
 
 *Attribution: bibliographic records and abstracts in this section were retrieved from **PubMed**; DOI links are given for each cited article as required by the data source's terms of use.*
 
-Concordance vocabulary: **SUPPORTED** / **PARTIALLY SUPPORTED** / **NOVEL-OR-UNVERIFIED** / **CONTRADICTED**.
+Concordance vocabulary: **SUPPORTED** / **PARTIALLY SUPPORTED** / **CONTRADICTED** / **MIXED** / **NOVEL** / **UNRESOLVED**.
 
 ---
 
@@ -120,7 +120,7 @@ The gradient is one of the most robust findings in MS epidemiology. A meta-regre
 
 **Oligoclonal bands** are embedded in the diagnostic standard: the 2017 McDonald criteria allow CSF-specific OCBs to substitute for dissemination in time in a typical clinically isolated syndrome. A meta-analysis of 71 studies (12,253 MS and 2,685 CIS patients) found OCBs in 87.7% of MS and 68.6% of CIS, with OCB-positive CIS patients carrying an odds ratio of 9.88 for conversion to MS (and, notably for Claim 7, OCB prevalence itself varies with latitude). **Neurofilament light chain** is the dominant fluid biomarker of neuroaxonal injury; the reference-database study of 10,133 control and 7,769 MS samples showed that age- and BMI-adjusted sNfL Z-scores above 1.5 predict future clinical/MRI activity even in patients classed as having no evidence of disease activity (OR 3.15), validated in an independent Swedish registry cohort. NfL is also the biomarker that carried the EBV causal argument (Claim 6).
 
-On the KG's own analytes: **decreased urate** in MS is a real and replicated observational finding, but Mendelian randomisation does **not** support a causal effect of serum urate on MS risk (pooled OR 1.05, 95% CI 0.92-1.19) or of MS on urate — so BiomarkerKB's urate entry should be read as a correlate, not a mechanism. I did not find, and therefore do not assert, a comparable large-cohort or MR-level source for increased quinolinic acid; that entry remains **NOVEL-OR-UNVERIFIED** at the level of evidence checked here.
+On the KG's own analytes: **decreased urate** in MS is a real and replicated observational finding, but Mendelian randomisation does **not** support a causal effect of serum urate on MS risk (pooled OR 1.05, 95% CI 0.92-1.19) or of MS on urate — so BiomarkerKB's urate entry should be read as a correlate, not a mechanism. I did not find, and therefore do not assert, a comparable large-cohort or MR-level source for increased quinolinic acid; that entry remains **NOVEL** at the level of evidence checked here.
 
 - Thompson AJ, et al. Diagnosis of multiple sclerosis: 2017 revisions of the McDonald criteria. *Lancet Neurol*. 2018. PMID:29275977 · [doi:10.1016/S1474-4422(17)30470-2](https://doi.org/10.1016/S1474-4422%2817%2930470-2)
 - Dobson R, et al. Cerebrospinal fluid oligoclonal bands in multiple sclerosis and clinically isolated syndromes: a meta-analysis of prevalence, prognosis and effect of latitude. *J Neurol Neurosurg Psychiatry*. 2013. PMID:23431079 · [doi:10.1136/jnnp-2012-304695](https://doi.org/10.1136/jnnp-2012-304695)
@@ -190,4 +190,4 @@ The MS clinical phenotype is textbook-level established and codified in guidelin
 
 **Where the KG adds nothing new**
 
-12. Claims 1, 3, 4, 6 and 7 all recover findings that are already canonical (2011-2022 IMSGC genetics; CYP27B1/vitamin D Mendelian randomisation; microglial enrichment — which is literally in the title of the 2019 *Science* paper; EBV; the latitude gradient). The value of the multi-KG analysis here is **convergent reproduction across independent resources**, plus the explicit statistical framing (hypergeometric test with a declared ProKN background), not novel discovery. No claim examined was **CONTRADICTED** at the level of core biology, and only one item — the BiomarkerKB analyte "increased quinolinic acid" — is left **NOVEL-OR-UNVERIFIED**, because no corroborating large-cohort or causal-inference source was found in this search.
+12. Claims 1, 3, 4, 6 and 7 all recover findings that are already canonical (2011-2022 IMSGC genetics; CYP27B1/vitamin D Mendelian randomisation; microglial enrichment — which is literally in the title of the 2019 *Science* paper; EBV; the latitude gradient). The value of the multi-KG analysis here is **convergent reproduction across independent resources**, plus the explicit statistical framing (hypergeometric test with a declared ProKN background), not novel discovery. No claim examined was **CONTRADICTED** at the level of core biology, and only one item — the BiomarkerKB analyte "increased quinolinic acid" — is left **NOVEL**, because no corroborating large-cohort or causal-inference source was found in this search.

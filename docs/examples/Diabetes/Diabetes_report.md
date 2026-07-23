@@ -251,17 +251,17 @@ According to **PubMed** and the **Paperclip** full-text corpus, this analysis's 
 | 3 | Islet layer: islet inflammation, β-cell dedifferentiation and loss of identity, cell-type-specific chromatin remodelling | **SUPPORTED** — all established [5–7] |
 | 4 | Population layer: the diabetes belt, and short sleep as a population-level risk factor | **SUPPORTED** — both established [8,9] |
 | 5 | Rurality sign reversal | **SUPPORTED** — a published result, adjusted odds ratio 0.94 for rural residence [10], verified against the full text of [11]. A partial dissent exists for the nonmetropolitan South [23] |
-| 6 | IL-4/IL-13 signalling as a T2D axis | **NOVEL OR UNDER-STUDIED** — real immunometabolic biology [12–14], but not a pathway canonical T2D enrichments recover |
-| 7 | Cold-induced thermogenesis as a T2D gene-set result | **NOVEL OR UNDER-STUDIED** — causally implicated in human glucose metabolism [15,16], yet novel in this framing |
-| 8 | PanKbase gene-level accessibility calls (A1CF, RASSF10, TMED6, ST8SIA4, FOXE1, DACT2; ductal / endothelial / macrophage sets) | **NOVEL OR UNDER-STUDIED** — the single most novel output; no supporting citation was found for any of them |
-| 9 | CASR, KL (klotho), ERO1B and SLC16A13 — and BRAF, POC5 | **NOVEL OR UNDER-STUDIED** — the first four have real but thin T2D biology; BRAF and POC5 have none, BRAF almost certainly a graph-hub artefact of a heavily-annotated cancer gene |
-| 10 | lncRNA layer | **NOVEL OR UNDER-STUDIED** — only ANRIL, KCNQ1OT1 and MEG3 carry T2D functional evidence; the rest should be read as positional [24–27] |
+| 6 | IL-4/IL-13 signalling as a T2D axis | **NOVEL** — real immunometabolic biology [12–14], but not a pathway canonical T2D enrichments recover |
+| 7 | Cold-induced thermogenesis as a T2D gene-set result | **NOVEL** — causally implicated in human glucose metabolism [15,16], yet novel in this framing |
+| 8 | PanKbase gene-level accessibility calls (A1CF, RASSF10, TMED6, ST8SIA4, FOXE1, DACT2; ductal / endothelial / macrophage sets) | **NOVEL** — the single most novel output; no supporting citation was found for any of them |
+| 9 | CASR, KL (klotho), ERO1B and SLC16A13 — and BRAF, POC5 | **NOVEL** — the first four have real but thin T2D biology; BRAF and POC5 have none, BRAF almost certainly a graph-hub artefact of a heavily-annotated cancer gene |
+| 10 | lncRNA layer | **NOVEL** — only ANRIL, KCNQ1OT1 and MEG3 carry T2D functional evidence; the rest should be read as positional [24–27] |
 | 11 | PFOS-versus-PFOA divergence | **CONTRADICTED** — PFOA is not inactive on the insulin axis [17,18]; the divergence is an assay-coverage artefact, and the newest meta-analysis judges PFAS→T2D evidence “limited” overall [19] |
 | 12 | PM₂.₅ null | **CONTRADICTED** — conflicts with global-burden estimates attributing roughly 20 % of diabetes burden to particulate exposure [20]; the county-mean ecological design is the likely explanation |
 | 13 | Statins in the repurposing shortlist | **CONTRADICTED** — statins *raise* new-onset diabetes by about 10 % [21]; a failure of graph-distance repurposing, retained deliberately |
 | 14 | Sirolimus and everolimus in the repurposing shortlist | **CONTRADICTED** — both are directly β-cell toxic and diabetogenic [22]; likewise retained as a repurposing failure mode |
-| 15 | Tier-A symbols ANKH and TLE1, adjacent to the better-known ANK1 and TLE4 | **FLAGGED FOR AUDIT** — checked in the source data rather than against the literature: both are genuinely distinct genes with distinct rsIDs, so not a mapping error but nearest-gene variant-to-gene attribution propagating into a knowledge graph |
-| 16 | GO terms *cholesterol homeostasis* and *cellular response to hypoxia*; internal statistics (folds, FDRs, R², β) | **NOT CHECKED** — the GO terms were not checked against primary sources; internal statistics are not literature-checkable by construction |
+| 15 | Tier-A symbols ANKH and TLE1, adjacent to the better-known ANK1 and TLE4 | **NOVEL** — a KG data-quality observation, not a literature claim: checked in the source data rather than against the literature: both are genuinely distinct genes with distinct rsIDs, so not a mapping error but nearest-gene variant-to-gene attribution propagating into a knowledge graph |
+| 16 | GO terms *cholesterol homeostasis* and *cellular response to hypoxia*; internal statistics (folds, FDRs, R², β) | **UNRESOLVED** — the GO terms were not checked against primary sources; internal statistics are not literature-checkable by construction |
 
 ---
 

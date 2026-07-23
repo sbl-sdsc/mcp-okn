@@ -1,6 +1,6 @@
 # Literature Comparison — Alzheimer's Disease Knowledge-Graph Analysis
 
-Per-finding comparison of this analysis against the primary literature, retrieved via the **PubMed** MCP connector and the **Paperclip** full-text corpus. §8 of the report tabulates these findings and their concordance; this document is the supporting detail behind each row, in the same order. Concordance: **SUPPORTED** / **PARTIALLY SUPPORTED** / **CONSISTENT WITH THE LITERATURE'S OWN STATE** / **NOVEL**.
+Per-finding comparison of this analysis against the primary literature, retrieved via the **PubMed** MCP connector and the **Paperclip** full-text corpus. §8 of the report tabulates these findings and their concordance; this document is the supporting detail behind each row, in the same order. Concordance: **SUPPORTED** / **PARTIALLY SUPPORTED** / **CONTRADICTED** / **MIXED** / **NOVEL** / **UNRESOLVED**.
 
 ---
 
@@ -18,13 +18,13 @@ Microglia, lipid metabolism and APP degradation are the dominant enriched proces
 
 ## Finding 3 — LUBAC / TNF-α arm
 
-**Concordance: SUPPORTED — and non-obvious.**
+**Concordance: SUPPORTED.**
 
 The LUBAC / TNF-α arm (SHARPIN, RBCK1 in the Tier-A/B core, proteostasis module) is corroborated by Bellenguez *et al.* [2], who name "the tumor necrosis factor alpha pathway through the **linear ubiquitin chain assembly complex**" among their *new* genetically associated processes. Both LUBAC components surfaced here independently.
 
 ## Finding 4 — Notch as a γ-secretase off-target liability
 
-**Concordance: SUPPORTED (verified against full text).**
+**Concordance: SUPPORTED.**
 
 Yang *et al.* 2008 quantified γ-secretase inhibitor selectivity between the two substrates, showing compounds differ in potency for "Aβ generation from APP than NICD generation from Notch" [3]; Hyde *et al.* 2013 characterised strategies "for managing Notch-related side effects" [4]; Yang *et al.* 2024 review secretases "simultaneously cleav[ing] Notch and APP" [5].
 
@@ -36,19 +36,19 @@ The neuroinflammatory prognostic panel (GFAP, YKL-40/CHI3L1, TSPO, TREM2, S100B,
 
 ## Finding 6 — SEMA4D and RBFOX-family involvement
 
-**Concordance: PARTIALLY SUPPORTED / convergent.**
+**Concordance: PARTIALLY SUPPORTED.**
 
 An all-cause-dementia GWAS meta-analysis reports novel loci including **SEMA4D** (energy transport) and **RBFOX1** (brain amyloid deposition) [7]. This study independently surfaces **SEMA4D** as the target of pepinemab in the AD drug layer and **RBFOX3** in the DE consensus — convergent evidence on the family rather than an exact locus match.
 
 ## Finding 7 — Contradictory evidence for HRT/oestrogen, NSAIDs, statins, vitamin E, ginkgo, metformin
 
-**Concordance: CONSISTENT WITH THE LITERATURE'S OWN STATE.**
+**Concordance: MIXED.**
 
 `biohealth` carries both asserted and negated edges for these interventions, reproducing the disagreement rather than resolving it. The trial and observational literature itself was **not checked against primary sources here**, so no citation is claimed for that characterisation.
 
 ## Finding 8 — `oard-kg` binding AD associations to the *familial type-1* MONDO term
 
-**Concordance: NOVEL (data-quality finding).**
+**Concordance: NOVEL.**
 
 Not a biological claim; recorded here as an ontology mismatch that would silently zero out a naive parent-term query.
 
