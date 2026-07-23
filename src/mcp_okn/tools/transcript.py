@@ -295,7 +295,7 @@ def _active_window(entries: list[dict[str, Any]]) -> str:
     to the second (see ``session.record``); token/cost usage is NOT visible to the server and cannot be
     included here (record it from the client, e.g. Claude Code ``/cost``).
     """
-    stamps = [e.get("timestamp") for e in entries if e.get("timestamp")]
+    stamps = [ts for e in entries if isinstance(ts := e.get("timestamp"), str)]
     if not stamps:
         return ""
     try:
