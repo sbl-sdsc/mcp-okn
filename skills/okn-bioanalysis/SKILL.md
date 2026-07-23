@@ -19,7 +19,7 @@ compatibility: >-
   ortholog-projection, and mechanistic-map scripts.
 metadata:
   author: sbl-sdsc
-  version: "1.0"
+  version: "0.1.0"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
