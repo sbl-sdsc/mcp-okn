@@ -184,6 +184,16 @@ deliverable, **`<study>_literature_comparison.md`** (not under `data/`, which is
 extracts), and §8 **links** to it. Choose the link form by where the report will actually be read —
 see *Linking between deliverables* below.
 
+**Every reference in the companion uses the §12 entry format** — `Author, et al. Title. *Journal*.
+Year. PMID:… · [doi:…](…)`, plus `— full-text-verified ([PMC…](…))` where applicable — whether the
+citations are a consolidated `## References` list or per-claim bullets under each finding. A paper
+that is also in the report's §12 **reuses that exact entry** (so its DOI link and full-text/PMC
+marker stay identical to the report); a paper cited only in the companion is formatted the same way
+from its NCBI `esummary` record. Every inline `[N]` must resolve to a listed entry in the companion
+itself — the companion is a standalone document; do not leave `[N]` that only the report's §12 can
+resolve. All the §12 rules apply here too (live DOI links, percent-encoded parens, tested links,
+preprints labelled).
+
 **Preflight:** this section needs the **PubMed** (`https://pubmed.mcp.claude.com/mcp`) and
 **Paperclip** (`https://paperclip.gxl.ai/mcp`) MCP connectors (look for tools named `pubmed` /
 `paperclip`). Confirm they're available before writing it; if one is missing, enable it (claude.ai →

@@ -44,8 +44,10 @@ abbreviation (`T2D_…`) that disagrees with the folder.
 ├── scripts/  *.py                # the exact scripts used (for reproducibility)
 ├── <study>_literature_comparison.md      # §8's per-claim record: one entry per checked claim,
 │                                  #   its verdict (supported / partially / novel / contradicted)
-│                                  #   and citations. A SIBLING deliverable — never inside data/,
-│                                  #   which holds machine extracts, not prose.
+│                                  #   and citations in the SAME §12 reference format (reuse the
+│                                  #   report's §12 entry for any shared paper; every [N] resolves
+│                                  #   here). A SIBLING deliverable — never inside data/, which
+│                                  #   holds machine extracts, not prose.
 └── <study>_reproducibility.md            # ONE file: replicator spec (rules, thresholds, joins,
                                   #   verified quantities, limitations) + verbatim supporting queries
                                   #   & row counts — from create_reproducibility_record (spec via appendix=)
