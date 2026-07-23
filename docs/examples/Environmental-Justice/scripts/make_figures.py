@@ -119,6 +119,8 @@ short={'D1_pollution_sources':'D1 Pollution src','D2_chemical_exposure':'D2 Chem
 labs=[short[c] for c in cm.columns]
 fig,ax=plt.subplots(figsize=(7.4,6.0))
 F.diverging_heatmap(ax,cm.values,labs,labs,vmax=1.0)
+# Rotate the x tick labels so the long domain names don't overlap along the bottom axis.
+plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
 ax.set_title("Spearman correlation among burden domains")
 F.finalize(fig,6,f"{FIG}/fig6_correlations.png")
 
