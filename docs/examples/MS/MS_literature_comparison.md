@@ -4,7 +4,7 @@
 
 *Attribution: bibliographic records and abstracts in this section were retrieved from **PubMed**; DOI links are given for each cited article as required by the data source's terms of use.*
 
-Verdict vocabulary: **SUPPORTED** / **PARTIALLY SUPPORTED** / **NOVEL-OR-UNVERIFIED** / **CONTRADICTED**.
+Concordance vocabulary: **SUPPORTED** / **PARTIALLY SUPPORTED** / **NOVEL-OR-UNVERIFIED** / **CONTRADICTED**.
 
 ---
 
@@ -12,7 +12,7 @@ Verdict vocabulary: **SUPPORTED** / **PARTIALLY SUPPORTED** / **NOVEL-OR-UNVERIF
 
 > The top consensus MS genes recovered across KGs are dominated by adaptive-immune costimulation and cytokine-receptor signalling: HLA-DRB1, HLA-DQA1, IL2RA, IL7R, CD58, CD6, CD40, CD86, CD28, CLEC16A, TNFRSF1A, TYK2, STAT3/STAT4, EVI5, BATF, IKZF3, SOCS1, RGS1, MERTK.
 
-**Verdict: SUPPORTED.**
+**Concordance: SUPPORTED.**
 
 This is essentially the canonical MS GWAS gene core. The 2011 IMSGC/WTCCC2 GWAS (9,772 cases) refined the HLA-DRB1 risk alleles, confirmed independent HLA class I (HLA-A) protection, and reported that "immunologically relevant genes are significantly overrepresented among those mapping close to the identified loci", particularly implicating T-helper-cell differentiation. The ImmunoChip study extended this to 110 established non-MHC risk variants at 103 loci, overwhelmingly immune genes. The definitive 2019 map (47,429 cases / 68,374 controls) established 200 autosomal non-MHC variants, one X variant and 32 MHC variants, prioritising 551 putative susceptibility genes across innate and adaptive immune compartments. Every gene named in the KG claim (costimulatory receptors CD40/CD58/CD6/CD86/CD28, cytokine receptors IL2RA/IL7R, JAK-STAT components TYK2/STAT3/STAT4/SOCS1, and CLEC16A/EVI5/TNFRSF1A/BATF/IKZF3/RGS1/MERTK) falls inside these published sets. The only nuance is emphasis: HLA-DRB1*15:01 dwarfs all non-MHC effects, and the KG's flat "consensus gene" ranking does not convey that effect-size hierarchy.
 
@@ -26,7 +26,7 @@ This is essentially the canonical MS GWAS gene core. The 2011 IMSGC/WTCCC2 GWAS 
 
 > ORA of the MS gene set gives "cell surface receptor signaling pathway via JAK-STAT" as the single most enriched GO BP term (16/47, 30-fold, FDR 2.3e-18), and Reactome "Interleukin-10 signalling" (9/31, 25-fold, FDR 2.0e-9), IL-4/IL-13, IFN-gamma, IL-12/-23/-21/-27, and "RUNX1 and FOXP3 control the development of regulatory T lymphocytes". Are JAK-STAT / IL-cytokine signalling established core MS mechanisms, and are BTK/JAK inhibitors pursued on that basis?
 
-**Verdict: PARTIALLY SUPPORTED** — the biology is established; the therapeutic inference is only half right.
+**Concordance: PARTIALLY SUPPORTED** — the biology is established; the therapeutic inference is only half right.
 
 Cytokine-receptor/JAK-STAT signalling is unambiguously a core MS mechanism: the MS risk gene set is built from cytokine receptors and their downstream JAK-STAT machinery (IL2RA, IL7R, TYK2, STAT3, STAT4, SOCS1), and MS progression correlates with abnormal cytokine expression across Th1/Th17/Treg and myeloid axes. The direct pharmacological instantiation of the IL-2/CD25 arm was daclizumab (anti-CD25, i.e. IL2RA), which was superior to interferon beta-1a on relapse rate in the phase 3 DECIDE trial — though it was later withdrawn for immune-mediated toxicity. However, **no JAK inhibitor is approved or in late-phase development for MS** (JAK blockade in MS remains preclinical/EAE-level), and the IL-12/IL-23 axis highlighted by the Reactome result was directly tested and **failed**: ustekinumab (anti-IL-12/23 p40) showed no reduction in gadolinium-enhancing lesions in RRMS. The therapy class actually being pursued on a "signalling-hub" rationale is BTK inhibition, which sits on BCR/Fc-receptor/TLR signalling rather than JAK-STAT (see Claim 9).
 
@@ -41,7 +41,7 @@ Cytokine-receptor/JAK-STAT signalling is unambiguously a core MS mechanism: the 
 
 > The MS gene set is significantly enriched for GO "response to vitamin D" (4/15, 24-fold, FDR 1.2e-4), driven by CYP27B1 and CYP24A1.
 
-**Verdict: SUPPORTED.**
+**Concordance: SUPPORTED.**
 
 Both genes are genuine MS susceptibility loci, and the causal direction has independent genetic support. Whole-exome sequencing of MS multiplex families identified rare loss-of-function CYP27B1 variants (including known vitamin-D-dependent rickets type I mutations) that were over-transmitted to affected offspring (Peto OR 4.7; transmitted 35/35 in heterozygous parents), directly implicating the 1-alpha-hydroxylase. Two-sample Mendelian randomisation using 25OHD-lowering instruments found that each genetically determined 1-SD decrease in log-25OHD roughly doubled the odds of MS (OR 2.0, 95% CI 1.7-2.5), replicated in an independent MR that also isolated childhood BMI as a separate causal factor. Interventional evidence is more mixed — supplementation trials in established MS have largely been neutral — but the recent D-Lay MS randomised trial showed that 100,000 IU cholecalciferol every 2 weeks reduced combined clinical/MRI disease activity in clinically isolated syndrome (HR 0.66, p = 0.004). So the KG's vitamin-D signal reflects real, causally-supported biology, not an annotation artefact.
 
@@ -56,7 +56,7 @@ Both genes are genuine MS susceptibility loci, and the causal direction has inde
 
 > The MS gene set is enriched for GO "microglial cell activation" (4/20, 18-fold, FDR 2.6e-4) and "macrophage differentiation" (4/16, 22-fold).
 
-**Verdict: SUPPORTED.**
+**Concordance: SUPPORTED.**
 
 This recapitulates one of the headline findings of the 2019 genomic map, which reported enrichment of MS susceptibility genes in expression profiles of purified human microglia and concluded these brain-resident immune cells may help target the autoimmune process to the CNS. On the pathology side, MRI-informed single-nucleus RNA-seq of the rim of chronic active ("paramagnetic rim") lesions defined a "microglia inflamed in MS" (MIMS) state with neurodegenerative transcriptional programming, and identified C1q as a critical mediator whose blockade improved chronic EAE. The current mechanistic framework for MS progression explicitly attributes non-relapsing disability accrual to compartmentalised, innate-immune-driven "smouldering" inflammation rather than to new focal relapses. The KG claim is therefore aligned with, not ahead of, the field.
 
@@ -70,7 +70,7 @@ This recapitulates one of the headline findings of the 2019 genomic map, which r
 
 > In Gene Expression Atlas MS contrasts, DE enrichment is overwhelmingly type I / type II interferon signalling, antiviral response and ISG15/OAS mechanisms across CD4, CD8, B cells, monocytes, neutrophils and whole blood, both before and after IFN-beta treatment.
 
-**Verdict: PARTIALLY SUPPORTED** — the signature is real and well documented, but the KG's contrast design conflates two different things.
+**Concordance: PARTIALLY SUPPORTED** — the signature is real and well documented, but the KG's contrast design conflates two different things.
 
 An endogenous type I IFN signature in peripheral blood is established in a **subset** of MS patients independent of treatment: whole-blood microarray profiling of untreated RRMS defined a subgroup (roughly half of patients) with an activated immune-defence/"virus response" transcriptional programme. That signature has a specific, replicated clinical meaning — high baseline type I IFN-induced gene expression in monocytes, with elevated pSTAT1 and IFNAR1, marks patients who respond **poorly** to interferon beta. However, in cohorts sampled *after* IFN-beta exposure the ISG/OAS/ISG15 signal is dominated by the pharmacodynamic effect of the drug itself. The KG's observation that the same interferon modules appear "both before and after IFN-beta treatment" is consistent with the literature, but the KG as constructed cannot separate treatment effect from endogenous disease biology; the biologically informative reading (a response-predictive endogenous IFN subtype) requires treatment-naive stratification that the federation does not currently expose.
 
@@ -83,7 +83,7 @@ An endogenous type I IFN signature in peripheral blood is established in a **sub
 
 > The NIAID Data Ecosystem KG links MS to EBV (NCBI taxid 10376) via GEO dataset GSE221624, "Unstable EBV latency drives inflammation in multiple sclerosis patient derived spontaneous B cells". Is EBV now regarded as a necessary/near-necessary cause of MS?
 
-**Verdict: SUPPORTED** (for the underlying biology), **with a provenance caveat about the specific KG edge.**
+**Concordance: SUPPORTED** (for the underlying biology), **with a provenance caveat about the specific KG edge.**
 
 The key large-cohort study is the US military serology cohort: among >10 million young adults on active duty, 955 of whom developed MS, EBV seroconversion raised MS risk **32-fold**, with no comparable effect for other viruses including the similarly transmitted cytomegalovirus, and serum neurofilament light rose only after EBV seroconversion. The authors concluded EBV is "the leading cause of MS", and near-universal EBV seropositivity in MS supports a necessary-but-not-sufficient causal model. A plausible molecular mechanism followed weeks later: high-affinity molecular mimicry between EBNA1 and the CNS protein GlialCAM, with structural and in vivo validation. The field-level synthesis in *Nature Reviews Microbiology* treats EBV as a prerequisite risk factor.
 
@@ -99,7 +99,7 @@ The key large-cohort study is the US military serology cohort: among >10 million
 
 > Joining spoke-okn IHME GBD-2019 MS prevalence for 200 countries to Wikidata country centroids gives Spearman rho = 0.836 (p = 2e-53) between |latitude| and MS prevalence; median prevalence rises ~40-fold from 3.1/100,000 at 0-10 degrees to 125/100,000 at 50-60 degrees, holding separately in both hemispheres.
 
-**Verdict: SUPPORTED**, with important methodological caveats that the KG analysis should state.
+**Concordance: SUPPORTED**, with important methodological caveats that the KG analysis should state.
 
 The gradient is one of the most robust findings in MS epidemiology. A meta-regression of 650 prevalence estimates from 321 studies found a significant positive association between age-standardised prevalence and latitude (1.04 per degree, p < 0.001; 2.60 per degree after adjusting for prevalence year), with the Italian and northern Scandinavian exceptions explained by HLA-DRB1 allele distribution and behavioural/cultural variation; crucially, the European gradient **persisted after adjustment for HLA-DRB1 allele frequencies**, arguing for latitude-varying environmental factors (UVR/vitamin D). The 2019 update (880 prevalence points) confirmed the gradient and found it had **increased** over time (5.27/100,000 per degree; 4.34 age-standardised), persisting after adjustment for ascertainment method. Global prevalence itself continues to rise (Atlas of MS, 3rd edition).
 
@@ -116,7 +116,7 @@ The gradient is one of the most robust findings in MS epidemiology. A meta-regre
 
 > BiomarkerKB gives 373 MS biomarkers dominated by "indicates risk of developing" dbSNP entries plus CSF/serum analytes including decreased urate and increased quinolinic acid; NfL and OCB were NOT retrievable from the federation.
 
-**Verdict: SUPPORTED** — NfL and OCB are indeed the clinically dominant MS biomarkers, so their absence is a genuine KG coverage gap, not an absence of knowledge.
+**Concordance: SUPPORTED** — NfL and OCB are indeed the clinically dominant MS biomarkers, so their absence is a genuine KG coverage gap, not an absence of knowledge.
 
 **Oligoclonal bands** are embedded in the diagnostic standard: the 2017 McDonald criteria allow CSF-specific OCBs to substitute for dissemination in time in a typical clinically isolated syndrome. A meta-analysis of 71 studies (12,253 MS and 2,685 CIS patients) found OCBs in 87.7% of MS and 68.6% of CIS, with OCB-positive CIS patients carrying an odds ratio of 9.88 for conversion to MS (and, notably for Claim 7, OCB prevalence itself varies with latitude). **Neurofilament light chain** is the dominant fluid biomarker of neuroaxonal injury; the reference-database study of 10,133 control and 7,769 MS samples showed that age- and BMI-adjusted sNfL Z-scores above 1.5 predict future clinical/MRI activity even in patients classed as having no evidence of disease activity (OR 3.15), validated in an independent Swedish registry cohort. NfL is also the biomarker that carried the EBV causal argument (Claim 6).
 
@@ -134,7 +134,7 @@ On the KG's own analytes: **decreased urate** in MS is a real and replicated obs
 
 > RDKG assigns the standard DMTs to RRMS and puts BTK inhibitors (tolebrutinib, remibrutinib, fenebrutinib) on progressive/pediatric MS. ProKN target wiring: fingolimod/siponimod/ozanimod/ponesimod -> S1PR1/3/4/5; teriflunomide -> DHODH; dimethyl fumarate -> KEAP1; ocrelizumab/ofatumumab/rituximab -> MS4A1; mitoxantrone -> TOP2A; dalfampridine -> KCNA/KCNB.
 
-**Verdict: PARTIALLY SUPPORTED.** Most target assignments are correct; the S1P receptor selectivity is over-broad, and the BTK-inhibitor subtype assignment is only correct for tolebrutinib.
+**Concordance: PARTIALLY SUPPORTED.** Most target assignments are correct; the S1P receptor selectivity is over-broad, and the BTK-inhibitor subtype assignment is only correct for tolebrutinib.
 
 *Targets that are right:* teriflunomide -> DHODH, dimethyl fumarate -> KEAP1 (the electrophilic target whose modification releases NRF2), anti-CD20 antibodies -> MS4A1, mitoxantrone -> TOP2A, and dalfampridine (4-aminopyridine) -> voltage-gated Kv channels (KCNA/KCNB/KCNC/KCND families in the extracted table) are all standard, correct pharmacology.
 
@@ -156,7 +156,7 @@ On the KG's own analytes: **decreased urate** in MS is a real and replicated obs
 
 > oard-kg returns HP terms only for pediatric MS (209) and Marburg acute MS (2), and those look like EHR co-occurrence artefacts (otitis media, microcephaly, polyuria, high palate) rather than MS clinical phenotypes. Is the canonical MS phenotype set well established, i.e. is this a KG coverage gap?
 
-**Verdict: SUPPORTED** — this is a knowledge-graph coverage gap, not an absence of clinical knowledge.
+**Concordance: SUPPORTED** — this is a knowledge-graph coverage gap, not an absence of clinical knowledge.
 
 The MS clinical phenotype is textbook-level established and codified in guidelines. Standard reviews describe the characteristic syndromes — optic neuritis, internuclear ophthalmoplegia and other brainstem/oculomotor syndromes, partial myelitis with Lhermitte sign, spasticity, cerebellar ataxia, neurogenic bladder, fatigue and heat-sensitivity (Uhthoff phenomenon) — and the diagnostic criteria are explicitly built on clinically isolated syndromes of exactly these kinds (supratentorial, infratentorial and spinal cord syndromes, with a research call-out for optic nerve involvement). Progressive disability accrual independent of relapses is likewise a defined clinical construct. Inspection of the federation's phenotype export confirms the gap: the only rows retrieved for MS subtypes are `Non-Mendelian inheritance` and `Embryonal onset` (rdkg, Marburg acute MS) and oard-kg terms such as `Polyuria`, `Hydronephrosis` and `High palate` for pediatric MS — i.e. EHR co-occurrence statistics, not curated disease phenotypes. **Adult MS (the main MONDO term) carries no HPO annotation at all.** This should be reported as a federation limitation with the canonical phenotype list supplied from the clinical literature.
 

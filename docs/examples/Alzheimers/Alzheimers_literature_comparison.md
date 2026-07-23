@@ -1,54 +1,54 @@
 # Literature Comparison — Alzheimer's Disease Knowledge-Graph Analysis
 
-Per-finding comparison of this analysis against the primary literature, retrieved via the **PubMed** MCP connector and the **Paperclip** full-text corpus. §8 of the report tabulates these findings and their concordance; this document is the supporting detail behind each row, in the same order. Verdicts: **SUPPORTED** / **PARTIALLY SUPPORTED** / **CONSISTENT WITH THE LITERATURE'S OWN STATE** / **NOVEL**.
+Per-finding comparison of this analysis against the primary literature, retrieved via the **PubMed** MCP connector and the **Paperclip** full-text corpus. §8 of the report tabulates these findings and their concordance; this document is the supporting detail behind each row, in the same order. Concordance: **SUPPORTED** / **PARTIALLY SUPPORTED** / **CONSISTENT WITH THE LITERATURE'S OWN STATE** / **NOVEL**.
 
 ---
 
 ## Finding 1 — Consensus gene core
 
-**Verdict: SUPPORTED.**
+**Concordance: SUPPORTED.**
 
 The consensus core recovered across the knowledge graphs — APOE, APP, PSEN1/2, SORL1, ABCA7, ABCA1, ADAM10, CD2AP, CLU, CR1, PICALM, TREM2, BIN1, MS4A, EPHA1, CASS4, INPP5D — is essentially the canonical AD GWAS panel. Jansen *et al.* 2019 (29 loci, 215 genes) [1] and Bellenguez *et al.* 2022 (75 loci, 42 new) [2] recover essentially this panel from GWAS alone. The value here is reconstruction from independent graph sources, not novelty.
 
 ## Finding 2 — Dominant enriched processes
 
-**Verdict: SUPPORTED.**
+**Concordance: SUPPORTED.**
 
 Microglia, lipid metabolism and APP degradation are the dominant enriched processes. Jansen *et al.* [1] report associated genes "strongly expressed in immune-related tissues and cell types (spleen, liver, and **microglia**)" and gene-set analyses implicating "**lipid-related processes and degradation of amyloid precursor proteins**" — the same three axes this study recovers at 15.4×, 15.5× and 30.7×. Bellenguez *et al.* [2] independently confirm "amyloid/tau pathways and highlighted **microglia** implication".
 
 ## Finding 3 — LUBAC / TNF-α arm
 
-**Verdict: SUPPORTED — and non-obvious.**
+**Concordance: SUPPORTED — and non-obvious.**
 
 The LUBAC / TNF-α arm (SHARPIN, RBCK1 in the Tier-A/B core, proteostasis module) is corroborated by Bellenguez *et al.* [2], who name "the tumor necrosis factor alpha pathway through the **linear ubiquitin chain assembly complex**" among their *new* genetically associated processes. Both LUBAC components surfaced here independently.
 
 ## Finding 4 — Notch as a γ-secretase off-target liability
 
-**Verdict: SUPPORTED (verified against full text).**
+**Concordance: SUPPORTED (verified against full text).**
 
 Yang *et al.* 2008 quantified γ-secretase inhibitor selectivity between the two substrates, showing compounds differ in potency for "Aβ generation from APP than NICD generation from Notch" [3]; Hyde *et al.* 2013 characterised strategies "for managing Notch-related side effects" [4]; Yang *et al.* 2024 review secretases "simultaneously cleav[ing] Notch and APP" [5].
 
 ## Finding 5 — Neuroinflammatory prognostic panel
 
-**Verdict: SUPPORTED.**
+**Concordance: SUPPORTED.**
 
 The neuroinflammatory prognostic panel (GFAP, YKL-40/CHI3L1, TSPO, TREM2, S100B, ICAM1, VCAM1, CCL2) is well grounded: plasma GFAP as a marker of astrocyte reactivity in AD is an active and well-populated literature (30 PubMed records for the narrow query used) [6].
 
 ## Finding 6 — SEMA4D and RBFOX-family involvement
 
-**Verdict: PARTIALLY SUPPORTED / convergent.**
+**Concordance: PARTIALLY SUPPORTED / convergent.**
 
 An all-cause-dementia GWAS meta-analysis reports novel loci including **SEMA4D** (energy transport) and **RBFOX1** (brain amyloid deposition) [7]. This study independently surfaces **SEMA4D** as the target of pepinemab in the AD drug layer and **RBFOX3** in the DE consensus — convergent evidence on the family rather than an exact locus match.
 
 ## Finding 7 — Contradictory evidence for HRT/oestrogen, NSAIDs, statins, vitamin E, ginkgo, metformin
 
-**Verdict: CONSISTENT WITH THE LITERATURE'S OWN STATE.**
+**Concordance: CONSISTENT WITH THE LITERATURE'S OWN STATE.**
 
 `biohealth` carries both asserted and negated edges for these interventions, reproducing the disagreement rather than resolving it. The trial and observational literature itself was **not checked against primary sources here**, so no citation is claimed for that characterisation.
 
 ## Finding 8 — `oard-kg` binding AD associations to the *familial type-1* MONDO term
 
-**Verdict: NOVEL (data-quality finding).**
+**Concordance: NOVEL (data-quality finding).**
 
 Not a biological claim; recorded here as an ontology mismatch that would silently zero out a naive parent-term query.
 

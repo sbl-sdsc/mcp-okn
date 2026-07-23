@@ -194,6 +194,10 @@ itself — the companion is a standalone document; do not leave `[N]` that only 
 resolve. All the §12 rules apply here too (live DOI links, percent-encoded parens, tested links,
 preprints labelled).
 
+**Label each finding's outcome *Concordance*, never *Verdict*** — the same word §8's column uses,
+for the same reason (the report compares, it does not pass judgement). Write it as
+`**Concordance: SUPPORTED.**` (etc.), not `**Verdict: …**`.
+
 **Preflight:** this section needs the **PubMed** (`https://pubmed.mcp.claude.com/mcp`) and
 **Paperclip** (`https://paperclip.gxl.ai/mcp`) MCP connectors (look for tools named `pubmed` /
 `paperclip`). Confirm they're available before writing it; if one is missing, enable it (claude.ai →
