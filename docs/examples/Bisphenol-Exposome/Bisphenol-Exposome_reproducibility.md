@@ -106,18 +106,35 @@ classDef iri fill:yellow;
   q1v8("?gene"):::projected 
   q1v5("?mg")
   q1v10("?target"):::projected 
-  subgraph q1graph0["GRAPH biobricks-ice"]
-    q1v3 --"a"--> c2([biolink:ChemicalEntity])
+  subgraph q1graph0["GRAPH https://purl.org/okn/frink/kg/biobricks-ice"]
+    style q1graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q1graph0c15(["AC50"]):::literal 
+    q1graph0c5(["Active"]):::literal 
+    q1graph0c7(["Call"]):::literal 
+    q1graph0c2(["biolink:ChemicalEntity"]):::iri 
+    q1graph0f0[["contains(str(?dtxsid),'comptox') && (contains(lcase(?chemLabel),'bisphenol') || contains(lcase(?chemLabel),'sulfonyldiphenol') || contains(lcase(?chemLabel),'methylenediphenol') || contains(lcase(?chemLabel),'dihydroxydiphenyl'))"]]
+    q1graph0f0 --> q1v1
+    q1graph0f0 --> q1v2
+    q1v3 --"a"--> q1graph0c2
     q1v4 --"obo:IAO_0000136"--> q1v3
-    q1v4 --"sio:SIO_000300"--> a([Active])
-    q1v4 --"rdfs:label"--> c([Call])
+    q1v4 --"sio:SIO_000300"--> q1graph0c5
+    q1v4 --"rdfs:label"--> q1graph0c7
     q1v3 --"obo:RO_0000056"--> q1v5
     q1v5 --"obo:OBI_0000299"--> q1v4
     q1v3 --"edam:has_identifier"--> q1v1
+    q1v3 --"rdfs:label"--> q1v2
     q1v6 --"bao:BAO_0000209"--> q1v5
+    q1v6 --"rdfs:label"--> q1v7
     q1v6 --"ice:assay_entrez_gene_id"--> q1v8
     q1v6 --"ice:mayInformOn"--> q1v9
     q1v6 --"ice:throughMechanisticTarget"--> q1v10
+    subgraph q1optionalgraph00["(optional)"]
+    style q1optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      q1v11 -."rdfs:label".-> q1graph0c15
+      q1v11 --"obo:IAO_0000136"--> q1v3
+      q1v11 --"sio:SIO_000300"--> q1v12
+      q1v5 --"obo:OBI_0000299"--> q1v11
+    end
   end
 ```
 
@@ -149,11 +166,46 @@ ORDER BY ?chemTitle ?aop
 
 ```mermaid
 graph TD
-  q2v3("?aop") --"obo:NCIT_C54571"--> v4("?stressor")
-  v4 --"aop:has_chemical_entity"--> v2("?chem")
-  q2v3 --"aop:has_molecular_initiating_event"--> v7("?mie")
-  q2v3 --"aop:has_adverse_outcome"--> v9("?ao")
-  q2v3 --"a"--> c3([aop:AdverseOutcomePathway])
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q2v9("?ao")
+  q2v10("?aoTitle"):::projected 
+  q2v3("?aop"):::projected 
+  q2v6("?aopTitle"):::projected 
+  q2v5("?cas"):::projected 
+  q2v2("?chem")
+  q2v1("?chemTitle"):::projected 
+  q2v7("?mie")
+  q2v8("?mieTitle"):::projected 
+  q2v4("?stressor")
+  subgraph q2graph0["GRAPH https://purl.org/okn/frink/kg/biobricks-aopwiki"]
+    style q2graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q2graph0c3(["aop:AdverseOutcomePathway"]):::iri 
+    q2graph0c2(["http://semanticscience.org/resource/CHEMINF_000000"]):::iri 
+    q2graph0f0[["(contains(lcase(?chemTitle),'bisphenol') || contains(lcase(?chemTitle),'sulfonyldiphenol') || contains(lcase(?chemTitle),'dihydroxydiphenyl'))"]]
+    q2graph0f0 --> q2v1
+    q2v2 --"a"--> q2graph0c2
+    q2v3 --"a"--> q2graph0c3
+    q2v4 --"aop:has_chemical_entity"--> q2v2
+    q2v2 --"dc:title"--> q2v1
+    q2v2 --"http://semanticscience.org/resource/CHEMINF_000446"--> q2v5
+    q2v3 --"obo:NCIT_C54571"--> q2v4
+    subgraph q2optionalgraph00["(optional)"]
+    style q2optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      q2v3 -."dc:title".-> q2v6
+    end
+    subgraph q2optionalgraph01["(optional)"]
+    style q2optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      q2v3 -."aop:has_molecular_initiating_event".-> q2v7
+      q2v7 --"dc:title"--> q2v8
+    end
+    subgraph q2optionalgraph02["(optional)"]
+    style q2optionalgraph02 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      q2v9 -."dc:title".-> q2v10
+      q2v3 --"aop:has_adverse_outcome"--> q2v9
+    end
+  end
 ```
 
 _4 row(s)_
@@ -182,10 +234,40 @@ ORDER BY ?aop ?keTitle
 
 ```mermaid
 graph TD
-  q3bind[/"VALUES ?aop (152,314,522,535)"/] --> v1("?aop")
-  v1 --"aop:has_key_event"--> v2("?ke")
-  v2 -."dc:title".-> v3("?keTitle")
-  v2 -."aop:OrganContext".-> v5("?organ")
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q3v1("?aop"):::projected 
+  q3v4("?geneId"):::projected 
+  q3v2("?ke"):::projected 
+  q3v3("?keTitle"):::projected 
+  q3v5("?organ"):::projected 
+  subgraph q3graph0["GRAPH https://purl.org/okn/frink/kg/biobricks-aopwiki"]
+    style q3graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q3graph0bind0[/"VALUES ?aop"/]
+    q3graph0bind0-->q3v1
+    q3graph0bind00(["https://identifiers.org/aop/152"])
+    q3graph0bind00 --> q3graph0bind0
+    q3graph0bind01(["https://identifiers.org/aop/314"])
+    q3graph0bind01 --> q3graph0bind0
+    q3graph0bind02(["https://identifiers.org/aop/522"])
+    q3graph0bind02 --> q3graph0bind0
+    q3graph0bind03(["https://identifiers.org/aop/535"])
+    q3graph0bind03 --> q3graph0bind0
+    q3v1 --"aop:has_key_event"--> q3v2
+    subgraph q3optionalgraph00["(optional)"]
+    style q3optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      q3v2 -."dc:title".-> q3v3
+    end
+    subgraph q3optionalgraph01["(optional)"]
+    style q3optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      q3v2 -."edam:data_1027".-> q3v4
+    end
+    subgraph q3optionalgraph02["(optional)"]
+    style q3optionalgraph02 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      q3v2 -."aop:OrganContext".-> q3v5
+    end
+  end
 ```
 
 _31 row(s)_
@@ -209,10 +291,31 @@ SELECT ?gene ?sym ?disease ?dlabel WHERE {
 
 ```mermaid
 graph TD
-  q4bind[/"VALUES ?gene (178 Entrez)"/] --> v2("?gene")
-  v2 --"biolink:related_to"--> v1("?disease MONDO")
-  v1 --"rdfs:label"--> v3("?dlabel")
-  v2 --"rdfs:label"--> v4("?sym")
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q4v1("?disease"):::projected 
+  q4v3("?dlabel"):::projected 
+  q4v2("?gene"):::projected 
+  q4v4("?sym"):::projected 
+  subgraph q4graph0["GRAPH https://purl.org/okn/frink/kg/rdkg"]
+    style q4graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q4graph0f0[["contains(str(?disease),'MONDO')"]]
+    q4graph0f0 --> q4v1
+    q4graph0bind0[/"VALUES ?gene"/]
+    q4graph0bind0-->q4v2
+    q4graph0bind00(["http://identifiers.org/ncbigene/10018"])
+    q4graph0bind00 --> q4graph0bind0
+    q4graph0bind01(["http://identifiers.org/ncbigene/1026"])
+    q4graph0bind01 --> q4graph0bind0
+    q4graph0bind02(["http://identifiers.org/ncbigene/10344"])
+    q4graph0bind02 --> q4graph0bind0
+    q4graph0bind0more([+180 more])
+    q4graph0bind0more --> q4graph0bind0
+    q4v2 --"biolink:related_to"--> q4v1
+    q4v1 --"rdfs:label"--> q4v3
+    q4v2 --"rdfs:label"--> q4v4
+  end
 ```
 
 _5955 row(s)_
@@ -233,9 +336,22 @@ SELECT (COUNT(DISTINCT ?g) AS ?n_bg) WHERE {
 
 ```mermaid
 graph TD
-  q5v4("?g") --"biolink:related_to"--> v3("?d MONDO")
-  q5v4 --"biolink:category"--> c([biolink:Gene])
-  q5bind[/"count(?g) AS ?n_bg"/]
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q5v3("?d")
+  q5v4("?g")
+  q5v1("?n_bg"):::projected 
+  subgraph q5graph0["GRAPH https://purl.org/okn/frink/kg/rdkg"]
+    style q5graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q5graph0c2(["biolink:Gene"]):::literal 
+    q5graph0f0[["contains(str(?d),'MONDO')"]]
+    q5graph0f0 --> q5v3
+    q5v4 --"biolink:category"--> q5graph0c2
+    q5v4 --"biolink:related_to"--> q5v3
+  end
+  q5bind0[/"count(?g)"/]
+  q5bind0 --as--o q5v1
 ```
 
 _1 row(s)_
@@ -257,10 +373,30 @@ SELECT ?d (COUNT(DISTINCT ?g) AS ?K) WHERE {
 
 ```mermaid
 graph TD
-  q6bind[/"VALUES ?d (232 MONDO)"/] --> v2("?d")
-  q6v5("?g") --"biolink:related_to"--> v2
-  q6v5 --"biolink:category"--> c([biolink:Gene])
-  q6cnt[/"count(?g) AS ?K"/]
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q6v1("?K"):::projected 
+  q6v2("?d"):::projected 
+  q6v5("?g")
+  subgraph q6graph0["GRAPH https://purl.org/okn/frink/kg/rdkg"]
+    style q6graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q6graph0c234(["biolink:Gene"]):::literal 
+    q6graph0bind0[/"VALUES ?d"/]
+    q6graph0bind0-->q6v2
+    q6graph0bind00(["MONDO:0003582"])
+    q6graph0bind00 --> q6graph0bind0
+    q6graph0bind01(["MONDO:0021100"])
+    q6graph0bind01 --> q6graph0bind0
+    q6graph0bind02(["MONDO:0007254"])
+    q6graph0bind02 --> q6graph0bind0
+    q6graph0bind0more([+229 more])
+    q6graph0bind0more --> q6graph0bind0
+    q6v5 --"biolink:category"--> q6graph0c234
+    q6v5 --"biolink:related_to"--> q6v2
+  end
+  q6bind1[/"count(?g)"/]
+  q6bind1 --as--o q6v1
 ```
 
 _232 row(s)_
@@ -286,11 +422,38 @@ SELECT ?sym ?pw ?pwLabel WHERE {
 
 ```mermaid
 graph TD
-  q7bind[/"VALUES ?sym (183 symbols)"/] --> v2("?sym")
-  q7v4("?gene") --"rdfs:label"--> v2
-  q7v4 --"sio:010078"--> v3("?prot")
-  v3 --"RO:0000056"--> v1("?pw R-HSA")
-  v1 --"a"--> c([up:Pathway])
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q7v4("?gene")
+  q7v3("?prot")
+  q7v1("?pw"):::projected 
+  q7v5("?pwLabel"):::projected 
+  q7v2("?sym"):::projected 
+  subgraph q7graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style q7graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q7graph0c185(["up:Pathway"]):::iri 
+    q7graph0f0[["contains(str(?pw),'R-HSA')"]]
+    q7graph0f0 --> q7v1
+    q7graph0bind0[/"VALUES ?sym"/]
+    q7graph0bind0-->q7v2
+    q7graph0bind00(["BCL2L11"])
+    q7graph0bind00 --> q7graph0bind0
+    q7graph0bind01(["CDKN1A"])
+    q7graph0bind01 --> q7graph0bind0
+    q7graph0bind02(["CCL26"])
+    q7graph0bind02 --> q7graph0bind0
+    q7graph0bind0more([+180 more])
+    q7graph0bind0more --> q7graph0bind0
+    q7v1 --"a"--> q7graph0c185
+    q7v3 --"RO:0000056"--> q7v1
+    q7v4 --"sio:010078"--> q7v3
+    q7v4 --"rdfs:label"--> q7v2
+    subgraph q7optionalgraph00["(optional)"]
+    style q7optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      q7v1 -."rdfs:label".-> q7v5
+    end
+  end
 ```
 
 _1183 row(s)_
@@ -313,10 +476,34 @@ SELECT ?sym ?go ?goLabel WHERE {
 
 ```mermaid
 graph TD
-  q8bind[/"VALUES ?sym (183 symbols)"/] --> v1("?sym")
-  q8v2("?gene") --"rdfs:label"--> v1
-  q8v2 --"sio:010078"--> v3("?prot")
-  v3 --"RO:0002331"--> v4("?go")
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q8v2("?gene")
+  q8v4("?go"):::projected 
+  q8v5("?goLabel"):::projected 
+  q8v3("?prot")
+  q8v1("?sym"):::projected 
+  subgraph q8graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style q8graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q8graph0bind0[/"VALUES ?sym"/]
+    q8graph0bind0-->q8v1
+    q8graph0bind00(["BCL2L11"])
+    q8graph0bind00 --> q8graph0bind0
+    q8graph0bind01(["CDKN1A"])
+    q8graph0bind01 --> q8graph0bind0
+    q8graph0bind02(["CCL26"])
+    q8graph0bind02 --> q8graph0bind0
+    q8graph0bind0more([+180 more])
+    q8graph0bind0more --> q8graph0bind0
+    q8v2 --"sio:010078"--> q8v3
+    q8v2 --"rdfs:label"--> q8v1
+    q8v3 --"RO:0002331"--> q8v4
+    subgraph q8optionalgraph00["(optional)"]
+    style q8optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      q8v4 -."rdfs:label".-> q8v5
+    end
+  end
 ```
 
 _3900 row(s)_
@@ -339,11 +526,26 @@ SELECT (COUNT(DISTINCT ?sym) AS ?N_react) WHERE {
 
 ```mermaid
 graph TD
-  q9v5("?gene") --"rdfs:label"--> v6("?sym")
-  q9v5 --"sio:010078"--> v4("?prot")
-  v4 --"RO:0000056"--> v3("?pw R-HSA")
-  v3 --"a"--> c([up:Pathway])
-  q9cnt[/"count(?sym) AS ?N_react"/]
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q9v1("?N_react"):::projected 
+  q9v5("?gene")
+  q9v4("?prot")
+  q9v3("?pw")
+  q9v6("?sym")
+  subgraph q9graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style q9graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q9graph0c2(["up:Pathway"]):::iri 
+    q9graph0f0[["contains(str(?pw),'R-HSA')"]]
+    q9graph0f0 --> q9v3
+    q9v3 --"a"--> q9graph0c2
+    q9v4 --"RO:0000056"--> q9v3
+    q9v5 --"sio:010078"--> q9v4
+    q9v5 --"rdfs:label"--> q9v6
+  end
+  q9bind0[/"count(?sym)"/]
+  q9bind0 --as--o q9v1
 ```
 
 _1 row(s)_
@@ -364,10 +566,22 @@ SELECT (COUNT(DISTINCT ?sym) AS ?N_go) WHERE {
 
 ```mermaid
 graph TD
-  q10v3("?gene") --"rdfs:label"--> v5("?sym")
-  q10v3 --"sio:010078"--> v4("?prot")
-  v4 --"RO:0002331"--> v6("?go")
-  q10cnt[/"count(?sym) AS ?N_go"/]
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q10v1("?N_go"):::projected 
+  q10v3("?gene")
+  q10v6("?go")
+  q10v4("?prot")
+  q10v5("?sym")
+  subgraph q10graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style q10graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q10v3 --"sio:010078"--> q10v4
+    q10v3 --"rdfs:label"--> q10v5
+    q10v4 --"RO:0002331"--> q10v6
+  end
+  q10bind0[/"count(?sym)"/]
+  q10bind0 --as--o q10v1
 ```
 
 _1 row(s)_
@@ -389,11 +603,32 @@ SELECT ?pw (COUNT(DISTINCT ?sym) AS ?K) WHERE {
 
 ```mermaid
 graph TD
-  q11bind[/"VALUES ?pw (42 R-HSA)"/] --> v2("?pw")
-  q11v5("?gene") --"rdfs:label"--> v7("?sym")
-  q11v5 --"sio:010078"--> v6("?prot")
-  v6 --"RO:0000056"--> v2
-  q11cnt[/"count(?sym) AS ?K"/]
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q11v1("?K"):::projected 
+  q11v5("?gene")
+  q11v6("?prot")
+  q11v2("?pw"):::projected 
+  q11v7("?sym")
+  subgraph q11graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style q11graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q11graph0bind0[/"VALUES ?pw"/]
+    q11graph0bind0-->q11v2
+    q11graph0bind00(["https://identifiers.org/reactome/R-HSA-6785807"])
+    q11graph0bind00 --> q11graph0bind0
+    q11graph0bind01(["https://identifiers.org/reactome/R-HSA-383280"])
+    q11graph0bind01 --> q11graph0bind0
+    q11graph0bind02(["https://identifiers.org/reactome/R-HSA-1989781"])
+    q11graph0bind02 --> q11graph0bind0
+    q11graph0bind0more([+39 more])
+    q11graph0bind0more --> q11graph0bind0
+    q11v5 --"sio:010078"--> q11v6
+    q11v5 --"rdfs:label"--> q11v7
+    q11v6 --"RO:0000056"--> q11v2
+  end
+  q11bind1[/"count(?sym)"/]
+  q11bind1 --as--o q11v1
 ```
 
 _42 row(s)_
@@ -415,11 +650,32 @@ SELECT ?go (COUNT(DISTINCT ?sym) AS ?K) WHERE {
 
 ```mermaid
 graph TD
-  q12bind[/"VALUES ?go (47 GO terms)"/] --> v2("?go")
-  q12v5("?gene") --"rdfs:label"--> v7("?sym")
-  q12v5 --"sio:010078"--> v6("?prot")
-  v6 --"RO:0002331"--> v2
-  q12cnt[/"count(?sym) AS ?K"/]
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q12v1("?K"):::projected 
+  q12v5("?gene")
+  q12v2("?go"):::projected 
+  q12v6("?prot")
+  q12v7("?sym")
+  subgraph q12graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style q12graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q12graph0bind0[/"VALUES ?go"/]
+    q12graph0bind0-->q12v2
+    q12graph0bind00(["GO:0045944"])
+    q12graph0bind00 --> q12graph0bind0
+    q12graph0bind01(["GO:0006355"])
+    q12graph0bind01 --> q12graph0bind0
+    q12graph0bind02(["GO:0007165"])
+    q12graph0bind02 --> q12graph0bind0
+    q12graph0bind0more([+44 more])
+    q12graph0bind0more --> q12graph0bind0
+    q12v5 --"sio:010078"--> q12v6
+    q12v5 --"rdfs:label"--> q12v7
+    q12v6 --"RO:0002331"--> q12v2
+  end
+  q12bind1[/"count(?sym)"/]
+  q12bind1 --as--o q12v1
 ```
 
 _47 row(s)_
@@ -449,12 +705,29 @@ ORDER BY ?chemLabel ?useValue
 
 ```mermaid
 graph TD
-  q13v3("?chem") --"a"--> c([biolink:ChemicalEntity])
-  q13v3 --"obo:RO_0000056"--> v5("?mg")
-  v5 --"obo:OBI_0000299"--> v4("?ep")
-  v4 --"obo:IAO_0000136"--> q13v3
-  v4 --"rdfs:label"--> v2("?useType (Functional Use)")
-  v4 --"sio:SIO_000300"--> v6("?useValue")
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q13v3("?chem")
+  q13v1("?chemLabel"):::projected 
+  q13v4("?ep")
+  q13v5("?mg")
+  q13v2("?useType"):::projected 
+  q13v6("?useValue"):::projected 
+  subgraph q13graph0["GRAPH https://purl.org/okn/frink/kg/biobricks-ice"]
+    style q13graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q13graph0c2(["biolink:ChemicalEntity"]):::iri 
+    q13graph0f0[["(contains(lcase(?chemLabel),'bisphenol') || contains(lcase(?chemLabel),'sulfonyldiphenol') || contains(lcase(?chemLabel),'methylenediphenol') || contains(lcase(?chemLabel),'dihydroxydiphenyl')) && contains(?useType,'Functional Use')"]]
+    q13graph0f0 --> q13v1
+    q13graph0f0 --> q13v2
+    q13v3 --"a"--> q13graph0c2
+    q13v4 --"obo:IAO_0000136"--> q13v3
+    q13v3 --"obo:RO_0000056"--> q13v5
+    q13v5 --"obo:OBI_0000299"--> q13v4
+    q13v3 --"rdfs:label"--> q13v1
+    q13v4 --"sio:SIO_000300"--> q13v6
+    q13v4 --"rdfs:label"--> q13v2
+  end
 ```
 
 _47 row(s)_
@@ -476,10 +749,32 @@ SELECT ?sym ?trait ?tlabel WHERE {
 
 ```mermaid
 graph TD
-  q14bind[/"VALUES ?g (183 Entrez)"/] --> v1("?g")
-  v1 --"rdfs:label"--> v2("?sym")
-  v1 --"digcfdekg:geneToTrait"--> v3("?trait")
-  v3 -."rdfs:label".-> v4("?tlabel")
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q14v1("?g")
+  q14v2("?sym"):::projected 
+  q14v4("?tlabel"):::projected 
+  q14v3("?trait"):::projected 
+  subgraph q14graph0["GRAPH https://purl.org/okn/frink/kg/digcfdekg"]
+    style q14graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q14graph0bind0[/"VALUES ?g"/]
+    q14graph0bind0-->q14v1
+    q14graph0bind00(["http://www.ncbi.nlm.nih.gov/gene/10018"])
+    q14graph0bind00 --> q14graph0bind0
+    q14graph0bind01(["http://www.ncbi.nlm.nih.gov/gene/1026"])
+    q14graph0bind01 --> q14graph0bind0
+    q14graph0bind02(["http://www.ncbi.nlm.nih.gov/gene/10344"])
+    q14graph0bind02 --> q14graph0bind0
+    q14graph0bind0more([+180 more])
+    q14graph0bind0more --> q14graph0bind0
+    q14v1 --"rdfs:label"--> q14v2
+    q14v1 --"https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait"--> q14v3
+    subgraph q14optionalgraph00["(optional)"]
+    style q14optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      q14v3 -."rdfs:label".-> q14v4
+    end
+  end
 ```
 
 _38833 row(s)_
@@ -505,10 +800,25 @@ ORDER BY ?label
 
 ```mermaid
 graph TD
-  q15v4("?chem") --"a"--> c([biolink:ChemicalEntity])
-  q15v4 --"edam:has_identifier"--> v1("?cas")
-  q15v4 --"edam:has_identifier"--> v2("?dtxsid")
-  q15v4 --"rdfs:label"--> v3("?label")
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q15v1("?cas"):::projected 
+  q15v4("?chem")
+  q15v2("?dtxsid"):::projected 
+  q15v3("?label"):::projected 
+  subgraph q15graph0["GRAPH https://purl.org/okn/frink/kg/biobricks-toxcast"]
+    style q15graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q15graph0c2(["biolink:ChemicalEntity"]):::iri 
+    q15graph0f0[["contains(str(?cas),'cas') && contains(str(?dtxsid),'comptox') && (contains(lcase(?label),'bisphenol') || contains(lcase(?label),'sulfonyldiphenol') || contains(lcase(?label),'methylenediphenol') || contains(lcase(?label),'dihydroxydiphenyl'))"]]
+    q15graph0f0 --> q15v1
+    q15graph0f0 --> q15v2
+    q15graph0f0 --> q15v3
+    q15v4 --"a"--> q15graph0c2
+    q15v4 --"edam:has_identifier"--> q15v1
+    q15v4 --"edam:has_identifier"--> q15v2
+    q15v4 --"rdfs:label"--> q15v3
+  end
 ```
 
 _17 row(s)_
@@ -529,9 +839,30 @@ SELECT ?g ?sym ?name WHERE {
 
 ```mermaid
 graph TD
-  q16bind[/"VALUES ?g (71 Entrez targets)"/] --> v1("?g")
-  v1 --"rdfs:label"--> v2("?sym")
-  v1 -."rdfs:comment".-> v3("?name")
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  q16v1("?g"):::projected 
+  q16v3("?name"):::projected 
+  q16v2("?sym"):::projected 
+  subgraph q16graph0["GRAPH https://purl.org/okn/frink/kg/spoke-okn"]
+    style q16graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    q16graph0bind0[/"VALUES ?g"/]
+    q16graph0bind0-->q16v1
+    q16graph0bind00(["http://www.ncbi.nlm.nih.gov/gene/2099"])
+    q16graph0bind00 --> q16graph0bind0
+    q16graph0bind01(["http://www.ncbi.nlm.nih.gov/gene/2100"])
+    q16graph0bind01 --> q16graph0bind0
+    q16graph0bind02(["http://www.ncbi.nlm.nih.gov/gene/2101"])
+    q16graph0bind02 --> q16graph0bind0
+    q16graph0bind0more([+68 more])
+    q16graph0bind0more --> q16graph0bind0
+    q16v1 --"rdfs:label"--> q16v2
+    subgraph q16optionalgraph00["(optional)"]
+    style q16optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      q16v1 -."rdfs:comment".-> q16v3
+    end
+  end
 ```
 
 _71 row(s)_
