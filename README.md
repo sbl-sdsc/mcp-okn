@@ -1,5 +1,7 @@
 # mcp-okn
 
+[![CI](https://github.com/sbl-sdsc/mcp-okn/actions/workflows/ci.yml/badge.svg)](https://github.com/sbl-sdsc/mcp-okn/actions/workflows/ci.yml)
+
 An MCP server for querying the **federated SPARQL endpoint**
 (`https://apps.okn.us/federation/sparql`) over the
 [Proto-OKN](https://www.proto-okn.net/) knowledge graphs.
