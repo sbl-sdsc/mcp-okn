@@ -30,12 +30,12 @@ the participating knowledge graphs.
 This repository ships one MCP server, two Agent Skills, and relies on two external
 literature MCPs — each with a distinct role:
 
-| | Component | Role |
-|---|---|---|
-| <img src="docs/overview/mcp-okn.png" width="72" alt="mcp-okn"> | **mcp-okn** ([connect](#connecting-your-client)) | Federated OKN query service: discovers the relevant Proto-OKN graphs, writes SPARQL scoped to named graphs, aligns across KGs via crosswalks, and returns grounded rows with provenance and transcripts. |
-| <img src="docs/overview/okn-report-style.png" width="72" alt="okn-report-style"> | **[`okn-report-style`](#skills)** | Report & reproducibility skill: turns an OKN analysis into a polished, reproducible deliverable (Markdown / HTML / Excel / figures / maps), tracking sources, versions, queries, and caveats. |
-| <img src="docs/overview/okn-bioanalysis.png" width="72" alt="okn-bioanalysis"> | **[`okn-bioanalysis`](#skills)** | Biomedical workflow skill: cross-KG analysis of genes, diseases, chemicals, and drugs — enrichment, ortholog projection, mechanistic maps — ranking hypotheses by evidence and calling the literature MCPs to validate. |
-| <img src="docs/overview/pubmed-paperclip.png" width="72" alt="PubMed and Paperclip"> | **[PubMed & Paperclip](#literature-comparison-connectors-pubmed--paperclip)** | Literature evidence validation: search PubMed and full-text collections, corroborate OKN-derived claims against sources, add citations, and flag conflicts and uncertainty. |
+| Component | Role |
+|---|---|
+| <img src="docs/overview/mcp-okn.png" width="72" alt="mcp-okn"><br>**mcp-okn** ([connect](#connecting-your-client)) | Federated OKN query service: discovers the relevant Proto-OKN graphs, writes SPARQL scoped to named graphs, aligns across KGs via crosswalks, and returns grounded rows with provenance and transcripts. |
+| <img src="docs/overview/okn-report-style.png" width="72" alt="okn-report-style"><br>**[`okn-report-style`](#skills)** | Report & reproducibility skill: turns an OKN analysis into a polished, reproducible deliverable (Markdown / HTML / Excel / figures / maps), tracking sources, versions, queries, and caveats. |
+| <img src="docs/overview/okn-bioanalysis.png" width="72" alt="okn-bioanalysis"><br>**[`okn-bioanalysis`](#skills)** | Biomedical workflow skill: cross-KG analysis of genes, diseases, chemicals, and drugs — enrichment, ortholog projection, mechanistic maps — ranking hypotheses by evidence and calling the literature MCPs to validate. |
+| <img src="docs/overview/pubmed-paperclip.png" width="72" alt="PubMed and Paperclip"><br>**[PubMed & Paperclip](#literature-comparison-connectors-pubmed--paperclip)** | Literature evidence validation: search PubMed and full-text collections, corroborate OKN-derived claims against sources, add citations, and flag conflicts and uncertainty. |
 
 **Complementary by design:** the skills augment `mcp-okn`, which queries the OKN;
 `okn-bioanalysis` can call PubMed & Paperclip for literature evidence validation, and
