@@ -221,6 +221,52 @@ def _fence_kind(line: str) -> str | None:
     return None
 
 
+# --- fidelity gate: a diagram of a GRAPH-scoped query MUST carry the GRAPH box ---
+# `sparql_to_mermaid` ALWAYS wraps a `GRAPH <iri> { … }` block in a `subgraph …["GRAPH …"]`.
+# So a query that targets a named graph whose injected diagram has NO such box is not faithful
+# tool output — it was hand-authored, is stale, or came from a bespoke script. That is exactly
+# the break that once shipped boxless diagrams, so the delivery gate checks it and it can't
+# recur. The test is STRUCTURAL (not a re-render): it needs no package and is stable across
+# renderer versions, unlike a regenerate-and-compare, which false-positives whenever the
+# sparql-to-mermaid version moves.
+_GRAPH_CLAUSE = re.compile(r"\bGRAPH\s+<[^>]+>")
+_GRAPH_BOX = re.compile(r'subgraph\s+\w+\["GRAPH ')
+
+
+def diagrams_missing_graph_box(text: str) -> list[str]:
+    """Return the verbatim SPARQL of every query that targets a named GRAPH but whose following
+    ```mermaid diagram lacks the `subgraph ["GRAPH …"]` box — i.e. the diagram is not faithful
+    `sparql_to_mermaid` output. A ```sparql block with NO diagram at all is the job of
+    :func:`queries_needing_diagrams`, not this check, so it is skipped here."""
+    lines = text.split("\n")
+    out: list[str] = []
+    i, n = 0, len(lines)
+    while i < n:
+        if _fence_kind(lines[i]) == "sparql":
+            body: list[str] = []
+            j = i + 1
+            while j < n and lines[j].strip() != "```":
+                body.append(lines[j])
+                j += 1
+            i = j + 1
+            k = i
+            while k < n and lines[k].strip() == "":
+                k += 1
+            if k < n and _fence_kind(lines[k]) == "mermaid":
+                mb: list[str] = []
+                k += 1
+                while k < n and lines[k].strip() != "```":
+                    mb.append(lines[k])
+                    k += 1
+                sparql = "\n".join(body).strip()
+                if sparql and _GRAPH_CLAUSE.search(sparql) and not _GRAPH_BOX.search("\n".join(mb)):
+                    out.append(sparql)
+                i = k + 1
+        else:
+            i += 1
+    return out
+
+
 def expand(
     text: str, generate, max_chars: int | None = DEFAULT_MAX_CHARS
 ) -> tuple[str, dict]:

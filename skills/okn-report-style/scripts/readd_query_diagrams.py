@@ -53,6 +53,7 @@ from expand_query_diagrams import (
     _MCP_NOTICE_RE,
     DEFAULT_MAX_CHARS,
     _map_generate,
+    diagrams_missing_graph_box,
     expand,
     queries_needing_diagrams,
     strip_mcp_notices,
@@ -100,21 +101,29 @@ def _emit_worklist(src: Path, text: str) -> int:
 
 
 def check(src: Path, text: str) -> int:
-    """Completeness gate: verify every ```sparql block already has a diagram, WITHOUT modifying.
+    """Completeness + fidelity gate: verify every ```sparql block has a diagram AND that each
+    diagram is faithful `sparql_to_mermaid` output, WITHOUT modifying.
 
     Mirrors report-style's `check_report_parity` gate for the HTML: prints a single PASS/FAIL line and
-    exits 0 (all diagrammed) or 1 (some ```sparql blocks lack a ```mermaid). Works in ANY environment —
-    it never generates, so it needs neither the sparql-to-mermaid package nor a diagrams.json. Run it
-    as the last step before delivering a transcript; a FAIL means the re-add half was skipped.
+    exits 0 (all present and faithful) or 1 otherwise. Works in ANY environment — it never generates, so
+    it needs neither the sparql-to-mermaid package nor a diagrams.json. Run it as the last step before
+    delivering a transcript. Two failure modes:
+      - PRESENCE: a ```sparql block has no ```mermaid diagram — the re-add half was skipped.
+      - FIDELITY: a query scoped to a named GRAPH has a diagram with no `subgraph ["GRAPH …"]` box, so
+        the diagram is not what `sparql_to_mermaid` produces (hand-authored, stale, or from a bespoke
+        script). Regenerate it from the verbatim query with the tool/library — never hand-draw one.
     """
     missing = queries_needing_diagrams(text)
+    unfaithful = diagrams_missing_graph_box(text)
     total = text.count("```sparql")
     # Backstop: a stale `<!-- mcp-okn WARNING: … -->` notice must never ship in the artifact. The
     # re-add pass strips it, but a file that already had its diagrams (so re-add was skipped) can still
     # carry it — catch that here, at the last gate before delivery.
     stale_notice = bool(_MCP_NOTICE_RE.search(text))
-    if not missing and not stale_notice:
-        print(f"[readd_query_diagrams] PASS — all {total} sparql block(s) have a diagram: {src}")
+    if not missing and not unfaithful and not stale_notice:
+        print(
+            f"[readd_query_diagrams] PASS — all {total} sparql block(s) have a faithful diagram: {src}"
+        )
         return 0
     if missing:
         print(
@@ -124,6 +133,16 @@ def check(src: Path, text: str) -> int:
         )
         for q in missing[:5]:
             print(f"  missing: {' '.join(q.split())[:70]}…")
+    if unfaithful:
+        print(
+            f"[readd_query_diagrams] FAIL — {len(unfaithful)} of {total} diagram(s) are NOT faithful "
+            f"sparql_to_mermaid output: {src}\n  A query scoped to a named GRAPH has a diagram with no "
+            f'`subgraph ["GRAPH …"]` box, so it was hand-authored, is stale, or came from a bespoke '
+            f"script. Regenerate it from the VERBATIM query with the `sparql_to_mermaid` tool/library "
+            f"(never hand-draw a diagram); do NOT deliver until PASS."
+        )
+        for q in unfaithful[:5]:
+            print(f"  unfaithful (no GRAPH box): {' '.join(q.split())[:70]}…")
     if stale_notice:
         print(
             f"[readd_query_diagrams] FAIL — a stale `<!-- mcp-okn WARNING: … -->` notice is baked into "

@@ -298,11 +298,14 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
      report session, since the package is mcp-okn-internal and **not pip-installable**) it writes the
      exact WORK-LIST of un-diagrammed queries to `<transcript.md>.queries.json` and exits non-zero so
      you can't mistake it for done. Turn that list into diagrams by calling the **`sparql_to_mermaid`
-     TOOL** (available over MCP) on **each verbatim** query (never a shortened copy — a diagram under a
-     SPARQL block it doesn't match is a fidelity break), save `[{sparql, mermaid}, …]` as
-     `diagrams.json`, then re-run `python scripts/readd_query_diagrams.py <transcript.md> --diagrams
-     diagrams.json --max-chars 4000` (dependency-free injection, idempotent). (The injection engine is
-     `scripts/expand_query_diagrams.py`; the helper is a thin front door over it.)
+     TOOL** (available over MCP) on **each verbatim** query (never a shortened copy, and never a
+     hand-drawn or paraphrased diagram — the diagram must be the tool's exact output; anything else is a
+     fidelity break the `--check` gate now rejects), save `[{sparql, mermaid}, …]` as `diagrams.json`,
+     then re-run `python scripts/readd_query_diagrams.py <transcript.md> --diagrams diagrams.json
+     --max-chars 4000` (dependency-free injection, idempotent). (The injection engine is
+     `scripts/expand_query_diagrams.py`; the helper is a thin front door over it.) Do **not** write a
+     bespoke per-study script that emits diagram strings — that bypass is exactly what once shipped
+     diagrams missing their KG box.
   **Cap the diagrams** (`--max-chars 4000`, mirroring the server's `diagram_max_chars`): as of
   `sparql-to-mermaid` **v0.5.0** a long `VALUES` list collapses to "3 values + `+N more`" (the
   `max_values` default) **and** node labels are quoted, so the old symbol-list blowup — a 250-symbol
@@ -317,13 +320,15 @@ Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient f
   you still want the diagrams in the final file.** If the user asks for **no** query diagrams at all,
   pass `include_query_diagrams=False` (and `include_visualizations=False` for the schema classDiagrams)
   and **skip the re-add step** — don't re-inject what they asked to omit.
-  **Completeness gate — the transcript is not "delivered" until `readd_query_diagrams.py --check
-  <transcript.md>` prints `[readd_query_diagrams] PASS`** (every ```sparql block has a diagram). This
-  mirrors the HTML's `check_report_parity` gate: `--check` verifies WITHOUT modifying and needs no
-  package, so run it as the last step — a **FAIL means you generated lean and skipped the re-add**, the
-  exact silent-drop this guards against. Treat FAIL (or never having run it) as blocking. (The only
-  clean way to skip the gate is the user asking for no diagrams — then there are no ```sparql-without-
-  diagram blocks to flag anyway.)
+  **Completeness + fidelity gate — the transcript is not "delivered" until `readd_query_diagrams.py
+  --check <transcript.md>` prints `[readd_query_diagrams] PASS`.** It checks two things, WITHOUT
+  modifying and with no package needed: **(a) presence** — every ```sparql block has a ```mermaid
+  diagram (a FAIL here means you generated lean and skipped the re-add); and **(b) fidelity** — every
+  query scoped to a named `GRAPH` has a diagram carrying the `subgraph ["GRAPH …"]` box that
+  `sparql_to_mermaid` always emits, so a boxless diagram is caught as hand-drawn / stale / from a
+  bespoke script rather than the tool. This mirrors the HTML's `check_report_parity` gate; run it as the
+  last step and treat FAIL (or never having run it) as blocking. (The only clean way to skip it is the
+  user asking for no diagrams — then there are no ```sparql-without-diagram blocks to flag anyway.)
 - No closing recap / limitations → end with **Summary of findings & limitations** (findings recap +
   numbered caveats).
 - Undefined acronyms → add the Abbreviations block and expand each at first use.
