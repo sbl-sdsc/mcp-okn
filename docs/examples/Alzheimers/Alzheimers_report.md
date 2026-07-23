@@ -201,7 +201,7 @@ Three results survive the caveats and are worth carrying forward.
 
 ## 8. Comparison with prior work
 
-According to **PubMed** and the **Paperclip** full-text corpus, the central findings are largely *supported*, with the value added being reconstruction from independent graph sources rather than novelty.
+According to **PubMed** and the **Paperclip** full-text corpus, the central findings are largely *supported*, with the value added being reconstruction from independent graph sources rather than novelty. The per-finding detail behind each row is in [Alzheimers_literature_comparison.md](Alzheimers_literature_comparison.md).
 
 | # | Claim | Concordance |
 |---|---|---|
