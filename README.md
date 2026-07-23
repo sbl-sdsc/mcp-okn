@@ -161,9 +161,8 @@ docs/examples/MS/
 └── data/                        # intermediate result tables (CSV)
 ```
 
-`figures/` and `scripts/` ship with every study; `data/` accompanies all but
-Diabetes, whose intermediate data tables are omitted here because of their large
-size.
+`figures/`, `scripts/`, and `data/` accompany every study (the Diabetes `data/`
+holds a note in place of its oversized intermediate tables).
 
 ---
 
