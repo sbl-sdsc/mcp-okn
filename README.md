@@ -25,7 +25,7 @@ the participating knowledge graphs.
 
 ---
 
-## How the pieces fit together
+## Components of mcp-okn
 
 This repository ships one MCP server, two Agent Skills, and relies on two external
 literature MCPs — each with a distinct role:
