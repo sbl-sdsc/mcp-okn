@@ -118,9 +118,7 @@ cm=pd.read_csv(f"{D}/domain_correlations.csv",index_col=0)
 short={'D1_pollution_sources':'D1 Pollution src','D2_chemical_exposure':'D2 Chem exposure','D3_ambient_quality':'D3 Ambient qual','D4_socioeconomic':'D4 Socioecon','D5_public_safety':'D5 Public safety','D6_health_outcomes':'D6 Health','D7_service_scarcity':'D7 Service gap'}
 labs=[short[c] for c in cm.columns]
 fig,ax=plt.subplots(figsize=(7.4,6.0))
-F.diverging_heatmap(ax,cm.values,labs,labs,vmax=1.0)
-# Rotate the x tick labels so the long domain names don't overlap along the bottom axis.
-plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
+F.diverging_heatmap(ax,cm.values,labs,labs,vmax=1.0)  # long x labels auto-tilt (okn_figstyle)
 ax.set_title("Spearman correlation among burden domains")
 F.finalize(fig,6,f"{FIG}/fig6_correlations.png")
 
