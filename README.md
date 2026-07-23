@@ -277,12 +277,13 @@ Each skill is a self-contained folder: a `SKILL.md` plus `references/` and
 
 ### Supported clients
 
-Agent Skills work in these Claude clients:
+Agent Skills work in these clients:
 
 | Client | Install method | Notes |
 | --- | --- | --- |
 | **Claude Desktop** (macOS / Windows) | Upload the zip under Settings → Capabilities → Skills | Pro, Max, Team, or Enterprise |
 | **claude.ai** (web) | Upload the zip under Settings → Capabilities → Skills | Pro, Max, Team, or Enterprise |
+| **ChatGPT** (web) | Type the prompt: `Install skill from GitHub: https://github.com/sbl-sdsc/mcp-okn/blob/main/skills/{skill}.zip` | Replace `{skill}` with `okn-report-style` or `okn-bioanalysis` |
 | **Claude Code** (CLI + IDE extensions) | Copy the folder into `.claude/skills/` or `~/.claude/skills/` ([see below](#claude-code-1)) | Free tier and up |
 | **Claude Agent SDK** | Point the SDK at the skill folder | For building custom agents |
 | **Claude Developer Platform** (API) | Load via the code-execution / Skills API | For programmatic use |
