@@ -12,6 +12,15 @@ description: >-
   out-of-order figures, a map that just plots raw lat/long, a too-long results table). NOT for
   answering questions about the federation itself (how to cite it, which KGs exist) — only for
   building or fixing the deliverable.
+license: BSD-3-Clause
+compatibility: >-
+  Requires the mcp-okn MCP server (https://apps.okn.us/okn-mcp-dev/mcp) for the analysis it
+  presents, plus Python with the plotting, Excel, and mapping libraries the bundled scripts import
+  to render the HTML report, figures, workbook, and maps.
+metadata:
+  author: sbl-sdsc
+  version: "1.0"
+  repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
 # OKN report style

@@ -12,6 +12,15 @@ description: >-
   expression, enrichment, ortholog projection, or mapping these across KGs or onto locations.
   Triggers: "analyze these genes", "map genes / proteins / diseases to drugs / phenotypes",
   "GO / Reactome enrichment", "link a disease or chemical to exposure / geography", or naming a bio KG.
+license: BSD-3-Clause
+compatibility: >-
+  Requires the mcp-okn MCP server (https://apps.okn.us/okn-mcp-dev/mcp); the PubMed and Paperclip
+  MCP connectors for the optional literature-validation step; and Python for the bundled enrichment,
+  ortholog-projection, and mechanistic-map scripts.
+metadata:
+  author: sbl-sdsc
+  version: "1.0"
+  repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
 # OKN bio-analysis
