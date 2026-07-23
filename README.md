@@ -119,7 +119,9 @@ co-located with regulated facilities, resolved to chemical identity, functional
 use, and toxicological coverage) — each finding tagged with its source(s) and
 evidence kind, then ranked by cross-source agreement. Every case study ships an
 interactive HTML report, a reproducibility record preserving every verbatim
-SPARQL query, and an Excel workbook. Reproducing the literature-comparison step
+SPARQL query, and an Excel workbook. Producing a case study end to end uses the
+two [Skills](#skills) — `okn-bioanalysis` for the analysis and `okn-report-style`
+for the report format. Reproducing the literature-comparison step additionally
 requires the **PubMed** and **Paperclip** MCP connectors — see
 [Literature-comparison connectors](#literature-comparison-connectors-pubmed--paperclip)
 for their URLs and setup.
