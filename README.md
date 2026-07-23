@@ -161,9 +161,6 @@ docs/examples/MS/
 └── data/                        # intermediate result tables (CSV)
 ```
 
-`figures/`, `scripts/`, and `data/` accompany every study (the Diabetes `data/`
-holds a note in place of its oversized intermediate tables).
-
 ---
 
 ## Connecting your client
