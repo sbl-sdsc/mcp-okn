@@ -119,7 +119,10 @@ co-located with regulated facilities, resolved to chemical identity, functional
 use, and toxicological coverage) — each finding tagged with its source(s) and
 evidence kind, then ranked by cross-source agreement. Every case study ships an
 interactive HTML report, a reproducibility record preserving every verbatim
-SPARQL query, and an Excel workbook.
+SPARQL query, and an Excel workbook. Reproducing the literature-comparison step
+requires the **PubMed** and **Paperclip** MCP connectors — see
+[Literature-comparison connectors](#literature-comparison-connectors-pubmed--paperclip)
+for their URLs and setup.
 
 | Case study | Report | Literature Comparison | Data | Reproducibility |
 |---|---|---|---|---|
@@ -201,6 +204,26 @@ Supported in the ChatGPT web app at <https://chatgpt.com>.
 
 Use MCP in Agent mode with the GitHub Copilot extension, with the same URL:
 `https://apps.okn.us/okn-mcp-dev/mcp`.
+
+### Literature-comparison connectors (PubMed + Paperclip)
+
+The case studies' **Comparison with prior work** step checks each finding against
+the primary literature, which needs two additional MCP connectors beyond the
+mcp-okn server:
+
+- **PubMed** — `https://pubmed.mcp.claude.com/mcp`
+- **Paperclip** — `https://paperclip.gxl.ai/mcp`
+
+Add them the same way as the mcp-okn server — in Claude Desktop / claude.ai via
+**Settings → Connectors → Add custom connector**, or from Claude Code:
+
+```bash
+claude mcp add --transport http pubmed https://pubmed.mcp.claude.com/mcp
+claude mcp add --transport http paperclip https://paperclip.gxl.ai/mcp
+```
+
+These are needed only to reproduce that one step; the rest of each case study runs
+on the mcp-okn server alone.
 
 ---
 
