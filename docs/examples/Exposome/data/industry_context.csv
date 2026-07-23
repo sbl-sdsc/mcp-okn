@@ -1,5 +1,0 @@
-kg,finding,link_type,detail,evidence_kind
-sudokn,US manufacturers of polycarbonate products (BPA-derived),material-based (no CAS),"e.g. abcomolds.com (TUFFAK polycarbonate sheets), 3acindustry.com (IMPEX polycarbonate), 3erp.com (polycarbonate filament/injection moldings)",industrial capability listing
-sudokn,US manufacturers of epoxy-resin products (BPA-derived),material-based (no CAS),"e.g. 1proline.com (epoxy resin workbenches/surfaces), 3erp.com (epoxy resin molds)",industrial capability listing
-sawgraph,No bisphenols present,none,SAWGraph is PFAS-only; 0 of 7 tested bisphenol CAS numbers found,negative coverage
-fiokg,No bisphenol chemical identifiers,none,"FRS facilities + NAICS industry codes + geospatial only; no CAS/DTXSID chemical layer to join bisphenols",negative coverage

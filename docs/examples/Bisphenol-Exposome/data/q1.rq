@@ -1,0 +1,17 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aop: <http://aopkb.org/aop_ontology#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+SELECT DISTINCT ?chemTitle ?cas ?aop ?aopTitle ?mieTitle ?aoTitle WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> {
+    ?chem a <http://semanticscience.org/resource/CHEMINF_000000> ; dc:title ?chemTitle ;
+          <http://semanticscience.org/resource/CHEMINF_000446> ?cas .
+    FILTER( CONTAINS(LCASE(?chemTitle),"bisphenol") || CONTAINS(LCASE(?chemTitle),"sulfonyldiphenol") || CONTAINS(LCASE(?chemTitle),"dihydroxydiphenyl") )
+    ?stressor aop:has_chemical_entity ?chem .
+    ?aop obo:NCIT_C54571 ?stressor ; a aop:AdverseOutcomePathway .
+    OPTIONAL { ?aop dc:title ?aopTitle }
+    OPTIONAL { ?aop aop:has_molecular_initiating_event ?mie . ?mie dc:title ?mieTitle }
+    OPTIONAL { ?aop aop:has_adverse_outcome ?ao . ?ao dc:title ?aoTitle }
+  }
+}
+ORDER BY ?chemTitle ?aop

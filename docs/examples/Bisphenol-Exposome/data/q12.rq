@@ -1,0 +1,16 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX bao: <http://www.bioassayontology.org/bao#>
+PREFIX biolink: <https://w3id.org/biolink/vocab/>
+SELECT DISTINCT ?chemLabel ?useType ?useValue WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> {
+    ?chem a biolink:ChemicalEntity ; rdfs:label ?chemLabel ; obo:RO_0000056 ?mg .
+    FILTER( CONTAINS(LCASE(?chemLabel), "bisphenol") || CONTAINS(LCASE(?chemLabel), "sulfonyldiphenol")
+         || CONTAINS(LCASE(?chemLabel), "methylenediphenol") || CONTAINS(LCASE(?chemLabel), "dihydroxydiphenyl") )
+    ?mg obo:OBI_0000299 ?ep .
+    ?ep obo:IAO_0000136 ?chem ; rdfs:label ?useType ; sio:SIO_000300 ?useValue .
+    FILTER(CONTAINS(?useType, "Functional Use"))
+  }
+}
+ORDER BY ?chemLabel ?useValue

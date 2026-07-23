@@ -1,0 +1,5 @@
+cas,abbr,aop,aop_title,MIE,adverse_outcome
+79-94-7,TBBPA,aop/152,Interference with thyroid serum binding protein transthyretin and subsequent adverse human neurodevelopmental toxicity,"Binding, Transthyretin in serum","Cognitive function, decreased"
+80-05-7,BPA,aop/314,Binding to estrogen receptor (ER)-alpha in immune cells leading to exacerbation of systemic lupus erythematosus (SLE),Binding to ER-alpha in immune cells,Exacerbation of systemic lupus erythematosus (SLE)
+80-05-7,BPA,aop/522,Estrogen antagonism leading to increased risk of autism-like behavior,"Antagonism, Estrogen receptor",autism-like behavior
+80-05-7,BPA,aop/535,Binding and activation of GPER leading to learning and memory impairments,GPER activation,"Impairment, Learning and memory"

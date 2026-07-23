@@ -1,0 +1,32 @@
+aop,abbr,key_event,event_type,organ
+aop/152,TBBPA,"Binding, Transthyretin in serum",MIE,thyroid gland
+aop/152,TBBPA,"Displacement, Serum thyroxine (T4) from transthyretin",KE,-
+aop/152,TBBPA,"Increased, Free serum thyroxine (T4)",KE,blood
+aop/152,TBBPA,"Increased, Uptake of thyroxine into tissue",KE,-
+aop/152,TBBPA,"Increased, Clearance of thyroxine from serum",KE,liver
+aop/152,TBBPA,"Thyroxine (T4) in serum, Decreased",KE,thyroid gland
+aop/152,TBBPA,"Thyroxine (T4) in neuronal tissue, Decreased",KE,brain
+aop/152,TBBPA,"Hippocampal gene expression, Altered",KE,brain
+aop/152,TBBPA,"Hippocampal anatomy, Altered",KE,brain
+aop/152,TBBPA,"Hippocampal Physiology, Altered",KE,brain
+aop/152,TBBPA,"Cognitive function, decreased",AO,-
+aop/314,BPA,Binding to estrogen receptor (ER)-alpha in immune cells,MIE,immune system
+aop/314,BPA,Induction of GATA3 expression,KE,immune system
+aop/314,BPA,Increase of Th2 cells producing IL-4,KE,immune system
+aop/314,BPA,Increase of anti-DNA antibody from autoreactive B cell,KE,immune system
+aop/314,BPA,Exacerbation of systemic lupus erythematosus (SLE),AO,-
+aop/522,BPA,"Antagonism, Estrogen receptor",MIE,-
+aop/522,BPA,"Inhibition, NMDARs",KE,-
+aop/522,BPA,"inhibition, ERK1/2 signaling pathway",KE,-
+aop/522,BPA,"Aberrant, synaptic formation and plasticity",KE,-
+aop/522,BPA,Decrease of neuronal network function,KE,brain
+aop/522,BPA,autism-like behavior,AO,-
+aop/535,BPA,protein-coupled estrogen receptor 1 (GPER) activation,MIE,-
+aop/535,BPA,"Increased, Intracellular Calcium overload",KE,-
+aop/535,BPA,Oxidative Stress,KE,-
+aop/535,BPA,Neuroinflammation,KE,brain
+aop/535,BPA,Apoptosis,KE,-
+aop/535,BPA,"Disruption, neurotransmitter release",KE,brain
+aop/535,BPA,"Decreased, ERalphabeta heterodimers",KE,-
+aop/535,BPA,"Aberrant, synaptic formation and plasticity",KE,-
+aop/535,BPA,"Impairment, Learning and memory",AO,-

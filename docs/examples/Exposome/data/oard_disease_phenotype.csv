@@ -1,3 +1,0 @@
-mondo,disease,n_ehr_phenotypes,source,relationship,evidence_kind
-MONDO_0000088,precocious puberty,1639,oard-kg,disease-phenotype,EHR disease-phenotype association
-MONDO_0008315,prostate cancer,1218,oard-kg,disease-phenotype,EHR disease-phenotype association

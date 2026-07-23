@@ -1,0 +1,12 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX biolink: <https://w3id.org/biolink/vocab/>
+PREFIX edam: <http://edamontology.org/>
+SELECT DISTINCT ?label ?cas ?dtxsid WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/biobricks-toxcast> {
+    ?chem a biolink:ChemicalEntity ; rdfs:label ?label ; edam:has_identifier ?cas , ?dtxsid .
+    FILTER(CONTAINS(STR(?cas),"cas")) FILTER(CONTAINS(STR(?dtxsid),"comptox"))
+    FILTER( CONTAINS(LCASE(?label), "bisphenol") || CONTAINS(LCASE(?label), "sulfonyldiphenol")
+         || CONTAINS(LCASE(?label), "methylenediphenol") || CONTAINS(LCASE(?label), "dihydroxydiphenyl") )
+  }
+}
+ORDER BY ?label

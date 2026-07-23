@@ -1,0 +1,26 @@
+chemLabel,useType,useValue
+Bisphenol A,OECD,Binder
+Bisphenol A,OECD,Catalyst
+Bisphenol A,OECD,Hardener
+Bisphenol A,Predicted,Antioxidant
+Bisphenol A,Predicted,Uv absorber
+"2,2'-Bisphenol F",Predicted,Antioxidant
+"4,4'-Sulfonyldiphenol (BPS)",Predicted,Colorant
+Bisphenol B,Predicted,Antioxidant
+Bisphenol E,Predicted,Antioxidant
+Bisphenol P,Predicted,Antioxidant
+"3,3'-Dimethylbisphenol A",Predicted,Antioxidant
+"3,3'-Dimethylbisphenol A",Predicted,Uv absorber
+"4,4'-(1-Phenylethylidene)bisphenol (BPAP)",Predicted,Antioxidant
+"4,4'-(1-Phenylethylidene)bisphenol (BPAP)",Predicted,Uv absorber
+"2,2',6,6'-Tetrachlorobisphenol A",Predicted,Flame retardant
+Tetrabromobisphenol A (TBBPA),OECD,Flame retardant
+Tetrabromobisphenol A (TBBPA),Predicted,Flame retardant
+TBBPA bis(2-hydroxyethyl) ether,Predicted,Flame retardant
+"TBBPA-bis(2,3-dibromopropyl ether)",OECD,Flame retardant
+Bisphenol A / Epichlorohydrin resin,OECD,Binder
+Bisphenol A / Epichlorohydrin resin,OECD,Hardener
+Bisphenol A / Epichlorohydrin resin,OECD,Monomer
+Bisphenol A / Epichlorohydrin resin,OECD,Lubricating agent
+Tetrabutyl ethylidenebisphenol,OECD,Antioxidant
+Tetrabutyl ethylidenebisphenol,OECD,Fragrance

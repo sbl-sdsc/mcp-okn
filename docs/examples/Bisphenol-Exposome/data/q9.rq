@@ -1,0 +1,7 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT (COUNT(DISTINCT ?sym) AS ?N_go) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    ?gene rdfs:label ?sym ; <http://semanticscience.org/resource/SIO_010078> ?prot .
+    ?prot <http://purl.obolibrary.org/obo/RO_0002331> ?go .
+  }
+}

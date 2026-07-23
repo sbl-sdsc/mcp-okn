@@ -1,0 +1,5925 @@
+{
+  "vars": [
+    "sym",
+    "pw",
+    "pwLabel"
+  ],
+  "rows": [
+    {
+      "sym": "IL6R",
+      "pw": "https://identifiers.org/reactome/R-HSA-1059683",
+      "pwLabel": "Interleukin-6 signaling"
+    },
+    {
+      "sym": "IL6",
+      "pw": "https://identifiers.org/reactome/R-HSA-1059683",
+      "pwLabel": "Interleukin-6 signaling"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-109704",
+      "pwLabel": "PI3K Cascade"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-109704",
+      "pwLabel": "PI3K Cascade"
+    },
+    {
+      "sym": "IL6R",
+      "pw": "https://identifiers.org/reactome/R-HSA-110056",
+      "pwLabel": "MAPK3 (ERK1) activation"
+    },
+    {
+      "sym": "IL6",
+      "pw": "https://identifiers.org/reactome/R-HSA-110056",
+      "pwLabel": "MAPK3 (ERK1) activation"
+    },
+    {
+      "sym": "REV3L",
+      "pw": "https://identifiers.org/reactome/R-HSA-110312",
+      "pwLabel": "Translesion synthesis by REV1"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-110328",
+      "pwLabel": "Recognition and association of DNA glycosylase with site containing an affected pyrimidine"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-110329",
+      "pwLabel": "Cleavage of the damaged pyrimidine "
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-110330",
+      "pwLabel": "Recognition and association of DNA glycosylase with site containing an affected purine"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-110331",
+      "pwLabel": "Cleavage of the damaged purine"
+    },
+    {
+      "sym": "BCL2L11",
+      "pw": "https://identifiers.org/reactome/R-HSA-111446",
+      "pwLabel": "Activation of BIM and translocation to mitochondria "
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-111448",
+      "pwLabel": "Activation of NOXA and translocation to mitochondria"
+    },
+    {
+      "sym": "BCL2L11",
+      "pw": "https://identifiers.org/reactome/R-HSA-111453",
+      "pwLabel": "BH3-only proteins associate with and inactivate anti-apoptotic BCL-2 members"
+    },
+    {
+      "sym": "BAX",
+      "pw": "https://identifiers.org/reactome/R-HSA-111457",
+      "pwLabel": "Release of apoptotic factors from the mitochondria"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-111459",
+      "pwLabel": "Activation of caspases through apoptosome-mediated cleavage"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-111463",
+      "pwLabel": "SMAC (DIABLO) binds to IAPs "
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-111464",
+      "pwLabel": "SMAC(DIABLO)-mediated dissociation of IAP:caspase complexes "
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-111465",
+      "pwLabel": "Apoptotic cleavage of cellular proteins"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-111469",
+      "pwLabel": "SMAC, XIAP-regulated apoptotic response"
+    },
+    {
+      "sym": "OPRM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-111885",
+      "pwLabel": "Opioid Signalling"
+    },
+    {
+      "sym": "SLC22A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-112311",
+      "pwLabel": "Neurotransmitter clearance"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-112399",
+      "pwLabel": "IRS-mediated signalling"
+    },
+    {
+      "sym": "IL6R",
+      "pw": "https://identifiers.org/reactome/R-HSA-112411",
+      "pwLabel": "MAPK1 (ERK2) activation"
+    },
+    {
+      "sym": "IL6",
+      "pw": "https://identifiers.org/reactome/R-HSA-112411",
+      "pwLabel": "MAPK1 (ERK2) activation"
+    },
+    {
+      "sym": "BAX",
+      "pw": "https://identifiers.org/reactome/R-HSA-114294",
+      "pwLabel": "Activation, translocation and oligomerization of BAX"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-114604",
+      "pwLabel": "GPVI-mediated activation cascade"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-114604",
+      "pwLabel": "GPVI-mediated activation cascade"
+    },
+    {
+      "sym": "SERPINE1",
+      "pw": "https://identifiers.org/reactome/R-HSA-114608",
+      "pwLabel": "Platelet degranulation "
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-114608",
+      "pwLabel": "Platelet degranulation "
+    },
+    {
+      "sym": "TIMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-114608",
+      "pwLabel": "Platelet degranulation "
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-114608",
+      "pwLabel": "Platelet degranulation "
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-114608",
+      "pwLabel": "Platelet degranulation "
+    },
+    {
+      "sym": "SELP",
+      "pw": "https://identifiers.org/reactome/R-HSA-114608",
+      "pwLabel": "Platelet degranulation "
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-1181150",
+      "pwLabel": "Signaling by NODAL"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-1221632",
+      "pwLabel": "Meiotic synapsis"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-1227986",
+      "pwLabel": "Signaling by ERBB2"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-1227986",
+      "pwLabel": "Signaling by ERBB2"
+    },
+    {
+      "sym": "HIF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-1234158",
+      "pwLabel": "Regulation of gene expression by Hypoxia-inducible Factor"
+    },
+    {
+      "sym": "HIF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-1234174",
+      "pwLabel": "Cellular response to hypoxia"
+    },
+    {
+      "sym": "HIF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-1234176",
+      "pwLabel": "Oxygen-dependent proline hydroxylation of Hypoxia-inducible Factor Alpha"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-1236382",
+      "pwLabel": "Constitutive Signaling by Ligand-Responsive EGFR Cancer Variants"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1236382",
+      "pwLabel": "Constitutive Signaling by Ligand-Responsive EGFR Cancer Variants"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-1236394",
+      "pwLabel": "Signaling by ERBB4"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-1250196",
+      "pwLabel": "SHC1 events in ERBB2 signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1250342",
+      "pwLabel": "PI3K events in ERBB4 signaling"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-1251932",
+      "pwLabel": "PLCG1 events in ERBB2 signaling"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1251985",
+      "pwLabel": "Nuclear signaling by ERBB4"
+    },
+    {
+      "sym": "PGR",
+      "pw": "https://identifiers.org/reactome/R-HSA-1251985",
+      "pwLabel": "Nuclear signaling by ERBB4"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-1251985",
+      "pwLabel": "Nuclear signaling by ERBB4"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-1253288",
+      "pwLabel": "Downregulation of ERBB4 signaling"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1257604",
+      "pwLabel": "PIP3 activates AKT signaling"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-1257604",
+      "pwLabel": "PIP3 activates AKT signaling"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-1257604",
+      "pwLabel": "PIP3 activates AKT signaling"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-1257604",
+      "pwLabel": "PIP3 activates AKT signaling"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-1257604",
+      "pwLabel": "PIP3 activates AKT signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1257604",
+      "pwLabel": "PIP3 activates AKT signaling"
+    },
+    {
+      "sym": "ESR2",
+      "pw": "https://identifiers.org/reactome/R-HSA-1257604",
+      "pwLabel": "PIP3 activates AKT signaling"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-1266695",
+      "pwLabel": "Interleukin-7 signaling"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-1295596",
+      "pwLabel": "Spry regulation of FGF signaling"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-1362277",
+      "pwLabel": "Transcription of E2F targets under negative control by DREAM complex"
+    },
+    {
+      "sym": "SERPINE1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1368108",
+      "pwLabel": "BMAL1:CLOCK,NPAS2 activates circadian expression"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1368108",
+      "pwLabel": "BMAL1:CLOCK,NPAS2 activates circadian expression"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1368108",
+      "pwLabel": "BMAL1:CLOCK,NPAS2 activates circadian expression"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-139915",
+      "pwLabel": "Activation of PUMA and translocation to mitochondria"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-140342",
+      "pwLabel": "Apoptosis induced DNA fragmentation"
+    },
+    {
+      "sym": "FAS",
+      "pw": "https://identifiers.org/reactome/R-HSA-140534",
+      "pwLabel": "Caspase activation via Death Receptors in the presence of ligand"
+    },
+    {
+      "sym": "F3",
+      "pw": "https://identifiers.org/reactome/R-HSA-140834",
+      "pwLabel": "Extrinsic Pathway of Fibrin Clot Formation"
+    },
+    {
+      "sym": "THBD",
+      "pw": "https://identifiers.org/reactome/R-HSA-140875",
+      "pwLabel": "Common Pathway of Fibrin Clot Formation"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-1433557",
+      "pwLabel": "Signaling by SCF-KIT"
+    },
+    {
+      "sym": "MMP9",
+      "pw": "https://identifiers.org/reactome/R-HSA-1433557",
+      "pwLabel": "Signaling by SCF-KIT"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1433557",
+      "pwLabel": "Signaling by SCF-KIT"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-1433559",
+      "pwLabel": "Regulation of KIT signaling"
+    },
+    {
+      "sym": "MMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1442490",
+      "pwLabel": "Collagen degradation"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1442490",
+      "pwLabel": "Collagen degradation"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1442490",
+      "pwLabel": "Collagen degradation"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1442490",
+      "pwLabel": "Collagen degradation"
+    },
+    {
+      "sym": "MMP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-1442490",
+      "pwLabel": "Collagen degradation"
+    },
+    {
+      "sym": "MMP10",
+      "pw": "https://identifiers.org/reactome/R-HSA-1442490",
+      "pwLabel": "Collagen degradation"
+    },
+    {
+      "sym": "MMP9",
+      "pw": "https://identifiers.org/reactome/R-HSA-1442490",
+      "pwLabel": "Collagen degradation"
+    },
+    {
+      "sym": "MMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1474228",
+      "pwLabel": "Degradation of the extracellular matrix"
+    },
+    {
+      "sym": "MMP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-1474228",
+      "pwLabel": "Degradation of the extracellular matrix"
+    },
+    {
+      "sym": "DCN",
+      "pw": "https://identifiers.org/reactome/R-HSA-1474228",
+      "pwLabel": "Degradation of the extracellular matrix"
+    },
+    {
+      "sym": "MMP10",
+      "pw": "https://identifiers.org/reactome/R-HSA-1474228",
+      "pwLabel": "Degradation of the extracellular matrix"
+    },
+    {
+      "sym": "MMP9",
+      "pw": "https://identifiers.org/reactome/R-HSA-1474228",
+      "pwLabel": "Degradation of the extracellular matrix"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-1474228",
+      "pwLabel": "Degradation of the extracellular matrix"
+    },
+    {
+      "sym": "CYP1A2",
+      "pw": "https://identifiers.org/reactome/R-HSA-156581",
+      "pwLabel": "Methylation"
+    },
+    {
+      "sym": "UGT1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-156588",
+      "pwLabel": "Glucuronidation"
+    },
+    {
+      "sym": "GSTA2",
+      "pw": "https://identifiers.org/reactome/R-HSA-156590",
+      "pwLabel": "Glutathione conjugation"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1566977",
+      "pwLabel": "Fibronectin matrix formation"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1566977",
+      "pwLabel": "Fibronectin matrix formation"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1566977",
+      "pwLabel": "Fibronectin matrix formation"
+    },
+    {
+      "sym": "TIMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1592389",
+      "pwLabel": "Activation of Matrix Metalloproteinases"
+    },
+    {
+      "sym": "MMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1592389",
+      "pwLabel": "Activation of Matrix Metalloproteinases"
+    },
+    {
+      "sym": "MMP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-1592389",
+      "pwLabel": "Activation of Matrix Metalloproteinases"
+    },
+    {
+      "sym": "MMP10",
+      "pw": "https://identifiers.org/reactome/R-HSA-1592389",
+      "pwLabel": "Activation of Matrix Metalloproteinases"
+    },
+    {
+      "sym": "MMP9",
+      "pw": "https://identifiers.org/reactome/R-HSA-1592389",
+      "pwLabel": "Activation of Matrix Metalloproteinases"
+    },
+    {
+      "sym": "ABCB11",
+      "pw": "https://identifiers.org/reactome/R-HSA-159418",
+      "pwLabel": "Recycling of bile acids and salts"
+    },
+    {
+      "sym": "ABCC3",
+      "pw": "https://identifiers.org/reactome/R-HSA-159418",
+      "pwLabel": "Recycling of bile acids and salts"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-159418",
+      "pwLabel": "Recycling of bile acids and salts"
+    },
+    {
+      "sym": "NR1H4",
+      "pw": "https://identifiers.org/reactome/R-HSA-159418",
+      "pwLabel": "Recycling of bile acids and salts"
+    },
+    {
+      "sym": "SLCO1B1",
+      "pw": "https://identifiers.org/reactome/R-HSA-159418",
+      "pwLabel": "Recycling of bile acids and salts"
+    },
+    {
+      "sym": "PLAUR",
+      "pw": "https://identifiers.org/reactome/R-HSA-162791",
+      "pwLabel": "Attachment of GPI anchor to uPAR"
+    },
+    {
+      "sym": "PRKAA1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1632852",
+      "pwLabel": "Macroautophagy"
+    },
+    {
+      "sym": "FABP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-163560",
+      "pwLabel": "Triglyceride catabolism"
+    },
+    {
+      "sym": "FASN",
+      "pw": "https://identifiers.org/reactome/R-HSA-163765",
+      "pwLabel": "ChREBP activates metabolic gene expression"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1650814",
+      "pwLabel": "Collagen biosynthesis and modifying enzymes"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1650814",
+      "pwLabel": "Collagen biosynthesis and modifying enzymes"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1650814",
+      "pwLabel": "Collagen biosynthesis and modifying enzymes"
+    },
+    {
+      "sym": "SREBF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1655829",
+      "pwLabel": "Regulation of cholesterol biosynthesis by SREBP (SREBF)"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1660499",
+      "pwLabel": "Synthesis of PIPs at the plasma membrane"
+    },
+    {
+      "sym": "PTEN",
+      "pw": "https://identifiers.org/reactome/R-HSA-1660499",
+      "pwLabel": "Synthesis of PIPs at the plasma membrane"
+    },
+    {
+      "sym": "ABCG2",
+      "pw": "https://identifiers.org/reactome/R-HSA-1660661",
+      "pwLabel": "Sphingolipid de novo biosynthesis"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-168277",
+      "pwLabel": "Influenza Virus Induced Apoptosis"
+    },
+    {
+      "sym": "HSPA1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-168330",
+      "pwLabel": "Viral RNP Complexes in the Host Cell Nucleus"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-171007",
+      "pwLabel": "p38MAPK events"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-171306",
+      "pwLabel": "Packaging Of Telomere Ends"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-177929",
+      "pwLabel": "Signaling by EGFR"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-177929",
+      "pwLabel": "Signaling by EGFR"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-179812",
+      "pwLabel": "GRB2 events in EGFR signaling"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-180292",
+      "pwLabel": "GAB1 signalosome"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-180292",
+      "pwLabel": "GAB1 signalosome"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-180292",
+      "pwLabel": "GAB1 signalosome"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-180336",
+      "pwLabel": "SHC1 events in EGFR signaling"
+    },
+    {
+      "sym": "SLC22A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-181430",
+      "pwLabel": "Norepinephrine Neurotransmitter Release Cycle"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-182971",
+      "pwLabel": "EGFR downregulation"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1839117",
+      "pwLabel": "Signaling by cytosolic FGFR1 fusion mutants"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-1839122",
+      "pwLabel": "Signaling by activated point mutants of FGFR1"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-1839130",
+      "pwLabel": "Signaling by activated point mutants of FGFR3"
+    },
+    {
+      "sym": "PTEN",
+      "pw": "https://identifiers.org/reactome/R-HSA-1855204",
+      "pwLabel": "Synthesis of IP3 and IP4 in the cytosol"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-186763",
+      "pwLabel": "Downstream signal transduction"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-186763",
+      "pwLabel": "Downstream signal transduction"
+    },
+    {
+      "sym": "PLAT",
+      "pw": "https://identifiers.org/reactome/R-HSA-186797",
+      "pwLabel": "Signaling by PDGF"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-186797",
+      "pwLabel": "Signaling by PDGF"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-186797",
+      "pwLabel": "Signaling by PDGF"
+    },
+    {
+      "sym": "ADORA2A",
+      "pw": "https://identifiers.org/reactome/R-HSA-187024",
+      "pwLabel": "NGF-independant TRKA activation"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-187577",
+      "pwLabel": "SCF(Skp2)-mediated degradation of p27/p21"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-187577",
+      "pwLabel": "SCF(Skp2)-mediated degradation of p27/p21"
+    },
+    {
+      "sym": "ABCG2",
+      "pw": "https://identifiers.org/reactome/R-HSA-189451",
+      "pwLabel": "Heme biosynthesis"
+    },
+    {
+      "sym": "FABP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-189483",
+      "pwLabel": "Heme degradation"
+    },
+    {
+      "sym": "UGT1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-189483",
+      "pwLabel": "Heme degradation"
+    },
+    {
+      "sym": "SLCO1B1",
+      "pw": "https://identifiers.org/reactome/R-HSA-189483",
+      "pwLabel": "Heme degradation"
+    },
+    {
+      "sym": "ABCG2",
+      "pw": "https://identifiers.org/reactome/R-HSA-189483",
+      "pwLabel": "Heme degradation"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-190322",
+      "pwLabel": "FGFR4 ligand binding and activation"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-190370",
+      "pwLabel": "FGFR1b ligand binding and activation"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-190372",
+      "pwLabel": "FGFR3c ligand binding and activation"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-190373",
+      "pwLabel": "FGFR1c ligand binding and activation"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-190375",
+      "pwLabel": "FGFR2c ligand binding and activation"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-190377",
+      "pwLabel": "FGFR2b ligand binding and activation"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-1912408",
+      "pwLabel": "Pre-NOTCH Transcription and Translation"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-1912408",
+      "pwLabel": "Pre-NOTCH Transcription and Translation"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1912408",
+      "pwLabel": "Pre-NOTCH Transcription and Translation"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-1912408",
+      "pwLabel": "Pre-NOTCH Transcription and Translation"
+    },
+    {
+      "sym": "SREBF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-191273",
+      "pwLabel": "Cholesterol biosynthesis"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-191650",
+      "pwLabel": "Regulation of gap junction activity"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-192105",
+      "pwLabel": "Synthesis of bile acids and bile salts"
+    },
+    {
+      "sym": "NR1H4",
+      "pw": "https://identifiers.org/reactome/R-HSA-192105",
+      "pwLabel": "Synthesis of bile acids and bile salts"
+    },
+    {
+      "sym": "CYP19A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-193144",
+      "pwLabel": "Estrogen biosynthesis"
+    },
+    {
+      "sym": "ABCB11",
+      "pw": "https://identifiers.org/reactome/R-HSA-193368",
+      "pwLabel": "Synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-193368",
+      "pwLabel": "Synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol"
+    },
+    {
+      "sym": "NR1H4",
+      "pw": "https://identifiers.org/reactome/R-HSA-193368",
+      "pwLabel": "Synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol"
+    },
+    {
+      "sym": "BCL2L11",
+      "pw": "https://identifiers.org/reactome/R-HSA-193648",
+      "pwLabel": "NRAGE signals death through JNK"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-193807",
+      "pwLabel": "Synthesis of bile acids and bile salts via 27-hydroxycholesterol"
+    },
+    {
+      "sym": "NR1H4",
+      "pw": "https://identifiers.org/reactome/R-HSA-193807",
+      "pwLabel": "Synthesis of bile acids and bile salts via 27-hydroxycholesterol"
+    },
+    {
+      "sym": "KDR",
+      "pw": "https://identifiers.org/reactome/R-HSA-194306",
+      "pwLabel": "Neurophilin interactions with VEGF and VEGFR"
+    },
+    {
+      "sym": "KDR",
+      "pw": "https://identifiers.org/reactome/R-HSA-195399",
+      "pwLabel": "VEGF binds to VEGFR leading to receptor dimerization"
+    },
+    {
+      "sym": "TSPO",
+      "pw": "https://identifiers.org/reactome/R-HSA-196108",
+      "pwLabel": "Pregnenolone biosynthesis"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-1963640",
+      "pwLabel": "GRB2 events in ERBB2 signaling"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-1963642",
+      "pwLabel": "PI3K events in ERBB2 signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1963642",
+      "pwLabel": "PI3K events in ERBB2 signaling"
+    },
+    {
+      "sym": "VDR",
+      "pw": "https://identifiers.org/reactome/R-HSA-196791",
+      "pwLabel": "Vitamin D (calciferol) metabolism"
+    },
+    {
+      "sym": "CYP24A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-196791",
+      "pwLabel": "Vitamin D (calciferol) metabolism"
+    },
+    {
+      "sym": "CD38",
+      "pw": "https://identifiers.org/reactome/R-HSA-196807",
+      "pwLabel": "Nicotinate metabolism"
+    },
+    {
+      "sym": "DCN",
+      "pw": "https://identifiers.org/reactome/R-HSA-1971475",
+      "pwLabel": "Glycosaminoglycan-protein linkage region biosynthesis"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-198203",
+      "pwLabel": "PI3K/AKT activation"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-198323",
+      "pwLabel": "AKT phosphorylates targets in the cytosol"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-198693",
+      "pwLabel": "AKT phosphorylates targets in the nucleus"
+    },
+    {
+      "sym": "FOXO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-198693",
+      "pwLabel": "AKT phosphorylates targets in the nucleus"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-198933",
+      "pwLabel": "Immunoregulatory interactions between a Lymphoid and a non-Lymphoid cell"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-198933",
+      "pwLabel": "Immunoregulatory interactions between a Lymphoid and a non-Lymphoid cell"
+    },
+    {
+      "sym": "ICAM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-198933",
+      "pwLabel": "Immunoregulatory interactions between a Lymphoid and a non-Lymphoid cell"
+    },
+    {
+      "sym": "CD40",
+      "pw": "https://identifiers.org/reactome/R-HSA-198933",
+      "pwLabel": "Immunoregulatory interactions between a Lymphoid and a non-Lymphoid cell"
+    },
+    {
+      "sym": "VCAM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-198933",
+      "pwLabel": "Immunoregulatory interactions between a Lymphoid and a non-Lymphoid cell"
+    },
+    {
+      "sym": "CYP1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "ESRRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "SP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "FABP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "AHR",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "RXRB",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "SREBF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "PPARG",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "RORA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "NRF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "NR1H4",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "HMGCS2",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "ACOX1",
+      "pw": "https://identifiers.org/reactome/R-HSA-1989781",
+      "pwLabel": "PPARA activates gene expression"
+    },
+    {
+      "sym": "FASN",
+      "pw": "https://identifiers.org/reactome/R-HSA-199220",
+      "pwLabel": "Vitamin B5 (pantothenate) metabolism"
+    },
+    {
+      "sym": "PTEN",
+      "pw": "https://identifiers.org/reactome/R-HSA-199418",
+      "pwLabel": "Negative regulation of the PI3K/AKT network"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-200425",
+      "pwLabel": "Carnitine shuttle"
+    },
+    {
+      "sym": "PPARD",
+      "pw": "https://identifiers.org/reactome/R-HSA-200425",
+      "pwLabel": "Carnitine shuttle"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-201556",
+      "pwLabel": "Signaling by ALK"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-201556",
+      "pwLabel": "Signaling by ALK"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-201556",
+      "pwLabel": "Signaling by ALK"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-201722",
+      "pwLabel": "Formation of the beta-catenin:TCF transactivating complex"
+    },
+    {
+      "sym": "OPRM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-202040",
+      "pwLabel": "G-protein activation"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2022090",
+      "pwLabel": "Assembly of collagen fibrils and other multimeric structures"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2022090",
+      "pwLabel": "Assembly of collagen fibrils and other multimeric structures"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2022090",
+      "pwLabel": "Assembly of collagen fibrils and other multimeric structures"
+    },
+    {
+      "sym": "MMP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-2022090",
+      "pwLabel": "Assembly of collagen fibrils and other multimeric structures"
+    },
+    {
+      "sym": "MMP9",
+      "pw": "https://identifiers.org/reactome/R-HSA-2022090",
+      "pwLabel": "Assembly of collagen fibrils and other multimeric structures"
+    },
+    {
+      "sym": "DCN",
+      "pw": "https://identifiers.org/reactome/R-HSA-2022870",
+      "pwLabel": "CS-GAG biosynthesis"
+    },
+    {
+      "sym": "DCN",
+      "pw": "https://identifiers.org/reactome/R-HSA-2022923",
+      "pwLabel": "DS-GAG biosynthesis"
+    },
+    {
+      "sym": "DCN",
+      "pw": "https://identifiers.org/reactome/R-HSA-2024101",
+      "pwLabel": "CS/DS degradation"
+    },
+    {
+      "sym": "HLA-DRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-202424",
+      "pwLabel": "Downstream TCR signaling"
+    },
+    {
+      "sym": "PTEN",
+      "pw": "https://identifiers.org/reactome/R-HSA-202424",
+      "pwLabel": "Downstream TCR signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-202424",
+      "pwLabel": "Downstream TCR signaling"
+    },
+    {
+      "sym": "HLA-DRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-202427",
+      "pwLabel": "Phosphorylation of CD3 and TCR zeta chains"
+    },
+    {
+      "sym": "HLA-DRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-202430",
+      "pwLabel": "Translocation of ZAP-70 to Immunological synapse"
+    },
+    {
+      "sym": "HLA-DRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-202433",
+      "pwLabel": "Generation of second messenger molecules"
+    },
+    {
+      "sym": "DUSP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-202670",
+      "pwLabel": "ERKs are inactivated"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-202733",
+      "pwLabel": "Cell surface interactions at the vascular wall"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-202733",
+      "pwLabel": "Cell surface interactions at the vascular wall"
+    },
+    {
+      "sym": "THBD",
+      "pw": "https://identifiers.org/reactome/R-HSA-202733",
+      "pwLabel": "Cell surface interactions at the vascular wall"
+    },
+    {
+      "sym": "SELP",
+      "pw": "https://identifiers.org/reactome/R-HSA-202733",
+      "pwLabel": "Cell surface interactions at the vascular wall"
+    },
+    {
+      "sym": "SELE",
+      "pw": "https://identifiers.org/reactome/R-HSA-202733",
+      "pwLabel": "Cell surface interactions at the vascular wall"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-2028269",
+      "pwLabel": "Signaling by Hippo"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-2029481",
+      "pwLabel": "FCGR activation"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-2029485",
+      "pwLabel": "Role of phospholipids in phagocytosis"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-2033519",
+      "pwLabel": "Activated point mutants of FGFR2"
+    },
+    {
+      "sym": "PDK4",
+      "pw": "https://identifiers.org/reactome/R-HSA-204174",
+      "pwLabel": "Regulation of pyruvate dehydrogenase (PDH) complex"
+    },
+    {
+      "sym": "ACOX1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2046106",
+      "pwLabel": "alpha-linolenic acid (ALA) metabolism"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-205025",
+      "pwLabel": "NADE modulates death signalling"
+    },
+    {
+      "sym": "PAX6",
+      "pw": "https://identifiers.org/reactome/R-HSA-210745",
+      "pwLabel": "Regulation of gene expression in beta cells"
+    },
+    {
+      "sym": "FOXO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-210745",
+      "pwLabel": "Regulation of gene expression in beta cells"
+    },
+    {
+      "sym": "HNF4A",
+      "pw": "https://identifiers.org/reactome/R-HSA-210745",
+      "pwLabel": "Regulation of gene expression in beta cells"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-210990",
+      "pwLabel": "PECAM1 interactions"
+    },
+    {
+      "sym": "MMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-210991",
+      "pwLabel": "Basigin interactions"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-210993",
+      "pwLabel": "Tie2 Signaling"
+    },
+    {
+      "sym": "FOXO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-211163",
+      "pwLabel": "AKT-mediated inactivation of FOXO1A"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-211736",
+      "pwLabel": "Stimulation of the cell death response by PAK-2p34"
+    },
+    {
+      "sym": "CYP24A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-211916",
+      "pwLabel": "Vitamins"
+    },
+    {
+      "sym": "CYP2B6",
+      "pw": "https://identifiers.org/reactome/R-HSA-211935",
+      "pwLabel": "Fatty acids"
+    },
+    {
+      "sym": "CYP2J2",
+      "pw": "https://identifiers.org/reactome/R-HSA-211935",
+      "pwLabel": "Fatty acids"
+    },
+    {
+      "sym": "CYP3A4",
+      "pw": "https://identifiers.org/reactome/R-HSA-211945",
+      "pwLabel": "Phase I - Functionalization of compounds"
+    },
+    {
+      "sym": "CYP2B6",
+      "pw": "https://identifiers.org/reactome/R-HSA-211945",
+      "pwLabel": "Phase I - Functionalization of compounds"
+    },
+    {
+      "sym": "AHR",
+      "pw": "https://identifiers.org/reactome/R-HSA-211945",
+      "pwLabel": "Phase I - Functionalization of compounds"
+    },
+    {
+      "sym": "CYP1A2",
+      "pw": "https://identifiers.org/reactome/R-HSA-211957",
+      "pwLabel": "Aromatic amines can be N-hydroxylated or N-dealkylated by CYP1A2"
+    },
+    {
+      "sym": "CYP19A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-211976",
+      "pwLabel": "Endogenous sterols"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-211976",
+      "pwLabel": "Endogenous sterols"
+    },
+    {
+      "sym": "AHR",
+      "pw": "https://identifiers.org/reactome/R-HSA-211976",
+      "pwLabel": "Endogenous sterols"
+    },
+    {
+      "sym": "NR1H4",
+      "pw": "https://identifiers.org/reactome/R-HSA-211976",
+      "pwLabel": "Endogenous sterols"
+    },
+    {
+      "sym": "CYP1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-211981",
+      "pwLabel": "Xenobiotics"
+    },
+    {
+      "sym": "CYP3A4",
+      "pw": "https://identifiers.org/reactome/R-HSA-211981",
+      "pwLabel": "Xenobiotics"
+    },
+    {
+      "sym": "CYP2C9",
+      "pw": "https://identifiers.org/reactome/R-HSA-211981",
+      "pwLabel": "Xenobiotics"
+    },
+    {
+      "sym": "CYP2E1",
+      "pw": "https://identifiers.org/reactome/R-HSA-211981",
+      "pwLabel": "Xenobiotics"
+    },
+    {
+      "sym": "AHR",
+      "pw": "https://identifiers.org/reactome/R-HSA-211981",
+      "pwLabel": "Xenobiotics"
+    },
+    {
+      "sym": "CYP2B6",
+      "pw": "https://identifiers.org/reactome/R-HSA-211981",
+      "pwLabel": "Xenobiotics"
+    },
+    {
+      "sym": "CYP2C19",
+      "pw": "https://identifiers.org/reactome/R-HSA-211981",
+      "pwLabel": "Xenobiotics"
+    },
+    {
+      "sym": "CYP2C18",
+      "pw": "https://identifiers.org/reactome/R-HSA-211981",
+      "pwLabel": "Xenobiotics"
+    },
+    {
+      "sym": "CYP2J2",
+      "pw": "https://identifiers.org/reactome/R-HSA-211981",
+      "pwLabel": "Xenobiotics"
+    },
+    {
+      "sym": "CYP2C9",
+      "pw": "https://identifiers.org/reactome/R-HSA-211999",
+      "pwLabel": "CYP2E1 reactions"
+    },
+    {
+      "sym": "CYP2E1",
+      "pw": "https://identifiers.org/reactome/R-HSA-211999",
+      "pwLabel": "CYP2E1 reactions"
+    },
+    {
+      "sym": "CYP2C19",
+      "pw": "https://identifiers.org/reactome/R-HSA-211999",
+      "pwLabel": "CYP2E1 reactions"
+    },
+    {
+      "sym": "CYP2B6",
+      "pw": "https://identifiers.org/reactome/R-HSA-211999",
+      "pwLabel": "CYP2E1 reactions"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-2122947",
+      "pwLabel": "NOTCH1 Intracellular Domain Regulates Transcription"
+    },
+    {
+      "sym": "HIF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-2122947",
+      "pwLabel": "NOTCH1 Intracellular Domain Regulates Transcription"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-212300",
+      "pwLabel": "PRC2 methylates histones and DNA"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-212718",
+      "pwLabel": "EGFR interacts with phospholipase C-gamma"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2129379",
+      "pwLabel": "Molecules associated with elastic fibres"
+    },
+    {
+      "sym": "HLA-DRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-2132295",
+      "pwLabel": "MHC class II antigen presentation"
+    },
+    {
+      "sym": "CYP1A2",
+      "pw": "https://identifiers.org/reactome/R-HSA-2142670",
+      "pwLabel": "Synthesis of epoxy (EET) and dihydroxyeicosatrienoic acids (DHET)"
+    },
+    {
+      "sym": "CYP1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2142670",
+      "pwLabel": "Synthesis of epoxy (EET) and dihydroxyeicosatrienoic acids (DHET)"
+    },
+    {
+      "sym": "CYP2C9",
+      "pw": "https://identifiers.org/reactome/R-HSA-2142670",
+      "pwLabel": "Synthesis of epoxy (EET) and dihydroxyeicosatrienoic acids (DHET)"
+    },
+    {
+      "sym": "CYP2C19",
+      "pw": "https://identifiers.org/reactome/R-HSA-2142670",
+      "pwLabel": "Synthesis of epoxy (EET) and dihydroxyeicosatrienoic acids (DHET)"
+    },
+    {
+      "sym": "CYP2J2",
+      "pw": "https://identifiers.org/reactome/R-HSA-2142670",
+      "pwLabel": "Synthesis of epoxy (EET) and dihydroxyeicosatrienoic acids (DHET)"
+    },
+    {
+      "sym": "CYP1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2142816",
+      "pwLabel": "Synthesis of (16-20)-hydroxyeicosatetraenoic acids (HETE)"
+    },
+    {
+      "sym": "CYP1A2",
+      "pw": "https://identifiers.org/reactome/R-HSA-2142816",
+      "pwLabel": "Synthesis of (16-20)-hydroxyeicosatetraenoic acids (HETE)"
+    },
+    {
+      "sym": "CYP2C9",
+      "pw": "https://identifiers.org/reactome/R-HSA-2142816",
+      "pwLabel": "Synthesis of (16-20)-hydroxyeicosatetraenoic acids (HETE)"
+    },
+    {
+      "sym": "CYP2C19",
+      "pw": "https://identifiers.org/reactome/R-HSA-2142816",
+      "pwLabel": "Synthesis of (16-20)-hydroxyeicosatetraenoic acids (HETE)"
+    },
+    {
+      "sym": "ESRRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-2151201",
+      "pwLabel": "Transcriptional activation of mitochondrial biogenesis"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-2151201",
+      "pwLabel": "Transcriptional activation of mitochondrial biogenesis"
+    },
+    {
+      "sym": "SIRT3",
+      "pw": "https://identifiers.org/reactome/R-HSA-2151201",
+      "pwLabel": "Transcriptional activation of mitochondrial biogenesis"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-2151201",
+      "pwLabel": "Transcriptional activation of mitochondrial biogenesis"
+    },
+    {
+      "sym": "NRF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2151201",
+      "pwLabel": "Transcriptional activation of mitochondrial biogenesis"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-216083",
+      "pwLabel": "Integrin cell surface interactions"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-216083",
+      "pwLabel": "Integrin cell surface interactions"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-216083",
+      "pwLabel": "Integrin cell surface interactions"
+    },
+    {
+      "sym": "ICAM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-216083",
+      "pwLabel": "Integrin cell surface interactions"
+    },
+    {
+      "sym": "VCAM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-216083",
+      "pwLabel": "Integrin cell surface interactions"
+    },
+    {
+      "sym": "KDR",
+      "pw": "https://identifiers.org/reactome/R-HSA-216083",
+      "pwLabel": "Integrin cell surface interactions"
+    },
+    {
+      "sym": "SLC22A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2161517",
+      "pwLabel": "Abacavir transmembrane transport"
+    },
+    {
+      "sym": "ABCG2",
+      "pw": "https://identifiers.org/reactome/R-HSA-2161517",
+      "pwLabel": "Abacavir transmembrane transport"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2173788",
+      "pwLabel": "Downregulation of TGF-beta receptor signaling"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2173789",
+      "pwLabel": "TGF-beta receptor signaling activates SMADs"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2173791",
+      "pwLabel": "TGF-beta receptor signaling in EMT (epithelial to mesenchymal transition)"
+    },
+    {
+      "sym": "SERPINE1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2173796",
+      "pwLabel": "SMAD2/SMAD3:SMAD4 heterotrimer regulates transcription"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-2173796",
+      "pwLabel": "SMAD2/SMAD3:SMAD4 heterotrimer regulates transcription"
+    },
+    {
+      "sym": "SP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2173796",
+      "pwLabel": "SMAD2/SMAD3:SMAD4 heterotrimer regulates transcription"
+    },
+    {
+      "sym": "MMP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-2179392",
+      "pwLabel": "EGFR Transactivation by Gastrin"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2214320",
+      "pwLabel": "Anchoring fibril formation"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2214320",
+      "pwLabel": "Anchoring fibril formation"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2219530",
+      "pwLabel": "Constitutive Signaling by Aberrant PI3K in Cancer"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-2219530",
+      "pwLabel": "Constitutive Signaling by Aberrant PI3K in Cancer"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-2219530",
+      "pwLabel": "Constitutive Signaling by Aberrant PI3K in Cancer"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-2219530",
+      "pwLabel": "Constitutive Signaling by Aberrant PI3K in Cancer"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-2219530",
+      "pwLabel": "Constitutive Signaling by Aberrant PI3K in Cancer"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-2219530",
+      "pwLabel": "Constitutive Signaling by Aberrant PI3K in Cancer"
+    },
+    {
+      "sym": "ESR2",
+      "pw": "https://identifiers.org/reactome/R-HSA-2219530",
+      "pwLabel": "Constitutive Signaling by Aberrant PI3K in Cancer"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2243919",
+      "pwLabel": "Crosslinking of collagen fibrils"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2243919",
+      "pwLabel": "Crosslinking of collagen fibrils"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-2299718",
+      "pwLabel": "Condensation of Prophase Chromosomes"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-2424491",
+      "pwLabel": "DAP12 signaling"
+    },
+    {
+      "sym": "SP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2426168",
+      "pwLabel": "Activation of gene expression by SREBF (SREBP)"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-2426168",
+      "pwLabel": "Activation of gene expression by SREBF (SREBP)"
+    },
+    {
+      "sym": "SREBF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2426168",
+      "pwLabel": "Activation of gene expression by SREBF (SREBP)"
+    },
+    {
+      "sym": "FASN",
+      "pw": "https://identifiers.org/reactome/R-HSA-2426168",
+      "pwLabel": "Activation of gene expression by SREBF (SREBP)"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-2426168",
+      "pwLabel": "Activation of gene expression by SREBF (SREBP)"
+    },
+    {
+      "sym": "FOS",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559580",
+      "pwLabel": "Oxidative Stress Induced Senescence"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559580",
+      "pwLabel": "Oxidative Stress Induced Senescence"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559580",
+      "pwLabel": "Oxidative Stress Induced Senescence"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559580",
+      "pwLabel": "Oxidative Stress Induced Senescence"
+    },
+    {
+      "sym": "FOS",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559582",
+      "pwLabel": "Senescence-Associated Secretory Phenotype (SASP)"
+    },
+    {
+      "sym": "CXCL8",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559582",
+      "pwLabel": "Senescence-Associated Secretory Phenotype (SASP)"
+    },
+    {
+      "sym": "IL6",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559582",
+      "pwLabel": "Senescence-Associated Secretory Phenotype (SASP)"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559582",
+      "pwLabel": "Senescence-Associated Secretory Phenotype (SASP)"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559582",
+      "pwLabel": "Senescence-Associated Secretory Phenotype (SASP)"
+    },
+    {
+      "sym": "CEBPB",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559582",
+      "pwLabel": "Senescence-Associated Secretory Phenotype (SASP)"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559582",
+      "pwLabel": "Senescence-Associated Secretory Phenotype (SASP)"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559584",
+      "pwLabel": "Formation of Senescence-Associated Heterochromatin Foci (SAHF)"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559585",
+      "pwLabel": "Oncogene Induced Senescence"
+    },
+    {
+      "sym": "SP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559585",
+      "pwLabel": "Oncogene Induced Senescence"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559586",
+      "pwLabel": "DNA Damage/Telomere Stress Induced Senescence"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559586",
+      "pwLabel": "DNA Damage/Telomere Stress Induced Senescence"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-2559586",
+      "pwLabel": "DNA Damage/Telomere Stress Induced Senescence"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-2644606",
+      "pwLabel": "Constitutive Signaling by NOTCH1 PEST Domain Mutants"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-264870",
+      "pwLabel": "Caspase-mediated cleavage of cytoskeletal proteins"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-2682334",
+      "pwLabel": "EPH-Ephrin signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-2730905",
+      "pwLabel": "Role of LAT2/NTAL/LAB on calcium mobilization"
+    },
+    {
+      "sym": "FOS",
+      "pw": "https://identifiers.org/reactome/R-HSA-2871796",
+      "pwLabel": "FCERI mediated MAPK activation"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-2871796",
+      "pwLabel": "FCERI mediated MAPK activation"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-2892247",
+      "pwLabel": "POU5F1 (OCT4), SOX2, NANOG activate genes related to proliferation"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-2894862",
+      "pwLabel": "Constitutive Signaling by NOTCH1 HD+PEST Domain Mutants"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000157",
+      "pwLabel": "Laminin interactions"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000170",
+      "pwLabel": "Syndecan interactions"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000170",
+      "pwLabel": "Syndecan interactions"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000170",
+      "pwLabel": "Syndecan interactions"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000170",
+      "pwLabel": "Syndecan interactions"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000171",
+      "pwLabel": "Non-integrin membrane-ECM interactions"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000171",
+      "pwLabel": "Non-integrin membrane-ECM interactions"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000171",
+      "pwLabel": "Non-integrin membrane-ECM interactions"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000171",
+      "pwLabel": "Non-integrin membrane-ECM interactions"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000178",
+      "pwLabel": "ECM proteoglycans"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000178",
+      "pwLabel": "ECM proteoglycans"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000178",
+      "pwLabel": "ECM proteoglycans"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000178",
+      "pwLabel": "ECM proteoglycans"
+    },
+    {
+      "sym": "SERPINE1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000178",
+      "pwLabel": "ECM proteoglycans"
+    },
+    {
+      "sym": "DCN",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000178",
+      "pwLabel": "ECM proteoglycans"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000480",
+      "pwLabel": "Scavenging by Class A Receptors"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000480",
+      "pwLabel": "Scavenging by Class A Receptors"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3000480",
+      "pwLabel": "Scavenging by Class A Receptors"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-3214858",
+      "pwLabel": "RMTs methylate histone arginines"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3214858",
+      "pwLabel": "RMTs methylate histone arginines"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-3232118",
+      "pwLabel": "SUMOylation of transcription factors"
+    },
+    {
+      "sym": "CAT",
+      "pw": "https://identifiers.org/reactome/R-HSA-3299685",
+      "pwLabel": "Detoxification of Reactive Oxygen Species"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3304356",
+      "pwLabel": "SMAD2/3 Phosphorylation Motif Mutants in Cancer"
+    },
+    {
+      "sym": "FAS",
+      "pw": "https://identifiers.org/reactome/R-HSA-3371378",
+      "pwLabel": "Regulation by c-FLIP"
+    },
+    {
+      "sym": "HSPA1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-3371453",
+      "pwLabel": "Regulation of HSF1-mediated heat shock response"
+    },
+    {
+      "sym": "HSF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3371453",
+      "pwLabel": "Regulation of HSF1-mediated heat shock response"
+    },
+    {
+      "sym": "NR3C1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3371497",
+      "pwLabel": "HSP90 chaperone cycle for steroid hormone receptors (SHR) in the presence of ligand"
+    },
+    {
+      "sym": "PGR",
+      "pw": "https://identifiers.org/reactome/R-HSA-3371497",
+      "pwLabel": "HSP90 chaperone cycle for steroid hormone receptors (SHR) in the presence of ligand"
+    },
+    {
+      "sym": "AR",
+      "pw": "https://identifiers.org/reactome/R-HSA-3371497",
+      "pwLabel": "HSP90 chaperone cycle for steroid hormone receptors (SHR) in the presence of ligand"
+    },
+    {
+      "sym": "HSPA1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-3371497",
+      "pwLabel": "HSP90 chaperone cycle for steroid hormone receptors (SHR) in the presence of ligand"
+    },
+    {
+      "sym": "HSF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3371511",
+      "pwLabel": "HSF1 activation"
+    },
+    {
+      "sym": "HSPA1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-3371568",
+      "pwLabel": "Attenuation phase"
+    },
+    {
+      "sym": "HSF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3371568",
+      "pwLabel": "Attenuation phase"
+    },
+    {
+      "sym": "HSPA1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-3371571",
+      "pwLabel": "HSF1-dependent transactivation"
+    },
+    {
+      "sym": "HSF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3371571",
+      "pwLabel": "HSF1-dependent transactivation"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-349425",
+      "pwLabel": "Autodegradation of the E3 ubiquitin ligase COP1"
+    },
+    {
+      "sym": "NQO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-350562",
+      "pwLabel": "Regulation of ornithine decarboxylase (ODC)"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-351906",
+      "pwLabel": "Apoptotic cleavage of cell adhesion  proteins"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-354192",
+      "pwLabel": "Integrin signaling"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-354194",
+      "pwLabel": "GRB2:SOS provides linkage to MAPK signaling for Integrins "
+    },
+    {
+      "sym": "DCN",
+      "pw": "https://identifiers.org/reactome/R-HSA-3560783",
+      "pwLabel": "Defective B4GALT7 causes EDS, progeroid type"
+    },
+    {
+      "sym": "DCN",
+      "pw": "https://identifiers.org/reactome/R-HSA-3560801",
+      "pwLabel": "Defective B3GAT3 causes JDSSDHD"
+    },
+    {
+      "sym": "DCN",
+      "pw": "https://identifiers.org/reactome/R-HSA-3595172",
+      "pwLabel": "Defective CHST3 causes SEDCJD"
+    },
+    {
+      "sym": "DCN",
+      "pw": "https://identifiers.org/reactome/R-HSA-3595174",
+      "pwLabel": "Defective CHST14 causes EDS, musculocontractural type"
+    },
+    {
+      "sym": "DCN",
+      "pw": "https://identifiers.org/reactome/R-HSA-3595177",
+      "pwLabel": "Defective CHSY1 causes TPBS"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3642279",
+      "pwLabel": "TGFBR2 MSI Frameshift Mutants in Cancer"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3645790",
+      "pwLabel": "TGFBR2 Kinase Domain Mutants in Cancer"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3656532",
+      "pwLabel": "TGFBR1 KD Mutants in Cancer"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-3656535",
+      "pwLabel": "TGFBR1 LBD Mutants in Cancer"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-372708",
+      "pwLabel": "p130Cas linkage to MAPK signaling for integrins"
+    },
+    {
+      "sym": "SHH",
+      "pw": "https://identifiers.org/reactome/R-HSA-373080",
+      "pwLabel": "Class B/2 (Secretin family receptors)"
+    },
+    {
+      "sym": "EZR",
+      "pw": "https://identifiers.org/reactome/R-HSA-373752",
+      "pwLabel": "Netrin-1 signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-373753",
+      "pwLabel": "Nephrin family interactions"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-375165",
+      "pwLabel": "NCAM signaling for neurite out-growth"
+    },
+    {
+      "sym": "CXCL8",
+      "pw": "https://identifiers.org/reactome/R-HSA-375276",
+      "pwLabel": "Peptide ligand-binding receptors"
+    },
+    {
+      "sym": "TRHR",
+      "pw": "https://identifiers.org/reactome/R-HSA-375276",
+      "pwLabel": "Peptide ligand-binding receptors"
+    },
+    {
+      "sym": "OPRM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-375276",
+      "pwLabel": "Peptide ligand-binding receptors"
+    },
+    {
+      "sym": "OPRL1",
+      "pw": "https://identifiers.org/reactome/R-HSA-375276",
+      "pwLabel": "Peptide ligand-binding receptors"
+    },
+    {
+      "sym": "OPRD1",
+      "pw": "https://identifiers.org/reactome/R-HSA-375276",
+      "pwLabel": "Peptide ligand-binding receptors"
+    },
+    {
+      "sym": "TSHR",
+      "pw": "https://identifiers.org/reactome/R-HSA-375281",
+      "pwLabel": "Hormone ligand-binding receptors"
+    },
+    {
+      "sym": "SLC6A3",
+      "pw": "https://identifiers.org/reactome/R-HSA-379401",
+      "pwLabel": "Dopamine clearance from the synaptic cleft"
+    },
+    {
+      "sym": "CXCL8",
+      "pw": "https://identifiers.org/reactome/R-HSA-380108",
+      "pwLabel": "Chemokine receptors bind chemokines"
+    },
+    {
+      "sym": "CCL2",
+      "pw": "https://identifiers.org/reactome/R-HSA-380108",
+      "pwLabel": "Chemokine receptors bind chemokines"
+    },
+    {
+      "sym": "PRKAA1",
+      "pw": "https://identifiers.org/reactome/R-HSA-380972",
+      "pwLabel": "Energy dependent regulation of mTOR by LKB1-AMPK"
+    },
+    {
+      "sym": "CCL2",
+      "pw": "https://identifiers.org/reactome/R-HSA-380994",
+      "pwLabel": "ATF4 activates genes in response to endoplasmic reticulum  stress"
+    },
+    {
+      "sym": "CXCL8",
+      "pw": "https://identifiers.org/reactome/R-HSA-380994",
+      "pwLabel": "ATF4 activates genes in response to endoplasmic reticulum  stress"
+    },
+    {
+      "sym": "IGFBP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-380994",
+      "pwLabel": "ATF4 activates genes in response to endoplasmic reticulum  stress"
+    },
+    {
+      "sym": "CEBPB",
+      "pw": "https://identifiers.org/reactome/R-HSA-380994",
+      "pwLabel": "ATF4 activates genes in response to endoplasmic reticulum  stress"
+    },
+    {
+      "sym": "ATF6",
+      "pw": "https://identifiers.org/reactome/R-HSA-380994",
+      "pwLabel": "ATF4 activates genes in response to endoplasmic reticulum  stress"
+    },
+    {
+      "sym": "DDIT3",
+      "pw": "https://identifiers.org/reactome/R-HSA-380994",
+      "pwLabel": "ATF4 activates genes in response to endoplasmic reticulum  stress"
+    },
+    {
+      "sym": "ATF6",
+      "pw": "https://identifiers.org/reactome/R-HSA-381033",
+      "pwLabel": "ATF6 (ATF6-alpha) activates chaperones"
+    },
+    {
+      "sym": "XBP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-381038",
+      "pwLabel": "XBP1(S) activates chaperone genes"
+    },
+    {
+      "sym": "XBP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-381070",
+      "pwLabel": "IRE1alpha activates chaperones"
+    },
+    {
+      "sym": "DDIT3",
+      "pw": "https://identifiers.org/reactome/R-HSA-381183",
+      "pwLabel": "ATF6 (ATF6-alpha) activates chaperone genes"
+    },
+    {
+      "sym": "ATF6",
+      "pw": "https://identifiers.org/reactome/R-HSA-381183",
+      "pwLabel": "ATF6 (ATF6-alpha) activates chaperone genes"
+    },
+    {
+      "sym": "XBP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-381183",
+      "pwLabel": "ATF6 (ATF6-alpha) activates chaperone genes"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-381340",
+      "pwLabel": "Transcriptional regulation of white adipocyte differentiation"
+    },
+    {
+      "sym": "TNF",
+      "pw": "https://identifiers.org/reactome/R-HSA-381340",
+      "pwLabel": "Transcriptional regulation of white adipocyte differentiation"
+    },
+    {
+      "sym": "LPL",
+      "pw": "https://identifiers.org/reactome/R-HSA-381340",
+      "pwLabel": "Transcriptional regulation of white adipocyte differentiation"
+    },
+    {
+      "sym": "SREBF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-381340",
+      "pwLabel": "Transcriptional regulation of white adipocyte differentiation"
+    },
+    {
+      "sym": "PPARG",
+      "pw": "https://identifiers.org/reactome/R-HSA-381340",
+      "pwLabel": "Transcriptional regulation of white adipocyte differentiation"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-381340",
+      "pwLabel": "Transcriptional regulation of white adipocyte differentiation"
+    },
+    {
+      "sym": "CEBPB",
+      "pw": "https://identifiers.org/reactome/R-HSA-381340",
+      "pwLabel": "Transcriptional regulation of white adipocyte differentiation"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-381340",
+      "pwLabel": "Transcriptional regulation of white adipocyte differentiation"
+    },
+    {
+      "sym": "MMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-381426",
+      "pwLabel": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+    },
+    {
+      "sym": "TIMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-381426",
+      "pwLabel": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+    },
+    {
+      "sym": "IL6",
+      "pw": "https://identifiers.org/reactome/R-HSA-381426",
+      "pwLabel": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+    },
+    {
+      "sym": "CSF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-381426",
+      "pwLabel": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+    },
+    {
+      "sym": "IGFBP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-381426",
+      "pwLabel": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+    },
+    {
+      "sym": "PAX6",
+      "pw": "https://identifiers.org/reactome/R-HSA-381771",
+      "pwLabel": "Synthesis, secretion, and inactivation of Glucagon-like Peptide-1 (GLP-1)"
+    },
+    {
+      "sym": "ABCC3",
+      "pw": "https://identifiers.org/reactome/R-HSA-382556",
+      "pwLabel": "ABC-family proteins mediated transport"
+    },
+    {
+      "sym": "NR3C1",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "NR1I2",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "THRB",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "ESRRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "PGR",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "VDR",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "THRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "RARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "AR",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "RXRB",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "PPARG",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "RORA",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "HNF4A",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "RORC",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "NR4A2",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "PPARD",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "NR1H4",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "ESR2",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "NR1I3",
+      "pw": "https://identifiers.org/reactome/R-HSA-383280",
+      "pwLabel": "Nuclear Receptor transcription pathway"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-389356",
+      "pwLabel": "Co-stimulation by CD28"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-389357",
+      "pwLabel": "CD28 dependent PI3K/Akt signaling"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-389513",
+      "pwLabel": "Co-inhibition by CTLA4"
+    },
+    {
+      "sym": "HLA-DRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-389948",
+      "pwLabel": "Co-inhibition by PD-1"
+    },
+    {
+      "sym": "ACOX1",
+      "pw": "https://identifiers.org/reactome/R-HSA-390247",
+      "pwLabel": "Beta-oxidation of very long chain fatty acids"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-390471",
+      "pwLabel": "Association of TriC/CCT with target proteins during biosynthesis"
+    },
+    {
+      "sym": "ACTA1",
+      "pw": "https://identifiers.org/reactome/R-HSA-390522",
+      "pwLabel": "Striated Muscle Contraction"
+    },
+    {
+      "sym": "CHRM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-390648",
+      "pwLabel": "Muscarinic acetylcholine receptors"
+    },
+    {
+      "sym": "DRD1",
+      "pw": "https://identifiers.org/reactome/R-HSA-390651",
+      "pwLabel": "Dopamine receptors"
+    },
+    {
+      "sym": "DRD4",
+      "pw": "https://identifiers.org/reactome/R-HSA-390651",
+      "pwLabel": "Dopamine receptors"
+    },
+    {
+      "sym": "DRD2",
+      "pw": "https://identifiers.org/reactome/R-HSA-390651",
+      "pwLabel": "Dopamine receptors"
+    },
+    {
+      "sym": "HTR7",
+      "pw": "https://identifiers.org/reactome/R-HSA-390666",
+      "pwLabel": "Serotonin receptors"
+    },
+    {
+      "sym": "HTR2C",
+      "pw": "https://identifiers.org/reactome/R-HSA-390666",
+      "pwLabel": "Serotonin receptors"
+    },
+    {
+      "sym": "HTR6",
+      "pw": "https://identifiers.org/reactome/R-HSA-390666",
+      "pwLabel": "Serotonin receptors"
+    },
+    {
+      "sym": "ADRB2",
+      "pw": "https://identifiers.org/reactome/R-HSA-390696",
+      "pwLabel": "Adrenoceptors"
+    },
+    {
+      "sym": "ADRB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-390696",
+      "pwLabel": "Adrenoceptors"
+    },
+    {
+      "sym": "ADRA2C",
+      "pw": "https://identifiers.org/reactome/R-HSA-390696",
+      "pwLabel": "Adrenoceptors"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-391160",
+      "pwLabel": "Signal regulatory protein family interactions"
+    },
+    {
+      "sym": "PTGER2",
+      "pw": "https://identifiers.org/reactome/R-HSA-391908",
+      "pwLabel": "Prostanoid ligand receptors"
+    },
+    {
+      "sym": "ADRA2C",
+      "pw": "https://identifiers.org/reactome/R-HSA-392023",
+      "pwLabel": "Adrenaline signalling through Alpha-2 adrenergic receptor"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-3928662",
+      "pwLabel": "EPHB-mediated forward signaling"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-3928663",
+      "pwLabel": "EPHA-mediated growth cone collapse"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-3928664",
+      "pwLabel": "Ephrin signaling"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-3928665",
+      "pwLabel": "EPH-ephrin mediated repulsion of cells"
+    },
+    {
+      "sym": "MMP9",
+      "pw": "https://identifiers.org/reactome/R-HSA-3928665",
+      "pwLabel": "EPH-ephrin mediated repulsion of cells"
+    },
+    {
+      "sym": "ADRA2C",
+      "pw": "https://identifiers.org/reactome/R-HSA-400042",
+      "pwLabel": "Adrenaline,noradrenaline inhibits insulin secretion"
+    },
+    {
+      "sym": "FABP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-400206",
+      "pwLabel": "Regulation of lipid metabolism by PPARalpha"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-400206",
+      "pwLabel": "Regulation of lipid metabolism by PPARalpha"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-400206",
+      "pwLabel": "Regulation of lipid metabolism by PPARalpha"
+    },
+    {
+      "sym": "PAX6",
+      "pw": "https://identifiers.org/reactome/R-HSA-400511",
+      "pwLabel": "Synthesis, secretion, and inactivation of Glucose-dependent Insulinotropic Polypeptide (GIP)"
+    },
+    {
+      "sym": "NR1I2",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "NR3C1",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "AR",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "VDR",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "PGR",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "THRB",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "THRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "RARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "PPARG",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "RORA",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "NR1H4",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "NR4A2",
+      "pw": "https://identifiers.org/reactome/R-HSA-4090294",
+      "pwLabel": "SUMOylation of intracellular receptors"
+    },
+    {
+      "sym": "CHRM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-416476",
+      "pwLabel": "G alpha (q) signalling events"
+    },
+    {
+      "sym": "TRHR",
+      "pw": "https://identifiers.org/reactome/R-HSA-416476",
+      "pwLabel": "G alpha (q) signalling events"
+    },
+    {
+      "sym": "HTR2C",
+      "pw": "https://identifiers.org/reactome/R-HSA-416476",
+      "pwLabel": "G alpha (q) signalling events"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-416476",
+      "pwLabel": "G alpha (q) signalling events"
+    },
+    {
+      "sym": "ADORA2A",
+      "pw": "https://identifiers.org/reactome/R-HSA-417973",
+      "pwLabel": "Adenosine P1 receptors"
+    },
+    {
+      "sym": "ADORA1",
+      "pw": "https://identifiers.org/reactome/R-HSA-417973",
+      "pwLabel": "Adenosine P1 receptors"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-418555",
+      "pwLabel": "G alpha (s) signalling events"
+    },
+    {
+      "sym": "ADRB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-418555",
+      "pwLabel": "G alpha (s) signalling events"
+    },
+    {
+      "sym": "ADRB2",
+      "pw": "https://identifiers.org/reactome/R-HSA-418555",
+      "pwLabel": "G alpha (s) signalling events"
+    },
+    {
+      "sym": "ADORA2A",
+      "pw": "https://identifiers.org/reactome/R-HSA-418555",
+      "pwLabel": "G alpha (s) signalling events"
+    },
+    {
+      "sym": "HTR7",
+      "pw": "https://identifiers.org/reactome/R-HSA-418555",
+      "pwLabel": "G alpha (s) signalling events"
+    },
+    {
+      "sym": "DRD1",
+      "pw": "https://identifiers.org/reactome/R-HSA-418555",
+      "pwLabel": "G alpha (s) signalling events"
+    },
+    {
+      "sym": "TSHR",
+      "pw": "https://identifiers.org/reactome/R-HSA-418555",
+      "pwLabel": "G alpha (s) signalling events"
+    },
+    {
+      "sym": "HTR6",
+      "pw": "https://identifiers.org/reactome/R-HSA-418555",
+      "pwLabel": "G alpha (s) signalling events"
+    },
+    {
+      "sym": "PTGER2",
+      "pw": "https://identifiers.org/reactome/R-HSA-418555",
+      "pwLabel": "G alpha (s) signalling events"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-418592",
+      "pwLabel": "ADP signalling through P2Y purinoceptor 1"
+    },
+    {
+      "sym": "CXCL8",
+      "pw": "https://identifiers.org/reactome/R-HSA-418594",
+      "pwLabel": "G alpha (i) signalling events"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-418594",
+      "pwLabel": "G alpha (i) signalling events"
+    },
+    {
+      "sym": "DRD4",
+      "pw": "https://identifiers.org/reactome/R-HSA-418594",
+      "pwLabel": "G alpha (i) signalling events"
+    },
+    {
+      "sym": "ADRA2C",
+      "pw": "https://identifiers.org/reactome/R-HSA-418594",
+      "pwLabel": "G alpha (i) signalling events"
+    },
+    {
+      "sym": "OPRM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-418594",
+      "pwLabel": "G alpha (i) signalling events"
+    },
+    {
+      "sym": "ADORA1",
+      "pw": "https://identifiers.org/reactome/R-HSA-418594",
+      "pwLabel": "G alpha (i) signalling events"
+    },
+    {
+      "sym": "OPRL1",
+      "pw": "https://identifiers.org/reactome/R-HSA-418594",
+      "pwLabel": "G alpha (i) signalling events"
+    },
+    {
+      "sym": "OPRD1",
+      "pw": "https://identifiers.org/reactome/R-HSA-418594",
+      "pwLabel": "G alpha (i) signalling events"
+    },
+    {
+      "sym": "ADRA2C",
+      "pw": "https://identifiers.org/reactome/R-HSA-418597",
+      "pwLabel": "G alpha (z) signalling events"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-418885",
+      "pwLabel": "DCC mediated attractive signaling"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-418886",
+      "pwLabel": "Netrin mediated repulsion signals"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-418889",
+      "pwLabel": "Caspase activation via Dependence Receptors in the absence of ligand"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-419037",
+      "pwLabel": "NCAM1 interactions"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-419037",
+      "pwLabel": "NCAM1 interactions"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-427359",
+      "pwLabel": "SIRT1 negatively regulates rRNA expression"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-427389",
+      "pwLabel": "ERCC6 (CSB) and EHMT2 (G9a) positively regulate rRNA expression"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-427413",
+      "pwLabel": "NoRC negatively regulates rRNA expression"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-428542",
+      "pwLabel": "Regulation of commissural axon pathfinding by SLIT and ROBO"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-430116",
+      "pwLabel": "GP1b-IX-V activation signalling"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-430116",
+      "pwLabel": "GP1b-IX-V activation signalling"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-437239",
+      "pwLabel": "Recycling pathway of L1"
+    },
+    {
+      "sym": "EZR",
+      "pw": "https://identifiers.org/reactome/R-HSA-437239",
+      "pwLabel": "Recycling pathway of L1"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-4411364",
+      "pwLabel": "Binding of TCF/LEF:CTNNB1 to target gene promoters"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-4420097",
+      "pwLabel": "VEGFA-VEGFR2 Pathway"
+    },
+    {
+      "sym": "KDR",
+      "pw": "https://identifiers.org/reactome/R-HSA-4420097",
+      "pwLabel": "VEGFA-VEGFR2 Pathway"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-4420097",
+      "pwLabel": "VEGFA-VEGFR2 Pathway"
+    },
+    {
+      "sym": "DCN",
+      "pw": "https://identifiers.org/reactome/R-HSA-4420332",
+      "pwLabel": "Defective B3GALT6 causes EDSP2 and SEMDJL1"
+    },
+    {
+      "sym": "SLC22A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-442660",
+      "pwLabel": "SLC-mediated transport of neurotransmitters"
+    },
+    {
+      "sym": "SLC6A2",
+      "pw": "https://identifiers.org/reactome/R-HSA-442660",
+      "pwLabel": "SLC-mediated transport of neurotransmitters"
+    },
+    {
+      "sym": "SLC6A3",
+      "pw": "https://identifiers.org/reactome/R-HSA-442660",
+      "pwLabel": "SLC-mediated transport of neurotransmitters"
+    },
+    {
+      "sym": "IL17A",
+      "pw": "https://identifiers.org/reactome/R-HSA-448424",
+      "pwLabel": "Interleukin-17 signaling"
+    },
+    {
+      "sym": "CSF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-449836",
+      "pwLabel": "Other interleukin signaling"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-449836",
+      "pwLabel": "Other interleukin signaling"
+    },
+    {
+      "sym": "FOS",
+      "pw": "https://identifiers.org/reactome/R-HSA-450341",
+      "pwLabel": "Activation of the AP-1 family of transcription factors"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-450341",
+      "pwLabel": "Activation of the AP-1 family of transcription factors"
+    },
+    {
+      "sym": "HSPA1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-450408",
+      "pwLabel": "AUF1 (hnRNP D0) binds and destabilizes mRNA"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-456926",
+      "pwLabel": "Thrombin signalling through proteinase activated receptors (PARs)"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-512988",
+      "pwLabel": "Interleukin-3, Interleukin-5 and GM-CSF signaling"
+    },
+    {
+      "sym": "FAS",
+      "pw": "https://identifiers.org/reactome/R-HSA-5213460",
+      "pwLabel": "RIPK1-mediated regulated necrosis"
+    },
+    {
+      "sym": "FAS",
+      "pw": "https://identifiers.org/reactome/R-HSA-5218900",
+      "pwLabel": "CASP8 activity is inhibited"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-5218921",
+      "pwLabel": "VEGFR2 mediated cell proliferation"
+    },
+    {
+      "sym": "KDR",
+      "pw": "https://identifiers.org/reactome/R-HSA-5218921",
+      "pwLabel": "VEGFR2 mediated cell proliferation"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-5250924",
+      "pwLabel": "B-WICH complex positively regulates rRNA expression"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-5334118",
+      "pwLabel": "DNA methylation"
+    },
+    {
+      "sym": "TNF",
+      "pw": "https://identifiers.org/reactome/R-HSA-5357786",
+      "pwLabel": "TNFR1-induced proapoptotic signaling"
+    },
+    {
+      "sym": "TNFRSF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-5357786",
+      "pwLabel": "TNFR1-induced proapoptotic signaling"
+    },
+    {
+      "sym": "TNF",
+      "pw": "https://identifiers.org/reactome/R-HSA-5357905",
+      "pwLabel": "Regulation of TNFR1 signaling"
+    },
+    {
+      "sym": "TNFRSF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-5357905",
+      "pwLabel": "Regulation of TNFR1 signaling"
+    },
+    {
+      "sym": "TNF",
+      "pw": "https://identifiers.org/reactome/R-HSA-5357956",
+      "pwLabel": "TNFR1-induced NF-kappa-B signaling pathway"
+    },
+    {
+      "sym": "TNFRSF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-5357956",
+      "pwLabel": "TNFR1-induced NF-kappa-B signaling pathway"
+    },
+    {
+      "sym": "SHH",
+      "pw": "https://identifiers.org/reactome/R-HSA-5358346",
+      "pwLabel": "Hedgehog ligand biogenesis"
+    },
+    {
+      "sym": "RARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5362517",
+      "pwLabel": "Signaling by Retinoic Acid"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5362517",
+      "pwLabel": "Signaling by Retinoic Acid"
+    },
+    {
+      "sym": "RXRB",
+      "pw": "https://identifiers.org/reactome/R-HSA-5362517",
+      "pwLabel": "Signaling by Retinoic Acid"
+    },
+    {
+      "sym": "PDK4",
+      "pw": "https://identifiers.org/reactome/R-HSA-5362517",
+      "pwLabel": "Signaling by Retinoic Acid"
+    },
+    {
+      "sym": "PPARD",
+      "pw": "https://identifiers.org/reactome/R-HSA-5362517",
+      "pwLabel": "Signaling by Retinoic Acid"
+    },
+    {
+      "sym": "SHH",
+      "pw": "https://identifiers.org/reactome/R-HSA-5362768",
+      "pwLabel": "Hh mutants are degraded by ERAD"
+    },
+    {
+      "sym": "SHH",
+      "pw": "https://identifiers.org/reactome/R-HSA-5362798",
+      "pwLabel": "Release of Hh-Np from the secreting cell"
+    },
+    {
+      "sym": "CYP1A2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5423646",
+      "pwLabel": "Aflatoxin activation and detoxification"
+    },
+    {
+      "sym": "CYP3A4",
+      "pw": "https://identifiers.org/reactome/R-HSA-5423646",
+      "pwLabel": "Aflatoxin activation and detoxification"
+    },
+    {
+      "sym": "SLC22A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-549127",
+      "pwLabel": "SLC-mediated transport of organic cations"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-5578749",
+      "pwLabel": "Transcriptional regulation by small RNAs"
+    },
+    {
+      "sym": "UGT1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5579002",
+      "pwLabel": "Defective UGT1A1 causes hyperbilirubinemia"
+    },
+    {
+      "sym": "CYP24A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5579010",
+      "pwLabel": "Defective CYP24A1 causes HCAI"
+    },
+    {
+      "sym": "CYP19A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5579030",
+      "pwLabel": "Defective CYP19A1 causes AEXS"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-5607764",
+      "pwLabel": "CLEC7A (Dectin-1) signaling"
+    },
+    {
+      "sym": "GLI1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5610780",
+      "pwLabel": "Degradation of GLI1 by the proteasome"
+    },
+    {
+      "sym": "GLI1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5610787",
+      "pwLabel": "Hedgehog 'off' state"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-5617472",
+      "pwLabel": "Activation of anterior HOX genes in hindbrain development during early embryogenesis"
+    },
+    {
+      "sym": "RARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5617472",
+      "pwLabel": "Activation of anterior HOX genes in hindbrain development during early embryogenesis"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-5617472",
+      "pwLabel": "Activation of anterior HOX genes in hindbrain development during early embryogenesis"
+    },
+    {
+      "sym": "PAX6",
+      "pw": "https://identifiers.org/reactome/R-HSA-5617472",
+      "pwLabel": "Activation of anterior HOX genes in hindbrain development during early embryogenesis"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5617472",
+      "pwLabel": "Activation of anterior HOX genes in hindbrain development during early embryogenesis"
+    },
+    {
+      "sym": "SLC6A3",
+      "pw": "https://identifiers.org/reactome/R-HSA-5619081",
+      "pwLabel": "Defective SLC6A3 causes Parkinsonism-dystonia infantile (PKDYS)"
+    },
+    {
+      "sym": "SLC6A2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5619109",
+      "pwLabel": "Defective SLC6A2 causes orthostatic intolerance (OI)"
+    },
+    {
+      "sym": "SLCO1B1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5619110",
+      "pwLabel": "Defective SLCO1B1 causes hyperbilirubinemia, Rotor type (HBLRR)"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-5620971",
+      "pwLabel": "Pyroptosis"
+    },
+    {
+      "sym": "CASP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-5620971",
+      "pwLabel": "Pyroptosis"
+    },
+    {
+      "sym": "BAX",
+      "pw": "https://identifiers.org/reactome/R-HSA-5620971",
+      "pwLabel": "Pyroptosis"
+    },
+    {
+      "sym": "AR",
+      "pw": "https://identifiers.org/reactome/R-HSA-5625886",
+      "pwLabel": "Activated PKN1 stimulates transcription of AR (androgen receptor) regulated genes KLK2 and KLK3"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-5625886",
+      "pwLabel": "Activated PKN1 stimulates transcription of AR (androgen receptor) regulated genes KLK2 and KLK3"
+    },
+    {
+      "sym": "TNF",
+      "pw": "https://identifiers.org/reactome/R-HSA-5626978",
+      "pwLabel": "TNFR1-mediated ceramide production"
+    },
+    {
+      "sym": "TNFRSF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-5626978",
+      "pwLabel": "TNFR1-mediated ceramide production"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-5628897",
+      "pwLabel": "TP53 Regulates Metabolic Genes"
+    },
+    {
+      "sym": "PTEN",
+      "pw": "https://identifiers.org/reactome/R-HSA-5628897",
+      "pwLabel": "TP53 Regulates Metabolic Genes"
+    },
+    {
+      "sym": "PRKAA1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5628897",
+      "pwLabel": "TP53 Regulates Metabolic Genes"
+    },
+    {
+      "sym": "SHH",
+      "pw": "https://identifiers.org/reactome/R-HSA-5632681",
+      "pwLabel": "Ligand-receptor interactions"
+    },
+    {
+      "sym": "GLI1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5632684",
+      "pwLabel": "Hedgehog 'on' state"
+    },
+    {
+      "sym": "SHH",
+      "pw": "https://identifiers.org/reactome/R-HSA-5632684",
+      "pwLabel": "Hedgehog 'on' state"
+    },
+    {
+      "sym": "SHH",
+      "pw": "https://identifiers.org/reactome/R-HSA-5635838",
+      "pwLabel": "Activation of SMO"
+    },
+    {
+      "sym": "GLI1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5635851",
+      "pwLabel": "GLI proteins bind promoters of Hh responsive genes to promote transcription"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-5637810",
+      "pwLabel": "Constitutive Signaling by EGFRvIII"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5637810",
+      "pwLabel": "Constitutive Signaling by EGFRvIII"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-5638303",
+      "pwLabel": "Inhibition of Signaling by Overexpressed EGFR"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654219",
+      "pwLabel": "Phospholipase C-mediated cascade: FGFR1"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654221",
+      "pwLabel": "Phospholipase C-mediated cascade; FGFR2"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654227",
+      "pwLabel": "Phospholipase C-mediated cascade; FGFR3"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654228",
+      "pwLabel": "Phospholipase C-mediated cascade; FGFR4"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654687",
+      "pwLabel": "Downstream signaling of activated FGFR1"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654688",
+      "pwLabel": "SHC-mediated cascade:FGFR1"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654689",
+      "pwLabel": "PI-3K cascade:FGFR1"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654689",
+      "pwLabel": "PI-3K cascade:FGFR1"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654693",
+      "pwLabel": "FRS-mediated FGFR1 signaling"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654695",
+      "pwLabel": "PI-3K cascade:FGFR2"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654695",
+      "pwLabel": "PI-3K cascade:FGFR2"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654699",
+      "pwLabel": "SHC-mediated cascade:FGFR2"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654700",
+      "pwLabel": "FRS-mediated FGFR2 signaling"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654704",
+      "pwLabel": "SHC-mediated cascade:FGFR3"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654706",
+      "pwLabel": "FRS-mediated FGFR3 signaling"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654710",
+      "pwLabel": "PI-3K cascade:FGFR3"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654710",
+      "pwLabel": "PI-3K cascade:FGFR3"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654712",
+      "pwLabel": "FRS-mediated FGFR4 signaling"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654719",
+      "pwLabel": "SHC-mediated cascade:FGFR4"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654720",
+      "pwLabel": "PI-3K cascade:FGFR4"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654720",
+      "pwLabel": "PI-3K cascade:FGFR4"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654726",
+      "pwLabel": "Negative regulation of FGFR1 signaling"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654727",
+      "pwLabel": "Negative regulation of FGFR2 signaling"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654732",
+      "pwLabel": "Negative regulation of FGFR3 signaling"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5654733",
+      "pwLabel": "Negative regulation of FGFR4 signaling"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5655253",
+      "pwLabel": "Signaling by FGFR2 in disease"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5655253",
+      "pwLabel": "Signaling by FGFR2 in disease"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5655291",
+      "pwLabel": "Signaling by FGFR4 in disease"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5655302",
+      "pwLabel": "Signaling by FGFR1 in disease"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5655302",
+      "pwLabel": "Signaling by FGFR1 in disease"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5655332",
+      "pwLabel": "Signaling by FGFR3 in disease"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5655332",
+      "pwLabel": "Signaling by FGFR3 in disease"
+    },
+    {
+      "sym": "REV3L",
+      "pw": "https://identifiers.org/reactome/R-HSA-5655862",
+      "pwLabel": "Translesion synthesis by POLK"
+    },
+    {
+      "sym": "REV3L",
+      "pw": "https://identifiers.org/reactome/R-HSA-5656121",
+      "pwLabel": "Translesion synthesis by POLI"
+    },
+    {
+      "sym": "SHH",
+      "pw": "https://identifiers.org/reactome/R-HSA-5658034",
+      "pwLabel": "HHAT G278V doesn't palmitoylate Hh-Np"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5658623",
+      "pwLabel": "FGFRL1 modulation of FGFR1 signaling"
+    },
+    {
+      "sym": "SLC6A3",
+      "pw": "https://identifiers.org/reactome/R-HSA-5660724",
+      "pwLabel": "Defective SLC6A3 causes Parkinsonism-dystonia infantile (PKDYS)"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-5663220",
+      "pwLabel": "RHO GTPases Activate Formins"
+    },
+    {
+      "sym": "TNF",
+      "pw": "https://identifiers.org/reactome/R-HSA-5668541",
+      "pwLabel": "TNFR2 non-canonical NF-kB pathway"
+    },
+    {
+      "sym": "CD40",
+      "pw": "https://identifiers.org/reactome/R-HSA-5668541",
+      "pwLabel": "TNFR2 non-canonical NF-kB pathway"
+    },
+    {
+      "sym": "TNFRSF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-5669034",
+      "pwLabel": "TNFs bind their physiological receptors"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-5673000",
+      "pwLabel": "RAF activation"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-5673001",
+      "pwLabel": "RAF/MAP kinase cascade"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5673001",
+      "pwLabel": "RAF/MAP kinase cascade"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-5673001",
+      "pwLabel": "RAF/MAP kinase cascade"
+    },
+    {
+      "sym": "IL2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5673001",
+      "pwLabel": "RAF/MAP kinase cascade"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-5673001",
+      "pwLabel": "RAF/MAP kinase cascade"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-5674135",
+      "pwLabel": "MAP2K and MAPK activation"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-5674400",
+      "pwLabel": "Constitutive Signaling by AKT1 E17K in Cancer"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-5674400",
+      "pwLabel": "Constitutive Signaling by AKT1 E17K in Cancer"
+    },
+    {
+      "sym": "FOXO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5674400",
+      "pwLabel": "Constitutive Signaling by AKT1 E17K in Cancer"
+    },
+    {
+      "sym": "PTEN",
+      "pw": "https://identifiers.org/reactome/R-HSA-5674404",
+      "pwLabel": "PTEN Loss of Function in Cancer"
+    },
+    {
+      "sym": "CD40",
+      "pw": "https://identifiers.org/reactome/R-HSA-5676594",
+      "pwLabel": "TNF receptor superfamily (TNFSF) members mediating non-canonical NF-kB pathway"
+    },
+    {
+      "sym": "ABCB11",
+      "pw": "https://identifiers.org/reactome/R-HSA-5678520",
+      "pwLabel": "Defective ABCB11 causes PFIC2 and BRIC2"
+    },
+    {
+      "sym": "ADRA2C",
+      "pw": "https://identifiers.org/reactome/R-HSA-5683826",
+      "pwLabel": "Surfactant metabolism"
+    },
+    {
+      "sym": "ADORA2A",
+      "pw": "https://identifiers.org/reactome/R-HSA-5683826",
+      "pwLabel": "Surfactant metabolism"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-5687128",
+      "pwLabel": "MAPK6/MAPK4 signaling"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-5687128",
+      "pwLabel": "MAPK6/MAPK4 signaling"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-5687128",
+      "pwLabel": "MAPK6/MAPK4 signaling"
+    },
+    {
+      "sym": "FOXO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5687128",
+      "pwLabel": "MAPK6/MAPK4 signaling"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5689603",
+      "pwLabel": "UCH proteinases"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-5689880",
+      "pwLabel": "Ub-specific processing proteases"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-5689880",
+      "pwLabel": "Ub-specific processing proteases"
+    },
+    {
+      "sym": "ADRB2",
+      "pw": "https://identifiers.org/reactome/R-HSA-5689880",
+      "pwLabel": "Ub-specific processing proteases"
+    },
+    {
+      "sym": "AR",
+      "pw": "https://identifiers.org/reactome/R-HSA-5689880",
+      "pwLabel": "Ub-specific processing proteases"
+    },
+    {
+      "sym": "PTEN",
+      "pw": "https://identifiers.org/reactome/R-HSA-5689880",
+      "pwLabel": "Ub-specific processing proteases"
+    },
+    {
+      "sym": "HIF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-5689880",
+      "pwLabel": "Ub-specific processing proteases"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-5689896",
+      "pwLabel": "Ovarian tumor domain proteases"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-5689896",
+      "pwLabel": "Ovarian tumor domain proteases"
+    },
+    {
+      "sym": "PTEN",
+      "pw": "https://identifiers.org/reactome/R-HSA-5689896",
+      "pwLabel": "Ovarian tumor domain proteases"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-5693565",
+      "pwLabel": "Recruitment and ATM-mediated phosphorylation of repair and signaling proteins at DNA double strand breaks"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-5693565",
+      "pwLabel": "Recruitment and ATM-mediated phosphorylation of repair and signaling proteins at DNA double strand breaks"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-5693571",
+      "pwLabel": "Nonhomologous End-Joining (NHEJ)"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-5693607",
+      "pwLabel": "Processing of DNA double-strand break ends"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-606279",
+      "pwLabel": "Deposition of new CENPA-containing nucleosomes at the centromere"
+    },
+    {
+      "sym": "SDHB",
+      "pw": "https://identifiers.org/reactome/R-HSA-611105",
+      "pwLabel": "Respiratory electron transport"
+    },
+    {
+      "sym": "TIMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6783783",
+      "pwLabel": "Interleukin-10 signaling"
+    },
+    {
+      "sym": "TNF",
+      "pw": "https://identifiers.org/reactome/R-HSA-6783783",
+      "pwLabel": "Interleukin-10 signaling"
+    },
+    {
+      "sym": "CSF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6783783",
+      "pwLabel": "Interleukin-10 signaling"
+    },
+    {
+      "sym": "CXCL8",
+      "pw": "https://identifiers.org/reactome/R-HSA-6783783",
+      "pwLabel": "Interleukin-10 signaling"
+    },
+    {
+      "sym": "CCL2",
+      "pw": "https://identifiers.org/reactome/R-HSA-6783783",
+      "pwLabel": "Interleukin-10 signaling"
+    },
+    {
+      "sym": "IL6",
+      "pw": "https://identifiers.org/reactome/R-HSA-6783783",
+      "pwLabel": "Interleukin-10 signaling"
+    },
+    {
+      "sym": "ICAM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6783783",
+      "pwLabel": "Interleukin-10 signaling"
+    },
+    {
+      "sym": "TNFRSF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-6783783",
+      "pwLabel": "Interleukin-10 signaling"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785631",
+      "pwLabel": "ERBB2 Regulates Cell Motility"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "MMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "FOS",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "TIMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "TNF",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "MMP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "ICAM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "IL6R",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "CCL2",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "IL6",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "CXCL8",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "MMP9",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "RORA",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "VCAM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "OPRM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "POU2F1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "RORC",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "HIF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "FOXO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "IL17A",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "OPRD1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6785807",
+      "pwLabel": "Interleukin-4 and Interleukin-13 signaling"
+    },
+    {
+      "sym": "FOS",
+      "pw": "https://identifiers.org/reactome/R-HSA-6796648",
+      "pwLabel": "TP53 Regulates Transcription of DNA Repair Genes"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6796648",
+      "pwLabel": "TP53 Regulates Transcription of DNA Repair Genes"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-6796648",
+      "pwLabel": "TP53 Regulates Transcription of DNA Repair Genes"
+    },
+    {
+      "sym": "CAT",
+      "pw": "https://identifiers.org/reactome/R-HSA-6798695",
+      "pwLabel": "Neutrophil degranulation"
+    },
+    {
+      "sym": "PLAU",
+      "pw": "https://identifiers.org/reactome/R-HSA-6798695",
+      "pwLabel": "Neutrophil degranulation"
+    },
+    {
+      "sym": "HSPA1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-6798695",
+      "pwLabel": "Neutrophil degranulation"
+    },
+    {
+      "sym": "MMP9",
+      "pw": "https://identifiers.org/reactome/R-HSA-6798695",
+      "pwLabel": "Neutrophil degranulation"
+    },
+    {
+      "sym": "PLAUR",
+      "pw": "https://identifiers.org/reactome/R-HSA-6798695",
+      "pwLabel": "Neutrophil degranulation"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-6802946",
+      "pwLabel": "Signaling by moderate kinase activity BRAF mutants"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-6802948",
+      "pwLabel": "Signaling by high-kinase activity BRAF mutants"
+    },
+    {
+      "sym": "BCL2L11",
+      "pw": "https://identifiers.org/reactome/R-HSA-6802952",
+      "pwLabel": "Signaling by BRAF and RAF1 fusions"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-6802952",
+      "pwLabel": "Signaling by BRAF and RAF1 fusions"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-6802955",
+      "pwLabel": "Paradoxical activation of RAF signaling by kinase inactive BRAF"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6803204",
+      "pwLabel": "TP53 Regulates Transcription of Genes Involved in Cytochrome C Release"
+    },
+    {
+      "sym": "BAX",
+      "pw": "https://identifiers.org/reactome/R-HSA-6803204",
+      "pwLabel": "TP53 Regulates Transcription of Genes Involved in Cytochrome C Release"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6803205",
+      "pwLabel": "TP53 regulates transcription of several additional cell death genes whose specific roles in p53-dependent apoptosis remain uncertain"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6803207",
+      "pwLabel": "TP53 Regulates Transcription of Caspase Activators and Caspases"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6803211",
+      "pwLabel": "TP53 Regulates Transcription of Death Receptors and Ligands"
+    },
+    {
+      "sym": "FAS",
+      "pw": "https://identifiers.org/reactome/R-HSA-6803211",
+      "pwLabel": "TP53 Regulates Transcription of Death Receptors and Ligands"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6804114",
+      "pwLabel": "TP53 Regulates Transcription of Genes Involved in G2 Cell Cycle Arrest"
+    },
+    {
+      "sym": "BAX",
+      "pw": "https://identifiers.org/reactome/R-HSA-6804114",
+      "pwLabel": "TP53 Regulates Transcription of Genes Involved in G2 Cell Cycle Arrest"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6804115",
+      "pwLabel": "TP53 regulates transcription of additional cell cycle genes whose exact role in the p53 pathway remain uncertain"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6804116",
+      "pwLabel": "TP53 Regulates Transcription of Genes Involved in G1 Cell Cycle Arrest"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-6804116",
+      "pwLabel": "TP53 Regulates Transcription of Genes Involved in G1 Cell Cycle Arrest"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6804754",
+      "pwLabel": "Regulation of TP53 Expression"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6804756",
+      "pwLabel": "Regulation of TP53 Activity through Phosphorylation"
+    },
+    {
+      "sym": "PRKAA1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6804756",
+      "pwLabel": "Regulation of TP53 Activity through Phosphorylation"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6804757",
+      "pwLabel": "Regulation of TP53 Degradation"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6804758",
+      "pwLabel": "Regulation of TP53 Activity through Acetylation"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6804759",
+      "pwLabel": "Regulation of TP53 Activity through Association with Co-factors"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6804760",
+      "pwLabel": "Regulation of TP53 Activity through Methylation"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-6806942",
+      "pwLabel": "MET Receptor Activation"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-6807004",
+      "pwLabel": "Negative regulation of MET activity"
+    },
+    {
+      "sym": "SP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6807505",
+      "pwLabel": "RNA polymerase II transcribes snRNA genes"
+    },
+    {
+      "sym": "POU2F1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6807505",
+      "pwLabel": "RNA polymerase II transcribes snRNA genes"
+    },
+    {
+      "sym": "ALPP",
+      "pw": "https://identifiers.org/reactome/R-HSA-6811438",
+      "pwLabel": "Intra-Golgi traffic"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-6811555",
+      "pwLabel": "PI5P Regulates TP53 Acetylation"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-6811558",
+      "pwLabel": "PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-6811558",
+      "pwLabel": "PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-6811558",
+      "pwLabel": "PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-6811558",
+      "pwLabel": "PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-6811558",
+      "pwLabel": "PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-6811558",
+      "pwLabel": "PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling"
+    },
+    {
+      "sym": "ESR2",
+      "pw": "https://identifiers.org/reactome/R-HSA-6811558",
+      "pwLabel": "PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-68616",
+      "pwLabel": "Assembly of the ORC complex at the origin of replication"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-69202",
+      "pwLabel": "Cyclin E associated events during G1/S transition "
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-69202",
+      "pwLabel": "Cyclin E associated events during G1/S transition "
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-69231",
+      "pwLabel": "Cyclin D associated events in G1"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-69231",
+      "pwLabel": "Cyclin D associated events in G1"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-69231",
+      "pwLabel": "Cyclin D associated events in G1"
+    },
+    {
+      "sym": "FAS",
+      "pw": "https://identifiers.org/reactome/R-HSA-69416",
+      "pwLabel": "Dimerization of procaspase-8"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-69473",
+      "pwLabel": "G2/M DNA damage checkpoint"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-69473",
+      "pwLabel": "G2/M DNA damage checkpoint"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-69481",
+      "pwLabel": "G2/M Checkpoints"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-69541",
+      "pwLabel": "Stabilization of p53"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-69563",
+      "pwLabel": "p53-Dependent G1 DNA Damage Response"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-69656",
+      "pwLabel": "Cyclin A:Cdk2-associated events at S phase entry"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-69656",
+      "pwLabel": "Cyclin A:Cdk2-associated events at S phase entry"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-69895",
+      "pwLabel": "Transcriptional  activation of  cell cycle inhibitor p21 "
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-69895",
+      "pwLabel": "Transcriptional  activation of  cell cycle inhibitor p21 "
+    },
+    {
+      "sym": "SDHB",
+      "pw": "https://identifiers.org/reactome/R-HSA-71403",
+      "pwLabel": "Citric acid cycle (TCA cycle)"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-73728",
+      "pwLabel": "RNA Polymerase I Promoter Opening"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-73772",
+      "pwLabel": "RNA Polymerase I Promoter Escape"
+    },
+    {
+      "sym": "NFIA",
+      "pw": "https://identifiers.org/reactome/R-HSA-73980",
+      "pwLabel": "RNA Polymerase III Transcription Termination"
+    },
+    {
+      "sym": "ADK",
+      "pw": "https://identifiers.org/reactome/R-HSA-74217",
+      "pwLabel": "Purine salvage"
+    },
+    {
+      "sym": "POU2F1",
+      "pw": "https://identifiers.org/reactome/R-HSA-749476",
+      "pwLabel": "RNA Polymerase III Abortive And Retractive Initiation"
+    },
+    {
+      "sym": "NFIA",
+      "pw": "https://identifiers.org/reactome/R-HSA-749476",
+      "pwLabel": "RNA Polymerase III Abortive And Retractive Initiation"
+    },
+    {
+      "sym": "FASN",
+      "pw": "https://identifiers.org/reactome/R-HSA-75105",
+      "pwLabel": "Fatty acyl-CoA biosynthesis"
+    },
+    {
+      "sym": "FAS",
+      "pw": "https://identifiers.org/reactome/R-HSA-75157",
+      "pwLabel": "FasL/ CD95L signaling"
+    },
+    {
+      "sym": "PLAT",
+      "pw": "https://identifiers.org/reactome/R-HSA-75205",
+      "pwLabel": "Dissolution of Fibrin Clot"
+    },
+    {
+      "sym": "SERPINE1",
+      "pw": "https://identifiers.org/reactome/R-HSA-75205",
+      "pwLabel": "Dissolution of Fibrin Clot"
+    },
+    {
+      "sym": "PLAU",
+      "pw": "https://identifiers.org/reactome/R-HSA-75205",
+      "pwLabel": "Dissolution of Fibrin Clot"
+    },
+    {
+      "sym": "PLAUR",
+      "pw": "https://identifiers.org/reactome/R-HSA-75205",
+      "pwLabel": "Dissolution of Fibrin Clot"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-75815",
+      "pwLabel": "Ubiquitin-dependent degradation of Cyclin D"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-75892",
+      "pwLabel": "Platelet Adhesion to exposed collagen"
+    },
+    {
+      "sym": "TNF",
+      "pw": "https://identifiers.org/reactome/R-HSA-75893",
+      "pwLabel": "TNF signaling"
+    },
+    {
+      "sym": "TNFRSF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-75893",
+      "pwLabel": "TNF signaling"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-76009",
+      "pwLabel": "Platelet Aggregation (Plug Formation)"
+    },
+    {
+      "sym": "POU2F1",
+      "pw": "https://identifiers.org/reactome/R-HSA-76071",
+      "pwLabel": "RNA Polymerase III Transcription Initiation From Type 3 Promoter"
+    },
+    {
+      "sym": "HMGCS2",
+      "pw": "https://identifiers.org/reactome/R-HSA-77111",
+      "pwLabel": "Synthesis of Ketone Bodies"
+    },
+    {
+      "sym": "HLA-DRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-877300",
+      "pwLabel": "Interferon gamma signaling"
+    },
+    {
+      "sym": "ICAM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-877300",
+      "pwLabel": "Interferon gamma signaling"
+    },
+    {
+      "sym": "VCAM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-877300",
+      "pwLabel": "Interferon gamma signaling"
+    },
+    {
+      "sym": "SLCO1B1",
+      "pw": "https://identifiers.org/reactome/R-HSA-879518",
+      "pwLabel": "Organic anion transport by SLCO transporters"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-8847993",
+      "pwLabel": "ERBB2 Activates PTK6 Signaling"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8849470",
+      "pwLabel": "PTK6 Regulates Cell Cycle"
+    },
+    {
+      "sym": "NR3C1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8849473",
+      "pwLabel": "PTK6 Expression"
+    },
+    {
+      "sym": "HIF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-8849473",
+      "pwLabel": "PTK6 Expression"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-8851708",
+      "pwLabel": "Signaling by FGFR2 IIIa TM"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-8851805",
+      "pwLabel": "MET activates RAS signaling"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-8851907",
+      "pwLabel": "MET activates PI3K/AKT signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-8851907",
+      "pwLabel": "MET activates PI3K/AKT signaling"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-8852276",
+      "pwLabel": "The role of GTSE1 in G2/M progression after G2 checkpoint"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-8852276",
+      "pwLabel": "The role of GTSE1 in G2/M progression after G2 checkpoint"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-8853659",
+      "pwLabel": "RET signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-8853659",
+      "pwLabel": "RET signaling"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-8853884",
+      "pwLabel": "Transcriptional Regulation by VENTX"
+    },
+    {
+      "sym": "IL6",
+      "pw": "https://identifiers.org/reactome/R-HSA-8853884",
+      "pwLabel": "Transcriptional Regulation by VENTX"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8853884",
+      "pwLabel": "Transcriptional Regulation by VENTX"
+    },
+    {
+      "sym": "CEBPB",
+      "pw": "https://identifiers.org/reactome/R-HSA-8853884",
+      "pwLabel": "Transcriptional Regulation by VENTX"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-8856825",
+      "pwLabel": "Cargo recognition for clathrin-mediated endocytosis"
+    },
+    {
+      "sym": "LDLR",
+      "pw": "https://identifiers.org/reactome/R-HSA-8856825",
+      "pwLabel": "Cargo recognition for clathrin-mediated endocytosis"
+    },
+    {
+      "sym": "ADRB2",
+      "pw": "https://identifiers.org/reactome/R-HSA-8856825",
+      "pwLabel": "Cargo recognition for clathrin-mediated endocytosis"
+    },
+    {
+      "sym": "LDLR",
+      "pw": "https://identifiers.org/reactome/R-HSA-8856828",
+      "pwLabel": "Clathrin-mediated endocytosis"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-8856828",
+      "pwLabel": "Clathrin-mediated endocytosis"
+    },
+    {
+      "sym": "ADRB2",
+      "pw": "https://identifiers.org/reactome/R-HSA-8856828",
+      "pwLabel": "Clathrin-mediated endocytosis"
+    },
+    {
+      "sym": "HIF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-8857538",
+      "pwLabel": "PTK6 promotes HIF1A stabilization"
+    },
+    {
+      "sym": "BCL2L11",
+      "pw": "https://identifiers.org/reactome/R-HSA-8862803",
+      "pwLabel": "Deregulated CDK5 triggers multiple neurodegenerative pathways in Alzheimer's disease models"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-8862803",
+      "pwLabel": "Deregulated CDK5 triggers multiple neurodegenerative pathways in Alzheimer's disease models"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-8862803",
+      "pwLabel": "Deregulated CDK5 triggers multiple neurodegenerative pathways in Alzheimer's disease models"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-8863795",
+      "pwLabel": "Downregulation of ERBB2 signaling"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-8865999",
+      "pwLabel": "MET activates PTPN11"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8866910",
+      "pwLabel": "TFAP2 (AP-2) family regulates transcription of growth factors and their receptors"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-8866911",
+      "pwLabel": "TFAP2 (AP-2) family regulates transcription of cell cycle factors"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-8866911",
+      "pwLabel": "TFAP2 (AP-2) family regulates transcription of cell cycle factors"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8874081",
+      "pwLabel": "MET activates PTK2 signaling"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8874081",
+      "pwLabel": "MET activates PTK2 signaling"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-8874081",
+      "pwLabel": "MET activates PTK2 signaling"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-8874081",
+      "pwLabel": "MET activates PTK2 signaling"
+    },
+    {
+      "sym": "CREB3",
+      "pw": "https://identifiers.org/reactome/R-HSA-8874211",
+      "pwLabel": "CREB3 factors activate genes"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-8875513",
+      "pwLabel": "MET interacts with TNS proteins"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-8875555",
+      "pwLabel": "MET activates RAP1 and RAC1"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-8875656",
+      "pwLabel": "MET receptor recycling"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-8875791",
+      "pwLabel": "MET activates STAT3"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-8876493",
+      "pwLabel": "InlA-mediated entry of Listeria monocytogenes into host cells"
+    },
+    {
+      "sym": "IL2",
+      "pw": "https://identifiers.org/reactome/R-HSA-8877330",
+      "pwLabel": "RUNX1 and FOXP3 control the development of regulatory T lymphocytes (Tregs)"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8878166",
+      "pwLabel": "Transcriptional regulation by RUNX2"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-8878166",
+      "pwLabel": "Transcriptional regulation by RUNX2"
+    },
+    {
+      "sym": "BAX",
+      "pw": "https://identifiers.org/reactome/R-HSA-8878166",
+      "pwLabel": "Transcriptional regulation by RUNX2"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8931987",
+      "pwLabel": "RUNX1 regulates estrogen receptor mediated transcription"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-8934593",
+      "pwLabel": "Regulation of RUNX1 Expression and Activity"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8934593",
+      "pwLabel": "Regulation of RUNX1 Expression and Activity"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-8934903",
+      "pwLabel": "Receptor Mediated Mitophagy"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-8936459",
+      "pwLabel": "RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function"
+    },
+    {
+      "sym": "AHR",
+      "pw": "https://identifiers.org/reactome/R-HSA-8937144",
+      "pwLabel": "Aryl hydrocarbon receptor signalling"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8939211",
+      "pwLabel": "ESR-mediated signaling"
+    },
+    {
+      "sym": "ESR2",
+      "pw": "https://identifiers.org/reactome/R-HSA-8939211",
+      "pwLabel": "ESR-mediated signaling"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-8939236",
+      "pwLabel": "RUNX1 regulates transcription of genes involved in differentiation of HSCs"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8939256",
+      "pwLabel": "RUNX1 regulates transcription of genes involved in WNT signaling"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8939902",
+      "pwLabel": "Regulation of RUNX2 expression and activity"
+    },
+    {
+      "sym": "NR3C1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8939902",
+      "pwLabel": "Regulation of RUNX2 expression and activity"
+    },
+    {
+      "sym": "ESRRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-8939902",
+      "pwLabel": "Regulation of RUNX2 expression and activity"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8940973",
+      "pwLabel": "RUNX2 regulates osteoblast differentiation"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-8940973",
+      "pwLabel": "RUNX2 regulates osteoblast differentiation"
+    },
+    {
+      "sym": "AR",
+      "pw": "https://identifiers.org/reactome/R-HSA-8940973",
+      "pwLabel": "RUNX2 regulates osteoblast differentiation"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-8941855",
+      "pwLabel": "RUNX3 regulates CDKN1A transcription"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8941855",
+      "pwLabel": "RUNX3 regulates CDKN1A transcription"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-8941855",
+      "pwLabel": "RUNX3 regulates CDKN1A transcription"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8941858",
+      "pwLabel": "Regulation of RUNX3 expression and activity"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-8941858",
+      "pwLabel": "Regulation of RUNX3 expression and activity"
+    },
+    {
+      "sym": "PTEN",
+      "pw": "https://identifiers.org/reactome/R-HSA-8943723",
+      "pwLabel": "Regulation of PTEN mRNA translation"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-8943724",
+      "pwLabel": "Regulation of PTEN gene transcription"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-8943724",
+      "pwLabel": "Regulation of PTEN gene transcription"
+    },
+    {
+      "sym": "PPARG",
+      "pw": "https://identifiers.org/reactome/R-HSA-8943724",
+      "pwLabel": "Regulation of PTEN gene transcription"
+    },
+    {
+      "sym": "EGR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8943724",
+      "pwLabel": "Regulation of PTEN gene transcription"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8948216",
+      "pwLabel": "Collagen chain trimerization"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8948216",
+      "pwLabel": "Collagen chain trimerization"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8948216",
+      "pwLabel": "Collagen chain trimerization"
+    },
+    {
+      "sym": "PTEN",
+      "pw": "https://identifiers.org/reactome/R-HSA-8948747",
+      "pwLabel": "Regulation of PTEN localization"
+    },
+    {
+      "sym": "PTEN",
+      "pw": "https://identifiers.org/reactome/R-HSA-8948751",
+      "pwLabel": "Regulation of PTEN stability and activity"
+    },
+    {
+      "sym": "RORC",
+      "pw": "https://identifiers.org/reactome/R-HSA-8949275",
+      "pwLabel": "RUNX3 Regulates Immune Response and Cell Migration"
+    },
+    {
+      "sym": "GSTA2",
+      "pw": "https://identifiers.org/reactome/R-HSA-8950505",
+      "pwLabel": "Gene and protein expression by JAK-STAT signaling after Interleukin-12 stimulation"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-8951430",
+      "pwLabel": "RUNX3 regulates WNT signaling"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8951430",
+      "pwLabel": "RUNX3 regulates WNT signaling"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-8951664",
+      "pwLabel": "Neddylation"
+    },
+    {
+      "sym": "HIF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-8951664",
+      "pwLabel": "Neddylation"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-8951664",
+      "pwLabel": "Neddylation"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8951936",
+      "pwLabel": "RUNX3 regulates p14-ARF"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8951936",
+      "pwLabel": "RUNX3 regulates p14-ARF"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-8952158",
+      "pwLabel": "RUNX3 regulates BCL2L11 (BIM) transcription"
+    },
+    {
+      "sym": "BCL2L11",
+      "pw": "https://identifiers.org/reactome/R-HSA-8952158",
+      "pwLabel": "RUNX3 regulates BCL2L11 (BIM) transcription"
+    },
+    {
+      "sym": "TIMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8957275",
+      "pwLabel": "Post-translational protein phosphorylation"
+    },
+    {
+      "sym": "CSF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8957275",
+      "pwLabel": "Post-translational protein phosphorylation"
+    },
+    {
+      "sym": "IGFBP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-8957275",
+      "pwLabel": "Post-translational protein phosphorylation"
+    },
+    {
+      "sym": "IL6",
+      "pw": "https://identifiers.org/reactome/R-HSA-8957275",
+      "pwLabel": "Post-translational protein phosphorylation"
+    },
+    {
+      "sym": "LPL",
+      "pw": "https://identifiers.org/reactome/R-HSA-8963889",
+      "pwLabel": "Assembly of active LPL and LIPC lipase complexes"
+    },
+    {
+      "sym": "LPL",
+      "pw": "https://identifiers.org/reactome/R-HSA-8963901",
+      "pwLabel": "Chylomicron remodeling"
+    },
+    {
+      "sym": "LDLR",
+      "pw": "https://identifiers.org/reactome/R-HSA-8964026",
+      "pwLabel": "Chylomicron clearance"
+    },
+    {
+      "sym": "LDLR",
+      "pw": "https://identifiers.org/reactome/R-HSA-8964038",
+      "pwLabel": "LDL clearance"
+    },
+    {
+      "sym": "PTEN",
+      "pw": "https://identifiers.org/reactome/R-HSA-8986944",
+      "pwLabel": "Transcriptional Regulation by MECP2"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-9009391",
+      "pwLabel": "Extra-nuclear estrogen signaling"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9009391",
+      "pwLabel": "Extra-nuclear estrogen signaling"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9009391",
+      "pwLabel": "Extra-nuclear estrogen signaling"
+    },
+    {
+      "sym": "MMP3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9009391",
+      "pwLabel": "Extra-nuclear estrogen signaling"
+    },
+    {
+      "sym": "MMP9",
+      "pw": "https://identifiers.org/reactome/R-HSA-9009391",
+      "pwLabel": "Extra-nuclear estrogen signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9009391",
+      "pwLabel": "Extra-nuclear estrogen signaling"
+    },
+    {
+      "sym": "ESR2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9009391",
+      "pwLabel": "Extra-nuclear estrogen signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9013149",
+      "pwLabel": "RAC1 GTPase cycle"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9013404",
+      "pwLabel": "RAC2 GTPase cycle"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9013420",
+      "pwLabel": "RHOU GTPase cycle"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-9013507",
+      "pwLabel": "NOTCH3 Activation and Transmission of Signal to the Nucleus"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9018519",
+      "pwLabel": "Estrogen-dependent gene expression"
+    },
+    {
+      "sym": "FOS",
+      "pw": "https://identifiers.org/reactome/R-HSA-9018519",
+      "pwLabel": "Estrogen-dependent gene expression"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9018519",
+      "pwLabel": "Estrogen-dependent gene expression"
+    },
+    {
+      "sym": "SP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9018519",
+      "pwLabel": "Estrogen-dependent gene expression"
+    },
+    {
+      "sym": "PGR",
+      "pw": "https://identifiers.org/reactome/R-HSA-9018519",
+      "pwLabel": "Estrogen-dependent gene expression"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-9018519",
+      "pwLabel": "Estrogen-dependent gene expression"
+    },
+    {
+      "sym": "POU2F1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9018519",
+      "pwLabel": "Estrogen-dependent gene expression"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9018519",
+      "pwLabel": "Estrogen-dependent gene expression"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-9018519",
+      "pwLabel": "Estrogen-dependent gene expression"
+    },
+    {
+      "sym": "CYP1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9018681",
+      "pwLabel": "Biosynthesis of protectins"
+    },
+    {
+      "sym": "CYP1A2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9018681",
+      "pwLabel": "Biosynthesis of protectins"
+    },
+    {
+      "sym": "IL2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9020558",
+      "pwLabel": "Interleukin-2 signaling"
+    },
+    {
+      "sym": "OPRM1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9022699",
+      "pwLabel": "MECP2 regulates neuronal receptors and channels"
+    },
+    {
+      "sym": "PPARG",
+      "pw": "https://identifiers.org/reactome/R-HSA-9022707",
+      "pwLabel": "MECP2 regulates transcription factors"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9027276",
+      "pwLabel": "Erythropoietin activates Phosphoinositide-3-kinase (PI3K)"
+    },
+    {
+      "sym": "CYP2E1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9027307",
+      "pwLabel": "Biosynthesis of maresin-like SPMs"
+    },
+    {
+      "sym": "CYP2C9",
+      "pw": "https://identifiers.org/reactome/R-HSA-9027307",
+      "pwLabel": "Biosynthesis of maresin-like SPMs"
+    },
+    {
+      "sym": "CYP1A2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9027307",
+      "pwLabel": "Biosynthesis of maresin-like SPMs"
+    },
+    {
+      "sym": "CYP3A4",
+      "pw": "https://identifiers.org/reactome/R-HSA-9027307",
+      "pwLabel": "Biosynthesis of maresin-like SPMs"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9028335",
+      "pwLabel": "Activated NTRK2 signals through PI3K"
+    },
+    {
+      "sym": "RXRB",
+      "pw": "https://identifiers.org/reactome/R-HSA-9029558",
+      "pwLabel": "NR1H2 & NR1H3 regulate gene expression linked to lipogenesis"
+    },
+    {
+      "sym": "SREBF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9029558",
+      "pwLabel": "NR1H2 & NR1H3 regulate gene expression linked to lipogenesis"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9029558",
+      "pwLabel": "NR1H2 & NR1H3 regulate gene expression linked to lipogenesis"
+    },
+    {
+      "sym": "FASN",
+      "pw": "https://identifiers.org/reactome/R-HSA-9029558",
+      "pwLabel": "NR1H2 & NR1H3 regulate gene expression linked to lipogenesis"
+    },
+    {
+      "sym": "RXRB",
+      "pw": "https://identifiers.org/reactome/R-HSA-9029569",
+      "pwLabel": "NR1H3 & NR1H2 regulate gene expression linked to cholesterol transport and efflux"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9029569",
+      "pwLabel": "NR1H3 & NR1H2 regulate gene expression linked to cholesterol transport and efflux"
+    },
+    {
+      "sym": "RXRB",
+      "pw": "https://identifiers.org/reactome/R-HSA-9031525",
+      "pwLabel": "NR1H2 & NR1H3 regulate gene expression to limit cholesterol uptake "
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9031525",
+      "pwLabel": "NR1H2 & NR1H3 regulate gene expression to limit cholesterol uptake "
+    },
+    {
+      "sym": "RXRB",
+      "pw": "https://identifiers.org/reactome/R-HSA-9031528",
+      "pwLabel": "NR1H2 & NR1H3 regulate gene expression linked to triglyceride lipolysis in adipose"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9031528",
+      "pwLabel": "NR1H2 & NR1H3 regulate gene expression linked to triglyceride lipolysis in adipose"
+    },
+    {
+      "sym": "FOS",
+      "pw": "https://identifiers.org/reactome/R-HSA-9031628",
+      "pwLabel": "NGF-stimulated transcription"
+    },
+    {
+      "sym": "F3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9031628",
+      "pwLabel": "NGF-stimulated transcription"
+    },
+    {
+      "sym": "EGR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9031628",
+      "pwLabel": "NGF-stimulated transcription"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9032500",
+      "pwLabel": "Activated NTRK2 signals through FYN"
+    },
+    {
+      "sym": "CAT",
+      "pw": "https://identifiers.org/reactome/R-HSA-9033241",
+      "pwLabel": "Peroxisomal protein import"
+    },
+    {
+      "sym": "ACOX1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9033241",
+      "pwLabel": "Peroxisomal protein import"
+    },
+    {
+      "sym": "ACOX1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9033500",
+      "pwLabel": "TYSND1 cleaves peroxisomal proteins"
+    },
+    {
+      "sym": "EGR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-909733",
+      "pwLabel": "Interferon alpha/beta signaling"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-912446",
+      "pwLabel": "Meiotic recombination"
+    },
+    {
+      "sym": "IL2",
+      "pw": "https://identifiers.org/reactome/R-HSA-912526",
+      "pwLabel": "Interleukin receptor SHC signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-912526",
+      "pwLabel": "Interleukin receptor SHC signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-912631",
+      "pwLabel": "Regulation of signaling by CBL"
+    },
+    {
+      "sym": "ABCG2",
+      "pw": "https://identifiers.org/reactome/R-HSA-917937",
+      "pwLabel": "Iron uptake and transport"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9603381",
+      "pwLabel": "Activated NTRK3 signals through PI3K"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9603381",
+      "pwLabel": "Activated NTRK3 signals through PI3K"
+    },
+    {
+      "sym": "BAX",
+      "pw": "https://identifiers.org/reactome/R-HSA-9603505",
+      "pwLabel": "NTRK3 as a dependence receptor"
+    },
+    {
+      "sym": "BCL2L11",
+      "pw": "https://identifiers.org/reactome/R-HSA-9607240",
+      "pwLabel": "FLT3 Signaling"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9607240",
+      "pwLabel": "FLT3 Signaling"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9607240",
+      "pwLabel": "FLT3 Signaling"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9614399",
+      "pwLabel": "Regulation of localization of FOXO transcription factors"
+    },
+    {
+      "sym": "FOXO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9614399",
+      "pwLabel": "Regulation of localization of FOXO transcription factors"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9614657",
+      "pwLabel": "FOXO-mediated transcription of cell death genes"
+    },
+    {
+      "sym": "BCL2L11",
+      "pw": "https://identifiers.org/reactome/R-HSA-9614657",
+      "pwLabel": "FOXO-mediated transcription of cell death genes"
+    },
+    {
+      "sym": "DDIT3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9614657",
+      "pwLabel": "FOXO-mediated transcription of cell death genes"
+    },
+    {
+      "sym": "FOXO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9614657",
+      "pwLabel": "FOXO-mediated transcription of cell death genes"
+    },
+    {
+      "sym": "CAT",
+      "pw": "https://identifiers.org/reactome/R-HSA-9615017",
+      "pwLabel": "FOXO-mediated transcription of oxidative stress, metabolic and neuronal genes"
+    },
+    {
+      "sym": "NR3C1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9615017",
+      "pwLabel": "FOXO-mediated transcription of oxidative stress, metabolic and neuronal genes"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9615017",
+      "pwLabel": "FOXO-mediated transcription of oxidative stress, metabolic and neuronal genes"
+    },
+    {
+      "sym": "IGFBP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9615017",
+      "pwLabel": "FOXO-mediated transcription of oxidative stress, metabolic and neuronal genes"
+    },
+    {
+      "sym": "SREBF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9615017",
+      "pwLabel": "FOXO-mediated transcription of oxidative stress, metabolic and neuronal genes"
+    },
+    {
+      "sym": "FOXO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9615017",
+      "pwLabel": "FOXO-mediated transcription of oxidative stress, metabolic and neuronal genes"
+    },
+    {
+      "sym": "SIRT3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9615017",
+      "pwLabel": "FOXO-mediated transcription of oxidative stress, metabolic and neuronal genes"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9616222",
+      "pwLabel": "Transcriptional regulation of granulopoiesis"
+    },
+    {
+      "sym": "IL6R",
+      "pw": "https://identifiers.org/reactome/R-HSA-9616222",
+      "pwLabel": "Transcriptional regulation of granulopoiesis"
+    },
+    {
+      "sym": "RARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9616222",
+      "pwLabel": "Transcriptional regulation of granulopoiesis"
+    },
+    {
+      "sym": "CEBPB",
+      "pw": "https://identifiers.org/reactome/R-HSA-9616222",
+      "pwLabel": "Transcriptional regulation of granulopoiesis"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-9616222",
+      "pwLabel": "Transcriptional regulation of granulopoiesis"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9616222",
+      "pwLabel": "Transcriptional regulation of granulopoiesis"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9616222",
+      "pwLabel": "Transcriptional regulation of granulopoiesis"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9617629",
+      "pwLabel": "Regulation of FOXO transcriptional activity by acetylation"
+    },
+    {
+      "sym": "FOXO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9617629",
+      "pwLabel": "Regulation of FOXO transcriptional activity by acetylation"
+    },
+    {
+      "sym": "SIRT3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9617629",
+      "pwLabel": "Regulation of FOXO transcriptional activity by acetylation"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9617828",
+      "pwLabel": "FOXO-mediated transcription of cell cycle genes"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9617828",
+      "pwLabel": "FOXO-mediated transcription of cell cycle genes"
+    },
+    {
+      "sym": "FOXO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9617828",
+      "pwLabel": "FOXO-mediated transcription of cell cycle genes"
+    },
+    {
+      "sym": "PRKAA1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9619483",
+      "pwLabel": "Activation of AMPK downstream of NMDARs"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9620244",
+      "pwLabel": "Long-term potentiation"
+    },
+    {
+      "sym": "RXRB",
+      "pw": "https://identifiers.org/reactome/R-HSA-9623433",
+      "pwLabel": "NR1H2 & NR1H3 regulate gene expression to control bile acid homeostasis"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9623433",
+      "pwLabel": "NR1H2 & NR1H3 regulate gene expression to control bile acid homeostasis"
+    },
+    {
+      "sym": "RXRB",
+      "pw": "https://identifiers.org/reactome/R-HSA-9632974",
+      "pwLabel": "NR1H2 & NR1H3 regulate gene expression linked to gluconeogenesis "
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9632974",
+      "pwLabel": "NR1H2 & NR1H3 regulate gene expression linked to gluconeogenesis "
+    },
+    {
+      "sym": "CEBPB",
+      "pw": "https://identifiers.org/reactome/R-HSA-9633012",
+      "pwLabel": "Response of EIF2AK4 (GCN2) to amino acid deficiency"
+    },
+    {
+      "sym": "DDIT3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9633012",
+      "pwLabel": "Response of EIF2AK4 (GCN2) to amino acid deficiency"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9634597",
+      "pwLabel": "GPER1 signaling"
+    },
+    {
+      "sym": "FOS",
+      "pw": "https://identifiers.org/reactome/R-HSA-9634638",
+      "pwLabel": "Estrogen-dependent nuclear events downstream of ESR-membrane signaling"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-9634638",
+      "pwLabel": "Estrogen-dependent nuclear events downstream of ESR-membrane signaling"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9634638",
+      "pwLabel": "Estrogen-dependent nuclear events downstream of ESR-membrane signaling"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9634638",
+      "pwLabel": "Estrogen-dependent nuclear events downstream of ESR-membrane signaling"
+    },
+    {
+      "sym": "COL4A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9638630",
+      "pwLabel": "Attachment of bacteria to epithelial cells"
+    },
+    {
+      "sym": "HSF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9646399",
+      "pwLabel": "Aggrephagy"
+    },
+    {
+      "sym": "CEBPB",
+      "pw": "https://identifiers.org/reactome/R-HSA-9648895",
+      "pwLabel": "Response of EIF2AK1 (HRI) to heme deficiency"
+    },
+    {
+      "sym": "DDIT3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9648895",
+      "pwLabel": "Response of EIF2AK1 (HRI) to heme deficiency"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9649948",
+      "pwLabel": "Signaling downstream of RAS mutants"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9656223",
+      "pwLabel": "Signaling by RAF1 mutants"
+    },
+    {
+      "sym": "IL6",
+      "pw": "https://identifiers.org/reactome/R-HSA-9660821",
+      "pwLabel": "ADORA2B mediated anti-inflammatory cytokines production"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9661069",
+      "pwLabel": "Defective binding of RB1 mutants to E2F1,(E2F2, E2F3)"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9661069",
+      "pwLabel": "Defective binding of RB1 mutants to E2F1,(E2F2, E2F3)"
+    },
+    {
+      "sym": "EZR",
+      "pw": "https://identifiers.org/reactome/R-HSA-9662360",
+      "pwLabel": "Sensory processing of sound by inner hair cells of the cochlea"
+    },
+    {
+      "sym": "EZR",
+      "pw": "https://identifiers.org/reactome/R-HSA-9662361",
+      "pwLabel": "Sensory processing of sound by outer hair cells of the cochlea"
+    },
+    {
+      "sym": "IL6",
+      "pw": "https://identifiers.org/reactome/R-HSA-9662834",
+      "pwLabel": "CD163 mediating an anti-inflammatory response"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9664323",
+      "pwLabel": "FCGR3A-mediated IL10 synthesis"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9664422",
+      "pwLabel": "FCGR3A-mediated phagocytosis"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-9664565",
+      "pwLabel": "Signaling by ERBB2 KD Mutants"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9664565",
+      "pwLabel": "Signaling by ERBB2 KD Mutants"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-9665348",
+      "pwLabel": "Signaling by ERBB2 ECD mutants"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9665348",
+      "pwLabel": "Signaling by ERBB2 ECD mutants"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-9665686",
+      "pwLabel": "Signaling by ERBB2 TMD/JMD mutants"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-9670095",
+      "pwLabel": "Inhibition of DNA recombination at telomere"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9670439",
+      "pwLabel": "Signaling by phosphorylated juxtamembrane, extracellular and kinase domain KIT mutants"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9670439",
+      "pwLabel": "Signaling by phosphorylated juxtamembrane, extracellular and kinase domain KIT mutants"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-9673324",
+      "pwLabel": "WNT5:FZD7-mediated leishmania damping"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9673767",
+      "pwLabel": "Signaling by PDGFRA transmembrane, juxtamembrane and kinase domain mutants"
+    },
+    {
+      "sym": "KDR",
+      "pw": "https://identifiers.org/reactome/R-HSA-9673768",
+      "pwLabel": "Signaling by membrane-tethered fusions of PDGFRA or PDGFRB"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9673770",
+      "pwLabel": "Signaling by PDGFRA extracellular domain mutants"
+    },
+    {
+      "sym": "NR3C1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9679191",
+      "pwLabel": "Potential therapeutics for SARS"
+    },
+    {
+      "sym": "IL6R",
+      "pw": "https://identifiers.org/reactome/R-HSA-9679191",
+      "pwLabel": "Potential therapeutics for SARS"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9679191",
+      "pwLabel": "Potential therapeutics for SARS"
+    },
+    {
+      "sym": "CSF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9680350",
+      "pwLabel": "Signaling by CSF1 (M-CSF) in myeloid cells"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9680350",
+      "pwLabel": "Signaling by CSF1 (M-CSF) in myeloid cells"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9680350",
+      "pwLabel": "Signaling by CSF1 (M-CSF) in myeloid cells"
+    },
+    {
+      "sym": "HIF1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9701898",
+      "pwLabel": "STAT3 nuclear events downstream of ALK signaling"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9702518",
+      "pwLabel": "STAT5 activation downstream of FLT3 ITD mutants"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9703465",
+      "pwLabel": "Signaling by FLT3 fusion proteins"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9703465",
+      "pwLabel": "Signaling by FLT3 fusion proteins"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9703648",
+      "pwLabel": "Signaling by FLT3 ITD and TKD mutants"
+    },
+    {
+      "sym": "IL17A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9705671",
+      "pwLabel": "SARS-CoV-2 activates/modulates innate and adaptive immune responses"
+    },
+    {
+      "sym": "HTR7",
+      "pw": "https://identifiers.org/reactome/R-HSA-9706019",
+      "pwLabel": "RHOBTB3 ATPase cycle"
+    },
+    {
+      "sym": "FABP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9707564",
+      "pwLabel": "Cytoprotection by HMOX1"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9707564",
+      "pwLabel": "Cytoprotection by HMOX1"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9707564",
+      "pwLabel": "Cytoprotection by HMOX1"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9707587",
+      "pwLabel": "Regulation of HMOX1 expression and activity"
+    },
+    {
+      "sym": "RORA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9707616",
+      "pwLabel": "Heme signaling"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9707616",
+      "pwLabel": "Heme signaling"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9707616",
+      "pwLabel": "Heme signaling"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9707616",
+      "pwLabel": "Heme signaling"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-9710421",
+      "pwLabel": "Defective pyroptosis"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-9723905",
+      "pwLabel": "Loss of function of TP53 in cancer due to loss of tetramerization ability"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-9725370",
+      "pwLabel": "Signaling by ALK fusions and activated point mutants"
+    },
+    {
+      "sym": "JUN",
+      "pw": "https://identifiers.org/reactome/R-HSA-9725370",
+      "pwLabel": "Signaling by ALK fusions and activated point mutants"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9725370",
+      "pwLabel": "Signaling by ALK fusions and activated point mutants"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9725370",
+      "pwLabel": "Signaling by ALK fusions and activated point mutants"
+    },
+    {
+      "sym": "CEBPB",
+      "pw": "https://identifiers.org/reactome/R-HSA-9725371",
+      "pwLabel": "Nuclear events stimulated by ALK signaling in cancer"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-9725554",
+      "pwLabel": "Differentiation of Keratinocytes in Interfollicular Epidermis in Mammalian Skin"
+    },
+    {
+      "sym": "ABCG2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9725554",
+      "pwLabel": "Differentiation of Keratinocytes in Interfollicular Epidermis in Mammalian Skin"
+    },
+    {
+      "sym": "HGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-9734091",
+      "pwLabel": "Drug-mediated inhibition of MET activation"
+    },
+    {
+      "sym": "SP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9735871",
+      "pwLabel": "SARS-CoV-1 targets host intracellular signalling and regulatory pathways"
+    },
+    {
+      "sym": "GSTA2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9748787",
+      "pwLabel": "Azathioprine ADME"
+    },
+    {
+      "sym": "ABCC3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9749641",
+      "pwLabel": "Aspirin ADME"
+    },
+    {
+      "sym": "CYP2E1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9749641",
+      "pwLabel": "Aspirin ADME"
+    },
+    {
+      "sym": "CYP2C9",
+      "pw": "https://identifiers.org/reactome/R-HSA-9749641",
+      "pwLabel": "Aspirin ADME"
+    },
+    {
+      "sym": "CYP3A4",
+      "pw": "https://identifiers.org/reactome/R-HSA-9749641",
+      "pwLabel": "Aspirin ADME"
+    },
+    {
+      "sym": "CYP2C19",
+      "pw": "https://identifiers.org/reactome/R-HSA-9749641",
+      "pwLabel": "Aspirin ADME"
+    },
+    {
+      "sym": "UGT1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9749641",
+      "pwLabel": "Aspirin ADME"
+    },
+    {
+      "sym": "ABCC3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9753281",
+      "pwLabel": "Paracetamol ADME"
+    },
+    {
+      "sym": "CYP2E1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9753281",
+      "pwLabel": "Paracetamol ADME"
+    },
+    {
+      "sym": "UGT1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9753281",
+      "pwLabel": "Paracetamol ADME"
+    },
+    {
+      "sym": "ABCG2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9753281",
+      "pwLabel": "Paracetamol ADME"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9754119",
+      "pwLabel": "Drug-mediated inhibition of CDK4/CDK6 activity"
+    },
+    {
+      "sym": "CYP3A4",
+      "pw": "https://identifiers.org/reactome/R-HSA-9754706",
+      "pwLabel": "Atorvastatin ADME"
+    },
+    {
+      "sym": "SLCO1B1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9754706",
+      "pwLabel": "Atorvastatin ADME"
+    },
+    {
+      "sym": "ADK",
+      "pw": "https://identifiers.org/reactome/R-HSA-9755088",
+      "pwLabel": "Ribavirin ADME"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9755511",
+      "pwLabel": "KEAP1-NFE2L2 pathway"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9755511",
+      "pwLabel": "KEAP1-NFE2L2 pathway"
+    },
+    {
+      "sym": "LDLR",
+      "pw": "https://identifiers.org/reactome/R-HSA-975634",
+      "pwLabel": "Retinoid metabolism and transport"
+    },
+    {
+      "sym": "LPL",
+      "pw": "https://identifiers.org/reactome/R-HSA-975634",
+      "pwLabel": "Retinoid metabolism and transport"
+    },
+    {
+      "sym": "CYP3A4",
+      "pw": "https://identifiers.org/reactome/R-HSA-9757110",
+      "pwLabel": "Prednisone ADME"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-9758274",
+      "pwLabel": "Regulation of NF-kappa B signaling"
+    },
+    {
+      "sym": "SHH",
+      "pw": "https://identifiers.org/reactome/R-HSA-9758920",
+      "pwLabel": "Formation of lateral plate mesoderm"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9759194",
+      "pwLabel": "Nuclear events mediated by NFE2L2"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9761174",
+      "pwLabel": "Formation of intermediate mesoderm"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9762114",
+      "pwLabel": "GSK3B and BTRC:CUL1-mediated-degradation of NFE2L2"
+    },
+    {
+      "sym": "SP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9762293",
+      "pwLabel": "Regulation of CDH11 gene transcription"
+    },
+    {
+      "sym": "ACTA1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9764561",
+      "pwLabel": "Regulation of CDH1 Function"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9764562",
+      "pwLabel": "Regulation of CDH1 mRNA translation by microRNAs"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-9764725",
+      "pwLabel": "Negative Regulation of CDH1 Gene Transcription"
+    },
+    {
+      "sym": "SP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9764790",
+      "pwLabel": "Positive Regulation of CDH1 Gene Transcription"
+    },
+    {
+      "sym": "SRC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9766229",
+      "pwLabel": "Degradation of CDH1"
+    },
+    {
+      "sym": "NR3C1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9768777",
+      "pwLabel": "Regulation of NPAS4 gene transcription"
+    },
+    {
+      "sym": "FOS",
+      "pw": "https://identifiers.org/reactome/R-HSA-9768919",
+      "pwLabel": "NPAS4 regulates expression of target genes"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-977225",
+      "pwLabel": "Amyloid fiber formation"
+    },
+    {
+      "sym": "SLC22A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9793528",
+      "pwLabel": "Ciprofloxacin ADME"
+    },
+    {
+      "sym": "ABCG2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9793528",
+      "pwLabel": "Ciprofloxacin ADME"
+    },
+    {
+      "sym": "SHH",
+      "pw": "https://identifiers.org/reactome/R-HSA-9796292",
+      "pwLabel": "Formation of axial mesoderm"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818025",
+      "pwLabel": "NFE2L2 regulating TCA cycle genes"
+    },
+    {
+      "sym": "CCL2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818026",
+      "pwLabel": "NFE2L2 regulating inflammation associated genes"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818026",
+      "pwLabel": "NFE2L2 regulating inflammation associated genes"
+    },
+    {
+      "sym": "NQO1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818027",
+      "pwLabel": "NFE2L2 regulating anti-oxidant/detoxification enzymes"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818027",
+      "pwLabel": "NFE2L2 regulating anti-oxidant/detoxification enzymes"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818028",
+      "pwLabel": "NFE2L2 regulates pentose phosphate pathway genes"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818030",
+      "pwLabel": "NFE2L2 regulating tumorigenic genes"
+    },
+    {
+      "sym": "SP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818030",
+      "pwLabel": "NFE2L2 regulating tumorigenic genes"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818030",
+      "pwLabel": "NFE2L2 regulating tumorigenic genes"
+    },
+    {
+      "sym": "ABCC3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818032",
+      "pwLabel": "NFE2L2 regulating MDR associated enzymes"
+    },
+    {
+      "sym": "ABCG2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818032",
+      "pwLabel": "NFE2L2 regulating MDR associated enzymes"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818032",
+      "pwLabel": "NFE2L2 regulating MDR associated enzymes"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818035",
+      "pwLabel": "NFE2L2 regulating ER-stress associated genes"
+    },
+    {
+      "sym": "MYC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818749",
+      "pwLabel": "Regulation of NFE2L2 gene expression"
+    },
+    {
+      "sym": "NFE2L2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9818749",
+      "pwLabel": "Regulation of NFE2L2 gene expression"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-9819196",
+      "pwLabel": "Zygotic genome activation (ZGA)"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-9821002",
+      "pwLabel": "Chromatin modifications during the maternal to zygotic transition (MZT)"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-9821993",
+      "pwLabel": "Replacement of protamines by nucleosomes in the male pronucleus"
+    },
+    {
+      "sym": "PAX6",
+      "pw": "https://identifiers.org/reactome/R-HSA-9823739",
+      "pwLabel": "Formation of the anterior neural plate"
+    },
+    {
+      "sym": "CCND1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9825892",
+      "pwLabel": "Regulation of MITF-M-dependent genes involved in cell cycle and proliferation"
+    },
+    {
+      "sym": "CDKN1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9825892",
+      "pwLabel": "Regulation of MITF-M-dependent genes involved in cell cycle and proliferation"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9830364",
+      "pwLabel": "Formation of the nephric duct"
+    },
+    {
+      "sym": "HNF4A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9831926",
+      "pwLabel": "Nephron development"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-983231",
+      "pwLabel": "Factors involved in megakaryocyte development and platelet production"
+    },
+    {
+      "sym": "TP53",
+      "pw": "https://identifiers.org/reactome/R-HSA-9833482",
+      "pwLabel": "PKR-mediated signaling"
+    },
+    {
+      "sym": "HSPA1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9833482",
+      "pwLabel": "PKR-mediated signaling"
+    },
+    {
+      "sym": "HMGCS2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9837999",
+      "pwLabel": "Mitochondrial protein degradation"
+    },
+    {
+      "sym": "TIMP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9839383",
+      "pwLabel": "TGFBR3 PTM regulation"
+    },
+    {
+      "sym": "TGFB1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9839389",
+      "pwLabel": "TGFBR3 regulates TGF-beta signaling"
+    },
+    {
+      "sym": "SP1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9839394",
+      "pwLabel": "TGFBR3 expression"
+    },
+    {
+      "sym": "RARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9839394",
+      "pwLabel": "TGFBR3 expression"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9839394",
+      "pwLabel": "TGFBR3 expression"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9839397",
+      "pwLabel": "TGFBR3 regulates FGF2 signaling"
+    },
+    {
+      "sym": "FOXO3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9841251",
+      "pwLabel": "Mitochondrial unfolded protein response (UPRmt)"
+    },
+    {
+      "sym": "CAT",
+      "pw": "https://identifiers.org/reactome/R-HSA-9841251",
+      "pwLabel": "Mitochondrial unfolded protein response (UPRmt)"
+    },
+    {
+      "sym": "ESR1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9841251",
+      "pwLabel": "Mitochondrial unfolded protein response (UPRmt)"
+    },
+    {
+      "sym": "HSPA1A",
+      "pw": "https://identifiers.org/reactome/R-HSA-9841251",
+      "pwLabel": "Mitochondrial unfolded protein response (UPRmt)"
+    },
+    {
+      "sym": "NRF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9841251",
+      "pwLabel": "Mitochondrial unfolded protein response (UPRmt)"
+    },
+    {
+      "sym": "SIRT3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9841251",
+      "pwLabel": "Mitochondrial unfolded protein response (UPRmt)"
+    },
+    {
+      "sym": "HSF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9841251",
+      "pwLabel": "Mitochondrial unfolded protein response (UPRmt)"
+    },
+    {
+      "sym": "LPL",
+      "pw": "https://identifiers.org/reactome/R-HSA-9841922",
+      "pwLabel": "MLL4 and MLL3 complexes regulate expression of PPARG target genes in adipogenesis and hepatic steatosis"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9841922",
+      "pwLabel": "MLL4 and MLL3 complexes regulate expression of PPARG target genes in adipogenesis and hepatic steatosis"
+    },
+    {
+      "sym": "PPARG",
+      "pw": "https://identifiers.org/reactome/R-HSA-9841922",
+      "pwLabel": "MLL4 and MLL3 complexes regulate expression of PPARG target genes in adipogenesis and hepatic steatosis"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-9841922",
+      "pwLabel": "MLL4 and MLL3 complexes regulate expression of PPARG target genes in adipogenesis and hepatic steatosis"
+    },
+    {
+      "sym": "PDK4",
+      "pw": "https://identifiers.org/reactome/R-HSA-9841922",
+      "pwLabel": "MLL4 and MLL3 complexes regulate expression of PPARG target genes in adipogenesis and hepatic steatosis"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9842640",
+      "pwLabel": "Signaling by LTK in cancer"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9842663",
+      "pwLabel": "Signaling by LTK"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-9843940",
+      "pwLabel": "Regulation of endogenous retroelements by KRAB-ZFP proteins"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-9843970",
+      "pwLabel": "Regulation of endogenous retroelements by the Human Silencing Hub (HUSH) complex"
+    },
+    {
+      "sym": "PPARG",
+      "pw": "https://identifiers.org/reactome/R-HSA-9844594",
+      "pwLabel": "Transcriptional regulation of brown and beige adipocyte differentiation by EBF2"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9844594",
+      "pwLabel": "Transcriptional regulation of brown and beige adipocyte differentiation by EBF2"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9844594",
+      "pwLabel": "Transcriptional regulation of brown and beige adipocyte differentiation by EBF2"
+    },
+    {
+      "sym": "H2AX",
+      "pw": "https://identifiers.org/reactome/R-HSA-9845323",
+      "pwLabel": "Regulation of endogenous retroelements by Piwi-interacting RNAs (piRNAs)"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9845619",
+      "pwLabel": "Enhanced cleavage of VWF variant by ADAMTS13"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9845620",
+      "pwLabel": "Enhanced binding of GP1BA variant to VWF multimer:collagen "
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9845621",
+      "pwLabel": "Defective VWF cleavage by ADAMTS13 variant"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9845622",
+      "pwLabel": "Defective VWF binding to collagen type I "
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9846298",
+      "pwLabel": "Defective binding of VWF variant to GPIb:IX:V"
+    },
+    {
+      "sym": "SDHB",
+      "pw": "https://identifiers.org/reactome/R-HSA-9854311",
+      "pwLabel": "Maturation of TCA enzymes and regulation of TCA cycle"
+    },
+    {
+      "sym": "SIRT3",
+      "pw": "https://identifiers.org/reactome/R-HSA-9854311",
+      "pwLabel": "Maturation of TCA enzymes and regulation of TCA cycle"
+    },
+    {
+      "sym": "KDR",
+      "pw": "https://identifiers.org/reactome/R-HSA-9856530",
+      "pwLabel": "High laminar flow shear stress activates signaling by PIEZO1 and PECAM1:CDH5:KDR in endothelial cells"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9856530",
+      "pwLabel": "High laminar flow shear stress activates signaling by PIEZO1 and PECAM1:CDH5:KDR in endothelial cells"
+    },
+    {
+      "sym": "CSF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9856649",
+      "pwLabel": "Transcriptional and post-translational regulation of MITF-M expression and activity"
+    },
+    {
+      "sym": "ATF6",
+      "pw": "https://identifiers.org/reactome/R-HSA-9909505",
+      "pwLabel": "Modulation of host responses by IFN-stimulated genes"
+    },
+    {
+      "sym": "ACTA1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9913351",
+      "pwLabel": "Formation of the dystrophin-glycoprotein complex (DGC)"
+    },
+    {
+      "sym": "COL3A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9925563",
+      "pwLabel": "Developmental Lineage of Pancreatic Ductal Cells"
+    },
+    {
+      "sym": "COL1A1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9925563",
+      "pwLabel": "Developmental Lineage of Pancreatic Ductal Cells"
+    },
+    {
+      "sym": "SERPINE1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9926550",
+      "pwLabel": "Regulation of MITF-M-dependent genes involved in extracellular matrix, focal adhesion and epithelial-to-mesenchymal transition"
+    },
+    {
+      "sym": "PIK3CA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9927354",
+      "pwLabel": "Co-stimulation by ICOS"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-9927432",
+      "pwLabel": "Developmental Lineage of Mammary Gland Myoepithelial Cells"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9931509",
+      "pwLabel": "Expression of BMAL (ARNTL), CLOCK, and NPAS2"
+    },
+    {
+      "sym": "RORA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9931509",
+      "pwLabel": "Expression of BMAL (ARNTL), CLOCK, and NPAS2"
+    },
+    {
+      "sym": "RORC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9931509",
+      "pwLabel": "Expression of BMAL (ARNTL), CLOCK, and NPAS2"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9931509",
+      "pwLabel": "Expression of BMAL (ARNTL), CLOCK, and NPAS2"
+    },
+    {
+      "sym": "RORA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9931510",
+      "pwLabel": "Phosphorylated BMAL1:CLOCK (ARNTL:CLOCK) activates expression of core clock genes"
+    },
+    {
+      "sym": "RORC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9931510",
+      "pwLabel": "Phosphorylated BMAL1:CLOCK (ARNTL:CLOCK) activates expression of core clock genes"
+    },
+    {
+      "sym": "RORA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9933387",
+      "pwLabel": "RORA,B,C and NR1D1 (REV-ERBA) regulate gene expression"
+    },
+    {
+      "sym": "SREBF1",
+      "pw": "https://identifiers.org/reactome/R-HSA-9933387",
+      "pwLabel": "RORA,B,C and NR1D1 (REV-ERBA) regulate gene expression"
+    },
+    {
+      "sym": "RXRA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9933387",
+      "pwLabel": "RORA,B,C and NR1D1 (REV-ERBA) regulate gene expression"
+    },
+    {
+      "sym": "PPARA",
+      "pw": "https://identifiers.org/reactome/R-HSA-9933387",
+      "pwLabel": "RORA,B,C and NR1D1 (REV-ERBA) regulate gene expression"
+    },
+    {
+      "sym": "RORC",
+      "pw": "https://identifiers.org/reactome/R-HSA-9933387",
+      "pwLabel": "RORA,B,C and NR1D1 (REV-ERBA) regulate gene expression"
+    },
+    {
+      "sym": "EGF",
+      "pw": "https://identifiers.org/reactome/R-HSA-9937080",
+      "pwLabel": "Developmental Lineage of Multipotent Pancreatic Progenitor Cells"
+    },
+    {
+      "sym": "FGF2",
+      "pw": "https://identifiers.org/reactome/R-HSA-9937080",
+      "pwLabel": "Developmental Lineage of Multipotent Pancreatic Progenitor Cells"
+    },
+    {
+      "sym": "SHH",
+      "pw": "https://identifiers.org/reactome/R-HSA-9937080",
+      "pwLabel": "Developmental Lineage of Multipotent Pancreatic Progenitor Cells"
+    }
+  ],
+  "row_count": 1183
+}

@@ -1,0 +1,9 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX up: <http://purl.uniprot.org/core/>
+SELECT (COUNT(DISTINCT ?sym) AS ?N_react) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    ?gene rdfs:label ?sym ; <http://semanticscience.org/resource/SIO_010078> ?prot .
+    ?prot <http://purl.obolibrary.org/obo/RO_0000056> ?pw .
+    ?pw a up:Pathway . FILTER(CONTAINS(STR(?pw),"R-HSA"))
+  }
+}

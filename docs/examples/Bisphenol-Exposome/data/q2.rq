@@ -1,0 +1,15 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aop: <http://aopkb.org/aop_ontology#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX edam: <http://edamontology.org/>
+SELECT DISTINCT ?aop ?ke ?keTitle ?geneId ?organ WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> {
+    VALUES ?aop { <https://identifiers.org/aop/152> <https://identifiers.org/aop/314> <https://identifiers.org/aop/522> <https://identifiers.org/aop/535> }
+    ?aop aop:has_key_event ?ke .
+    OPTIONAL { ?ke dc:title ?keTitle }
+    OPTIONAL { ?ke edam:data_1027 ?geneId }
+    OPTIONAL { ?ke aop:OrganContext ?organ }
+  }
+}
+ORDER BY ?aop ?keTitle

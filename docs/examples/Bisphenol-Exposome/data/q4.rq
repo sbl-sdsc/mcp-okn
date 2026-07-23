@@ -1,0 +1,7 @@
+PREFIX biolink: <https://w3id.org/biolink/vocab/>
+SELECT (COUNT(DISTINCT ?g) AS ?n_bg) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/rdkg> {
+    ?g biolink:related_to ?d ; <https://w3id.org/biolink/vocab/category> "biolink:Gene" .
+    FILTER(CONTAINS(STR(?d),"MONDO"))
+  }
+}
