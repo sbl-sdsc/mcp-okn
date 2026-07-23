@@ -1,0 +1,52 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v5("?compound"):::projected 
+  v6("?compound_label"):::projected 
+  v2("?e")
+  v4("?effect"):::projected 
+  v1("?gene"):::projected 
+  v3("?gene_symbol"):::projected 
+  v7("?max_phase"):::projected 
+  bind0[/"VALUES ?e"/]
+  bind0-->v2
+  bind00(["187^^xsd:integer"])
+  bind00 --> bind0
+  bind01(["358^^xsd:integer"])
+  bind01 --> bind0
+  bind02(["383^^xsd:integer"])
+  bind02 --> bind0
+  bind0more([+166 more])
+  bind0more --> bind0
+  bind1[/"iri(concat('http://www.ncbi.nlm.nih.gov/gene/',str(?e)))"/]
+  v2 --o bind1
+  bind1 --as--o v1
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/spoke-okn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v1 --"rdfs:label"--> v3
+    subgraph uniongraph00[" Union "]
+    style uniongraph00 color:#000;
+    subgraph uniongraph00l[" "]
+      style uniongraph00l fill:#abf,stroke-dasharray: 3 3;
+      v5 --"so:DOWNREGULATES_CdG"--> v1
+      graph0bind2[/"'DOWNREGULATES'"/]
+      graph0bind2 --as--o v4
+    end
+    subgraph uniongraph00r[" "]
+      style uniongraph00r fill:#abf,stroke-dasharray: 3 3;
+      v5 --"so:UPREGULATES_CuG"--> v1
+      graph0bind3[/"'UPREGULATES'"/]
+      graph0bind3 --as--o v4
+    end
+    uniongraph00r <== or ==> uniongraph00l
+    end
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v5 -."rdfs:label".-> v6
+    end
+    subgraph optionalgraph01["(optional)"]
+    style optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v5 -."so:max_phase".-> v7
+    end
+  end

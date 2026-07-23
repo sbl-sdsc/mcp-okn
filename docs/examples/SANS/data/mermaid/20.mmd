@@ -1,0 +1,27 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v1("?K"):::projected 
+  v5("?gene")
+  v6("?prot")
+  v2("?pw"):::projected 
+  v7("?sym")
+  bind0[/"VALUES ?pw"/]
+  bind0-->v2
+  bind00(["https://identifiers.org/reactome/R-HSA-163210"])
+  bind00 --> bind0
+  bind01(["https://identifiers.org/reactome/R-HSA-5578775"])
+  bind01 --> bind0
+  bind02(["https://identifiers.org/reactome/R-HSA-6798695"])
+  bind02 --> bind0
+  bind0more([+9 more])
+  bind0more --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v5 --"sio:SIO_010078"--> v6
+    v5 --"rdfs:label"--> v7
+    v6 --"obo:RO_0000056"--> v2
+  end
+  bind1[/"count(?gene)"/]
+  bind1 --as--o v1

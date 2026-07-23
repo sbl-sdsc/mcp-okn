@@ -1,0 +1,302 @@
+disease,diseaseLabel,drug,drugLabel,relation
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,http://identifiers.org/drugbank/DB00710,Ibandronate,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,http://identifiers.org/drugbank/DB00860,Prednisolone,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,http://identifiers.org/drugbank/DB01436,Alfacalcidol,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,http://identifiers.org/drugbank/DB05295,Eldecalcitol,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,http://identifiers.org/drugbank/DB06285,Teriparatide,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,http://identifiers.org/drugbank/DB06643,Denosumab,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,http://identifiers.org/drugbank/DB11866,Romosozumab,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_alendronate_sodium,Alendronate Sodium,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_alfacalcidol_tablets,Alfacalcidol Tablets,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_bisphosphonates,Bisphosphonates,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_calcium_carbonate_tablets,Calcium Carbonate Tablets,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_dmab_discontinuation_and_switching,Dmab Discontinuation And Switching,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_eldecalcitol_capsules,Eldecalcitol Capsules,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_glucocorticoid_effect,Glucocorticoid Effect,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_glucocorticoid_treatment,Glucocorticoid Treatment,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_jmt103,Jmt103,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_mk0217_duration_of_treatment_12_months,Mk0217/duration Of Treatment : 12 Months,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_pamidronate,Pamidronate,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_parathyroid_hormone_hpth_1_34_,Parathyroid Hormone (hpth 1-34),treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_parathyroid_hormone,Parathyroid Hormone,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_prolia_,Prolia®,treats
+http://purl.obolibrary.org/obo/MONDO_0000757,glucocorticoid-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_risedronate,Risedronate,treats
+http://purl.obolibrary.org/obo/MONDO_0000837,bone resorption disease,https://rdaccelerate.org/resource/CTDRUG_70_ethanol_alcohol,70% Ethanol Alcohol,treats
+http://purl.obolibrary.org/obo/MONDO_0000837,bone resorption disease,https://rdaccelerate.org/resource/CTDRUG_human_spongiosa,Human-spongiosa,treats
+http://purl.obolibrary.org/obo/MONDO_0000837,bone resorption disease,https://rdaccelerate.org/resource/CTDRUG_no_platelet_rich_plasma,No Platelet Rich Plasma,treats
+http://purl.obolibrary.org/obo/MONDO_0000837,bone resorption disease,https://rdaccelerate.org/resource/CTDRUG_platelet_rich_fibrin_prf_,Platelet-rich Fibrin (prf),treats
+http://purl.obolibrary.org/obo/MONDO_0000837,bone resorption disease,https://rdaccelerate.org/resource/CTDRUG_platelet_rich_plasma,Platelet Rich Plasma,treats
+http://purl.obolibrary.org/obo/MONDO_0000837,bone resorption disease,https://rdaccelerate.org/resource/CTDRUG_zoledronic_acid_5_mg_bag_100_ml_inj,Zoledronic Acid 5 Mg/bag 100 Ml Inj,treats
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00136,Calcitriol,treats
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00146,Calcifediol,treats
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00153,Ergocalciferol,treats
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00169,Cholecalciferol,treats
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00252,Phenytoin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00300,Tenofovir disoproxil,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00625,Efavirenz,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00630,Alendronic acid,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00658,Sevelamer,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00710,Ibandronate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00755,Tretinoin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00879,Emtricitabine,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00930,Colesevelam,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB00982,Isotretinoin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB01070,Dihydrotachysterol,treats
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB01077,Etidronic acid,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB01133,Tiludronic acid,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB01174,Phenobarbital,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB06285,Teriparatide,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB08864,Rilpivirine,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),http://identifiers.org/drugbank/DB14126,Tenofovir,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),https://rdaccelerate.org/resource/CTDRUG_68ga_dota_jr11,68ga-dota-jr11,treats
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),https://rdaccelerate.org/resource/CTDRUG_68ga_dotatate,68ga-dotatate,treats
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),https://rdaccelerate.org/resource/CTDRUG_bgj398,Bgj398,treats
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),https://rdaccelerate.org/resource/CTDRUG_diagnostic_test_68ga_dotatate,Diagnostic Test: 68ga-dotatate,treats
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),https://rdaccelerate.org/resource/CTDRUG_diagnostic_test_al18f_nota_lm3,Diagnostic Test: Al18f-nota-lm3,treats
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),https://rdaccelerate.org/resource/CTDRUG_fgf23_related_hypophosphataemic_rickets_and,Fgf23-related Hypophosphataemic Rickets And Osteomalacia,treats
+http://purl.obolibrary.org/obo/MONDO_0001068,osteomalacia (disease),https://rdaccelerate.org/resource/CTDRUG_krn23,Krn23,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00017,Salmon calcitonin,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00153,Ergocalciferol,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00169,Cholecalciferol,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00213,Pantoprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00222,Glimepiride,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00279,Liothyronine,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00281,Lidocaine,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00331,Metformin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00338,Omeprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00367,Levonorgestrel,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00396,Progesterone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00396,Progesterone,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00399,Zoledronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00407,Ardeparin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00412,Rosiglitazone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00443,Betamethasone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00448,Lansoprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00451,Levothyroxine,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00481,Raloxifene,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00588,Fluticasone propionate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00603,Medroxyprogesterone acetate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00603,Medroxyprogesterone acetate,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00620,Triamcinolone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00630,Alendronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00635,Prednisone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00666,Nafarelin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00710,Ibandronate,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00717,Norethisterone,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00736,Esomeprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00741,Hydrocortisone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00755,Tretinoin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00783,Estradiol,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00783,Estradiol,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00788,Naproxen,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00860,Prednisolone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00884,Risedronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00938,Salmeterol,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00957,Norgestimate,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00959,Methylprednisolone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00977,Ethinylestradiol,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00982,Isotretinoin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB00983,Formoterol,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01006,Letrozole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01022,Phylloquinone,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01060,Amoxicillin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01086,Benzocaine,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01109,Heparin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01129,Rabeprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01174,Phenobarbital,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01211,Clarithromycin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01222,Budesonide,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01225,Enoxaparin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01234,Dexamethasone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01260,Desonide,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01377,Magnesium oxide,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01380,Cortisone acetate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB01410,Ciclesonide,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB05295,Eldecalcitol,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB05351,Dexlansoprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB06005,Adomiparin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB06202,Lasofoxifene,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB06255,Incadronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB06285,Teriparatide,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB06401,Bazedoxifene,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB06548,Minodronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB06643,Denosumab,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB06779,Dalteparin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB09070,Tibolone,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB09104,Magnesium hydroxide,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB09260,Parnaparin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB09267,Strontium ranelate,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB09345,Pramocaine,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB09481,Magnesium carbonate,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB11110,Magnesium citrate,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB11126,Calcium gluconate,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB11620,Neridronic Acid,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB11866,Romosozumab,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB11979,Elagolix,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB13231,Calcium lactate,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB13618,Ipriflavone,treats
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB13762,Dexrabeprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB13954,Estradiol cypionate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB14512,Mometasone furoate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB14539,Hydrocortisone acetate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,http://identifiers.org/drugbank/DB15404,"Heparin, bovine",contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008146,osteogenesis imperfecta type 1,https://rdaccelerate.org/resource/CTDRUG_aga2115,Aga2115,treats
+http://purl.obolibrary.org/obo/MONDO_0008146,osteogenesis imperfecta type 1,https://rdaccelerate.org/resource/CTDRUG_bone_marrow_derived_mesenchymal_stromal_cel,Bone Marrow-derived Mesenchymal Stromal Cells (mscs),treats
+http://purl.obolibrary.org/obo/MONDO_0008146,osteogenesis imperfecta type 1,https://rdaccelerate.org/resource/CTDRUG_bps804,Bps804,treats
+http://purl.obolibrary.org/obo/MONDO_0008149,"osteogenesis imperfecta with opalescent teeth, blue sclerae and wormian bones but without fractures",http://identifiers.org/drugbank/DB00017,Salmon calcitonin,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00017,Salmon calcitonin,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00136,Calcitriol,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00153,Ergocalciferol,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00169,Cholecalciferol,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00213,Pantoprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00222,Glimepiride,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00279,Liothyronine,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00281,Lidocaine,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00331,Metformin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00338,Omeprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00367,Levonorgestrel,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00396,Progesterone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00396,Progesterone,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00399,Zoledronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00407,Ardeparin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00412,Rosiglitazone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00443,Betamethasone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00448,Lansoprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00451,Levothyroxine,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00481,Raloxifene,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00588,Fluticasone propionate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00603,Medroxyprogesterone acetate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00603,Medroxyprogesterone acetate,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00620,Triamcinolone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00630,Alendronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00635,Prednisone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00666,Nafarelin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00710,Ibandronate,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00717,Norethisterone,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00736,Esomeprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00741,Hydrocortisone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00755,Tretinoin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00783,Estradiol,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00783,Estradiol,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00788,Naproxen,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00860,Prednisolone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00884,Risedronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00938,Salmeterol,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00957,Norgestimate,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00959,Methylprednisolone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00977,Ethinylestradiol,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00982,Isotretinoin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB00983,Formoterol,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01006,Letrozole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01022,Phylloquinone,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01060,Amoxicillin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01086,Benzocaine,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01109,Heparin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01129,Rabeprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01174,Phenobarbital,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01211,Clarithromycin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01222,Budesonide,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01225,Enoxaparin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01234,Dexamethasone,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01260,Desonide,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01377,Magnesium oxide,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01380,Cortisone acetate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB01410,Ciclesonide,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB05295,Eldecalcitol,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB05351,Dexlansoprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB06005,Adomiparin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB06202,Lasofoxifene,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB06255,Incadronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB06285,Teriparatide,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB06401,Bazedoxifene,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB06548,Minodronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB06643,Denosumab,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB06779,Dalteparin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB09070,Tibolone,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB09104,Magnesium hydroxide,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB09260,Parnaparin,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB09267,Strontium ranelate,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB09345,Pramocaine,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB09481,Magnesium carbonate,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB11110,Magnesium citrate,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB11126,Calcium gluconate,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB11620,Neridronic Acid,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB11866,Romosozumab,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB11979,Elagolix,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB13231,Calcium lactate,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB13618,Ipriflavone,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB13762,Dexrabeprazole,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB13954,Estradiol cypionate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB14512,Mometasone furoate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB14539,Hydrocortisone acetate,contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,http://identifiers.org/drugbank/DB15404,"Heparin, bovine",contraindicated_for
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_alendronate_70_mg_vitamin_d3_5600_iu_combin,Alendronate 70-mg/vitamin D3 5600 Iu Combination Tablet (fosamax Plus),treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_alendronate_ibandronate_risedronate,"Alendronate, Ibandronate; Risedronate",treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_alendronate,Alendronate,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_cholecalciferol_vitamin_d3_,Cholecalciferol (vitamin D3),treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_comparator_calcium_carbonate_duration_of_tr,Comparator : Calcium Carbonate /duration Of Treatment : 2 Years,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_denosumab_60_mg_ml,Denosumab 60 Mg/ml,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_denosumab_ref,Denosumab-ref,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_high_tocotrienols_group,High Tocotrienols Group,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_low_tocotrienols_group,Low Tocotrienols Group,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_mk_0773,Mk 0773,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_mk0217_alendronate_sodium_duration_of_treat,"Mk0217, Alendronate Sodium / Duration Of Treatment : 2 Years",treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_nitrates_nabt_main_trial_,Nitrates (nabt Main Trial),treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_parathyroid_hormone_related_protein,Parathyroid Hormone-related Protein,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_prolia_,Prolia®,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_ql1206,Ql1206,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_risedronate_cholecalciferol_combination_mon,Risedronate/cholecalciferol Combination(montly),treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_risedronate_cholecalciferol_combination_wee,Risedronate/cholecalciferol Combination(weekly),treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_risedronate,Risedronate,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_salmon_calcitonin_100_iu_day_subcutaneous,Salmon Calcitonin 100 Iu/day Subcutaneous,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_teriparatide_20_micrograms_day_subcutaneous,Teriparatide 20 Micrograms/day Subcutaneous,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_teriparatide_nasal_spray,Teriparatide Nasal Spray,treats
+http://purl.obolibrary.org/obo/MONDO_0008159,postmenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_zoledronic_acid_injection,Zoledronic Acid Injection,treats
+http://purl.obolibrary.org/obo/MONDO_0009803,congenital osteogenesis imperfecta-microcephaly-cataracts syndrome,http://identifiers.org/drugbank/DB00017,Salmon calcitonin,treats
+http://purl.obolibrary.org/obo/MONDO_0009804,osteogenesis imperfecta type 3,https://rdaccelerate.org/resource/CTDRUG_bisphosphonate,Bisphosphonate,treats
+http://purl.obolibrary.org/obo/MONDO_0009820,osteoporosis-pseudoglioma syndrome,https://rdaccelerate.org/resource/MAXO_0000954,bisphosphonate agent therapy,treats
+http://purl.obolibrary.org/obo/MONDO_0013460,osteogenesis imperfecta type 12,https://rdaccelerate.org/resource/MAXO_0000954,bisphosphonate agent therapy,treats
+http://purl.obolibrary.org/obo/MONDO_0017791,high bone mass osteogenesis imperfecta,http://identifiers.org/drugbank/DB00017,Salmon calcitonin,treats
+http://purl.obolibrary.org/obo/MONDO_0018124,Oncogenic osteomalacia,https://rdaccelerate.org/resource/CTDRUG_krn23,Krn23,treats
+http://purl.obolibrary.org/obo/MONDO_0019409,idiopathic juvenile osteoporosis,https://rdaccelerate.org/resource/CTDRUG_alendronate_fosamax_,Alendronate (fosamax),treats
+http://purl.obolibrary.org/obo/MONDO_0019409,idiopathic juvenile osteoporosis,https://rdaccelerate.org/resource/CTDRUG_alendronate,Alendronate,treats
+http://purl.obolibrary.org/obo/MONDO_0019409,idiopathic juvenile osteoporosis,https://rdaccelerate.org/resource/CTDRUG_pamidronate,Pamidronate,treats
+http://purl.obolibrary.org/obo/MONDO_0020645,autosomal dominant osteopetrosis,https://rdaccelerate.org/resource/CTDRUG_actimmune,Actimmune,treats
+http://purl.obolibrary.org/obo/MONDO_0024650,drug-induced osteoporosis,http://identifiers.org/drugbank/DB00282,Pamidronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0024650,drug-induced osteoporosis,http://identifiers.org/drugbank/DB00399,Zoledronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0024650,drug-induced osteoporosis,http://identifiers.org/drugbank/DB01006,Letrozole,treats
+http://purl.obolibrary.org/obo/MONDO_0024650,drug-induced osteoporosis,http://identifiers.org/drugbank/DB06285,Teriparatide,treats
+http://purl.obolibrary.org/obo/MONDO_0024650,drug-induced osteoporosis,http://identifiers.org/drugbank/DB06643,Denosumab,treats
+http://purl.obolibrary.org/obo/MONDO_0024650,drug-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_risedronate,Risedronate,treats
+http://purl.obolibrary.org/obo/MONDO_0024650,drug-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_xianlinggubao,Xianlinggubao,treats
+http://purl.obolibrary.org/obo/MONDO_0024650,drug-induced osteoporosis,https://rdaccelerate.org/resource/CTDRUG_zhongyaofufang,Zhongyaofufang,treats
+http://purl.obolibrary.org/obo/MONDO_0024651,corticosteroid-induced osteoporosis,http://identifiers.org/drugbank/DB00399,Zoledronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0700047,premenopausal osteoporosis,http://identifiers.org/drugbank/DB00399,Zoledronic acid,treats
+http://purl.obolibrary.org/obo/MONDO_0700047,premenopausal osteoporosis,http://identifiers.org/drugbank/DB06285,Teriparatide,treats
+http://purl.obolibrary.org/obo/MONDO_0700047,premenopausal osteoporosis,http://identifiers.org/drugbank/DB06643,Denosumab,treats
+http://purl.obolibrary.org/obo/MONDO_0700047,premenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_alendronate,Alendronate,treats
+http://purl.obolibrary.org/obo/MONDO_0700047,premenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_denosumab_60_mg_ml_prefilled_syringe_prolia,Denosumab 60 Mg/ml Prefilled Syringe [prolia],treats
+http://purl.obolibrary.org/obo/MONDO_0700047,premenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_estradiol_0_045_mg_levonorgestrel_0_015mg,Estradiol 0.045 Mg/levonorgestrel 0.015mg,treats
+http://purl.obolibrary.org/obo/MONDO_0700047,premenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_risedronate_sodium,Risedronate Sodium,treats
+http://purl.obolibrary.org/obo/MONDO_0700047,premenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_romosozumab_prefilled_syringe_evenity_,Romosozumab Prefilled Syringe [evenity],treats
+http://purl.obolibrary.org/obo/MONDO_0700047,premenopausal osteoporosis,https://rdaccelerate.org/resource/CTDRUG_teriparatide_pth_1_34_,Teriparatide (pth 1-34),treats
+http://purl.obolibrary.org/obo/MONDO_1010154,adult hypophosphatasia,http://identifiers.org/drugbank/DB09105,Asfotase alfa,treats
+http://purl.obolibrary.org/obo/MONDO_1010154,adult hypophosphatasia,https://rdaccelerate.org/resource/CTDRUG_bps804,Bps804,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_7798_9428_18570,hypophosphatasia,http://identifiers.org/drugbank/DB00073,Rituximab,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_7798_9428_18570,hypophosphatasia,http://identifiers.org/drugbank/DB00158,Folic acid,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_7798_9428_18570,hypophosphatasia,http://identifiers.org/drugbank/DB00188,Bortezomib,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_7798_9428_18570,hypophosphatasia,http://identifiers.org/drugbank/DB00563,Methotrexate,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_7798_9428_18570,hypophosphatasia,http://identifiers.org/drugbank/DB09105,Asfotase alfa,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_7798_9428_18570,hypophosphatasia,https://rdaccelerate.org/resource/CTDRUG_alxn1850,Alxn1850,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_7798_9428_18570,hypophosphatasia,https://rdaccelerate.org/resource/CTDRUG_asfotase_alfa_alxn1215_,Asfotase Alfa (alxn1215),treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_7798_9428_18570,hypophosphatasia,https://rdaccelerate.org/resource/CTDRUG_ivig,Ivig,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_a21578a24e970de9,osteogenesis imperfecta,http://identifiers.org/drugbank/DB00017,Salmon calcitonin,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_a21578a24e970de9,osteogenesis imperfecta,http://identifiers.org/drugbank/DB00399,Zoledronic acid,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_a21578a24e970de9,osteogenesis imperfecta,http://identifiers.org/drugbank/DB06285,Teriparatide,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_a21578a24e970de9,osteogenesis imperfecta,http://identifiers.org/drugbank/DB06643,Denosumab,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_a21578a24e970de9,osteogenesis imperfecta,http://identifiers.org/drugbank/DB11866,Romosozumab,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_a21578a24e970de9,osteogenesis imperfecta,https://rdaccelerate.org/resource/CTDRUG_aga2115,Aga2115,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_a21578a24e970de9,osteogenesis imperfecta,https://rdaccelerate.org/resource/CTDRUG_alendronate,Alendronate,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_a21578a24e970de9,osteogenesis imperfecta,https://rdaccelerate.org/resource/CTDRUG_alternative_osteoporosis_medications,Alternative Osteoporosis Medications,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_a21578a24e970de9,osteogenesis imperfecta,https://rdaccelerate.org/resource/CTDRUG_bisphosphonate,Bisphosphonate,treats
+https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_a21578a24e970de9,osteogenesis imperfecta,https://rdaccelerate.org/resource/CTDRUG_fresolimumab,Fresolimumab,treats

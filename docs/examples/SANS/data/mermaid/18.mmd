@@ -1,0 +1,28 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v1("?N_go_annotated_genes"):::projected 
+  v3("?gene")
+  v6("?go")
+  v4("?prot")
+  v5("?sym")
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v3 --"sio:SIO_010078"--> v4
+    v3 --"rdfs:label"--> v5
+    subgraph uniongraph00[" Union "]
+    style uniongraph00 color:#000;
+      v4 --"up:partOf"--> v6
+      subgraph uniongraph01[" Union "]
+      style uniongraph01 color:#000;
+        v4 --"obo:RO_0002327"--> v6
+      subgraph uniongraph01r[" "]
+        style uniongraph01r fill:#abf,stroke-dasharray: 3 3;
+        v4 --"obo:RO_0002331"--> v6
+      end
+      end
+    end
+  end
+  bind0[/"count(?gene)"/]
+  bind0 --as--o v1

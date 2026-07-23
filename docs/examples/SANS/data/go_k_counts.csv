@@ -1,0 +1,93 @@
+aspect,go_id,go_label,k
+MF,GO_0005515,protein binding,60
+CC,GO_0016020,membrane,36
+CC,GO_0005829,cytosol,29
+CC,GO_0005886,plasma membrane,27
+CC,GO_0005737,cytoplasm,25
+CC,GO_0005634,nucleus,20
+MF,GO_0046872,metal ion binding,15
+CC,GO_0005739,mitochondrion,14
+CC,GO_0070062,extracellular exosome,14
+MF,GO_0016787,hydrolase activity,13
+MF,GO_0000166,nucleotide binding,13
+CC,GO_0005783,endoplasmic reticulum,13
+BP,GO_0006811,monoatomic ion transport,13
+MF,GO_0042802,identical protein binding,12
+CC,GO_0005654,nucleoplasm,12
+CC,GO_0005615,extracellular space,11
+MF,GO_0005524,ATP binding,11
+CC,GO_0005576,extracellular region,11
+CC,GO_0005789,endoplasmic reticulum membrane,10
+MF,GO_0016740,transferase activity,9
+BP,GO_0007165,signal transduction,9
+MF,GO_0008270,zinc ion binding,8
+CC,GO_0045202,synapse,8
+CC,GO_0043025,neuronal cell body,8
+MF,GO_0003723,RNA binding,7
+CC,GO_0005743,mitochondrial inner membrane,6
+CC,GO_0005759,mitochondrial matrix,6
+CC,GO_0016323,basolateral plasma membrane,6
+CC,GO_0009986,cell surface,6
+CC,GO_0030424,axon,6
+MF,GO_0005509,calcium ion binding,6
+BP,GO_0055085,transmembrane transport,6
+BP,GO_0006457,protein folding,6
+BP,GO_0006629,lipid metabolic process,6
+BP,GO_0034220,monoatomic ion transmembrane transport,6
+BP,GO_1902600,proton transmembrane transport,5
+CC,GO_0042470,melanosome,5
+CC,GO_0016324,apical plasma membrane,5
+CC,GO_0048471,perinuclear region of cytoplasm,5
+BP,GO_0006915,apoptotic process,5
+BP,GO_0015986,proton motive force-driven ATP synthesis,5
+CC,GO_0005788,endoplasmic reticulum lumen,5
+BP,GO_0042776,proton motive force-driven mitochondrial ATP synthesis,5
+MF,GO_0016491,oxidoreductase activity,5
+MF,GO_0003779,actin binding,5
+MF,GO_0005216,monoatomic ion channel activity,5
+MF,GO_0016887,ATP hydrolysis activity,4
+MF,GO_0022857,transmembrane transporter activity,4
+MF,GO_0038023,signaling receptor activity,4
+MF,GO_0045296,cadherin binding,4
+MF,GO_0046933,"proton-transporting ATP synthase activity, rotational mechanism",4
+MF,GO_0016746,acyltransferase activity,4
+BP,GO_0001666,response to hypoxia,4
+BP,GO_0051301,cell division,4
+CC,GO_0030425,dendrite,4
+BP,GO_0060078,regulation of postsynaptic membrane potential,4
+BP,GO_0006754,ATP biosynthetic process,4
+BP,GO_0043066,negative regulation of apoptotic process,4
+BP,GO_0007268,chemical synaptic transmission,4
+CC,GO_0005794,Golgi apparatus,4
+CC,GO_0005730,nucleolus,4
+MF,GO_0031625,ubiquitin protein ligase binding,3
+BP,GO_0045766,positive regulation of angiogenesis,3
+BP,GO_0030154,cell differentiation,3
+MF,GO_0019904,protein domain specific binding,3
+MF,GO_0030165,PDZ domain binding,3
+CC,GO_0030496,midbody,3
+BP,GO_0051289,protein homotetramerization,3
+BP,GO_0006954,inflammatory response,3
+MF,GO_0044183,protein folding chaperone,3
+BP,GO_0006836,neurotransmitter transport,3
+BP,GO_0006813,potassium ion transport,3
+MF,GO_0051082,unfolded protein binding,3
+MF,GO_0051087,protein-folding chaperone binding,3
+BP,GO_0006974,DNA damage response,3
+BP,GO_0071260,cellular response to mechanical stimulus,3
+CC,GO_0031965,nuclear membrane,3
+BP,GO_0071320,cellular response to cAMP,3
+BP,GO_0071805,potassium ion transmembrane transport,3
+MF,GO_0005267,potassium channel activity,3
+BP,GO_0090090,negative regulation of canonical Wnt signaling pathway,3
+MF,GO_0005198,structural molecule activity,3
+MF,GO_0003824,catalytic activity,3
+CC,GO_0005741,mitochondrial outer membrane,3
+CC,GO_0005856,cytoskeleton,3
+CC,GO_0009925,basal plasma membrane,3
+CC,GO_0045211,postsynaptic membrane,3
+BP,GO_0002376,immune system process,3
+CC,GO_0043204,perikaryon,3
+CC,GO_0014069,postsynaptic density,3
+CC,GO_0043005,neuron projection,3
+MF,GO_0051213,dioxygenase activity,3

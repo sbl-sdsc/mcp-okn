@@ -1,0 +1,37 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v1("?disease"):::projected 
+  v2("?hp"):::projected 
+  v4("?hp_label"):::projected 
+  v3("?stmt")
+  bind0[/"VALUES ?disease"/]
+  bind0-->v1
+  bind00(["MONDO:0010788"])
+  bind00 --> bind0
+  bind01(["MONDO:0008134"])
+  bind01 --> bind0
+  bind02(["MONDO:0020147"])
+  bind02 --> bind0
+  bind0more([+3 more])
+  bind0more --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/oard-kg"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0f0[["contains(str(?hp),'/HP_')"]]
+    graph0f0 --> v2
+    subgraph uniongraph00[" Union "]
+    style uniongraph00 color:#000;
+      v3 --"bl:object"--> v1
+      v3 --"bl:subject"--> v2
+    subgraph uniongraph00r[" "]
+      style uniongraph00r fill:#abf,stroke-dasharray: 3 3;
+      v3 --"bl:object"--> v2
+      v3 --"bl:subject"--> v1
+    end
+    end
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v2 -."rdfs:label".-> v4
+    end
+  end

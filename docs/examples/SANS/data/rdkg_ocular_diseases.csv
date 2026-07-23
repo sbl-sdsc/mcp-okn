@@ -1,0 +1,125 @@
+symbol,disease,disease_label,drug,drug_label
+ATP5F1A,http://purl.obolibrary.org/obo/MONDO_0005942,Reye syndrome,http://identifiers.org/drugbank/DB00382,Tacrine
+ATP5F1A,http://purl.obolibrary.org/obo/MONDO_0005942,Reye syndrome,http://identifiers.org/drugbank/DB00674,Galantamine
+ATP5F1A,http://purl.obolibrary.org/obo/MONDO_0005942,Reye syndrome,http://identifiers.org/drugbank/DB00843,Donepezil
+ATP5F1A,http://purl.obolibrary.org/obo/MONDO_0005942,Reye syndrome,http://identifiers.org/drugbank/DB00989,Rivastigmine
+ATP5F1A,http://purl.obolibrary.org/obo/MONDO_0005942,Reye syndrome,http://identifiers.org/drugbank/DB08842,Acetylcarnitine
+ATP5F1A,http://purl.obolibrary.org/obo/MONDO_0005942,Reye syndrome,http://identifiers.org/drugbank/DB11275,Epicriptine
+ATP5F1A,http://purl.obolibrary.org/obo/MONDO_0005942,Reye syndrome,http://identifiers.org/drugbank/DB13668,Ipidacrine
+CHAT,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB00186,Lorazepam
+CHAT,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB00252,Phenytoin
+CHAT,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB00555,Lamotrigine
+CHAT,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB00564,Carbamazepine
+CHAT,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB00794,Primidone
+CHAT,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB01068,Clonazepam
+CHAT,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB01174,Phenobarbital
+CHAT,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB06201,Rufinamide
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00133,Serine
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00273,Topiramate
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00373,Timolol
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00654,Latanoprost
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00703,Methazolamide
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00819,Acetazolamide
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00981,Physostigmine
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB01144,Diclofenamide
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB01214,Metipranolol
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB11396,Dichlorophen
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_antihistaminics,Antihistaminics
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_antihypertensive_agents,Antihypertensive Agents
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_brimonidine_0_2_timolol_0_5_fixed_combinati,Brimonidine 0.2%/timolol 0.5% Fixed Combination Ophthalmic Solution
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_latanoprost_0_005_,Latanoprost (0.005%)
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_rho_kinase_inhibitor,Rho-kinase Inhibitor
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_travoprost_0_004__502cec,Travoprost (0.004%)
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_travoprost_timolol_azopt_brimonidine,Travoprost/ Timolol/ Azopt/ Brimonidine
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB00133,Serine
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB00373,Timolol
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB00703,Methazolamide
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB00819,Acetazolamide
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB00981,Physostigmine
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB01144,Diclofenamide
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB01214,Metipranolol
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB11396,Dichlorophen
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,https://rdaccelerate.org/resource/CTDRUG_balanced_salt_solution_bss,Balanced Salt Solution Bss
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,https://rdaccelerate.org/resource/CTDRUG_pilocarpine_1_,Pilocarpine 1%
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,https://rdaccelerate.org/resource/CTDRUG_travoprost_0_004_travatan_,Travoprost 0.004% (travatan)
+CHAT,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,https://rdaccelerate.org/resource/CTDRUG_triesence,Triesence
+GRIA4,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_ca2ff8f36bf786a8,myopia,https://rdaccelerate.org/resource/CTDRUG_alleance_,Alleance®
+GRIA4,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_ca2ff8f36bf786a8,myopia,https://rdaccelerate.org/resource/CTDRUG_atropine_ophthalmic,Atropine Ophthalmic
+GRIA4,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_ca2ff8f36bf786a8,myopia,https://rdaccelerate.org/resource/CTDRUG_atropine,Atropine
+GRIA4,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_ca2ff8f36bf786a8,myopia,https://rdaccelerate.org/resource/CTDRUG_treatment_with_brimonidine_eye_drops_0_025_,Treatment With Brimonidine Eye Drops 0.025%
+GRID2,http://purl.obolibrary.org/obo/MONDO_0010065,spinocerebellar degeneration with slow eye movements,,
+HCN1,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB00186,Lorazepam
+HCN1,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB00252,Phenytoin
+HCN1,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB00555,Lamotrigine
+HCN1,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB00564,Carbamazepine
+HCN1,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB00794,Primidone
+HCN1,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB01068,Clonazepam
+HCN1,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB01174,Phenobarbital
+HCN1,http://purl.obolibrary.org/obo/MONDO_0001386,visual epilepsy,http://identifiers.org/drugbank/DB06201,Rufinamide
+MFN2,http://purl.obolibrary.org/obo/MONDO_0008134,"autosomal dominant optic atrophy, classic form",,
+MFN2,http://purl.obolibrary.org/obo/MONDO_0010788,Leber hereditary optic neuropathy,http://identifiers.org/drugbank/DB09081,Idebenone
+MFN2,http://purl.obolibrary.org/obo/MONDO_0010788,Leber hereditary optic neuropathy,https://rdaccelerate.org/resource/CTDRUG_raav2_nd4,Raav2-nd4
+MFN2,http://purl.obolibrary.org/obo/MONDO_0013069,"autosomal recessive optic atrophy, OPA7 type",,
+MFN2,http://purl.obolibrary.org/obo/MONDO_0014320,Bosch-Boonstra-Schaaf optic atrophy syndrome,,
+MFN2,https://rdaccelerate.org/resource/MONDO_GROUPED_14720_20250_16646,autosomal dominant optic atrophy,https://rdaccelerate.org/resource/CTDRUG_pyc_001,Pyc-001
+MFN2,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_bdf5a962db65def9,optic atrophy,http://identifiers.org/drugbank/DB06292,Dapagliflozin
+MFN2,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_bdf5a962db65def9,optic atrophy,https://rdaccelerate.org/resource/CTDRUG_anx007,Anx007
+MFN2,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_bdf5a962db65def9,optic atrophy,https://rdaccelerate.org/resource/CTDRUG_avacincaptad_pegol_acp_,Avacincaptad Pegol (acp)
+MFN2,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_bdf5a962db65def9,optic atrophy,https://rdaccelerate.org/resource/CTDRUG_avacincaptad,Avacincaptad
+MFN2,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_bdf5a962db65def9,optic atrophy,https://rdaccelerate.org/resource/CTDRUG_avd_104,Avd-104
+MFN2,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_bdf5a962db65def9,optic atrophy,https://rdaccelerate.org/resource/CTDRUG_gem103,Gem103
+MFN2,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_bdf5a962db65def9,optic atrophy,https://rdaccelerate.org/resource/CTDRUG_oracea_,Oracea®
+MSX2,http://purl.obolibrary.org/obo/MONDO_0007401,craniosynostosis-Dandy-Walker malformation-hydrocephalus syndrome,,
+PRSS56,http://purl.obolibrary.org/obo/MONDO_0010527,microphthalmia-ankyloblepharon-intellectual disability syndrome,,
+PRSS56,http://purl.obolibrary.org/obo/MONDO_0011936,microphthalmia with brain and digit anomalies,,
+PRSS56,http://purl.obolibrary.org/obo/MONDO_0012638,microphthalmia-brain atrophy syndrome,,
+PRSS56,http://purl.obolibrary.org/obo/MONDO_0016764,isolated anophthalmia-microphthalmia syndrome,,
+PRSS56,http://purl.obolibrary.org/obo/MONDO_0018924,"microphthalmia, Lenz type",,
+PRSS56,http://purl.obolibrary.org/obo/MONDO_0020147,anophthalmia-microphthalmia syndrome,,
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_12413_10261_13734_10671_14229_16073,syndromic microphthalmia,,
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00133,Serine
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00273,Topiramate
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00373,Timolol
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00654,Latanoprost
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00703,Methazolamide
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00819,Acetazolamide
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB00981,Physostigmine
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB01144,Diclofenamide
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB01214,Metipranolol
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,http://identifiers.org/drugbank/DB11396,Dichlorophen
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_antihistaminics,Antihistaminics
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_antihypertensive_agents,Antihypertensive Agents
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_brimonidine_0_2_timolol_0_5_fixed_combinati,Brimonidine 0.2%/timolol 0.5% Fixed Combination Ophthalmic Solution
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_latanoprost_0_005_,Latanoprost (0.005%)
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_rho_kinase_inhibitor,Rho-kinase Inhibitor
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_travoprost_0_004__502cec,Travoprost (0.004%)
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1868_1744_1742_1864,angle-closure glaucoma,https://rdaccelerate.org/resource/CTDRUG_travoprost_timolol_azopt_brimonidine,Travoprost/ Timolol/ Azopt/ Brimonidine
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB00133,Serine
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB00373,Timolol
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB00703,Methazolamide
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB00819,Acetazolamide
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB00981,Physostigmine
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB01144,Diclofenamide
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB01214,Metipranolol
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,http://identifiers.org/drugbank/DB11396,Dichlorophen
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,https://rdaccelerate.org/resource/CTDRUG_balanced_salt_solution_bss,Balanced Salt Solution Bss
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,https://rdaccelerate.org/resource/CTDRUG_pilocarpine_1_,Pilocarpine 1%
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,https://rdaccelerate.org/resource/CTDRUG_travoprost_0_004_travatan_,Travoprost 0.004% (travatan)
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_1966_1817,closed-angle glaucoma,https://rdaccelerate.org/resource/CTDRUG_triesence,Triesence
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_5a7f85d2e701f7db,microphthalmia,,
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_8624ab522894000a,isolated microphthalmia,,
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_ca2ff8f36bf786a8,myopia,https://rdaccelerate.org/resource/CTDRUG_alleance_,Alleance®
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_ca2ff8f36bf786a8,myopia,https://rdaccelerate.org/resource/CTDRUG_atropine_ophthalmic,Atropine Ophthalmic
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_ca2ff8f36bf786a8,myopia,https://rdaccelerate.org/resource/CTDRUG_atropine,Atropine
+PRSS56,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_ca2ff8f36bf786a8,myopia,https://rdaccelerate.org/resource/CTDRUG_treatment_with_brimonidine_eye_drops_0_025_,Treatment With Brimonidine Eye Drops 0.025%
+RLBP1,http://purl.obolibrary.org/obo/MONDO_0011838,Bothnia retinal dystrophy,,
+RLBP1,http://purl.obolibrary.org/obo/MONDO_0018877,retinitis punctata albescens,,
+RLBP1,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_5b1ba1ca23a17b99,macular degeneration,http://identifiers.org/drugbank/DB00112,Bevacizumab
+RLBP1,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_5b1ba1ca23a17b99,macular degeneration,http://identifiers.org/drugbank/DB00137,Lutein
+RLBP1,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_5b1ba1ca23a17b99,macular degeneration,http://identifiers.org/drugbank/DB00460,Verteporfin
+RLBP1,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_5b1ba1ca23a17b99,macular degeneration,http://identifiers.org/drugbank/DB01270,Ranibizumab
+RLBP1,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_5b1ba1ca23a17b99,macular degeneration,http://identifiers.org/drugbank/DB04895,Pegaptanib
+RLBP1,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_5b1ba1ca23a17b99,macular degeneration,http://identifiers.org/drugbank/DB05288,Anecortave acetate
+RLBP1,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_5b1ba1ca23a17b99,macular degeneration,http://identifiers.org/drugbank/DB08885,Aflibercept
+RLBP1,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_5b1ba1ca23a17b99,macular degeneration,http://identifiers.org/drugbank/DB14864,Brolucizumab
+RLBP1,https://rdaccelerate.org/resource/MONDO_GROUPED_GROUP_c0f02cd08e75ece4,retinitis pigmentosa,,

@@ -1,0 +1,18 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v3("?gene")
+  v1("?n"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/spoke-genelab"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["biolink:Gene"]):::iri 
+    v3 --"a"--> graph0c2
+  end
+  subgraph graph1["GRAPH https://purl.org/okn/frink/kg/spoke-okn"]
+    style graph1 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph1c2(["biolink:Gene"]):::iri 
+    v3 --"a"--> graph1c2
+  end
+  bind0[/"count(?gene)"/]
+  bind0 --as--o v1

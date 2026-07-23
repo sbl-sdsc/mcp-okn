@@ -1,0 +1,415 @@
+disease,hp,hp_label,disease_label
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0000365,Hearing impairment,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0000488,Retinopathy,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0000508,Ptosis,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0000648,Optic atrophy,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0000716,Depression,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0000726,Dementia,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0000819,Diabetes mellitus,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0000980,Pallor,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0001250,Seizure,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0001251,Ataxia,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0001824,Weight loss,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0001903,Anemia,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0001943,Hypoglycemia,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0001945,Fever,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0002019,Constipation,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0002315,Headache,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0002321,Vertigo,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0002608,Celiac disease,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0002829,Arthralgia,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0003074,Hyperglycemia,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0004324,Increased body weight,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0005978,Type II diabetes mellitus,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0009830,Peripheral neuropathy,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0012378,Fatigue,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0012735,Cough,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0025406,Asthenia,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0100512,Low levels of vitamin D,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0008134,http://purl.obolibrary.org/obo/HP_0100651,Type I diabetes mellitus,autosomal dominant optic atrophy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000005,Mode of inheritance,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000006,Autosomal dominant inheritance,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000007,Autosomal recessive inheritance,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000010,Recurrent urinary tract infections,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000012,Urinary urgency,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000016,Urinary retention,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000019,Urinary hesitancy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000020,Urinary incontinence,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000083,Renal insufficiency,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000093,Proteinuria,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000126,Hydronephrosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000218,High palate,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000252,Microcephaly,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000273,Facial grimacing,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000275,Narrow face,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000286,Epicanthus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000347,Micrognathia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000365,Hearing impairment,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000407,Sensorineural hearing impairment,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000478,Abnormality of the eye,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000479,Abnormal retinal morphology,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000483,Astigmatism,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000486,Strabismus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000488,Retinopathy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000496,Abnormality of eye movement,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000501,Glaucoma,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000505,Visual impairment,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000508,Ptosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000510,Rod-cone dystrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000518,Cataract,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000529,Progressive visual loss,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000540,Hypermetropia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000541,Retinal detachment,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000543,Optic disc pallor,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000544,External ophthalmoplegia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000545,Myopia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000546,Retinal degeneration,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000554,Uveitis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000556,Retinal dystrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000565,Esotropia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000572,Visual loss,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000575,Scotoma,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000577,Exotropia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000580,Pigmentary retinopathy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000590,Progressive external ophthalmoplegia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000602,Ophthalmoplegia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000603,Central scotoma,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000608,Macular degeneration,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000609,Optic nerve hypoplasia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000613,Photophobia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000618,Blindness,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000622,Blurred vision,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000635,Blue irides,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000639,Nystagmus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000646,Amblyopia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000648,Optic atrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000651,Diplopia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000662,Nyctalopia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000666,Horizontal nystagmus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000712,Emotional lability,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000717,Autism,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000720,Mood swings,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000722,Obsessive-compulsive behavior,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000726,Dementia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000729,Autistic behavior,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000739,Anxiety,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000750,Delayed speech and language development,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000759,Abnormal peripheral nervous system morphology,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000767,Pectus excavatum,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000787,Nephrolithiasis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000790,Hematuria,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000817,Poor eye contact,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000818,Abnormality of the endocrine system,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000821,Hypothyroidism,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000824,Decreased response to growth hormone stimulation test,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000836,Hyperthyroidism,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000846,Adrenal insufficiency,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000863,Central diabetes insipidus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000938,Osteopenia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000939,Osteoporosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000961,Cyanosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000975,Hyperhidrosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000980,Pallor,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0000992,Cutaneous photosensitivity,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001009,Telangiectasia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001057,Aplasia cutis congenita,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001065,Striae distensae,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001085,Papilledema,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001097,Keratoconjunctivitis sicca,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001105,Retinal atrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001112,Leber optic atrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001123,Visual field defect,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001133,Constriction of peripheral visual field,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001138,Optic neuropathy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001141,Severely reduced visual acuity,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001217,Clubbing,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001249,Intellectual disability,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001250,Seizure,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001251,Ataxia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001252,Hypotonia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001257,Spasticity,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001260,Dysarthria,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001263,Global developmental delay,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001268,Mental deterioration,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001269,Hemiparesis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001270,Motor delay,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001271,Polyneuropathy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001272,Cerebellar atrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001274,Agenesis of corpus callosum,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001276,Hypertonia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001288,Gait disturbance,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001297,Stroke,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001298,Encephalopathy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001300,Parkinsonism,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001310,Dysmetria,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001324,Muscle weakness,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001332,Dystonia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001336,Myoclonus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001344,Absent speech,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001347,Hyperreflexia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001355,Megalencephaly,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001371,Flexion contracture,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001382,Joint hypermobility,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001388,Joint laxity,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001392,Abnormality of the liver,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001396,Cholestasis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001397,Hepatic steatosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001399,Hepatic failure,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001410,Decreased liver function,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001417,X-linked inheritance,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001427,Mitochondrial inheritance,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001433,Hepatosplenomegaly,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001488,Bilateral ptosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001508,Failure to thrive,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001510,Growth delay,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001538,Protuberant abdomen,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001548,Overgrowth,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001631,Atrial septal defect,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001634,Mitral valve prolapse,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001635,Congestive heart failure,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001638,Cardiomyopathy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001639,Hypertrophic cardiomyopathy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001653,Mitral regurgitation,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001662,Bradycardia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001677,Coronary artery atherosclerosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001688,Sinus bradycardia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001695,Cardiac arrest,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001733,Pancreatitis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001763,Pes planus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001788,Premature rupture of membranes,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001873,Thrombocytopenia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001875,Neutropenia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001876,Pancytopenia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001907,Thromboembolism,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001924,Sideroblastic anemia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001928,Abnormality of coagulation,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001941,Acidosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001943,Hypoglycemia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001946,Ketosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001947,Renal tubular acidosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001962,Palpitations,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001974,Leukocytosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0001999,Abnormal facial shape,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002024,Malabsorption,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002028,Chronic diarrhea,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002045,Hypothermia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002046,Heat intolerance,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002047,Malignant hyperthermia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002059,Cerebral atrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002066,Gait ataxia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002069,Bilateral tonic-clonic seizure,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002072,Chorea,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002076,Migraine,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002079,Hypoplasia of the corpus callosum,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002119,Ventriculomegaly,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002120,Cerebral cortical atrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002133,Status epilepticus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002150,Hypercalciuria,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002169,Clonus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002171,Gliosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002174,Postural tremor,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002180,Neurodegeneration,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002183,Phonophobia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002186,Apraxia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002194,Delayed gross motor development,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002197,Generalized-onset seizure,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002236,Frontal upsweep of hair,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002240,Hepatomegaly,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002286,Fair hair,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002301,Hemiplegia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002311,Incoordination,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002312,Clumsiness,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002344,Progressive neurologic deterioration,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002352,Leukoencephalopathy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002353,EEG abnormality,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002354,Memory impairment,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002355,Difficulty walking,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002359,Frequent falls,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002367,Visual hallucinations,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002370,Poor coordination,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002376,Developmental regression,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002378,Hand tremor,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002380,Fasciculations,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002383,Infectious encephalitis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002384,Focal impaired awareness seizure,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002401,Stroke-like episode,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002415,Leukodystrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002421,Poor head control,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002476,Primitive reflex,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002487,Hyperkinetic movements,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002500,Abnormal cerebral white matter morphology,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002511,Alzheimer disease,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002516,Increased intracranial pressure,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002572,Episodic vomiting,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002578,Gastroparesis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002579,Gastrointestinal dysmotility,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002591,Polyphagia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002595,Ileus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002615,Hypotension,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002617,Vascular dilatation,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002625,Deep venous thrombosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002633,Vasculitis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002664,Neoplasm,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002665,Lymphoma,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002719,Recurrent infections,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002721,Immunodeficiency,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002725,Systemic lupus erythematosus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002779,Tracheomalacia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002791,Hypoventilation,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002808,Kyphosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002816,Genu recurvatum,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002863,Myelodysplasia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002870,Obstructive sleep apnea,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002871,Central apnea,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002883,Hyperventilation,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002900,Hypokalemia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002901,Hypocalcemia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002902,Hyponatremia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002910,Elevated hepatic transaminase,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002913,Myoglobinuria,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002919,Ketonuria,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002925,Elevated circulating thyroid-stimulating hormone concentration,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002938,Lumbar hyperlordosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002942,Thoracic kyphosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0002944,Thoracolumbar scoliosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003002,Breast carcinoma,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003003,Colon cancer,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003074,Hyperglycemia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003076,Glycosuria,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003077,Hyperlipidemia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003115,Abnormal EKG,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003116,Abnormal echocardiogram,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003119,Abnormal circulating lipid concentration,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003128,Lactic acidosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003198,Myopathy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003200,Ragged-red muscle fibers,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003201,Rhabdomyolysis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003202,Skeletal muscle atrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003236,Elevated circulating creatine kinase concentration,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003256,Abnormality of the coagulation cascade,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003264,Deficiency of N-acetylglucosamine-1-phosphotransferase,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003287,Abnormality of mitochondrial metabolism,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003307,Hyperlordosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003324,Generalized muscle weakness,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003376,Steppage gait,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003388,Easy fatigability,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003470,Paralysis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003473,Fatigable weakness,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003474,Somatic sensory dysfunction,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003493,Antinuclear antibody positivity,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003546,Exercise intolerance,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003557,Increased variability in muscle fiber diameter,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003560,Muscular dystrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003581,Adult onset,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003677,Slowly progressive,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003680,Nonprogressive,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003689,Multiple mitochondrial DNA deletions,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003690,Limb muscle weakness,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003701,Proximal muscle weakness,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003737,Mitochondrial myopathy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003745,Sporadic,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003750,Increased muscle fatiguability,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003761,Calcinosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003805,Rimmed vacuoles,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003808,Abnormal muscle tone,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0003829,Incomplete penetrance,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0004209,Clinodactyly of the 5th finger,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0004313,Decreased circulating antibody level,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0004322,Short stature,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0004325,Decreased body weight,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0004395,Malnutrition,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0004755,Supraventricular tachycardia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0004900,Severe lactic acidosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0004936,Venous thrombosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0005110,Atrial fibrillation,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0005268,Spontaneous abortion,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0006532,Recurrent pneumonia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0006699,Premature atrial contractions,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0006934,Congenital nystagmus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0007209,Facial paralysis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0007302,Bipolar affective disorder,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0007340,Lower limb muscle weakness,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0007354,Amyotrophic lateral sclerosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0007359,Focal-onset seizure,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0007417,Discoid lupus rash,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0007641,Dyschromatopsia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0007650,Progressive ophthalmoplegia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0007663,Reduced visual acuity,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0007677,Vitelliform-like macular lesions,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0007875,Congenital blindness,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0008936,Muscular hypotonia of the trunk,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0009071,Inflammatory myopathy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0009733,Glioma,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0009763,Limb pain,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0009830,Peripheral neuropathy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0009921,Duane anomaly,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0010508,Metatarsus valgus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0010535,Sleep apnea,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0010536,Central sleep apnea,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0010628,Facial palsy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0010866,Abdominal wall defect,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0010867,Dyssynergia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011003,High myopia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011096,Peripheral demyelination,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011105,Hypervolemia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011224,Ablepharon,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011331,Hemifacial atrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011448,Ankle clonus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011499,Mydriasis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011530,Retinal hole,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011675,Arrhythmia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011703,Sinus tachycardia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011747,Abnormality of the anterior pituitary,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011951,Aspiration pneumonia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0011958,Retinal perforation,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012043,Pendular nystagmus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012072,Aciduria,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012125,Prostate cancer,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012399,Pressure ulcer,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012432,Chronic fatigue,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012444,Brain atrophy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012446,Decreased CSF 5-methyltetrahydrofolate concentration,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012450,Chronic constipation,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012452,Restless legs,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012486,Myelitis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012503,Abnormality of the pituitary gland,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012523,Oral aversion,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012532,Chronic pain,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012622,Chronic kidney disease,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012733,Macule,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0012798,Pulmonary lymphangiomyomatosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0025406,Asthenia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0030005,Capillary leak,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0030050,Narcolepsy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0030059,Mitochondrial depletion,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0030084,Clinodactyly,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0030127,Endometriosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0030186,Kinetic tremor,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0030187,Titubation,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0030223,Perseveration,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0030553,Visual acuity no light perception,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0030786,Photopsia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0040019,Finger clinodactyly,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0040083,Toe walking,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0040160,Generalized osteoporosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100021,Cerebral palsy,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100022,Abnormality of movement,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100309,Subdural hemorrhage,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100324,Scleroderma,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100502,Vitamin B12 deficiency,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100507,Reduced blood folate concentration,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100512,Low levels of vitamin D,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100543,Cognitive impairment,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100546,Carotid artery stenosis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100561,Spinal cord lesion,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100614,Myositis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100651,Type I diabetes mellitus,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100653,Optic neuritis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100660,Dyskinesia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100704,Cerebral visual impairment,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100724,Hypercoagulability,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100785,Insomnia,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100806,Sepsis,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0100832,Vitreous floaters,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0200021,Down-sloping shoulders,Leber hereditary optic neuropathy
+http://purl.obolibrary.org/obo/MONDO_0010788,http://purl.obolibrary.org/obo/HP_0200136,Oral-pharyngeal dysphagia,Leber hereditary optic neuropathy

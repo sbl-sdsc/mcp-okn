@@ -1,0 +1,38 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v1("?K"):::projected 
+  v5("?gene")
+  v2("?go"):::projected 
+  v6("?prot")
+  v7("?sym")
+  bind0[/"VALUES ?go"/]
+  bind0-->v2
+  bind00(["obo:GO_0005515"])
+  bind00 --> bind0
+  bind01(["obo:GO_0016020"])
+  bind01 --> bind0
+  bind02(["obo:GO_0005829"])
+  bind02 --> bind0
+  bind0more([+89 more])
+  bind0more --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v5 --"sio:SIO_010078"--> v6
+    v5 --"rdfs:label"--> v7
+    subgraph uniongraph00[" Union "]
+    style uniongraph00 color:#000;
+      v6 --"up:partOf"--> v2
+      subgraph uniongraph01[" Union "]
+      style uniongraph01 color:#000;
+        v6 --"obo:RO_0002327"--> v2
+      subgraph uniongraph01r[" "]
+        style uniongraph01r fill:#abf,stroke-dasharray: 3 3;
+        v6 --"obo:RO_0002331"--> v2
+      end
+      end
+    end
+  end
+  bind1[/"count(?gene)"/]
+  bind1 --as--o v1

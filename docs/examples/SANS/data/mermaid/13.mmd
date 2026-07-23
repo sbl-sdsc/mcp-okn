@@ -1,0 +1,18 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v1("?fly_gene"):::projected 
+  v3("?fly_symbol"):::projected 
+  v2("?human_gene"):::projected 
+  v4("?human_symbol"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/spoke-genelab"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["obo:NCBITaxon_7227"]):::iri 
+    graph0c4(["obo:NCBITaxon_9606"]):::iri 
+    v1 --"gl:taxonomy"--> graph0c2
+    v1 --"gl:IS_ORTHOLOG_MGiG"--> v2
+    v2 --"gl:taxonomy"--> graph0c4
+    v1 --"gl:symbol"--> v3
+    v2 --"gl:symbol"--> v4
+  end

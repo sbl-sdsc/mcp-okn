@@ -1,0 +1,35 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v2("?adj_p"):::projected 
+  v1("?assay"):::projected 
+  v5("?gene"):::projected 
+  v3("?log2fc"):::projected 
+  v4("?stmt")
+  v6("?symbol"):::projected 
+  v7("?taxonomy"):::projected 
+  bind0[/"VALUES ?assay"/]
+  bind0-->v1
+  bind00(["https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-100-061ffc525c9e17c392b5ed0b4e770133"])
+  bind00 --> bind0
+  bind01(["https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-162-8d9c16a7a8374294c91e68646804fdd6"])
+  bind01 --> bind0
+  bind02(["https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-194-7c13deab3d43973b1f8c841dbe0ee047"])
+  bind02 --> bind0
+  bind0more([+2 more])
+  bind0more --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/spoke-genelab"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c2(["gl:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG"]):::iri 
+    graph0f0[["?adj_p <= '0.05^^xsd:decimal' && abs(?log2fc) >= '1^^xsd:integer'"]]
+    graph0f0 --> v2
+    graph0f0 --> v3
+    v4 --"rdf:predicate"--> graph0c2
+    v4 --"rdf:object"--> v5
+    v4 --"rdf:subject"--> v1
+    v4 --"gl:adj_p_value"--> v2
+    v4 --"gl:log2fc"--> v3
+    v5 --"gl:symbol"--> v6
+    v5 --"gl:taxonomy"--> v7
+  end

@@ -1,0 +1,34 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v2("?e")
+  v1("?gene")
+  v4("?symbol"):::projected 
+  v3("?trait"):::projected 
+  v5("?trait_label"):::projected 
+  bind0[/"VALUES ?e"/]
+  bind0-->v2
+  bind00(["187^^xsd:integer"])
+  bind00 --> bind0
+  bind01(["358^^xsd:integer"])
+  bind01 --> bind0
+  bind02(["383^^xsd:integer"])
+  bind02 --> bind0
+  bind0more([+166 more])
+  bind0more --> bind0
+  bind1[/"iri(concat('http://www.ncbi.nlm.nih.gov/gene/',str(?e)))"/]
+  v2 --o bind1
+  bind1 --as--o v1
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/digcfdekg"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v1 --"dig:geneToTrait"--> v3
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v1 -."rdfs:label".-> v4
+    end
+    subgraph optionalgraph01["(optional)"]
+    style optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v3 -."rdfs:label".-> v5
+    end
+  end

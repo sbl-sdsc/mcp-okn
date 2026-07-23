@@ -1,0 +1,24 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v1("?adj_p"):::projected 
+  v3("?gene"):::projected 
+  v4("?log2fc"):::projected 
+  v2("?stmt")
+  v5("?symbol"):::projected 
+  v6("?taxonomy"):::projected 
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/spoke-genelab"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c4(["https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-100-061ffc525c9e17c392b5ed0b4e770133"]):::iri 
+    graph0c2(["gl:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG"]):::iri 
+    graph0f0[["?adj_p <= '0.05^^xsd:decimal'"]]
+    graph0f0 --> v1
+    v2 --"rdf:predicate"--> graph0c2
+    v2 --"rdf:subject"--> graph0c4
+    v2 --"rdf:object"--> v3
+    v2 --"gl:adj_p_value"--> v1
+    v2 --"gl:log2fc"--> v4
+    v3 --"gl:symbol"--> v5
+    v3 --"gl:taxonomy"--> v6
+  end

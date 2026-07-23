@@ -1,0 +1,63 @@
+trait,trait_label,k
+http://purl.obolibrary.org/obo/MONDO_0001703,color vision disorder,17
+http://purl.obolibrary.org/obo/MONDO_0005150,Age-related macular degeneration (AMD),10
+http://purl.obolibrary.org/obo/MONDO_0005266,Diabetic retinopathy,10
+http://www.orpha.net/ORDO/Orphanet_101435,Rare genetic eye disease,22
+http://www.orpha.net/ORDO/Orphanet_104,Leber hereditary optic neuropathy,14
+http://www.orpha.net/ORDO/Orphanet_156165,Retinal ciliopathy,14
+http://www.orpha.net/ORDO/Orphanet_156168,Retinal ciliopathy due to mutation in the retinitis pigmentosa-1 gene,10
+http://www.orpha.net/ORDO/Orphanet_156171,Retinal ciliopathy due to mutation in the RPGR gene,16
+http://www.orpha.net/ORDO/Orphanet_156174,Retinal ciliopathy due to mutation in the RPGRIP gene,13
+http://www.orpha.net/ORDO/Orphanet_183557,Genetic developmental defect of the eye,18
+http://www.orpha.net/ORDO/Orphanet_519266,Rare disorder of the ocular adnexa,10
+http://www.orpha.net/ORDO/Orphanet_519284,Rare disorder of the anterior segment of the eye,15
+http://www.orpha.net/ORDO/Orphanet_519302,Isolated macular dystrophy,10
+http://www.orpha.net/ORDO/Orphanet_519306,Isolated progressive inherited retinal disorder,11
+http://www.orpha.net/ORDO/Orphanet_519311,Rare disorder of the posterior segment of the eye,14
+http://www.orpha.net/ORDO/Orphanet_519315,Rare retinal disorder,14
+http://www.orpha.net/ORDO/Orphanet_519319,Isolated stationary inherited retinal disorder,11
+http://www.orpha.net/ORDO/Orphanet_519325,Syndromic inherited retinal disorder,9
+http://www.orpha.net/ORDO/Orphanet_519329,Rare disorder involving multiple structures of the eye,8
+http://www.orpha.net/ORDO/Orphanet_520814,Rare disorder of the visual organs,23
+http://www.orpha.net/ORDO/Orphanet_520817,Isolated inherited retinal disorder,12
+http://www.orpha.net/ORDO/Orphanet_522504,Rare genetic disorder of the visual organs,22
+http://www.orpha.net/ORDO/Orphanet_522524,Rare genetic disorder of the ocular adnexa,10
+http://www.orpha.net/ORDO/Orphanet_522528,Rare genetic eyelid malposition disorder,9
+http://www.orpha.net/ORDO/Orphanet_522538,Rare genetic disorder of the anterior segment of the eye,14
+http://www.orpha.net/ORDO/Orphanet_522570,Rare genetic disorder of the posterior segment of the eye,14
+http://www.orpha.net/ORDO/Orphanet_522572,Rare genetic retinal disorder,14
+http://www.orpha.net/ORDO/Orphanet_71862,Inherited retinal disorder,13
+http://www.orpha.net/ORDO/Orphanet_791,Retinitis pigmentosa,10
+http://www.orpha.net/ORDO/Orphanet_98553,Developmental defect of the eye,17
+http://www.orpha.net/ORDO/Orphanet_98567,Rare eyelid malposition disorder,9
+http://www.orpha.net/ORDO/Orphanet_98618,Rare refraction anomaly,10
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/ae99105b1d5880597eb7,CT visual scoring; wall thickening,9
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/e400916c9394f952ebfe,Primary open-angle glaucoma,14
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/ebf7f76ec638dff57195,INL retinal layer thickness,14
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/f6dc687b1cb06ce3b517,PS retinal layer thickness,11
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/f76329af0589ccc14f2b,OPL retinal layer thickness,13
+http://www.orpha.net/ORDO/Orphanet_98053,Rare genetic disease,60
+http://www.orpha.net/ORDO/Orphanet_71859,Rare genetic neurological disorder,39
+http://www.orpha.net/ORDO/Orphanet_98006,Rare neurologic disease,38
+http://www.orpha.net/ORDO/Orphanet_611314,Rare syndromic intellectual disability without multiple congenital anomalies/dysmorphic syndrome,34
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/8a55fbbd2f871eea292d,rare v2,34
+http://www.orpha.net/ORDO/Orphanet_68367,Rare inborn errors of metabolism,31
+http://www.orpha.net/ORDO/Orphanet_183497,Genetic neuromuscular disease,29
+http://www.orpha.net/ORDO/Orphanet_206656,Non-dystrophic myopathy,28
+http://www.orpha.net/ORDO/Orphanet_206634,Genetic skeletal muscle disease,27
+http://www.orpha.net/ORDO/Orphanet_93890,Rare developmental defect during embryogenesis,26
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/7153de2afff9f0479804,Pulse rate,25
+http://www.orpha.net/ORDO/Orphanet_183512,Rare genetic epilepsy,25
+http://www.orpha.net/ORDO/Orphanet_68381,Neuromuscular disease,25
+http://www.orpha.net/ORDO/Orphanet_98472,Skeletal muscle disease,25
+http://www.orpha.net/ORDO/Orphanet_101998,Rare epilepsy,25
+http://www.orpha.net/ORDO/Orphanet_87277,Rare intellectual disability,25
+http://www.orpha.net/ORDO/Orphanet_68385,Neurometabolic disease,24
+http://www.orpha.net/ORDO/Orphanet_79200,Disorder of energy metabolism,24
+http://www.orpha.net/ORDO/Orphanet_183757,Rare genetic intellectual disability,24
+http://www.orpha.net/ORDO/Orphanet_183763,Rare genetic syndromic intellectual disability,24
+http://www.orpha.net/ORDO/Orphanet_102369,Rare syndromic intellectual disability,24
+http://www.orpha.net/ORDO/Orphanet_183530,Rare genetic developmental defect during embryogenesis,23
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/b4fdd3bf98fb702c4abe,Heart rate,23
+http://www.orpha.net/ORDO/Orphanet_223713,Mitochondrial oxidative phosphorylation disorder,23
+http://www.orpha.net/ORDO/Orphanet_68380,Mitochondrial disease,23

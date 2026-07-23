@@ -1,0 +1,51 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v1("?assay"):::projected 
+  v10("?end_date"):::projected 
+  v8("?flight_program"):::projected 
+  v3("?material"):::projected 
+  v6("?mission"):::projected 
+  v5("?project_title"):::projected 
+  v7("?space_program"):::projected 
+  v9("?start_date"):::projected 
+  v2("?study"):::projected 
+  v4("?technology"):::projected 
+  bind0[/"VALUES ?assay"/]
+  bind0-->v1
+  bind00(["https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-100-061ffc525c9e17c392b5ed0b4e770133"])
+  bind00 --> bind0
+  bind01(["https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-162-8d9c16a7a8374294c91e68646804fdd6"])
+  bind01 --> bind0
+  bind02(["https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-194-7c13deab3d43973b1f8c841dbe0ee047"])
+  bind02 --> bind0
+  bind0more([+23 more])
+  bind0more --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/spoke-genelab"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v2 --"gl:PERFORMED_SpAS"--> v1
+    v1 --"gl:material_1"--> v3
+    v1 --"gl:technology"--> v4
+    v2 --"gl:project_title"--> v5
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v6 -."gl:CONDUCTED_MIcS".-> v2
+      subgraph optionalgraph01["(optional)"]
+      style optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v6 -."gl:space_program".-> v7
+      end
+      subgraph optionalgraph02["(optional)"]
+      style optionalgraph02 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v6 -."gl:flight_program".-> v8
+      end
+      subgraph optionalgraph03["(optional)"]
+      style optionalgraph03 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v6 -."gl:start_date".-> v9
+      end
+      subgraph optionalgraph04["(optional)"]
+      style optionalgraph04 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+        v6 -."gl:end_date".-> v10
+      end
+    end
+  end

@@ -1,0 +1,52 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v4("?compound"):::projected 
+  v5("?compound_label"):::projected 
+  v3("?direction"):::projected 
+  v2("?gene")
+  v6("?phase"):::projected 
+  v1("?symbol"):::projected 
+  bind0[/"VALUES ?symbol"/]
+  bind0-->v1
+  bind00(["AQP1"])
+  bind00 --> bind0
+  bind01(["CA8"])
+  bind01 --> bind0
+  bind02(["CA9"])
+  bind02 --> bind0
+  bind0more([+74 more])
+  bind0more --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    graph0c6(["obo:NCIT_C43366"]):::iri 
+    graph0c2(["up:Gene"]):::iri 
+    v2 --"a"--> graph0c2
+    v2 --"rdfs:label"--> v1
+    subgraph uniongraph00[" Union "]
+    style uniongraph00 color:#000;
+    subgraph uniongraph00l[" "]
+      style uniongraph00l fill:#abf,stroke-dasharray: 3 3;
+      v4 --"obo:RO_0002212"--> v2
+      graph0bind1[/"'negatively regulates'"/]
+      graph0bind1 --as--o v3
+    end
+    subgraph uniongraph00r[" "]
+      style uniongraph00r fill:#abf,stroke-dasharray: 3 3;
+      v4 --"obo:RO_0002213"--> v2
+      graph0bind2[/"'positively regulates'"/]
+      graph0bind2 --as--o v3
+    end
+    uniongraph00r <== or ==> uniongraph00l
+    end
+    v4 --"a"--> graph0c6
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v4 -."rdfs:label".-> v5
+    end
+    subgraph optionalgraph01["(optional)"]
+    style optionalgraph01 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v4 -."rep:Phase".-> v6
+    end
+  end

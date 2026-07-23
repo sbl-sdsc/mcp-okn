@@ -1,0 +1,474 @@
+symbol,pw,pw_label,pw_id
+ANLN,https://identifiers.org/reactome/R-HSA-8980692,RHOA GTPase cycle,R-HSA-8980692
+ANLN,https://identifiers.org/reactome/R-HSA-9013026,RHOB GTPase cycle,R-HSA-9013026
+ANLN,https://identifiers.org/reactome/R-HSA-9013106,RHOC GTPase cycle,R-HSA-9013106
+APLNR,https://identifiers.org/reactome/R-HSA-375276,Peptide ligand-binding receptors,R-HSA-375276
+APLNR,https://identifiers.org/reactome/R-HSA-418594,G alpha (i) signalling events,R-HSA-418594
+AQP1,https://identifiers.org/reactome/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,R-HSA-1237044
+AQP1,https://identifiers.org/reactome/R-HSA-1247673,Erythrocytes take up oxygen and release carbon dioxide,R-HSA-1247673
+AQP1,https://identifiers.org/reactome/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,R-HSA-432040
+AQP1,https://identifiers.org/reactome/R-HSA-432047,Passive transport by Aquaporins,R-HSA-432047
+AQP1,https://identifiers.org/reactome/R-HSA-9925563,Developmental Lineage of Pancreatic Ductal Cells,R-HSA-9925563
+ARG1,https://identifiers.org/reactome/R-HSA-6798695,Neutrophil degranulation,R-HSA-6798695
+ARG1,https://identifiers.org/reactome/R-HSA-70635,Urea cycle,R-HSA-70635
+ARHGAP15,https://identifiers.org/reactome/R-HSA-9013149,RAC1 GTPase cycle,R-HSA-9013149
+ARHGAP15,https://identifiers.org/reactome/R-HSA-9013423,RAC3 GTPase cycle,R-HSA-9013423
+ASPH,https://identifiers.org/reactome/R-HSA-2672351,Stimuli-sensing channels,R-HSA-2672351
+ASPH,https://identifiers.org/reactome/R-HSA-5578775,Ion homeostasis,R-HSA-5578775
+ASPH,https://identifiers.org/reactome/R-HSA-9629569,Protein hydroxylation,R-HSA-9629569
+ATP2A3,https://identifiers.org/reactome/R-HSA-1912420,Pre-NOTCH Processing in Golgi,R-HSA-1912420
+ATP2A3,https://identifiers.org/reactome/R-HSA-418359,Reduction of cytosolic Ca++ levels,R-HSA-418359
+ATP2A3,https://identifiers.org/reactome/R-HSA-5578775,Ion homeostasis,R-HSA-5578775
+ATP2A3,https://identifiers.org/reactome/R-HSA-936837,Ion transport by P-type ATPases,R-HSA-936837
+ATP5F1A,https://identifiers.org/reactome/R-HSA-1268020,Mitochondrial protein import,R-HSA-1268020
+ATP5F1A,https://identifiers.org/reactome/R-HSA-163210,Formation of ATP by chemiosmotic coupling,R-HSA-163210
+ATP5F1A,https://identifiers.org/reactome/R-HSA-8949613,Cristae formation,R-HSA-8949613
+ATP5F1A,https://identifiers.org/reactome/R-HSA-9837999,Mitochondrial protein degradation,R-HSA-9837999
+ATP5F1C,https://identifiers.org/reactome/R-HSA-163210,Formation of ATP by chemiosmotic coupling,R-HSA-163210
+ATP5F1C,https://identifiers.org/reactome/R-HSA-8949613,Cristae formation,R-HSA-8949613
+ATP5F1C,https://identifiers.org/reactome/R-HSA-9837999,Mitochondrial protein degradation,R-HSA-9837999
+ATP5F1D,https://identifiers.org/reactome/R-HSA-163210,Formation of ATP by chemiosmotic coupling,R-HSA-163210
+ATP5F1D,https://identifiers.org/reactome/R-HSA-8949613,Cristae formation,R-HSA-8949613
+ATP5F1E,https://identifiers.org/reactome/R-HSA-163210,Formation of ATP by chemiosmotic coupling,R-HSA-163210
+ATP5F1E,https://identifiers.org/reactome/R-HSA-8949613,Cristae formation,R-HSA-8949613
+ATP5PD,https://identifiers.org/reactome/R-HSA-163210,Formation of ATP by chemiosmotic coupling,R-HSA-163210
+ATP5PD,https://identifiers.org/reactome/R-HSA-8949613,Cristae formation,R-HSA-8949613
+ATP5PD,https://identifiers.org/reactome/R-HSA-9837999,Mitochondrial protein degradation,R-HSA-9837999
+BAG3,https://identifiers.org/reactome/R-HSA-3371453,Regulation of HSF1-mediated heat shock response,R-HSA-3371453
+CA9,https://identifiers.org/reactome/R-HSA-1234158,Regulation of gene expression by Hypoxia-inducible Factor,R-HSA-1234158
+CA9,https://identifiers.org/reactome/R-HSA-1475029,Reversible hydration of carbon dioxide,R-HSA-1475029
+CALB1,https://identifiers.org/reactome/R-HSA-977225,Amyloid fiber formation,R-HSA-977225
+CDC6,https://identifiers.org/reactome/R-HSA-1362277,Transcription of E2F targets under negative control by DREAM complex,R-HSA-1362277
+CDC6,https://identifiers.org/reactome/R-HSA-176187,Activation of ATR in response to replication stress,R-HSA-176187
+CDC6,https://identifiers.org/reactome/R-HSA-68689,CDC6 association with the ORC:origin complex,R-HSA-68689
+CDC6,https://identifiers.org/reactome/R-HSA-68867,Assembly of the pre-replicative complex,R-HSA-68867
+CDC6,https://identifiers.org/reactome/R-HSA-68949,Orc1 removal from chromatin,R-HSA-68949
+CDC6,https://identifiers.org/reactome/R-HSA-68962,Activation of the pre-replicative complex,R-HSA-68962
+CDC6,https://identifiers.org/reactome/R-HSA-69017,CDK-mediated phosphorylation and removal of Cdc6,R-HSA-69017
+CDC6,https://identifiers.org/reactome/R-HSA-69205,G1/S-Specific Transcription,R-HSA-69205
+CHAT,https://identifiers.org/reactome/R-HSA-1483191,Synthesis of PC,R-HSA-1483191
+CHAT,https://identifiers.org/reactome/R-HSA-264642,Acetylcholine Neurotransmitter Release Cycle,R-HSA-264642
+CHIA,https://identifiers.org/reactome/R-HSA-189085,Digestion of dietary carbohydrate,R-HSA-189085
+CNTN2,https://identifiers.org/reactome/R-HSA-373760,L1CAM interactions,R-HSA-373760
+CNTN2,https://identifiers.org/reactome/R-HSA-419037,NCAM1 interactions,R-HSA-419037
+CNTN2,https://identifiers.org/reactome/R-HSA-447038,NrCAM interactions,R-HSA-447038
+CYP26B1,https://identifiers.org/reactome/R-HSA-211916,Vitamins,R-HSA-211916
+CYP26B1,https://identifiers.org/reactome/R-HSA-5365859,RA biosynthesis pathway,R-HSA-5365859
+CYP26B1,https://identifiers.org/reactome/R-HSA-5579015,Defective CYP26B1 causes RHFCA,R-HSA-5579015
+DLAT,https://identifiers.org/reactome/R-HSA-204174,Regulation of pyruvate dehydrogenase (PDH) complex,R-HSA-204174
+DLAT,https://identifiers.org/reactome/R-HSA-5362517,Signaling by Retinoic Acid,R-HSA-5362517
+DLAT,https://identifiers.org/reactome/R-HSA-9857492,Protein lipoylation,R-HSA-9857492
+DLAT,https://identifiers.org/reactome/R-HSA-9861559,PDH complex synthesizes acetyl-CoA from PYR,R-HSA-9861559
+DYRK2,https://identifiers.org/reactome/R-HSA-6804756,Regulation of TP53 Activity through Phosphorylation,R-HSA-6804756
+EPB41,https://identifiers.org/reactome/R-HSA-6794361,Neurexins and neuroligins,R-HSA-6794361
+FASN,https://identifiers.org/reactome/R-HSA-163765,ChREBP activates metabolic gene expression,R-HSA-163765
+FASN,https://identifiers.org/reactome/R-HSA-199220,Vitamin B5 (pantothenate) metabolism,R-HSA-199220
+FASN,https://identifiers.org/reactome/R-HSA-2426168,Activation of gene expression by SREBF (SREBP),R-HSA-2426168
+FASN,https://identifiers.org/reactome/R-HSA-75105,Fatty acyl-CoA biosynthesis,R-HSA-75105
+FASN,https://identifiers.org/reactome/R-HSA-9029558,NR1H2 & NR1H3 regulate gene expression linked to lipogenesis,R-HSA-9029558
+GABRR2,https://identifiers.org/reactome/R-HSA-977443,GABA receptor activation,R-HSA-977443
+GRIA4,https://identifiers.org/reactome/R-HSA-399710,Activation of AMPA receptors,R-HSA-399710
+GRIA4,https://identifiers.org/reactome/R-HSA-399719,Trafficking of AMPA receptors,R-HSA-399719
+GRIA4,https://identifiers.org/reactome/R-HSA-416993,Trafficking of GluR2-containing AMPA receptors,R-HSA-416993
+GRIA4,https://identifiers.org/reactome/R-HSA-438066,"Unblocking of NMDA receptors, glutamate binding and activation",R-HSA-438066
+GRIA4,https://identifiers.org/reactome/R-HSA-8849932,Synaptic adhesion-like molecules,R-HSA-8849932
+GRIK2,https://identifiers.org/reactome/R-HSA-451307,Activation of Na-permeable kainate receptors,R-HSA-451307
+GRIK2,https://identifiers.org/reactome/R-HSA-451308,Activation of Ca-permeable Kainate Receptor,R-HSA-451308
+GRM4,https://identifiers.org/reactome/R-HSA-418594,G alpha (i) signalling events,R-HSA-418594
+GRM4,https://identifiers.org/reactome/R-HSA-420499,Class C/3 (Metabotropic glutamate/pheromone receptors),R-HSA-420499
+GRM4,https://identifiers.org/reactome/R-HSA-9717207,"Sensory perception of sweet, bitter, and umami (glutamate) taste",R-HSA-9717207
+HCN1,https://identifiers.org/reactome/R-HSA-1296061,HCN channels,R-HSA-1296061
+HK2,https://identifiers.org/reactome/R-HSA-70171,Glycolysis,R-HSA-70171
+HOMER2,https://identifiers.org/reactome/R-HSA-6794361,Neurexins and neuroligins,R-HSA-6794361
+HSP90AA1,https://identifiers.org/reactome/R-HSA-1227986,Signaling by ERBB2,R-HSA-1227986
+HSP90AA1,https://identifiers.org/reactome/R-HSA-1236382,Constitutive Signaling by Ligand-Responsive EGFR Cancer Variants,R-HSA-1236382
+HSP90AA1,https://identifiers.org/reactome/R-HSA-1474151,"Tetrahydrobiopterin (BH4) synthesis, recycling, salvage and regulation",R-HSA-1474151
+HSP90AA1,https://identifiers.org/reactome/R-HSA-168928,DDX58/IFIH1-mediated induction of interferon-alpha/beta,R-HSA-168928
+HSP90AA1,https://identifiers.org/reactome/R-HSA-192905,vRNP Assembly,R-HSA-192905
+HSP90AA1,https://identifiers.org/reactome/R-HSA-2029482,Regulation of actin dynamics for phagocytic cup formation,R-HSA-2029482
+HSP90AA1,https://identifiers.org/reactome/R-HSA-203615,eNOS activation,R-HSA-203615
+HSP90AA1,https://identifiers.org/reactome/R-HSA-2565942,Regulation of PLK1 Activity at G2/M Transition,R-HSA-2565942
+HSP90AA1,https://identifiers.org/reactome/R-HSA-3000484,Scavenging by Class F Receptors,R-HSA-3000484
+HSP90AA1,https://identifiers.org/reactome/R-HSA-3371497,HSP90 chaperone cycle for steroid hormone receptors (SHR) in the presence of ligand,R-HSA-3371497
+HSP90AA1,https://identifiers.org/reactome/R-HSA-3371511,HSF1 activation,R-HSA-3371511
+HSP90AA1,https://identifiers.org/reactome/R-HSA-3371568,Attenuation phase,R-HSA-3371568
+HSP90AA1,https://identifiers.org/reactome/R-HSA-3371571,HSF1-dependent transactivation,R-HSA-3371571
+HSP90AA1,https://identifiers.org/reactome/R-HSA-380259,Loss of Nlp from mitotic centrosomes,R-HSA-380259
+HSP90AA1,https://identifiers.org/reactome/R-HSA-380270,Recruitment of mitotic centrosome proteins and complexes,R-HSA-380270
+HSP90AA1,https://identifiers.org/reactome/R-HSA-380284,Loss of proteins required for interphase microtubule organization from the centrosome,R-HSA-380284
+HSP90AA1,https://identifiers.org/reactome/R-HSA-380320,Recruitment of NuMA to mitotic centrosomes,R-HSA-380320
+HSP90AA1,https://identifiers.org/reactome/R-HSA-399954,Sema3A PAK dependent Axon repulsion,R-HSA-399954
+HSP90AA1,https://identifiers.org/reactome/R-HSA-4420097,VEGFA-VEGFR2 Pathway,R-HSA-4420097
+HSP90AA1,https://identifiers.org/reactome/R-HSA-5218920,VEGFR2 mediated vascular permeability,R-HSA-5218920
+HSP90AA1,https://identifiers.org/reactome/R-HSA-5336415,Uptake and function of diphtheria toxin,R-HSA-5336415
+HSP90AA1,https://identifiers.org/reactome/R-HSA-5601884,PIWI-interacting RNA (piRNA) biogenesis,R-HSA-5601884
+HSP90AA1,https://identifiers.org/reactome/R-HSA-5620912,Anchoring of the basal body to the plasma membrane,R-HSA-5620912
+HSP90AA1,https://identifiers.org/reactome/R-HSA-5637810,Constitutive Signaling by EGFRvIII,R-HSA-5637810
+HSP90AA1,https://identifiers.org/reactome/R-HSA-5675482,Regulation of necroptotic cell death,R-HSA-5675482
+HSP90AA1,https://identifiers.org/reactome/R-HSA-6785807,Interleukin-4 and Interleukin-13 signaling,R-HSA-6785807
+HSP90AA1,https://identifiers.org/reactome/R-HSA-6798695,Neutrophil degranulation,R-HSA-6798695
+HSP90AA1,https://identifiers.org/reactome/R-HSA-8852276,The role of GTSE1 in G2/M progression after G2 checkpoint,R-HSA-8852276
+HSP90AA1,https://identifiers.org/reactome/R-HSA-8854518,AURKA Activation by TPX2,R-HSA-8854518
+HSP90AA1,https://identifiers.org/reactome/R-HSA-8863795,Downregulation of ERBB2 signaling,R-HSA-8863795
+HSP90AA1,https://identifiers.org/reactome/R-HSA-8939211,ESR-mediated signaling,R-HSA-8939211
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9009391,Extra-nuclear estrogen signaling,R-HSA-9009391
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9013418,RHOBTB2 GTPase cycle,R-HSA-9013418
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9018519,Estrogen-dependent gene expression,R-HSA-9018519
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9613829,Chaperone Mediated Autophagy,R-HSA-9613829
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9634285,Constitutive Signaling by Overexpressed ERBB2,R-HSA-9634285
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9646399,Aggrephagy,R-HSA-9646399
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9652282,Drug-mediated inhibition of ERBB2 signaling,R-HSA-9652282
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9664565,Signaling by ERBB2 KD Mutants,R-HSA-9664565
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9665233,Resistance of ERBB2 KD mutants to trastuzumab,R-HSA-9665233
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9665244,Resistance of ERBB2 KD mutants to sapitinib,R-HSA-9665244
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9665245,Resistance of ERBB2 KD mutants to tesevatinib,R-HSA-9665245
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9665246,Resistance of ERBB2 KD mutants to neratinib,R-HSA-9665246
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9665247,Resistance of ERBB2 KD mutants to osimertinib,R-HSA-9665247
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9665249,Resistance of ERBB2 KD mutants to afatinib,R-HSA-9665249
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9665250,Resistance of ERBB2 KD mutants to AEE788,R-HSA-9665250
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9665251,Resistance of ERBB2 KD mutants to lapatinib,R-HSA-9665251
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9665348,Signaling by ERBB2 ECD mutants,R-HSA-9665348
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9665686,Signaling by ERBB2 TMD/JMD mutants,R-HSA-9665686
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9665737,Drug resistance in ERBB2 TMD/JMD mutants,R-HSA-9665737
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9679191,Potential therapeutics for SARS,R-HSA-9679191
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9705671,SARS-CoV-2 activates/modulates innate and adaptive immune responses,R-HSA-9705671
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9820962,Assembly and release of respiratory syncytial virus (RSV) virions,R-HSA-9820962
+HSP90AA1,https://identifiers.org/reactome/R-HSA-9834752,Respiratory syncytial virus genome replication,R-HSA-9834752
+HSP90B1,https://identifiers.org/reactome/R-HSA-1679131,Trafficking and processing of endosomal TLR,R-HSA-1679131
+HSP90B1,https://identifiers.org/reactome/R-HSA-3000480,Scavenging by Class A Receptors,R-HSA-3000480
+HSP90B1,https://identifiers.org/reactome/R-HSA-381183,ATF6 (ATF6-alpha) activates chaperone genes,R-HSA-381183
+HSP90B1,https://identifiers.org/reactome/R-HSA-381426,Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs),R-HSA-381426
+HSP90B1,https://identifiers.org/reactome/R-HSA-6785807,Interleukin-4 and Interleukin-13 signaling,R-HSA-6785807
+HSP90B1,https://identifiers.org/reactome/R-HSA-8957275,Post-translational protein phosphorylation,R-HSA-8957275
+HSPA5,https://identifiers.org/reactome/R-HSA-114608,Platelet degranulation ,R-HSA-114608
+HSPA5,https://identifiers.org/reactome/R-HSA-3371453,Regulation of HSF1-mediated heat shock response,R-HSA-3371453
+HSPA5,https://identifiers.org/reactome/R-HSA-381033,ATF6 (ATF6-alpha) activates chaperones,R-HSA-381033
+HSPA5,https://identifiers.org/reactome/R-HSA-381042,PERK regulates gene expression,R-HSA-381042
+HSPA5,https://identifiers.org/reactome/R-HSA-381070,IRE1alpha activates chaperones,R-HSA-381070
+HSPA5,https://identifiers.org/reactome/R-HSA-381183,ATF6 (ATF6-alpha) activates chaperone genes,R-HSA-381183
+HSPA5,https://identifiers.org/reactome/R-HSA-8874177,ATF6B (ATF6-beta) activates chaperones,R-HSA-8874177
+HSPA5,https://identifiers.org/reactome/R-HSA-983170,"Antigen Presentation: Folding, assembly and peptide loading of class I MHC",R-HSA-983170
+HSPA5,https://identifiers.org/reactome/R-HSA-9909505,Modulation of host responses by IFN-stimulated genes,R-HSA-9909505
+INMT,https://identifiers.org/reactome/R-HSA-2408552,Methylation of MeSeH for excretion,R-HSA-2408552
+KCNQ3,https://identifiers.org/reactome/R-HSA-1296072,Voltage gated Potassium channels,R-HSA-1296072
+KCNQ3,https://identifiers.org/reactome/R-HSA-445095,Interaction between L1 and Ankyrins,R-HSA-445095
+MADD,https://identifiers.org/reactome/R-HSA-5357905,Regulation of TNFR1 signaling,R-HSA-5357905
+MADD,https://identifiers.org/reactome/R-HSA-8876198,RAB GEFs exchange GTP for GDP on RABs,R-HSA-8876198
+NAB2,https://identifiers.org/reactome/R-HSA-9031628,NGF-stimulated transcription,R-HSA-9031628
+NAB2,https://identifiers.org/reactome/R-HSA-9619665,EGR2 and SOX10-mediated initiation of Schwann cell myelination,R-HSA-9619665
+NOL6,https://identifiers.org/reactome/R-HSA-6790901,rRNA modification in the nucleus and cytosol,R-HSA-6790901
+NOL6,https://identifiers.org/reactome/R-HSA-6791226,Major pathway of rRNA processing in the nucleolus and cytosol,R-HSA-6791226
+NPEPPS,https://identifiers.org/reactome/R-HSA-983168,Antigen processing: Ubiquitination & Proteasome degradation,R-HSA-983168
+NPPA,https://identifiers.org/reactome/R-HSA-2032785,YAP1- and WWTR1 (TAZ)-stimulated gene expression,R-HSA-2032785
+NPPA,https://identifiers.org/reactome/R-HSA-5578768,Physiological factors,R-HSA-5578768
+NPPA,https://identifiers.org/reactome/R-HSA-977225,Amyloid fiber formation,R-HSA-977225
+NR4A1,https://identifiers.org/reactome/R-HSA-198693,AKT phosphorylates targets in the nucleus,R-HSA-198693
+NR4A1,https://identifiers.org/reactome/R-HSA-383280,Nuclear Receptor transcription pathway,R-HSA-383280
+NR4A1,https://identifiers.org/reactome/R-HSA-5674400,Constitutive Signaling by AKT1 E17K in Cancer,R-HSA-5674400
+P4HA1,https://identifiers.org/reactome/R-HSA-1650814,Collagen biosynthesis and modifying enzymes,R-HSA-1650814
+PDE2A,https://identifiers.org/reactome/R-HSA-418457,cGMP effects,R-HSA-418457
+PDE2A,https://identifiers.org/reactome/R-HSA-418555,G alpha (s) signalling events,R-HSA-418555
+PDIA6,https://identifiers.org/reactome/R-HSA-381038,XBP1(S) activates chaperone genes,R-HSA-381038
+PDIA6,https://identifiers.org/reactome/R-HSA-381426,Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs),R-HSA-381426
+PDIA6,https://identifiers.org/reactome/R-HSA-8957275,Post-translational protein phosphorylation,R-HSA-8957275
+PLD3,https://identifiers.org/reactome/R-HSA-1483148,Synthesis of PG,R-HSA-1483148
+PLD3,https://identifiers.org/reactome/R-HSA-2029485,Role of phospholipids in phagocytosis,R-HSA-2029485
+PSMD2,https://identifiers.org/reactome/R-HSA-1169091,Activation of NF-kappaB in B cells,R-HSA-1169091
+PSMD2,https://identifiers.org/reactome/R-HSA-1234176,Oxygen-dependent proline hydroxylation of Hypoxia-inducible Factor Alpha,R-HSA-1234176
+PSMD2,https://identifiers.org/reactome/R-HSA-1236974,ER-Phagosome pathway,R-HSA-1236974
+PSMD2,https://identifiers.org/reactome/R-HSA-1236978,Cross-presentation of soluble exogenous antigens (endosomes),R-HSA-1236978
+PSMD2,https://identifiers.org/reactome/R-HSA-174084,Autodegradation of Cdh1 by Cdh1:APC/C,R-HSA-174084
+PSMD2,https://identifiers.org/reactome/R-HSA-174113,SCF-beta-TrCP mediated degradation of Emi1,R-HSA-174113
+PSMD2,https://identifiers.org/reactome/R-HSA-174154,APC/C:Cdc20 mediated degradation of Securin,R-HSA-174154
+PSMD2,https://identifiers.org/reactome/R-HSA-174178,APC/C:Cdh1 mediated degradation of Cdc20 and other APC/C:Cdh1 targeted proteins in late mitosis/early G1,R-HSA-174178
+PSMD2,https://identifiers.org/reactome/R-HSA-174184,Cdc20:Phospho-APC/C mediated degradation of Cyclin A,R-HSA-174184
+PSMD2,https://identifiers.org/reactome/R-HSA-180534,Vpu mediated degradation of CD4,R-HSA-180534
+PSMD2,https://identifiers.org/reactome/R-HSA-180585,Vif-mediated degradation of APOBEC3G,R-HSA-180585
+PSMD2,https://identifiers.org/reactome/R-HSA-187577,SCF(Skp2)-mediated degradation of p27/p21,R-HSA-187577
+PSMD2,https://identifiers.org/reactome/R-HSA-195253,Degradation of beta-catenin by the destruction complex,R-HSA-195253
+PSMD2,https://identifiers.org/reactome/R-HSA-202424,Downstream TCR signaling,R-HSA-202424
+PSMD2,https://identifiers.org/reactome/R-HSA-211733,Regulation of activated PAK-2p34 by proteasome mediated degradation,R-HSA-211733
+PSMD2,https://identifiers.org/reactome/R-HSA-2467813,Separation of Sister Chromatids,R-HSA-2467813
+PSMD2,https://identifiers.org/reactome/R-HSA-2871837,FCERI mediated NF-kB activation,R-HSA-2871837
+PSMD2,https://identifiers.org/reactome/R-HSA-349425,Autodegradation of the E3 ubiquitin ligase COP1,R-HSA-349425
+PSMD2,https://identifiers.org/reactome/R-HSA-350562,Regulation of ornithine decarboxylase (ODC),R-HSA-350562
+PSMD2,https://identifiers.org/reactome/R-HSA-382556,ABC-family proteins mediated transport,R-HSA-382556
+PSMD2,https://identifiers.org/reactome/R-HSA-450408,AUF1 (hnRNP D0) binds and destabilizes mRNA,R-HSA-450408
+PSMD2,https://identifiers.org/reactome/R-HSA-4608870,Asymmetric localization of PCP proteins,R-HSA-4608870
+PSMD2,https://identifiers.org/reactome/R-HSA-4641257,Degradation of AXIN,R-HSA-4641257
+PSMD2,https://identifiers.org/reactome/R-HSA-4641258,Degradation of DVL,R-HSA-4641258
+PSMD2,https://identifiers.org/reactome/R-HSA-5358346,Hedgehog ligand biogenesis,R-HSA-5358346
+PSMD2,https://identifiers.org/reactome/R-HSA-5362768,Hh mutants are degraded by ERAD,R-HSA-5362768
+PSMD2,https://identifiers.org/reactome/R-HSA-5607761,Dectin-1 mediated noncanonical NF-kB signaling,R-HSA-5607761
+PSMD2,https://identifiers.org/reactome/R-HSA-5607764,CLEC7A (Dectin-1) signaling,R-HSA-5607764
+PSMD2,https://identifiers.org/reactome/R-HSA-5610780,Degradation of GLI1 by the proteasome,R-HSA-5610780
+PSMD2,https://identifiers.org/reactome/R-HSA-5610783,Degradation of GLI2 by the proteasome,R-HSA-5610783
+PSMD2,https://identifiers.org/reactome/R-HSA-5610785,GLI3 is processed to GLI3R by the proteasome,R-HSA-5610785
+PSMD2,https://identifiers.org/reactome/R-HSA-5632684,Hedgehog 'on' state,R-HSA-5632684
+PSMD2,https://identifiers.org/reactome/R-HSA-5658442,Regulation of RAS by GAPs,R-HSA-5658442
+PSMD2,https://identifiers.org/reactome/R-HSA-5668541,TNFR2 non-canonical NF-kB pathway,R-HSA-5668541
+PSMD2,https://identifiers.org/reactome/R-HSA-5676590,NIK-->noncanonical NF-kB signaling,R-HSA-5676590
+PSMD2,https://identifiers.org/reactome/R-HSA-5678895,Defective CFTR causes cystic fibrosis,R-HSA-5678895
+PSMD2,https://identifiers.org/reactome/R-HSA-5687128,MAPK6/MAPK4 signaling,R-HSA-5687128
+PSMD2,https://identifiers.org/reactome/R-HSA-5689603,UCH proteinases,R-HSA-5689603
+PSMD2,https://identifiers.org/reactome/R-HSA-5689880,Ub-specific processing proteases,R-HSA-5689880
+PSMD2,https://identifiers.org/reactome/R-HSA-6798695,Neutrophil degranulation,R-HSA-6798695
+PSMD2,https://identifiers.org/reactome/R-HSA-68867,Assembly of the pre-replicative complex,R-HSA-68867
+PSMD2,https://identifiers.org/reactome/R-HSA-68949,Orc1 removal from chromatin,R-HSA-68949
+PSMD2,https://identifiers.org/reactome/R-HSA-69017,CDK-mediated phosphorylation and removal of Cdc6,R-HSA-69017
+PSMD2,https://identifiers.org/reactome/R-HSA-69481,G2/M Checkpoints,R-HSA-69481
+PSMD2,https://identifiers.org/reactome/R-HSA-69601,Ubiquitin-Mediated Degradation of Phosphorylated Cdc25A,R-HSA-69601
+PSMD2,https://identifiers.org/reactome/R-HSA-75815,Ubiquitin-dependent degradation of Cyclin D,R-HSA-75815
+PSMD2,https://identifiers.org/reactome/R-HSA-8852276,The role of GTSE1 in G2/M progression after G2 checkpoint,R-HSA-8852276
+PSMD2,https://identifiers.org/reactome/R-HSA-8854050,FBXL7 down-regulates AURKA during mitotic entry and in early mitosis,R-HSA-8854050
+PSMD2,https://identifiers.org/reactome/R-HSA-8939236,RUNX1 regulates transcription of genes involved in differentiation of HSCs,R-HSA-8939236
+PSMD2,https://identifiers.org/reactome/R-HSA-8939902,Regulation of RUNX2 expression and activity,R-HSA-8939902
+PSMD2,https://identifiers.org/reactome/R-HSA-8941858,Regulation of RUNX3 expression and activity,R-HSA-8941858
+PSMD2,https://identifiers.org/reactome/R-HSA-8948751,Regulation of PTEN stability and activity,R-HSA-8948751
+PSMD2,https://identifiers.org/reactome/R-HSA-8951664,Neddylation,R-HSA-8951664
+PSMD2,https://identifiers.org/reactome/R-HSA-9010553,Regulation of expression of SLITs and ROBOs,R-HSA-9010553
+PSMD2,https://identifiers.org/reactome/R-HSA-9020702,Interleukin-1 signaling,R-HSA-9020702
+PSMD2,https://identifiers.org/reactome/R-HSA-9604323,Negative regulation of NOTCH4 signaling,R-HSA-9604323
+PSMD2,https://identifiers.org/reactome/R-HSA-9755511,KEAP1-NFE2L2 pathway,R-HSA-9755511
+PSMD2,https://identifiers.org/reactome/R-HSA-9762114,GSK3B and BTRC:CUL1-mediated-degradation of NFE2L2,R-HSA-9762114
+PSMD2,https://identifiers.org/reactome/R-HSA-9766229,Degradation of CDH1,R-HSA-9766229
+PSMD2,https://identifiers.org/reactome/R-HSA-9824272,Somitogenesis,R-HSA-9824272
+PSMD2,https://identifiers.org/reactome/R-HSA-983168,Antigen processing: Ubiquitination & Proteasome degradation,R-HSA-983168
+PSMD2,https://identifiers.org/reactome/R-HSA-9907900,Proteasome assembly,R-HSA-9907900
+PSMD2,https://identifiers.org/reactome/R-HSA-9932298,Degradation of CRY and PER proteins,R-HSA-9932298
+RAD51C,https://identifiers.org/reactome/R-HSA-5685942,HDR through Homologous Recombination (HRR),R-HSA-5685942
+RAD51C,https://identifiers.org/reactome/R-HSA-5693554,Resolution of D-loop Structures through Synthesis-Dependent Strand Annealing (SDSA),R-HSA-5693554
+RAD51C,https://identifiers.org/reactome/R-HSA-5693568,Resolution of D-loop Structures through Holliday Junction Intermediates,R-HSA-5693568
+RAD51C,https://identifiers.org/reactome/R-HSA-5693579,Homologous DNA Pairing and Strand Exchange,R-HSA-5693579
+RAD51C,https://identifiers.org/reactome/R-HSA-5693616,Presynaptic phase of homologous DNA pairing and strand exchange,R-HSA-5693616
+RAD51C,https://identifiers.org/reactome/R-HSA-912446,Meiotic recombination,R-HSA-912446
+RAD51C,https://identifiers.org/reactome/R-HSA-9701192,Defective homologous recombination repair (HRR) due to BRCA1 loss of function,R-HSA-9701192
+RAD51C,https://identifiers.org/reactome/R-HSA-9704331,Defective HDR through Homologous Recombination Repair (HRR) due to PALB2 loss of BRCA1 binding function,R-HSA-9704331
+RAD51C,https://identifiers.org/reactome/R-HSA-9704646,Defective HDR through Homologous Recombination Repair (HRR) due to PALB2 loss of BRCA2/RAD51/RAD51C binding function,R-HSA-9704646
+RAD51C,https://identifiers.org/reactome/R-HSA-9709603,Impaired BRCA2 binding to PALB2,R-HSA-9709603
+RAD51C,https://identifiers.org/reactome/R-HSA-983231,Factors involved in megakaryocyte development and platelet production,R-HSA-983231
+RNF113A,https://identifiers.org/reactome/R-HSA-72163,mRNA Splicing - Major Pathway,R-HSA-72163
+RPL36,https://identifiers.org/reactome/R-HSA-156827,L13a-mediated translational silencing of Ceruloplasmin expression,R-HSA-156827
+RPL36,https://identifiers.org/reactome/R-HSA-156902,Peptide chain elongation,R-HSA-156902
+RPL36,https://identifiers.org/reactome/R-HSA-1799339,SRP-dependent cotranslational protein targeting to membrane,R-HSA-1799339
+RPL36,https://identifiers.org/reactome/R-HSA-192823,Viral mRNA Translation,R-HSA-192823
+RPL36,https://identifiers.org/reactome/R-HSA-2408557,Selenocysteine synthesis,R-HSA-2408557
+RPL36,https://identifiers.org/reactome/R-HSA-6791226,Major pathway of rRNA processing in the nucleolus and cytosol,R-HSA-6791226
+RPL36,https://identifiers.org/reactome/R-HSA-72689,Formation of a pool of free 40S subunits,R-HSA-72689
+RPL36,https://identifiers.org/reactome/R-HSA-72706,GTP hydrolysis and joining of the 60S ribosomal subunit,R-HSA-72706
+RPL36,https://identifiers.org/reactome/R-HSA-72764,Eukaryotic Translation Termination,R-HSA-72764
+RPL36,https://identifiers.org/reactome/R-HSA-9010553,Regulation of expression of SLITs and ROBOs,R-HSA-9010553
+RPL36,https://identifiers.org/reactome/R-HSA-9633012,Response of EIF2AK4 (GCN2) to amino acid deficiency,R-HSA-9633012
+RPL36,https://identifiers.org/reactome/R-HSA-975956,Nonsense Mediated Decay (NMD) independent of the Exon Junction Complex (EJC),R-HSA-975956
+RPL36,https://identifiers.org/reactome/R-HSA-975957,Nonsense Mediated Decay (NMD) enhanced by the Exon Junction Complex (EJC),R-HSA-975957
+SLC22A13,https://identifiers.org/reactome/R-HSA-196807,Nicotinate metabolism,R-HSA-196807
+SLC22A2,https://identifiers.org/reactome/R-HSA-112311,Neurotransmitter clearance,R-HSA-112311
+SLC22A2,https://identifiers.org/reactome/R-HSA-181430,Norepinephrine Neurotransmitter Release Cycle,R-HSA-181430
+SLC22A2,https://identifiers.org/reactome/R-HSA-2161517,Abacavir transmembrane transport,R-HSA-2161517
+SLC22A2,https://identifiers.org/reactome/R-HSA-442660,SLC-mediated transport of neurotransmitters,R-HSA-442660
+SLC22A2,https://identifiers.org/reactome/R-HSA-549127,SLC-mediated transport of organic cations,R-HSA-549127
+SLC22A4,https://identifiers.org/reactome/R-HSA-549127,SLC-mediated transport of organic cations,R-HSA-549127
+SOAT1,https://identifiers.org/reactome/R-HSA-8964038,LDL clearance,R-HSA-8964038
+SSR1,https://identifiers.org/reactome/R-HSA-1799339,SRP-dependent cotranslational protein targeting to membrane,R-HSA-1799339
+SSR1,https://identifiers.org/reactome/R-HSA-381038,XBP1(S) activates chaperone genes,R-HSA-381038
+TDO2,https://identifiers.org/reactome/R-HSA-71240,Tryptophan catabolism,R-HSA-71240
+TLL1,https://identifiers.org/reactome/R-HSA-1474228,Degradation of the extracellular matrix,R-HSA-1474228
+TLL1,https://identifiers.org/reactome/R-HSA-1650814,Collagen biosynthesis and modifying enzymes,R-HSA-1650814
+TLL1,https://identifiers.org/reactome/R-HSA-2214320,Anchoring fibril formation,R-HSA-2214320
+TLL1,https://identifiers.org/reactome/R-HSA-2243919,Crosslinking of collagen fibrils,R-HSA-2243919
+TNNI3,https://identifiers.org/reactome/R-HSA-390522,Striated Muscle Contraction,R-HSA-390522
+TNNI3,https://identifiers.org/reactome/R-HSA-5578775,Ion homeostasis,R-HSA-5578775
+UBB,https://identifiers.org/reactome/R-HSA-110312,Translesion synthesis by REV1,R-HSA-110312
+UBB,https://identifiers.org/reactome/R-HSA-110314,Recognition of DNA damage by PCNA-containing replication complex,R-HSA-110314
+UBB,https://identifiers.org/reactome/R-HSA-110320,Translesion Synthesis by POLH,R-HSA-110320
+UBB,https://identifiers.org/reactome/R-HSA-1169091,Activation of NF-kappaB in B cells,R-HSA-1169091
+UBB,https://identifiers.org/reactome/R-HSA-1169408,ISG15 antiviral mechanism,R-HSA-1169408
+UBB,https://identifiers.org/reactome/R-HSA-1234176,Oxygen-dependent proline hydroxylation of Hypoxia-inducible Factor Alpha,R-HSA-1234176
+UBB,https://identifiers.org/reactome/R-HSA-1236382,Constitutive Signaling by Ligand-Responsive EGFR Cancer Variants,R-HSA-1236382
+UBB,https://identifiers.org/reactome/R-HSA-1236974,ER-Phagosome pathway,R-HSA-1236974
+UBB,https://identifiers.org/reactome/R-HSA-1253288,Downregulation of ERBB4 signaling,R-HSA-1253288
+UBB,https://identifiers.org/reactome/R-HSA-1295596,Spry regulation of FGF signaling,R-HSA-1295596
+UBB,https://identifiers.org/reactome/R-HSA-1358803,Downregulation of ERBB2:ERBB3 signaling,R-HSA-1358803
+UBB,https://identifiers.org/reactome/R-HSA-162588,Budding and maturation of HIV virion,R-HSA-162588
+UBB,https://identifiers.org/reactome/R-HSA-168638,NOD1/2 Signaling Pathway,R-HSA-168638
+UBB,https://identifiers.org/reactome/R-HSA-168927,"TICAM1, RIP1-mediated IKK complex recruitment",R-HSA-168927
+UBB,https://identifiers.org/reactome/R-HSA-168928,DDX58/IFIH1-mediated induction of interferon-alpha/beta,R-HSA-168928
+UBB,https://identifiers.org/reactome/R-HSA-174048,APC/C:Cdc20 mediated degradation of Cyclin B,R-HSA-174048
+UBB,https://identifiers.org/reactome/R-HSA-174084,Autodegradation of Cdh1 by Cdh1:APC/C,R-HSA-174084
+UBB,https://identifiers.org/reactome/R-HSA-174113,SCF-beta-TrCP mediated degradation of Emi1,R-HSA-174113
+UBB,https://identifiers.org/reactome/R-HSA-174154,APC/C:Cdc20 mediated degradation of Securin,R-HSA-174154
+UBB,https://identifiers.org/reactome/R-HSA-174178,APC/C:Cdh1 mediated degradation of Cdc20 and other APC/C:Cdh1 targeted proteins in late mitosis/early G1,R-HSA-174178
+UBB,https://identifiers.org/reactome/R-HSA-174184,Cdc20:Phospho-APC/C mediated degradation of Cyclin A,R-HSA-174184
+UBB,https://identifiers.org/reactome/R-HSA-174490,Membrane binding and targetting of GAG proteins,R-HSA-174490
+UBB,https://identifiers.org/reactome/R-HSA-175474,Assembly Of The HIV Virion,R-HSA-175474
+UBB,https://identifiers.org/reactome/R-HSA-179409,APC-Cdc20 mediated degradation of Nek2A,R-HSA-179409
+UBB,https://identifiers.org/reactome/R-HSA-180534,Vpu mediated degradation of CD4,R-HSA-180534
+UBB,https://identifiers.org/reactome/R-HSA-180585,Vif-mediated degradation of APOBEC3G,R-HSA-180585
+UBB,https://identifiers.org/reactome/R-HSA-182971,EGFR downregulation,R-HSA-182971
+UBB,https://identifiers.org/reactome/R-HSA-187577,SCF(Skp2)-mediated degradation of p27/p21,R-HSA-187577
+UBB,https://identifiers.org/reactome/R-HSA-195253,Degradation of beta-catenin by the destruction complex,R-HSA-195253
+UBB,https://identifiers.org/reactome/R-HSA-201681,TCF dependent signaling in response to WNT,R-HSA-201681
+UBB,https://identifiers.org/reactome/R-HSA-202424,Downstream TCR signaling,R-HSA-202424
+UBB,https://identifiers.org/reactome/R-HSA-205043,NRIF signals cell death from the nucleus,R-HSA-205043
+UBB,https://identifiers.org/reactome/R-HSA-209543,p75NTR recruits signalling complexes,R-HSA-209543
+UBB,https://identifiers.org/reactome/R-HSA-209560,NF-kB is activated and signals survival,R-HSA-209560
+UBB,https://identifiers.org/reactome/R-HSA-211733,Regulation of activated PAK-2p34 by proteasome mediated degradation,R-HSA-211733
+UBB,https://identifiers.org/reactome/R-HSA-2122947,NOTCH1 Intracellular Domain Regulates Transcription,R-HSA-2122947
+UBB,https://identifiers.org/reactome/R-HSA-2122948,Activated NOTCH1 Transmits Signal to the Nucleus,R-HSA-2122948
+UBB,https://identifiers.org/reactome/R-HSA-2173788,Downregulation of TGF-beta receptor signaling,R-HSA-2173788
+UBB,https://identifiers.org/reactome/R-HSA-2173791,TGF-beta receptor signaling in EMT (epithelial to mesenchymal transition),R-HSA-2173791
+UBB,https://identifiers.org/reactome/R-HSA-2173795,Downregulation of SMAD2/3:SMAD4 transcriptional activity,R-HSA-2173795
+UBB,https://identifiers.org/reactome/R-HSA-2173796,SMAD2/SMAD3:SMAD4 heterotrimer regulates transcription,R-HSA-2173796
+UBB,https://identifiers.org/reactome/R-HSA-2467813,Separation of Sister Chromatids,R-HSA-2467813
+UBB,https://identifiers.org/reactome/R-HSA-2559580,Oxidative Stress Induced Senescence,R-HSA-2559580
+UBB,https://identifiers.org/reactome/R-HSA-2559582,Senescence-Associated Secretory Phenotype (SASP),R-HSA-2559582
+UBB,https://identifiers.org/reactome/R-HSA-2559585,Oncogene Induced Senescence,R-HSA-2559585
+UBB,https://identifiers.org/reactome/R-HSA-2565942,Regulation of PLK1 Activity at G2/M Transition,R-HSA-2565942
+UBB,https://identifiers.org/reactome/R-HSA-2644606,Constitutive Signaling by NOTCH1 PEST Domain Mutants,R-HSA-2644606
+UBB,https://identifiers.org/reactome/R-HSA-2672351,Stimuli-sensing channels,R-HSA-2672351
+UBB,https://identifiers.org/reactome/R-HSA-2691232,Constitutive Signaling by NOTCH1 HD Domain Mutants,R-HSA-2691232
+UBB,https://identifiers.org/reactome/R-HSA-2871837,FCERI mediated NF-kB activation,R-HSA-2871837
+UBB,https://identifiers.org/reactome/R-HSA-2894862,Constitutive Signaling by NOTCH1 HD+PEST Domain Mutants,R-HSA-2894862
+UBB,https://identifiers.org/reactome/R-HSA-2979096,NOTCH2 Activation and Transmission of Signal to the Nucleus,R-HSA-2979096
+UBB,https://identifiers.org/reactome/R-HSA-3134975,Regulation of innate immune responses to cytosolic DNA,R-HSA-3134975
+UBB,https://identifiers.org/reactome/R-HSA-3322077,Glycogen synthesis,R-HSA-3322077
+UBB,https://identifiers.org/reactome/R-HSA-349425,Autodegradation of the E3 ubiquitin ligase COP1,R-HSA-349425
+UBB,https://identifiers.org/reactome/R-HSA-3769402,Deactivation of the beta-catenin transactivating complex,R-HSA-3769402
+UBB,https://identifiers.org/reactome/R-HSA-3785653,Myoclonic epilepsy of Lafora,R-HSA-3785653
+UBB,https://identifiers.org/reactome/R-HSA-382556,ABC-family proteins mediated transport,R-HSA-382556
+UBB,https://identifiers.org/reactome/R-HSA-445989,TAK1-dependent IKK and NF-kappa-B activation  ,R-HSA-445989
+UBB,https://identifiers.org/reactome/R-HSA-450302,activated TAK1 mediates p38 MAPK activation,R-HSA-450302
+UBB,https://identifiers.org/reactome/R-HSA-450321,JNK (c-Jun kinases) phosphorylation and  activation mediated by activated human TAK1,R-HSA-450321
+UBB,https://identifiers.org/reactome/R-HSA-450408,AUF1 (hnRNP D0) binds and destabilizes mRNA,R-HSA-450408
+UBB,https://identifiers.org/reactome/R-HSA-4608870,Asymmetric localization of PCP proteins,R-HSA-4608870
+UBB,https://identifiers.org/reactome/R-HSA-4641257,Degradation of AXIN,R-HSA-4641257
+UBB,https://identifiers.org/reactome/R-HSA-4641258,Degradation of DVL,R-HSA-4641258
+UBB,https://identifiers.org/reactome/R-HSA-4641263,Regulation of FZD by ubiquitination,R-HSA-4641263
+UBB,https://identifiers.org/reactome/R-HSA-5205685,PINK1-PRKN Mediated Mitophagy,R-HSA-5205685
+UBB,https://identifiers.org/reactome/R-HSA-532668,N-glycan trimming in the ER and Calnexin/Calreticulin cycle,R-HSA-532668
+UBB,https://identifiers.org/reactome/R-HSA-5357905,Regulation of TNFR1 signaling,R-HSA-5357905
+UBB,https://identifiers.org/reactome/R-HSA-5357956,TNFR1-induced NF-kappa-B signaling pathway,R-HSA-5357956
+UBB,https://identifiers.org/reactome/R-HSA-5358346,Hedgehog ligand biogenesis,R-HSA-5358346
+UBB,https://identifiers.org/reactome/R-HSA-5362768,Hh mutants are degraded by ERAD,R-HSA-5362768
+UBB,https://identifiers.org/reactome/R-HSA-5607761,Dectin-1 mediated noncanonical NF-kB signaling,R-HSA-5607761
+UBB,https://identifiers.org/reactome/R-HSA-5607764,CLEC7A (Dectin-1) signaling,R-HSA-5607764
+UBB,https://identifiers.org/reactome/R-HSA-5610780,Degradation of GLI1 by the proteasome,R-HSA-5610780
+UBB,https://identifiers.org/reactome/R-HSA-5610783,Degradation of GLI2 by the proteasome,R-HSA-5610783
+UBB,https://identifiers.org/reactome/R-HSA-5610785,GLI3 is processed to GLI3R by the proteasome,R-HSA-5610785
+UBB,https://identifiers.org/reactome/R-HSA-5632684,Hedgehog 'on' state,R-HSA-5632684
+UBB,https://identifiers.org/reactome/R-HSA-5654726,Negative regulation of FGFR1 signaling,R-HSA-5654726
+UBB,https://identifiers.org/reactome/R-HSA-5654727,Negative regulation of FGFR2 signaling,R-HSA-5654727
+UBB,https://identifiers.org/reactome/R-HSA-5654732,Negative regulation of FGFR3 signaling,R-HSA-5654732
+UBB,https://identifiers.org/reactome/R-HSA-5654733,Negative regulation of FGFR4 signaling,R-HSA-5654733
+UBB,https://identifiers.org/reactome/R-HSA-5655862,Translesion synthesis by POLK,R-HSA-5655862
+UBB,https://identifiers.org/reactome/R-HSA-5656121,Translesion synthesis by POLI,R-HSA-5656121
+UBB,https://identifiers.org/reactome/R-HSA-5656169,Termination of translesion DNA synthesis,R-HSA-5656169
+UBB,https://identifiers.org/reactome/R-HSA-5658442,Regulation of RAS by GAPs,R-HSA-5658442
+UBB,https://identifiers.org/reactome/R-HSA-5668541,TNFR2 non-canonical NF-kB pathway,R-HSA-5668541
+UBB,https://identifiers.org/reactome/R-HSA-5675221,Negative regulation of MAPK pathway,R-HSA-5675221
+UBB,https://identifiers.org/reactome/R-HSA-5675482,Regulation of necroptotic cell death,R-HSA-5675482
+UBB,https://identifiers.org/reactome/R-HSA-5676590,NIK-->noncanonical NF-kB signaling,R-HSA-5676590
+UBB,https://identifiers.org/reactome/R-HSA-5678895,Defective CFTR causes cystic fibrosis,R-HSA-5678895
+UBB,https://identifiers.org/reactome/R-HSA-5684264,MAP3K8 (TPL2)-dependent MAPK1/3 activation,R-HSA-5684264
+UBB,https://identifiers.org/reactome/R-HSA-5685942,HDR through Homologous Recombination (HRR),R-HSA-5685942
+UBB,https://identifiers.org/reactome/R-HSA-5687128,MAPK6/MAPK4 signaling,R-HSA-5687128
+UBB,https://identifiers.org/reactome/R-HSA-5689603,UCH proteinases,R-HSA-5689603
+UBB,https://identifiers.org/reactome/R-HSA-5689877,Josephin domain DUBs,R-HSA-5689877
+UBB,https://identifiers.org/reactome/R-HSA-5689880,Ub-specific processing proteases,R-HSA-5689880
+UBB,https://identifiers.org/reactome/R-HSA-5689896,Ovarian tumor domain proteases,R-HSA-5689896
+UBB,https://identifiers.org/reactome/R-HSA-5689901,Metalloprotease DUBs,R-HSA-5689901
+UBB,https://identifiers.org/reactome/R-HSA-5693565,Recruitment and ATM-mediated phosphorylation of repair and signaling proteins at DNA double strand breaks,R-HSA-5693565
+UBB,https://identifiers.org/reactome/R-HSA-5693607,Processing of DNA double-strand break ends,R-HSA-5693607
+UBB,https://identifiers.org/reactome/R-HSA-5696394,DNA Damage Recognition in GG-NER,R-HSA-5696394
+UBB,https://identifiers.org/reactome/R-HSA-5696395,Formation of Incision Complex in GG-NER,R-HSA-5696395
+UBB,https://identifiers.org/reactome/R-HSA-5696397,Gap-filling DNA repair synthesis and ligation in GG-NER,R-HSA-5696397
+UBB,https://identifiers.org/reactome/R-HSA-5696400,Dual Incision in GG-NER,R-HSA-5696400
+UBB,https://identifiers.org/reactome/R-HSA-6781823,Formation of TC-NER Pre-Incision Complex,R-HSA-6781823
+UBB,https://identifiers.org/reactome/R-HSA-6781827,Transcription-Coupled Nucleotide Excision Repair (TC-NER),R-HSA-6781827
+UBB,https://identifiers.org/reactome/R-HSA-6782135,Dual incision in TC-NER,R-HSA-6782135
+UBB,https://identifiers.org/reactome/R-HSA-6782210,Gap-filling DNA repair synthesis and ligation in TC-NER,R-HSA-6782210
+UBB,https://identifiers.org/reactome/R-HSA-6783310,Fanconi Anemia Pathway,R-HSA-6783310
+UBB,https://identifiers.org/reactome/R-HSA-6804756,Regulation of TP53 Activity through Phosphorylation,R-HSA-6804756
+UBB,https://identifiers.org/reactome/R-HSA-6804757,Regulation of TP53 Degradation,R-HSA-6804757
+UBB,https://identifiers.org/reactome/R-HSA-6804760,Regulation of TP53 Activity through Methylation,R-HSA-6804760
+UBB,https://identifiers.org/reactome/R-HSA-6807004,Negative regulation of MET activity,R-HSA-6807004
+UBB,https://identifiers.org/reactome/R-HSA-68867,Assembly of the pre-replicative complex,R-HSA-68867
+UBB,https://identifiers.org/reactome/R-HSA-68949,Orc1 removal from chromatin,R-HSA-68949
+UBB,https://identifiers.org/reactome/R-HSA-69017,CDK-mediated phosphorylation and removal of Cdc6,R-HSA-69017
+UBB,https://identifiers.org/reactome/R-HSA-69231,Cyclin D associated events in G1,R-HSA-69231
+UBB,https://identifiers.org/reactome/R-HSA-69481,G2/M Checkpoints,R-HSA-69481
+UBB,https://identifiers.org/reactome/R-HSA-69541,Stabilization of p53,R-HSA-69541
+UBB,https://identifiers.org/reactome/R-HSA-69601,Ubiquitin-Mediated Degradation of Phosphorylated Cdc25A,R-HSA-69601
+UBB,https://identifiers.org/reactome/R-HSA-75815,Ubiquitin-dependent degradation of Cyclin D,R-HSA-75815
+UBB,https://identifiers.org/reactome/R-HSA-8849469,PTK6 Regulates RTKs and Their Effectors AKT1 and DOK1,R-HSA-8849469
+UBB,https://identifiers.org/reactome/R-HSA-8852276,The role of GTSE1 in G2/M progression after G2 checkpoint,R-HSA-8852276
+UBB,https://identifiers.org/reactome/R-HSA-8854050,FBXL7 down-regulates AURKA during mitotic entry and in early mitosis,R-HSA-8854050
+UBB,https://identifiers.org/reactome/R-HSA-8856825,Cargo recognition for clathrin-mediated endocytosis,R-HSA-8856825
+UBB,https://identifiers.org/reactome/R-HSA-8856828,Clathrin-mediated endocytosis,R-HSA-8856828
+UBB,https://identifiers.org/reactome/R-HSA-8863795,Downregulation of ERBB2 signaling,R-HSA-8863795
+UBB,https://identifiers.org/reactome/R-HSA-8866427,VLDLR internalisation and degradation,R-HSA-8866427
+UBB,https://identifiers.org/reactome/R-HSA-8866652,Synthesis of active ubiquitin: roles of E1 and E2 enzymes,R-HSA-8866652
+UBB,https://identifiers.org/reactome/R-HSA-8866654,E3 ubiquitin ligases ubiquitinate target proteins,R-HSA-8866654
+UBB,https://identifiers.org/reactome/R-HSA-8875360,InlB-mediated entry of Listeria monocytogenes into host cell,R-HSA-8875360
+UBB,https://identifiers.org/reactome/R-HSA-8876493,InlA-mediated entry of Listeria monocytogenes into host cells,R-HSA-8876493
+UBB,https://identifiers.org/reactome/R-HSA-8939236,RUNX1 regulates transcription of genes involved in differentiation of HSCs,R-HSA-8939236
+UBB,https://identifiers.org/reactome/R-HSA-8939902,Regulation of RUNX2 expression and activity,R-HSA-8939902
+UBB,https://identifiers.org/reactome/R-HSA-8941858,Regulation of RUNX3 expression and activity,R-HSA-8941858
+UBB,https://identifiers.org/reactome/R-HSA-8948747,Regulation of PTEN localization,R-HSA-8948747
+UBB,https://identifiers.org/reactome/R-HSA-8948751,Regulation of PTEN stability and activity,R-HSA-8948751
+UBB,https://identifiers.org/reactome/R-HSA-8951664,Neddylation,R-HSA-8951664
+UBB,https://identifiers.org/reactome/R-HSA-901032,ER Quality Control Compartment (ERQC),R-HSA-901032
+UBB,https://identifiers.org/reactome/R-HSA-9010553,Regulation of expression of SLITs and ROBOs,R-HSA-9010553
+UBB,https://identifiers.org/reactome/R-HSA-9013507,NOTCH3 Activation and Transmission of Signal to the Nucleus,R-HSA-9013507
+UBB,https://identifiers.org/reactome/R-HSA-9013973,TICAM1-dependent activation of IRF3/IRF7,R-HSA-9013973
+UBB,https://identifiers.org/reactome/R-HSA-9014325,"TICAM1,TRAF6-dependent induction of TAK1 complex",R-HSA-9014325
+UBB,https://identifiers.org/reactome/R-HSA-9020702,Interleukin-1 signaling,R-HSA-9020702
+UBB,https://identifiers.org/reactome/R-HSA-9033241,Peroxisomal protein import,R-HSA-9033241
+UBB,https://identifiers.org/reactome/R-HSA-909733,Interferon alpha/beta signaling,R-HSA-909733
+UBB,https://identifiers.org/reactome/R-HSA-912631,Regulation of signaling by CBL,R-HSA-912631
+UBB,https://identifiers.org/reactome/R-HSA-917729,Endosomal Sorting Complex Required For Transport (ESCRT),R-HSA-917729
+UBB,https://identifiers.org/reactome/R-HSA-917937,Iron uptake and transport,R-HSA-917937
+UBB,https://identifiers.org/reactome/R-HSA-936440,Negative regulators of DDX58/IFIH1 signaling,R-HSA-936440
+UBB,https://identifiers.org/reactome/R-HSA-936964,"Activation of IRF3, IRF7 mediated by TBK1, IKK (IKBKE)",R-HSA-936964
+UBB,https://identifiers.org/reactome/R-HSA-937039,IRAK1 recruits IKK complex,R-HSA-937039
+UBB,https://identifiers.org/reactome/R-HSA-937041,IKK complex recruitment mediated by RIP1,R-HSA-937041
+UBB,https://identifiers.org/reactome/R-HSA-937042,IRAK2 mediated activation of TAK1 complex,R-HSA-937042
+UBB,https://identifiers.org/reactome/R-HSA-937072,TRAF6-mediated induction of TAK1 complex within TLR4 complex,R-HSA-937072
+UBB,https://identifiers.org/reactome/R-HSA-9604323,Negative regulation of NOTCH4 signaling,R-HSA-9604323
+UBB,https://identifiers.org/reactome/R-HSA-9613829,Chaperone Mediated Autophagy,R-HSA-9613829
+UBB,https://identifiers.org/reactome/R-HSA-9615710,Late endosomal microautophagy,R-HSA-9615710
+UBB,https://identifiers.org/reactome/R-HSA-9636383,Prevention of phagosomal-lysosomal fusion,R-HSA-9636383
+UBB,https://identifiers.org/reactome/R-HSA-9637628,Modulation by Mtb of host immune system,R-HSA-9637628
+UBB,https://identifiers.org/reactome/R-HSA-9645460,Alpha-protein kinase 1 signaling pathway,R-HSA-9645460
+UBB,https://identifiers.org/reactome/R-HSA-9646399,Aggrephagy,R-HSA-9646399
+UBB,https://identifiers.org/reactome/R-HSA-9648002,RAS processing,R-HSA-9648002
+UBB,https://identifiers.org/reactome/R-HSA-9664873,Pexophagy,R-HSA-9664873
+UBB,https://identifiers.org/reactome/R-HSA-9680350,Signaling by CSF1 (M-CSF) in myeloid cells,R-HSA-9680350
+UBB,https://identifiers.org/reactome/R-HSA-9683683,Maturation of protein E,R-HSA-9683683
+UBB,https://identifiers.org/reactome/R-HSA-9692916,SARS-CoV-1 activates/modulates innate immune responses,R-HSA-9692916
+UBB,https://identifiers.org/reactome/R-HSA-9694493,Maturation of protein E,R-HSA-9694493
+UBB,https://identifiers.org/reactome/R-HSA-9705462,Inactivation of CSF3 (G-CSF) signaling,R-HSA-9705462
+UBB,https://identifiers.org/reactome/R-HSA-9705671,SARS-CoV-2 activates/modulates innate and adaptive immune responses,R-HSA-9705671
+UBB,https://identifiers.org/reactome/R-HSA-9706369,Negative regulation of FLT3,R-HSA-9706369
+UBB,https://identifiers.org/reactome/R-HSA-9706377,FLT3 signaling by CBL mutants,R-HSA-9706377
+UBB,https://identifiers.org/reactome/R-HSA-9708530,Regulation of BACH1 activity,R-HSA-9708530
+UBB,https://identifiers.org/reactome/R-HSA-9725370,Signaling by ALK fusions and activated point mutants,R-HSA-9725370
+UBB,https://identifiers.org/reactome/R-HSA-975110,TRAF6 mediated IRF7 activation in TLR7/8 or 9 signaling,R-HSA-975110
+UBB,https://identifiers.org/reactome/R-HSA-975144,IRAK1 recruits IKK complex upon TLR7/8 or 9 stimulation,R-HSA-975144
+UBB,https://identifiers.org/reactome/R-HSA-975163,IRAK2 mediated activation of TAK1 complex upon TLR7/8 or 9 stimulation,R-HSA-975163
+UBB,https://identifiers.org/reactome/R-HSA-9755511,KEAP1-NFE2L2 pathway,R-HSA-9755511
+UBB,https://identifiers.org/reactome/R-HSA-9758274,Regulation of NF-kappa B signaling,R-HSA-9758274
+UBB,https://identifiers.org/reactome/R-HSA-9762114,GSK3B and BTRC:CUL1-mediated-degradation of NFE2L2,R-HSA-9762114
+UBB,https://identifiers.org/reactome/R-HSA-9766229,Degradation of CDH1,R-HSA-9766229
+UBB,https://identifiers.org/reactome/R-HSA-977225,Amyloid fiber formation,R-HSA-977225
+UBB,https://identifiers.org/reactome/R-HSA-9824878,"Regulation of TBK1, IKK (IKBKE)-mediated activation of IRF3, IRF7 ",R-HSA-9824878
+UBB,https://identifiers.org/reactome/R-HSA-9828211,"Regulation of TBK1, IKK-mediated activation of IRF3, IRF7 upon TLR3 ligation",R-HSA-9828211
+UBB,https://identifiers.org/reactome/R-HSA-983168,Antigen processing: Ubiquitination & Proteasome degradation,R-HSA-983168
+UBB,https://identifiers.org/reactome/R-HSA-9833109,Evasion by RSV of host interferon responses,R-HSA-9833109
+UBB,https://identifiers.org/reactome/R-HSA-9861718,Regulation of pyruvate metabolism,R-HSA-9861718
+UBB,https://identifiers.org/reactome/R-HSA-9932298,Degradation of CRY and PER proteins,R-HSA-9932298
+UNC5B,https://identifiers.org/reactome/R-HSA-373752,Netrin-1 signaling,R-HSA-373752
+UNC5B,https://identifiers.org/reactome/R-HSA-418886,Netrin mediated repulsion signals,R-HSA-418886
+UNC5B,https://identifiers.org/reactome/R-HSA-418889,Caspase activation via Dependence Receptors in the absence of ligand,R-HSA-418889
+UST,https://identifiers.org/reactome/R-HSA-2022870,CS-GAG biosynthesis,R-HSA-2022870
+UST,https://identifiers.org/reactome/R-HSA-2022923,DS-GAG biosynthesis,R-HSA-2022923

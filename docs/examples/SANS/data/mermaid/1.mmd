@@ -1,0 +1,20 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v2("?label"):::projected 
+  v1("?tissue"):::projected 
+  bind0[/"VALUES ?tissue"/]
+  bind0-->v1
+  bind00(["CL:0000000"])
+  bind00 --> bind0
+  bind01(["CL:0000056"])
+  bind01 --> bind0
+  bind02(["UBERON:0000033"])
+  bind02 --> bind0
+  bind0more([+32 more])
+  bind0more --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/ubergraph"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v1 --"rdfs:label"--> v2
+  end

@@ -1,0 +1,16 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v2("?N_trait_genes"):::projected 
+  v5("?gene")
+  v1("?n_traits"):::projected 
+  v6("?trait")
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/digcfdekg"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v5 --"dig:geneToTrait"--> v6
+  end
+  bind0[/"count(?gene)"/]
+  bind0 --as--o v2
+  bind1[/"count(?trait)"/]
+  bind1 --as--o v1

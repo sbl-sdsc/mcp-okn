@@ -1,0 +1,54 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v4("?aspect"):::projected 
+  v2("?gene")
+  v5("?go"):::projected 
+  v6("?go_label"):::projected 
+  v3("?prot"):::projected 
+  v1("?symbol"):::projected 
+  bind0[/"VALUES ?symbol"/]
+  bind0-->v1
+  bind00(["ABHD16A"])
+  bind00 --> bind0
+  bind01(["AKR1B15"])
+  bind01 --> bind0
+  bind02(["ANLN"])
+  bind02 --> bind0
+  bind0more([+166 more])
+  bind0more --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/prokn"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v2 --"sio:SIO_010078"--> v3
+    v2 --"rdfs:label"--> v1
+    subgraph uniongraph00[" Union "]
+    style uniongraph00 color:#000;
+    subgraph uniongraph00l[" "]
+      style uniongraph00l fill:#abf,stroke-dasharray: 3 3;
+      v3 --"up:partOf"--> v5
+      graph0bind1[/"'CC'"/]
+      graph0bind1 --as--o v4
+    end
+      subgraph uniongraph01[" Union "]
+      style uniongraph01 color:#000;
+      subgraph uniongraph01l[" "]
+        style uniongraph01l fill:#abf,stroke-dasharray: 3 3;
+        v3 --"obo:RO_0002327"--> v5
+        graph0bind2[/"'MF'"/]
+        graph0bind2 --as--o v4
+      end
+      subgraph uniongraph01r[" "]
+        style uniongraph01r fill:#abf,stroke-dasharray: 3 3;
+        v3 --"obo:RO_0002331"--> v5
+        graph0bind3[/"'BP'"/]
+        graph0bind3 --as--o v4
+      end
+      uniongraph01r <== or ==> uniongraph01l
+      end
+    end
+    subgraph optionalgraph00["(optional)"]
+    style optionalgraph00 fill:#bbf,stroke-dasharray: 5 5,color:#000;
+      v5 -."rdfs:label".-> v6
+    end
+  end

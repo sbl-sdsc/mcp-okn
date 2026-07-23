@@ -161,9 +161,8 @@ docs/examples/MS/
 └── data/                        # intermediate result tables (CSV)
 ```
 
-`figures/` ships with every study; `scripts/` and `data/` accompany most of them
-(the compact Bone-Health and SANS studies carry figures only, and Diabetes has no
-separate `data/`).
+`figures/` and `scripts/` ship with every study; `data/` accompanies all but
+Diabetes.
 
 ---
 

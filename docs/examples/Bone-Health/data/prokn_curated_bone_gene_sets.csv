@@ -1,0 +1,718 @@
+disease_set,gene
+Reduced bone mineral density_HP:0004349,ABCC6
+Reduced bone mineral density_HP:0004349,ABCC9
+Reduced bone mineral density_HP:0004349,ADAMTS2
+Reduced bone mineral density_HP:0004349,ADAMTSL2
+Reduced bone mineral density_HP:0004349,ADCY10
+Reduced bone mineral density_HP:0004349,AEBP1
+Reduced bone mineral density_HP:0004349,AIFM1
+Reduced bone mineral density_HP:0004349,AIP
+Reduced bone mineral density_HP:0004349,AKR1D1
+Reduced bone mineral density_HP:0004349,ALB
+Reduced bone mineral density_HP:0004349,ALDH18A1
+Reduced bone mineral density_HP:0004349,ALPL
+Reduced bone mineral density_HP:0004349,ANAPC1
+Reduced bone mineral density_HP:0004349,ANO5
+Reduced bone mineral density_HP:0004349,ANOS1
+Reduced bone mineral density_HP:0004349,ANTXR2
+Reduced bone mineral density_HP:0004349,AP2S1
+Reduced bone mineral density_HP:0004349,AR
+Reduced bone mineral density_HP:0004349,ARL6IP6
+Reduced bone mineral density_HP:0004349,ARMC5
+Reduced bone mineral density_HP:0004349,ASAH1
+Reduced bone mineral density_HP:0004349,ASXL1
+Reduced bone mineral density_HP:0004349,ASXL2
+Reduced bone mineral density_HP:0004349,ATP6V0A2
+Reduced bone mineral density_HP:0004349,ATP6V0A4
+Reduced bone mineral density_HP:0004349,ATP7A
+Reduced bone mineral density_HP:0004349,ATP7B
+Reduced bone mineral density_HP:0004349,AVP
+Reduced bone mineral density_HP:0004349,B3GALT6
+Reduced bone mineral density_HP:0004349,B3GAT3
+Reduced bone mineral density_HP:0004349,B4GALT7
+Reduced bone mineral density_HP:0004349,BAAT
+Reduced bone mineral density_HP:0004349,BANF1
+Reduced bone mineral density_HP:0004349,BAZ1B
+Reduced bone mineral density_HP:0004349,BMP1
+Reduced bone mineral density_HP:0004349,BMP15
+Reduced bone mineral density_HP:0004349,BMP2
+Reduced bone mineral density_HP:0004349,BNC1
+Reduced bone mineral density_HP:0004349,BRAF
+Reduced bone mineral density_HP:0004349,BRCA1
+Reduced bone mineral density_HP:0004349,BRCA2
+Reduced bone mineral density_HP:0004349,BRIP1
+Reduced bone mineral density_HP:0004349,CA2
+Reduced bone mineral density_HP:0004349,CALCR
+Reduced bone mineral density_HP:0004349,CANT1
+Reduced bone mineral density_HP:0004349,CASR
+Reduced bone mineral density_HP:0004349,CAVIN1
+Reduced bone mineral density_HP:0004349,CBL
+Reduced bone mineral density_HP:0004349,CBS
+Reduced bone mineral density_HP:0004349,CCDC141
+Reduced bone mineral density_HP:0004349,CCN6
+Reduced bone mineral density_HP:0004349,CCND1
+Reduced bone mineral density_HP:0004349,CDC73
+Reduced bone mineral density_HP:0004349,CDH23
+Reduced bone mineral density_HP:0004349,CDKN1A
+Reduced bone mineral density_HP:0004349,CDKN1B
+Reduced bone mineral density_HP:0004349,CDKN2B
+Reduced bone mineral density_HP:0004349,CDKN2C
+Reduced bone mineral density_HP:0004349,CHD7
+Reduced bone mineral density_HP:0004349,CHST3
+Reduced bone mineral density_HP:0004349,CLCN5
+Reduced bone mineral density_HP:0004349,CLCN7
+Reduced bone mineral density_HP:0004349,CLIP2
+Reduced bone mineral density_HP:0004349,COG1
+Reduced bone mineral density_HP:0004349,COL1A1
+Reduced bone mineral density_HP:0004349,COL1A2
+Reduced bone mineral density_HP:0004349,COL2A1
+Reduced bone mineral density_HP:0004349,COL5A1
+Reduced bone mineral density_HP:0004349,COL5A2
+Reduced bone mineral density_HP:0004349,COL7A1
+Reduced bone mineral density_HP:0004349,COX4I2
+Reduced bone mineral density_HP:0004349,CPLX1
+Reduced bone mineral density_HP:0004349,CREB3L1
+Reduced bone mineral density_HP:0004349,CRIPT
+Reduced bone mineral density_HP:0004349,CRTAP
+Reduced bone mineral density_HP:0004349,CTBP1
+Reduced bone mineral density_HP:0004349,CTC1
+Reduced bone mineral density_HP:0004349,CTCF
+Reduced bone mineral density_HP:0004349,CTDP1
+Reduced bone mineral density_HP:0004349,CTNS
+Reduced bone mineral density_HP:0004349,CYB5A
+Reduced bone mineral density_HP:0004349,CYP11A1
+Reduced bone mineral density_HP:0004349,CYP17A1
+Reduced bone mineral density_HP:0004349,CYP19A1
+Reduced bone mineral density_HP:0004349,CYP27A1
+Reduced bone mineral density_HP:0004349,CYP27B1
+Reduced bone mineral density_HP:0004349,CYP2R1
+Reduced bone mineral density_HP:0004349,CYP3A4
+Reduced bone mineral density_HP:0004349,DCAF17
+Reduced bone mineral density_HP:0004349,DCC
+Reduced bone mineral density_HP:0004349,DCHS1
+Reduced bone mineral density_HP:0004349,DDOST
+Reduced bone mineral density_HP:0004349,DHX37
+Reduced bone mineral density_HP:0004349,DKC1
+Reduced bone mineral density_HP:0004349,DKK1
+Reduced bone mineral density_HP:0004349,DMP1
+Reduced bone mineral density_HP:0004349,DMRT3
+Reduced bone mineral density_HP:0004349,DNAJC21
+Reduced bone mineral density_HP:0004349,DPM2
+Reduced bone mineral density_HP:0004349,DUSP6
+Reduced bone mineral density_HP:0004349,EED
+Reduced bone mineral density_HP:0004349,EFL1
+Reduced bone mineral density_HP:0004349,EHHADH
+Reduced bone mineral density_HP:0004349,EIF2AK3
+Reduced bone mineral density_HP:0004349,ELANE
+Reduced bone mineral density_HP:0004349,ELN
+Reduced bone mineral density_HP:0004349,ENPP1
+Reduced bone mineral density_HP:0004349,ERCC2
+Reduced bone mineral density_HP:0004349,ERCC3
+Reduced bone mineral density_HP:0004349,ERCC4
+Reduced bone mineral density_HP:0004349,ERCC6
+Reduced bone mineral density_HP:0004349,ESR1
+Reduced bone mineral density_HP:0004349,ESR2
+Reduced bone mineral density_HP:0004349,EXT2
+Reduced bone mineral density_HP:0004349,FAH
+Reduced bone mineral density_HP:0004349,FANCA
+Reduced bone mineral density_HP:0004349,FANCB
+Reduced bone mineral density_HP:0004349,FANCC
+Reduced bone mineral density_HP:0004349,FANCD2
+Reduced bone mineral density_HP:0004349,FANCE
+Reduced bone mineral density_HP:0004349,FANCF
+Reduced bone mineral density_HP:0004349,FANCG
+Reduced bone mineral density_HP:0004349,FANCL
+Reduced bone mineral density_HP:0004349,FANCM
+Reduced bone mineral density_HP:0004349,FARSB
+Reduced bone mineral density_HP:0004349,FAT4
+Reduced bone mineral density_HP:0004349,FBN1
+Reduced bone mineral density_HP:0004349,FBN2
+Reduced bone mineral density_HP:0004349,FEZF1
+Reduced bone mineral density_HP:0004349,FGF17
+Reduced bone mineral density_HP:0004349,FGF23
+Reduced bone mineral density_HP:0004349,FGF8
+Reduced bone mineral density_HP:0004349,FGFR1
+Reduced bone mineral density_HP:0004349,FGFR2
+Reduced bone mineral density_HP:0004349,FKBP10
+Reduced bone mineral density_HP:0004349,FKBP14
+Reduced bone mineral density_HP:0004349,FLRT3
+Reduced bone mineral density_HP:0004349,FOXA2
+Reduced bone mineral density_HP:0004349,FSHR
+Reduced bone mineral density_HP:0004349,FUT8
+Reduced bone mineral density_HP:0004349,G6PC1
+Reduced bone mineral density_HP:0004349,GALNS
+Reduced bone mineral density_HP:0004349,GALT
+Reduced bone mineral density_HP:0004349,GATA1
+Reduced bone mineral density_HP:0004349,GATA4
+Reduced bone mineral density_HP:0004349,GATM
+Reduced bone mineral density_HP:0004349,GBA1
+Reduced bone mineral density_HP:0004349,GCM2
+Reduced bone mineral density_HP:0004349,GEMIN4
+Reduced bone mineral density_HP:0004349,GFI1
+Reduced bone mineral density_HP:0004349,GK
+Reduced bone mineral density_HP:0004349,GLA
+Reduced bone mineral density_HP:0004349,GLB1
+Reduced bone mineral density_HP:0004349,GLI2
+Reduced bone mineral density_HP:0004349,GLIS3
+Reduced bone mineral density_HP:0004349,GNA11
+Reduced bone mineral density_HP:0004349,GNAS
+Reduced bone mineral density_HP:0004349,GNPAT
+Reduced bone mineral density_HP:0004349,GNPTAB
+Reduced bone mineral density_HP:0004349,GNRH1
+Reduced bone mineral density_HP:0004349,GNRHR
+Reduced bone mineral density_HP:0004349,GORAB
+Reduced bone mineral density_HP:0004349,GPAA1
+Reduced bone mineral density_HP:0004349,GPR35
+Reduced bone mineral density_HP:0004349,GTF2E2
+Reduced bone mineral density_HP:0004349,GTF2H5
+Reduced bone mineral density_HP:0004349,GTF2I
+Reduced bone mineral density_HP:0004349,GTF2IRD1
+Reduced bone mineral density_HP:0004349,GZF1
+Reduced bone mineral density_HP:0004349,HAMP
+Reduced bone mineral density_HP:0004349,HBB
+Reduced bone mineral density_HP:0004349,HECW2
+Reduced bone mineral density_HP:0004349,HERC2
+Reduced bone mineral density_HP:0004349,HESX1
+Reduced bone mineral density_HP:0004349,HFE
+Reduced bone mineral density_HP:0004349,HGD
+Reduced bone mineral density_HP:0004349,HJV
+Reduced bone mineral density_HP:0004349,HLA-DQA1
+Reduced bone mineral density_HP:0004349,HLA-DQB1
+Reduced bone mineral density_HP:0004349,HNF4A
+Reduced bone mineral density_HP:0004349,HNRNPK
+Reduced bone mineral density_HP:0004349,HPGD
+Reduced bone mineral density_HP:0004349,HRAS
+Reduced bone mineral density_HP:0004349,HS6ST1
+Reduced bone mineral density_HP:0004349,HSD17B4
+Reduced bone mineral density_HP:0004349,HSD3B7
+Reduced bone mineral density_HP:0004349,HSPG2
+Reduced bone mineral density_HP:0004349,IARS2
+Reduced bone mineral density_HP:0004349,IER3IP1
+Reduced bone mineral density_HP:0004349,IFIH1
+Reduced bone mineral density_HP:0004349,IFITM5
+Reduced bone mineral density_HP:0004349,IFT122
+Reduced bone mineral density_HP:0004349,IFT43
+Reduced bone mineral density_HP:0004349,IFT52
+Reduced bone mineral density_HP:0004349,IGF1
+Reduced bone mineral density_HP:0004349,IL12A
+Reduced bone mineral density_HP:0004349,IL12RB1
+Reduced bone mineral density_HP:0004349,IL17RD
+Reduced bone mineral density_HP:0004349,IL1RN
+Reduced bone mineral density_HP:0004349,IPW
+Reduced bone mineral density_HP:0004349,IRF5
+Reduced bone mineral density_HP:0004349,IRX5
+Reduced bone mineral density_HP:0004349,KCNJ1
+Reduced bone mineral density_HP:0004349,KCNJ8
+Reduced bone mineral density_HP:0004349,KDELR2
+Reduced bone mineral density_HP:0004349,KIF1A
+Reduced bone mineral density_HP:0004349,KISS1
+Reduced bone mineral density_HP:0004349,KISS1R
+Reduced bone mineral density_HP:0004349,KL
+Reduced bone mineral density_HP:0004349,KNSTRN
+Reduced bone mineral density_HP:0004349,KRAS
+Reduced bone mineral density_HP:0004349,LAMA3
+Reduced bone mineral density_HP:0004349,LAMB3
+Reduced bone mineral density_HP:0004349,LAMC2
+Reduced bone mineral density_HP:0004349,LARS2
+Reduced bone mineral density_HP:0004349,LBR
+Reduced bone mineral density_HP:0004349,LETM1
+Reduced bone mineral density_HP:0004349,LHX4
+Reduced bone mineral density_HP:0004349,LIFR
+Reduced bone mineral density_HP:0004349,LIMK1
+Reduced bone mineral density_HP:0004349,LMNA
+Reduced bone mineral density_HP:0004349,LMX1B
+Reduced bone mineral density_HP:0004349,LRP5
+Reduced bone mineral density_HP:0004349,LRP6
+Reduced bone mineral density_HP:0004349,MAD2L2
+Reduced bone mineral density_HP:0004349,MAFB
+Reduced bone mineral density_HP:0004349,MAGEL2
+Reduced bone mineral density_HP:0004349,MALT1
+Reduced bone mineral density_HP:0004349,MAN2B1
+Reduced bone mineral density_HP:0004349,MAP2K1
+Reduced bone mineral density_HP:0004349,MAP3K1
+Reduced bone mineral density_HP:0004349,MBTPS2
+Reduced bone mineral density_HP:0004349,MDM4
+Reduced bone mineral density_HP:0004349,MEN1
+Reduced bone mineral density_HP:0004349,MGAT2
+Reduced bone mineral density_HP:0004349,MKRN3
+Reduced bone mineral density_HP:0004349,MLXIPL
+Reduced bone mineral density_HP:0004349,MMEL1
+Reduced bone mineral density_HP:0004349,MMP1
+Reduced bone mineral density_HP:0004349,MMP13
+Reduced bone mineral density_HP:0004349,MMP14
+Reduced bone mineral density_HP:0004349,MMP2
+Reduced bone mineral density_HP:0004349,MPLKIP
+Reduced bone mineral density_HP:0004349,MRPS22
+Reduced bone mineral density_HP:0004349,MST1
+Reduced bone mineral density_HP:0004349,MTAP
+Reduced bone mineral density_HP:0004349,MTRR
+Reduced bone mineral density_HP:0004349,MTTP
+Reduced bone mineral density_HP:0004349,MTX2
+Reduced bone mineral density_HP:0004349,NAB2
+Reduced bone mineral density_HP:0004349,NAGA
+Reduced bone mineral density_HP:0004349,NCF1
+Reduced bone mineral density_HP:0004349,NDN
+Reduced bone mineral density_HP:0004349,NDNF
+Reduced bone mineral density_HP:0004349,NDUFAF1
+Reduced bone mineral density_HP:0004349,NDUFAF6
+Reduced bone mineral density_HP:0004349,NELFA
+Reduced bone mineral density_HP:0004349,NF1
+Reduced bone mineral density_HP:0004349,NFIX
+Reduced bone mineral density_HP:0004349,NGLY1
+Reduced bone mineral density_HP:0004349,NHERF1
+Reduced bone mineral density_HP:0004349,NHP2
+Reduced bone mineral density_HP:0004349,NLRP3
+Reduced bone mineral density_HP:0004349,NOP10
+Reduced bone mineral density_HP:0004349,NOTCH2
+Reduced bone mineral density_HP:0004349,NPAP1
+Reduced bone mineral density_HP:0004349,NPM1
+Reduced bone mineral density_HP:0004349,NPR2
+Reduced bone mineral density_HP:0004349,NR0B1
+Reduced bone mineral density_HP:0004349,NR5A1
+Reduced bone mineral density_HP:0004349,NRAS
+Reduced bone mineral density_HP:0004349,NSD2
+Reduced bone mineral density_HP:0004349,NSMF
+Reduced bone mineral density_HP:0004349,NUP107
+Reduced bone mineral density_HP:0004349,OCA2
+Reduced bone mineral density_HP:0004349,OCRL
+Reduced bone mineral density_HP:0004349,OFD1
+Reduced bone mineral density_HP:0004349,OTX2
+Reduced bone mineral density_HP:0004349,P3H1
+Reduced bone mineral density_HP:0004349,P4HB
+Reduced bone mineral density_HP:0004349,PALB2
+Reduced bone mineral density_HP:0004349,PARN
+Reduced bone mineral density_HP:0004349,PCCA
+Reduced bone mineral density_HP:0004349,PCCB
+Reduced bone mineral density_HP:0004349,PDE11A
+Reduced bone mineral density_HP:0004349,PDE8B
+Reduced bone mineral density_HP:0004349,PDGFRB
+Reduced bone mineral density_HP:0004349,PDLIM4
+Reduced bone mineral density_HP:0004349,PEPD
+Reduced bone mineral density_HP:0004349,PEX12
+Reduced bone mineral density_HP:0004349,PHEX
+Reduced bone mineral density_HP:0004349,PHGDH
+Reduced bone mineral density_HP:0004349,PHKA2
+Reduced bone mineral density_HP:0004349,PHKG2
+Reduced bone mineral density_HP:0004349,PIGG
+Reduced bone mineral density_HP:0004349,PIGT
+Reduced bone mineral density_HP:0004349,PIGU
+Reduced bone mineral density_HP:0004349,PIGY
+Reduced bone mineral density_HP:0004349,PIK3CD
+Reduced bone mineral density_HP:0004349,PLEKHM1
+Reduced bone mineral density_HP:0004349,PLOD1
+Reduced bone mineral density_HP:0004349,PLOD2
+Reduced bone mineral density_HP:0004349,PLOD3
+Reduced bone mineral density_HP:0004349,PLS3
+Reduced bone mineral density_HP:0004349,PMM2
+Reduced bone mineral density_HP:0004349,POF1B
+Reduced bone mineral density_HP:0004349,POLD1
+Reduced bone mineral density_HP:0004349,POLE
+Reduced bone mineral density_HP:0004349,POLG
+Reduced bone mineral density_HP:0004349,POLG2
+Reduced bone mineral density_HP:0004349,POLR3A
+Reduced bone mineral density_HP:0004349,POLR3H
+Reduced bone mineral density_HP:0004349,POU1F1
+Reduced bone mineral density_HP:0004349,POU2AF1
+Reduced bone mineral density_HP:0004349,PRDM5
+Reduced bone mineral density_HP:0004349,PRKACA
+Reduced bone mineral density_HP:0004349,PRKAR1A
+Reduced bone mineral density_HP:0004349,PRLR
+Reduced bone mineral density_HP:0004349,PROK2
+Reduced bone mineral density_HP:0004349,PROKR2
+Reduced bone mineral density_HP:0004349,PROP1
+Reduced bone mineral density_HP:0004349,PSAP
+Reduced bone mineral density_HP:0004349,PSAT1
+Reduced bone mineral density_HP:0004349,PSMC3IP
+Reduced bone mineral density_HP:0004349,PTEN
+Reduced bone mineral density_HP:0004349,PTH1R
+Reduced bone mineral density_HP:0004349,PWAR1
+Reduced bone mineral density_HP:0004349,PWRN1
+Reduced bone mineral density_HP:0004349,PYCR1
+Reduced bone mineral density_HP:0004349,PYGL
+Reduced bone mineral density_HP:0004349,RAB3GAP1
+Reduced bone mineral density_HP:0004349,RAD51
+Reduced bone mineral density_HP:0004349,RAD51C
+Reduced bone mineral density_HP:0004349,RECQL4
+Reduced bone mineral density_HP:0004349,RETREG1
+Reduced bone mineral density_HP:0004349,RFC2
+Reduced bone mineral density_HP:0004349,RFWD3
+Reduced bone mineral density_HP:0004349,RIN2
+Reduced bone mineral density_HP:0004349,RNF113A
+Reduced bone mineral density_HP:0004349,RNF125
+Reduced bone mineral density_HP:0004349,RNU4ATAC
+Reduced bone mineral density_HP:0004349,RPL10
+Reduced bone mineral density_HP:0004349,RPL11
+Reduced bone mineral density_HP:0004349,RRM2B
+Reduced bone mineral density_HP:0004349,RSPRY1
+Reduced bone mineral density_HP:0004349,RTEL1
+Reduced bone mineral density_HP:0004349,RUNX1
+Reduced bone mineral density_HP:0004349,RUNX2
+Reduced bone mineral density_HP:0004349,SATB2
+Reduced bone mineral density_HP:0004349,SBDS
+Reduced bone mineral density_HP:0004349,SC5D
+Reduced bone mineral density_HP:0004349,SCARB2
+Reduced bone mineral density_HP:0004349,SCN9A
+Reduced bone mineral density_HP:0004349,SEC23A
+Reduced bone mineral density_HP:0004349,SEC24D
+Reduced bone mineral density_HP:0004349,SEMA3A
+Reduced bone mineral density_HP:0004349,SERPINH1
+Reduced bone mineral density_HP:0004349,SFRP4
+Reduced bone mineral density_HP:0004349,SGMS2
+Reduced bone mineral density_HP:0004349,SH3PXD2B
+Reduced bone mineral density_HP:0004349,SIM1
+Reduced bone mineral density_HP:0004349,SKI
+Reduced bone mineral density_HP:0004349,SLC12A1
+Reduced bone mineral density_HP:0004349,SLC17A5
+Reduced bone mineral density_HP:0004349,SLC25A19
+Reduced bone mineral density_HP:0004349,SLC25A4
+Reduced bone mineral density_HP:0004349,SLC2A2
+Reduced bone mineral density_HP:0004349,SLC34A1
+Reduced bone mineral density_HP:0004349,SLC34A3
+Reduced bone mineral density_HP:0004349,SLC35A2
+Reduced bone mineral density_HP:0004349,SLC37A4
+Reduced bone mineral density_HP:0004349,SLC39A13
+Reduced bone mineral density_HP:0004349,SLC39A8
+Reduced bone mineral density_HP:0004349,SLC4A1
+Reduced bone mineral density_HP:0004349,SLC7A7
+Reduced bone mineral density_HP:0004349,SLCO2A1
+Reduced bone mineral density_HP:0004349,SLX4
+Reduced bone mineral density_HP:0004349,SMAD3
+Reduced bone mineral density_HP:0004349,SMARCAL1
+Reduced bone mineral density_HP:0004349,SMARCD2
+Reduced bone mineral density_HP:0004349,SMPD1
+Reduced bone mineral density_HP:0004349,SMS
+Reduced bone mineral density_HP:0004349,SNORD115-1
+Reduced bone mineral density_HP:0004349,SNORD116-1
+Reduced bone mineral density_HP:0004349,SNRPN
+Reduced bone mineral density_HP:0004349,SNX10
+Reduced bone mineral density_HP:0004349,SOX10
+Reduced bone mineral density_HP:0004349,SOX3
+Reduced bone mineral density_HP:0004349,SOX9
+Reduced bone mineral density_HP:0004349,SP7
+Reduced bone mineral density_HP:0004349,SPARC
+Reduced bone mineral density_HP:0004349,SPIB
+Reduced bone mineral density_HP:0004349,SPIDR
+Reduced bone mineral density_HP:0004349,SPRY4
+Reduced bone mineral density_HP:0004349,SRC
+Reduced bone mineral density_HP:0004349,SRP54
+Reduced bone mineral density_HP:0004349,SRSF2
+Reduced bone mineral density_HP:0004349,SRY
+Reduced bone mineral density_HP:0004349,STAT1
+Reduced bone mineral density_HP:0004349,STAT3
+Reduced bone mineral density_HP:0004349,STAT6
+Reduced bone mineral density_HP:0004349,STN1
+Reduced bone mineral density_HP:0004349,STX1A
+Reduced bone mineral density_HP:0004349,TAC3
+Reduced bone mineral density_HP:0004349,TACR3
+Reduced bone mineral density_HP:0004349,TAF1
+Reduced bone mineral density_HP:0004349,TAPT1
+Reduced bone mineral density_HP:0004349,TARS1
+Reduced bone mineral density_HP:0004349,TBCK
+Reduced bone mineral density_HP:0004349,TBL2
+Reduced bone mineral density_HP:0004349,TCF4
+Reduced bone mineral density_HP:0004349,TCIRG1
+Reduced bone mineral density_HP:0004349,TENT5A
+Reduced bone mineral density_HP:0004349,TERC
+Reduced bone mineral density_HP:0004349,TERT
+Reduced bone mineral density_HP:0004349,TET2
+Reduced bone mineral density_HP:0004349,TGFBR2
+Reduced bone mineral density_HP:0004349,TINF2
+Reduced bone mineral density_HP:0004349,TJP2
+Reduced bone mineral density_HP:0004349,TMEM165
+Reduced bone mineral density_HP:0004349,TMEM38B
+Reduced bone mineral density_HP:0004349,TMEM67
+Reduced bone mineral density_HP:0004349,TNFRSF11A
+Reduced bone mineral density_HP:0004349,TNFRSF11B
+Reduced bone mineral density_HP:0004349,TNFSF11
+Reduced bone mineral density_HP:0004349,TNFSF15
+Reduced bone mineral density_HP:0004349,TNPO3
+Reduced bone mineral density_HP:0004349,TONSL
+Reduced bone mineral density_HP:0004349,TREM2
+Reduced bone mineral density_HP:0004349,TRIP11
+Reduced bone mineral density_HP:0004349,TRMT10A
+Reduced bone mineral density_HP:0004349,TRPS1
+Reduced bone mineral density_HP:0004349,TRPV6
+Reduced bone mineral density_HP:0004349,TWNK
+Reduced bone mineral density_HP:0004349,TYROBP
+Reduced bone mineral density_HP:0004349,UBE2T
+Reduced bone mineral density_HP:0004349,UNC80
+Reduced bone mineral density_HP:0004349,UROD
+Reduced bone mineral density_HP:0004349,UROS
+Reduced bone mineral density_HP:0004349,USB1
+Reduced bone mineral density_HP:0004349,USP8
+Reduced bone mineral density_HP:0004349,USP9X
+Reduced bone mineral density_HP:0004349,VAMP7
+Reduced bone mineral density_HP:0004349,VDR
+Reduced bone mineral density_HP:0004349,VPS53
+Reduced bone mineral density_HP:0004349,WDR11
+Reduced bone mineral density_HP:0004349,WDR19
+Reduced bone mineral density_HP:0004349,WDR35
+Reduced bone mineral density_HP:0004349,WNK1
+Reduced bone mineral density_HP:0004349,WNT1
+Reduced bone mineral density_HP:0004349,WNT3A
+Reduced bone mineral density_HP:0004349,WRAP53
+Reduced bone mineral density_HP:0004349,WRN
+Reduced bone mineral density_HP:0004349,WT1
+Reduced bone mineral density_HP:0004349,WWOX
+Reduced bone mineral density_HP:0004349,XRCC2
+Reduced bone mineral density_HP:0004349,XYLT2
+Reduced bone mineral density_HP:0004349,ZBTB20
+Reduced bone mineral density_HP:0004349,ZFPM2
+Reduced bone mineral density_HP:0004349,ZMPSTE24
+Reduced bone mineral density_HP:0004349,ZNF469
+Osteopenia_HP:0000938,ADAMTS2
+Osteopenia_HP:0000938,ADAMTSL2
+Osteopenia_HP:0000938,ADCY10
+Osteopenia_HP:0000938,AEBP1
+Osteopenia_HP:0000938,AIP
+Osteopenia_HP:0000938,ALDH18A1
+Osteopenia_HP:0000938,ALG13
+Osteopenia_HP:0000938,ANAPC1
+Osteopenia_HP:0000938,ANO5
+Osteopenia_HP:0000938,ANTXR2
+Osteopenia_HP:0000938,ATP6V0A2
+Osteopenia_HP:0000938,ATP7A
+Osteopenia_HP:0000938,AVP
+Osteopenia_HP:0000938,B3GALT6
+Osteopenia_HP:0000938,B3GAT3
+Osteopenia_HP:0000938,B4GALT7
+Osteopenia_HP:0000938,BAZ1B
+Osteopenia_HP:0000938,BMP15
+Osteopenia_HP:0000938,BNC1
+Osteopenia_HP:0000938,BRAF
+Osteopenia_HP:0000938,CARD11
+Osteopenia_HP:0000938,CAVIN1
+Osteopenia_HP:0000938,CCND1
+Osteopenia_HP:0000938,CDC73
+Osteopenia_HP:0000938,CDH23
+Osteopenia_HP:0000938,CHD7
+Osteopenia_HP:0000938,CHST3
+Osteopenia_HP:0000938,CLIP2
+Osteopenia_HP:0000938,COG1
+Osteopenia_HP:0000938,COL1A1
+Osteopenia_HP:0000938,COL5A1
+Osteopenia_HP:0000938,COL5A2
+Osteopenia_HP:0000938,COL7A1
+Osteopenia_HP:0000938,COX4I2
+Osteopenia_HP:0000938,CREB3L1
+Osteopenia_HP:0000938,CRIPT
+Osteopenia_HP:0000938,CRTAP
+Osteopenia_HP:0000938,CTC1
+Osteopenia_HP:0000938,CTCF
+Osteopenia_HP:0000938,CYP19A1
+Osteopenia_HP:0000938,CYP27A1
+Osteopenia_HP:0000938,CYP3A4
+Osteopenia_HP:0000938,DCAF17
+Osteopenia_HP:0000938,DCHS1
+Osteopenia_HP:0000938,DDOST
+Osteopenia_HP:0000938,DNAJC21
+Osteopenia_HP:0000938,DPM2
+Osteopenia_HP:0000938,DUSP6
+Osteopenia_HP:0000938,EED
+Osteopenia_HP:0000938,EFL1
+Osteopenia_HP:0000938,EIF2AK3
+Osteopenia_HP:0000938,ELANE
+Osteopenia_HP:0000938,ELN
+Osteopenia_HP:0000938,ERCC2
+Osteopenia_HP:0000938,ERCC3
+Osteopenia_HP:0000938,ESR1
+Osteopenia_HP:0000938,FARSB
+Osteopenia_HP:0000938,FAT4
+Osteopenia_HP:0000938,FBN1
+Osteopenia_HP:0000938,FBN2
+Osteopenia_HP:0000938,FGF17
+Osteopenia_HP:0000938,FGF8
+Osteopenia_HP:0000938,FGFR1
+Osteopenia_HP:0000938,FGFR2
+Osteopenia_HP:0000938,FKBP10
+Osteopenia_HP:0000938,FKBP14
+Osteopenia_HP:0000938,FLRT3
+Osteopenia_HP:0000938,FOXA2
+Osteopenia_HP:0000938,FSHR
+Osteopenia_HP:0000938,FUT8
+Osteopenia_HP:0000938,GATA1
+Osteopenia_HP:0000938,GBA1
+Osteopenia_HP:0000938,GCM2
+Osteopenia_HP:0000938,GEMIN4
+Osteopenia_HP:0000938,GFI1
+Osteopenia_HP:0000938,GLI2
+Osteopenia_HP:0000938,GLIS3
+Osteopenia_HP:0000938,GNAS
+Osteopenia_HP:0000938,GNPAT
+Osteopenia_HP:0000938,GNPTAB
+Osteopenia_HP:0000938,GNRH1
+Osteopenia_HP:0000938,GNRHR
+Osteopenia_HP:0000938,GORAB
+Osteopenia_HP:0000938,GPAA1
+Osteopenia_HP:0000938,GPR35
+Osteopenia_HP:0000938,GTF2E2
+Osteopenia_HP:0000938,GTF2H5
+Osteopenia_HP:0000938,GTF2I
+Osteopenia_HP:0000938,GTF2IRD1
+Osteopenia_HP:0000938,GZF1
+Osteopenia_HP:0000938,HBB
+Osteopenia_HP:0000938,HECW2
+Osteopenia_HP:0000938,HERC2
+Osteopenia_HP:0000938,HESX1
+Osteopenia_HP:0000938,HNRNPK
+Osteopenia_HP:0000938,HPGD
+Osteopenia_HP:0000938,HRAS
+Osteopenia_HP:0000938,HS6ST1
+Osteopenia_HP:0000938,HSD17B4
+Osteopenia_HP:0000938,IARS2
+Osteopenia_HP:0000938,IER3IP1
+Osteopenia_HP:0000938,IFITM5
+Osteopenia_HP:0000938,IGF1
+Osteopenia_HP:0000938,IL17RD
+Osteopenia_HP:0000938,IL1RN
+Osteopenia_HP:0000938,IPW
+Osteopenia_HP:0000938,IRX5
+Osteopenia_HP:0000938,KCNJ1
+Osteopenia_HP:0000938,KISS1
+Osteopenia_HP:0000938,KISS1R
+Osteopenia_HP:0000938,KL
+Osteopenia_HP:0000938,KNSTRN
+Osteopenia_HP:0000938,KRAS
+Osteopenia_HP:0000938,LHX4
+Osteopenia_HP:0000938,LIFR
+Osteopenia_HP:0000938,LIMK1
+Osteopenia_HP:0000938,LMNA
+Osteopenia_HP:0000938,LRP5
+Osteopenia_HP:0000938,MAFB
+Osteopenia_HP:0000938,MAGEL2
+Osteopenia_HP:0000938,MAN2B1
+Osteopenia_HP:0000938,MBTPS2
+Osteopenia_HP:0000938,MDM4
+Osteopenia_HP:0000938,MEN1
+Osteopenia_HP:0000938,MGAT2
+Osteopenia_HP:0000938,MKRN3
+Osteopenia_HP:0000938,MLXIPL
+Osteopenia_HP:0000938,MMP1
+Osteopenia_HP:0000938,MMP14
+Osteopenia_HP:0000938,MMP2
+Osteopenia_HP:0000938,MPLKIP
+Osteopenia_HP:0000938,MRPS22
+Osteopenia_HP:0000938,MST1
+Osteopenia_HP:0000938,MTAP
+Osteopenia_HP:0000938,MTTP
+Osteopenia_HP:0000938,MTX2
+Osteopenia_HP:0000938,NAGA
+Osteopenia_HP:0000938,NCF1
+Osteopenia_HP:0000938,NDN
+Osteopenia_HP:0000938,NF1
+Osteopenia_HP:0000938,NHERF1
+Osteopenia_HP:0000938,NOTCH2
+Osteopenia_HP:0000938,NPAP1
+Osteopenia_HP:0000938,NPR2
+Osteopenia_HP:0000938,NR5A1
+Osteopenia_HP:0000938,NRAS
+Osteopenia_HP:0000938,NSMF
+Osteopenia_HP:0000938,NUP107
+Osteopenia_HP:0000938,OCA2
+Osteopenia_HP:0000938,OTX2
+Osteopenia_HP:0000938,P3H1
+Osteopenia_HP:0000938,P4HB
+Osteopenia_HP:0000938,PDE11A
+Osteopenia_HP:0000938,PDGFRB
+Osteopenia_HP:0000938,PHGDH
+Osteopenia_HP:0000938,PIGT
+Osteopenia_HP:0000938,PIGU
+Osteopenia_HP:0000938,PIGY
+Osteopenia_HP:0000938,PIK3CD
+Osteopenia_HP:0000938,PLEKHM1
+Osteopenia_HP:0000938,PLOD1
+Osteopenia_HP:0000938,PLOD2
+Osteopenia_HP:0000938,PLOD3
+Osteopenia_HP:0000938,PLS3
+Osteopenia_HP:0000938,PMM2
+Osteopenia_HP:0000938,POLE
+Osteopenia_HP:0000938,POLR3A
+Osteopenia_HP:0000938,POLR3H
+Osteopenia_HP:0000938,POU1F1
+Osteopenia_HP:0000938,PRKACA
+Osteopenia_HP:0000938,PRKAR1A
+Osteopenia_HP:0000938,PRLR
+Osteopenia_HP:0000938,PROK2
+Osteopenia_HP:0000938,PROKR2
+Osteopenia_HP:0000938,PROP1
+Osteopenia_HP:0000938,PSAP
+Osteopenia_HP:0000938,PSAT1
+Osteopenia_HP:0000938,PSMC3IP
+Osteopenia_HP:0000938,PTH1R
+Osteopenia_HP:0000938,PWAR1
+Osteopenia_HP:0000938,PWRN1
+Osteopenia_HP:0000938,PYCR1
+Osteopenia_HP:0000938,PYGL
+Osteopenia_HP:0000938,RECQL4
+Osteopenia_HP:0000938,RFC2
+Osteopenia_HP:0000938,RNF113A
+Osteopenia_HP:0000938,RNF125
+Osteopenia_HP:0000938,RNU4ATAC
+Osteopenia_HP:0000938,RPL11
+Osteopenia_HP:0000938,RSPRY1
+Osteopenia_HP:0000938,SATB2
+Osteopenia_HP:0000938,SBDS
+Osteopenia_HP:0000938,SCARB2
+Osteopenia_HP:0000938,SEC23A
+Osteopenia_HP:0000938,SEC24D
+Osteopenia_HP:0000938,SERPINH1
+Osteopenia_HP:0000938,SGMS2
+Osteopenia_HP:0000938,SH3PXD2B
+Osteopenia_HP:0000938,SIM1
+Osteopenia_HP:0000938,SKI
+Osteopenia_HP:0000938,SLC12A1
+Osteopenia_HP:0000938,SLC17A5
+Osteopenia_HP:0000938,SLC2A2
+Osteopenia_HP:0000938,SLC34A1
+Osteopenia_HP:0000938,SLC35A2
+Osteopenia_HP:0000938,SLC37A4
+Osteopenia_HP:0000938,SLC39A13
+Osteopenia_HP:0000938,SLC39A8
+Osteopenia_HP:0000938,SLC7A7
+Osteopenia_HP:0000938,SMARCAL1
+Osteopenia_HP:0000938,SMARCD2
+Osteopenia_HP:0000938,SMPD1
+Osteopenia_HP:0000938,SNORD115-1
+Osteopenia_HP:0000938,SNORD116-1
+Osteopenia_HP:0000938,SNRPN
+Osteopenia_HP:0000938,SOX3
+Osteopenia_HP:0000938,SPIDR
+Osteopenia_HP:0000938,SPRY4
+Osteopenia_HP:0000938,SRP54
+Osteopenia_HP:0000938,STAT1
+Osteopenia_HP:0000938,STAT3
+Osteopenia_HP:0000938,STN1
+Osteopenia_HP:0000938,STX1A
+Osteopenia_HP:0000938,TAC3
+Osteopenia_HP:0000938,TACR3
+Osteopenia_HP:0000938,TAF1
+Osteopenia_HP:0000938,TAPT1
+Osteopenia_HP:0000938,TARS1
+Osteopenia_HP:0000938,TBL2
+Osteopenia_HP:0000938,TCF4
+Osteopenia_HP:0000938,TCIRG1
+Osteopenia_HP:0000938,TENT5A
+Osteopenia_HP:0000938,TERT
+Osteopenia_HP:0000938,TMEM38B
+Osteopenia_HP:0000938,TMEM67
+Osteopenia_HP:0000938,TONSL
+Osteopenia_HP:0000938,TREM2
+Osteopenia_HP:0000938,TRPS1
+Osteopenia_HP:0000938,TRPV6
+Osteopenia_HP:0000938,UNC80
+Osteopenia_HP:0000938,UROD
+Osteopenia_HP:0000938,UROS
+Osteopenia_HP:0000938,USP9X
+Osteopenia_HP:0000938,WDR11
+Osteopenia_HP:0000938,XYLT2
+Osteopenia_HP:0000938,ZMPSTE24
+"Osteoporosis, Senile",ALPL
+"Osteoporosis, Senile",O75197
+"Osteoporosis, Senile",P02452
+"Osteoporosis, Senile",P04628
+"Osteoporosis, Senile",P13797
+"Osteoporosis, Senile",Q9BXB1
+"Osteoporosis, Senile",SRC
+"Osteoporosis, Senile",WNT1
+Severe generalized osteoporosis_HP:0005897,COL1A1
+Severe generalized osteoporosis_HP:0005897,COL1A2

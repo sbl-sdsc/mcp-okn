@@ -1,0 +1,23 @@
+graph TD
+classDef projected fill:lightgreen;
+classDef literal fill:orange;
+classDef iri fill:yellow;
+  v1("?K"):::projected 
+  v5("?gene")
+  v2("?trait"):::projected 
+  bind0[/"VALUES ?trait"/]
+  bind0-->v2
+  bind00(["MONDO:0001703"])
+  bind00 --> bind0
+  bind01(["MONDO:0005150"])
+  bind01 --> bind0
+  bind02(["MONDO:0005266"])
+  bind02 --> bind0
+  bind0more([+59 more])
+  bind0more --> bind0
+  subgraph graph0["GRAPH https://purl.org/okn/frink/kg/digcfdekg"]
+    style graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+    v5 --"dig:geneToTrait"--> v2
+  end
+  bind1[/"count(?gene)"/]
+  bind1 --as--o v1
