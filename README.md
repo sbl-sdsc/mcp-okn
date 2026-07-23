@@ -130,10 +130,10 @@ evidence kind, then ranked by cross-source agreement. Every case study ships an
 interactive HTML report, a reproducibility record preserving every verbatim
 SPARQL query, and an Excel workbook.
 
-> [!NOTE]
-> **Prerequisites for re-running a case study:**
-> - The two [Skills](#skills) — `okn-bioanalysis` (analysis) + `okn-report-style` (report format).
-> - The **PubMed** and **Paperclip** MCP connectors — [URLs and setup](#literature-comparison-connectors-pubmed--paperclip) (literature-comparison step only).
+**Re-running a case study** needs the two [Skills](#skills) — `okn-bioanalysis`
+(analysis) and `okn-report-style` (report format) — plus the **PubMed** and
+**Paperclip** [MCP connectors](#literature-comparison-connectors-pubmed--paperclip),
+the latter only for the literature-comparison step.
 
 | Case study | Report | Literature Comparison | Data | Reproducibility | Folder |
 |---|---|---|---|---|---|
