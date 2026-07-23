@@ -121,14 +121,14 @@ evidence kind, then ranked by cross-source agreement. Every case study ships an
 interactive HTML report, a reproducibility record preserving every verbatim
 SPARQL query, and an Excel workbook.
 
-| Case study | Report | Reproducibility | Data (Excel) |
-|---|---|---|---|
-| **Type 2 diabetes** — 16 KGs, 2,117 genes (381 multi-source) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Diabetes/Diabetes_report.html) | [Reproducibility](docs/examples/Diabetes/Diabetes_reproducibility.md) | [Excel](docs/examples/Diabetes/Diabetes_results.xlsx) |
-| **Alzheimer's disease** — 8 KGs, 2,662 genes (318 multi-source) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Alzheimers/Alzheimers_report.html) | [Reproducibility](docs/examples/Alzheimers/Alzheimers_reproducibility.md) | [Excel](docs/examples/Alzheimers/Alzheimers_results.xlsx) |
-| **Multiple sclerosis** — 14 KGs, 2,397 genes (52 Tier A) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/MS/MS_report.html) | [Reproducibility](docs/examples/MS/MS_reproducibility.md) | [Excel](docs/examples/MS/MS_results.xlsx) |
-| **Spaceflight-induced bone loss** — 8 KGs, 2,686-gene flight signature (777 core) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Bone-Health/Bone-Health_report.html) | [Reproducibility](docs/examples/Bone-Health/Bone-Health_reproducibility.md) | [Excel](docs/examples/Bone-Health/Bone-Health_results.xlsx) |
-| **Spaceflight-associated neuro-ocular syndrome (SANS)** — 6 KGs, 169-gene cross-species core | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/SANS/SANS_report.html) | [Reproducibility](docs/examples/SANS/SANS_reproducibility.md) | [Excel](docs/examples/SANS/SANS_results.xlsx) |
-| **PFAS source prioritization** — 5 KGs, 2,949 S2 cells, 12,714 co-located facilities | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/PFAS/PFAS_report.html) | [Reproducibility](docs/examples/PFAS/PFAS_reproducibility.md) | [Excel](docs/examples/PFAS/PFAS_results.xlsx) |
+| Case study | Report | Literature Comparison | Data | Reproducibility |
+|---|---|---|---|---|
+| **Type 2 diabetes** — 16 KGs, 2,117 genes (381 multi-source) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Diabetes/Diabetes_report.html) | [Literature Comparison](docs/examples/Diabetes/Diabetes_literature_comparison.md) | [Excel](docs/examples/Diabetes/Diabetes_results.xlsx) | [Reproducibility](docs/examples/Diabetes/Diabetes_reproducibility.md) |
+| **Alzheimer's disease** — 8 KGs, 2,662 genes (318 multi-source) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Alzheimers/Alzheimers_report.html) | — | [Excel](docs/examples/Alzheimers/Alzheimers_results.xlsx) | [Reproducibility](docs/examples/Alzheimers/Alzheimers_reproducibility.md) |
+| **Multiple sclerosis** — 14 KGs, 2,397 genes (52 Tier A) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/MS/MS_report.html) | [Literature Comparison](docs/examples/MS/MS_literature_comparison.md) | [Excel](docs/examples/MS/MS_results.xlsx) | [Reproducibility](docs/examples/MS/MS_reproducibility.md) |
+| **Spaceflight-induced bone loss** — 8 KGs, 2,686-gene flight signature (777 core) | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Bone-Health/Bone-Health_report.html) | [Literature Comparison](docs/examples/Bone-Health/Bone-Health_literature_comparison.md) | [Excel](docs/examples/Bone-Health/Bone-Health_results.xlsx) | [Reproducibility](docs/examples/Bone-Health/Bone-Health_reproducibility.md) |
+| **Spaceflight-associated neuro-ocular syndrome (SANS)** — 6 KGs, 169-gene cross-species core | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/SANS/SANS_report.html) | [Literature Comparison](docs/examples/SANS/SANS_literature_comparison.md) | [Excel](docs/examples/SANS/SANS_results.xlsx) | [Reproducibility](docs/examples/SANS/SANS_reproducibility.md) |
+| **PFAS source prioritization** — 5 KGs, 2,949 S2 cells, 12,714 co-located facilities | [Report](https://sbl-sdsc.github.io/mcp-okn/docs/examples/PFAS/PFAS_report.html) | [Literature Comparison](docs/examples/PFAS/PFAS_literature_comparison.md) | [Excel](docs/examples/PFAS/PFAS_results.xlsx) | [Reproducibility](docs/examples/PFAS/PFAS_reproducibility.md) |
 
 Each report's Markdown source sits beside it in `docs/examples/`.
 
