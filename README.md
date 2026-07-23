@@ -283,7 +283,7 @@ Agent Skills work in these clients:
 | --- | --- | --- |
 | **Claude Desktop** (macOS / Windows) | Upload the zip under Settings → Capabilities → Skills | Pro, Max, Team, or Enterprise |
 | **claude.ai** (web) | Upload the zip under Settings → Capabilities → Skills | Pro, Max, Team, or Enterprise |
-| **ChatGPT** (web) | Type the prompt: `Install skill from GitHub: https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/skills/{skill}.zip` | Replace `{skill}` with `okn-report-style` or `okn-bioanalysis` |
+| **ChatGPT Desktop** | Type the prompt: `Install skill from GitHub: https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/skills/{skill}.zip` | Replace `{skill}` with `okn-report-style` or `okn-bioanalysis` |
 | **Claude Code** (CLI + IDE extensions) | Copy the folder into `.claude/skills/` or `~/.claude/skills/` ([see below](#claude-code-1)) | Free tier and up |
 | **Claude Agent SDK** | Point the SDK at the skill folder | For building custom agents |
 | **Claude Developer Platform** (API) | Load via the code-execution / Skills API | For programmatic use |
