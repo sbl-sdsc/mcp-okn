@@ -35,12 +35,16 @@ table=B.candidate_table(
     sources_col=("sources_n","sources_list"),
 )
 
-# Interactive county map ships as a standalone companion file (Environmental-Justice_county_map.html),
-# named in the report; inlining the 153KB folium iframe stalls the parity regex, so we link not inline.
+# Interactive OpenStreetMap county map: inline it in the report at the <!-- COUNTY_MAP --> marker,
+# using the self-contained <iframe srcdoc> build (no duplicate <html>/<body> tags, so the structure
+# and parity checks stay clean), AND ship the standalone companion file for full-screen viewing.
 import shutil
 shutil.copy(f"{D}/county_map.html", f"{BASE}/Environmental-Justice_county_map.html")
 B.build_report_from_markdown(MD, HTML, kpis=kpis, table=table, stats=stats)
-print("standalone interactive map: Environmental-Justice_county_map.html")
+iframe = open(f"{D}/county_map_iframe.html").read()
+html = open(HTML).read().replace("<!-- COUNTY_MAP -->", iframe, 1)
+open(HTML, "w").write(html)
+print("inlined interactive map + standalone companion: Environmental-Justice_county_map.html")
 
 # ================= Excel workbook =================
 import openpyxl
