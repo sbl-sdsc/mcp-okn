@@ -362,7 +362,9 @@ def folium_map_iframe(m, height=520, title="Interactive map"):
     whose HTML has duplicate document tags, so a raw-inlined map is caught before delivery.
     """
     doc = m.get_root().render()
-    srcdoc = html.escape(doc, quote=True)  # escape < > & " ' for the double-quoted attribute
+    srcdoc = html.escape(
+        doc, quote=True
+    )  # escape < > & " ' for the double-quoted attribute
     return (
         f'<iframe title="{html.escape(title)}" srcdoc="{srcdoc}" loading="lazy" '
         f'style="width:100%;height:{int(height)}px;border:1px solid #e5e7eb;'

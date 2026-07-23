@@ -780,7 +780,9 @@ def check_report_parity(md_path, html_path, min_word_ratio=0.85, ignore_sections
     fig_note = (
         ""
         if figures_ok
-        else "; FIGURES NOT CONSECUTIVE (" + "; ".join(fig_issues) + ") — number figures 1..N in "
+        else "; FIGURES NOT CONSECUTIVE ("
+        + "; ".join(fig_issues)
+        + ") — number figures 1..N in "
         "document order and rename files to match (renumber captions + files on reorder)"
     )
     print(

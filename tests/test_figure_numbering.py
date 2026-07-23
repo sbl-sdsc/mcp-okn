@@ -7,7 +7,9 @@ import sys
 from pathlib import Path
 
 # build_report_html is a report-style skill script (stdlib-only), not part of the mcp_okn package.
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "skills/okn-report-style/scripts"))
+sys.path.insert(
+    0, str(Path(__file__).resolve().parent.parent / "skills/okn-report-style/scripts")
+)
 import build_report_html as b
 
 

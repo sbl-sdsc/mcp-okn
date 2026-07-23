@@ -253,7 +253,23 @@ def _as_utc(dt: datetime) -> datetime:
     Keeps span arithmetic from raising on a naive-vs-aware mix — logged timestamps carry ``+00:00``
     but a caller-supplied chat start/end may be naive.
     """
-    return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt.astimezone(timezone.utc)
+    return (
+        dt.replace(tzinfo=timezone.utc)
+        if dt.tzinfo is None
+        else dt.astimezone(timezone.utc)
+    )
+
+
+def _parse_iso(s: str) -> datetime:
+    """Parse an ISO-8601 timestamp, tolerating a trailing ``Z`` (UTC designator).
+
+    Python 3.10's ``datetime.fromisoformat`` rejects ``Z`` (only 3.11+ accepts it), so normalise it
+    to ``+00:00`` first — a caller may pass e.g. ``2026-07-18T09:03:00Z``. Raises ``ValueError`` on
+    unparseable input, exactly like ``fromisoformat``, so existing callers' fallbacks still fire.
+    """
+    if isinstance(s, str) and s.endswith("Z"):
+        s = s[:-1] + "+00:00"
+    return datetime.fromisoformat(s)
 
 
 def _format_span(first: datetime, last: datetime) -> str:
@@ -283,7 +299,7 @@ def _active_window(entries: list[dict[str, Any]]) -> str:
     if not stamps:
         return ""
     try:
-        times = sorted(datetime.fromisoformat(s) for s in stamps)
+        times = sorted(_parse_iso(s) for s in stamps)
     except ValueError:
         return ""
     return _format_span(times[0], times[-1])
@@ -298,12 +314,12 @@ def _chat_window(started: str, ended: str | None) -> str | None:
     supplied ``ended``) can't be parsed, so the caller can fall back to the active-query window.
     """
     try:
-        start = datetime.fromisoformat(started)
+        start = _parse_iso(started)
     except (ValueError, TypeError):
         return None
     if ended:
         try:
-            end = datetime.fromisoformat(ended)
+            end = _parse_iso(ended)
         except (ValueError, TypeError):
             return None
     else:

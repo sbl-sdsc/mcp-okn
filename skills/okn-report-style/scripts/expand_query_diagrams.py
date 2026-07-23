@@ -70,7 +70,9 @@ _QUOTED = re.compile(r'"(?:[^"\\]|\\.)*"')
 _NODE_DECL = re.compile(r"^\s*([A-Za-z]\w*)(?:\(|\[|\{)")
 _SUBGRAPH_DECL = re.compile(r"^\s*subgraph\s+([A-Za-z]\w*)")
 _STYLE_DECL = re.compile(r"^\s*style\s+([A-Za-z]\w*)")
-_KEYWORDS = frozenset({"subgraph", "end", "style", "classDef", "graph", "linkStyle", "click"})
+_KEYWORDS = frozenset(
+    {"subgraph", "end", "style", "classDef", "graph", "linkStyle", "click"}
+)
 
 
 def _first_directive(mermaid: str) -> str:
@@ -117,7 +119,9 @@ def namespace_diagram(mermaid: str, prefix: str) -> str:
     result = []
     for line in mermaid.split("\n"):
         s = line.strip()
-        result.append(line if s == "graph TD" or s.startswith("classDef ") else rewrite(line))
+        result.append(
+            line if s == "graph TD" or s.startswith("classDef ") else rewrite(line)
+        )
     return "\n".join(result)
 
 
@@ -259,7 +263,11 @@ def diagrams_missing_graph_box(text: str) -> list[str]:
                     mb.append(lines[k])
                     k += 1
                 sparql = "\n".join(body).strip()
-                if sparql and _GRAPH_CLAUSE.search(sparql) and not _GRAPH_BOX.search("\n".join(mb)):
+                if (
+                    sparql
+                    and _GRAPH_CLAUSE.search(sparql)
+                    and not _GRAPH_BOX.search("\n".join(mb))
+                ):
                     out.append(sparql)
                 i = k + 1
         else:
@@ -376,7 +384,11 @@ def main(argv: list[str] | None = None) -> int:
         f"{dst}: {st['sparql']} sparql blocks → {st['added']} diagrams added, "
         f"{st['already']} already present, {st['absent']} absent-skipped, "
         f"{st['oversized']} oversized-skipped (>{cap})"
-        + (f"; stripped {st['notices_stripped']} stale mcp-okn notice(s)" if st["notices_stripped"] else "")
+        + (
+            f"; stripped {st['notices_stripped']} stale mcp-okn notice(s)"
+            if st["notices_stripped"]
+            else ""
+        )
     )
     for snip, ln in st["oversized_queries"]:
         print(f"  oversized ({ln} chars, skipped): {snip}…")

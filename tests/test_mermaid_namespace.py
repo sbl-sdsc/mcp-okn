@@ -72,7 +72,9 @@ def test_every_id_gets_the_prefix_and_none_bare_survive():
         # ...and no original bare id is reachable outside a label span.
         stripped = re.sub(r'"(?:[^"\\]|\\.)*"', "", ns)
         for i in ids:
-            assert not re.search(rf"(?<![A-Za-z0-9]){re.escape(i)}(?![A-Za-z0-9])", stripped), (
+            assert not re.search(
+                rf"(?<![A-Za-z0-9]){re.escape(i)}(?![A-Za-z0-9])", stripped
+            ), (
                 name,
                 i,
             )

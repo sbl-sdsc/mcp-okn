@@ -32,7 +32,9 @@ _NODE_DECL = re.compile(r"^\s*([A-Za-z]\w*)(?:\(|\[|\{)")
 _SUBGRAPH_DECL = re.compile(r"^\s*subgraph\s+([A-Za-z]\w*)")
 _STYLE_DECL = re.compile(r"^\s*style\s+([A-Za-z]\w*)")
 # Line-leading words that are Mermaid keywords, never node ids.
-_KEYWORDS = frozenset({"subgraph", "end", "style", "classDef", "graph", "linkStyle", "click"})
+_KEYWORDS = frozenset(
+    {"subgraph", "end", "style", "classDef", "graph", "linkStyle", "click"}
+)
 
 
 def _first_directive(mermaid: str) -> str:

@@ -83,7 +83,9 @@ def _emit_worklist(src: Path, text: str) -> int:
     """
     queries = queries_needing_diagrams(text)
     if not queries:
-        print(f"{src}: every ```sparql block already has a diagram — nothing to re-add.")
+        print(
+            f"{src}: every ```sparql block already has a diagram — nothing to re-add."
+        )
         return 0
     work = src.with_name(src.name + ".queries.json")
     work.write_text(json.dumps([{"sparql": q} for q in queries], indent=2))
@@ -210,7 +212,9 @@ def main(argv: list[str] | None = None) -> int:
     else:
         library = _try_library(portable=args.portable)
         if library is None:
-            return _emit_worklist(src, text)  # path 3: no package, no diagrams.json → work-list
+            return _emit_worklist(
+                src, text
+            )  # path 3: no package, no diagrams.json → work-list
         generate = library  # path 2: generate locally AND inject in this call
 
     new_text, st = expand(text, generate, max_chars=cap)

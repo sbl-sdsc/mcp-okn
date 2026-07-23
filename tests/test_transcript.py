@@ -894,7 +894,9 @@ async def test_query_diagrams_namespaced_uniquely():
     diagrams collide on `graph0`/`v1`/`bind0` and stop rendering. Each block gets a
     distinct `q<N>` id namespace."""
     session.record(_DIAGRAM_QUERY, "json", result=JSON_RESULT)
-    session.record(_DIAGRAM_QUERY.replace("?disease", "?d2"), "json", result=JSON_RESULT)
+    session.record(
+        _DIAGRAM_QUERY.replace("?disease", "?d2"), "json", result=JSON_RESULT
+    )
     md = await create_chat_transcript(model="m")
     # No diagram uses the bare, collision-prone ids...
     assert "subgraph graph0[" not in md
@@ -1087,7 +1089,9 @@ async def test_record_appendix_merges_before_queries():
     assert "- FDR < 0.05." in md
     # placed after the header/KG list and before the query record
     assert md.index("## Rules, thresholds and joins") < md.index("## SPARQL queries")
-    assert md.index("## Knowledge graphs used") < md.index("## Rules, thresholds and joins")
+    assert md.index("## Knowledge graphs used") < md.index(
+        "## Rules, thresholds and joins"
+    )
 
 
 @pytest.mark.asyncio
