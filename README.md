@@ -118,12 +118,12 @@ verify each as live SPARQL, and validate the findings against the literature.
 
 ### Case studies
 
-Six end-to-end analyses that federate many Proto-OKN graphs into a single
+Eight end-to-end analyses that federate many Proto-OKN graphs into a single
 evidence-backed map — five of a disease's biology (genes, variants,
 pathways/gene sets, drugs, altered-activity signatures, and clinical/biomarker
-features), and one of environmental PFAS source attribution (detections
-co-located with regulated facilities, resolved to chemical identity, functional
-use, and toxicological coverage) — each finding tagged with its source(s) and
+features), and three of environmental exposure and justice (PFAS source
+attribution, the bisphenol chemical exposome, and cumulative environmental-justice
+burden across U.S. counties) — each finding tagged with its source(s) and
 evidence kind, then ranked by cross-source agreement. Every case study ships an
 interactive HTML report, a reproducibility record preserving every verbatim
 SPARQL query, and an Excel workbook.
@@ -142,6 +142,7 @@ SPARQL query, and an Excel workbook.
 | **Spaceflight-associated neuro-ocular syndrome (SANS)** — 6 KGs, 169-gene cross-species core | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/SANS/SANS_report.html) | [md](docs/examples/SANS/SANS_literature_comparison.md) | [xlsx](docs/examples/SANS/SANS_results.xlsx) | [md](docs/examples/SANS/SANS_reproducibility.md) |
 | **PFAS source prioritization** — 5 KGs, 2,949 S2 cells, 12,714 co-located facilities | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/PFAS/PFAS_report.html) | [md](docs/examples/PFAS/PFAS_literature_comparison.md) | [xlsx](docs/examples/PFAS/PFAS_results.xlsx) | [md](docs/examples/PFAS/PFAS_reproducibility.md) |
 | **Bisphenol chemical exposome** — 7 KGs, 13 bisphenol analogues, 183 target genes (186 consensus pairs) | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Bisphenol-Exposome/Bisphenol-Exposome_report.html) | [md](docs/examples/Bisphenol-Exposome/Bisphenol-Exposome_literature_comparison.md) | [xlsx](docs/examples/Bisphenol-Exposome/Bisphenol-Exposome_results.xlsx) | [md](docs/examples/Bisphenol-Exposome/Bisphenol-Exposome_reproducibility.md) |
+| **Cumulative environmental-justice burden** — 8 KGs, 3,134 counties, 6 burden domains (31 indicators), 495 high-burden | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Environmental-Justice/Environmental-Justice_report.html) | [md](docs/examples/Environmental-Justice/Environmental-Justice_literature_comparison.md) | [xlsx](docs/examples/Environmental-Justice/Environmental-Justice_results.xlsx) | [md](docs/examples/Environmental-Justice/Environmental-Justice_reproducibility.md) |
 
 Each report's Markdown source sits beside it in `docs/examples/`.
 

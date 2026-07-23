@@ -1,0 +1,2850 @@
+<iframe title="County burden hot-spots (spatialkg centroids)" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/&gt;
+    
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
+            &lt;style&gt;
+                #map_6f9d487b328328afa25dbabc4038142e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            &lt;/style&gt;
+
+            &lt;style&gt;html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            &lt;/style&gt;
+
+            &lt;style&gt;#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            &lt;/style&gt;
+
+            &lt;script&gt;
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            &lt;/script&gt;
+
+        
+&lt;/head&gt;
+&lt;body&gt;
+    
+    
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_6f9d487b328328afa25dbabc4038142e&quot; &gt;&lt;/div&gt;
+        
+&lt;/body&gt;
+&lt;script&gt;
+    
+    
+            var map_6f9d487b328328afa25dbabc4038142e = L.map(
+                &quot;map_6f9d487b328328afa25dbabc4038142e&quot;,
+                {
+                    center: [33.43526746987952, -92.01750963855424],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  &quot;zoom&quot;: 5,
+  &quot;zoomControl&quot;: true,
+  &quot;preferCanvas&quot;: false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_6f9d487b328328afa25dbabc4038142e);
+
+            
+
+        
+    
+            var tile_layer_7dac15cc8bd330413eab8febfa6172dd = L.tileLayer(
+                &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
+                {
+  &quot;minZoom&quot;: 0,
+  &quot;maxZoom&quot;: 19,
+  &quot;maxNativeZoom&quot;: 19,
+  &quot;noWrap&quot;: false,
+  &quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors&quot;,
+  &quot;subdomains&quot;: &quot;abc&quot;,
+  &quot;detectRetina&quot;: false,
+  &quot;tms&quot;: false,
+  &quot;opacity&quot;: 1,
+}
+
+            );
+        
+    
+            tile_layer_7dac15cc8bd330413eab8febfa6172dd.addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+            var circle_marker_4c9cd6d314adbc2ccdde121ba0660b19 = L.circleMarker(
+                [42.2847, -83.2611],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.449489742783179, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_1d8c01849e821b8bc147508d1d592e12 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_5b53653d433a963a270ef7373b98959b = $(`&lt;div id=&quot;html_5b53653d433a963a270ef7373b98959b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Wayne County, Michigan&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 6&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: -1.13&lt;/div&gt;`)[0];
+                popup_1d8c01849e821b8bc147508d1d592e12.setContent(html_5b53653d433a963a270ef7373b98959b);
+            
+        
+
+        circle_marker_4c9cd6d314adbc2ccdde121ba0660b19.bindPopup(popup_1d8c01849e821b8bc147508d1d592e12)
+        ;
+
+        
+    
+    
+            circle_marker_4c9cd6d314adbc2ccdde121ba0660b19.bindTooltip(
+                `&lt;div&gt;
+                     Wayne County, Michigan
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_7e3d8f9e00bf1e78775ef93957108a87 = L.circleMarker(
+                [32.5807, -93.8824],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.449489742783179, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_a22a78570c052186d7651b2f8612b906 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_0a8536879c238d5a2f105b59bab8c37a = $(`&lt;div id=&quot;html_0a8536879c238d5a2f105b59bab8c37a&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Caddo Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 6&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.93&lt;/div&gt;`)[0];
+                popup_a22a78570c052186d7651b2f8612b906.setContent(html_0a8536879c238d5a2f105b59bab8c37a);
+            
+        
+
+        circle_marker_7e3d8f9e00bf1e78775ef93957108a87.bindPopup(popup_a22a78570c052186d7651b2f8612b906)
+        ;
+
+        
+    
+    
+            circle_marker_7e3d8f9e00bf1e78775ef93957108a87.bindTooltip(
+                `&lt;div&gt;
+                     Caddo Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_1022d8d8338eef1f002c5d3844184177 = L.circleMarker(
+                [31.8696, -85.3932],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_39c3a24b42d7da2655ae798a2fe22052 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_775a49279501d3d22d82ab5b7e2a9f88 = $(`&lt;div id=&quot;html_775a49279501d3d22d82ab5b7e2a9f88&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Barbour County, Alabama&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.98&lt;/div&gt;`)[0];
+                popup_39c3a24b42d7da2655ae798a2fe22052.setContent(html_775a49279501d3d22d82ab5b7e2a9f88);
+            
+        
+
+        circle_marker_1022d8d8338eef1f002c5d3844184177.bindPopup(popup_39c3a24b42d7da2655ae798a2fe22052)
+        ;
+
+        
+    
+    
+            circle_marker_1022d8d8338eef1f002c5d3844184177.bindTooltip(
+                `&lt;div&gt;
+                     Barbour County, Alabama
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_1209bcec13b5282e8ff96ff9b03fad2c = L.circleMarker(
+                [35.0484, -96.2502],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_b8edf490fbf8458f2e800e5496c025b2 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_83b5920560f68062b4074783a9d14580 = $(`&lt;div id=&quot;html_83b5920560f68062b4074783a9d14580&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Hughes County, Oklahoma&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.06&lt;/div&gt;`)[0];
+                popup_b8edf490fbf8458f2e800e5496c025b2.setContent(html_83b5920560f68062b4074783a9d14580);
+            
+        
+
+        circle_marker_1209bcec13b5282e8ff96ff9b03fad2c.bindPopup(popup_b8edf490fbf8458f2e800e5496c025b2)
+        ;
+
+        
+    
+    
+            circle_marker_1209bcec13b5282e8ff96ff9b03fad2c.bindTooltip(
+                `&lt;div&gt;
+                     Hughes County, Oklahoma
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_d6043f5693d4f4552e374fefae1b633a = L.circleMarker(
+                [39.301, -76.6106],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_ff9421f66078d81392687137bc442274 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_c70cecb0093f0484d934e8cfe3580708 = $(`&lt;div id=&quot;html_c70cecb0093f0484d934e8cfe3580708&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Baltimore city, Maryland&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: -1.6&lt;/div&gt;`)[0];
+                popup_ff9421f66078d81392687137bc442274.setContent(html_c70cecb0093f0484d934e8cfe3580708);
+            
+        
+
+        circle_marker_d6043f5693d4f4552e374fefae1b633a.bindPopup(popup_ff9421f66078d81392687137bc442274)
+        ;
+
+        
+    
+    
+            circle_marker_d6043f5693d4f4552e374fefae1b633a.bindTooltip(
+                `&lt;div&gt;
+                     Baltimore city, Maryland
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_0409eac2b244d639b48a58804597985b = L.circleMarker(
+                [32.7135, -93.335],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_29068318c1e26e2495906409a75e6105 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_d8f54cd88b8c5e3b63ac5104f8315605 = $(`&lt;div id=&quot;html_d8f54cd88b8c5e3b63ac5104f8315605&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Webster Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.13&lt;/div&gt;`)[0];
+                popup_29068318c1e26e2495906409a75e6105.setContent(html_d8f54cd88b8c5e3b63ac5104f8315605);
+            
+        
+
+        circle_marker_0409eac2b244d639b48a58804597985b.bindPopup(popup_29068318c1e26e2495906409a75e6105)
+        ;
+
+        
+    
+    
+            circle_marker_0409eac2b244d639b48a58804597985b.bindTooltip(
+                `&lt;div&gt;
+                     Webster Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_857cd1c598201e9b0a2e130623946b76 = L.circleMarker(
+                [29.6347, -91.473],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_e60e3bdeef5a316c6f8c0995b3f7154c = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_29629704faaa067dc959791dbfec6a86 = $(`&lt;div id=&quot;html_29629704faaa067dc959791dbfec6a86&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: St. Mary Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.6&lt;/div&gt;`)[0];
+                popup_e60e3bdeef5a316c6f8c0995b3f7154c.setContent(html_29629704faaa067dc959791dbfec6a86);
+            
+        
+
+        circle_marker_857cd1c598201e9b0a2e130623946b76.bindPopup(popup_e60e3bdeef5a316c6f8c0995b3f7154c)
+        ;
+
+        
+    
+    
+            circle_marker_857cd1c598201e9b0a2e130623946b76.bindTooltip(
+                `&lt;div&gt;
+                     St. Mary Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_65adfab9eddfa5b99e907b4fd13ecbd6 = L.circleMarker(
+                [30.5989, -92.0058],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_f8b0df390a18ef9c785b07e425b32641 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_f7f65817c17cdd0f75ec515a0c9c44fc = $(`&lt;div id=&quot;html_f7f65817c17cdd0f75ec515a0c9c44fc&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: St. Landry Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.72&lt;/div&gt;`)[0];
+                popup_f8b0df390a18ef9c785b07e425b32641.setContent(html_f7f65817c17cdd0f75ec515a0c9c44fc);
+            
+        
+
+        circle_marker_65adfab9eddfa5b99e907b4fd13ecbd6.bindPopup(popup_f8b0df390a18ef9c785b07e425b32641)
+        ;
+
+        
+    
+    
+            circle_marker_65adfab9eddfa5b99e907b4fd13ecbd6.bindTooltip(
+                `&lt;div&gt;
+                     St. Landry Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_3b18f61edcaf0e8222de048787de150a = L.circleMarker(
+                [31.564, -93.5547],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_f266c5a0b4087ea21a76432082738277 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_10b33576838e9d22f8aa9a12dee35b1d = $(`&lt;div id=&quot;html_10b33576838e9d22f8aa9a12dee35b1d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Sabine Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.46&lt;/div&gt;`)[0];
+                popup_f266c5a0b4087ea21a76432082738277.setContent(html_10b33576838e9d22f8aa9a12dee35b1d);
+            
+        
+
+        circle_marker_3b18f61edcaf0e8222de048787de150a.bindPopup(popup_f266c5a0b4087ea21a76432082738277)
+        ;
+
+        
+    
+    
+            circle_marker_3b18f61edcaf0e8222de048787de150a.bindTooltip(
+                `&lt;div&gt;
+                     Sabine Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_c938beb3d1e1e70bca899d8c0564e99b = L.circleMarker(
+                [32.0931, -93.3398],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_cd03c1805aa6ffb0cdce0e4a25e16bfe = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_d5b30cfa6e0a7ab4bd6329b2cc58757b = $(`&lt;div id=&quot;html_d5b30cfa6e0a7ab4bd6329b2cc58757b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Red River Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.4&lt;/div&gt;`)[0];
+                popup_cd03c1805aa6ffb0cdce0e4a25e16bfe.setContent(html_d5b30cfa6e0a7ab4bd6329b2cc58757b);
+            
+        
+
+        circle_marker_c938beb3d1e1e70bca899d8c0564e99b.bindPopup(popup_cd03c1805aa6ffb0cdce0e4a25e16bfe)
+        ;
+
+        
+    
+    
+            circle_marker_c938beb3d1e1e70bca899d8c0564e99b.bindTooltip(
+                `&lt;div&gt;
+                     Red River Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_85e3a9597d917d707ca1b700e30928e8 = L.circleMarker(
+                [30.2586, -91.3495],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_378622829c26321ddb29b5df06f4e6e4 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_db9827070c7312bac62b7ba5643ffd47 = $(`&lt;div id=&quot;html_db9827070c7312bac62b7ba5643ffd47&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Iberville Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.09&lt;/div&gt;`)[0];
+                popup_378622829c26321ddb29b5df06f4e6e4.setContent(html_db9827070c7312bac62b7ba5643ffd47);
+            
+        
+
+        circle_marker_85e3a9597d917d707ca1b700e30928e8.bindPopup(popup_378622829c26321ddb29b5df06f4e6e4)
+        ;
+
+        
+    
+    
+            circle_marker_85e3a9597d917d707ca1b700e30928e8.bindTooltip(
+                `&lt;div&gt;
+                     Iberville Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_e841bcd7a8c9a9ceaae8d18079403526 = L.circleMarker(
+                [32.3572, -90.852],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_6307dcc35aa2b5eeecee7eef8381d837 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_cfa89a93bf89254faea81b4a49641612 = $(`&lt;div id=&quot;html_cfa89a93bf89254faea81b4a49641612&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Warren County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.93&lt;/div&gt;`)[0];
+                popup_6307dcc35aa2b5eeecee7eef8381d837.setContent(html_cfa89a93bf89254faea81b4a49641612);
+            
+        
+
+        circle_marker_e841bcd7a8c9a9ceaae8d18079403526.bindPopup(popup_6307dcc35aa2b5eeecee7eef8381d837)
+        ;
+
+        
+    
+    
+            circle_marker_e841bcd7a8c9a9ceaae8d18079403526.bindTooltip(
+                `&lt;div&gt;
+                     Warren County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_cfd1b715f04c19260043e093edd15e4f = L.circleMarker(
+                [31.6408, -88.6958],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_74b3c02d320b427ffd0546859fae3d77 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_fe9205e333edc2df68e2dd403c7c354d = $(`&lt;div id=&quot;html_fe9205e333edc2df68e2dd403c7c354d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Wayne County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.82&lt;/div&gt;`)[0];
+                popup_74b3c02d320b427ffd0546859fae3d77.setContent(html_fe9205e333edc2df68e2dd403c7c354d);
+            
+        
+
+        circle_marker_cfd1b715f04c19260043e093edd15e4f.bindPopup(popup_74b3c02d320b427ffd0546859fae3d77)
+        ;
+
+        
+    
+    
+            circle_marker_cfd1b715f04c19260043e093edd15e4f.bindTooltip(
+                `&lt;div&gt;
+                     Wayne County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_f2662cc897b10fa5bc31279a0ce1f6f6 = L.circleMarker(
+                [32.3473, -93.0561],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_8b3587ad24c66d166b90598cd22370da = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_dab00b3fabbd22f144208749967d0fe7 = $(`&lt;div id=&quot;html_dab00b3fabbd22f144208749967d0fe7&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Bienville Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.35&lt;/div&gt;`)[0];
+                popup_8b3587ad24c66d166b90598cd22370da.setContent(html_dab00b3fabbd22f144208749967d0fe7);
+            
+        
+
+        circle_marker_f2662cc897b10fa5bc31279a0ce1f6f6.bindPopup(popup_8b3587ad24c66d166b90598cd22370da)
+        ;
+
+        
+    
+    
+            circle_marker_f2662cc897b10fa5bc31279a0ce1f6f6.bindTooltip(
+                `&lt;div&gt;
+                     Bienville Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_ee98a895e9f1c7e6742ae923331d1bad = L.circleMarker(
+                [33.3596, -82.0735],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_c74e31c2478e63dc43bc075b610a40f6 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_42015fb816416b6e35720ef714002a68 = $(`&lt;div id=&quot;html_42015fb816416b6e35720ef714002a68&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Richmond County, Georgia&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.19&lt;/div&gt;`)[0];
+                popup_c74e31c2478e63dc43bc075b610a40f6.setContent(html_42015fb816416b6e35720ef714002a68);
+            
+        
+
+        circle_marker_ee98a895e9f1c7e6742ae923331d1bad.bindPopup(popup_c74e31c2478e63dc43bc075b610a40f6)
+        ;
+
+        
+    
+    
+            circle_marker_ee98a895e9f1c7e6742ae923331d1bad.bindTooltip(
+                `&lt;div&gt;
+                     Richmond County, Georgia
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_ff5527ba47305db51a01ce47d1da709e = L.circleMarker(
+                [29.6086, -81.7443],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_cfc031b56955a56a8e81890d33676bec = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_0c3c2aa3e3ed501768b31b2fe54790d5 = $(`&lt;div id=&quot;html_0c3c2aa3e3ed501768b31b2fe54790d5&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Putnam County, Florida&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.65&lt;/div&gt;`)[0];
+                popup_cfc031b56955a56a8e81890d33676bec.setContent(html_0c3c2aa3e3ed501768b31b2fe54790d5);
+            
+        
+
+        circle_marker_ff5527ba47305db51a01ce47d1da709e.bindPopup(popup_cfc031b56955a56a8e81890d33676bec)
+        ;
+
+        
+    
+    
+            circle_marker_ff5527ba47305db51a01ce47d1da709e.bindTooltip(
+                `&lt;div&gt;
+                     Putnam County, Florida
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_0619f6ce53203a6a4cce42aaaa481ab8 = L.circleMarker(
+                [38.6358, -90.2451],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_81ad6c471f02eabf1aea695d117d619f = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_c2acaecf5b159613bb58baab713d1ba2 = $(`&lt;div id=&quot;html_c2acaecf5b159613bb58baab713d1ba2&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: St. Louis city, Missouri&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.26&lt;/div&gt;`)[0];
+                popup_81ad6c471f02eabf1aea695d117d619f.setContent(html_c2acaecf5b159613bb58baab713d1ba2);
+            
+        
+
+        circle_marker_0619f6ce53203a6a4cce42aaaa481ab8.bindPopup(popup_81ad6c471f02eabf1aea695d117d619f)
+        ;
+
+        
+    
+    
+            circle_marker_0619f6ce53203a6a4cce42aaaa481ab8.bindTooltip(
+                `&lt;div&gt;
+                     St. Louis city, Missouri
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_2e805209b9cd4d0be6ef1ceaece154d3 = L.circleMarker(
+                [34.1153, -94.7714],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_bb49f4a68fdd3f8485ae6761376bed7f = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_b48f0fc196574a66d61a1474629a47df = $(`&lt;div id=&quot;html_b48f0fc196574a66d61a1474629a47df&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: McCurtain County, Oklahoma&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.38&lt;/div&gt;`)[0];
+                popup_bb49f4a68fdd3f8485ae6761376bed7f.setContent(html_b48f0fc196574a66d61a1474629a47df);
+            
+        
+
+        circle_marker_2e805209b9cd4d0be6ef1ceaece154d3.bindPopup(popup_bb49f4a68fdd3f8485ae6761376bed7f)
+        ;
+
+        
+    
+    
+            circle_marker_2e805209b9cd4d0be6ef1ceaece154d3.bindTooltip(
+                `&lt;div&gt;
+                     McCurtain County, Oklahoma
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_1b6619ca5e493f761dc3bfa4d2b4d11c = L.circleMarker(
+                [33.1714, -92.5973],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_12fa194b5e33c035c8ae4eef374c58cd = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_fa9d01b4f1696930eeb1d52b4f101df3 = $(`&lt;div id=&quot;html_fa9d01b4f1696930eeb1d52b4f101df3&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Union County, Arkansas&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.89&lt;/div&gt;`)[0];
+                popup_12fa194b5e33c035c8ae4eef374c58cd.setContent(html_fa9d01b4f1696930eeb1d52b4f101df3);
+            
+        
+
+        circle_marker_1b6619ca5e493f761dc3bfa4d2b4d11c.bindPopup(popup_12fa194b5e33c035c8ae4eef374c58cd)
+        ;
+
+        
+    
+    
+            circle_marker_1b6619ca5e493f761dc3bfa4d2b4d11c.bindTooltip(
+                `&lt;div&gt;
+                     Union County, Arkansas
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_e10dca71971bab58e97f8ebea3ddf605 = L.circleMarker(
+                [32.2476, -87.7895],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_cde0cb6835b47a472a111c91c0ca3be6 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_4d153889480e90461ea851f013f93f8e = $(`&lt;div id=&quot;html_4d153889480e90461ea851f013f93f8e&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Marengo County, Alabama&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.41&lt;/div&gt;`)[0];
+                popup_cde0cb6835b47a472a111c91c0ca3be6.setContent(html_4d153889480e90461ea851f013f93f8e);
+            
+        
+
+        circle_marker_e10dca71971bab58e97f8ebea3ddf605.bindPopup(popup_cde0cb6835b47a472a111c91c0ca3be6)
+        ;
+
+        
+    
+    
+            circle_marker_e10dca71971bab58e97f8ebea3ddf605.bindTooltip(
+                `&lt;div&gt;
+                     Marengo County, Alabama
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_f82bc2bb64e18a9b46e3307d9c2d5fbd = L.circleMarker(
+                [35.3996, -110.3214],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_d5a39b80c5520b675395636491449017 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_a5842c1da35323bf0139b6648359d8c5 = $(`&lt;div id=&quot;html_a5842c1da35323bf0139b6648359d8c5&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Navajo County, Arizona&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.1&lt;/div&gt;`)[0];
+                popup_d5a39b80c5520b675395636491449017.setContent(html_a5842c1da35323bf0139b6648359d8c5);
+            
+        
+
+        circle_marker_f82bc2bb64e18a9b46e3307d9c2d5fbd.bindPopup(popup_d5a39b80c5520b675395636491449017)
+        ;
+
+        
+    
+    
+            circle_marker_f82bc2bb64e18a9b46e3307d9c2d5fbd.bindTooltip(
+                `&lt;div&gt;
+                     Navajo County, Arizona
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_eb40b8622275a93834815c30c4f87d36 = L.circleMarker(
+                [35.1842, -89.8941],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_36174dba0bcd641cc1ecc0b0f34462ff = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_24990ddd850161009142c0e7931eb446 = $(`&lt;div id=&quot;html_24990ddd850161009142c0e7931eb446&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Shelby County, Tennessee&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: -0.41&lt;/div&gt;`)[0];
+                popup_36174dba0bcd641cc1ecc0b0f34462ff.setContent(html_24990ddd850161009142c0e7931eb446);
+            
+        
+
+        circle_marker_eb40b8622275a93834815c30c4f87d36.bindPopup(popup_36174dba0bcd641cc1ecc0b0f34462ff)
+        ;
+
+        
+    
+    
+            circle_marker_eb40b8622275a93834815c30c4f87d36.bindTooltip(
+                `&lt;div&gt;
+                     Shelby County, Tennessee
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_52d75c8b5fe801e51f9fcdd299c642f7 = L.circleMarker(
+                [32.2667, -90.4428],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_910c91aa5ea867fd2a870350f7c8b9fc = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_7faa4aa275f9ab982b87d32f410d3fd9 = $(`&lt;div id=&quot;html_7faa4aa275f9ab982b87d32f410d3fd9&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Hinds County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: -0.1&lt;/div&gt;`)[0];
+                popup_910c91aa5ea867fd2a870350f7c8b9fc.setContent(html_7faa4aa275f9ab982b87d32f410d3fd9);
+            
+        
+
+        circle_marker_52d75c8b5fe801e51f9fcdd299c642f7.bindPopup(popup_910c91aa5ea867fd2a870350f7c8b9fc)
+        ;
+
+        
+    
+    
+            circle_marker_52d75c8b5fe801e51f9fcdd299c642f7.bindTooltip(
+                `&lt;div&gt;
+                     Hinds County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_98db220d38f612feac3e9a2f764d162f = L.circleMarker(
+                [34.9239, -95.7484],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_c2fb922cd048ef89ee6c753cdcfcc40e = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_1b5112c10d084a1407fb00b00c3ed147 = $(`&lt;div id=&quot;html_1b5112c10d084a1407fb00b00c3ed147&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Pittsburg County, Oklahoma&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.36&lt;/div&gt;`)[0];
+                popup_c2fb922cd048ef89ee6c753cdcfcc40e.setContent(html_1b5112c10d084a1407fb00b00c3ed147);
+            
+        
+
+        circle_marker_98db220d38f612feac3e9a2f764d162f.bindPopup(popup_c2fb922cd048ef89ee6c753cdcfcc40e)
+        ;
+
+        
+    
+    
+            circle_marker_98db220d38f612feac3e9a2f764d162f.bindTooltip(
+                `&lt;div&gt;
+                     Pittsburg County, Oklahoma
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_df34c36e4767140f236431853ff18f01 = L.circleMarker(
+                [34.4162, -95.3759],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.23606797749979, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_1b6f66820432219205fc379323f6d7ff = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_a9df068a3aab92a10034aea56a48b62e = $(`&lt;div id=&quot;html_a9df068a3aab92a10034aea56a48b62e&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Pushmataha County, Oklahoma&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 5&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: A (very high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.72&lt;/div&gt;`)[0];
+                popup_1b6f66820432219205fc379323f6d7ff.setContent(html_a9df068a3aab92a10034aea56a48b62e);
+            
+        
+
+        circle_marker_df34c36e4767140f236431853ff18f01.bindPopup(popup_1b6f66820432219205fc379323f6d7ff)
+        ;
+
+        
+    
+    
+            circle_marker_df34c36e4767140f236431853ff18f01.bindTooltip(
+                `&lt;div&gt;
+                     Pushmataha County, Oklahoma
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_f9066943b070537ce158b090be08a466 = L.circleMarker(
+                [40.7872, -74.2471],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_9c9c23f71ec16eb2549239b9414cc049 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_70df3b79c9bc58c9ece92e34521bc8dc = $(`&lt;div id=&quot;html_70df3b79c9bc58c9ece92e34521bc8dc&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Essex County, New Jersey&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.07&lt;/div&gt;`)[0];
+                popup_9c9c23f71ec16eb2549239b9414cc049.setContent(html_70df3b79c9bc58c9ece92e34521bc8dc);
+            
+        
+
+        circle_marker_f9066943b070537ce158b090be08a466.bindPopup(popup_9c9c23f71ec16eb2549239b9414cc049)
+        ;
+
+        
+    
+    
+            circle_marker_f9066943b070537ce158b090be08a466.bindTooltip(
+                `&lt;div&gt;
+                     Essex County, New Jersey
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_f64d2d44113423918c3ed6736307bd50 = L.circleMarker(
+                [33.1235, -90.0921],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_c25cb570d5c6e74752d1346b1d51efce = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_ddb3d3a2e48d528dc9a796b03255fb7e = $(`&lt;div id=&quot;html_ddb3d3a2e48d528dc9a796b03255fb7e&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Holmes County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.04&lt;/div&gt;`)[0];
+                popup_c25cb570d5c6e74752d1346b1d51efce.setContent(html_ddb3d3a2e48d528dc9a796b03255fb7e);
+            
+        
+
+        circle_marker_f64d2d44113423918c3ed6736307bd50.bindPopup(popup_c25cb570d5c6e74752d1346b1d51efce)
+        ;
+
+        
+    
+    
+            circle_marker_f64d2d44113423918c3ed6736307bd50.bindTooltip(
+                `&lt;div&gt;
+                     Holmes County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_eb03a653d15acb72a428765798837bb7 = L.circleMarker(
+                [31.7342, -91.0372],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_f8b44c71d6ee5d72a0a597353050dc45 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_2dbe17a664d7be802bd92204f0810235 = $(`&lt;div id=&quot;html_2dbe17a664d7be802bd92204f0810235&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Jefferson County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.94&lt;/div&gt;`)[0];
+                popup_f8b44c71d6ee5d72a0a597353050dc45.setContent(html_2dbe17a664d7be802bd92204f0810235);
+            
+        
+
+        circle_marker_eb03a653d15acb72a428765798837bb7.bindPopup(popup_f8b44c71d6ee5d72a0a597353050dc45)
+        ;
+
+        
+    
+    
+            circle_marker_eb03a653d15acb72a428765798837bb7.bindTooltip(
+                `&lt;div&gt;
+                     Jefferson County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_41a3e8ffe938f80be95f53e61958592b = L.circleMarker(
+                [31.7924, -94.145],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_dc6d843357c583f5694abb31ada174e5 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_6fbd802da414182c718adcfe9155fe25 = $(`&lt;div id=&quot;html_6fbd802da414182c718adcfe9155fe25&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Shelby County, Texas&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.65&lt;/div&gt;`)[0];
+                popup_dc6d843357c583f5694abb31ada174e5.setContent(html_6fbd802da414182c718adcfe9155fe25);
+            
+        
+
+        circle_marker_41a3e8ffe938f80be95f53e61958592b.bindPopup(popup_dc6d843357c583f5694abb31ada174e5)
+        ;
+
+        
+    
+    
+            circle_marker_41a3e8ffe938f80be95f53e61958592b.bindTooltip(
+                `&lt;div&gt;
+                     Shelby County, Texas
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_411df8be014a830c4aba5ddd2f620afd = L.circleMarker(
+                [31.3942, -94.1682],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_9b59f0f225d1dcebcb0e9a43e05b42ab = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_b47836297ce6160616c832a1ade4358f = $(`&lt;div id=&quot;html_b47836297ce6160616c832a1ade4358f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: San Augustine County, Texas&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.81&lt;/div&gt;`)[0];
+                popup_9b59f0f225d1dcebcb0e9a43e05b42ab.setContent(html_b47836297ce6160616c832a1ade4358f);
+            
+        
+
+        circle_marker_411df8be014a830c4aba5ddd2f620afd.bindPopup(popup_9b59f0f225d1dcebcb0e9a43e05b42ab)
+        ;
+
+        
+    
+    
+            circle_marker_411df8be014a830c4aba5ddd2f620afd.bindTooltip(
+                `&lt;div&gt;
+                     San Augustine County, Texas
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_734b90aad6052d13070a1a47c062289e = L.circleMarker(
+                [34.0266, -95.5522],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_da841bae0c5e4f677460ed74ab282c20 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_6f30eeca62d653e975d3986e8faef737 = $(`&lt;div id=&quot;html_6f30eeca62d653e975d3986e8faef737&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Choctaw County, Oklahoma&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.12&lt;/div&gt;`)[0];
+                popup_da841bae0c5e4f677460ed74ab282c20.setContent(html_6f30eeca62d653e975d3986e8faef737);
+            
+        
+
+        circle_marker_734b90aad6052d13070a1a47c062289e.bindPopup(popup_da841bae0c5e4f677460ed74ab282c20)
+        ;
+
+        
+    
+    
+            circle_marker_734b90aad6052d13070a1a47c062289e.bindTooltip(
+                `&lt;div&gt;
+                     Choctaw County, Oklahoma
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_f2c96529e0facd3f6109237f3e00303d = L.circleMarker(
+                [31.5696, -89.823],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_ef54304b523a90f4e05cb9378e1b81ff = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_8787cb263126c35969f199e39d96f98d = $(`&lt;div id=&quot;html_8787cb263126c35969f199e39d96f98d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Jefferson Davis County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.58&lt;/div&gt;`)[0];
+                popup_ef54304b523a90f4e05cb9378e1b81ff.setContent(html_8787cb263126c35969f199e39d96f98d);
+            
+        
+
+        circle_marker_f2c96529e0facd3f6109237f3e00303d.bindPopup(popup_ef54304b523a90f4e05cb9378e1b81ff)
+        ;
+
+        
+    
+    
+            circle_marker_f2c96529e0facd3f6109237f3e00303d.bindTooltip(
+                `&lt;div&gt;
+                     Jefferson Davis County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_72231566bcd08e9d7bfd68eddefa0d72 = L.circleMarker(
+                [34.7623, -89.5031],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_b9f37f7e9bcc322390e1967513e16c82 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_8577cebb8c298b26fa7a48a38526bb01 = $(`&lt;div id=&quot;html_8577cebb8c298b26fa7a48a38526bb01&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Marshall County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.62&lt;/div&gt;`)[0];
+                popup_b9f37f7e9bcc322390e1967513e16c82.setContent(html_8577cebb8c298b26fa7a48a38526bb01);
+            
+        
+
+        circle_marker_72231566bcd08e9d7bfd68eddefa0d72.bindPopup(popup_b9f37f7e9bcc322390e1967513e16c82)
+        ;
+
+        
+    
+    
+            circle_marker_72231566bcd08e9d7bfd68eddefa0d72.bindTooltip(
+                `&lt;div&gt;
+                     Marshall County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_edeb0d2f7501d2e415e6e7ca3727e65e = L.circleMarker(
+                [33.6207, -95.0504],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_ec8db9c01a2a51318af5ec786f1af685 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_75a1e7da54724c65545374f75b17fb55 = $(`&lt;div id=&quot;html_75a1e7da54724c65545374f75b17fb55&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Red River County, Texas&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.83&lt;/div&gt;`)[0];
+                popup_ec8db9c01a2a51318af5ec786f1af685.setContent(html_75a1e7da54724c65545374f75b17fb55);
+            
+        
+
+        circle_marker_edeb0d2f7501d2e415e6e7ca3727e65e.bindPopup(popup_ec8db9c01a2a51318af5ec786f1af685)
+        ;
+
+        
+    
+    
+            circle_marker_edeb0d2f7501d2e415e6e7ca3727e65e.bindTooltip(
+                `&lt;div&gt;
+                     Red River County, Texas
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_d5d60fb6d47b09cfed3d24bea12c005f = L.circleMarker(
+                [29.8537, -94.1534],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_5c3d4c7c77ec1568e4a03b2603b685ed = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_b10800eb930a4dca0affdb23a9674da7 = $(`&lt;div id=&quot;html_b10800eb930a4dca0affdb23a9674da7&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Jefferson County, Texas&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.37&lt;/div&gt;`)[0];
+                popup_5c3d4c7c77ec1568e4a03b2603b685ed.setContent(html_b10800eb930a4dca0affdb23a9674da7);
+            
+        
+
+        circle_marker_d5d60fb6d47b09cfed3d24bea12c005f.bindPopup(popup_5c3d4c7c77ec1568e4a03b2603b685ed)
+        ;
+
+        
+    
+    
+            circle_marker_d5d60fb6d47b09cfed3d24bea12c005f.bindTooltip(
+                `&lt;div&gt;
+                     Jefferson County, Texas
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_2127e39a6821ac7ed7aa7278181f5b13 = L.circleMarker(
+                [29.8573, -95.3923],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_4c09fb81eb429ee1130c097831451ee2 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_dba761f833ca35edbbe5ee9ae2fda434 = $(`&lt;div id=&quot;html_dba761f833ca35edbbe5ee9ae2fda434&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Harris County, Texas&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.38&lt;/div&gt;`)[0];
+                popup_4c09fb81eb429ee1130c097831451ee2.setContent(html_dba761f833ca35edbbe5ee9ae2fda434);
+            
+        
+
+        circle_marker_2127e39a6821ac7ed7aa7278181f5b13.bindPopup(popup_4c09fb81eb429ee1130c097831451ee2)
+        ;
+
+        
+    
+    
+            circle_marker_2127e39a6821ac7ed7aa7278181f5b13.bindTooltip(
+                `&lt;div&gt;
+                     Harris County, Texas
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_19d0f98e89d2228a1f87cd2992d68fb9 = L.circleMarker(
+                [33.1101, -88.5698],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_ac26083210cd6f35e720a562de2439d6 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_41429858db1da127795c55cef75dca64 = $(`&lt;div id=&quot;html_41429858db1da127795c55cef75dca64&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Noxubee County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.36&lt;/div&gt;`)[0];
+                popup_ac26083210cd6f35e720a562de2439d6.setContent(html_41429858db1da127795c55cef75dca64);
+            
+        
+
+        circle_marker_19d0f98e89d2228a1f87cd2992d68fb9.bindPopup(popup_ac26083210cd6f35e720a562de2439d6)
+        ;
+
+        
+    
+    
+            circle_marker_19d0f98e89d2228a1f87cd2992d68fb9.bindTooltip(
+                `&lt;div&gt;
+                     Noxubee County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_0a71e159014cd72d7072178656ba49e4 = L.circleMarker(
+                [34.23, -90.6017],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_8b5e4186da35ea284714d75ed5daa61b = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_4ed29e656ed75849f07e57fd33b4b684 = $(`&lt;div id=&quot;html_4ed29e656ed75849f07e57fd33b4b684&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Coahoma County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.32&lt;/div&gt;`)[0];
+                popup_8b5e4186da35ea284714d75ed5daa61b.setContent(html_4ed29e656ed75849f07e57fd33b4b684);
+            
+        
+
+        circle_marker_0a71e159014cd72d7072178656ba49e4.bindPopup(popup_8b5e4186da35ea284714d75ed5daa61b)
+        ;
+
+        
+    
+    
+            circle_marker_0a71e159014cd72d7072178656ba49e4.bindTooltip(
+                `&lt;div&gt;
+                     Coahoma County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_fea1a8eb9eb33457874e36c2e3be74ec = L.circleMarker(
+                [34.2514, -90.2891],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_e1dcaf66e151e0eeb7240f99e9190663 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_4d1f2d33bc52c07e1e2c51f83390c4bc = $(`&lt;div id=&quot;html_4d1f2d33bc52c07e1e2c51f83390c4bc&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Quitman County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 3.45&lt;/div&gt;`)[0];
+                popup_e1dcaf66e151e0eeb7240f99e9190663.setContent(html_4d1f2d33bc52c07e1e2c51f83390c4bc);
+            
+        
+
+        circle_marker_fea1a8eb9eb33457874e36c2e3be74ec.bindPopup(popup_e1dcaf66e151e0eeb7240f99e9190663)
+        ;
+
+        
+    
+    
+            circle_marker_fea1a8eb9eb33457874e36c2e3be74ec.bindTooltip(
+                `&lt;div&gt;
+                     Quitman County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_6bbdeb31b0ad7b3b0563ef85f25b8b4a = L.circleMarker(
+                [34.6402, -79.1039],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_4f6cfbf4068363c195b702c5250c1db4 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_cc301a828c7dee6a7125dc2a5f85d6a0 = $(`&lt;div id=&quot;html_cc301a828c7dee6a7125dc2a5f85d6a0&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Robeson County, North Carolina&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.33&lt;/div&gt;`)[0];
+                popup_4f6cfbf4068363c195b702c5250c1db4.setContent(html_cc301a828c7dee6a7125dc2a5f85d6a0);
+            
+        
+
+        circle_marker_6bbdeb31b0ad7b3b0563ef85f25b8b4a.bindPopup(popup_4f6cfbf4068363c195b702c5250c1db4)
+        ;
+
+        
+    
+    
+            circle_marker_6bbdeb31b0ad7b3b0563ef85f25b8b4a.bindTooltip(
+                `&lt;div&gt;
+                     Robeson County, North Carolina
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_a02a24c2aa6d1a43c3947f5d3798a723 = L.circleMarker(
+                [34.5882, -96.2978],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_0277524bbd243a2b0d72b7be32c35be5 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_8df382d407e516ffb15c45fbcf274b44 = $(`&lt;div id=&quot;html_8df382d407e516ffb15c45fbcf274b44&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Coal County, Oklahoma&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.38&lt;/div&gt;`)[0];
+                popup_0277524bbd243a2b0d72b7be32c35be5.setContent(html_8df382d407e516ffb15c45fbcf274b44);
+            
+        
+
+        circle_marker_a02a24c2aa6d1a43c3947f5d3798a723.bindPopup(popup_0277524bbd243a2b0d72b7be32c35be5)
+        ;
+
+        
+    
+    
+            circle_marker_a02a24c2aa6d1a43c3947f5d3798a723.bindTooltip(
+                `&lt;div&gt;
+                     Coal County, Oklahoma
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_d7d33bb8a26c8a69660f23496854b305 = L.circleMarker(
+                [33.6023, -90.5886],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_17c8cb950ddc35d27974bd4a51d1981c = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_240c54038334ad3e4d9b03e52f59c2f4 = $(`&lt;div id=&quot;html_240c54038334ad3e4d9b03e52f59c2f4&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Sunflower County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.85&lt;/div&gt;`)[0];
+                popup_17c8cb950ddc35d27974bd4a51d1981c.setContent(html_240c54038334ad3e4d9b03e52f59c2f4);
+            
+        
+
+        circle_marker_d7d33bb8a26c8a69660f23496854b305.bindPopup(popup_17c8cb950ddc35d27974bd4a51d1981c)
+        ;
+
+        
+    
+    
+            circle_marker_d7d33bb8a26c8a69660f23496854b305.bindTooltip(
+                `&lt;div&gt;
+                     Sunflower County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_64866d779c0b4c9089d26094050d2ca9 = L.circleMarker(
+                [34.6021, -79.6787],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_fea9e12c9363dc5e36ac3e886c572123 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_0fb741898d3e831ddaa22cddb8a98f35 = $(`&lt;div id=&quot;html_0fb741898d3e831ddaa22cddb8a98f35&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Marlboro County, South Carolina&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.76&lt;/div&gt;`)[0];
+                popup_fea9e12c9363dc5e36ac3e886c572123.setContent(html_0fb741898d3e831ddaa22cddb8a98f35);
+            
+        
+
+        circle_marker_64866d779c0b4c9089d26094050d2ca9.bindPopup(popup_fea9e12c9363dc5e36ac3e886c572123)
+        ;
+
+        
+    
+    
+            circle_marker_64866d779c0b4c9089d26094050d2ca9.bindTooltip(
+                `&lt;div&gt;
+                     Marlboro County, South Carolina
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_b2bad061d65019de3942cca40e686a52 = L.circleMarker(
+                [33.2838, -90.9473],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_85e4209749d7ad1a73d14d1426116393 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_0ccab22b1375273596384bb2e43cc3f7 = $(`&lt;div id=&quot;html_0ccab22b1375273596384bb2e43cc3f7&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Washington County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.63&lt;/div&gt;`)[0];
+                popup_85e4209749d7ad1a73d14d1426116393.setContent(html_0ccab22b1375273596384bb2e43cc3f7);
+            
+        
+
+        circle_marker_b2bad061d65019de3942cca40e686a52.bindPopup(popup_85e4209749d7ad1a73d14d1426116393)
+        ;
+
+        
+    
+    
+            circle_marker_b2bad061d65019de3942cca40e686a52.bindTooltip(
+                `&lt;div&gt;
+                     Washington County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_36dc1e216b2fb9928ee15bfd7ed8264d = L.circleMarker(
+                [34.1633, -80.2545],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_7fb40e2787ea7986950ee4e6c00b3bdb = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_52fa8b370d727ee5ffb7682a5c8d792e = $(`&lt;div id=&quot;html_52fa8b370d727ee5ffb7682a5c8d792e&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Lee County, South Carolina&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.01&lt;/div&gt;`)[0];
+                popup_7fb40e2787ea7986950ee4e6c00b3bdb.setContent(html_52fa8b370d727ee5ffb7682a5c8d792e);
+            
+        
+
+        circle_marker_36dc1e216b2fb9928ee15bfd7ed8264d.bindPopup(popup_7fb40e2787ea7986950ee4e6c00b3bdb)
+        ;
+
+        
+    
+    
+            circle_marker_36dc1e216b2fb9928ee15bfd7ed8264d.bindTooltip(
+                `&lt;div&gt;
+                     Lee County, South Carolina
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_da726ad614548e586d1a2c72be27f22c = L.circleMarker(
+                [32.9881, -81.3582],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_8e263c9ea9b3ba96154f5f2502bb717a = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_d67466e4bbea04a1edddcc4d3a57a733 = $(`&lt;div id=&quot;html_d67466e4bbea04a1edddcc4d3a57a733&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Allendale County, South Carolina&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.3&lt;/div&gt;`)[0];
+                popup_8e263c9ea9b3ba96154f5f2502bb717a.setContent(html_d67466e4bbea04a1edddcc4d3a57a733);
+            
+        
+
+        circle_marker_da726ad614548e586d1a2c72be27f22c.bindPopup(popup_8e263c9ea9b3ba96154f5f2502bb717a)
+        ;
+
+        
+    
+    
+            circle_marker_da726ad614548e586d1a2c72be27f22c.bindTooltip(
+                `&lt;div&gt;
+                     Allendale County, South Carolina
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_355d687964dea88593a62d212188ceaa = L.circleMarker(
+                [32.7803, -90.3964],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_e3285d140f3c12c7db27f1dd53c6c753 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_91a9806ce92fc855685b1f09c67c9036 = $(`&lt;div id=&quot;html_91a9806ce92fc855685b1f09c67c9036&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Yazoo County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.71&lt;/div&gt;`)[0];
+                popup_e3285d140f3c12c7db27f1dd53c6c753.setContent(html_91a9806ce92fc855685b1f09c67c9036);
+            
+        
+
+        circle_marker_355d687964dea88593a62d212188ceaa.bindPopup(popup_e3285d140f3c12c7db27f1dd53c6c753)
+        ;
+
+        
+    
+    
+            circle_marker_355d687964dea88593a62d212188ceaa.bindTooltip(
+                `&lt;div&gt;
+                     Yazoo County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_9335726df467512a39b443a8c685e5c0 = L.circleMarker(
+                [36.2115, -89.7854],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_271332e51e420c830345a48a86f42793 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_ff817e13f9dcf5b76f3fa638b4823769 = $(`&lt;div id=&quot;html_ff817e13f9dcf5b76f3fa638b4823769&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Pemiscot County, Missouri&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.91&lt;/div&gt;`)[0];
+                popup_271332e51e420c830345a48a86f42793.setContent(html_ff817e13f9dcf5b76f3fa638b4823769);
+            
+        
+
+        circle_marker_9335726df467512a39b443a8c685e5c0.bindPopup(popup_271332e51e420c830345a48a86f42793)
+        ;
+
+        
+    
+    
+            circle_marker_9335726df467512a39b443a8c685e5c0.bindTooltip(
+                `&lt;div&gt;
+                     Pemiscot County, Missouri
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_872528cc032bcca8a79709c072269a07 = L.circleMarker(
+                [32.8797, -90.8132],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_359c451d2a3198c5affb716640b6fbea = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_6d13f851909c58df7f62a8b9f4e8a1f0 = $(`&lt;div id=&quot;html_6d13f851909c58df7f62a8b9f4e8a1f0&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Sharkey County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.18&lt;/div&gt;`)[0];
+                popup_359c451d2a3198c5affb716640b6fbea.setContent(html_6d13f851909c58df7f62a8b9f4e8a1f0);
+            
+        
+
+        circle_marker_872528cc032bcca8a79709c072269a07.bindPopup(popup_359c451d2a3198c5affb716640b6fbea)
+        ;
+
+        
+    
+    
+            circle_marker_872528cc032bcca8a79709c072269a07.bindTooltip(
+                `&lt;div&gt;
+                     Sharkey County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_eb38b615ae2b20162c87a69d73d2079c = L.circleMarker(
+                [32.0018, -91.3401],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_3798ce79d47b7af7d79786becba12563 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_31251484fc59632176d9a3bc40a1b75d = $(`&lt;div id=&quot;html_31251484fc59632176d9a3bc40a1b75d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Tensas Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.32&lt;/div&gt;`)[0];
+                popup_3798ce79d47b7af7d79786becba12563.setContent(html_31251484fc59632176d9a3bc40a1b75d);
+            
+        
+
+        circle_marker_eb38b615ae2b20162c87a69d73d2079c.bindPopup(popup_3798ce79d47b7af7d79786becba12563)
+        ;
+
+        
+    
+    
+            circle_marker_eb38b615ae2b20162c87a69d73d2079c.bindTooltip(
+                `&lt;div&gt;
+                     Tensas Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_635da2b66fcceaa6621f459caf4249a9 = L.circleMarker(
+                [31.9737, -90.9118],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_de84878d0acf8907b02f9f1a83d1c8be = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_2ae9d8dbfd59519a26a62472a080dc4a = $(`&lt;div id=&quot;html_2ae9d8dbfd59519a26a62472a080dc4a&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Claiborne County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 3.01&lt;/div&gt;`)[0];
+                popup_de84878d0acf8907b02f9f1a83d1c8be.setContent(html_2ae9d8dbfd59519a26a62472a080dc4a);
+            
+        
+
+        circle_marker_635da2b66fcceaa6621f459caf4249a9.bindPopup(popup_de84878d0acf8907b02f9f1a83d1c8be)
+        ;
+
+        
+    
+    
+            circle_marker_635da2b66fcceaa6621f459caf4249a9.bindTooltip(
+                `&lt;div&gt;
+                     Claiborne County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_a1f32e469864cc0109d6a1989e2f66c1 = L.circleMarker(
+                [36.2202, -118.8005],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_f6c23e6df195c10f6dbe34da50b8b44f = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_6122764a086ffc3b1474eb32434f1d51 = $(`&lt;div id=&quot;html_6122764a086ffc3b1474eb32434f1d51&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Tulare County, California&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.5&lt;/div&gt;`)[0];
+                popup_f6c23e6df195c10f6dbe34da50b8b44f.setContent(html_6122764a086ffc3b1474eb32434f1d51);
+            
+        
+
+        circle_marker_a1f32e469864cc0109d6a1989e2f66c1.bindPopup(popup_f6c23e6df195c10f6dbe34da50b8b44f)
+        ;
+
+        
+    
+    
+            circle_marker_a1f32e469864cc0109d6a1989e2f66c1.bindTooltip(
+                `&lt;div&gt;
+                     Tulare County, California
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_fb0bfd3d9f58f07b7545cc26b4937e50 = L.circleMarker(
+                [32.0196, -88.2632],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_6154309f3df8dda89bab66b02cab157e = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_3b1bcc844c9392ea95e16ca510fabadd = $(`&lt;div id=&quot;html_3b1bcc844c9392ea95e16ca510fabadd&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Choctaw County, Alabama&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 3.44&lt;/div&gt;`)[0];
+                popup_6154309f3df8dda89bab66b02cab157e.setContent(html_3b1bcc844c9392ea95e16ca510fabadd);
+            
+        
+
+        circle_marker_fb0bfd3d9f58f07b7545cc26b4937e50.bindPopup(popup_6154309f3df8dda89bab66b02cab157e)
+        ;
+
+        
+    
+    
+            circle_marker_fb0bfd3d9f58f07b7545cc26b4937e50.bindTooltip(
+                `&lt;div&gt;
+                     Choctaw County, Alabama
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_94513382eca9642f1d57190de0b00144 = L.circleMarker(
+                [31.1261, -87.1616],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_aecb04a2af85d9e803b099323c09c70a = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_f085c104acd71d61146f596d183e69f3 = $(`&lt;div id=&quot;html_f085c104acd71d61146f596d183e69f3&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Escambia County, Alabama&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.65&lt;/div&gt;`)[0];
+                popup_aecb04a2af85d9e803b099323c09c70a.setContent(html_f085c104acd71d61146f596d183e69f3);
+            
+        
+
+        circle_marker_94513382eca9642f1d57190de0b00144.bindPopup(popup_aecb04a2af85d9e803b099323c09c70a)
+        ;
+
+        
+    
+    
+            circle_marker_94513382eca9642f1d57190de0b00144.bindTooltip(
+                `&lt;div&gt;
+                     Escambia County, Alabama
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_11315ca06f20922e6351c45dbaba2ae5 = L.circleMarker(
+                [31.5708, -87.3654],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_b34a641127556c09620c810035b3a3a0 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_d2f3b846151939f2a43f1cceee7b00d3 = $(`&lt;div id=&quot;html_d2f3b846151939f2a43f1cceee7b00d3&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Monroe County, Alabama&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.04&lt;/div&gt;`)[0];
+                popup_b34a641127556c09620c810035b3a3a0.setContent(html_d2f3b846151939f2a43f1cceee7b00d3);
+            
+        
+
+        circle_marker_11315ca06f20922e6351c45dbaba2ae5.bindPopup(popup_b34a641127556c09620c810035b3a3a0)
+        ;
+
+        
+    
+    
+            circle_marker_11315ca06f20922e6351c45dbaba2ae5.bindTooltip(
+                `&lt;div&gt;
+                     Monroe County, Alabama
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_3725e4f3314a076ba06dca62dc30a075 = L.circleMarker(
+                [31.4076, -88.2079],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_c4aeff2c9d073ded5698bdd791f6cadd = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_8ed5ef84a91c8c7866e411f91684bf14 = $(`&lt;div id=&quot;html_8ed5ef84a91c8c7866e411f91684bf14&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Washington County, Alabama&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.25&lt;/div&gt;`)[0];
+                popup_c4aeff2c9d073ded5698bdd791f6cadd.setContent(html_8ed5ef84a91c8c7866e411f91684bf14);
+            
+        
+
+        circle_marker_3725e4f3314a076ba06dca62dc30a075.bindPopup(popup_c4aeff2c9d073ded5698bdd791f6cadd)
+        ;
+
+        
+    
+    
+            circle_marker_3725e4f3314a076ba06dca62dc30a075.bindTooltip(
+                `&lt;div&gt;
+                     Washington County, Alabama
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_74c058e2c280231aea6aa34b55701460 = L.circleMarker(
+                [31.9892, -87.3082],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_cae7ac193887c3d1b4ddab1bed896467 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_2d95d0ca526f01f4e125fa008c36e014 = $(`&lt;div id=&quot;html_2d95d0ca526f01f4e125fa008c36e014&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Wilcox County, Alabama&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 4.13&lt;/div&gt;`)[0];
+                popup_cae7ac193887c3d1b4ddab1bed896467.setContent(html_2d95d0ca526f01f4e125fa008c36e014);
+            
+        
+
+        circle_marker_74c058e2c280231aea6aa34b55701460.bindPopup(popup_cae7ac193887c3d1b4ddab1bed896467)
+        ;
+
+        
+    
+    
+            circle_marker_74c058e2c280231aea6aa34b55701460.bindTooltip(
+                `&lt;div&gt;
+                     Wilcox County, Alabama
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_c7b0831f3572a66c42ad7da9390cb2d2 = L.circleMarker(
+                [33.267, -91.2937],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_d359976139bda7c147a80701762e6c8e = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_4edea15fc8050a4e0d281c2c3b16c971 = $(`&lt;div id=&quot;html_4edea15fc8050a4e0d281c2c3b16c971&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Chicot County, Arkansas&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.57&lt;/div&gt;`)[0];
+                popup_d359976139bda7c147a80701762e6c8e.setContent(html_4edea15fc8050a4e0d281c2c3b16c971);
+            
+        
+
+        circle_marker_c7b0831f3572a66c42ad7da9390cb2d2.bindPopup(popup_d359976139bda7c147a80701762e6c8e)
+        ;
+
+        
+    
+    
+            circle_marker_c7b0831f3572a66c42ad7da9390cb2d2.bindTooltip(
+                `&lt;div&gt;
+                     Chicot County, Arkansas
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_7f4b0b4c9200143125156077ff16e050 = L.circleMarker(
+                [33.2143, -93.2273],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_5902b7d42f86eb39ba9b9dca82bd81c9 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_566ac37bb9db970906fc0ca262e3566f = $(`&lt;div id=&quot;html_566ac37bb9db970906fc0ca262e3566f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Columbia County, Arkansas&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.57&lt;/div&gt;`)[0];
+                popup_5902b7d42f86eb39ba9b9dca82bd81c9.setContent(html_566ac37bb9db970906fc0ca262e3566f);
+            
+        
+
+        circle_marker_7f4b0b4c9200143125156077ff16e050.bindPopup(popup_5902b7d42f86eb39ba9b9dca82bd81c9)
+        ;
+
+        
+    
+    
+            circle_marker_7f4b0b4c9200143125156077ff16e050.bindTooltip(
+                `&lt;div&gt;
+                     Columbia County, Arkansas
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_cd687e0d4e433f54ac31508439106a81 = L.circleMarker(
+                [34.2683, -91.9304],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_4a3d9db68757d0fb730a89d3481b3f35 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_6d7e96498e8c06abe7927570934f2cb0 = $(`&lt;div id=&quot;html_6d7e96498e8c06abe7927570934f2cb0&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Jefferson County, Arkansas&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.7&lt;/div&gt;`)[0];
+                popup_4a3d9db68757d0fb730a89d3481b3f35.setContent(html_6d7e96498e8c06abe7927570934f2cb0);
+            
+        
+
+        circle_marker_cd687e0d4e433f54ac31508439106a81.bindPopup(popup_4a3d9db68757d0fb730a89d3481b3f35)
+        ;
+
+        
+    
+    
+            circle_marker_cd687e0d4e433f54ac31508439106a81.bindTooltip(
+                `&lt;div&gt;
+                     Jefferson County, Arkansas
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_f70a662b29af5066cea93d506ce102a4 = L.circleMarker(
+                [34.7804, -90.7808],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_4265fd18eebbb5b52ca8712b7da4acc1 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_7c37a8ccd61ef00442d1a1beca196ce3 = $(`&lt;div id=&quot;html_7c37a8ccd61ef00442d1a1beca196ce3&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Lee County, Arkansas&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.52&lt;/div&gt;`)[0];
+                popup_4265fd18eebbb5b52ca8712b7da4acc1.setContent(html_7c37a8ccd61ef00442d1a1beca196ce3);
+            
+        
+
+        circle_marker_f70a662b29af5066cea93d506ce102a4.bindPopup(popup_4265fd18eebbb5b52ca8712b7da4acc1)
+        ;
+
+        
+    
+    
+            circle_marker_f70a662b29af5066cea93d506ce102a4.bindTooltip(
+                `&lt;div&gt;
+                     Lee County, Arkansas
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_90cbc37ab4e485b2731786f72a45b6d8 = L.circleMarker(
+                [36.7582, -119.6493],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_5b08146ef0165259e038fc7928a1fd70 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_48e40322fcf03245d93ec2fa01a6bc69 = $(`&lt;div id=&quot;html_48e40322fcf03245d93ec2fa01a6bc69&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Fresno County, California&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.01&lt;/div&gt;`)[0];
+                popup_5b08146ef0165259e038fc7928a1fd70.setContent(html_48e40322fcf03245d93ec2fa01a6bc69);
+            
+        
+
+        circle_marker_90cbc37ab4e485b2731786f72a45b6d8.bindPopup(popup_5b08146ef0165259e038fc7928a1fd70)
+        ;
+
+        
+    
+    
+            circle_marker_90cbc37ab4e485b2731786f72a45b6d8.bindTooltip(
+                `&lt;div&gt;
+                     Fresno County, California
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_67c37ddc18a5e9330d26c5fe28f37b30 = L.circleMarker(
+                [35.3426, -118.73],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_e5156bc95c19dd6a55e7a6d20608e835 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_e72b10e79cecf97c05e41445914ad713 = $(`&lt;div id=&quot;html_e72b10e79cecf97c05e41445914ad713&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Kern County, California&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.14&lt;/div&gt;`)[0];
+                popup_e5156bc95c19dd6a55e7a6d20608e835.setContent(html_e72b10e79cecf97c05e41445914ad713);
+            
+        
+
+        circle_marker_67c37ddc18a5e9330d26c5fe28f37b30.bindPopup(popup_e5156bc95c19dd6a55e7a6d20608e835)
+        ;
+
+        
+    
+    
+            circle_marker_67c37ddc18a5e9330d26c5fe28f37b30.bindTooltip(
+                `&lt;div&gt;
+                     Kern County, California
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_023c605f7e19bfdc17578d6c74872aa3 = L.circleMarker(
+                [34.1982, -118.2611],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_8f45add9ec0aa8aa5bcafc1291fd92df = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_b21c770b2e58dd2116f95e19efc0f716 = $(`&lt;div id=&quot;html_b21c770b2e58dd2116f95e19efc0f716&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Los Angeles County, California&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: -7.11&lt;/div&gt;`)[0];
+                popup_8f45add9ec0aa8aa5bcafc1291fd92df.setContent(html_b21c770b2e58dd2116f95e19efc0f716);
+            
+        
+
+        circle_marker_023c605f7e19bfdc17578d6c74872aa3.bindPopup(popup_8f45add9ec0aa8aa5bcafc1291fd92df)
+        ;
+
+        
+    
+    
+            circle_marker_023c605f7e19bfdc17578d6c74872aa3.bindTooltip(
+                `&lt;div&gt;
+                     Los Angeles County, California
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_8c8aa5730ff0b90c26e51639b420f2d6 = L.circleMarker(
+                [37.1919, -120.7177],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_7b0e4f4b3abf5cd8505afe2f3ce2d328 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_eecbd2f4c7b2ac80c82813ef9f15c70e = $(`&lt;div id=&quot;html_eecbd2f4c7b2ac80c82813ef9f15c70e&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Merced County, California&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.78&lt;/div&gt;`)[0];
+                popup_7b0e4f4b3abf5cd8505afe2f3ce2d328.setContent(html_eecbd2f4c7b2ac80c82813ef9f15c70e);
+            
+        
+
+        circle_marker_8c8aa5730ff0b90c26e51639b420f2d6.bindPopup(popup_7b0e4f4b3abf5cd8505afe2f3ce2d328)
+        ;
+
+        
+    
+    
+            circle_marker_8c8aa5730ff0b90c26e51639b420f2d6.bindTooltip(
+                `&lt;div&gt;
+                     Merced County, California
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_cee1e4ccaf8e72c669c4f65a08be421a = L.circleMarker(
+                [37.9348, -121.2714],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_cc0d357cae7b5519954ddd955f490e55 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_8bb6b275d18dec45048cab62a7edeffa = $(`&lt;div id=&quot;html_8bb6b275d18dec45048cab62a7edeffa&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: San Joaquin County, California&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.4&lt;/div&gt;`)[0];
+                popup_cc0d357cae7b5519954ddd955f490e55.setContent(html_8bb6b275d18dec45048cab62a7edeffa);
+            
+        
+
+        circle_marker_cee1e4ccaf8e72c669c4f65a08be421a.bindPopup(popup_cc0d357cae7b5519954ddd955f490e55)
+        ;
+
+        
+    
+    
+            circle_marker_cee1e4ccaf8e72c669c4f65a08be421a.bindTooltip(
+                `&lt;div&gt;
+                     San Joaquin County, California
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_eeb23b9ee2b37bde958afe85bab615c0 = L.circleMarker(
+                [32.3584, -84.0425],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_a95b1602c75e224df43cc3f46d711b19 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_8bfa380af3044f47ae7dd39a01236363 = $(`&lt;div id=&quot;html_8bfa380af3044f47ae7dd39a01236363&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Macon County, Georgia&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 4.27&lt;/div&gt;`)[0];
+                popup_a95b1602c75e224df43cc3f46d711b19.setContent(html_8bfa380af3044f47ae7dd39a01236363);
+            
+        
+
+        circle_marker_eeb23b9ee2b37bde958afe85bab615c0.bindPopup(popup_a95b1602c75e224df43cc3f46d711b19)
+        ;
+
+        
+    
+    
+            circle_marker_eeb23b9ee2b37bde958afe85bab615c0.bindTooltip(
+                `&lt;div&gt;
+                     Macon County, Georgia
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_c50993b34cefe9e7957b03180f1775ac = L.circleMarker(
+                [33.7971, -90.8806],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_05c2c20dc02cfc3793da9f08951267eb = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_18099a92a3fc96b2db6623c27d29e34f = $(`&lt;div id=&quot;html_18099a92a3fc96b2db6623c27d29e34f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Bolivar County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.69&lt;/div&gt;`)[0];
+                popup_05c2c20dc02cfc3793da9f08951267eb.setContent(html_18099a92a3fc96b2db6623c27d29e34f);
+            
+        
+
+        circle_marker_c50993b34cefe9e7957b03180f1775ac.bindPopup(popup_05c2c20dc02cfc3793da9f08951267eb)
+        ;
+
+        
+    
+    
+            circle_marker_c50993b34cefe9e7957b03180f1775ac.bindTooltip(
+                `&lt;div&gt;
+                     Bolivar County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_b939a13dab8f61ce09ec66c744e44ddd = L.circleMarker(
+                [33.409, -82.6768],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_2d9b380f89d8739c88914f954c276bbf = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_1b36aa0ebfbc6dc8c9eed73b27a2dbea = $(`&lt;div id=&quot;html_1b36aa0ebfbc6dc8c9eed73b27a2dbea&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Warren County, Georgia&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.55&lt;/div&gt;`)[0];
+                popup_2d9b380f89d8739c88914f954c276bbf.setContent(html_1b36aa0ebfbc6dc8c9eed73b27a2dbea);
+            
+        
+
+        circle_marker_b939a13dab8f61ce09ec66c744e44ddd.bindPopup(popup_2d9b380f89d8739c88914f954c276bbf)
+        ;
+
+        
+    
+    
+            circle_marker_b939a13dab8f61ce09ec66c744e44ddd.bindTooltip(
+                `&lt;div&gt;
+                     Warren County, Georgia
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_91de0dfb9e93abd91750e5ffcbc1b4a7 = L.circleMarker(
+                [37.6925, -83.9643],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_9c4c665b0cf6897e1f0a21358b668b04 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_29f2d2d60b6e10d6763c4667346aa109 = $(`&lt;div id=&quot;html_29f2d2d60b6e10d6763c4667346aa109&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Estill County, Kentucky&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.73&lt;/div&gt;`)[0];
+                popup_9c4c665b0cf6897e1f0a21358b668b04.setContent(html_29f2d2d60b6e10d6763c4667346aa109);
+            
+        
+
+        circle_marker_91de0dfb9e93abd91750e5ffcbc1b4a7.bindPopup(popup_9c4c665b0cf6897e1f0a21358b668b04)
+        ;
+
+        
+    
+    
+            circle_marker_91de0dfb9e93abd91750e5ffcbc1b4a7.bindTooltip(
+                `&lt;div&gt;
+                     Estill County, Kentucky
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_c142a7f538ad83bdd9eff67fa70f2c23 = L.circleMarker(
+                [37.7065, -83.0649],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_3ed57ab4e076669124b2353700d256e0 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_7add307323464260291f7890df3d51e8 = $(`&lt;div id=&quot;html_7add307323464260291f7890df3d51e8&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Magoffin County, Kentucky&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.83&lt;/div&gt;`)[0];
+                popup_3ed57ab4e076669124b2353700d256e0.setContent(html_7add307323464260291f7890df3d51e8);
+            
+        
+
+        circle_marker_c142a7f538ad83bdd9eff67fa70f2c23.bindPopup(popup_3ed57ab4e076669124b2353700d256e0)
+        ;
+
+        
+    
+    
+            circle_marker_c142a7f538ad83bdd9eff67fa70f2c23.bindTooltip(
+                `&lt;div&gt;
+                     Magoffin County, Kentucky
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_6f61d3400b12aa5bb7381a497cc16d8c = L.circleMarker(
+                [36.7122, -85.7165],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_d60d0747b2b9b7824104dff52f2af5ec = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_eddf216f03276ddc085df63323f19bb2 = $(`&lt;div id=&quot;html_eddf216f03276ddc085df63323f19bb2&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Monroe County, Kentucky&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.57&lt;/div&gt;`)[0];
+                popup_d60d0747b2b9b7824104dff52f2af5ec.setContent(html_eddf216f03276ddc085df63323f19bb2);
+            
+        
+
+        circle_marker_6f61d3400b12aa5bb7381a497cc16d8c.bindPopup(popup_d60d0747b2b9b7824104dff52f2af5ec)
+        ;
+
+        
+    
+    
+            circle_marker_6f61d3400b12aa5bb7381a497cc16d8c.bindTooltip(
+                `&lt;div&gt;
+                     Monroe County, Kentucky
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_13b915026b8008f2f547169b61569209 = L.circleMarker(
+                [32.0924, -92.1166],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_fd0f2bc6ec3bb364a59a1d3fb3721ec9 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_d61814aac0cdc225983f1959e519b97b = $(`&lt;div id=&quot;html_d61814aac0cdc225983f1959e519b97b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Caldwell Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.2&lt;/div&gt;`)[0];
+                popup_fd0f2bc6ec3bb364a59a1d3fb3721ec9.setContent(html_d61814aac0cdc225983f1959e519b97b);
+            
+        
+
+        circle_marker_13b915026b8008f2f547169b61569209.bindPopup(popup_fd0f2bc6ec3bb364a59a1d3fb3721ec9)
+        ;
+
+        
+    
+    
+            circle_marker_13b915026b8008f2f547169b61569209.bindTooltip(
+                `&lt;div&gt;
+                     Caldwell Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_748350a249289d37990e6e185b4ae78b = L.circleMarker(
+                [32.8228, -92.9957],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_b2032e7cbddb45b6e392f698a610bb2e = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_1a90dc93cd3dfce31a4cbb063c197263 = $(`&lt;div id=&quot;html_1a90dc93cd3dfce31a4cbb063c197263&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Claiborne Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.84&lt;/div&gt;`)[0];
+                popup_b2032e7cbddb45b6e392f698a610bb2e.setContent(html_1a90dc93cd3dfce31a4cbb063c197263);
+            
+        
+
+        circle_marker_748350a249289d37990e6e185b4ae78b.bindPopup(popup_b2032e7cbddb45b6e392f698a610bb2e)
+        ;
+
+        
+    
+    
+            circle_marker_748350a249289d37990e6e185b4ae78b.bindTooltip(
+                `&lt;div&gt;
+                     Claiborne Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_0b880a3e51c6ca3c3fc5bb50f51a73e7 = L.circleMarker(
+                [31.4459, -91.64],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_41ed3378d16ec75786533b5ea1d954c4 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_50470af143ad0ae6c417bf05710e7304 = $(`&lt;div id=&quot;html_50470af143ad0ae6c417bf05710e7304&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Concordia Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.03&lt;/div&gt;`)[0];
+                popup_41ed3378d16ec75786533b5ea1d954c4.setContent(html_50470af143ad0ae6c417bf05710e7304);
+            
+        
+
+        circle_marker_0b880a3e51c6ca3c3fc5bb50f51a73e7.bindPopup(popup_41ed3378d16ec75786533b5ea1d954c4)
+        ;
+
+        
+    
+    
+            circle_marker_0b880a3e51c6ca3c3fc5bb50f51a73e7.bindTooltip(
+                `&lt;div&gt;
+                     Concordia Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_fd8645489f4e4ac8bbcc15bc80ef0c58 = L.circleMarker(
+                [32.0555, -93.7373],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_c45ab047a5a0e0418c30cda0e609c5c8 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_93d6d5b5073afb7e5bb756584bdcf6a5 = $(`&lt;div id=&quot;html_93d6d5b5073afb7e5bb756584bdcf6a5&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: De Soto Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.59&lt;/div&gt;`)[0];
+                popup_c45ab047a5a0e0418c30cda0e609c5c8.setContent(html_93d6d5b5073afb7e5bb756584bdcf6a5);
+            
+        
+
+        circle_marker_fd8645489f4e4ac8bbcc15bc80ef0c58.bindPopup(popup_c45ab047a5a0e0418c30cda0e609c5c8)
+        ;
+
+        
+    
+    
+            circle_marker_fd8645489f4e4ac8bbcc15bc80ef0c58.bindTooltip(
+                `&lt;div&gt;
+                     De Soto Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_f062dc45089deeb034b167f4cc7999cb = L.circleMarker(
+                [30.5383, -91.0956],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_c680c5e690e6790e40c27c9b9bcdd0e4 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_253dd3a7d14982f7c8f5a09a36289c8f = $(`&lt;div id=&quot;html_253dd3a7d14982f7c8f5a09a36289c8f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: East Baton Rouge Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.16&lt;/div&gt;`)[0];
+                popup_c680c5e690e6790e40c27c9b9bcdd0e4.setContent(html_253dd3a7d14982f7c8f5a09a36289c8f);
+            
+        
+
+        circle_marker_f062dc45089deeb034b167f4cc7999cb.bindPopup(popup_c680c5e690e6790e40c27c9b9bcdd0e4)
+        ;
+
+        
+    
+    
+            circle_marker_f062dc45089deeb034b167f4cc7999cb.bindTooltip(
+                `&lt;div&gt;
+                     East Baton Rouge Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_4fa9b138f19c583dc1e3194fd4196dbc = L.circleMarker(
+                [32.8202, -91.8018],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_3f45caf3c9c0bcb4bf6aee2e0a485bf1 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_24fdb445ec5be8457adc83ea5bfeaada = $(`&lt;div id=&quot;html_24fdb445ec5be8457adc83ea5bfeaada&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Morehouse Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.54&lt;/div&gt;`)[0];
+                popup_3f45caf3c9c0bcb4bf6aee2e0a485bf1.setContent(html_24fdb445ec5be8457adc83ea5bfeaada);
+            
+        
+
+        circle_marker_4fa9b138f19c583dc1e3194fd4196dbc.bindPopup(popup_3f45caf3c9c0bcb4bf6aee2e0a485bf1)
+        ;
+
+        
+    
+    
+            circle_marker_4fa9b138f19c583dc1e3194fd4196dbc.bindTooltip(
+                `&lt;div&gt;
+                     Morehouse Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_acb88762c4b47cf888c919739e938f2c = L.circleMarker(
+                [30.0686, -89.9281],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_dbfbd04ef59c10afcf4a18c06ef8c490 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_efe23e537a8b77a2a78fdd9ce3eedfc3 = $(`&lt;div id=&quot;html_efe23e537a8b77a2a78fdd9ce3eedfc3&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Orleans Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 2&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 0.24&lt;/div&gt;`)[0];
+                popup_dbfbd04ef59c10afcf4a18c06ef8c490.setContent(html_efe23e537a8b77a2a78fdd9ce3eedfc3);
+            
+        
+
+        circle_marker_acb88762c4b47cf888c919739e938f2c.bindPopup(popup_dbfbd04ef59c10afcf4a18c06ef8c490)
+        ;
+
+        
+    
+    
+            circle_marker_acb88762c4b47cf888c919739e938f2c.bindTooltip(
+                `&lt;div&gt;
+                     Orleans Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_79a3f54df0c9b2631450ba54436eace4 = L.circleMarker(
+                [31.7524, -86.6803],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_3721ed067370ca794176f221c6a2e7cd = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_5741d2494a2e5ca1bbaa5f2e52bc70ad = $(`&lt;div id=&quot;html_5741d2494a2e5ca1bbaa5f2e52bc70ad&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Butler County, Alabama&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.57&lt;/div&gt;`)[0];
+                popup_3721ed067370ca794176f221c6a2e7cd.setContent(html_5741d2494a2e5ca1bbaa5f2e52bc70ad);
+            
+        
+
+        circle_marker_79a3f54df0c9b2631450ba54436eace4.bindPopup(popup_3721ed067370ca794176f221c6a2e7cd)
+        ;
+
+        
+    
+    
+            circle_marker_79a3f54df0c9b2631450ba54436eace4.bindTooltip(
+                `&lt;div&gt;
+                     Butler County, Alabama
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_a4269252309d9c70bd0354e0932e9f35 = L.circleMarker(
+                [30.8534, -90.0405],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_03a3e755a690dc05ca81e82b86ec8a4b = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_92098196e4b1a6fe6996d104b08c7e5b = $(`&lt;div id=&quot;html_92098196e4b1a6fe6996d104b08c7e5b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Washington Parish, Louisiana&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.95&lt;/div&gt;`)[0];
+                popup_03a3e755a690dc05ca81e82b86ec8a4b.setContent(html_92098196e4b1a6fe6996d104b08c7e5b);
+            
+        
+
+        circle_marker_a4269252309d9c70bd0354e0932e9f35.bindPopup(popup_03a3e755a690dc05ca81e82b86ec8a4b)
+        ;
+
+        
+    
+    
+            circle_marker_a4269252309d9c70bd0354e0932e9f35.bindTooltip(
+                `&lt;div&gt;
+                     Washington Parish, Louisiana
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_1e67195f8d69e76997bf9eefc346ce38 = L.circleMarker(
+                [31.1744, -90.8044],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_85f02c96e97fa41196d05e2ddb897cc4 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_e9e386a8c1f99efbf0af6bbc338db002 = $(`&lt;div id=&quot;html_e9e386a8c1f99efbf0af6bbc338db002&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Amite County, Mississippi&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 2.59&lt;/div&gt;`)[0];
+                popup_85f02c96e97fa41196d05e2ddb897cc4.setContent(html_e9e386a8c1f99efbf0af6bbc338db002);
+            
+        
+
+        circle_marker_1e67195f8d69e76997bf9eefc346ce38.bindPopup(popup_85f02c96e97fa41196d05e2ddb897cc4)
+        ;
+
+        
+    
+    
+            circle_marker_1e67195f8d69e76997bf9eefc346ce38.bindTooltip(
+                `&lt;div&gt;
+                     Amite County, Mississippi
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var circle_marker_3a3ead98dbe5de8f6a217369a94af4c2 = L.circleMarker(
+                [31.0888, -95.1355],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#c0392b&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#c0392b&quot;, &quot;fillOpacity&quot;: 0.75, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 9.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+    
+        var popup_2bc2fb37dff8f8c042b305fc13d87099 = L.popup({
+  &quot;maxWidth&quot;: 280,
+});
+
+        
+            
+                var html_f726f9907587ce81206a2403c1f9b8a4 = $(`&lt;div id=&quot;html_f726f9907587ce81206a2403c1f9b8a4&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;County&lt;/b&gt;: Trinity County, Texas&lt;br&gt;&lt;b&gt;Consensus (0-6)&lt;/b&gt;: 4&lt;br&gt;&lt;b&gt;Tier&lt;/b&gt;: B (high)&lt;br&gt;&lt;b&gt;Env domains&lt;/b&gt;: 1&lt;br&gt;&lt;b&gt;Social domains&lt;/b&gt;: 3&lt;br&gt;&lt;b&gt;Mismatch index&lt;/b&gt;: 1.84&lt;/div&gt;`)[0];
+                popup_2bc2fb37dff8f8c042b305fc13d87099.setContent(html_f726f9907587ce81206a2403c1f9b8a4);
+            
+        
+
+        circle_marker_3a3ead98dbe5de8f6a217369a94af4c2.bindPopup(popup_2bc2fb37dff8f8c042b305fc13d87099)
+        ;
+
+        
+    
+    
+            circle_marker_3a3ead98dbe5de8f6a217369a94af4c2.bindTooltip(
+                `&lt;div&gt;
+                     Trinity County, Texas
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            map_6f9d487b328328afa25dbabc4038142e.fitBounds(
+                [[29.6086, -121.2714], [42.2847, -74.2471]],
+                {}
+            );
+        
+    
+            tile_layer_7dac15cc8bd330413eab8febfa6172dd.addTo(map_6f9d487b328328afa25dbabc4038142e);
+        
+&lt;/script&gt;
+&lt;/html&gt;" loading="lazy" style="width:100%;height:520px;border:1px solid #e5e7eb;border-radius:9px;margin:10px 0"></iframe>

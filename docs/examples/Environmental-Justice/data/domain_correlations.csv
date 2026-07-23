@@ -1,0 +1,8 @@
+,D1_pollution_sources,D2_chemical_exposure,D3_ambient_quality,D4_socioeconomic,D5_public_safety,D6_health_outcomes,D7_service_scarcity
+D1_pollution_sources,1.0,0.449,0.301,-0.059,-0.511,-0.226,-0.455
+D2_chemical_exposure,0.449,1.0,0.195,0.019,-0.169,0.037,-0.188
+D3_ambient_quality,0.301,0.195,1.0,0.231,-0.056,0.248,0.088
+D4_socioeconomic,-0.059,0.019,0.231,1.0,0.477,0.765,0.233
+D5_public_safety,-0.511,-0.169,-0.056,0.477,1.0,0.618,0.478
+D6_health_outcomes,-0.226,0.037,0.248,0.765,0.618,1.0,0.489
+D7_service_scarcity,-0.455,-0.188,0.088,0.233,0.478,0.489,1.0
