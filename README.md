@@ -129,7 +129,7 @@ interactive HTML report, a reproducibility record preserving every verbatim
 SPARQL query, and an Excel workbook.
 
 > [!NOTE]
-> **Prerequisites for reproducing a case study:**
+> **Prerequisites for re-running a case study:**
 > - The two [Skills](#skills) — `okn-bioanalysis` (analysis) + `okn-report-style` (report format).
 > - The **PubMed** and **Paperclip** MCP connectors — [URLs and setup](#literature-comparison-connectors-pubmed--paperclip) (literature-comparison step only).
 
