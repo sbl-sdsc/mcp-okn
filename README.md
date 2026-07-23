@@ -146,7 +146,24 @@ SPARQL query, and an Excel workbook.
 | **Bisphenol chemical exposome** — 7 KGs, 13 bisphenol analogues, 183 target genes (186 consensus pairs) | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Bisphenol-Exposome/Bisphenol-Exposome_report.html) | [md](docs/examples/Bisphenol-Exposome/Bisphenol-Exposome_literature_comparison.md) | [xlsx](docs/examples/Bisphenol-Exposome/Bisphenol-Exposome_results.xlsx) | [md](docs/examples/Bisphenol-Exposome/Bisphenol-Exposome_reproducibility.md) |
 | **Cumulative environmental-justice burden** — 8 KGs, 3,134 counties, 6 burden domains (31 indicators), 495 high-burden | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Environmental-Justice/Environmental-Justice_report.html) | [md](docs/examples/Environmental-Justice/Environmental-Justice_literature_comparison.md) | [xlsx](docs/examples/Environmental-Justice/Environmental-Justice_results.xlsx) | [md](docs/examples/Environmental-Justice/Environmental-Justice_reproducibility.md) |
 
-Each report's Markdown source sits beside it in `docs/examples/`.
+Each case study is a self-contained folder under `docs/examples/{Name}/` — the
+report and its deliverables sit alongside the `figures/`, `scripts/`, and `data/`
+that produced them, so every analysis is inspectable and re-runnable:
+
+```
+docs/examples/Diabetes/
+├── Diabetes_report.html / .md         # interactive report + Markdown source
+├── Diabetes_literature_comparison.md  # per-finding PubMed / Paperclip check
+├── Diabetes_reproducibility.md        # every verbatim SPARQL query
+├── Diabetes_results.xlsx              # multi-sheet data workbook
+├── figures/                           # publication figures (PNG)
+├── scripts/                           # figure / report / analysis build code
+└── data/                              # intermediate result tables (CSV)
+```
+
+`figures/` ships with every study; `scripts/` and `data/` accompany most of them
+(the compact Bone-Health and SANS studies carry figures only, and Diabetes has no
+separate `data/`).
 
 ---
 
