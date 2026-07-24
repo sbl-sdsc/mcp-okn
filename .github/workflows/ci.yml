@@ -45,3 +45,38 @@ jobs:
 
       - name: Run tests (offline)
         run: uv run python -m pytest -q
+
+  skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Validate skills against the Agent Skills spec
+        run: |
+          for skill in skills/okn-report-style skills/okn-bioanalysis; do
+            echo "::group::agentskills validate $skill"
+            uvx --from skills-ref agentskills validate "$skill"
+            echo "::endgroup::"
+          done
+
+      - name: Check each skill zip is in sync with its folder
+        run: |
+          rc=0
+          for skill in okn-report-style okn-bioanalysis; do
+            echo "::group::zip sync: $skill"
+            tmp="$(mktemp -d)"
+            unzip -q "skills/$skill.zip" -d "$tmp"
+            # The zip bundles the folder verbatim (minus __pycache__/.DS_Store, which
+            # are gitignored and excluded from the zip), so a recursive diff must be
+            # clean. A mismatch means SKILL.md/references/scripts were edited but the
+            # zip was not rebuilt (`zip -rq $skill.zip $skill -x '*/__pycache__/*'`).
+            if ! diff -r -x __pycache__ -x '.DS_Store' "skills/$skill" "$tmp/$skill"; then
+              echo "::error::skills/$skill.zip is out of sync with skills/$skill — rebuild the zip"
+              rc=1
+            fi
+            echo "::endgroup::"
+          done
+          exit $rc

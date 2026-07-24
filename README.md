@@ -478,7 +478,11 @@ print(asyncio.run(run_sparql('SELECT ?s WHERE { ?s ?p ?o } LIMIT 3')))"
 ```
 
 CI (`.github/workflows/ci.yml`) runs ruff lint, ruff format-check, and mypy on
-every push/PR, plus the offline test suite on Python 3.10 and 3.12.
+every push/PR, plus the offline test suite on Python 3.10 and 3.12. A `skills`
+job validates both Agent Skills against the
+[Agent Skills spec](https://agentskills.io/specification) with the official
+`agentskills` validator and asserts each committed `.zip` is in sync with its
+skill folder (so an edited `SKILL.md` can't ship without a rebuilt zip).
 
 ### Lint & formatting conventions
 
