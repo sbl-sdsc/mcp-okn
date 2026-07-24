@@ -16,7 +16,7 @@ from xml.sax.saxutils import escape
 sys.path.insert(
     0, str(Path(__file__).resolve().parent.parent / "skills/okn-report-style/scripts")
 )
-import validate_okn_report as v  # noqa: E402
+import validate_okn_report as v
 
 TOKEN = "Demo"
 
@@ -75,7 +75,9 @@ def _md_to_html(md: str) -> str:
     )
 
 
-def _write_xlsx(path: Path, sheets=("Ranked Results", "Methods & Rules"), abbrev=True) -> None:
+def _write_xlsx(
+    path: Path, sheets=("Ranked Results", "Methods & Rules"), abbrev=True
+) -> None:
     """A minimal xlsx (a zip) carrying just what the validator reads: sheet names in xl/workbook.xml and,
     optionally, the word 'Abbreviations' as an inline cell string."""
     sheets_xml = "".join(
@@ -87,7 +89,11 @@ def _write_xlsx(path: Path, sheets=("Ranked Results", "Methods & Rules"), abbrev
         'xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">'
         f"<sheets>{sheets_xml}</sheets></workbook>"
     )
-    cell = "<row><c t=\"inlineStr\"><is><t>Abbreviations</t></is></c></row>" if abbrev else ""
+    cell = (
+        '<row><c t="inlineStr"><is><t>Abbreviations</t></is></c></row>'
+        if abbrev
+        else ""
+    )
     ws = f"<worksheet><sheetData>{cell}</sheetData></worksheet>"
     with zipfile.ZipFile(path, "w") as z:
         z.writestr("xl/workbook.xml", workbook)
@@ -103,9 +109,13 @@ def _build(tmp_path: Path) -> Path:
 
     (study / f"{TOKEN}_report.md").write_text(_REPORT_MD)
     (study / f"{TOKEN}_report.html").write_text(_md_to_html(_REPORT_MD))
-    (study / f"{TOKEN}_literature_comparison.md").write_text("# Lit comparison\n\n1. Demo. 2026.\n")
+    (study / f"{TOKEN}_literature_comparison.md").write_text(
+        "# Lit comparison\n\n1. Demo. 2026.\n"
+    )
     # No ```sparql blocks → the diagram gate passes trivially (nothing to diagram).
-    (study / f"{TOKEN}_reproducibility.md").write_text("# Reproducibility\n\nSpec and queries.\n")
+    (study / f"{TOKEN}_reproducibility.md").write_text(
+        "# Reproducibility\n\nSpec and queries.\n"
+    )
     _write_xlsx(study / f"{TOKEN}_results.xlsx")
 
     (study / "figures" / "fig1_demo.png").write_bytes(b"\x89PNG\r\n")
@@ -190,7 +200,9 @@ def test_renderer_driver_named_build_html_passes(tmp_path):
 
 def test_missing_workbook_sheet_fails(tmp_path):
     study = _build(tmp_path)
-    _write_xlsx(study / f"{TOKEN}_results.xlsx", sheets=("Ranked Results",))  # drop Methods & Rules
+    _write_xlsx(
+        study / f"{TOKEN}_results.xlsx", sheets=("Ranked Results",)
+    )  # drop Methods & Rules
     r = v.validate(str(study))
     assert any("Methods & Rules" in e for e in r.errors)
 
@@ -230,7 +242,9 @@ def test_duplicate_reproducibility_file_fails(tmp_path):
     (study / f"{TOKEN}_transcript.md").write_text("# stray transcript\n")
     r = v.validate(str(study))
     # Caught either as a split-reproducibility error or as an unexpected top-level file — both are correct.
-    assert any("reproducibility" in e.lower() or "transcript" in e.lower() for e in r.errors)
+    assert any(
+        "reproducibility" in e.lower() or "transcript" in e.lower() for e in r.errors
+    )
 
 
 def test_junk_file_in_subdir_fails(tmp_path):

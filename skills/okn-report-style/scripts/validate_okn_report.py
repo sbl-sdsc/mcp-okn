@@ -40,8 +40,8 @@ from pathlib import Path
 # Reuse the sibling skill scripts (present here and copied into every study's scripts/), so this runs
 # both from the skill dir and from inside a delivered package. build_report_html is stdlib-only.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import build_report_html as _brh  # noqa: E402
-import readd_query_diagrams as _rqd  # noqa: E402
+import build_report_html as _brh
+import readd_query_diagrams as _rqd
 
 # ── The mandated package (SKILL.md "Deliverable set") ────────────────────────────────────────────────
 REQUIRED_FILE_SUFFIXES = [
@@ -61,6 +61,7 @@ REQUIRED_DIRS = ["figures", "data", "scripts"]
 # one thing the skill explicitly bars from data/ is the literature comparison (a top-level sibling); genuine
 # junk (previews, worklists, temp/QA files, __pycache__) is caught by the recursive junk scan.
 DATA_ALLOWED_EXT = {".csv", ".tsv", ".json", ".mmd", ".md", ".txt"}
+
 
 # scripts/ is "the exact scripts used". The anti-pattern is BEHAVIORAL, not a filename: a script that
 # emits the report .html WITHOUT going through build_report_from_markdown is the hand-built
@@ -92,9 +93,7 @@ def _is_junk(name: str) -> bool:
         return True
     if any(s in low for s in _JUNK_SUBSTRINGS):
         return True
-    if any(low.startswith(p) for p in _JUNK_PREFIXES):
-        return True
-    return False
+    return any(low.startswith(p) for p in _JUNK_PREFIXES)
 
 
 # ── Report section order (SKILL.md §1..§12) ──────────────────────────────────────────────────────────
@@ -156,9 +155,10 @@ def _workbook_has_abbreviations(xlsx: Path) -> bool:
     inline in the worksheet XML (openpyxl uses inline strings), so scan both."""
     with zipfile.ZipFile(xlsx) as z:
         for member in z.namelist():
-            if member == "xl/sharedStrings.xml" or member.startswith("xl/worksheets/"):
-                if "abbreviation" in z.read(member).decode("utf-8", "ignore").lower():
-                    return True
+            if (
+                member == "xl/sharedStrings.xml" or member.startswith("xl/worksheets/")
+            ) and "abbreviation" in z.read(member).decode("utf-8", "ignore").lower():
+                return True
     return False
 
 
@@ -194,7 +194,9 @@ def _check_toplevel(study: Path, token: str, r: _Report) -> dict:
                 f"prefixed with the study token '{token}_'"
             )
         else:
-            r.err(f"unexpected top-level {kind}: '{name}' — not in the deliverable allowlist")
+            r.err(
+                f"unexpected top-level {kind}: '{name}' — not in the deliverable allowlist"
+            )
 
     return {
         "report_md": study / f"{token}_report.md",
@@ -277,7 +279,11 @@ def _check_figures(study: Path, report_md: Path, r: _Report) -> None:
 
     md = report_md.read_text(encoding="utf-8")
     referenced = set(re.findall(r"figures/(fig\d+_[^)\s\"']*\.png)", md))
-    on_disk = {p.name for p in figs.iterdir() if p.is_file() and re.match(r"fig\d+_.*\.png$", p.name)}
+    on_disk = {
+        p.name
+        for p in figs.iterdir()
+        if p.is_file() and re.match(r"fig\d+_.*\.png$", p.name)
+    }
     for missing in sorted(referenced - on_disk):
         r.err(f"figure referenced in the report but missing on disk: figures/{missing}")
     for orphan in sorted(on_disk - referenced):
@@ -323,7 +329,9 @@ def _check_section_order(report_md: Path, r: _Report) -> None:
     found_names = {name for _, name in matched}
 
     if "sources" not in found_names:
-        r.err("missing required section: 'Sources used' (§2) — every report must credit its sources")
+        r.err(
+            "missing required section: 'Sources used' (§2) — every report must credit its sources"
+        )
 
     # Relative order of recognized anchors must be monotonic (a subsequence of the canonical order).
     idxs = [i for i, _ in matched]
@@ -333,9 +341,14 @@ def _check_section_order(report_md: Path, r: _Report) -> None:
 
     # The last two SECTION headings must be Reproducibility then References, nothing after References.
     if "reproducibility" not in found_names or "references" not in found_names:
-        r.err("the report must end with '## Reproducibility' then '## References' (§11, §12)")
+        r.err(
+            "the report must end with '## Reproducibility' then '## References' (§11, §12)"
+        )
     else:
-        if headings[-1] != _norm_heading("references") and "references" not in headings[-1]:
+        if (
+            headings[-1] != _norm_heading("references")
+            and "references" not in headings[-1]
+        ):
             r.err(
                 f"'References' is not the last section — the last heading is '{headings[-1]}'; "
                 "nothing may follow References"
@@ -357,9 +370,13 @@ def _check_junk(study: Path, r: _Report) -> None:
         for p in base.rglob("*"):
             name = p.name
             if p.is_dir() and name in _JUNK_DIRS:
-                r.err(f"scratch/QA artifact in the package: {p.relative_to(study).as_posix()}/")
+                r.err(
+                    f"scratch/QA artifact in the package: {p.relative_to(study).as_posix()}/"
+                )
             elif p.is_file() and _is_junk(name):
-                r.err(f"scratch/QA/temp file in the package: {p.relative_to(study).as_posix()}")
+                r.err(
+                    f"scratch/QA/temp file in the package: {p.relative_to(study).as_posix()}"
+                )
 
 
 def _check_parity(paths: dict, r: _Report) -> None:
@@ -369,7 +386,9 @@ def _check_parity(paths: dict, r: _Report) -> None:
         if not res["ok"]:
             missing = res.get("missing_sections") or []
             detail = f" — missing/short: {', '.join(missing)}" if missing else ""
-            r.err(f"HTML/Markdown parity FAILED (see [check_report_parity] line){detail}")
+            r.err(
+                f"HTML/Markdown parity FAILED (see [check_report_parity] line){detail}"
+            )
 
 
 def _check_diagrams(paths: dict, r: _Report) -> None:
@@ -422,7 +441,9 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  - {e}")
         return 1
     extra = f" ({len(r.warnings)} warning(s))" if r.warnings else ""
-    print(f"[validate_okn_report] PASS: {token}/ is a compliant okn-report-style package{extra}")
+    print(
+        f"[validate_okn_report] PASS: {token}/ is a compliant okn-report-style package{extra}"
+    )
     return 0
 
 
