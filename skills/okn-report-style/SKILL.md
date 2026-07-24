@@ -19,7 +19,7 @@ compatibility: >-
   to render the HTML report, figures, workbook, and maps.
 metadata:
   author: sbl-sdsc
-  version: "0.1.0"
+  version: "0.1.1"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
