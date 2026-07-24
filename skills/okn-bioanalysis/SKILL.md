@@ -80,35 +80,23 @@ surfaces after the whole analysis is done and there's no time left to turn them 
 ## Operating rules (non-negotiable — details in the workflow reference)
 
 1. `reset_query_log` at the start; `create_reproducibility_record` + `get_kg_version` at the end (pin
-   versions + dates). `create_reproducibility_record` emits the lean deliverable — header + the
-   verbatim supporting queries + row counts — which fits inline and saves directly (use
-   `create_chat_transcript` only when you also need the conversation prose + result tables). **If it
-   comes back as a stub (log too large to return inline), that is NOT a stopping point:** you know how
-   many queries there are, so re-call with `supporting=[1, 5, 9, …]` (bare 1-based indices from
-   `get_query_log`) to curate to the findings-supporting queries, or batch them — never leave the
-   transcript missing. **A frequent cause of the stub/spill is the per-query mermaid diagrams** (each
-   duplicates its SPARQL and they are 25–50%+ of the bytes): pass **`include_query_diagrams=False`**
-   for a lean return, then **re-add** the diagrams as a postprocessing step (do BOTH halves — generating
-   lean and not re-adding silently drops them). Use report-style's one-command front door
-   **`scripts/readd_query_diagrams.py <transcript.md>`**: in a report session (where the
-   `sparql-to-mermaid` package isn't importable) it emits a work-list of the un-diagrammed queries —
-   generate each with the **`sparql_to_mermaid` TOOL** on the verbatim logged query, save
-   `[{sparql, mermaid}, …]` as `diagrams.json`, then re-run with `--diagrams diagrams.json --max-chars
-   4000` (see report-style for the full recipe). **Completeness gate — the transcript is not delivered
-   until `readd_query_diagrams.py --check <transcript.md>` prints `PASS`** (every ```sparql block has a
-   diagram); `--check` verifies without modifying and needs no package, so a FAIL is your tripwire that
-   the re-add was skipped — treat it as blocking. The re-add applies only when you still want them in
-   the final file; if the user asks for **no** diagrams, pass the flag and skip re-add. Don't mark
-   substantive queries `exploratory` — least of all the query that establishes a cross-KG bridge; that
-   one is the point of the analysis and MUST be logged.
+   versions + dates). `create_reproducibility_record` emits the lean deliverable (header + verbatim
+   supporting queries + row counts) that fits inline; use `create_chat_transcript` only when you also
+   need the conversation prose + result tables. **A stub return (log too large) is NOT a stopping
+   point** — re-call with curated `supporting=[1, 5, 9, …]` indices (from `get_query_log`), or batch,
+   so the transcript is never left missing. A frequent cause of the stub/spill is the per-query mermaid
+   diagrams: generate diagram-free (`include_query_diagrams=False`) then re-add via report-style's
+   `scripts/readd_query_diagrams.py`, ending on its `--check … PASS` gate — full defer-and-re-add
+   recipe in **okn-report-style `references/failure-modes.md`**. Don't mark substantive queries
+   `exploratory` — least of all the query that establishes a cross-KG bridge; that one is the point of
+   the analysis and MUST be logged.
 2. Before querying a KG: `get_schema`. For cross-KG joins use the **precomputed crosswalk catalog**
    first — `list_crosswalks` (the whole verified join map in one call) and `get_join_strategy(a, b)`
    (one pair's recipe; respect `known_non_join`); `find_context_sources(want, join_key)` for the
    reverse ("who annotates this entity?"). **Reconcile with what these tools RETURN — don't just call
-   them.** `find_context_sources` is a capability index, not a single-answer lookup: for each `want`,
-   enumerate EVERY supplier it names and state why each was used or dropped (coverage, id scheme,
-   redundancy). Using one and ignoring the rest complies with "call the tools" while defeating their
-   purpose — a dropped supplier needs a reason, exactly like a skipped enrichment family (step 6). If a KG *seems* to lack an id you need, run
+   them:** `find_context_sources` is a capability index, not a single-answer lookup, so for each `want`
+   enumerate EVERY supplier and state why each was used or dropped (a dropped supplier needs a reason,
+   exactly like a skipped enrichment family). If a KG *seems* to lack an id you need, run
    `find_crosswalks(kg)` before giving up — the id is usually just encoded non-obviously (a buried
    mapping predicate, the node's own IRI, or an arbitrary domain predicate). Before joining on
    ontology-term objects: `probe_namespaces` — pick the richest id scheme, don't guess.
@@ -190,21 +178,16 @@ label-match cases, and the bio↔geography bridges are tabulated in **`reference
    which supplier fed each; `find_context_sources(want=["trait","disease"], join_key="gene")` lists
    all suppliers to reconcile against (rule 2).
 10. **Drug / target / exposure linkage.**
-    - **Known & candidate treatments for a target (therapeutic hypotheses).** For each known or
-      top-ranked target, find drugs / compounds that act on it: on a **protein (UniProt)** or **gene**
-      (Ensembl; Entrez / HGNC symbol via a bridge) target, **prokn** links approved / investigational
-      **drugs** and **probe compounds** (measured bioactivity) to the target; and chain
-      **target → its diseases → drugs that treat them** for a
-      **repurposing** angle (disease↔gene, then a drug→disease layer — **rdkg `treats`** is the clean
-      curated source; **spoke-okn** also carries DrugBank drugs + a `TREATS_CtD` drug→disease layer,
-      though sparser). Map every hit back onto the target; `find_context_sources(want=["drug"],
-      join_key=…)` confirms the suppliers. spoke-okn can also tie a drug to **place / SDoH** (step 11).
-    - **Label the evidence layer honestly:** approved therapeutic > investigational > medicinal-
-      chemistry probe (potential, unvalidated) > toxicogenomic perturbation — e.g. **spoke-okn's
-      compound→gene layer is a toxicogenomic perturbation, not a treatment**, so check what a
-      compound→gene predicate means. The payload label is the fastest evidence cue: a **`drug`**
-      payload is a DrugBank therapeutic (approved / investigational); a **`chemical`** payload is a
-      CAS / CHEBI / PubChem *substance* — a med-chem probe or tox-screen chemical, i.e. a lower rung.
+    - **Known & candidate treatments for a target.** On a **protein (UniProt)** or **gene** (Ensembl;
+      Entrez / HGNC via a bridge) target, **prokn** links approved / investigational **drugs** and
+      **probe compounds** to it; chain **target → its diseases → drugs that treat them** for a
+      **repurposing** angle (**rdkg `treats`** is the clean curated source; **spoke-okn** carries
+      DrugBank + a sparser `TREATS_CtD` layer). Map hits back onto the target; confirm suppliers with
+      `find_context_sources(want=["drug"], …)`. spoke-okn can also tie a drug to **place / SDoH** (step 11).
+    - **Label the evidence layer honestly:** approved > investigational > med-chem probe > toxicogenomic
+      perturbation — e.g. spoke-okn's compound→gene layer is a tox perturbation, not a treatment. The
+      payload label is the fastest cue: **`drug`** = DrugBank therapeutic; **`chemical`** = a CAS / CHEBI
+      / PubChem substance (med-chem probe or tox-screen), a lower rung.
     - **Exposure / toxicology (environmental questions):** chemical↔gene tox screens (biobricks tox)
       and adverse outcome pathways (aopwiki) — the harmful-exposure direction, distinct from therapy.
 11. **Place-based linkage (bio ↔ geography).** When the question is spatial, get the bio entity onto a
@@ -249,13 +232,11 @@ label-match cases, and the bio↔geography bridges are tabulated in **`reference
 
 - Joining across KGs on study / dataset accessions (island) → integrate on entity IDs / geography.
 - Enrichment against an implicit / all-genome background → inflated significance.
-- Doing GO enrichment and silently skipping Reactome (or half of any compound deliverable) → they are
-  separate families; run both and declare run-vs-skipped with reasons. A missing analysis has no
-  loud tripwire (unlike an absurd result), so the report must make the omission explicit.
+- GO enrichment done, Reactome silently skipped (or half of any compound deliverable) → separate
+  families; run both and declare run-vs-skipped with reasons (a missing analysis has no loud tripwire).
 - Using only the KGs with prominent write-ups here and missing one named in a parenthetical (e.g.
-  `digcfdekg`) → that is pattern-matching on this doc's layout, not reading the capability index.
-  Reconcile against what `find_context_sources` RETURNS: list every supplier per `want`, use-or-drop
-  each with a reason.
+  `digcfdekg`) → reconcile against what `find_context_sources` RETURNS: list every supplier per `want`,
+  use-or-drop each with a reason.
 - Reaching place-based data by name instead of a geographic key → join on FIPS / ZIP / S2 (find the
   bridge KG with `find_context_sources` / `get_join_strategy`).
 - A single combined query pushing a big reified pattern + OPTIONAL joins → timeout; go one piece at a

@@ -106,19 +106,13 @@ come between them, and nothing follows References:
    SKIPPED, each with a one-line reason** — a silently dropped sub-analysis reads as full coverage.
 7. **Discussion** — synthesise the axes; state implications / targets and the testable predictions.
 8. **Comparison with prior work** — per-finding concordance with citations; needs the PubMed /
-   Paperclip connectors (preflight them, or state §8 is omitted — never drop it silently).
-   **Lead with a numbered `| # | Claim | Concordance |` table** — one row per checked claim, each
-   cell a bolded label from the **closed six-term set** (**SUPPORTED** / **PARTIALLY SUPPORTED** /
-   **CONTRADICTED** / **MIXED** / **NOVEL** / **UNRESOLVED** — no custom or compound labels; every
-   qualifier goes in the description) followed by its reason — then the full-text line and the
-   divergences paragraph. Head the column *Concordance*, never *Verdict*: the report is not passing
-   judgement.
-   Prose-only §8s hide the distribution; see `references/report-structure.md`. The
-   full per-claim record goes in `<study>_literature_comparison.md`; §8 points at it with a
-   **relative sibling link in the `.md`**. The **`.html` names companion documents rather than
-   linking them** — it gets copied out of its folder, where any sibling link is dead; the renderer
-   enforces this by emitting `<a>` only for absolute destinations. Never hard-code a repo URL. See
-   `references/report-structure.md` → *Linking between deliverables*.
+   Paperclip connectors (preflight them, or state §8 is omitted — never drop it silently). **Lead with a
+   numbered `| # | Claim | Concordance |` table**, each cell a bolded label from the **closed six-term
+   set** (SUPPORTED / PARTIALLY SUPPORTED / CONTRADICTED / MIXED / NOVEL / UNRESOLVED — no custom labels;
+   qualifiers go in the description); head the column *Concordance*, never *Verdict*. The full per-claim
+   record goes in `<study>_literature_comparison.md` (§8 links it as a **relative sibling** in the `.md`;
+   the `.html` names companion docs rather than linking). Details + the deliverable-linking rules:
+   `references/report-structure.md`.
 9. **Full ranked results** — pointer to xlsx / tsv + the interactive HTML table + a prose slice.
 10. **Summary of findings & limitations** — **always end the report here**: a findings recap, then the
     caveats as a numbered list. **This is the single home for the caveats list — don't duplicate it.**
@@ -128,15 +122,11 @@ come between them, and nothing follows References:
     carries the header timing; pass `chat_started=` for whole-chat elapsed, else the active-query
     window). Token/cost isn't visible to the tooling — cite client figures or omit.
 12. **References** — numbered, one fixed shape: `Author, et al. Title. *Journal*. Year. PMID:… ·
-    [doi:…](https://doi.org/…)`, plus ` — full-text-verified (<link>)` on entries actually read in
-    full, where `<link>` is the **PMC** id (`[PMC…](…)`) or, for a paywalled paper read through
-    Paperclip, the **Paperclip line-anchored URL** (`[full text](https://citations.gxl.ai/…#Lxx)`) —
-    never a bare marker with no link. Fields come from the NCBI `esummary` record, not from memory;
-    percent-encode `(`/`)` in DOI links (Lancet-style DOIs break Markdown otherwise); test the links —
-    403 is a publisher bot-block, 404 is a defect. **Preprints**: label them
-    `*<Server>* (preprint — not peer-reviewed)` using the server's full name, never the `Res Sq`-style
-    abbreviation; a missing PMID/PMC is normal for them and the DOI alone is enough — check first
-    whether a peer-reviewed version now exists. See `references/report-structure.md`.
+    [doi:…](…)`, plus ` — full-text-verified (<link>)` on entries read in full (the **PMC** id or a
+    Paperclip line-anchored URL — never a bare marker). Fields from the NCBI `esummary`, not memory;
+    percent-encode `(`/`)` in DOIs; test links (403 = bot-block, 404 = defect). **Preprints**: label
+    `*<Server>* (preprint — not peer-reviewed)`, DOI alone is enough — check first for a peer-reviewed
+    version. Full shape: `references/report-structure.md`.
 
 **One kind of data, one place.** Group all results of the same kind into a *single* section — never
 scatter the same data type (geolocation, an entity type, an enrichment family, a network output)
@@ -231,38 +221,18 @@ from the `.md` and splices the table in at the `<!-- RESULTS_TABLE -->` marker. 
 sorted by the count). It emits the sortable / filterable / paginated table and the whole page; see
 `python scripts/build_report_html.py --demo-md` (render-from-Markdown) or `--demo` (low-level path).
 
-**Call `build_report_from_markdown` — do not write your own HTML builder.** This has been the single
-most common — and most recurrent — way the deliverable breaks: not editing the `.md` and `.html` out
-of sync, but bypassing the renderer entirely — hand-authoring the HTML body, or writing a one-off
-script that takes report sections as **raw HTML strings** and fills in a condensed version from
-memory. That silently ships a "highlights reel" — the interesting claims kept, and the
-unglamorous-but-mandatory parts dropped (the **§2 Sources** table, **§3 Design & rules**, **§4
-Confidence tiers**, **§7 Discussion**, **§8 Comparison with prior work** — the whole literature
-validation — **§10 Limitations**, **§11 Reproducibility**, **§12 References**). The artifact everyone
-opens then lacks exactly the provenance, the adversarial evidence, and the caveats. **There is never a
-reason to hand-build:** `build_report_from_markdown` renders the *entire* `.md` faithfully and also
-**self-verifies** (below), which a hand-built page does not. If you catch yourself writing `<h2>` tags
-or a custom build script for a report, stop — you are about to ship a highlights reel.
+**Never write your own HTML builder — always render through `build_report_from_markdown`.** Bypassing
+the renderer (hand-authoring the body, or a one-off script fed raw HTML sections from memory) silently
+ships a "highlights reel" that keeps the interesting claims and drops the mandatory sections. **Do not
+copy the `docs/examples/*/build_html.py` scripts** — they predate this renderer and are the
+anti-pattern (see `references/failure-modes.md`).
 
-> **Do NOT copy the `docs/examples/*/build_html.py` scripts — they are the anti-pattern, not the
-> template.** Every one of them predates this renderer, hand-authors the HTML, and **FAILS
-> `check_report_parity`** (the shipped example `.html`s carry only 22–71% of their `.md` and each drops
-> 4–17 sections — including the mandatory Limitations / Caveats and the contradicting-evidence
-> sections). A model that reads `docs/examples/` for a build template learns exactly the failure mode
-> above — which is why this recurs. Ignore those `build_html.py` files; the **only** supported way to
-> build a report's `.html` is `build_report_from_markdown`, and the same `.md` that fails parity
-> hand-built **passes** (0 missing sections) when rendered through it.
-
-**Completeness gate — the report is not "delivered" until you have seen `[check_report_parity] PASS`.**
-`build_report_from_markdown` runs **`check_report_parity(md_path, html_path)`** automatically after
-writing (it prints `[check_report_parity] PASS …`) — so if you used it, read that line before
-presenting the report. If you built the HTML any other way, you MUST run it yourself
-(`check_report_parity(md, html)` or `python scripts/build_report_html.py --check report.md
-report.html`) and see PASS first. It confirms the HTML is the *same report*: every `##`/`###` heading
-from the `.md` is present and the visible word count is within `min_word_ratio` (default 0.85). It
-**FAILS**, naming the missing sections, on a dropped-section / condensed build — a check distinct from
-self-containment / numbers / markup, all of which pass on an HTML that is a quarter of the report.
-Treat a FAIL (or never having run it) as blocking: do not present the `.html` until parity PASSES.
+**Completeness gate — not "delivered" until you've seen `[check_report_parity] PASS`.**
+`build_report_from_markdown` runs `check_report_parity(md_path, html_path)` automatically after writing;
+read that line before presenting. If you built the HTML any other way, run it yourself
+(`python scripts/build_report_html.py --check report.md report.html`) and see PASS first — it confirms
+every heading is present and the visible word count is within `min_word_ratio` (0.85), FAILING and
+naming the missing sections on a condensed build. Treat a FAIL (or never having run it) as blocking.
 
 ## Excel workbook
 
@@ -272,87 +242,26 @@ sub-analysis, any retrieved items, and a **Methods & Rules** sheet including an 
 Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient for results data
 (not formulas); if you do add formulas, recalculate and check for errors.
 
-## Common failure modes (all seen in real reports)
+## Common failure modes
 
-- Legend overlapping a donut / pie or bar → move it out; regenerate; re-read the PNG.
-- Figure caption text baked into the PNG → move to the legend below.
-- Geographic points plotted as a bare lon/lat scatter on empty axes → put them on an OpenStreetMap
-  basemap (static: `contextily`; interactive: `folium`) so the geography is legible.
-- Figures out of numerical order after inserting a new one → renumber captions + files (enforced by
-  `check_figure_numbering` inside the `check_report_parity` delivery gate — it FAILs on non-consecutive
-  captions or filenames, so this can't ship silently).
-- Same kind of data split across two+ sections (e.g. geolocation in two places) → consolidate into
-  one section; cross-reference instead of repeating.
-- **Sources used** section missing, or a queried KG absent from it → always include the table with a
-  row per KG actually queried.
-- Phantom source: a KG credited in the Sources table / as a pill though no logged query touched it
-  (its "contribution" came from an exploratory or unlogged query) → drop it, or re-run the bridge
-  query non-exploratory so it's in the transcript. Every source must trace to a logged query.
-- **Reproducibility transcript left missing because `create_reproducibility_record` returned a stub**
-  (the log was too large to return inline) → a stub is a next step, not a stopping point. Re-call with
-  `supporting=[1, 5, 9, …]` (bare 1-based indices from `get_query_log`) to curate to the
-  findings-supporting queries, or batch them (`list(range(1, 41))`, then `range(41, 81)`, …). Curating
-  the real logged queries is not the forbidden fabrication — never ship the report with an empty or
-  placeholder transcript.
-- **Transcript bloated / spilling because of the per-query mermaid diagrams** — each ` ```sparql `
-  block is followed by a ` ```mermaid ` diagram that duplicates it, and those diagrams are 25–50%+ of
-  the bytes, which is often what pushes the return over the inline limit → **generate diagram-free,
-  then re-add the diagrams as a postprocessing step** (both halves — generating lean and *not*
-  re-adding silently drops the diagrams; that is an omission, not a choice):
-  1. Call `create_chat_transcript` / `create_reproducibility_record` with
-     **`include_query_diagrams=False`** (lean return, no stub/spill) and save the markdown.
-  2. Re-add the diagrams with **`scripts/readd_query_diagrams.py <transcript.md>`** — the ONE-command
-     front door for this half. It auto-selects the path: if `sparql-to-mermaid` is importable (a dev
-     checkout) it generates every diagram and injects them in that single call; if not (the usual
-     report session, since the package is mcp-okn-internal and **not pip-installable**) it writes the
-     exact WORK-LIST of un-diagrammed queries to `<transcript.md>.queries.json` and exits non-zero so
-     you can't mistake it for done. Turn that list into diagrams by calling the **`sparql_to_mermaid`
-     TOOL** (available over MCP) on **each verbatim** query (never a shortened copy, and never a
-     hand-drawn or paraphrased diagram — the diagram must be the tool's exact output; anything else is a
-     fidelity break the `--check` gate now rejects), save `[{sparql, mermaid}, …]` as `diagrams.json`,
-     then re-run `python scripts/readd_query_diagrams.py <transcript.md> --diagrams diagrams.json
-     --max-chars 4000` (dependency-free injection, idempotent). (The injection engine is
-     `scripts/expand_query_diagrams.py`; the helper is a thin front door over it.) Do **not** write a
-     bespoke per-study script that emits diagram strings — that bypass is exactly what once shipped
-     diagrams missing their KG box.
-  **Cap the diagrams** (`--max-chars 4000`, mirroring the server's `diagram_max_chars`): as of
-  `sparql-to-mermaid` **v0.5.0** a long `VALUES` list collapses to "3 values + `+N more`" (the
-  `max_values` default) **and** node labels are quoted, so the old symbol-list blowup — a 250-symbol
-  query → a ~28K-char diagram of ~280 meaningless nodes — no longer happens, and an IRI with special
-  characters (e.g. a Reactome / PubChem id containing `(`) no longer breaks Mermaid parsing; the cap
-  stays as a backstop for any diagram that is still huge (e.g. very many distinct triples). (v0.5.0
-  also adds an opt-in `portable=True` / `--portable` mode that compacts unknown IRIs to CURIEs for
-  stricter renderers; the default output used here renders in Claude's Artifact renderer and current
-  Mermaid, so you don't need it unless a specific viewer rejects a diagram.) Skipped diagrams get **noted in the transcript** (a one-line
-  table), the same rule the server applies inline. Don't
-  rasterize the mermaid to SVG/PNG — leave it as source. **This defer-and-re-add flow applies only when
-  you still want the diagrams in the final file.** If the user asks for **no** query diagrams at all,
-  pass `include_query_diagrams=False` (and `include_visualizations=False` for the schema classDiagrams)
-  and **skip the re-add step** — don't re-inject what they asked to omit.
-  **Completeness + fidelity gate — the transcript is not "delivered" until `readd_query_diagrams.py
-  --check <transcript.md>` prints `[readd_query_diagrams] PASS`.** It checks two things, WITHOUT
-  modifying and with no package needed: **(a) presence** — every ```sparql block has a ```mermaid
-  diagram (a FAIL here means you generated lean and skipped the re-add); and **(b) fidelity** — every
-  query scoped to a named `GRAPH` has a diagram carrying the `subgraph ["GRAPH …"]` box that
-  `sparql_to_mermaid` always emits, so a boxless diagram is caught as hand-drawn / stale / from a
-  bespoke script rather than the tool. This mirrors the HTML's `check_report_parity` gate; run it as the
-  last step and treat FAIL (or never having run it) as blocking. (The only clean way to skip it is the
-  user asking for no diagrams — then there are no ```sparql-without-diagram blocks to flag anyway.)
-- No closing recap / limitations → end with **Summary of findings & limitations** (findings recap +
-  numbered caveats).
-- Undefined acronyms → add the Abbreviations block and expand each at first use.
-- 900-row HTML table → paginate, and add the subset pull-downs + a search box.
-- **Prose drifting between .md and .html** because the HTML re-states the report instead of rendering
-  it (a section, figure legend, or interpretation edited in one file and now disagreeing with the
-  other) → generate the `.html` FROM the `.md` with `build_report_from_markdown(...)`; never
-  hand-author HTML prose that duplicates the Markdown. The `.md` is the single source of the prose.
-- **HTML is a "highlights reel" missing whole sections** — a hand-authored HTML (or a custom builder
-  fed raw HTML sections) that keeps the interesting claims but silently drops the mandatory,
-  unglamorous ones (**§2 Sources**, **§10 Limitations**, Discussion, Reproducibility, References,
-  Abbreviations). Self-containment / numbers / markup checks all pass on it — none asks whether it is
-  the *same report* → render from the `.md`, and run **`check_report_parity(md, html)`** as the final
-  gate (it FAILS naming the dropped sections when the HTML is shorter than the source).
-- Numbers drifting between .md / .html / .xlsx after an edit → keep a single `stats.json`, reference
-  each figure as a `{{key}}` placeholder, and let the tooling fill it (`fill_stats` for the delivered
-  `.md`, `build_report_from_markdown(stats=…)` for the `.html`, `kpis_from_stats` for the KPI cards) so
-  one edit propagates everywhere. Grep the three artifacts for the key figures to confirm they match.
+The full catalog of real report failures and their fixes is **`references/failure-modes.md`** — skim
+it before delivering, and read it in full for the two procedures that recur most (the hand-built
+"highlights-reel" HTML and the dropped / diagram-bloated reproducibility transcript). The ones to keep
+front of mind:
+
+- **Hand-built / "highlights-reel" HTML** that silently drops mandatory sections (§2 Sources, §10
+  Limitations, §8 Comparison, References…) → always render from the `.md` with
+  `build_report_from_markdown` and see `[check_report_parity] PASS` before presenting. Do **not** copy
+  `docs/examples/*/build_html.py` — those are the anti-pattern.
+- **Phantom source** — a KG credited with no logged query behind it → cut it, or re-run the bridge
+  query non-exploratory so it's in the transcript.
+- **Numbers drifting** across `.md` / `.html` / `.xlsx` → single `stats.json` + `{{key}}` placeholders,
+  filled by the tooling; grep the three artifacts to confirm they match.
+- **Reproducibility transcript stubbed or bloated** — a stub (log too large) is a next step, not a stop:
+  re-call with curated `supporting=[…]` indices. If per-query mermaid diagrams cause the bloat/spill,
+  generate diagram-free (`include_query_diagrams=False`) then re-add via
+  `scripts/readd_query_diagrams.py` — do BOTH halves and end on `[readd_query_diagrams] PASS`. Full
+  defer-and-re-add recipe + the `--check` fidelity gate: **`references/failure-modes.md`**.
+- **Figure problems** — legend/caption baked into the PNG, in-plot overlap, out-of-order numbering,
+  bare lat/long scatter, same data split across sections → legend below, re-read the rendered PNG,
+  renumber on reorder, use an OSM basemap, consolidate. (All expanded in the reference.)
