@@ -269,34 +269,8 @@ report deliverables without re-explaining conventions each time:
   chemicals, drugs, enrichment, ortholog projection, and linking bio entities to
   place-based data via geography).
 
-Each skill is a self-contained folder: a `SKILL.md` — kept lean so it loads fast
-(both are under the 500-line / 5,000-token best-practice budget) — plus a
-`references/` directory of detailed material the agent pulls in **on demand**
-(progressive disclosure), and a `scripts/` directory of the helpers the workflow
-calls.
-
-The `references/` files, per skill:
-
-- **[`okn-report-style/references/`](skills/okn-report-style/references/)** —
-  [`report-structure.md`](skills/okn-report-style/references/report-structure.md)
-  (the section-by-section report template),
-  [`figure-checklist.md`](skills/okn-report-style/references/figure-checklist.md)
-  (the per-figure checklist), and
-  [`failure-modes.md`](skills/okn-report-style/references/failure-modes.md)
-  (real report failures and their fixes — the highlights-reel HTML, the
-  transcript-diagram defer-and-re-add flow, the parity gates).
-- **[`okn-bioanalysis/references/`](skills/okn-bioanalysis/references/)** —
-  [`mcp-okn-workflow.md`](skills/okn-bioanalysis/references/mcp-okn-workflow.md)
-  (how the server tools drive discovery and joins, plus the bio↔geography bridge),
-  [`enrichment-methods.md`](skills/okn-bioanalysis/references/enrichment-methods.md)
-  (over-representation done right),
-  [`mechanistic-map.md`](skills/okn-bioanalysis/references/mechanistic-map.md)
-  (building the anchor → module → gene → drug map), and
-  [`pitfalls.md`](skills/okn-bioanalysis/references/pitfalls.md)
-  (recurring cross-KG failure modes).
-
-A ready-to-upload zip of each skill — `SKILL.md`, `references/`, and `scripts/`
-bundled together — is also committed for convenience:
+Each skill is a self-contained folder: a `SKILL.md` plus `references/` and
+`scripts/`. A ready-to-upload zip of each is also committed for convenience:
 
 - [`skills/okn-report-style.zip`](skills/okn-report-style.zip)
 - [`skills/okn-bioanalysis.zip`](skills/okn-bioanalysis.zip)
