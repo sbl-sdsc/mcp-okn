@@ -37,7 +37,7 @@ geospatial / environmental / social layers you can bridge into. There is **no si
 source** — pick the KGs the question needs and **integrate on shared entity identifiers** (never on
 study / dataset accessions).
 
-**Three references (progressive disclosure):**
+**References (progressive disclosure):**
 - **`references/mcp-okn-workflow.md`** — how to let the mcp-okn **server tools** drive discovery and
   joins (`list_crosswalks` / `get_join_strategy` / `find_context_sources` / `find_crosswalks` /
   `get_valid_contrasts`), the identifier types you join on, the **bio↔geography bridge**, and the
@@ -46,6 +46,8 @@ study / dataset accessions).
   phenotype / chemical sets) done right: explicit background, hypergeometric + FDR, interpretation.
 - **`references/mechanistic-map.md`** — *when the question is "map the biology of X":* how to build the
   **anchor → module → gene → drug mechanistic map** (the synthesis network figure) honestly.
+- **`references/pitfalls.md`** — the recurring cross-KG failure modes and their fixes; skim before
+  finalising an analysis.
 
 **Three scripts:**
 - **`scripts/enrichment.py`** — hypergeometric over-representation + Benjamini–Hochberg FDR against
@@ -230,14 +232,5 @@ label-match cases, and the bio↔geography bridges are tabulated in **`reference
 
 ## Common failure modes
 
-- Joining across KGs on study / dataset accessions (island) → integrate on entity IDs / geography.
-- Enrichment against an implicit / all-genome background → inflated significance.
-- GO enrichment done, Reactome silently skipped (or half of any compound deliverable) → separate
-  families; run both and declare run-vs-skipped with reasons (a missing analysis has no loud tripwire).
-- Using only the KGs with prominent write-ups here and missing one named in a parenthetical (e.g.
-  `digcfdekg`) → reconcile against what `find_context_sources` RETURNS: list every supplier per `want`,
-  use-or-drop each with a reason.
-- Reaching place-based data by name instead of a geographic key → join on FIPS / ZIP / S2 (find the
-  bridge KG with `find_context_sources` / `get_join_strategy`).
-- A single combined query pushing a big reified pattern + OPTIONAL joins → timeout; go one piece at a
-  time, no global ORDER BY.
+Before finalising an analysis, skim **`references/pitfalls.md`** — the recurring cross-KG mistakes and
+their fixes, each the inverse of an Operating rule or Analysis-menu step above.
