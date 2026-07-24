@@ -65,22 +65,21 @@ abbreviation (`T2D_…`) that disagrees with the folder.
 Write working files to a scratch dir, then copy final artifacts into the delivered folder. Share
 the HTML, MD and XLSX with the user via the file-presentation tool.
 
-**One argument, authored once.** The `.md` is the single source of the report's *prose*; the `.html`
-is **rendered from it**, never re-authored (see *Interactive HTML report*). Numbers likewise have a
-single source: keep every volatile / headline figure in one **`stats.json`**, write it into the `.md`
-as a **`{{key}}` placeholder**, and let the tooling fill it — `fill_stats(text, stats)` fills the
-delivered `.md` (so it reads standalone), `build_report_from_markdown(..., stats=…)` fills the same
-placeholders when rendering the `.html`, and `kpis_from_stats(stats, spec)` builds the KPI cards from
-that dict. One edit in `stats.json` then updates the prose, the HTML, and the KPI cards at once. The
-remaining
-artifacts are deliberately **not** retellings of the report and must not be collapsed into it: the
-`_reproducibility.md` leads with the **originating user prompt** (pass it VERBATIM as
-`create_reproducibility_record`'s `prompt=`), then the replicator SPEC (rules, thresholds, joins,
-verified quantities, limitations — passed as `appendix=`), then the **verbatim
-SPARQL query text** that supports the findings, each with its row count (its unique payload — the
-queries exist nowhere else and let the analysis audit standalone; full result data stays in the
-`.xlsx` / `data/`), and the `.xlsx` is the **data**, not a narrative. Don't "deduplicate" either away.
-The spec and the queries live in this ONE file — do not split them back into two.
+**One argument, authored once.** Each deliverable has a single source — never collapse one into
+another or "deduplicate" them away:
+
+- **Prose → the `.md`.** The `.html` is **rendered from it**, never re-authored (see *Interactive HTML
+  report*).
+- **Numbers → one `stats.json`.** Write each volatile / headline figure into the `.md` as a **`{{key}}`
+  placeholder** and let the tooling fill it: `fill_stats(text, stats)` for the delivered `.md` (so it
+  reads standalone), `build_report_from_markdown(..., stats=…)` for the `.html`, `kpis_from_stats(stats,
+  spec)` for the KPI cards — one edit updates prose, HTML, and cards at once.
+- **`_reproducibility.md` is not a retelling.** It leads with the **originating user prompt** VERBATIM
+  (`create_reproducibility_record`'s `prompt=`), then the replicator SPEC (rules, thresholds, joins,
+  verified quantities, limitations — `appendix=`), then the **verbatim SPARQL** supporting the findings,
+  each with its row count (its unique payload — the queries exist nowhere else; full result data stays
+  in the `.xlsx` / `data/`). Spec + queries live in this ONE file — do not split them back into two.
+- **`.xlsx` is the data**, not a narrative.
 
 ## Report structure (Markdown)
 
