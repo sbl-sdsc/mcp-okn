@@ -51,7 +51,9 @@ abbreviation (`T2D_…`) that disagrees with the folder.
 ├── figures/  fig1_*.png …        # one PNG per figure, numbered in document order
 ├── data/     *.tsv / *.json      # intermediate extracts (for reproducibility)
 ├── scripts/  *.py                # the exact scripts used (for reproducibility)
-├── <study>_literature_comparison.md      # §8's per-claim record: one entry per checked claim,
+├── <study>_literature_comparison.md      # §8's per-claim record (OPTIONAL — present only when §8 was
+│                                  #   done; if §8 is omitted-and-stated, this file is absent):
+│                                  #   one entry per checked claim,
 │                                  #   its verdict (supported / partially / novel / contradicted)
 │                                  #   and citations in the SAME §12 reference format (reuse the
 │                                  #   report's §12 entry for any shared paper; every [N] resolves
@@ -62,8 +64,32 @@ abbreviation (`T2D_…`) that disagrees with the folder.
                                   #   & row counts — from create_reproducibility_record (spec via appendix=)
 ```
 
-Write working files to a scratch dir, then copy final artifacts into the delivered folder. Share
-the HTML, MD and XLSX with the user via the file-presentation tool.
+**Build in scratch, deliver by allowlist.** Do all the messy work — previews, inspection logs, temp
+transcripts, diagram work-lists, `*_small` subsets, alternate builders — in a **scratch dir**, and copy
+**only** the allowlisted artifacts into the delivered folder. The delivered folder's top level is
+**exactly** the five `<study>_*` files above plus `figures/`, `data/`, `scripts/` — nothing else. And
+within those dirs:
+
+- **`data/` is machine extracts + reproducibility intermediates** — `*.csv` / `*.tsv` / `*.json`
+  extracts, and the reproducibility inputs that regenerate the report (a `diagrams.json` cache, a
+  `mermaid/` subdir of `.mmd` sources, the `{{key}}` report template, subset extracts) are all fine. The
+  one thing barred from `data/` is the **`<study>_literature_comparison.md`** — it is a top-level sibling.
+- **`scripts/` never contains a hand-built HTML builder** — a script that emits the report `.html`
+  *without* calling `build_report_from_markdown` is the highlights-reel anti-pattern. A thin per-study
+  driver that builds the table/KPIs and **does** call `build_report_from_markdown` is correct (even if it
+  is named `build_html.py`).
+- **No scratch/QA/temp files anywhere** — no `__pycache__/`, `.DS_Store`, `*.tmp`, `*~`, `*.queries.json`,
+  `*_old*`, `*copy*`, `preview*`, `worklist*` in the deliverable. These, not the reproducibility
+  intermediates above, are the junk to keep in scratch.
+
+Then present the deliverable by **linking the whole `<study>/` folder**, not a single file. The report
+is a package — the reader needs the report `.md`/`.html`, the workbook, `figures/`, `data/`, `scripts/`,
+and the reproducibility record together — so hand over the **folder** (or a zip of it) via the
+file-presentation tool and name the key entry points inside it (open `<study>_report.html` for the
+interactive report; `<study>_results.xlsx` for the data). Surfacing only the `.html` (or only the
+`.md`) hides the rest of the package. **`python scripts/validate_okn_report.py <study>/` is the blocking
+gate that enforces all of the above** — see *Delivery gate* below; do not claim the report is done until
+it prints `[validate_okn_report] PASS`.
 
 **One argument, authored once.** Each deliverable has a single source — never collapse one into
 another or "deduplicate" them away:
@@ -264,3 +290,38 @@ front of mind:
 - **Figure problems** — legend/caption baked into the PNG, in-plot overlap, out-of-order numbering,
   bare lat/long scatter, same data split across sections → legend below, re-read the rendered PNG,
   renumber on reorder, use an OSM basemap, consolidate. (All expanded in the reference.)
+
+## Delivery gate — the blocking checklist
+
+**A report is not "done" until `python scripts/validate_okn_report.py <study>/` prints
+`[validate_okn_report] PASS`.** Run it on the finished folder as the last step. It is the single
+package-level gate that *composes* the two content gates (`check_report_parity`,
+`readd_query_diagrams --check`) and adds the structural checks nothing else covered, so one command
+either passes or names every violation. A FAIL — or never having run it — is blocking; fix and re-run,
+never hand-wave a failure away. Exit code is 0 on PASS, 1 on any error (warnings never fail the build).
+
+It rejects, each as a blocking error:
+
+1. **Wrong top-level set** — a missing required `<study>_*` file/dir, OR any unexpected top-level file
+   or directory (the allowlist is exact).
+2. **Naming** — a top-level file not prefixed with the study token, or a workbook not named
+   `<study>_results.xlsx`.
+3. **Split reproducibility** — more than one reproducibility/transcript/spec file (spec + verbatim
+   queries must be ONE file).
+4. **`data/` pollution** — the `<study>_literature_comparison.md` misfiled inside `data/` (it is a
+   top-level sibling). Reproducibility intermediates (`diagrams.json`, `mermaid/`, the template, subset
+   extracts) are allowed; an unusual extension only warns.
+5. **Anti-pattern builder** — a `scripts/*.py` that emits the report `.html` WITHOUT calling
+   `build_report_from_markdown` (detected by behaviour, not filename).
+6. **Figures** — captions/filenames not consecutive 1..N, a referenced figure missing on disk, or an
+   orphan `figN_*.png` not referenced in the report.
+7. **Workbook** — the `Ranked Results` or `Methods & Rules` sheet missing (warns if no Abbreviations
+   text).
+8. **Section order** — Sources absent, sections out of the required order, or the report not ending
+   Reproducibility → References.
+9. **SPARQL → Mermaid** — a ```sparql block with no faithful ```mermaid diagram, or a stale warning
+   notice (via `readd_query_diagrams.check`).
+10. **HTML/Markdown parity** — the `.html` drops sections, is much shorter than the `.md`, or is not one
+    well-formed document (via `check_report_parity`).
+11. **Scratch/QA/temp junk** — `__pycache__/`, `.DS_Store`, `*.tmp`, `*~`, `*.queries.json`, `*_old*`,
+    `*copy*`, `preview*`, `worklist*` anywhere inside the folder.

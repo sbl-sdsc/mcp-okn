@@ -19,7 +19,7 @@ What this adds: SANS is usually framed as a fluid-mechanical problem. This analy
 
 ## 2. Sources used
 
-Six federation knowledge graphs were queried. Every row below traces to at least one logged, non-exploratory SPARQL query in the reproducibility record.
+Seven federation knowledge graphs were queried. Every row below traces to at least one logged, non-exploratory SPARQL query in the reproducibility record.
 
 | KG | Version | Updated | Role in this study | Join key / confidence |
 |---|---|---|---|---|
