@@ -259,7 +259,14 @@ passed as `appendix=`): by default the **study active window** (first→last log
 UTC — a lower bound that excludes pre-first-query framing and post-last-query writing, and
 collapses when large extraction queries went unlogged); for **whole-chat elapsed time** instead,
 pass `chat_started` (ISO-8601 — the server can't know it) and optionally `chat_ended`, giving
-`**Elapsed time:** <start>–<end> UTC (<elapsed>)`. Token/cost is not captured by the tooling (the
+`**Elapsed time:** <start>–<end> UTC (<elapsed>)`.
+
+The record's header also carries the **skills** that shaped the run — `- **Skills:** okn-bioanalysis
+v0.1.1 · okn-report-style v0.1.2` — but only if you pass `skills=[...]`: the server cannot see which
+skills your session loaded, so an omitted list silently reads as "no methodology skill was used".
+Give each as `"<name> v<version>"`, the version taken from that skill's frontmatter
+`metadata.version` (not guessed), and list only skills you actually followed — a skill you didn't use
+is a phantom source, exactly like an unqueried KG in §2. Token/cost is not captured by the tooling (the
 server sees only tool calls); if you cite it, use client figures (Claude Code `/cost` / API
 `usage`), labelled as client-measured — do not invent a number.
 

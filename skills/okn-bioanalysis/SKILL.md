@@ -19,7 +19,7 @@ compatibility: >-
   ortholog-projection, and mechanistic-map scripts.
 metadata:
   author: sbl-sdsc
-  version: "0.1.0"
+  version: "0.1.1"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -82,7 +82,10 @@ surfaces after the whole analysis is done and there's no time left to turn them 
 ## Operating rules (non-negotiable — details in the workflow reference)
 
 1. `reset_query_log` at the start; `create_reproducibility_record` + `get_kg_version` at the end (pin
-   versions + dates). `create_reproducibility_record` emits the lean deliverable (header + verbatim
+   versions + dates), passing `skills=` — every skill you actually followed as `"<name> v<version>"`
+   from its frontmatter `metadata.version` (this skill is `okn-bioanalysis v0.1.1`); the server can't
+   see them, so an omitted list reads as "no methodology skill was used".
+   `create_reproducibility_record` emits the lean deliverable (header + verbatim
    supporting queries + row counts) that fits inline; use `create_chat_transcript` only when you also
    need the conversation prose + result tables. **A stub return (log too large) is NOT a stopping
    point** — re-call with curated `supporting=[1, 5, 9, …]` indices (from `get_query_log`), or batch,
