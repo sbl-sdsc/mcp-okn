@@ -24,9 +24,10 @@ It COMPOSES the existing content gates rather than reimplementing them:
   - `readd_query_diagrams.check`                — every ```sparql block has a faithful ```mermaid diagram.
 And ADDS the package-level checks that had no home: the top-level allowlist, naming prefix, single
 reproducibility file, `data/` = flat CSV/TSV/JSON only, `scripts/` anti-pattern rejection, workbook sheet
-names, report section order (…Reproducibility → References last), figure file/reference cross-check, and a
-recursive scan for QA/temp/scratch junk. Stdlib-only (an .xlsx is a zip — sheet names are read straight
-from `xl/workbook.xml`), so it runs wherever a report is built, exactly like the sibling gates.
+names, report section order (…Reproducibility → References last), the reproducibility header's `Skills`
+provenance line, figure file/reference cross-check, and a recursive scan for QA/temp/scratch junk.
+Stdlib-only (an .xlsx is a zip — sheet names are read straight from `xl/workbook.xml`), so it runs
+wherever a report is built, exactly like the sibling gates.
 """
 
 from __future__ import annotations
@@ -125,6 +126,17 @@ def _level2_headings(md_text: str) -> list[str]:
         if m:
             out.append(_norm_heading(m.group(1)))
     return out
+
+
+# ── The reproducibility header (written by create_reproducibility_record) ────────────────────────────
+# `skills=` is the one header field the server cannot derive on its own: it sees the model, its own
+# version, the endpoint and the query log, but NOT which skills the session loaded. So an absent
+# `- **Skills:**` line means the tool call omitted the argument — the header is generated and saved
+# verbatim, so it cannot go missing any other way — and the record then silently claims no methodology.
+# This is checkable precisely because the validator only ever runs on an okn-report-style package: that
+# skill was used BY DEFINITION, so the line must exist and must name it.
+_SKILLS_LINE = re.compile(r"^-\s+\*\*Skills:\*\*[ \t]*(.+?)[ \t]*$", re.M)
+_VERSIONED = re.compile(r"\sv\d+(?:\.\d+)*\b")  # "okn-report-style v0.1.3"
 
 
 class _Report:
@@ -360,6 +372,45 @@ def _check_section_order(report_md: Path, r: _Report) -> None:
             )
 
 
+def _check_repro_skills(repro_md: Path, r: _Report) -> None:
+    """The reproducibility header must record the skills the run followed.
+
+    Only the HEADER counts (everything above the first ``##`` section): the line is provenance, and a
+    mention down in the spec or a query description is not the tool-generated header field. Naming
+    `okn-report-style` is mandatory — this validator is running, so the package was built with it. An
+    entry carrying no version is a warning, not an error: it still identifies the methodology, it just
+    doesn't pin it.
+    """
+    if not repro_md.is_file():
+        return
+    text = repro_md.read_text(encoding="utf-8", errors="ignore")
+    header = re.split(r"^##\s", text, maxsplit=1, flags=re.M)[0]
+    m = _SKILLS_LINE.search(header)
+    if not m:
+        r.err(
+            f"{repro_md.name}: the header has no '- **Skills:**' line — pass `skills=[...]` to "
+            "create_reproducibility_record (e.g. `skills=['okn-bioanalysis v0.1.1', "
+            "'okn-report-style v0.1.3']`, versions from each skill's frontmatter `metadata.version`). "
+            "The server cannot see which skills your session loaded, so an omitted list leaves the "
+            "record claiming no methodology at all; do NOT hand-add the line — regenerate the record"
+        )
+        return
+    entries = [e.strip() for e in m.group(1).split("·") if e.strip()]
+    if not any(e.startswith("okn-report-style") for e in entries):
+        r.err(
+            f"{repro_md.name}: the header's Skills line does not name okn-report-style "
+            f"(has: {', '.join(entries) or '—'}) — this package was built with it, so it belongs in "
+            "the record; add it to `skills=` and regenerate"
+        )
+    unversioned = [e for e in entries if not _VERSIONED.search(e)]
+    if unversioned:
+        r.warn(
+            f"{repro_md.name}: Skills entries without a version: {', '.join(unversioned)} — give each "
+            "as '<name> v<version>' (from the skill's frontmatter `metadata.version`) so the "
+            "methodology is pinned, not just named"
+        )
+
+
 def _check_junk(study: Path, r: _Report) -> None:
     """Recursive scan of the subdirectories for QA/temp/scratch junk (the top level is covered by the
     allowlist). __pycache__ is gitignored/excluded from the skill zip but must not ship in a package."""
@@ -417,6 +468,7 @@ def validate(study_dir: str) -> _Report:
     _check_figures(study, paths["report_md"], r)
     _check_workbook(paths["xlsx"], r)
     _check_section_order(paths["report_md"], r)
+    _check_repro_skills(paths["repro_md"], r)
     _check_junk(study, r)
     # Content gates last (they each print their own PASS/FAIL line).
     _check_parity(paths, r)

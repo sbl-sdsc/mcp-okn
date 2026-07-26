@@ -19,7 +19,7 @@ compatibility: >-
   to render the HTML report, figures, workbook, and maps.
 metadata:
   author: sbl-sdsc
-  version: "0.1.2"
+  version: "0.1.3"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -146,7 +146,7 @@ come between them, and nothing follows References:
     script filenames, repeat KG versions or give a timing line — the record holds all of it (it
     carries the header timing; pass `chat_started=` for whole-chat elapsed, else the active-query
     window). Also pass `skills=` — every skill you actually followed, `"<name> v<version>"` from
-    each one's frontmatter `metadata.version` (this skill is `okn-report-style v0.1.2`) — so the
+    each one's frontmatter `metadata.version` (this skill is `okn-report-style v0.1.3`) — so the
     header records the methodology, not just the model. Token/cost isn't visible to the tooling —
     cite client figures or omit.
 12. **References** — numbered, one fixed shape: `Author, et al. Title. *Journal*. Year. PMID:… ·
@@ -322,9 +322,13 @@ It rejects, each as a blocking error:
    text).
 8. **Section order** — Sources absent, sections out of the required order, or the report not ending
    Reproducibility → References.
-9. **SPARQL → Mermaid** — a ```sparql block with no faithful ```mermaid diagram, or a stale warning
+9. **Missing skills provenance** — the reproducibility header has no `- **Skills:**` line, or one that
+   doesn't name `okn-report-style` (it built this package, so it belongs there). The server can't see
+   your session's skills, so only `skills=` puts them on the record — fix it by regenerating with
+   `skills=[...]`, never by hand-adding the line. An entry without a version only warns.
+10. **SPARQL → Mermaid** — a ```sparql block with no faithful ```mermaid diagram, or a stale warning
    notice (via `readd_query_diagrams.check`).
-10. **HTML/Markdown parity** — the `.html` drops sections, is much shorter than the `.md`, or is not one
+11. **HTML/Markdown parity** — the `.html` drops sections, is much shorter than the `.md`, or is not one
     well-formed document (via `check_report_parity`).
-11. **Scratch/QA/temp junk** — `__pycache__/`, `.DS_Store`, `*.tmp`, `*~`, `*.queries.json`, `*_old*`,
+12. **Scratch/QA/temp junk** — `__pycache__/`, `.DS_Store`, `*.tmp`, `*~`, `*.queries.json`, `*_old*`,
     `*copy*`, `preview*`, `worklist*` anywhere inside the folder.
