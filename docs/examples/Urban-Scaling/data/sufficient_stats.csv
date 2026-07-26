@@ -1,0 +1,19 @@
+series,domain,level,source,n,sx,sy,sxx,sxy,syy
+arteriosclerosis (high cholesterol),Chronic disease,place,CDC PLACES via spoke-okn,26343,-19398.2,28579.6,86855.4,51650.5,103978
+asthma,Chronic disease,place,CDC PLACES via spoke-okn,26343,-19398.2,44.324,86855.4,72250.5,72289
+cerebrovascular disease (stroke),Chronic disease,place,CDC PLACES via spoke-okn,26343,-19398.2,-33627.2,86855.4,96239.2,114568
+chronic obstructive pulmonary disease,Chronic disease,place,CDC PLACES via spoke-okn,26343,-19398.2,-11507.2,86855.4,78364.8,74328.9
+coronary artery disease,Chronic disease,place,CDC PLACES via spoke-okn,26343,-19398.2,-16500,86855.4,82896.7,80166.4
+depressive disorder,Chronic disease,place,CDC PLACES via spoke-okn,26343,-19398.2,20770.3,86855.4,56162.4,87367.8
+diabetes mellitus,Chronic disease,place,CDC PLACES via spoke-okn,26343,-19398.2,-1983.87,86855.4,73768.6,73940.8
+hypertension,Chronic disease,place,CDC PLACES via spoke-okn,26343,-19398.2,28591.5,86855.4,50776.1,102764
+obesity,Chronic disease,place,CDC PLACES via spoke-okn,26343,-19398.2,32445.8,86855.4,47008.5,109909
+premature death (YPLL),Mortality,county,County Health Rankings via spoke-okn,2855,1453.7,7583.69,5430.76,8197.43,24402.5
+premature age-adjusted mortality,Mortality,county,County Health Rankings via spoke-okn,3072,1026.34,-1686.82,6308.84,5132.95,6613.77
+injury deaths,Mortality,county,County Health Rankings via spoke-okn,3027,1127.37,-6216.97,6077.51,2928.9,17847
+drug overdose deaths,Mortality,county,County Health Rankings via spoke-okn,1791,2085.35,-4758.77,4726.87,-3335.19,15218.7
+motor vehicle crash deaths,Mortality,county,County Health Rankings via spoke-okn,2682,1643.57,-9282.39,5193.66,-2608.38,34765.8
+child mortality,Mortality,county,County Health Rankings via spoke-okn,1876,2088.76,-3318.36,4744.89,-1666.17,7755.18
+infant mortality,Mortality,county,County Health Rankings via spoke-okn,1209,1989.32,1431.93,4581.89,3478.64,2756.61
+alcohol-impaired driving deaths,Mortality,county,County Health Rankings via spoke-okn,2952,1145.1,10721.6,6235.72,9815.43,45229.6
+federal criminal case filings,Crime / justice,county,SCALES,2377,1448.97,-2551.27,5419.76,2088.2,9250.09

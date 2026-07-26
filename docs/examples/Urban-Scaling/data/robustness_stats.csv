@@ -1,0 +1,28 @@
+series,domain,level,subset,n,sx,sy,sxx,sxy,syy
+arteriosclerosis (high cholesterol),Chronic disease,place,pop 10k-50k,2845,5287.81,10483.1,10375.1,20028.1,39183.8
+asthma,Chronic disease,place,pop 10k-50k,2845,5287.81,7316.71,10375.1,14139.6,19384.3
+cerebrovascular disease (stroke),Chronic disease,place,pop 10k-50k,2845,5287.81,3609.67,10375.1,7244.49,5251.8
+chronic obstructive pulmonary disease,Chronic disease,place,pop 10k-50k,2845,5287.81,5781.81,10375.1,11262,12502.2
+coronary artery disease,Chronic disease,place,pop 10k-50k,2845,5287.81,5376.03,10375.1,10520.7,10777.5
+depressive disorder,Chronic disease,place,pop 10k-50k,2845,5287.81,9431.78,10375.1,18061.6,31877.4
+diabetes mellitus,Chronic disease,place,pop 10k-50k,2845,5287.81,7131.14,10375.1,13800.6,18630.5
+hypertension,Chronic disease,place,pop 10k-50k,2845,5287.81,10385,10375.1,19837,38511.7
+obesity,Chronic disease,place,pop 10k-50k,2845,5287.81,10699.8,10375.1,20418.1,40867.9
+arteriosclerosis (high cholesterol),Chronic disease,place,pop>=50k,709,2510.62,3809.04,9242.78,13843.7,20825.8
+asthma,Chronic disease,place,pop>=50k,709,2510.62,3013.98,9242.78,11030,13184
+cerebrovascular disease (stroke),Chronic disease,place,pop>=50k,709,2510.62,2111.33,9242.78,7851.21,6714.39
+chronic obstructive pulmonary disease,Chronic disease,place,pop>=50k,709,2510.62,2615.43,9242.78,9626.43,10079.7
+coronary artery disease,Chronic disease,place,pop>=50k,709,2510.62,2529.02,9242.78,9318.32,9416.41
+depressive disorder,Chronic disease,place,pop>=50k,709,2510.62,3518.72,9242.78,12810.9,17835.7
+diabetes mellitus,Chronic disease,place,pop>=50k,709,2510.62,3010.71,9242.78,11041.3,13238.2
+hypertension,Chronic disease,place,pop>=50k,709,2510.62,3772.72,9242.78,13724.5,20469.7
+obesity,Chronic disease,place,pop>=50k,709,2510.62,3834.76,9242.78,13937.7,21136
+alcohol-impaired driving deaths,Mortality,county,metro (RUCC 1-3),1142,1623.62,5305.49,4414.77,9678.56,27020.4
+child mortality,Mortality,county,metro (RUCC 1-3),980,1716.31,-1225.25,4299.45,-985.365,2669.8
+drug overdose deaths,Mortality,county,metro (RUCC 1-3),974,1711.98,-2015.49,4300.71,-2273.96,5687.85
+infant mortality,Mortality,county,metro (RUCC 1-3),809,1670.63,1240.11,4250.44,3275.53,2606.78
+injury deaths,Mortality,county,metro (RUCC 1-3),1154,1623.49,-1292.33,4397.05,168.793,3405.06
+motor vehicle crash deaths,Mortality,county,metro (RUCC 1-3),1119,1659.86,-3188.68,4350.76,-3278.39,10362.9
+premature age-adjusted mortality,Mortality,county,metro (RUCC 1-3),1159,1611.72,491.893,4425.12,2731.52,2208.15
+premature death (YPLL),Mortality,county,metro (RUCC 1-3),1144,1638.35,3985.15,4373.16,7586.08,15713.4
+federal criminal case filings,Crime / justice,county,metro (RUCC 1-3),1035,1613.16,-323.029,4271.22,1337.6,3586.78

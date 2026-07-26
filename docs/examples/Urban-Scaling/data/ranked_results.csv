@@ -1,0 +1,19 @@
+series,domain,level,n,beta,ci,rate_elasticity,R2_rate,classification,beta_restricted,classification_restricted,tier,tier_reason,sources,n_sources
+motor vehicle crash deaths,Mortality,county,2682,0.7357,0.724 – 0.747,-0.2643,0.4391,sublinear,0.7686,sublinear,A,same direction and significant in both samples (β=0.736 → 0.769),"['spoke-okn', 'ruralkg']",2
+child mortality,Mortality,county,1876,0.8385,0.826 – 0.851,-0.1615,0.2548,sublinear,0.8971,sublinear,A,same direction and significant in both samples (β=0.838 → 0.897),"['spoke-okn', 'ruralkg']",2
+infant mortality,Mortality,county,1209,0.8578,0.842 – 0.873,-0.1422,0.213,sublinear,0.8927,sublinear,A,same direction and significant in both samples (β=0.858 → 0.893),"['spoke-okn', 'ruralkg']",2
+premature death (YPLL),Mortality,county,2855,0.9244,0.916 – 0.933,-0.0756,0.0969,sublinear,0.927,sublinear,A,same direction and significant in both samples (β=0.924 → 0.927),"['spoke-okn', 'ruralkg']",2
+injury deaths,Mortality,county,3027,0.9269,0.920 – 0.934,-0.0731,0.1221,sublinear,0.9403,sublinear,A,same direction and significant in both samples (β=0.927 → 0.940),"['spoke-okn', 'ruralkg']",2
+premature age-adjusted mortality,Mortality,county,3072,0.9548,0.948 – 0.962,-0.0452,0.0467,sublinear,0.9376,sublinear,A,same direction and significant in both samples (β=0.955 → 0.938),"['spoke-okn', 'ruralkg']",2
+arteriosclerosis (high cholesterol),Chronic disease,place,26343,1.0017,1.001 – 1.002,0.0017,0.0014,superlinear,1.0089,superlinear,A,same direction and significant in both samples (β=1.002 → 1.009),['spoke-okn'],1
+federal criminal case filings,Crime / justice,county,2377,0.8031,0.767 – 0.839,-0.1969,0.0467,sublinear,1.0479,linear (n.s.),B,direction stable but significance changes (β=0.803 → 1.048),"['spoke-okn', 'ruralkg', 'scales']",3
+drug overdose deaths,Mortality,county,1791,0.9595,0.939 – 0.980,-0.0405,0.0082,sublinear,0.9822,linear (n.s.),B,direction stable but significance changes (β=0.959 → 0.982),"['spoke-okn', 'ruralkg']",2
+alcohol-impaired driving deaths,Mortality,county,2952,0.9767,0.964 – 0.990,-0.0233,0.0041,sublinear,1.0138,linear (n.s.),B,direction stable but significance changes (β=0.977 → 1.014),"['spoke-okn', 'ruralkg']",2
+obesity,Chronic disease,place,26343,0.977,0.976 – 0.978,-0.023,0.0537,sublinear,1.0171,linear (n.s.),B,direction stable but significance changes (β=0.977 → 1.017),['spoke-okn'],1
+depressive disorder,Chronic disease,place,26343,0.9846,0.984 – 0.986,-0.0154,0.0264,sublinear,0.9954,linear (n.s.),B,direction stable but significance changes (β=0.985 → 0.995),['spoke-okn'],1
+chronic obstructive pulmonary disease,Chronic disease,place,26343,0.9631,0.961 – 0.965,-0.0369,0.0473,sublinear,1.0355,superlinear,C,direction REVERSES with city definition (β=0.963 → 1.035),['spoke-okn'],1
+coronary artery disease,Chronic disease,place,26343,0.9749,0.974 – 0.976,-0.0251,0.0504,sublinear,1.0295,superlinear,C,direction REVERSES with city definition (β=0.975 → 1.029),['spoke-okn'],1
+cerebrovascular disease (stroke),Chronic disease,place,26343,0.9849,0.983 – 0.987,-0.0151,0.0131,sublinear,1.0634,superlinear,C,direction REVERSES with city definition (β=0.985 → 1.063),['spoke-okn'],1
+hypertension,Chronic disease,place,26343,0.9898,0.989 – 0.991,-0.0102,0.0118,sublinear,1.0356,superlinear,C,direction REVERSES with city definition (β=0.990 → 1.036),['spoke-okn'],1
+asthma,Chronic disease,place,26343,0.996,0.995 – 0.997,-0.004,0.0039,sublinear,1.0136,superlinear,C,direction REVERSES with city definition (β=0.996 → 1.014),['spoke-okn'],1
+diabetes mellitus,Chronic disease,place,26343,0.9964,0.994 – 0.998,-0.0036,0.0005,sublinear,1.0785,superlinear,C,direction REVERSES with city definition (β=0.996 → 1.078),['spoke-okn'],1
