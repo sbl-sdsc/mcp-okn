@@ -1,0 +1,24 @@
+sector,facilities,sector_name,share_pct
+33,401,Manufacturing (33),17.67
+32,314,Manufacturing (32),13.83
+81,309,Other Services,13.61
+23,142,Construction,6.26
+48,131,Transportation (48),5.77
+56,116,Admin & Waste Management,5.11
+42,103,Wholesale Trade,4.54
+22,97,Utilities,4.27
+44,93,Retail Trade (44),4.1
+11,88,"Agriculture, Forestry, Fishing & Hunting",3.88
+31,84,Manufacturing (31),3.7
+62,81,Health Care & Social Assistance,3.57
+45,57,Retail Trade (45),2.51
+92,51,Public Administration,2.25
+61,47,Educational Services,2.07
+53,45,Real Estate,1.98
+49,30,Warehousing (49),1.32
+54,25,Professional/Scientific/Technical,1.1
+71,17,Arts & Recreation,0.75
+21,17,"Mining, Quarrying, Oil & Gas",0.75
+51,13,Information,0.57
+52,6,Finance & Insurance,0.26
+72,3,Accommodation & Food,0.13
