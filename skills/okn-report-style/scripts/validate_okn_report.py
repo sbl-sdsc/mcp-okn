@@ -136,7 +136,7 @@ def _level2_headings(md_text: str) -> list[str]:
 # This is checkable precisely because the validator only ever runs on an okn-report-style package: that
 # skill was used BY DEFINITION, so the line must exist and must name it.
 _SKILLS_LINE = re.compile(r"^-\s+\*\*Skills:\*\*[ \t]*(.+?)[ \t]*$", re.M)
-_VERSIONED = re.compile(r"\sv\d+(?:\.\d+)*\b")  # "okn-report-style v0.1.3"
+_VERSIONED = re.compile(r"\sv\d+(?:\.\d+)*\b")  # the " v1.2.3" in "<skill> v1.2.3"
 
 
 class _Report:
