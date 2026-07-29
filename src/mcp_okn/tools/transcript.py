@@ -114,6 +114,29 @@ def _clean_skills(skills: list[str] | None) -> list[str]:
     return seen
 
 
+def _skills_warning(noun: str) -> str:
+    """Return the provenance warning for a document generated without ``skills=``.
+
+    ``skills`` is the one header field the server cannot derive — it knows the model,
+    its own version, the endpoint and the query log, but not which skills the client's
+    session loaded. So an omitted list is indistinguishable from "no methodology", and
+    a silently absent line is only ever noticed later (if at all). Both document tools
+    say this at the moment of generation, while regenerating is still a single call.
+
+    Args:
+        noun: What the caller is generating ("record" / "transcript"), so the warning
+            names the thing in front of them.
+    """
+    return (
+        f"no `skills=` passed, so the header has no `- **Skills:**` line and the {noun} "
+        "claims no methodology at all. If any skill shaped this analysis "
+        "(okn-report-style, okn-bioanalysis, …), call again with "
+        "`skills=['<name> v<version>', …]` — version from each skill's frontmatter "
+        "`metadata.version` — and save THAT result. Do not hand-add the line to the "
+        "saved file. If no skill was used, this warning is correctly ignored."
+    )
+
+
 def _plural(count: int, singular: str, plural: str | None = None) -> str:
     """Format a count with its noun for the header manifest.
 
@@ -595,14 +618,18 @@ async def create_chat_transcript(
             save it verbatim). Applies to `markdown` only. When you get a stub,
             deliver the transcript from the resource — do not treat the stub AS the
             transcript.
-        skills: OPTIONAL agent skills that shaped this analysis, each as
+        skills: The agent skills that shaped this analysis, each as
             `"<name> v<version>"` (e.g. `["okn-bioanalysis v0.1.0",
             "okn-report-style v0.1.1"]`) — the version is the skill's frontmatter
             `metadata.version`. Rendered as a `- **Skills:**` header line directly
-            beneath "Model", omitted when not passed. The server CANNOT see which skills your session
-            loaded, so this is caller-supplied: list only skills you actually
-            followed, exactly as `model` names the model that actually ran. Naming
-            a skill you did not use is a phantom source, same as an unqueried KG.
+            beneath "Model". Technically optional, but PASS IT whenever a skill was
+            followed: the server CANNOT see which skills your session loaded, so
+            omitting it silently publishes a transcript claiming no methodology —
+            the tool returns a WARNING when you do, and the fix is to call again
+            with `skills=[...]`, never to hand-add the line to the saved file. List
+            only skills you actually followed, exactly as `model` names the model
+            that actually ran. Naming a skill you did not use is a phantom source,
+            same as an unqueried KG.
 
     Returns:
         For `markdown`: the transcript string (or, when it exceeds
@@ -690,6 +717,8 @@ async def create_chat_transcript(
     log, kgs, warnings = _resolve_sources(
         log, visualizations, kgs_used, check_phantom=include_query_log
     )
+    if not skill_list:
+        warnings.append(_skills_warning("transcript"))
 
     if format == "json":
         payload: dict[str, Any] = {
@@ -937,20 +966,6 @@ async def create_reproducibility_record(
     # Curate to the supporting subset (1-based indices into the log), in the order
     # given, attaching any per-item heading label. None -> the whole log in order.
     warnings: list[str] = []
-    # `skills` is the one header field the server cannot derive — it knows the model,
-    # its own version, the endpoint and the query log, but not which skills the client's
-    # session loaded. So an omitted list is indistinguishable from "no methodology", and
-    # a silently absent line is only ever noticed later (if at all). Say so HERE, at the
-    # moment the record is generated, while regenerating is still a single call.
-    if not skill_list:
-        warnings.append(
-            "no `skills=` passed, so the header has no `- **Skills:**` line and the "
-            "record claims no methodology at all. If any skill shaped this analysis "
-            "(okn-report-style, okn-bioanalysis, …), call again with "
-            "`skills=['<name> v<version>', …]` — version from each skill's frontmatter "
-            "`metadata.version` — and save THAT result. Do not hand-add the line to the "
-            "saved file. If no skill was used, this warning is correctly ignored."
-        )
     if supporting is None:
         selected = list(log)
     else:
@@ -985,6 +1000,8 @@ async def create_reproducibility_record(
         selected, [], kgs_used, check_phantom=True
     )
     warnings += guard_warnings
+    if not skill_list:
+        warnings.append(_skills_warning("record"))
 
     # Choose the header timing line. When the caller supplied a chat start, show the
     # WHOLE-CHAT elapsed window (only the caller knows when the chat began); otherwise

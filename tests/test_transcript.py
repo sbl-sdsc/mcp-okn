@@ -174,7 +174,7 @@ async def test_transcript_keeps_queries_that_touch_kgs_used():
     session.record(_q("sawgraph"), "json", result=JSON_RESULT)
     session.record(_q("prokn"), "json", result=JSON_RESULT)
     md = await create_chat_transcript(
-        model="claude-opus-4-8", kgs_used=["sawgraph", "prokn"]
+        model="claude-opus-4-8", kgs_used=["sawgraph", "prokn"], skills=["okn-x v0.1.0"]
     )
     assert "kg/sawgraph" in md
     assert "kg/prokn" in md
@@ -205,7 +205,9 @@ async def test_visualized_kg_is_not_a_phantom_source():
     session.record(_q("sawgraph"), "json", result=JSON_RESULT)
     session.record_visualization("spoke-genelab", "classDiagram\n  class Gene")
     md = await create_chat_transcript(
-        model="claude-opus-4-8", kgs_used=["sawgraph", "spoke-genelab"]
+        model="claude-opus-4-8",
+        kgs_used=["sawgraph", "spoke-genelab"],
+        skills=["okn-x v0.1.0"],
     )
     assert "mcp-okn WARNING" not in md
 
@@ -219,6 +221,7 @@ async def test_phantom_check_skipped_when_query_log_excluded():
         model="claude-opus-4-8",
         kgs_used=["sawgraph", "ubergraph"],
         include_query_log=False,
+        skills=["okn-x v0.1.0"],
     )
     assert "mcp-okn WARNING" not in md
 
@@ -773,7 +776,9 @@ async def test_transcript_resource_publishes_last_markdown():
     assert "No transcript yet" in latest_transcript_resource()
     # After generating a markdown transcript, the resource serves it verbatim.
     md = await create_chat_transcript(
-        model="m", exchanges=[{"prompt": "hi", "answer": "hello"}]
+        model="m",
+        exchanges=[{"prompt": "hi", "answer": "hello"}],
+        skills=["okn-x v0.1.0"],
     )
     assert latest_transcript_resource() == md
     assert "👤 **User**" in latest_transcript_resource()
@@ -1041,6 +1046,20 @@ async def test_record_warns_when_skills_omitted():
 
 
 @pytest.mark.asyncio
+async def test_transcript_warns_when_skills_omitted():
+    """The full transcript carries the same header, so it carries the same tripwire —
+    naming the transcript rather than the record."""
+    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
+    bare = await create_chat_transcript(model="m")
+    assert "mcp-okn WARNING: no `skills=` passed" in bare
+    assert "the transcript claims no methodology" in bare
+    named = await create_chat_transcript(model="m", skills=["okn-x v0.1.0"])
+    assert "no `skills=` passed" not in named
+    payload = await create_chat_transcript(model="m", format="json")
+    assert any("no `skills=` passed" in w for w in payload["warnings"])
+
+
+@pytest.mark.asyncio
 async def test_record_skills_normalised_and_in_json_payload():
     """Blank/duplicate skill entries are dropped (order preserved) and the list rides
     along on the JSON payload; the key is absent when nothing usable was passed."""
@@ -1238,9 +1257,7 @@ async def test_record_curation_description_label():
 async def test_record_out_of_range_index_warns():
     """An out-of-range `supporting` index is skipped with a warning, not an error."""
     session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(
-        model="m", supporting=[{"index": 9}], skills=["okn-report-style v0.1.3"]
-    )
+    md = await create_reproducibility_record(model="m", supporting=[{"index": 9}])
     assert md.startswith("<!--")
     assert "out of range" in md.split("\n")[0]
     assert md.count("```sparql") == 0  # nothing selected
