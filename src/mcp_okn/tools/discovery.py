@@ -1,11 +1,30 @@
-"""KG discovery tools: list_kgs, describe_kg."""
+"""KG discovery tools: list_kgs, describe_kg, get_server_info."""
 
 from __future__ import annotations
 
 from typing import Any
 
-from .. import payloads, registry, schema, void
+from .. import __version__, payloads, registry, schema, void
 from ..app import mcp
+from ..build_info import build_id
+from ..sparql import FEDERATION_ENDPOINT
+
+
+@mcp.tool()
+async def get_server_info() -> dict[str, Any]:
+    """Identify THIS server: `{service, version, build, sparql_endpoint}`.
+
+    `build` is the deployed commit (`unknown` if unidentifiable). The version alone
+    can't tell two deployments apart, so call this when a tool or argument seems to
+    be missing — a hosted server can lag the repo — or to record exactly which build
+    produced a result.
+    """
+    return {
+        "service": mcp.name,
+        "version": __version__,
+        "build": build_id(),
+        "sparql_endpoint": FEDERATION_ENDPOINT,
+    }
 
 
 @mcp.tool()

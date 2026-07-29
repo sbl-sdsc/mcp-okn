@@ -8,15 +8,87 @@ QLever-backed federation endpoint and scoped to named graphs.
 
 from __future__ import annotations
 
+import asyncio
 import contextlib
 import json
+import random
 import re
+import weakref
 from typing import Any
 
 import httpx
 
 #: The single federation endpoint. Do not query per-KG endpoints.
 FEDERATION_ENDPOINT = "https://apps.okn.us/federation/sparql"
+
+#: Statuses worth retrying: the endpoint's server-side operation limit (429) and the
+#: gateway/overload family. QLever's own query errors come back as 400 with an
+#: `exception` body — deterministic, so retrying one only doubles the wait.
+_RETRY_STATUSES = frozenset({429, 502, 503, 504})
+
+#: 429 is QLever's "Operation timed out", and it does not fail fast: measured at ~30s
+#: per attempt against the live endpoint. Retrying is still right — crosswalks.json
+#: records skeletons sitting right at the limit that failed two runs in three and
+#: passed the third — but each try is expensive, so it gets ONE, where a
+#: gateway/overload status (which returns immediately) gets the full `max_retries`.
+_SLOW_STATUS_RETRIES = {429: 1}
+
+#: Backoff before retry N (jittered).
+_BACKOFF_SECONDS = (0.5, 2.0)
+
+#: Cap on an honoured `Retry-After`, so a large one can't stall a tool call for minutes.
+_MAX_RETRY_AFTER = 30.0
+
+
+async def _sleep(seconds: float) -> None:
+    """Sleep between retries. Patched in tests so the suite doesn't actually wait."""
+    await asyncio.sleep(seconds)
+
+
+def _retry_delay(resp: httpx.Response, attempt: int) -> float:
+    """Seconds to wait before retry ``attempt`` (1-based), honouring ``Retry-After``."""
+    header = resp.headers.get("retry-after", "")
+    with contextlib.suppress(TypeError, ValueError):
+        if header:
+            return min(float(header), _MAX_RETRY_AFTER)
+    base = _BACKOFF_SECONDS[min(attempt, len(_BACKOFF_SECONDS)) - 1]
+    # Jitter so concurrent queries don't retry in lockstep (not a crypto use).
+    return base * (1.0 + random.random() * 0.25)
+
+
+# One client per event loop, so a keep-alive connection is reused across queries
+# instead of paying a TLS handshake each time (find_crosswalks alone fires three
+# concurrent queries). Keyed by loop — and weakly — because the test suite runs each
+# test in a fresh loop, and a pooled connection belonging to a closed loop is unusable.
+_clients: weakref.WeakKeyDictionary[Any, httpx.AsyncClient] = (
+    weakref.WeakKeyDictionary()
+)
+
+
+def _shared_client(timeout: float) -> httpx.AsyncClient:
+    """Return this event loop's shared client, creating it on first use."""
+    try:
+        loop: Any = asyncio.get_running_loop()
+    except RuntimeError:  # no loop (sync caller) — hand back a throwaway client
+        return httpx.AsyncClient(timeout=timeout)
+    client = _clients.get(loop)
+    if client is None or client.is_closed:
+        client = httpx.AsyncClient(
+            timeout=timeout,
+            limits=httpx.Limits(max_connections=10, max_keepalive_connections=10),
+        )
+        _clients[loop] = client
+    return client
+
+
+async def aclose_shared_client() -> None:
+    """Close this event loop's shared client, if one was created. For teardown."""
+    with contextlib.suppress(RuntimeError):
+        loop = asyncio.get_running_loop()
+        client = _clients.pop(loop, None)
+        if client is not None and not client.is_closed:
+            await client.aclose()
+
 
 #: Template for a KG's federation named graph URI.
 GRAPH_URI = "https://purl.org/okn/frink/kg/{shortname}"
@@ -98,6 +170,7 @@ async def run_sparql(
     timeout: float = 120.0,
     client: httpx.AsyncClient | None = None,
     normalize_schema: bool = True,
+    max_retries: int = 2,
 ) -> dict[str, Any]:
     """Run a SPARQL query against the OKN federation endpoint.
 
@@ -107,12 +180,19 @@ async def run_sparql(
         fmt: Output format: ``json`` (default, parsed into rows), ``csv`` or
             ``tsv`` (returned as raw text).
         timeout: Request timeout in seconds.
-        client: Optional shared httpx.AsyncClient.
+        client: Optional httpx.AsyncClient to use instead of this event loop's
+            shared one. A caller-supplied client is never closed here.
         normalize_schema: Canonicalize bracketed ``<https://schema.org/…>`` IRIs
             to the ``http`` form (default True). Set False to leave them as
             written — required for the few KGs that STORE the ``https`` form
             (see ``benchmark.adapt.HTTPS_SCHEMA_ORG_KGS``), where canonicalizing
             to ``http`` would silently match nothing.
+        max_retries: How many times to retry a TRANSIENT failure (the
+            gateway/overload statuses), with jittered backoff. Default 2; pass 0
+            to disable. A 429 gets at most ONE retry however high this is — each
+            attempt costs a full ~30s server-side operation timeout. Query errors
+            and request timeouts are never retried: they are deterministic, so a
+            retry only doubles the wait.
 
     Returns:
         For ``json``: ``{"vars": [...], "rows": [...], "row_count": N}``.
@@ -131,24 +211,37 @@ async def run_sparql(
     headers = {"Accept": _ACCEPT[fmt]}
     data = {"query": query}
 
-    owns_client = client is None
+    # A caller-supplied client belongs to the caller; the shared one is reused across
+    # queries. Either way this call never closes it.
     if client is None:
-        client = httpx.AsyncClient(timeout=timeout)
-    try:
-        resp = await client.post(
-            FEDERATION_ENDPOINT, data=data, headers=headers, timeout=timeout
+        client = _shared_client(timeout)
+
+    attempts = 0
+    while True:
+        attempts += 1
+        try:
+            resp = await client.post(
+                FEDERATION_ENDPOINT, data=data, headers=headers, timeout=timeout
+            )
+        except httpx.TimeoutException as exc:
+            # Surface as SparqlError so callers degrade uniformly instead of crashing
+            # on a raw httpx traceback. A timeout means the scan was too broad to
+            # finish in time — narrow it (e.g. add a `sample`/`LIMIT`). Not retried:
+            # the same query would scan the same ground and burn another `timeout`s.
+            raise SparqlError(
+                f"SPARQL request timed out after {timeout}s — the query scanned too "
+                f"much; narrow it with a sample/LIMIT.\nQuery:\n{query}"
+            ) from exc
+        # The endpoint's operation limit (429) and the gateway/overload family are
+        # transient: the same query commonly succeeds moments later. Back off and
+        # retry rather than handing the caller a failure it can do nothing about.
+        budget = min(
+            max_retries, _SLOW_STATUS_RETRIES.get(resp.status_code, max_retries)
         )
-    except httpx.TimeoutException as exc:
-        # Surface as SparqlError so callers degrade uniformly instead of crashing
-        # on a raw httpx traceback. A timeout means the scan was too broad to
-        # finish in time — narrow it (e.g. add a `sample`/`LIMIT`).
-        raise SparqlError(
-            f"SPARQL request timed out after {timeout}s — the query scanned too "
-            f"much; narrow it with a sample/LIMIT.\nQuery:\n{query}"
-        ) from exc
-    finally:
-        if owns_client:
-            await client.aclose()
+        if resp.status_code in _RETRY_STATUSES and attempts <= budget:
+            await _sleep(_retry_delay(resp, attempts))
+            continue
+        break
 
     text = resp.text
 
@@ -161,8 +254,11 @@ async def run_sparql(
             message = err.get("exception", text)
         except (json.JSONDecodeError, ValueError):
             pass
+        # Name the retries when there were any, so an exhausted transient failure
+        # ("still overloaded after 3 tries") reads differently from a bad query.
+        tried = f" after {attempts} attempts" if attempts > 1 else ""
         raise SparqlError(
-            f"SPARQL endpoint returned HTTP {resp.status_code}: "
+            f"SPARQL endpoint returned HTTP {resp.status_code}{tried}: "
             f"{message.strip()}\nQuery:\n{query}"
         )
 
