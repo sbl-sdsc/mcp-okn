@@ -31,7 +31,7 @@ Ranked by how much a single new sampling effort would tell us, the top counties 
 | `biomarkerkg` | v0.0.2 | 2026-03-16 | Biomarker evidence for the mapped human diseases | `MONDO` |
 | `prokn` | v0.0.5 | 2026-06-23 | Independent check on whether the mapped diseases exist in a protein-centric disease layer | `MONDO` via `skos:exactMatch` |
 | `spoke-okn` | v0.0.6 | 2026-03-16 | Place-based context: county-level chemicals-found-in-location, SDoH measures (adult asthma prevalence, per-capita income); DOID disease layer check | `county_FIPS` (node IRI), `DOID` |
-| `fiokg` | v0.0.11 | 2026-03-18 | EPA FRS facility counts per Florida county — the environmental-pressure proxy | `county_FIPS` |
+| `fiokg` | v0.0.11 | 2026-03-18 | EPA facility counts per Florida county: `EPA-PFAS-Facility` records (the scored environmental-pressure proxy) and all-programme FRS records (reported for context) | `county_FIPS` |
 | `climatemodelskg` | v0.0.15 | 2026-05-06 | The climate record for the observation counties: regional climate models covering each place, and climate publications mentioning it | county FIPS assembled from `admin1_code` + `admin2_code` |
 
 Twelve KGs were queried; all appear above and every claim traces to a logged query in the reproducibility record. Suppliers that the capability index named but that this study **did not** use are declared in §6.4.
@@ -46,7 +46,7 @@ Twelve KGs were queried; all appear above and every claim traces to a logged que
 
 **Human evidence.** For each mapped disease, four independent human-side layers were interrogated — biohealth (literature/clinical associations, via the MONDO↔UMLS `hasDbXref` bridge), oard-kg (EHR phenotype co-occurrence, UNIONing both reified roles), biomarkerkg (biomarkers), prokn and spoke-okn (presence in a curated disease layer).
 
-**Scoring.** Counties are scored on six min–max-normalised axes (sentinel-capable species richness, best proximity tier present, pathogen-host species count, log EPA FRS facility count, total observed species richness, adult asthma prevalence); species are scored on five (number of infectious diseases hosted, proximity tier, human-evidence weight of those diseases, Florida observation footprint, county spread) with a multiplier applied when the species is a pathogen host that has never been sampled. The exact weights, formulas and thresholds are in the reproducibility file; §3 states only what is in the score and why.
+**Scoring.** Counties are scored on six min–max-normalised axes (sentinel-capable species richness, best proximity tier present, pathogen-host species count, log EPA **PFAS**-facility count, total observed species richness, adult asthma prevalence); species are scored on five (number of infectious diseases hosted, proximity tier, human-evidence weight of those diseases, Florida observation footprint, county spread) with a multiplier applied when the species is a pathogen host that has never been sampled. The exact weights, formulas and thresholds are in the reproducibility file; §3 states only what is in the score and why.
 
 **Inventory (rebuilt live).**
 
@@ -60,7 +60,8 @@ Twelve KGs were queried; all appear above and every claim traces to a logged que
 | Contaminant biota taxa (federation-wide) | 67 | 2,284 biota samples (2,269 with a county geoId), 12 states |
 | Contaminant samples in Florida | 0 | any medium, any analyte |
 | Host–pathogen taxon–disease pairs | 22 | 11 taxa, 9 diseases |
-| EPA FRS facilities in the study area | 118,663 | across all 67 Florida counties |
+| EPA PFAS facilities in the study area | 4,118 | `EPA-PFAS-Facility` subset, all 67 Florida counties |
+| EPA FRS facilities, all programmes | 118,663 | full registry; reported but not scored (see §3) |
 
 ![Study design and evidence inventory](figures/fig1_design_inventory.png)
 
@@ -74,7 +75,7 @@ Two ranked products are reported, each tiered A/B/C by score quartile (A = top q
 
 | Tier | County ranking requires | Species ranking requires |
 |---|---|---|
-| **A** | Top-quartile composite score: high sentinel-capable richness *and* either a pathogen-host species present or substantial facility pressure | Top-quartile information value: a host–pathogen assertion with human-evidence support, or measured body burden, plus a real Florida footprint |
+| **A** | Top-quartile composite score: high sentinel-capable richness *and* either a pathogen-host species present or substantial PFAS-facility pressure | Top-quartile information value: a host–pathogen assertion with human-evidence support, or measured body burden, plus a real Florida footprint |
 | **B** | Mid-range score: sentinel-capable species present but thin host or pressure evidence | Proximity-tier membership (I1–I3) with a Florida footprint but no host–pathogen assertion |
 | **C** | Low score: few sentinel-capable taxa, low richness, low facility pressure | Weak proximity (I4/N/Z) and no host–pathogen assertion, or a single Florida record |
 
@@ -128,11 +129,11 @@ Panel B is the second disconnect. Every mapped zoonosis has a substantial human 
 
 ### 5.5 The place-based picture: health, environment, social, climate
 
-For the 64 observation counties, `spoke-okn` supplies 140–151 chemicals recorded as found in the county and 853–1,140 SDoH measures per county; **none of those chemicals is a PFAS**, so the absence of Florida PFAS data in `sawgraph` is not compensated elsewhere in the federation. The available health and social measures are adult asthma prevalence (7.5% in Monroe to 10.4% in Gadsden, 2019) and per-capita income ($15,532 in Hamilton to $47,382 in Monroe, 2020). `fiokg` gives 118,663 EPA FRS facilities across the state, ranging from 72 in Liberty County to 9,284 in Miami-Dade — the study's proxy for where contamination is plausible. Uninsured rate and children-in-poverty are present as SDoH concepts for all 67 counties but their values did not resolve on the reified-value path used here and are not reported.
+For the 64 observation counties, `spoke-okn` supplies 140–151 chemicals recorded as found in the county and 853–1,140 SDoH measures per county; **none of those chemicals is a PFAS**, so the absence of Florida PFAS data in `sawgraph` is not compensated elsewhere in the federation. The available health and social measures are adult asthma prevalence (7.5% in Monroe to 10.4% in Gadsden, 2019) and per-capita income ($15,532 in Hamilton to $47,382 in Monroe, 2020). `fiokg` gives **4,118 EPA `EPA-PFAS-Facility` records** across the state, from 1 in Liberty County to 279 in Hillsborough — the study's proxy for where PFAS contamination is plausible. The same graph holds 118,663 all-programme FRS records for Florida (72 to 9,284 per county), but FRS registers every site EPA or a state programme has ever tracked — filling stations, dry cleaners, schools with tanks, closed sites — so it indexes economic activity rather than PFAS risk and is reported without entering the score. For scale, `fiokg` carries 4,955,792 FRS and 188,057 PFAS facilities nationally, so Florida holds 2.4% of the FRS total against roughly 6.6% of the US population. Uninsured rate and children-in-poverty are present as SDoH concepts for all 67 counties but their values did not resolve on the reified-value path used here and are not reported.
 
 The climate record reaches **35 of 64** counties: `climatemodelskg` holds 246 Florida GeoNames places in 36 Florida counties (35 of them inside the study area), covered by three CORDEX regional climate models (CRCM5, HIRHAM5, REMO2015) and mentioned by 97 distinct climate publications across 125 place–paper mentions, concentrated in Miami-Dade (50 mentions), Brevard (21), Orange (14) and Palm Beach (9). The remaining 29 counties — including several that rank highly on wildlife content, such as Wakulla — have no place in the climate graph at all, so the climate context is systematically absent from exactly the rural, low-facility counties where the wildlife record is richest.
 
-Geography is reported in one place only, as an interactive OpenStreetMap-tiled map of the 64 counties (see the companion file `Sentinel-Wildlife_county_map.html`, also embedded in the HTML report). Each marker is clickable and carries that county's rank, score, tier, sentinel-capable and pathogen-host species counts, facility count, asthma prevalence and contributing sources. County anchor points are the mean position of three S2 Level-13 cells (minimum, maximum and a sample of the cell ids `spatialkg` records as contained by that county) — a point inside the county, **not** its centroid.
+Geography is reported in one place only, as an interactive OpenStreetMap-tiled map of the 64 counties (see the companion file `Sentinel-Wildlife_county_map.html`, also embedded in the HTML report). Each marker is clickable and carries that county's rank, score, tier, sentinel-capable and pathogen-host species counts, PFAS- and all-FRS facility counts, asthma prevalence and contributing sources. County anchor points are the mean position of three S2 Level-13 cells (minimum, maximum and a sample of the cell ids `spatialkg` records as contained by that county) — a point inside the county, **not** its centroid.
 
 <!-- COUNTY_MAP -->
 
@@ -140,11 +141,11 @@ Geography is reported in one place only, as an interactive OpenStreetMap-tiled m
 
 ### 6.1 The county gap: sentinel-capable richness where nothing has been sampled
 
-Because the sampling deficit is total and uniform across Florida, the county ranking measures biological and environmental *content*. **Orange County** leads decisively: 11 sentinel-capable taxa (the most of any county, including the mallard itself, so it is the one county where a measured species and a first-ever Florida sample coincide), four pathogen-host taxa, 110 observed taxa and 8,727 FRS facilities. **Miami-Dade** and **Palm Beach** follow on a similar profile of high richness and high facility pressure. **Wakulla** at rank 7 is the informative outlier — 73 observed taxa, five sentinel-capable taxa and two pathogen hosts on only 188 facilities, i.e. high biological value with low industrial pressure, which makes it the natural low-exposure reference site rather than a hotspot candidate. Four counties (Brevard, Alachua, Leon, Citrus) carry three or more sentinel-capable taxa and **no** pathogen-host taxon, which is a contaminant-only opportunity.
+Because the sampling deficit is total and uniform across Florida, the county ranking measures biological and environmental *content*. **Orange County** leads decisively: 11 sentinel-capable taxa (the most of any county, including the mallard itself, so it is the one county where a measured species and a first-ever Florida sample coincide), four pathogen-host taxa, 110 observed taxa and 210 PFAS facilities. **Miami-Dade** and **Palm Beach** follow on a similar profile of high richness and high PFAS-facility pressure. **Wakulla** at rank 7 is the informative outlier — 73 observed taxa, five sentinel-capable taxa and two pathogen hosts on only 4 PFAS facilities, i.e. high biological value with almost no PFAS-facility pressure, which makes it the natural low-exposure reference site rather than a hotspot candidate. Four counties (Brevard, Alachua, Leon, Citrus) carry three or more sentinel-capable taxa and **no** pathogen-host taxon, which is a contaminant-only opportunity.
 
 ![County sampling-priority ranking](figures/fig6_county_priority.png)
 
-> ***Figure 6. Sampling-priority ranking, top 20 Florida counties.*** Bars are the composite score (0–1); colour is the confidence tier. Each annotation gives the county's sentinel-capable taxa, pathogen-host taxa, total observed taxa and EPA FRS facility count. Provenance: `wildlifekn` observations bridged to county FIPS via `spatialkg`; proximity tiers via `ubergraph`; host links via `biohealth`; facilities via `fiokg`; asthma prevalence via `spoke-okn`.
+> ***Figure 6. Sampling-priority ranking, top 20 Florida counties.*** Bars are the composite score (0–1); colour is the confidence tier. Each annotation gives the county's sentinel-capable taxa, pathogen-host taxa, total observed taxa and EPA `EPA-PFAS-Facility` count. Provenance: `wildlifekn` observations bridged to county FIPS via `spatialkg`; proximity tiers via `ubergraph`; host links via `biohealth`; PFAS facilities via `fiokg`; asthma prevalence via `spoke-okn`.
 
 ### 6.2 The species gap: pathogen hosts absent from the contaminant record
 
@@ -214,7 +215,7 @@ All twelve claims were checked against abstracts and full-text-indexed records r
 
 The complete rankings are in `Sentinel-Wildlife_results.xlsx` — **Ranked Results** (counties), **Species Ranking**, plus one sheet per supporting extract (observation inventory, temporal series, contaminant record, host–pathogen links, human evidence, place context) and a **Methods & Rules** sheet. The intermediate TSV/CSV extracts are in `data/`.
 
-Tip: click a column header to sort (the `sources (n)` column sorts by how many federation KGs support the row), use the search box for a county name, and use the pull-downs to restrict to a confidence tier or a best-proximity tier. Sources contribute as follows — `wildlifekn` the observations, `spatialkg` the county geography, `sawgraph` the (empty) contaminant record, `fiokg` the facility pressure, `spoke-okn` the health and social measures, `climatemodelskg` the climate record where it reaches the county.
+Tip: click a column header to sort (the `sources (n)` column sorts by how many federation KGs support the row), use the search box for a county name, and use the pull-downs to restrict to a confidence tier or a best-proximity tier. Sources contribute as follows — `wildlifekn` the observations, `spatialkg` the county geography, `sawgraph` the (empty) contaminant record, `fiokg` the PFAS-facility pressure, `spoke-okn` the health and social measures, `climatemodelskg` the climate record where it reaches the county.
 
 <!-- RESULTS_TABLE -->
 
@@ -248,7 +249,7 @@ The gap, stated plainly: **8 species are hosts for a human pathogen and have nev
 6. **Host–pathogen links are observational co-occurrence.** The `biohealth` layer is literature text-mined; one edge is a demonstrated artefact, one contradicts host-competence experiments (§8, Claims 4 and 10), and absence of an edge is not evidence of non-host status.
 7. **`nde` overlap is dominated by laboratory use.** *Gallus gallus*'s 1,158 datasets make it a study organism, not a wild sentinel; conflating the two would badly distort any ranking that used raw dataset counts.
 8. **The human-evidence layers are shallow for zoonoses.** oard-kg is rare-disease-oriented, `biomarkerkg` covers one of the nine diseases, and none appears in spoke-okn — so "does the disease show up in human clinical and biomarker evidence?" is answered *no* for eight of nine, which is a statement about these graphs and not about clinical medicine.
-9. **The place-based layer is coarse and partly unresolved.** SDoH values are county-level annual figures; uninsured rate and children-in-poverty did not resolve on the reified-value path and are omitted. FRS facility counts are a crude pressure proxy that does not distinguish a fluorochemical plant from a dry cleaner.
+9. **The place-based layer is coarse and partly unresolved.** SDoH values are county-level annual figures; uninsured rate and children-in-poverty did not resolve on the reified-value path and are omitted. The PFAS-facility count is a presence proxy, not an emissions estimate, and does not weight a fluorochemical plant against a small user; the all-FRS count is coarser still and is reported for context only.
 10. **The climate record covers 35 of 64 counties** and is a gazetteer-plus-model-coverage layer, not climate observations; counties with no `climatemodelskg` place have no climate context at all, and that absence is correlated with rurality.
 11. **County anchor points are not centroids.** They are the mean of three S2 Level-13 cell positions per county and are used only to place a marker inside the right county on the map.
 12. **The scores are a decision aid, not an estimate.** Weights were set by the analyst to encode the question asked ("what would one new sample tell us?"); they are stated in the reproducibility file and a reader who weights differently will reorder the middle of both tables, though the top four counties and top three species are robust to reasonable reweighting.

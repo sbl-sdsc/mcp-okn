@@ -199,7 +199,7 @@ ranked_barh(ax, [f"{r.rank}. {r.county_name}" for r in top.itertuples()],
             themes=top.conf_tier.tolist(),
             theme_colors={"A": C["A"], "B": C["B"], "C": C["C"]},
             annots=[f"{int(r.sentinel_species)} sentinel sp. / {int(r.host_species)} host sp."
-                    f" / {int(r.total_species)} spp. / {int(r.frs_facilities):,} facilities"
+                    f" / {int(r.total_species)} spp. / {int(r.pfas_facilities):,} PFAS facilities"
                     for r in top.itertuples()],
             xlabel="sampling-priority score (0-1)")
 from matplotlib.patches import Patch
@@ -235,7 +235,8 @@ for r in c.itertuples():
                  "pathogen-host species": int(r.host_species),
                  "species observed": int(r.total_species),
                  "bird / amphibian species": f"{int(r.species_n_bird)} / {int(r.species_n_amphibian)}",
-                 "EPA FRS facilities": int(r.frs_facilities),
+                 "EPA PFAS facilities": int(r.pfas_facilities),
+                 "EPA FRS facilities (all)": int(r.frs_facilities),
                  "adult asthma %": r.adult_asthma_pct,
                  "contaminant samples in county": 0,
                  "sources": ", ".join(eval(r.sources)) if isinstance(r.sources, str) else "",

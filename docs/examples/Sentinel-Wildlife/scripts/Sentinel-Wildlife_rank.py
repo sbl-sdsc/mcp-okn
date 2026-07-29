@@ -61,7 +61,10 @@ c["total_species"] = c.species_n_bird + c.species_n_amphibian
 c["total_records"] = c.records_bird + c.records_amphibian
 # every Florida county has zero contaminant samples of any medium (sawgraph): uniform deficit
 c["pfas_samples_in_county"] = 0
-c["log_facilities"] = c.frs_facilities.apply(lambda x: math.log10(max(x, 1)))
+# Environmental-pressure proxy = fiokg EPA-PFAS-Facility records (PFAS-relevant subset of FRS).
+# all-FRS counts are retained as a reported column but no longer enter the score: FRS is EPA's
+# registry of every regulated/reported site, so it indexes economic activity more than PFAS risk.
+c["log_facilities"] = c.pfas_facilities.apply(lambda x: math.log10(max(x, 1)))
 
 W = {"sentinel_species": .30, "best_tier_w": .20, "host_species": .20,
      "log_facilities": .12, "total_species": .13, "adult_asthma_pct": .05}
@@ -76,7 +79,8 @@ c["evidence"] = [
     (f"{int(r.sentinel_species)} sentinel-capable sp. (best tier {r.best_tier}); "
      f"{int(r.host_species)} pathogen-host sp.; "
      f"{int(r.total_species)} spp. observed ({int(r.species_n_bird)} bird / "
-     f"{int(r.species_n_amphibian)} amphibian); {int(r.frs_facilities):,} EPA FRS facilities; "
+     f"{int(r.species_n_amphibian)} amphibian); {int(r.pfas_facilities):,} EPA PFAS facilities "
+     f"of {int(r.frs_facilities):,} FRS records; "
      f"adult asthma {r.adult_asthma_pct}%; contaminant samples in county: 0")
     for r in c.itertuples()]
 c["sources_n"] = 5
@@ -177,7 +181,8 @@ stats = {
   "record_start": "1974-06-10", "record_end": "2024-05-13",
   "bird_last_year": 2024, "amph_last_year": 2018,
   "amph_2018_records": 1709, "bird_2023_records": 575,
-  "taxa_resolved": 339,
+  "taxa_resolved": 339, "aves_resolved": 263, "amphibia_resolved": 76,
+  "unresolved_labels": 61,
   "fl_counties_bridged": int(len(bridge)), "fl_counties_total": 67,
   "l8_published_count": 63, "l8_true_count": 62,
   "fl_counties_studied": int(len(fl)),
@@ -219,6 +224,9 @@ stats = {
   "top_species_counties": int(spp.iloc[0].fl_counties),
   "cm_counties": int((c.cm_cities > 0).sum()),
   "frs_facilities_total": int(ctx.frs_facilities.sum()),
+  "pfas_facilities_total": int(ctx.pfas_facilities.sum()),
+  "frs_facilities_national": 4955792, "pfas_facilities_national": 188057,
+  "malformed_region_nodes": 5, "malformed_region_facilities": 682,
   "kgs_queried": 9,
 }
 json.dump(stats, open("data/stats.json", "w"), indent=2)
