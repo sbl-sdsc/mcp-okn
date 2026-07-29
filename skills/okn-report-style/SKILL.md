@@ -19,7 +19,7 @@ compatibility: >-
   to render the HTML report, figures, workbook, and maps.
 metadata:
   author: sbl-sdsc
-  version: "0.1.4"
+  version: "0.1.5"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -146,7 +146,7 @@ come between them, and nothing follows References:
     script filenames, repeat KG versions or give a timing line — the record holds all of it (it
     carries the header timing; pass `chat_started=` for whole-chat elapsed, else the active-query
     window). Also pass `skills=` — every skill you actually followed, `"<name> v<version>"` from
-    each one's frontmatter `metadata.version` (this skill is `okn-report-style v0.1.4`) — so the
+    each one's frontmatter `metadata.version` (this skill is `okn-report-style v0.1.5`) — so the
     header records the methodology, not just the model; and `external_mcp_servers=` — every OTHER
     MCP connector a call actually fed the analysis from (`["PubMed", "Paperclip", …]`), so the
     header shows the whole evidence base, not just the KGs. Token/cost isn't visible to the tooling —

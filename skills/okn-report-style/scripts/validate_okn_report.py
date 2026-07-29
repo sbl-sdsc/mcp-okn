@@ -219,15 +219,23 @@ def _check_toplevel(study: Path, token: str, r: _Report) -> dict:
     }
 
 
+#: Names that mark a second spec/record document. `_spec` needs the lookahead: a bare substring test
+#: matched `_species`, so a study with `wl_species_summary.csv` in `data/` failed this check on a CSV.
+#: `transcript` deliberately has no lookahead — a plural `_transcripts.md` IS the split anti-pattern.
+_SPLIT_DOC_RE = re.compile(r"reproducibility|transcript|_spec(?![a-z])", re.I)
+
+#: Only prose documents can BE a spec or a record; data and figures never are.
+_DOC_SUFFIXES = {".md", ".html", ".htm", ".txt", ".pdf", ".docx"}
+
+
 def _check_single_reproducibility(study: Path, token: str, r: _Report) -> None:
     """Exactly ONE reproducibility file — spec + verbatim queries live together (SKILL.md: "do not split
-    them back into two"). Any second reproducibility/transcript/spec file is the split anti-pattern."""
+    them back into two"). Any second reproducibility/transcript/spec DOCUMENT is the split anti-pattern."""
     hits = []
     for p in study.rglob("*"):
-        if not p.is_file():
+        if not p.is_file() or p.suffix.lower() not in _DOC_SUFFIXES:
             continue
-        low = p.name.lower()
-        if any(k in low for k in ("reproducibility", "transcript", "_spec")):
+        if _SPLIT_DOC_RE.search(p.name):
             hits.append(p.relative_to(study).as_posix())
     canonical = f"{token}_reproducibility.md"
     extra = [h for h in hits if Path(h).name != canonical]
@@ -390,7 +398,7 @@ def _check_repro_skills(repro_md: Path, r: _Report) -> None:
         r.err(
             f"{repro_md.name}: the header has no '- **Skills:**' line — pass `skills=[...]` to "
             "create_reproducibility_record (e.g. `skills=['okn-bioanalysis v0.1.2', "
-            "'okn-report-style v0.1.4']`, versions from each skill's frontmatter `metadata.version`). "
+            "'okn-report-style v0.1.5']`, versions from each skill's frontmatter `metadata.version`). "
             "The server cannot see which skills your session loaded, so an omitted list leaves the "
             "record claiming no methodology at all; do NOT hand-add the line — regenerate the record"
         )

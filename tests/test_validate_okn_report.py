@@ -274,6 +274,23 @@ def test_duplicate_reproducibility_file_fails(tmp_path):
     )
 
 
+def test_species_filenames_are_not_mistaken_for_a_spec_file(tmp_path):
+    """`_spec` used to be a bare substring test, so `_species` matched it: a study with
+    `wl_species_summary.csv` in `data/` failed the split-reproducibility check on a CSV.
+    Data and figures can never BE a spec document, and `_spec` must end the word."""
+    study = _build(tmp_path)
+    (study / "data" / "wl_species_summary.csv").write_text("taxon,n\nAves,3\n")
+    (study / "data" / "sentinel_species_county.csv").write_text("fips,n\n12086,4\n")
+    (study / "figures" / "fig9_species_value.png").write_bytes(b"\x89PNG\r\n\x1a\n")
+    # A prose file whose stem genuinely ends in `_spec` is still the anti-pattern.
+    r = v.validate(str(study))
+    assert not any("more than one reproducibility" in e for e in r.errors), r.errors
+
+    (study / "data" / "extra_spec.md").write_text("# a second spec\n")
+    r2 = v.validate(str(study))
+    assert any("more than one reproducibility" in e for e in r2.errors)
+
+
 def test_missing_skills_header_line_fails(tmp_path):
     # `skills=` is caller-supplied — the server can't see which skills a session loaded — so a record
     # with no Skills line is a forgotten argument, and the package silently claims no methodology.
