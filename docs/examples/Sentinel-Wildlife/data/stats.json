@@ -67,10 +67,7 @@
   "top_species_records": 12,
   "top_species_counties": 9,
   "cm_counties": 35,
-  "frs_facilities_total": 118663,
   "pfas_facilities_total": 4118,
-  "frs_facilities_national": 4955792,
-  "pfas_facilities_national": 188057,
   "malformed_region_nodes": 5,
   "malformed_region_facilities": 682,
   "kgs_queried": 9

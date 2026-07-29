@@ -236,7 +236,6 @@ for r in c.itertuples():
                  "species observed": int(r.total_species),
                  "bird / amphibian species": f"{int(r.species_n_bird)} / {int(r.species_n_amphibian)}",
                  "EPA PFAS facilities": int(r.pfas_facilities),
-                 "EPA FRS facilities (all)": int(r.frs_facilities),
                  "adult asthma %": r.adult_asthma_pct,
                  "contaminant samples in county": 0,
                  "sources": ", ".join(eval(r.sources)) if isinstance(r.sources, str) else "",

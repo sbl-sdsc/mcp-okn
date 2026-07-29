@@ -223,9 +223,7 @@ stats = {
   "top_species_records": int(spp.iloc[0].fl_records),
   "top_species_counties": int(spp.iloc[0].fl_counties),
   "cm_counties": int((c.cm_cities > 0).sum()),
-  "frs_facilities_total": int(ctx.frs_facilities.sum()),
   "pfas_facilities_total": int(ctx.pfas_facilities.sum()),
-  "frs_facilities_national": 4955792, "pfas_facilities_national": 188057,
   "malformed_region_nodes": 5, "malformed_region_facilities": 682,
   "kgs_queried": 9,
 }
