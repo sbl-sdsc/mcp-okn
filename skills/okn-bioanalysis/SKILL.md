@@ -19,7 +19,7 @@ compatibility: >-
   ortholog-projection, and mechanistic-map scripts.
 metadata:
   author: sbl-sdsc
-  version: "0.1.1"
+  version: "0.1.2"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -83,8 +83,10 @@ surfaces after the whole analysis is done and there's no time left to turn them 
 
 1. `reset_query_log` at the start; `create_reproducibility_record` + `get_kg_version` at the end (pin
    versions + dates), passing `skills=` — every skill you actually followed as `"<name> v<version>"`
-   from its frontmatter `metadata.version` (this skill is `okn-bioanalysis v0.1.1`); the server can't
-   see them, so an omitted list reads as "no methodology skill was used".
+   from its frontmatter `metadata.version` (this skill is `okn-bioanalysis v0.1.2`); the server can't
+   see them, so an omitted list reads as "no methodology skill was used". Pass
+   `external_mcp_servers=` the same way — every OTHER MCP connector a call actually fed the analysis
+   from (`["PubMed", "Paperclip", …]`), so the header shows the whole evidence base, not just the KGs.
    `create_reproducibility_record` emits the lean deliverable (header + verbatim
    supporting queries + row counts) that fits inline; use `create_chat_transcript` only when you also
    need the conversation prose + result tables. **A stub return (log too large) is NOT a stopping

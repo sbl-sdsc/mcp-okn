@@ -262,11 +262,18 @@ pass `chat_started` (ISO-8601 — the server can't know it) and optionally `chat
 `**Elapsed time:** <start>–<end> UTC (<elapsed>)`.
 
 The record's header also carries the **skills** that shaped the run — `- **Skills:** okn-bioanalysis
-v0.1.1 · okn-report-style v0.1.3` — but only if you pass `skills=[...]`: the server cannot see which
+v0.1.2 · okn-report-style v0.1.4` — but only if you pass `skills=[...]`: the server cannot see which
 skills your session loaded, so an omitted list silently reads as "no methodology skill was used".
 Give each as `"<name> v<version>"`, the version taken from that skill's frontmatter
 `metadata.version` (not guessed), and list only skills you actually followed — a skill you didn't use
-is a phantom source, exactly like an unqueried KG in §2. Token/cost is not captured by the tooling (the
+is a phantom source, exactly like an unqueried KG in §2.
+
+The same is true of the **external MCP servers** the study called — `- **External MCP servers:**
+PubMed · Paperclip` — passed as `external_mcp_servers=[...]`. The header's KG list covers only what
+came from *this* server; literature and other outside evidence arrived through connectors the server
+cannot see, so without this line a replicator reads the KGs as the whole evidence base. List a
+connector only if a call to it actually fed the analysis (an enabled-but-unused one is a phantom
+source), which is the same set §12's attribution line credits. Token/cost is not captured by the tooling (the
 server sees only tool calls); if you cite it, use client figures (Claude Code `/cost` / API
 `usage`), labelled as client-measured — do not invent a number.
 

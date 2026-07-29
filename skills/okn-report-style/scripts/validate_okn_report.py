@@ -389,8 +389,8 @@ def _check_repro_skills(repro_md: Path, r: _Report) -> None:
     if not m:
         r.err(
             f"{repro_md.name}: the header has no '- **Skills:**' line — pass `skills=[...]` to "
-            "create_reproducibility_record (e.g. `skills=['okn-bioanalysis v0.1.1', "
-            "'okn-report-style v0.1.3']`, versions from each skill's frontmatter `metadata.version`). "
+            "create_reproducibility_record (e.g. `skills=['okn-bioanalysis v0.1.2', "
+            "'okn-report-style v0.1.4']`, versions from each skill's frontmatter `metadata.version`). "
             "The server cannot see which skills your session loaded, so an omitted list leaves the "
             "record claiming no methodology at all; do NOT hand-add the line — regenerate the record"
         )
