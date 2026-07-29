@@ -1,0 +1,14 @@
+stateFIPS,state,biota_counties,biota_taxa,biota_samples,all_media_sample_points,all_media_samples
+01,Alabama,9,5,10,10,10
+04,Arizona,3,3,6,413,851
+05,Arkansas,9,6,10,14,92
+17,Illinois,17,9,26,28,59
+18,Indiana,76,47,361,326,361
+20,Kansas,8,4,11,11,11
+23,Maine,12,10,71,4477,17361
+25,Massachusetts,6,5,18,18,18
+27,Minnesota,33,38,1714,1075,3579
+33,New Hampshire,7,5,17,17,17
+45,South Carolina,9,4,16,16,16
+50,Vermont,5,6,9,9,9
+12,Florida,0,0,0,0,0

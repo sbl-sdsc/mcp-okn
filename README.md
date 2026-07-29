@@ -120,15 +120,17 @@ verify each as live SPARQL, and validate the findings against the literature.
 
 ### Case studies
 
-Ten end-to-end analyses that federate many Proto-OKN graphs into a single
+Eleven end-to-end analyses that federate many Proto-OKN graphs into a single
 evidence-backed map — five of a disease's biology (genes, variants,
 pathways/gene sets, drugs, altered-activity signatures, and clinical/biomarker
 features), four of environmental exposure and justice (PFAS source
 attribution, the bisphenol chemical exposome, cumulative environmental-justice
 burden across U.S. counties, and flood-mobilised contamination routed downstream
-through the stream network), and one of urban scaling (how disease, mortality
-and crime scale with settlement size) — each finding tagged with its source(s) and
-evidence kind, then ranked by cross-source agreement. Every case study ships an
+through the stream network), one of urban scaling (how disease, mortality
+and crime scale with settlement size), and one of wildlife sentinel surveillance
+(whether Florida's wild-animal record and its contaminant record overlap at all)
+— each finding tagged with its source(s) and evidence kind, then ranked by
+cross-source agreement. Every case study ships an
 interactive HTML report, a reproducibility record preserving every verbatim
 SPARQL query, and an Excel workbook.
 
@@ -149,6 +151,7 @@ SPARQL query, and an Excel workbook.
 | **Cumulative environmental-justice burden** — 8 KGs, 3,134 counties, 6 burden domains (31 indicators), 495 high-burden | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Environmental-Justice/Environmental-Justice_report.html) | [md](docs/examples/Environmental-Justice/Environmental-Justice_literature_comparison.md) | [xlsx](docs/examples/Environmental-Justice/Environmental-Justice_results.xlsx) | [md](docs/examples/Environmental-Justice/Environmental-Justice_reproducibility.md) | [files](docs/examples/Environmental-Justice/) |
 | **Urban scaling of disease, mortality & crime** — 3 KGs, 18 outcomes, 26,343 census places and up to 3,072 counties | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Urban-Scaling/Urban-Scaling_report.html) | [md](docs/examples/Urban-Scaling/Urban-Scaling_literature_comparison.md) | [xlsx](docs/examples/Urban-Scaling/Urban-Scaling_results.xlsx) | [md](docs/examples/Urban-Scaling/Urban-Scaling_reproducibility.md) | [files](docs/examples/Urban-Scaling/) |
 | **Flood-mobilised contamination cascade** — 6 KGs, 11,085 flood-exposed facilities routed to 519 counties (179 downstream-only) | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Flood-Cascade/Flood-Cascade_report.html) | [md](docs/examples/Flood-Cascade/Flood-Cascade_literature_comparison.md) | [xlsx](docs/examples/Flood-Cascade/Flood-Cascade_results.xlsx) | [md](docs/examples/Flood-Cascade/Flood-Cascade_reproducibility.md) | [files](docs/examples/Flood-Cascade/) |
+| **Wildlife sentinel surveillance gap (Florida)** — 12 KGs, 5,205 bird & amphibian observations vs 0 Florida contaminant measurements (2 measured bird taxa federation-wide) | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Sentinel-Wildlife/Sentinel-Wildlife_report.html) | [md](docs/examples/Sentinel-Wildlife/Sentinel-Wildlife_literature_comparison.md) | [xlsx](docs/examples/Sentinel-Wildlife/Sentinel-Wildlife_results.xlsx) | [md](docs/examples/Sentinel-Wildlife/Sentinel-Wildlife_reproducibility.md) | [files](docs/examples/Sentinel-Wildlife/) |
 
 Each case study is a self-contained folder under `docs/examples/{Name}/` — the
 report and its deliverables sit alongside the `figures/`, `scripts/`, and `data/`

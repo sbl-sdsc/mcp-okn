@@ -1,0 +1,30 @@
+binom,tier,tier_label,anchor,measured
+Anas platyrhynchos,M,measured body burden,self,yes
+Branta canadensis,M,measured body burden,self,yes
+Anas acuta,I1,same genus as a measured species,Anas,no
+Anas castanea,I1,same genus as a measured species,Anas,no
+Anas crecca,I1,same genus as a measured species,Anas,no
+Anas fulvigula,I1,same genus as a measured species,Anas,no
+Branta leucopsis,I1,same genus as a measured species,Branta,no
+Aix sponsa,I2,same subfamily as a measured species,Anatinae,no
+Bucephala albeola,I2,same subfamily as a measured species,Anatinae,no
+Cairina moschata,I2,same subfamily as a measured species,Anatinae,no
+Lophodytes cucullatus,I2,same subfamily as a measured species,Anatinae,no
+Mareca americana,I2,same subfamily as a measured species,Anatinae,no
+Mergus serrator,I2,same subfamily as a measured species,Anatinae,no
+Nomonyx dominicus,I2,same subfamily as a measured species,Anatinae,no
+Oxyura jamaicensis,I2,same subfamily as a measured species,Anatinae,no
+Spatula clypeata,I2,same subfamily as a measured species,Anatinae,no
+Spatula discors,I2,same subfamily as a measured species,Anatinae,no
+Anser anser,I2,same subfamily as a measured species,Anserinae,no
+Anser cygnoides,I2,same subfamily as a measured species,Anserinae,no
+Alopochen aegyptiaca,I3,same family as a measured species,Anatidae,no
+Aythya affinis,I3,same family as a measured species,Anatidae,no
+Aythya americana,I3,same family as a measured species,Anatidae,no
+Aythya collaris,I3,same family as a measured species,Anatidae,no
+Dendrocygna autumnalis,I3,same family as a measured species,Anatidae,no
+Dendrocygna bicolor,I3,same family as a measured species,Anatidae,no
+Colinus virginianus,I4,same superorder as a measured species,Galloanserae,no
+Gallus gallus,I4,same superorder as a measured species,Galloanserae,no
+Meleagris gallopavo,I4,same superorder as a measured species,Galloanserae,no
+Pavo cristatus,I4,same superorder as a measured species,Galloanserae,no

@@ -1,0 +1,46 @@
+taxonLabel,analyte,value_ng_per_g,sample_date,state
+Anas platyrhynchos,PFOS,1990,2022-08-11,MN
+Anas platyrhynchos,PFOS,1730,2022-08-11,MN
+Anas platyrhynchos,PFOS,948,2022-08-11,MN
+Anas platyrhynchos,PFOS,875,2022-08-11,MN
+Anas platyrhynchos,PFDA (10-H-perfluorodecanoic),43.3,2022-08-11,MN
+Anas platyrhynchos,PFDA (10-H-perfluorodecanoic),37.0,2022-08-11,MN
+Anas platyrhynchos,PFDA (10-H-perfluorodecanoic),13.8,2022-08-11,MN
+Anas platyrhynchos,PFDA (10-H-perfluorodecanoic),10.1,2022-08-11,MN
+Anas platyrhynchos,PFHpS,24.1,2022-08-11,MN
+Anas platyrhynchos,PFHpS,17.7,2022-08-11,MN
+Anas platyrhynchos,PFHpS,6.73,2022-08-11,MN
+Anas platyrhynchos,PFHpS,6.16,2022-08-11,MN
+Anas platyrhynchos,PFHxS,14.1,2022-08-11,MN
+Anas platyrhynchos,PFHxS,13.7,2022-08-11,MN
+Anas platyrhynchos,PFHxS,7.95,2022-08-11,MN
+Anas platyrhynchos,PFHxS,5.24,2022-08-11,MN
+Anas platyrhynchos,FHUEA (2H2H3H3H-PFOA),17.9,2022-08-11,MN
+Anas platyrhynchos,FHUEA (2H2H3H3H-PFOA),15.1,2022-08-11,MN
+Anas platyrhynchos,FHUEA (2H2H3H3H-PFOA),8.29,2022-08-11,MN
+Anas platyrhynchos,FHUEA (2H2H3H3H-PFOA),3.71,2022-08-11,MN
+Anas platyrhynchos,PFBA,3.89,2022-08-11,MN
+Anas platyrhynchos,PFBA,2.23,2022-08-11,MN
+Anas platyrhynchos,PFBA,0.624,2022-08-11,MN
+Anas platyrhynchos,PFNS,2.86,2022-08-11,MN
+Anas platyrhynchos,PFNS,2.08,2022-08-11,MN
+Anas platyrhynchos,PFNS,0.797,2022-08-11,MN
+Anas platyrhynchos,PFNS,0.298,2022-08-11,MN
+Anas platyrhynchos,PFDS,1.16,2022-08-11,MN
+Anas platyrhynchos,PFDS,0.765,2022-08-11,MN
+Anas platyrhynchos,PFDS,0.397,2022-08-11,MN
+Branta canadensis,PFOS,137,2022-06-22,MN
+Branta canadensis,PFOS,90.6,2022-06-22,MN
+Branta canadensis,PFOS,78.2,2022-06-22,MN
+Branta canadensis,PFOS,47.3,2022-06-22,MN
+Branta canadensis,PFOS,31.7,2022-06-22,MN
+Branta canadensis,PFOS,13.3,2022-06-22,MN
+Branta canadensis,PFBA,3.43,2022-06-22,MN
+Branta canadensis,PFBA,3.16,2022-06-22,MN
+Branta canadensis,PFBA,1.37,2022-06-22,MN
+Branta canadensis,PFBA,0.5,2022-06-22,MN
+Branta canadensis,PFDA (10-H-perfluorodecanoic),2.03,2022-06-22,MN
+Branta canadensis,PFDA (10-H-perfluorodecanoic),1.25,2022-06-22,MN
+Branta canadensis,PFDA (10-H-perfluorodecanoic),1.17,2022-06-22,MN
+Branta canadensis,PFHpS,0.391,2022-06-22,MN
+Branta canadensis,PFHxS,0.33,2022-06-22,MN

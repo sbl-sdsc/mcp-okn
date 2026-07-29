@@ -1,0 +1,3 @@
+county,fips5,note
+Saint Johns County,12109,"recovered by 'Saint'->'St.' normalisation (spatialkg label is 'St. Johns County')"
+Saint Lucie County,12111,"recovered by 'Saint'->'St.' normalisation (spatialkg label is 'St. Lucie County')"

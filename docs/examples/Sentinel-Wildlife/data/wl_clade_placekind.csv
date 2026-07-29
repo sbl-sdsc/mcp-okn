@@ -1,0 +1,5 @@
+clade,placeKind,records,individuals,species_n,places_n,first,last
+Amphibian,city,1484,3639,66,474,2002-11-27,2018-12-31
+Amphibian,county,1239,4564,95,137,1974-06-10,2018-12-31
+Bird,city,1331,1656,234,283,1985-06-14,2024-05-13
+Bird,county,1151,1795,246,59,1991-02-03,2024-05-11

@@ -1,0 +1,18 @@
+clade,binom,ncbitaxon,nde_datasets,role
+Bird,Gallus gallus,9031,1158,laboratory study organism
+Bird,Anas platyrhynchos,8839,33,wild reservoir + study organism
+Bird,Meleagris gallopavo,9103,27,agricultural host
+Bird,Columba livia,8932,12,study organism
+Bird,Anser cygnoides,8845,9,study organism
+Bird,Anser anser,8843,3,study organism
+Bird,Colinus virginianus,9014,2,study organism
+Bird,Cairina moschata,8855,1,study organism
+Bird,Haemorhous mexicanus,30427,1,wild host (conjunctivitis)
+Bird,Falco sparverius,56350,1,study organism
+Bird,Sturnus vulgaris,9172,1,study organism
+Bird,Catharus ustulatus,91951,1,study organism
+Amphibian,Notophthalmus viridescens,8316,4,study organism
+Amphibian,Anura,8342,3,study organism
+Amphibian,Amphibia,8292,2,study organism
+Amphibian,Lithobates clamitans,145282,2,study organism
+Amphibian,Rhinella marina,8386,1,study organism

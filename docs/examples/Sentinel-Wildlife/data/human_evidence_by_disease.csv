@@ -1,0 +1,10 @@
+mondo,disease,nde_datasets_any_species,biohealth_edges,oard_ehr_phenotypes,biomarkerkg_biomarkers,prokn_disease,spoke_okn_doid,rdkg
+MONDO_0018695,avian influenza,13,243,0,0,no,no,no
+MONDO_0005812,influenza,6,1368,0,1,yes,no,no
+MONDO_0002282,West Nile fever,43,96,0,0,no,no,no
+MONDO_0005736,eastern equine encephalitis,2,71,0,0,no,no,no
+MONDO_0020731,arbovirus infection,24,135,0,0,no,no,no
+MONDO_0000827,salmonellosis,6,462,128,0,yes,no,no
+MONDO_0003799,conjunctivitis,1,498,0,0,no,no,no
+MONDO_0005707,coccidiosis,3,204,0,0,no,no,no
+MONDO_0005875,Newcastle disease,6,80,0,0,no,no,no
