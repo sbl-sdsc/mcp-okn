@@ -12,6 +12,7 @@ directly from the proto-okn server.
 
 from __future__ import annotations
 
+import asyncio
 import csv
 import re
 from io import StringIO
@@ -80,8 +81,10 @@ def usage_notes(shortname: str) -> dict[str, str] | None:
 #: Schema namespace template used inside generated edge-property templates.
 _SCHEMA_NS = "https://purl.org/okn/frink/kg/{shortname}/schema/"
 
-#: KGs too large to enumerate a schema for via brute-force SPARQL probing.
-_TOO_LARGE = {"ubergraph"}
+#: KGs too large to enumerate a schema for via brute-force SPARQL probing. `wikidata`
+#: was measured: its probe spends ~62s hitting the endpoint's operation timeout twice
+#: and learns nothing, so the caller is better served by the message below immediately.
+_TOO_LARGE = {"ubergraph", "wikidata"}
 
 #: Mermaid `style` declarations distinguishing the two kinds of class box. Node
 #: (entity) classes are light blue; edge (relationship) classes are orange. The
@@ -360,34 +363,64 @@ async def _probe_schema(shortname: str) -> dict[str, Any]:
     the KG's named graph via a ``GRAPH`` block.
     """
     graph = named_graph(shortname)
-    class_query = f"""\
+    # Classes are probed by TWO separate queries, not one UNION. Combining the
+    # unbound `?s a ?class` with the declared-class branches made QLever's planner
+    # try to allocate 37.9 GB and fail with HTTP 500 — instantly, for EVERY graph,
+    # so this whole path was dead. Split, each part runs fine (measured on
+    # identifier-mappings: ~5s for the instance types, ~0.1s for the declarations).
+    instance_class_query = f"""\
 SELECT DISTINCT ?class WHERE {{
   GRAPH <{graph}> {{
-    {{ ?s a ?class . }}
-    UNION {{ ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?class . }}
-    UNION {{ ?class a <http://www.w3.org/2000/01/rdf-schema#Class> . }}
+    ?s a ?class .
+  }}
+}}"""
+
+    # Classes DECLARED but possibly never instantiated. (`a` already IS rdf:type, so
+    # the old query's separate rdf:type branch was a duplicate of the one above.)
+    declared_class_query = f"""\
+SELECT DISTINCT ?class WHERE {{
+  GRAPH <{graph}> {{
+    {{ ?class a <http://www.w3.org/2000/01/rdf-schema#Class> . }}
     UNION {{ ?class a <http://www.w3.org/2002/07/owl#Class> . }}
   }}
-}} ORDER BY ?class"""
+}}"""
 
     predicate_query = f"""\
 SELECT DISTINCT ?predicate WHERE {{
   GRAPH <{graph}> {{
     ?s ?predicate ?o .
   }}
-}} ORDER BY ?predicate"""
+}}"""
 
-    classes = await run_sparql(class_query)
-    predicates = await run_sparql(predicate_query)
+    # Independent probes of the same graph — run them together rather than paying
+    # every round trip in series (the same pattern as probe.find_crosswalks).
+    # `return_exceptions=True` so ALL results are consumed before we raise: a bare
+    # gather would surface the first failure and leave a sibling's exception
+    # unretrieved. Ordering is done below rather than by the endpoint — the results
+    # are merged anyway, so an ORDER BY would just be work the server repeats.
+    probed: list[Any] = await asyncio.gather(
+        run_sparql(instance_class_query),
+        run_sparql(declared_class_query),
+        run_sparql(predicate_query),
+        return_exceptions=True,
+    )
+    for outcome in probed:
+        if isinstance(outcome, BaseException):
+            raise outcome
+    instance_classes, declared_classes, predicates = probed
 
-    class_data = [
-        [r["class"]]
-        for r in classes.get("rows", [])
+    class_uris = {
+        r["class"]
+        for result in (instance_classes, declared_classes)
+        for r in result.get("rows", [])
         if r.get("class") and not _should_exclude_uri(r["class"])
-    ]
+    }
+    class_data = [[uri] for uri in sorted(class_uris)]
     predicate_data = [
         [r["predicate"]]
-        for r in predicates.get("rows", [])
+        for r in sorted(
+            predicates.get("rows", []), key=lambda r: r.get("predicate") or ""
+        )
         if r.get("predicate") and not _should_exclude_uri(r["predicate"])
     ]
 

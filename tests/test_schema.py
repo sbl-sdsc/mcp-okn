@@ -1,6 +1,8 @@
 import csv
 from io import StringIO
 
+import pytest
+
 import mcp_okn.schema as schema_mod
 from mcp_okn.schema import (
     _build_schema_from_metadata,
@@ -299,3 +301,82 @@ def test_build_mermaid_diagram_probe_shape_classes_only():
     diagram = build_mermaid_diagram("demo", schema)
     assert "class Person" in diagram
     assert "%%   - name" in diagram
+
+
+# ── _probe_schema (the fallback for KGs with no curated metadata) ─────────────
+
+
+def _stub_probe(monkeypatch, by_var, fail=None):
+    """Stub run_sparql for _probe_schema, recording the queries it issues.
+
+    `by_var` maps the projected variable ("class"/"predicate") to rows; the two
+    class queries are told apart by whether the query asks for declared classes.
+    `fail` is an exception raised for the query whose text contains that substring.
+    """
+    sent = []
+
+    async def fake_run_sparql(query, *a, **kw):
+        sent.append(query)
+        if fail and fail[0] in query:
+            raise fail[1]
+        if "?predicate" in query:
+            return {"rows": [{"predicate": p} for p in by_var.get("predicate", [])]}
+        key = "declared" if "rdf-schema#Class" in query else "instance"
+        return {"rows": [{"class": c} for c in by_var.get(key, [])]}
+
+    monkeypatch.setattr(schema_mod, "run_sparql", fake_run_sparql)
+    return sent
+
+
+async def test_probe_schema_merges_both_class_queries(monkeypatch):
+    """Instantiated and merely-DECLARED classes are probed separately — combining
+    them in one UNION made QLever try to allocate 37.9 GB and fail on every graph.
+    The two result sets are merged, de-duplicated, and sorted here instead.
+    """
+    sent = _stub_probe(
+        monkeypatch,
+        {
+            "instance": ["http://ex.org/Gene", "http://ex.org/Drug"],
+            "declared": ["http://ex.org/Drug", "http://ex.org/Unused"],
+            "predicate": ["http://ex.org/treats", "http://ex.org/name"],
+        },
+    )
+    out = await schema_mod._probe_schema("demo")
+
+    assert len(sent) == 3  # instance types, declared classes, predicates
+    assert not any("UNION" in q and "?s a ?class" in q for q in sent)
+    assert out["classes"]["data"] == [
+        ["http://ex.org/Drug"],  # in both results, listed once
+        ["http://ex.org/Gene"],
+        ["http://ex.org/Unused"],  # declared but never instantiated
+    ]
+    assert out["classes"]["count"] == 3
+    assert out["predicates"]["data"] == [
+        ["http://ex.org/name"],
+        ["http://ex.org/treats"],
+    ]
+
+
+async def test_probe_schema_excludes_rdf_syntax_uris(monkeypatch):
+    _stub_probe(
+        monkeypatch,
+        {
+            "instance": ["http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"],
+            "declared": ["http://ex.org/Real"],
+            "predicate": ["http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"],
+        },
+    )
+    out = await schema_mod._probe_schema("demo")
+    assert out["classes"]["data"] == [["http://ex.org/Real"]]
+    assert out["predicates"]["data"] == []
+
+
+async def test_probe_schema_propagates_a_failed_probe(monkeypatch):
+    """The probes run concurrently with return_exceptions=True, so a failure must
+    still reach the caller rather than being swallowed with the sibling's result."""
+    boom = RuntimeError("endpoint said no")
+    _stub_probe(
+        monkeypatch, {"instance": ["http://ex.org/A"]}, fail=("?predicate", boom)
+    )
+    with pytest.raises(RuntimeError, match="endpoint said no"):
+        await schema_mod._probe_schema("demo")
