@@ -1,0 +1,22 @@
+naics,firmName,hwProducts,hwVersions,cves,vulnTypes
+334111,HP,9504,19194,903,62
+335314,Rockwell Automation,218,409,109,47
+335313,ABB,209,373,87,50
+334112,Western Digital,96,192,64,33
+332710,Baxter,14,32,25,15
+339112,BD,49,97,19,14
+336360,Johnson Controls,38,74,16,17
+333415,Johnson Controls,38,74,16,17
+332710,GE HealthCare,140,260,10,11
+334118,Verifone,6,12,8,5
+334413,Marvell,28,56,6,3
+334118,Black Box,26,52,5,8
+333248,Aztech,5,8,5,4
+334118,Zebra,10,20,4,4
+334511,Garmin,1,2,4,3
+333415,Trane,11,20,4,4
+335314,Vertiv,2,4,4,4
+339112,Boston Scientific,2,4,3,4
+334413,Renesas,12,14,1,0
+332999,Avery Dennison,1,2,1,1
+332994,General Dynamics,1,3,0,0

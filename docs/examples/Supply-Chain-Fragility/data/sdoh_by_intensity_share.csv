@@ -1,0 +1,73 @@
+variable,tier,counties,mean
+adult obesity,A_dependent,278,36.9935
+adult obesity,B_moderate,752,36.4198
+adult obesity,C_marginal,1092,35.4784
+adult smoking,A_dependent,278,21.4561
+adult smoking,B_moderate,752,20.0584
+adult smoking,C_marginal,1092,19.0853
+air pollution - particulate matter,A_dependent,278,7.98885
+air pollution - particulate matter,B_moderate,752,7.99136
+air pollution - particulate matter,C_marginal,1092,7.7239
+broadband access,A_dependent,278,81.0871
+broadband access,B_moderate,752,82.131
+broadband access,C_marginal,1092,82.3889
+children in poverty,A_dependent,278,19.4079
+children in poverty,B_moderate,752,19.0686
+children in poverty,C_marginal,1092,18.5992
+diabetes prevalence,A_dependent,278,10.6396
+diabetes prevalence,B_moderate,752,10.3527
+diabetes prevalence,C_marginal,1092,10.1777
+drug overdose deaths,A_dependent,223,0.0282041
+drug overdose deaths,B_moderate,580,0.0253873
+drug overdose deaths,C_marginal,749,0.0224443
+food insecurity,A_dependent,278,12.8421
+food insecurity,B_moderate,752,12.4265
+food insecurity,C_marginal,1092,11.9527
+frequent mental distress,A_dependent,278,16.6349
+frequent mental distress,B_moderate,752,16.011
+frequent mental distress,C_marginal,1092,15.4157
+injury deaths,A_dependent,275,0.095921
+injury deaths,B_moderate,748,0.0898852
+injury deaths,C_marginal,1089,0.0847256
+life expectancy,A_dependent,277,75.9887
+life expectancy,B_moderate,750,76.641
+life expectancy,C_marginal,1092,77.4358
+mental health providers,A_dependent,268,1302.18
+mental health providers,B_moderate,740,1181.38
+mental health providers,C_marginal,1076,1243.97
+CDC SVI overall percentile,A_dependent,278,0.484524
+CDC SVI overall percentile,B_moderate,752,0.508683
+CDC SVI overall percentile,C_marginal,1092,0.500701
+poor or fair health,A_dependent,278,16.204
+poor or fair health,B_moderate,752,15.7887
+poor or fair health,C_marginal,1092,15.3672
+premature age-adjusted mortality,A_dependent,278,0.456183
+premature age-adjusted mortality,B_moderate,750,0.431337
+premature age-adjusted mortality,C_marginal,1092,0.405297
+preventable hospital stays,A_dependent,277,3.18449
+preventable hospital stays,B_moderate,748,3.0786
+preventable hospital stays,C_marginal,1092,2.92338
+primary care physicians,A_dependent,272,2766.56
+primary care physicians,B_moderate,745,2531.78
+primary care physicians,C_marginal,1078,2546.45
+rural,A_dependent,278,52.399
+rural,B_moderate,752,47.8012
+rural,C_marginal,1092,49.3365
+severe housing problems,A_dependent,278,12.0957
+severe housing problems,B_moderate,752,13.0657
+severe housing problems,C_marginal,1092,13.6049
+social associations,A_dependent,278,0.106523
+social associations,B_moderate,752,0.111314
+social associations,C_marginal,1092,0.113931
+some college,A_dependent,278,57.5877
+some college,B_moderate,752,59.8223
+some college,C_marginal,1092,60.7381
+unemployment,A_dependent,278,4.5499
+unemployment,B_moderate,752,4.61931
+unemployment,C_marginal,1092,4.70913
+uninsured,A_dependent,278,10.7763
+uninsured,B_moderate,752,10.6846
+uninsured,C_marginal,1092,11.3177
+voter turnout,A_dependent,278,64.2479
+voter turnout,B_moderate,752,65.6378
+voter turnout,C_marginal,1092,66.1006

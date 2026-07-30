@@ -1,0 +1,76 @@
+variable,tier,counties,mean
+65 and older,A_high,669,20.0079
+65 and older,B_mid,1019,19.1078
+65 and older,C_low,434,18.4723
+adult obesity,A_high,669,36.7389
+adult obesity,B_mid,1019,36.1981
+adult obesity,C_low,434,34.4472
+adult smoking,A_high,669,20.4404
+adult smoking,B_mid,1019,19.9058
+adult smoking,C_low,434,18.2747
+air pollution - particulate matter,A_high,669,7.63139
+air pollution - particulate matter,B_mid,1019,7.94799
+air pollution - particulate matter,C_low,434,7.9735
+broadband access,A_high,669,81.1653
+broadband access,B_mid,1019,81.9042
+broadband access,C_low,434,84.1326
+children in poverty,A_high,669,18.3317
+children in poverty,B_mid,1019,19.151
+children in poverty,C_low,434,19.0472
+diabetes prevalence,A_high,669,10.1356
+diabetes prevalence,B_mid,1019,10.3628
+diabetes prevalence,C_low,434,10.4069
+drug overdose deaths,A_high,408,0.0253779
+drug overdose deaths,B_mid,746,0.0249116
+drug overdose deaths,C_low,398,0.0223285
+food insecurity,A_high,669,11.9679
+food insecurity,B_mid,1019,12.3977
+food insecurity,C_low,434,12.2751
+frequent mental distress,A_high,669,15.8628
+frequent mental distress,B_mid,1019,15.8708
+frequent mental distress,C_low,434,15.4705
+injury deaths,A_high,659,0.0905336
+injury deaths,B_mid,1019,0.0891533
+injury deaths,C_low,434,0.081497
+life expectancy,A_high,666,76.7626
+life expectancy,B_mid,1019,76.7313
+life expectancy,C_low,434,77.8258
+mental health providers,A_high,637,1333.72
+mental health providers,B_mid,1013,1273.4
+mental health providers,C_low,434,972.776
+CDC SVI overall percentile,A_high,669,0.437756
+CDC SVI overall percentile,B_mid,1019,0.512856
+CDC SVI overall percentile,C_low,434,0.572656
+poor or fair health,A_high,669,15.4395
+poor or fair health,B_mid,1019,15.8046
+poor or fair health,C_low,434,15.4952
+premature age-adjusted mortality,A_high,667,0.427275
+premature age-adjusted mortality,B_mid,1019,0.428279
+premature age-adjusted mortality,C_low,434,0.395156
+preventable hospital stays,A_high,666,2.97382
+preventable hospital stays,B_mid,1017,3.05744
+preventable hospital stays,C_low,434,2.96601
+primary care physicians,A_high,650,2633.76
+primary care physicians,B_mid,1011,2652.06
+primary care physicians,C_low,434,2282.42
+rural,A_high,669,56.6603
+rural,B_mid,1019,49.3672
+rural,C_low,434,37.2765
+severe housing problems,A_high,669,11.8762
+severe housing problems,B_mid,1019,13.087
+severe housing problems,C_low,434,15.5849
+social associations,A_high,669,0.124187
+social associations,B_mid,1019,0.111727
+social associations,C_low,434,0.0940177
+some college,A_high,669,59.5005
+some college,B_mid,1019,59.3492
+some college,C_low,434,62.302
+unemployment,A_high,669,4.29062
+unemployment,B_mid,1019,4.70256
+unemployment,C_low,434,5.11206
+uninsured,A_high,669,10.2743
+uninsured,B_mid,1019,11.1932
+uninsured,C_low,434,11.7747
+voter turnout,A_high,669,66.1628
+voter turnout,B_mid,1019,65.2772
+voter turnout,C_low,434,66.1006

@@ -1,0 +1,27 @@
+name,role,dependentPkgs,versions,cves,upstreamHubDeps,keyUpstream
+pandas,data handling / MES-ERP reporting,45991,337,1,0,
+opencv-python,machine vision / inspection,6330,60,12,0,
+shapely,geometry / toolpath,2579,261,0,1,numpy
+pyserial,serial link to CNC & instruments,2136,23,0,0,
+trimesh,mesh / STL for additive,331,1010,0,2,numpy|setuptools
+pyvista,3D visualisation,316,97,0,4,pillow|numpy|matplotlib|typing-extensions
+vtk,3D visualisation kernel,288,32,1,1,matplotlib
+scapy,network / protocol analysis,245,30,1,0,
+open3d,3D point cloud / metrology,177,21,0,8,pandas|tqdm|scikit-learn|pillow|numpy|pyyaml|matplotlib|setuptools
+meshio,mesh I/O for FEA,165,215,0,1,numpy
+pymodbus,Modbus PLC protocol,151,83,0,3,pyserial|six|setuptools
+python-can,CAN bus,123,78,0,2,typing-extensions|setuptools
+numpy-stl,STL for additive,91,68,0,1,numpy
+ezdxf,DXF / CAD exchange,60,224,0,2,typing-extensions|numpy
+cadquery,parametric CAD kernel,29,33,0,0,
+ifcopenshell,BIM / IFC exchange,22,11,0,2,numpy|typing-extensions
+asyncua,OPC-UA client/server,22,45,3,2,typing-extensions|cryptography
+opcua,OPC-UA (legacy),19,26,3,0,
+canopen,CANopen fieldbus,11,42,0,0,
+python-snap7,Siemens S7 PLC protocol,8,23,0,0,
+pylogix,Allen-Bradley / Rockwell PLC tags,7,54,0,0,
+dxfgrabber,DXF reader,6,21,0,0,
+bacpypes,BACnet building automation,6,171,0,0,
+pycomm3,Rockwell CIP / EtherNet-IP,5,51,0,0,
+pygcode,G-code parsing,3,5,0,1,six
+pyads,Beckhoff TwinCAT ADS,2,54,0,0,

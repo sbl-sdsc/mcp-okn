@@ -1,0 +1,401 @@
+"""
+expand_query_diagrams.py — postprocessing step that injects a ```mermaid diagram after every
+```sparql block in a transcript, so the transcript can be GENERATED diagram-free (small, no stub /
+harness spill) and made diagram-rich locally afterward.
+
+Why defer: the per-query mermaid diagram duplicates the adjacent SPARQL and is 25–50%+ of a
+transcript's bytes, so generating with diagrams inline is what makes `create_chat_transcript` /
+`create_reproducibility_record` overflow the inline limit and spill. Keeping the re-add local keeps
+the large blob off the tool round-trip.
+
+TWO ways to supply the diagrams — injection itself needs NO third-party package:
+
+1. `--diagrams diagrams.json` (the PORTABLE path — use this in a report session). The
+   `sparql-to-mermaid` package is mcp-okn-internal and NOT pip-installable, so it usually cannot be
+   imported where reports are built — but the mcp-okn **`sparql_to_mermaid` TOOL** is available over
+   MCP. Call that tool on each **verbatim** logged query, collect the results into a JSON, and inject:
+
+       # in the report session, for each logged query q (VERBATIM — see fidelity note):
+       #   diagrams.append({"sparql": q, "mermaid": sparql_to_mermaid(q)["mermaid"]})
+       # write that list (or a {sparql: mermaid} dict) to diagrams.json, then:
+       python expand_query_diagrams.py transcript.md --diagrams diagrams.json --max-chars 4000
+
+   diagrams.json is either a list of {"sparql","mermaid"} objects or a {sparql: mermaid} dict; a block
+   is matched to its diagram by whitespace-normalized SPARQL, so injection needs no rdflib/mermaid lib.
+
+2. No `--diagrams`: falls back to importing `try_to_mermaid` from `sparql-to-mermaid` and generating
+   locally — works only in a dev checkout of mcp-okn where that package is installed.
+
+FIDELITY: generate every diagram from the query EXACTLY as logged. Do not strip a `VALUES` clause or
+otherwise shorten the query to make the diagram smaller — a diagram that sits under a ```sparql block
+it does not match misrepresents it. If a diagram is too big, SKIP it (below), don't fake a small one.
+
+SIZE CAP (`--max-chars`, default 4000, mirroring the server's `diagram_max_chars`): as of
+`sparql-to-mermaid` v0.5.0 a long `VALUES` list collapses to "3 values + `+N more`" (the `max_values`
+default), so the old symbol-list blowup — a 250-symbol query → a ~28,000-char diagram of ~280 useless
+nodes — no longer happens. (Node labels are also quoted, so an IRI containing special characters —
+e.g. a Reactome/PubChem id with `(` — no longer breaks Mermaid parsing.) The cap stays as a general
+backstop for any diagram that is still huge (e.g.
+a query with very many distinct triples); over-cap diagrams are skipped, informative ones
+(~500–3,500 chars) kept. The script prints which queries were skipped so you can note them in the
+transcript, exactly as the server does inline.
+
+Idempotent: a ```sparql block already immediately followed by a ```mermaid block is left alone, so
+re-running (or expanding a partially-expanded file) never double-injects.
+
+    python expand_query_diagrams.py transcript.md --diagrams diagrams.json   # dependency-free inject
+    python expand_query_diagrams.py transcript.md --diagrams d.json --out o.md
+    python expand_query_diagrams.py transcript.md                            # dev checkout only
+    python expand_query_diagrams.py transcript.md --portable                 # dev checkout, portable mode
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from pathlib import Path
+
+DEFAULT_MAX_CHARS = 4000
+
+# --- per-diagram id namespacing (self-contained copy of mcp_okn.mermaid_namespace) ---
+# `sparql_to_mermaid` renders every diagram with the SAME node ids (graph0, v1, bind0,
+# …), so N diagrams in ONE transcript collide on those ids and later ones stop
+# rendering. Prefix each block's ids with a per-block `q<N>` namespace as it is
+# injected. Kept inline (not imported) because these scripts run in report sessions
+# where the mcp-okn package is NOT importable; the canonical copy is
+# src/mcp_okn/mermaid_namespace.py — keep the two in sync.
+_QUOTED = re.compile(r'"(?:[^"\\]|\\.)*"')
+_NODE_DECL = re.compile(r"^\s*([A-Za-z]\w*)(?:\(|\[|\{)")
+_SUBGRAPH_DECL = re.compile(r"^\s*subgraph\s+([A-Za-z]\w*)")
+_STYLE_DECL = re.compile(r"^\s*style\s+([A-Za-z]\w*)")
+_KEYWORDS = frozenset(
+    {"subgraph", "end", "style", "classDef", "graph", "linkStyle", "click"}
+)
+
+
+def _first_directive(mermaid: str) -> str:
+    for line in mermaid.split("\n"):
+        if line.strip():
+            return line.strip()
+    return ""
+
+
+def _collect_ids(mermaid: str) -> set:
+    ids = set()
+    for line in mermaid.split("\n"):
+        for pat in (_SUBGRAPH_DECL, _STYLE_DECL):
+            m = pat.match(line)
+            if m:
+                ids.add(m.group(1))
+        m = _NODE_DECL.match(line)
+        if m and m.group(1) not in _KEYWORDS:
+            ids.add(m.group(1))
+    return ids
+
+
+def namespace_diagram(mermaid: str, prefix: str) -> str:
+    """Prefix every node id in a `graph TD` diagram with ``prefix`` (label text
+    untouched); return it unchanged when ``prefix`` is empty or it is not `graph TD`."""
+    if not prefix or _first_directive(mermaid) != "graph TD":
+        return mermaid
+    ids = _collect_ids(mermaid)
+    if not ids:
+        return mermaid
+    alt = "|".join(re.escape(i) for i in sorted(ids, key=len, reverse=True))
+    id_re = re.compile(rf"(?<![A-Za-z0-9])(?:{alt})(?![A-Za-z0-9])")
+    sub = lambda m: prefix + m.group(0)  # noqa: E731
+
+    def rewrite(line: str) -> str:
+        out, pos = [], 0
+        for m in _QUOTED.finditer(line):
+            out.append(id_re.sub(sub, line[pos : m.start()]))
+            out.append(m.group(0))
+            pos = m.end()
+        out.append(id_re.sub(sub, line[pos:]))
+        return "".join(out)
+
+    result = []
+    for line in mermaid.split("\n"):
+        s = line.strip()
+        result.append(
+            line if s == "graph TD" or s.startswith("classDef ") else rewrite(line)
+        )
+    return "\n".join(result)
+
+
+def _normalize(sparql: str) -> str:
+    """Whitespace-normalized key so a ```sparql block matches its diagrams.json entry regardless of
+    incidental reflow (both are the same logged query, so this matches exactly)."""
+    return re.sub(r"\s+", " ", sparql).strip()
+
+
+# `create_chat_transcript` / `create_reproducibility_record` prepend a caller-facing
+# `<!-- mcp-okn WARNING: … -->` HTML comment to their RETURN value (e.g. "per-query diagrams were
+# OMITTED — re-add them"). It is a nudge for the caller, NOT part of the artifact; when the caller
+# saves the tool result verbatim it lands at the top of the .md. Re-adding the diagrams is exactly what
+# the notice asks for, so once this script does that the notice is stale and must be stripped.
+_MCP_NOTICE_RE = re.compile(r"[ \t]*<!--\s*mcp-okn WARNING:.*?-->[ \t]*\n?", re.S)
+
+
+def strip_mcp_notices(text: str) -> tuple[str, int]:
+    """Remove any `<!-- mcp-okn WARNING: … -->` notice the transcript tools prepended. Returns
+    (cleaned_text, count_removed); leaves all other HTML comments untouched."""
+    cleaned, n = _MCP_NOTICE_RE.subn("", text)
+    return cleaned.lstrip("\n") if n else cleaned, n
+
+
+def _library_generate(portable: bool = False):
+    """Return a `sparql -> mermaid|None` callable backed by the local sparql-to-mermaid package,
+    or exit with guidance if it (the dev-only, non-PyPI package) is not importable.
+
+    ``portable`` is forwarded to ``try_to_mermaid`` — when True, IRIs with no known prefix compact to a
+    synthetic ``segment:local`` CURIE (e.g. ``kg:spoke-genelab``) and the aggregate edge uses pipe-label
+    form, for stricter/older Mermaid renderers."""
+    try:
+        from sparql_to_mermaid import try_to_mermaid
+    except ModuleNotFoundError:
+        sys.exit(
+            "sparql-to-mermaid is not importable (it is mcp-okn-internal, not on PyPI), so diagrams "
+            "cannot be generated here.\nGenerate them with the mcp-okn `sparql_to_mermaid` TOOL on "
+            "each verbatim logged query (pass portable=True for portable output), write "
+            "[{'sparql':…,'mermaid':…}, …] to diagrams.json, and re-run with:\n"
+            "  python expand_query_diagrams.py <transcript.md> --diagrams diagrams.json"
+        )
+    return lambda sparql: try_to_mermaid(sparql, portable=portable)
+
+
+def _map_generate(diagrams_path: str):
+    """Return a `sparql -> mermaid|None` callable backed by a diagrams.json produced from the
+    `sparql_to_mermaid` tool. Accepts a list of {sparql, mermaid} (or {query, diagram}) objects or a
+    {sparql: mermaid} dict; keys are whitespace-normalized for matching."""
+    raw = json.loads(Path(diagrams_path).read_text())
+    table: dict[str, str] = {}
+    if isinstance(raw, dict):
+        items = raw.items()
+    else:
+        items = (
+            (d.get("sparql") or d.get("query"), d.get("mermaid") or d.get("diagram"))
+            for d in raw
+        )
+    for sparql, mermaid in items:
+        if sparql and mermaid:
+            table[_normalize(sparql)] = mermaid
+    return lambda sparql: table.get(_normalize(sparql))
+
+
+def queries_needing_diagrams(text: str) -> list[str]:
+    """Return the verbatim SPARQL of every ```sparql block NOT already followed by a ```mermaid block.
+
+    This is the work-list to hand to the `sparql_to_mermaid` TOOL when the `sparql-to-mermaid` package
+    can't be imported locally (the report-session case): generate a diagram per query, collect them into
+    diagrams.json, then inject with :func:`expand`. Uses the same fence walk and already-present rule as
+    :func:`expand`, so a block that already carries a diagram is never listed.
+    """
+    lines = text.split("\n")
+    todo: list[str] = []
+    i, n = 0, len(lines)
+    while i < n:
+        if _fence_kind(lines[i]) == "sparql":
+            body: list[str] = []
+            j = i + 1
+            while j < n and lines[j].strip() != "```":
+                body.append(lines[j])
+                j += 1
+            i = j + 1
+            k = i  # already followed by a ```mermaid block (allowing blank lines)?
+            while k < n and lines[k].strip() == "":
+                k += 1
+            if k < n and _fence_kind(lines[k]) == "mermaid":
+                continue
+            sparql = "\n".join(body).strip()
+            if sparql:
+                todo.append(sparql)
+        else:
+            i += 1
+    return todo
+
+
+def _fence_kind(line: str) -> str | None:
+    """Return the language of an opening code fence (e.g. 'sparql', 'mermaid'), else None."""
+    s = line.strip()
+    if s.startswith("```") and len(s) > 3:
+        return s[3:].strip().lower()
+    return None
+
+
+# --- fidelity gate: a diagram of a GRAPH-scoped query MUST carry the GRAPH box ---
+# `sparql_to_mermaid` ALWAYS wraps a `GRAPH <iri> { … }` block in a `subgraph …["GRAPH …"]`.
+# So a query that targets a named graph whose injected diagram has NO such box is not faithful
+# tool output — it was hand-authored, is stale, or came from a bespoke script. That is exactly
+# the break that once shipped boxless diagrams, so the delivery gate checks it and it can't
+# recur. The test is STRUCTURAL (not a re-render): it needs no package and is stable across
+# renderer versions, unlike a regenerate-and-compare, which false-positives whenever the
+# sparql-to-mermaid version moves.
+_GRAPH_CLAUSE = re.compile(r"\bGRAPH\s+<[^>]+>")
+_GRAPH_BOX = re.compile(r'subgraph\s+\w+\["GRAPH ')
+
+
+def diagrams_missing_graph_box(text: str) -> list[str]:
+    """Return the verbatim SPARQL of every query that targets a named GRAPH but whose following
+    ```mermaid diagram lacks the `subgraph ["GRAPH …"]` box — i.e. the diagram is not faithful
+    `sparql_to_mermaid` output. A ```sparql block with NO diagram at all is the job of
+    :func:`queries_needing_diagrams`, not this check, so it is skipped here."""
+    lines = text.split("\n")
+    out: list[str] = []
+    i, n = 0, len(lines)
+    while i < n:
+        if _fence_kind(lines[i]) == "sparql":
+            body: list[str] = []
+            j = i + 1
+            while j < n and lines[j].strip() != "```":
+                body.append(lines[j])
+                j += 1
+            i = j + 1
+            k = i
+            while k < n and lines[k].strip() == "":
+                k += 1
+            if k < n and _fence_kind(lines[k]) == "mermaid":
+                mb: list[str] = []
+                k += 1
+                while k < n and lines[k].strip() != "```":
+                    mb.append(lines[k])
+                    k += 1
+                sparql = "\n".join(body).strip()
+                if (
+                    sparql
+                    and _GRAPH_CLAUSE.search(sparql)
+                    and not _GRAPH_BOX.search("\n".join(mb))
+                ):
+                    out.append(sparql)
+                i = k + 1
+        else:
+            i += 1
+    return out
+
+
+def expand(
+    text: str, generate, max_chars: int | None = DEFAULT_MAX_CHARS
+) -> tuple[str, dict]:
+    """Insert a ```mermaid block after each ```sparql block that lacks one.
+
+    `generate` is a `sparql -> mermaid str | None` callable (library- or tool-backed). A query with no
+    diagram (generate returns falsy) is skipped like the server skips an unparseable one; a diagram
+    over `max_chars` is skipped and recorded. Returns (new_text, stats); stats['oversized_queries'] and
+    ['absent_queries'] carry a short SPARQL snippet per skip so you can log them in the transcript.
+
+    Also strips any stale `<!-- mcp-okn WARNING: … -->` notice the transcript tool prepended (re-adding
+    the diagrams is what the notice asked for), so it never stays baked into the saved artifact.
+    """
+    text, n_notices = strip_mcp_notices(text)
+    lines = text.split("\n")
+    out: list[str] = []
+    stats = {
+        "sparql": 0,
+        "added": 0,
+        "notices_stripped": n_notices,
+        "already": 0,
+        "absent": 0,
+        "oversized": 0,
+        "oversized_queries": [],
+        "absent_queries": [],
+    }
+    i, n = 0, len(lines)
+    while i < n:
+        if _fence_kind(lines[i]) == "sparql":
+            stats["sparql"] += 1
+            body: list[str] = []
+            j = i + 1
+            while j < n and lines[j].strip() != "```":
+                body.append(lines[j])
+                j += 1
+            out.extend(lines[i : j + 1])  # emit the sparql block verbatim
+            i = j + 1
+            k = i  # already followed by a ```mermaid block (allowing blank lines)?
+            while k < n and lines[k].strip() == "":
+                k += 1
+            if k < n and _fence_kind(lines[k]) == "mermaid":
+                stats["already"] += 1
+                continue
+            sparql = "\n".join(body).strip()
+            snippet = _normalize(sparql)[:70]
+            mermaid = generate(sparql) if sparql else None
+            if not mermaid:
+                stats["absent"] += 1
+                stats["absent_queries"].append(snippet)
+                continue
+            if max_chars is not None and len(mermaid) > max_chars:
+                stats["oversized"] += 1
+                stats["oversized_queries"].append((snippet, len(mermaid)))
+                continue
+            # Namespace this diagram's ids by its sparql-block ordinal so it can't
+            # collide with the other diagrams once they share one rendered page.
+            mermaid = namespace_diagram(mermaid.strip(), f"q{stats['sparql']}")
+            out.extend(["", "```mermaid", mermaid, "```"])
+            stats["added"] += 1
+        else:
+            out.append(lines[i])
+            i += 1
+    return "\n".join(out), stats
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("path", help="transcript markdown file to expand")
+    ap.add_argument("--out", help="write result here (default: edit PATH in place)")
+    ap.add_argument(
+        "--diagrams",
+        help="JSON of diagrams from the sparql_to_mermaid tool (list of {sparql,mermaid} or "
+        "{sparql: mermaid}); enables dependency-free injection. Omit to generate locally (dev only).",
+    )
+    ap.add_argument(
+        "--max-chars",
+        type=int,
+        default=DEFAULT_MAX_CHARS,
+        help=f"skip any diagram whose mermaid text exceeds this (default {DEFAULT_MAX_CHARS}; "
+        "mirrors the server's diagram_max_chars — drops the uninformative symbol-list monsters). "
+        "Pass 0 for no cap.",
+    )
+    ap.add_argument(
+        "--portable",
+        action="store_true",
+        help="generate stricter-renderer-compatible diagrams (unknown IRIs -> segment:local CURIEs, "
+        "pipe-label aggregate edges). Only affects LOCAL generation; ignored with --diagrams (those "
+        "diagrams were already rendered by the tool, where you'd pass portable=True instead).",
+    )
+    args = ap.parse_args(argv)
+    if args.portable and args.diagrams:
+        print(
+            "note: --portable is ignored with --diagrams (the supplied diagrams are used as-is; "
+            "pass portable=True to the sparql_to_mermaid tool when generating diagrams.json instead)."
+        )
+    generate = (
+        _map_generate(args.diagrams)
+        if args.diagrams
+        else _library_generate(portable=args.portable)
+    )
+    cap = None if args.max_chars == 0 else args.max_chars
+    src = Path(args.path)
+    new_text, st = expand(src.read_text(), generate, max_chars=cap)
+    dst = Path(args.out) if args.out else src
+    dst.write_text(new_text)
+    print(
+        f"{dst}: {st['sparql']} sparql blocks → {st['added']} diagrams added, "
+        f"{st['already']} already present, {st['absent']} absent-skipped, "
+        f"{st['oversized']} oversized-skipped (>{cap})"
+        + (
+            f"; stripped {st['notices_stripped']} stale mcp-okn notice(s)"
+            if st["notices_stripped"]
+            else ""
+        )
+    )
+    for snip, ln in st["oversized_queries"]:
+        print(f"  oversized ({ln} chars, skipped): {snip}…")
+    for snip in st["absent_queries"]:
+        print(f"  no diagram (skipped): {snip}…")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
