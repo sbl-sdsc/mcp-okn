@@ -661,7 +661,7 @@ requires-dist = [
     { name = "mcp", specifier = ">=1.2.0" },
     { name = "pyyaml", specifier = ">=6.0" },
     { name = "s2sphere", specifier = ">=0.2.5" },
-    { name = "sparql-to-mermaid", git = "https://github.com/sbl-sdsc/sparql-to-mermaid.git?tag=v0.5.0" },
+    { name = "sparql-to-mermaid", specifier = ">=0.5.1" },
 ]
 
 [package.metadata.requires-dev]
@@ -1435,10 +1435,14 @@ wheels = [
 
 [[package]]
 name = "sparql-to-mermaid"
-version = "0.5.0"
-source = { git = "https://github.com/sbl-sdsc/sparql-to-mermaid.git?tag=v0.5.0#313b715cdcf2fadf2ce5475fc1b46ed79579ceca" }
+version = "0.5.1"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "rdflib" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/dd/df/51083ce4a59a09ef32f3a3ca19c544b4c77b6bfa96997efc0b528cc634f0/sparql_to_mermaid-0.5.1.tar.gz", hash = "sha256:361f30e4491edd44eaf8bf988353ca5a2fc49f08b8386d530c1107f38a43c427", size = 29917, upload-time = "2026-07-30T23:41:07.661Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ec/4d/3a822fb25ea39a173fbff88723e665edc38c93a9e1c2b457e627496f5ef0/sparql_to_mermaid-0.5.1-py3-none-any.whl", hash = "sha256:3b2ecac35a1f86d90a2b09dfe8efebe1d98d8f1a6375dc0ccad10ae8e164626a", size = 28842, upload-time = "2026-07-30T23:41:06.63Z" },
 ]
 
 [[package]]

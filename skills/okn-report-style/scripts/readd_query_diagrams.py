@@ -15,9 +15,10 @@ It picks the right path automatically:
    report session after calling the `sparql_to_mermaid` TOOL on each verbatim query.
 
 2. else, `sparql-to-mermaid` importable → generate every diagram locally AND inject, in this one call.
-   Works in an mcp-okn dev checkout (or any env where the package is installed). Nothing else to run.
+   Works in an mcp-okn dev checkout, or any env where the package is installed / installable from PyPI
+   (`pip install sparql-to-mermaid`). Nothing else to run.
 
-3. else (report session: package not importable, no diagrams.json yet) → this is where the ritual used
+3. else (report session: package not importable and not installable, no diagrams.json yet) → this is where the ritual used
    to get forgotten. Instead of erroring, write the exact WORK-LIST of un-diagrammed queries to
    `<transcript>.queries.json` and print the next command. Turn that list into diagrams.json by calling
    the `sparql_to_mermaid` TOOL on each verbatim query, then re-run with `--diagrams diagrams.json`.
@@ -63,8 +64,9 @@ from expand_query_diagrams import (
 def _try_library(portable: bool = False):
     """Return a `sparql -> mermaid|None` callable if `sparql-to-mermaid` is importable here, else None.
 
-    The package is mcp-okn-internal and NOT on PyPI, so it is importable in a dev checkout but usually
-    NOT where a report is built — that split is exactly why path 3 (the work-list) exists. ``portable``
+    The package is on PyPI, but a report session normally can't install it, so it is importable in a
+    dev checkout and usually NOT where a report is built — that split is exactly why path 3 (the
+    work-list) exists. ``portable``
     is forwarded to ``try_to_mermaid`` (unknown IRIs -> ``segment:local`` CURIEs, pipe-label aggregate
     edges) for stricter/older Mermaid renderers.
     """

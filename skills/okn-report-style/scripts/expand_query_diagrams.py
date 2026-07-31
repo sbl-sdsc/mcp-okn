@@ -11,9 +11,10 @@ the large blob off the tool round-trip.
 TWO ways to supply the diagrams — injection itself needs NO third-party package:
 
 1. `--diagrams diagrams.json` (the PORTABLE path — use this in a report session). The
-   `sparql-to-mermaid` package is mcp-okn-internal and NOT pip-installable, so it usually cannot be
-   imported where reports are built — but the mcp-okn **`sparql_to_mermaid` TOOL** is available over
-   MCP. Call that tool on each **verbatim** logged query, collect the results into a JSON, and inject:
+   `sparql-to-mermaid` package is on PyPI (`pip install sparql-to-mermaid`), but a report session
+   usually has no way to install it, so it cannot be imported where reports are built — the mcp-okn
+   **`sparql_to_mermaid` TOOL**, however, is available over MCP. Call that tool on each **verbatim**
+   logged query, collect the results into a JSON, and inject:
 
        # in the report session, for each logged query q (VERBATIM — see fidelity note):
        #   diagrams.append({"sparql": q, "mermaid": sparql_to_mermaid(q)["mermaid"]})
@@ -24,7 +25,8 @@ TWO ways to supply the diagrams — injection itself needs NO third-party packag
    is matched to its diagram by whitespace-normalized SPARQL, so injection needs no rdflib/mermaid lib.
 
 2. No `--diagrams`: falls back to importing `try_to_mermaid` from `sparql-to-mermaid` and generating
-   locally — works only in a dev checkout of mcp-okn where that package is installed.
+   locally — works wherever that package is installed (an mcp-okn dev checkout, or any env where you
+   can `pip install sparql-to-mermaid`).
 
 FIDELITY: generate every diagram from the query EXACTLY as logged. Do not strip a `VALUES` clause or
 otherwise shorten the query to make the diagram smaller — a diagram that sits under a ```sparql block
@@ -148,7 +150,7 @@ def strip_mcp_notices(text: str) -> tuple[str, int]:
 
 def _library_generate(portable: bool = False):
     """Return a `sparql -> mermaid|None` callable backed by the local sparql-to-mermaid package,
-    or exit with guidance if it (the dev-only, non-PyPI package) is not importable.
+    or exit with guidance if it is not importable here (a report session normally can't install it).
 
     ``portable`` is forwarded to ``try_to_mermaid`` — when True, IRIs with no known prefix compact to a
     synthetic ``segment:local`` CURIE (e.g. ``kg:spoke-genelab``) and the aggregate edge uses pipe-label
@@ -157,8 +159,9 @@ def _library_generate(portable: bool = False):
         from sparql_to_mermaid import try_to_mermaid
     except ModuleNotFoundError:
         sys.exit(
-            "sparql-to-mermaid is not importable (it is mcp-okn-internal, not on PyPI), so diagrams "
-            "cannot be generated here.\nGenerate them with the mcp-okn `sparql_to_mermaid` TOOL on "
+            "sparql-to-mermaid is not importable here, so diagrams cannot be generated locally "
+            "(it is on PyPI — `pip install sparql-to-mermaid` — if this env can install packages).\n"
+            "Otherwise generate them with the mcp-okn `sparql_to_mermaid` TOOL on "
             "each verbatim logged query (pass portable=True for portable output), write "
             "[{'sparql':…,'mermaid':…}, …] to diagrams.json, and re-run with:\n"
             "  python expand_query_diagrams.py <transcript.md> --diagrams diagrams.json"

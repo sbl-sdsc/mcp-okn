@@ -78,8 +78,9 @@ silently drops the diagrams; that is an omission, not a choice):
    (lean return, no stub/spill) and save the markdown.
 2. Re-add the diagrams with **`scripts/readd_query_diagrams.py <transcript.md>`** — the ONE-command
    front door for this half. It auto-selects the path: if `sparql-to-mermaid` is importable (a dev
-   checkout) it generates every diagram and injects them in that single call; if not (the usual report
-   session, since the package is mcp-okn-internal and **not pip-installable**) it writes the exact
+   checkout, or any env where you can `pip install sparql-to-mermaid` — it is on PyPI) it generates
+   every diagram and injects them in that single call; if not (the usual report session, which can't
+   install packages) it writes the exact
    WORK-LIST of un-diagrammed queries to `<transcript.md>.queries.json` and exits non-zero so you can't
    mistake it for done. Turn that list into diagrams by calling the **`sparql_to_mermaid` TOOL**
    (available over MCP) on **each verbatim** query (never a shortened copy, and never a hand-drawn or
