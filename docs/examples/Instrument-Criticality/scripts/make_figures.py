@@ -12,7 +12,7 @@ sys.path.insert(0, "/sessions/gifted-adoring-thompson/mnt/.claude/skills/"
                    "okn-report-style/scripts")
 from okn_figstyle import (THEME, UP, DOWN, NEUTRAL, apply_style, finalize,  # noqa: E402
                           legend_outside, panel_title, ranked_barh,
-                          osm_basemap, folium_osm_map, save_map_html)
+                          osm_basemap)
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA, FIG = ROOT / "data", ROOT / "figures"
@@ -315,10 +315,3 @@ except Exception as exc:  # OSM tile server unreachable from the sandbox
                     bbox=dict(fc="white", ec="none", alpha=0.8, pad=1.0))
 print(f"[fig8] basemap = {basemap}")
 finalize(fig, 8, FIG / "fig8_study_regions_map.png")
-
-# interactive folium map (embedded in the HTML report)
-m = folium_osm_map(reg2.to_dict("records"), lat_key="lat", lon_key="lon",
-                   popup_keys=["name", "fcode", "nPapers"],
-                   value_key="nPapers", tooltip_key="name")
-save_map_html(m, DATA / "study_regions_map.html")
-print("[map] wrote data/study_regions_map.html")

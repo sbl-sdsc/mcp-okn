@@ -2549,7 +2549,7 @@ classDef iri fill:yellow;
 | File | Purpose |
 |---|---|
 | `scripts/analyse_criticality.py` | Merges the extracts, applies the taxonomy and scoring, assigns tiers and risk classes, runs the asymmetry tests, writes `data/instrument_criticality.csv`, `data/stats.json`, `data/risk_classes.json`, `data/route_agreement_matrix.csv` |
-| `scripts/make_figures.py` | Figures 1–8 and the interactive `data/study_regions_map.html` |
+| `scripts/make_figures.py` | Figures 1–8 |
 | `scripts/build_workbook.py` | The 12-sheet `Instrument-Criticality_results.xlsx` |
 | `scripts/build_html.py` | Renders the HTML report from the Markdown via `build_report_from_markdown` and fills `{{key}}` placeholders from `data/stats.json` |
 | `data/*.csv` | Every extract, one file per query family; `stats.json` is the single source of every number in the report, HTML and workbook |

@@ -402,9 +402,7 @@ regions with coordinates and 215 countries.
 
 > ***Figure 8. Where the climate-modelling literature studies (climatemodelskg).*** Marker position is
 > the GeoNames coordinate of each region named by a paper; marker size and colour encode the number of
-> papers (log scale). Basemap is a bundled 0.5° land/ocean mask — the OpenStreetMap tile service was
-> unreachable from the analysis sandbox, and an interactive OSM-tiled version of the same points is
-> written to `data/study_regions_map.html`. Provenance: `climatemodelskg`
+> papers (log scale). Provenance: `climatemodelskg`
 > `Paper -PAPER_MENTIONS-> No_Country_Region`, with `latitude` / `longitude` / `asciiname`.
 
 Research attention is oceanic and polar before it is territorial: **Southern Ocean
