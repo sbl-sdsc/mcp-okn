@@ -1,0 +1,151 @@
+k,R1b_platMentionPapers
+aatsr,36
+abi,4
+acrim,1
+airs,73
+alt (topex),12
+altika altimeter,1
+altimeters,17
+amr,16
+amr-c,1
+amsr-e,110
+amsr2,1
+amsu-a,73
+amsu-b,73
+asar,36
+ascat,13
+aster,80
+atms,4
+avhrr,41
+avhrr-2,4
+avhrr-3,4
+c-sar,4
+caliop,26
+camera,5
+cameras,20
+cats,2
+ccd imager,5
+cd,17
+ceres scanner,123
+ceres-fm1,80
+ceres-fm2,80
+ceres-fm3,73
+ceres-fm4,73
+ceres-fm5,3
+ceres-fm6,4
+ceres-pfm,17
+computer,15
+cowvr,2
+cris,73
+doris,62
+doris ground station beacon,27
+dpr,7
+ecostress,2
+emit imaging spectrometer,2
+epic,1
+erb-scanner,5
+erbe,5
+erbe wfov nonscanner,1
+etm+,48
+gedi,2
+gfo altimeter,1
+gis,2
+glas,17
+glm,4
+gmi,7
+gnss,1
+gnss receiver,1
+gnss-ro receiver,1
+goes n-p imager,7
+goes-15 imager,7
+goes-16 imager,7
+goes-17 imager,4
+gps,103
+gps receiver,17
+gpsp,4
+gyros,4
+hico,2
+hirdls,25
+hirs,4
+hirs/2,4
+hsb,73
+iir,26
+imaging radiometers,83
+infrared radiometers,10
+jason-1 microwave radiometer,6
+jason-class altimeter,4
+karin,4
+la,17
+lis,19
+lra,4
+meris,36
+misr,80
+mls,25
+modis,125
+mopitt,80
+msu,4
+mviri,4
+nistar,1
+not applicable,179
+nra,12
+oco spectrometers,2
+oco-2,2
+oco-3,2
+ols,7
+omi,25
+omps,4
+otd,15
+palsar,3
+pc,17
+photometers,1
+poseidon-2,6
+poseidon-3,2
+poseidon-3b,12
+poseidon-4 radar altimeter,1
+pr,17
+ps0,1
+ps1,1
+ps2,1
+ps2.sd,1
+psb.sd,1
+ra-2,36
+radar altimeters,15
+radiometers,19
+rapidscat,2
+reis,1
+ro,1
+sage ii,1
+sage iii,2
+sar,8
+sbuv/2,4
+sciamachy,36
+sentinel-1 c-sar,4
+seviri,5
+sim,3
+siral,15
+smap l-band radar,4
+smap l-band radiometer,4
+solstice,3
+ssalt,12
+ssm/i,7
+ssmis,22
+star tracker,5
+sun photometers,1
+tanso-fts,9
+tempest,2
+tes,25
+tim,3
+tm,48
+tmi,17
+tmr,12
+tovs,19
+trsr,6
+vas,7
+viirs,73
+virs,17
+vissr-gms,1
+vissr-meteosat,5
+wfc,26
+windsat,1
+wv110,5
+xps,3

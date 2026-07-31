@@ -1,0 +1,264 @@
+k,allPubs,dsWithPubs
+aatsr,657,24
+abi,59,13
+acc,169,23
+ace-fts,19,8
+acrim ii,44,10
+ahi,56,9
+airs,7203,422
+alt (topex),72,10
+altika altimeter,7,1
+altimeters,945,42
+ami,746,21
+amr,124,29
+amr-2,72,10
+amr-c,24,7
+amsr,31,1
+amsr-e,13553,630
+amsr2,549,41
+amsu-a,6752,403
+amsu-b,6766,399
+aquarius_radiometer,64,22
+aquarius_scatterometer,64,22
+asar,657,24
+ascat,824,48
+aster,11687,375
+atlas,524,34
+atms,686,204
+atsr-2,746,21
+avcs nimbus-1,3,2
+avcs nimbus-2,3,2
+avhrr,1321,111
+avhrr-2,679,26
+avhrr-3,650,80
+c-sar,842,21
+caliop,260,40
+camera,194,10
+cameras,199,15
+cats,350,47
+ccd imager,33,11
+cd,76,16
+ceres scanner,13462,784
+ceres-fm1,11420,329
+ceres-fm2,11420,329
+ceres-fm3,6624,372
+ceres-fm4,6624,372
+ceres-fm5,568,160
+ceres-fm6,229,49
+ceres-pfm,200,33
+claes,44,10
+cloudsat-cpr,20,4
+computer,418,49
+cowvr,350,47
+cris,7042,562
+czcs,1536,33
+ddmi,120,27
+doris,988,55
+doris ground station beacon,355,22
+dpr,166,33
+ecostress,350,47
+emit imaging spectrometer,350,47
+epic,17,7
+erb-scanner,644,26
+erbe,644,26
+erbe wfov nonscanner,189,13
+ers-1 altimeter,738,19
+ers-2 altimeter,744,19
+esmr,49,4
+etm+,648,36
+gedi,350,47
+gfo altimeter,32,3
+gis,181,5
+glas,242,22
+glm,57,12
+gmi,166,33
+gnss,24,7
+gnss receiver,24,7
+gnss-ro receiver,24,7
+goes i-m imager,119,5
+goes n-p imager,166,8
+goes-10 imager,9,4
+goes-11 imager,11,5
+goes-12 imager,9,4
+goes-13 imager,5,2
+goes-14 imager,2,1
+goes-15 imager,170,9
+goes-16 imager,218,17
+goes-17 imager,16,4
+goes-8 imager,4,3
+goes-9 imager,4,3
+gome,744,19
+gome-2,134,31
+gps,13722,611
+gps p,52,27
+gps receiver,76,16
+gps receivers,52,27
+gpsp,153,46
+grace acc,169,23
+grace interferometer,156,20
+grace lrr,156,20
+grace sca,156,20
+grace-fo acc,169,23
+grace-fo kbr,156,20
+grace-fo lri,34,6
+grace-fo mwi,34,6
+grace-fo sca,34,6
+gyros,31,9
+haloe,44,10
+harp2,1,1
+hawkeye,1,2
+hico,350,47
+hirdls,924,163
+hirs,697,28
+hirs/2,679,26
+hrir,5,3
+hrs,191,2
+hrvir,4,2
+hsb,6624,372
+hyperion,8,2
+iasi,134,31
+idcs nimbus-3,5,3
+igor,590,13
+iir,260,40
+imaging radiometers,11421,331
+infrared radiometers,166,11
+itpr,48,3
+jami,5,5
+jason-1 microwave radiometer,72,11
+jason-class altimeter,31,9
+karin,31,9
+kbr,156,20
+ku-band radar,744,19
+la,76,16
+lims,1536,33
+lis,546,80
+lra,31,9
+lrir,1,1
+meris,657,24
+mhs,407,47
+mir,4,3
+misr,11687,375
+mls,946,167
+modis,13629,677
+mopitt,11420,329
+mr,738,19
+mrir,5,3
+msir,4,3
+mss,520,31
+msu,679,26
+mtsat 1r imager,51,5
+mtsat 2 imager,53,6
+mviri,60,9
+mwri,8,1
+nems,48,3
+nistar,17,7
+not applicable,15148,842
+nra,72,10
+nscat,1,1
+oci,1,1
+oco spectrometers,159,22
+oco-2,159,22
+oco-3,350,47
+octs,1,1
+olci,3,1
+oli,1051,39
+oli-2,124,7
+ols,1649,45
+omi,924,163
+omps,679,196
+oscat,2,1
+otd,68,13
+palsar,978,13
+palsar-2,55,1
+pc,76,16
+photometers,1587,40
+pmr,1,1
+poam iii,4,2
+poseidon-2,72,11
+poseidon-3,92,14
+poseidon-3b,85,13
+poseidon-4 radar altimeter,24,7
+pr,200,33
+ps0,2,2
+ps1,2,2
+ps2,2,2
+ps2.sd,2,2
+psb.sd,2,2
+quickbird/bhrc-60,165,3
+ra,746,21
+ra-2,657,24
+radar altimeters,754,24
+radiometers,1438,44
+rapidscat,350,47
+reis,4,3
+ro,24,7
+sage i,11,2
+sage ii,57,7
+sage iii,362,50
+sams,1536,33
+saphir,4,2
+sar,1799,88
+sbuv,1536,33
+sbuv/2,960,41
+scams,1,1
+scatterometers,738,19
+sciamachy,657,24
+scmr,48,3
+scr,48,3
+seawifs,77,15
+seawinds,62,8
+sentinel-1 c-sar,193,14
+sentinel-2 msi,191,14
+seviri,64,20
+sim,22,8
+sir-c,305,7
+siral,80,4
+sirs,5,3
+slstr,3,1
+smap l-band radar,836,46
+smap l-band radiometer,836,46
+smmr,1536,33
+smos l-band radiometer,20,4
+solstice,20,5
+sounders,4,3
+spexone,1,1
+srtm,1059,20
+srtm c-band radar,764,13
+ssalt,72,10
+ssm/i,1650,47
+ssmis,1812,52
+ssu,86,6
+star tracker,53,16
+sun photometers,1587,40
+tanso-fts,13,2
+tdx-1,504,9
+tempest,350,47
+tempo,3,4
+tes,924,163
+thir,1544,36
+tim,22,8
+tirs,1051,39
+tm,629,33
+tmi,200,33
+tmr,72,10
+tms,1,1
+tmws,1,1
+toms,1888,52
+tovs,802,43
+tropomi,70,10
+trsr,72,11
+vas,163,8
+vegetation-1,4,2
+vhrr,2,2
+viirs,7068,568
+virs,200,33
+vissr,120,7
+vissr-gms,49,7
+vissr-meteosat,94,12
+vtpr,8,1
+wfc,260,40
+windsat,311,11
+wv110,183,7
+wv60,181,5
+x-sar,860,28
+xps,20,5

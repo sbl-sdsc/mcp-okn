@@ -1,0 +1,160 @@
+name,lat,lon,fcode,nPapers
+Hawaiian Arch,20.0,-152.0,ARCU,3
+Dogger Bank,55.25,3.5,ARRU,2
+Bay of Fundy,45.0,-66.0,BAY,2
+Great Bahama Bank,23.25,-78.0,BNKU,1
+Georges Bank,41.25,-67.5,BNKU,1
+Dogger Bank,55.0,3.0,BNKU,2
+Rockall Bank,57.5,-13.83333,BNKU,1
+Spitsbergen Bank,76.0,23.0,BNKU,5
+Brazil Basin,-15.0,-25.0,BSNU,2
+Angola Basin,-15.0,3.0,BSNU,1
+Cape Basin,-37.0,7.0,BSNU,1
+Argentine Basin,-45.0,-45.0,BSNU,1
+Southeast Pacific Basin,-60.0,-115.0,BSNU,4
+Guinea Basin,0.0,-5.0,BSNU,1
+Cariaco Basin,10.61667,-65.16667,BSNU,1
+Northeast Pacific Basin,20.0,-140.0,BSNU,16
+Murray Basin,27.08333,-93.6,BSNU,1
+Guaymas Basin,27.25,-111.5,BSNU,1
+Levantine Basin,33.0,29.0,BSNU,1
+Santa Barbara Basin,34.25,-120.05,BSNU,1
+Iberian Basin,39.0,-16.0,BSNU,1
+Tyrrhenian Basin,40.0,13.0,BSNU,5
+Northwest Pacific Basin,40.0,155.0,BSNU,7
+Murray Basin,42.5,-69.83333,BSNU,1
+Central Pacific Basin,5.0,-175.0,BSNU,15
+Murray Basin,51.61667,176.45,BSNU,1
+Iceland Basin,61.0,-19.0,BSNU,4
+Irminger Basin,61.0,-36.0,BSNU,2
+Canada Basin,80.0,-145.0,BSNU,2
+Nansen Basin,84.5,75.0,BSNU,1
+Makarov Basin,87.0,170.0,BSNU,1
+Eurasia Basin,87.0,80.0,BSNU,6
+Mid-Atlantic Ridge,0.0,-20.0,CDAU,3
+North Passage,-16.2,150.03333,CHN,1
+Bransfield Strait,-63.0,-59.0,CHNM,1
+Antarctic Circumpolar Current,-62.64985,-4.15661,CRNT,1
+Kuroshio,40.0,150.0,CRNT,2
+Sahara,26.0,13.0,DSRT,49
+Saharan Fan,24.5,-18.33333,FANU,3
+Charlie-Gibbs Fracture Zone,52.75,-35.5,FRZU,1
+Gulf of Oman,25.0,58.0,GULF,1
+Gulf of Sidra,31.5,18.0,GULF,1
+Gulf of Lion,43.0,4.0,GULF,6
+South Pacific Islands,-14.43468,174.11133,ISLS,25
+Spratly Islands,10.0,114.0,ISLS,1
+Mariana Islands,17.79054,145.89844,ISLS,2
+Andes Mountains,-16.87815,-70.30151,MTS,2
+Himalayas,28.0,84.0,MTS,31
+Atlas Mountains,32.0,-2.0,MTS,3
+Pyrenees,42.66667,1.0,MTS,9
+Alps,46.41667,10.0,MTS,26
+Carpathians,47.0,25.5,MTS,1
+Jura,47.16667,7.0,MTS,1
+Southern Ocean,-60.0,90.0,OCN,231
+Atlantic Ocean,10.0,-25.0,OCN,117
+Pacific Ocean,3.51342,-132.1875,OCN,219
+Arabian Peninsula,25.0,45.0,PEN,21
+Korean Peninsula,38.62545,127.55127,PEN,4
+Malay Peninsula,4.03962,102.12891,PEN,2
+Iberian Peninsula,40.0,-5.0,PEN,17
+Kerguelen Plateau,-55.0,75.0,PLTU,3
+Yermak Plateau,82.0,5.0,PLTU,1
+North Pole,90.0,0.0,PT,8
+Mentawai Ridge,-1.0,98.66667,RDGU,1
+Walvis Ridge,-28.0,3.0,RDGU,1
+Researcher Ridge,15.25,-50.5,RDGU,1
+Greater Antilles Ridge,20.0,-74.0,RDGU,1
+Blake Ridge,30.16556,-73.72611,RDGU,1
+Newfoundland Ridge,40.5,-48.0,RDGU,3
+Hydrate Ridge,44.66667,-125.1,RDGU,1
+Wyville Thomson Ridge,60.25,-7.5,RDGU,1
+Reykjanes Ridge,62.0,-27.0,RDGU,2
+Faroe-Iceland Ridge,64.0,-10.0,RDGU,2
+Lomonosov Ridge,88.0,140.0,RDGU,3
+Madagascar Rock,9.4625,116.93333,RF,2
+Eastern Africa,-0.52734,36.51855,RGN,21
+Central Africa,-2.02107,24.69727,RGN,21
+Southern Africa,-27.11781,22.28027,RGN,23
+Melanesia,-7.44962,157.71973,RGN,1
+Latin America and the Caribbean,-8.05923,-72.59766,RGN,10
+World Ocean,0.0,-150.0,RGN,1
+Great Lakes Region,0.66434,33.72941,RGN,11
+Sub-Saharan Africa,1.5509,25.63297,RGN,20
+Northeast Africa,16.97841,32.70055,RGN,2
+Sahel,17.30869,2.46094,RGN,45
+Indochina,18.0,101.0,RGN,5
+Western Africa,18.31281,-4.83398,RGN,33
+West Indies,19.38333,-71.21667,RGN,2
+Caribbean,20.38583,-72.33398,RGN,34
+Southern Asia,21.28937,78.66211,RGN,3
+Arabia,25.0,45.0,RGN,1
+Central America,25.32417,-99.66797,RGN,19
+Western Asia,25.83945,43.24219,RGN,2
+Eastern Asia,32.24997,114.60938,RGN,4
+Northern Africa,32.95337,9.97559,RGN,40
+Middle East,33.13906,35.85869,RGN,50
+Levant,34.0,36.0,RGN,3
+Southern Europe,41.34382,-3.33984,RGN,18
+Caucasus Region,42.0,45.0,RGN,5
+Central Asia,43.00465,71.71875,RGN,35
+Balkans,43.97233,22.11567,RGN,6
+Western Europe,50.21909,7.42676,RGN,19
+Central Europe,50.28762,15.1903,RGN,22
+Eastern Europe,51.72703,28.38867,RGN,19
+Northern America,54.77535,-105.64453,RGN,1
+Baltic States,56.85514,25.32515,RGN,5
+Baltic Region,57.29568,19.48591,RGN,3
+Micronesia,6.53365,163.74023,RGN,1
+South Eastern Asia,6.83917,116.45508,RGN,50
+Northern Europe,61.68987,2.90039,RGN,22
+Nordic,62.0,-6.0,RGN,7
+Scandinavia,63.0,12.0,RGN,34
+Arctic,75.58494,-43.94531,RGN,170
+Polar Regions,85.0,50.0,RGN,7
+Horn of Africa,9.0,47.99878,RGN,8
+Mediterranean Basin,35.78,19.33,RGNE,13
+European Free Trade Association,46.22026,6.1387,RGNE,1
+Bermuda Rise,32.5,-65.0,RISU,3
+Shatskiy Rise,35.0,160.0,RISU,1
+Sierra Leone Rise,5.5,-21.0,RISU,1
+Greenland-Iceland Rise,67.0,-27.0,RISU,1
+Banda Sea,-3.45389,122.72472,SEA,2
+Scotia Sea,-57.5,-40.0,SEA,4
+Cosmonauts Sea,-64.93895,45.04688,SEA,1
+King Haakon VII Sea,-67.99979,6.9964,SEA,1
+South China Sea,14.64735,115.63737,SEA,32
+Indo-Pacific,15.0213,140.14914,SEA,24
+Red Sea,19.0,39.5,SEA,19
+Sargasso Sea,30.0,-60.0,SEA,8
+Levantine Sea,34.05,34.05,SEA,1
+Mediterranean Sea,35.0,20.0,SEA,141
+Sea of Azov,46.0,36.0,SEA,1
+Irminger Sea,63.0541,-34.041,SEA,14
+Iceland Sea,68.56044,-18.01398,SEA,8
+Sulu Sea,8.0,120.0,SEA,2
+Arafura Shelf,-10.0,137.0,SHFU,1
+West Florida Shelf,27.0,-83.33333,SHFU,1
+Scotian Shelf,44.0,-62.0,SHFU,1
+Sunda Shelf,5.0,107.0,SHFU,1
+East Siberian Shelf,74.4,-162.26667,SHFU,4
+Porcupine Seabight,50.0,-14.0,SHVU,1
+Mid-Pacific Mountains,20.0,-178.0,SMSU,3
+New England Seamounts,38.0,-61.0,SMSU,1
+Atacama Deep,-23.41118,-71.3414,SMU,5
+Faroe Bank,60.91667,-8.66667,SMU,1
+Drake Passage,-60.0,-60.0,STRT,18
+Strait of Otranto,40.18333,18.95,STRT,1
+Faeroe-Shetland Channel,61.0,-4.0,STRT,2
+Hudson Strait,62.0,-70.0,STRT,4
+Denmark Strait,67.5403,-25.68784,STRT,15
+Nares Strait,81.0,-66.0,STRT,1
+Okinawa Trough,25.5,125.0,TRGU,1
+Nankai Trough,32.16667,135.0,TRGU,1
+Rockall Trough,57.0,-12.0,TRGU,2
+North Pole,89.1906,0.08034,TRIG,8
+Hudson Valley,38.46667,-70.95,VALU,1
+Bering Strait Valley,65.75,-168.5,VALU,23
+Storfjordrenna,76.0,17.0,VALU,1
+European Union,50.83857,4.37599,ZN,11

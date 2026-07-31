@@ -1,0 +1,289 @@
+k,fracDs
+11.5um radiometer,3.11111
+6.7um radiometer,3.11111
+aatsr,9.85714
+abi,25.3333
+acc,7.66667
+ace-fts,10.0
+acrim,2.0
+acrim ii,4.25
+ahi,24.0
+airs,87.0833
+alt (topex),3.25
+altika altimeter,2.5
+altimeters,10.3214
+ami,4.75
+amr,23.8194
+amr-2,3.5
+amr-c,5.44444
+amsr,1.5
+amsr-e,159.174
+amsr2,77.0
+amsu-a,100.379
+amsu-b,87.375
+aquarius_radiometer,86.5
+aquarius_scatterometer,86.5
+asar,9.85714
+ascat,15.8611
+aster,95.7576
+atlas,44.0
+atmos,28.0
+atms,152.702
+atsr-2,4.75
+avcs nimbus-1,3.33333
+avcs nimbus-2,3.0
+avhrr,161.273
+avhrr-2,51.9107
+avhrr-3,82.0813
+awifs,3.0
+buv,3.11111
+c-sar,30.5
+caliop,25.3333
+camera,12.5
+cameras,29.9444
+cats,11.9091
+ccd imager,14.1667
+cd,2.57143
+ceres scanner,258.555
+ceres-fm1,72.0909
+ceres-fm2,72.0909
+ceres-fm3,59.75
+ceres-fm4,59.75
+ceres-fm5,75.2857
+ceres-fm6,48.75
+ceres-pfm,11.4286
+claes,4.25
+cloudsat-cpr,6.0
+computer,33.854
+cowvr,11.9091
+cris,183.786
+czcs,8.22222
+ddmi,45.0
+doris,61.5099
+doris ground station beacon,30.3333
+dpr,25.5
+ecostress,11.9091
+emit imaging spectrometer,11.9091
+epic,8.66667
+erb-scanner,22.6
+erbe,22.6
+erbe wfov nonscanner,11.9
+ers-1 altimeter,2.08333
+ers-2 altimeter,2.66667
+esmr,4.83333
+etm+,60.0
+gedi,11.9091
+geos-3 altimeter,1.0
+gfc radiometer,3.0
+gfo altimeter,3.0
+gis,3.5
+glas,5.57143
+glm,21.0
+gmi,25.5
+gnss,5.44444
+gnss receiver,5.44444
+gnss-ro receiver,5.44444
+goes i-m imager,29.4167
+goes n-p imager,10.3333
+goes-10 imager,4.33333
+goes-11 imager,15.1667
+goes-12 imager,4.33333
+goes-13 imager,6.33333
+goes-14 imager,2.33333
+goes-15 imager,12.1667
+goes-16 imager,11.6667
+goes-17 imager,5.5
+goes-8 imager,4.5
+goes-9 imager,3.25
+gome,2.66667
+gome-2,10.1111
+gps,279.732
+gps p,22.75
+gps receiver,2.57143
+gps receivers,22.75
+gpsp,31.125
+grace acc,7.66667
+grace interferometer,4.0
+grace lrr,4.0
+grace sca,4.0
+grace-fo acc,7.66667
+grace-fo kbr,4.0
+grace-fo lri,3.66667
+grace-fo mwi,3.66667
+grace-fo sca,3.66667
+gvhrr,2.0
+gyros,4.875
+haloe,4.25
+harp2,22.6667
+hawkeye,2.0
+hico,11.9091
+hirdls,68.8
+hirs,62.3857
+hirs/2,57.1607
+hrir,8.93333
+hrs,2.33333
+hrv,1.0
+hrvir,2.0
+hsb,59.75
+hyperion,3.0
+iasi,10.1111
+idcs nimbus-3,2.6
+idcs nimbus-4,3.11111
+igor,12.6667
+iir,25.3333
+imaging radiometers,96.2909
+infrared radiometers,11.8333
+iris,3.11111
+itpr,2.33333
+jami,5.33333
+jason-1 microwave radiometer,5.83333
+jason-class altimeter,4.875
+karin,4.875
+kbr,4.0
+ku-band radar,2.66667
+la,2.57143
+laser reflector,28.0
+lims,8.22222
+lis,23.3377
+low-resolution omnidirectional radiometer,2.5
+lra,4.875
+lrir,2.5
+maps,3.0
+medium-resolution scanning radiometer,4.5
+meris,9.85714
+mhs,29.9206
+mir,9.7
+misr,95.7576
+mls,73.05
+modis,187.241
+mopitt,72.0909
+mr,2.08333
+mrir,5.6
+msir,5.2
+mss,36.5
+msu,57.1607
+mtsat 1r imager,2.5
+mtsat 2 imager,4.5
+mviri,8.66667
+mwri,1.0
+nems,2.33333
+nistar,8.66667
+not applicable,281.777
+nra,3.25
+nscat,13.0
+oci,22.6667
+oco spectrometers,18.0
+oco-2,18.0
+oco-3,11.9091
+octs,13.0
+olci,19.5
+oli,29.5
+oli-2,5.5
+ols,94.1667
+omi,68.8
+omps,143.952
+optical beacon,1.0
+osa,2.0
+oscat,1.0
+oscat-2,4.0
+otd,15.4
+palsar,13.0
+palsar-2,1.0
+pc,2.57143
+photometers,15.2222
+pmr,2.5
+poam iii,2.0
+poseidon-2,5.83333
+poseidon-3,10.25
+poseidon-3b,6.75
+poseidon-4 radar altimeter,5.44444
+pr,11.4286
+ps0,0.5
+ps1,0.5
+ps2,0.5
+ps2.sd,0.5
+psb.sd,0.5
+quickbird/bhrc-60,5.0
+ra,4.75
+ra-2,9.85714
+radar altimeters,14.4833
+radio transponders,1.0
+radiometers,39.2798
+rapidscat,11.9091
+reis,3.0
+ro,5.44444
+sage i,3.0
+sage ii,7.0
+sage iii,19.9091
+sams,8.22222
+saphir,7.0
+sar,66.5
+sass,3.0
+sbuv,8.22222
+sbuv/2,62.0571
+scams,2.5
+scatterometers,5.08333
+sciamachy,9.85714
+scmr,2.33333
+scr,5.44444
+seawifs,50.0
+seawinds,11.5
+sentinel-1 c-sar,20.0
+sentinel-2 msi,36.0
+seviri,43.8333
+sim,6.0
+sir-c,4.0
+siral,3.66667
+sirs,5.71111
+slstr,19.5
+smap l-band radar,15.25
+smap l-band radiometer,18.25
+smmr,8.22222
+smos l-band radiometer,3.0
+solstice,4.0
+sounders,3.25
+spexone,22.6667
+srtm,12.0
+srtm c-band radar,8.0
+ssalt,3.25
+ssm/i,144.167
+ssmis,88.0667
+ssu,2.25
+star tracker,10.3194
+sun photometers,15.2222
+tanso-fts,11.0
+tdx-1,3.33333
+tempest,11.9091
+tempo,33.0
+tes,68.8
+thermal radiation experiment,2.0
+thir,16.1667
+tim,8.0
+tirs,24.0
+tirs-prefire,34.0
+tm,34.5
+tmi,11.4286
+tmr,3.25
+tms,23.5
+tmws,17.5
+toms,35.1508
+tovs,89.9
+transponders,1.0
+tropomi,28.0
+trsr,5.83333
+vas,3.66667
+vegetation-1,2.0
+vhrr,4.0
+viirs,220.452
+virs,11.4286
+vissr,65.9167
+vissr-gms,10.0
+vissr-meteosat,21.1667
+vtpr,1.0
+wfc,25.3333
+wind profilers,1.0
+windsat,21.0
+wv110,9
+wv60,3.0
+x-sar,10.0833
+xps,4.0

@@ -1,0 +1,122 @@
+k,R1_cmMentionPapers,R2_cmModelPapers,R2_cmDistinctModels,R3_doiPapers,R3_doiDatasets
+aatsr,3,1,1,1,1
+abi,1,0,0,0,0
+ace-fts,6,2,27,0,0
+ahi,1,0,0,0,0
+airs,10,2,2,7,9
+altimeters,0,0,0,1,1
+amr,1,0,0,0,0
+amsr,2,0,0,0,0
+amsr-e,18,6,22,13,19
+amsr2,0,0,0,1,1
+amsu-a,7,3,28,8,8
+amsu-b,0,0,0,8,8
+asar,0,0,0,1,1
+ascat,5,1,1,0,0
+aster,8,0,0,12,16
+atmos,1,0,0,0,0
+atms,0,0,0,1,1
+avhrr,27,9,32,2,2
+avhrr-2,0,0,0,1,1
+avhrr-3,0,0,0,2,2
+c-sar,0,0,0,1,1
+ceres scanner,0,0,0,13,17
+ceres-fm1,0,0,0,12,14
+ceres-fm2,0,0,0,12,14
+ceres-fm3,0,0,0,7,7
+ceres-fm4,0,0,0,7,7
+ceres-fm6,0,0,0,1,1
+ceres-pfm,0,0,0,1,1
+claes,1,0,0,0,0
+computer,0,0,0,1,1
+cris,1,1,1,7,7
+czcs,0,0,0,5,3
+doris,0,0,0,2,2
+doris ground station beacon,0,0,0,1,1
+dpr,0,0,0,1,1
+ecostress,2,0,0,0,0
+erb-scanner,0,0,0,1,1
+erbe,8,4,3,1,1
+etm+,5,1,1,1,1
+gedi,2,0,0,0,0
+gis,1,0,0,0,0
+glas,2,0,0,1,1
+gmi,1,1,1,1,1
+gnss,3,1,1,0,0
+gome,16,2,6,0,0
+gome-2,8,1,5,0,0
+gps,10,4,6,18,18
+gps receivers,1,0,0,0,0
+haloe,6,0,0,0,0
+hirdls,3,0,0,2,3
+hirs,5,0,0,1,1
+hirs/2,0,0,0,1,1
+hrs,0,0,0,1,1
+hsb,0,0,0,7,7
+iasi,9,2,2,0,0
+igor,1,0,0,1,1
+imaging radiometers,1,1,1,12,14
+lims,1,0,0,5,3
+lis,2,0,0,1,1
+meris,6,1,1,1,1
+mhs,2,1,1,1,1
+misr,16,6,15,12,16
+mls,8,1,3,2,3
+modis,170,60,52,13,21
+mopitt,12,1,1,12,14
+mss,1,1,1,1,1
+msu,4,2,2,1,1
+mwri,1,0,0,0,0
+not applicable,0,0,0,17,22
+nscat,1,0,0,0,0
+oco-2,6,2,11,0,0
+olci,1,0,0,0,0
+oli,4,0,0,1,1
+ols,0,0,0,8,6
+omi,17,2,4,2,3
+omps,2,0,0,1,1
+otd,1,0,0,0,0
+palsar,1,0,0,1,1
+photometers,0,0,0,5,3
+poam iii,3,0,0,0,0
+pr,0,0,0,1,1
+ra-2,0,0,0,1,1
+radiometers,2,1,1,1,1
+sage ii,5,1,1,0,0
+sams,0,0,0,5,3
+sar,4,0,0,2,2
+sbuv,5,1,1,5,3
+sbuv/2,0,0,0,1,1
+scatterometers,10,2,2,0,0
+sciamachy,29,1,5,1,1
+seawifs,20,8,4,0,0
+seviri,8,1,1,0,0
+sim,2,1,1,0,0
+sir-c,0,0,0,1,1
+slstr,1,0,0,0,0
+smap l-band radar,0,0,0,1,1
+smap l-band radiometer,0,0,0,1,1
+smmr,13,6,39,5,3
+solstice,2,1,1,0,0
+srtm,1,1,6,2,2
+srtm c-band radar,0,0,0,1,1
+ssm/i,0,0,0,8,6
+ssmis,11,5,33,8,6
+sun photometers,13,3,2,5,3
+tanso-fts,2,0,0,0,0
+tdx-1,0,0,0,1,1
+tes,8,1,5,2,3
+thir,0,0,0,5,3
+tim,3,2,2,0,0
+tirs,4,0,0,1,1
+tm,4,1,1,1,1
+tmi,3,3,4,1,1
+tmr,1,0,0,0,0
+toms,10,1,3,6,4
+tovs,6,5,27,1,1
+tropomi,4,1,1,0,0
+viirs,9,3,2,7,7
+virs,2,0,0,1,1
+windsat,3,3,3,1,1
+x-sar,0,0,0,1,1
+xps,1,1,1,0,0

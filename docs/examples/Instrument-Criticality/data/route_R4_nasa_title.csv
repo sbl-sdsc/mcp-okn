@@ -1,0 +1,183 @@
+k,R4_modelTitlePubs,R4_modelTitleDatasets
+aatsr,8,4
+abi,1,1
+acc,8,4
+ace-fts,2,1
+acrim ii,2,1
+ahi,8,4
+airs,148,93
+alt (topex),5,2
+altimeters,19,8
+ami,10,5
+amr,5,2
+amr-2,3,1
+amsr-e,227,155
+amsr2,17,6
+amsu-a,135,89
+amsu-b,135,87
+aquarius_radiometer,1,1
+aquarius_scatterometer,1,1
+asar,8,4
+ascat,15,15
+aster,171,109
+atlas,4,3
+atms,9,15
+atsr-2,10,5
+avhrr,51,31
+avhrr-2,23,6
+avhrr-3,17,21
+c-sar,3,2
+caliop,9,6
+camera,2,1
+cameras,2,1
+cats,2,4
+ceres scanner,210,154
+ceres-fm1,163,96
+ceres-fm2,163,96
+ceres-fm3,127,80
+ceres-fm4,127,80
+ceres-fm5,5,10
+ceres-fm6,6,6
+ceres-pfm,12,4
+claes,2,1
+cloudsat-cpr,1,1
+computer,12,15
+cowvr,2,4
+cris,131,92
+czcs,69,10
+doris,11,7
+doris ground station beacon,8,5
+dpr,13,6
+ecostress,2,4
+emit imaging spectrometer,2,4
+erb-scanner,19,4
+erbe,19,4
+erbe wfov nonscanner,4,1
+ers-1 altimeter,10,5
+ers-2 altimeter,10,5
+esmr,2,1
+etm+,15,4
+gedi,2,4
+gfo altimeter,3,1
+gis,2,1
+glas,9,3
+gmi,13,6
+goes i-m imager,10,2
+goes n-p imager,18,6
+goes-10 imager,1,1
+goes-11 imager,1,1
+goes-12 imager,1,1
+goes-13 imager,1,1
+goes-14 imager,1,1
+goes-15 imager,18,6
+goes-16 imager,17,5
+goes-8 imager,1,1
+goes-9 imager,1,1
+gome,10,5
+gome-2,10,12
+gps,245,129
+gpsp,3,1
+grace acc,8,4
+grace interferometer,8,4
+grace lrr,8,4
+grace sca,8,4
+grace-fo acc,8,4
+grace-fo kbr,8,4
+haloe,2,1
+hico,2,4
+hirdls,23,27
+hirs,25,7
+hirs/2,23,6
+hrs,2,2
+hsb,127,80
+iasi,10,12
+iir,9,6
+imaging radiometers,163,96
+infrared radiometers,18,6
+itpr,2,1
+jami,1,1
+jason-1 microwave radiometer,5,2
+kbr,8,4
+ku-band radar,10,5
+lims,69,10
+lis,14,8
+meris,8,4
+mhs,12,17
+mir,1,1
+misr,171,109
+mls,23,27
+modis,229,165
+mopitt,163,96
+mr,10,5
+msir,1,1
+mss,14,3
+msu,23,6
+mtsat 1r imager,8,4
+mtsat 2 imager,9,5
+mviri,9,5
+nems,2,1
+not applicable,243,179
+nra,5,2
+oco-3,2,4
+oli,14,3
+ols,91,20
+omi,23,27
+omps,9,15
+palsar,4,3
+photometers,69,10
+poseidon-2,5,2
+poseidon-3,5,2
+poseidon-3b,5,2
+pr,12,4
+quickbird/bhrc-60,2,1
+ra,10,5
+ra-2,8,4
+radar altimeters,10,5
+radiometers,38,10
+rapidscat,2,4
+sage iii,2,4
+sams,69,10
+sar,21,12
+sbuv,69,10
+sbuv/2,31,11
+scatterometers,10,5
+sciamachy,8,4
+scmr,2,1
+scr,2,1
+seawinds,3,1
+seviri,1,1
+sir-c,1,1
+siral,1,1
+smap l-band radar,11,7
+smap l-band radiometer,11,7
+smmr,69,10
+smos l-band radiometer,1,1
+sounders,1,1
+srtm,7,3
+srtm c-band radar,6,2
+ssalt,5,2
+ssm/i,91,20
+ssmis,94,21
+ssu,8,4
+sun photometers,69,10
+tempest,2,4
+tes,23,27
+thir,69,10
+tirs,14,3
+tm,15,4
+tmi,12,4
+tmr,5,2
+toms,80,16
+tovs,36,12
+trsr,5,2
+vas,17,5
+viirs,131,92
+virs,12,4
+vissr,10,2
+vissr-gms,9,5
+vissr-meteosat,9,5
+wfc,9,6
+windsat,14,5
+wv110,2,1
+wv60,2,1
+x-sar,10,5

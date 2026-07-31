@@ -1,0 +1,91 @@
+variable,measurerName
+albsn,modis
+amocrapid,rapid array
+aod550volso4,lidar measurements
+asl,airborne topographic mapper
+BIO12,the cloudsat spaceborne cloud-profiling radar
+BIO7,marine sediments
+bldep,ceilometer
+carbon_dioxide_GM,in situ air measurements at mauna loa observatory (mlo)
+ccn,calipso
+ch2cl2,hagar-v
+CH4-em-anthro,methanesat
+chl,sea-viewing wide field-of-view sensor (seawifs)
+cl,the cloud profiling radar
+CLIMODIS,modis simulator
+clivi,ceres
+clt,moderate resolution imaging spectroradiometer (modis)
+clw,tmi (trmm microwave imager)
+CLWMODIS,modis simulator
+clwvi,tmi (trmm microwave imager)
+concbc,single particle soot photometer (sp2)
+dfe,fia-8hq
+evlwr,synoptic meteorological stations
+FLNS_d1,atmospheric surface flux stations
+FSNS_d1,kipp & zonen
+H2OSOI_LIQ,ssmi: special sensor microwave imager
+hur950,surface meteorological stations
+i2x_ix_Faii_sen,eddy covariance (ec) system
+i2x_ix_Si_u10,scatterometer climatology of ocean winds (scow)
+inc,forward scattering spectrometer probe
+intpoc,sea-viewing wide field-of-view sensor (seawifs)
+iprm,poes medium energy proton and electron detector
+loadbc,strohlein coulomat 702c
+mmraerso4,mipas (the michelson interferometer for passive atmospheric sounding)
+mmrdust,lidar measurements
+mmrno3,collectors
+mmrpm2p5,ground-site or in situ remote sensing
+nppLut,modis
+o2os,optical dissolved oxygen (do) sensor (sbe63)
+o2sat,winkler titration method
+o2x_ox_So_s,satellite instrument from sea surface salinity satellite mission
+orogIs,aerial stereo photogrammetric imagery
+pctisccp,isccp
+prwSprd,tmi (trmm microwave imager)
+psSprd,young (r.m. young company) sensors
+Q,vaisala sondes rs80/rs92/vs41
+QBOT,balloon sonde
+QOVER,satellite instruments
+QSNOMELT,moderate resolution imaging spectroradiometer (modis)
+reffclis,ceres
+rlds,pyranometer
+rltcre,ceres
+rlut,ceres
+rsdtSprd,ceres
+rss,cnr4
+rsusSprd,vortex dynamic radiometer
+rsutSprd,ceres
+salinity,next generation atlas moorings
+SFCO2,eddy covariance towers
+SFCO2_LND,eddy covariance towers
+SFO3,noaa fast-response custom made analyzer
+siarean,cobe-sst2
+sifb,cryosat-2
+sisnmass,passive microwave satellite sensors
+sitSprd,advanced very high resolution radiometer (avhrr)
+snicem,landsat
+surface_temperature,advanced very high resolution radiometer (avhrr)
+SWCF,earth radiation budget experiment (erbe)
+SWCF_d1,clouds and earths radiant energy system (ceres) mission
+ta300,the shaded thermometer
+tas,automatic weather stations
+tas-hc,met office hadley centre/climatic research unit global surface temperature anomalies version 5 (hadcrut5)
+tasSprd,automatic weather stations
+timeMonthly_avg_activeTracers_temperature,argo floats
+timeMonthly_avg_broadbandAlbedo,moderate resolution imaging spectroradiometer (modis)
+total_solar_irradiance,gome-2
+TOTVEGC_ABG,gedi
+TS,chinese meteorological stations
+tsnl,platinum thermistor
+tsns,hemispheric pyradiometer
+tsSprd,modis
+TWS,grace
+U,radiosondes
+vegFrac,modis
+wa950,eddy covariance (ec) system
+WIND,scatterometers
+ws60m,sar
+xao_ox_Faox_lat,eddy covariance towers
+zmla,"ceilometer (vaisala, model ld-40)"
+zooc,new sensors for zooplankton
+zosga,satellite altimeter

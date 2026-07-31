@@ -1,0 +1,26 @@
+k,R5_nModelVars,R5_nSoleVars,R5_soleVars
+aatsr,2,2,aod_fmbg | cdnc
+airs,2,2,CLOUD | TMQ
+amsr,1,1,sispeed
+amsr-e,5,5,icwtr | snm | sic | swe | tos
+avhrr,2,2,sncSprd | tos
+erbe,1,1,al
+etm+,1,1,tslsiLut
+gedi,1,1,TOTVEGC_ABG
+glas,1,1,al
+gome-2,1,1,total_solar_irradiance
+meris,1,1,cod
+modis,26,26,CLOUD | burntArea | AODUV | lwp | cdnc | gppLut | cod | al | albsn | lai | et | nppLut | angstrom | aod_fmbg | aod_spmx | fpar | reffclwtop | sic | sncSprd | rlutSprd | tos | vegFrac | tsSprd | TMQ | tau | tslsiLut
+omi,1,1,vmrno2
+sar,3,3,mrsoLut | sispeed | ws60m
+scatterometers,1,1,WIND
+seawifs,1,1,chlos
+seviri,1,1,AODUV
+smmr,3,3,snm | siextentn | sic
+ssmis,2,2,siextentn | sic
+sun photometers,4,4,ABSORB_d1 | AODUV | angstrom | tau
+tirs,1,1,i2x_ix_Si_t
+tm,1,1,tslsiLut
+toms,1,1,toz
+tropomi,4,4,AODUV | ssa550 | toz | vmrno2
+viirs,3,3,lai | tos | tslsiLut

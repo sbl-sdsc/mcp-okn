@@ -1,0 +1,91 @@
+variable,measurerName,k,aliasFamily
+albsn,modis,modis,MODIS
+amocrapid,rapid array,rapid array,
+aod550volso4,lidar measurements,lidar measurements,
+asl,airborne topographic mapper,airborne topographic mapper,
+BIO12,the cloudsat spaceborne cloud-profiling radar,the cloudsat spaceborne cloud-profiling radar,CloudSat-CPR
+BIO7,marine sediments,marine sediments,
+bldep,ceilometer,ceilometer,
+carbon_dioxide_GM,in situ air measurements at mauna loa observatory (mlo),in situ air measurements at mauna loa observatory (mlo),
+ccn,calipso,calipso,CALIOP/CALIPSO
+ch2cl2,hagar-v,hagar-v,
+CH4-em-anthro,methanesat,methanesat,
+chl,sea-viewing wide field-of-view sensor (seawifs),sea-viewing wide field-of-view sensor (seawifs),SeaWiFS
+cl,the cloud profiling radar,the cloud profiling radar,CloudSat-CPR
+CLIMODIS,modis simulator,modis simulator,
+clivi,ceres,ceres,CERES (family)
+clt,moderate resolution imaging spectroradiometer (modis),moderate resolution imaging spectroradiometer (modis),MODIS
+clw,tmi (trmm microwave imager),tmi (trmm microwave imager),TMI
+CLWMODIS,modis simulator,modis simulator,
+clwvi,tmi (trmm microwave imager),tmi (trmm microwave imager),TMI
+concbc,single particle soot photometer (sp2),single particle soot photometer (sp2),
+dfe,fia-8hq,fia-8hq,
+evlwr,synoptic meteorological stations,synoptic meteorological stations,
+FLNS_d1,atmospheric surface flux stations,atmospheric surface flux stations,
+FSNS_d1,kipp & zonen,kipp & zonen,
+H2OSOI_LIQ,ssmi: special sensor microwave imager,ssmi: special sensor microwave imager,SSM/I
+hur950,surface meteorological stations,surface meteorological stations,
+i2x_ix_Faii_sen,eddy covariance (ec) system,eddy covariance (ec) system,
+i2x_ix_Si_u10,scatterometer climatology of ocean winds (scow),scatterometer climatology of ocean winds (scow),
+inc,forward scattering spectrometer probe,forward scattering spectrometer probe,
+intpoc,sea-viewing wide field-of-view sensor (seawifs),sea-viewing wide field-of-view sensor (seawifs),SeaWiFS
+iprm,poes medium energy proton and electron detector,poes medium energy proton and electron detector,
+loadbc,strohlein coulomat 702c,strohlein coulomat 702c,
+mmraerso4,mipas (the michelson interferometer for passive atmospheric sounding),mipas (the michelson interferometer for passive atmospheric sounding),MIPAS
+mmrdust,lidar measurements,lidar measurements,
+mmrno3,collectors,collectors,
+mmrpm2p5,ground-site or in situ remote sensing,ground-site or in situ remote sensing,
+nppLut,modis,modis,MODIS
+o2os,optical dissolved oxygen (do) sensor (sbe63),optical dissolved oxygen (do) sensor (sbe63),
+o2sat,winkler titration method,winkler titration method,
+o2x_ox_So_s,satellite instrument from sea surface salinity satellite mission,satellite instrument from sea surface salinity satellite mission,
+orogIs,aerial stereo photogrammetric imagery,aerial stereo photogrammetric imagery,
+pctisccp,isccp,isccp,
+prwSprd,tmi (trmm microwave imager),tmi (trmm microwave imager),TMI
+psSprd,young (r.m. young company) sensors,young (r.m. young company) sensors,
+Q,vaisala sondes rs80/rs92/vs41,vaisala sondes rs80/rs92/vs41,
+QBOT,balloon sonde,balloon sonde,
+QOVER,satellite instruments,satellite instruments,
+QSNOMELT,moderate resolution imaging spectroradiometer (modis),moderate resolution imaging spectroradiometer (modis),MODIS
+reffclis,ceres,ceres,CERES (family)
+rlds,pyranometer,pyranometer,
+rltcre,ceres,ceres,CERES (family)
+rlut,ceres,ceres,CERES (family)
+rsdtSprd,ceres,ceres,CERES (family)
+rss,cnr4,cnr4,
+rsusSprd,vortex dynamic radiometer,vortex dynamic radiometer,
+rsutSprd,ceres,ceres,CERES (family)
+salinity,next generation atlas moorings,next generation atlas moorings,
+SFCO2,eddy covariance towers,eddy covariance towers,
+SFCO2_LND,eddy covariance towers,eddy covariance towers,
+SFO3,noaa fast-response custom made analyzer,noaa fast-response custom made analyzer,
+siarean,cobe-sst2,cobe-sst2,
+sifb,cryosat-2,cryosat-2,SIRAL/CryoSat-2
+sisnmass,passive microwave satellite sensors,passive microwave satellite sensors,
+sitSprd,advanced very high resolution radiometer (avhrr),advanced very high resolution radiometer (avhrr),AVHRR
+snicem,landsat,landsat,Landsat (family)
+surface_temperature,advanced very high resolution radiometer (avhrr),advanced very high resolution radiometer (avhrr),AVHRR
+SWCF,earth radiation budget experiment (erbe),earth radiation budget experiment (erbe),ERBE
+SWCF_d1,clouds and earths radiant energy system (ceres) mission,clouds and earths radiant energy system (ceres) mission,CERES (family)
+ta300,the shaded thermometer,the shaded thermometer,
+tas,automatic weather stations,automatic weather stations,
+tas-hc,met office hadley centre/climatic research unit global surface temperature anomalies version 5 (hadcrut5),met office hadley centre/climatic research unit global surface temperature anomalies version 5 (hadcrut5),
+tasSprd,automatic weather stations,automatic weather stations,
+timeMonthly_avg_activeTracers_temperature,argo floats,argo floats,
+timeMonthly_avg_broadbandAlbedo,moderate resolution imaging spectroradiometer (modis),moderate resolution imaging spectroradiometer (modis),MODIS
+total_solar_irradiance,gome-2,gome-2,GOME-2
+TOTVEGC_ABG,gedi,gedi,GEDI
+TS,chinese meteorological stations,chinese meteorological stations,
+tsnl,platinum thermistor,platinum thermistor,
+tsns,hemispheric pyradiometer,hemispheric pyradiometer,
+tsSprd,modis,modis,MODIS
+TWS,grace,grace,GRACE (family)
+U,radiosondes,radiosondes,
+vegFrac,modis,modis,MODIS
+wa950,eddy covariance (ec) system,eddy covariance (ec) system,
+WIND,scatterometers,scatterometers,
+ws60m,sar,sar,
+xao_ox_Faox_lat,eddy covariance towers,eddy covariance towers,
+zmla,"ceilometer (vaisala, model ld-40)","ceilometer (vaisala, model ld-40)",
+zooc,new sensors for zooplankton,new sensors for zooplankton,
+zosga,satellite altimeter,satellite altimeter,

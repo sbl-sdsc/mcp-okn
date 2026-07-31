@@ -120,7 +120,7 @@ verify each as live SPARQL, and validate the findings against the literature.
 
 ### Case studies
 
-Twelve end-to-end analyses that federate many Proto-OKN graphs into a single
+Thirteen end-to-end analyses that federate many Proto-OKN graphs into a single
 evidence-backed map — five of a disease's biology (genes, variants,
 pathways/gene sets, drugs, altered-activity signatures, and clinical/biomarker
 features), four of environmental exposure and justice (PFAS source
@@ -129,10 +129,12 @@ burden across U.S. counties, and flood-mobilised contamination routed downstream
 through the stream network), one of urban scaling (how disease, mortality
 and crime scale with settlement size), one of wildlife sentinel surveillance
 (whether Florida's wild-animal record and its contaminant record overlap at all),
-and one of supply-chain fragility (physical manufacturing capacity, regulated
+one of supply-chain fragility (physical manufacturing capacity, regulated
 industrial burden, software dependency risk and community vulnerability in one
-frame) — each finding tagged with its source(s) and evidence kind, then ranked by
-cross-source agreement. Every case study ships an
+frame), and one of research-infrastructure criticality (which Earth-observation
+instruments the climate-modelling record actually leans on, and what modelling
+would stop being able to check if one went dark) — each finding tagged with its
+source(s) and evidence kind, then ranked by cross-source agreement. Every case study ships an
 interactive HTML report, a reproducibility record preserving every verbatim
 SPARQL query, and an Excel workbook.
 
@@ -155,6 +157,7 @@ SPARQL query, and an Excel workbook.
 | **Flood-mobilised contamination cascade** — 6 KGs, 11,085 flood-exposed facilities routed to 519 counties (179 downstream-only) | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Flood-Cascade/Flood-Cascade_report.html) | [md](docs/examples/Flood-Cascade/Flood-Cascade_literature_comparison.md) | [xlsx](docs/examples/Flood-Cascade/Flood-Cascade_results.xlsx) | [md](docs/examples/Flood-Cascade/Flood-Cascade_reproducibility.md) | [files](docs/examples/Flood-Cascade/) |
 | **Wildlife sentinel surveillance gap (Florida)** — 12 KGs, 5,205 bird & amphibian observations vs 0 Florida contaminant measurements (2 measured bird taxa federation-wide) | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Sentinel-Wildlife/Sentinel-Wildlife_report.html) | [md](docs/examples/Sentinel-Wildlife/Sentinel-Wildlife_literature_comparison.md) | [xlsx](docs/examples/Sentinel-Wildlife/Sentinel-Wildlife_results.xlsx) | [md](docs/examples/Sentinel-Wildlife/Sentinel-Wildlife_reproducibility.md) | [files](docs/examples/Sentinel-Wildlife/) |
 | **Supply-chain fragility** — 6 KGs, 15,571 SMM manufacturers & 27,200 regulated facilities against 803,769 software packages (numpy a direct dependency of 8.7% of them) | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Supply-Chain-Fragility/Supply-Chain-Fragility_report.html) | [md](docs/examples/Supply-Chain-Fragility/Supply-Chain-Fragility_literature_comparison.md) | [xlsx](docs/examples/Supply-Chain-Fragility/Supply-Chain-Fragility_results.xlsx) | [md](docs/examples/Supply-Chain-Fragility/Supply-Chain-Fragility_reproducibility.md) | [files](docs/examples/Supply-Chain-Fragility/) |
+| **Earth-observation instrument criticality** — 2 KGs, 243 science instruments scored on 5 independent dependency routes (24 dependent on all five, 49 on none; 2 narrow-but-irreplaceable) | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Instrument-Criticality/Instrument-Criticality_report.html) | [md](docs/examples/Instrument-Criticality/Instrument-Criticality_literature_comparison.md) | [xlsx](docs/examples/Instrument-Criticality/Instrument-Criticality_results.xlsx) | [md](docs/examples/Instrument-Criticality/Instrument-Criticality_reproducibility.md) | [files](docs/examples/Instrument-Criticality/) |
 
 Each case study is a self-contained folder under `docs/examples/{Name}/` — the
 report and its deliverables sit alongside the `figures/`, `scripts/`, and `data/`

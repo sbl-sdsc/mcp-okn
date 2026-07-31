@@ -1,0 +1,435 @@
+{
+  "A": [
+    {
+      "instr": "MODIS",
+      "criticality": 100.0,
+      "corroboration": 5,
+      "nDs": 1414
+    },
+    {
+      "instr": "AMSR-E",
+      "criticality": 59.200254955136145,
+      "corroboration": 5,
+      "nDs": 1305
+    },
+    {
+      "instr": "MISR",
+      "criticality": 57.36664222448737,
+      "corroboration": 5,
+      "nDs": 864
+    },
+    {
+      "instr": "MOPITT",
+      "criticality": 53.34420058153041,
+      "corroboration": 5,
+      "nDs": 793
+    },
+    {
+      "instr": "AMSU-A",
+      "criticality": 52.043259750720026,
+      "corroboration": 5,
+      "nDs": 848
+    },
+    {
+      "instr": "VIIRS",
+      "criticality": 51.9693260922541,
+      "corroboration": 5,
+      "nDs": 1623
+    },
+    {
+      "instr": "AIRS",
+      "criticality": 51.648490541150636,
+      "corroboration": 5,
+      "nDs": 799
+    },
+    {
+      "instr": "SSMIS",
+      "criticality": 50.6120504937366,
+      "corroboration": 5,
+      "nDs": 170
+    },
+    {
+      "instr": "AVHRR",
+      "criticality": 49.363085950965605,
+      "corroboration": 5,
+      "nDs": 646
+    },
+    {
+      "instr": "ASTER",
+      "criticality": 47.799092197713975,
+      "corroboration": 4,
+      "nDs": 864
+    },
+    {
+      "instr": "CrIS",
+      "criticality": 46.671374017227116,
+      "corroboration": 5,
+      "nDs": 1534
+    },
+    {
+      "instr": "OMI",
+      "criticality": 42.54144435938363,
+      "corroboration": 5,
+      "nDs": 344
+    },
+    {
+      "instr": "CERES SCANNER",
+      "criticality": 41.78920176543808,
+      "corroboration": 3,
+      "nDs": 2070
+    },
+    {
+      "instr": "TOVS",
+      "criticality": 40.964424583167926,
+      "corroboration": 5,
+      "nDs": 238
+    },
+    {
+      "instr": "CERES-FM2",
+      "criticality": 40.00204126116373,
+      "corroboration": 3,
+      "nDs": 793
+    },
+    {
+      "instr": "CERES-FM1",
+      "criticality": 40.00204126116373,
+      "corroboration": 3,
+      "nDs": 793
+    },
+    {
+      "instr": "MLS",
+      "criticality": 39.97357965525845,
+      "corroboration": 5,
+      "nDs": 353
+    },
+    {
+      "instr": "TES",
+      "criticality": 39.97357965525845,
+      "corroboration": 5,
+      "nDs": 344
+    },
+    {
+      "instr": "SCIAMACHY",
+      "criticality": 39.67778838870055,
+      "corroboration": 5,
+      "nDs": 69
+    },
+    {
+      "instr": "SMMR",
+      "criticality": 38.91495834283593,
+      "corroboration": 4,
+      "nDs": 74
+    },
+    {
+      "instr": "ETM+",
+      "criticality": 38.03731677711117,
+      "corroboration": 5,
+      "nDs": 61
+    },
+    {
+      "instr": "AMSU-B",
+      "criticality": 37.88504468267935,
+      "corroboration": 3,
+      "nDs": 832
+    },
+    {
+      "instr": "TM",
+      "criticality": 37.64726069843268,
+      "corroboration": 5,
+      "nDs": 61
+    },
+    {
+      "instr": "HSB",
+      "criticality": 37.27147688569078,
+      "corroboration": 3,
+      "nDs": 717
+    },
+    {
+      "instr": "CERES-FM3",
+      "criticality": 37.27147688569078,
+      "corroboration": 3,
+      "nDs": 717
+    },
+    {
+      "instr": "CERES-FM4",
+      "criticality": 37.27147688569078,
+      "corroboration": 3,
+      "nDs": 717
+    },
+    {
+      "instr": "ERBE",
+      "criticality": 37.0314351211025,
+      "corroboration": 5,
+      "nDs": 129
+    },
+    {
+      "instr": "MERIS",
+      "criticality": 36.56436811474471,
+      "corroboration": 5,
+      "nDs": 69
+    },
+    {
+      "instr": "TMI",
+      "criticality": 36.326838230684345,
+      "corroboration": 5,
+      "nDs": 80
+    },
+    {
+      "instr": "TOMS",
+      "criticality": 35.984594465017416,
+      "corroboration": 4,
+      "nDs": 164
+    },
+    {
+      "instr": "AATSR",
+      "criticality": 35.367134262384916,
+      "corroboration": 5,
+      "nDs": 69
+    },
+    {
+      "instr": "MSU",
+      "criticality": 34.36115971441427,
+      "corroboration": 5,
+      "nDs": 141
+    },
+    {
+      "instr": "SBUV",
+      "criticality": 33.750080809487024,
+      "corroboration": 4,
+      "nDs": 74
+    },
+    {
+      "instr": "HIRDLS",
+      "criticality": 33.38394329592759,
+      "corroboration": 4,
+      "nDs": 344
+    },
+    {
+      "instr": "SSM/I",
+      "criticality": 32.03456126786971,
+      "corroboration": 3,
+      "nDs": 143
+    },
+    {
+      "instr": "OLS",
+      "criticality": 32.03456126786971,
+      "corroboration": 3,
+      "nDs": 116
+    },
+    {
+      "instr": "WINDSAT",
+      "criticality": 31.618767423532677,
+      "corroboration": 5,
+      "nDs": 21
+    },
+    {
+      "instr": "GMI",
+      "criticality": 31.294648665164026,
+      "corroboration": 5,
+      "nDs": 51
+    },
+    {
+      "instr": "LIS",
+      "criticality": 29.530987562567518,
+      "corroboration": 4,
+      "nDs": 211
+    },
+    {
+      "instr": "ASCAT",
+      "criticality": 29.298794432203312,
+      "corroboration": 4,
+      "nDs": 99
+    },
+    {
+      "instr": "VIRS",
+      "criticality": 29.001887230764606,
+      "corroboration": 4,
+      "nDs": 80
+    },
+    {
+      "instr": "HIRS",
+      "criticality": 28.973424196966068,
+      "corroboration": 4,
+      "nDs": 178
+    },
+    {
+      "instr": "GLAS",
+      "criticality": 28.471183880335925,
+      "corroboration": 4,
+      "nDs": 24
+    },
+    {
+      "instr": "DORIS",
+      "criticality": 28.02904277692181,
+      "corroboration": 3,
+      "nDs": 187
+    },
+    {
+      "instr": "LIMS",
+      "criticality": 26.54498162140545,
+      "corroboration": 3,
+      "nDs": 74
+    },
+    {
+      "instr": "OMPS",
+      "criticality": 25.55773247878923,
+      "corroboration": 4,
+      "nDs": 906
+    },
+    {
+      "instr": "RA-2",
+      "criticality": 24.54657224555262,
+      "corroboration": 3,
+      "nDs": 69
+    },
+    {
+      "instr": "ASAR",
+      "criticality": 24.54657224555262,
+      "corroboration": 3,
+      "nDs": 69
+    },
+    {
+      "instr": "CERES-PFM",
+      "criticality": 23.651532128267544,
+      "corroboration": 3,
+      "nDs": 80
+    },
+    {
+      "instr": "PR",
+      "criticality": 23.651532128267544,
+      "corroboration": 3,
+      "nDs": 80
+    },
+    {
+      "instr": "AVHRR-3",
+      "criticality": 23.08637778915263,
+      "corroboration": 3,
+      "nDs": 481
+    },
+    {
+      "instr": "GOME",
+      "criticality": 22.8514329335792,
+      "corroboration": 3,
+      "nDs": 24
+    },
+    {
+      "instr": "SBUV/2",
+      "criticality": 22.560167429734037,
+      "corroboration": 3,
+      "nDs": 193
+    },
+    {
+      "instr": "ERB-SCANNER",
+      "criticality": 22.024142514963525,
+      "corroboration": 3,
+      "nDs": 129
+    },
+    {
+      "instr": "AVHRR-2",
+      "criticality": 21.978251900886004,
+      "corroboration": 3,
+      "nDs": 139
+    },
+    {
+      "instr": "HIRS/2",
+      "criticality": 21.978251900886004,
+      "corroboration": 3,
+      "nDs": 141
+    },
+    {
+      "instr": "DPR",
+      "criticality": 21.95699561395563,
+      "corroboration": 3,
+      "nDs": 51
+    },
+    {
+      "instr": "IASI",
+      "criticality": 21.71621459470093,
+      "corroboration": 3,
+      "nDs": 72
+    }
+  ],
+  "B": [
+    {
+      "instr": "ATLAS",
+      "criticality": 19.17582429725701,
+      "IR_raw": 1.0,
+      "R5_soleVars": "",
+      "soleKeyword": "BATHYMETRY/SEAFLOOR TOPOGRAPHY",
+      "nDs": 44
+    },
+    {
+      "instr": "DDMI",
+      "criticality": 12.920296742201792,
+      "IR_raw": 1.0,
+      "R5_soleVars": "",
+      "soleKeyword": "WATER QUALITY",
+      "nDs": 45
+    }
+  ],
+  "C": [
+    {
+      "instr": "HARP2",
+      "nDs": 68,
+      "allPubs": 1.0,
+      "nKeywords": 0,
+      "lastStartYear": 2024
+    },
+    {
+      "instr": "OCI",
+      "nDs": 68,
+      "allPubs": 1.0,
+      "nKeywords": 0,
+      "lastStartYear": 2024
+    },
+    {
+      "instr": "SPEXone",
+      "nDs": 68,
+      "allPubs": 1.0,
+      "nKeywords": 0,
+      "lastStartYear": 2024
+    },
+    {
+      "instr": "DDMI",
+      "nDs": 45,
+      "allPubs": 120.0,
+      "nKeywords": 13,
+      "lastStartYear": 2024
+    },
+    {
+      "instr": "TMS",
+      "nDs": 41,
+      "allPubs": 1.0,
+      "nKeywords": 4,
+      "lastStartYear": 2023
+    },
+    {
+      "instr": "SIRS",
+      "nDs": 38,
+      "allPubs": 5.0,
+      "nKeywords": 9,
+      "lastStartYear": 1970
+    },
+    {
+      "instr": "TMWS",
+      "nDs": 35,
+      "allPubs": 1.0,
+      "nKeywords": 4,
+      "lastStartYear": 2023
+    },
+    {
+      "instr": "TIRS-PREFIRE",
+      "nDs": 34,
+      "allPubs": 0.0,
+      "nKeywords": 16,
+      "lastStartYear": 2024
+    },
+    {
+      "instr": "TEMPO",
+      "nDs": 33,
+      "allPubs": 3.0,
+      "nKeywords": 9,
+      "lastStartYear": 2025
+    }
+  ]
+}
