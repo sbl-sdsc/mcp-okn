@@ -262,7 +262,7 @@ pass `chat_started` (ISO-8601 — the server can't know it) and optionally `chat
 `**Elapsed time:** <start>–<end> UTC (<elapsed>)`.
 
 The record's header also carries the **skills** that shaped the run — `- **Skills:** okn-bioanalysis
-v0.1.2 · okn-report-style v0.1.5` — but only if you pass `skills=[...]`: the server cannot see which
+v0.1.2 · okn-report-style v0.1.6` — but only if you pass `skills=[...]`: the server cannot see which
 skills your session loaded, so an omitted list silently reads as "no methodology skill was used".
 Give each as `"<name> v<version>"`, the version taken from that skill's frontmatter
 `metadata.version` (not guessed), and list only skills you actually followed — a skill you didn't use

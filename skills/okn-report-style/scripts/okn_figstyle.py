@@ -225,6 +225,49 @@ def ranked_barh(
 heatmap_logfc = diverging_heatmap
 barh_enrichment = ranked_barh
 
+#: Latitude at which Web Mercator (EPSG:3857, the projection OSM tiles use) diverges.
+MERCATOR_MAX_LAT = 85.05112878
+
+
+def _reject_polar_latitudes(lats):
+    """Raise if any latitude falls outside the Web Mercator domain.
+
+    EPSG:3857 sends |lat| >= 85.05 to infinity, so a single polar point blows up the
+    axis limits and collapses the whole map into a corner of the canvas. That failure
+    is SILENT — a broken PNG, not an exception, and no figure gate inspects pixels.
+    It is also invisible to the tile-failure path callers already have: their
+    ``except`` only fires when the tile FETCH fails, so on a machine that can reach
+    the tile server, polar data produces a wrecked figure with no fallback at all.
+
+    Raising is what routes such data to a projection that can hold it: callers wrap
+    ``osm_basemap`` in ``except Exception`` and fall back to an equirectangular
+    basemap (plate carrée), which represents the poles correctly. Do not silently
+    clip to +/-85 instead — that moves real points, and an Arctic region quietly
+    dragged 5 degrees south misrepresents the data rather than declining to plot it.
+    """
+    worst = 0.0
+    n = 0
+    for value in lats:
+        try:
+            lat = float(value)
+        except (TypeError, ValueError):
+            continue
+        if lat != lat:  # NaN
+            continue
+        if abs(lat) >= MERCATOR_MAX_LAT:
+            n += 1
+            worst = max(worst, abs(lat))
+    if not n:
+        return
+    raise ValueError(
+        f"{n} latitude(s) reach |lat| {worst:g}, outside the Web Mercator limit of "
+        f"{MERCATOR_MAX_LAT:g} that OSM tiles use — EPSG:3857 is undefined there and "
+        "the figure would render broken rather than error. Use an equirectangular "
+        "basemap for polar data (that is what the `except` fallback around this call "
+        "is for), or drop/clip the offending points yourself if that is truly the "
+        "intent — this function will not move them for you."
+    )
+
 
 def osm_basemap(
     ax,
@@ -250,7 +293,14 @@ def osm_basemap(
     Pass either a GeoDataFrame (`gdf=`) or matched `lons=`/`lats=` sequences (+ optional `values=`
     to colour points). `source` defaults to contextily's OpenStreetMap.Mapnik (keep the © OSM
     attribution it adds). Needs `pip install geopandas contextily` and network access for the tiles.
+
+    Raises `ValueError` for data reaching |lat| >= 85.05, which Web Mercator cannot represent —
+    see `_reject_polar_latitudes`. Global datasets that include the poles belong on an
+    equirectangular basemap, not this one.
     """
+    # Cheap precondition first: fail on unplottable data before importing or fetching anything.
+    if lats is not None:
+        _reject_polar_latitudes(lats)
     try:
         import contextily as cx
         import geopandas as gpd
@@ -265,6 +315,10 @@ def osm_basemap(
         gdf = gpd.GeoDataFrame(
             geometry=gpd.points_from_xy(list(lons), list(lats)), crs=crs_in
         )
+    elif getattr(getattr(gdf, "crs", None), "is_geographic", False):
+        # Degrees only: a gdf already in a projected CRS carries metres, not latitudes.
+        miny, maxy = gdf.total_bounds[1], gdf.total_bounds[3]
+        _reject_polar_latitudes([miny, maxy])
     if values is not None:  # works for BOTH the gdf= and lons/lats paths
         gdf = gdf.copy()
         gdf["__value"] = list(values)
