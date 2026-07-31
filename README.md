@@ -177,7 +177,8 @@ docs/examples/MS/
 
 The server is hosted at **`https://apps.okn.us/okn-mcp-dev/mcp`** — point any MCP
 client at that URL, no local install required. (For a local install instead, see
-[Local installation](#local-installation).)
+[Local installation](#local-installation); to check whether the hosted server is
+current, see [Identifying a deployment](#identifying-a-deployment).)
 
 ### Claude Desktop
 
@@ -376,6 +377,45 @@ metadata. Without either it reads `unknown`, and the header omits the build enti
 rather than claiming one. This is what lets you tell a hosted server that lags the
 repo from a local one — and what distinguishes two records that name the same
 `version`.
+
+Two servers claiming `version` 0.1.0 can be months apart, so
+`scripts/check_deployment.py` answers the question directly: it speaks MCP to a live
+endpoint, enumerates what that server actually exposes, and diffs it against this
+checkout.
+
+```bash
+uv run python scripts/check_deployment.py                # the hosted dev endpoint
+uv run python scripts/check_deployment.py --url URL      # any MCP endpoint
+```
+
+It exits **0** when everything agrees, **1** on drift, and **2** when the endpoint
+can't be reached or doesn't speak MCP — so it can gate a "did the redeploy land?"
+check without reading a mid-restart `502` as either answer. Three things are
+compared:
+
+- **build** — `get_server_info().build` against `git rev-parse --short HEAD`. When the
+  hosted build is a commit this checkout knows, the report says how far behind it is
+  (`209 commits and 17 days behind HEAD`). A deployment old enough to predate
+  `get_server_info` can't report a build at all; the script says so and falls back to
+  the tool set.
+- **tool and resource surface** — the names the server lists versus the ones this tree
+  registers, reported as missing/extra. This is what catches a lagging deployment with
+  no build id: in July 2026 the hosted server served 19 tools against 23 in the repo
+  for 17 days, and nothing flagged it until a reproducibility record could not be
+  generated.
+- **bundled data** — the crosswalk table's `count` and `verified_on`, and the KG count.
+  These ship inside the wheel, so they move only on a redeploy: a stale deployment can
+  serve an identical tool surface over a months-old `crosswalks.json`.
+
+The `serverInfo.version` returned by the MCP handshake is the **MCP SDK's** version,
+not this project's (`FastMCP` is constructed without one), so it is never a build
+signal; the script prints it labelled as such precisely so it isn't misread.
+Instruction and tool-description drift is reported but not fatal by default — pass
+`--strict` to fail on it too, which catches a redeploy that changed guidance without
+changing any tool name. `--json` emits the same report for a polling loop.
+
+The deploy pipeline for the hosted endpoint is operated externally, so a redeploy is a
+request rather than a command; this script is how you confirm one landed.
 
 ---
 
