@@ -1,0 +1,194 @@
+[
+  {
+    "platforms": 7,
+    "datasets": 376,
+    "instruments": 2
+  },
+  {
+    "platform_type": "Aircraft",
+    "platforms": 4,
+    "datasets": 60,
+    "instruments": 21
+  },
+  {
+    "platform_type": "Balloons",
+    "platforms": 3,
+    "datasets": 32,
+    "instruments": 18
+  },
+  {
+    "platform_type": "Balloons/Rockets",
+    "platforms": 1,
+    "datasets": 1,
+    "instruments": 3
+  },
+  {
+    "platform_type": "Buoys",
+    "platforms": 3,
+    "datasets": 42,
+    "instruments": 20
+  },
+  {
+    "platform_type": "Earth Observation Satellites",
+    "platforms": 232,
+    "datasets": 4626,
+    "instruments": 262
+  },
+  {
+    "platform_type": "Field Sites",
+    "platforms": 1,
+    "datasets": 45,
+    "instruments": 24
+  },
+  {
+    "platform_type": "Fixed Platforms",
+    "platforms": 2,
+    "datasets": 3,
+    "instruments": 3
+  },
+  {
+    "platform_type": "In Situ Land-based Platforms",
+    "platforms": 1,
+    "datasets": 4,
+    "instruments": 0
+  },
+  {
+    "platform_type": "In Situ Ocean-based Platforms",
+    "platforms": 21,
+    "datasets": 82,
+    "instruments": 32
+  },
+  {
+    "platform_type": "Jet",
+    "platforms": 16,
+    "datasets": 561,
+    "instruments": 296
+  },
+  {
+    "platform_type": "Models",
+    "platforms": 50,
+    "datasets": 914,
+    "instruments": 12
+  },
+  {
+    "platform_type": "Models/Analyses",
+    "platforms": 1,
+    "datasets": 2,
+    "instruments": 1
+  },
+  {
+    "platform_type": "Multi-sensor Analysis",
+    "platforms": 1,
+    "datasets": 9,
+    "instruments": 1
+  },
+  {
+    "platform_type": "Navigation Platforms",
+    "platforms": 6,
+    "datasets": 106,
+    "instruments": 10
+  },
+  {
+    "platform_type": "Navigation Satellites",
+    "platforms": 1,
+    "datasets": 91,
+    "instruments": 4
+  },
+  {
+    "platform_type": "NOT APPLICABLE",
+    "platforms": 2,
+    "datasets": 13,
+    "instruments": 2
+  },
+  {
+    "platform_type": "Permanent Land Sites",
+    "platforms": 15,
+    "datasets": 829,
+    "instruments": 280
+  },
+  {
+    "platform_type": "Photographs",
+    "platforms": 1,
+    "datasets": 3,
+    "instruments": 1
+  },
+  {
+    "platform_type": "Physical Models",
+    "platforms": 1,
+    "datasets": 8,
+    "instruments": 19
+  },
+  {
+    "platform_type": "Propeller",
+    "platforms": 34,
+    "datasets": 440,
+    "instruments": 257
+  },
+  {
+    "platform_type": "Reports",
+    "platforms": 1,
+    "datasets": 11,
+    "instruments": 2
+  },
+  {
+    "platform_type": "Rotorcraft/Helicopter",
+    "platforms": 4,
+    "datasets": 4,
+    "instruments": 3
+  },
+  {
+    "platform_type": "Solar/Space Observation Satellites",
+    "platforms": 7,
+    "datasets": 56,
+    "instruments": 10
+  },
+  {
+    "platform_type": "Sounding Rockets",
+    "platforms": 1,
+    "datasets": 1,
+    "instruments": 1
+  },
+  {
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "platforms": 12,
+    "datasets": 168,
+    "instruments": 18
+  },
+  {
+    "platform_type": "Space-based Platforms",
+    "platforms": 1,
+    "datasets": 4,
+    "instruments": 1
+  },
+  {
+    "platform_type": "Spacecraft",
+    "platforms": 1,
+    "datasets": 2,
+    "instruments": 1
+  },
+  {
+    "platform_type": "Uncrewed Aerial Vehicles",
+    "platforms": 6,
+    "datasets": 46,
+    "instruments": 44
+  },
+  {
+    "platform_type": "Uncrewed Vehicles",
+    "platforms": 4,
+    "datasets": 12,
+    "instruments": 13
+  },
+  {
+    "platform_type": "Vehicles",
+    "platforms": 5,
+    "datasets": 12,
+    "instruments": 36
+  },
+  {
+    "platform_type": "Vessels",
+    "platforms": 10,
+    "datasets": 59,
+    "instruments": 83
+  }
+]
+

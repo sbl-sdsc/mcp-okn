@@ -1,0 +1,1515 @@
+[
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11298",
+    "center_name": "BYU/SCP",
+    "dataset_count": 3,
+    "platform_count": 3,
+    "instrument_count": 17,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11299",
+    "center_name": "NASA/JPL/PODAAC",
+    "dataset_count": 849,
+    "platform_count": 122,
+    "instrument_count": 312,
+    "publication_count": 1108
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11300",
+    "center_name": "NOAA/NESDIS",
+    "dataset_count": 2,
+    "platform_count": 2,
+    "instrument_count": 6,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11301",
+    "center_name": "OSISAF",
+    "dataset_count": 2,
+    "platform_count": 2,
+    "instrument_count": 12,
+    "publication_count": 3
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11302",
+    "center_name": "Saildrone",
+    "dataset_count": 3,
+    "platform_count": 1,
+    "instrument_count": 9,
+    "publication_count": 14
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11303",
+    "center_name": "CMC",
+    "dataset_count": 1,
+    "platform_count": 12,
+    "instrument_count": 67,
+    "publication_count": 19
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11304",
+    "center_name": "LP DAAC",
+    "dataset_count": 968,
+    "platform_count": 35,
+    "instrument_count": 115,
+    "publication_count": 10977
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11305",
+    "center_name": "UMASS-B/SFE",
+    "dataset_count": 468,
+    "platform_count": 4,
+    "instrument_count": 25,
+    "publication_count": 793
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11306",
+    "center_name": "NASA/GSFC/SED/ESD/TISL/MODAPS",
+    "dataset_count": 366,
+    "platform_count": 4,
+    "instrument_count": 25,
+    "publication_count": 8744
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11307",
+    "center_name": "NASA/GSFC/SED/ESD/TISL/LandSIPS",
+    "dataset_count": 428,
+    "platform_count": 4,
+    "instrument_count": 10,
+    "publication_count": 149
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11308",
+    "center_name": "UMD/GLCF",
+    "dataset_count": 5,
+    "platform_count": 7,
+    "instrument_count": 24,
+    "publication_count": 84
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11309",
+    "center_name": "DOI/USGS/WGSC",
+    "dataset_count": 18,
+    "platform_count": 12,
+    "instrument_count": 51,
+    "publication_count": 180
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11310",
+    "center_name": "UMD/GLAD",
+    "dataset_count": 3,
+    "platform_count": 5,
+    "instrument_count": 4,
+    "publication_count": 3
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11311",
+    "center_name": "JP/METI/AIST/JSS/GDS",
+    "dataset_count": 27,
+    "platform_count": 1,
+    "instrument_count": 11,
+    "publication_count": 160
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11312",
+    "center_name": "BU/EE/LCSC",
+    "dataset_count": 3,
+    "platform_count": 5,
+    "instrument_count": 6,
+    "publication_count": 22
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11313",
+    "center_name": "NASA/JPL/ECOSTRESS",
+    "dataset_count": 41,
+    "platform_count": 1,
+    "instrument_count": 11,
+    "publication_count": 60
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11314",
+    "center_name": "NASA/JPL/SRTM",
+    "dataset_count": 22,
+    "platform_count": 2,
+    "instrument_count": 3,
+    "publication_count": 1050
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11315",
+    "center_name": "NASA/GSFC/SED/ESD",
+    "dataset_count": 34,
+    "platform_count": 17,
+    "instrument_count": 379,
+    "publication_count": 26
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11316",
+    "center_name": "SD-STATE/GISCCE",
+    "dataset_count": 17,
+    "platform_count": 3,
+    "instrument_count": 3,
+    "publication_count": 9
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11317",
+    "center_name": "UWI-MAD/SSEC/CIMSS",
+    "dataset_count": 13,
+    "platform_count": 2,
+    "instrument_count": 19,
+    "publication_count": 15
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11318",
+    "center_name": "NASA/IMPACT",
+    "dataset_count": 6,
+    "platform_count": 5,
+    "instrument_count": 4,
+    "publication_count": 41
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11319",
+    "center_name": "NASA/JPL/EMIT",
+    "dataset_count": 13,
+    "platform_count": 1,
+    "instrument_count": 11,
+    "publication_count": 17
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11320",
+    "center_name": "NASA/JPL/ESSD",
+    "dataset_count": 2,
+    "platform_count": 9,
+    "instrument_count": 16,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11321",
+    "center_name": "NASA/GSFC/SED/ESD/BSL",
+    "dataset_count": 6,
+    "platform_count": 2,
+    "instrument_count": 0,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11322",
+    "center_name": "UAZ/ECE/VIP",
+    "dataset_count": 6,
+    "platform_count": 5,
+    "instrument_count": 21,
+    "publication_count": 57
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11323",
+    "center_name": "NASA/GSFC/GEDI",
+    "dataset_count": 3,
+    "platform_count": 1,
+    "instrument_count": 11,
+    "publication_count": 186
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11324",
+    "center_name": "NASA/JPL/ASTER",
+    "dataset_count": 11,
+    "platform_count": 1,
+    "instrument_count": 11,
+    "publication_count": 735
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11325",
+    "center_name": "NASA/GSFC/SED/ESD/HBSL/BISB/MODAPS",
+    "dataset_count": 105,
+    "platform_count": 7,
+    "instrument_count": 25,
+    "publication_count": 1734
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11326",
+    "center_name": "UK/MOD/MET",
+    "dataset_count": 2,
+    "platform_count": 26,
+    "instrument_count": 65,
+    "publication_count": 28
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11327",
+    "center_name": "ESDIS",
+    "dataset_count": 335,
+    "platform_count": 23,
+    "instrument_count": 207,
+    "publication_count": 3498
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11328",
+    "center_name": "DOD/USNAVY/NAVOCEANO",
+    "dataset_count": 16,
+    "platform_count": 11,
+    "instrument_count": 26,
+    "publication_count": 15
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11329",
+    "center_name": "SPURS Project",
+    "dataset_count": 37,
+    "platform_count": 17,
+    "instrument_count": 22,
+    "publication_count": 16
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11330",
+    "center_name": "MEaSUREs",
+    "dataset_count": 5,
+    "platform_count": 9,
+    "instrument_count": 53,
+    "publication_count": 13
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11331",
+    "center_name": "REMSS",
+    "dataset_count": 3,
+    "platform_count": 2,
+    "instrument_count": 11,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11332",
+    "center_name": "UDEL/CEOE/ORB_LAB",
+    "dataset_count": 5,
+    "platform_count": 5,
+    "instrument_count": 17,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11333",
+    "center_name": "NASA/GSFC/SED/ESD/GCDC/OB.DAAC",
+    "dataset_count": 686,
+    "platform_count": 24,
+    "instrument_count": 69,
+    "publication_count": 260
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11334",
+    "center_name": "NASA/ESSP/UMICH/CYGNSS",
+    "dataset_count": 38,
+    "platform_count": 1,
+    "instrument_count": 1,
+    "publication_count": 109
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11335",
+    "center_name": "NASA/MSFC/AMSR SIPS/LANCE",
+    "dataset_count": 7,
+    "platform_count": 1,
+    "instrument_count": 1,
+    "publication_count": 4
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11336",
+    "center_name": "NASA/MSFC/NSSTC",
+    "dataset_count": 1,
+    "platform_count": 5,
+    "instrument_count": 16,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11337",
+    "center_name": "NASA/MSFC/GHRC",
+    "dataset_count": 641,
+    "platform_count": 103,
+    "instrument_count": 595,
+    "publication_count": 295
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11338",
+    "center_name": "NASA/GSFC/EOS/ESDIS/LANCE MODIS",
+    "dataset_count": 126,
+    "platform_count": 8,
+    "instrument_count": 25,
+    "publication_count": 429
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11339",
+    "center_name": "NASA/GSFC/SED/ESD/BSL/VCST",
+    "dataset_count": 58,
+    "platform_count": 3,
+    "instrument_count": 10,
+    "publication_count": 22
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11340",
+    "center_name": "NASA/GSFC/EOS/ESDIS/LANCE MODIS FIRMS",
+    "dataset_count": 3,
+    "platform_count": 4,
+    "instrument_count": 24,
+    "publication_count": 116
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11341",
+    "center_name": "NASA/GSFC/EOS/ESDIS/LANCEMODIS",
+    "dataset_count": 107,
+    "platform_count": 5,
+    "instrument_count": 19,
+    "publication_count": 934
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11342",
+    "center_name": "NASA/GSFC/SED/ESD/TISL/GESDISC",
+    "dataset_count": 1509,
+    "platform_count": 151,
+    "instrument_count": 271,
+    "publication_count": 5009
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11343",
+    "center_name": "UCO/LASP/SORCE",
+    "dataset_count": 16,
+    "platform_count": 1,
+    "instrument_count": 4,
+    "publication_count": 20
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11344",
+    "center_name": "UCO/LASP/TCTE",
+    "dataset_count": 2,
+    "platform_count": 1,
+    "instrument_count": 1,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11345",
+    "center_name": "NASA/GSFC/SED/ESD/HBSL/BISB/LAADS",
+    "dataset_count": 162,
+    "platform_count": 18,
+    "instrument_count": 135,
+    "publication_count": 1164
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11346",
+    "center_name": "NASA/GSFC/SED/ESD/BSL/MCST",
+    "dataset_count": 4,
+    "platform_count": 2,
+    "instrument_count": 5,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11347",
+    "center_name": "NASA/GSFC/SED/ESD/GCDC/SeaBASS",
+    "dataset_count": 371,
+    "platform_count": 3,
+    "instrument_count": 0,
+    "publication_count": 97
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11348",
+    "center_name": "UWI-MAD/SSEC/ASIPS",
+    "dataset_count": 42,
+    "platform_count": 8,
+    "instrument_count": 31,
+    "publication_count": 49
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11349",
+    "center_name": "UWI-MAD/SSEC",
+    "dataset_count": 21,
+    "platform_count": 4,
+    "instrument_count": 19,
+    "publication_count": 35
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11350",
+    "center_name": "NASA/GSFC/SED/ESD/HBSL/BISB/LANCEMODIS",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 3,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11351",
+    "center_name": "NASA/GSFC/SED/ESD/HBSL/BSB/MCST",
+    "dataset_count": 8,
+    "platform_count": 2,
+    "instrument_count": 19,
+    "publication_count": 122
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11352",
+    "center_name": "NASA/JPL",
+    "dataset_count": 50,
+    "platform_count": 36,
+    "instrument_count": 116,
+    "publication_count": 472
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11353",
+    "center_name": "NASA/JPL/MISR",
+    "dataset_count": 83,
+    "platform_count": 2,
+    "instrument_count": 11,
+    "publication_count": 10
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11354",
+    "center_name": "NASA/LARC/SD/ASDC",
+    "dataset_count": 1609,
+    "platform_count": 176,
+    "instrument_count": 726,
+    "publication_count": 652
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11355",
+    "center_name": "NASA/JPL/GRACE-TELLUS-0001",
+    "dataset_count": 33,
+    "platform_count": 4,
+    "instrument_count": 14,
+    "publication_count": 95
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11356",
+    "center_name": "NASA/JPL/OSTM",
+    "dataset_count": 1,
+    "platform_count": 2,
+    "instrument_count": 12,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11357",
+    "center_name": "NASA/JPL/SeaPAC",
+    "dataset_count": 4,
+    "platform_count": 1,
+    "instrument_count": 2,
+    "publication_count": 25
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11358",
+    "center_name": "DOC/NOAA/NESDIS/STAR",
+    "dataset_count": 22,
+    "platform_count": 13,
+    "instrument_count": 39,
+    "publication_count": 19
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11359",
+    "center_name": "OBPG",
+    "dataset_count": 348,
+    "platform_count": 16,
+    "instrument_count": 65,
+    "publication_count": 224
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11360",
+    "center_name": "RSS",
+    "dataset_count": 29,
+    "platform_count": 20,
+    "instrument_count": 46,
+    "publication_count": 109
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11361",
+    "center_name": "NASA/JPL/SMAP",
+    "dataset_count": 51,
+    "platform_count": 9,
+    "instrument_count": 302,
+    "publication_count": 594
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11362",
+    "center_name": "EUMETSAT/OSISAF",
+    "dataset_count": 6,
+    "platform_count": 4,
+    "instrument_count": 17,
+    "publication_count": 6
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11363",
+    "center_name": "AU/BOM",
+    "dataset_count": 2,
+    "platform_count": 8,
+    "instrument_count": 59,
+    "publication_count": 4
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11364",
+    "center_name": "DOC/NOAA/NESDIS/OSPO",
+    "dataset_count": 7,
+    "platform_count": 7,
+    "instrument_count": 22,
+    "publication_count": 10
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11365",
+    "center_name": "IT/CNR/ISAC",
+    "dataset_count": 4,
+    "platform_count": 6,
+    "instrument_count": 35,
+    "publication_count": 5
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11366",
+    "center_name": "UMICH/ENG/CSSE",
+    "dataset_count": 3,
+    "platform_count": 1,
+    "instrument_count": 1,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11367",
+    "center_name": "UHI/SOEST/IPRC",
+    "dataset_count": 5,
+    "platform_count": 4,
+    "instrument_count": 7,
+    "publication_count": 20
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11368",
+    "center_name": "CA/EC/MSC/CMC",
+    "dataset_count": 1,
+    "platform_count": 7,
+    "instrument_count": 27,
+    "publication_count": 16
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11369",
+    "center_name": "DMI/COI",
+    "dataset_count": 1,
+    "platform_count": 7,
+    "instrument_count": 32,
+    "publication_count": 8
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11370",
+    "center_name": "ESR",
+    "dataset_count": 3,
+    "platform_count": 20,
+    "instrument_count": 69,
+    "publication_count": 32
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11371",
+    "center_name": "UWA/CFR",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 4,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11372",
+    "center_name": "UCAR/COSMIC/CDAAC",
+    "dataset_count": 2,
+    "platform_count": 1,
+    "instrument_count": 1,
+    "publication_count": 11
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11373",
+    "center_name": "NASA/JPL/QUIKSCAT",
+    "dataset_count": 2,
+    "platform_count": 2,
+    "instrument_count": 3,
+    "publication_count": 3
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11374",
+    "center_name": "UTX-AUSTIN/CSR",
+    "dataset_count": 6,
+    "platform_count": 3,
+    "instrument_count": 13,
+    "publication_count": 38
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11375",
+    "center_name": "DOC/NOAA/NESDIS/NCEI",
+    "dataset_count": 3,
+    "platform_count": 12,
+    "instrument_count": 38,
+    "publication_count": 44
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11376",
+    "center_name": "EUMETSAT",
+    "dataset_count": 5,
+    "platform_count": 4,
+    "instrument_count": 17,
+    "publication_count": 4
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11377",
+    "center_name": "U-MIAMI/RSMAS",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 7,
+    "publication_count": 3
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11378",
+    "center_name": "NASA/JPL/AQUARIUS",
+    "dataset_count": 3,
+    "platform_count": 1,
+    "instrument_count": 2,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11379",
+    "center_name": "ASF",
+    "dataset_count": 24,
+    "platform_count": 15,
+    "instrument_count": 139,
+    "publication_count": 234
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11380",
+    "center_name": "NASA/JPL/OMG",
+    "dataset_count": 9,
+    "platform_count": 5,
+    "instrument_count": 9,
+    "publication_count": 35
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11381",
+    "center_name": "NASA/CSDA",
+    "dataset_count": 17,
+    "platform_count": 8,
+    "instrument_count": 12,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11382",
+    "center_name": "AVISO",
+    "dataset_count": 2,
+    "platform_count": 7,
+    "instrument_count": 42,
+    "publication_count": 10
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11383",
+    "center_name": "Aquarius Project NASA/CONAE",
+    "dataset_count": 145,
+    "platform_count": 1,
+    "instrument_count": 2,
+    "publication_count": 14
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11384",
+    "center_name": "Aquarius Project NASA/OBPG, Reynolds & Smith NOAA/NCDC",
+    "dataset_count": 23,
+    "platform_count": 8,
+    "instrument_count": 20,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11385",
+    "center_name": "Aquarius Project NASA/CONAE, JPL",
+    "dataset_count": 6,
+    "platform_count": 1,
+    "instrument_count": 2,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11386",
+    "center_name": "Aquarius Project NASA/OBPG, Reynolds",
+    "dataset_count": 5,
+    "platform_count": 8,
+    "instrument_count": 20,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11387",
+    "center_name": "Craig Risin and P. Ted Strub",
+    "dataset_count": 1,
+    "platform_count": 3,
+    "instrument_count": 13,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11388",
+    "center_name": "NASA NSIDC DAAC",
+    "dataset_count": 886,
+    "platform_count": 155,
+    "instrument_count": 702,
+    "publication_count": 6379
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11389",
+    "center_name": "NASA/GSFC/SED/ESD/I2-SIPS",
+    "dataset_count": 2,
+    "platform_count": 1,
+    "instrument_count": 1,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11390",
+    "center_name": "OR-STATE/COAS",
+    "dataset_count": 1,
+    "platform_count": 6,
+    "instrument_count": 13,
+    "publication_count": 10
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11391",
+    "center_name": "UTX-AUSTIN/IG",
+    "dataset_count": 34,
+    "platform_count": 12,
+    "instrument_count": 165,
+    "publication_count": 72
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11392",
+    "center_name": "UKS/CRESIS",
+    "dataset_count": 12,
+    "platform_count": 13,
+    "instrument_count": 286,
+    "publication_count": 212
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11393",
+    "center_name": "DOD/USARMY/USACE/ERDC/GRL",
+    "dataset_count": 2,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11394",
+    "center_name": "NASA/MSFC/AMSR-E SIPS",
+    "dataset_count": 31,
+    "platform_count": 3,
+    "instrument_count": 13,
+    "publication_count": 358
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11395",
+    "center_name": "NASA/GSFC/SED/ESD/GMAO",
+    "dataset_count": 21,
+    "platform_count": 8,
+    "instrument_count": 27,
+    "publication_count": 180
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11396",
+    "center_name": "NASA/GSFC/SED/ESD/HBSL/CSB",
+    "dataset_count": 3,
+    "platform_count": 2,
+    "instrument_count": 137,
+    "publication_count": 13
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11397",
+    "center_name": "METASENSING",
+    "dataset_count": 2,
+    "platform_count": 1,
+    "instrument_count": 94,
+    "publication_count": 3
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11398",
+    "center_name": "NASA/GSFC/SED/ESD/LRSL",
+    "dataset_count": 20,
+    "platform_count": 10,
+    "instrument_count": 185,
+    "publication_count": 52
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11399",
+    "center_name": "COLOSTATE/WCNR/DG",
+    "dataset_count": 10,
+    "platform_count": 5,
+    "instrument_count": 132,
+    "publication_count": 4
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11400",
+    "center_name": "NASA/GSFC/EOS/EO",
+    "dataset_count": 26,
+    "platform_count": 5,
+    "instrument_count": 144,
+    "publication_count": 82
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11401",
+    "center_name": "UAK-F/GI",
+    "dataset_count": 8,
+    "platform_count": 7,
+    "instrument_count": 83,
+    "publication_count": 19
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11402",
+    "center_name": "NSIDC",
+    "dataset_count": 33,
+    "platform_count": 34,
+    "instrument_count": 351,
+    "publication_count": 77
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11403",
+    "center_name": "BSU",
+    "dataset_count": 25,
+    "platform_count": 8,
+    "instrument_count": 182,
+    "publication_count": 14
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11404",
+    "center_name": "DOD/USARMY/USACE/ERDC/CRREL",
+    "dataset_count": 11,
+    "platform_count": 3,
+    "instrument_count": 135,
+    "publication_count": 4
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11405",
+    "center_name": "UC-IRVINE/PHYSSCI/ESS",
+    "dataset_count": 12,
+    "platform_count": 22,
+    "instrument_count": 48,
+    "publication_count": 658
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11406",
+    "center_name": "CU/INSTAAR",
+    "dataset_count": 3,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 7
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11407",
+    "center_name": "USDA/ARS",
+    "dataset_count": 8,
+    "platform_count": 3,
+    "instrument_count": 143,
+    "publication_count": 4
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11408",
+    "center_name": "CA/AGR",
+    "dataset_count": 14,
+    "platform_count": 6,
+    "instrument_count": 141,
+    "publication_count": 15
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11409",
+    "center_name": "RUTGERS/GEOGRAPHY",
+    "dataset_count": 6,
+    "platform_count": 7,
+    "instrument_count": 31,
+    "publication_count": 36
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11410",
+    "center_name": "NASA/GSFC/SED/ESD/HBSL/HSB",
+    "dataset_count": 8,
+    "platform_count": 4,
+    "instrument_count": 167,
+    "publication_count": 12
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11411",
+    "center_name": "AGDC",
+    "dataset_count": 3,
+    "platform_count": 1,
+    "instrument_count": 7,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11412",
+    "center_name": "UCO/CIRES",
+    "dataset_count": 1,
+    "platform_count": 7,
+    "instrument_count": 24,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11413",
+    "center_name": "UCONN/ENGR",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 3,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11414",
+    "center_name": "UCLA/CEE",
+    "dataset_count": 2,
+    "platform_count": 4,
+    "instrument_count": 16,
+    "publication_count": 41
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11415",
+    "center_name": "UWA/CEE",
+    "dataset_count": 4,
+    "platform_count": 8,
+    "instrument_count": 164,
+    "publication_count": 6
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11416",
+    "center_name": "UWA/APL",
+    "dataset_count": 10,
+    "platform_count": 21,
+    "instrument_count": 28,
+    "publication_count": 287
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11417",
+    "center_name": "UMT",
+    "dataset_count": 4,
+    "platform_count": 8,
+    "instrument_count": 27,
+    "publication_count": 31
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11418",
+    "center_name": "COLUMBIA/LDEO",
+    "dataset_count": 11,
+    "platform_count": 10,
+    "instrument_count": 153,
+    "publication_count": 26
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11419",
+    "center_name": "CMU",
+    "dataset_count": 2,
+    "platform_count": 2,
+    "instrument_count": 5,
+    "publication_count": 16
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11420",
+    "center_name": "UC-SC/UARC/NASA/AMES",
+    "dataset_count": 7,
+    "platform_count": 10,
+    "instrument_count": 159,
+    "publication_count": 55
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11421",
+    "center_name": "CU-Boulder/ECEE",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 1,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11422",
+    "center_name": "NASA/GSFC/SED/ESD/ESPO/OIB",
+    "dataset_count": 11,
+    "platform_count": 14,
+    "instrument_count": 276,
+    "publication_count": 134
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11423",
+    "center_name": "BYU/CRS/SCP",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 1,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11424",
+    "center_name": "TAMU/ECCB",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 1,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11425",
+    "center_name": "MT-STATE/DES",
+    "dataset_count": 2,
+    "platform_count": 2,
+    "instrument_count": 127,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11426",
+    "center_name": "UMD/ESSIC",
+    "dataset_count": 3,
+    "platform_count": 1,
+    "instrument_count": 71,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11427",
+    "center_name": "USHERBROOKE/AGEO",
+    "dataset_count": 2,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 3
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11428",
+    "center_name": "USDA/ARS/BARC/ANRI/HRSL",
+    "dataset_count": 2,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11429",
+    "center_name": "COLOSTATE/CIRA",
+    "dataset_count": 2,
+    "platform_count": 2,
+    "instrument_count": 16,
+    "publication_count": 43
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11430",
+    "center_name": "OH-STATE/BPRC",
+    "dataset_count": 7,
+    "platform_count": 18,
+    "instrument_count": 189,
+    "publication_count": 356
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11431",
+    "center_name": "UAZ/GEOSCI",
+    "dataset_count": 3,
+    "platform_count": 1,
+    "instrument_count": 8,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11432",
+    "center_name": "NORTHUMBRIA/CAPE",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 4
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11433",
+    "center_name": "DARTMOUTH/THAYER",
+    "dataset_count": 2,
+    "platform_count": 7,
+    "instrument_count": 140,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11434",
+    "center_name": "NASA/GSFC/WFF/OSB",
+    "dataset_count": 14,
+    "platform_count": 12,
+    "instrument_count": 270,
+    "publication_count": 216
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11435",
+    "center_name": "NASA/GSFC/SED/ESD/HBSL/BISB/MODAPS_SERVICES",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 11,
+    "publication_count": 16
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11436",
+    "center_name": "COLOSTATE/WCNR",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 53,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11437",
+    "center_name": "UNH/EOS",
+    "dataset_count": 4,
+    "platform_count": 2,
+    "instrument_count": 13,
+    "publication_count": 6
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11438",
+    "center_name": "RUTGERS/ENVISAT",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 3,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11439",
+    "center_name": "U-UTAH/GEOG",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 46,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11440",
+    "center_name": "NASA/GSFC/EOS/ESDIS",
+    "dataset_count": 2,
+    "platform_count": 2,
+    "instrument_count": 93,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11441",
+    "center_name": "UWA/APL/PSC",
+    "dataset_count": 4,
+    "platform_count": 16,
+    "instrument_count": 237,
+    "publication_count": 126
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11442",
+    "center_name": "UAK-F/INE/WERC",
+    "dataset_count": 7,
+    "platform_count": 3,
+    "instrument_count": 166,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11443",
+    "center_name": "CSAS",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11444",
+    "center_name": "UWA/SEFS",
+    "dataset_count": 2,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11445",
+    "center_name": "NASA/JPL/ASO",
+    "dataset_count": 4,
+    "platform_count": 2,
+    "instrument_count": 32,
+    "publication_count": 49
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11446",
+    "center_name": "UCAR/NCAR",
+    "dataset_count": 1,
+    "platform_count": 3,
+    "instrument_count": 21,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11447",
+    "center_name": "BYU",
+    "dataset_count": 3,
+    "platform_count": 3,
+    "instrument_count": 8,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11448",
+    "center_name": "KU-LEUNVEN/DEES",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11449",
+    "center_name": "IACS",
+    "dataset_count": 1,
+    "platform_count": 4,
+    "instrument_count": 17,
+    "publication_count": 131
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11450",
+    "center_name": "STANFORD-U/EARTH",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 6
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11451",
+    "center_name": "OH-STATE/SES",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11452",
+    "center_name": "GMU/GGS",
+    "dataset_count": 2,
+    "platform_count": 3,
+    "instrument_count": 3,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11453",
+    "center_name": "U-UTAH/MET",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 3,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11454",
+    "center_name": "UAZ/ATMOS",
+    "dataset_count": 1,
+    "platform_count": 2,
+    "instrument_count": 127,
+    "publication_count": 91
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11455",
+    "center_name": "UVA/ENGSYS-ENV",
+    "dataset_count": 2,
+    "platform_count": 3,
+    "instrument_count": 22,
+    "publication_count": 19
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11456",
+    "center_name": "UWYO/CEPS",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11457",
+    "center_name": "COLUMBIA/LDEO/EESC",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 3,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11458",
+    "center_name": "UND/NSERC",
+    "dataset_count": 1,
+    "platform_count": 2,
+    "instrument_count": 70,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11459",
+    "center_name": "UNM/CWE",
+    "dataset_count": 2,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 4
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11460",
+    "center_name": "NASA/JPL/AVIRIS",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 46,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11461",
+    "center_name": "CCNY/EAS",
+    "dataset_count": 1,
+    "platform_count": 2,
+    "instrument_count": 2,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11462",
+    "center_name": "DOC/NOAA/GFDL",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 3,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11463",
+    "center_name": "NASA National Snow and Ice Data Center Distributed Active Archive Center",
+    "dataset_count": 1,
+    "platform_count": 2,
+    "instrument_count": 71,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11464",
+    "center_name": "CA/EC",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11465",
+    "center_name": "WATERLOO/GEM",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 126,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11466",
+    "center_name": "JP/JAXA/EOC",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 2,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11467",
+    "center_name": "DOI/USGS/EROS",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 1,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11468",
+    "center_name": "AMSR-E SIPS",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 2,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11469",
+    "center_name": "Dartmouth/Earth-Sci",
+    "dataset_count": 1,
+    "platform_count": 2,
+    "instrument_count": 223,
+    "publication_count": 168
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11470",
+    "center_name": "BRIS/GEOGRAPHY",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 1,
+    "publication_count": 4
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11471",
+    "center_name": "U-Calgary",
+    "dataset_count": 1,
+    "platform_count": 4,
+    "instrument_count": 5,
+    "publication_count": 6
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11472",
+    "center_name": "CU-Boulder/GS",
+    "dataset_count": 1,
+    "platform_count": 2,
+    "instrument_count": 5,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11473",
+    "center_name": "TOPEX/POSEIDON",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 8,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11474",
+    "center_name": "DE/GFZ",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 9,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11475",
+    "center_name": "DE/GFZ/ISDC",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 6,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11476",
+    "center_name": "University of Colorado, Boulder",
+    "dataset_count": 1,
+    "platform_count": 4,
+    "instrument_count": 13,
+    "publication_count": 2
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11477",
+    "center_name": "CDDIS",
+    "dataset_count": 156,
+    "platform_count": 36,
+    "instrument_count": 315,
+    "publication_count": 59
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11478",
+    "center_name": "GSFC",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 2,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11479",
+    "center_name": "GSFC/JPL/NCAR",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 2,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11480",
+    "center_name": "UCAR/NCAR/CGD/OCE",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 0,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11481",
+    "center_name": "NASA/JPL/OPERA",
+    "dataset_count": 6,
+    "platform_count": 4,
+    "instrument_count": 4,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11482",
+    "center_name": "JPL/UCLA/AES",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 2,
+    "publication_count": 0
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11483",
+    "center_name": "Jason-1",
+    "dataset_count": 6,
+    "platform_count": 2,
+    "instrument_count": 6,
+    "publication_count": 1
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11484",
+    "center_name": "Jet Propulsion Laboratory",
+    "dataset_count": 33,
+    "platform_count": 1,
+    "instrument_count": 8,
+    "publication_count": 26
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11485",
+    "center_name": "ISS-RapidScat",
+    "dataset_count": 5,
+    "platform_count": 7,
+    "instrument_count": 18,
+    "publication_count": 4
+  },
+  {
+    "center": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11486",
+    "center_name": "DOC/NOAA/NESDIS/NODC",
+    "dataset_count": 1,
+    "platform_count": 1,
+    "instrument_count": 2,
+    "publication_count": 0
+  }
+]
+

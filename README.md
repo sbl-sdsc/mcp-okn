@@ -120,7 +120,7 @@ verify each as live SPARQL, and validate the findings against the literature.
 
 ### Case studies
 
-Thirteen end-to-end analyses that federate many Proto-OKN graphs into a single
+Fourteen end-to-end analyses that federate many Proto-OKN graphs into a single
 evidence-backed map — five of a disease's biology (genes, variants,
 pathways/gene sets, drugs, altered-activity signatures, and clinical/biomarker
 features), four of environmental exposure and justice (PFAS source
@@ -137,6 +137,10 @@ would stop being able to check if one went dark) — each finding tagged with it
 source(s) and evidence kind, then ranked by cross-source agreement. Every case study ships an
 interactive HTML report, a reproducibility record preserving every verbatim
 SPARQL query, and an Excel workbook.
+
+That last question is answered twice — once by `claude-opus-5`, once by
+`gpt-5.6-sol`, from the same prompt against the same two graphs — so the two
+runs can be read side by side.
 
 **Prerequisites for re-running a case study:**
 
@@ -158,6 +162,7 @@ SPARQL query, and an Excel workbook.
 | **Wildlife sentinel surveillance gap (Florida)** — 12 KGs | `claude-opus-5` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Sentinel-Wildlife/Sentinel-Wildlife_report.html) | [md](docs/examples/Sentinel-Wildlife/Sentinel-Wildlife_literature_comparison.md) | [xlsx](docs/examples/Sentinel-Wildlife/Sentinel-Wildlife_results.xlsx) | [md](docs/examples/Sentinel-Wildlife/Sentinel-Wildlife_reproducibility.md) | [files](docs/examples/Sentinel-Wildlife/) |
 | **Supply-chain fragility** — 6 KGs | `claude-opus-5` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Supply-Chain-Fragility/Supply-Chain-Fragility_report.html) | [md](docs/examples/Supply-Chain-Fragility/Supply-Chain-Fragility_literature_comparison.md) | [xlsx](docs/examples/Supply-Chain-Fragility/Supply-Chain-Fragility_results.xlsx) | [md](docs/examples/Supply-Chain-Fragility/Supply-Chain-Fragility_reproducibility.md) | [files](docs/examples/Supply-Chain-Fragility/) |
 | **Earth-observation instrument criticality** — 2 KGs | `claude-opus-5` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Instrument-Criticality/Instrument-Criticality_report.html) | [md](docs/examples/Instrument-Criticality/Instrument-Criticality_literature_comparison.md) | [xlsx](docs/examples/Instrument-Criticality/Instrument-Criticality_results.xlsx) | [md](docs/examples/Instrument-Criticality/Instrument-Criticality_reproducibility.md) | [files](docs/examples/Instrument-Criticality/) |
+| **Earth-observation instrument criticality** — 2 KGs | `gpt-5.6-sol` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Instrument-Criticality-GPT/Instrument-Criticality-GPT_report.html) | [md](docs/examples/Instrument-Criticality-GPT/Instrument-Criticality-GPT_literature_comparison.md) | [xlsx](docs/examples/Instrument-Criticality-GPT/Instrument-Criticality-GPT_results.xlsx) | [md](docs/examples/Instrument-Criticality-GPT/Instrument-Criticality-GPT_reproducibility.md) | [files](docs/examples/Instrument-Criticality-GPT/) |
 
 Each case study is a self-contained folder under `docs/examples/{Name}/` — the
 report and its deliverables sit alongside the `figures/`, `scripts/`, and `data/`

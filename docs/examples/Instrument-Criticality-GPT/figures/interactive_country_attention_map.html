@@ -1,0 +1,4068 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_338be97940fdc2d7de584102f37be17d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_338be97940fdc2d7de584102f37be17d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_338be97940fdc2d7de584102f37be17d = L.map(
+                "map_338be97940fdc2d7de584102f37be17d",
+                {
+                    center: [23.52309748767461, 23.39265117027109],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_338be97940fdc2d7de584102f37be17d);
+
+            
+
+        
+    
+            var tile_layer_c287c504cdc78638c6f01a6e625eceaa = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c287c504cdc78638c6f01a6e625eceaa.addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+            var circle_marker_54b673fd07ad1c4d7b4d9c94ac074e98 = L.circleMarker(
+                [35.9, 104.2],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.21110255092798, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_f8ac2c8cd402d74d6482cd0269154e3c = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_bfe913eeeeea1ace55775b909b476b85 = $(`<div id="html_bfe913eeeeea1ace55775b909b476b85" style="width: 100.0%; height: 100.0%;"><b>country</b>: China<br><b>iso</b>: CN<br><b>all papers</b>: 540<br><b>model papers</b>: 164<br><b>model + instrument papers</b>: 52<br><b>distinct model sources</b>: 87<br><b>evidence</b>: represented</div>`)[0];
+                popup_f8ac2c8cd402d74d6482cd0269154e3c.setContent(html_bfe913eeeeea1ace55775b909b476b85);
+            
+        
+
+        circle_marker_54b673fd07ad1c4d7b4d9c94ac074e98.bindPopup(popup_f8ac2c8cd402d74d6482cd0269154e3c)
+        ;
+
+        
+    
+    
+            circle_marker_54b673fd07ad1c4d7b4d9c94ac074e98.bindTooltip(
+                `<div>
+                     China
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_583530014acf81cc7ee6190f78e838f5 = L.circleMarker(
+                [51.2, 10.4],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_a0f881d6c89387b6c0164946e95b3ee6 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_b0e335a70605dba7af05d26e0746d856 = $(`<div id="html_b0e335a70605dba7af05d26e0746d856" style="width: 100.0%; height: 100.0%;"><b>country</b>: Germany<br><b>iso</b>: DE<br><b>all papers</b>: 409<br><b>model papers</b>: 124<br><b>model + instrument papers</b>: 49<br><b>distinct model sources</b>: 77<br><b>evidence</b>: represented</div>`)[0];
+                popup_a0f881d6c89387b6c0164946e95b3ee6.setContent(html_b0e335a70605dba7af05d26e0746d856);
+            
+        
+
+        circle_marker_583530014acf81cc7ee6190f78e838f5.bindPopup(popup_a0f881d6c89387b6c0164946e95b3ee6)
+        ;
+
+        
+    
+    
+            circle_marker_583530014acf81cc7ee6190f78e838f5.bindTooltip(
+                `<div>
+                     Germany
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c3fd1997995455531cbe86715227bd60 = L.circleMarker(
+                [-82.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.32455532033676, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_a6ba6b47f1bf8badafe2277132b9c162 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_0fc2df1a0f47d76eeb825a7bc46b3d13 = $(`<div id="html_0fc2df1a0f47d76eeb825a7bc46b3d13" style="width: 100.0%; height: 100.0%;"><b>country</b>: Antarctica<br><b>iso</b>: AQ<br><b>all papers</b>: 210<br><b>model papers</b>: 68<br><b>model + instrument papers</b>: 40<br><b>distinct model sources</b>: 74<br><b>evidence</b>: represented</div>`)[0];
+                popup_a6ba6b47f1bf8badafe2277132b9c162.setContent(html_0fc2df1a0f47d76eeb825a7bc46b3d13);
+            
+        
+
+        circle_marker_c3fd1997995455531cbe86715227bd60.bindPopup(popup_a6ba6b47f1bf8badafe2277132b9c162)
+        ;
+
+        
+    
+    
+            circle_marker_c3fd1997995455531cbe86715227bd60.bindTooltip(
+                `<div>
+                     Antarctica
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf5e1cc4aa0a31a592fae98b84f354cc = L.circleMarker(
+                [20.6, 78.9],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_c5143d24a7359335ed4be213b60ec1c6 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_733d06c1da717a0a02a4e5d25f10d479 = $(`<div id="html_733d06c1da717a0a02a4e5d25f10d479" style="width: 100.0%; height: 100.0%;"><b>country</b>: India<br><b>iso</b>: IN<br><b>all papers</b>: 344<br><b>model papers</b>: 87<br><b>model + instrument papers</b>: 36<br><b>distinct model sources</b>: 74<br><b>evidence</b>: represented</div>`)[0];
+                popup_c5143d24a7359335ed4be213b60ec1c6.setContent(html_733d06c1da717a0a02a4e5d25f10d479);
+            
+        
+
+        circle_marker_bf5e1cc4aa0a31a592fae98b84f354cc.bindPopup(popup_c5143d24a7359335ed4be213b60ec1c6)
+        ;
+
+        
+    
+    
+            circle_marker_bf5e1cc4aa0a31a592fae98b84f354cc.bindTooltip(
+                `<div>
+                     India
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9802a65788ba61f7e50439bbe8bf7c14 = L.circleMarker(
+                [56.1, -106.3],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_9a639bceb1328cce58a0e13faeffbefd = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_087e938523d4bd7242b09821a21f8af9 = $(`<div id="html_087e938523d4bd7242b09821a21f8af9" style="width: 100.0%; height: 100.0%;"><b>country</b>: Canada<br><b>iso</b>: CA<br><b>all papers</b>: 320<br><b>model papers</b>: 99<br><b>model + instrument papers</b>: 36<br><b>distinct model sources</b>: 73<br><b>evidence</b>: represented</div>`)[0];
+                popup_9a639bceb1328cce58a0e13faeffbefd.setContent(html_087e938523d4bd7242b09821a21f8af9);
+            
+        
+
+        circle_marker_9802a65788ba61f7e50439bbe8bf7c14.bindPopup(popup_9a639bceb1328cce58a0e13faeffbefd)
+        ;
+
+        
+    
+    
+            circle_marker_9802a65788ba61f7e50439bbe8bf7c14.bindTooltip(
+                `<div>
+                     Canada
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_202a8e7c530aa70c17b0283117ee5024 = L.circleMarker(
+                [46.2, 2.2],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.8309518948453, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_0e74782a79ee9aeb2ae64d518a90283c = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_ca75f6b7cba184f8ab3627baafb19890 = $(`<div id="html_ca75f6b7cba184f8ab3627baafb19890" style="width: 100.0%; height: 100.0%;"><b>country</b>: France<br><b>iso</b>: FR<br><b>all papers</b>: 350<br><b>model papers</b>: 108<br><b>model + instrument papers</b>: 34<br><b>distinct model sources</b>: 79<br><b>evidence</b>: represented</div>`)[0];
+                popup_0e74782a79ee9aeb2ae64d518a90283c.setContent(html_ca75f6b7cba184f8ab3627baafb19890);
+            
+        
+
+        circle_marker_202a8e7c530aa70c17b0283117ee5024.bindPopup(popup_0e74782a79ee9aeb2ae64d518a90283c)
+        ;
+
+        
+    
+    
+            circle_marker_202a8e7c530aa70c17b0283117ee5024.bindTooltip(
+                `<div>
+                     France
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ca3b68dd64fa2c1113c6a43dae2570f9 = L.circleMarker(
+                [39.8, -98.6],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.744562646538029, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_4269b87297a3c8a65cdbfbeb3089a50b = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_7f21c958c7e76fb8f632b23c8fb5f458 = $(`<div id="html_7f21c958c7e76fb8f632b23c8fb5f458" style="width: 100.0%; height: 100.0%;"><b>country</b>: United States<br><b>iso</b>: US<br><b>all papers</b>: 265<br><b>model papers</b>: 74<br><b>model + instrument papers</b>: 33<br><b>distinct model sources</b>: 58<br><b>evidence</b>: represented</div>`)[0];
+                popup_4269b87297a3c8a65cdbfbeb3089a50b.setContent(html_7f21c958c7e76fb8f632b23c8fb5f458);
+            
+        
+
+        circle_marker_ca3b68dd64fa2c1113c6a43dae2570f9.bindPopup(popup_4269b87297a3c8a65cdbfbeb3089a50b)
+        ;
+
+        
+    
+    
+            circle_marker_ca3b68dd64fa2c1113c6a43dae2570f9.bindTooltip(
+                `<div>
+                     United States
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89a51eea3fb64deb2c621a2de8737ff9 = L.circleMarker(
+                [-25.3, 133.8],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.567764362830022, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_e0124a29703d144df3bb89da67662bab = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_a20d9000a95151e3c088327d117b28ea = $(`<div id="html_a20d9000a95151e3c088327d117b28ea" style="width: 100.0%; height: 100.0%;"><b>country</b>: Australia<br><b>iso</b>: AU<br><b>all papers</b>: 267<br><b>model papers</b>: 78<br><b>model + instrument papers</b>: 31<br><b>distinct model sources</b>: 70<br><b>evidence</b>: represented</div>`)[0];
+                popup_e0124a29703d144df3bb89da67662bab.setContent(html_a20d9000a95151e3c088327d117b28ea);
+            
+        
+
+        circle_marker_89a51eea3fb64deb2c621a2de8737ff9.bindPopup(popup_e0124a29703d144df3bb89da67662bab)
+        ;
+
+        
+    
+    
+            circle_marker_89a51eea3fb64deb2c621a2de8737ff9.bindTooltip(
+                `<div>
+                     Australia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c9b77dc8aea2d80d6c102dd505cfa556 = L.circleMarker(
+                [36.2, 138.3],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.291502622129181, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_74db8a6344296d454e4ef45b0ef2c5ee = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_f811ec5f07ad99deaad8afea7efc01f2 = $(`<div id="html_f811ec5f07ad99deaad8afea7efc01f2" style="width: 100.0%; height: 100.0%;"><b>country</b>: Japan<br><b>iso</b>: JP<br><b>all papers</b>: 278<br><b>model papers</b>: 88<br><b>model + instrument papers</b>: 28<br><b>distinct model sources</b>: 69<br><b>evidence</b>: represented</div>`)[0];
+                popup_74db8a6344296d454e4ef45b0ef2c5ee.setContent(html_f811ec5f07ad99deaad8afea7efc01f2);
+            
+        
+
+        circle_marker_c9b77dc8aea2d80d6c102dd505cfa556.bindPopup(popup_74db8a6344296d454e4ef45b0ef2c5ee)
+        ;
+
+        
+    
+    
+            circle_marker_c9b77dc8aea2d80d6c102dd505cfa556.bindTooltip(
+                `<div>
+                     Japan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1af6de877b453c91eb70eed2794d99fc = L.circleMarker(
+                [46.81451094229815, 8.225043641892114],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.69041575982343, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_0c132220d099c9aec1a7b7ff577767ef = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_76085891a510e5e8b0e1e1be5c25e639 = $(`<div id="html_76085891a510e5e8b0e1e1be5c25e639" style="width: 100.0%; height: 100.0%;"><b>country</b>: Switzerland<br><b>iso</b>: CH<br><b>all papers</b>: 179<br><b>model papers</b>: 48<br><b>model + instrument papers</b>: 22<br><b>distinct model sources</b>: 70<br><b>evidence</b>: represented</div>`)[0];
+                popup_0c132220d099c9aec1a7b7ff577767ef.setContent(html_76085891a510e5e8b0e1e1be5c25e639);
+            
+        
+
+        circle_marker_1af6de877b453c91eb70eed2794d99fc.bindPopup(popup_0c132220d099c9aec1a7b7ff577767ef)
+        ;
+
+        
+    
+    
+            circle_marker_1af6de877b453c91eb70eed2794d99fc.bindTooltip(
+                `<div>
+                     Switzerland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4a2b38d2c02b09a9ee64163d0e844c78 = L.circleMarker(
+                [41.2923181669521, 12.57350138452484],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.58257569495584, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_e1a96bebd91148e074c627a82eb7a557 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_bd928e815f785ffc9b06794eb70cd61b = $(`<div id="html_bd928e815f785ffc9b06794eb70cd61b" style="width: 100.0%; height: 100.0%;"><b>country</b>: Italy<br><b>iso</b>: IT<br><b>all papers</b>: 205<br><b>model papers</b>: 70<br><b>model + instrument papers</b>: 21<br><b>distinct model sources</b>: 66<br><b>evidence</b>: represented</div>`)[0];
+                popup_e1a96bebd91148e074c627a82eb7a557.setContent(html_bd928e815f785ffc9b06794eb70cd61b);
+            
+        
+
+        circle_marker_4a2b38d2c02b09a9ee64163d0e844c78.bindPopup(popup_e1a96bebd91148e074c627a82eb7a557)
+        ;
+
+        
+    
+    
+            circle_marker_4a2b38d2c02b09a9ee64163d0e844c78.bindTooltip(
+                `<div>
+                     Italy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ea0bb66493e56e6563912581760dc0ba = L.circleMarker(
+                [-14.426757095000001, -51.414978657000006],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.358898943540674, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_a1c6c1c8f18ddf2f62472156f27dcbc8 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_c9ec425f211926a08c310d02011d44f9 = $(`<div id="html_c9ec425f211926a08c310d02011d44f9" style="width: 100.0%; height: 100.0%;"><b>country</b>: Brazil<br><b>iso</b>: BR<br><b>all papers</b>: 189<br><b>model papers</b>: 53<br><b>model + instrument papers</b>: 19<br><b>distinct model sources</b>: 64<br><b>evidence</b>: represented</div>`)[0];
+                popup_a1c6c1c8f18ddf2f62472156f27dcbc8.setContent(html_c9ec425f211926a08c310d02011d44f9);
+            
+        
+
+        circle_marker_ea0bb66493e56e6563912581760dc0ba.bindPopup(popup_a1c6c1c8f18ddf2f62472156f27dcbc8)
+        ;
+
+        
+    
+    
+            circle_marker_ea0bb66493e56e6563912581760dc0ba.bindTooltip(
+                `<div>
+                     Brazil
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e5b90f5e6cf594dbd2e3e9e3c83b27f4 = L.circleMarker(
+                [54.0, -2.0],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.872983346207417, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_c3cc242ab5228fdf9c6f42cf267de343 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_53fef1c58cb6cd04ea8da7c10353f4ca = $(`<div id="html_53fef1c58cb6cd04ea8da7c10353f4ca" style="width: 100.0%; height: 100.0%;"><b>country</b>: United Kingdom<br><b>iso</b>: GB<br><b>all papers</b>: 137<br><b>model papers</b>: 36<br><b>model + instrument papers</b>: 15<br><b>distinct model sources</b>: 59<br><b>evidence</b>: represented</div>`)[0];
+                popup_c3cc242ab5228fdf9c6f42cf267de343.setContent(html_53fef1c58cb6cd04ea8da7c10353f4ca);
+            
+        
+
+        circle_marker_e5b90f5e6cf594dbd2e3e9e3c83b27f4.bindPopup(popup_c3cc242ab5228fdf9c6f42cf267de343)
+        ;
+
+        
+    
+    
+            circle_marker_e5b90f5e6cf594dbd2e3e9e3c83b27f4.bindTooltip(
+                `<div>
+                     United Kingdom
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_972db4692ca4a4cc9c1d470b68443408 = L.circleMarker(
+                [64.57250683200162, 17.836260882757394],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.741657386773941, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_216f2b4d12a325024194e7f4a3fa55a5 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_2e01ad1f7d1280d7f419f6a85e1b6018 = $(`<div id="html_2e01ad1f7d1280d7f419f6a85e1b6018" style="width: 100.0%; height: 100.0%;"><b>country</b>: Norway<br><b>iso</b>: NO<br><b>all papers</b>: 178<br><b>model papers</b>: 61<br><b>model + instrument papers</b>: 14<br><b>distinct model sources</b>: 74<br><b>evidence</b>: represented</div>`)[0];
+                popup_216f2b4d12a325024194e7f4a3fa55a5.setContent(html_2e01ad1f7d1280d7f419f6a85e1b6018);
+            
+        
+
+        circle_marker_972db4692ca4a4cc9c1d470b68443408.bindPopup(popup_216f2b4d12a325024194e7f4a3fa55a5)
+        ;
+
+        
+    
+    
+            circle_marker_972db4692ca4a4cc9c1d470b68443408.bindTooltip(
+                `<div>
+                     Norway
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e6ec925f9016f09f9c466eb3bd68a91 = L.circleMarker(
+                [64.8915939365, 26.067670050000004],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.60555127546399, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_fbaee7e735a47b1bb0011889b27c05f1 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_376ee61bb1801dce0302e0f23600a046 = $(`<div id="html_376ee61bb1801dce0302e0f23600a046" style="width: 100.0%; height: 100.0%;"><b>country</b>: Finland<br><b>iso</b>: FI<br><b>all papers</b>: 104<br><b>model papers</b>: 23<br><b>model + instrument papers</b>: 13<br><b>distinct model sources</b>: 42<br><b>evidence</b>: represented</div>`)[0];
+                popup_fbaee7e735a47b1bb0011889b27c05f1.setContent(html_376ee61bb1801dce0302e0f23600a046);
+            
+        
+
+        circle_marker_7e6ec925f9016f09f9c466eb3bd68a91.bindPopup(popup_fbaee7e735a47b1bb0011889b27c05f1)
+        ;
+
+        
+    
+    
+            circle_marker_7e6ec925f9016f09f9c466eb3bd68a91.bindTooltip(
+                `<div>
+                     Finland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1a575e6c11cf823cc4754bedc0d202c6 = L.circleMarker(
+                [61.5, 105.3],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.60555127546399, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_3007de6bd0c12069e29fe5ef31a4edeb = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_1de119b4bb7ab136bf62234a405e7d42 = $(`<div id="html_1de119b4bb7ab136bf62234a405e7d42" style="width: 100.0%; height: 100.0%;"><b>country</b>: Russia<br><b>iso</b>: RU<br><b>all papers</b>: 182<br><b>model papers</b>: 47<br><b>model + instrument papers</b>: 13<br><b>distinct model sources</b>: 67<br><b>evidence</b>: represented</div>`)[0];
+                popup_3007de6bd0c12069e29fe5ef31a4edeb.setContent(html_1de119b4bb7ab136bf62234a405e7d42);
+            
+        
+
+        circle_marker_1a575e6c11cf823cc4754bedc0d202c6.bindPopup(popup_3007de6bd0c12069e29fe5ef31a4edeb)
+        ;
+
+        
+    
+    
+            circle_marker_1a575e6c11cf823cc4754bedc0d202c6.bindTooltip(
+                `<div>
+                     Russia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_46f84cf141cc86fd790416fd1039fce8 = L.circleMarker(
+                [52.1526910075357, 5.29293843207461],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.464101615137754, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_4deec7b48b7158e3fe3f523a459b6db0 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_145dc6d4cefe25f5a192323a31331d37 = $(`<div id="html_145dc6d4cefe25f5a192323a31331d37" style="width: 100.0%; height: 100.0%;"><b>country</b>: The Netherlands<br><b>iso</b>: NL<br><b>all papers</b>: 154<br><b>model papers</b>: 26<br><b>model + instrument papers</b>: 12<br><b>distinct model sources</b>: 52<br><b>evidence</b>: represented</div>`)[0];
+                popup_4deec7b48b7158e3fe3f523a459b6db0.setContent(html_145dc6d4cefe25f5a192323a31331d37);
+            
+        
+
+        circle_marker_46f84cf141cc86fd790416fd1039fce8.bindPopup(popup_4deec7b48b7158e3fe3f523a459b6db0)
+        ;
+
+        
+    
+    
+            circle_marker_46f84cf141cc86fd790416fd1039fce8.bindTooltip(
+                `<div>
+                     The Netherlands
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ffcc1c185fb1c3449c965c29f470125f = L.circleMarker(
+                [38.275283162055345, 24.5082942284132],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.3166247903554, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_7e08d3f5ed64c7a52cc65d9d3da8b6b3 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_d9ab887422b09c4f3059e99f577c1569 = $(`<div id="html_d9ab887422b09c4f3059e99f577c1569" style="width: 100.0%; height: 100.0%;"><b>country</b>: Greece<br><b>iso</b>: GR<br><b>all papers</b>: 69<br><b>model papers</b>: 26<br><b>model + instrument papers</b>: 11<br><b>distinct model sources</b>: 59<br><b>evidence</b>: represented</div>`)[0];
+                popup_7e08d3f5ed64c7a52cc65d9d3da8b6b3.setContent(html_d9ab887422b09c4f3059e99f577c1569);
+            
+        
+
+        circle_marker_ffcc1c185fb1c3449c965c29f470125f.bindPopup(popup_7e08d3f5ed64c7a52cc65d9d3da8b6b3)
+        ;
+
+        
+    
+    
+            circle_marker_ffcc1c185fb1c3449c965c29f470125f.bindTooltip(
+                `<div>
+                     Greece
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d318c9d9ee672b16157b1f1aa5d7ff50 = L.circleMarker(
+                [35.715084523792925, -6.916718496257344],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.3166247903554, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_c5685f8acc75f0ac18a90778383f0788 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_1328089ea74c8a6159ab55e24a530681 = $(`<div id="html_1328089ea74c8a6159ab55e24a530681" style="width: 100.0%; height: 100.0%;"><b>country</b>: Spain<br><b>iso</b>: ES<br><b>all papers</b>: 172<br><b>model papers</b>: 43<br><b>model + instrument papers</b>: 11<br><b>distinct model sources</b>: 54<br><b>evidence</b>: represented</div>`)[0];
+                popup_c5685f8acc75f0ac18a90778383f0788.setContent(html_1328089ea74c8a6159ab55e24a530681);
+            
+        
+
+        circle_marker_d318c9d9ee672b16157b1f1aa5d7ff50.bindPopup(popup_c5685f8acc75f0ac18a90778383f0788)
+        ;
+
+        
+    
+    
+            circle_marker_d318c9d9ee672b16157b1f1aa5d7ff50.bindTooltip(
+                `<div>
+                     Spain
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e103bf06eb60b7e70a32ed3c7bc10566 = L.circleMarker(
+                [71.70538236200001, -42.333615626000004],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.16227766016838, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_58a8c44d26e4aad499d34002ba65d132 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_795f81d8a334557dbe5e343fee7343b9 = $(`<div id="html_795f81d8a334557dbe5e343fee7343b9" style="width: 100.0%; height: 100.0%;"><b>country</b>: Greenland<br><b>iso</b>: GL<br><b>all papers</b>: 84<br><b>model papers</b>: 26<br><b>model + instrument papers</b>: 10<br><b>distinct model sources</b>: 37<br><b>evidence</b>: represented</div>`)[0];
+                popup_58a8c44d26e4aad499d34002ba65d132.setContent(html_795f81d8a334557dbe5e343fee7343b9);
+            
+        
+
+        circle_marker_e103bf06eb60b7e70a32ed3c7bc10566.bindPopup(popup_58a8c44d26e4aad499d34002ba65d132)
+        ;
+
+        
+    
+    
+            circle_marker_e103bf06eb60b7e70a32ed3c7bc10566.bindTooltip(
+                `<div>
+                     Greenland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b326332b33cd2af3fd3a29ef661010e3 = L.circleMarker(
+                [-38.41782481349995, -63.60213268449999],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_629efebeee0cbf7e2a0a74751323eb6a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_f85a2665bdfa56e7197aa9cce59206c5 = $(`<div id="html_f85a2665bdfa56e7197aa9cce59206c5" style="width: 100.0%; height: 100.0%;"><b>country</b>: Argentina<br><b>iso</b>: AR<br><b>all papers</b>: 72<br><b>model papers</b>: 21<br><b>model + instrument papers</b>: 9<br><b>distinct model sources</b>: 49<br><b>evidence</b>: represented</div>`)[0];
+                popup_629efebeee0cbf7e2a0a74751323eb6a.setContent(html_f85a2665bdfa56e7197aa9cce59206c5);
+            
+        
+
+        circle_marker_b326332b33cd2af3fd3a29ef661010e3.bindPopup(popup_629efebeee0cbf7e2a0a74751323eb6a)
+        ;
+
+        
+    
+    
+            circle_marker_b326332b33cd2af3fd3a29ef661010e3.bindTooltip(
+                `<div>
+                     Argentina
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db9bef8f3a8486f44b1a39d580e35d5e = L.circleMarker(
+                [-2.4653425499999697, 118.01527325000004],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_7f03401d16e2d685f5af785d94dd7691 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_2e0bc2a3e6adf9d929227d17ccfab828 = $(`<div id="html_2e0bc2a3e6adf9d929227d17ccfab828" style="width: 100.0%; height: 100.0%;"><b>country</b>: Indonesia<br><b>iso</b>: ID<br><b>all papers</b>: 130<br><b>model papers</b>: 20<br><b>model + instrument papers</b>: 9<br><b>distinct model sources</b>: 50<br><b>evidence</b>: represented</div>`)[0];
+                popup_7f03401d16e2d685f5af785d94dd7691.setContent(html_2e0bc2a3e6adf9d929227d17ccfab828);
+            
+        
+
+        circle_marker_db9bef8f3a8486f44b1a39d580e35d5e.bindPopup(popup_7f03401d16e2d685f5af785d94dd7691)
+        ;
+
+        
+    
+    
+            circle_marker_db9bef8f3a8486f44b1a39d580e35d5e.bindTooltip(
+                `<div>
+                     Indonesia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_306a4b43111ecdf93e17630c7956f303 = L.circleMarker(
+                [56.15582546209076, 11.634940725388708],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.82842712474619, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_2cefe516d09b617b32c73f7f28612ff2 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_82f633882e3c118c032334f62035ae71 = $(`<div id="html_82f633882e3c118c032334f62035ae71" style="width: 100.0%; height: 100.0%;"><b>country</b>: Denmark<br><b>iso</b>: DK<br><b>all papers</b>: 74<br><b>model papers</b>: 17<br><b>model + instrument papers</b>: 8<br><b>distinct model sources</b>: 54<br><b>evidence</b>: represented</div>`)[0];
+                popup_2cefe516d09b617b32c73f7f28612ff2.setContent(html_82f633882e3c118c032334f62035ae71);
+            
+        
+
+        circle_marker_306a4b43111ecdf93e17630c7956f303.bindPopup(popup_2cefe516d09b617b32c73f7f28612ff2)
+        ;
+
+        
+    
+    
+            circle_marker_306a4b43111ecdf93e17630c7956f303.bindTooltip(
+                `<div>
+                     Denmark
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_252bfc938b6bce997905686dc7d90fc5 = L.circleMarker(
+                [47.69690739538185, 13.346510468834115],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.82842712474619, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_9dd03efbebbf6b81060738c27318d2d4 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_e2de76c1c5a3ccd76279b4e02227d23f = $(`<div id="html_e2de76c1c5a3ccd76279b4e02227d23f" style="width: 100.0%; height: 100.0%;"><b>country</b>: Austria<br><b>iso</b>: AT<br><b>all papers</b>: 109<br><b>model papers</b>: 25<br><b>model + instrument papers</b>: 8<br><b>distinct model sources</b>: 54<br><b>evidence</b>: represented</div>`)[0];
+                popup_9dd03efbebbf6b81060738c27318d2d4.setContent(html_e2de76c1c5a3ccd76279b4e02227d23f);
+            
+        
+
+        circle_marker_252bfc938b6bce997905686dc7d90fc5.bindPopup(popup_9dd03efbebbf6b81060738c27318d2d4)
+        ;
+
+        
+    
+    
+            circle_marker_252bfc938b6bce997905686dc7d90fc5.bindTooltip(
+                `<div>
+                     Austria
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eef04eff73058a368f71147398d02698 = L.circleMarker(
+                [62.19870554434405, 17.56493461597266],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.82842712474619, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_251b91d387b9d7cdf33572a0c0ddd08d = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_30721983f40cb469579105010314e7ec = $(`<div id="html_30721983f40cb469579105010314e7ec" style="width: 100.0%; height: 100.0%;"><b>country</b>: Sweden<br><b>iso</b>: SE<br><b>all papers</b>: 137<br><b>model papers</b>: 34<br><b>model + instrument papers</b>: 8<br><b>distinct model sources</b>: 64<br><b>evidence</b>: represented</div>`)[0];
+                popup_251b91d387b9d7cdf33572a0c0ddd08d.setContent(html_30721983f40cb469579105010314e7ec);
+            
+        
+
+        circle_marker_eef04eff73058a368f71147398d02698.bindPopup(popup_251b91d387b9d7cdf33572a0c0ddd08d)
+        ;
+
+        
+    
+    
+            circle_marker_eef04eff73058a368f71147398d02698.bindTooltip(
+                `<div>
+                     Sweden
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_346293db2b5e5814fa5d29c5913dd2e0 = L.circleMarker(
+                [53.427518187460805, -8.30746278284137],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.82842712474619, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_43838a2b743f57562f8fcc1fd26c09dd = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_ad3cf4a7291026e3431ccfdd021c7aa9 = $(`<div id="html_ad3cf4a7291026e3431ccfdd021c7aa9" style="width: 100.0%; height: 100.0%;"><b>country</b>: Ireland<br><b>iso</b>: IE<br><b>all papers</b>: 66<br><b>model papers</b>: 19<br><b>model + instrument papers</b>: 8<br><b>distinct model sources</b>: 61<br><b>evidence</b>: represented</div>`)[0];
+                popup_43838a2b743f57562f8fcc1fd26c09dd.setContent(html_ad3cf4a7291026e3431ccfdd021c7aa9);
+            
+        
+
+        circle_marker_346293db2b5e5814fa5d29c5913dd2e0.bindPopup(popup_43838a2b743f57562f8fcc1fd26c09dd)
+        ;
+
+        
+    
+    
+            circle_marker_346293db2b5e5814fa5d29c5913dd2e0.bindTooltip(
+                `<div>
+                     Ireland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c92e2b101eccd937bbf58ae5844a9972 = L.circleMarker(
+                [9.14917550050002, 40.49939500100005],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.645751311064591, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_62e7cfb198c7fd905600c8a085ede45c = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_e6c8c5446aa79949fb2ec0a613cb313c = $(`<div id="html_e6c8c5446aa79949fb2ec0a613cb313c" style="width: 100.0%; height: 100.0%;"><b>country</b>: Ethiopia<br><b>iso</b>: ET<br><b>all papers</b>: 70<br><b>model papers</b>: 21<br><b>model + instrument papers</b>: 7<br><b>distinct model sources</b>: 38<br><b>evidence</b>: represented</div>`)[0];
+                popup_62e7cfb198c7fd905600c8a085ede45c.setContent(html_e6c8c5446aa79949fb2ec0a613cb313c);
+            
+        
+
+        circle_marker_c92e2b101eccd937bbf58ae5844a9972.bindPopup(popup_62e7cfb198c7fd905600c8a085ede45c)
+        ;
+
+        
+    
+    
+            circle_marker_c92e2b101eccd937bbf58ae5844a9972.bindTooltip(
+                `<div>
+                     Ethiopia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_50c6106f05892fce7d8e625ac7ea29d6 = L.circleMarker(
+                [64.93110113979095, -19.0136480053063],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.645751311064591, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_8d1c8645cbf196ee39fa4e6e30cb6ef1 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_7e1893b9fc744e7298686f47f24b08c3 = $(`<div id="html_7e1893b9fc744e7298686f47f24b08c3" style="width: 100.0%; height: 100.0%;"><b>country</b>: Iceland<br><b>iso</b>: IS<br><b>all papers</b>: 66<br><b>model papers</b>: 17<br><b>model + instrument papers</b>: 7<br><b>distinct model sources</b>: 41<br><b>evidence</b>: represented</div>`)[0];
+                popup_8d1c8645cbf196ee39fa4e6e30cb6ef1.setContent(html_7e1893b9fc744e7298686f47f24b08c3);
+            
+        
+
+        circle_marker_50c6106f05892fce7d8e625ac7ea29d6.bindPopup(popup_8d1c8645cbf196ee39fa4e6e30cb6ef1)
+        ;
+
+        
+    
+    
+            circle_marker_50c6106f05892fce7d8e625ac7ea29d6.bindTooltip(
+                `<div>
+                     Iceland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_decc11bdc63b7ec3b3dba1af98342977 = L.circleMarker(
+                [-40.92575252500001, -4.981102252500008],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.645751311064591, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_fae60fcdebb1a8ec1e394573dce69029 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_bb2677670c7c3650eb68fce63f9d507c = $(`<div id="html_bb2677670c7c3650eb68fce63f9d507c" style="width: 100.0%; height: 100.0%;"><b>country</b>: New Zealand<br><b>iso</b>: NZ<br><b>all papers</b>: 76<br><b>model papers</b>: 16<br><b>model + instrument papers</b>: 7<br><b>distinct model sources</b>: 52<br><b>evidence</b>: represented</div>`)[0];
+                popup_fae60fcdebb1a8ec1e394573dce69029.setContent(html_bb2677670c7c3650eb68fce63f9d507c);
+            
+        
+
+        circle_marker_decc11bdc63b7ec3b3dba1af98342977.bindPopup(popup_fae60fcdebb1a8ec1e394573dce69029)
+        ;
+
+        
+    
+    
+            circle_marker_decc11bdc63b7ec3b3dba1af98342977.bindTooltip(
+                `<div>
+                     New Zealand
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f15f0da432a4d587b548b50bc94a81b2 = L.circleMarker(
+                [50.50104018639075, 4.47463321196499],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.449489742783178, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_9fc6266708489b2e925fc6b6d46bb8a7 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_657f49be4f9c59ffdb62137cda12afe8 = $(`<div id="html_657f49be4f9c59ffdb62137cda12afe8" style="width: 100.0%; height: 100.0%;"><b>country</b>: Belgium<br><b>iso</b>: BE<br><b>all papers</b>: 80<br><b>model papers</b>: 20<br><b>model + instrument papers</b>: 6<br><b>distinct model sources</b>: 19<br><b>evidence</b>: represented</div>`)[0];
+                popup_9fc6266708489b2e925fc6b6d46bb8a7.setContent(html_657f49be4f9c59ffdb62137cda12afe8);
+            
+        
+
+        circle_marker_f15f0da432a4d587b548b50bc94a81b2.bindPopup(popup_9fc6266708489b2e925fc6b6d46bb8a7)
+        ;
+
+        
+    
+    
+            circle_marker_f15f0da432a4d587b548b50bc94a81b2.bindTooltip(
+                `<div>
+                     Belgium
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e84277e23b8d0cd134acc024a6f3fd82 = L.circleMarker(
+                [4.583198742000015, -74.29149552349995],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.449489742783178, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_fe917095f99b083ec7e8a822c0eda0c7 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_c34d49adfb5d41e198c71feec0238e42 = $(`<div id="html_c34d49adfb5d41e198c71feec0238e42" style="width: 100.0%; height: 100.0%;"><b>country</b>: Colombia<br><b>iso</b>: CO<br><b>all papers</b>: 41<br><b>model papers</b>: 10<br><b>model + instrument papers</b>: 6<br><b>distinct model sources</b>: 35<br><b>evidence</b>: represented</div>`)[0];
+                popup_fe917095f99b083ec7e8a822c0eda0c7.setContent(html_c34d49adfb5d41e198c71feec0238e42);
+            
+        
+
+        circle_marker_e84277e23b8d0cd134acc024a6f3fd82.bindPopup(popup_fe917095f99b083ec7e8a822c0eda0c7)
+        ;
+
+        
+    
+    
+            circle_marker_e84277e23b8d0cd134acc024a6f3fd82.bindTooltip(
+                `<div>
+                     Colombia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fff9457b8a18371a12b70a7c0758a51a = L.circleMarker(
+                [23.62663755, -102.5381862695],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.449489742783178, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_e2350d7b6756bb605f185f055ed6bdb7 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_59d00cc7d0a090fae1f873c07b584421 = $(`<div id="html_59d00cc7d0a090fae1f873c07b584421" style="width: 100.0%; height: 100.0%;"><b>country</b>: Mexico<br><b>iso</b>: MX<br><b>all papers</b>: 91<br><b>model papers</b>: 22<br><b>model + instrument papers</b>: 6<br><b>distinct model sources</b>: 49<br><b>evidence</b>: represented</div>`)[0];
+                popup_e2350d7b6756bb605f185f055ed6bdb7.setContent(html_59d00cc7d0a090fae1f873c07b584421);
+            
+        
+
+        circle_marker_fff9457b8a18371a12b70a7c0758a51a.bindPopup(popup_e2350d7b6756bb605f185f055ed6bdb7)
+        ;
+
+        
+    
+    
+            circle_marker_fff9457b8a18371a12b70a7c0758a51a.bindTooltip(
+                `<div>
+                     Mexico
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5d6e75ccfea653c34efcc4857508503d = L.circleMarker(
+                [30.38940100050005, 68.9431347320001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.449489742783178, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_fcd6386623c4d1339c32855ac085b0c0 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_378161ab5f67d13b075539c1e7de6eb0 = $(`<div id="html_378161ab5f67d13b075539c1e7de6eb0" style="width: 100.0%; height: 100.0%;"><b>country</b>: Pakistan<br><b>iso</b>: PK<br><b>all papers</b>: 78<br><b>model papers</b>: 23<br><b>model + instrument papers</b>: 6<br><b>distinct model sources</b>: 53<br><b>evidence</b>: represented</div>`)[0];
+                popup_fcd6386623c4d1339c32855ac085b0c0.setContent(html_378161ab5f67d13b075539c1e7de6eb0);
+            
+        
+
+        circle_marker_5d6e75ccfea653c34efcc4857508503d.bindPopup(popup_fcd6386623c4d1339c32855ac085b0c0)
+        ;
+
+        
+    
+    
+            circle_marker_5d6e75ccfea653c34efcc4857508503d.bindTooltip(
+                `<div>
+                     Pakistan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_de785e69f71e731b633d14b2ca1e6c63 = L.circleMarker(
+                [9.078115159500044, 8.670771499500034],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.449489742783178, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_e9eac00597253e0eb001e93603982dab = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_8eb178df1d67cff440d2b7f8cd2c12b8 = $(`<div id="html_8eb178df1d67cff440d2b7f8cd2c12b8" style="width: 100.0%; height: 100.0%;"><b>country</b>: Nigeria<br><b>iso</b>: NG<br><b>all papers</b>: 49<br><b>model papers</b>: 13<br><b>model + instrument papers</b>: 6<br><b>distinct model sources</b>: 26<br><b>evidence</b>: represented</div>`)[0];
+                popup_e9eac00597253e0eb001e93603982dab.setContent(html_8eb178df1d67cff440d2b7f8cd2c12b8);
+            
+        
+
+        circle_marker_de785e69f71e731b633d14b2ca1e6c63.bindPopup(popup_e9eac00597253e0eb001e93603982dab)
+        ;
+
+        
+    
+    
+            circle_marker_de785e69f71e731b633d14b2ca1e6c63.bindTooltip(
+                `<div>
+                     Nigeria
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ad32fa211f8cf1f8cff7ae1485b121ac = L.circleMarker(
+                [32.421313950000055, 53.682987854000004],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.449489742783178, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_6f500717c99f168018ae6bf4b6c3856f = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_36d3bd56cb4560b364b84fabc4cddaea = $(`<div id="html_36d3bd56cb4560b364b84fabc4cddaea" style="width: 100.0%; height: 100.0%;"><b>country</b>: Iran<br><b>iso</b>: IR<br><b>all papers</b>: 50<br><b>model papers</b>: 19<br><b>model + instrument papers</b>: 6<br><b>distinct model sources</b>: 36<br><b>evidence</b>: represented</div>`)[0];
+                popup_6f500717c99f168018ae6bf4b6c3856f.setContent(html_36d3bd56cb4560b364b84fabc4cddaea);
+            
+        
+
+        circle_marker_ad32fa211f8cf1f8cff7ae1485b121ac.bindPopup(popup_6f500717c99f168018ae6bf4b6c3856f)
+        ;
+
+        
+    
+    
+            circle_marker_ad32fa211f8cf1f8cff7ae1485b121ac.bindTooltip(
+                `<div>
+                     Iran
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5438d9cdc3371617e206df64f5aefcd3 = L.circleMarker(
+                [23.604749849500003, 90.34436480000001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.23606797749979, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_d09e013a4a942ab2a25769c3564f96ab = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_eb45dfd55a8422a40ee72afea55d59e3 = $(`<div id="html_eb45dfd55a8422a40ee72afea55d59e3" style="width: 100.0%; height: 100.0%;"><b>country</b>: Bangladesh<br><b>iso</b>: BD<br><b>all papers</b>: 64<br><b>model papers</b>: 14<br><b>model + instrument papers</b>: 5<br><b>distinct model sources</b>: 42<br><b>evidence</b>: represented</div>`)[0];
+                popup_d09e013a4a942ab2a25769c3564f96ab.setContent(html_eb45dfd55a8422a40ee72afea55d59e3);
+            
+        
+
+        circle_marker_5438d9cdc3371617e206df64f5aefcd3.bindPopup(popup_d09e013a4a942ab2a25769c3564f96ab)
+        ;
+
+        
+    
+    
+            circle_marker_5438d9cdc3371617e206df64f5aefcd3.bindTooltip(
+                `<div>
+                     Bangladesh
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9c07d69fa6a1c09275b9aa5e59907774 = L.circleMarker(
+                [49.803835553233554, 15.474971770021849],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.23606797749979, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_2a448a3325c49cad0da02e39a3077b5b = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_52f9b624cee248d2ec7d9f3f8255aadc = $(`<div id="html_52f9b624cee248d2ec7d9f3f8255aadc" style="width: 100.0%; height: 100.0%;"><b>country</b>: Czechia<br><b>iso</b>: CZ<br><b>all papers</b>: 50<br><b>model papers</b>: 14<br><b>model + instrument papers</b>: 5<br><b>distinct model sources</b>: 35<br><b>evidence</b>: represented</div>`)[0];
+                popup_2a448a3325c49cad0da02e39a3077b5b.setContent(html_52f9b624cee248d2ec7d9f3f8255aadc);
+            
+        
+
+        circle_marker_9c07d69fa6a1c09275b9aa5e59907774.bindPopup(popup_2a448a3325c49cad0da02e39a3077b5b)
+        ;
+
+        
+    
+    
+            circle_marker_9c07d69fa6a1c09275b9aa5e59907774.bindTooltip(
+                `<div>
+                     Czechia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_62426333d3c4b4bbcd7ddc5b274523e9 = L.circleMarker(
+                [35.16361872019715, 33.4293630330958],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.23606797749979, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_c78e789028e83388016af5076d73d9c9 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_c2dc7be76448da372fd6a9cac86f9adb = $(`<div id="html_c2dc7be76448da372fd6a9cac86f9adb" style="width: 100.0%; height: 100.0%;"><b>country</b>: Cyprus<br><b>iso</b>: CY<br><b>all papers</b>: 21<br><b>model papers</b>: 10<br><b>model + instrument papers</b>: 5<br><b>distinct model sources</b>: 41<br><b>evidence</b>: represented</div>`)[0];
+                popup_c78e789028e83388016af5076d73d9c9.setContent(html_c2dc7be76448da372fd6a9cac86f9adb);
+            
+        
+
+        circle_marker_62426333d3c4b4bbcd7ddc5b274523e9.bindPopup(popup_c78e789028e83388016af5076d73d9c9)
+        ;
+
+        
+    
+    
+            circle_marker_62426333d3c4b4bbcd7ddc5b274523e9.bindTooltip(
+                `<div>
+                     Cyprus
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c20e1582ee7e4054d625ebb325e3f977 = L.circleMarker(
+                [1.31860293042268, 103.845703000567],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_5a57c8911d56f63d0c21875281fed046 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_ef38b9b5aa4b99b3ffd45b983e0d0862 = $(`<div id="html_ef38b9b5aa4b99b3ffd45b983e0d0862" style="width: 100.0%; height: 100.0%;"><b>country</b>: Singapore<br><b>iso</b>: SG<br><b>all papers</b>: 25<br><b>model papers</b>: 8<br><b>model + instrument papers</b>: 4<br><b>distinct model sources</b>: 23<br><b>evidence</b>: represented</div>`)[0];
+                popup_5a57c8911d56f63d0c21875281fed046.setContent(html_ef38b9b5aa4b99b3ffd45b983e0d0862);
+            
+        
+
+        circle_marker_c20e1582ee7e4054d625ebb325e3f977.bindPopup(popup_5a57c8911d56f63d0c21875281fed046)
+        ;
+
+        
+    
+    
+            circle_marker_c20e1582ee7e4054d625ebb325e3f977.bindTooltip(
+                `<div>
+                     Singapore
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fed0217510edcf5ec659ddc273324b95 = L.circleMarker(
+                [51.9189175894306, 19.1343339362561],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_ca8628954f1b4262a5469e23e60e519e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_8b43fd31d73c74b38bd0496119737282 = $(`<div id="html_8b43fd31d73c74b38bd0496119737282" style="width: 100.0%; height: 100.0%;"><b>country</b>: Poland<br><b>iso</b>: PL<br><b>all papers</b>: 59<br><b>model papers</b>: 12<br><b>model + instrument papers</b>: 4<br><b>distinct model sources</b>: 23<br><b>evidence</b>: represented</div>`)[0];
+                popup_ca8628954f1b4262a5469e23e60e519e.setContent(html_8b43fd31d73c74b38bd0496119737282);
+            
+        
+
+        circle_marker_fed0217510edcf5ec659ddc273324b95.bindPopup(popup_ca8628954f1b4262a5469e23e60e519e)
+        ;
+
+        
+    
+    
+            circle_marker_fed0217510edcf5ec659ddc273324b95.bindTooltip(
+                `<div>
+                     Poland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bd09e26822bc0c87f5b710f058972739 = L.circleMarker(
+                [36.092297325508, -18.72898735776124],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_36d63151e76bbc0c45bc93b63b8adf0e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_16dd2e1326ee2e27001335f30e7b2d04 = $(`<div id="html_16dd2e1326ee2e27001335f30e7b2d04" style="width: 100.0%; height: 100.0%;"><b>country</b>: Portugal<br><b>iso</b>: PT<br><b>all papers</b>: 62<br><b>model papers</b>: 14<br><b>model + instrument papers</b>: 4<br><b>distinct model sources</b>: 49<br><b>evidence</b>: represented</div>`)[0];
+                popup_36d63151e76bbc0c45bc93b63b8adf0e.setContent(html_16dd2e1326ee2e27001335f30e7b2d04);
+            
+        
+
+        circle_marker_bd09e26822bc0c87f5b710f058972739.bindPopup(popup_36d63151e76bbc0c45bc93b63b8adf0e)
+        ;
+
+        
+    
+    
+            circle_marker_bd09e26822bc0c87f5b710f058972739.bindTooltip(
+                `<div>
+                     Portugal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd7aff38e631e387014f272fd9611fc4 = L.circleMarker(
+                [48.3807142575001, 31.178779165],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_bd4c136f4f0a06d85ab08b52613e941d = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_a77ac516a167610df5405ae45862bccc = $(`<div id="html_a77ac516a167610df5405ae45862bccc" style="width: 100.0%; height: 100.0%;"><b>country</b>: Ukraine<br><b>iso</b>: UA<br><b>all papers</b>: 32<br><b>model papers</b>: 12<br><b>model + instrument papers</b>: 4<br><b>distinct model sources</b>: 52<br><b>evidence</b>: represented</div>`)[0];
+                popup_bd4c136f4f0a06d85ab08b52613e941d.setContent(html_a77ac516a167610df5405ae45862bccc);
+            
+        
+
+        circle_marker_fd7aff38e631e387014f272fd9611fc4.bindPopup(popup_bd4c136f4f0a06d85ab08b52613e941d)
+        ;
+
+        
+    
+    
+            circle_marker_fd7aff38e631e387014f272fd9611fc4.bindTooltip(
+                `<div>
+                     Ukraine
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7f7775417a18f0fd32b5a3698304a99d = L.circleMarker(
+                [26.69797250000005, 30.67855350000005],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_25589b0a7cab0e6f4d84a15ec53b0488 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_dbe57620040e20ca7a23d0660422fed5 = $(`<div id="html_dbe57620040e20ca7a23d0660422fed5" style="width: 100.0%; height: 100.0%;"><b>country</b>: Egypt<br><b>iso</b>: EG<br><b>all papers</b>: 45<br><b>model papers</b>: 13<br><b>model + instrument papers</b>: 4<br><b>distinct model sources</b>: 48<br><b>evidence</b>: represented</div>`)[0];
+                popup_25589b0a7cab0e6f4d84a15ec53b0488.setContent(html_dbe57620040e20ca7a23d0660422fed5);
+            
+        
+
+        circle_marker_7f7775417a18f0fd32b5a3698304a99d.bindPopup(popup_25589b0a7cab0e6f4d84a15ec53b0488)
+        ;
+
+        
+    
+    
+            circle_marker_7f7775417a18f0fd32b5a3698304a99d.bindTooltip(
+                `<div>
+                     Egypt
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_785429be06aa81cf59657ffb507cc435 = L.circleMarker(
+                [35.85355059076805, 128.240957185006],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_f368afb35321be6cce7d1c03617b4a1a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_57b305e2906c58b5cdff6e63608e845f = $(`<div id="html_57b305e2906c58b5cdff6e63608e845f" style="width: 100.0%; height: 100.0%;"><b>country</b>: South Korea<br><b>iso</b>: KR<br><b>all papers</b>: 66<br><b>model papers</b>: 23<br><b>model + instrument papers</b>: 4<br><b>distinct model sources</b>: 57<br><b>evidence</b>: represented</div>`)[0];
+                popup_f368afb35321be6cce7d1c03617b4a1a.setContent(html_57b305e2906c58b5cdff6e63608e845f);
+            
+        
+
+        circle_marker_785429be06aa81cf59657ffb507cc435.bindPopup(popup_f368afb35321be6cce7d1c03617b4a1a)
+        ;
+
+        
+    
+    
+            circle_marker_785429be06aa81cf59657ffb507cc435.bindTooltip(
+                `<div>
+                     South Korea
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a037b5394564c53f7cc689850db2d765 = L.circleMarker(
+                [45.942203927915045, 24.98864679799815],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_23120af207f0b80f38cdb3dba4677fec = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_e634567d454803768c08c58de45acbac = $(`<div id="html_e634567d454803768c08c58de45acbac" style="width: 100.0%; height: 100.0%;"><b>country</b>: Romania<br><b>iso</b>: RO<br><b>all papers</b>: 32<br><b>model papers</b>: 9<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 38<br><b>evidence</b>: represented</div>`)[0];
+                popup_23120af207f0b80f38cdb3dba4677fec.setContent(html_e634567d454803768c08c58de45acbac);
+            
+        
+
+        circle_marker_a037b5394564c53f7cc689850db2d765.bindPopup(popup_23120af207f0b80f38cdb3dba4677fec)
+        ;
+
+        
+    
+    
+            circle_marker_a037b5394564c53f7cc689850db2d765.bindTooltip(
+                `<div>
+                     Romania
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e0441f5573eefd4eb2df6c13bddfcde = L.circleMarker(
+                [-34.55198052899995, 27.2261775],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_ae5ccae3548d7661f26420a2cfdc4012 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_713f97d1ebe4302c2c169b45c7a01dea = $(`<div id="html_713f97d1ebe4302c2c169b45c7a01dea" style="width: 100.0%; height: 100.0%;"><b>country</b>: South Africa<br><b>iso</b>: ZA<br><b>all papers</b>: 76<br><b>model papers</b>: 14<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 34<br><b>evidence</b>: represented</div>`)[0];
+                popup_ae5ccae3548d7661f26420a2cfdc4012.setContent(html_713f97d1ebe4302c2c169b45c7a01dea);
+            
+        
+
+        circle_marker_6e0441f5573eefd4eb2df6c13bddfcde.bindPopup(popup_ae5ccae3548d7661f26420a2cfdc4012)
+        ;
+
+        
+    
+    
+            circle_marker_6e0441f5573eefd4eb2df6c13bddfcde.bindTooltip(
+                `<div>
+                     South Africa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7947774508067fa48bc6f0e11e734ea2 = L.circleMarker(
+                [48.6725475000001, 19.699580868000098],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_a0d1df853ded0b188cc24f1b8c96994d = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_3b7e9e15faefafbfa98e8950c8a8a50c = $(`<div id="html_3b7e9e15faefafbfa98e8950c8a8a50c" style="width: 100.0%; height: 100.0%;"><b>country</b>: Slovakia<br><b>iso</b>: SK<br><b>all papers</b>: 25<br><b>model papers</b>: 7<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 36<br><b>evidence</b>: represented</div>`)[0];
+                popup_a0d1df853ded0b188cc24f1b8c96994d.setContent(html_3b7e9e15faefafbfa98e8950c8a8a50c);
+            
+        
+
+        circle_marker_7947774508067fa48bc6f0e11e734ea2.bindPopup(popup_a0d1df853ded0b188cc24f1b8c96994d)
+        ;
+
+        
+    
+    
+            circle_marker_7947774508067fa48bc6f0e11e734ea2.bindTooltip(
+                `<div>
+                     Slovakia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7648d083e052b7cbe6a531e466cf8a8f = L.circleMarker(
+                [41.6137974700001, 21.7432335155001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_1db88d2a4066f80e22457987cab19673 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_e902946497551e96ede69ec94d69d9fd = $(`<div id="html_e902946497551e96ede69ec94d69d9fd" style="width: 100.0%; height: 100.0%;"><b>country</b>: North Macedonia<br><b>iso</b>: MK<br><b>all papers</b>: 11<br><b>model papers</b>: 6<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 36<br><b>evidence</b>: represented</div>`)[0];
+                popup_1db88d2a4066f80e22457987cab19673.setContent(html_e902946497551e96ede69ec94d69d9fd);
+            
+        
+
+        circle_marker_7648d083e052b7cbe6a531e466cf8a8f.bindPopup(popup_1db88d2a4066f80e22457987cab19673)
+        ;
+
+        
+    
+    
+            circle_marker_7648d083e052b7cbe6a531e466cf8a8f.bindTooltip(
+                `<div>
+                     North Macedonia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_18f490ce8cf58b79a77d6fa2203febd8 = L.circleMarker(
+                [-9.19554405, -74.99026478350001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_f1b53956412f75ba8a7b18fe614ae484 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_debca721e86f75bdd4ea6b133a26eb1a = $(`<div id="html_debca721e86f75bdd4ea6b133a26eb1a" style="width: 100.0%; height: 100.0%;"><b>country</b>: Peru<br><b>iso</b>: PE<br><b>all papers</b>: 46<br><b>model papers</b>: 16<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 38<br><b>evidence</b>: represented</div>`)[0];
+                popup_f1b53956412f75ba8a7b18fe614ae484.setContent(html_debca721e86f75bdd4ea6b133a26eb1a);
+            
+        
+
+        circle_marker_18f490ce8cf58b79a77d6fa2203febd8.bindPopup(popup_f1b53956412f75ba8a7b18fe614ae484)
+        ;
+
+        
+    
+    
+            circle_marker_18f490ce8cf58b79a77d6fa2203febd8.bindTooltip(
+                `<div>
+                     Peru
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ca22ee17b1a16a83984e784249d77062 = L.circleMarker(
+                [16.317648107000068, 30.1984424045001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_5685fdc7bcb42f03c3a26a36f3326808 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_107b12c0871b689c7f5a1d77d0e5b028 = $(`<div id="html_107b12c0871b689c7f5a1d77d0e5b028" style="width: 100.0%; height: 100.0%;"><b>country</b>: Sudan<br><b>iso</b>: SD<br><b>all papers</b>: 22<br><b>model papers</b>: 6<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 40<br><b>evidence</b>: represented</div>`)[0];
+                popup_5685fdc7bcb42f03c3a26a36f3326808.setContent(html_107b12c0871b689c7f5a1d77d0e5b028);
+            
+        
+
+        circle_marker_ca22ee17b1a16a83984e784249d77062.bindPopup(popup_5685fdc7bcb42f03c3a26a36f3326808)
+        ;
+
+        
+    
+    
+            circle_marker_ca22ee17b1a16a83984e784249d77062.bindTooltip(
+                `<div>
+                     Sudan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fa07b47205f70aac3112356457017a77 = L.circleMarker(
+                [28.39767790950005, 84.12998828450006],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_a1b097dccdf108860233dd12c1fce1b2 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_1fbec632c36733c02d669e458f2048f6 = $(`<div id="html_1fbec632c36733c02d669e458f2048f6" style="width: 100.0%; height: 100.0%;"><b>country</b>: Nepal<br><b>iso</b>: NP<br><b>all papers</b>: 46<br><b>model papers</b>: 8<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 32<br><b>evidence</b>: represented</div>`)[0];
+                popup_a1b097dccdf108860233dd12c1fce1b2.setContent(html_1fbec632c36733c02d669e458f2048f6);
+            
+        
+
+        circle_marker_fa07b47205f70aac3112356457017a77.bindPopup(popup_a1b097dccdf108860233dd12c1fce1b2)
+        ;
+
+        
+    
+    
+            circle_marker_fa07b47205f70aac3112356457017a77.bindTooltip(
+                `<div>
+                     Nepal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d064f4133aebf21ab8c671f80e88c8f8 = L.circleMarker(
+                [42.72541105, 25.4822931755],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_d12bd0fabe553133890dc1d30194d882 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_591076be5a73d9e1e6282d96ca55ece9 = $(`<div id="html_591076be5a73d9e1e6282d96ca55ece9" style="width: 100.0%; height: 100.0%;"><b>country</b>: Bulgaria<br><b>iso</b>: BG<br><b>all papers</b>: 20<br><b>model papers</b>: 7<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 39<br><b>evidence</b>: represented</div>`)[0];
+                popup_d12bd0fabe553133890dc1d30194d882.setContent(html_591076be5a73d9e1e6282d96ca55ece9);
+            
+        
+
+        circle_marker_d064f4133aebf21ab8c671f80e88c8f8.bindPopup(popup_d12bd0fabe553133890dc1d30194d882)
+        ;
+
+        
+    
+    
+            circle_marker_d064f4133aebf21ab8c671f80e88c8f8.bindTooltip(
+                `<div>
+                     Bulgaria
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_898645b86309349c4bd1742e6a365df9 = L.circleMarker(
+                [-16.283706499499985, -63.54937128649995],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_06a2665b4d2b64a7fc5d9f7d4024ada0 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_e58af5519d78679cb801abd6ea9978c7 = $(`<div id="html_e58af5519d78679cb801abd6ea9978c7" style="width: 100.0%; height: 100.0%;"><b>country</b>: Bolivia<br><b>iso</b>: BO<br><b>all papers</b>: 28<br><b>model papers</b>: 6<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 14<br><b>evidence</b>: represented</div>`)[0];
+                popup_06a2665b4d2b64a7fc5d9f7d4024ada0.setContent(html_e58af5519d78679cb801abd6ea9978c7);
+            
+        
+
+        circle_marker_898645b86309349c4bd1742e6a365df9.bindPopup(popup_06a2665b4d2b64a7fc5d9f7d4024ada0)
+        ;
+
+        
+    
+    
+            circle_marker_898645b86309349c4bd1742e6a365df9.bindTooltip(
+                `<div>
+                     Bolivia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_92104696d9f7d1074a1cf34d58f4afb6 = L.circleMarker(
+                [-36.7403731114999, -87.9330469345],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_51a2520c284b93c319f48d97ce1f0d8d = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_c27eda5bf5ee3611673cf7ebb8d38589 = $(`<div id="html_c27eda5bf5ee3611673cf7ebb8d38589" style="width: 100.0%; height: 100.0%;"><b>country</b>: Chile<br><b>iso</b>: CL<br><b>all papers</b>: 57<br><b>model papers</b>: 12<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 42<br><b>evidence</b>: represented</div>`)[0];
+                popup_51a2520c284b93c319f48d97ce1f0d8d.setContent(html_c27eda5bf5ee3611673cf7ebb8d38589);
+            
+        
+
+        circle_marker_92104696d9f7d1074a1cf34d58f4afb6.bindPopup(popup_51a2520c284b93c319f48d97ce1f0d8d)
+        ;
+
+        
+    
+    
+            circle_marker_92104696d9f7d1074a1cf34d58f4afb6.bindTooltip(
+                `<div>
+                     Chile
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8f0f8baf5cb3e6bf64611d88ea75a2dd = L.circleMarker(
+                [26.333251125500002, 17.270353397],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_e24580099213b3e83accdf9aff648e2b = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_c86c724f3be3da2d34df19f6e391119c = $(`<div id="html_c86c724f3be3da2d34df19f6e391119c" style="width: 100.0%; height: 100.0%;"><b>country</b>: Libya<br><b>iso</b>: LY<br><b>all papers</b>: 23<br><b>model papers</b>: 6<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 26<br><b>evidence</b>: represented</div>`)[0];
+                popup_e24580099213b3e83accdf9aff648e2b.setContent(html_c86c724f3be3da2d34df19f6e391119c);
+            
+        
+
+        circle_marker_8f0f8baf5cb3e6bf64611d88ea75a2dd.bindPopup(popup_e24580099213b3e83accdf9aff648e2b)
+        ;
+
+        
+    
+    
+            circle_marker_8f0f8baf5cb3e6bf64611d88ea75a2dd.bindTooltip(
+                `<div>
+                     Libya
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2217eff4759242f81771f2d6ce4a8453 = L.circleMarker(
+                [17.6043779960001, 8.08061382150006],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_6967ce38a64b226ab8f8b95f847eaff7 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_b21995fe596678de67e9173fef9960ca = $(`<div id="html_b21995fe596678de67e9173fef9960ca" style="width: 100.0%; height: 100.0%;"><b>country</b>: Niger<br><b>iso</b>: NE<br><b>all papers</b>: 22<br><b>model papers</b>: 7<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 32<br><b>evidence</b>: represented</div>`)[0];
+                popup_6967ce38a64b226ab8f8b95f847eaff7.setContent(html_b21995fe596678de67e9173fef9960ca);
+            
+        
+
+        circle_marker_2217eff4759242f81771f2d6ce4a8453.bindPopup(popup_6967ce38a64b226ab8f8b95f847eaff7)
+        ;
+
+        
+    
+    
+            circle_marker_2217eff4759242f81771f2d6ce4a8453.bindTooltip(
+                `<div>
+                     Niger
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9c22fc3a4d978450c20703ae2e127537 = L.circleMarker(
+                [15.902592804500003, 108.25718763888551],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_8b87da6a1054cc1211a40f8ff9c7b406 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_c401ac1f9f4b010d428fbea1149c4a93 = $(`<div id="html_c401ac1f9f4b010d428fbea1149c4a93" style="width: 100.0%; height: 100.0%;"><b>country</b>: Vietnam<br><b>iso</b>: VN<br><b>all papers</b>: 39<br><b>model papers</b>: 10<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 23<br><b>evidence</b>: represented</div>`)[0];
+                popup_8b87da6a1054cc1211a40f8ff9c7b406.setContent(html_c401ac1f9f4b010d428fbea1149c4a93);
+            
+        
+
+        circle_marker_9c22fc3a4d978450c20703ae2e127537.bindPopup(popup_8b87da6a1054cc1211a40f8ff9c7b406)
+        ;
+
+        
+    
+    
+            circle_marker_9c22fc3a4d978450c20703ae2e127537.bindTooltip(
+                `<div>
+                     Vietnam
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a7072ad61b11158121e19ce0798d2e2f = L.circleMarker(
+                [38.95853556500005, 35.242316863461284],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_92d3f2a4632b67db245045666765f1f8 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_0a3116955ebaf0db925d952ddd17bbca = $(`<div id="html_0a3116955ebaf0db925d952ddd17bbca" style="width: 100.0%; height: 100.0%;"><b>country</b>: Turkey<br><b>iso</b>: TR<br><b>all papers</b>: 56<br><b>model papers</b>: 16<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 44<br><b>evidence</b>: represented</div>`)[0];
+                popup_92d3f2a4632b67db245045666765f1f8.setContent(html_0a3116955ebaf0db925d952ddd17bbca);
+            
+        
+
+        circle_marker_a7072ad61b11158121e19ce0798d2e2f.bindPopup(popup_92d3f2a4632b67db245045666765f1f8)
+        ;
+
+        
+    
+    
+            circle_marker_a7072ad61b11158121e19ce0798d2e2f.bindTooltip(
+                `<div>
+                     Turkey
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_37d4e2994a39679a1ae3dd4354ada9ac = L.circleMarker(
+                [33.22097700050005, 43.7027050000001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_4799dffd60e77c5e9ba43de826598534 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_49a6890d4d32fd18b5d5e88660c2b806 = $(`<div id="html_49a6890d4d32fd18b5d5e88660c2b806" style="width: 100.0%; height: 100.0%;"><b>country</b>: Iraq<br><b>iso</b>: IQ<br><b>all papers</b>: 27<br><b>model papers</b>: 8<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 35<br><b>evidence</b>: represented</div>`)[0];
+                popup_4799dffd60e77c5e9ba43de826598534.setContent(html_49a6890d4d32fd18b5d5e88660c2b806);
+            
+        
+
+        circle_marker_37d4e2994a39679a1ae3dd4354ada9ac.bindPopup(popup_4799dffd60e77c5e9ba43de826598534)
+        ;
+
+        
+    
+    
+            circle_marker_37d4e2994a39679a1ae3dd4354ada9ac.bindTooltip(
+                `<div>
+                     Iraq
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_86814ae1399a4b8598639c8f0cbb31af = L.circleMarker(
+                [19.073310718500004, 96.67112474999999],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_dffc465aed74f88a9c7c3962c94ab999 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_b421c22c83d580517ad7b64a975a0cc8 = $(`<div id="html_b421c22c83d580517ad7b64a975a0cc8" style="width: 100.0%; height: 100.0%;"><b>country</b>: Myanmar<br><b>iso</b>: MM<br><b>all papers</b>: 31<br><b>model papers</b>: 12<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 34<br><b>evidence</b>: represented</div>`)[0];
+                popup_dffc465aed74f88a9c7c3962c94ab999.setContent(html_b421c22c83d580517ad7b64a975a0cc8);
+            
+        
+
+        circle_marker_86814ae1399a4b8598639c8f0cbb31af.bindPopup(popup_dffc465aed74f88a9c7c3962c94ab999)
+        ;
+
+        
+    
+    
+            circle_marker_86814ae1399a4b8598639c8f0cbb31af.bindTooltip(
+                `<div>
+                     Myanmar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_233cb3f86c46c7000e0fd83faf6e812a = L.circleMarker(
+                [23.5412866255, 119.4088630105],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_edf22594e68c06b5038bdf82527cc52e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_4e9dd726992a1c6eb6000389cab0c9e3 = $(`<div id="html_4e9dd726992a1c6eb6000389cab0c9e3" style="width: 100.0%; height: 100.0%;"><b>country</b>: Taiwan<br><b>iso</b>: TW<br><b>all papers</b>: 42<br><b>model papers</b>: 11<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 47<br><b>evidence</b>: represented</div>`)[0];
+                popup_edf22594e68c06b5038bdf82527cc52e.setContent(html_4e9dd726992a1c6eb6000389cab0c9e3);
+            
+        
+
+        circle_marker_233cb3f86c46c7000e0fd83faf6e812a.bindPopup(popup_edf22594e68c06b5038bdf82527cc52e)
+        ;
+
+        
+    
+    
+            circle_marker_233cb3f86c46c7000e0fd83faf6e812a.bindTooltip(
+                `<div>
+                     Taiwan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f00920095e2dd89d9dc0824c2c26df82 = L.circleMarker(
+                [54.463395500000004, 24.6849235005],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_ae4a255fdd8f9b76cdc3d7e2fd7fb0b6 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_3ae264355e6fb7308f42e921059b5583 = $(`<div id="html_3ae264355e6fb7308f42e921059b5583" style="width: 100.0%; height: 100.0%;"><b>country</b>: Belarus<br><b>iso</b>: BY<br><b>all papers</b>: 17<br><b>model papers</b>: 6<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 51<br><b>evidence</b>: represented</div>`)[0];
+                popup_ae4a255fdd8f9b76cdc3d7e2fd7fb0b6.setContent(html_3ae264355e6fb7308f42e921059b5583);
+            
+        
+
+        circle_marker_f00920095e2dd89d9dc0824c2c26df82.bindPopup(popup_ae4a255fdd8f9b76cdc3d7e2fd7fb0b6)
+        ;
+
+        
+    
+    
+            circle_marker_f00920095e2dd89d9dc0824c2c26df82.bindTooltip(
+                `<div>
+                     Belarus
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a3382c353d6d37fe9723e1714195e9cb = L.circleMarker(
+                [31.39074493100005, 34.968793500000004],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.732050807568877, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_b3dff71dbe2510a0c917c6abfc35d7dd = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_2f2aaebeaa158ebe563bfc603f55326b = $(`<div id="html_2f2aaebeaa158ebe563bfc603f55326b" style="width: 100.0%; height: 100.0%;"><b>country</b>: Israel<br><b>iso</b>: IL<br><b>all papers</b>: 24<br><b>model papers</b>: 7<br><b>model + instrument papers</b>: 3<br><b>distinct model sources</b>: 27<br><b>evidence</b>: represented</div>`)[0];
+                popup_b3dff71dbe2510a0c917c6abfc35d7dd.setContent(html_2f2aaebeaa158ebe563bfc603f55326b);
+            
+        
+
+        circle_marker_a3382c353d6d37fe9723e1714195e9cb.bindPopup(popup_b3dff71dbe2510a0c917c6abfc35d7dd)
+        ;
+
+        
+    
+    
+            circle_marker_a3382c353d6d37fe9723e1714195e9cb.bindTooltip(
+                `<div>
+                     Israel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23c4029e8d35cb06aff6f00ae775b0b7 = L.circleMarker(
+                [-29.62318750149995, 28.23346997000005],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_00cc706854b39bcb4d900c1c9a8f0a36 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_8e50bcb24fca62f37420c804a20b9939 = $(`<div id="html_8e50bcb24fca62f37420c804a20b9939" style="width: 100.0%; height: 100.0%;"><b>country</b>: Lesotho<br><b>iso</b>: LS<br><b>all papers</b>: 9<br><b>model papers</b>: 3<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 26<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_00cc706854b39bcb4d900c1c9a8f0a36.setContent(html_8e50bcb24fca62f37420c804a20b9939);
+            
+        
+
+        circle_marker_23c4029e8d35cb06aff6f00ae775b0b7.bindPopup(popup_00cc706854b39bcb4d900c1c9a8f0a36)
+        ;
+
+        
+    
+    
+            circle_marker_23c4029e8d35cb06aff6f00ae775b0b7.bindTooltip(
+                `<div>
+                     Lesotho
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_16a50550959899e0ccc6c5e04b615a9c = L.circleMarker(
+                [46.14922027499175, 14.99298269358545],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_04381cb78bce677e6a1254db3e576ef2 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_7f19f16db5d0f6eeb5883b03f58ae852 = $(`<div id="html_7f19f16db5d0f6eeb5883b03f58ae852" style="width: 100.0%; height: 100.0%;"><b>country</b>: Slovenia<br><b>iso</b>: SI<br><b>all papers</b>: 18<br><b>model papers</b>: 6<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 35<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_04381cb78bce677e6a1254db3e576ef2.setContent(html_7f19f16db5d0f6eeb5883b03f58ae852);
+            
+        
+
+        circle_marker_16a50550959899e0ccc6c5e04b615a9c.bindPopup(popup_04381cb78bce677e6a1254db3e576ef2)
+        ;
+
+        
+    
+    
+            circle_marker_16a50550959899e0ccc6c5e04b615a9c.bindTooltip(
+                `<div>
+                     Slovenia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dcea55077fed8232206ff5c4b476c476 = L.circleMarker(
+                [42.32089155, 43.371361500000006],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_051c84a71b058300c574766232684f9d = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_054b446ab18018efde2f372be92368a7 = $(`<div id="html_054b446ab18018efde2f372be92368a7" style="width: 100.0%; height: 100.0%;"><b>country</b>: Georgia<br><b>iso</b>: GE<br><b>all papers</b>: 15<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 9<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_051c84a71b058300c574766232684f9d.setContent(html_054b446ab18018efde2f372be92368a7);
+            
+        
+
+        circle_marker_dcea55077fed8232206ff5c4b476c476.bindPopup(popup_051c84a71b058300c574766232684f9d)
+        ;
+
+        
+    
+    
+            circle_marker_dcea55077fed8232206ff5c4b476c476.bindTooltip(
+                `<div>
+                     Georgia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e31d4d866c9a48c1345da210ddb80d3d = L.circleMarker(
+                [44.4712378895, 16.468595225500003],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_a1ff4a5d7a859f93f65b346c02874e38 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_b4cda18b1efdd6a27f517f06f5224815 = $(`<div id="html_b4cda18b1efdd6a27f517f06f5224815" style="width: 100.0%; height: 100.0%;"><b>country</b>: Croatia<br><b>iso</b>: HR<br><b>all papers</b>: 22<br><b>model papers</b>: 6<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 35<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_a1ff4a5d7a859f93f65b346c02874e38.setContent(html_b4cda18b1efdd6a27f517f06f5224815);
+            
+        
+
+        circle_marker_e31d4d866c9a48c1345da210ddb80d3d.bindPopup(popup_a1ff4a5d7a859f93f65b346c02874e38)
+        ;
+
+        
+    
+    
+            circle_marker_e31d4d866c9a48c1345da210ddb80d3d.bindTooltip(
+                `<div>
+                     Croatia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3292ad37dfee46b303072aa6a6937c53 = L.circleMarker(
+                [13.038997, 101.490104],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_fe5970d89504a72674afee70f851dd9d = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_bf19d37e58154c14f5bc41e7283b6121 = $(`<div id="html_bf19d37e58154c14f5bc41e7283b6121" style="width: 100.0%; height: 100.0%;"><b>country</b>: Thailand<br><b>iso</b>: TH<br><b>all papers</b>: 42<br><b>model papers</b>: 6<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 20<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_fe5970d89504a72674afee70f851dd9d.setContent(html_bf19d37e58154c14f5bc41e7283b6121);
+            
+        
+
+        circle_marker_3292ad37dfee46b303072aa6a6937c53.bindPopup(popup_fe5970d89504a72674afee70f851dd9d)
+        ;
+
+        
+    
+    
+            circle_marker_3292ad37dfee46b303072aa6a6937c53.bindTooltip(
+                `<div>
+                     Thailand
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c4368ba796248cca9ab26d9f0ca95f55 = L.circleMarker(
+                [0.17676325450003016, 37.9083830000001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_5e6e3042d18a3e13e23f853c33db5be6 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_0988031162b505f66b28d389e0b9c7b1 = $(`<div id="html_0988031162b505f66b28d389e0b9c7b1" style="width: 100.0%; height: 100.0%;"><b>country</b>: Kenya<br><b>iso</b>: KE<br><b>all papers</b>: 38<br><b>model papers</b>: 9<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 16<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_5e6e3042d18a3e13e23f853c33db5be6.setContent(html_0988031162b505f66b28d389e0b9c7b1);
+            
+        
+
+        circle_marker_c4368ba796248cca9ab26d9f0ca95f55.bindPopup(popup_5e6e3042d18a3e13e23f853c33db5be6)
+        ;
+
+        
+    
+    
+            circle_marker_c4368ba796248cca9ab26d9f0ca95f55.bindTooltip(
+                `<div>
+                     Kenya
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc8f7d98557f53d0db111fd0c490f3bb = L.circleMarker(
+                [41.15301471062055, 20.160672377352647],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_bb703359a4cea9f9d36bcfa2817e2cb4 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_8eea2ba9f2804ad2188407f0b44d1c33 = $(`<div id="html_8eea2ba9f2804ad2188407f0b44d1c33" style="width: 100.0%; height: 100.0%;"><b>country</b>: Albania<br><b>iso</b>: AL<br><b>all papers</b>: 14<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 34<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_bb703359a4cea9f9d36bcfa2817e2cb4.setContent(html_8eea2ba9f2804ad2188407f0b44d1c33);
+            
+        
+
+        circle_marker_dc8f7d98557f53d0db111fd0c490f3bb.bindPopup(popup_bb703359a4cea9f9d36bcfa2817e2cb4)
+        ;
+
+        
+    
+    
+            circle_marker_dc8f7d98557f53d0db111fd0c490f3bb.bindTooltip(
+                `<div>
+                     Albania
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2c8624706c31781ef35efdabced81ed = L.circleMarker(
+                [-22.967063586499947, 18.49962703050005],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_e62e28b190d1efbaf74ca4dc5db06f1e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_ff15ddbcdce68d4983b31060c9bccd06 = $(`<div id="html_ff15ddbcdce68d4983b31060c9bccd06" style="width: 100.0%; height: 100.0%;"><b>country</b>: Namibia<br><b>all papers</b>: 17<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 9<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_e62e28b190d1efbaf74ca4dc5db06f1e.setContent(html_ff15ddbcdce68d4983b31060c9bccd06);
+            
+        
+
+        circle_marker_a2c8624706c31781ef35efdabced81ed.bindPopup(popup_e62e28b190d1efbaf74ca4dc5db06f1e)
+        ;
+
+        
+    
+    
+            circle_marker_a2c8624706c31781ef35efdabced81ed.bindTooltip(
+                `<div>
+                     Namibia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4e2f1de063bb4060389235b497508cc2 = L.circleMarker(
+                [18.198604730338413, -66.58617835856087],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_c5c0a4f9475a6eaf861fd38a6daf4960 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_0e7e449942f9ff8910cd9180815abf43 = $(`<div id="html_0e7e449942f9ff8910cd9180815abf43" style="width: 100.0%; height: 100.0%;"><b>country</b>: Puerto Rico<br><b>iso</b>: PR<br><b>all papers</b>: 8<br><b>model papers</b>: 3<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 5<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_c5c0a4f9475a6eaf861fd38a6daf4960.setContent(html_0e7e449942f9ff8910cd9180815abf43);
+            
+        
+
+        circle_marker_4e2f1de063bb4060389235b497508cc2.bindPopup(popup_c5c0a4f9475a6eaf861fd38a6daf4960)
+        ;
+
+        
+    
+    
+            circle_marker_4e2f1de063bb4060389235b497508cc2.bindTooltip(
+                `<div>
+                     Puerto Rico
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d82d7144eedc8191afe19b1ff9b35b8f = L.circleMarker(
+                [48.005336250000056, 66.9045435005001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_01ec38ee5a3c92b76855d7db99198819 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_4a80eae7ffe273615ce4bc6d7fba5c46 = $(`<div id="html_4a80eae7ffe273615ce4bc6d7fba5c46" style="width: 100.0%; height: 100.0%;"><b>country</b>: Kazakhstan<br><b>iso</b>: KZ<br><b>all papers</b>: 24<br><b>model papers</b>: 5<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 12<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_01ec38ee5a3c92b76855d7db99198819.setContent(html_4a80eae7ffe273615ce4bc6d7fba5c46);
+            
+        
+
+        circle_marker_d82d7144eedc8191afe19b1ff9b35b8f.bindPopup(popup_01ec38ee5a3c92b76855d7db99198819)
+        ;
+
+        
+    
+    
+            circle_marker_d82d7144eedc8191afe19b1ff9b35b8f.bindTooltip(
+                `<div>
+                     Kazakhstan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_185828b038d21ff0bc896fbdfe354bbd = L.circleMarker(
+                [46.8650940010001, 103.83299442950005],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_e628e65060523c278c60c7c9fa61d9d1 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_58dfe048031ada5f3cb8f505b48b48e7 = $(`<div id="html_58dfe048031ada5f3cb8f505b48b48e7" style="width: 100.0%; height: 100.0%;"><b>country</b>: Mongolia<br><b>iso</b>: MN<br><b>all papers</b>: 26<br><b>model papers</b>: 5<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 15<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_e628e65060523c278c60c7c9fa61d9d1.setContent(html_58dfe048031ada5f3cb8f505b48b48e7);
+            
+        
+
+        circle_marker_185828b038d21ff0bc896fbdfe354bbd.bindPopup(popup_e628e65060523c278c60c7c9fa61d9d1)
+        ;
+
+        
+    
+    
+            circle_marker_185828b038d21ff0bc896fbdfe354bbd.bindTooltip(
+                `<div>
+                     Mongolia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d254d9510bbb25d4cd79220e33a4cc5 = L.circleMarker(
+                [18.2093824755, 103.85948296800001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_eae2d6d123c1c4e076c04aaa89e49aa4 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_a730a91143a3522111fb3d2370df0cfd = $(`<div id="html_a730a91143a3522111fb3d2370df0cfd" style="width: 100.0%; height: 100.0%;"><b>country</b>: Laos<br><b>iso</b>: LA<br><b>all papers</b>: 15<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 14<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_eae2d6d123c1c4e076c04aaa89e49aa4.setContent(html_a730a91143a3522111fb3d2370df0cfd);
+            
+        
+
+        circle_marker_0d254d9510bbb25d4cd79220e33a4cc5.bindPopup(popup_eae2d6d123c1c4e076c04aaa89e49aa4)
+        ;
+
+        
+    
+    
+            circle_marker_0d254d9510bbb25d4cd79220e33a4cc5.bindTooltip(
+                `<div>
+                     Laos
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4c36c92a8f2192f34e9bd127a66c5701 = L.circleMarker(
+                [28.0289741905, 1.665444371500075],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_e2ebc6ce0d53f84e8f5910643f23fb9c = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_fe7fcb0808a020697837644f68a55ca4 = $(`<div id="html_fe7fcb0808a020697837644f68a55ca4" style="width: 100.0%; height: 100.0%;"><b>country</b>: Algeria<br><b>iso</b>: DZ<br><b>all papers</b>: 32<br><b>model papers</b>: 5<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 27<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_e2ebc6ce0d53f84e8f5910643f23fb9c.setContent(html_fe7fcb0808a020697837644f68a55ca4);
+            
+        
+
+        circle_marker_4c36c92a8f2192f34e9bd127a66c5701.bindPopup(popup_e2ebc6ce0d53f84e8f5910643f23fb9c)
+        ;
+
+        
+    
+    
+            circle_marker_4c36c92a8f2192f34e9bd127a66c5701.bindTooltip(
+                `<div>
+                     Algeria
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_13982fe497aedbccd54b520f39433a78 = L.circleMarker(
+                [12.854589987787726, 120.44143313747418],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_f4f6ea12de3c7c2a6be5abfe92bdd329 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_64bc0d7282b1ca0be5a10ea16bbb28de = $(`<div id="html_64bc0d7282b1ca0be5a10ea16bbb28de" style="width: 100.0%; height: 100.0%;"><b>country</b>: Philippines<br><b>iso</b>: PH<br><b>all papers</b>: 42<br><b>model papers</b>: 9<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 33<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_f4f6ea12de3c7c2a6be5abfe92bdd329.setContent(html_64bc0d7282b1ca0be5a10ea16bbb28de);
+            
+        
+
+        circle_marker_13982fe497aedbccd54b520f39433a78.bindPopup(popup_f4f6ea12de3c7c2a6be5abfe92bdd329)
+        ;
+
+        
+    
+    
+            circle_marker_13982fe497aedbccd54b520f39433a78.bindTooltip(
+                `<div>
+                     Philippines
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6c40ffe440be9f3a92d08ea15588030b = L.circleMarker(
+                [12.302004438, 104.9806727],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_9acc495920105be9b8da061ab8bdfc35 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_69df5b17594105d55fc4cba8101b9c18 = $(`<div id="html_69df5b17594105d55fc4cba8101b9c18" style="width: 100.0%; height: 100.0%;"><b>country</b>: Cambodia<br><b>iso</b>: KH<br><b>all papers</b>: 16<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 16<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_9acc495920105be9b8da061ab8bdfc35.setContent(html_69df5b17594105d55fc4cba8101b9c18);
+            
+        
+
+        circle_marker_6c40ffe440be9f3a92d08ea15588030b.bindPopup(popup_9acc495920105be9b8da061ab8bdfc35)
+        ;
+
+        
+    
+    
+            circle_marker_6c40ffe440be9f3a92d08ea15588030b.bindTooltip(
+                `<div>
+                     Cambodia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf6a8b51adff17d61564bad28b913290 = L.circleMarker(
+                [40.1522785010001, 47.693247514],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_bd5a7e5aa7e2615b52a6b67e267666ff = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_6e5850933dcc48f1d1a84c4c3abc0eb3 = $(`<div id="html_6e5850933dcc48f1d1a84c4c3abc0eb3" style="width: 100.0%; height: 100.0%;"><b>country</b>: Azerbaijan<br><b>iso</b>: AZ<br><b>all papers</b>: 8<br><b>model papers</b>: 2<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 7<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_bd5a7e5aa7e2615b52a6b67e267666ff.setContent(html_6e5850933dcc48f1d1a84c4c3abc0eb3);
+            
+        
+
+        circle_marker_bf6a8b51adff17d61564bad28b913290.bindPopup(popup_bd5a7e5aa7e2615b52a6b67e267666ff)
+        ;
+
+        
+    
+    
+            circle_marker_bf6a8b51adff17d61564bad28b913290.bindTooltip(
+                `<div>
+                     Azerbaijan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6d31b229f1f8b4a610b87e04672c23b8 = L.circleMarker(
+                [-19.015658999, 29.1528020000001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_72ce8b718d76a14f487ada7f5deb03ef = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_d61ff1e2f8f34b1b6f830b17b0f3a1b2 = $(`<div id="html_d61ff1e2f8f34b1b6f830b17b0f3a1b2" style="width: 100.0%; height: 100.0%;"><b>country</b>: Zimbabwe<br><b>iso</b>: ZW<br><b>all papers</b>: 13<br><b>model papers</b>: 3<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 7<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_72ce8b718d76a14f487ada7f5deb03ef.setContent(html_d61ff1e2f8f34b1b6f830b17b0f3a1b2);
+            
+        
+
+        circle_marker_6d31b229f1f8b4a610b87e04672c23b8.bindPopup(popup_72ce8b718d76a14f487ada7f5deb03ef)
+        ;
+
+        
+    
+    
+            circle_marker_6d31b229f1f8b4a610b87e04672c23b8.bindTooltip(
+                `<div>
+                     Zimbabwe
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd600c6638301b11aa4e6525af73e9ee = L.circleMarker(
+                [-13.14035099999997, 27.85419070300005],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_12620ae36e79affcddeb02e1bc48a158 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_f3e634ac5d1a89c1c46e87370c0a91d4 = $(`<div id="html_f3e634ac5d1a89c1c46e87370c0a91d4" style="width: 100.0%; height: 100.0%;"><b>country</b>: Zambia<br><b>iso</b>: ZM<br><b>all papers</b>: 12<br><b>model papers</b>: 2<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 3<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_12620ae36e79affcddeb02e1bc48a158.setContent(html_f3e634ac5d1a89c1c46e87370c0a91d4);
+            
+        
+
+        circle_marker_fd600c6638301b11aa4e6525af73e9ee.bindPopup(popup_12620ae36e79affcddeb02e1bc48a158)
+        ;
+
+        
+    
+    
+            circle_marker_fd600c6638301b11aa4e6525af73e9ee.bindTooltip(
+                `<div>
+                     Zambia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b67510048a103256c2a62f85844e6f43 = L.circleMarker(
+                [24.14629500000005, 45.081196500000004],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_c7c7dc36f9331acd5acc7779b616220e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_7fac632e7d53f5020a894f726350f9e1 = $(`<div id="html_7fac632e7d53f5020a894f726350f9e1" style="width: 100.0%; height: 100.0%;"><b>country</b>: Saudi Arabia<br><b>iso</b>: SA<br><b>all papers</b>: 35<br><b>model papers</b>: 7<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 39<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_c7c7dc36f9331acd5acc7779b616220e.setContent(html_7fac632e7d53f5020a894f726350f9e1);
+            
+        
+
+        circle_marker_b67510048a103256c2a62f85844e6f43.bindPopup(popup_c7c7dc36f9331acd5acc7779b616220e)
+        ;
+
+        
+    
+    
+            circle_marker_b67510048a103256c2a62f85844e6f43.bindTooltip(
+                `<div>
+                     Saudi Arabia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd1790539c6cc7196379e1623202dedf = L.circleMarker(
+                [-23.440716782554, -58.45177067417295],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_64fe3e96476fbe25e8db1d1813b3359e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_48c38833cbf5937ab17b4a3985efc0fe = $(`<div id="html_48c38833cbf5937ab17b4a3985efc0fe" style="width: 100.0%; height: 100.0%;"><b>country</b>: Paraguay<br><b>iso</b>: PY<br><b>all papers</b>: 17<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 5<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_64fe3e96476fbe25e8db1d1813b3359e.setContent(html_48c38833cbf5937ab17b4a3985efc0fe);
+            
+        
+
+        circle_marker_dd1790539c6cc7196379e1623202dedf.bindPopup(popup_64fe3e96476fbe25e8db1d1813b3359e)
+        ;
+
+        
+    
+    
+            circle_marker_dd1790539c6cc7196379e1623202dedf.bindTooltip(
+                `<div>
+                     Paraguay
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3a91db4a89074e5104add63ddb797b8d = L.circleMarker(
+                [46.97973348300005, 28.3900074995001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_075836688580fc0c0a7388c04f79e67d = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_09264e655253d82fb7b1d09baee803ed = $(`<div id="html_09264e655253d82fb7b1d09baee803ed" style="width: 100.0%; height: 100.0%;"><b>country</b>: Moldova<br><b>iso</b>: MD<br><b>all papers</b>: 11<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 8<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_075836688580fc0c0a7388c04f79e67d.setContent(html_09264e655253d82fb7b1d09baee803ed);
+            
+        
+
+        circle_marker_3a91db4a89074e5104add63ddb797b8d.bindPopup(popup_075836688580fc0c0a7388c04f79e67d)
+        ;
+
+        
+    
+    
+            circle_marker_3a91db4a89074e5104add63ddb797b8d.bindTooltip(
+                `<div>
+                     Moldova
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0612a82297141ee53efecd49ad43c48f = L.circleMarker(
+                [47.16119277950005, 19.505179668],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_d9c20f9612c071132d76166d77f936ed = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_274a6b6d8a409a03dbea5db03266fe92 = $(`<div id="html_274a6b6d8a409a03dbea5db03266fe92" style="width: 100.0%; height: 100.0%;"><b>country</b>: Hungary<br><b>iso</b>: HU<br><b>all papers</b>: 31<br><b>model papers</b>: 7<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 41<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_d9c20f9612c071132d76166d77f936ed.setContent(html_274a6b6d8a409a03dbea5db03266fe92);
+            
+        
+
+        circle_marker_0612a82297141ee53efecd49ad43c48f.bindPopup(popup_d9c20f9612c071132d76166d77f936ed)
+        ;
+
+        
+    
+    
+            circle_marker_0612a82297141ee53efecd49ad43c48f.bindTooltip(
+                `<div>
+                     Hungary
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_acb52c8434977b79116a0e5a2cdbc362 = L.circleMarker(
+                [22.35783828227245, 114.13852996435699],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_f0b2b29aa0ac414961352464efff5fc2 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_0779761700e7835063c96a878f8a36de = $(`<div id="html_0779761700e7835063c96a878f8a36de" style="width: 100.0%; height: 100.0%;"><b>country</b>: Hong Kong<br><b>iso</b>: HK<br><b>all papers</b>: 22<br><b>model papers</b>: 6<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 17<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_f0b2b29aa0ac414961352464efff5fc2.setContent(html_0779761700e7835063c96a878f8a36de);
+            
+        
+
+        circle_marker_acb52c8434977b79116a0e5a2cdbc362.bindPopup(popup_f0b2b29aa0ac414961352464efff5fc2)
+        ;
+
+        
+    
+    
+            circle_marker_acb52c8434977b79116a0e5a2cdbc362.bindTooltip(
+                `<div>
+                     Hong Kong
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2cc980fbbf300015a79bc134c0f42ab5 = L.circleMarker(
+                [-18.778802484, 46.837233253],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.414213562373095, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_d12de615865f40e4fea89c0e8ba3ee61 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_d6ac3473420d3baaedad70247c8dbc39 = $(`<div id="html_d6ac3473420d3baaedad70247c8dbc39" style="width: 100.0%; height: 100.0%;"><b>country</b>: Madagascar<br><b>iso</b>: MG<br><b>all papers</b>: 19<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 2<br><b>distinct model sources</b>: 4<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_d12de615865f40e4fea89c0e8ba3ee61.setContent(html_d6ac3473420d3baaedad70247c8dbc39);
+            
+        
+
+        circle_marker_2cc980fbbf300015a79bc134c0f42ab5.bindPopup(popup_d12de615865f40e4fea89c0e8ba3ee61)
+        ;
+
+        
+    
+    
+            circle_marker_2cc980fbbf300015a79bc134c0f42ab5.bindTooltip(
+                `<div>
+                     Madagascar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bd9ff3d9301d4777bf035212b9babd80 = L.circleMarker(
+                [8.42489122796366, -80.10438130784925],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_4a4872086f27b0aebca1aa60f6fa7374 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_a7c60f56b052c6534db41b34be6f0193 = $(`<div id="html_a7c60f56b052c6534db41b34be6f0193" style="width: 100.0%; height: 100.0%;"><b>country</b>: Panama<br><b>iso</b>: PA<br><b>all papers</b>: 13<br><b>model papers</b>: 2<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 3<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_4a4872086f27b0aebca1aa60f6fa7374.setContent(html_a7c60f56b052c6534db41b34be6f0193);
+            
+        
+
+        circle_marker_bd9ff3d9301d4777bf035212b9babd80.bindPopup(popup_4a4872086f27b0aebca1aa60f6fa7374)
+        ;
+
+        
+    
+    
+            circle_marker_bd9ff3d9301d4777bf035212b9babd80.bindTooltip(
+                `<div>
+                     Panama
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3a3a9f8a335f00da84695a436c2560be = L.circleMarker(
+                [4.117778539500051, 109.10291189990966],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_152a8d2a378ba8ea51549bb1f9f41535 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_ebb756724855ca68751797ecd33b2afc = $(`<div id="html_ebb756724855ca68751797ecd33b2afc" style="width: 100.0%; height: 100.0%;"><b>country</b>: Malaysia<br><b>iso</b>: MY<br><b>all papers</b>: 35<br><b>model papers</b>: 7<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 21<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_152a8d2a378ba8ea51549bb1f9f41535.setContent(html_ebb756724855ca68751797ecd33b2afc);
+            
+        
+
+        circle_marker_3a3a9f8a335f00da84695a436c2560be.bindPopup(popup_152a8d2a378ba8ea51549bb1f9f41535)
+        ;
+
+        
+    
+    
+            circle_marker_3a3a9f8a335f00da84695a436c2560be.bindTooltip(
+                `<div>
+                     Malaysia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3559bdf55f7a4bbe26f4673c10f1ec0b = L.circleMarker(
+                [21.018582350000003, -10.951430450000002],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_f120e19bcfe1e920abecd82bc6dbb172 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_966bf4c80d09321def41f7d6e766a115 = $(`<div id="html_966bf4c80d09321def41f7d6e766a115" style="width: 100.0%; height: 100.0%;"><b>country</b>: Mauritania<br><b>iso</b>: MR<br><b>all papers</b>: 9<br><b>model papers</b>: 2<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 3<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_f120e19bcfe1e920abecd82bc6dbb172.setContent(html_966bf4c80d09321def41f7d6e766a115);
+            
+        
+
+        circle_marker_3559bdf55f7a4bbe26f4673c10f1ec0b.bindPopup(popup_f120e19bcfe1e920abecd82bc6dbb172)
+        ;
+
+        
+    
+    
+            circle_marker_3559bdf55f7a4bbe26f4673c10f1ec0b.bindTooltip(
+                `<div>
+                     Mauritania
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6a132c168f723390cb5ad7fd5f0bba1 = L.circleMarker(
+                [13.190012385500001, -59.535703791],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_ac9bda244088615a61571033b1b9c108 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_770b9d26f82bd1905fea2d5e405a66a8 = $(`<div id="html_770b9d26f82bd1905fea2d5e405a66a8" style="width: 100.0%; height: 100.0%;"><b>country</b>: Barbados<br><b>iso</b>: BB<br><b>all papers</b>: 10<br><b>model papers</b>: 2<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 1<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_ac9bda244088615a61571033b1b9c108.setContent(html_770b9d26f82bd1905fea2d5e405a66a8);
+            
+        
+
+        circle_marker_c6a132c168f723390cb5ad7fd5f0bba1.bindPopup(popup_ac9bda244088615a61571033b1b9c108)
+        ;
+
+        
+    
+    
+            circle_marker_c6a132c168f723390cb5ad7fd5f0bba1.bindTooltip(
+                `<div>
+                     Barbados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d16bf9a8a2d19478fd4c3ea61d32e89e = L.circleMarker(
+                [38.9636773630001, 59.576465532500094],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_939e19f8b2dde7b6c98feffab78cb5a5 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_ee24188f127613040aeeb9cafc012959 = $(`<div id="html_ee24188f127613040aeeb9cafc012959" style="width: 100.0%; height: 100.0%;"><b>country</b>: Turkmenistan<br><b>iso</b>: TM<br><b>all papers</b>: 9<br><b>model papers</b>: 2<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 5<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_939e19f8b2dde7b6c98feffab78cb5a5.setContent(html_ee24188f127613040aeeb9cafc012959);
+            
+        
+
+        circle_marker_d16bf9a8a2d19478fd4c3ea61d32e89e.bindPopup(popup_939e19f8b2dde7b6c98feffab78cb5a5)
+        ;
+
+        
+    
+    
+            circle_marker_d16bf9a8a2d19478fd4c3ea61d32e89e.bindTooltip(
+                `<div>
+                     Turkmenistan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_074c729472621b76867161ecdd787d7e = L.circleMarker(
+                [7.87727986907553, 80.70020262114622],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_fb1f9082d96e5369524ddfb1e5ab6b9e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_512b090cf0247d01b1841ea005f9960e = $(`<div id="html_512b090cf0247d01b1841ea005f9960e" style="width: 100.0%; height: 100.0%;"><b>country</b>: Sri Lanka<br><b>iso</b>: LK<br><b>all papers</b>: 18<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 33<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_fb1f9082d96e5369524ddfb1e5ab6b9e.setContent(html_512b090cf0247d01b1841ea005f9960e);
+            
+        
+
+        circle_marker_074c729472621b76867161ecdd787d7e.bindPopup(popup_fb1f9082d96e5369524ddfb1e5ab6b9e)
+        ;
+
+        
+    
+    
+            circle_marker_074c729472621b76867161ecdd787d7e.bindTooltip(
+                `<div>
+                     Sri Lanka
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_57eb6a220b3a2f42e8e7fec2f8f6bd97 = L.circleMarker(
+                [-11.2135837, 17.8790409385],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_0227a3f8d99ea47d553863a9e2633912 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_73129fe039cbd941504f91e9cd870a33 = $(`<div id="html_73129fe039cbd941504f91e9cd870a33" style="width: 100.0%; height: 100.0%;"><b>country</b>: Angola<br><b>iso</b>: AO<br><b>all papers</b>: 15<br><b>model papers</b>: 2<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 4<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_0227a3f8d99ea47d553863a9e2633912.setContent(html_73129fe039cbd941504f91e9cd870a33);
+            
+        
+
+        circle_marker_57eb6a220b3a2f42e8e7fec2f8f6bd97.bindPopup(popup_0227a3f8d99ea47d553863a9e2633912)
+        ;
+
+        
+    
+    
+            circle_marker_57eb6a220b3a2f42e8e7fec2f8f6bd97.bindTooltip(
+                `<div>
+                     Angola
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7df6819d95c0d4aa8f85bcf44582830b = L.circleMarker(
+                [42.5423175, 1.60013365],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_c5e72bf2b014591da2af053190458073 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_bd8ddf0f29b00b9f7c16c358bf155fde = $(`<div id="html_bd8ddf0f29b00b9f7c16c358bf155fde" style="width: 100.0%; height: 100.0%;"><b>country</b>: Andorra<br><b>iso</b>: AD<br><b>all papers</b>: 6<br><b>model papers</b>: 2<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 32<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_c5e72bf2b014591da2af053190458073.setContent(html_bd8ddf0f29b00b9f7c16c358bf155fde);
+            
+        
+
+        circle_marker_7df6819d95c0d4aa8f85bcf44582830b.bindPopup(popup_c5e72bf2b014591da2af053190458073)
+        ;
+
+        
+    
+    
+            circle_marker_7df6819d95c0d4aa8f85bcf44582830b.bindTooltip(
+                `<div>
+                     Andorra
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2d2ce502d04931c5b1f6e6b1fcf342a7 = L.circleMarker(
+                [-22.342840999499998, 24.6871035],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_bab94fa346d90945e86c3fbe45c6094b = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_05e819ddf840f91c2010bb218c56b293 = $(`<div id="html_05e819ddf840f91c2010bb218c56b293" style="width: 100.0%; height: 100.0%;"><b>country</b>: Botswana<br><b>iso</b>: BW<br><b>all papers</b>: 10<br><b>model papers</b>: 3<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 7<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_bab94fa346d90945e86c3fbe45c6094b.setContent(html_05e819ddf840f91c2010bb218c56b293);
+            
+        
+
+        circle_marker_2d2ce502d04931c5b1f6e6b1fcf342a7.bindPopup(popup_bab94fa346d90945e86c3fbe45c6094b)
+        ;
+
+        
+    
+    
+            circle_marker_2d2ce502d04931c5b1f6e6b1fcf342a7.bindTooltip(
+                `<div>
+                     Botswana
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0996e50500805b968418284f8eaaa90d = L.circleMarker(
+                [4.8554735760000005, -58.950975850000006],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_e7f9a9ddeed01b15764decfc1d98cbce = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_7d85a5d617f73bd564290120bb690f66 = $(`<div id="html_7d85a5d617f73bd564290120bb690f66" style="width: 100.0%; height: 100.0%;"><b>country</b>: Guyana<br><b>iso</b>: GY<br><b>all papers</b>: 7<br><b>model papers</b>: 1<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 1<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_e7f9a9ddeed01b15764decfc1d98cbce.setContent(html_7d85a5d617f73bd564290120bb690f66);
+            
+        
+
+        circle_marker_0996e50500805b968418284f8eaaa90d.bindPopup(popup_e7f9a9ddeed01b15764decfc1d98cbce)
+        ;
+
+        
+    
+    
+            circle_marker_0996e50500805b968418284f8eaaa90d.bindTooltip(
+                `<div>
+                     Guyana
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a4a32019630f35e72d84bd20d266f76a = L.circleMarker(
+                [58.665556205, 24.986482033],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_bc1607d91db629d8387dbf0b61e766d2 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_2d16679b637c5f7b8ec01dce2f921d97 = $(`<div id="html_2d16679b637c5f7b8ec01dce2f921d97" style="width: 100.0%; height: 100.0%;"><b>country</b>: Estonia<br><b>iso</b>: EE<br><b>all papers</b>: 17<br><b>model papers</b>: 3<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 10<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_bc1607d91db629d8387dbf0b61e766d2.setContent(html_2d16679b637c5f7b8ec01dce2f921d97);
+            
+        
+
+        circle_marker_a4a32019630f35e72d84bd20d266f76a.bindPopup(popup_bc1607d91db629d8387dbf0b61e766d2)
+        ;
+
+        
+    
+    
+            circle_marker_a4a32019630f35e72d84bd20d266f76a.bindTooltip(
+                `<div>
+                     Estonia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_181294bf54df8637548f899c1a5cd945 = L.circleMarker(
+                [31.794805285000052, -7.0846364104999235],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_2e30dd1e6344782aff2d9e306e9690a4 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_bfd2b40aa41fc770f25fef8c65758d35 = $(`<div id="html_bfd2b40aa41fc770f25fef8c65758d35" style="width: 100.0%; height: 100.0%;"><b>country</b>: Morocco<br><b>iso</b>: MA<br><b>all papers</b>: 41<br><b>model papers</b>: 8<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 13<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_2e30dd1e6344782aff2d9e306e9690a4.setContent(html_bfd2b40aa41fc770f25fef8c65758d35);
+            
+        
+
+        circle_marker_181294bf54df8637548f899c1a5cd945.bindPopup(popup_2e30dd1e6344782aff2d9e306e9690a4)
+        ;
+
+        
+    
+    
+            circle_marker_181294bf54df8637548f899c1a5cd945.bindTooltip(
+                `<div>
+                     Morocco
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0b4172575e2c838da4bbeff051e072f3 = L.circleMarker(
+                [15.17957158800005, 39.785447160500055],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_ddd0660d6a18f4fd83c7e9426572f98d = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_beb1a05bad8f8a71abc929ec2ce6c268 = $(`<div id="html_beb1a05bad8f8a71abc929ec2ce6c268" style="width: 100.0%; height: 100.0%;"><b>country</b>: Eritrea<br><b>iso</b>: ER<br><b>all papers</b>: 2<br><b>model papers</b>: 1<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 1<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_ddd0660d6a18f4fd83c7e9426572f98d.setContent(html_beb1a05bad8f8a71abc929ec2ce6c268);
+            
+        
+
+        circle_marker_0b4172575e2c838da4bbeff051e072f3.bindPopup(popup_ddd0660d6a18f4fd83c7e9426572f98d)
+        ;
+
+        
+    
+    
+            circle_marker_0b4172575e2c838da4bbeff051e072f3.bindTooltip(
+                `<div>
+                     Eritrea
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ef55c542217fd77fa8d80f8d6dcd3855 = L.circleMarker(
+                [34.81585245300005, 38.98176],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_9f078c293f54b9df5eb9b968e7ce529f = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_532992e4fe4a278c0bba831d1649acb8 = $(`<div id="html_532992e4fe4a278c0bba831d1649acb8" style="width: 100.0%; height: 100.0%;"><b>country</b>: Syria<br><b>iso</b>: SY<br><b>all papers</b>: 20<br><b>model papers</b>: 3<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 10<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_9f078c293f54b9df5eb9b968e7ce529f.setContent(html_532992e4fe4a278c0bba831d1649acb8);
+            
+        
+
+        circle_marker_ef55c542217fd77fa8d80f8d6dcd3855.bindPopup(popup_9f078c293f54b9df5eb9b968e7ce529f)
+        ;
+
+        
+    
+    
+            circle_marker_ef55c542217fd77fa8d80f8d6dcd3855.bindTooltip(
+                `<div>
+                     Syria
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_02724041161ecc8fcb677e1766f20fbf = L.circleMarker(
+                [42.56266308700005, 20.902075500000052],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_74a912d3daf9c0c5ccd01515cdbc34c9 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_8d00c9cb619c165bc2f2be6a07e9234a = $(`<div id="html_8d00c9cb619c165bc2f2be6a07e9234a" style="width: 100.0%; height: 100.0%;"><b>country</b>: Kosovo<br><b>iso</b>: XK<br><b>all papers</b>: 3<br><b>model papers</b>: 3<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 33<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_74a912d3daf9c0c5ccd01515cdbc34c9.setContent(html_8d00c9cb619c165bc2f2be6a07e9234a);
+            
+        
+
+        circle_marker_02724041161ecc8fcb677e1766f20fbf.bindPopup(popup_74a912d3daf9c0c5ccd01515cdbc34c9)
+        ;
+
+        
+    
+    
+            circle_marker_02724041161ecc8fcb677e1766f20fbf.bindTooltip(
+                `<div>
+                     Kosovo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cdfa61b6770e4a1fa1b609dc7934fa21 = L.circleMarker(
+                [13.444081, 144.7874765],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_a624ff65bbc3b9f12bae30ead2cf3c9c = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_be883f73549884bbd02fc293c09d1e8d = $(`<div id="html_be883f73549884bbd02fc293c09d1e8d" style="width: 100.0%; height: 100.0%;"><b>country</b>: Guam<br><b>iso</b>: GU<br><b>all papers</b>: 2<br><b>model papers</b>: 1<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 1<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_a624ff65bbc3b9f12bae30ead2cf3c9c.setContent(html_be883f73549884bbd02fc293c09d1e8d);
+            
+        
+
+        circle_marker_cdfa61b6770e4a1fa1b609dc7934fa21.bindPopup(popup_a624ff65bbc3b9f12bae30ead2cf3c9c)
+        ;
+
+        
+    
+    
+            circle_marker_cdfa61b6770e4a1fa1b609dc7934fa21.bindTooltip(
+                `<div>
+                     Guam
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e18bcb93f40856ebaaf821810cacf0a2 = L.circleMarker(
+                [15.447668058000076, 18.73500000000005],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_6a9a6b9fb1e9954c51ecdfafeb9f4b8b = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_e10dbcf3f5b44c5fc3af81813beac5a5 = $(`<div id="html_e10dbcf3f5b44c5fc3af81813beac5a5" style="width: 100.0%; height: 100.0%;"><b>country</b>: Chad<br><b>iso</b>: TD<br><b>all papers</b>: 14<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 8<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_6a9a6b9fb1e9954c51ecdfafeb9f4b8b.setContent(html_e10dbcf3f5b44c5fc3af81813beac5a5);
+            
+        
+
+        circle_marker_e18bcb93f40856ebaaf821810cacf0a2.bindPopup(popup_6a9a6b9fb1e9954c51ecdfafeb9f4b8b)
+        ;
+
+        
+    
+    
+            circle_marker_e18bcb93f40856ebaaf821810cacf0a2.bindTooltip(
+                `<div>
+                     Chad
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2797c21ce96b1c521d81d9bcc94ae6d = L.circleMarker(
+                [3.9212307815000003, -56.025723600000006],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_797c512ee737cb65af14b07ae241e31a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_29cf63e60bc317449e19d10554fe3119 = $(`<div id="html_29cf63e60bc317449e19d10554fe3119" style="width: 100.0%; height: 100.0%;"><b>country</b>: Suriname<br><b>iso</b>: SR<br><b>all papers</b>: 7<br><b>model papers</b>: 1<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 1<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_797c512ee737cb65af14b07ae241e31a.setContent(html_29cf63e60bc317449e19d10554fe3119);
+            
+        
+
+        circle_marker_a2797c21ce96b1c521d81d9bcc94ae6d.bindPopup(popup_797c512ee737cb65af14b07ae241e31a)
+        ;
+
+        
+    
+    
+            circle_marker_a2797c21ce96b1c521d81d9bcc94ae6d.bindTooltip(
+                `<div>
+                     Suriname
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_05453199c77f8efe53321cefa42f849e = L.circleMarker(
+                [8.159459634, -66.58627385],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_8d753c4d7319bd19f689209aff9d003b = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_2f4c3ea073f6c55d7e5ccd50a52e59e5 = $(`<div id="html_2f4c3ea073f6c55d7e5ccd50a52e59e5" style="width: 100.0%; height: 100.0%;"><b>country</b>: Venezuela<br><b>iso</b>: VE<br><b>all papers</b>: 18<br><b>model papers</b>: 3<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 21<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_8d753c4d7319bd19f689209aff9d003b.setContent(html_2f4c3ea073f6c55d7e5ccd50a52e59e5);
+            
+        
+
+        circle_marker_05453199c77f8efe53321cefa42f849e.bindPopup(popup_8d753c4d7319bd19f689209aff9d003b)
+        ;
+
+        
+    
+    
+            circle_marker_05453199c77f8efe53321cefa42f849e.bindTooltip(
+                `<div>
+                     Venezuela
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ed0f47fa8d0ab6d70a67eda067836b2e = L.circleMarker(
+                [43.9160067475, 17.67621689400005],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_5cf08e2491e07b44290a55f33551b9bc = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_6514aa439e75a56d658f444bdad964b3 = $(`<div id="html_6514aa439e75a56d658f444bdad964b3" style="width: 100.0%; height: 100.0%;"><b>country</b>: Bosnia and Herzegovina<br><b>iso</b>: BA<br><b>all papers</b>: 13<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 34<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_5cf08e2491e07b44290a55f33551b9bc.setContent(html_6514aa439e75a56d658f444bdad964b3);
+            
+        
+
+        circle_marker_ed0f47fa8d0ab6d70a67eda067836b2e.bindPopup(popup_5cf08e2491e07b44290a55f33551b9bc)
+        ;
+
+        
+    
+    
+            circle_marker_ed0f47fa8d0ab6d70a67eda067836b2e.bindTooltip(
+                `<div>
+                     Bosnia and Herzegovina
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_62703632130e295b3d2a9533124b248e = L.circleMarker(
+                [7.95694917750002, -1.03065230949994],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_940336571c67fed8a16924b25c2acbf0 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_7e6c510d91a77d4bda3093d2dd8b16fd = $(`<div id="html_7e6c510d91a77d4bda3093d2dd8b16fd" style="width: 100.0%; height: 100.0%;"><b>country</b>: Ghana<br><b>iso</b>: GH<br><b>all papers</b>: 29<br><b>model papers</b>: 7<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 43<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_940336571c67fed8a16924b25c2acbf0.setContent(html_7e6c510d91a77d4bda3093d2dd8b16fd);
+            
+        
+
+        circle_marker_62703632130e295b3d2a9533124b248e.bindPopup(popup_940336571c67fed8a16924b25c2acbf0)
+        ;
+
+        
+    
+    
+            circle_marker_62703632130e295b3d2a9533124b248e.bindTooltip(
+                `<div>
+                     Ghana
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a56eb409bb5b5f31398b2b35c2b306f5 = L.circleMarker(
+                [33.933928305646205, 67.68076727267155],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_6410befcbca7dea8fd3daef7024955c0 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_833ae5173934aa0fe9189a8942abf7a4 = $(`<div id="html_833ae5173934aa0fe9189a8942abf7a4" style="width: 100.0%; height: 100.0%;"><b>country</b>: Afghanistan<br><b>iso</b>: AF<br><b>all papers</b>: 17<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 27<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_6410befcbca7dea8fd3daef7024955c0.setContent(html_833ae5173934aa0fe9189a8942abf7a4);
+            
+        
+
+        circle_marker_a56eb409bb5b5f31398b2b35c2b306f5.bindPopup(popup_6410befcbca7dea8fd3daef7024955c0)
+        ;
+
+        
+    
+    
+            circle_marker_a56eb409bb5b5f31398b2b35c2b306f5.bindTooltip(
+                `<div>
+                     Afghanistan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6909f4b08004e0d9c1bd053fd4f81bfb = L.circleMarker(
+                [44.21047450050005, 20.92221552450005],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_a258c3c511b22675225fa0c8ec8b73a1 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_1e576a3d586a1e2b86f407fe7bdc696c = $(`<div id="html_1e576a3d586a1e2b86f407fe7bdc696c" style="width: 100.0%; height: 100.0%;"><b>country</b>: Serbia<br><b>iso</b>: RS<br><b>all papers</b>: 23<br><b>model papers</b>: 6<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 35<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_a258c3c511b22675225fa0c8ec8b73a1.setContent(html_1e576a3d586a1e2b86f407fe7bdc696c);
+            
+        
+
+        circle_marker_6909f4b08004e0d9c1bd053fd4f81bfb.bindPopup(popup_a258c3c511b22675225fa0c8ec8b73a1)
+        ;
+
+        
+    
+    
+            circle_marker_6909f4b08004e0d9c1bd053fd4f81bfb.bindTooltip(
+                `<div>
+                     Serbia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_854e08e33d9ae89a4bf28970da3c116c = L.circleMarker(
+                [-1.6671613597619452, -83.59805643933291],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_a7547ea36e89f8c1e7d2cf3d521b26d1 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_77aba371f6ef8927f4162e6487d9010d = $(`<div id="html_77aba371f6ef8927f4162e6487d9010d" style="width: 100.0%; height: 100.0%;"><b>country</b>: Ecuador<br><b>iso</b>: EC<br><b>all papers</b>: 18<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 13<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_a7547ea36e89f8c1e7d2cf3d521b26d1.setContent(html_77aba371f6ef8927f4162e6487d9010d);
+            
+        
+
+        circle_marker_854e08e33d9ae89a4bf28970da3c116c.bindPopup(popup_a7547ea36e89f8c1e7d2cf3d521b26d1)
+        ;
+
+        
+    
+    
+            circle_marker_854e08e33d9ae89a4bf28970da3c116c.bindTooltip(
+                `<div>
+                     Ecuador
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d2320a6e9213e05ddd40391ce019c917 = L.circleMarker(
+                [-18.670668815999953, 35.530010500000046],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_4cac353c3e83fea48519df92c8220cbc = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_0e6350f5e675b3f77729b85c991ca450 = $(`<div id="html_0e6350f5e675b3f77729b85c991ca450" style="width: 100.0%; height: 100.0%;"><b>country</b>: Mozambique<br><b>iso</b>: MZ<br><b>all papers</b>: 18<br><b>model papers</b>: 3<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 7<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_4cac353c3e83fea48519df92c8220cbc.setContent(html_0e6350f5e675b3f77729b85c991ca450);
+            
+        
+
+        circle_marker_d2320a6e9213e05ddd40391ce019c917.bindPopup(popup_4cac353c3e83fea48519df92c8220cbc)
+        ;
+
+        
+    
+    
+            circle_marker_d2320a6e9213e05ddd40391ce019c917.bindTooltip(
+                `<div>
+                     Mozambique
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fdf4958f9f32e6077a16dcf09914a857 = L.circleMarker(
+                [14.50012315, -14.437469695],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_e24d185be5275ca189477a2b8acc13be = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_2aa0e803418843a3a3f3e09c66d818be = $(`<div id="html_2aa0e803418843a3a3f3e09c66d818be" style="width: 100.0%; height: 100.0%;"><b>country</b>: Senegal<br><b>iso</b>: SN<br><b>all papers</b>: 17<br><b>model papers</b>: 5<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 22<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_e24d185be5275ca189477a2b8acc13be.setContent(html_2aa0e803418843a3a3f3e09c66d818be);
+            
+        
+
+        circle_marker_fdf4958f9f32e6077a16dcf09914a857.bindPopup(popup_e24d185be5275ca189477a2b8acc13be)
+        ;
+
+        
+    
+    
+            circle_marker_fdf4958f9f32e6077a16dcf09914a857.bindTooltip(
+                `<div>
+                     Senegal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_65bcb31e60d63de83b28183e56e3a6a2 = L.circleMarker(
+                [11.775941049, -15.171046364000002],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_60c369a1261cf3f092d066a25688d896 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_b9aa4fa74f05f804010d049d8bb515d4 = $(`<div id="html_b9aa4fa74f05f804010d049d8bb515d4" style="width: 100.0%; height: 100.0%;"><b>country</b>: Guinea-Bissau<br><b>iso</b>: GW<br><b>all papers</b>: 4<br><b>model papers</b>: 2<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 3<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_60c369a1261cf3f092d066a25688d896.setContent(html_b9aa4fa74f05f804010d049d8bb515d4);
+            
+        
+
+        circle_marker_65bcb31e60d63de83b28183e56e3a6a2.bindPopup(popup_60c369a1261cf3f092d066a25688d896)
+        ;
+
+        
+    
+    
+            circle_marker_65bcb31e60d63de83b28183e56e3a6a2.bindTooltip(
+                `<div>
+                     Guinea-Bissau
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_186d48f5a5fefa88b5ee10bf5d26a285 = L.circleMarker(
+                [9.932732900000001, -11.356871814000002],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_5c096d48d1c9d98711ded1bbe0636740 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_7d941a17517b1003ee06794814731e77 = $(`<div id="html_7d941a17517b1003ee06794814731e77" style="width: 100.0%; height: 100.0%;"><b>country</b>: Guinea<br><b>iso</b>: GN<br><b>all papers</b>: 8<br><b>model papers</b>: 3<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 4<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_5c096d48d1c9d98711ded1bbe0636740.setContent(html_7d941a17517b1003ee06794814731e77);
+            
+        
+
+        circle_marker_186d48f5a5fefa88b5ee10bf5d26a285.bindPopup(popup_5c096d48d1c9d98711ded1bbe0636740)
+        ;
+
+        
+    
+    
+            circle_marker_186d48f5a5fefa88b5ee10bf5d26a285.bindTooltip(
+                `<div>
+                     Guinea
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d8f68629e59c5122889b4962e4c769d4 = L.circleMarker(
+                [40.07061850000005, 45.04081976250005],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_811c6a393947d7308794a0fffc93db2c = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_f191f9872bf0748e33ca5229d67d05cd = $(`<div id="html_f191f9872bf0748e33ca5229d67d05cd" style="width: 100.0%; height: 100.0%;"><b>country</b>: Armenia<br><b>iso</b>: AM<br><b>all papers</b>: 6<br><b>model papers</b>: 1<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 6<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_811c6a393947d7308794a0fffc93db2c.setContent(html_f191f9872bf0748e33ca5229d67d05cd);
+            
+        
+
+        circle_marker_d8f68629e59c5122889b4962e4c769d4.bindPopup(popup_811c6a393947d7308794a0fffc93db2c)
+        ;
+
+        
+    
+    
+            circle_marker_d8f68629e59c5122889b4962e4c769d4.bindTooltip(
+                `<div>
+                     Armenia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_815d52694966822999605f68f89468f5 = L.circleMarker(
+                [24.3504517995001, 53.955491912],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_4c7cdc746914103d91cd28c11594e025 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_4c3e93ffbcea66689c7d9f757bde4acc = $(`<div id="html_4c3e93ffbcea66689c7d9f757bde4acc" style="width: 100.0%; height: 100.0%;"><b>country</b>: United Arab Emirates<br><b>iso</b>: AE<br><b>all papers</b>: 11<br><b>model papers</b>: 2<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 5<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_4c7cdc746914103d91cd28c11594e025.setContent(html_4c3e93ffbcea66689c7d9f757bde4acc);
+            
+        
+
+        circle_marker_815d52694966822999605f68f89468f5.bindPopup(popup_4c7cdc746914103d91cd28c11594e025)
+        ;
+
+        
+    
+    
+            circle_marker_815d52694966822999605f68f89468f5.bindTooltip(
+                `<div>
+                     United Arab Emirates
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f1b88f1a8c5a947dfcfedb7f70a6bb8 = L.circleMarker(
+                [42.7134908795, 19.393242790000052],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_4783641e7acdcc7a39a52f407a0ee02f = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_989083d69d95a80d69c28f8d53654bbc = $(`<div id="html_989083d69d95a80d69c28f8d53654bbc" style="width: 100.0%; height: 100.0%;"><b>country</b>: Montenegro<br><b>iso</b>: ME<br><b>all papers</b>: 13<br><b>model papers</b>: 5<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 34<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_4783641e7acdcc7a39a52f407a0ee02f.setContent(html_989083d69d95a80d69c28f8d53654bbc);
+            
+        
+
+        circle_marker_6f1b88f1a8c5a947dfcfedb7f70a6bb8.bindPopup(popup_4783641e7acdcc7a39a52f407a0ee02f)
+        ;
+
+        
+    
+    
+            circle_marker_6f1b88f1a8c5a947dfcfedb7f70a6bb8.bindTooltip(
+                `<div>
+                     Montenegro
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7f1a11d042e766786f73beb69fb4f303 = L.circleMarker(
+                [17.574447499999998, -3.98683838699997],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_952e25ffecddf02769e436a7c2f1b6ee = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_cda02580711643f34f2b806df7637c47 = $(`<div id="html_cda02580711643f34f2b806df7637c47" style="width: 100.0%; height: 100.0%;"><b>country</b>: Mali<br><b>iso</b>: ML<br><b>all papers</b>: 12<br><b>model papers</b>: 4<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 4<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_952e25ffecddf02769e436a7c2f1b6ee.setContent(html_cda02580711643f34f2b806df7637c47);
+            
+        
+
+        circle_marker_7f1a11d042e766786f73beb69fb4f303.bindPopup(popup_952e25ffecddf02769e436a7c2f1b6ee)
+        ;
+
+        
+    
+    
+            circle_marker_7f1a11d042e766786f73beb69fb4f303.bindTooltip(
+                `<div>
+                     Mali
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6ef315654b74612dd11fc63eeaf9e0d5 = L.circleMarker(
+                [41.38117241450005, 64.5735820000001],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 1}
+            ).addTo(map_338be97940fdc2d7de584102f37be17d);
+        
+    
+        var popup_73ac682c93a94246028139362bcfca5c = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_68a21c43c859b11a21f317da52aa8592 = $(`<div id="html_68a21c43c859b11a21f317da52aa8592" style="width: 100.0%; height: 100.0%;"><b>country</b>: Uzbekistan<br><b>iso</b>: UZ<br><b>all papers</b>: 12<br><b>model papers</b>: 1<br><b>model + instrument papers</b>: 1<br><b>distinct model sources</b>: 2<br><b>evidence</b>: thin (&lt;3)</div>`)[0];
+                popup_73ac682c93a94246028139362bcfca5c.setContent(html_68a21c43c859b11a21f317da52aa8592);
+            
+        
+
+        circle_marker_6ef315654b74612dd11fc63eeaf9e0d5.bindPopup(popup_73ac682c93a94246028139362bcfca5c)
+        ;
+
+        
+    
+    
+            circle_marker_6ef315654b74612dd11fc63eeaf9e0d5.bindTooltip(
+                `<div>
+                     Uzbekistan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            map_338be97940fdc2d7de584102f37be17d.fitBounds(
+                [[-82.0, -106.3], [71.70538236200001, 144.7874765]],
+                {}
+            );
+        
+</script>
+</html>

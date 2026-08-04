@@ -1,0 +1,2681 @@
+{
+  "doi": [
+    {
+      "instrument_name": "AATSR",
+      "doi_models": 16,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "AIRS",
+      "doi_models": 19,
+      "doi_climate_papers": 4,
+      "doi_datasets": 6,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "AMS",
+      "doi_models": 17,
+      "doi_climate_papers": 2,
+      "doi_datasets": 2,
+      "doi_nasa_publications": 2
+    },
+    {
+      "instrument_name": "AMSR-E",
+      "doi_models": 31,
+      "doi_climate_papers": 9,
+      "doi_datasets": 15,
+      "doi_nasa_publications": 12
+    },
+    {
+      "instrument_name": "AMSR2",
+      "doi_models": 1,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 2
+    },
+    {
+      "instrument_name": "AMSU-A",
+      "doi_models": 19,
+      "doi_climate_papers": 4,
+      "doi_datasets": 4,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "AMSU-B",
+      "doi_models": 19,
+      "doi_climate_papers": 4,
+      "doi_datasets": 4,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "ASAR",
+      "doi_models": 16,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "ASTER",
+      "doi_models": 31,
+      "doi_climate_papers": 9,
+      "doi_datasets": 13,
+      "doi_nasa_publications": 12
+    },
+    {
+      "instrument_name": "ATMS",
+      "doi_models": 15,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "AVHRR",
+      "doi_models": 15,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "AVHRR-3",
+      "doi_models": 15,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "C-SAR",
+      "doi_models": 16,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "CERES SCANNER",
+      "doi_models": 31,
+      "doi_climate_papers": 9,
+      "doi_datasets": 13,
+      "doi_nasa_publications": 12
+    },
+    {
+      "instrument_name": "CERES-FM1",
+      "doi_models": 31,
+      "doi_climate_papers": 9,
+      "doi_datasets": 11,
+      "doi_nasa_publications": 12
+    },
+    {
+      "instrument_name": "CERES-FM2",
+      "doi_models": 31,
+      "doi_climate_papers": 9,
+      "doi_datasets": 11,
+      "doi_nasa_publications": 12
+    },
+    {
+      "instrument_name": "CERES-FM3",
+      "doi_models": 19,
+      "doi_climate_papers": 4,
+      "doi_datasets": 4,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "CERES-FM4",
+      "doi_models": 19,
+      "doi_climate_papers": 4,
+      "doi_datasets": 4,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "CERES-FM6",
+      "doi_models": 15,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "CERES-PFM",
+      "doi_models": 1,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 2
+    },
+    {
+      "instrument_name": "Computer",
+      "doi_models": 46,
+      "doi_climate_papers": 10,
+      "doi_datasets": 7,
+      "doi_nasa_publications": 15
+    },
+    {
+      "instrument_name": "CrIS",
+      "doi_models": 19,
+      "doi_climate_papers": 4,
+      "doi_datasets": 4,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "CZCS",
+      "doi_models": 20,
+      "doi_climate_papers": 4,
+      "doi_datasets": 2,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "DORIS",
+      "doi_models": 32,
+      "doi_climate_papers": 2,
+      "doi_datasets": 2,
+      "doi_nasa_publications": 2
+    },
+    {
+      "instrument_name": "DORIS GROUND STATION BEACON",
+      "doi_models": 25,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "DPR",
+      "doi_models": 1,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 2
+    },
+    {
+      "instrument_name": "ETM+",
+      "doi_models": 25,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "GMI",
+      "doi_models": 1,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 2
+    },
+    {
+      "instrument_name": "GPS",
+      "doi_models": 39,
+      "doi_climate_papers": 13,
+      "doi_datasets": 13,
+      "doi_nasa_publications": 17
+    },
+    {
+      "instrument_name": "HRS",
+      "doi_models": 25,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "HSB",
+      "doi_models": 19,
+      "doi_climate_papers": 4,
+      "doi_datasets": 4,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "IGOR",
+      "doi_models": 16,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "IMAGING RADIOMETERS",
+      "doi_models": 31,
+      "doi_climate_papers": 9,
+      "doi_datasets": 11,
+      "doi_nasa_publications": 12
+    },
+    {
+      "instrument_name": "LIMS",
+      "doi_models": 20,
+      "doi_climate_papers": 4,
+      "doi_datasets": 2,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "LIS",
+      "doi_models": 1,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 2
+    },
+    {
+      "instrument_name": "MERIS",
+      "doi_models": 16,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "MISR",
+      "doi_models": 31,
+      "doi_climate_papers": 9,
+      "doi_datasets": 13,
+      "doi_nasa_publications": 12
+    },
+    {
+      "instrument_name": "MODIS",
+      "doi_models": 31,
+      "doi_climate_papers": 9,
+      "doi_datasets": 17,
+      "doi_nasa_publications": 12
+    },
+    {
+      "instrument_name": "MOPITT",
+      "doi_models": 31,
+      "doi_climate_papers": 9,
+      "doi_datasets": 11,
+      "doi_nasa_publications": 12
+    },
+    {
+      "instrument_name": "MSS",
+      "doi_models": 25,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "NOT APPLICABLE",
+      "doi_models": 51,
+      "doi_climate_papers": 20,
+      "doi_datasets": 22,
+      "doi_nasa_publications": 28
+    },
+    {
+      "instrument_name": "OLI",
+      "doi_models": 16,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "OLS",
+      "doi_models": 22,
+      "doi_climate_papers": 6,
+      "doi_datasets": 4,
+      "doi_nasa_publications": 8
+    },
+    {
+      "instrument_name": "OMPS",
+      "doi_models": 15,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "PALSAR",
+      "doi_models": 16,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "PHOTOMETERS",
+      "doi_models": 20,
+      "doi_climate_papers": 4,
+      "doi_datasets": 2,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "PR",
+      "doi_models": 1,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 2
+    },
+    {
+      "instrument_name": "RA-2",
+      "doi_models": 16,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "SAMS",
+      "doi_models": 20,
+      "doi_climate_papers": 4,
+      "doi_datasets": 2,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "SAR",
+      "doi_models": 17,
+      "doi_climate_papers": 2,
+      "doi_datasets": 2,
+      "doi_nasa_publications": 2
+    },
+    {
+      "instrument_name": "SBUV",
+      "doi_models": 20,
+      "doi_climate_papers": 4,
+      "doi_datasets": 2,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "SCIAMACHY",
+      "doi_models": 16,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "SIR-C",
+      "doi_models": 2,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "SMAP L-BAND RADAR",
+      "doi_models": 1,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "SMAP L-BAND RADIOMETER",
+      "doi_models": 1,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "SMMR",
+      "doi_models": 20,
+      "doi_climate_papers": 4,
+      "doi_datasets": 2,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "SRTM",
+      "doi_models": 2,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "SSM/I",
+      "doi_models": 22,
+      "doi_climate_papers": 6,
+      "doi_datasets": 4,
+      "doi_nasa_publications": 8
+    },
+    {
+      "instrument_name": "SSMIS",
+      "doi_models": 22,
+      "doi_climate_papers": 6,
+      "doi_datasets": 4,
+      "doi_nasa_publications": 8
+    },
+    {
+      "instrument_name": "SUN PHOTOMETERS",
+      "doi_models": 20,
+      "doi_climate_papers": 4,
+      "doi_datasets": 2,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "TDX-1",
+      "doi_models": 16,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "THIR",
+      "doi_models": 20,
+      "doi_climate_papers": 4,
+      "doi_datasets": 2,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "TIRS",
+      "doi_models": 16,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "TM",
+      "doi_models": 25,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    },
+    {
+      "instrument_name": "TMI",
+      "doi_models": 1,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 2
+    },
+    {
+      "instrument_name": "TOMS",
+      "doi_models": 20,
+      "doi_climate_papers": 4,
+      "doi_datasets": 2,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "VIIRS",
+      "doi_models": 19,
+      "doi_climate_papers": 4,
+      "doi_datasets": 4,
+      "doi_nasa_publications": 5
+    },
+    {
+      "instrument_name": "VIRS",
+      "doi_models": 1,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 2
+    },
+    {
+      "instrument_name": "WINDSAT",
+      "doi_models": 1,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 2
+    },
+    {
+      "instrument_name": "X-SAR",
+      "doi_models": 16,
+      "doi_climate_papers": 1,
+      "doi_datasets": 1,
+      "doi_nasa_publications": 1
+    }
+  ],
+  "instrument_text": [
+    {
+      "instrument_name": "AATSR",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "ACE-FTS",
+      "text_models": 27,
+      "text_papers": 2,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "AIRS",
+      "text_models": 2,
+      "text_papers": 2,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "AMSR-E",
+      "text_models": 22,
+      "text_papers": 6,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "AMSU-A",
+      "text_models": 28,
+      "text_papers": 3,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "ASCAT",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "AVHRR",
+      "text_models": 32,
+      "text_papers": 9,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "CrIS",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "ERBE",
+      "text_models": 3,
+      "text_papers": 4,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "ETM+",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "GMI",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "GNSS",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "GOME",
+      "text_models": 6,
+      "text_papers": 2,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "GOME-2",
+      "text_models": 5,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "GPS",
+      "text_models": 6,
+      "text_papers": 4,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "IASI",
+      "text_models": 2,
+      "text_papers": 2,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "IMAGING RADIOMETERS",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "MERIS",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "MHS",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "MISR",
+      "text_models": 15,
+      "text_papers": 6,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "MLS",
+      "text_models": 3,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "MODIS",
+      "text_models": 52,
+      "text_papers": 60,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "MOPITT",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "MSS",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "MSU",
+      "text_models": 2,
+      "text_papers": 2,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "OCO-2",
+      "text_models": 11,
+      "text_papers": 2,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "OMI",
+      "text_models": 4,
+      "text_papers": 2,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "RADIOMETERS",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "SAGE II",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "SBUV",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "SCATTEROMETERS",
+      "text_models": 2,
+      "text_papers": 2,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "SCIAMACHY",
+      "text_models": 5,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "SeaWiFS",
+      "text_models": 4,
+      "text_papers": 8,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "SEVIRI",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "SIM",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "SMMR",
+      "text_models": 39,
+      "text_papers": 6,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "SOLSTICE",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "SRTM",
+      "text_models": 6,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "SSMIS",
+      "text_models": 33,
+      "text_papers": 5,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "SUN PHOTOMETERS",
+      "text_models": 2,
+      "text_papers": 3,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "TES",
+      "text_models": 5,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "TIM",
+      "text_models": 2,
+      "text_papers": 2,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "TM",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "TMI",
+      "text_models": 4,
+      "text_papers": 3,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "TOMS",
+      "text_models": 3,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "TOVS",
+      "text_models": 27,
+      "text_papers": 5,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "TROPOMI",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "VIIRS",
+      "text_models": 2,
+      "text_papers": 3,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "WINDSAT",
+      "text_models": 3,
+      "text_papers": 3,
+      "text_mentions": 1
+    },
+    {
+      "instrument_name": "XPS",
+      "text_models": 1,
+      "text_papers": 1,
+      "text_mentions": 1
+    }
+  ],
+  "platform_text": [
+    {
+      "instrument_name": "AATSR",
+      "platform_text_models": 2,
+      "platform_text_papers": 3,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "AIRS",
+      "platform_text_models": 49,
+      "platform_text_papers": 29,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "ALTIMETERS",
+      "platform_text_models": 15,
+      "platform_text_papers": 5,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "AMR",
+      "platform_text_models": 1,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "AMSR-E",
+      "platform_text_models": 52,
+      "platform_text_papers": 37,
+      "mentioned_platforms": 3
+    },
+    {
+      "instrument_name": "AMSR2",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "AMSU-A",
+      "platform_text_models": 49,
+      "platform_text_papers": 29,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "AMSU-B",
+      "platform_text_models": 49,
+      "platform_text_papers": 29,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "ASAR",
+      "platform_text_models": 2,
+      "platform_text_papers": 3,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "ASCAT",
+      "platform_text_models": 3,
+      "platform_text_papers": 3,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "ASTER",
+      "platform_text_models": 51,
+      "platform_text_papers": 26,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "ATMS",
+      "platform_text_models": 2,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "AVHRR",
+      "platform_text_models": 32,
+      "platform_text_papers": 8,
+      "mentioned_platforms": 4
+    },
+    {
+      "instrument_name": "AVHRR-2",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "AVHRR-3",
+      "platform_text_models": 2,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "C-SAR",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "CALIOP",
+      "platform_text_models": 5,
+      "platform_text_papers": 9,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "CAMERAS",
+      "platform_text_models": 28,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "CATS",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "CD",
+      "platform_text_models": 15,
+      "platform_text_papers": 5,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "CERES SCANNER",
+      "platform_text_models": 54,
+      "platform_text_papers": 44,
+      "mentioned_platforms": 5
+    },
+    {
+      "instrument_name": "CERES-FM1",
+      "platform_text_models": 51,
+      "platform_text_papers": 26,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "CERES-FM2",
+      "platform_text_models": 51,
+      "platform_text_papers": 26,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "CERES-FM3",
+      "platform_text_models": 49,
+      "platform_text_papers": 29,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "CERES-FM4",
+      "platform_text_models": 49,
+      "platform_text_papers": 29,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "CERES-FM5",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "CERES-FM6",
+      "platform_text_models": 2,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "CERES-PFM",
+      "platform_text_models": 9,
+      "platform_text_papers": 8,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "Computer",
+      "platform_text_models": 28,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "COWVR",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "CrIS",
+      "platform_text_models": 49,
+      "platform_text_papers": 29,
+      "mentioned_platforms": 3
+    },
+    {
+      "instrument_name": "DORIS",
+      "platform_text_models": 12,
+      "platform_text_papers": 10,
+      "mentioned_platforms": 4
+    },
+    {
+      "instrument_name": "DORIS GROUND STATION BEACON",
+      "platform_text_models": 10,
+      "platform_text_papers": 6,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "DPR",
+      "platform_text_models": 6,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "ECOSTRESS",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "EMIT Imaging Spectrometer",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "ERB-SCANNER",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "ERBE",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "ETM+",
+      "platform_text_models": 8,
+      "platform_text_papers": 10,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "GEDI",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "GLAS",
+      "platform_text_models": 15,
+      "platform_text_papers": 5,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "GMI",
+      "platform_text_models": 6,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "GPS",
+      "platform_text_models": 55,
+      "platform_text_papers": 32,
+      "mentioned_platforms": 4
+    },
+    {
+      "instrument_name": "GPS Receiver",
+      "platform_text_models": 15,
+      "platform_text_papers": 5,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "GPSP",
+      "platform_text_models": 1,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "GYROS",
+      "platform_text_models": 1,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "HICO",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "HIRDLS",
+      "platform_text_models": 5,
+      "platform_text_papers": 4,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "HIRS",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "HIRS/2",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "HSB",
+      "platform_text_models": 49,
+      "platform_text_papers": 29,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "IIR",
+      "platform_text_models": 5,
+      "platform_text_papers": 9,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "IMAGING RADIOMETERS",
+      "platform_text_models": 58,
+      "platform_text_papers": 28,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "INFRARED RADIOMETERS",
+      "platform_text_models": 2,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "JASON-1 Microwave Radiometer",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "Jason-class Altimeter",
+      "platform_text_models": 1,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "KaRIn",
+      "platform_text_models": 1,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "LA",
+      "platform_text_models": 15,
+      "platform_text_papers": 5,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "LIS",
+      "platform_text_models": 10,
+      "platform_text_papers": 9,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "LRA",
+      "platform_text_models": 1,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "MERIS",
+      "platform_text_models": 2,
+      "platform_text_papers": 3,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "MISR",
+      "platform_text_models": 51,
+      "platform_text_papers": 26,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "MLS",
+      "platform_text_models": 5,
+      "platform_text_papers": 4,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "MODIS",
+      "platform_text_models": 55,
+      "platform_text_papers": 39,
+      "mentioned_platforms": 5
+    },
+    {
+      "instrument_name": "MOPITT",
+      "platform_text_models": 51,
+      "platform_text_papers": 26,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "MSU",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "MVIRI",
+      "platform_text_models": 2,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "NOT APPLICABLE",
+      "platform_text_models": 59,
+      "platform_text_papers": 50,
+      "mentioned_platforms": 7
+    },
+    {
+      "instrument_name": "OCO-3",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "OLS",
+      "platform_text_models": 18,
+      "platform_text_papers": 3,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "OMI",
+      "platform_text_models": 5,
+      "platform_text_papers": 4,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "OMPS",
+      "platform_text_models": 2,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "OTD",
+      "platform_text_models": 28,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "PC",
+      "platform_text_models": 15,
+      "platform_text_papers": 5,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "POSEIDON-2",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "PR",
+      "platform_text_models": 9,
+      "platform_text_papers": 8,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "RA-2",
+      "platform_text_models": 2,
+      "platform_text_papers": 3,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "RADAR ALTIMETERS",
+      "platform_text_models": 28,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "RADIOMETERS",
+      "platform_text_models": 29,
+      "platform_text_papers": 3,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "RapidScat",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "SAGE III",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "SAR",
+      "platform_text_models": 2,
+      "platform_text_papers": 3,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "SBUV/2",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "SCIAMACHY",
+      "platform_text_models": 2,
+      "platform_text_papers": 3,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "SENTINEL-1 C-SAR",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "SEVIRI",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "SIM",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "SIRAL",
+      "platform_text_models": 10,
+      "platform_text_papers": 5,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "SMAP L-BAND RADAR",
+      "platform_text_models": 2,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "SMAP L-BAND RADIOMETER",
+      "platform_text_models": 2,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "SOLSTICE",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "SSM/I",
+      "platform_text_models": 18,
+      "platform_text_papers": 3,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "SSMIS",
+      "platform_text_models": 34,
+      "platform_text_papers": 5,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "Star Tracker",
+      "platform_text_models": 1,
+      "platform_text_papers": 2,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "TANSO-FTS",
+      "platform_text_models": 5,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "TEMPEST",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "TES",
+      "platform_text_models": 5,
+      "platform_text_papers": 4,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "TIM",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "TM",
+      "platform_text_models": 8,
+      "platform_text_papers": 10,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "TMI",
+      "platform_text_models": 9,
+      "platform_text_papers": 8,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "TOVS",
+      "platform_text_models": 29,
+      "platform_text_papers": 3,
+      "mentioned_platforms": 2
+    },
+    {
+      "instrument_name": "TRSR",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "VIIRS",
+      "platform_text_models": 49,
+      "platform_text_papers": 29,
+      "mentioned_platforms": 4
+    },
+    {
+      "instrument_name": "VIRS",
+      "platform_text_models": 9,
+      "platform_text_papers": 8,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "VISSR-METEOSAT",
+      "platform_text_models": 2,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "WFC",
+      "platform_text_models": 5,
+      "platform_text_papers": 9,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "WINDSAT",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    },
+    {
+      "instrument_name": "XPS",
+      "platform_text_models": 1,
+      "platform_text_papers": 1,
+      "mentioned_platforms": 1
+    }
+  ],
+  "evaluation_context": [
+    {
+      "instrument_name": "AATSR",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "ACE-FTS",
+      "evaluation_models": 27,
+      "evaluation_papers": 2,
+      "observational_datasets": 2
+    },
+    {
+      "instrument_name": "AIRS",
+      "evaluation_models": 2,
+      "evaluation_papers": 2,
+      "observational_datasets": 6
+    },
+    {
+      "instrument_name": "AMSR-E",
+      "evaluation_models": 10,
+      "evaluation_papers": 4,
+      "observational_datasets": 35
+    },
+    {
+      "instrument_name": "AMSU-A",
+      "evaluation_models": 28,
+      "evaluation_papers": 3,
+      "observational_datasets": 5
+    },
+    {
+      "instrument_name": "ASCAT",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "AVHRR",
+      "evaluation_models": 32,
+      "evaluation_papers": 9,
+      "observational_datasets": 31
+    },
+    {
+      "instrument_name": "CrIS",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "ERBE",
+      "evaluation_models": 3,
+      "evaluation_papers": 4,
+      "observational_datasets": 17
+    },
+    {
+      "instrument_name": "ETM+",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 24
+    },
+    {
+      "instrument_name": "GMI",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 10
+    },
+    {
+      "instrument_name": "GNSS",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "GOME-2",
+      "evaluation_models": 5,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "GPS",
+      "evaluation_models": 4,
+      "evaluation_papers": 2,
+      "observational_datasets": 5
+    },
+    {
+      "instrument_name": "IASI",
+      "evaluation_models": 2,
+      "evaluation_papers": 2,
+      "observational_datasets": 4
+    },
+    {
+      "instrument_name": "IMAGING RADIOMETERS",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "MERIS",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "MHS",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 3
+    },
+    {
+      "instrument_name": "MISR",
+      "evaluation_models": 14,
+      "evaluation_papers": 5,
+      "observational_datasets": 27
+    },
+    {
+      "instrument_name": "MLS",
+      "evaluation_models": 3,
+      "evaluation_papers": 1,
+      "observational_datasets": 12
+    },
+    {
+      "instrument_name": "MODIS",
+      "evaluation_models": 50,
+      "evaluation_papers": 40,
+      "observational_datasets": 137
+    },
+    {
+      "instrument_name": "MOPITT",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "MSS",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 24
+    },
+    {
+      "instrument_name": "MSU",
+      "evaluation_models": 2,
+      "evaluation_papers": 2,
+      "observational_datasets": 4
+    },
+    {
+      "instrument_name": "OMI",
+      "evaluation_models": 4,
+      "evaluation_papers": 2,
+      "observational_datasets": 13
+    },
+    {
+      "instrument_name": "RADIOMETERS",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "SAGE II",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "SBUV",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "SCATTEROMETERS",
+      "evaluation_models": 2,
+      "evaluation_papers": 2,
+      "observational_datasets": 4
+    },
+    {
+      "instrument_name": "SeaWiFS",
+      "evaluation_models": 3,
+      "evaluation_papers": 7,
+      "observational_datasets": 19
+    },
+    {
+      "instrument_name": "SEVIRI",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "SIM",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "SMMR",
+      "evaluation_models": 32,
+      "evaluation_papers": 4,
+      "observational_datasets": 5
+    },
+    {
+      "instrument_name": "SOLSTICE",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "SSMIS",
+      "evaluation_models": 32,
+      "evaluation_papers": 4,
+      "observational_datasets": 14
+    },
+    {
+      "instrument_name": "SUN PHOTOMETERS",
+      "evaluation_models": 2,
+      "evaluation_papers": 3,
+      "observational_datasets": 13
+    },
+    {
+      "instrument_name": "TIM",
+      "evaluation_models": 2,
+      "evaluation_papers": 2,
+      "observational_datasets": 2
+    },
+    {
+      "instrument_name": "TM",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 24
+    },
+    {
+      "instrument_name": "TMI",
+      "evaluation_models": 4,
+      "evaluation_papers": 3,
+      "observational_datasets": 13
+    },
+    {
+      "instrument_name": "TOMS",
+      "evaluation_models": 3,
+      "evaluation_papers": 1,
+      "observational_datasets": 12
+    },
+    {
+      "instrument_name": "TOVS",
+      "evaluation_models": 27,
+      "evaluation_papers": 5,
+      "observational_datasets": 22
+    },
+    {
+      "instrument_name": "VIIRS",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    },
+    {
+      "instrument_name": "WINDSAT",
+      "evaluation_models": 2,
+      "evaluation_papers": 2,
+      "observational_datasets": 11
+    },
+    {
+      "instrument_name": "XPS",
+      "evaluation_models": 1,
+      "evaluation_papers": 1,
+      "observational_datasets": 1
+    }
+  ],
+  "union": [
+    {
+      "instrument_name": "AATSR",
+      "union_models": 18,
+      "union_climate_papers": 4,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "ACE-FTS",
+      "union_models": 27,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "direct instrument text"
+    },
+    {
+      "instrument_name": "AIRS",
+      "union_models": 52,
+      "union_climate_papers": 33,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "ALTIMETERS",
+      "union_models": 15,
+      "union_climate_papers": 5,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "AMR",
+      "union_models": 1,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "AMSR-E",
+      "union_models": 59,
+      "union_climate_papers": 45,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "AMSR2",
+      "union_models": 2,
+      "union_climate_papers": 2,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "AMSU-A",
+      "union_models": 55,
+      "union_climate_papers": 34,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "AMSU-B",
+      "union_models": 51,
+      "union_climate_papers": 31,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "ASAR",
+      "union_models": 18,
+      "union_climate_papers": 4,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "ASCAT",
+      "union_models": 3,
+      "union_climate_papers": 3,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "ASTER",
+      "union_models": 56,
+      "union_climate_papers": 32,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "ATMS",
+      "union_models": 17,
+      "union_climate_papers": 3,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "AVHRR",
+      "union_models": 41,
+      "union_climate_papers": 17,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "AVHRR-2",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "AVHRR-3",
+      "union_models": 17,
+      "union_climate_papers": 3,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "C-SAR",
+      "union_models": 17,
+      "union_climate_papers": 2,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CALIOP",
+      "union_models": 5,
+      "union_climate_papers": 9,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CAMERAS",
+      "union_models": 28,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CATS",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CD",
+      "union_models": 15,
+      "union_climate_papers": 5,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CERES SCANNER",
+      "union_models": 59,
+      "union_climate_papers": 49,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CERES-FM1",
+      "union_models": 56,
+      "union_climate_papers": 32,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CERES-FM2",
+      "union_models": 56,
+      "union_climate_papers": 32,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CERES-FM3",
+      "union_models": 51,
+      "union_climate_papers": 31,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CERES-FM4",
+      "union_models": 51,
+      "union_climate_papers": 31,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CERES-FM5",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CERES-FM6",
+      "union_models": 17,
+      "union_climate_papers": 3,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CERES-PFM",
+      "union_models": 10,
+      "union_climate_papers": 9,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "Computer",
+      "union_models": 28,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "COWVR",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "CrIS",
+      "union_models": 51,
+      "union_climate_papers": 32,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "CZCS",
+      "union_models": 20,
+      "union_climate_papers": 4,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "DORIS",
+      "union_models": 38,
+      "union_climate_papers": 12,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "DORIS GROUND STATION BEACON",
+      "union_models": 31,
+      "union_climate_papers": 7,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "DPR",
+      "union_models": 7,
+      "union_climate_papers": 3,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "ECOSTRESS",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "EMIT Imaging Spectrometer",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "ERB-SCANNER",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "ERBE",
+      "union_models": 3,
+      "union_climate_papers": 5,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "ETM+",
+      "union_models": 28,
+      "union_climate_papers": 11,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "GEDI",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "GLAS",
+      "union_models": 15,
+      "union_climate_papers": 5,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "GMI",
+      "union_models": 7,
+      "union_climate_papers": 4,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "GNSS",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "direct instrument text"
+    },
+    {
+      "instrument_name": "GOME",
+      "union_models": 6,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "direct instrument text"
+    },
+    {
+      "instrument_name": "GOME-2",
+      "union_models": 5,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "direct instrument text"
+    },
+    {
+      "instrument_name": "GPS",
+      "union_models": 61,
+      "union_climate_papers": 45,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "GPS Receiver",
+      "union_models": 15,
+      "union_climate_papers": 5,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "GPSP",
+      "union_models": 1,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "GYROS",
+      "union_models": 1,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "HICO",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "HIRDLS",
+      "union_models": 5,
+      "union_climate_papers": 4,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "HIRS",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "HIRS/2",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "HRS",
+      "union_models": 25,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "HSB",
+      "union_models": 51,
+      "union_climate_papers": 31,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "IASI",
+      "union_models": 2,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "direct instrument text"
+    },
+    {
+      "instrument_name": "IGOR",
+      "union_models": 16,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "IIR",
+      "union_models": 5,
+      "union_climate_papers": 9,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "IMAGING RADIOMETERS",
+      "union_models": 59,
+      "union_climate_papers": 34,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "INFRARED RADIOMETERS",
+      "union_models": 2,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "JASON-1 Microwave Radiometer",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "Jason-class Altimeter",
+      "union_models": 1,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "KaRIn",
+      "union_models": 1,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "LA",
+      "union_models": 15,
+      "union_climate_papers": 5,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "LIMS",
+      "union_models": 20,
+      "union_climate_papers": 4,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "LIS",
+      "union_models": 10,
+      "union_climate_papers": 10,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "LRA",
+      "union_models": 1,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "MERIS",
+      "union_models": 19,
+      "union_climate_papers": 5,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "MHS",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "direct instrument text"
+    },
+    {
+      "instrument_name": "MISR",
+      "union_models": 58,
+      "union_climate_papers": 36,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "MLS",
+      "union_models": 8,
+      "union_climate_papers": 5,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "MODIS",
+      "union_models": 69,
+      "union_climate_papers": 78,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "MOPITT",
+      "union_models": 57,
+      "union_climate_papers": 33,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "MSS",
+      "union_models": 26,
+      "union_climate_papers": 2,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "MSU",
+      "union_models": 3,
+      "union_climate_papers": 3,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "MVIRI",
+      "union_models": 2,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "NOT APPLICABLE",
+      "union_models": 64,
+      "union_climate_papers": 56,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "OCO-2",
+      "union_models": 11,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "direct instrument text"
+    },
+    {
+      "instrument_name": "OCO-3",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "OLI",
+      "union_models": 16,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "OLS",
+      "union_models": 23,
+      "union_climate_papers": 8,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "OMI",
+      "union_models": 9,
+      "union_climate_papers": 6,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "OMPS",
+      "union_models": 17,
+      "union_climate_papers": 3,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "OTD",
+      "union_models": 28,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "PALSAR",
+      "union_models": 16,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "PC",
+      "union_models": 15,
+      "union_climate_papers": 5,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "PHOTOMETERS",
+      "union_models": 20,
+      "union_climate_papers": 4,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "POSEIDON-2",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "PR",
+      "union_models": 10,
+      "union_climate_papers": 9,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "RA-2",
+      "union_models": 18,
+      "union_climate_papers": 4,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "RADAR ALTIMETERS",
+      "union_models": 28,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "RADIOMETERS",
+      "union_models": 30,
+      "union_climate_papers": 4,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "RapidScat",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "SAGE II",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "direct instrument text"
+    },
+    {
+      "instrument_name": "SAGE III",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "SAMS",
+      "union_models": 20,
+      "union_climate_papers": 4,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "SAR",
+      "union_models": 18,
+      "union_climate_papers": 4,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "SBUV",
+      "union_models": 21,
+      "union_climate_papers": 5,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "SBUV/2",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "SCATTEROMETERS",
+      "union_models": 2,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "direct instrument text"
+    },
+    {
+      "instrument_name": "SCIAMACHY",
+      "union_models": 20,
+      "union_climate_papers": 5,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "SeaWiFS",
+      "union_models": 4,
+      "union_climate_papers": 8,
+      "route_count": 1,
+      "routes": "direct instrument text"
+    },
+    {
+      "instrument_name": "SENTINEL-1 C-SAR",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "SEVIRI",
+      "union_models": 2,
+      "union_climate_papers": 2,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "SIM",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "SIR-C",
+      "union_models": 2,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "SIRAL",
+      "union_models": 10,
+      "union_climate_papers": 5,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "SMAP L-BAND RADAR",
+      "union_models": 2,
+      "union_climate_papers": 2,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "SMAP L-BAND RADIOMETER",
+      "union_models": 2,
+      "union_climate_papers": 2,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "SMMR",
+      "union_models": 40,
+      "union_climate_papers": 8,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "SOLSTICE",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "SRTM",
+      "union_models": 8,
+      "union_climate_papers": 2,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "SSM/I",
+      "union_models": 23,
+      "union_climate_papers": 8,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "SSMIS",
+      "union_models": 41,
+      "union_climate_papers": 12,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "Star Tracker",
+      "union_models": 1,
+      "union_climate_papers": 2,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "SUN PHOTOMETERS",
+      "union_models": 22,
+      "union_climate_papers": 7,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "TANSO-FTS",
+      "union_models": 5,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "TDX-1",
+      "union_models": 16,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "TEMPEST",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "TES",
+      "union_models": 10,
+      "union_climate_papers": 5,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "THIR",
+      "union_models": 20,
+      "union_climate_papers": 4,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "TIM",
+      "union_models": 2,
+      "union_climate_papers": 2,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "TIRS",
+      "union_models": 16,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "TM",
+      "union_models": 28,
+      "union_climate_papers": 11,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "TMI",
+      "union_models": 10,
+      "union_climate_papers": 10,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "TOMS",
+      "union_models": 23,
+      "union_climate_papers": 5,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "TOVS",
+      "union_models": 37,
+      "union_climate_papers": 8,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "TROPOMI",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "direct instrument text"
+    },
+    {
+      "instrument_name": "TRSR",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "VIIRS",
+      "union_models": 51,
+      "union_climate_papers": 32,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "VIRS",
+      "union_models": 10,
+      "union_climate_papers": 9,
+      "route_count": 2,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "VISSR-METEOSAT",
+      "union_models": 2,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "WFC",
+      "union_models": 5,
+      "union_climate_papers": 9,
+      "route_count": 1,
+      "routes": "platform text, then carried instrument"
+    },
+    {
+      "instrument_name": "WINDSAT",
+      "union_models": 3,
+      "union_climate_papers": 4,
+      "route_count": 3,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument | platform text, then carried instrument | direct instrument text"
+    },
+    {
+      "instrument_name": "X-SAR",
+      "union_models": 16,
+      "union_climate_papers": 1,
+      "route_count": 1,
+      "routes": "DOI-shared paper, dataset, platform, carried instrument"
+    },
+    {
+      "instrument_name": "XPS",
+      "union_models": 1,
+      "union_climate_papers": 1,
+      "route_count": 2,
+      "routes": "platform text, then carried instrument | direct instrument text"
+    }
+  ]
+}
+

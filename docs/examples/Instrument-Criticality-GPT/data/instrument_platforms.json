@@ -1,0 +1,3523 @@
+[
+  {
+    "instrument_name": "ASCAT",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMI",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADAR ALTIMETERS",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAR",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RA",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MR",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ATSR-2",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADIOMETERS",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ALTIMETERS",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SCATTEROMETERS",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "X-SAR",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ERS-1 ALTIMETER",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OCTS",
+    "platform_name": "ADEOS-I",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NSCAT",
+    "platform_name": "ADEOS-I",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "KU-BAND RADAR",
+    "platform_name": "ERS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ERS-2 Altimeter",
+    "platform_name": "ERS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ATSR-2",
+    "platform_name": "ERS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ALTIMETERS",
+    "platform_name": "ERS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RA",
+    "platform_name": "ERS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMI",
+    "platform_name": "ERS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAR",
+    "platform_name": "ERS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ASCAT",
+    "platform_name": "ERS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOME",
+    "platform_name": "ERS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-15 Imager",
+    "platform_name": "GOES-15",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-11 Imager",
+    "platform_name": "GOES-15",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "INFRARED RADIOMETERS",
+    "platform_name": "MTSAT-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MTSAT 2 Imager",
+    "platform_name": "MTSAT-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "JAMI",
+    "platform_name": "MTSAT-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "MTSAT-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ABI",
+    "platform_name": "GOES-13",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES N-P Imager",
+    "platform_name": "GOES-13",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-13 Imager",
+    "platform_name": "GOES-13",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-A",
+    "platform_name": "METOP-A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-3",
+    "platform_name": "METOP-A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MHS",
+    "platform_name": "METOP-A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOME-2",
+    "platform_name": "METOP-A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "METOP-A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Computer",
+    "platform_name": "METOP-A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "IASI",
+    "platform_name": "METOP-A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "METOP-A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ASCAT",
+    "platform_name": "METOP-A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES SCANNER",
+    "platform_name": "TRMM",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VIRS",
+    "platform_name": "TRMM",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LIS",
+    "platform_name": "TRMM",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "TRMM",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TMI",
+    "platform_name": "TRMM",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES-PFM",
+    "platform_name": "TRMM",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "PR",
+    "platform_name": "TRMM",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "WINDSAT",
+    "platform_name": "CORIOLIS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-B",
+    "platform_name": "NOAA-16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-A",
+    "platform_name": "NOAA-16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA-16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "NOAA-16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-3",
+    "platform_name": "NOAA-16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS",
+    "platform_name": "NOAA-16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SBUV/2",
+    "platform_name": "NOAA-16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA-17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS",
+    "platform_name": "NOAA-17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-A",
+    "platform_name": "NOAA-17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-3",
+    "platform_name": "NOAA-17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SBUV/2",
+    "platform_name": "NOAA-17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "NOAA-17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-B",
+    "platform_name": "NOAA-17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AIRS",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-A",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CrIS",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-B",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES-FM4",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VIIRS",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HSB",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES SCANNER",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MODIS",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSR-E",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES-FM3",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-19",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-A",
+    "platform_name": "NOAA-19",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Computer",
+    "platform_name": "NOAA-19",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOMS",
+    "platform_name": "NOAA-19",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-3",
+    "platform_name": "NOAA-19",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MHS",
+    "platform_name": "NOAA-19",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SBUV/2",
+    "platform_name": "NOAA-19",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-20",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES-FM6",
+    "platform_name": "NOAA-20",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-3",
+    "platform_name": "NOAA-20",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES SCANNER",
+    "platform_name": "NOAA-20",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CrIS",
+    "platform_name": "NOAA-20",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OMPS",
+    "platform_name": "NOAA-20",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ATMS",
+    "platform_name": "NOAA-20",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VIIRS",
+    "platform_name": "NOAA-20",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "ENVISAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SCIAMACHY",
+    "platform_name": "ENVISAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MERIS",
+    "platform_name": "ENVISAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "ENVISAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ASAR",
+    "platform_name": "ENVISAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RA-2",
+    "platform_name": "ENVISAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AATSR",
+    "platform_name": "ENVISAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "Terra",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ASTER",
+    "platform_name": "Terra",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES-FM1",
+    "platform_name": "Terra",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MODIS",
+    "platform_name": "Terra",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MISR",
+    "platform_name": "Terra",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MOPITT",
+    "platform_name": "Terra",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "Terra",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSR-E",
+    "platform_name": "Terra",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES-FM2",
+    "platform_name": "Terra",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES SCANNER",
+    "platform_name": "Terra",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "IMAGING RADIOMETERS",
+    "platform_name": "Terra",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ETM+",
+    "platform_name": "LANDSAT-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TM",
+    "platform_name": "LANDSAT-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSS",
+    "platform_name": "LANDSAT-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "Suomi-NPP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES-FM5",
+    "platform_name": "Suomi-NPP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES SCANNER",
+    "platform_name": "Suomi-NPP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CrIS",
+    "platform_name": "Suomi-NPP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ATMS",
+    "platform_name": "Suomi-NPP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VIIRS",
+    "platform_name": "Suomi-NPP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OMPS",
+    "platform_name": "Suomi-NPP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TIRS",
+    "platform_name": "LANDSAT-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLI",
+    "platform_name": "LANDSAT-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Sentinel-2 MSI",
+    "platform_name": "Sentinel-2A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Sentinel-2 MSI",
+    "platform_name": "Sentinel-2B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Sentinel-2 MSI",
+    "platform_name": "Sentinel-2C",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLI",
+    "platform_name": "LANDSAT-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLI-2",
+    "platform_name": "LANDSAT-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RapidScat",
+    "platform_name": "ISS",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "SAGE III",
+    "platform_name": "ISS",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "TEMPEST",
+    "platform_name": "ISS",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "COWVR",
+    "platform_name": "ISS",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "GEDI",
+    "platform_name": "ISS",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "HICO",
+    "platform_name": "ISS",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "LIS",
+    "platform_name": "ISS",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "EMIT Imaging Spectrometer",
+    "platform_name": "ISS",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "OCO-3",
+    "platform_name": "ISS",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "CATS",
+    "platform_name": "ISS",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "ECOSTRESS",
+    "platform_name": "ISS",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "SIR-C",
+    "platform_name": "OV-105",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "SRTM",
+    "platform_name": "OV-105",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "SRTM",
+    "platform_name": "STS-99",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "SRTM C-BAND RADAR",
+    "platform_name": "STS-99",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "TM",
+    "platform_name": "LANDSAT-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSS",
+    "platform_name": "LANDSAT-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "GOES-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES I-M Imager",
+    "platform_name": "GOES-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-8 Imager",
+    "platform_name": "GOES-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GOES-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GOES-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES I-M Imager",
+    "platform_name": "GOES-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-10 Imager",
+    "platform_name": "GOES-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-11 Imager",
+    "platform_name": "GOES-11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GOES-11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES I-M Imager",
+    "platform_name": "GOES-11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-12 Imager",
+    "platform_name": "GOES-12",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES I-M Imager",
+    "platform_name": "GOES-12",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GOES-12",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-14 Imager",
+    "platform_name": "GOES-14",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES N-P Imager",
+    "platform_name": "GOES-14",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES I-M Imager",
+    "platform_name": "GOES-14",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ABI",
+    "platform_name": "GOES-16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GLM",
+    "platform_name": "GOES-16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-16 Imager",
+    "platform_name": "GOES-16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSU",
+    "platform_name": "NOAA-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS/2",
+    "platform_name": "NOAA-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-2",
+    "platform_name": "NOAA-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SBUV/2",
+    "platform_name": "NOAA-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS",
+    "platform_name": "NOAA-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADIOMETERS",
+    "platform_name": "NOAA-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS/2",
+    "platform_name": "NOAA-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-2",
+    "platform_name": "NOAA-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSU",
+    "platform_name": "NOAA-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ERB-SCANNER",
+    "platform_name": "NOAA-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ERBE",
+    "platform_name": "NOAA-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SBUV/2",
+    "platform_name": "NOAA-11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-2",
+    "platform_name": "NOAA-11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADIOMETERS",
+    "platform_name": "NOAA-11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS/2",
+    "platform_name": "NOAA-11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS",
+    "platform_name": "NOAA-11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA-11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSU",
+    "platform_name": "NOAA-11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-2",
+    "platform_name": "NOAA-14",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS",
+    "platform_name": "NOAA-14",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS/2",
+    "platform_name": "NOAA-14",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA-14",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SBUV/2",
+    "platform_name": "NOAA-14",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-14",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSU",
+    "platform_name": "NOAA-14",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CCD IMAGER",
+    "platform_name": "GOES-17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ABI",
+    "platform_name": "GOES-17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-17 Imager",
+    "platform_name": "GOES-17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GLM",
+    "platform_name": "GOES-17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HYPERION",
+    "platform_name": "EO-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SEVIRI",
+    "platform_name": "METEOSAT-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR-METEOSAT",
+    "platform_name": "METEOSAT-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TM",
+    "platform_name": "LANDSAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ETM+",
+    "platform_name": "LANDSAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SEAWINDS",
+    "platform_name": "QUIKSCAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "QUIKSCAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-B",
+    "platform_name": "METOP-B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ASCAT",
+    "platform_name": "METOP-B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "METOP-B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MHS",
+    "platform_name": "METOP-B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Computer",
+    "platform_name": "METOP-B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "METOP-B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-3",
+    "platform_name": "METOP-B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOME-2",
+    "platform_name": "METOP-B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "IASI",
+    "platform_name": "METOP-B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SeaWiFS",
+    "platform_name": "OrbView-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSM/I",
+    "platform_name": "DMSP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSMIS",
+    "platform_name": "DMSP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLS",
+    "platform_name": "DMSP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "KBR",
+    "platform_name": "GRACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ACC",
+    "platform_name": "GRACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GRACE-FO KBR",
+    "platform_name": "GRACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GRACE LRR",
+    "platform_name": "GRACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GRACE INTERFEROMETER",
+    "platform_name": "GRACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GRACE ACC",
+    "platform_name": "GRACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GRACE-FO ACC",
+    "platform_name": "GRACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GRACE SCA",
+    "platform_name": "GRACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "GRACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "TIROS-N",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS/2",
+    "platform_name": "TIROS-N",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSU",
+    "platform_name": "TIROS-N",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-2",
+    "platform_name": "TIROS-N",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-3",
+    "platform_name": "TIROS-N",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "TIROS-N",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VIIRS",
+    "platform_name": "NOAA-21",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ATMS",
+    "platform_name": "NOAA-21",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OMPS",
+    "platform_name": "NOAA-21",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS GROUND STATION BEACON",
+    "platform_name": "OSTM/JASON-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "POSEIDON-3",
+    "platform_name": "OSTM/JASON-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMR",
+    "platform_name": "OSTM/JASON-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "OSTM/JASON-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPSP",
+    "platform_name": "JASON-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "POSEIDON-3B",
+    "platform_name": "JASON-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMR-2",
+    "platform_name": "JASON-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "POSEIDON-3",
+    "platform_name": "JASON-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "JASON-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMR",
+    "platform_name": "JASON-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "JASON-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "JASON-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TRSR",
+    "platform_name": "JASON-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "JASON-1 Microwave Radiometer",
+    "platform_name": "JASON-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS GROUND STATION BEACON",
+    "platform_name": "JASON-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "POSEIDON-2",
+    "platform_name": "JASON-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NRA",
+    "platform_name": "TOPEX/POSEIDON",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "POSEIDON-3B",
+    "platform_name": "TOPEX/POSEIDON",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ALT (TOPEX)",
+    "platform_name": "TOPEX/POSEIDON",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "TOPEX/POSEIDON",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS GROUND STATION BEACON",
+    "platform_name": "TOPEX/POSEIDON",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSALT",
+    "platform_name": "TOPEX/POSEIDON",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TMR",
+    "platform_name": "TOPEX/POSEIDON",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMR",
+    "platform_name": "TOPEX/POSEIDON",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "THIR",
+    "platform_name": "Nimbus-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SBUV",
+    "platform_name": "Nimbus-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LIMS",
+    "platform_name": "Nimbus-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOMS",
+    "platform_name": "Nimbus-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAMS",
+    "platform_name": "Nimbus-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SMMR",
+    "platform_name": "Nimbus-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CZCS",
+    "platform_name": "Nimbus-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "PHOTOMETERS",
+    "platform_name": "Nimbus-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SUN PHOTOMETERS",
+    "platform_name": "Nimbus-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SCATTEROMETERS",
+    "platform_name": "SEASAT 1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SASS",
+    "platform_name": "SEASAT 1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Computer",
+    "platform_name": "Models",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA POES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA POES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-B",
+    "platform_name": "NOAA POES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSU",
+    "platform_name": "NOAA POES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "MetOP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DDMI",
+    "platform_name": "CYGNSS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSR2",
+    "platform_name": "GCOM-W1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-3",
+    "platform_name": "METOP-C",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "METOP-C",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MHS",
+    "platform_name": "METOP-C",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSM/I",
+    "platform_name": "DMSP 5D-2/F14",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR-METEOSAT",
+    "platform_name": "METEOSAT-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "METEOSAT-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DPR",
+    "platform_name": "GPM",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GMI",
+    "platform_name": "GPM",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "NOAA-15",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-A",
+    "platform_name": "NOAA-15",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-B",
+    "platform_name": "NOAA-15",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS",
+    "platform_name": "NOAA-15",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA-15",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-15",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GMS-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR-GMS",
+    "platform_name": "GMS-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLS",
+    "platform_name": "DMSP 5D-2/F13",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSM/I",
+    "platform_name": "DMSP 5D-2/F13",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SEVIRI",
+    "platform_name": "METEOSAT-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR-METEOSAT",
+    "platform_name": "METEOSAT-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MVIRI",
+    "platform_name": "METEOSAT-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSM/I",
+    "platform_name": "DMSP 5D-3/F15",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "DMSP 5D-3/F15",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSMIS",
+    "platform_name": "DMSP 5D-3/F15",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "DMSP 5D-3/F17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSMIS",
+    "platform_name": "DMSP 5D-3/F17",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSMIS",
+    "platform_name": "DMSP 5D-3/F16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "DMSP 5D-3/F16",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSMIS",
+    "platform_name": "DMSP 5D-3/F18",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "DMSP 5D-3/F18",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OTD",
+    "platform_name": "OrbView-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSM/I",
+    "platform_name": "DMSP 5D-2/F8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLS",
+    "platform_name": "DMSP 5D-2/F8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSU-A",
+    "platform_name": "NOAA-18",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "NOAA-18",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA-18",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Computer",
+    "platform_name": "NOAA-18",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-18",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SBUV/2",
+    "platform_name": "NOAA-18",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MHS",
+    "platform_name": "NOAA-18",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLS",
+    "platform_name": "DMSP 5D-2/F11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSM/I",
+    "platform_name": "DMSP 5D-2/F11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SEVIRI",
+    "platform_name": "MSG",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSMIS",
+    "platform_name": "DMSP 5D-3/F19",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLS",
+    "platform_name": "DMSP 5D-2/F10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSM/I",
+    "platform_name": "DMSP 5D-2/F10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SEVIRI",
+    "platform_name": "METEOSAT-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SEVIRI",
+    "platform_name": "METEOSAT-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR-METEOSAT",
+    "platform_name": "METEOSAT-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "JAMI",
+    "platform_name": "MTSAT-1R",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "MTSAT-1R",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "INFRARED RADIOMETERS",
+    "platform_name": "MTSAT-1R",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-9 Imager",
+    "platform_name": "GOES-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GOES-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SOUNDERS",
+    "platform_name": "GOES-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES I-M Imager",
+    "platform_name": "GOES-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR-GMS",
+    "platform_name": "GMS-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GMS-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSM/I",
+    "platform_name": "DMSP 5D-2/F9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLS",
+    "platform_name": "DMSP 5D-2/F9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSM/I",
+    "platform_name": "DMSP 5D-2/F15",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLS",
+    "platform_name": "DMSP 5D-2/F12",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSM/I",
+    "platform_name": "DMSP 5D-2/F12",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GLM",
+    "platform_name": "GOES-18",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ABI",
+    "platform_name": "GOES-18",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GLM",
+    "platform_name": "GOES-19",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS",
+    "platform_name": "NOAA-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ERBE WFOV Nonscanner",
+    "platform_name": "NOAA-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ERBE",
+    "platform_name": "NOAA-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ERB-SCANNER",
+    "platform_name": "NOAA-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-2",
+    "platform_name": "NOAA-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSU",
+    "platform_name": "NOAA-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADIOMETERS",
+    "platform_name": "NOAA-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS/2",
+    "platform_name": "NOAA-10",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSU",
+    "platform_name": "NOAA-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS/2",
+    "platform_name": "NOAA-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSU",
+    "platform_name": "NOAA-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS/2",
+    "platform_name": "NOAA-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR-2",
+    "platform_name": "NOAA-12",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSU",
+    "platform_name": "NOAA-12",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADIOMETERS",
+    "platform_name": "NOAA-12",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "NOAA-12",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "NOAA-12",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS/2",
+    "platform_name": "NOAA-12",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS",
+    "platform_name": "NOAA-12",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLS",
+    "platform_name": "DMSP 5D-1/F1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLS",
+    "platform_name": "DMSP 5D-2/F7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLS",
+    "platform_name": "DMSP 5B/F3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "SATELLITES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "SATELLITES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OTD",
+    "platform_name": "SATELLITES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADIOMETERS",
+    "platform_name": "SATELLITES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "SATELLITES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERAS",
+    "platform_name": "SATELLITES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SSMIS",
+    "platform_name": "SATELLITES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Computer",
+    "platform_name": "SATELLITES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MODIS",
+    "platform_name": "SATELLITES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADAR ALTIMETERS",
+    "platform_name": "SATELLITES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "INFRARED RADIOMETERS",
+    "platform_name": "GOES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-15 Imager",
+    "platform_name": "GOES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES-16 Imager",
+    "platform_name": "GOES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VAS",
+    "platform_name": "GOES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES N-P Imager",
+    "platform_name": "GOES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "platform_name": "GOES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SMAP L-BAND RADIOMETER",
+    "platform_name": "SMAP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "SMAP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAR",
+    "platform_name": "SMAP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SMAP L-BAND RADAR",
+    "platform_name": "SMAP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MISR",
+    "platform_name": "TERRA",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MODIS",
+    "platform_name": "TERRA",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ASTER",
+    "platform_name": "TERRA",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSR-E",
+    "platform_name": "AQUA",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AIRS",
+    "platform_name": "AQUA",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MODIS",
+    "platform_name": "AQUA",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VIIRS",
+    "platform_name": "SUOMI-NPP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SeaWiFS",
+    "platform_name": "EP-TOMS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOMS",
+    "platform_name": "EP-TOMS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "INFRARED RADIOMETERS",
+    "platform_name": "GMS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR-GMS",
+    "platform_name": "GMS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR-METEOSAT",
+    "platform_name": "METEOSAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "INFRARED RADIOMETERS",
+    "platform_name": "METEOSAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MVIRI",
+    "platform_name": "METEOSAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRDLS",
+    "platform_name": "Aura",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MLS",
+    "platform_name": "Aura",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TES",
+    "platform_name": "Aura",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "Aura",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OMI",
+    "platform_name": "Aura",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TMWS",
+    "platform_name": "TROPICS/06",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TMS",
+    "platform_name": "TROPICS/06",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TMS",
+    "platform_name": "TROPICS/05",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TMWS",
+    "platform_name": "TROPICS/05",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Thermal Radiation Experiment",
+    "platform_name": "Explorer-7",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "ATMOS",
+    "platform_name": "Spacelab-3",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "ATMOS",
+    "platform_name": "ATLAS-1",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "ATMOS",
+    "platform_name": "ATLAS-2",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "ATMOS",
+    "platform_name": "ATLAS-3",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "IDCS Nimbus-4",
+    "platform_name": "Nimbus-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "IRIS",
+    "platform_name": "Nimbus-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "BUV",
+    "platform_name": "Nimbus-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "11.5um Radiometer",
+    "platform_name": "Nimbus-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "THIR",
+    "platform_name": "Nimbus-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERAS",
+    "platform_name": "Nimbus-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "6.7um Radiometer",
+    "platform_name": "Nimbus-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SCR",
+    "platform_name": "Nimbus-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SIRS",
+    "platform_name": "Nimbus-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "SMS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MTSAT 2 Imager",
+    "platform_name": "MTSAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MTSAT 1R Imager",
+    "platform_name": "MTSAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AHI",
+    "platform_name": "Himawari-8",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SOLSTICE",
+    "platform_name": "SORCE",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "SIM",
+    "platform_name": "SORCE",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "TIM",
+    "platform_name": "SORCE",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "XPS",
+    "platform_name": "SORCE",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "ATMS",
+    "platform_name": "JPSS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CERES-FM6",
+    "platform_name": "JPSS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VIIRS",
+    "platform_name": "JPSS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CrIS",
+    "platform_name": "JPSS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "THIR",
+    "platform_name": "Nimbus-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ESMR",
+    "platform_name": "Nimbus-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NEMS",
+    "platform_name": "Nimbus-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SCMR",
+    "platform_name": "Nimbus-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SCR",
+    "platform_name": "Nimbus-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ITPR",
+    "platform_name": "Nimbus-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "IGOR",
+    "platform_name": "TSX",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "X-SAR",
+    "platform_name": "TSX",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAR",
+    "platform_name": "TSX",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "IGOR",
+    "platform_name": "COSMIC/FORMOSAT-3",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "HIRS",
+    "platform_name": "Nimbus-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SCAMS",
+    "platform_name": "Nimbus-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LRIR",
+    "platform_name": "Nimbus-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "THIR",
+    "platform_name": "Nimbus-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ESMR",
+    "platform_name": "Nimbus-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "PMR",
+    "platform_name": "Nimbus-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOMS",
+    "platform_name": "Meteor-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OCO-2",
+    "platform_name": "OCO-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OCO SPECTROMETERS",
+    "platform_name": "OCO-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TROPOMI",
+    "platform_name": "Sentinel-5P",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GNSS",
+    "platform_name": "Sentinel-6A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GNSS-RO RECEIVER",
+    "platform_name": "Sentinel-6A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Star Tracker",
+    "platform_name": "Sentinel-6A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RO",
+    "platform_name": "Sentinel-6A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GNSS RECEIVER",
+    "platform_name": "Sentinel-6A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMR",
+    "platform_name": "Sentinel-6A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMR-C",
+    "platform_name": "Sentinel-6A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Poseidon-4 Radar Altimeter",
+    "platform_name": "Sentinel-6A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "Sentinel-6A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ACE-FTS",
+    "platform_name": "SCISAT-1/ACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TANSO-FTS",
+    "platform_name": "GOSAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "SMS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HRIR",
+    "platform_name": "Nimbus-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MRIR",
+    "platform_name": "Nimbus-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AVCS Nimbus-2",
+    "platform_name": "Nimbus-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERAS",
+    "platform_name": "Nimbus-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TMS",
+    "platform_name": "TROPICS/07",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAPHIR",
+    "platform_name": "MT1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SIM",
+    "platform_name": "TSIS-1",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "TIM",
+    "platform_name": "TSIS-1",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "TOMS",
+    "platform_name": "ADEOS-II",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMSR",
+    "platform_name": "ADEOS-II",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Medium-Resolution Scanning Radiometer",
+    "platform_name": "TIROS-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Low-Resolution Omnidirectional Radiometer",
+    "platform_name": "TIROS-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Medium-Resolution Scanning Radiometer",
+    "platform_name": "TIROS-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Low-Resolution Omnidirectional Radiometer",
+    "platform_name": "TIROS-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TMS",
+    "platform_name": "TROPICS/01",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TMWS",
+    "platform_name": "TROPICS/01",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GVHRR",
+    "platform_name": "ATS-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GOES-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CLAES",
+    "platform_name": "UARS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MLS",
+    "platform_name": "UARS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HALOE",
+    "platform_name": "UARS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ACRIM II",
+    "platform_name": "UARS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "IDCS Nimbus-3",
+    "platform_name": "Nimbus-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERAS",
+    "platform_name": "Nimbus-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HRIR",
+    "platform_name": "Nimbus-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MRIR",
+    "platform_name": "Nimbus-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SIRS",
+    "platform_name": "Nimbus-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TIM",
+    "platform_name": "STPSat-3",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "AVCS Nimbus-1",
+    "platform_name": "Nimbus-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERAS",
+    "platform_name": "Nimbus-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HRIR",
+    "platform_name": "Nimbus-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GOES-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GOES-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Medium-Resolution Scanning Radiometer",
+    "platform_name": "TIROS-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TMS",
+    "platform_name": "TROPICS/03",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TMWS",
+    "platform_name": "TROPICS/03",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CloudSat-CPR",
+    "platform_name": "CloudSat",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "WINDSAT",
+    "platform_name": "NPOESS (National Polar-orbiting Operational Environmental Satellite System )",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OPTICAL BEACON",
+    "platform_name": "GEOS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAGE I",
+    "platform_name": "AEM-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAGE II",
+    "platform_name": "ERBS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "PHOTOMETERS",
+    "platform_name": "ERBS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ERBE",
+    "platform_name": "ERBS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "ERBS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SUN PHOTOMETERS",
+    "platform_name": "ERBS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ERBE WFOV Nonscanner",
+    "platform_name": "ERBS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ERB-SCANNER",
+    "platform_name": "ERBS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAGE III",
+    "platform_name": "Meteor-3M",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ATMOS",
+    "platform_name": "SPACELAB-3",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "IGOR",
+    "platform_name": "PAZ",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "IGOR",
+    "platform_name": "KOMPSAT-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GEOS-3 ALTIMETER",
+    "platform_name": "GEOS-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TRANSPONDERS",
+    "platform_name": "GEOS-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADIO TRANSPONDERS",
+    "platform_name": "Eole",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Medium-Resolution Scanning Radiometer",
+    "platform_name": "TIROS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AHI",
+    "platform_name": "Himawari-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPSP",
+    "platform_name": "SWOT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Star Tracker",
+    "platform_name": "SWOT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LRA",
+    "platform_name": "SWOT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AMR",
+    "platform_name": "SWOT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GYROS",
+    "platform_name": "SWOT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "SWOT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "KaRIn",
+    "platform_name": "SWOT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Jason-class Altimeter",
+    "platform_name": "SWOT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OSCAT-2",
+    "platform_name": "SCATSAT-1",
+    "platform_type": "Space-based Platforms"
+  },
+  {
+    "instrument_name": "GRACE-FO MWI",
+    "platform_name": "GRACE-FO",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GRACE-FO SCA",
+    "platform_name": "GRACE-FO",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GRACE-FO ACC",
+    "platform_name": "GRACE-FO",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GRACE-FO LRI",
+    "platform_name": "GRACE-FO",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GRACE ACC",
+    "platform_name": "GRACE-FO",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ACC",
+    "platform_name": "GRACE-FO",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ALTIKA Altimeter",
+    "platform_name": "SARAL",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "SARAL",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AQUARIUS_RADIOMETER",
+    "platform_name": "SAC-D",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AQUARIUS_SCATTEROMETER",
+    "platform_name": "SAC-D",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SMOS L-BAND RADIOMETER",
+    "platform_name": "SMOS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SMAP L-BAND RADIOMETER",
+    "platform_name": "SMOS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GFO Altimeter",
+    "platform_name": "GFO",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OSCAT",
+    "platform_name": "IRS-O2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "C-SAR",
+    "platform_name": "Sentinel-1A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SENTINEL-1 C-SAR",
+    "platform_name": "Sentinel-1A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "C-SAR",
+    "platform_name": "Sentinel-1B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SENTINEL-1 C-SAR",
+    "platform_name": "Sentinel-1B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SEVIRI",
+    "platform_name": "METEOSAT-11",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLCI",
+    "platform_name": "Sentinel-3A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SLSTR",
+    "platform_name": "Sentinel-3A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OLCI",
+    "platform_name": "Sentinel-3B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SLSTR",
+    "platform_name": "Sentinel-3B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AQUARIUS_SCATTEROMETER",
+    "platform_name": "Aquarius SAC-D",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AQUARIUS_RADIOMETER",
+    "platform_name": "Aquarius SAC-D",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TEMPO",
+    "platform_name": "IS-40e",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "IIR",
+    "platform_name": "CALIPSO",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CALIOP",
+    "platform_name": "CALIPSO",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "WFC",
+    "platform_name": "CALIPSO",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MAPS",
+    "platform_name": "STS-68",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "GFC RADIOMETER",
+    "platform_name": "STS-68",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "SPACE SHUTTLES",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "TIRS-PREFIRE",
+    "platform_name": "PREFIRE-SAT1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MIR",
+    "platform_name": "METEOSAT-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MVIRI",
+    "platform_name": "METEOSAT-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSIR",
+    "platform_name": "METEOSAT-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "METEOSAT-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MAPS",
+    "platform_name": "STS-59",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "GFC RADIOMETER",
+    "platform_name": "STS-59",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "IMAGING RADIOMETERS",
+    "platform_name": "GEOSTATIONARY SATELLITES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES I-M Imager",
+    "platform_name": "GOES-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADIOMETERS",
+    "platform_name": "GOES-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GOES-6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "EPIC",
+    "platform_name": "DSCOVR",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "NISTAR",
+    "platform_name": "DSCOVR",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "CCD IMAGER",
+    "platform_name": "DSCOVR",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "TIRS-PREFIRE",
+    "platform_name": "PREFIRE-SAT2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GMS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GMS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GMS-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VHRR",
+    "platform_name": "INSAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "METEOSAT-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "METEOSAT-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MIR",
+    "platform_name": "METEOSAT-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "Computer",
+    "platform_name": "METEOSAT-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSIR",
+    "platform_name": "METEOSAT-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MIR",
+    "platform_name": "METEOSAT-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "IMAGING RADIOMETERS",
+    "platform_name": "METEOSAT-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "NOT APPLICABLE",
+    "platform_name": "METEOSAT-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES I-M Imager",
+    "platform_name": "GOES-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GOES-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GOES I-M Imager",
+    "platform_name": "GOES-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADIOMETERS",
+    "platform_name": "GOES-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VISSR",
+    "platform_name": "GOES-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VAS",
+    "platform_name": "GOES-7",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ACRIM",
+    "platform_name": "ACRIMSAT",
+    "platform_type": "Solar/Space Observation Satellites"
+  },
+  {
+    "instrument_name": "WIND PROFILERS",
+    "platform_name": "Aeolus",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MAPS",
+    "platform_name": "STS-41G",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "GFC RADIOMETER",
+    "platform_name": "STS-41G",
+    "platform_type": "Space Stations/Crewed Spacecraft"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "SPOT-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VEGETATION-1",
+    "platform_name": "SPOT-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HRVIR",
+    "platform_name": "SPOT-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "POAM III",
+    "platform_name": "SPOT-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS GROUND STATION BEACON",
+    "platform_name": "SPOT-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "WV60",
+    "platform_name": "WORLDVIEW-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERAS",
+    "platform_name": "WORLDVIEW-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GIS",
+    "platform_name": "GEOEYE-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERAS",
+    "platform_name": "GEOEYE-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OSA",
+    "platform_name": "IKONOS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERA",
+    "platform_name": "WORLDVIEW-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "WV110",
+    "platform_name": "WORLDVIEW-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERAS",
+    "platform_name": "WORLDVIEW-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERA",
+    "platform_name": "WORLDVIEW-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERAS",
+    "platform_name": "WORLDVIEW-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "WV110",
+    "platform_name": "WORLDVIEW-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "QUICKBIRD/BHRC-60",
+    "platform_name": "QUICKBIRD-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "WV110",
+    "platform_name": "WORLDVIEW-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERA",
+    "platform_name": "PlanetScope",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "PS0",
+    "platform_name": "PlanetScope",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "PS2.SD",
+    "platform_name": "PlanetScope",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "PSB.SD",
+    "platform_name": "PlanetScope",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "PS2",
+    "platform_name": "PlanetScope",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "PS1",
+    "platform_name": "PlanetScope",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AQUARIUS_SCATTEROMETER",
+    "platform_name": "Aquarius_SAC-D",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AQUARIUS_RADIOMETER",
+    "platform_name": "Aquarius_SAC-D",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ATLAS",
+    "platform_name": "ICESat-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TOVS",
+    "platform_name": "TIROS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ALTIMETERS",
+    "platform_name": "ICESAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GLAS",
+    "platform_name": "ICESAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "PALSAR",
+    "platform_name": "ALOS",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "PALSAR-2",
+    "platform_name": "ALOS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAR",
+    "platform_name": "RADARSAT-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAR",
+    "platform_name": "RADARSAT-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "C-SAR",
+    "platform_name": "SENTINEL-1A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAR",
+    "platform_name": "SENTINEL-1A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "C-SAR",
+    "platform_name": "SENTINEL-1B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "X-SAR",
+    "platform_name": "TDX",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAR",
+    "platform_name": "TDX",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TDX-1",
+    "platform_name": "TDX",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "ICESat",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GLAS",
+    "platform_name": "ICESat",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CD",
+    "platform_name": "ICESat",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "ALTIMETERS",
+    "platform_name": "ICESat",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS Receiver",
+    "platform_name": "ICESat",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LA",
+    "platform_name": "ICESat",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "PC",
+    "platform_name": "ICESat",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "REIS",
+    "platform_name": "RAPIDEYE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SIRAL",
+    "platform_name": "CRYOSAT-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "CRYOSAT-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS GROUND STATION BEACON",
+    "platform_name": "CRYOSAT-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "AWIFS",
+    "platform_name": "IRS-P6",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HRV",
+    "platform_name": "SPOT-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "GPS P",
+    "platform_name": "GPS",
+    "platform_type": "Navigation Satellites"
+  },
+  {
+    "instrument_name": "GPSP",
+    "platform_name": "GPS",
+    "platform_type": "Navigation Satellites"
+  },
+  {
+    "instrument_name": "GPS",
+    "platform_name": "GPS",
+    "platform_type": "Navigation Satellites"
+  },
+  {
+    "instrument_name": "GPS RECEIVERS",
+    "platform_name": "GPS",
+    "platform_type": "Navigation Satellites"
+  },
+  {
+    "instrument_name": "ASCAT",
+    "platform_name": "METOP",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAR",
+    "platform_name": "COSMO-SKYMED",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "C-SAR",
+    "platform_name": "Sentinel-1C",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADAR ALTIMETERS",
+    "platform_name": "GEOSAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "RADAR ALTIMETERS",
+    "platform_name": "SEASAT",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "SPOT-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS GROUND STATION BEACON",
+    "platform_name": "SPOT-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HRS",
+    "platform_name": "SPOT-5",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERA",
+    "platform_name": "HEXAGON KH-9",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MWRI",
+    "platform_name": "FY-3B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSS",
+    "platform_name": "LANDSAT-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSS",
+    "platform_name": "LANDSAT-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "MSS",
+    "platform_name": "LANDSAT-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERA",
+    "platform_name": "Pleiades-1A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "CAMERA",
+    "platform_name": "Pleiades-1B",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "VTPR",
+    "platform_name": "NOAA-4",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "Jason-1 Geodetic",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "TRSR",
+    "platform_name": "Jason-1 Geodetic",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "POSEIDON-2",
+    "platform_name": "Jason-1 Geodetic",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "JASON-1 Microwave Radiometer",
+    "platform_name": "Jason-1 Geodetic",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LASER REFLECTOR",
+    "platform_name": "LAGEOS-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LASER REFLECTOR",
+    "platform_name": "LAGEOS-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LASER REFLECTOR",
+    "platform_name": "ETALON-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LASER REFLECTOR",
+    "platform_name": "ETALON-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "SENTINEL-3A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "HY2-A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS GROUND STATION BEACON",
+    "platform_name": "HY2-A",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS GROUND STATION BEACON",
+    "platform_name": "SPOT-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "SPOT-2",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS GROUND STATION BEACON",
+    "platform_name": "SPOT-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "DORIS",
+    "platform_name": "SPOT-3",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LASER REFLECTOR",
+    "platform_name": "AJISAI",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LASER REFLECTOR",
+    "platform_name": "STARLETTE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LASER REFLECTOR",
+    "platform_name": "STELLA",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "LASER REFLECTOR",
+    "platform_name": "LARES",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HARP2",
+    "platform_name": "PACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "OCI",
+    "platform_name": "PACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SPEXone",
+    "platform_name": "PACE",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "HawkEye",
+    "platform_name": "SeaHawk-1",
+    "platform_type": "Earth Observation Satellites"
+  },
+  {
+    "instrument_name": "SAR",
+    "platform_name": "JERS-1",
+    "platform_type": "Spacecraft"
+  }
+]
+

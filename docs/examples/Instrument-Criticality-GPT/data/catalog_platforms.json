@@ -1,0 +1,4091 @@
+[
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11487",
+    "platform_name": "ERS-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 12,
+    "dataset_count": 25,
+    "archive_count": 13,
+    "publication_count": 738
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11488",
+    "platform_name": "ADEOS-I",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 26,
+    "archive_count": 6,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11489",
+    "platform_name": "ERS-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 9,
+    "dataset_count": 24,
+    "archive_count": 13,
+    "publication_count": 744
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11490",
+    "platform_name": "GOES-15",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 21,
+    "archive_count": 9,
+    "publication_count": 9
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11491",
+    "platform_name": "MTSAT-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 8,
+    "archive_count": 4,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11492",
+    "platform_name": "GOES-13",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 19,
+    "archive_count": 8,
+    "publication_count": 5
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11493",
+    "platform_name": "METOP-A",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 9,
+    "dataset_count": 46,
+    "archive_count": 20,
+    "publication_count": 125
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11494",
+    "platform_name": "Saildrone",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 9,
+    "dataset_count": 8,
+    "archive_count": 3,
+    "publication_count": 18
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11495",
+    "platform_name": "TRMM",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 7,
+    "dataset_count": 80,
+    "archive_count": 9,
+    "publication_count": 200
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11496",
+    "platform_name": "CORIOLIS",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 18,
+    "archive_count": 7,
+    "publication_count": 288
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11497",
+    "platform_name": "NOAA-16",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 8,
+    "dataset_count": 68,
+    "archive_count": 12,
+    "publication_count": 223
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11498",
+    "platform_name": "NOAA-17",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 8,
+    "dataset_count": 59,
+    "archive_count": 11,
+    "publication_count": 99
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11499",
+    "platform_name": "Aqua",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 12,
+    "dataset_count": 717,
+    "archive_count": 37,
+    "publication_count": 6624
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11500",
+    "platform_name": "NOAA-19",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 7,
+    "dataset_count": 73,
+    "archive_count": 14,
+    "publication_count": 356
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11501",
+    "platform_name": "NOAA-20",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 8,
+    "dataset_count": 320,
+    "archive_count": 29,
+    "publication_count": 215
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11502",
+    "platform_name": "BUOYS",
+    "platform_type": "Buoys",
+    "instrument_count": 16,
+    "dataset_count": 25,
+    "archive_count": 8,
+    "publication_count": 708
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11503",
+    "platform_name": "ENVISAT",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 7,
+    "dataset_count": 69,
+    "archive_count": 16,
+    "publication_count": 657
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11504",
+    "platform_name": "Terra",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 11,
+    "dataset_count": 793,
+    "archive_count": 42,
+    "publication_count": 11420
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11505",
+    "platform_name": "LANDSAT-7",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 59,
+    "archive_count": 20,
+    "publication_count": 540
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11506",
+    "platform_name": "LANDSAT-5",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 59,
+    "archive_count": 19,
+    "publication_count": 520
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11507",
+    "platform_name": "Suomi-NPP",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 7,
+    "dataset_count": 527,
+    "archive_count": 29,
+    "publication_count": 568
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11508",
+    "platform_name": "LANDSAT-8",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 48,
+    "archive_count": 21,
+    "publication_count": 1051
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11509",
+    "platform_name": "DEM",
+    "platform_type": "Models",
+    "instrument_count": 0,
+    "dataset_count": 7,
+    "archive_count": 2,
+    "publication_count": 98
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11510",
+    "platform_name": "Sentinel-2A",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 16,
+    "archive_count": 12,
+    "publication_count": 191
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11511",
+    "platform_name": "Sentinel-2B",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 14,
+    "archive_count": 11,
+    "publication_count": 143
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11512",
+    "platform_name": "Sentinel-2C",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 5,
+    "publication_count": 31
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11513",
+    "platform_name": "LANDSAT-9",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 11,
+    "archive_count": 8,
+    "publication_count": 124
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11514",
+    "platform_name": "ISS",
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "instrument_count": 11,
+    "dataset_count": 131,
+    "archive_count": 12,
+    "publication_count": 350
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11515",
+    "platform_name": "OV-105",
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "instrument_count": 2,
+    "dataset_count": 8,
+    "archive_count": 3,
+    "publication_count": 305
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11516",
+    "platform_name": "STS-99",
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "instrument_count": 2,
+    "dataset_count": 16,
+    "archive_count": 3,
+    "publication_count": 764
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11517",
+    "platform_name": "G-LiHT",
+    "platform_type": "Jet",
+    "instrument_count": 2,
+    "dataset_count": 12,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11518",
+    "platform_name": "LANDSAT-4",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 8,
+    "archive_count": 8,
+    "publication_count": 189
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11519",
+    "platform_name": "Airplane",
+    "platform_type": "Jet",
+    "instrument_count": 24,
+    "dataset_count": 20,
+    "archive_count": 6,
+    "publication_count": 13
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11520",
+    "platform_name": "GOES-8",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 18,
+    "archive_count": 4,
+    "publication_count": 4
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11521",
+    "platform_name": "GOES-10",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 13,
+    "archive_count": 4,
+    "publication_count": 9
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11522",
+    "platform_name": "GOES-11",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 14,
+    "archive_count": 4,
+    "publication_count": 4
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11523",
+    "platform_name": "GOES-12",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 13,
+    "archive_count": 4,
+    "publication_count": 9
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11524",
+    "platform_name": "GOES-14",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 7,
+    "archive_count": 4,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11525",
+    "platform_name": "GOES-16",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 30,
+    "archive_count": 10,
+    "publication_count": 57
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11526",
+    "platform_name": "LPJ-PROSAIL",
+    "platform_type": "Models",
+    "instrument_count": 0,
+    "dataset_count": 2,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11527",
+    "platform_name": "NOAA-7",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 5,
+    "dataset_count": 57,
+    "archive_count": 14,
+    "publication_count": 324
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11528",
+    "platform_name": "NOAA-9",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 10,
+    "dataset_count": 107,
+    "archive_count": 14,
+    "publication_count": 584
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11529",
+    "platform_name": "NOAA-11",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 8,
+    "dataset_count": 77,
+    "archive_count": 14,
+    "publication_count": 587
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11530",
+    "platform_name": "NOAA-14",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 7,
+    "dataset_count": 75,
+    "archive_count": 16,
+    "publication_count": 679
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11531",
+    "platform_name": "GOES-17",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 22,
+    "archive_count": 8,
+    "publication_count": 16
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11532",
+    "platform_name": "LPJ-EOSIM",
+    "platform_type": "Models",
+    "instrument_count": 0,
+    "dataset_count": 4,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11533",
+    "platform_name": "EO-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 3,
+    "publication_count": 8
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11534",
+    "platform_name": "FIELD SURVEYS",
+    "platform_type": "Field Sites",
+    "instrument_count": 24,
+    "dataset_count": 45,
+    "archive_count": 11,
+    "publication_count": 23
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11535",
+    "platform_name": "METEOSAT-9",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 14,
+    "archive_count": 5,
+    "publication_count": 38
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11536",
+    "platform_name": "MODELS",
+    "platform_type": "Models",
+    "instrument_count": 3,
+    "dataset_count": 468,
+    "archive_count": 26,
+    "publication_count": 3424
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11537",
+    "platform_name": "LANDSAT",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 110
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11538",
+    "platform_name": "QUIKSCAT",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 23,
+    "archive_count": 9,
+    "publication_count": 62
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11539",
+    "platform_name": "METOP-B",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 9,
+    "dataset_count": 45,
+    "archive_count": 18,
+    "publication_count": 56
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11540",
+    "platform_name": "OrbView-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 40,
+    "archive_count": 5,
+    "publication_count": 37
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11541",
+    "platform_name": "DMSP",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 35,
+    "archive_count": 7,
+    "publication_count": 296
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11542",
+    "platform_name": "GRACE",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 9,
+    "dataset_count": 36,
+    "archive_count": 8,
+    "publication_count": 156
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11543",
+    "platform_name": "TIROS-N",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 6,
+    "dataset_count": 6,
+    "archive_count": 3,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11544",
+    "platform_name": "NOAA-21",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 86,
+    "archive_count": 12,
+    "publication_count": 7
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11545",
+    "platform_name": "Mooring",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 2,
+    "dataset_count": 4,
+    "archive_count": 2,
+    "publication_count": 12
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11546",
+    "platform_name": "TenuseGlider",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11547",
+    "platform_name": "ARGO",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 2,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11548",
+    "platform_name": "R/V Revelle",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 11,
+    "dataset_count": 11,
+    "archive_count": 2,
+    "publication_count": 10
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11549",
+    "platform_name": "RAWINSONDES",
+    "platform_type": "Balloons/Rockets",
+    "instrument_count": 3,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11550",
+    "platform_name": "Seaglider",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 6
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11551",
+    "platform_name": "R/V Endeavor",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 6,
+    "dataset_count": 6,
+    "archive_count": 2,
+    "publication_count": 7
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11552",
+    "platform_name": "R/V Knorr",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 5,
+    "dataset_count": 5,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11553",
+    "platform_name": "Ecomapper",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 4,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11554",
+    "platform_name": "R/V Thalassa",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 2,
+    "dataset_count": 2,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11555",
+    "platform_name": "R/V Sarmiento",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 3,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11556",
+    "platform_name": "NeutrallyBuoyantFloat",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11557",
+    "platform_name": "Waveglider",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 3,
+    "dataset_count": 2,
+    "archive_count": 2,
+    "publication_count": 5
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11558",
+    "platform_name": "Drifter",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 2,
+    "publication_count": 4
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11559",
+    "platform_name": "S/V Lady Amber",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11560",
+    "platform_name": "Seasoar",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11561",
+    "platform_name": "OSTM/JASON-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 27,
+    "archive_count": 8,
+    "publication_count": 79
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11562",
+    "platform_name": "JASON-3",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 6,
+    "dataset_count": 21,
+    "archive_count": 6,
+    "publication_count": 72
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11563",
+    "platform_name": "JASON-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 6,
+    "dataset_count": 29,
+    "archive_count": 9,
+    "publication_count": 72
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11564",
+    "platform_name": "TOPEX/POSEIDON",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 8,
+    "dataset_count": 26,
+    "archive_count": 9,
+    "publication_count": 72
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11565",
+    "platform_name": "Nimbus-7",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 9,
+    "dataset_count": 74,
+    "archive_count": 12,
+    "publication_count": 1536
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11566",
+    "platform_name": "SEASAT 1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 6,
+    "archive_count": 7,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11567",
+    "platform_name": "Models",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11568",
+    "platform_name": "NOAA POES",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 9,
+    "archive_count": 6,
+    "publication_count": 86
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11569",
+    "platform_name": "MetOP",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11570",
+    "platform_name": "CYGNSS",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 45,
+    "archive_count": 7,
+    "publication_count": 120
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11571",
+    "platform_name": "GCOM-W1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 77,
+    "archive_count": 16,
+    "publication_count": 549
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11572",
+    "platform_name": "METOP-C",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 14,
+    "archive_count": 6,
+    "publication_count": 9
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11573",
+    "platform_name": "GROUND STATIONS",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 202,
+    "dataset_count": 585,
+    "archive_count": 6,
+    "publication_count": 193
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11574",
+    "platform_name": "DMSP 5D-2/F14",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 32,
+    "archive_count": 8,
+    "publication_count": 90
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11575",
+    "platform_name": "METEOSAT-6",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 6,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11576",
+    "platform_name": "GPM",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 51,
+    "archive_count": 6,
+    "publication_count": 166
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11577",
+    "platform_name": "NOAA-15",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 6,
+    "dataset_count": 27,
+    "archive_count": 6,
+    "publication_count": 16
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11578",
+    "platform_name": "GMS-5",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 9,
+    "archive_count": 2,
+    "publication_count": 4
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11579",
+    "platform_name": "DMSP 5D-2/F13",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 52,
+    "archive_count": 12,
+    "publication_count": 1487
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11580",
+    "platform_name": "METEOSAT-7",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 10,
+    "archive_count": 2,
+    "publication_count": 9
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11581",
+    "platform_name": "DMSP 5D-3/F15",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 21,
+    "archive_count": 7,
+    "publication_count": 53
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11582",
+    "platform_name": "NASA DC-8",
+    "platform_type": "Jet",
+    "instrument_count": 185,
+    "dataset_count": 221,
+    "archive_count": 9,
+    "publication_count": 382
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11583",
+    "platform_name": "RASI",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11584",
+    "platform_name": "NASA ER-2",
+    "platform_type": "Jet",
+    "instrument_count": 92,
+    "dataset_count": 186,
+    "archive_count": 5,
+    "publication_count": 27
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11585",
+    "platform_name": "GROUND-BASED OBSERVATIONS",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 126,
+    "dataset_count": 223,
+    "archive_count": 36,
+    "publication_count": 417
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11586",
+    "platform_name": "DMSP 5D-3/F17",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 50,
+    "archive_count": 12,
+    "publication_count": 1591
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11587",
+    "platform_name": "DMSP 5D-3/F16",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 34,
+    "archive_count": 7,
+    "publication_count": 182
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11588",
+    "platform_name": "DMSP 5D-3/F18",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 28,
+    "archive_count": 6,
+    "publication_count": 274
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11589",
+    "platform_name": "UND CITATION II",
+    "platform_type": "Jet",
+    "instrument_count": 25,
+    "dataset_count": 17,
+    "archive_count": 1,
+    "publication_count": 26
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11590",
+    "platform_name": "WP-3D ORION",
+    "platform_type": "Propeller",
+    "instrument_count": 12,
+    "dataset_count": 19,
+    "archive_count": 6,
+    "publication_count": 379
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11591",
+    "platform_name": "AEROSONDE",
+    "platform_type": "Uncrewed Aerial Vehicles",
+    "instrument_count": 5,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11592",
+    "platform_name": "UWKA",
+    "platform_type": "Propeller",
+    "instrument_count": 11,
+    "dataset_count": 3,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11593",
+    "platform_name": "COMPUTERS",
+    "platform_type": "Models",
+    "instrument_count": 2,
+    "dataset_count": 13,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11594",
+    "platform_name": "FIXED OBSERVATION STATIONS",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 8,
+    "dataset_count": 7,
+    "archive_count": 3,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11595",
+    "platform_name": "OrbView-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 11,
+    "archive_count": 1,
+    "publication_count": 57
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11596",
+    "platform_name": "DMSP 5D-2/F8",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 38,
+    "archive_count": 11,
+    "publication_count": 1447
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11597",
+    "platform_name": "ECMWFIFS",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11598",
+    "platform_name": "NOAA-18",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 7,
+    "dataset_count": 33,
+    "archive_count": 6,
+    "publication_count": 10
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11599",
+    "platform_name": "MISSION REPORTS",
+    "platform_type": "Reports",
+    "instrument_count": 2,
+    "dataset_count": 11,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11600",
+    "platform_name": "DMSP 5D-2/F11",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 40,
+    "archive_count": 12,
+    "publication_count": 1479
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11601",
+    "platform_name": "NASA P-3",
+    "platform_type": "Propeller",
+    "instrument_count": 71,
+    "dataset_count": 34,
+    "archive_count": 6,
+    "publication_count": 19
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11602",
+    "platform_name": "MIPS",
+    "platform_type": "Vehicles",
+    "instrument_count": 11,
+    "dataset_count": 7,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11603",
+    "platform_name": "BALLOONS",
+    "platform_type": "Balloons",
+    "instrument_count": 13,
+    "dataset_count": 18,
+    "archive_count": 4,
+    "publication_count": 6
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11604",
+    "platform_name": "LDAR",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11605",
+    "platform_name": "MSG",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 12,
+    "archive_count": 7,
+    "publication_count": 18
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11606",
+    "platform_name": "WWLLN",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 3,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11607",
+    "platform_name": "ALTUS",
+    "platform_type": "Uncrewed Aerial Vehicles",
+    "instrument_count": 11,
+    "dataset_count": 6,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11608",
+    "platform_name": "CRM",
+    "platform_type": "Models",
+    "instrument_count": 2,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11609",
+    "platform_name": "DMSP 5D-3/F19",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 9,
+    "archive_count": 4,
+    "publication_count": 53
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11610",
+    "platform_name": "METEOROLOGICAL STATIONS",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 24,
+    "dataset_count": 13,
+    "archive_count": 4,
+    "publication_count": 94
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11611",
+    "platform_name": "GLOBAL HAWK",
+    "platform_type": "Uncrewed Aerial Vehicles",
+    "instrument_count": 26,
+    "dataset_count": 21,
+    "archive_count": 2,
+    "publication_count": 11
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11612",
+    "platform_name": "DMSP 5D-2/F10",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 25,
+    "archive_count": 8,
+    "publication_count": 90
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11613",
+    "platform_name": "NASA WB-57F",
+    "platform_type": "Jet",
+    "instrument_count": 39,
+    "dataset_count": 19,
+    "archive_count": 2,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11614",
+    "platform_name": "METEOSAT-10",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 11,
+    "archive_count": 4,
+    "publication_count": 9
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11615",
+    "platform_name": "RADIOSONDES",
+    "platform_type": "Balloons",
+    "instrument_count": 10,
+    "dataset_count": 14,
+    "archive_count": 3,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11616",
+    "platform_name": "METEOSAT-8",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 11,
+    "archive_count": 2,
+    "publication_count": 4
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11617",
+    "platform_name": "MTSAT-1R",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 10,
+    "archive_count": 3,
+    "publication_count": 5
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11618",
+    "platform_name": "GOES-9",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 13,
+    "archive_count": 2,
+    "publication_count": 4
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11619",
+    "platform_name": "GMS-4",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 6,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11620",
+    "platform_name": "MESONET",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 6,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11621",
+    "platform_name": "DMSP 5D-2/F9",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11622",
+    "platform_name": "DMSP 5D-2/F15",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 14,
+    "archive_count": 5,
+    "publication_count": 43
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11623",
+    "platform_name": "DMSP 5D-2/F12",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11624",
+    "platform_name": "CMORPH",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11625",
+    "platform_name": "WRF",
+    "platform_type": "Models",
+    "instrument_count": 2,
+    "dataset_count": 8,
+    "archive_count": 3,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11626",
+    "platform_name": "GOES-18",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 7,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11627",
+    "platform_name": "GOES-19",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11628",
+    "platform_name": "WEATHER STATIONS",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 13,
+    "dataset_count": 7,
+    "archive_count": 4,
+    "publication_count": 62
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11629",
+    "platform_name": "R/V ARANDA",
+    "platform_type": "Vessels",
+    "instrument_count": 2,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11630",
+    "platform_name": "NOAA-10",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 10,
+    "dataset_count": 49,
+    "archive_count": 6,
+    "publication_count": 132
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11631",
+    "platform_name": "NOAA-6",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 7,
+    "archive_count": 5,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11632",
+    "platform_name": "NOAA-8",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 14,
+    "archive_count": 6,
+    "publication_count": 5
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11633",
+    "platform_name": "NOAA-12",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 7,
+    "dataset_count": 25,
+    "archive_count": 6,
+    "publication_count": 294
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11634",
+    "platform_name": "DMSP 5D-1/F1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11635",
+    "platform_name": "DMSP 5D-2/F7",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11636",
+    "platform_name": "DMSP 5B/F3",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11637",
+    "platform_name": "SURFRAD",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 7,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11638",
+    "platform_name": "AGBFM",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11639",
+    "platform_name": "SMART-R",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11640",
+    "platform_name": "SATELLITES",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 10,
+    "dataset_count": 44,
+    "archive_count": 5,
+    "publication_count": 11
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11641",
+    "platform_name": "GOES",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 6,
+    "dataset_count": 10,
+    "archive_count": 4,
+    "publication_count": 161
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11642",
+    "platform_name": "SMAP",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 61,
+    "archive_count": 13,
+    "publication_count": 836
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11643",
+    "platform_name": "TERRA",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 71,
+    "archive_count": 11,
+    "publication_count": 1055
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11644",
+    "platform_name": "AQUA",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 82,
+    "archive_count": 8,
+    "publication_count": 1150
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11645",
+    "platform_name": "SUOMI-NPP",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 8,
+    "archive_count": 6,
+    "publication_count": 42
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11646",
+    "platform_name": "EP-TOMS",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 20,
+    "archive_count": 2,
+    "publication_count": 40
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11647",
+    "platform_name": "CASA-GFED3-V2",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 5,
+    "archive_count": 1,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11648",
+    "platform_name": "MERRA-2",
+    "platform_type": "Models",
+    "instrument_count": 2,
+    "dataset_count": 107,
+    "archive_count": 2,
+    "publication_count": 1825
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11649",
+    "platform_name": "GMS",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 5,
+    "archive_count": 1,
+    "publication_count": 45
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11650",
+    "platform_name": "METEOSAT",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 7,
+    "archive_count": 2,
+    "publication_count": 51
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11651",
+    "platform_name": "Catchment-LSM",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 11,
+    "archive_count": 1,
+    "publication_count": 138
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11652",
+    "platform_name": "Aura",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 5,
+    "dataset_count": 344,
+    "archive_count": 2,
+    "publication_count": 924
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11653",
+    "platform_name": "Mosaic-LSM",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 1,
+    "publication_count": 12
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11654",
+    "platform_name": "CMS-Flux",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 15,
+    "archive_count": 1,
+    "publication_count": 5
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11655",
+    "platform_name": "TROPICS/06",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 9,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11656",
+    "platform_name": "TROPICS/05",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 8,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11657",
+    "platform_name": "Explorer-7",
+    "platform_type": "Solar/Space Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11658",
+    "platform_name": "GEOS-5",
+    "platform_type": "Models",
+    "instrument_count": 2,
+    "dataset_count": 16,
+    "archive_count": 4,
+    "publication_count": 187
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11659",
+    "platform_name": "Spacelab-3",
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11660",
+    "platform_name": "ATLAS-1",
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "instrument_count": 1,
+    "dataset_count": 7,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11661",
+    "platform_name": "ATLAS-2",
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "instrument_count": 1,
+    "dataset_count": 7,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11662",
+    "platform_name": "ATLAS-3",
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "instrument_count": 1,
+    "dataset_count": 7,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11663",
+    "platform_name": "ECCO2_Darwin-V3",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11664",
+    "platform_name": "NCEP-CFSV2",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11665",
+    "platform_name": "GLPPM",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11666",
+    "platform_name": "Nimbus-4",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 9,
+    "dataset_count": 28,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11667",
+    "platform_name": "IMERG",
+    "platform_type": "Multi-sensor Analysis",
+    "instrument_count": 1,
+    "dataset_count": 9,
+    "archive_count": 1,
+    "publication_count": 336
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11668",
+    "platform_name": "SMS-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11669",
+    "platform_name": "LANDMET",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 5,
+    "archive_count": 1,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11670",
+    "platform_name": "MTSAT",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 5,
+    "archive_count": 2,
+    "publication_count": 51
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11671",
+    "platform_name": "Himawari-8",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 17,
+    "archive_count": 6,
+    "publication_count": 49
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11672",
+    "platform_name": "SORCE",
+    "platform_type": "Solar/Space Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 16,
+    "archive_count": 2,
+    "publication_count": 20
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11673",
+    "platform_name": "REANALYSIS MODELS",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 68,
+    "archive_count": 1,
+    "publication_count": 7
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11674",
+    "platform_name": "JPSS-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 35,
+    "archive_count": 4,
+    "publication_count": 15
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11675",
+    "platform_name": "Nimbus-5",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 6,
+    "dataset_count": 14,
+    "archive_count": 3,
+    "publication_count": 48
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11676",
+    "platform_name": "RM-OBS/PU",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11677",
+    "platform_name": "TSX",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 14,
+    "archive_count": 6,
+    "publication_count": 590
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11678",
+    "platform_name": "COSMIC/FORMOSAT-3",
+    "platform_type": "Solar/Space Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11679",
+    "platform_name": "C-131A",
+    "platform_type": "Propeller",
+    "instrument_count": 17,
+    "dataset_count": 22,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11680",
+    "platform_name": "Nimbus-6",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 6,
+    "dataset_count": 15,
+    "archive_count": 2,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11681",
+    "platform_name": "Meteor-3",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 5,
+    "archive_count": 1,
+    "publication_count": 31
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11682",
+    "platform_name": "Forcing-LSM",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 1,
+    "publication_count": 79
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11683",
+    "platform_name": "AC-690A",
+    "platform_type": "Propeller",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11684",
+    "platform_name": "OCO-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 36,
+    "archive_count": 1,
+    "publication_count": 159
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11685",
+    "platform_name": "NOBM",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 13
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11686",
+    "platform_name": "Sentinel-5P",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 28,
+    "archive_count": 1,
+    "publication_count": 70
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11687",
+    "platform_name": "Sentinel-6A",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 9,
+    "dataset_count": 49,
+    "archive_count": 3,
+    "publication_count": 24
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11688",
+    "platform_name": "SCISAT-1/ACE",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 10,
+    "archive_count": 1,
+    "publication_count": 19
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11689",
+    "platform_name": "GOSAT",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 11,
+    "archive_count": 1,
+    "publication_count": 13
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11690",
+    "platform_name": "GEOS-Chem",
+    "platform_type": "Models",
+    "instrument_count": 2,
+    "dataset_count": 7,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11691",
+    "platform_name": "Noah-LSM",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 23,
+    "archive_count": 3,
+    "publication_count": 763
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11692",
+    "platform_name": "CASA-GFED3-V3",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 1,
+    "publication_count": 12
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11693",
+    "platform_name": "STILT",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11694",
+    "platform_name": "OBSERVATION BASED",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11695",
+    "platform_name": "TMPA",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 9,
+    "archive_count": 1,
+    "publication_count": 444
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11696",
+    "platform_name": "SMS-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11697",
+    "platform_name": "FFDAS-V2",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11698",
+    "platform_name": "Nimbus-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 12,
+    "archive_count": 3,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11699",
+    "platform_name": "TROPICS/07",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11700",
+    "platform_name": "MT1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 7,
+    "archive_count": 1,
+    "publication_count": 4
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11701",
+    "platform_name": "TSIS-1",
+    "platform_type": "Solar/Space Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11702",
+    "platform_name": "ADEOS-II",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 3,
+    "archive_count": 4,
+    "publication_count": 31
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11703",
+    "platform_name": "TIROS-3",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11704",
+    "platform_name": "Data Analysis",
+    "platform_type": "Models",
+    "instrument_count": 8,
+    "dataset_count": 48,
+    "archive_count": 2,
+    "publication_count": 12
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11705",
+    "platform_name": "FLEXPART",
+    "platform_type": "Models",
+    "instrument_count": 2,
+    "dataset_count": 14,
+    "archive_count": 2,
+    "publication_count": 6
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11706",
+    "platform_name": "TIROS-4",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 3,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11707",
+    "platform_name": "TROPICS/01",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 9,
+    "archive_count": 1,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11708",
+    "platform_name": "ATS-6",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11709",
+    "platform_name": "VIC-LSM",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 9,
+    "archive_count": 1,
+    "publication_count": 53
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11710",
+    "platform_name": "GOES-3",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11711",
+    "platform_name": "Convair-580",
+    "platform_type": "Propeller",
+    "instrument_count": 1,
+    "dataset_count": 5,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11712",
+    "platform_name": "UARS",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 17,
+    "archive_count": 2,
+    "publication_count": 44
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11713",
+    "platform_name": "SEAGLIDER",
+    "platform_type": "Uncrewed Vehicles",
+    "instrument_count": 3,
+    "dataset_count": 4,
+    "archive_count": 2,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11714",
+    "platform_name": "J-31",
+    "platform_type": "Jet",
+    "instrument_count": 3,
+    "dataset_count": 6,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11715",
+    "platform_name": "Nimbus-3",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 5,
+    "dataset_count": 13,
+    "archive_count": 3,
+    "publication_count": 5
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11716",
+    "platform_name": "STPSat-3",
+    "platform_type": "Solar/Space Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11717",
+    "platform_name": "Nimbus-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 10,
+    "archive_count": 3,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11718",
+    "platform_name": "GOES-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11719",
+    "platform_name": "NRL P-3",
+    "platform_type": "Propeller",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11720",
+    "platform_name": "GOES-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11721",
+    "platform_name": "TIROS-7",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11722",
+    "platform_name": "TROPICS/03",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 9,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11723",
+    "platform_name": "CloudSat",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 2,
+    "publication_count": 20
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11724",
+    "platform_name": "NPOESS (National Polar-orbiting Operational Environmental Satellite System )",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 1,
+    "publication_count": 23
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11725",
+    "platform_name": "GEOS-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11726",
+    "platform_name": "MERRA",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11727",
+    "platform_name": "NCEP-GFS",
+    "platform_type": "Models",
+    "instrument_count": 2,
+    "dataset_count": 5,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11728",
+    "platform_name": "AEM-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 11
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11729",
+    "platform_name": "ERBS",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 7,
+    "dataset_count": 49,
+    "archive_count": 2,
+    "publication_count": 57
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11730",
+    "platform_name": "Meteor-3M",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 8,
+    "archive_count": 2,
+    "publication_count": 13
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11731",
+    "platform_name": "SPACELAB-3",
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11732",
+    "platform_name": "Penman-Monteith",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11733",
+    "platform_name": "PAZ",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11734",
+    "platform_name": "KOMPSAT-5",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11735",
+    "platform_name": "GEOS-3",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 2,
+    "archive_count": 3,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11736",
+    "platform_name": "Noah-MP-LSM",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11737",
+    "platform_name": "GEOS",
+    "platform_type": "Models",
+    "instrument_count": 2,
+    "dataset_count": 4,
+    "archive_count": 2,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11738",
+    "platform_name": "MITgcm",
+    "platform_type": "Models",
+    "instrument_count": 2,
+    "dataset_count": 110,
+    "archive_count": 2,
+    "publication_count": 33
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11739",
+    "platform_name": "BLING",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11740",
+    "platform_name": "Eole",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11741",
+    "platform_name": "Eole Balloons",
+    "platform_type": "Balloons",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11742",
+    "platform_name": "CLM-LSM",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 11
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11743",
+    "platform_name": "SMERGE",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 10
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11744",
+    "platform_name": "TIROS-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11745",
+    "platform_name": "Water-based Platforms",
+    "instrument_count": 0,
+    "dataset_count": 371,
+    "archive_count": 2,
+    "publication_count": 97
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11746",
+    "platform_name": "In Situ Ocean-based Platforms",
+    "instrument_count": 0,
+    "dataset_count": 371,
+    "archive_count": 2,
+    "publication_count": 97
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11747",
+    "platform_name": "G-IV",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11748",
+    "platform_name": "Ocean Platforms",
+    "instrument_count": 0,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11749",
+    "platform_name": "Himawari-9",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 7,
+    "archive_count": 5,
+    "publication_count": 7
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11750",
+    "platform_name": "SWOT",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 8,
+    "dataset_count": 39,
+    "archive_count": 3,
+    "publication_count": 31
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11751",
+    "platform_name": "SCATSAT-1",
+    "platform_type": "Space-based Platforms",
+    "instrument_count": 1,
+    "dataset_count": 4,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11752",
+    "platform_name": "GRACE-FO",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 6,
+    "dataset_count": 22,
+    "archive_count": 6,
+    "publication_count": 34
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11753",
+    "platform_name": "SARAL",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 5,
+    "archive_count": 3,
+    "publication_count": 7
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11754",
+    "platform_name": "Argo-Float",
+    "platform_type": "Buoys",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11755",
+    "platform_name": "AUVS",
+    "platform_type": "Uncrewed Vehicles",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11756",
+    "platform_name": "MOORINGS",
+    "platform_type": "Buoys",
+    "instrument_count": 8,
+    "dataset_count": 14,
+    "archive_count": 3,
+    "publication_count": 19
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11757",
+    "platform_name": "G-III",
+    "platform_type": "Jet",
+    "instrument_count": 9,
+    "dataset_count": 19,
+    "archive_count": 5,
+    "publication_count": 16
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11758",
+    "platform_name": "Wave Glider",
+    "platform_type": "Uncrewed Vehicles",
+    "instrument_count": 8,
+    "dataset_count": 5,
+    "archive_count": 1,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11759",
+    "platform_name": "Ships",
+    "platform_type": "Vessels",
+    "instrument_count": 35,
+    "dataset_count": 44,
+    "archive_count": 3,
+    "publication_count": 6
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11760",
+    "platform_name": "BT-67",
+    "platform_type": "Propeller",
+    "instrument_count": 19,
+    "dataset_count": 37,
+    "archive_count": 7,
+    "publication_count": 222
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11761",
+    "platform_name": "DHC-6",
+    "platform_type": "Propeller",
+    "instrument_count": 12,
+    "dataset_count": 21,
+    "archive_count": 8,
+    "publication_count": 148
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11762",
+    "platform_name": "B-200",
+    "platform_type": "Propeller",
+    "instrument_count": 46,
+    "dataset_count": 50,
+    "archive_count": 8,
+    "publication_count": 52
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11763",
+    "platform_name": "SAC-D",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 16,
+    "archive_count": 5,
+    "publication_count": 36
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11764",
+    "platform_name": "SMOS",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 6,
+    "archive_count": 4,
+    "publication_count": 20
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11765",
+    "platform_name": "GFO",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 32
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11766",
+    "platform_name": "ROVS",
+    "platform_type": "Uncrewed Vehicles",
+    "instrument_count": 4,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11767",
+    "platform_name": "IRS-O2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11768",
+    "platform_name": "Sentinel-1A",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 20,
+    "archive_count": 11,
+    "publication_count": 193
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11769",
+    "platform_name": "Sentinel-1B",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 20,
+    "archive_count": 11,
+    "publication_count": 193
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11770",
+    "platform_name": "METEOSAT-11",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 5,
+    "archive_count": 3,
+    "publication_count": 8
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11771",
+    "platform_name": "Sentinel-3A",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 20,
+    "archive_count": 4,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11772",
+    "platform_name": "Sentinel-3B",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 19,
+    "archive_count": 4,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11773",
+    "platform_name": "NCEP GTS",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 3,
+    "publication_count": 4
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11774",
+    "platform_name": "SHIPS",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 7,
+    "dataset_count": 4,
+    "archive_count": 3,
+    "publication_count": 7
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11775",
+    "platform_name": "Aquarius SAC-D",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 4,
+    "archive_count": 3,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11776",
+    "platform_name": "OMGSHIP_SBES",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11777",
+    "platform_name": "Airborne",
+    "platform_type": "Aircraft",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 8
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11778",
+    "platform_name": "OMGSHIP_MBES",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 6
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11779",
+    "platform_name": "InSitu",
+    "platform_type": "In Situ Ocean-based Platforms",
+    "instrument_count": 3,
+    "dataset_count": 31,
+    "archive_count": 4,
+    "publication_count": 13
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11780",
+    "platform_name": "Aircraft",
+    "platform_type": "Aircraft",
+    "instrument_count": 3,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 12
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11781",
+    "platform_name": "IS-40e",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 33,
+    "archive_count": 1,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11782",
+    "platform_name": "HU-25A",
+    "platform_type": "Jet",
+    "instrument_count": 22,
+    "dataset_count": 16,
+    "archive_count": 5,
+    "publication_count": 208
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11783",
+    "platform_name": "P-3B",
+    "platform_type": "Propeller",
+    "instrument_count": 94,
+    "dataset_count": 123,
+    "archive_count": 13,
+    "publication_count": 676
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11784",
+    "platform_name": "HU-25C",
+    "platform_type": "Jet",
+    "instrument_count": 6,
+    "dataset_count": 27,
+    "archive_count": 6,
+    "publication_count": 231
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11785",
+    "platform_name": "R/V Atlantis",
+    "platform_type": "Vessels",
+    "instrument_count": 22,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11786",
+    "platform_name": "NASA ELECTRA",
+    "platform_type": "Propeller",
+    "instrument_count": 12,
+    "dataset_count": 25,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11787",
+    "platform_name": "King Air",
+    "platform_type": "Propeller",
+    "instrument_count": 23,
+    "dataset_count": 15,
+    "archive_count": 4,
+    "publication_count": 59
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11788",
+    "platform_name": "CALIPSO",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 76,
+    "archive_count": 3,
+    "publication_count": 260
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11789",
+    "platform_name": "STS-68",
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "instrument_count": 2,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11790",
+    "platform_name": "SPACE SHUTTLES",
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "instrument_count": 1,
+    "dataset_count": 5,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11791",
+    "platform_name": "UMD Cessna",
+    "platform_type": "Propeller",
+    "instrument_count": 12,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11792",
+    "platform_name": "PREFIRE-SAT1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 17,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11793",
+    "platform_name": "AIRCRAFT",
+    "platform_type": "Propeller",
+    "instrument_count": 53,
+    "dataset_count": 90,
+    "archive_count": 19,
+    "publication_count": 355
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11794",
+    "platform_name": "R/V ONNURI",
+    "platform_type": "Vessels",
+    "instrument_count": 5,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11795",
+    "platform_name": "METEOSAT-5",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 12,
+    "archive_count": 1,
+    "publication_count": 4
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11796",
+    "platform_name": "CESSNA 188",
+    "platform_type": "Propeller",
+    "instrument_count": 7,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11797",
+    "platform_name": "STS-59",
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "instrument_count": 2,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11798",
+    "platform_name": "G-1 AIRCRAFT",
+    "platform_type": "Propeller",
+    "instrument_count": 7,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11799",
+    "platform_name": "GEOSTATIONARY SATELLITES",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 22,
+    "archive_count": 1,
+    "publication_count": 82
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11800",
+    "platform_name": "SOUNDING ROCKETS",
+    "platform_type": "Sounding Rockets",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11801",
+    "platform_name": "TWIN OTTER CIRPAS NPS",
+    "platform_type": "Propeller",
+    "instrument_count": 10,
+    "dataset_count": 6,
+    "archive_count": 3,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11802",
+    "platform_name": "C-130",
+    "platform_type": "Propeller",
+    "instrument_count": 44,
+    "dataset_count": 52,
+    "archive_count": 8,
+    "publication_count": 478
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11803",
+    "platform_name": "CAM-chem",
+    "platform_type": "Models",
+    "instrument_count": 0,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11804",
+    "platform_name": "NOAA Twin Otter",
+    "platform_type": "Propeller",
+    "instrument_count": 13,
+    "dataset_count": 7,
+    "archive_count": 3,
+    "publication_count": 158
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11805",
+    "platform_name": "R/V Point Sur",
+    "platform_type": "Vessels",
+    "instrument_count": 7,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11806",
+    "platform_name": "UC-12B",
+    "platform_type": "Propeller",
+    "instrument_count": 6,
+    "dataset_count": 10,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11807",
+    "platform_name": "GOES-6",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 6,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11808",
+    "platform_name": "LEARJET",
+    "platform_type": "Jet",
+    "instrument_count": 19,
+    "dataset_count": 9,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11809",
+    "platform_name": "DSCOVR",
+    "platform_type": "Solar/Space Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 26,
+    "archive_count": 1,
+    "publication_count": 17
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11810",
+    "platform_name": "PREFIRE-SAT2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 17,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11811",
+    "platform_name": "GMS-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11812",
+    "platform_name": "GMS-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11813",
+    "platform_name": "GMS-3",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11814",
+    "platform_name": "INSAT",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11815",
+    "platform_name": "METEOSAT-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11816",
+    "platform_name": "METEOSAT-3",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 9,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11817",
+    "platform_name": "METEOSAT-4",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 5,
+    "dataset_count": 11,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11818",
+    "platform_name": "GOES-5",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11819",
+    "platform_name": "GOES-7",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 8,
+    "archive_count": 2,
+    "publication_count": 112
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11820",
+    "platform_name": "CONVAIR CV-580",
+    "platform_type": "Propeller",
+    "instrument_count": 9,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11821",
+    "platform_name": "DLR-Falcon",
+    "platform_type": "Jet",
+    "instrument_count": 14,
+    "dataset_count": 5,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11822",
+    "platform_name": "PAM",
+    "platform_type": "Vehicles",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11823",
+    "platform_name": "Alpha",
+    "platform_type": "Jet",
+    "instrument_count": 4,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11824",
+    "platform_name": "NSF/NCAR GV HIAPER",
+    "platform_type": "Jet",
+    "instrument_count": 15,
+    "dataset_count": 7,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11825",
+    "platform_name": "T-39",
+    "platform_type": "Jet",
+    "instrument_count": 6,
+    "dataset_count": 3,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11826",
+    "platform_name": "ACRIMSAT",
+    "platform_type": "Solar/Space Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11827",
+    "platform_name": "LABORATORY",
+    "platform_type": "Physical Models",
+    "instrument_count": 19,
+    "dataset_count": 8,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11828",
+    "platform_name": "BE-200",
+    "platform_type": "Propeller",
+    "instrument_count": 2,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11829",
+    "platform_name": "ECMWF",
+    "platform_type": "Models",
+    "instrument_count": 2,
+    "dataset_count": 3,
+    "archive_count": 5,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11830",
+    "platform_name": "Aeolus",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11831",
+    "platform_name": "NASA MACH-2",
+    "platform_type": "Vehicles",
+    "instrument_count": 21,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11832",
+    "platform_name": "AML",
+    "platform_type": "Vehicles",
+    "instrument_count": 2,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11833",
+    "platform_name": "Vaisala WXT520",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 2,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11834",
+    "platform_name": "NLDN",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 0,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11835",
+    "platform_name": "FOKKER F27",
+    "platform_type": "Propeller",
+    "instrument_count": 12,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11836",
+    "platform_name": "R/V Thompson",
+    "platform_type": "Vessels",
+    "instrument_count": 22,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11837",
+    "platform_name": "R/V JangMok",
+    "platform_type": "Vessels",
+    "instrument_count": 6,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11838",
+    "platform_name": "G-V",
+    "platform_type": "Jet",
+    "instrument_count": 12,
+    "dataset_count": 40,
+    "archive_count": 9,
+    "publication_count": 400
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11839",
+    "platform_name": "NOAA Delaware II",
+    "platform_type": "Vessels",
+    "instrument_count": 3,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11840",
+    "platform_name": "R/V SERC",
+    "platform_type": "Vessels",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11841",
+    "platform_name": "NCAR ELECTRA",
+    "platform_type": "Propeller",
+    "instrument_count": 17,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11842",
+    "platform_name": "SA Mooney",
+    "platform_type": "Propeller",
+    "instrument_count": 6,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11843",
+    "platform_name": "C-23 Sherpa",
+    "platform_type": "Propeller",
+    "instrument_count": 13,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11844",
+    "platform_name": "CLIMATE MODELS",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11845",
+    "platform_name": "CARB MMP",
+    "platform_type": "Vehicles",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11846",
+    "platform_name": "OCEAN PLATFORMS",
+    "platform_type": "Fixed Platforms",
+    "instrument_count": 2,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11847",
+    "platform_name": "CESSNA 206",
+    "platform_type": "Propeller",
+    "instrument_count": 3,
+    "dataset_count": 4,
+    "archive_count": 4,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11848",
+    "platform_name": "STS-41G",
+    "platform_type": "Space Stations/Crewed Spacecraft",
+    "instrument_count": 2,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11849",
+    "platform_name": "ECMWF ERA5",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11850",
+    "platform_name": "SPOT-4",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 5,
+    "dataset_count": 10,
+    "archive_count": 4,
+    "publication_count": 4
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11851",
+    "platform_name": "Vaisala HydroMet AWS",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 3,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11852",
+    "platform_name": "TRAJ3D",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11853",
+    "platform_name": "R/V Mirai",
+    "platform_type": "Vessels",
+    "instrument_count": 2,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11854",
+    "platform_name": "Cessna Pelican",
+    "platform_type": "Propeller",
+    "instrument_count": 3,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11855",
+    "platform_name": "UAV",
+    "platform_type": "Uncrewed Aerial Vehicles",
+    "instrument_count": 3,
+    "dataset_count": 2,
+    "archive_count": 3,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11856",
+    "platform_name": "WORLDVIEW-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 6,
+    "archive_count": 5,
+    "publication_count": 181
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11857",
+    "platform_name": "GEOEYE-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 7,
+    "archive_count": 5,
+    "publication_count": 181
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11858",
+    "platform_name": "IKONOS",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11859",
+    "platform_name": "WORLDVIEW-3",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 11,
+    "archive_count": 5,
+    "publication_count": 183
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11860",
+    "platform_name": "WORLDVIEW-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 10,
+    "archive_count": 5,
+    "publication_count": 183
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11861",
+    "platform_name": "QUICKBIRD-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 5,
+    "archive_count": 3,
+    "publication_count": 165
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11862",
+    "platform_name": "WORLDVIEW-4",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11863",
+    "platform_name": "PlanetScope",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 6,
+    "dataset_count": 3,
+    "archive_count": 4,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11864",
+    "platform_name": "Aquarius_SAC-D",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 153,
+    "archive_count": 4,
+    "publication_count": 27
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11865",
+    "platform_name": "ICESat-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 44,
+    "archive_count": 8,
+    "publication_count": 524
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11866",
+    "platform_name": "TIROS",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 10
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11867",
+    "platform_name": "DC-8",
+    "platform_type": "Aircraft",
+    "instrument_count": 18,
+    "dataset_count": 54,
+    "archive_count": 11,
+    "publication_count": 497
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11868",
+    "platform_name": "ICESAT",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 6,
+    "archive_count": 2,
+    "publication_count": 170
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11869",
+    "platform_name": "CESSNA T206H",
+    "platform_type": "Propeller",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11870",
+    "platform_name": "NOT APPLICABLE",
+    "platform_type": "NOT APPLICABLE",
+    "instrument_count": 1,
+    "dataset_count": 11,
+    "archive_count": 5,
+    "publication_count": 29
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11871",
+    "platform_name": "AERIAL PHOTOGRAPHS",
+    "platform_type": "Photographs",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11872",
+    "platform_name": "RQ-4",
+    "platform_type": "Uncrewed Aerial Vehicles",
+    "instrument_count": 3,
+    "dataset_count": 15,
+    "archive_count": 3,
+    "publication_count": 40
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11873",
+    "platform_name": "DHC-3",
+    "platform_type": "Propeller",
+    "instrument_count": 8,
+    "dataset_count": 14,
+    "archive_count": 7,
+    "publication_count": 63
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11874",
+    "platform_name": "HELICOPTER",
+    "platform_type": "Rotorcraft/Helicopter",
+    "instrument_count": 2,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11875",
+    "platform_name": "ALOS",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 13,
+    "archive_count": 5,
+    "publication_count": 978
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11876",
+    "platform_name": "ALOS-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 55
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11877",
+    "platform_name": "RADARSAT-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 17,
+    "archive_count": 6,
+    "publication_count": 856
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11878",
+    "platform_name": "RADARSAT-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 13,
+    "archive_count": 4,
+    "publication_count": 696
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11879",
+    "platform_name": "SENTINEL-1A",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 7,
+    "archive_count": 4,
+    "publication_count": 683
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11880",
+    "platform_name": "SENTINEL-1B",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 4,
+    "archive_count": 4,
+    "publication_count": 223
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11881",
+    "platform_name": "TDX",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 10,
+    "archive_count": 5,
+    "publication_count": 504
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11882",
+    "platform_name": "ICESat",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 7,
+    "dataset_count": 18,
+    "archive_count": 5,
+    "publication_count": 76
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11883",
+    "platform_name": "NP-3C Orion",
+    "platform_type": "Propeller",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11884",
+    "platform_name": "RAPIDEYE",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 4
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11885",
+    "platform_name": "CRYOSAT-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 11,
+    "archive_count": 4,
+    "publication_count": 80
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11886",
+    "platform_name": "IRS-P6",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11887",
+    "platform_name": "SPOT-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11888",
+    "platform_name": "GPS",
+    "platform_type": "Navigation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 91,
+    "archive_count": 2,
+    "publication_count": 52
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11889",
+    "platform_name": "METOP",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11890",
+    "platform_name": "COSMO-SKYMED",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 309
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11891",
+    "platform_name": "Sentinel-1C",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 3,
+    "publication_count": 11
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11892",
+    "platform_name": "GEOSAT",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 3,
+    "publication_count": 22
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11893",
+    "platform_name": "SEASAT",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11894",
+    "platform_name": "P-3A",
+    "platform_type": "Aircraft",
+    "instrument_count": 3,
+    "dataset_count": 4,
+    "archive_count": 3,
+    "publication_count": 50
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11895",
+    "platform_name": "P-3A ORION",
+    "platform_type": "Propeller",
+    "instrument_count": 3,
+    "dataset_count": 4,
+    "archive_count": 3,
+    "publication_count": 50
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11896",
+    "platform_name": "ARWS",
+    "platform_type": "Permanent Land Sites",
+    "instrument_count": 11,
+    "dataset_count": 2,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11897",
+    "platform_name": "L4_C",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 30
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11898",
+    "platform_name": "C-185",
+    "platform_type": "Propeller",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11899",
+    "platform_name": "IKHANA",
+    "platform_type": "Uncrewed Aerial Vehicles",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 3
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11900",
+    "platform_name": "SPOT-5",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 7,
+    "archive_count": 4,
+    "publication_count": 191
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11901",
+    "platform_name": "HEXAGON KH-9",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 3,
+    "archive_count": 2,
+    "publication_count": 9
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11902",
+    "platform_name": "OCEAN WEATHER STATIONS",
+    "platform_type": "Fixed Platforms",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11903",
+    "platform_name": "Models/Analyses",
+    "platform_type": "Models/Analyses",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11904",
+    "platform_name": "FY-3B",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 8
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11905",
+    "platform_name": "Multiple",
+    "platform_type": "NOT APPLICABLE",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 2,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11906",
+    "platform_name": "CHIRPS",
+    "platform_type": "Models",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11907",
+    "platform_name": "LANDSAT-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 8
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11908",
+    "platform_name": "LANDSAT-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 8
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11909",
+    "platform_name": "LANDSAT-3",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 8
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11910",
+    "platform_name": "Pleiades-1A",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11911",
+    "platform_name": "Pleiades-1B",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11912",
+    "platform_name": "NOAA-4",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 8
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11913",
+    "platform_name": "Not provided",
+    "instrument_count": 0,
+    "dataset_count": 2,
+    "archive_count": 3,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11914",
+    "platform_name": "AS350-B2",
+    "platform_type": "Rotorcraft/Helicopter",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11915",
+    "platform_name": "AS350-B3",
+    "platform_type": "Rotorcraft/Helicopter",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11916",
+    "platform_name": "AS355-F2",
+    "platform_type": "Rotorcraft/Helicopter",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 2,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11917",
+    "platform_name": "Jason-1 Geodetic",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 4,
+    "dataset_count": 4,
+    "archive_count": 3,
+    "publication_count": 2
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11918",
+    "platform_name": "GLONASS",
+    "platform_type": "Navigation Platforms",
+    "instrument_count": 3,
+    "dataset_count": 87,
+    "archive_count": 1,
+    "publication_count": 48
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11919",
+    "platform_name": "GEODYNAMIC STATIONS",
+    "platform_type": "In Situ Land-based Platforms",
+    "instrument_count": 0,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11920",
+    "platform_name": "Beidou",
+    "platform_type": "Navigation Platforms",
+    "instrument_count": 2,
+    "dataset_count": 68,
+    "archive_count": 1,
+    "publication_count": 46
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11921",
+    "platform_name": "Galileo",
+    "platform_type": "Navigation Platforms",
+    "instrument_count": 4,
+    "dataset_count": 72,
+    "archive_count": 1,
+    "publication_count": 47
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11922",
+    "platform_name": "QZSS",
+    "platform_type": "Navigation Platforms",
+    "instrument_count": 2,
+    "dataset_count": 68,
+    "archive_count": 1,
+    "publication_count": 46
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11923",
+    "platform_name": "IRNSS",
+    "platform_type": "Navigation Platforms",
+    "instrument_count": 2,
+    "dataset_count": 68,
+    "archive_count": 1,
+    "publication_count": 46
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11924",
+    "platform_name": "SBAS",
+    "platform_type": "Navigation Platforms",
+    "instrument_count": 1,
+    "dataset_count": 66,
+    "archive_count": 1,
+    "publication_count": 46
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11925",
+    "platform_name": "CHAMP",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11926",
+    "platform_name": "SAC-C",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11927",
+    "platform_name": "LAGEOS-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11928",
+    "platform_name": "LAGEOS-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11929",
+    "platform_name": "ETALON-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11930",
+    "platform_name": "ETALON-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 6,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11931",
+    "platform_name": "SENTINEL-3A",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 4,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11932",
+    "platform_name": "HY2-A",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 5,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11933",
+    "platform_name": "SPOT-2",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 5,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11934",
+    "platform_name": "SPOT-3",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 2,
+    "dataset_count": 5,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11935",
+    "platform_name": "AJISAI",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11936",
+    "platform_name": "STARLETTE",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11937",
+    "platform_name": "STELLA",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11938",
+    "platform_name": "LARES",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 1,
+    "archive_count": 1,
+    "publication_count": 0
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11939",
+    "platform_name": "PACE",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 3,
+    "dataset_count": 68,
+    "archive_count": 2,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11940",
+    "platform_name": "SeaHawk-1",
+    "platform_type": "Earth Observation Satellites",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 2,
+    "publication_count": 1
+  },
+  {
+    "platform": "https://purl.org/okn/frink/kg/nasa-gesdisc/node/11941",
+    "platform_name": "JERS-1",
+    "platform_type": "Spacecraft",
+    "instrument_count": 1,
+    "dataset_count": 2,
+    "archive_count": 1,
+    "publication_count": 0
+  }
+]
+

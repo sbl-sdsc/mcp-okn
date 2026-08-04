@@ -1,0 +1,4197 @@
+[
+  {
+    "instrument_name": "sun photometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ABSORB_d1",
+    "variable_name": "ABSORB_d1",
+    "variable_long_name": "[Aerosol absorption]"
+  },
+  {
+    "instrument_name": "sun-/sky-photometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ABSORB_d1",
+    "variable_name": "ABSORB_d1",
+    "variable_long_name": "[Aerosol absorption]"
+  },
+  {
+    "instrument_name": "Sentinel-5P",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ABSORB_d1",
+    "variable_name": "ABSORB_d1",
+    "variable_long_name": "[Aerosol absorption]"
+  },
+  {
+    "instrument_name": "Multi-angle Imaging SpectroRadiometer (MISR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ABSORB_d1",
+    "variable_name": "ABSORB_d1",
+    "variable_long_name": "[Aerosol absorption]"
+  },
+  {
+    "instrument_name": "multi-angle absorption photometer (MAAP)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ABSORB_d1",
+    "variable_name": "ABSORB_d1",
+    "variable_long_name": "[Aerosol absorption]"
+  },
+  {
+    "instrument_name": "aethalometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ABSORB_d1",
+    "variable_name": "ABSORB_d1",
+    "variable_long_name": "[Aerosol absorption]"
+  },
+  {
+    "instrument_name": "TOMS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AEROD_v",
+    "variable_name": "AEROD_v",
+    "variable_long_name": "[Total Aerosol Optical Depth in visible band]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AEROD_v",
+    "variable_name": "AEROD_v",
+    "variable_long_name": "[Total Aerosol Optical Depth in visible band]"
+  },
+  {
+    "instrument_name": "POLDER",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AEROD_v",
+    "variable_name": "AEROD_v",
+    "variable_long_name": "[Total Aerosol Optical Depth in visible band]"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AEROD_v",
+    "variable_name": "AEROD_v",
+    "variable_long_name": "[Total Aerosol Optical Depth in visible band]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/al",
+    "variable_name": "al",
+    "variable_long_name": "[Albedo]"
+  },
+  {
+    "instrument_name": "GLAS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/al",
+    "variable_name": "al",
+    "variable_long_name": "[Albedo]"
+  },
+  {
+    "instrument_name": "ERBE",
+    "variable": "https://climatepub4kg.github.io/id/Variable/al",
+    "variable_name": "al",
+    "variable_long_name": "[Albedo]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/al",
+    "variable_name": "al",
+    "variable_long_name": "[Albedo]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/albsn",
+    "variable_name": "albsn",
+    "variable_long_name": "[Snow Albedo]"
+  },
+  {
+    "instrument_name": "Aviso altimeter",
+    "variable": "https://climatepub4kg.github.io/id/Variable/altitude",
+    "variable_name": "altitude",
+    "variable_long_name": "[altitude]"
+  },
+  {
+    "instrument_name": "Shuttle Radar Topography Mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/altitude",
+    "variable_name": "altitude",
+    "variable_long_name": "[altitude]"
+  },
+  {
+    "instrument_name": "RAPID Array",
+    "variable": "https://climatepub4kg.github.io/id/Variable/amocrapid",
+    "variable_name": "amocrapid",
+    "variable_long_name": "[Atlantic Meridional Overturning Circulation]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/angstrom",
+    "variable_name": "angstrom",
+    "variable_long_name": "[Angstrom Exponent]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/angstrom",
+    "variable_name": "angstrom",
+    "variable_long_name": "[Angstrom Exponent]"
+  },
+  {
+    "instrument_name": "sun photometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/angstrom",
+    "variable_name": "angstrom",
+    "variable_long_name": "[Angstrom Exponent]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/aod_fmbg",
+    "variable_name": "aod_fmbg",
+    "variable_long_name": "[Background fine mode optical depth (AOD) at 550 nm at source]"
+  },
+  {
+    "instrument_name": "AATSR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/aod_fmbg",
+    "variable_name": "aod_fmbg",
+    "variable_long_name": "[Background fine mode optical depth (AOD) at 550 nm at source]"
+  },
+  {
+    "instrument_name": "Aerosol Robotic Network",
+    "variable": "https://climatepub4kg.github.io/id/Variable/aod_spmx",
+    "variable_name": "aod_spmx",
+    "variable_long_name": "[Optical depth (AOD) at source]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/aod_spmx",
+    "variable_name": "aod_spmx",
+    "variable_long_name": "[Optical depth (AOD) at source]"
+  },
+  {
+    "instrument_name": "Cimel sun photometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/aod_spmx",
+    "variable_name": "aod_spmx",
+    "variable_long_name": "[Optical depth (AOD) at source]"
+  },
+  {
+    "instrument_name": "the Ozone Monitoring Instrument (OMI)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/aod_spmx",
+    "variable_name": "aod_spmx",
+    "variable_long_name": "[Optical depth (AOD) at source]"
+  },
+  {
+    "instrument_name": "Aerosol Robotic Network (AERONET)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/aod_spmx",
+    "variable_name": "aod_spmx",
+    "variable_long_name": "[Optical depth (AOD) at source]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/aod_spmx",
+    "variable_name": "aod_spmx",
+    "variable_long_name": "[Optical depth (AOD) at source]"
+  },
+  {
+    "instrument_name": "Multi-angle Imaging SpectroRadiometer (MISR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/aod_spmx",
+    "variable_name": "aod_spmx",
+    "variable_long_name": "[Optical depth (AOD) at source]"
+  },
+  {
+    "instrument_name": "Terra-MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/aod_spmx",
+    "variable_name": "aod_spmx",
+    "variable_long_name": "[Optical depth (AOD) at source]"
+  },
+  {
+    "instrument_name": "lidar measurements",
+    "variable": "https://climatepub4kg.github.io/id/Variable/aod550volso4",
+    "variable_name": "aod550volso4",
+    "variable_long_name": "[Aerosol optical depth at 550 nm due to stratospheric volcanic aerosols]"
+  },
+  {
+    "instrument_name": "AERONET sun photometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODABS_d1",
+    "variable_name": "AODABS_d1",
+    "variable_long_name": "[Aerosol absorption optical depth 550 nm]"
+  },
+  {
+    "instrument_name": "the Ozone Monitoring Instrument (OMI)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODABS_d1",
+    "variable_name": "AODABS_d1",
+    "variable_long_name": "[Aerosol absorption optical depth 550 nm]"
+  },
+  {
+    "instrument_name": "MSG-SEVIRI (Spinning-Enhanced Visible and InfraRed Imager)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODDUST",
+    "variable_name": "AODDUST",
+    "variable_long_name": "[Aerosol optical depth 550 nm from dust]"
+  },
+  {
+    "instrument_name": "CALIOP (Cloud-Aerosol Lidar with Orthogonal Polarization)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODDUST",
+    "variable_name": "AODDUST",
+    "variable_long_name": "[Aerosol optical depth 550 nm from dust]"
+  },
+  {
+    "instrument_name": "TROPOMI",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODUV",
+    "variable_name": "AODUV",
+    "variable_long_name": "[Aerosol optical depth 350 nm]"
+  },
+  {
+    "instrument_name": "Along Track Scanning Radiometer (ATSR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODUV",
+    "variable_name": "AODUV",
+    "variable_long_name": "[Aerosol optical depth 350 nm]"
+  },
+  {
+    "instrument_name": "Aerosol Robotic Network (AERONET)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODUV",
+    "variable_name": "AODUV",
+    "variable_long_name": "[Aerosol optical depth 350 nm]"
+  },
+  {
+    "instrument_name": "Multi-angle Imaging SpectroRadiometer (MISR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODUV",
+    "variable_name": "AODUV",
+    "variable_long_name": "[Aerosol optical depth 350 nm]"
+  },
+  {
+    "instrument_name": "sun photometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODUV",
+    "variable_name": "AODUV",
+    "variable_long_name": "[Aerosol optical depth 350 nm]"
+  },
+  {
+    "instrument_name": "AERONET sun photometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODUV",
+    "variable_name": "AODUV",
+    "variable_long_name": "[Aerosol optical depth 350 nm]"
+  },
+  {
+    "instrument_name": "SEVIRI",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODUV",
+    "variable_name": "AODUV",
+    "variable_long_name": "[Aerosol optical depth 350 nm]"
+  },
+  {
+    "instrument_name": "Aerosol Robotic Network",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODUV",
+    "variable_name": "AODUV",
+    "variable_long_name": "[Aerosol optical depth 350 nm]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODUV",
+    "variable_name": "AODUV",
+    "variable_long_name": "[Aerosol optical depth 350 nm]"
+  },
+  {
+    "instrument_name": "Cimel sun photometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODUV",
+    "variable_name": "AODUV",
+    "variable_long_name": "[Aerosol optical depth 350 nm]"
+  },
+  {
+    "instrument_name": "sun-/sky-photometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODUV",
+    "variable_name": "AODUV",
+    "variable_long_name": "[Aerosol optical depth 350 nm]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODUV",
+    "variable_name": "AODUV",
+    "variable_long_name": "[Aerosol optical depth 350 nm]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AODVIS",
+    "variable_name": "AODVIS",
+    "variable_long_name": "[Aerosol optical depth 550 nm]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/AREI",
+    "variable_name": "AREI",
+    "variable_long_name": "[Average ice effective radius]"
+  },
+  {
+    "instrument_name": "Airborne Topographic Mapper",
+    "variable": "https://climatepub4kg.github.io/id/Variable/asl",
+    "variable_name": "asl",
+    "variable_long_name": "[surface altitude]"
+  },
+  {
+    "instrument_name": "the CloudSat spaceborne cloud-profiling radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/BIO12",
+    "variable_name": "BIO12",
+    "variable_long_name": "[Annual Precipitation]"
+  },
+  {
+    "instrument_name": "infrared (IR) sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/BIO15",
+    "variable_name": "BIO15",
+    "variable_long_name": "[Precipitation Seasonality]"
+  },
+  {
+    "instrument_name": "lake sediments",
+    "variable": "https://climatepub4kg.github.io/id/Variable/BIO4",
+    "variable_name": "BIO4",
+    "variable_long_name": "[Temperature Seasonality]"
+  },
+  {
+    "instrument_name": "pollen",
+    "variable": "https://climatepub4kg.github.io/id/Variable/BIO4",
+    "variable_name": "BIO4",
+    "variable_long_name": "[Temperature Seasonality]"
+  },
+  {
+    "instrument_name": "corals",
+    "variable": "https://climatepub4kg.github.io/id/Variable/BIO4",
+    "variable_name": "BIO4",
+    "variable_long_name": "[Temperature Seasonality]"
+  },
+  {
+    "instrument_name": "tree rings",
+    "variable": "https://climatepub4kg.github.io/id/Variable/BIO4",
+    "variable_name": "BIO4",
+    "variable_long_name": "[Temperature Seasonality]"
+  },
+  {
+    "instrument_name": "speleothems",
+    "variable": "https://climatepub4kg.github.io/id/Variable/BIO4",
+    "variable_name": "BIO4",
+    "variable_long_name": "[Temperature Seasonality]"
+  },
+  {
+    "instrument_name": "marine sediments",
+    "variable": "https://climatepub4kg.github.io/id/Variable/BIO7",
+    "variable_name": "BIO7",
+    "variable_long_name": "[Temperature Annual Range]"
+  },
+  {
+    "instrument_name": "ceilometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/bldep",
+    "variable_name": "bldep",
+    "variable_long_name": "[Boundary Layer Depth]"
+  },
+  {
+    "instrument_name": "SP2 instrument",
+    "variable": "https://climatepub4kg.github.io/id/Variable/BURDENBC",
+    "variable_name": "BURDENBC",
+    "variable_long_name": "[Black carbon aerosol burden]"
+  },
+  {
+    "instrument_name": "aethalometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/BURDENBC",
+    "variable_name": "BURDENBC",
+    "variable_long_name": "[Black carbon aerosol burden]"
+  },
+  {
+    "instrument_name": "LIDAR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/BURDENDUST",
+    "variable_name": "BURDENDUST",
+    "variable_long_name": "[Dust aerosol burden]"
+  },
+  {
+    "instrument_name": "Advanced ATSR (AATSR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/burntArea",
+    "variable_name": "burntArea",
+    "variable_long_name": "[Burnt Area Fraction]"
+  },
+  {
+    "instrument_name": "SPOT VEGETATION",
+    "variable": "https://climatepub4kg.github.io/id/Variable/burntArea",
+    "variable_name": "burntArea",
+    "variable_long_name": "[Burnt Area Fraction]"
+  },
+  {
+    "instrument_name": "Along Track Scanning Radiometer (ATSR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/burntArea",
+    "variable_name": "burntArea",
+    "variable_long_name": "[Burnt Area Fraction]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/burntArea",
+    "variable_name": "burntArea",
+    "variable_long_name": "[Burnt Area Fraction]"
+  },
+  {
+    "instrument_name": "in situ air measurements at Mauna Loa Observatory (MLO)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/carbon_dioxide_GM",
+    "variable_name": "carbon_dioxide_GM",
+    "variable_long_name": "[Global Mean Mole Fraction of CO2]"
+  },
+  {
+    "instrument_name": "CALIPSO",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ccn",
+    "variable_name": "ccn",
+    "variable_long_name": "[Cloud Condensation Nuclei Concentration at Liquid Cloud Top]"
+  },
+  {
+    "instrument_name": "AATSR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cdnc",
+    "variable_name": "cdnc",
+    "variable_long_name": "[Cloud Droplet Number Concentration]"
+  },
+  {
+    "instrument_name": "Fast-FSSP",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cdnc",
+    "variable_name": "cdnc",
+    "variable_long_name": "[Cloud Droplet Number Concentration]"
+  },
+  {
+    "instrument_name": "FFSSP (Fast Forward Scattering Spectrometer Probe)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cdnc",
+    "variable_name": "cdnc",
+    "variable_long_name": "[Cloud Droplet Number Concentration]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cdnc",
+    "variable_name": "cdnc",
+    "variable_long_name": "[Cloud Droplet Number Concentration]"
+  },
+  {
+    "instrument_name": "HAGAR-V",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ch2cl2",
+    "variable_name": "ch2cl2",
+    "variable_long_name": "[ch2cl2]"
+  },
+  {
+    "instrument_name": "MethaneSAT",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CH4-em-anthro",
+    "variable_name": "CH4-em-anthro",
+    "variable_long_name": "[CH4 Anthropogenic Emissions]"
+  },
+  {
+    "instrument_name": "ENVISAT/SCIAMACHY",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ch4brdn",
+    "variable_name": "ch4brdn",
+    "variable_long_name": "[Methane (CH4) burden in the atmosphere]"
+  },
+  {
+    "instrument_name": "HALOE instrument",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ch4brdn",
+    "variable_name": "ch4brdn",
+    "variable_long_name": "[Methane (CH4) burden in the atmosphere]"
+  },
+  {
+    "instrument_name": "sea-viewing wide field-of-view sensor (SeaWiFS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/chl",
+    "variable_name": "chl",
+    "variable_long_name": "[Total Chlorophyll Mass Concentration]"
+  },
+  {
+    "instrument_name": "sea-viewing wide field-of-view sensor (SeaWiFS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/chla",
+    "variable_name": "chla",
+    "variable_long_name": "[ocean input data: chla]"
+  },
+  {
+    "instrument_name": "SeaWiFS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/chlos",
+    "variable_name": "chlos",
+    "variable_long_name": "[Surface Mass Concentration of Total Phytoplankton Expressed as Chlorophyll in Sea Water]"
+  },
+  {
+    "instrument_name": "sea-viewing wide field-of-view sensor (SeaWiFS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/chlos",
+    "variable_name": "chlos",
+    "variable_long_name": "[Surface Mass Concentration of Total Phytoplankton Expressed as Chlorophyll in Sea Water]"
+  },
+  {
+    "instrument_name": "the cloud profiling radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cl",
+    "variable_name": "cl",
+    "variable_long_name": "[Cloud Area Fraction]"
+  },
+  {
+    "instrument_name": "MODIS simulator",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLIMODIS",
+    "variable_name": "CLIMODIS",
+    "variable_long_name": "[MODIS Ice Cloud Fraction]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/clivi",
+    "variable_name": "clivi",
+    "variable_long_name": "[Ice Water Path]"
+  },
+  {
+    "instrument_name": "Infrared Pathfinder",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cllcalipso",
+    "variable_name": "cllcalipso",
+    "variable_long_name": "[CALIPSO Low Level Cloud Fraction]"
+  },
+  {
+    "instrument_name": "Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cllcalipso",
+    "variable_name": "cllcalipso",
+    "variable_long_name": "[CALIPSO Low Level Cloud Fraction]"
+  },
+  {
+    "instrument_name": "GCM simulator-oriented ISCCP cloud product",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "MODIS/Terra dataset",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "CALIPSO",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "AIRS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "Caliop Lidar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "lidars",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "CALIPSO-GOCCP",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "Multi-angle Imaging SpectroRadiometer (MISR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "the GCM-Oriented Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) Cloud Product (GOCCP)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "Clouds and Earths Radiant Energy System (CERES) mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUD",
+    "variable_name": "CLOUD",
+    "variable_long_name": "[Cloud fraction]"
+  },
+  {
+    "instrument_name": "TSI (Total Sky Imager)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLOUDFRAC_CLUBB",
+    "variable_name": "CLOUDFRAC_CLUBB",
+    "variable_long_name": "[Cloud Fraction]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/clt",
+    "variable_name": "clt",
+    "variable_long_name": "[Total Cloud Fraction]"
+  },
+  {
+    "instrument_name": "ground-based ceilometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cltSprd",
+    "variable_name": "cltSprd",
+    "variable_long_name": "[Total Cloud Fraction]"
+  },
+  {
+    "instrument_name": "lidars",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cltSprd",
+    "variable_name": "cltSprd",
+    "variable_long_name": "[Total Cloud Fraction]"
+  },
+  {
+    "instrument_name": "TMI (TRMM microwave imager)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/clw",
+    "variable_name": "clw",
+    "variable_long_name": "[Mass Fraction of Cloud Liquid Water]"
+  },
+  {
+    "instrument_name": "MODIS simulator",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CLWMODIS",
+    "variable_name": "CLWMODIS",
+    "variable_long_name": "[MODIS Liquid Cloud Fraction]"
+  },
+  {
+    "instrument_name": "TMI (TRMM microwave imager)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/clwvi",
+    "variable_name": "clwvi",
+    "variable_long_name": "[Condensed Water Path]"
+  },
+  {
+    "instrument_name": "eddy covariance (EC) system",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CO2_LND",
+    "variable_name": "CO2_LND",
+    "variable_long_name": "[CO2_LND]"
+  },
+  {
+    "instrument_name": "chamber",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CO2_LND",
+    "variable_name": "CO2_LND",
+    "variable_long_name": "[CO2_LND]"
+  },
+  {
+    "instrument_name": "eddy covariance towers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/CO2_LND",
+    "variable_name": "CO2_LND",
+    "variable_long_name": "[CO2_LND]"
+  },
+  {
+    "instrument_name": "gas chromatography (GC)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/co2s",
+    "variable_name": "co2s",
+    "variable_long_name": "[Atmosphere CO2]"
+  },
+  {
+    "instrument_name": "LI-7200",
+    "variable": "https://climatepub4kg.github.io/id/Variable/co2s",
+    "variable_name": "co2s",
+    "variable_long_name": "[Atmosphere CO2]"
+  },
+  {
+    "instrument_name": "infrared",
+    "variable": "https://climatepub4kg.github.io/id/Variable/co2s",
+    "variable_name": "co2s",
+    "variable_long_name": "[Atmosphere CO2]"
+  },
+  {
+    "instrument_name": "Clouds and Earths Radiant Energy System (CERES) mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cod",
+    "variable_name": "cod",
+    "variable_long_name": "[Cloud Optical Depth]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cod",
+    "variable_name": "cod",
+    "variable_long_name": "[Cloud Optical Depth]"
+  },
+  {
+    "instrument_name": "ISCCP",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cod",
+    "variable_name": "cod",
+    "variable_long_name": "[Cloud Optical Depth]"
+  },
+  {
+    "instrument_name": "Spinning-Enhanced Visible and InfraRed Imager",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cod",
+    "variable_name": "cod",
+    "variable_long_name": "[Cloud Optical Depth]"
+  },
+  {
+    "instrument_name": "MERIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cod",
+    "variable_name": "cod",
+    "variable_long_name": "[Cloud Optical Depth]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/cod",
+    "variable_name": "cod",
+    "variable_long_name": "[Cloud Optical Depth]"
+  },
+  {
+    "instrument_name": "Single Particle Soot Photometer (SP2)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/concbc",
+    "variable_name": "concbc",
+    "variable_long_name": "[Concentration of Black Carbon Aerosol]"
+  },
+  {
+    "instrument_name": "a cloud and aerosol spectrometer probe (CAS; Droplet Measurement Technologies, Inc.)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/conccn",
+    "variable_name": "conccn",
+    "variable_long_name": "[Aerosol Number Concentration]"
+  },
+  {
+    "instrument_name": "scanning mobility particle sizers (SMPS: SMPS1: CPC3027 & DMA 3075; SMPS2: CPC 3022 & DMA 3071)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/conccn",
+    "variable_name": "conccn",
+    "variable_long_name": "[Aerosol Number Concentration]"
+  },
+  {
+    "instrument_name": "ground-site or in situ remote sensing",
+    "variable": "https://climatepub4kg.github.io/id/Variable/conccn",
+    "variable_name": "conccn",
+    "variable_long_name": "[Aerosol Number Concentration]"
+  },
+  {
+    "instrument_name": "FSSP aerosol probe",
+    "variable": "https://climatepub4kg.github.io/id/Variable/conccn",
+    "variable_name": "conccn",
+    "variable_long_name": "[Aerosol Number Concentration]"
+  },
+  {
+    "instrument_name": "aerosol size spectrometer TSI SMPS-3934",
+    "variable": "https://climatepub4kg.github.io/id/Variable/conccn",
+    "variable_name": "conccn",
+    "variable_long_name": "[Aerosol Number Concentration]"
+  },
+  {
+    "instrument_name": "PCASP",
+    "variable": "https://climatepub4kg.github.io/id/Variable/conccn",
+    "variable_name": "conccn",
+    "variable_long_name": "[Aerosol Number Concentration]"
+  },
+  {
+    "instrument_name": "scanning mobility particle sizers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/conccn",
+    "variable_name": "conccn",
+    "variable_long_name": "[Aerosol Number Concentration]"
+  },
+  {
+    "instrument_name": "Dionex ion-sup-pressed chromatography (DX-120 series)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/concnh4",
+    "variable_name": "concnh4",
+    "variable_long_name": "[Concentration of NH4]"
+  },
+  {
+    "instrument_name": "FIA-8HQ",
+    "variable": "https://climatepub4kg.github.io/id/Variable/dfe",
+    "variable_name": "dfe",
+    "variable_long_name": "[Dissolved Iron Concentration]"
+  },
+  {
+    "instrument_name": "Clouds and Earths Radiant Energy System (CERES) mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/EFLX_LWRAD_OUT",
+    "variable_name": "EFLX_LWRAD_OUT",
+    "variable_long_name": "[emitted infrared (longwave) radiation]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/EFLX_LWRAD_OUT",
+    "variable_name": "EFLX_LWRAD_OUT",
+    "variable_long_name": "[emitted infrared (longwave) radiation]"
+  },
+  {
+    "instrument_name": "Earth Radiation Budget Experiment (ERBE)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/EFLX_LWRAD_OUT",
+    "variable_name": "EFLX_LWRAD_OUT",
+    "variable_long_name": "[emitted infrared (longwave) radiation]"
+  },
+  {
+    "instrument_name": "Sounding of the Atmosphere using Broadband Emission Radiometry",
+    "variable": "https://climatepub4kg.github.io/id/Variable/EFLX_LWRAD_OUT",
+    "variable_name": "EFLX_LWRAD_OUT",
+    "variable_long_name": "[emitted infrared (longwave) radiation]"
+  },
+  {
+    "instrument_name": "European Remote-sensing Satellite (ERS-1) altimetry",
+    "variable": "https://climatepub4kg.github.io/id/Variable/elevation",
+    "variable_name": "elevation",
+    "variable_long_name": "[elevation]"
+  },
+  {
+    "instrument_name": "Global Ecosystem Dynamics Investigation",
+    "variable": "https://climatepub4kg.github.io/id/Variable/elevation",
+    "variable_name": "elevation",
+    "variable_long_name": "[elevation]"
+  },
+  {
+    "instrument_name": "ASTER",
+    "variable": "https://climatepub4kg.github.io/id/Variable/elevation",
+    "variable_name": "elevation",
+    "variable_long_name": "[elevation]"
+  },
+  {
+    "instrument_name": "Shuttle Radar Topography Mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/elevation",
+    "variable_name": "elevation",
+    "variable_long_name": "[elevation]"
+  },
+  {
+    "instrument_name": "Clouds and the Earth\b0s Radiant Energy System",
+    "variable": "https://climatepub4kg.github.io/id/Variable/EMISCLD",
+    "variable_name": "EMISCLD",
+    "variable_long_name": "[cloud emissivity]"
+  },
+  {
+    "instrument_name": "flux tower systems",
+    "variable": "https://climatepub4kg.github.io/id/Variable/et",
+    "variable_name": "et",
+    "variable_long_name": "[Total Evapotranspiration]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/et",
+    "variable_name": "et",
+    "variable_long_name": "[Total Evapotranspiration]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/et",
+    "variable_name": "et",
+    "variable_long_name": "[Total Evapotranspiration]"
+  },
+  {
+    "instrument_name": "synoptic meteorological stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/evlwr",
+    "variable_name": "evlwr",
+    "variable_long_name": "[evaporation]"
+  },
+  {
+    "instrument_name": "MAX-DOAS (multi-axis differential optical absorption spectroscopy) instruments",
+    "variable": "https://climatepub4kg.github.io/id/Variable/EXTINCT_d1",
+    "variable_name": "EXTINCT_d1",
+    "variable_long_name": "[Aerosol extinction]"
+  },
+  {
+    "instrument_name": "HALOE",
+    "variable": "https://climatepub4kg.github.io/id/Variable/EXTINCT_d1",
+    "variable_name": "EXTINCT_d1",
+    "variable_long_name": "[Aerosol extinction]"
+  },
+  {
+    "instrument_name": "Raman LIDAR (light detection and ranging)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/EXTINCT",
+    "variable_name": "EXTINCT",
+    "variable_long_name": "[Aerosol extinction]"
+  },
+  {
+    "instrument_name": "the Cryogenic Limb Array Etalon Spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/EXTINCT",
+    "variable_name": "EXTINCT",
+    "variable_long_name": "[Aerosol extinction]"
+  },
+  {
+    "instrument_name": "GOMOS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/EXTINCT",
+    "variable_name": "EXTINCT",
+    "variable_long_name": "[Aerosol extinction]"
+  },
+  {
+    "instrument_name": "CLAES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/EXTINCT",
+    "variable_name": "EXTINCT",
+    "variable_long_name": "[Aerosol extinction]"
+  },
+  {
+    "instrument_name": "atmospheric surface flux stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/FLNS_d1",
+    "variable_name": "FLNS_d1",
+    "variable_long_name": "[Net longwave flux at surface]"
+  },
+  {
+    "instrument_name": "Clouds and Earths Radiant Energy System (CERES) mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/FLNT_d1",
+    "variable_name": "FLNT_d1",
+    "variable_long_name": "[Net longwave flux at top of model]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/fpar",
+    "variable_name": "fpar",
+    "variable_long_name": "[Fraction of Absorbed Photosynthetically Active Radiation]"
+  },
+  {
+    "instrument_name": "sea-viewing wide field-of-view sensor (SeaWiFS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/fpar",
+    "variable_name": "fpar",
+    "variable_long_name": "[Fraction of Absorbed Photosynthetically Active Radiation]"
+  },
+  {
+    "instrument_name": "Clouds and Earths Radiant Energy System (CERES) mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/FSA",
+    "variable_name": "FSA",
+    "variable_long_name": "[absorbed solar radiation]"
+  },
+  {
+    "instrument_name": "Kipp & Zonen",
+    "variable": "https://climatepub4kg.github.io/id/Variable/FSNS_d1",
+    "variable_name": "FSNS_d1",
+    "variable_long_name": "[Net solar flux at surface]"
+  },
+  {
+    "instrument_name": "BBR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/FSNTOA_d1",
+    "variable_name": "FSNTOA_d1",
+    "variable_long_name": "[Net solar flux at top of atmosphere]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/FSR",
+    "variable_name": "FSR",
+    "variable_long_name": "[reflected solar radiation]"
+  },
+  {
+    "instrument_name": "SR05-L, ISO 9060 Second Class Pyranometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/FSR",
+    "variable_name": "FSR",
+    "variable_long_name": "[reflected solar radiation]"
+  },
+  {
+    "instrument_name": "Clouds and Earths Radiant Energy System (CERES) mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/FSR",
+    "variable_name": "FSR",
+    "variable_long_name": "[reflected solar radiation]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/gppLut",
+    "variable_name": "gppLut",
+    "variable_long_name": "[Gross Primary Productivity on Land-Use Tile]"
+  },
+  {
+    "instrument_name": "eddy covariance towers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/gppLut",
+    "variable_name": "gppLut",
+    "variable_long_name": "[Gross Primary Productivity on Land-Use Tile]"
+  },
+  {
+    "instrument_name": "Keller Series 36XiW-CTD probe",
+    "variable": "https://climatepub4kg.github.io/id/Variable/H2OSFC",
+    "variable_name": "H2OSFC",
+    "variable_long_name": "[surface water depth]"
+  },
+  {
+    "instrument_name": "Instrument on SWOT",
+    "variable": "https://climatepub4kg.github.io/id/Variable/H2OSFC",
+    "variable_name": "H2OSFC",
+    "variable_long_name": "[surface water depth]"
+  },
+  {
+    "instrument_name": "SSMI: Special Sensor Microwave Imager",
+    "variable": "https://climatepub4kg.github.io/id/Variable/H2OSOI_LIQ",
+    "variable_name": "H2OSOI_LIQ",
+    "variable_long_name": "[liquid water]"
+  },
+  {
+    "instrument_name": "TDR (time domain reflectometry) sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/H2OSOI",
+    "variable_name": "H2OSOI",
+    "variable_long_name": "[volumetric soil water (vegetated landunits only)]"
+  },
+  {
+    "instrument_name": "Global Ozone Monitoring Experiment (GOME)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hcho",
+    "variable_name": "hcho",
+    "variable_long_name": "[Formaldehyde volume mixing ratio]"
+  },
+  {
+    "instrument_name": "the Ozone Monitoring Instrument (OMI)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hcho",
+    "variable_name": "hcho",
+    "variable_long_name": "[Formaldehyde volume mixing ratio]"
+  },
+  {
+    "instrument_name": "Argo floats",
+    "variable": "https://climatepub4kg.github.io/id/Variable/heightv",
+    "variable_name": "heightv",
+    "variable_long_name": "[height]"
+  },
+  {
+    "instrument_name": "multichannel coherent ice-penetrating radar depth sounder/ imager",
+    "variable": "https://climatepub4kg.github.io/id/Variable/heightv",
+    "variable_name": "heightv",
+    "variable_long_name": "[height]"
+  },
+  {
+    "instrument_name": "Keller PA-9SE-10 pressure sensor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/heightv",
+    "variable_name": "heightv",
+    "variable_long_name": "[height]"
+  },
+  {
+    "instrument_name": "Mechanical BathyThermograph",
+    "variable": "https://climatepub4kg.github.io/id/Variable/heightv",
+    "variable_name": "heightv",
+    "variable_long_name": "[height]"
+  },
+  {
+    "instrument_name": "shipboard conductivity-temperature-depth (CTD) sensor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/heightv",
+    "variable_name": "heightv",
+    "variable_long_name": "[height]"
+  },
+  {
+    "instrument_name": "CTD",
+    "variable": "https://climatepub4kg.github.io/id/Variable/heightv",
+    "variable_name": "heightv",
+    "variable_long_name": "[height]"
+  },
+  {
+    "instrument_name": "surface meteorological stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hur950",
+    "variable_name": "hur950",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "SwitchBot IP65 Outdoor Sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hurs200",
+    "variable_name": "hurs200",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "environmental sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hurs200",
+    "variable_name": "hurs200",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "SSMI: Special Sensor Microwave Imager",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hurs200",
+    "variable_name": "hurs200",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "IASI: Infrared Atmospheric Sounding Interferometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hurs200",
+    "variable_name": "hurs200",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "two radiosonde types, namely RS80 and RS92",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hurs200",
+    "variable_name": "hurs200",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "interconnected sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hurs200",
+    "variable_name": "hurs200",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "HIRS: High-resolution Infrared Radiation Sounder",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hurs200",
+    "variable_name": "hurs200",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "AIRS: Atmospheric Infrared Sounder",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hurs200",
+    "variable_name": "hurs200",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "radiosondes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hurs200",
+    "variable_name": "hurs200",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "Hygrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hurs200",
+    "variable_name": "hurs200",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "MHS: Microwave Humidity Sounder",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hurs200",
+    "variable_name": "hurs200",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "flux tower systems",
+    "variable": "https://climatepub4kg.github.io/id/Variable/hurs200",
+    "variable_name": "hurs200",
+    "variable_long_name": "[Relative Humidity]"
+  },
+  {
+    "instrument_name": "eddy covariance (EC) system",
+    "variable": "https://climatepub4kg.github.io/id/Variable/i2x_ix_Faii_sen",
+    "variable_name": "i2x_ix_Faii_sen",
+    "variable_long_name": "[Sensible heat flux]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/i2x_ix_Si_t",
+    "variable_name": "i2x_ix_Si_t",
+    "variable_long_name": "[Surface temperature]"
+  },
+  {
+    "instrument_name": "AVHRR Polar Pathfinder (APP)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/i2x_ix_Si_t",
+    "variable_name": "i2x_ix_Si_t",
+    "variable_long_name": "[Surface temperature]"
+  },
+  {
+    "instrument_name": "TOPDON TC002 thermal imaging camera",
+    "variable": "https://climatepub4kg.github.io/id/Variable/i2x_ix_Si_t",
+    "variable_name": "i2x_ix_Si_t",
+    "variable_long_name": "[Surface temperature]"
+  },
+  {
+    "instrument_name": "infrared and microwave sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/i2x_ix_Si_t",
+    "variable_name": "i2x_ix_Si_t",
+    "variable_long_name": "[Surface temperature]"
+  },
+  {
+    "instrument_name": "TIRS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/i2x_ix_Si_t",
+    "variable_name": "i2x_ix_Si_t",
+    "variable_long_name": "[Surface temperature]"
+  },
+  {
+    "instrument_name": "Scatterometer Climatology of Ocean Winds (SCOW)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/i2x_ix_Si_u10",
+    "variable_name": "i2x_ix_Si_u10",
+    "variable_long_name": "[10m wind]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ialb",
+    "variable_name": "ialb",
+    "variable_long_name": "[Sea Ice Albedo]"
+  },
+  {
+    "instrument_name": "Advanced Very High Resolution Radiometer (AVHRR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ialb",
+    "variable_name": "ialb",
+    "variable_long_name": "[Sea Ice Albedo]"
+  },
+  {
+    "instrument_name": "space-borne passive mi- crowave sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/icwtr",
+    "variable_name": "icwtr",
+    "variable_long_name": "[ice/water fraction]"
+  },
+  {
+    "instrument_name": "SSMI",
+    "variable": "https://climatepub4kg.github.io/id/Variable/icwtr",
+    "variable_name": "icwtr",
+    "variable_long_name": "[ice/water fraction]"
+  },
+  {
+    "instrument_name": "AMSR-E",
+    "variable": "https://climatepub4kg.github.io/id/Variable/icwtr",
+    "variable_name": "icwtr",
+    "variable_long_name": "[ice/water fraction]"
+  },
+  {
+    "instrument_name": "EUMETSAT Ocean and Sea Ice Satellite Application Facility (OSI-SAF)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/icwtr",
+    "variable_name": "icwtr",
+    "variable_long_name": "[ice/water fraction]"
+  },
+  {
+    "instrument_name": "Forward Scattering Spectrometer Probe",
+    "variable": "https://climatepub4kg.github.io/id/Variable/inc",
+    "variable_name": "inc",
+    "variable_long_name": "[Ice Crystal Number Concentration]"
+  },
+  {
+    "instrument_name": "sea-viewing wide field-of-view sensor (SeaWiFS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/intdoc",
+    "variable_name": "intdoc",
+    "variable_long_name": "[Dissolved Organic Carbon Content]"
+  },
+  {
+    "instrument_name": "Aurora1030 TOC analyser (OI Analytical) coupled to a Delta V Advantage IRMS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/intdoc",
+    "variable_name": "intdoc",
+    "variable_long_name": "[Dissolved Organic Carbon Content]"
+  },
+  {
+    "instrument_name": "total organic C analyzer (Vario TOC cube)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/intdoc",
+    "variable_name": "intdoc",
+    "variable_long_name": "[Dissolved Organic Carbon Content]"
+  },
+  {
+    "instrument_name": "Thermo HiperTOC-isotope ratio mass spectrometer (IRMS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/intdoc",
+    "variable_name": "intdoc",
+    "variable_long_name": "[Dissolved Organic Carbon Content]"
+  },
+  {
+    "instrument_name": "sea-viewing wide field-of-view sensor (SeaWiFS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/intpoc",
+    "variable_name": "intpoc",
+    "variable_long_name": "[Particulate Organic Carbon Content]"
+  },
+  {
+    "instrument_name": "POES Medium Energy Proton and Electron Detector",
+    "variable": "https://climatepub4kg.github.io/id/Variable/iprm",
+    "variable_name": "iprm",
+    "variable_long_name": "[Ion pair production rate by MEE]"
+  },
+  {
+    "instrument_name": "High Spectral Resolution Lidar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/IWC",
+    "variable_name": "IWC",
+    "variable_long_name": "[Grid box average ice water content]"
+  },
+  {
+    "instrument_name": "95 GHz Doppler cloud radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/IWC",
+    "variable_name": "IWC",
+    "variable_long_name": "[Grid box average ice water content]"
+  },
+  {
+    "instrument_name": "LAI-2000",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lai",
+    "variable_name": "lai",
+    "variable_long_name": "[Leaf Area Index]"
+  },
+  {
+    "instrument_name": "VIIRS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lai",
+    "variable_name": "lai",
+    "variable_long_name": "[Leaf Area Index]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lai",
+    "variable_name": "lai",
+    "variable_long_name": "[Leaf Area Index]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lai",
+    "variable_name": "lai",
+    "variable_long_name": "[Leaf Area Index]"
+  },
+  {
+    "instrument_name": "Advanced Very High Resolution Radiometer (AVHRR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lai",
+    "variable_name": "lai",
+    "variable_long_name": "[Leaf Area Index]"
+  },
+  {
+    "instrument_name": "Flux towers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/LHFLX",
+    "variable_name": "LHFLX",
+    "variable_long_name": "[Surface latent heat flux]"
+  },
+  {
+    "instrument_name": "upgraded TAO",
+    "variable": "https://climatepub4kg.github.io/id/Variable/LHFLX",
+    "variable_name": "LHFLX",
+    "variable_long_name": "[Surface latent heat flux]"
+  },
+  {
+    "instrument_name": "IMET buoys",
+    "variable": "https://climatepub4kg.github.io/id/Variable/LHFLX",
+    "variable_name": "LHFLX",
+    "variable_long_name": "[Surface latent heat flux]"
+  },
+  {
+    "instrument_name": "eddy covariance (EC) system",
+    "variable": "https://climatepub4kg.github.io/id/Variable/LHFLX",
+    "variable_name": "LHFLX",
+    "variable_long_name": "[Surface latent heat flux]"
+  },
+  {
+    "instrument_name": "GRACE",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lim",
+    "variable_name": "lim",
+    "variable_long_name": "[Ice Sheet Mass]"
+  },
+  {
+    "instrument_name": "satellite altimeter",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lim",
+    "variable_name": "lim",
+    "variable_long_name": "[Ice Sheet Mass]"
+  },
+  {
+    "instrument_name": "SBUV",
+    "variable": "https://climatepub4kg.github.io/id/Variable/LINOZ_O3COL",
+    "variable_name": "LINOZ_O3COL",
+    "variable_long_name": "[ozone column above]"
+  },
+  {
+    "instrument_name": "TOMS (total ozone mapping spectrometer)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/LINOZ_O3COL",
+    "variable_name": "LINOZ_O3COL",
+    "variable_long_name": "[ozone column above]"
+  },
+  {
+    "instrument_name": "ozonesondes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/LINOZ_O3COL",
+    "variable_name": "LINOZ_O3COL",
+    "variable_long_name": "[ozone column above]"
+  },
+  {
+    "instrument_name": "radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lithk",
+    "variable_name": "lithk",
+    "variable_long_name": "[Ice Sheet Thickness]"
+  },
+  {
+    "instrument_name": "seismic sounding techniques",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lithk",
+    "variable_name": "lithk",
+    "variable_long_name": "[Ice Sheet Thickness]"
+  },
+  {
+    "instrument_name": "airborne radio-echo sounding surveys",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lithk",
+    "variable_name": "lithk",
+    "variable_long_name": "[Ice Sheet Thickness]"
+  },
+  {
+    "instrument_name": "Ströhlein Coulomat 702C®",
+    "variable": "https://climatepub4kg.github.io/id/Variable/loadbc",
+    "variable_name": "loadbc",
+    "variable_long_name": "[Load of Black Carbon Aerosol]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lwp",
+    "variable_name": "lwp",
+    "variable_long_name": "[Liquid Water Path]"
+  },
+  {
+    "instrument_name": "Advanced Microwave Scanning Radiometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lwp",
+    "variable_name": "lwp",
+    "variable_long_name": "[Liquid Water Path]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lwp",
+    "variable_name": "lwp",
+    "variable_long_name": "[Liquid Water Path]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lwp",
+    "variable_name": "lwp",
+    "variable_long_name": "[Liquid Water Path]"
+  },
+  {
+    "instrument_name": "dielectric sensor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lwp",
+    "variable_name": "lwp",
+    "variable_long_name": "[Liquid Water Path]"
+  },
+  {
+    "instrument_name": "SSMR/I",
+    "variable": "https://climatepub4kg.github.io/id/Variable/lwp",
+    "variable_name": "lwp",
+    "variable_long_name": "[Liquid Water Path]"
+  },
+  {
+    "instrument_name": "MIPAS (the Michelson Interferometer for Passive Atmospheric Sounding)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mmraerso4",
+    "variable_name": "mmraerso4",
+    "variable_long_name": "[Aerosol Sulfate Mass Mixing Ratio]"
+  },
+  {
+    "instrument_name": "lidar measurements",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mmrdust",
+    "variable_name": "mmrdust",
+    "variable_long_name": "[Dust aerosol mass mixing ratio]"
+  },
+  {
+    "instrument_name": "Collectors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mmrno3",
+    "variable_name": "mmrno3",
+    "variable_long_name": "[NO3 aerosol mass mixing ratio]"
+  },
+  {
+    "instrument_name": "ground-site or in situ remote sensing",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mmrpm2p5",
+    "variable_name": "mmrpm2p5",
+    "variable_long_name": "[PM2.5 mass mixing ratio]"
+  },
+  {
+    "instrument_name": "Orbiting Carbon Observatory-2",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mole_fraction_of_carbon_dioxide_in_air",
+    "variable_name": "mole_fraction_of_carbon_dioxide_in_air",
+    "variable_long_name": "[Mole Fraction of CO2]"
+  },
+  {
+    "instrument_name": "Greenhouse Gases Observing Satellite (GOSAT) instrument",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mole_fraction_of_carbon_dioxide_in_air",
+    "variable_name": "mole_fraction_of_carbon_dioxide_in_air",
+    "variable_long_name": "[Mole Fraction of CO2]"
+  },
+  {
+    "instrument_name": "CS 650",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrso",
+    "variable_name": "mrso",
+    "variable_long_name": "[Total Soil Moisture Content]"
+  },
+  {
+    "instrument_name": "ThetaProbes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrso",
+    "variable_name": "mrso",
+    "variable_long_name": "[Total Soil Moisture Content]"
+  },
+  {
+    "instrument_name": "radiometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrso",
+    "variable_name": "mrso",
+    "variable_long_name": "[Total Soil Moisture Content]"
+  },
+  {
+    "instrument_name": "CS655-Water Content Reflectometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrso",
+    "variable_name": "mrso",
+    "variable_long_name": "[Total Soil Moisture Content]"
+  },
+  {
+    "instrument_name": "Synthetic Aperture Radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrsoLut",
+    "variable_name": "mrsoLut",
+    "variable_long_name": "[Total Soil Moisture]"
+  },
+  {
+    "instrument_name": "Sentinel-1",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrsoLut",
+    "variable_name": "mrsoLut",
+    "variable_long_name": "[Total Soil Moisture]"
+  },
+  {
+    "instrument_name": "TDR-100 probe",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrsoLut",
+    "variable_name": "mrsoLut",
+    "variable_long_name": "[Total Soil Moisture]"
+  },
+  {
+    "instrument_name": "SMAP",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrsoLut",
+    "variable_name": "mrsoLut",
+    "variable_long_name": "[Total Soil Moisture]"
+  },
+  {
+    "instrument_name": "Instrument on SMAP",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrsoLut",
+    "variable_name": "mrsoLut",
+    "variable_long_name": "[Total Soil Moisture]"
+  },
+  {
+    "instrument_name": "SAR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrsoLut",
+    "variable_name": "mrsoLut",
+    "variable_long_name": "[Total Soil Moisture]"
+  },
+  {
+    "instrument_name": "Hydrosense II",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrsoLut",
+    "variable_name": "mrsoLut",
+    "variable_long_name": "[Total Soil Moisture]"
+  },
+  {
+    "instrument_name": "Cosmic-ray Soil Moisture Observation System (COSMOS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrsoLut",
+    "variable_name": "mrsoLut",
+    "variable_long_name": "[Total Soil Moisture]"
+  },
+  {
+    "instrument_name": "infrared and microwave sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrsoLut",
+    "variable_name": "mrsoLut",
+    "variable_long_name": "[Total Soil Moisture]"
+  },
+  {
+    "instrument_name": "Instrument on SMOS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrsoLut",
+    "variable_name": "mrsoLut",
+    "variable_long_name": "[Total Soil Moisture]"
+  },
+  {
+    "instrument_name": "Gravity-based measurements",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrtws",
+    "variable_name": "mrtws",
+    "variable_long_name": "[Terrestrial Water Storage]"
+  },
+  {
+    "instrument_name": "GRACE",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrtws",
+    "variable_name": "mrtws",
+    "variable_long_name": "[Terrestrial Water Storage]"
+  },
+  {
+    "instrument_name": "Gravity Recovery And Climate Experiment [GRACE] satellite mission instruments",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrtws",
+    "variable_name": "mrtws",
+    "variable_long_name": "[Terrestrial Water Storage]"
+  },
+  {
+    "instrument_name": "Instrument on GRACE",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrtws",
+    "variable_name": "mrtws",
+    "variable_long_name": "[Terrestrial Water Storage]"
+  },
+  {
+    "instrument_name": "the GRACE satellite",
+    "variable": "https://climatepub4kg.github.io/id/Variable/mrtws",
+    "variable_name": "mrtws",
+    "variable_long_name": "[Terrestrial Water Storage]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/nppLut",
+    "variable_name": "nppLut",
+    "variable_long_name": "[Net Primary Productivity on Land-Use Tile]"
+  },
+  {
+    "instrument_name": "BGC-Argo floats",
+    "variable": "https://climatepub4kg.github.io/id/Variable/o2",
+    "variable_name": "o2",
+    "variable_long_name": "[Dissolved Oxygen Concentration at Surface, Dissolved Oxygen Concentration]"
+  },
+  {
+    "instrument_name": "Argo floats",
+    "variable": "https://climatepub4kg.github.io/id/Variable/o2",
+    "variable_name": "o2",
+    "variable_long_name": "[Dissolved Oxygen Concentration at Surface, Dissolved Oxygen Concentration]"
+  },
+  {
+    "instrument_name": "CTD (Conductivity-Temperature-Depth) SeaBird SBE 37-ODO probe",
+    "variable": "https://climatepub4kg.github.io/id/Variable/o2",
+    "variable_name": "o2",
+    "variable_long_name": "[Dissolved Oxygen Concentration at Surface, Dissolved Oxygen Concentration]"
+  },
+  {
+    "instrument_name": "Optical Dissolved Oxygen (DO) sensor (SBE63)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/o2os",
+    "variable_name": "o2os",
+    "variable_long_name": "[Surface Dissolved Oxygen Concentration]"
+  },
+  {
+    "instrument_name": "Winkler titration method",
+    "variable": "https://climatepub4kg.github.io/id/Variable/o2sat",
+    "variable_name": "o2sat",
+    "variable_long_name": "[Dissolved Oxygen Concentration at Saturation]"
+  },
+  {
+    "instrument_name": "satellite instrument from sea surface salinity satellite mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/o2x_ox_So_s",
+    "variable_name": "o2x_ox_So_s",
+    "variable_long_name": "[Sea surface salinity]"
+  },
+  {
+    "instrument_name": "TIRS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/o2x_ox_So_t",
+    "variable_name": "o2x_ox_So_t",
+    "variable_long_name": "[Surface temperature]"
+  },
+  {
+    "instrument_name": "Tropospheric Emission Spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/o3ste",
+    "variable_name": "o3ste",
+    "variable_long_name": "[Ozone volume mixing ratio]"
+  },
+  {
+    "instrument_name": "Microwave Limb Sounder",
+    "variable": "https://climatepub4kg.github.io/id/Variable/o3ste",
+    "variable_name": "o3ste",
+    "variable_long_name": "[Ozone volume mixing ratio]"
+  },
+  {
+    "instrument_name": "a Regener type potassium iodide (KI) automatic ozone analyser",
+    "variable": "https://climatepub4kg.github.io/id/Variable/o3ste",
+    "variable_name": "o3ste",
+    "variable_long_name": "[Ozone volume mixing ratio]"
+  },
+  {
+    "instrument_name": "UV absorption analyser",
+    "variable": "https://climatepub4kg.github.io/id/Variable/o3ste",
+    "variable_name": "o3ste",
+    "variable_long_name": "[Ozone volume mixing ratio]"
+  },
+  {
+    "instrument_name": "UV absorption analyser (Thermo 49i, USA)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/o3ste",
+    "variable_name": "o3ste",
+    "variable_long_name": "[Ozone volume mixing ratio]"
+  },
+  {
+    "instrument_name": "OSIRIS (Optical Spectrograph and Infrared Imaging System)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/od550aerso",
+    "variable_name": "od550aerso",
+    "variable_long_name": "[Stratospheric Optical Depth at 550nm (All Aerosols) 2D-Field (Stratosphere Only)]"
+  },
+  {
+    "instrument_name": "Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/od550aerso",
+    "variable_name": "od550aerso",
+    "variable_long_name": "[Stratospheric Optical Depth at 550nm (All Aerosols) 2D-Field (Stratosphere Only)]"
+  },
+  {
+    "instrument_name": "AERONET sun photometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/od550csaer",
+    "variable_name": "od550csaer",
+    "variable_long_name": "[ambient aerosol optical thickness at 550 nm]"
+  },
+  {
+    "instrument_name": "Multi-angle Imaging SpectroRadiometer (MISR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/od550csaer",
+    "variable_name": "od550csaer",
+    "variable_long_name": "[ambient aerosol optical thickness at 550 nm]"
+  },
+  {
+    "instrument_name": "aerial stereo photogrammetric imagery",
+    "variable": "https://climatepub4kg.github.io/id/Variable/orogIs",
+    "variable_name": "orogIs",
+    "variable_long_name": "[Ice Sheet Surface Altitude]"
+  },
+  {
+    "instrument_name": "SeaWiFS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/par",
+    "variable_name": "par",
+    "variable_long_name": "[Photosynthetically Active Radiation]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/par",
+    "variable_name": "par",
+    "variable_long_name": "[Photosynthetically Active Radiation]"
+  },
+  {
+    "instrument_name": "Clouds and the Earth\b0s Radiant Energy System",
+    "variable": "https://climatepub4kg.github.io/id/Variable/par",
+    "variable_name": "par",
+    "variable_long_name": "[Photosynthetically Active Radiation]"
+  },
+  {
+    "instrument_name": "CS310 Quantum PAR Sensor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/par",
+    "variable_name": "par",
+    "variable_long_name": "[Photosynthetically Active Radiation]"
+  },
+  {
+    "instrument_name": "snow buoy",
+    "variable": "https://climatepub4kg.github.io/id/Variable/PBOT",
+    "variable_name": "PBOT",
+    "variable_long_name": "[atmospheric pressure]"
+  },
+  {
+    "instrument_name": "station barometer observations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/PBOT",
+    "variable_name": "PBOT",
+    "variable_long_name": "[atmospheric pressure]"
+  },
+  {
+    "instrument_name": "flux tower systems",
+    "variable": "https://climatepub4kg.github.io/id/Variable/PBOT",
+    "variable_name": "PBOT",
+    "variable_long_name": "[atmospheric pressure]"
+  },
+  {
+    "instrument_name": "Pro-Oceanus CO2-Pro ATM sensor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/PCO2",
+    "variable_name": "PCO2",
+    "variable_long_name": "[atmospheric partial pressure of CO2]"
+  },
+  {
+    "instrument_name": "portable infrared gas analyser",
+    "variable": "https://climatepub4kg.github.io/id/Variable/PCO2",
+    "variable_name": "PCO2",
+    "variable_long_name": "[atmospheric partial pressure of CO2]"
+  },
+  {
+    "instrument_name": "ISCCP",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pctisccp",
+    "variable_name": "pctisccp",
+    "variable_long_name": "[ISCCP Mean Cloud Top Pressure]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pfts1d_itypveg",
+    "variable_name": "pfts1d_itypveg",
+    "variable_long_name": "[pft vegetation type]"
+  },
+  {
+    "instrument_name": "bulk or wet-only precipitation samplers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ph",
+    "variable_name": "ph",
+    "variable_long_name": "[pH]"
+  },
+  {
+    "instrument_name": "SAMI-pH sensor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ph",
+    "variable_name": "ph",
+    "variable_long_name": "[pH]"
+  },
+  {
+    "instrument_name": "Argo floats",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ph",
+    "variable_name": "ph",
+    "variable_long_name": "[pH]"
+  },
+  {
+    "instrument_name": "lysimeters or suction cup samplers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ph",
+    "variable_name": "ph",
+    "variable_long_name": "[pH]"
+  },
+  {
+    "instrument_name": "portable field probes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ph",
+    "variable_name": "ph",
+    "variable_long_name": "[pH]"
+  },
+  {
+    "instrument_name": "Biogeochemical Argo floats",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ph",
+    "variable_name": "ph",
+    "variable_long_name": "[pH]"
+  },
+  {
+    "instrument_name": "Collectors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ph",
+    "variable_name": "ph",
+    "variable_long_name": "[pH]"
+  },
+  {
+    "instrument_name": "barometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/plevel",
+    "variable_name": "plevel",
+    "variable_long_name": "[pressure]"
+  },
+  {
+    "instrument_name": "the Argo profiling float system",
+    "variable": "https://climatepub4kg.github.io/id/Variable/plevel",
+    "variable_name": "plevel",
+    "variable_long_name": "[pressure]"
+  },
+  {
+    "instrument_name": "Druck pressure sensor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/plevel",
+    "variable_name": "plevel",
+    "variable_long_name": "[pressure]"
+  },
+  {
+    "instrument_name": "sympiesometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/plevel",
+    "variable_name": "plevel",
+    "variable_long_name": "[pressure]"
+  },
+  {
+    "instrument_name": "barometric pressure sensor (model 61402V)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/plevel",
+    "variable_name": "plevel",
+    "variable_long_name": "[pressure]"
+  },
+  {
+    "instrument_name": "radiosondes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/plevel",
+    "variable_name": "plevel",
+    "variable_long_name": "[pressure]"
+  },
+  {
+    "instrument_name": "Argo floats",
+    "variable": "https://climatepub4kg.github.io/id/Variable/plevel",
+    "variable_name": "plevel",
+    "variable_long_name": "[pressure]"
+  },
+  {
+    "instrument_name": "Manual rain gauges",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "bulk or wet-only precipitation samplers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "Instrument on GPM",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "C-band Doppler radars",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "automatic weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "satellite-born radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "CPR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "surface meteorological stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "rain gauge",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "Davis vantage pro weather station",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "satellite instruments",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "Automated Meteorological Data Acquisition System (AMeDAS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "Tropical Rainfall Measuring Mission Precipitation Radar 2A25",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "AMSRE: Advanced Microwave Scanning Radiometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "electronic sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "Tropical Rainfall Measuring Missions (TRMM) microwave imager",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "passive microwave satellite sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "GPM",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "TRMM precipitation radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "precipitation stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "TE525-Series-Tipping Bucket Rain Gage",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "Satellite-based sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "Collectors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "automatic rain gauge",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "flux tower systems",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "infrared and microwave sounders",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "Snowpack Telemetry (SNOTEL) sites",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "GPM dual-frequency precipitation radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "CPE weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "GPM Microwave Imager",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "the cloud profiling radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "T_200B rain gauge",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "TRMM",
+    "variable": "https://climatepub4kg.github.io/id/Variable/pr",
+    "variable_name": "pr",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "SSMR/I",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prhmax",
+    "variable_name": "prhmax",
+    "variable_long_name": "[Daily Maximum Hourly Precipitation Rate]"
+  },
+  {
+    "instrument_name": "Weather radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prhmax",
+    "variable_name": "prhmax",
+    "variable_long_name": "[Daily Maximum Hourly Precipitation Rate]"
+  },
+  {
+    "instrument_name": "satellite",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prra",
+    "variable_name": "prra",
+    "variable_long_name": "[Rainfall Flux]"
+  },
+  {
+    "instrument_name": "infrared observation instrument",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prra",
+    "variable_name": "prra",
+    "variable_long_name": "[Rainfall Flux]"
+  },
+  {
+    "instrument_name": "Tropical Rainfall Measuring Mission (TRMM 3B42 version 6)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prra",
+    "variable_name": "prra",
+    "variable_long_name": "[Rainfall Flux]"
+  },
+  {
+    "instrument_name": "Tropical Rainfall Measuring Missions (TRMM) microwave imager",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prra",
+    "variable_name": "prra",
+    "variable_long_name": "[Rainfall Flux]"
+  },
+  {
+    "instrument_name": "Global Precipitation Climatology Project (GPCP)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prra",
+    "variable_name": "prra",
+    "variable_long_name": "[Rainfall Flux]"
+  },
+  {
+    "instrument_name": "New sensors for biological and geochemical parameters, for wind and rainfall, and for better sampling of temperature and salinity structure in the oceans surface layer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prra",
+    "variable_name": "prra",
+    "variable_long_name": "[Rainfall Flux]"
+  },
+  {
+    "instrument_name": "radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prra",
+    "variable_name": "prra",
+    "variable_long_name": "[Rainfall Flux]"
+  },
+  {
+    "instrument_name": "weighing-bucket type precipitation gauge",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prsn",
+    "variable_name": "prsn",
+    "variable_long_name": "[Snowfall Flux]"
+  },
+  {
+    "instrument_name": "the CloudSat spaceborne cloud-profiling radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prsn",
+    "variable_name": "prsn",
+    "variable_long_name": "[Snowfall Flux]"
+  },
+  {
+    "instrument_name": "the cloud profiling radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prsn",
+    "variable_name": "prsn",
+    "variable_long_name": "[Snowfall Flux]"
+  },
+  {
+    "instrument_name": "gauges",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prsn",
+    "variable_name": "prsn",
+    "variable_long_name": "[Snowfall Flux]"
+  },
+  {
+    "instrument_name": "rain gauge",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prSprd",
+    "variable_name": "prSprd",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "thermal infrared (IR) observations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prSprd",
+    "variable_name": "prSprd",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "S-band radar",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prSprd",
+    "variable_name": "prSprd",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "radar data",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prSprd",
+    "variable_name": "prSprd",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "passive microwave satellite sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prSprd",
+    "variable_name": "prSprd",
+    "variable_long_name": "[Precipitation]"
+  },
+  {
+    "instrument_name": "TMI (TRMM microwave imager)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/prwSprd",
+    "variable_name": "prwSprd",
+    "variable_long_name": "[Water Vapor Path]"
+  },
+  {
+    "instrument_name": "Young (R.M. Young Company) sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/psSprd",
+    "variable_name": "psSprd",
+    "variable_long_name": "[Surface Air Pressure]"
+  },
+  {
+    "instrument_name": "Vaisala sondes RS80/RS92/VS41",
+    "variable": "https://climatepub4kg.github.io/id/Variable/Q",
+    "variable_name": "Q",
+    "variable_long_name": "[Specific humidity]"
+  },
+  {
+    "instrument_name": "balloon sonde",
+    "variable": "https://climatepub4kg.github.io/id/Variable/QBOT",
+    "variable_name": "QBOT",
+    "variable_long_name": "[atmospheric specific humidity]"
+  },
+  {
+    "instrument_name": "satellite instruments",
+    "variable": "https://climatepub4kg.github.io/id/Variable/QOVER",
+    "variable_name": "QOVER",
+    "variable_long_name": "[surface runoff]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/QSNOMELT",
+    "variable_name": "QSNOMELT",
+    "variable_long_name": "[snow melt]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/reffclis",
+    "variable_name": "reffclis",
+    "variable_long_name": "[Hydrometeor Effective Radius of Stratiform Cloud Ice]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/reffclwtop",
+    "variable_name": "reffclwtop",
+    "variable_long_name": "[Cloud-Top Effective Droplet Radius]"
+  },
+  {
+    "instrument_name": "Along Track Scanning Radiometer (ATSR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/reffclwtop",
+    "variable_name": "reffclwtop",
+    "variable_long_name": "[Cloud-Top Effective Droplet Radius]"
+  },
+  {
+    "instrument_name": "PARASOL (Polarization and Anisotropy of Reflectances for Atmospheric Sciences coupled with Observations from a Lidar)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/reffclwtop",
+    "variable_name": "reffclwtop",
+    "variable_long_name": "[Cloud-Top Effective Droplet Radius]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/reffclwtop",
+    "variable_name": "reffclwtop",
+    "variable_long_name": "[Cloud-Top Effective Droplet Radius]"
+  },
+  {
+    "instrument_name": "POLarization and Directionality of the Earths Reflectances",
+    "variable": "https://climatepub4kg.github.io/id/Variable/reffclwtop",
+    "variable_name": "reffclwtop",
+    "variable_long_name": "[Cloud-Top Effective Droplet Radius]"
+  },
+  {
+    "instrument_name": "cloud observing suite",
+    "variable": "https://climatepub4kg.github.io/id/Variable/reffclwtop",
+    "variable_name": "reffclwtop",
+    "variable_long_name": "[Cloud-Top Effective Droplet Radius]"
+  },
+  {
+    "instrument_name": "Spinning-Enhanced Visible and InfraRed Imager",
+    "variable": "https://climatepub4kg.github.io/id/Variable/reffclwtop",
+    "variable_name": "reffclwtop",
+    "variable_long_name": "[Cloud-Top Effective Droplet Radius]"
+  },
+  {
+    "instrument_name": "weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/RELHUM",
+    "variable_name": "RELHUM",
+    "variable_long_name": "[Relative humidity]"
+  },
+  {
+    "instrument_name": "Relative Humidity/Temperature Probe (model 41382VC)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/RELHUM",
+    "variable_name": "RELHUM",
+    "variable_long_name": "[Relative humidity]"
+  },
+  {
+    "instrument_name": "radiosondes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/RELHUM",
+    "variable_name": "RELHUM",
+    "variable_long_name": "[Relative humidity]"
+  },
+  {
+    "instrument_name": "ATLAS (Automated Temperature Line Acquisition System) buoys",
+    "variable": "https://climatepub4kg.github.io/id/Variable/RELHUM",
+    "variable_name": "RELHUM",
+    "variable_long_name": "[Relative humidity]"
+  },
+  {
+    "instrument_name": "Young (R.M. Young Company) sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/RELHUM",
+    "variable_name": "RELHUM",
+    "variable_long_name": "[Relative humidity]"
+  },
+  {
+    "instrument_name": "Chinese meteorological stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/RELHUM",
+    "variable_name": "RELHUM",
+    "variable_long_name": "[Relative humidity]"
+  },
+  {
+    "instrument_name": "Digital data loggers (HOBO or ThermoPro)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/RELHUM",
+    "variable_name": "RELHUM",
+    "variable_long_name": "[Relative humidity]"
+  },
+  {
+    "instrument_name": "HygroVUE-TM 5-Temperature and Relative Humidity Sensor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/RELHUM",
+    "variable_name": "RELHUM",
+    "variable_long_name": "[Relative humidity]"
+  },
+  {
+    "instrument_name": "integrating nephelometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/RELHUM",
+    "variable_name": "RELHUM",
+    "variable_long_name": "[Relative humidity]"
+  },
+  {
+    "instrument_name": "Davis vantage pro weather station",
+    "variable": "https://climatepub4kg.github.io/id/Variable/RELHUM",
+    "variable_name": "RELHUM",
+    "variable_long_name": "[Relative humidity]"
+  },
+  {
+    "instrument_name": "CPE weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/RELHUM",
+    "variable_name": "RELHUM",
+    "variable_long_name": "[Relative humidity]"
+  },
+  {
+    "instrument_name": "automatic weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/RELHUM",
+    "variable_name": "RELHUM",
+    "variable_long_name": "[Relative humidity]"
+  },
+  {
+    "instrument_name": "permanent weirs",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rivo",
+    "variable_name": "rivo",
+    "variable_long_name": "[River Discharge]"
+  },
+  {
+    "instrument_name": "Instrument on SWOT",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rivo",
+    "variable_name": "rivo",
+    "variable_long_name": "[River Discharge]"
+  },
+  {
+    "instrument_name": "vortex dynamic radiometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rld",
+    "variable_name": "rld",
+    "variable_long_name": "[Downwelling Longwave Radiation]"
+  },
+  {
+    "instrument_name": "pyrgeometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rld",
+    "variable_name": "rld",
+    "variable_long_name": "[Downwelling Longwave Radiation]"
+  },
+  {
+    "instrument_name": "pyranometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rlds",
+    "variable_name": "rlds",
+    "variable_long_name": "[Surface Downwelling Longwave Radiation]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rltcre",
+    "variable_name": "rltcre",
+    "variable_long_name": "[Top of Atmosphere Longwave CRE]"
+  },
+  {
+    "instrument_name": "pyrgeometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rlu",
+    "variable_name": "rlu",
+    "variable_long_name": "[Upwelling Longwave Radiation]"
+  },
+  {
+    "instrument_name": "vortex dynamic radiometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rlu",
+    "variable_name": "rlu",
+    "variable_long_name": "[Upwelling Longwave Radiation]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rlut",
+    "variable_name": "rlut",
+    "variable_long_name": "[TOA Outgoing Longwave Radiation]"
+  },
+  {
+    "instrument_name": "ERBS sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rlutSprd",
+    "variable_name": "rlutSprd",
+    "variable_long_name": "[TOA Outgoing Longwave Radiation]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rlutSprd",
+    "variable_name": "rlutSprd",
+    "variable_long_name": "[TOA Outgoing Longwave Radiation]"
+  },
+  {
+    "instrument_name": "Advanced Very High Resolution Radiometer (AVHRR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rlutSprd",
+    "variable_name": "rlutSprd",
+    "variable_long_name": "[TOA Outgoing Longwave Radiation]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rlutSprd",
+    "variable_name": "rlutSprd",
+    "variable_long_name": "[TOA Outgoing Longwave Radiation]"
+  },
+  {
+    "instrument_name": "Tropospheric Emission Spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rlutSprd",
+    "variable_name": "rlutSprd",
+    "variable_long_name": "[TOA Outgoing Longwave Radiation]"
+  },
+  {
+    "instrument_name": "Clouds and Earths Radiant Energy System (CERES) mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rlutSprd",
+    "variable_name": "rlutSprd",
+    "variable_long_name": "[TOA Outgoing Longwave Radiation]"
+  },
+  {
+    "instrument_name": "Solar infrared radiation system (SIRS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rsd",
+    "variable_name": "rsd",
+    "variable_long_name": "[Downwelling Shortwave Radiation]"
+  },
+  {
+    "instrument_name": "Biogeochemical Argo floats",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rsd",
+    "variable_name": "rsd",
+    "variable_long_name": "[Downwelling Shortwave Radiation]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rsdsSprd",
+    "variable_name": "rsdsSprd",
+    "variable_long_name": "[Surface Downwelling Shortwave Radiation]"
+  },
+  {
+    "instrument_name": "pyranometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rsdsSprd",
+    "variable_name": "rsdsSprd",
+    "variable_long_name": "[Surface Downwelling Shortwave Radiation]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rsdtSprd",
+    "variable_name": "rsdtSprd",
+    "variable_long_name": "[TOA Incident Shortwave Radiation]"
+  },
+  {
+    "instrument_name": "CNR4",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rss",
+    "variable_name": "rss",
+    "variable_long_name": "[Net Shortwave Surface Radiation]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rstcre",
+    "variable_name": "rstcre",
+    "variable_long_name": "[Top of Atmosphere Shortwave CRE]"
+  },
+  {
+    "instrument_name": "Clouds and the Earth\b0s Radiant Energy System",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rstcre",
+    "variable_name": "rstcre",
+    "variable_long_name": "[Top of Atmosphere Shortwave CRE]"
+  },
+  {
+    "instrument_name": "Earth Radiation Budget Experiment (ERBE)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rsu",
+    "variable_name": "rsu",
+    "variable_long_name": "[Upwelling Shortwave Radiation]"
+  },
+  {
+    "instrument_name": "Clouds and Earths Radiant Energy System (CERES) mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rsu",
+    "variable_name": "rsu",
+    "variable_long_name": "[Upwelling Shortwave Radiation]"
+  },
+  {
+    "instrument_name": "vortex dynamic radiometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rsusSprd",
+    "variable_name": "rsusSprd",
+    "variable_long_name": "[Surface Upwelling Shortwave Radiation]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rsutSprd",
+    "variable_name": "rsutSprd",
+    "variable_long_name": "[TOA Outgoing Shortwave Radiation]"
+  },
+  {
+    "instrument_name": "The Geostationary Earth Radiation Budget instrument (GERB)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rt",
+    "variable_name": "rt",
+    "variable_long_name": "[Top of Atmosphere Net Radation]"
+  },
+  {
+    "instrument_name": "CERES",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rt",
+    "variable_name": "rt",
+    "variable_long_name": "[Top of Atmosphere Net Radation]"
+  },
+  {
+    "instrument_name": "ISCCP",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rt",
+    "variable_name": "rt",
+    "variable_long_name": "[Top of Atmosphere Net Radation]"
+  },
+  {
+    "instrument_name": "ERBE-S9",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rt",
+    "variable_name": "rt",
+    "variable_long_name": "[Top of Atmosphere Net Radation]"
+  },
+  {
+    "instrument_name": "CERES-EBAF",
+    "variable": "https://climatepub4kg.github.io/id/Variable/rt",
+    "variable_name": "rt",
+    "variable_long_name": "[Top of Atmosphere Net Radation]"
+  },
+  {
+    "instrument_name": "Next Generation ATLAS moorings",
+    "variable": "https://climatepub4kg.github.io/id/Variable/salinity",
+    "variable_name": "salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "Sierra-Andersen high-volume cascade impactor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sconcoa",
+    "variable_name": "sconcoa",
+    "variable_long_name": "[Surface Concentration of Dry Aerosol Organic Matter]"
+  },
+  {
+    "instrument_name": "The balloon-borne cryogenic whole-air sampler BONBON",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sf6",
+    "variable_name": "sf6",
+    "variable_long_name": "[sf6]"
+  },
+  {
+    "instrument_name": "Michelson Interferometer for Passive Atmospheric Sounding",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sf6",
+    "variable_name": "sf6",
+    "variable_long_name": "[sf6]"
+  },
+  {
+    "instrument_name": "instruments on balloon flights",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sf6",
+    "variable_name": "sf6",
+    "variable_long_name": "[sf6]"
+  },
+  {
+    "instrument_name": "eddy covariance towers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/SFCO2_LND",
+    "variable_name": "SFCO2_LND",
+    "variable_long_name": "[CO2_LND surface flux]"
+  },
+  {
+    "instrument_name": "eddy covariance towers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/SFCO2",
+    "variable_name": "SFCO2",
+    "variable_long_name": "[CO2 surface flux]"
+  },
+  {
+    "instrument_name": "ATLAS (Automated Temperature Line Acquisition System) buoys",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sfcWind",
+    "variable_name": "sfcWind",
+    "variable_long_name": "[Near-Surface Wind Speed]"
+  },
+  {
+    "instrument_name": "synthetic aperture radar (SAR) scatterometer on the Extended Ocean Vector Winds Mission (XOVWM)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sfcWind",
+    "variable_name": "sfcWind",
+    "variable_long_name": "[Near-Surface Wind Speed]"
+  },
+  {
+    "instrument_name": "QuikSCAT",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sfcWind",
+    "variable_name": "sfcWind",
+    "variable_long_name": "[Near-Surface Wind Speed]"
+  },
+  {
+    "instrument_name": "SSMI: Special Sensor Microwave Imager",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sfcWind",
+    "variable_name": "sfcWind",
+    "variable_long_name": "[Near-Surface Wind Speed]"
+  },
+  {
+    "instrument_name": "TMI (TRMM microwave imager)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sfcWind",
+    "variable_name": "sfcWind",
+    "variable_long_name": "[Near-Surface Wind Speed]"
+  },
+  {
+    "instrument_name": "NOAA fast-response custom made analyzer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/SFO3",
+    "variable_name": "SFO3",
+    "variable_long_name": "[O3 surface flux]"
+  },
+  {
+    "instrument_name": "eddy flux measurements",
+    "variable": "https://climatepub4kg.github.io/id/Variable/SHFLX",
+    "variable_name": "SHFLX",
+    "variable_long_name": "[Surface sensible heat flux]"
+  },
+  {
+    "instrument_name": "Flux towers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/SHFLX",
+    "variable_name": "SHFLX",
+    "variable_long_name": "[Surface sensible heat flux]"
+  },
+  {
+    "instrument_name": "COBE-SST2",
+    "variable": "https://climatepub4kg.github.io/id/Variable/siarean",
+    "variable_name": "siarean",
+    "variable_long_name": "[Sea-Ice Area North]"
+  },
+  {
+    "instrument_name": "SSMIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sic",
+    "variable_name": "sic",
+    "variable_long_name": "[Sea Ice Area Fraction]"
+  },
+  {
+    "instrument_name": "SSMI: Special Sensor Microwave Imager",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sic",
+    "variable_name": "sic",
+    "variable_long_name": "[Sea Ice Area Fraction]"
+  },
+  {
+    "instrument_name": "AMSR-E",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sic",
+    "variable_name": "sic",
+    "variable_long_name": "[Sea Ice Area Fraction]"
+  },
+  {
+    "instrument_name": "Bootstrap algorithm",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sic",
+    "variable_name": "sic",
+    "variable_long_name": "[Sea Ice Area Fraction]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sic",
+    "variable_name": "sic",
+    "variable_long_name": "[Sea Ice Area Fraction]"
+  },
+  {
+    "instrument_name": "the Defense Meteorological Satellite Program (DMSP) -F8, -F11 and -F13 Special Sensor Microwave/Imagers (SSM/Is)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sic",
+    "variable_name": "sic",
+    "variable_long_name": "[Sea Ice Area Fraction]"
+  },
+  {
+    "instrument_name": "SMMR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sic",
+    "variable_name": "sic",
+    "variable_long_name": "[Sea Ice Area Fraction]"
+  },
+  {
+    "instrument_name": "NASA Team algorithm",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sic",
+    "variable_name": "sic",
+    "variable_long_name": "[Sea Ice Area Fraction]"
+  },
+  {
+    "instrument_name": "the Nimbus-7 Scanning Multichannel Microwave Radiometer (SMMR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sic",
+    "variable_name": "sic",
+    "variable_long_name": "[Sea Ice Area Fraction]"
+  },
+  {
+    "instrument_name": "SSMR/I",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sic",
+    "variable_name": "sic",
+    "variable_long_name": "[Sea Ice Area Fraction]"
+  },
+  {
+    "instrument_name": "passive microwave satellite sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sic",
+    "variable_name": "sic",
+    "variable_long_name": "[Sea Ice Area Fraction]"
+  },
+  {
+    "instrument_name": "SMMR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/siextentn",
+    "variable_name": "siextentn",
+    "variable_long_name": "[Sea-Ice Extent North]"
+  },
+  {
+    "instrument_name": "DMSP SSM/I-SSMIS Passive Microwave Data",
+    "variable": "https://climatepub4kg.github.io/id/Variable/siextentn",
+    "variable_name": "siextentn",
+    "variable_long_name": "[Sea-Ice Extent North]"
+  },
+  {
+    "instrument_name": "the Nimbus-7 Scanning Multichannel Microwave Radiometer (SMMR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/siextentn",
+    "variable_name": "siextentn",
+    "variable_long_name": "[Sea-Ice Extent North]"
+  },
+  {
+    "instrument_name": "SSMIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/siextentn",
+    "variable_name": "siextentn",
+    "variable_long_name": "[Sea-Ice Extent North]"
+  },
+  {
+    "instrument_name": "passive microwave satellite sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/siextentn",
+    "variable_name": "siextentn",
+    "variable_long_name": "[Sea-Ice Extent North]"
+  },
+  {
+    "instrument_name": "CryoSat-2",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sifb",
+    "variable_name": "sifb",
+    "variable_long_name": "[Sea-Ice Freeboard]"
+  },
+  {
+    "instrument_name": "passive microwave satellite sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sisnmass",
+    "variable_name": "sisnmass",
+    "variable_long_name": "[Snow Mass per Area]"
+  },
+  {
+    "instrument_name": "sea ice mass balance buoy",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sisnthick",
+    "variable_name": "sisnthick",
+    "variable_long_name": "[Snow Thickness]"
+  },
+  {
+    "instrument_name": "sonar snow buoy",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sisnthick",
+    "variable_name": "sisnthick",
+    "variable_long_name": "[Snow Thickness]"
+  },
+  {
+    "instrument_name": "SAR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sispeed",
+    "variable_name": "sispeed",
+    "variable_long_name": "[Sea-Ice Speed]"
+  },
+  {
+    "instrument_name": "AMSR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sispeed",
+    "variable_name": "sispeed",
+    "variable_long_name": "[Sea-Ice Speed]"
+  },
+  {
+    "instrument_name": "sea ice mass balance buoy",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sithick",
+    "variable_name": "sithick",
+    "variable_long_name": "[Sea Ice Thickness]"
+  },
+  {
+    "instrument_name": "ICESat altimetry",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sithick",
+    "variable_name": "sithick",
+    "variable_long_name": "[Sea Ice Thickness]"
+  },
+  {
+    "instrument_name": "Lidar altimetry",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sithick",
+    "variable_name": "sithick",
+    "variable_long_name": "[Sea Ice Thickness]"
+  },
+  {
+    "instrument_name": "SMOS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sithick",
+    "variable_name": "sithick",
+    "variable_long_name": "[Sea Ice Thickness]"
+  },
+  {
+    "instrument_name": "Soil Moisture and Ocean Salinity satellite",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sithick",
+    "variable_name": "sithick",
+    "variable_long_name": "[Sea Ice Thickness]"
+  },
+  {
+    "instrument_name": "L-band radiometer SMOS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sithick",
+    "variable_name": "sithick",
+    "variable_long_name": "[Sea Ice Thickness]"
+  },
+  {
+    "instrument_name": "altimetry",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sithick",
+    "variable_name": "sithick",
+    "variable_long_name": "[Sea Ice Thickness]"
+  },
+  {
+    "instrument_name": "SIMBA buoys",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sithick",
+    "variable_name": "sithick",
+    "variable_long_name": "[Sea Ice Thickness]"
+  },
+  {
+    "instrument_name": "CryoSat-2",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sithick",
+    "variable_name": "sithick",
+    "variable_long_name": "[Sea Ice Thickness]"
+  },
+  {
+    "instrument_name": "Advanced Very High Resolution Radiometer (AVHRR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sitSprd",
+    "variable_name": "sitSprd",
+    "variable_long_name": "[Sea Ice Thickness]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sncSprd",
+    "variable_name": "sncSprd",
+    "variable_long_name": "[Snow Area Fraction]"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sncSprd",
+    "variable_name": "sncSprd",
+    "variable_long_name": "[Snow Area Fraction]"
+  },
+  {
+    "instrument_name": "Landsat",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snicem",
+    "variable_name": "snicem",
+    "variable_long_name": "[Surface Snow and Ice Melt Flux]"
+  },
+  {
+    "instrument_name": "SIMBA buoys",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snld",
+    "variable_name": "snld",
+    "variable_long_name": "[snow depth]"
+  },
+  {
+    "instrument_name": "Lidar altimetry",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snld",
+    "variable_name": "snld",
+    "variable_long_name": "[snow depth]"
+  },
+  {
+    "instrument_name": "Advanced High Resolution Radiometer data",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snld",
+    "variable_name": "snld",
+    "variable_long_name": "[snow depth]"
+  },
+  {
+    "instrument_name": "the radar altimeter",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snld",
+    "variable_name": "snld",
+    "variable_long_name": "[snow depth]"
+  },
+  {
+    "instrument_name": "ultrasonic sensor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snld",
+    "variable_name": "snld",
+    "variable_long_name": "[snow depth]"
+  },
+  {
+    "instrument_name": "lidar measurements",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snld",
+    "variable_name": "snld",
+    "variable_long_name": "[snow depth]"
+  },
+  {
+    "instrument_name": "Interactive Multisensor Snow and Ice Mapping System (IMS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snld",
+    "variable_name": "snld",
+    "variable_long_name": "[snow depth]"
+  },
+  {
+    "instrument_name": "SMMR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snm",
+    "variable_name": "snm",
+    "variable_long_name": "[Surface Snow Melt]"
+  },
+  {
+    "instrument_name": "AMSR-E",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snm",
+    "variable_name": "snm",
+    "variable_long_name": "[Surface Snow Melt]"
+  },
+  {
+    "instrument_name": "QuikSCAT",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snm",
+    "variable_name": "snm",
+    "variable_long_name": "[Surface Snow Melt]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snm",
+    "variable_name": "snm",
+    "variable_long_name": "[Surface Snow Melt]"
+  },
+  {
+    "instrument_name": "stakes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/snoToIce",
+    "variable_name": "snoToIce",
+    "variable_long_name": "[Snow-Ice Formation Rate]"
+  },
+  {
+    "instrument_name": "The Total Irradiance Monitor (TIM)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sol_tsi",
+    "variable_name": "sol_tsi",
+    "variable_long_name": "[total solar irradiance]"
+  },
+  {
+    "instrument_name": "the Solar Radiance and Climate Experiment",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sol_tsi",
+    "variable_name": "sol_tsi",
+    "variable_long_name": "[total solar irradiance]"
+  },
+  {
+    "instrument_name": "the NASA Solar Radiation and Climate Experiment (SORCE)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sol_tsi",
+    "variable_name": "sol_tsi",
+    "variable_long_name": "[total solar irradiance]"
+  },
+  {
+    "instrument_name": "TSI radiometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/sol_tsi",
+    "variable_name": "sol_tsi",
+    "variable_long_name": "[total solar irradiance]"
+  },
+  {
+    "instrument_name": "CPE weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/SOLIN_d1",
+    "variable_name": "SOLIN_d1",
+    "variable_long_name": "[Solar insolation]"
+  },
+  {
+    "instrument_name": "automatic weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/SOLIN_d1",
+    "variable_name": "SOLIN_d1",
+    "variable_long_name": "[Solar insolation]"
+  },
+  {
+    "instrument_name": "lysimeters or suction cup samplers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/SOLUTIONP",
+    "variable_name": "SOLUTIONP",
+    "variable_long_name": "[soil solution P]"
+  },
+  {
+    "instrument_name": "AERONET sun photometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ssa550",
+    "variable_name": "ssa550",
+    "variable_long_name": "[Single Scattering Albedo at 550 nm]"
+  },
+  {
+    "instrument_name": "TROPOMI",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ssa550",
+    "variable_name": "ssa550",
+    "variable_long_name": "[Single Scattering Albedo at 550 nm]"
+  },
+  {
+    "instrument_name": "altimetry",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ssh",
+    "variable_name": "ssh",
+    "variable_long_name": "[sea surface height]"
+  },
+  {
+    "instrument_name": "tide-gauge",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ssh",
+    "variable_name": "ssh",
+    "variable_long_name": "[sea surface height]"
+  },
+  {
+    "instrument_name": "satellite altimeter",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ssh",
+    "variable_name": "ssh",
+    "variable_long_name": "[sea surface height]"
+  },
+  {
+    "instrument_name": "altimeter",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ssh",
+    "variable_name": "ssh",
+    "variable_long_name": "[sea surface height]"
+  },
+  {
+    "instrument_name": "SAGE II (Stratospheric Aerosol and Gas Experiment)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/strataod",
+    "variable_name": "strataod",
+    "variable_long_name": "[Stratospheric Aerosol Optical Depth at 550nm]"
+  },
+  {
+    "instrument_name": "OSIRIS (Optical Spectrograph and Infrared Imaging System)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/strataod",
+    "variable_name": "strataod",
+    "variable_long_name": "[Stratospheric Aerosol Optical Depth at 550nm]"
+  },
+  {
+    "instrument_name": "Advanced Very High Resolution Radiometer (AVHRR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/surface_albedo",
+    "variable_name": "surface_albedo",
+    "variable_long_name": "[Shortwave surface albedo (spectrally constant)]"
+  },
+  {
+    "instrument_name": "CIMEL radiancemeters",
+    "variable": "https://climatepub4kg.github.io/id/Variable/surface_albedo",
+    "variable_name": "surface_albedo",
+    "variable_long_name": "[Shortwave surface albedo (spectrally constant)]"
+  },
+  {
+    "instrument_name": "Advanced Very High Resolution Radiometer (AVHRR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/surface_temperature",
+    "variable_name": "surface_temperature",
+    "variable_long_name": "[Surface skin temperature]"
+  },
+  {
+    "instrument_name": "Clouds and Earths Radiant Energy System (CERES) mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/SWCF_d1",
+    "variable_name": "SWCF_d1",
+    "variable_long_name": "[Shortwave cloud forcing]"
+  },
+  {
+    "instrument_name": "Earth Radiation Budget Experiment (ERBE)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/SWCF",
+    "variable_name": "SWCF",
+    "variable_long_name": "[Shortwave cloud forcing]"
+  },
+  {
+    "instrument_name": "automated snow pillow",
+    "variable": "https://climatepub4kg.github.io/id/Variable/swe",
+    "variable_name": "swe",
+    "variable_long_name": "[snow_water_equivalent]"
+  },
+  {
+    "instrument_name": "Snowpack Telemetry (SNOTEL) sites",
+    "variable": "https://climatepub4kg.github.io/id/Variable/swe",
+    "variable_name": "swe",
+    "variable_long_name": "[snow_water_equivalent]"
+  },
+  {
+    "instrument_name": "SMOS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/swe",
+    "variable_name": "swe",
+    "variable_long_name": "[snow_water_equivalent]"
+  },
+  {
+    "instrument_name": "AMSR-E",
+    "variable": "https://climatepub4kg.github.io/id/Variable/swe",
+    "variable_name": "swe",
+    "variable_long_name": "[snow_water_equivalent]"
+  },
+  {
+    "instrument_name": "multi-thermistor cables",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T_GRND",
+    "variable_name": "T_GRND",
+    "variable_long_name": "[ground temperature]"
+  },
+  {
+    "instrument_name": "boreholes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T_GRND",
+    "variable_name": "T_GRND",
+    "variable_long_name": "[ground temperature]"
+  },
+  {
+    "instrument_name": "Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T_GRND",
+    "variable_name": "T_GRND",
+    "variable_long_name": "[ground temperature]"
+  },
+  {
+    "instrument_name": "Sea-Bird Scientific SBE56",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T_LAKE",
+    "variable_name": "T_LAKE",
+    "variable_long_name": "[lake temperature]"
+  },
+  {
+    "instrument_name": "inverse mercury-filled thermometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T_LAKE",
+    "variable_name": "T_LAKE",
+    "variable_long_name": "[lake temperature]"
+  },
+  {
+    "instrument_name": "Aanderaa TR7 thermistor chains",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T_LAKE",
+    "variable_name": "T_LAKE",
+    "variable_long_name": "[lake temperature]"
+  },
+  {
+    "instrument_name": "TR-1000 by Richard Brancker Research Ltd. (RBR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T_LAKE",
+    "variable_name": "T_LAKE",
+    "variable_long_name": "[lake temperature]"
+  },
+  {
+    "instrument_name": "surface meteorological stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T_REF2M_MAX",
+    "variable_name": "T_REF2M_MAX",
+    "variable_long_name": "[daily maximum of average 2 m height surface air temperature (K)]"
+  },
+  {
+    "instrument_name": "surface meteorological stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T_REF2M_MIN",
+    "variable_name": "T_REF2M_MIN",
+    "variable_long_name": "[daily minimum of average 2 m height surface air temperature (K)]"
+  },
+  {
+    "instrument_name": "IASI: Infrared Atmospheric Sounding Interferometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "CTD (Conductivity-Temperature-Depth) SeaBird SBE 37-ODO probe",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "conductivity-temperature-depth sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "HIRS: High-resolution Infrared Radiation Sounder",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "thermistor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "AMSU-A: Advanced Microwave Sounder A",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "Mechanical BathyThermograph",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "expendable bathythermograph",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "Selective Chopper Radiometer (SCR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "Argo",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "Pressure Modulation Radiometer (PMR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "AIRS: Atmospheric Infrared Sounder",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "radiosondes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/T",
+    "variable_name": "T",
+    "variable_long_name": "[Temperature]"
+  },
+  {
+    "instrument_name": "passively-ventilated air temperature loggers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta",
+    "variable_name": "ta",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "iButton Hygrochron Temperature Loggers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta",
+    "variable_name": "ta",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "the shaded thermometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta300",
+    "variable_name": "ta300",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "AMeDAS weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "automatic weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "flux tower systems",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "CPE weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "PASCO wireless weather sensor (PS-3209)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "HygroVUE-TM 5-Temperature and Relative Humidity Sensor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "Vaisala sondes RS80/RS92/VS41",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "Davis vantage pro weather station",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "SwitchBot IP65 Outdoor Sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "radiosondes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "iButton",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "ATLAS (Automated Temperature Line Acquisition System) buoys",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "Relative Humidity/Temperature Probe (model 41382VC)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "satellite instruments",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "Young (R.M. Young Company) sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ta850",
+    "variable_name": "ta850",
+    "variable_long_name": "[Air Temperature]"
+  },
+  {
+    "instrument_name": "Met Office Hadley Centre/Climatic Research Unit global surface temperature anomalies version 5 (HadCRUT5)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tas-hc",
+    "variable_name": "tas-hc",
+    "variable_long_name": "[Near-Surface Air Temperature]"
+  },
+  {
+    "instrument_name": "automatic weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tas",
+    "variable_name": "tas",
+    "variable_long_name": "[Near-Surface Air Temperature]"
+  },
+  {
+    "instrument_name": "automatic weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tasSprd",
+    "variable_name": "tasSprd",
+    "variable_long_name": "[Near-Surface Air Temperature]"
+  },
+  {
+    "instrument_name": "Advanced Very High Resolution Radiometer (AVHRR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tau",
+    "variable_name": "tau",
+    "variable_long_name": "[optical depth]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tau",
+    "variable_name": "tau",
+    "variable_long_name": "[optical depth]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tau",
+    "variable_name": "tau",
+    "variable_long_name": "[optical depth]"
+  },
+  {
+    "instrument_name": "sun photometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tau",
+    "variable_name": "tau",
+    "variable_long_name": "[optical depth]"
+  },
+  {
+    "instrument_name": "Meteostat",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tau",
+    "variable_name": "tau",
+    "variable_long_name": "[optical depth]"
+  },
+  {
+    "instrument_name": "Aerosol Robotic Network",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tau",
+    "variable_name": "tau",
+    "variable_long_name": "[optical depth]"
+  },
+  {
+    "instrument_name": "POLDER",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tau",
+    "variable_name": "tau",
+    "variable_long_name": "[optical depth]"
+  },
+  {
+    "instrument_name": "weather balloons",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TBOT",
+    "variable_name": "TBOT",
+    "variable_long_name": "[atmospheric air temperature]"
+  },
+  {
+    "instrument_name": "satellites",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TBOT",
+    "variable_name": "TBOT",
+    "variable_long_name": "[atmospheric air temperature]"
+  },
+  {
+    "instrument_name": "Tropospheric Emission Spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TBOT",
+    "variable_name": "TBOT",
+    "variable_long_name": "[atmospheric air temperature]"
+  },
+  {
+    "instrument_name": "profiling microwave radiometer (MWR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TBOT",
+    "variable_name": "TBOT",
+    "variable_long_name": "[atmospheric air temperature]"
+  },
+  {
+    "instrument_name": "rawinsonde",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TBOT",
+    "variable_name": "TBOT",
+    "variable_long_name": "[atmospheric air temperature]"
+  },
+  {
+    "instrument_name": "buoy",
+    "variable": "https://climatepub4kg.github.io/id/Variable/temperatureAtBottom",
+    "variable_name": "temperatureAtBottom",
+    "variable_long_name": "[ocean temperature at bottom]"
+  },
+  {
+    "instrument_name": "satellites",
+    "variable": "https://climatepub4kg.github.io/id/Variable/temperatureAtBottom",
+    "variable_name": "temperatureAtBottom",
+    "variable_long_name": "[ocean temperature at bottom]"
+  },
+  {
+    "instrument_name": "portable field probes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TH2OSFC",
+    "variable_name": "TH2OSFC",
+    "variable_long_name": "[surface water temperature]"
+  },
+  {
+    "instrument_name": "satellite instruments",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TH2OSFC",
+    "variable_name": "TH2OSFC",
+    "variable_long_name": "[surface water temperature]"
+  },
+  {
+    "instrument_name": "the Argo profiling float system",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "New sensors for biological and geochemical parameters, for wind and rainfall, and for better sampling of temperature and salinity structure in the oceans surface layer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "temperature and salinity sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "BGC-Argo floats",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "YSI 2030 pro multiprobe",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "Nansen bottle",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "environmental sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "CTD buoys",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "Argo",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "Argo floats",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "conductivity-temperature-depth sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "Seabird SBE 911 plus CTD",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "CTD",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "underwater glider",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "Slocum gliders",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "CTD (Conductivity-Temperature-Depth) SeaBird SBE 37-ODO probe",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "a global array of more than 4000 free-drifting profiling floats, known as ARGO",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "YSI 85",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_salinity",
+    "variable_name": "timeMonthly_avg_activeTracers_salinity",
+    "variable_long_name": "[salinity]"
+  },
+  {
+    "instrument_name": "Argo floats",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_activeTracers_temperature",
+    "variable_name": "timeMonthly_avg_activeTracers_temperature",
+    "variable_long_name": "[potential temperature]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_broadbandAlbedo",
+    "variable_name": "timeMonthly_avg_broadbandAlbedo",
+    "variable_long_name": "[snow/sea ice broadband albedo]"
+  },
+  {
+    "instrument_name": "gamma-ray attenuation",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_density",
+    "variable_name": "timeMonthly_avg_density",
+    "variable_long_name": "[density]"
+  },
+  {
+    "instrument_name": "Vaisala sondes RS80/RS92/VS41",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_density",
+    "variable_name": "timeMonthly_avg_density",
+    "variable_long_name": "[density]"
+  },
+  {
+    "instrument_name": "lidar measurements",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_dThreshMLD",
+    "variable_name": "timeMonthly_avg_dThreshMLD",
+    "variable_long_name": "[mixed layer depth based on density threshold]"
+  },
+  {
+    "instrument_name": "satellite altimeter",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_ssh",
+    "variable_name": "timeMonthly_avg_ssh",
+    "variable_long_name": "[sea surface height]"
+  },
+  {
+    "instrument_name": "AVISO Altimetry",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_ssh",
+    "variable_name": "timeMonthly_avg_ssh",
+    "variable_long_name": "[sea surface height]"
+  },
+  {
+    "instrument_name": "SRAL",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_ssh",
+    "variable_name": "timeMonthly_avg_ssh",
+    "variable_long_name": "[sea surface height]"
+  },
+  {
+    "instrument_name": "altimeter",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_ssh",
+    "variable_name": "timeMonthly_avg_ssh",
+    "variable_long_name": "[sea surface height]"
+  },
+  {
+    "instrument_name": "satellite instruments",
+    "variable": "https://climatepub4kg.github.io/id/Variable/timeMonthly_avg_ssh",
+    "variable_name": "timeMonthly_avg_ssh",
+    "variable_long_name": "[sea surface height]"
+  },
+  {
+    "instrument_name": "Advanced Very High Resolution Radiometer (AVHRR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TLAKE",
+    "variable_name": "TLAKE",
+    "variable_long_name": "[lake temperature]"
+  },
+  {
+    "instrument_name": "NOAA advanced very high-resolution radiometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TLAKE",
+    "variable_name": "TLAKE",
+    "variable_long_name": "[lake temperature]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TLAKE",
+    "variable_name": "TLAKE",
+    "variable_long_name": "[lake temperature]"
+  },
+  {
+    "instrument_name": "Fourier Transform Spectrometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TMCO2",
+    "variable_name": "TMCO2",
+    "variable_long_name": "[CO2 column burden]"
+  },
+  {
+    "instrument_name": "Terra-MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TMQ",
+    "variable_name": "TMQ",
+    "variable_long_name": "[Total (vertically integrated) precipitable water]"
+  },
+  {
+    "instrument_name": "special sensor microwave imager",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TMQ",
+    "variable_name": "TMQ",
+    "variable_long_name": "[Total (vertically integrated) precipitable water]"
+  },
+  {
+    "instrument_name": "AIRS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TMQ",
+    "variable_name": "TMQ",
+    "variable_long_name": "[Total (vertically integrated) precipitable water]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TMQ",
+    "variable_name": "TMQ",
+    "variable_long_name": "[Total (vertically integrated) precipitable water]"
+  },
+  {
+    "instrument_name": "Aerosol Robotic Network",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TMQ",
+    "variable_name": "TMQ",
+    "variable_long_name": "[Total (vertically integrated) precipitable water]"
+  },
+  {
+    "instrument_name": "satellites",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "ATLAS (Automated Temperature Line Acquisition System) buoys",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "satellite instruments",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "TMI (TRMM microwave imager)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "drifting buoys",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "Advanced Very High Resolution Radiometer (AVHRR)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "palaeothermometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "AVHRR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "Tropical Rainfall Measuring Missions (TRMM) microwave imager",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "Météo-France buoys",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "Advanced Microwave Scanning Radiometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "Advanced High Resolution Radiometer data",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "Argo floats",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "Microwave Radiation Imager (MWRI)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "Aqua MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "AMSR-E",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "microwave radiometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "VIIRS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "ocean surface drifters",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tos",
+    "variable_name": "tos",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "GOME-2",
+    "variable": "https://climatepub4kg.github.io/id/Variable/total_solar_irradiance",
+    "variable_name": "total_solar_irradiance",
+    "variable_long_name": "[total solar irradiance at top of atmosphere]"
+  },
+  {
+    "instrument_name": "GEDI",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TOTVEGC_ABG",
+    "variable_name": "TOTVEGC_ABG",
+    "variable_long_name": "[total aboveground vegetation carbon, excluding cpool]"
+  },
+  {
+    "instrument_name": "Solar Backscatter Ultraviolet",
+    "variable": "https://climatepub4kg.github.io/id/Variable/toz",
+    "variable_name": "toz",
+    "variable_long_name": "[Total Ozone Column]"
+  },
+  {
+    "instrument_name": "GOME spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/toz",
+    "variable_name": "toz",
+    "variable_long_name": "[Total Ozone Column]"
+  },
+  {
+    "instrument_name": "total ozone mapping spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/toz",
+    "variable_name": "toz",
+    "variable_long_name": "[Total Ozone Column]"
+  },
+  {
+    "instrument_name": "the Ozone Monitoring Instrument (OMI)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/toz",
+    "variable_name": "toz",
+    "variable_long_name": "[Total Ozone Column]"
+  },
+  {
+    "instrument_name": "Earth Probe Total Ozone Mapping Spectrometer (EPTOMS)/Ozone monitoring Instrument (OMI)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/toz",
+    "variable_name": "toz",
+    "variable_long_name": "[Total Ozone Column]"
+  },
+  {
+    "instrument_name": "Global Ozone Monitoring Instrument 2",
+    "variable": "https://climatepub4kg.github.io/id/Variable/toz",
+    "variable_name": "toz",
+    "variable_long_name": "[Total Ozone Column]"
+  },
+  {
+    "instrument_name": "TOMS (total ozone mapping spectrometer)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/toz",
+    "variable_name": "toz",
+    "variable_long_name": "[Total Ozone Column]"
+  },
+  {
+    "instrument_name": "TOMS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/toz",
+    "variable_name": "toz",
+    "variable_long_name": "[Total Ozone Column]"
+  },
+  {
+    "instrument_name": "Ozone Mapping Profiler Suite",
+    "variable": "https://climatepub4kg.github.io/id/Variable/toz",
+    "variable_name": "toz",
+    "variable_long_name": "[Total Ozone Column]"
+  },
+  {
+    "instrument_name": "TROPOMI",
+    "variable": "https://climatepub4kg.github.io/id/Variable/toz",
+    "variable_name": "toz",
+    "variable_long_name": "[Total Ozone Column]"
+  },
+  {
+    "instrument_name": "TES (Tropospheric Emissions Spectrometer)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tropoz",
+    "variable_name": "tropoz",
+    "variable_long_name": "[Tropospheric Ozone Column]"
+  },
+  {
+    "instrument_name": "Aura satellite instruments (TES, OMI, MLS, HIRDLS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tropoz",
+    "variable_name": "tropoz",
+    "variable_long_name": "[Tropospheric Ozone Column]"
+  },
+  {
+    "instrument_name": "OMI-MLS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tropoz",
+    "variable_name": "tropoz",
+    "variable_long_name": "[Tropospheric Ozone Column]"
+  },
+  {
+    "instrument_name": "balloon sonde",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tropoz",
+    "variable_name": "tropoz",
+    "variable_long_name": "[Tropospheric Ozone Column]"
+  },
+  {
+    "instrument_name": "SCIAMACHY (Scanning Imaging Absorption Spectrometer for Atmospheric Chartography)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tropoz",
+    "variable_name": "tropoz",
+    "variable_long_name": "[Tropospheric Ozone Column]"
+  },
+  {
+    "instrument_name": "the Ozone Monitoring Instrument (OMI)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tropoz",
+    "variable_name": "tropoz",
+    "variable_long_name": "[Tropospheric Ozone Column]"
+  },
+  {
+    "instrument_name": "Atmospheric Infrared Sounder",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tropoz",
+    "variable_name": "tropoz",
+    "variable_long_name": "[Tropospheric Ozone Column]"
+  },
+  {
+    "instrument_name": "Tropospheric Emission Spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tropoz",
+    "variable_name": "tropoz",
+    "variable_long_name": "[Tropospheric Ozone Column]"
+  },
+  {
+    "instrument_name": "Microwave Limb Sounder",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tropoz",
+    "variable_name": "tropoz",
+    "variable_long_name": "[Tropospheric Ozone Column]"
+  },
+  {
+    "instrument_name": "Chinese meteorological stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TS",
+    "variable_name": "TS",
+    "variable_long_name": "[Surface Temperature]"
+  },
+  {
+    "instrument_name": "Advanced Microwave Scanning Radiometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TSA",
+    "variable_name": "TSA",
+    "variable_long_name": "[2m air temperature]"
+  },
+  {
+    "instrument_name": "satellite instruments",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tsl",
+    "variable_name": "tsl",
+    "variable_long_name": "[Temperature of Soil]"
+  },
+  {
+    "instrument_name": "CS655-Water Content Reflectometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tsl",
+    "variable_name": "tsl",
+    "variable_long_name": "[Temperature of Soil]"
+  },
+  {
+    "instrument_name": "CS 650",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tsl",
+    "variable_name": "tsl",
+    "variable_long_name": "[Temperature of Soil]"
+  },
+  {
+    "instrument_name": "CPE weather stations",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tsl",
+    "variable_name": "tsl",
+    "variable_long_name": "[Temperature of Soil]"
+  },
+  {
+    "instrument_name": "Landsat 8 sensor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "TM",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "Instrument on Landsat",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "VIIRS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "Clouds and Earths Radiant Energy System (CERES) mission",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "OLI/TIRS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "ETM+",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "Moderate Resolution Imaging Spectroradiometer (MODIS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "Landsat 9",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "Thematic mapper (TM)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "infrared thermometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "Sentinel-1",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tslsiLut",
+    "variable_name": "tslsiLut",
+    "variable_long_name": "[Surface Temperature on Landuse Tile]"
+  },
+  {
+    "instrument_name": "platinum thermistor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tsnl",
+    "variable_name": "tsnl",
+    "variable_long_name": "[Temperature profile in the snow]"
+  },
+  {
+    "instrument_name": "hemispheric pyradiometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tsns",
+    "variable_name": "tsns",
+    "variable_long_name": "[Snow Surface Temperature]"
+  },
+  {
+    "instrument_name": "AMSR-E",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tso",
+    "variable_name": "tso",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "WindSat",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tso",
+    "variable_name": "tso",
+    "variable_long_name": "[Sea Surface Temperature]"
+  },
+  {
+    "instrument_name": "automatic station (AWS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TSOI_10CM",
+    "variable_name": "TSOI_10CM",
+    "variable_long_name": "[soil temperature in top 10cm of soil]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/tsSprd",
+    "variable_name": "tsSprd",
+    "variable_long_name": "[Surface Temperature]"
+  },
+  {
+    "instrument_name": "GRACE",
+    "variable": "https://climatepub4kg.github.io/id/Variable/TWS",
+    "variable_name": "TWS",
+    "variable_long_name": "[total water storage]"
+  },
+  {
+    "instrument_name": "radiosondes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/U",
+    "variable_name": "U",
+    "variable_long_name": "[Zonal wind]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vegFrac",
+    "variable_name": "vegFrac",
+    "variable_long_name": "[Total Vegetated Percentage Cover]"
+  },
+  {
+    "instrument_name": "Microwave Limb Sounder",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrhno3",
+    "variable_name": "vmrhno3",
+    "variable_long_name": "[HNO3]"
+  },
+  {
+    "instrument_name": "The MIPAS Fourier transform spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrhno3",
+    "variable_name": "vmrhno3",
+    "variable_long_name": "[HNO3]"
+  },
+  {
+    "instrument_name": "Limb Infrared Monitor of the Stratosphere (LIMS)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrhno3",
+    "variable_name": "vmrhno3",
+    "variable_long_name": "[HNO3]"
+  },
+  {
+    "instrument_name": "Environment Canada ABB Bomem DA8 FTIR spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrhno3",
+    "variable_name": "vmrhno3",
+    "variable_long_name": "[HNO3]"
+  },
+  {
+    "instrument_name": "Bruker 125HR Fourier transform infrared spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrhno3",
+    "variable_name": "vmrhno3",
+    "variable_long_name": "[HNO3]"
+  },
+  {
+    "instrument_name": "The MIPAS Fourier transform spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno",
+    "variable_name": "vmrno",
+    "variable_long_name": "[NO]"
+  },
+  {
+    "instrument_name": "SOFIE",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno",
+    "variable_name": "vmrno",
+    "variable_long_name": "[NO]"
+  },
+  {
+    "instrument_name": "MIPAS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno",
+    "variable_name": "vmrno",
+    "variable_long_name": "[NO]"
+  },
+  {
+    "instrument_name": "Atmospheric Chemistry Experiment Fourier Transform Spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno",
+    "variable_name": "vmrno",
+    "variable_long_name": "[NO]"
+  },
+  {
+    "instrument_name": "the Ozone Monitoring Instrument (OMI)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno2",
+    "variable_name": "vmrno2",
+    "variable_long_name": "[NO2]"
+  },
+  {
+    "instrument_name": "TROPOMI",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno2",
+    "variable_name": "vmrno2",
+    "variable_long_name": "[NO2]"
+  },
+  {
+    "instrument_name": "Collectors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno2",
+    "variable_name": "vmrno2",
+    "variable_long_name": "[NO2]"
+  },
+  {
+    "instrument_name": "GOMOS (Global Ozone Monitoring by Occultation of Stars)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno2",
+    "variable_name": "vmrno2",
+    "variable_long_name": "[NO2]"
+  },
+  {
+    "instrument_name": "OMI",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno2",
+    "variable_name": "vmrno2",
+    "variable_long_name": "[NO2]"
+  },
+  {
+    "instrument_name": "Global Ozone Monitoring Experiment (GOME)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno2",
+    "variable_name": "vmrno2",
+    "variable_long_name": "[NO2]"
+  },
+  {
+    "instrument_name": "MIPAS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno2",
+    "variable_name": "vmrno2",
+    "variable_long_name": "[NO2]"
+  },
+  {
+    "instrument_name": "bulk or wet-only precipitation samplers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno2",
+    "variable_name": "vmrno2",
+    "variable_long_name": "[NO2]"
+  },
+  {
+    "instrument_name": "The MIPAS Fourier transform spectrometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/vmrno2",
+    "variable_name": "vmrno2",
+    "variable_long_name": "[NO2]"
+  },
+  {
+    "instrument_name": "eddy covariance (EC) system",
+    "variable": "https://climatepub4kg.github.io/id/Variable/wa950",
+    "variable_name": "wa950",
+    "variable_long_name": "[Upward air velocity]"
+  },
+  {
+    "instrument_name": "Young (R.M. Young Company) sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/WGUSTD",
+    "variable_name": "WGUSTD",
+    "variable_long_name": "[wind gusts from turbulence]"
+  },
+  {
+    "instrument_name": "scatterometers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/WIND",
+    "variable_name": "WIND",
+    "variable_long_name": "[atmospheric wind velocity magnitude]"
+  },
+  {
+    "instrument_name": "SAR",
+    "variable": "https://climatepub4kg.github.io/id/Variable/ws60m",
+    "variable_name": "ws60m",
+    "variable_long_name": "[Wind Speed at 60m]"
+  },
+  {
+    "instrument_name": "Landsat 8 sensor",
+    "variable": "https://climatepub4kg.github.io/id/Variable/x2oacc_ox_Fioi_meltw",
+    "variable_name": "x2oacc_ox_Fioi_meltw",
+    "variable_long_name": "[Water flux due to melting]"
+  },
+  {
+    "instrument_name": "Sentinel-1",
+    "variable": "https://climatepub4kg.github.io/id/Variable/x2oacc_ox_Fioi_meltw",
+    "variable_name": "x2oacc_ox_Fioi_meltw",
+    "variable_long_name": "[Water flux due to melting]"
+  },
+  {
+    "instrument_name": "pyranometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/xao_ax_Faox_swdn",
+    "variable_name": "xao_ax_Faox_swdn",
+    "variable_long_name": "[Downward solar radiation]"
+  },
+  {
+    "instrument_name": "Improved Meteorological (IMET) system",
+    "variable": "https://climatepub4kg.github.io/id/Variable/xao_ax_Faox_swdn",
+    "variable_name": "xao_ax_Faox_swdn",
+    "variable_long_name": "[Downward solar radiation]"
+  },
+  {
+    "instrument_name": "eddy covariance towers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/xao_ox_Faox_lat",
+    "variable_name": "xao_ox_Faox_lat",
+    "variable_long_name": "[Surface latent heat flux]"
+  },
+  {
+    "instrument_name": "meteorological tower",
+    "variable": "https://climatepub4kg.github.io/id/Variable/xao_ox_Faox_lwup",
+    "variable_name": "xao_ox_Faox_lwup",
+    "variable_long_name": "[Surface upward longwave heat flux]"
+  },
+  {
+    "instrument_name": "eddy covariance towers",
+    "variable": "https://climatepub4kg.github.io/id/Variable/xao_ox_Faox_sen",
+    "variable_name": "xao_ox_Faox_sen",
+    "variable_long_name": "[Sensible heat flux]"
+  },
+  {
+    "instrument_name": "radiation sensors",
+    "variable": "https://climatepub4kg.github.io/id/Variable/xao_ox_Faox_swdn",
+    "variable_name": "xao_ox_Faox_swdn",
+    "variable_long_name": "[Downward solar radiation]"
+  },
+  {
+    "instrument_name": "CS320-Digital Thermopile Pyranometer",
+    "variable": "https://climatepub4kg.github.io/id/Variable/xao_ox_Faox_swdn",
+    "variable_name": "xao_ox_Faox_swdn",
+    "variable_long_name": "[Downward solar radiation]"
+  },
+  {
+    "instrument_name": "Earth Radiation Budget Experiment (ERBE)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/xao_ox_Faox_swdn",
+    "variable_name": "xao_ox_Faox_swdn",
+    "variable_long_name": "[Downward solar radiation]"
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable": "https://climatepub4kg.github.io/id/Variable/xao_ox_So_avsdr",
+    "variable_name": "xao_ox_So_avsdr",
+    "variable_long_name": "[Direct albedo (visible radiation)]"
+  },
+  {
+    "instrument_name": "radiosondes",
+    "variable": "https://climatepub4kg.github.io/id/Variable/zg",
+    "variable_name": "zg",
+    "variable_long_name": "[Geopotential Height]"
+  },
+  {
+    "instrument_name": "Integrated Global Radiosonde Archive v2.2",
+    "variable": "https://climatepub4kg.github.io/id/Variable/zg",
+    "variable_name": "zg",
+    "variable_long_name": "[Geopotential Height]"
+  },
+  {
+    "instrument_name": "ceilometer (Vaisala, Model LD-40)",
+    "variable": "https://climatepub4kg.github.io/id/Variable/zmla",
+    "variable_name": "zmla",
+    "variable_long_name": "[Height of Boundary Layer]"
+  },
+  {
+    "instrument_name": "new sensors for zooplankton",
+    "variable": "https://climatepub4kg.github.io/id/Variable/zooc",
+    "variable_name": "zooc",
+    "variable_long_name": "[Zooplankton Carbon Concentration]"
+  },
+  {
+    "instrument_name": "satellite altimeter",
+    "variable": "https://climatepub4kg.github.io/id/Variable/zosga",
+    "variable_name": "zosga",
+    "variable_long_name": "[Global Average Sea Level Change]"
+  }
+]
+

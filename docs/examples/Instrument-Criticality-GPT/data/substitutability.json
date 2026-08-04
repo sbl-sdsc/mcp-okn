@@ -1,0 +1,213 @@
+[
+  {
+    "instrument_name": "sun photometers",
+    "variable_count": 4,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 2,
+    "mean_alternatives": 6
+  },
+  {
+    "instrument_name": "TOMS",
+    "variable_count": 2,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 3,
+    "mean_alternatives": 6
+  },
+  {
+    "instrument_name": "MODIS",
+    "variable_count": 32,
+    "unique_variable_count": 7,
+    "minimum_alternatives": 0,
+    "mean_alternatives": 4.125
+  },
+  {
+    "instrument_name": "AVHRR",
+    "variable_count": 3,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 1,
+    "mean_alternatives": 8
+  },
+  {
+    "instrument_name": "GLAS",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 3,
+    "mean_alternatives": 3
+  },
+  {
+    "instrument_name": "ERBE",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 3,
+    "mean_alternatives": 3
+  },
+  {
+    "instrument_name": "AATSR",
+    "variable_count": 2,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 1,
+    "mean_alternatives": 2
+  },
+  {
+    "instrument_name": "TROPOMI",
+    "variable_count": 4,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 1,
+    "mean_alternatives": 7.25
+  },
+  {
+    "instrument_name": "SEVIRI",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 11,
+    "mean_alternatives": 11
+  },
+  {
+    "instrument_name": "SeaWiFS",
+    "variable_count": 2,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 1,
+    "mean_alternatives": 2
+  },
+  {
+    "instrument_name": "AIRS",
+    "variable_count": 2,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 4,
+    "mean_alternatives": 8
+  },
+  {
+    "instrument_name": "MERIS",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 5,
+    "mean_alternatives": 5
+  },
+  {
+    "instrument_name": "ASTER",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 3,
+    "mean_alternatives": 3
+  },
+  {
+    "instrument_name": "HALOE",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 1,
+    "mean_alternatives": 1
+  },
+  {
+    "instrument_name": "CLAES",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 3,
+    "mean_alternatives": 3
+  },
+  {
+    "instrument_name": "TIRS",
+    "variable_count": 2,
+    "unique_variable_count": 1,
+    "minimum_alternatives": 0,
+    "mean_alternatives": 2
+  },
+  {
+    "instrument_name": "AMSR-E",
+    "variable_count": 6,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 1,
+    "mean_alternatives": 6.666666666666667
+  },
+  {
+    "instrument_name": "VIIRS",
+    "variable_count": 3,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 4,
+    "mean_alternatives": 12
+  },
+  {
+    "instrument_name": "SBUV",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 2,
+    "mean_alternatives": 2
+  },
+  {
+    "instrument_name": "SAR",
+    "variable_count": 3,
+    "unique_variable_count": 1,
+    "minimum_alternatives": 0,
+    "mean_alternatives": 3.3333333333333335
+  },
+  {
+    "instrument_name": "SSMIS",
+    "variable_count": 2,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 4,
+    "mean_alternatives": 7
+  },
+  {
+    "instrument_name": "SMMR",
+    "variable_count": 3,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 3,
+    "mean_alternatives": 5.666666666666667
+  },
+  {
+    "instrument_name": "AMSR",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 1,
+    "mean_alternatives": 1
+  },
+  {
+    "instrument_name": "GOME-2",
+    "variable_count": 1,
+    "unique_variable_count": 1,
+    "minimum_alternatives": 0,
+    "mean_alternatives": 0
+  },
+  {
+    "instrument_name": "GEDI",
+    "variable_count": 1,
+    "unique_variable_count": 1,
+    "minimum_alternatives": 0,
+    "mean_alternatives": 0
+  },
+  {
+    "instrument_name": "TM",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 12,
+    "mean_alternatives": 12
+  },
+  {
+    "instrument_name": "ETM+",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 12,
+    "mean_alternatives": 12
+  },
+  {
+    "instrument_name": "WindSat",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 1,
+    "mean_alternatives": 1
+  },
+  {
+    "instrument_name": "OMI",
+    "variable_count": 1,
+    "unique_variable_count": 0,
+    "minimum_alternatives": 8,
+    "mean_alternatives": 8
+  },
+  {
+    "instrument_name": "scatterometers",
+    "variable_count": 1,
+    "unique_variable_count": 1,
+    "minimum_alternatives": 0,
+    "mean_alternatives": 0
+  }
+]
+

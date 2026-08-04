@@ -1,0 +1,1066 @@
+[
+  {
+    "author_name": "Aaron Boone",
+    "orcid": "https://orcid.org/0000-0003-1901-7024",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Abigail Smith",
+    "orcid": "https://orcid.org/0000-0002-7704-8833",
+    "shared_doi_papers": 2,
+    "models": 17,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Agnès Ducharne",
+    "orcid": "https://orcid.org/0000-0002-6550-3413",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Alex Crawford",
+    "orcid": "https://orcid.org/0000-0003-1561-290X",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Alex Hall",
+    "orcid": "https://orcid.org/0000-0003-4973-8500",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Alexandra Gossart",
+    "orcid": "https://orcid.org/0000-0002-1927-2685",
+    "shared_doi_papers": 1,
+    "models": 16,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Alexandra Jahn",
+    "orcid": "https://orcid.org/0000-0002-6580-2579",
+    "shared_doi_papers": 2,
+    "models": 17,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Andie H. Jian",
+    "orcid": "https://orcid.org/0009-0002-2185-8711",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Andrew Hoell",
+    "orcid": "https://orcid.org/0000-0001-9936-2527",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Anna Kontu",
+    "orcid": "https://orcid.org/0000-0001-6880-6260",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Anton Darmenov",
+    "orcid": "https://orcid.org/0000-0003-4993-8078",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Apostolos Voulgarakis",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Bertrand Decharme",
+    "orcid": "https://orcid.org/0000-0002-8661-1464",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Bethan L. Harris",
+    "orcid": "https://orcid.org/0000-0002-0166-6256",
+    "shared_doi_papers": 1,
+    "models": 5,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Brian H. Bird",
+    "orcid": "https://orcid.org/0000-0001-8170-8710",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Cécile B. Ménard",
+    "orcid": "https://orcid.org/0000-0003-2166-9523",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Chad W. Thackeray",
+    "shared_doi_papers": 2,
+    "models": 4,
+    "nasa_datasets": 3
+  },
+  {
+    "author_name": "Charles Fierz",
+    "orcid": "https://orcid.org/0000-0001-9490-6732",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Chris Derksen",
+    "orcid": "https://orcid.org/0000-0001-6821-5479",
+    "shared_doi_papers": 3,
+    "models": 24,
+    "nasa_datasets": 3
+  },
+  {
+    "author_name": "Chris Funk",
+    "orcid": "https://orcid.org/0000-0002-9254-6718",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Christine K. Johnson",
+    "orcid": "https://orcid.org/0000-0001-6673-8743",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Christopher M. Taylor",
+    "orcid": "https://orcid.org/0000-0002-0120-3198",
+    "shared_doi_papers": 1,
+    "models": 5,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Claire Brutel-Vuilmet",
+    "orcid": "https://orcid.org/0000-0003-2773-9377",
+    "shared_doi_papers": 2,
+    "models": 22,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Colombe Siegenthaler‐Le Drian",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "D. J. Moore",
+    "orcid": "https://orcid.org/0000-0002-6462-3288",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "D. V. Turkov",
+    "orcid": "https://orcid.org/0000-0002-1813-757X",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Dan Zhu",
+    "orcid": "https://orcid.org/0000-0002-5857-1899",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Daniel G. Partridge",
+    "orcid": "https://orcid.org/0000-0002-5970-901X",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Danielle de Almeida Bressiani",
+    "orcid": "https://orcid.org/0000-0002-3773-1574",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Danny Marks",
+    "orcid": "https://orcid.org/0000-0003-3105-8427",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "David D. Breshears",
+    "orcid": "https://orcid.org/0000-0001-6601-0058",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "David M. Lawrence",
+    "orcid": "https://orcid.org/0000-0002-2968-3023",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "David Neubauer",
+    "orcid": "https://orcid.org/0000-0002-9869-3946",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "David P. Duda",
+    "orcid": "https://orcid.org/0000-0003-2365-4552",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 6
+  },
+  {
+    "author_name": "David Paynter",
+    "orcid": "https://orcid.org/0000-0002-7092-241X",
+    "shared_doi_papers": 1,
+    "models": 15,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Diego Pedreros",
+    "orcid": "https://orcid.org/0000-0001-9943-7373",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Diego Rodrigues Macedo",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Donifan Barahona",
+    "orcid": "https://orcid.org/0000-0001-5786-1344",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Douglas A. Spangenberg",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 6
+  },
+  {
+    "author_name": "Emanuel Dutra",
+    "orcid": "https://orcid.org/0000-0002-0643-2643",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Frédéric Laliberté",
+    "orcid": "https://orcid.org/0000-0001-9668-1418",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "G. J. Husak",
+    "orcid": "https://orcid.org/0000-0003-2647-7870",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "G. L. Manney",
+    "orcid": "https://orcid.org/0000-0003-4489-4811",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Gabriele Arduini",
+    "orcid": "https://orcid.org/0000-0002-6564-1699",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Gerd Schaedler",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Gerhard Krinner",
+    "orcid": "https://orcid.org/0000-0002-2959-5920",
+    "shared_doi_papers": 2,
+    "models": 22,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Gianpaolo Balsamo",
+    "orcid": "https://orcid.org/0000-0002-1745-3634",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Guillermo E. Ponce‐Campos",
+    "orcid": "https://orcid.org/0000-0003-4332-338X",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Harri Kokkola",
+    "orcid": "https://orcid.org/0000-0002-1404-6670",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Helmut Rott",
+    "orcid": "https://orcid.org/0000-0003-4719-7376",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Hu Li",
+    "shared_doi_papers": 1,
+    "models": 25,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Hua Yuan",
+    "orcid": "https://orcid.org/0000-0003-2524-598X",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Hyungjun Kim",
+    "orcid": "https://orcid.org/0000-0003-1083-8416",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "I. Bey",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Ina Tegen",
+    "orcid": "https://orcid.org/0000-0003-3700-3232",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Ingo Wohltmann",
+    "orcid": "https://orcid.org/0000-0003-4606-6788",
+    "shared_doi_papers": 1,
+    "models": 26,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Iulian-Alin Roșu",
+    "orcid": "https://orcid.org/0000-0001-6322-021X",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "J Li",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "J. P. Verdin",
+    "orcid": "https://orcid.org/0000-0003-0238-9657",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "James Rowland",
+    "orcid": "https://orcid.org/0000-0003-4837-3511",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Jeanne Colin",
+    "orcid": "https://orcid.org/0000-0002-4065-1866",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Jeff Derry",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Jing Feng",
+    "orcid": "https://orcid.org/0000-0003-1144-622X",
+    "shared_doi_papers": 1,
+    "models": 15,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Joel A. Biederman",
+    "orcid": "https://orcid.org/0000-0002-1831-461X",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Joel Michaelsen",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "John Marshall",
+    "orcid": "https://orcid.org/0000-0001-9230-3591",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "John W. Pomeroy",
+    "orcid": "https://orcid.org/0000-0002-4782-7457",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Josephine Ghattas",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Julia Boike",
+    "orcid": "https://orcid.org/0000-0002-5875-2112",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Julienne Strœve",
+    "orcid": "https://orcid.org/0000-0001-7316-8320",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Karoline Block",
+    "orcid": "https://orcid.org/0000-0002-4458-2327",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Katherine H. Breen",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Kevin M. Grise",
+    "orcid": "https://orcid.org/0000-0003-0934-8129",
+    "shared_doi_papers": 1,
+    "models": 21,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Konstantin Khlopenkov",
+    "orcid": "https://orcid.org/0000-0001-7644-7544",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 6
+  },
+  {
+    "author_name": "Krzysztof Wargan",
+    "orcid": "https://orcid.org/0000-0002-3795-2983",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "L. Harrison",
+    "orcid": "https://orcid.org/0000-0002-7962-4101",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Laibao Liu",
+    "orcid": "https://orcid.org/0000-0001-9140-0509",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Laura Landrum",
+    "orcid": "https://orcid.org/0000-0002-6003-1146",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Lawrence Mudryk",
+    "orcid": "https://orcid.org/0000-0001-6381-4288",
+    "shared_doi_papers": 3,
+    "models": 24,
+    "nasa_datasets": 3
+  },
+  {
+    "author_name": "Letícia Santos de Lima",
+    "orcid": "https://orcid.org/0000-0002-0268-2055",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Libo Wang",
+    "orcid": "https://orcid.org/0000-0002-3751-3390",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "M. E. Litvak",
+    "orcid": "https://orcid.org/0000-0002-4255-2263",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "M. F. Landsfeld",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "M. Flanner",
+    "orcid": "https://orcid.org/0000-0003-4012-174X",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Mallory L. Barnes",
+    "orcid": "https://orcid.org/0000-0001-8528-6981",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Manolis P. Petrakis",
+    "orcid": "https://orcid.org/0000-0003-2622-3109",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Marcela Uhart",
+    "orcid": "https://orcid.org/0000-0003-3525-541X",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "María Santolaria-Otín",
+    "orcid": "https://orcid.org/0000-0002-9232-5245",
+    "shared_doi_papers": 1,
+    "models": 21,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Marika M. Holland",
+    "orcid": "https://orcid.org/0000-0001-5621-8939",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Mark S. Raleigh",
+    "orcid": "https://orcid.org/0000-0002-1303-3472",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Markus Rex",
+    "orcid": "https://orcid.org/0000-0001-7847-8221",
+    "shared_doi_papers": 1,
+    "models": 26,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Martha M. Farella",
+    "orcid": "https://orcid.org/0000-0002-2925-4093",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Martin Ménégoz",
+    "orcid": "https://orcid.org/0000-0001-7098-9270",
+    "shared_doi_papers": 2,
+    "models": 22,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Martyn Clark",
+    "orcid": "https://orcid.org/0000-0002-2186-2625",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Masashi Niwano",
+    "orcid": "https://orcid.org/0000-0003-3121-3802",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Matthew Kasoar",
+    "orcid": "https://orcid.org/0000-0001-5571-8843",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Matthias Cuntz",
+    "orcid": "https://orcid.org/0000-0002-5966-1829",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Matthieu Lafaysse",
+    "orcid": "https://orcid.org/0009-0008-0095-4660",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Mike Brady",
+    "orcid": "https://orcid.org/0000-0001-8263-0951",
+    "shared_doi_papers": 1,
+    "models": 21,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Muyin Wang",
+    "orcid": "https://orcid.org/0000-0001-5233-4588",
+    "shared_doi_papers": 1,
+    "models": 15,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Nander Wever",
+    "orcid": "https://orcid.org/0000-0002-4829-8585",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Natasha MacBean",
+    "orcid": "https://orcid.org/0000-0001-6797-4836",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Nathalia Drummond Marques da Silva",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Nicholas R. Golledge",
+    "orcid": "https://orcid.org/0000-0001-7676-8970",
+    "shared_doi_papers": 1,
+    "models": 16,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Patrick Minnis",
+    "orcid": "https://orcid.org/0000-0002-4733-6148",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 6
+  },
+  {
+    "author_name": "Paul Bartlett",
+    "orcid": "https://orcid.org/0000-0001-9591-6617",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Paul J. Kushner",
+    "orcid": "https://orcid.org/0000-0002-6404-4518",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Pete Peterson",
+    "orcid": "https://orcid.org/0000-0001-9742-5379",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Peter von der Gathen",
+    "orcid": "https://orcid.org/0000-0001-7409-1556",
+    "shared_doi_papers": 1,
+    "models": 26,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Phil Harris",
+    "orcid": "https://orcid.org/0000-0002-4834-7746",
+    "shared_doi_papers": 1,
+    "models": 5,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Philip Stier",
+    "orcid": "https://orcid.org/0000-0002-1191-0128",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Pranav Pandit",
+    "orcid": "https://orcid.org/0000-0001-7649-0649",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "R. J. Salawitch",
+    "orcid": "https://orcid.org/0000-0001-8597-5832",
+    "shared_doi_papers": 1,
+    "models": 26,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "R. M. Law",
+    "orcid": "https://orcid.org/0000-0002-7346-0927",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Rafaila-Nikola Mourgela",
+    "orcid": "https://orcid.org/0009-0000-5281-4274",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Raymond Menzel",
+    "orcid": "https://orcid.org/0000-0002-2459-0119",
+    "shared_doi_papers": 1,
+    "models": 15,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Reinel Sospedra‐Alfonso",
+    "orcid": "https://orcid.org/0000-0002-4472-5607",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Richard Essery",
+    "orcid": "https://orcid.org/0000-0003-1756-9095",
+    "shared_doi_papers": 2,
+    "models": 22,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Rigel Kivi",
+    "orcid": "https://orcid.org/0000-0001-8828-2759",
+    "shared_doi_papers": 1,
+    "models": 26,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Ross Brown",
+    "orcid": "https://orcid.org/0000-0001-7196-2686",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Russell L. Scott",
+    "orcid": "https://orcid.org/0000-0003-2987-5380",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Ryan J. Kramer",
+    "orcid": "https://orcid.org/0000-0002-9377-0674",
+    "shared_doi_papers": 1,
+    "models": 15,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Sarah T. Bedka",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 6
+  },
+  {
+    "author_name": "Sean Davis",
+    "orcid": "https://orcid.org/0000-0001-9276-6158",
+    "shared_doi_papers": 1,
+    "models": 21,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Sean Svenson",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Shoujuan Shu",
+    "orcid": "https://orcid.org/0000-0002-5511-9792",
+    "shared_doi_papers": 1,
+    "models": 16,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Shraddhanand Shukla",
+    "orcid": "https://orcid.org/0000-0003-0077-6733",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Stefan Hagemann",
+    "orcid": "https://orcid.org/0000-0001-5444-2945",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Stephen Howell",
+    "orcid": "https://orcid.org/0000-0002-4848-9867",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Sylvaine Ferrachat",
+    "orcid": "https://orcid.org/0000-0003-3366-8296",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Tanja Stanelle",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Tao Wang",
+    "orcid": "https://orcid.org/0000-0002-1323-8697",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Tatiana G. Smirnova",
+    "orcid": "https://orcid.org/0000-0001-6227-4558",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Thad Chee",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 6
+  },
+  {
+    "author_name": "Thomas Marke",
+    "orcid": "https://orcid.org/0000-0003-1700-4115",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Tobias Stacke",
+    "orcid": "https://orcid.org/0000-0003-4637-5337",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Tomoko Nitta",
+    "orcid": "https://orcid.org/0000-0001-9918-4716",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Tristan Quaife",
+    "orcid": "https://orcid.org/0000-0001-6896-4613",
+    "shared_doi_papers": 1,
+    "models": 5,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Ulrich Strasser",
+    "orcid": "https://orcid.org/0000-0003-4776-2822",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Ulrike Lohmann",
+    "orcid": "https://orcid.org/0000-0001-8885-3785",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Vanessa Haverd",
+    "orcid": "https://orcid.org/0000-0003-4359-5895",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Vincent Vionnet",
+    "orcid": "https://orcid.org/0000-0002-9142-9739",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Weiping Li",
+    "orcid": "https://orcid.org/0000-0002-2203-1049",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Wenyan Zhou",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "William L. Smith",
+    "orcid": "https://orcid.org/0000-0002-7858-8532",
+    "shared_doi_papers": 1,
+    "models": 1,
+    "nasa_datasets": 6
+  },
+  {
+    "author_name": "Xiaoduo Pan",
+    "orcid": "https://orcid.org/0000-0002-0573-1625",
+    "shared_doi_papers": 1,
+    "models": 25,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Xiaowei Nie",
+    "shared_doi_papers": 1,
+    "models": 25,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Xing Fang",
+    "orcid": "https://orcid.org/0000-0002-4333-4815",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Yaowen Zheng",
+    "orcid": "https://orcid.org/0000-0003-3818-3474",
+    "shared_doi_papers": 1,
+    "models": 16,
+    "nasa_datasets": 2
+  },
+  {
+    "author_name": "Yavor Kostov",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Yeugeniy M. Gusev",
+    "orcid": "https://orcid.org/0000-0003-3886-2143",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Yongjiu Dai",
+    "orcid": "https://orcid.org/0000-0002-3588-6644",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "Zachary D. Lawrence",
+    "orcid": "https://orcid.org/0000-0003-0901-3839",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "В. А. Семенов",
+    "orcid": "https://orcid.org/0000-0001-7632-7921",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  },
+  {
+    "author_name": "О. Н. Насонова",
+    "orcid": "https://orcid.org/0000-0002-3111-3337",
+    "shared_doi_papers": 1,
+    "models": 2,
+    "nasa_datasets": 1
+  }
+]
+
