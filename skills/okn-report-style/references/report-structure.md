@@ -47,7 +47,7 @@ absolute URLs by fetching them.
 # <Descriptive title of the analysis / knowledge map>
 ### <one-line subtitle: what kind of analysis, on which OKN graphs>
 
-**Date:** YYYY-MM-DD · **Endpoint:** OKN federated SPARQL · **Model:** <model>
+**Date:** YYYY-MM-DD · **Endpoint:** OKN federated SPARQL · **Model:** <exact model id>
 
 > **Framing (non-negotiable).** <unit of analysis> over <spatial / temporal coverage>;
 > <level of inference>. <one-sentence key caveat> — e.g. *"hypothesis generation, not causal /
@@ -57,6 +57,18 @@ absolute URLs by fetching them.
 **Abbreviations.** Define EVERY acronym used (domain examples: PFAS = per- and polyfluoroalkyl
 substances; HUC = hydrologic unit code; FDR = false-discovery rate; BMD = bone mineral density; …).
 ```
+
+**`Model:` is the exact runtime model identifier** — `claude-opus-5`, `gpt-5.6-sol` — taken only from
+trusted session/system metadata or supplied by the user, with a context-window variant marker
+stripped (`claude-opus-5[1m]` → `claude-opus-5`). Never infer it from the assistant's product name or
+from wording like *"based on GPT-5"*, and never write a family name, product name, or placeholder
+(`Claude`, `GPT-5`, `Codex`, `OpenAI model`, `latest model`, `unknown`, `<model>`) — each one reads as
+filled-in provenance while identifying nothing. **If you cannot determine the exact identifier, ask
+the user for it** before generating the report or the reproducibility record; a guess, a placeholder,
+and a silent omission are all worse than the question. The same string must appear in the rendered
+`.html` header (automatic when the HTML is rendered from this `.md`) and in
+`create_reproducibility_record(model=…)` — `validate_okn_report.py` fails the package on a missing,
+generic, or inconsistent value.
 
 ## 1. Executive summary
 Headline result in 2–4 short paragraphs: the defining finding, the key quantities (with their
@@ -261,8 +273,15 @@ collapses when large extraction queries went unlogged); for **whole-chat elapsed
 pass `chat_started` (ISO-8601 — the server can't know it) and optionally `chat_ended`, giving
 `**Elapsed time:** <start>–<end> UTC (<elapsed>)`.
 
-The record's header also carries the **skills** that shaped the run — `- **Skills:** okn-bioanalysis
-v0.1.2 · okn-report-style v0.1.6` — but only if you pass `skills=[...]`: the server cannot see which
+The record's header also carries the **model** — `- **Model:** claude-opus-5`, from the required
+`model=` argument. The server stores that string verbatim: it cannot see which model is calling it,
+so it can neither derive the value nor tell a right one from a wrong one. Pass the **exact runtime
+model identifier**, identical to the report title block's (see *Title block* above), and ask the user
+if you cannot determine it — a family name, a product name, or an inferred id here silently
+mis-attributes the whole analysis.
+
+The header also carries the **skills** that shaped the run — `- **Skills:** okn-bioanalysis
+v0.1.2 · okn-report-style v0.1.7` — but only if you pass `skills=[...]`: the server cannot see which
 skills your session loaded, so an omitted list silently reads as "no methodology skill was used".
 Give each as `"<name> v<version>"`, the version taken from that skill's frontmatter
 `metadata.version` (not guessed), and list only skills you actually followed — a skill you didn't use

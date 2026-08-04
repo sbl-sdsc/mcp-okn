@@ -24,6 +24,8 @@ TOKEN = "Demo"
 # are Reproducibility then References.
 _REPORT_MD = """# Demo study
 
+**Date:** 2026-07-25 · **Endpoint:** OKN federated SPARQL · **Model:** claude-opus-5
+
 > Unit of analysis: demo. Coverage: demo. Abbreviations: n/a.
 
 ## Executive summary
@@ -328,6 +330,94 @@ def test_skills_mentioned_outside_header_does_not_satisfy_gate(tmp_path):
     )
     r = v.validate(str(study))
     assert any("no '- **Skills:**' line" in e for e in r.errors)
+
+
+# ── Model provenance ─────────────────────────────────────────────────────────────────────────────────
+# The model id is written by three different paths (hand-authored title block → lifted into the .html by
+# the renderer; `model=` into the record) and nothing reconciles them, so the gate checks all three are
+# present, specific, and identical.
+
+
+def _set_model(study: Path, *, md=None, html=None, repro=None) -> None:
+    """Rewrite the model id in one or more artifacts (None = leave alone, "" = drop the field)."""
+    for value, path, old in (
+        (md, study / f"{TOKEN}_report.md", "**Model:** claude-opus-5"),
+        (html, study / f"{TOKEN}_report.html", "Model: claude-opus-5"),
+        (repro, study / f"{TOKEN}_reproducibility.md", "- **Model:** claude-opus-5"),
+    ):
+        if value is None:
+            continue
+        text = path.read_text()
+        assert (
+            old in text
+        )  # guard: the fixture still carries the field we mean to rewrite
+        path.write_text(
+            text.replace(old, old.replace("claude-opus-5", value) if value else "")
+        )
+
+
+def test_missing_model_in_report_fails(tmp_path):
+    study = _build(tmp_path)
+    _set_model(study, md="")
+    r = v.validate(str(study))
+    assert any("no model recorded" in e for e in r.errors), r.errors
+    assert v.main([str(study)]) == 1
+
+
+def test_missing_model_in_record_fails(tmp_path):
+    study = _build(tmp_path)
+    _set_model(study, repro="")
+    r = v.validate(str(study))
+    assert any("no model recorded" in e for e in r.errors), r.errors
+
+
+def test_generic_model_family_name_fails(tmp_path):
+    # "Claude" reads as filled-in provenance while identifying nothing that ran.
+    study = _build(tmp_path)
+    _set_model(study, md="Claude", html="Claude", repro="Claude")
+    r = v.validate(str(study))
+    assert any("not an exact model id" in e for e in r.errors), r.errors
+    assert not any("differs across the package" in e for e in r.errors)
+
+
+def test_placeholder_model_fails(tmp_path):
+    study = _build(tmp_path)
+    _set_model(study, md="unknown", html="unknown", repro="unknown")
+    r = v.validate(str(study))
+    assert any("not an exact model id" in e for e in r.errors), r.errors
+
+
+def test_model_mismatch_between_md_and_record_fails(tmp_path):
+    study = _build(tmp_path)
+    _set_model(study, repro="claude-opus-4-8")
+    r = v.validate(str(study))
+    assert any("differs across the package" in e for e in r.errors), r.errors
+
+
+def test_model_mismatch_between_md_and_html_fails(tmp_path):
+    # A hand-built .html can disagree with the .md; parity is heading/word-count based and misses it.
+    study = _build(tmp_path)
+    _set_model(study, html="claude-opus-4-8")
+    r = v.validate(str(study))
+    assert any("differs across the package" in e for e in r.errors), r.errors
+
+
+def test_non_anthropic_model_id_passes(tmp_path):
+    # The rule is domain-neutral: any specific vendor id is fine, only generic ones are rejected.
+    study = _build(tmp_path)
+    _set_model(study, md="gpt-5.6-sol", html="gpt-5.6-sol", repro="gpt-5.6-sol")
+    r = v.validate(str(study))
+    assert r.errors == [], r.errors
+
+
+def test_model_mentioned_outside_header_does_not_satisfy_gate(tmp_path):
+    # Only the provenance header counts — a `Model:` down in the spec body is not the tool-written field.
+    study = _build(tmp_path)
+    _set_model(study, repro="")
+    repro = study / f"{TOKEN}_reproducibility.md"
+    repro.write_text(repro.read_text() + "\n- **Model:** claude-opus-5\n")
+    r = v.validate(str(study))
+    assert any("no model recorded" in e for e in r.errors), r.errors
 
 
 def test_junk_file_in_subdir_fails(tmp_path):

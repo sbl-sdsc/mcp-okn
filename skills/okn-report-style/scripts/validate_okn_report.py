@@ -25,7 +25,8 @@ It COMPOSES the existing content gates rather than reimplementing them:
 And ADDS the package-level checks that had no home: the top-level allowlist, naming prefix, single
 reproducibility file, `data/` = flat CSV/TSV/JSON only, `scripts/` anti-pattern rejection, workbook sheet
 names, report section order (…Reproducibility → References last), the reproducibility header's `Skills`
-provenance line, figure file/reference cross-check, and a recursive scan for QA/temp/scratch junk.
+provenance line, an exact model id recorded identically in the .md / .html / record, figure
+file/reference cross-check, and a recursive scan for QA/temp/scratch junk.
 Stdlib-only (an .xlsx is a zip — sheet names are read straight from `xl/workbook.xml`), so it runs
 wherever a report is built, exactly like the sibling gates.
 """
@@ -129,14 +130,62 @@ def _level2_headings(md_text: str) -> list[str]:
 
 
 # ── The reproducibility header (written by create_reproducibility_record) ────────────────────────────
-# `skills=` is the one header field the server cannot derive on its own: it sees the model, its own
-# version, the endpoint and the query log, but NOT which skills the session loaded. So an absent
+# `skills=` and `model=` are the two header fields the server cannot derive on its own: it knows its own
+# version, the endpoint and the query log, but NOT which skills the session loaded and NOT which model is
+# calling it — `model` is a caller-supplied string it stores verbatim without inspecting. So an absent
 # `- **Skills:**` line means the tool call omitted the argument — the header is generated and saved
 # verbatim, so it cannot go missing any other way — and the record then silently claims no methodology.
 # This is checkable precisely because the validator only ever runs on an okn-report-style package: that
 # skill was used BY DEFINITION, so the line must exist and must name it.
 _SKILLS_LINE = re.compile(r"^-\s+\*\*Skills:\*\*[ \t]*(.+?)[ \t]*$", re.M)
 _VERSIONED = re.compile(r"\sv\d+(?:\.\d+)*\b")  # the " v1.2.3" in "<skill> v1.2.3"
+
+# ── Model provenance (SKILL.md "Exact model provenance") ─────────────────────────────────────────────
+# The model id is written into THREE artifacts by three different paths — hand-authored in the report
+# `.md` title block, lifted verbatim from that line into the `.html` header by build_report_from_markdown,
+# and passed as `create_reproducibility_record(model=…)` into the record header — and NOTHING reconciles
+# them. Nor does anything check the value itself: the server stores whatever string it is handed, so a
+# family name ("Claude"), a product name, an inferred id, or a placeholder is indistinguishable from the
+# real thing. Reproducibility metadata that names the wrong model is worse than none, so this gate
+# requires all three to be present, specific, and identical.
+#
+# Matched markup-agnostically (`**Model:** x` in Markdown, `<strong>Model:</strong> x` in HTML once tags
+# are stripped) and stopping at the `·` / `|` that separate the title block's other meta fields.
+_MODEL_VALUE = re.compile(r"Model:\s*(?:\*\*)?[ \t]*([^\n·|]+)")
+_TAGS = re.compile(r"<[^>]+>")
+# Bare family / product names and placeholders: specific enough to look filled in, too generic to
+# identify what actually ran. Compared case-insensitively against the whole value.
+_GENERIC_MODELS = {
+    "",
+    "claude",
+    "anthropic",
+    "anthropic model",
+    "opus",
+    "sonnet",
+    "haiku",
+    "gpt",
+    "gpt-4",
+    "gpt-5",
+    "chatgpt",
+    "codex",
+    "openai",
+    "openai model",
+    "gemini",
+    "llama",
+    "mistral",
+    "grok",
+    "llm",
+    "model",
+    "<model>",
+    "latest model",
+    "latest",
+    "unknown",
+    "n/a",
+    "na",
+    "none",
+    "tbd",
+    "todo",
+}
 
 
 class _Report:
@@ -398,7 +447,7 @@ def _check_repro_skills(repro_md: Path, r: _Report) -> None:
         r.err(
             f"{repro_md.name}: the header has no '- **Skills:**' line — pass `skills=[...]` to "
             "create_reproducibility_record (e.g. `skills=['okn-bioanalysis v0.1.2', "
-            "'okn-report-style v0.1.6']`, versions from each skill's frontmatter `metadata.version`). "
+            "'okn-report-style v0.1.7']`, versions from each skill's frontmatter `metadata.version`). "
             "The server cannot see which skills your session loaded, so an omitted list leaves the "
             "record claiming no methodology at all; do NOT hand-add the line — regenerate the record"
         )
@@ -416,6 +465,72 @@ def _check_repro_skills(repro_md: Path, r: _Report) -> None:
             f"{repro_md.name}: Skills entries without a version: {', '.join(unversioned)} — give each "
             "as '<name> v<version>' (from the skill's frontmatter `metadata.version`) so the "
             "methodology is pinned, not just named"
+        )
+
+
+def _model_in(text: str, *, header_only: bool) -> str | None:
+    """The model id recorded in one artifact, or None if there is no `Model:` field at all.
+
+    `header_only` slices to the provenance block (everything above the first ``##``) for the two
+    Markdown files, so a `Model:` mentioned down in the prose or a query description can never stand in
+    for the real field. HTML has no ``##``, so it is searched whole after its tags are stripped — which
+    is what makes the match builder-agnostic rather than tied to `<strong>`.
+    """
+    if header_only:
+        text = re.split(r"^##\s", text, maxsplit=1, flags=re.M)[0]
+    else:
+        text = _TAGS.sub(" ", text)
+    m = _MODEL_VALUE.search(text)
+    return m.group(1).strip().strip("*").strip() if m else None
+
+
+def _check_model(paths: dict, r: _Report) -> None:
+    """The report `.md`, the report `.html`, and the reproducibility record must all name the SAME
+    exact model id, and it must actually identify a model.
+
+    Three separate authoring paths write this value (see the `_MODEL_VALUE` note above), so the gate is
+    a three-way reconciliation plus a specificity test. A value is rejected when it is a bare family or
+    product name from `_GENERIC_MODELS`, or when it carries no version token at all — "claude-opus-5"
+    and "gpt-5.6-sol" identify a run; "Claude" and "the latest model" do not.
+    """
+    artifacts = [
+        ("report .md", paths["report_md"], True),
+        ("report .html", paths["report_html"], False),
+        (paths["repro_md"].name, paths["repro_md"], True),
+    ]
+    found: dict[str, str] = {}
+    for label, path, header_only in artifacts:
+        if not path.is_file():
+            continue  # a missing artifact is already a top-level error
+        value = _model_in(
+            path.read_text(encoding="utf-8", errors="ignore"), header_only=header_only
+        )
+        if value is None:
+            r.err(
+                f"{label}: no model recorded — the title block needs "
+                "'**Date:** … · **Endpoint:** … · **Model:** <exact model id>' and the record needs a "
+                "'- **Model:**' line from `create_reproducibility_record(model=...)`. Record the exact "
+                "runtime model identifier from session metadata (e.g. `claude-opus-5`); if you cannot "
+                "determine it, ASK the user rather than guessing or omitting it"
+            )
+            continue
+        found[label] = value
+
+    for label, value in found.items():
+        if value.lower() in _GENERIC_MODELS or not any(c.isdigit() for c in value):
+            r.err(
+                f"{label}: '{value}' is a model family or product name, not an exact model id — record "
+                "the exact runtime identifier from session metadata (`claude-opus-5`, `gpt-5.6-sol`), "
+                "never a family name, a product name, or one inferred from wording like 'based on "
+                "GPT-5'. If it is unavailable or ambiguous, ASK the user for it"
+            )
+
+    distinct = set(found.values())
+    if len(distinct) > 1:
+        detail = " · ".join(f"{label}: '{value}'" for label, value in found.items())
+        r.err(
+            f"the recorded model differs across the package ({detail}) — the Markdown title block, the "
+            "rendered HTML header, and the reproducibility record must carry the IDENTICAL identifier"
         )
 
 
@@ -477,6 +592,7 @@ def validate(study_dir: str) -> _Report:
     _check_workbook(paths["xlsx"], r)
     _check_section_order(paths["report_md"], r)
     _check_repro_skills(paths["repro_md"], r)
+    _check_model(paths, r)
     _check_junk(study, r)
     # Content gates last (they each print their own PASS/FAIL line).
     _check_parity(paths, r)

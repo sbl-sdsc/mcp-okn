@@ -19,7 +19,7 @@ compatibility: >-
   to render the HTML report, figures, workbook, and maps.
 metadata:
   author: sbl-sdsc
-  version: "0.1.6"
+  version: "0.1.7"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -145,9 +145,12 @@ come between them, and nothing follows References:
     what it contains; scripts in `scripts/`, extracts in `data/`. Do not restate the spec, list
     script filenames, repeat KG versions or give a timing line — the record holds all of it (it
     carries the header timing; pass `chat_started=` for whole-chat elapsed, else the active-query
-    window). Also pass `skills=` — every skill you actually followed, `"<name> v<version>"` from
-    each one's frontmatter `metadata.version` (this skill is `okn-report-style v0.1.6`) — so the
-    header records the methodology, not just the model; and `external_mcp_servers=` — every OTHER
+    window). Pass `model=` — the **exact runtime model identifier**, matching the report title
+    block character for character; ask the user if you cannot determine it (*Exact model
+    provenance* above). Also pass `skills=` — every skill you actually followed, `"<name>
+    v<version>"` from each one's frontmatter `metadata.version` (this skill is `okn-report-style
+    v0.1.7`) — so the header records the methodology, not just the model; and
+    `external_mcp_servers=` — every OTHER
     MCP connector a call actually fed the analysis from (`["PubMed", "Paperclip", …]`), so the
     header shows the whole evidence base, not just the KGs. Token/cost isn't visible to the tooling —
     cite client figures or omit.
@@ -167,6 +170,29 @@ and merge any two that plot or tabulate the same kind of thing.
 downstream claim; prefer paragraphs over bullet-dumps. **Cross-reference** sections and figures ("see
 §5.6", "consistent with Figure 3") so the report reads as one connected argument. Bold key entities and
 headline numbers for scannability; never bold running prose.
+
+## Exact model provenance — a blocking requirement
+
+Record the **exact runtime model identifier** for the session that did the analysis (e.g.
+`claude-opus-5`, `gpt-5.6-sol`) — not a model family, not a product name, not an inferred identity.
+
+- **Take it only from trusted session/system metadata, or from the user.** Never derive it from the
+  assistant's product name, from wording like *"based on GPT-5"*, or from a list of models that were
+  merely *available*. Strip only a context-window variant marker: `claude-opus-5[1m]` →
+  `claude-opus-5`.
+- **Generic values are prohibited** — `Claude`, `GPT-5`, `GPT-4`, `Codex`, `Gemini`, `OpenAI model`,
+  `latest model`, `unknown`, `<model>`. Each looks filled in and identifies nothing.
+- **If the identifier is missing, inaccessible, or ambiguous, STOP and ask the user** — *"What exact
+  model identifier should I record in the report and reproducibility metadata (e.g.
+  `gpt-5.6-sol`)?"* Do not substitute a best guess, leave a placeholder, or silently omit the field.
+- **Use the identical string in all three artifacts**: the Markdown title block (`**Model:** …`), the
+  rendered HTML header (automatic — `build_report_from_markdown` lifts the title block's date line
+  verbatim, so this holds as long as you do not hand-build the HTML), and
+  `create_reproducibility_record(model=…)`.
+
+The server stores `model=` verbatim without inspecting it — it cannot see which model is calling it,
+so nothing but this rule stands between a wrong id and a shipped report. `validate_okn_report.py`
+fails the package on a missing, generic, or inconsistent value.
 
 ## Figures — the rules that matter
 
@@ -328,9 +354,13 @@ It rejects, each as a blocking error:
    doesn't name `okn-report-style` (it built this package, so it belongs there). The server can't see
    your session's skills, so only `skills=` puts them on the record — fix it by regenerating with
    `skills=[...]`, never by hand-adding the line. An entry without a version only warns.
-10. **SPARQL → Mermaid** — a ```sparql block with no faithful ```mermaid diagram, or a stale warning
+10. **Model provenance** — the report `.md` title block, the `.html` header, or the reproducibility
+    record has no `Model:` value; the value is a family/product name or placeholder (`Claude`,
+    `GPT-5`, `unknown`, `<model>`) rather than an exact id; or the three do not match exactly. See
+    *Exact model provenance* above.
+11. **SPARQL → Mermaid** — a ```sparql block with no faithful ```mermaid diagram, or a stale warning
    notice (via `readd_query_diagrams.check`).
-11. **HTML/Markdown parity** — the `.html` drops sections, is much shorter than the `.md`, or is not one
+12. **HTML/Markdown parity** — the `.html` drops sections, is much shorter than the `.md`, or is not one
     well-formed document (via `check_report_parity`).
-12. **Scratch/QA/temp junk** — `__pycache__/`, `.DS_Store`, `*.tmp`, `*~`, `*.queries.json`, `*_old*`,
+13. **Scratch/QA/temp junk** — `__pycache__/`, `.DS_Store`, `*.tmp`, `*~`, `*.queries.json`, `*_old*`,
     `*copy*`, `preview*`, `worklist*` anywhere inside the folder.

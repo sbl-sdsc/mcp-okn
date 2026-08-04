@@ -559,8 +559,14 @@ async def create_chat_transcript(
     full answer text (verbatim, not summarized) via `exchanges`.
 
     Args:
-        model: The model version that produced the analysis
-            (e.g. `claude-opus-4-8`). Use the exact model ID.
+        model: The EXACT runtime model identifier that produced the analysis
+            (e.g. `claude-opus-4-8`, `gpt-5.6-sol`), taken from trusted session
+            metadata or supplied by the user — never a family or product name
+            (`Claude`, `GPT-5`, `Codex`), a placeholder, or an id inferred from
+            wording like "based on GPT-5". The server stores this verbatim and
+            cannot see which model is calling it, so it can neither derive the
+            value nor tell a right one from a wrong one. If you cannot determine
+            it, ASK the user rather than guessing.
         exchanges: The conversation turns, in order. Each is a dict with
             `prompt` (str) and optional `answer` (str). The `answer` MUST be your
             full response for that turn, reproduced verbatim as the user saw it —
@@ -908,7 +914,12 @@ async def create_reproducibility_record(
     The full result data belongs in the workbook / `data/` extracts, not here.
 
     Args:
-        model: The exact model id producing the analysis (e.g. `claude-opus-4-8`).
+        model: The EXACT runtime model identifier producing the analysis (e.g.
+            `claude-opus-4-8`, `gpt-5.6-sol`), taken from trusted session metadata
+            or supplied by the user — never a family or product name (`Claude`,
+            `GPT-5`, `Codex`), a placeholder, or an inferred id. The server stores
+            it verbatim and cannot check it; it must match the report's title-block
+            `**Model:**` exactly. If you cannot determine it, ASK the user.
         kgs_used: Shortnames of the knowledge graphs this record is about. If
             omitted, inferred from the selected queries. When given, drives the same
             guards as `create_chat_transcript`: a logged query touching none of them
