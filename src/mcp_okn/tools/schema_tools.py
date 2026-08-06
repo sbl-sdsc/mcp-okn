@@ -10,26 +10,27 @@ from ..app import mcp
 
 @mcp.tool()
 async def get_schema(shortname: str, compact: bool = True) -> dict[str, Any]:
-    """Get the schema (classes, predicates, edge/node properties) for one KG.
+    """Get the observed VoID schema for one KG.
 
     Call this BEFORE writing a `sparql_query` for a KG, to learn its specific
-    entity types, predicates, and property names. Prefers curated metadata and
-    falls back to probing the federation endpoint for the distinct classes and
-    predicates used in the KG's named graph.
+    entity types and predicates. The `okn-void` graph is the only schema source;
+    curated CSV metadata and direct graph probing are not used.
 
     Args:
         shortname: The KG shortname (e.g. `prokn`, `sawgraph`), as returned by
             `list_kgs`.
-        compact: If True (default), return the compact schema. Set False to also
-            include an `edge_property_summary` highlighting relationships that
-            carry edge properties (with ready-to-use reification query templates).
+        compact: If True (default), return classes/predicates with their observed
+            `entity_count` / `triple_count` columns. Set False to also include an
+            observed source-class → predicate → target-class paths and
+            datatype/language value shapes.
 
     Returns:
-        `{"shortname": ..., "schema": {"classes", "predicates",
-        "edge_properties", "node_properties"}}`. Each of `classes`/`predicates`/
-        `node_properties` is a `{"columns", "data", "count"}` table;
-        `edge_properties` maps relationship names to their properties and a
-        `query_template` showing the RDF reification pattern to query them.
+        `{"shortname": ..., "schema": {"classes", "predicates"}}`, with each
+        schema entry represented as a `{"columns", "data", "count"}` table.
+        `schema_sources` is always `["okn-void"]` on success. With
+        `compact=False`, `observed_edges` carries source class, predicate, target
+        class, and edge count, while `value_shapes` carries each predicate's
+        observed datatype/language.
         Also includes `next_step` reminding you to `probe_namespaces` for any
         predicate whose objects are ontology terms before writing the query. For
         KGs with domain rules the schema alone does not convey (e.g.
@@ -61,18 +62,13 @@ async def get_schema(shortname: str, compact: bool = True) -> dict[str, Any]:
 
 @mcp.tool()
 async def visualize_schema(shortname: str, scope: str | None = None) -> dict[str, Any]:
-    """Generate a Mermaid class diagram of a KG's schema.
+    """Generate a Mermaid class diagram from a KG's observed VoID schema.
 
     Builds the diagram deterministically from `get_schema` (no drafting needed):
-    node classes become class boxes (with node properties as members), edge
-    predicates become labeled arrows, and predicates that carry edge properties
-    become intermediary classes with typed fields wired `source --> edge -->
-    target`. Node (entity) classes are colored light blue and edge
-    (relationship) classes orange, with a legend showing both. When the curated
-    metadata names predicates but not their endpoints (e.g. `sawgraph`), edges
-    are recovered from the graph's `rdfs:domain`/`rdfs:range`, scoped to the
-    curated classes; any predicate still without endpoints is listed as a `%%`
-    comment rather than guessed at.
+    observed classes become class boxes and observed source-class → predicate →
+    target-class paths become labeled arrows. Curated metadata and declared
+    `rdfs:domain`/`rdfs:range` are not used. Predicates without an observed
+    object-class path are listed as a `%%` comment rather than guessed at.
 
     Args:
         shortname: The KG shortname (e.g. `spoke-genelab`), as returned by

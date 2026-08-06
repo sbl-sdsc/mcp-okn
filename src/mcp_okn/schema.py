@@ -1,13 +1,9 @@
 """Schema discovery for Proto-OKN knowledge graphs.
 
-For each KG we prefer a curated entity metadata CSV (classes, predicates, edge
-properties, node properties) published in the ``sbl-sdsc/mcp-proto-okn`` repo.
-When no curated metadata exists we fall back to probing the federation endpoint
-for the distinct classes and predicates used in the KG's named graph.
-
-The shortnames are the same ones used as federation named graphs
-(``https://purl.org/okn/frink/kg/{shortname}``), so the curated CSVs port over
-directly from the proto-okn server.
+The public schema and visualization tools use only observed schema statistics
+from the federation's ``okn-void`` graph. Legacy curated-metadata helpers remain
+in this module for the separate payload-drift checker, but they are not runtime
+schema sources.
 """
 
 from __future__ import annotations
@@ -20,6 +16,7 @@ from typing import Any
 
 import httpx
 
+from . import void as void_metadata
 from .contrasts import (
     SPOKE_GENELAB_CONTRAST_GUIDANCE,
     SPOKE_GENELAB_CONTRAST_SNIPPET,
@@ -107,7 +104,8 @@ async def fetch_entity_metadata(
 
     Returns a dict mapping each URI to ``{label, description, type,
     edge_property_of, source_class, target_class}``. Returns an empty dict when
-    no curated CSV exists for the KG (the caller then falls back to probing).
+    no curated CSV exists for the KG. This legacy inventory is used by the
+    payload-drift checker, not by the public schema tools.
     """
     if shortname in _metadata_cache and not refresh:
         return _metadata_cache[shortname]
@@ -356,11 +354,125 @@ def _should_exclude_uri(uri: str) -> bool:
     )
 
 
-async def _probe_schema(shortname: str) -> dict[str, Any]:
-    """Discover classes and predicates by probing the federation endpoint.
+def _include_domain_uri(uri: str) -> bool:
+    """Whether an observed VoID class/predicate belongs in the domain schema."""
+    return bool(uri) and not _is_provenance_uri(uri) and not _should_exclude_uri(uri)
 
-    Used when no curated entity metadata exists for the KG. Scopes each query to
-    the KG's named graph via a ``GRAPH`` block.
+
+def _empty_schema() -> dict[str, Any]:
+    """Return the VoID-only schema table shape."""
+    return {
+        "classes": {"columns": ["uri"], "data": [], "count": 0},
+        "predicates": {"columns": ["uri"], "data": [], "count": 0},
+    }
+
+
+def _merge_partition_table(
+    table: dict[str, Any],
+    observed: list[dict[str, Any]],
+    count_column: str,
+) -> None:
+    """Append an observed count column and any missing URI rows to one table."""
+    columns = table.setdefault("columns", ["uri"])
+    data = table.setdefault("data", [])
+    if "uri" not in columns:
+        return
+    uri_idx = columns.index("uri")
+    if count_column not in columns:
+        columns.append(count_column)
+        for row in data:
+            row.append(None)
+    count_idx = columns.index(count_column)
+
+    by_uri = {
+        str(item["uri"]): item.get(count_column)
+        for item in observed
+        if _include_domain_uri(str(item.get("uri") or ""))
+    }
+    existing: set[str] = set()
+    for row in data:
+        if len(row) <= uri_idx:
+            continue
+        uri = str(row[uri_idx])
+        existing.add(uri)
+        while len(row) < len(columns):
+            row.append(None)
+        row[count_idx] = by_uri.get(uri)
+
+    for uri in sorted(set(by_uri) - existing):
+        new_row: list[Any] = []
+        for column in columns:
+            if column == "uri":
+                new_row.append(uri)
+            elif column == count_column:
+                new_row.append(by_uri[uri])
+            elif column == "has_edge_properties":
+                new_row.append(False)
+            else:
+                new_row.append("")
+        data.append(new_row)
+    table["count"] = len(data)
+
+
+def merge_void_partitions(
+    schema: dict[str, Any],
+    partitions: dict[str, list[dict[str, Any]]],
+) -> dict[str, Any]:
+    """Merge observed VoID class/property partitions into a schema table."""
+    _merge_partition_table(
+        schema["classes"], partitions.get("classes", []), "entity_count"
+    )
+    _merge_partition_table(
+        schema["predicates"], partitions.get("predicates", []), "triple_count"
+    )
+    return schema
+
+
+def _table_uris(table: dict[str, Any]) -> list[str]:
+    """Return non-empty URI values from a compact schema table."""
+    columns = table.get("columns", [])
+    if "uri" not in columns:
+        return []
+    idx = columns.index("uri")
+    return [
+        str(row[idx]) for row in table.get("data", []) if len(row) > idx and row[idx]
+    ]
+
+
+def _observed_edges_table(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    """Format VoID observed edge paths as a compact table."""
+    kept = [
+        row
+        for row in rows
+        if all(
+            _include_domain_uri(str(row.get(key) or ""))
+            for key in ("source_class", "predicate", "target_class")
+        )
+    ]
+    columns = ["source_class", "predicate", "target_class", "triple_count"]
+    return {
+        "columns": columns,
+        "data": [[row.get(column) for column in columns] for row in kept],
+        "count": len(kept),
+    }
+
+
+def _value_shapes_table(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    """Format VoID datatype/language partitions as a compact table."""
+    kept = [row for row in rows if _include_domain_uri(str(row.get("predicate") or ""))]
+    columns = ["predicate", "kind", "value", "triple_count"]
+    return {
+        "columns": columns,
+        "data": [[row.get(column) for column in columns] for row in kept],
+        "count": len(kept),
+    }
+
+
+async def _probe_schema(shortname: str) -> dict[str, Any]:
+    """Legacy helper that probes classes and predicates in a named graph.
+
+    The public schema tools do not call this; they require observed VoID
+    partitions.
     """
     graph = named_graph(shortname)
     # Classes are probed by TWO separate queries, not one UNION. Combining the
@@ -437,33 +549,50 @@ SELECT DISTINCT ?predicate WHERE {{
 
 
 async def get_schema(shortname: str, compact: bool = True) -> dict[str, Any]:
-    """Return the schema (classes, predicates, edge/node properties) for a KG.
-
-    Prefers curated entity metadata; falls back to probing the federation
-    endpoint for distinct classes and predicates.
+    """Return the observed VoID schema for a KG.
 
     Args:
         shortname: The KG shortname (e.g. ``prokn``, ``spoke``), as returned by
             ``list_kgs``.
-        compact: If True (default), omit the prepended ``edge_property_summary``
-            section. Set False for the richer summary.
+        compact: If True (default), return classes/predicates with observed
+            entity/triple counts. Set False to also include observed edge paths
+            and literal datatype/language value shapes.
     """
-    if shortname in _TOO_LARGE:
+    partitions = await void_metadata.fetch_schema_partitions(shortname)
+    has_partitions = bool(partitions["classes"] or partitions["predicates"])
+    if not has_partitions:
         return {
             "shortname": shortname,
-            "error": (
-                f"`{shortname}` is too large to enumerate a schema for; query it "
-                "directly with known ontology terms instead."
-            ),
+            "error": f"No observed VoID schema partitions are available for `{shortname}`.",
+            "schema_sources": ["okn-void"],
         }
 
-    entity_metadata = await fetch_entity_metadata(shortname)
-    if entity_metadata:
-        schema = _build_schema_from_metadata(shortname, entity_metadata, compact)
-    else:
-        schema = await _probe_schema(shortname)
+    schema = merge_void_partitions(_empty_schema(), partitions)
 
-    return {"shortname": shortname, "schema": schema}
+    if not compact:
+        class_uris = _table_uris(schema["classes"])
+        predicate_uris = _table_uris(schema["predicates"])
+        details = await asyncio.gather(
+            void_metadata.fetch_observed_edges(
+                shortname,
+                class_uris=class_uris,
+                predicate_uris=predicate_uris,
+            ),
+            void_metadata.fetch_value_shapes(shortname),
+            return_exceptions=True,
+        )
+        for outcome in details:
+            if isinstance(outcome, BaseException):
+                raise outcome
+        edge_rows, value_rows = details
+        schema["observed_edges"] = _observed_edges_table(edge_rows)
+        schema["value_shapes"] = _value_shapes_table(value_rows)
+
+    return {
+        "shortname": shortname,
+        "schema": schema,
+        "schema_sources": ["okn-void"],
+    }
 
 
 # ── Mermaid class-diagram generation ─────────────────────────────────────────
@@ -524,10 +653,9 @@ async def infer_curated_edges(
     Read from the graph's ``rdfs:domain``/``rdfs:range``, restricted to the given
     curated class and predicate URIs.
 
-    Used when a KG's curated metadata names predicates but not their endpoints
-    (e.g. ``sawgraph``): the graph itself often declares domain/range, and
-    scoping both ends to curated classes keeps the result bounded and aligned
-    with the schema. Returns ``[]`` on error or when nothing matches.
+    This legacy helper is retained for compatibility tests. The public schema
+    visualization does not call it because declared endpoints are not observed
+    VoID paths. Returns ``[]`` on error or when nothing matches.
     """
     if not class_uris or not pred_uris:
         return []
@@ -558,42 +686,64 @@ SELECT DISTINCT ?p ?d ?r WHERE {{
 async def infer_edge_labels(
     shortname: str, schema: dict[str, Any]
 ) -> list[tuple[str, str, str]]:
-    """Return inferred ``(source_label, predicate_label, target_label)`` edges.
-
-    No-op (returns ``[]``) when the schema already has curated predicate
-    endpoints — we only fill the gap, never override curated relationships.
-    """
+    """Return observed VoID edges as label triples for a schema."""
     classes_tbl = schema.get("classes", {})
     predicates_tbl = schema.get("predicates", {})
-    p_src, p_tgt = (
-        _col(predicates_tbl, "source_class"),
-        _col(predicates_tbl, "target_class"),
+    class_uris = _table_uris(classes_tbl)
+    predicate_uris = _table_uris(predicates_tbl)
+    if not class_uris or not predicate_uris:
+        return []
+
+    observed = await void_metadata.fetch_observed_edges(
+        shortname,
+        class_uris=class_uris,
+        predicate_uris=predicate_uris,
     )
+    observed_schema = {
+        **schema,
+        "observed_edges": _observed_edges_table(observed),
+    }
+    return _edge_labels_from_observed_table(observed_schema)
 
-    # If any curated predicate already declares both endpoints, don't infer.
-    if p_src is not None and p_tgt is not None:
-        for row in predicates_tbl.get("data", []):
-            if _row_value(row, p_src) and _row_value(row, p_tgt):
-                return []
 
-    cls_label = _col(classes_tbl, "label")
-    pred_label = _col(predicates_tbl, "label")
-    class_rows = [r for r in classes_tbl.get("data", []) if r]
-    pred_rows = [r for r in predicates_tbl.get("data", []) if r]
+def _edge_labels_from_observed_table(
+    schema: dict[str, Any],
+) -> list[tuple[str, str, str]]:
+    """Map a VoID ``observed_edges`` table to Mermaid label triples."""
+    classes_tbl = schema.get("classes", {})
+    predicates_tbl = schema.get("predicates", {})
+    observed_tbl = schema.get("observed_edges", {})
+
+    class_uri = _col(classes_tbl, "uri")
+    class_label = _col(classes_tbl, "label")
+    predicate_uri = _col(predicates_tbl, "uri")
+    predicate_label = _col(predicates_tbl, "label")
+    source_class = _col(observed_tbl, "source_class")
+    edge_predicate = _col(observed_tbl, "predicate")
+    target_class = _col(observed_tbl, "target_class")
+
     uri_to_class = {
-        r[0]: (_row_value(r, cls_label) or _local_name(r[0])) for r in class_rows
+        _row_value(row, class_uri): (
+            _row_value(row, class_label) or _local_name(_row_value(row, class_uri))
+        )
+        for row in classes_tbl.get("data", [])
+        if _row_value(row, class_uri)
     }
-    uri_to_pred = {
-        r[0]: (_row_value(r, pred_label) or _local_name(r[0])) for r in pred_rows
+    uri_to_predicate = {
+        _row_value(row, predicate_uri): (
+            _row_value(row, predicate_label)
+            or _local_name(_row_value(row, predicate_uri))
+        )
+        for row in predicates_tbl.get("data", [])
+        if _row_value(row, predicate_uri)
     }
 
-    triples = await infer_curated_edges(
-        shortname, list(uri_to_class), list(uri_to_pred)
-    )
     edges: list[tuple[str, str, str]] = []
     seen: set[tuple[str, str, str]] = set()
-    for p, d, r in triples:
-        src, tgt, label = uri_to_class.get(d), uri_to_class.get(r), uri_to_pred.get(p)
+    for row in observed_tbl.get("data", []):
+        src = uri_to_class.get(_row_value(row, source_class))
+        label = uri_to_predicate.get(_row_value(row, edge_predicate))
+        tgt = uri_to_class.get(_row_value(row, target_class))
         if not (src and tgt and label):
             continue
         key = (src, label, tgt)
@@ -614,10 +764,9 @@ def build_mermaid_diagram(
     predicates with source/target metadata become labeled arrows, and predicates
     carrying edge properties become intermediary classes with typed fields
     wired ``source --> edge --> target``. ``inferred_edges`` (optional
-    ``(source_label, predicate_label, target_label)`` triples recovered from the
-    graph's domain/range) are drawn as labeled arrows for KGs whose curated
-    metadata lacks endpoints. Predicates that remain without endpoints are listed
-    as ``%%`` comments rather than guessed at.
+    ``(source_label, predicate_label, target_label)`` triples recovered from VoID
+    observed paths) are drawn as labeled arrows. Predicates without observed
+    object-class paths are listed as ``%%`` comments rather than guessed at.
     """
     classes_tbl = schema.get("classes", {})
     predicates_tbl = schema.get("predicates", {})
@@ -679,8 +828,8 @@ def build_mermaid_diagram(
         if tgt:
             relationships.append(f"  {edge_id} --> {ensure_class(tgt)}")
 
-    # Edges inferred from the graph's domain/range (when curated metadata lacks
-    # endpoints). Their predicate labels are excluded from the "undrawn" list.
+    # Observed VoID object-class paths. Their predicate labels are excluded from
+    # the "undrawn" list.
     inferred_labels: set[str] = set()
     for src, pred, tgt in inferred_edges or []:
         relationships.append(
@@ -752,15 +901,19 @@ def build_mermaid_diagram(
 
 
 async def visualize_schema(shortname: str) -> dict[str, Any]:
-    """Build a Mermaid ``classDiagram`` of a KG's schema, server-side.
+    """Build a Mermaid ``classDiagram`` from observed VoID schema paths.
 
     Returns ``{"shortname", "mermaid"}`` on success, or ``{"shortname",
-    "error"}`` when the KG has no enumerable schema (e.g. ``ubergraph``).
+    "error"}`` when the KG has no observed VoID schema.
     """
-    result = await get_schema(shortname, compact=True)
+    result = await get_schema(shortname, compact=False)
     if "error" in result:
         return {"shortname": shortname, "error": result["error"]}
     schema = result["schema"]
-    inferred = await infer_edge_labels(shortname, schema)
-    diagram = build_mermaid_diagram(shortname, schema, inferred_edges=inferred)
+    observed_edges = _edge_labels_from_observed_table(schema)
+    diagram = build_mermaid_diagram(
+        shortname,
+        schema,
+        inferred_edges=observed_edges,
+    )
     return {"shortname": shortname, "mermaid": diagram}

@@ -6,95 +6,33 @@ syntactically plausible text.
 
 ## Method
 
-Two KGs covering both shapes the generator produces were rendered through the
-real Mermaid engine via `@mermaid-js/mermaid-cli` (headless Chromium):
+`visualize_schema` calls `get_schema(shortname, compact=False)` and uses only
+the returned `okn-void` tables:
 
-- `spoke-genelab` — the richest KG: typed node properties, labeled edges, and
-  edge predicates with properties.
-- `dreamkg` — the class-only case: classes but no `SourceClass`/`TargetClass`
-  metadata, so predicates are emitted as `%%` comments instead of edges.
-- `rdkg` — the probe fallback: no curated CSV at all, so the schema comes from
-  probing the endpoint (bare class/predicate URIs, no labels or endpoints).
+- `classes` supplies the class boxes;
+- `observed_edges` supplies labeled source-class → predicate → target-class
+  arrows;
+- `predicates` without an observed object-class path are emitted as `%%`
+  comments.
+
+The implementation does not fetch curated CSV metadata, probe the target graph,
+or infer edges from declared `rdfs:domain` / `rdfs:range`.
 
 ```bash
 # write the diagram (no fences) to a .mermaid file, then:
-npx -y @mermaid-js/mermaid-cli -i spoke-genelab.mermaid -o spoke-genelab.png -s 2
+npx -y @mermaid-js/mermaid-cli -i schema.mermaid -o schema.png -s 2
 ```
 
-## Result — spoke-genelab (edges + edge properties)
+## Current Result
 
-- Rendered cleanly — exit 0, valid `classDiagram` SVG/PNG, **zero** syntax-error
-  markers.
-- Visual layout matches the design:
-  - **Class boxes with typed members** — `Mission`, `Study`, `Assay`, `Gene`
-    (`string organism/symbol/taxonomy`), `MethylationRegion` (`int`/`boolean`
-    fields).
-  - **Plain predicates as labeled arrows** — `CONDUCTED_MIcS`, `PERFORMED_SpAS`,
-    `INVESTIGATED_ASiA`/`INVESTIGATED_ASiCT`, `METHYLATED_IN_MGmMR`, plus the
-    `IS_ORTHOLOG_MGiG` Gene→Gene self-loop.
-  - **Edge-property predicates as intermediary classes** with `float` fields,
-    wired `source --> edge --> target` — e.g.
-    `MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG` between `Assay` and `Gene`,
-    `MEASURED_DIFFERENTIAL_ABUNDANCE_ASmO` → `Organism`,
-    `MEASURED_DIFFERENTIAL_METHYLATION_ASmMR` → `MethylationRegion`. Node
-    (entity) classes are colored **light blue** and edge (relationship) classes
-    **orange**, with a **legend** showing both, via per-class `style` statements
-    — the form that renders fills in `classDiagram` (a `classDef` + `:::`
-    assignment parses but emits no fill).
-  - **`direction TB`** yields the intended tall, top-down layout.
+The automated schema tests verify that a VoID path such as
+`Assay → has_attribute → AnatomicalEntity` is rendered as a Mermaid arrow and
+that failures in the VoID detail queries are surfaced instead of being replaced
+with curated or graph-probed results.
 
-![Rendered spoke-genelab schema diagram](spoke-genelab-schema.png)
-
-## Result — dreamkg (class-only)
-
-dreamkg has 14 schema.org classes but no source/target metadata on its
-predicates. The diagram renders cleanly (exit 0, zero syntax-error markers) as:
-
-- **14 class boxes** (all light blue) — `AdministrativeArea`, `Audience`,
-  `CategoryCode`, `ContactPoint`, `OpeningHoursSpecification`, `Organization`,
-  `Place`, `Service`, `ServiceChannel`, `TextObject`, `WebPage`, `Activity`,
-  `Collection`, `Entity`.
-- **34 predicates as `%%` comments** (e.g. `address`, `name`, `telephone`),
-  which Mermaid ignores — so no edges are fabricated.
-- A **legend with only the "Node class" entry** — the edge-class legend entry is
-  omitted because this KG has no edge classes.
-
-![Rendered dreamkg schema diagram](dreamkg-schema.png)
-
-## Result — rdkg (probe fallback)
-
-rdkg has no curated CSV, so `get_schema` probes the federation endpoint and
-returns bare class/predicate URIs (no labels, no source/target). The generator
-derives class names from URI local parts; the diagram renders cleanly (exit 0,
-zero syntax-error markers) as:
-
-- **13 class boxes** from probed URIs — `ObjectProperty`, `Ontology`,
-  `AnatomicalEntity`, `BiologicalProcess`, `ChemicalEntity`, `ChemicalExposure`,
-  `Disease`, `Drug`, `ExposureEvent`, `Gene`, `PhenotypicFeature`,
-  `SequenceVariant`, `Treatment`.
-- **21 predicates as `%%` comments** (e.g. `comment`, `label`, `prefLabel`) —
-  probing yields no endpoints, so no edges are fabricated.
-
-![Rendered rdkg schema diagram](rdkg-schema.png)
-
-## Result — sawgraph (domain/range edge inference)
-
-sawgraph's curated CSV names 23 predicates but has no `SourceClass`/`TargetClass`
-columns, so curated metadata yields **0 edges** — leaving 34 disconnected class
-boxes that Mermaid lays out in one unreadable horizontal row. Because the graph
-itself declares `rdfs:domain`/`rdfs:range`, `visualize_schema` recovers edges
-from those, scoped to the curated classes:
-
-- **57 edges drawn** (e.g. `Contaminant Observation --analyzed sample-->
-  Material Sample`, `Material Sample --from sample point--> Sample Point`),
-  connecting the schema into a readable graph (exit 0, zero syntax errors).
-- **10 predicates remain as `%%` comments** — their declared domain/range fall
-  outside the curated class set, so they are listed rather than guessed at.
-- Inference only fires when curated endpoints are absent; KGs with curated edges
-  (spoke-genelab) are unaffected, and KGs without domain/range (dreamkg) fall
-  back to the comment list.
-
-![Rendered sawgraph schema diagram](sawgraph-schema.png)
+The PNGs previously stored beside this document were generated by the older
+curated-metadata implementation. They are historical artifacts and are not
+current verification outputs for the VoID-only behavior.
 
 ## Result — transcript round-trip (end-to-end)
 

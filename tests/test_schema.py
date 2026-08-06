@@ -11,8 +11,10 @@ from mcp_okn.schema import (
     _should_exclude_uri,
     build_mermaid_diagram,
     infer_edge_labels,
+    merge_void_partitions,
     usage_notes,
 )
+from mcp_okn.sparql import SparqlError
 
 
 def _parse(csv_text: str) -> dict[str, dict[str, str]]:
@@ -70,6 +72,47 @@ def test_build_schema_classes_and_predicates():
     assert schema["edge_properties"] == {}
     # Compact omits the summary.
     assert "edge_property_summary" not in schema
+
+
+def test_merge_void_partitions_adds_counts_and_observed_rows():
+    schema = _build_schema_from_metadata("demo", _parse(SIMPLE_CSV), compact=True)
+    merge_void_partitions(
+        schema,
+        {
+            "classes": [
+                {"uri": "http://schema.org/Person", "entity_count": 12},
+                {"uri": "http://schema.org/Organization", "entity_count": 3},
+                {
+                    "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement",
+                    "entity_count": 99,
+                },
+            ],
+            "predicates": [
+                {"uri": "http://schema.org/name", "triple_count": 20},
+                {"uri": "http://schema.org/knows", "triple_count": 7},
+                {"uri": "http://rdfs.org/ns/void#triples", "triple_count": 1},
+            ],
+        },
+    )
+
+    classes = schema["classes"]
+    assert classes["columns"][-1] == "entity_count"
+    person = next(row for row in classes["data"] if row[0].endswith("Person"))
+    organization = next(
+        row for row in classes["data"] if row[0].endswith("Organization")
+    )
+    assert person[-1] == 12
+    assert organization[classes["columns"].index("label")] == ""
+    assert organization[-1] == 3
+    assert not any("Statement" in row[0] for row in classes["data"])
+
+    predicates = schema["predicates"]
+    assert predicates["columns"][-1] == "triple_count"
+    name = next(row for row in predicates["data"] if row[0].endswith("name"))
+    knows = next(row for row in predicates["data"] if row[0].endswith("knows"))
+    assert name[-1] == 20
+    assert knows[-1] == 7
+    assert not any("void#triples" in row[0] for row in predicates["data"])
 
 
 def test_build_schema_edge_properties_and_template():
@@ -177,27 +220,59 @@ def test_inferred_edges_drawn_and_excluded_from_undrawn():
     assert "%%   - name" not in diagram
 
 
-async def test_infer_edge_labels_skips_when_curated_edges_exist():
-    # EDGE_CSV declares source/target — inference must be a no-op (and make no
-    # network call, since it returns before querying).
+async def test_infer_edge_labels_uses_void_even_when_curated_edges_exist(monkeypatch):
     schema = _build_schema_from_metadata("demo", _parse(EDGE_CSV), compact=True)
-    assert await infer_edge_labels("demo", schema) == []
+
+    async def fake_observed(*args, **kwargs):
+        return [
+            {
+                "predicate": "https://ex.org/schema/MEASURED_EXPR",
+                "source_class": "https://ex.org/schema/Sample",
+                "target_class": "https://ex.org/schema/Gene",
+                "triple_count": 3,
+            }
+        ]
+
+    monkeypatch.setattr(schema_mod.void_metadata, "fetch_observed_edges", fake_observed)
+    assert await infer_edge_labels("demo", schema) == [
+        ("Sample", "MEASURED_EXPR", "Gene")
+    ]
 
 
 async def test_infer_edge_labels_maps_uris_to_labels(monkeypatch):
     schema = _build_schema_from_metadata("demo", _parse(SIMPLE_CSV), compact=True)
 
-    async def fake_infer(shortname, class_uris, pred_uris, limit=400):
+    async def fake_observed(
+        shortname, class_uris=None, predicate_uris=None, limit=400, client=None
+    ):
         return [
-            (
-                "http://schema.org/name",
-                "http://schema.org/Person",
-                "http://schema.org/Person",
-            )
+            {
+                "predicate": "http://schema.org/name",
+                "source_class": "http://schema.org/Person",
+                "target_class": "http://schema.org/Person",
+                "triple_count": 3,
+            }
         ]
 
-    monkeypatch.setattr(schema_mod, "infer_curated_edges", fake_infer)
+    monkeypatch.setattr(schema_mod.void_metadata, "fetch_observed_edges", fake_observed)
     assert await infer_edge_labels("demo", schema) == [("Person", "name", "Person")]
+
+
+async def test_infer_edge_labels_does_not_fall_back_to_declared_domain_range(
+    monkeypatch,
+):
+    schema = _build_schema_from_metadata("demo", _parse(SIMPLE_CSV), compact=True)
+
+    async def unavailable(*args, **kwargs):
+        raise SparqlError("no VoID")
+
+    async def should_not_infer(*args, **kwargs):
+        raise AssertionError("rdfs:domain/range fallback must not run")
+
+    monkeypatch.setattr(schema_mod.void_metadata, "fetch_observed_edges", unavailable)
+    monkeypatch.setattr(schema_mod, "infer_curated_edges", should_not_infer)
+    with pytest.raises(SparqlError, match="no VoID"):
+        await infer_edge_labels("demo", schema)
 
 
 def test_usage_notes_spoke_genelab_carries_both_rules():
@@ -380,3 +455,248 @@ async def test_probe_schema_propagates_a_failed_probe(monkeypatch):
     )
     with pytest.raises(RuntimeError, match="endpoint said no"):
         await schema_mod._probe_schema("demo")
+
+
+# ── get_schema composition ----------------------------------------------------
+
+
+async def test_get_schema_uses_only_void_partitions(monkeypatch):
+    async def should_not_fetch_metadata(shortname):
+        raise AssertionError("curated metadata must not be fetched")
+
+    async def fake_partitions(shortname):
+        return {
+            "classes": [{"uri": "http://schema.org/Person", "entity_count": 5}],
+            "predicates": [{"uri": "http://schema.org/name", "triple_count": 8}],
+        }
+
+    monkeypatch.setattr(
+        schema_mod, "fetch_entity_metadata", should_not_fetch_metadata
+    )
+    monkeypatch.setattr(
+        schema_mod.void_metadata, "fetch_schema_partitions", fake_partitions
+    )
+    out = await schema_mod.get_schema("demo")
+    assert out["schema_sources"] == ["okn-void"]
+    assert set(out["schema"]) == {"classes", "predicates"}
+    assert out["schema"]["classes"] == {
+        "columns": ["uri", "entity_count"],
+        "data": [["http://schema.org/Person", 5]],
+        "count": 1,
+    }
+    assert out["schema"]["predicates"] == {
+        "columns": ["uri", "triple_count"],
+        "data": [["http://schema.org/name", 8]],
+        "count": 1,
+    }
+
+
+async def test_get_schema_never_uses_live_probe(monkeypatch):
+    async def should_not_fetch_metadata(shortname):
+        raise AssertionError("curated metadata must not be fetched")
+
+    async def fake_partitions(shortname):
+        return {
+            "classes": [{"uri": "http://ex.org/Gene", "entity_count": 2}],
+            "predicates": [{"uri": "http://ex.org/related_to", "triple_count": 4}],
+        }
+
+    async def should_not_probe(shortname):
+        raise AssertionError("live probe should not run when VoID is available")
+
+    monkeypatch.setattr(
+        schema_mod, "fetch_entity_metadata", should_not_fetch_metadata
+    )
+    monkeypatch.setattr(
+        schema_mod.void_metadata, "fetch_schema_partitions", fake_partitions
+    )
+    monkeypatch.setattr(schema_mod, "_probe_schema", should_not_probe)
+    out = await schema_mod.get_schema("demo")
+    assert out["schema_sources"] == ["okn-void"]
+    assert out["schema"]["classes"]["data"] == [["http://ex.org/Gene", 2]]
+    assert out["schema"]["predicates"]["data"] == [["http://ex.org/related_to", 4]]
+
+
+async def test_get_schema_uses_void_for_graph_previously_too_large(monkeypatch):
+    async def fake_partitions(shortname):
+        return {
+            "classes": [{"uri": "http://ex.org/Term", "entity_count": 100}],
+            "predicates": [
+                {
+                    "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "triple_count": 100,
+                }
+            ],
+        }
+
+    async def should_not_probe(shortname):
+        raise AssertionError("live probe should not run when VoID is available")
+
+    monkeypatch.setattr(
+        schema_mod.void_metadata, "fetch_schema_partitions", fake_partitions
+    )
+    monkeypatch.setattr(schema_mod, "_probe_schema", should_not_probe)
+    out = await schema_mod.get_schema("ubergraph")
+    assert "error" not in out
+    assert out["schema_sources"] == ["okn-void"]
+    assert out["schema"]["classes"]["count"] == 1
+
+
+async def test_get_schema_noncompact_includes_void_details(monkeypatch):
+    async def fake_partitions(shortname):
+        return {
+            "classes": [
+                {"uri": "http://ex.org/Gene", "entity_count": 2},
+                {"uri": "http://ex.org/Disease", "entity_count": 3},
+            ],
+            "predicates": [{"uri": "http://ex.org/associated_with", "triple_count": 4}],
+        }
+
+    async def fake_edges(*args, **kwargs):
+        return [
+            {
+                "source_class": "http://ex.org/Gene",
+                "predicate": "http://ex.org/associated_with",
+                "target_class": "http://ex.org/Disease",
+                "triple_count": 4,
+            }
+        ]
+
+    async def fake_shapes(*args, **kwargs):
+        return [
+            {
+                "predicate": "http://ex.org/name",
+                "kind": "language",
+                "value": "en",
+                "triple_count": 2,
+            }
+        ]
+
+    monkeypatch.setattr(
+        schema_mod.void_metadata, "fetch_schema_partitions", fake_partitions
+    )
+    monkeypatch.setattr(schema_mod.void_metadata, "fetch_observed_edges", fake_edges)
+    monkeypatch.setattr(schema_mod.void_metadata, "fetch_value_shapes", fake_shapes)
+    out = await schema_mod.get_schema("demo", compact=False)
+    assert set(out["schema"]) == {
+        "classes",
+        "predicates",
+        "observed_edges",
+        "value_shapes",
+    }
+    assert out["schema"]["observed_edges"]["count"] == 1
+    assert out["schema"]["observed_edges"]["data"][0][-1] == 4
+    assert out["schema"]["value_shapes"]["count"] == 1
+    assert out["schema"]["value_shapes"]["data"][0][1:3] == ["language", "en"]
+
+
+async def test_get_schema_noncompact_propagates_void_detail_failures(monkeypatch):
+    async def fake_partitions(shortname):
+        return {
+            "classes": [{"uri": "http://ex.org/Gene", "entity_count": 2}],
+            "predicates": [{"uri": "http://ex.org/associated_with", "triple_count": 4}],
+        }
+
+    async def unavailable(*args, **kwargs):
+        raise SparqlError("detail query unavailable")
+
+    monkeypatch.setattr(
+        schema_mod.void_metadata, "fetch_schema_partitions", fake_partitions
+    )
+    monkeypatch.setattr(schema_mod.void_metadata, "fetch_observed_edges", unavailable)
+    monkeypatch.setattr(schema_mod.void_metadata, "fetch_value_shapes", unavailable)
+    with pytest.raises(SparqlError, match="detail query unavailable"):
+        await schema_mod.get_schema("demo", compact=False)
+
+
+async def test_get_schema_does_not_fall_back_when_void_is_unavailable(monkeypatch):
+    async def unavailable(shortname):
+        raise SparqlError("VoID endpoint unavailable")
+
+    async def should_not_fetch_metadata(shortname):
+        raise AssertionError("curated metadata must not be fetched")
+
+    async def should_not_probe(shortname):
+        raise AssertionError("live probe must not run")
+
+    monkeypatch.setattr(
+        schema_mod, "fetch_entity_metadata", should_not_fetch_metadata
+    )
+    monkeypatch.setattr(
+        schema_mod.void_metadata, "fetch_schema_partitions", unavailable
+    )
+    monkeypatch.setattr(schema_mod, "_probe_schema", should_not_probe)
+    with pytest.raises(SparqlError, match="VoID endpoint unavailable"):
+        await schema_mod.get_schema("demo")
+
+
+async def test_get_schema_reports_missing_void_partitions_without_fallback(monkeypatch):
+    async def no_partitions(shortname):
+        return {"classes": [], "predicates": []}
+
+    async def should_not_probe(shortname):
+        raise AssertionError("live probe must not run")
+
+    monkeypatch.setattr(
+        schema_mod.void_metadata, "fetch_schema_partitions", no_partitions
+    )
+    monkeypatch.setattr(schema_mod, "_probe_schema", should_not_probe)
+    out = await schema_mod.get_schema("demo")
+    assert out == {
+        "shortname": "demo",
+        "error": "No observed VoID schema partitions are available for `demo`.",
+        "schema_sources": ["okn-void"],
+    }
+
+
+async def test_visualize_schema_draws_only_observed_void_edges(monkeypatch):
+    async def fake_get_schema(shortname, compact=True):
+        assert compact is False
+        return {
+            "shortname": shortname,
+            "schema_sources": ["okn-void"],
+            "schema": {
+                "classes": {
+                    "columns": ["uri", "entity_count"],
+                    "data": [
+                        ["http://example.org/Assay", 10],
+                        ["http://example.org/AnatomicalEntity", 4],
+                    ],
+                    "count": 2,
+                },
+                "predicates": {
+                    "columns": ["uri", "triple_count"],
+                    "data": [["http://example.org/has_attribute", 11]],
+                    "count": 1,
+                },
+                "observed_edges": {
+                    "columns": [
+                        "source_class",
+                        "predicate",
+                        "target_class",
+                        "triple_count",
+                    ],
+                    "data": [
+                        [
+                            "http://example.org/Assay",
+                            "http://example.org/has_attribute",
+                            "http://example.org/AnatomicalEntity",
+                            11,
+                        ]
+                    ],
+                    "count": 1,
+                },
+                "value_shapes": {
+                    "columns": ["predicate", "kind", "value", "triple_count"],
+                    "data": [],
+                    "count": 0,
+                },
+            },
+        }
+
+    monkeypatch.setattr(schema_mod, "get_schema", fake_get_schema)
+    out = await schema_mod.visualize_schema("gene-expression-atlas-okn")
+    assert (
+        "Assay --> AnatomicalEntity : has_attribute"
+        in out["mermaid"]
+    )
