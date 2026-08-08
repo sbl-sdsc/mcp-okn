@@ -20,7 +20,7 @@ partitions. Those describe what is OBSERVED in each loaded graph:
 
 This module queries those live from the federation and parses them into plain
 dicts. It is the data layer behind ``get_kg_version``, ``describe_kg`` profiles,
-and the VoID-only ``get_schema`` / ``visualize_schema`` tools.
+and the authoritative topology used by ``get_schema`` / ``visualize_schema``.
 """
 
 from __future__ import annotations

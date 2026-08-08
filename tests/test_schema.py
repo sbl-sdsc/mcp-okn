@@ -1,6 +1,7 @@
 import csv
 from io import StringIO
 
+import httpx
 import pytest
 
 import mcp_okn.schema as schema_mod
@@ -55,6 +56,7 @@ https://ex.org/schema/Sample,Sample,A sample.,Class,,,
 https://ex.org/schema/MEASURED_EXPR,MEASURED_EXPR,Expression edge.,Predicate,,Sample,Gene
 https://ex.org/schema/log2fc,log2fc,Log2 fold change (float).,EdgeProperty,MEASURED_EXPR,,
 https://ex.org/schema/pval,pval,P-value (float).,EdgeProperty,MEASURED_EXPR,,
+https://ex.org/schema/symbol,symbol,Gene symbol (string).,NodeProperty,,Gene,
 """
 
 
@@ -172,20 +174,28 @@ def test_member_type_extracts_trailing_parenthetical():
     assert _member_type("plain description") == ""
 
 
-def test_build_mermaid_diagram_edges_and_intermediary_classes():
+def test_build_mermaid_diagram_uses_observed_endpoints_for_edge_classes():
     schema = _build_schema_from_metadata("demo", _parse(EDGE_CSV), compact=True)
-    diagram = build_mermaid_diagram("demo", schema)
+    # Reverse the curated Sample -> Gene endpoint to prove the diagram uses this
+    # observed VoID path rather than the curated SourceClass/TargetClass columns.
+    diagram = build_mermaid_diagram(
+        "demo",
+        schema,
+        inferred_edges=[("Gene", "MEASURED_EXPR", "Sample")],
+    )
     assert diagram.startswith("classDiagram")
     assert "direction TB" in diagram
     # Node classes appear as boxes.
     assert "class Gene" in diagram
     assert "class Sample" in diagram
     # The edge-property predicate becomes an intermediary class with typed fields,
-    # wired source --> edge --> target.
+    # wired only through the observed path.
     assert "class MEASURED_EXPR {" in diagram
     assert "float log2fc" in diagram
-    assert "Sample --> MEASURED_EXPR" in diagram
-    assert "MEASURED_EXPR --> Gene" in diagram
+    assert "Gene --> MEASURED_EXPR" in diagram
+    assert "MEASURED_EXPR --> Sample" in diagram
+    assert "Sample --> MEASURED_EXPR" not in diagram
+    assert "MEASURED_EXPR --> Gene" not in diagram
     # Node classes are light blue; the edge class is orange.
     assert "style Gene fill:#BBDEFB" in diagram
     assert "style Sample fill:#BBDEFB" in diagram
@@ -460,9 +470,17 @@ async def test_probe_schema_propagates_a_failed_probe(monkeypatch):
 # ── get_schema composition ----------------------------------------------------
 
 
-async def test_get_schema_uses_only_void_partitions(monkeypatch):
-    async def should_not_fetch_metadata(shortname):
-        raise AssertionError("curated metadata must not be fetched")
+async def test_get_schema_enriches_only_void_observed_uris(monkeypatch):
+    async def fake_metadata(shortname, **kwargs):
+        return _parse(
+            """\
+URI,Label,Description,Type,EdgePropertyOf,SourceClass,TargetClass
+http://schema.org/Person,Human,A human being.,Class,,,
+http://schema.org/Organization,Organization,Not observed.,Class,,,
+http://schema.org/name,display name,The name of the thing.,Predicate,,Wrong,Wrong
+http://schema.org/knows,knows,Not observed.,Predicate,,Person,Person
+"""
+        )
 
     async def fake_partitions(shortname):
         return {
@@ -470,30 +488,72 @@ async def test_get_schema_uses_only_void_partitions(monkeypatch):
             "predicates": [{"uri": "http://schema.org/name", "triple_count": 8}],
         }
 
-    monkeypatch.setattr(
-        schema_mod, "fetch_entity_metadata", should_not_fetch_metadata
-    )
+    monkeypatch.setattr(schema_mod, "fetch_entity_metadata", fake_metadata)
     monkeypatch.setattr(
         schema_mod.void_metadata, "fetch_schema_partitions", fake_partitions
     )
     out = await schema_mod.get_schema("demo")
-    assert out["schema_sources"] == ["okn-void"]
-    assert set(out["schema"]) == {"classes", "predicates"}
+    assert out["schema_sources"] == ["okn-void", "curated_metadata"]
+    assert set(out["schema"]) == {
+        "classes",
+        "predicates",
+        "edge_properties",
+        "unmapped_edge_properties",
+        "node_properties",
+    }
     assert out["schema"]["classes"] == {
-        "columns": ["uri", "entity_count"],
-        "data": [["http://schema.org/Person", 5]],
+        "columns": [
+            "uri",
+            "label",
+            "description",
+            "type",
+            "metadata_source",
+            "entity_count",
+        ],
+        "data": [
+            [
+                "http://schema.org/Person",
+                "Human",
+                "A human being.",
+                "Class",
+                "curated_metadata",
+                5,
+            ]
+        ],
         "count": 1,
     }
-    assert out["schema"]["predicates"] == {
-        "columns": ["uri", "triple_count"],
-        "data": [["http://schema.org/name", 8]],
-        "count": 1,
+    predicates = out["schema"]["predicates"]
+    assert predicates["data"][0][0:5] == [
+        "http://schema.org/name",
+        "display name",
+        "The name of the thing.",
+        "Predicate",
+        "curated_metadata",
+    ]
+    assert "source_class" not in predicates["columns"]
+    assert "target_class" not in predicates["columns"]
+    assert not any("Organization" in str(row) for row in out["schema"]["classes"]["data"])
+    assert not any("knows" in str(row) for row in predicates["data"])
+    assert out["metadata_enrichment"] == {
+        "source": "curated_metadata",
+        "status": "applied",
+        "topology_source": "okn-void",
+        "curated_predicate_endpoints_used": False,
+        "matched_classes": 1,
+        "matched_predicates": 1,
+        "descriptions": 2,
+        "node_properties": 0,
+        "node_properties_with_observed_owner": 0,
+        "edge_property_relationships": 0,
+        "edge_properties": 0,
+        "mapped_edge_properties": 0,
+        "unmapped_edge_properties": 0,
     }
 
 
 async def test_get_schema_never_uses_live_probe(monkeypatch):
-    async def should_not_fetch_metadata(shortname):
-        raise AssertionError("curated metadata must not be fetched")
+    async def no_metadata(shortname, **kwargs):
+        return {}
 
     async def fake_partitions(shortname):
         return {
@@ -504,20 +564,24 @@ async def test_get_schema_never_uses_live_probe(monkeypatch):
     async def should_not_probe(shortname):
         raise AssertionError("live probe should not run when VoID is available")
 
-    monkeypatch.setattr(
-        schema_mod, "fetch_entity_metadata", should_not_fetch_metadata
-    )
+    monkeypatch.setattr(schema_mod, "fetch_entity_metadata", no_metadata)
     monkeypatch.setattr(
         schema_mod.void_metadata, "fetch_schema_partitions", fake_partitions
     )
     monkeypatch.setattr(schema_mod, "_probe_schema", should_not_probe)
     out = await schema_mod.get_schema("demo")
     assert out["schema_sources"] == ["okn-void"]
-    assert out["schema"]["classes"]["data"] == [["http://ex.org/Gene", 2]]
-    assert out["schema"]["predicates"]["data"] == [["http://ex.org/related_to", 4]]
+    assert out["metadata_enrichment"]["status"] == "not_available"
+    assert out["schema"]["classes"]["data"][0][0] == "http://ex.org/Gene"
+    assert out["schema"]["classes"]["data"][0][-1] == 2
+    assert out["schema"]["predicates"]["data"][0][0] == "http://ex.org/related_to"
+    assert out["schema"]["predicates"]["data"][0][-1] == 4
 
 
 async def test_get_schema_uses_void_for_graph_previously_too_large(monkeypatch):
+    async def no_metadata(shortname, **kwargs):
+        return {}
+
     async def fake_partitions(shortname):
         return {
             "classes": [{"uri": "http://ex.org/Term", "entity_count": 100}],
@@ -535,6 +599,7 @@ async def test_get_schema_uses_void_for_graph_previously_too_large(monkeypatch):
     monkeypatch.setattr(
         schema_mod.void_metadata, "fetch_schema_partitions", fake_partitions
     )
+    monkeypatch.setattr(schema_mod, "fetch_entity_metadata", no_metadata)
     monkeypatch.setattr(schema_mod, "_probe_schema", should_not_probe)
     out = await schema_mod.get_schema("ubergraph")
     assert "error" not in out
@@ -543,6 +608,9 @@ async def test_get_schema_uses_void_for_graph_previously_too_large(monkeypatch):
 
 
 async def test_get_schema_noncompact_includes_void_details(monkeypatch):
+    async def no_metadata(shortname, **kwargs):
+        return {}
+
     async def fake_partitions(shortname):
         return {
             "classes": [
@@ -575,6 +643,7 @@ async def test_get_schema_noncompact_includes_void_details(monkeypatch):
     monkeypatch.setattr(
         schema_mod.void_metadata, "fetch_schema_partitions", fake_partitions
     )
+    monkeypatch.setattr(schema_mod, "fetch_entity_metadata", no_metadata)
     monkeypatch.setattr(schema_mod.void_metadata, "fetch_observed_edges", fake_edges)
     monkeypatch.setattr(schema_mod.void_metadata, "fetch_value_shapes", fake_shapes)
     out = await schema_mod.get_schema("demo", compact=False)
@@ -583,11 +652,148 @@ async def test_get_schema_noncompact_includes_void_details(monkeypatch):
         "predicates",
         "observed_edges",
         "value_shapes",
+        "edge_properties",
+        "unmapped_edge_properties",
+        "node_properties",
     }
     assert out["schema"]["observed_edges"]["count"] == 1
     assert out["schema"]["observed_edges"]["data"][0][-1] == 4
     assert out["schema"]["value_shapes"]["count"] == 1
     assert out["schema"]["value_shapes"]["data"][0][1:3] == ["language", "en"]
+    assert out["metadata_enrichment"]["status"] == "not_available"
+
+
+async def test_get_schema_preserves_property_metadata_for_observed_uris(monkeypatch):
+    async def fake_metadata(shortname, **kwargs):
+        return _parse(EDGE_CSV)
+
+    async def fake_partitions(shortname):
+        return {
+            "classes": [
+                {"uri": "https://ex.org/schema/Gene", "entity_count": 2},
+                {"uri": "https://ex.org/schema/Sample", "entity_count": 3},
+            ],
+            "predicates": [
+                {
+                    "uri": "https://ex.org/schema/MEASURED_EXPR",
+                    "triple_count": 4,
+                },
+                {"uri": "https://ex.org/schema/log2fc", "triple_count": 4},
+                {"uri": "https://ex.org/schema/pval", "triple_count": 4},
+                {"uri": "https://ex.org/schema/symbol", "triple_count": 2},
+            ],
+        }
+
+    async def fake_edges(*args, **kwargs):
+        return [
+            {
+                "source_class": "https://ex.org/schema/Sample",
+                "predicate": "https://ex.org/schema/MEASURED_EXPR",
+                "target_class": "https://ex.org/schema/Gene",
+                "triple_count": 4,
+            }
+        ]
+
+    async def fake_shapes(*args, **kwargs):
+        return []
+
+    monkeypatch.setattr(schema_mod, "fetch_entity_metadata", fake_metadata)
+    monkeypatch.setattr(
+        schema_mod.void_metadata, "fetch_schema_partitions", fake_partitions
+    )
+    monkeypatch.setattr(schema_mod.void_metadata, "fetch_observed_edges", fake_edges)
+    monkeypatch.setattr(schema_mod.void_metadata, "fetch_value_shapes", fake_shapes)
+
+    out = await schema_mod.get_schema("demo", compact=False)
+    schema = out["schema"]
+    assert out["schema_sources"] == ["okn-void", "curated_metadata"]
+    assert schema["node_properties"]["data"] == [
+        [
+            "https://ex.org/schema/symbol",
+            "symbol",
+            "Gene symbol (string).",
+            "NodeProperty",
+            "https://ex.org/schema/Gene",
+            "Gene",
+            "owner_uri_observed",
+            "curated_metadata",
+        ]
+    ]
+    edge = schema["edge_properties"]["MEASURED_EXPR"]
+    assert edge["metadata_source"] == "curated_metadata"
+    assert edge["endpoint_source"] == "okn-void"
+    assert "statement_level_mapping_not_independently_verified" in edge[
+        "mapping_validation"
+    ]
+    assert "source_class" not in edge and "target_class" not in edge
+    assert {prop["label"] for prop in edge["properties"]} == {"log2fc", "pval"}
+    assert all(
+        prop["metadata_source"] == "curated_metadata"
+        for prop in edge["properties"]
+    )
+    assert "rdf:predicate <https://ex.org/schema/MEASURED_EXPR>" in edge[
+        "query_template"
+    ]
+    assert "<https://ex.org/schema/log2fc> ?log2fc" in edge["query_template"]
+    assert schema["edge_property_summary"]["mapping_source"] == "curated_metadata"
+    assert schema["edge_property_summary"]["topology_source"] == "okn-void"
+    assert "statement_level_mapping_not_independently_verified" in schema[
+        "edge_property_summary"
+    ]["mapping_validation"]
+    assert schema["unmapped_edge_properties"]["count"] == 0
+    predicate_columns = schema["predicates"]["columns"]
+    measured = next(
+        row
+        for row in schema["predicates"]["data"]
+        if row[predicate_columns.index("uri")].endswith("MEASURED_EXPR")
+    )
+    assert measured[predicate_columns.index("has_edge_properties")] is True
+
+
+async def test_get_schema_retains_unowned_and_unmapped_property_metadata(monkeypatch):
+    async def fake_metadata(shortname, **kwargs):
+        return _parse(
+            """\
+URI,Label,Description,Type,EdgePropertyOf,SourceClass,TargetClass
+http://ex.org/Assay,Assay,An assay.,Class,,,
+http://ex.org/array_design,array_design,Array design (string),NodeProperty,,,
+http://ex.org/log2fc,log2fc,Fold change (float),EdgeProperty,,,
+"""
+        )
+
+    async def fake_partitions(shortname):
+        return {
+            "classes": [{"uri": "http://ex.org/Assay", "entity_count": 2}],
+            "predicates": [
+                {"uri": "http://ex.org/array_design", "triple_count": 2},
+                {"uri": "http://ex.org/log2fc", "triple_count": 2},
+            ],
+        }
+
+    monkeypatch.setattr(schema_mod, "fetch_entity_metadata", fake_metadata)
+    monkeypatch.setattr(
+        schema_mod.void_metadata, "fetch_schema_partitions", fake_partitions
+    )
+    out = await schema_mod.get_schema("demo")
+    schema = out["schema"]
+    assert schema["node_properties"]["data"][0][-2:] == [
+        "not_provided",
+        "curated_metadata",
+    ]
+    assert schema["unmapped_edge_properties"]["data"][0][0:6] == [
+        "http://ex.org/log2fc",
+        "log2fc",
+        "Fold change (float)",
+        "EdgeProperty",
+        "",
+        "not_provided",
+    ]
+    assert out["metadata_enrichment"]["node_properties"] == 1
+    assert out["metadata_enrichment"]["node_properties_with_observed_owner"] == 0
+    assert out["metadata_enrichment"]["edge_properties"] == 1
+    assert out["metadata_enrichment"]["mapped_edge_properties"] == 0
+    assert out["metadata_enrichment"]["unmapped_edge_properties"] == 1
+    assert "no reification query template was generated" in out["warnings"][0]
 
 
 async def test_get_schema_noncompact_propagates_void_detail_failures(monkeypatch):
@@ -607,6 +813,32 @@ async def test_get_schema_noncompact_propagates_void_detail_failures(monkeypatch
     monkeypatch.setattr(schema_mod.void_metadata, "fetch_value_shapes", unavailable)
     with pytest.raises(SparqlError, match="detail query unavailable"):
         await schema_mod.get_schema("demo", compact=False)
+
+
+async def test_get_schema_reports_unavailable_semantic_enrichment(monkeypatch):
+    async def fake_partitions(shortname):
+        return {
+            "classes": [{"uri": "http://ex.org/Gene", "entity_count": 2}],
+            "predicates": [{"uri": "http://ex.org/name", "triple_count": 4}],
+        }
+
+    async def unavailable(shortname, **kwargs):
+        raise httpx.ConnectError(
+            "metadata host unavailable",
+            request=httpx.Request("GET", "https://example.org/metadata.csv"),
+        )
+
+    monkeypatch.setattr(
+        schema_mod.void_metadata, "fetch_schema_partitions", fake_partitions
+    )
+    monkeypatch.setattr(schema_mod, "fetch_entity_metadata", unavailable)
+    out = await schema_mod.get_schema("demo")
+    assert out["schema_sources"] == ["okn-void"]
+    assert out["metadata_enrichment"]["status"] == "unavailable"
+    assert out["metadata_enrichment"]["curated_predicate_endpoints_used"] is False
+    assert "metadata host unavailable" in out["metadata_enrichment"]["error"]
+    assert "without labels/descriptions/property guidance" in out["warnings"][0]
+    assert out["schema"]["classes"]["data"][0][1:5] == ["", "", "", ""]
 
 
 async def test_get_schema_does_not_fall_back_when_void_is_unavailable(monkeypatch):
@@ -654,7 +886,12 @@ async def test_visualize_schema_draws_only_observed_void_edges(monkeypatch):
         assert compact is False
         return {
             "shortname": shortname,
-            "schema_sources": ["okn-void"],
+            "schema_sources": ["okn-void", "curated_metadata"],
+            "metadata_enrichment": {
+                "status": "applied",
+                "topology_source": "okn-void",
+                "curated_predicate_endpoints_used": False,
+            },
             "schema": {
                 "classes": {
                     "columns": ["uri", "entity_count"],
@@ -696,7 +933,6 @@ async def test_visualize_schema_draws_only_observed_void_edges(monkeypatch):
 
     monkeypatch.setattr(schema_mod, "get_schema", fake_get_schema)
     out = await schema_mod.visualize_schema("gene-expression-atlas-okn")
-    assert (
-        "Assay --> AnatomicalEntity : has_attribute"
-        in out["mermaid"]
-    )
+    assert "Assay --> AnatomicalEntity : has_attribute" in out["mermaid"]
+    assert out["schema_sources"] == ["okn-void", "curated_metadata"]
+    assert out["metadata_enrichment"]["curated_predicate_endpoints_used"] is False

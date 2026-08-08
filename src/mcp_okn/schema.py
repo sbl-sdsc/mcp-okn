@@ -1,9 +1,10 @@
 """Schema discovery for Proto-OKN knowledge graphs.
 
-The public schema and visualization tools use only observed schema statistics
-from the federation's ``okn-void`` graph. Legacy curated-metadata helpers remain
-in this module for the separate payload-drift checker, but they are not runtime
-schema sources.
+The public schema and visualization tools use observed schema statistics from
+the federation's ``okn-void`` graph as the sole topology authority. Curated
+entity metadata may enrich those observed URIs with labels, descriptions, and
+property/reification guidance, but its class/predicate endpoints never create or
+override graph structure.
 """
 
 from __future__ import annotations
@@ -99,13 +100,15 @@ async def fetch_entity_metadata(
     shortname: str,
     client: httpx.AsyncClient | None = None,
     refresh: bool = False,
+    fail_on_error: bool = False,
 ) -> dict[str, dict[str, str]]:
     """Fetch and parse the curated entity metadata CSV for a KG (cached).
 
     Returns a dict mapping each URI to ``{label, description, type,
     edge_property_of, source_class, target_class}``. Returns an empty dict when
-    no curated CSV exists for the KG. This legacy inventory is used by the
-    payload-drift checker, not by the public schema tools.
+    no curated CSV exists for the KG. When ``fail_on_error`` is true, transport
+    and non-404 HTTP failures are raised so callers can report degraded semantic
+    enrichment instead of silently returning a thinner schema.
     """
     if shortname in _metadata_cache and not refresh:
         return _metadata_cache[shortname]
@@ -116,12 +119,17 @@ async def fetch_entity_metadata(
         client = httpx.AsyncClient(timeout=30.0)
     try:
         resp = await client.get(url)
-        if resp.status_code != 200:
+        if resp.status_code == 404:
             _metadata_cache[shortname] = {}
+            return {}
+        if resp.status_code != 200:
+            if fail_on_error:
+                resp.raise_for_status()
             return {}
         content = resp.text
     except httpx.HTTPError:
-        _metadata_cache[shortname] = {}
+        if fail_on_error:
+            raise
         return {}
     finally:
         if owns:
@@ -180,6 +188,46 @@ def _generate_query_template(
         f"  ?stmt rdf:subject ?{source_var} ;\n"
         f"        rdf:predicate schema:{relationship_label} ;\n"
         f"        rdf:object ?{target_var} ;\n"
+        f"{chr(10).join(prop_patterns)}\n"
+        "}"
+    )
+
+
+def _generate_reification_query_template(
+    relationship_uri: str,
+    properties: list[dict[str, Any]],
+) -> str:
+    """Generate a URI-safe RDF reification template from curated property mappings."""
+
+    def variable(label: str, fallback: str) -> str:
+        value = re.sub(r"\W+", "_", label or "").strip("_")
+        if value and value[0].isdigit():
+            value = f"v_{value}"
+        return value or fallback
+
+    prop_selects = [
+        f"?{variable(str(prop.get('label') or ''), f'property_{index}')}"
+        for index, prop in enumerate(properties, start=1)
+    ]
+    prop_patterns = []
+    for index, prop in enumerate(properties, start=1):
+        uri = str(prop.get("uri") or "")
+        if not uri:
+            continue
+        prop_patterns.append(
+            f"        <{uri}> "
+            f"?{variable(str(prop.get('label') or ''), f'property_{index}')} ;"
+        )
+    if prop_patterns:
+        prop_patterns[-1] = prop_patterns[-1].rstrip(" ;") + " ."
+
+    return (
+        "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\n"
+        f"SELECT ?source ?target {' '.join(prop_selects)}\n"
+        "WHERE {\n"
+        "  ?stmt rdf:subject ?source ;\n"
+        f"        rdf:predicate <{relationship_uri}> ;\n"
+        "        rdf:object ?target ;\n"
         f"{chr(10).join(prop_patterns)}\n"
         "}"
     )
@@ -360,7 +408,7 @@ def _include_domain_uri(uri: str) -> bool:
 
 
 def _empty_schema() -> dict[str, Any]:
-    """Return the VoID-only schema table shape."""
+    """Return the observed VoID table shape before semantic enrichment."""
     return {
         "classes": {"columns": ["uri"], "data": [], "count": 0},
         "predicates": {"columns": ["uri"], "data": [], "count": 0},
@@ -426,6 +474,268 @@ def merge_void_partitions(
         schema["predicates"], partitions.get("predicates", []), "triple_count"
     )
     return schema
+
+
+def _observed_aliases(
+    uris: set[str],
+    metadata: dict[str, dict[str, str]],
+) -> dict[str, set[str]]:
+    """Index unambiguous URI, local-name, and curated-label aliases."""
+    aliases: dict[str, set[str]] = {}
+    for uri in uris:
+        meta = metadata.get(uri, {})
+        for alias in (uri, _local_name(uri), meta.get("label", "")):
+            if not alias:
+                continue
+            aliases.setdefault(alias, set()).add(uri)
+            aliases.setdefault(alias.casefold(), set()).add(uri)
+    return aliases
+
+
+def _resolve_observed_alias(
+    value: str,
+    aliases: dict[str, set[str]],
+) -> str | None:
+    """Resolve an alias only when it identifies one observed URI."""
+    matches = aliases.get(value) or aliases.get(value.casefold()) or set()
+    return next(iter(matches)) if len(matches) == 1 else None
+
+
+def _enriched_partition_table(
+    table: dict[str, Any],
+    metadata: dict[str, dict[str, str]],
+    count_column: str,
+    edge_property_parents: set[str] | None = None,
+) -> dict[str, Any]:
+    """Add semantic metadata columns without adding unobserved URI rows."""
+    uri_idx = table["columns"].index("uri")
+    count_idx = table["columns"].index(count_column)
+    is_predicate = edge_property_parents is not None
+    columns = ["uri", "label", "description", "type", "metadata_source"]
+    if is_predicate:
+        columns.append("has_edge_properties")
+    columns.append(count_column)
+
+    data: list[list[Any]] = []
+    for row in table.get("data", []):
+        uri = str(row[uri_idx])
+        meta = metadata.get(uri, {})
+        enriched: list[Any] = [
+            uri,
+            meta.get("label", ""),
+            meta.get("description", ""),
+            meta.get("type", ""),
+            "curated_metadata" if meta else "",
+        ]
+        if is_predicate:
+            enriched.append(uri in (edge_property_parents or set()))
+        enriched.append(row[count_idx] if len(row) > count_idx else None)
+        data.append(enriched)
+    return {"columns": columns, "data": data, "count": len(data)}
+
+
+def enrich_void_schema(
+    schema: dict[str, Any],
+    metadata: dict[str, dict[str, str]],
+    compact: bool,
+) -> dict[str, int]:
+    """Enrich a VoID schema with URI-matched curated semantics.
+
+    VoID controls which classes and predicates exist. Curated ``SourceClass`` /
+    ``TargetClass`` predicate endpoints are deliberately ignored. The only
+    curated structural annotations retained are node-property ownership and
+    ``EdgePropertyOf`` reification mappings.
+    """
+    class_uris = set(_table_uris(schema["classes"]))
+    predicate_uris = set(_table_uris(schema["predicates"]))
+    class_aliases = _observed_aliases(class_uris, metadata)
+    predicate_aliases = _observed_aliases(predicate_uris, metadata)
+
+    observed_edge_properties: dict[str, dict[str, Any]] = {}
+    edge_properties_by_parent: dict[str, list[dict[str, Any]]] = {}
+    mapped_edge_property_uris: set[str] = set()
+    for property_uri in predicate_uris:
+        meta = metadata.get(property_uri, {})
+        if (meta.get("type") or "").casefold() != "edgeproperty":
+            continue
+        property_info = {
+            "uri": property_uri,
+            "label": meta.get("label", "") or _local_name(property_uri),
+            "description": meta.get("description", ""),
+            "type": meta.get("type", ""),
+            "metadata_source": "curated_metadata",
+        }
+        observed_edge_properties[property_uri] = property_info
+        parents = [
+            parent.strip()
+            for parent in (meta.get("edge_property_of") or "").split(";")
+            if parent.strip()
+        ]
+        for parent in parents:
+            parent_uri = _resolve_observed_alias(parent, predicate_aliases)
+            if parent_uri is None:
+                continue
+            edge_properties_by_parent.setdefault(parent_uri, []).append(property_info)
+            mapped_edge_property_uris.add(property_uri)
+
+    node_property_rows: list[list[Any]] = []
+    for property_uri in sorted(predicate_uris):
+        meta = metadata.get(property_uri, {})
+        if (meta.get("type") or "").casefold() != "nodeproperty":
+            continue
+        owner_value = meta.get("source_class", "")
+        owner_uri = _resolve_observed_alias(owner_value, class_aliases)
+        owner_meta = metadata.get(owner_uri or "", {})
+        if owner_uri:
+            owner_label = owner_meta.get("label", "") or _local_name(owner_uri)
+            ownership_status = "owner_uri_observed"
+        elif owner_value:
+            owner_label = owner_value
+            ownership_status = "unresolved"
+        else:
+            owner_label = ""
+            ownership_status = "not_provided"
+        node_property_rows.append(
+            [
+                property_uri,
+                meta.get("label", "") or _local_name(property_uri),
+                meta.get("description", ""),
+                meta.get("type", ""),
+                owner_uri or "",
+                owner_label,
+                ownership_status,
+                "curated_metadata",
+            ]
+        )
+
+    edge_properties_output: dict[str, Any] = {}
+    for relationship_uri, properties in sorted(edge_properties_by_parent.items()):
+        rel_meta = metadata.get(relationship_uri, {})
+        relationship_label = rel_meta.get("label", "") or _local_name(relationship_uri)
+        edge_properties_output[relationship_label] = {
+            "uri": relationship_uri,
+            "label": relationship_label,
+            "description": rel_meta.get("description", ""),
+            "metadata_source": "curated_metadata",
+            "property_mapping_source": "curated_metadata",
+            "endpoint_source": "okn-void",
+            "mapping_validation": (
+                "property_and_parent_uris_observed_in_okn_void; "
+                "statement_level_mapping_not_independently_verified"
+            ),
+            "properties": properties,
+            "query_template": _generate_reification_query_template(
+                relationship_uri,
+                properties,
+            ),
+        }
+
+    schema["classes"] = _enriched_partition_table(
+        schema["classes"],
+        metadata,
+        "entity_count",
+    )
+    schema["predicates"] = _enriched_partition_table(
+        schema["predicates"],
+        metadata,
+        "triple_count",
+        edge_property_parents=set(edge_properties_by_parent),
+    )
+    schema["edge_properties"] = edge_properties_output
+    unmapped_edge_property_rows = [
+        [
+            info["uri"],
+            info["label"],
+            info["description"],
+            info["type"],
+            metadata.get(uri, {}).get("edge_property_of", ""),
+            (
+                "not_provided"
+                if not metadata.get(uri, {}).get("edge_property_of")
+                else "unresolved"
+            ),
+            "curated_metadata",
+        ]
+        for uri, info in sorted(observed_edge_properties.items())
+        if uri not in mapped_edge_property_uris
+    ]
+    schema["unmapped_edge_properties"] = {
+        "columns": [
+            "uri",
+            "label",
+            "description",
+            "type",
+            "edge_property_of",
+            "mapping_status",
+            "metadata_source",
+        ],
+        "data": unmapped_edge_property_rows,
+        "count": len(unmapped_edge_property_rows),
+    }
+    schema["node_properties"] = {
+        "columns": [
+            "uri",
+            "label",
+            "description",
+            "type",
+            "class_uri",
+            "class",
+            "ownership_status",
+            "metadata_source",
+        ],
+        "data": node_property_rows,
+        "count": len(node_property_rows),
+    }
+
+    if not compact and edge_properties_output:
+        schema["edge_property_summary"] = {
+            "CRITICAL_NOTE": (
+                "These RDF reification mappings come from curated metadata. "
+                "Relationship endpoints in observed_edges come only from okn-void; "
+                "curated predicate SourceClass/TargetClass values are ignored."
+            ),
+            "mapping_source": "curated_metadata",
+            "topology_source": "okn-void",
+            "mapping_validation": (
+                "property_and_parent_uris_observed_in_okn_void; "
+                "statement_level_mapping_not_independently_verified"
+            ),
+            "edges_with_properties": [
+                {
+                    "relationship": label,
+                    "uri": info["uri"],
+                    "properties": [
+                        {
+                            "name": prop.get("label", ""),
+                            "description": prop.get("description", ""),
+                        }
+                        for prop in info.get("properties", [])
+                    ],
+                    "example_query": info.get("query_template", ""),
+                }
+                for label, info in edge_properties_output.items()
+            ],
+        }
+
+    matched_classes = sum(uri in metadata for uri in class_uris)
+    matched_predicates = sum(uri in metadata for uri in predicate_uris)
+    descriptions = sum(
+        bool(metadata.get(uri, {}).get("description"))
+        for uri in class_uris | predicate_uris
+    )
+    return {
+        "matched_classes": matched_classes,
+        "matched_predicates": matched_predicates,
+        "descriptions": descriptions,
+        "node_properties": len(node_property_rows),
+        "node_properties_with_observed_owner": sum(
+            row[-2] == "owner_uri_observed" for row in node_property_rows
+        ),
+        "edge_property_relationships": len(edge_properties_output),
+        "edge_properties": len(observed_edge_properties),
+        "mapped_edge_properties": len(mapped_edge_property_uris),
+        "unmapped_edge_properties": len(unmapped_edge_property_rows),
+    }
 
 
 def _table_uris(table: dict[str, Any]) -> list[str]:
@@ -549,14 +859,15 @@ SELECT DISTINCT ?predicate WHERE {{
 
 
 async def get_schema(shortname: str, compact: bool = True) -> dict[str, Any]:
-    """Return the observed VoID schema for a KG.
+    """Return a VoID-authoritative, semantically enriched schema for a KG.
 
     Args:
         shortname: The KG shortname (e.g. ``prokn``, ``spoke``), as returned by
             ``list_kgs``.
-        compact: If True (default), return classes/predicates with observed
-            entity/triple counts. Set False to also include observed edge paths
-            and literal datatype/language value shapes.
+        compact: If True (default), return observed classes/predicates with
+            entity/triple counts plus URI-matched curated semantic metadata. Set
+            False to also include observed edge paths, literal datatype/language
+            value shapes, and an edge-property summary.
     """
     partitions = await void_metadata.fetch_schema_partitions(shortname)
     has_partitions = bool(partitions["classes"] or partitions["predicates"])
@@ -588,11 +899,54 @@ async def get_schema(shortname: str, compact: bool = True) -> dict[str, Any]:
         schema["observed_edges"] = _observed_edges_table(edge_rows)
         schema["value_shapes"] = _value_shapes_table(value_rows)
 
-    return {
+    warnings: list[str] = []
+    metadata_error: str | None = None
+    try:
+        metadata = await fetch_entity_metadata(shortname, fail_on_error=True)
+    except httpx.HTTPError as exc:
+        metadata = {}
+        metadata_error = str(exc).splitlines()[0]
+        warnings.append(
+            "Curated semantic metadata unavailable; returning observed VoID "
+            f"topology without labels/descriptions/property guidance: {metadata_error}"
+        )
+
+    enrichment = enrich_void_schema(schema, metadata, compact)
+    if enrichment["unmapped_edge_properties"]:
+        warnings.append(
+            f"{enrichment['unmapped_edge_properties']} observed predicates are "
+            "curated as EdgeProperty but lack a resolvable EdgePropertyOf mapping; "
+            "their descriptions remain in predicates/unmapped_edge_properties, "
+            "but no reification query template was generated."
+        )
+    if metadata_error:
+        metadata_status = "unavailable"
+    elif metadata:
+        metadata_status = "applied"
+    else:
+        metadata_status = "not_available"
+    metadata_enrichment: dict[str, Any] = {
+        "source": "curated_metadata",
+        "status": metadata_status,
+        "topology_source": "okn-void",
+        "curated_predicate_endpoints_used": False,
+        **enrichment,
+    }
+    if metadata_error:
+        metadata_enrichment["error"] = metadata_error
+
+    out: dict[str, Any] = {
         "shortname": shortname,
         "schema": schema,
-        "schema_sources": ["okn-void"],
+        "schema_sources": [
+            "okn-void",
+            *(["curated_metadata"] if metadata else []),
+        ],
+        "metadata_enrichment": metadata_enrichment,
     }
+    if warnings:
+        out["warnings"] = warnings
+    return out
 
 
 # ── Mermaid class-diagram generation ─────────────────────────────────────────
@@ -797,8 +1151,11 @@ def build_mermaid_diagram(
     np_label = np_cols.index("label") if "label" in np_cols else None
     np_desc = np_cols.index("description") if "description" in np_cols else None
     np_class = np_cols.index("class") if "class" in np_cols else None
+    np_class_uri = np_cols.index("class_uri") if "class_uri" in np_cols else None
     for row in node_props_tbl.get("data", []):
         if not row or np_label is None or np_class is None:
+            continue
+        if np_class_uri is not None and not _row_value(row, np_class_uri):
             continue
         owner = row[np_class] if len(row) > np_class else ""
         name = row[np_label] if len(row) > np_label else ""
@@ -810,7 +1167,14 @@ def build_mermaid_diagram(
         if member not in declared[cid]:
             declared[cid].append(member)
 
-    # Edge predicates with properties → intermediary classes.
+    observed_edges = inferred_edges or []
+    observed_by_predicate: dict[str, list[tuple[str, str, str]]] = {}
+    for edge in observed_edges:
+        observed_by_predicate.setdefault(edge[1], []).append(edge)
+
+    # Curated reification/property metadata becomes intermediary classes, but
+    # every connection to a node class comes from an observed VoID path.
+    consumed_observed_edges: set[tuple[str, str, str]] = set()
     for rel_label, info in edge_properties.items():
         edge_id = _mermaid_id(rel_label)
         members = []
@@ -822,48 +1186,50 @@ def build_mermaid_diagram(
         declared[edge_id] = members
         if edge_id not in edge_class_ids:
             edge_class_ids.append(edge_id)
-        src, tgt = info.get("source_class", ""), info.get("target_class", "")
-        if src:
+        for src, pred, tgt in observed_by_predicate.get(rel_label, []):
             relationships.append(f"  {ensure_class(src)} --> {edge_id}")
-        if tgt:
             relationships.append(f"  {edge_id} --> {ensure_class(tgt)}")
+            consumed_observed_edges.add((src, pred, tgt))
 
     # Observed VoID object-class paths. Their predicate labels are excluded from
     # the "undrawn" list.
     inferred_labels: set[str] = set()
-    for src, pred, tgt in inferred_edges or []:
+    for src, pred, tgt in observed_edges:
+        inferred_labels.add(pred)
+        if (src, pred, tgt) in consumed_observed_edges:
+            continue
         relationships.append(
             f"  {ensure_class(src)} --> {ensure_class(tgt)} : {_clean_edge_label(pred)}"
         )
-        inferred_labels.add(pred)
 
-    # Plain predicates (no edge properties) with source/target → labeled arrows.
+    # Predicates without an observed VoID object-class path remain comments.
+    # Curated SourceClass/TargetClass columns are intentionally ignored.
     pred_cols = predicates_tbl.get("columns", [])
     p_label = pred_cols.index("label") if "label" in pred_cols else None
-    p_src = pred_cols.index("source_class") if "source_class" in pred_cols else None
-    p_tgt = pred_cols.index("target_class") if "target_class" in pred_cols else None
-    p_has = (
-        pred_cols.index("has_edge_properties")
-        if "has_edge_properties" in pred_cols
-        else None
-    )
     for row in predicates_tbl.get("data", []):
         if not row:
             continue
-        if p_has is not None and len(row) > p_has and row[p_has]:
-            continue  # already drawn as an intermediary class
         label = row[p_label] if p_label is not None and len(row) > p_label else ""
         label = label or _local_name(row[0])
-        src = row[p_src] if p_src is not None and len(row) > p_src else ""
-        tgt = row[p_tgt] if p_tgt is not None and len(row) > p_tgt else ""
-        if src and tgt:
-            relationships.append(
-                f"  {ensure_class(src)} --> {ensure_class(tgt)} : {_clean_edge_label(label)}"
-            )
-        elif label not in inferred_labels:
+        if label not in inferred_labels:
             undrawn.append(_clean_edge_label(label))
 
-    lines = ["classDiagram", "  direction TB"]
+    has_curated_metadata = bool(edge_properties) or bool(
+        node_props_tbl.get("data", [])
+    )
+    for table in (classes_tbl, predicates_tbl):
+        source_idx = _col(table, "metadata_source")
+        has_curated_metadata = has_curated_metadata or any(
+            _row_value(row, source_idx) == "curated_metadata"
+            for row in table.get("data", [])
+        )
+    semantic_source = "curated_metadata" if has_curated_metadata else "unavailable"
+
+    lines = [
+        "classDiagram",
+        f"  %% Topology: okn-void; semantic enrichment: {semantic_source}",
+        "  direction TB",
+    ]
     for cid, members in declared.items():
         if members:
             lines.append(f"  class {cid} {{")
@@ -901,7 +1267,7 @@ def build_mermaid_diagram(
 
 
 async def visualize_schema(shortname: str) -> dict[str, Any]:
-    """Build a Mermaid ``classDiagram`` from observed VoID schema paths.
+    """Build an enriched Mermaid diagram with VoID-authoritative topology.
 
     Returns ``{"shortname", "mermaid"}`` on success, or ``{"shortname",
     "error"}`` when the KG has no observed VoID schema.
@@ -916,4 +1282,12 @@ async def visualize_schema(shortname: str) -> dict[str, Any]:
         schema,
         inferred_edges=observed_edges,
     )
-    return {"shortname": shortname, "mermaid": diagram}
+    out: dict[str, Any] = {
+        "shortname": shortname,
+        "mermaid": diagram,
+        "schema_sources": result.get("schema_sources", []),
+        "metadata_enrichment": result.get("metadata_enrichment", {}),
+    }
+    if result.get("warnings"):
+        out["warnings"] = result["warnings"]
+    return out

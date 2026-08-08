@@ -10,27 +10,40 @@ from ..app import mcp
 
 @mcp.tool()
 async def get_schema(shortname: str, compact: bool = True) -> dict[str, Any]:
-    """Get the observed VoID schema for one KG.
+    """Get a VoID-authoritative, semantically enriched schema for one KG.
 
     Call this BEFORE writing a `sparql_query` for a KG, to learn its specific
-    entity types and predicates. The `okn-void` graph is the only schema source;
-    curated CSV metadata and direct graph probing are not used.
+    entity types and predicates. The `okn-void` graph is the sole topology
+    authority: it determines which classes/predicates exist, their counts, and
+    observed source → predicate → target paths. Curated metadata enriches only
+    matching observed URIs with labels, descriptions, node-property ownership,
+    and RDF reification guidance. Curated predicate SourceClass/TargetClass
+    endpoints are ignored and direct graph probing is not used.
 
     Args:
         shortname: The KG shortname (e.g. `prokn`, `sawgraph`), as returned by
             `list_kgs`.
         compact: If True (default), return classes/predicates with their observed
-            `entity_count` / `triple_count` columns. Set False to also include an
-            observed source-class → predicate → target-class paths and
-            datatype/language value shapes.
+            `entity_count` / `triple_count` columns plus semantic enrichment.
+            Set False to also include observed source-class → predicate →
+            target-class paths, datatype/language value shapes, and an
+            edge-property summary.
 
     Returns:
-        `{"shortname": ..., "schema": {"classes", "predicates"}}`, with each
-        schema entry represented as a `{"columns", "data", "count"}` table.
-        `schema_sources` is always `["okn-void"]` on success. With
+        `schema_sources` names the layers used, normally `["okn-void",
+        "curated_metadata"]`. `metadata_enrichment` reports match counts and
+        explicitly confirms that curated predicate endpoints were not used.
+        Every enriched row/property carries `metadata_source`. With
         `compact=False`, `observed_edges` carries source class, predicate, target
         class, and edge count, while `value_shapes` carries each predicate's
-        observed datatype/language.
+        observed datatype/language. Node/edge properties whose curated owner or
+        `EdgePropertyOf` mapping is missing remain visible with an explicit
+        unresolved status; no endpoint or query template is invented. Mapped
+        edge properties explicitly state that both URIs were observed in VoID but
+        the statement-level association remains curated and was not independently
+        verified. If semantic metadata cannot be fetched, the observed VoID
+        schema is returned with a warning rather than silently appearing fully
+        enriched.
         Also includes `next_step` reminding you to `probe_namespaces` for any
         predicate whose objects are ontology terms before writing the query. For
         KGs with domain rules the schema alone does not convey (e.g.
@@ -62,13 +75,15 @@ async def get_schema(shortname: str, compact: bool = True) -> dict[str, Any]:
 
 @mcp.tool()
 async def visualize_schema(shortname: str, scope: str | None = None) -> dict[str, Any]:
-    """Generate a Mermaid class diagram from a KG's observed VoID schema.
+    """Generate a semantically enriched Mermaid diagram with observed topology.
 
     Builds the diagram deterministically from `get_schema` (no drafting needed):
     observed classes become class boxes and observed source-class → predicate →
-    target-class paths become labeled arrows. Curated metadata and declared
-    `rdfs:domain`/`rdfs:range` are not used. Predicates without an observed
-    object-class path are listed as a `%%` comment rather than guessed at.
+    target-class paths become labeled arrows. Curated labels, node properties,
+    and edge-property/reification metadata enrich those observed elements.
+    Curated predicate endpoints and declared `rdfs:domain`/`rdfs:range` are not
+    used. Predicates without an observed object-class path are listed as a `%%`
+    comment rather than guessed at.
 
     Args:
         shortname: The KG shortname (e.g. `spoke-genelab`), as returned by
