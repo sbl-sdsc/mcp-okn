@@ -41,12 +41,6 @@ dev = [
     "ruff>=0.6",
     "mypy>=1.11",
 ]
-# Layer-2 (Claude agent) of the registry benchmark. The dataset build and
-# layer-1 smoke need nothing beyond the core deps; only the agent needs this.
-# Install with `uv sync --group benchmark` (and set ANTHROPIC_API_KEY).
-benchmark = [
-    "anthropic>=0.39",
-]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
@@ -77,10 +71,9 @@ convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
 # Docstrings are required only on the shipped package, not on tests, one-off
-# maintenance scripts, the benchmark harness, or the bundled skill helper scripts.
+# maintenance scripts, or the bundled skill helper scripts.
 "tests/*" = ["D"]
 "scripts/*" = ["D"]
-"benchmark/*" = ["D"]
 "skills/*/scripts/*" = ["D"]
 
 [tool.mypy]

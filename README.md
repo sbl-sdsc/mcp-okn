@@ -479,6 +479,17 @@ query → record**. The single table below is grouped in that order.
   **`mcp-okn`** redesign across query model, KG coverage, schema/registry handling,
   cross-graph joins, and reproducibility.
 
+### Benchmarking
+
+The benchmark harness lives in its own repository,
+**[mcp-okn-benchmark](https://github.com/sbl-sdsc/mcp-okn-benchmark)**. It measures how
+well an agent turns a prose question into a correct SPARQL answer, and how much of that
+success comes from the server's tooling — running the same corpus against `mcp-okn` and
+`mcp-proto-okn`, locally over stdio or remotely over HTTP.
+
+It was split out of this repository (`benchmark/`, removed here) because a harness that
+measures two servers cannot live inside one of them.
+
 ### Module layout
 
 The package is organized by concern. `server.py` is a thin assembly point: it
@@ -537,7 +548,7 @@ pass when bumping. Scope (see `[tool.ruff]` in `pyproject.toml`):
 - **Excluded** (`extend-exclude`): `docs/reproduction/` and `docs/examples/` — one-off,
   throwaway figure/PDF/reproduction scripts, not maintained tooling.
 - **Docstrings not required** (`D` ignored via `per-file-ignores`): `tests/`, `scripts/`,
-  `benchmark/`, and the bundled `skills/*/scripts/` helpers. Everything else — chiefly
+  and the bundled `skills/*/scripts/` helpers. Everything else — chiefly
   `src/mcp_okn/` — is held to the full rule set.
 
 When committing, **stage explicit paths** (`git add <path> …`), not `git add -A`: the

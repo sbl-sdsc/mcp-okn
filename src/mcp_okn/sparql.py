@@ -184,9 +184,9 @@ async def run_sparql(
             shared one. A caller-supplied client is never closed here.
         normalize_schema: Canonicalize bracketed ``<https://schema.org/…>`` IRIs
             to the ``http`` form (default True). Set False to leave them as
-            written — required for the few KGs that STORE the ``https`` form
-            (see ``benchmark.adapt.HTTPS_SCHEMA_ORG_KGS``), where canonicalizing
-            to ``http`` would silently match nothing.
+            written — required for the KGs that STORE the ``https`` form
+            (``ruralkg``, ``sockg``, ``hydrologykg``, ``nikg``, ``ufokn``),
+            where canonicalizing to ``http`` would silently match nothing.
         max_retries: How many times to retry a TRANSIENT failure (the
             gateway/overload statuses), with jittered backoff. Default 2; pass 0
             to disable. A 429 gets at most ONE retry however high this is — each
