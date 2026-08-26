@@ -1,6 +1,8 @@
 # mcp-okn
 
 [![CI](https://github.com/sbl-sdsc/mcp-okn/actions/workflows/ci.yml/badge.svg)](https://github.com/sbl-sdsc/mcp-okn/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
+[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-green)](LICENSE)
 
 An MCP server for querying the **federated SPARQL endpoint**
 (`https://apps.okn.us/federation/sparql`) over the
