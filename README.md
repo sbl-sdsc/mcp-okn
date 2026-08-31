@@ -440,12 +440,12 @@ query → record**. The single table below is grouped in that order.
 | --- | --- |
 | **1. Discover graphs** | |
 | `list_kgs` | List all KGs with `shortname`, `title`, `description`, `homepage`, `named_graph`, and a `payload` list — the curated context types each graph **supplies** (e.g. `digcfdekg` → `gene, gene_set, trait, disease`), so you judge a graph by what it carries, not its name. Served from a bundled snapshot for instant cold start. |
-| `describe_kg(shortname, long_description=False)` | Full registry doc (frontmatter + prose) for one KG, for deeper context. Set `long_description=True` for the registry's ~150-word prose body — useful for picking among near-overlapping KGs. For `spoke-genelab`, also appends its [spaceflight assay-comparison rules](#spoke-genelab-spaceflight-assay-comparisons). |
+| `describe_kg(shortname, long_description=False, include_profile=False)` | Full registry doc (frontmatter + prose) for one KG, for deeper context. Set `long_description=True` for the registry's ~150-word prose body — useful for picking among near-overlapping KGs. Set `include_profile=True` to append a live `okn-void` dataset profile with version, last load time, total triples, and observed class/predicate counts. For `spoke-genelab`, also appends its [spaceflight assay-comparison rules](#spoke-genelab-spaceflight-assay-comparisons). |
 | `get_kg_version(shortname=None)` | A KG's release `version` and `last_updated` (ISO-8601 timestamp) — read live from the `okn-void` meta-graph's VoID provenance (`pav:version`, `pav:lastUpdatedOn`). Omit `shortname` for every KG that records provenance (39 of 42), sorted by shortname. Use it to check how current a graph is or cite the exact version behind an analysis. |
 | `get_server_info()` | Identify the server answering you: `service`, `version`, `build` (the deployed commit, or `unknown`), and `sparql_endpoint`. The package version alone can't separate two deployments — a hosted server can lag the repo — so use this when a tool or argument seems to be missing, or to record which build produced a result. The `build` is also pinned in every reproducibility header. |
 | **2. Inspect a graph's schema and identifiers** | |
-| `get_schema(shortname, compact=True)` | Schema for one KG — classes, predicates, edge properties (with reification query templates), and node properties. Uses curated metadata when available, else probes the endpoint for distinct classes/predicates. Call **before** writing a query. Returns `usage_notes` (guidance + a reusable SPARQL snippet) for KGs with query-time domain rules, e.g. [`spoke-genelab`](#spoke-genelab-spaceflight-assay-comparisons). |
-| `visualize_schema(shortname)` | Deterministic Mermaid `classDiagram` of a KG's schema, built server-side from `get_schema` — class boxes, labeled edges, and edge-property predicates as intermediary classes with typed fields (node classes light blue, edge classes orange, with a legend). When the curated metadata names predicates but not their endpoints, edges are recovered from the graph's `rdfs:domain`/`rdfs:range` scoped to the curated classes. Returns `mermaid_block` (already wrapped in a ` ```mermaid ` fence) — output it **verbatim**; don't redraw it as SVG/an image. Rendered examples: [spoke-genelab](docs/spoke-genelab-schema.png), [dreamkg](docs/dreamkg-schema.png), [rdkg](docs/rdkg-schema.png) ([details](docs/verification-visualize-schema.md)). |
+| `get_schema(shortname, compact=True)` | VoID-authoritative schema for one KG: `okn-void` determines observed classes, predicates, counts, and topology; curated metadata enriches matching observed URIs with labels, descriptions, node properties, and RDF-reification guidance. Curated predicate endpoints never create or override edges. Unowned node properties and unmapped edge properties remain visible with explicit status rather than being dropped or guessed; mapped reification guidance is clearly marked as curated and not independently statement-validated. Set `compact=False` for observed source-class → predicate → target-class paths, datatype/language value shapes, and an edge-property summary. `metadata_enrichment` reports provenance and match counts. Call **before** writing a query. Returns `usage_notes` for KGs with query-time domain rules, e.g. [`spoke-genelab`](#spoke-genelab-spaceflight-assay-comparisons). |
+| `visualize_schema(shortname)` | Deterministic Mermaid `classDiagram`: boxes and edges come only from observed `okn-void` topology, while curated labels and node/edge-property metadata enrich those observed elements. Reified relationship classes are wired through VoID-observed endpoints, never curated `SourceClass`/`TargetClass` values. Predicates without an observed object-class path are listed as comments rather than guessed at. Returns `mermaid_block` (already wrapped in a ` ```mermaid ` fence) — output it **verbatim**; don't redraw it as SVG/an image. |
 | `probe_namespaces(shortname, predicate, sample=0)` | Report which identifier/ontology namespaces populate a predicate's objects. `get_schema` lists a KG's predicates but not which controlled vocabularies fill their values — call this before the main query whenever a predicate's objects are ontology terms (diseases, chemicals, genes, anatomy) to see the actual namespace distribution and pick the best identifier to join on. Exploratory — not logged. |
 | `find_crosswalks(shortname, sample=0)` | Find ontology/database ids in a KG however they are encoded, profiling all three places at once: mapping predicates (`rdfs:seeAlso`, `owl:sameAs`, SKOS `*Match`, `oboInOwl:hasDbXref`), node IRIs that *are* the ontology term (`role="subject"`), and domain-specific predicates carrying an id (`role="object"`). The latter two are invisible to a mapping-predicate-only scan. Use whenever a KG seems to lack the identifier you need on its obvious predicates. |
 | **3. Plan a cross-graph join** | |
@@ -509,7 +509,7 @@ src/mcp_okn/
 ├── sparql.py         # federation endpoint client: shared connection, retries, schema.org normalization
 ├── crosswalks.py     # curated cross-KG join table (data/crosswalks.json)
 ├── payloads.py       # curated per-KG payload tags (data/kg_payloads.json)
-├── void.py           # per-KG version / last-updated from the okn-void graph
+├── void.py           # VoID provenance, dataset profiles, and observed schema partitions
 ├── taxon.py          # NCBITaxon hub: taxon-overlap skeleton composition
 ├── session.py        # in-memory query/diagram log for transcripts
 ├── build_info.py     # which BUILD is running (MCP_OKN_BUILD / git HEAD)
@@ -569,9 +569,9 @@ Reproducible checks of behaviors that aren't covered by the offline unit tests:
   written with the `https` form still hits `http`-stored data (dreamkg `schema:Rating`
   → 3762), while string literals / `IRI(CONCAT(…))` are left intact (see below).
 - [visualize_schema rendering](docs/verification-visualize-schema.md) — the
-  generated Mermaid renders cleanly as a class diagram via `mermaid-cli` across
-  all three schema paths (curated, class-only, probe fallback), and survives the
-  `create_chat_transcript` round-trip.
+  generated Mermaid uses observed `okn-void` topology plus URI-matched semantic
+  enrichment; the verification also covers the `create_chat_transcript`
+  round-trip.
 - [transcript MCP resource](docs/verification-transcript-resource.md) — the
   `transcript://session/latest` resource serves the full document via the
   resource API, with its embedded diagram still rendering.
@@ -658,13 +658,13 @@ Each KG carries curated `payload` tags — the context types it **supplies** —
 edited at `metadata/kg_payloads.json` and bundled to
 `src/mcp_okn/data/kg_payloads.json` by `refresh_snapshot.py` (which validates that
 every tag is a defined vocabulary term and every servable KG is tagged). These tags
-are partly derived from each KG's entity schema, which `get_schema` fetches live
-from the upstream `*_entities.csv` files — so a KG's schema can change under the
-tags. `scripts/check_payload_drift.py` guards against that: it fingerprints each
-KG's live class + predicate labels and diffs them against a committed baseline
-(`metadata/schema_fingerprints.json`), flagging KGs whose schema moved so their
-tags can be re-reviewed. Run it after an upstream schema update; re-ground any
-affected tags, then `--update` to accept the new baseline.
+were historically derived in part from upstream `*_entities.csv` inventories.
+`get_schema` now uses those inventories only to enrich VoID-observed URIs; they
+do not determine which classes, predicates, or edges exist.
+`scripts/check_payload_drift.py` fingerprints their class + predicate labels and
+diffs them against a committed baseline (`metadata/schema_fingerprints.json`) to
+flag payload tags that may need re-review. Run it after an upstream inventory
+update; re-ground any affected tags, then `--update` to accept the new baseline.
 
 ```bash
 uv run python scripts/check_payload_drift.py            # report drift; exit 1 if any

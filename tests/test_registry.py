@@ -1,5 +1,6 @@
 from mcp_okn import registry
 from mcp_okn.registry import _meta_from_front, _split_frontmatter
+from mcp_okn.sparql import SparqlError
 
 SAMPLE = """\
 ---
@@ -85,3 +86,61 @@ async def test_describe_kg_appends_assay_rules_for_spoke_genelab(monkeypatch):
         assert "DIRECTION" in out and "COMPARABILITY" in out
         # Points at the reusable snippet without inlining it here.
         assert 'get_schema("spoke-genelab")' in out
+
+
+async def test_describe_kg_optionally_appends_void_profile(monkeypatch):
+    from mcp_okn import server, void
+
+    async def fake_doc(shortname, client=None, refresh=False):
+        return "# prokn\n\nProtein knowledge graph."
+
+    async def fake_profile(shortname, client=None):
+        return {
+            "shortname": "prokn",
+            "named_graph": "https://purl.org/okn/frink/kg/prokn",
+            "version": "v0.0.5",
+            "last_updated": "2026-06-23T14:26:02.126+00:00",
+            "triple_count": 99302327,
+            "property_count": 218,
+            "class_count": 42,
+            "predicate_count": 218,
+        }
+
+    monkeypatch.setattr(registry, "fetch_kg_doc", fake_doc)
+    monkeypatch.setattr(void, "fetch_profile", fake_profile)
+    out = await server.describe_kg("prokn", include_profile=True)
+    assert "## Dataset profile (VoID)" in out
+    assert "**Version:** v0.0.5" in out
+    assert "**Triples:** 99,302,327" in out
+    assert "**Observed classes:** 42" in out
+    assert "**Observed predicates:** 218" in out
+
+
+async def test_describe_kg_profile_is_opt_in(monkeypatch):
+    from mcp_okn import server, void
+
+    async def fake_doc(shortname, client=None, refresh=False):
+        return "# prokn"
+
+    async def should_not_fetch(shortname, client=None):
+        raise AssertionError("VoID profile should be opt-in")
+
+    monkeypatch.setattr(registry, "fetch_kg_doc", fake_doc)
+    monkeypatch.setattr(void, "fetch_profile", should_not_fetch)
+    assert await server.describe_kg("prokn") == "# prokn"
+
+
+async def test_describe_kg_surfaces_profile_failure(monkeypatch):
+    from mcp_okn import server, void
+
+    async def fake_doc(shortname, client=None, refresh=False):
+        return "# prokn"
+
+    async def unavailable(shortname, client=None):
+        raise SparqlError("endpoint unavailable\nQuery: SELECT ...")
+
+    monkeypatch.setattr(registry, "fetch_kg_doc", fake_doc)
+    monkeypatch.setattr(void, "fetch_profile", unavailable)
+    out = await server.describe_kg("prokn", include_profile=True)
+    assert "Dataset profile unavailable: endpoint unavailable" in out
+    assert "Query:" not in out

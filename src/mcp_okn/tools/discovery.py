@@ -7,7 +7,12 @@ from typing import Any
 from .. import __version__, payloads, registry, schema, void
 from ..app import mcp
 from ..build_info import build_id
-from ..sparql import FEDERATION_ENDPOINT
+from ..sparql import FEDERATION_ENDPOINT, SparqlError
+
+
+def _display_profile_value(value: Any) -> str:
+    """Format one compact VoID profile value for Markdown."""
+    return f"{value:,}" if isinstance(value, int) else str(value or "not recorded")
 
 
 @mcp.tool()
@@ -53,7 +58,11 @@ async def list_kgs() -> list[dict[str, Any]]:
 
 
 @mcp.tool()
-async def describe_kg(shortname: str, long_description: bool = False) -> str:
+async def describe_kg(
+    shortname: str,
+    long_description: bool = False,
+    include_profile: bool = False,
+) -> str:
     """Return registry documentation for one KG.
 
     Args:
@@ -65,6 +74,10 @@ async def describe_kg(shortname: str, long_description: bool = False) -> str:
             descriptions are too terse to tell which KG a question belongs to:
             the longer prose usually names the entities, sources, and scope that
             disambiguate near-overlapping graphs.
+        include_profile: If True, append a compact LIVE dataset profile from the
+            `okn-void` graph: version, last load time, total triples, and observed
+            class/property counts. False by default so registry-only discovery
+            stays instant and independent of the federation endpoint.
 
     Returns the registry markdown (title, description, and prose) for deeper
     context before writing a query — or just the long description when
@@ -76,6 +89,41 @@ async def describe_kg(shortname: str, long_description: bool = False) -> str:
         doc = await registry.fetch_kg_long_description(shortname)
     else:
         doc = await registry.fetch_kg_doc(shortname)
+
+    if include_profile:
+        try:
+            profile = await void.fetch_profile(shortname)
+        except SparqlError as exc:
+            profile_text = f"Dataset profile unavailable: {str(exc).splitlines()[0]}"
+        else:
+            if profile is None:
+                profile_text = "No VoID dataset profile is recorded for this graph."
+            else:
+                profile_text = "\n".join(
+                    [
+                        (
+                            "- **Version:** "
+                            f"{_display_profile_value(profile.get('version'))}"
+                        ),
+                        (
+                            "- **Last updated:** "
+                            f"{_display_profile_value(profile.get('last_updated'))}"
+                        ),
+                        (
+                            "- **Triples:** "
+                            f"{_display_profile_value(profile.get('triple_count'))}"
+                        ),
+                        (
+                            "- **Observed classes:** "
+                            f"{_display_profile_value(profile.get('class_count'))}"
+                        ),
+                        (
+                            "- **Observed predicates:** "
+                            f"{_display_profile_value(profile.get('predicate_count'))}"
+                        ),
+                    ]
+                )
+        doc = f"{doc}\n\n## Dataset profile (VoID)\n\n{profile_text}"
 
     notes = schema.usage_notes(shortname)
     if notes is not None:

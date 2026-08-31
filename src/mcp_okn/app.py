@@ -22,9 +22,16 @@ Query the OKN federated SPARQL endpoint over the Proto-OKN knowledge graphs.
 Workflow:
 1. Call `list_kgs` to see the available knowledge graphs and their descriptions,
    then choose which one(s) are relevant to the question.
-2. Optionally call `describe_kg` for richer prose context on a chosen KG.
+2. Optionally call `describe_kg` for richer prose context on a chosen KG. Pass
+   `include_profile=True` when dataset size, observed class/property counts,
+   version, and last-load time would help compare candidate graphs.
 3. Call `get_schema` for each chosen KG to learn its classes, predicates, and
-   property names BEFORE writing SPARQL — each KG has its own schema.
+   property names BEFORE writing SPARQL — each KG has its own schema. The schema
+   uses observed `okn-void` class/property partitions as the topology authority
+   and enriches matching URIs with curated labels, descriptions, and property
+   guidance. Curated predicate endpoints are ignored. Use `compact=False` when
+   you also need observed source→predicate→target paths, datatype/language value
+   shapes, and reification summaries.
 3b. When a predicate's objects are ontology terms (diseases, chemicals, genes),
    call `probe_namespaces(shortname, predicate)` to see which IDENTIFIER SCHEME /
    ontology actually populates them (e.g. DOID vs MONDO, NCBI Gene vs Ensembl vs

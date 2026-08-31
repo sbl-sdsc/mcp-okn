@@ -10,26 +10,40 @@ from ..app import mcp
 
 @mcp.tool()
 async def get_schema(shortname: str, compact: bool = True) -> dict[str, Any]:
-    """Get the schema (classes, predicates, edge/node properties) for one KG.
+    """Get a VoID-authoritative, semantically enriched schema for one KG.
 
     Call this BEFORE writing a `sparql_query` for a KG, to learn its specific
-    entity types, predicates, and property names. Prefers curated metadata and
-    falls back to probing the federation endpoint for the distinct classes and
-    predicates used in the KG's named graph.
+    entity types and predicates. The `okn-void` graph is the sole topology
+    authority: it determines which classes/predicates exist, their counts, and
+    observed source → predicate → target paths. Curated metadata enriches only
+    matching observed URIs with labels, descriptions, node-property ownership,
+    and RDF reification guidance. Curated predicate SourceClass/TargetClass
+    endpoints are ignored and direct graph probing is not used.
 
     Args:
         shortname: The KG shortname (e.g. `prokn`, `sawgraph`), as returned by
             `list_kgs`.
-        compact: If True (default), return the compact schema. Set False to also
-            include an `edge_property_summary` highlighting relationships that
-            carry edge properties (with ready-to-use reification query templates).
+        compact: If True (default), return classes/predicates with their observed
+            `entity_count` / `triple_count` columns plus semantic enrichment.
+            Set False to also include observed source-class → predicate →
+            target-class paths, datatype/language value shapes, and an
+            edge-property summary.
 
     Returns:
-        `{"shortname": ..., "schema": {"classes", "predicates",
-        "edge_properties", "node_properties"}}`. Each of `classes`/`predicates`/
-        `node_properties` is a `{"columns", "data", "count"}` table;
-        `edge_properties` maps relationship names to their properties and a
-        `query_template` showing the RDF reification pattern to query them.
+        `schema_sources` names the layers used, normally `["okn-void",
+        "curated_metadata"]`. `metadata_enrichment` reports match counts and
+        explicitly confirms that curated predicate endpoints were not used.
+        Every enriched row/property carries `metadata_source`. With
+        `compact=False`, `observed_edges` carries source class, predicate, target
+        class, and edge count, while `value_shapes` carries each predicate's
+        observed datatype/language. Node/edge properties whose curated owner or
+        `EdgePropertyOf` mapping is missing remain visible with an explicit
+        unresolved status; no endpoint or query template is invented. Mapped
+        edge properties explicitly state that both URIs were observed in VoID but
+        the statement-level association remains curated and was not independently
+        verified. If semantic metadata cannot be fetched, the observed VoID
+        schema is returned with a warning rather than silently appearing fully
+        enriched.
         Also includes `next_step` reminding you to `probe_namespaces` for any
         predicate whose objects are ontology terms before writing the query. For
         KGs with domain rules the schema alone does not convey (e.g.
@@ -61,17 +75,14 @@ async def get_schema(shortname: str, compact: bool = True) -> dict[str, Any]:
 
 @mcp.tool()
 async def visualize_schema(shortname: str, scope: str | None = None) -> dict[str, Any]:
-    """Generate a Mermaid class diagram of a KG's schema.
+    """Generate a semantically enriched Mermaid diagram with observed topology.
 
     Builds the diagram deterministically from `get_schema` (no drafting needed):
-    node classes become class boxes (with node properties as members), edge
-    predicates become labeled arrows, and predicates that carry edge properties
-    become intermediary classes with typed fields wired `source --> edge -->
-    target`. Node (entity) classes are colored light blue and edge
-    (relationship) classes orange, with a legend showing both. When the curated
-    metadata names predicates but not their endpoints (e.g. `sawgraph`), edges
-    are recovered from the graph's `rdfs:domain`/`rdfs:range`, scoped to the
-    curated classes; any predicate still without endpoints is listed as a `%%`
+    observed classes become class boxes and observed source-class → predicate →
+    target-class paths become labeled arrows. Curated labels, node properties,
+    and edge-property/reification metadata enrich those observed elements.
+    Curated predicate endpoints and declared `rdfs:domain`/`rdfs:range` are not
+    used. Predicates without an observed object-class path are listed as a `%%`
     comment rather than guessed at.
 
     Args:
