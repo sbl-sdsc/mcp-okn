@@ -823,27 +823,26 @@
     {
       "id": "G2-uniprot-ncipidkg-prokn",
       "left_kg": "ncipidkg",
-      "left_predicate": "http://www.w3.org/2002/07/owl#sameAs (UniProt accession of an NCI-PID interaction participant)",
-      "left_role": "object",
+      "left_predicate": "TWO LEGS, both required: (a) http://www.w3.org/2002/07/owl#sameAs (UniProt accession of an NCI-PID interaction participant, object role), and (b) node-iri — ncipidkg's own sio:SIO_010043-typed http://purl.uniprot.org/uniprot/{acc} nodes (subject role).",
+      "left_role": "object (owl:sameAs leg) + subject (node-IRI leg)",
       "right_kg": "prokn",
       "right_predicate": "node-iri (the same http://purl.uniprot.org/uniprot/{acc} IRI)",
       "right_role": "subject",
       "shared_key": "UniProt",
-      "key_namespace": "ncipidkg <http://purl.uniprot.org/uniprot/{acc}> on owl:sameAs <-> prokn node-iri, the SAME namespace (see iri_normalization for the form this leg used to carry)",
+      "key_namespace": "Both ncipidkg legs and prokn use the SAME namespace, <http://purl.uniprot.org/uniprot/{acc}>, so the IRIs join literally with no rewrite (see iri_normalization for the form the sameAs leg used to carry).",
       "bridge_kg": null,
       "iri_normalization": "NONE as of the deployed ncipidkg v0.0.2 — its owl:sameAs objects are http://purl.uniprot.org/uniprot/{acc}, prokn's own form, so the IRIs join literally. THIS CHANGED: the recipe previously rewrote http://identifiers.org/uniprot/{acc} to the purl form, and that filter now matches 0 of the 11,760 sameAs triples. Drive from ncipidkg (11,760 sameAs triples) and probe prokn; the reverse direction scans prokn unbound and times out.",
-      "verified_count": 1979,
-      "thin_thread_note": "Small join: NCI-PID exposes only ~85 distinct UniProt ids via owl:sameAs (it is a focused signaling-pathway graph), of which 12 are present in ProKN. Real but low-cardinality; useful for pathway-context lookups, not bulk joins. NCI-PID also encodes some proteins as obo/PR_ terms that this CURIE route does not reach.",
+      "verified_count": 2493,
       "example_question": "Signaling-pathway interaction proteins (NCI-PID) enriched with ProKN protein annotations.",
       "example_questions": [
         "Signaling-pathway interaction proteins (NCI-PID) enriched with ProKN protein annotations.",
-        "Of the 1,979 shared UniProt proteins, which NCI-PID signaling hubs also carry a ProKN disease association or PTM annotation, flagging pathway nodes with therapeutic relevance?"
+        "Of the 2,493 shared UniProt proteins, which NCI-PID signaling hubs also carry a ProKN disease association or PTM annotation, flagging pathway nodes with therapeutic relevance?"
       ],
-      "skeleton_query": "SELECT (COUNT(DISTINCT ?u) AS ?n) WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/ncipidkg> { ?s <http://www.w3.org/2002/07/owl#sameAs> ?u .\n    FILTER(STRSTARTS(STR(?u),'http://purl.uniprot.org/uniprot/')) }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?u ?pp ?op . }\n}",
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?u) AS ?n) WHERE {\n  {\n    GRAPH <https://purl.org/okn/frink/kg/ncipidkg> {\n      ?s <http://www.w3.org/2002/07/owl#sameAs> ?u .\n      FILTER(STRSTARTS(STR(?u),'http://purl.uniprot.org/uniprot/'))\n    }\n  } UNION {\n    GRAPH <https://purl.org/okn/frink/kg/ncipidkg> {\n      ?u a <http://semanticscience.org/resource/SIO_010043> .\n      FILTER(STRSTARTS(STR(?u),'http://purl.uniprot.org/uniprot/'))\n    }\n  }\n  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?u ?pp ?op . }\n}",
       "skeleton_verified": true,
-      "verified_count_note": "1,979 UniProt accessions are carried by both ncipidkg's owl:sameAs leg and prokn. Re-verified live 2026-09-01. The node-IRI route (ncipidkg's sio:SIO_010043-typed purl.uniprot.org nodes) reaches 537 — fewer, because only 2,588 nodes are typed while 11,760 sameAs triples exist — so the sameAs leg is the one to use for this pair.",
-      "drift_note": "RECIPE REPAIRED 2026-09-01, and the stored count was WRONG, not merely stale: the skeleton returned 0 on re-verification (expected 12). ncipidkg's redeploy (v0.0.2, 2026-07-02) moved its owl:sameAs objects from http://identifiers.org/uniprot/ (now 0 triples) to http://purl.uniprot.org/uniprot/ (11,760). The old normalization rewrote a namespace that no longer exists in the graph, so the join silently emptied. Repaired to a direct IRI match: 12 -> 1,979.",
-      "verified_on": "2026-09-01"
+      "verified_count_note": "2,493 UniProt accessions are shared with prokn, via the UNION of ncipidkg's two near-disjoint legs: owl:sameAs contributes 1,979 and the node-IRI leg 537, of which 514 are NOT reachable through sameAs (1,979 + 514 = 2,493). Measured live 2026-09-02; all three figures reproduce. Using either leg alone understates the join — the sameAs-only recipe this entry carried until 2026-09-02 missed 514 proteins (26%). ncipidkg also encodes some proteins as obo/PR_ terms that neither leg reaches, so 2,493 remains a lower bound. The two worked transcripts (proteins02_q1, proteins02_q2) were REGENERATED 2026-09-02 against this two-leg recipe; the 2026-06-27 versions queried the retired identifiers.org form and returned 0 rows.",
+      "drift_note": "RECIPE REPAIRED 2026-09-01, and the stored count was WRONG, not merely stale: the skeleton returned 0 on re-verification (expected 12). ncipidkg's redeploy (v0.0.2, 2026-07-02) moved its owl:sameAs objects from http://identifiers.org/uniprot/ (now 0 triples) to http://purl.uniprot.org/uniprot/ (11,760). The old normalization rewrote a namespace that no longer exists in the graph, so the join silently emptied. Repaired to a direct IRI match: 12 -> 1,979. WIDENED 2026-09-02: a schema audit found the recipe was still incomplete — it used only the sameAs leg, whose 1,979 misses 514 proteins that ncipidkg exposes solely as node IRIs. Rewritten as a two-leg UNION: 1,979 -> 2,493. The same audit retired a thin_thread_note that had survived the 2026-09-01 repair unrevised and stated two now-false figures (\"~85 distinct UniProt ids via owl:sameAs, of which 12 are present in ProKN\"; live values are 11,736 distinct and 1,979).",
+      "verified_on": "2026-09-02"
     },
     {
       "id": "A4-mondo",
