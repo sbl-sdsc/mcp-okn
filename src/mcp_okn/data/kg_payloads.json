@@ -24,7 +24,6 @@
     "medical_device": "Medical devices",
     "social_determinant": "Social determinants of health (SDoH)",
     "aging": "Aging, solitude, and behavioral-health research concepts",
-    "biology_concept": "General biology concepts and causal mechanisms (textbook-derived)",
     "geospatial": "Geospatial features / place-based linkage (S2 cells, FIPS, ZIP, admin regions)",
     "hydrology": "Hydrologic features (streams, aquifers, water wells, water systems)",
     "environmental": "Environmental contamination, samples, and measurements (e.g. PFAS)",
@@ -44,9 +43,6 @@
     "general": "Broad, general-purpose knowledge base spanning many domains"
   },
   "payloads": {
-    "bio101": [
-      "biology_concept"
-    ],
     "biobricks-aopwiki": [
       "adverse_event",
       "chemical",

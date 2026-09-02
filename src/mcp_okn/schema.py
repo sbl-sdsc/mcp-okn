@@ -88,6 +88,60 @@ ASK {{ GRAPH <https://purl.org/okn/frink/kg/{shortname}> {{
   ?s <{predicate}> ?o . }} }}\
 """
 
+#: ncipidkg no longer has a deployment gap. Upstream commit 422b460 (2026-09-02)
+#: realigned ``ncipidkg_entities.csv`` with the served graph: the three
+#: uninstantiated classes and the six absent predicates were dropped, the edge
+#: metadata was moved to its deployed ``http://example.org/okn/`` namespace, and
+#: the SIO_010043 typing flaw and ``owl:sameAs`` semantics are now documented in
+#: the CSV itself. A live census on 2026-09-02 confirms the CSV's 3 classes and
+#: 14 predicates are exactly the deployed set, so NO schema-ahead-of-deploy
+#: warning applies. What remains below is the guidance the CSV still does not
+#: carry: identifier hygiene and how to join the graph.
+NCIPIDKG_GUIDANCE = """\
+IDENTIFIER AND JOIN NOTES (the curated schema matches the deployed graph as of
+2026-09-02; these are the things it still does not tell you).
+
+JOIN ON BOTH LEGS. ncipidkg exposes UniProt accessions twice, and the two are
+near-disjoint views of the same protein set: owl:sameAs (11,760 triples, 11,736
+distinct accessions) and its own sio:SIO_010043-typed
+<http://purl.uniprot.org/uniprot/{acc}> node IRIs (2,527). Against prokn,
+sameAs matches 1,979 and the node-IRI leg 537 - but 514 of that 537 are NOT
+reachable through sameAs. UNION the two legs (crosswalk G2, 2,493); either
+alone understates the join by about a quarter.
+
+NON-CANONICAL UNIPROT ACCESSIONS. Four accession strings carry a GenBank-style
+sequence-version suffix that UniProt IRIs never use: P29353.1 (with owl:sameAs
+to P29353.2 and P29353.3) labelled SHC1, and Q05397.1 labelled PTK2. All are
+ORPHANS - no RO_* edges, no reified-statement roles - and the canonical P29353 /
+Q05397 appear NOWHERE in the graph. The live SHC1 and PTK2 data hangs off
+unreviewed TrEMBL accessions instead, B5BU19 (321 statement roles) and B4E2N6
+(760), so a join on the reviewed Swiss-Prot accession silently misses two major
+signalling hubs the graph does contain.
+
+NO NAMED-PATHWAY AXIS. Despite the KG's name, nothing links an interaction to
+an NCI-PID pathway: biolink:Pathway has 0 instances and both obo:RO_0000056 and
+the ndexbio inPathway predicate are absent (the realigned CSV simply omits them,
+so their absence is easy to miss). Ask about the interaction topology - 83,704
+reified INDRA statements over obo:RO_0002436 / RO_0002578 / RO_0002629 /
+RO_0002630 / RO_0002211 - not about pathway names.\
+"""
+
+#: Companion snippet: the two-leg UniProt join, which is the thing most callers
+#: get wrong on this KG.
+NCIPIDKG_SNIPPET = """\
+# ncipidkg UniProt: BOTH legs. Either alone understates the join.
+SELECT (COUNT(DISTINCT ?u) AS ?n) WHERE {
+  { GRAPH <https://purl.org/okn/frink/kg/ncipidkg> {
+      ?s <http://www.w3.org/2002/07/owl#sameAs> ?u .
+      FILTER(STRSTARTS(STR(?u),'http://purl.uniprot.org/uniprot/')) } }
+  UNION
+  { GRAPH <https://purl.org/okn/frink/kg/ncipidkg> {
+      ?u a <http://semanticscience.org/resource/SIO_010043> .
+      FILTER(STRSTARTS(STR(?u),'http://purl.uniprot.org/uniprot/')) } }
+  # ... join ?u to the other graph here
+}\
+"""
+
 #: Per-KG usage notes surfaced on ``get_schema`` (attached by the tool wrapper in
 #: :mod:`mcp_okn.tools.schema_tools`), delivered exactly when a client is about to
 #: write SPARQL for that KG. Only KGs with domain rules that the schema alone does
@@ -126,62 +180,8 @@ _KG_USAGE_NOTES: dict[str, dict[str, str]] = {
         ),
     },
     "ncipidkg": {
-        "guidance": SCHEMA_AHEAD_OF_DEPLOY_GUIDANCE.format(
-            shortname="ncipidkg",
-            absent=9,
-            total=20,
-            checked="2026-09-02",
-            detail=(
-                "The curated schema describes a LATER release than the federation "
-                "serves, and the two disagree on a whole VOCABULARY NAMESPACE. The "
-                "deployed graph publishes its edge metadata under "
-                "<http://example.org/okn/> (evidenceCount 83,704, evidenceUrl 83,704, "
-                "processType 10,662), NOT the <https://www.ndexbio.org/vocab/ncipid/> "
-                "form the schema lists — query the example.org form or you get 0 rows. "
-                "Only 3 of the 4 ndexbio predicates were relocated: inPathway has 0 "
-                "triples under BOTH namespaces, so it is deleted, not moved. "
-                "NO NAMED-PATHWAY AXIS IS DEPLOYED. inPathway, obo:RO_0000056 "
-                "'participates in' and the biolink:Pathway class (0 instances) are the "
-                "three ways this schema expresses pathway membership, and all three are "
-                "absent — so 'which NCI-PID pathway is X in?' returns 0 rows for every "
-                "X. What IS live is the interaction topology: 83,704 reified INDRA "
-                "statements (rdf:subject/predicate/object) over obo:RO_0002436 / "
-                "RO_0002578 / RO_0002629 / RO_0002630 / RO_0002211. Ask about "
-                "signaling edges, not about pathway names. "
-                "Also absent: skos:exactMatch, owl:equivalentClass, rdfs:domain, "
-                "rdfs:range, and the obo:SO_0000655 ncRNA / obo:CHEBI_23367 "
-                "molecular-entity classes (0 instances each). Live: owl:sameAs (11,760 "
-                "triples, 11,736 distinct accessions), rdfs:label (2,608) and "
-                "biolink:GeneFamily (20). "
-                "TYPING FLAW — sio:SIO_010043 'protein' types 2,588 nodes, of which 61 "
-                "are not proteins: 30 bare CHEBI CURIE STRINGS used as relative IRIs "
-                "(e.g. 'CHEBI:15552' with no scheme, so a bracketed <...> IRI can never "
-                "match them), 19 build-machine paths (<file:///mnt/repo/ncipidkg/main/"
-                "PLC>) and 12 <https://identifiers.org/cas/> numbers. These 61 are real "
-                "participants (40 of them carry 2,401 statement roles), so they are the "
-                "KG's chemical payload — just mistyped and unreachable via the absent "
-                "skos:exactMatch. Filter to <http://purl.uniprot.org/uniprot/> IRIs when "
-                "you want proteins. "
-                "NON-CANONICAL UNIPROT ACCESSIONS — 4 accession strings carry a "
-                "GenBank-style sequence-version suffix that UniProt IRIs never use: "
-                "P29353.1 (with owl:sameAs to P29353.2 and P29353.3) labelled SHC1, and "
-                "Q05397.1 labelled PTK2. All are ORPHANS (no RO_* edges, no statement "
-                "roles) and the canonical P29353 / Q05397 appear NOWHERE in the graph. "
-                "The live SHC1 and PTK2 data hangs off unreviewed TrEMBL accessions "
-                "instead — B5BU19 (321 statement roles) and B4E2N6 (760) — so a join on "
-                "the reviewed Swiss-Prot accession silently misses two major signaling "
-                "hubs the graph does contain. "
-                "JOIN ON BOTH LEGS. owl:sameAs and the node IRIs are near-disjoint "
-                "views of the protein set: against prokn, sameAs matches 1,979 and the "
-                "node-IRI leg 537, but 514 of those 537 are unreachable through sameAs. "
-                "UNION the two legs (crosswalk G2, 2,493) — either alone understates the "
-                "join."
-            ),
-        ),
-        "query_snippet": SCHEMA_AHEAD_OF_DEPLOY_SNIPPET.format(
-            shortname="ncipidkg",
-            predicate="https://www.ndexbio.org/vocab/ncipid/evidenceCount",
-        ),
+        "guidance": NCIPIDKG_GUIDANCE,
+        "query_snippet": NCIPIDKG_SNIPPET,
     },
 }
 

@@ -1,12 +1,5 @@
 [
   {
-    "shortname": "bio101",
-    "title": "KB Bio 101",
-    "description": "A knowledge base created from an introductory biology textbook",
-    "homepage": "https://www.ai.sri.com/~halo/public/exported-kb/biokb.html",
-    "named_graph": "https://purl.org/okn/frink/kg/bio101"
-  },
-  {
     "shortname": "biobricks-aopwiki",
     "title": "BioBricks AOP-Wiki",
     "description": "BioBricks AOP-Wiki is an open knowledge graph for Adverse Outcome Pathways from the AOP-Wiki.",

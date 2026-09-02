@@ -61,8 +61,8 @@ async def test_get_kg_version_single_returns_record(monkeypatch):
 async def test_get_kg_version_missing_kg_returns_note(monkeypatch):
     fake, _ = _capturing([])
     monkeypatch.setattr(void, "run_sparql", fake)
-    out = await get_kg_version("bio101")
-    assert out["shortname"] == "bio101"
+    out = await get_kg_version("nestkg")
+    assert out["shortname"] == "nestkg"
     assert out["version"] is None
     assert "No VoID provenance" in out["note"]
 

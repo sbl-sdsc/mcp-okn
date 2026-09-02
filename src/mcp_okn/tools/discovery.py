@@ -108,7 +108,7 @@ async def get_kg_version(shortname: str | None = None) -> dict[str, Any]:
 
     Returns (shortname given) a single record dict, or `{"shortname", "version":
     None, "note": ...}` when that KG records no VoID provenance (a few, e.g.
-    `bio101` and `wikidata`, do not). Returns (shortname omitted) `{"count",
+    `nestkg` and `wikidata`, do not). Returns (shortname omitted) `{"count",
     "versions": [record, ...]}`.
     """
     records = await void.fetch_versions(shortname)
@@ -120,7 +120,7 @@ async def get_kg_version(shortname: str | None = None) -> dict[str, Any]:
             "version": None,
             "note": (
                 f"No VoID provenance recorded for '{shortname}' in the okn-void "
-                "graph (some KGs, e.g. bio101 and wikidata, do not publish version "
+                "graph (some KGs, e.g. nestkg and wikidata, do not publish version "
                 "metadata). Check the shortname with `list_kgs` if unexpected."
             ),
         }

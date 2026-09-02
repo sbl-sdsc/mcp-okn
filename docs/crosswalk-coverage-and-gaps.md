@@ -3,7 +3,7 @@
 _Survey date: 2026-06-14 · 41 served KGs · federation endpoint
 `https://apps.okn.us/federation/sparql`_
 
-> **Dated snapshot — three findings below are superseded (2026-09-01).** This page is
+> **Dated snapshot — four findings below are superseded (2026-09-01, extended 2026-09-02).** This page is
 > kept as the 2026-06-14 survey, not rewritten. Since then: (1) **medical-device-kg is
 > no longer an island** — the v0.0.3 redeploy (2026-07-28) added establishment,
 > facility, applicant and recalling-firm addresses, so it joins the ZIP5 cluster on five
@@ -11,7 +11,13 @@ _Survey date: 2026-06-14 · 41 served KGs · federation endpoint
 > lists that timed out here hide 147,386 dbSNP variants, 201 PubChem gene IRIs (whose
 > GID number is the Entrez id), 63 PubChem compounds and 53 UBERON sample sources,
 > yielding C18–C21, AN7 and V1; (3) a **new KG, nestkg**, is served (43 KGs now) and
-> joins the UniProt cluster (G5–G8) and the MONDO axis (A30). See
+> joins the UniProt cluster (G5–G8) and the MONDO axis (A30); (4) **bio101 is no
+> longer served** — §D's own recommendation was acted on (it is recorded as a
+> `known_non_join`, unmaterialized), and on 2026-09-02 it was re-verified empty under
+> every candidate graph IRI and added to `registry.EXCLUDED_KGS`, so `list_kgs` now
+> returns **42 KGs**, superseding the 43 in (3). Note also that §D pairs bio101 with
+> digcfdekg; that pairing is stale, as digcfdekg has since been loaded and is queried
+> by several worked examples. See
 > `metadata/crosswalks.json` for the current table.
 
 **What this is.** An exhaustive sweep of the entity types and ontologies/identifier

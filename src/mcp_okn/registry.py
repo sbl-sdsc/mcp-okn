@@ -31,8 +31,19 @@ _RAW_BASE = (
 # `babel` joined the registry in the 2026-09-01 refresh but is NOT loaded: every
 # candidate graph IRI (…/kg/babel, …/kg/babel/, frink.renci.org/kg/babel) counts
 # 0 triples on the federation endpoint, so serving it would advertise a graph that
-# answers nothing. Drop it from this set once the federation loads it.
-EXCLUDED_KGS = {"semopenalex", "babel"}
+# answers nothing.
+# `bio101` (KB Bio 101) is the same case, and has been since at least 2026-06-18
+# when it was first recorded in crosswalks.json `known_non_joins` as
+# "unmaterialized" — it stayed in the listing for months while answering nothing.
+# Re-verified empty 2026-09-02: COUNT(*) = 0, no row on LIMIT 1, and no distinct
+# predicate, under every candidate graph IRI; the other 42 registered KGs all
+# return data. Excluding it also retired the payload tag `biology_concept`
+# ("General biology concepts and causal mechanisms (textbook-derived)"), whose
+# only carrier it was — the payload vocabulary must contain no term without a
+# supplier, or find_context_sources would advertise a capability nothing answers.
+# Restore both together if bio101 is loaded.
+# Drop a name from this set once the federation loads it.
+EXCLUDED_KGS = {"semopenalex", "babel", "bio101"}
 
 # Process-lifetime caches (the registry changes rarely).
 _shortnames_cache: list[str] | None = None

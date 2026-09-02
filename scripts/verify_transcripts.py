@@ -33,9 +33,22 @@ Usage:
     uv run python scripts/verify_transcripts.py --problems   # print only failures
     uv run python scripts/verify_transcripts.py --summary    # re-read cached results
 
+CONCURRENCY: ``ERR`` FROM A PARALLEL RUN IS USUALLY NOISE, NOT BREAKAGE. The
+federation endpoint sheds load under concurrent queries, so a parallel sweep
+reports errors that have nothing to do with the transcript: ``HTTP 429 …
+Operation timed out`` and ``HTTP 500: Tried to allocate 204.8 MB, but only 51.4 MB
+were available`` are both endpoint pressure. Measured on 2026-09-02, three full
+sweeps at ``--jobs`` 5, 3 and 2 each produced a DIFFERENT error set (27, 16 and 16
+queries), and every single one passed when re-run at ``--jobs 1``. The heavy
+transcripts (disease15/16/17, anatomy06, genes13, geospatial25) are the ones that
+surface first. So: never regenerate a transcript on the strength of a parallel
+run's ERR — re-check it serially first; this script prints the exact command.
+``ZERO`` and ``DRIFT``, by contrast, are load-independent and trustworthy at any
+concurrency, and they are what actually detect rot.
+
 Exit status is 1 if any query errored or returned zero rows, so this can gate a
 scheduled job. It is deliberately NOT wired into CI: it needs the live
-federation endpoint, and a full pass runs ~450 queries against it.
+federation endpoint, and a full pass runs ~500 queries against it.
 """
 
 from __future__ import annotations
@@ -64,11 +77,23 @@ RESULTS = ROOT / "scripts" / ".transcript_results.json"
 #: rather than trying to locate a section.
 FENCE = re.compile(r"```sparql\n(.*?)\n```\n", re.S)
 #: The row-count marker the transcript builder writes under a query, e.g.
-#: ``_12 row(s) — showing first 3_``. Anchored to the text immediately after the
-#: closing fence so it cannot pick up a later query's marker.
-ROW_MARKER = re.compile(r"\A\s*_(\d+) row\(s\)")
+#: ``_12 row(s) — showing first 3_``. It is NOT necessarily adjacent to the closing
+#: fence: when ``create_chat_transcript`` emits query diagrams, a ```mermaid block
+#: sits between the SPARQL and its row count. So this is SEARCHED within the span
+#: from one sparql fence to the next (see ``parse_transcript``) rather than anchored
+#: at the fence, and the first match in that span is the one belonging to the query.
+#: Anchoring it here was a real bug: every transcript regenerated with diagrams
+#: parsed as "no recorded count", which silently disabled drift detection for it
+#: while still reporting OK.
+ROW_MARKER = re.compile(r"^_(\d+) row\(s\)", re.M)
+#: A ```sparql fence does NOT always hold a runnable query. Some transcripts fence
+#: an illustrative FRAGMENT — most often a "target pattern" showing the graph block
+#: that ``spatial_bridge`` joins to an injected ``VALUES`` list, which begins at a
+#: bare ``GRAPH``. Submitting one earns an HTTP 400 that looks like a broken
+#: transcript but is just prose. A real query opens with a prologue or a query form.
+QUERY_START = re.compile(r"\A\s*(PREFIX|BASE|SELECT|ASK|CONSTRUCT|DESCRIBE)\b", re.I)
 
-OK, DRIFT, ZERO, ERR = "OK", "DRIFT", "ZERO", "ERR"
+OK, DRIFT, ZERO, ERR, SKIP = "OK", "DRIFT", "ZERO", "ERR", "SKIP"
 FAILING = (ZERO, ERR)
 
 
@@ -103,14 +128,21 @@ def parse_transcript(path: Path) -> list[Check]:
     """Extract each SPARQL block and the row count recorded beneath it."""
     text = path.read_text()
     checks: list[Check] = []
-    for i, m in enumerate(FENCE.finditer(text), start=1):
-        marker = ROW_MARKER.match(text[m.end() : m.end() + 200])
+    fences = list(FENCE.finditer(text))
+    for i, m in enumerate(fences, start=1):
+        # Search up to the NEXT sparql fence, so an intervening mermaid diagram
+        # doesn't hide the marker and a later query's marker can't be stolen.
+        stop = fences[i].start() if i < len(fences) else len(text)
+        marker = ROW_MARKER.search(text[m.end() : stop])
+        sparql = m.group(1)
         checks.append(
             Check(
                 stem=path.stem,
                 index=i,
-                sparql=m.group(1),
+                sparql=sparql,
                 expected=int(marker.group(1)) if marker else None,
+                status="" if QUERY_START.match(sparql) else SKIP,
+                detail="" if QUERY_START.match(sparql) else "fragment, not a query",
             )
         )
     return checks
@@ -167,12 +199,13 @@ def print_report(reports: list[FileReport], problems_only: bool) -> None:
 
 def summarize(reports: list[FileReport]) -> int:
     checks = [c for r in reports for c in r.checks]
-    by = {s: [c for c in checks if c.status == s] for s in (OK, DRIFT, ZERO, ERR)}
+    by = {s: [c for c in checks if c.status == s] for s in (OK, DRIFT, ZERO, ERR, SKIP)}
     bad_files = sorted({c.stem for c in by[ZERO] + by[ERR]})
 
     print(
         f"\n{len(reports)} transcript(s), {len(checks)} quer(ies): "
-        f"ok={len(by[OK])} drift={len(by[DRIFT])} zero={len(by[ZERO])} err={len(by[ERR])}"
+        f"ok={len(by[OK])} drift={len(by[DRIFT])} zero={len(by[ZERO])} "
+        f"err={len(by[ERR])} skipped-fragments={len(by[SKIP])}"
     )
     if by[DRIFT]:
         print(
@@ -191,6 +224,18 @@ def summarize(reports: list[FileReport]) -> int:
                 if c.stem == stem and c.status in FAILING
             ]
             print(f"  {stem}: {', '.join(marks)}")
+        if by[ERR]:
+            # An ERR from a parallel run is usually endpoint load, not a broken
+            # transcript (see the module docstring). Hand back the serial command
+            # rather than letting the reader act on a contended result.
+            err_stems = sorted({c.stem for c in by[ERR]})
+            print(
+                f"\n{len(err_stems)} of these failed with an ERROR, which at "
+                "--jobs > 1 is usually endpoint contention rather than broken "
+                "SPARQL. Re-check serially BEFORE regenerating anything:\n\n"
+                "  uv run python scripts/verify_transcripts.py --jobs 1 "
+                "--timeout 300 --problems \\\n    " + " \\\n    ".join(err_stems)
+            )
         print(
             "\nRegenerate these with create_chat_transcript against the current "
             "recipe — never hand-edit a transcript's queries or results."
@@ -232,9 +277,10 @@ async def main() -> int:
         return 1
 
     reports = [FileReport(stem=f.stem, checks=parse_transcript(f)) for f in files]
-    todo = [c for r in reports for c in r.checks]
+    # Fragments are classified at parse time and never submitted.
+    todo = [c for r in reports for c in r.checks if c.status != SKIP]
     if not todo:
-        print(f"{len(files)} file(s) matched but none contain a ```sparql block")
+        print(f"{len(files)} file(s) matched but none contain a runnable query")
         return 1
 
     print(

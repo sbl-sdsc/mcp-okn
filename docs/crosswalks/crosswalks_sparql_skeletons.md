@@ -1902,7 +1902,10 @@ _biobricks-aopwiki × prokn_
 
 ```sparql
 SELECT (COUNT(DISTINCT ?p2) AS ?n) WHERE {
-  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?u ?pa ?oa . FILTER(STRSTARTS(STR(?u),'https://identifiers.org/uniprot/')) }
+  { SELECT DISTINCT ?u WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?u ?pa ?oa . }
+      FILTER(STRSTARTS(STR(?u),'https://identifiers.org/uniprot/'))
+  } }
   BIND(IRI(CONCAT('http://purl.uniprot.org/uniprot/',REPLACE(STR(?u),'^.*/uniprot/',''))) AS ?p2)
   GRAPH <https://purl.org/okn/frink/kg/prokn> { ?p2 ?pp ?op . }
 }
