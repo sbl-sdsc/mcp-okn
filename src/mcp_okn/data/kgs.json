@@ -100,7 +100,7 @@
   {
     "shortname": "gene-expression-atlas-okn",
     "title": "Gene Expression Atlas",
-    "description": "Selected studies from the Gene Expression Atlas (https://www.ebi.ac.uk/gxa/home).",
+    "description": "Query pre-computed differential gene expression (log2 fold changes and adjusted p-values) for genes across diseases, tissues, cell types, developmental stages, and sex, drawn from a curated selection of 243 EMBL-EBI Expression Atlas studies. Use this graph to retrieve computed differential-expression results and expression associations for the studies it includes. It is a hand-picked subset, NOT a comprehensive index of the gene-expression datasets available for a given disease — to discover the full set of datasets for a condition (for example when assembling studies for your own pooled or meta-analysis), use a dataset-discovery index such as the NIAID Data Ecosystem (nde) graph.",
     "homepage": "https://www.ebi.ac.uk/gxa/home",
     "named_graph": "https://purl.org/okn/frink/kg/gene-expression-atlas-okn"
   },
@@ -128,7 +128,7 @@
   {
     "shortname": "medical-device-kg",
     "title": "Medical Device Knowledge Graph",
-    "description": "Knowledge graph constructed from FDA MAUDE adverse event reports using standardized FDA product codes.",
+    "description": "A unified medical-device knowledge graph integrating regulatory, clinical, research, safety, and other relevant data from multiple sources.",
     "homepage": "https://github.com/Prabhadeus/Proto-OKN",
     "named_graph": "https://purl.org/okn/frink/kg/medical-device-kg"
   },
@@ -149,9 +149,16 @@
   {
     "shortname": "nde",
     "title": "NIAID Data Ecosystem KG",
-    "description": "The nde (NIAID Data Ecosystem) KG contains infectious and immune-mediated disease datasets. These include datasets from NIAID-funded repositories as well as globally-relevant infectious and immune-mediated disease (IID) repositories from NIH and beyond. The datasets include -omics data, clinical data, epidemiological data, pathogen-host interaction data, flow cytometry, and imaging.",
+    "description": "The nde (NIAID Data Ecosystem) knowledge graph is a dataset-discovery index for finding biomedical research datasets — including gene-expression / transcriptomics data (RNA-seq, microarray, single-cell / single-nucleus), other -omics, clinical, epidemiological, imaging, and flow-cytometry data — searchable by disease or condition, organism, and source repository. It mirrors dataset metadata from NCBI GEO, ArrayExpress, and 70+ repositories; coverage is deepest for infectious and immune-mediated disease (its NIAID mission) but, because it indexes general-purpose repositories such as GEO, it also covers datasets for many non-infectious diseases and conditions (e.g. cancer, diabetes, kidney disease). Use it to find and triage candidate datasets for a specific disease — for example when assembling studies for a pooled or meta-analysis of differential gene expression. It stores dataset-level metadata and links to the primary repository; it does NOT store per-sample data or computed differential-expression values (log2 fold changes / p-values).",
     "homepage": "https://data.niaid.nih.gov/",
     "named_graph": "https://purl.org/okn/frink/kg/nde"
+  },
+  {
+    "shortname": "nestkg",
+    "title": "NeST KG",
+    "description": "The NeST (Nested Systems in Tumors) Knowledge Graph converts the NeST hierarchical map of cancer protein systems into RDF, capturing the nested containment hierarchy of protein assemblies, their member proteins, and system-level annotations derived from integrated cancer proteomics and interaction data.",
+    "homepage": "https://www.ndexbio.org/viewer/networks/4731187a-8796-11f1-857e-005056ae3c32",
+    "named_graph": "https://purl.org/okn/frink/kg/nestkg"
   },
   {
     "shortname": "nikg",
@@ -232,7 +239,7 @@
   },
   {
     "shortname": "sockg",
-    "title": "SOC-KG",
+    "title": "SOCKG",
     "description": "The Soil Organic Carbon Knowledge Graph (SOCKG) enhances robust soil carbon modeling, which is crucial for voluntary carbon markets.",
     "homepage": "https://idir.sockg.org/",
     "named_graph": "https://purl.org/okn/frink/kg/sockg"

@@ -57,6 +57,7 @@ DOMAIN_CODE = {
     "Publications": "B",
     "Earth observation": "W",
     "Hydrology": "H",
+    "Variants": "V",
     "Other": "O",
 }
 # fallback colours for domains not already present in the file's DOM
@@ -76,6 +77,7 @@ DEFAULT_COLORS = {
     "B": "#3B5BDB",
     "W": "#0B7285",
     "H": "#1098AD",
+    "V": "#BE4BDB",
     "O": "#868E96",
 }
 

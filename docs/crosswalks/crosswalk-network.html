@@ -48,7 +48,7 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>35 knowledge graphs, 162 verified crosswalks (verified 2026-07-12). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
+  <p>37 knowledge graphs, 181 verified crosswalks (verified 2026-09-01). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
   <p class="tip">&#9654; <b>Hover</b> a node or edge for detail · <b>drag</b> to rearrange · <b>scroll</b> to zoom · <b>double-click</b> a node to unpin it.<br>&#9654; <b>Click a legend item</b> &mdash; a domain (e.g. <b>Chemicals</b>) or a line style (e.g. <b>via ubergraph</b>) &mdash; to toggle those edges.</p>
 </header>
 <div class="bar" id="legend"></div>
@@ -75,7 +75,7 @@
 // Static-render mode (see the body.static CSS): set BEFORE the layout runs, so the
 // figure is fitted to the taller canvas the PNG uses.
 if(/[?&]static=1/.test(location.search))document.body.classList.add("static");
-const DOM={A:["Anatomy & Cell Type","#0C8599"],C:["Chemicals","#E8590C"],D:["Disease & phenotype","#D6336C"],W:["Earth observation","#0B7285"],E:["Environmental toxicology","#5C940D"],F:["Function & Pathways","#9C36B5"],G:["Genes","#7048E8"],S:["Geospatial","#1C7ED6"],H:["Hydrology","#1098AD"],I:["Industry & supply chain","#C9920A"],J:["Justice & Public Safety","#A61E4D"],P:["Proteins","#2B8A3E"],B:["Publications","#3B5BDB"],L:["Social Determinants & Services","#15AABF"],T:["Taxonomy","#82C91E"]};
+const DOM={A:["Anatomy & Cell Type","#0C8599"],C:["Chemicals","#E8590C"],D:["Disease & phenotype","#D6336C"],W:["Earth observation","#0B7285"],E:["Environmental toxicology","#5C940D"],F:["Function & Pathways","#9C36B5"],G:["Genes","#7048E8"],S:["Geospatial","#1C7ED6"],H:["Hydrology","#1098AD"],I:["Industry & supply chain","#C9920A"],J:["Justice & Public Safety","#A61E4D"],P:["Proteins","#2B8A3E"],B:["Publications","#3B5BDB"],L:["Social Determinants & Services","#15AABF"],T:["Taxonomy","#82C91E"],V:["Variants","#BE4BDB"]};
 const BRIDGES=new Set();
 const R=[
 ["A",["biomarkerkg","gene-expression-atlas-okn"],8,"CL"],
@@ -83,6 +83,7 @@ const R=[
 ["A",["gene-expression-atlas-okn","prokn"],31,"CL"],
 ["A",["spoke-genelab","gene-expression-atlas-okn"],4,"CL"],
 ["A",["spoke-genelab","prokn"],1,"CL"],
+["A",["biomarkerkg","gene-expression-atlas-okn"],27,"UBERON"],
 ["A",["spoke-genelab","gene-expression-atlas-okn"],27,"UBERON"],
 ["A",["biohealth","gene-expression-atlas-okn"],249,"UMLS↔UBERON (ubergraph)"],
 ["A",["biohealth","spoke-genelab"],35,"UMLS↔UBERON (ubergraph)"],
@@ -126,6 +127,7 @@ const R=[
 ["D",["biomarkerkg","prokn"],263,"MONDO"],
 ["D",["biomarkerkg","rdkg"],754,"MONDO"],
 ["D",["nde","oard-kg"],889,"MONDO"],
+["D",["nestkg","biomarkerkg"],13,"MONDO"],
 ["D",["oard-kg","prokn"],470,"MONDO"],
 ["D",["rdkg","oard-kg"],2014,"MONDO"],
 ["D",["biomarkerkg","digcfdekg"],193,"MONDO (+ EFO/Orphanet→MONDO bridged) (ubergraph)"],
@@ -145,8 +147,8 @@ const R=[
 ["D",["biohealth","rdkg"],9122,"UMLS↔MONDO (ubergraph)"],
 ["D",["biohealth","spoke-okn"],173,"UMLS↔MONDO↔DOID (ubergraph)"],
 
-["W",["climatemodelskg","nasa-gesdisc-kg"],115,"GCMD instrument"],
-["W",["climatemodelskg","nasa-gesdisc-kg"],70,"GCMD platform"],
+["W",["climatemodelskg","nasa-gesdisc-kg"],342,"GCMD instrument"],
+["W",["climatemodelskg","nasa-gesdisc-kg"],236,"GCMD platform"],
 
 ["E",["sawgraph","biobricks-ice"],39,"CAS"],
 ["E",["sawgraph","biobricks-toxcast"],32,"CAS"],
@@ -166,6 +168,10 @@ const R=[
 ["G",["biobricks-aopwiki","rdkg"],1193,"Entrez"],
 ["G",["biobricks-aopwiki","spoke-genelab"],1472,"Entrez"],
 ["G",["biobricks-ice","rdkg"],358,"Entrez"],
+["G",["biomarkerkg","digcfdekg"],200,"Entrez"],
+["G",["biomarkerkg","rdkg"],167,"Entrez"],
+["G",["biomarkerkg","spoke-genelab"],200,"Entrez"],
+["G",["biomarkerkg","spoke-okn"],191,"Entrez"],
 ["G",["digcfdekg","rdkg"],8934,"Entrez"],
 ["G",["digcfdekg","spoke-genelab"],19747,"Entrez"],
 ["G",["digcfdekg","spoke-okn"],16052,"Entrez"],
@@ -185,10 +191,15 @@ const R=[
 ["S",["sockg","sawgraph"],2,"S2_L13"],
 ["S",["sockg","spatialkg"],1069,"S2_L13"],
 ["S",["sudokn","spatialkg"],42560,"S2_L13"],
-["S",["ufokn","fiokg"],2461,"S2_L13"],
+["S",["ufokn","fiokg"],19252,"S2_L13"],
 ["S",["ufokn","spatialkg"],97087,"S2_L13"],
 ["S",["dreamkg","ruralkg"],30,"ZIP5"],
 ["S",["dreamkg","scales"],53,"ZIP5"],
+["S",["medical-device-kg","dreamkg"],50,"ZIP5"],
+["S",["medical-device-kg","ruralkg"],5118,"ZIP5"],
+["S",["medical-device-kg","scales"],19089,"ZIP5"],
+["S",["medical-device-kg","spoke-okn"],19563,"ZIP5"],
+["S",["medical-device-kg","sudokn"],11067,"ZIP5"],
 ["S",["ruralkg","scales"],5297,"ZIP5"],
 ["S",["spoke-okn","dreamkg"],53,"ZIP5"],
 ["S",["spoke-okn","ruralkg"],5390,"ZIP5"],
@@ -218,16 +229,21 @@ const R=[
 ["I",["securechainkg","sudokn"],35,"NAICS"],
 ["I",["securechainkg","sudokn"],58,"SUDOKN_industry_sector"],
 ["I",["climatemodelskg","securechainkg"],3,"climatemodelskg Source IRI"],
+["I",["medical-device-kg","sudokn"],361,"company name"],
 
 ["J",["scales","ruralkg"],37,"NIBRS_offense_category"],
 
+["P",["biobricks-aopwiki","nestkg"],1376,"UniProt"],
 ["P",["biobricks-aopwiki","prokn"],1805,"UniProt"],
 ["P",["biomarkerkg","biobricks-aopwiki"],86,"UniProt"],
 ["P",["biomarkerkg","prokn"],209,"UniProt"],
-["P",["ncipidkg","prokn"],12,"UniProt"],
+["P",["ncipidkg","prokn"],1979,"UniProt"],
+["P",["nestkg","biomarkerkg"],230,"UniProt"],
+["P",["nestkg","ncipidkg"],526,"UniProt"],
+["P",["nestkg","prokn"],16729,"UniProt"],
 
-["B",["climatemodelskg","nasa-gesdisc-kg"],651,"DOI"],
-["B",["climatemodelskg","nasa-gesdisc-kg"],8391,"author name (string; NOT an ORCID — see the entry's caveat)"],
+["B",["climatemodelskg","nasa-gesdisc-kg"],3660,"DOI"],
+["B",["climatemodelskg","nasa-gesdisc-kg"],32586,"author name (string; NOT an ORCID — see the entry's caveat)"],
 
 ["L",["spoke-okn","biohealth"],3,"MeSH→UMLS (wikidata)"],
 ["L",["spoke-okn","biohealth"],89,"concept label (SNOMED preferred term ↔ UMLS concept name)"],
@@ -253,7 +269,11 @@ const R=[
 ["T",["nde","wildlifekn"],[17,57,339],"NCBITaxon (ubergraph)"],
 ["T",["sawgraph","spoke-genelab"],[0,0,13],"NCBITaxon (ubergraph)"],
 ["T",["sawgraph","wildlifekn"],[2,2,339],"NCBITaxon (ubergraph)"],
-["T",["spoke-genelab","spoke-okn"],[2,2,33313],"NCBITaxon (ubergraph)"]
+["T",["spoke-genelab","spoke-okn"],[2,2,33313],"NCBITaxon (ubergraph)"],
+
+["V",["pankgraph","biomarkerkg"],214,"dbSNP rsID"],
+["V",["prokn","biomarkerkg"],3241,"dbSNP rsID"],
+["V",["prokn","pankgraph"],214,"dbSNP rsID"]
 ];
 const eff=w=>Array.isArray(w)?Math.max(w[0],w[1],w[2]):w;
 // one edge PER crosswalk (no merging); a 3-KG row still routes as two segments

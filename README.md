@@ -79,7 +79,7 @@ where a question one graph can't answer alone becomes answerable by combining tw
 This section catalogs the verified crosswalks and shows the queries that exercise
 them.
 
-A visual map of the whole network — all 162 crosswalks across 35 graphs, drawn as
+A visual map of the whole network — all 181 crosswalks across 37 graphs, drawn as
 direct KG-to-KG edges (edge width ∝ log of the verified join count). Each crosswalk is
 its own edge, so multiple crosswalks between the same pair of graphs fan out as parallel
 arcs. Identifier-bridged joins (e.g. `DOID↔MONDO` via `ubergraph`, `HGNC→Entrez` via
@@ -105,10 +105,14 @@ geospatial and industrial joins against their authoritative shared standard):
   Geospatial, Hydrology, Industry & Supply Chain, Justice & Public Safety, Proteins,
   Publications, Social Determinants & Services, Taxonomy). Every crosswalk is now worked
   twice — the inventory carries
-  **324 questions — two for every one of the 162 crosswalks** — and the catalog has a
-  transcript behind each, plus four questions on two extra stems (a second example on the
-  spoke-genelab×spoke-okn Entrez axis, and the three-way gene dossier whose clique row was
-  retired).
+  **362 questions — two for every one of the 181 crosswalks** — and the catalog has a
+  transcript behind each of the 162 crosswalks catalogued through 2026-07-17, plus four
+  questions on two extra stems (a second example on the spoke-genelab×spoke-okn Entrez
+  axis, and the three-way gene dossier whose clique row was retired). The 19 crosswalks
+  added in the 2026-09-01 upstream-metadata pass (nestkg, medical-device-kg into both the
+  ZIP and manufacturing clusters, BiomarkerKG's gene / variant / anatomy axes, and the
+  dbSNP variant cluster) carry a verified skeleton and two example questions each; their
+  transcripts are not yet worked.
 
 Every catalog row links to a standalone, replayable transcript — the prompt, the
 answer, and every verbatim SPARQL query with its result.
@@ -441,7 +445,7 @@ query → record**. The single table below is grouped in that order.
 | **1. Discover graphs** | |
 | `list_kgs` | List all KGs with `shortname`, `title`, `description`, `homepage`, `named_graph`, and a `payload` list — the curated context types each graph **supplies** (e.g. `digcfdekg` → `gene, gene_set, trait, disease`), so you judge a graph by what it carries, not its name. Served from a bundled snapshot for instant cold start. |
 | `describe_kg(shortname, long_description=False)` | Full registry doc (frontmatter + prose) for one KG, for deeper context. Set `long_description=True` for the registry's ~150-word prose body — useful for picking among near-overlapping KGs. For `spoke-genelab`, also appends its [spaceflight assay-comparison rules](#spoke-genelab-spaceflight-assay-comparisons). |
-| `get_kg_version(shortname=None)` | A KG's release `version` and `last_updated` (ISO-8601 timestamp) — read live from the `okn-void` meta-graph's VoID provenance (`pav:version`, `pav:lastUpdatedOn`). Omit `shortname` for every KG that records provenance (39 of 42), sorted by shortname. Use it to check how current a graph is or cite the exact version behind an analysis. |
+| `get_kg_version(shortname=None)` | A KG's release `version` and `last_updated` (ISO-8601 timestamp) — read live from the `okn-void` meta-graph's VoID provenance (`pav:version`, `pav:lastUpdatedOn`). Omit `shortname` for every KG that records provenance (40 of 43), sorted by shortname. Use it to check how current a graph is or cite the exact version behind an analysis. |
 | `get_server_info()` | Identify the server answering you: `service`, `version`, `build` (the deployed commit, or `unknown`), and `sparql_endpoint`. The package version alone can't separate two deployments — a hosted server can lag the repo — so use this when a tool or argument seems to be missing, or to record which build produced a result. The `build` is also pinned in every reproducibility header. |
 | **2. Inspect a graph's schema and identifiers** | |
 | `get_schema(shortname, compact=True)` | Schema for one KG — classes, predicates, edge properties (with reification query templates), and node properties. Uses curated metadata when available, else probes the endpoint for distinct classes/predicates. Call **before** writing a query. Returns `usage_notes` (guidance + a reusable SPARQL snippet) for KGs with query-time domain rules, e.g. [`spoke-genelab`](#spoke-genelab-spaceflight-assay-comparisons). |
@@ -630,7 +634,7 @@ comparability-signature SPARQL snippet) and are surfaced in the server
 
 ### KG snapshot
 
-`list_kgs` serves a static snapshot bundled at `src/mcp_okn/data/kgs.json` (~42
+`list_kgs` serves a static snapshot bundled at `src/mcp_okn/data/kgs.json` (~43
 KGs), so the first call returns instantly without fetching the individual
 registry files. The live registry is only contacted when the snapshot is missing
 (or when an internal `refresh=True` is passed). To refresh the snapshot after the
@@ -670,6 +674,20 @@ affected tags, then `--update` to accept the new baseline.
 uv run python scripts/check_payload_drift.py            # report drift; exit 1 if any
 uv run python scripts/check_payload_drift.py --update   # accept current schemas as baseline
 ```
+
+**When the curated schema runs ahead of the served graph.** Those CSVs are curated
+upstream and can be refreshed *before* (or without) the graph being redeployed, so
+`get_schema` may advertise predicates that have zero triples in the federation — a
+query against one returns an empty result that reads as "no data" rather than "not
+deployed yet". Where that gap is known and large, the KG carries a `usage_notes`
+entry (see `_KG_USAGE_NOTES` in `src/mcp_okn/schema.py`) naming the live surfaces,
+the absent ones, and an `ASK` to test any predicate before building on it. As of
+2026-09-01 that applies to two KGs: `medical-device-kg` (152 of 296 schema
+predicates absent — the whole AccessGUDID/UDI, CLIA, GMDN and materials block) and
+`ncipidkg` (9 of 20, including a whole vocabulary namespace: the deployed graph
+publishes edge metadata under `http://example.org/okn/`, not the
+`https://www.ndexbio.org/vocab/ncipid/` form the schema lists). Re-census after a
+redeploy and trim the note.
 
 ---
 

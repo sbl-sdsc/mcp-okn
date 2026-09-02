@@ -1,6 +1,6 @@
 # OKN / Proto-OKN Crosswalk Reference — Join Keys & SPARQL Skeletons
 
-- **Date:** 2026-07-12
+- **Date:** 2026-09-01
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
@@ -45,6 +45,8 @@
 - `phaseskg` — <https://purl.org/okn/frink/kg/phaseskg>
 - `climatemodelskg` — <https://purl.org/okn/frink/kg/climatemodelskg>
 - `nasa-gesdisc-kg` — <https://purl.org/okn/frink/kg/nasa-gesdisc-kg>
+- `nestkg` — <https://purl.org/okn/frink/kg/nestkg>
+- `medical-device-kg` — <https://purl.org/okn/frink/kg/medical-device-kg>
 
 ## Conversation
 
@@ -56,11 +58,11 @@ For each crosswalk, list the join key and the SPARQL skeleton
 
 🧠 **Assistant**
 
-The OKN federation has **162 crosswalks**, which collapse into **55 join-key families** (a domain + a shared identifier). They are grouped below by domain and key family — each entry lists every KG pair sharing that key (with its verified `COUNT(DISTINCT)`), the identifier scheme/namespace, and a runnable `COUNT(DISTINCT)` skeleton with the IRI normalization already applied (a naive join on the raw id usually returns 0 rows).
+The OKN federation has **181 crosswalks**, which collapse into **57 join-key families** (a domain + a shared identifier). They are grouped below by domain and key family — each entry lists every KG pair sharing that key (with its verified `COUNT(DISTINCT)`), the identifier scheme/namespace, and a runnable `COUNT(DISTINCT)` skeleton with the IRI normalization already applied (a naive join on the raw id usually returns 0 rows).
 
 **Pairs in one family often need different SPARQL**, so where a family's members diverge, every distinct skeleton is shown and labelled with the pairs it applies to. The CAS family is the clearest case: the biobricks graphs hang the id off `edam:has_identifier`, MeSH exposes it as `meshv:registryNumber`, and SAWGraph/SOCKG store it as a bare literal that must be rebuilt into an IRI. Copy the skeleton for YOUR pair, then extend it with your payload.
 
-Counts verified 2026-07-12. For any pair, `get_join_strategy(kg_a, kg_b)` returns the same skeleton plus the full recipe (predicates, roles, normalization); `taxon_overlap(kg_a, kg_b)` returns runnable skeletons for the NCBITaxon hub, whose overlaps are two-valued (exact id vs clade membership) and therefore not a single count.
+Counts verified 2026-09-01. For any pair, `get_join_strategy(kg_a, kg_b)` returns the same skeleton plus the full recipe (predicates, roles, normalization); `taxon_overlap(kg_a, kg_b)` returns runnable skeletons for the NCBITaxon hub, whose overlaps are two-valued (exact id vs clade membership) and therefore not a single count.
 
 ### ANATOMY & CELL TYPE
 
@@ -98,12 +100,23 @@ SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {
 }
 ```
 
-**UBERON** — `http://purl.obolibrary.org/obo/UBERON_ (both KGs use the raw OBO IRI directly — DIRECT join, no bridge)`: spoke-genelab × gene-expression-atlas-okn(27).
+**UBERON** — `http://purl.obolibrary.org/obo/UBERON_ (both KGs use the raw OBO IRI directly — DIRECT join, no bridge)`: spoke-genelab × gene-expression-atlas-okn(27), biomarkerkg × gene-expression-atlas-okn(27).
+
+_spoke-genelab × gene-expression-atlas-okn_
 
 ```sparql
 SELECT (COUNT(DISTINCT ?t) AS ?n) WHERE {
   { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?s <https://purl.org/okn/frink/kg/spoke-genelab/schema/INVESTIGATED_ASiA> ?t } } }
   GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?s2 <https://w3id.org/biolink/vocab/has_attribute> ?t . }
+}
+```
+
+_biomarkerkg × gene-expression-atlas-okn_
+
+```sparql
+SELECT (COUNT(DISTINCT ?ub) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s <http://purl.obolibrary.org/obo/OBCI_1000018> ?ub . }
+  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?x <https://w3id.org/biolink/vocab/has_attribute> ?ub . }
 }
 ```
 
@@ -441,7 +454,7 @@ SELECT (COUNT(DISTINCT ?m) AS ?n) WHERE {
 }
 ```
 
-**MONDO** — `biomarkerkg obo:OBCI_1000008 / obo:OBCI_1000002 -> http://purl.obolibrary.org/obo/MONDO_{id} (891 distinct MONDO diseases)`: biomarkerkg × prokn(263), nde × oard-kg(889), oard-kg × prokn(470), rdkg × oard-kg(2,014), biomarkerkg × nde(601), biomarkerkg × rdkg(754), biomarkerkg × oard-kg(290), ubergraph × oard-kg(212).
+**MONDO** — `biomarkerkg obo:OBCI_1000008 / obo:OBCI_1000002 -> http://purl.obolibrary.org/obo/MONDO_{id} (891 distinct MONDO diseases)`: biomarkerkg × prokn(263), nde × oard-kg(889), oard-kg × prokn(470), rdkg × oard-kg(2,014), biomarkerkg × nde(601), biomarkerkg × rdkg(754), biomarkerkg × oard-kg(290), ubergraph × oard-kg(212), nestkg × biomarkerkg(13).
 
 _biomarkerkg × prokn_
 
@@ -512,6 +525,15 @@ _ubergraph × oard-kg_
 SELECT (COUNT(DISTINCT ?disease) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?disease <http://www.w3.org/2000/01/rdf-schema#subClassOf>* <http://purl.obolibrary.org/obo/MONDO_0004995> . }
   GRAPH <https://purl.org/okn/frink/kg/oard-kg> { { ?x <https://w3id.org/biolink/vocab/subject> ?disease } UNION { ?xo <https://w3id.org/biolink/vocab/object> ?disease } }
+}
+```
+
+_nestkg × biomarkerkg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?a <https://w3id.org/biolink/vocab/object> ?mondo . }
+  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?bp ?mondo . }
 }
 ```
 
@@ -866,7 +888,7 @@ SELECT (COUNT(DISTINCT ?bh) AS ?n) WHERE {
 
 ### EARTH OBSERVATION
 
-**GCMD instrument** — `climatemodelskg <https://climatepub4kg.github.io/ontology#name> on a climatepub4kg:Instrument node <-> nasa-gesdisc-kg <http://www.w3.org/2000/01/rdf-schema#label> on a GCMD Instrument node (reached via nasa <https://purl.org/okn/frink/kg/nasa-gesdisc/schema/HAS_INSTRUMENT>). Match on the case-normalized instrument name.`: climatemodelskg × nasa-gesdisc-kg(115).
+**GCMD instrument** — `climatemodelskg <https://climatepub4kg.github.io/ontology#name> on a climatepub4kg:Instrument node <-> nasa-gesdisc-kg <http://www.w3.org/2000/01/rdf-schema#label> on a GCMD Instrument node (reached via nasa <https://purl.org/okn/frink/kg/nasa-gesdisc/schema/HAS_INSTRUMENT>). Match on the case-normalized instrument name.`: climatemodelskg × nasa-gesdisc-kg(342).
 
 ```sparql
 SELECT (COUNT(DISTINCT ?k) AS ?n) WHERE {
@@ -877,7 +899,7 @@ SELECT (COUNT(DISTINCT ?k) AS ?n) WHERE {
 }
 ```
 
-**GCMD platform** — `climatemodelskg <https://climatepub4kg.github.io/ontology#name> on a climatepub4kg:Platform node <-> nasa-gesdisc-kg <http://www.w3.org/2000/01/rdf-schema#label> on a GCMD Platform node (reached via nasa <https://purl.org/okn/frink/kg/nasa-gesdisc/schema/HAS_PLATFORM>). Match on the case-normalized platform name.`: climatemodelskg × nasa-gesdisc-kg(70).
+**GCMD platform** — `climatemodelskg <https://climatepub4kg.github.io/ontology#name> on a climatepub4kg:Platform node <-> nasa-gesdisc-kg <http://www.w3.org/2000/01/rdf-schema#label> on a GCMD Platform node (reached via nasa <https://purl.org/okn/frink/kg/nasa-gesdisc/schema/HAS_PLATFORM>). Match on the case-normalized platform name.`: climatemodelskg × nasa-gesdisc-kg(236).
 
 ```sparql
 SELECT (COUNT(DISTINCT ?k) AS ?n) WHERE {
@@ -1049,7 +1071,7 @@ SELECT (COUNT(DISTINCT ?ens) AS ?n) WHERE {
 }
 ```
 
-**Entrez** — `https://identifiers.org/ncbigene/ (aopwiki) ; http://identifiers.org/ncbigene/ (rdkg)`: biobricks-aopwiki × rdkg(1,193), biobricks-aopwiki × spoke-genelab(1,472), rdkg × spoke-genelab(9,034), rdkg × spoke-okn(8,475), spoke-genelab × spoke-okn(16,326), digcfdekg × spoke-okn(16,052), digcfdekg × spoke-genelab(19,747), digcfdekg × rdkg(8,934), biobricks-ice × rdkg(358).
+**Entrez** — `https://identifiers.org/ncbigene/ (aopwiki) ; http://identifiers.org/ncbigene/ (rdkg)`: biobricks-aopwiki × rdkg(1,193), biobricks-aopwiki × spoke-genelab(1,472), rdkg × spoke-genelab(9,034), rdkg × spoke-okn(8,475), spoke-genelab × spoke-okn(16,326), digcfdekg × spoke-okn(16,052), digcfdekg × spoke-genelab(19,747), digcfdekg × rdkg(8,934), biobricks-ice × rdkg(358), biomarkerkg × spoke-okn(191), biomarkerkg × spoke-genelab(200), biomarkerkg × digcfdekg(200), biomarkerkg × rdkg(167).
 
 _biobricks-aopwiki × rdkg_
 
@@ -1143,6 +1165,74 @@ SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {
 }
 ```
 
+_biomarkerkg × spoke-okn_
+
+```sparql
+SELECT (COUNT(DISTINCT ?ez) AS ?n) WHERE {
+  { SELECT DISTINCT ?ez WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> {
+        VALUES ?bp { <http://purl.obolibrary.org/obo/OBCI_1000009>
+                     <http://purl.obolibrary.org/obo/OBCI_1000015>
+                     <http://purl.obolibrary.org/obo/OBCI_1000016>
+                     <http://purl.obolibrary.org/obo/OBCI_1000017> }
+        ?s ?bp ?g . FILTER(STRSTARTS(STR(?g),'https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID')) }
+      BIND(REPLACE(STR(?g),'^.*/gene/GID','') AS ?ez) } }
+  BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',?ez)) AS ?gg)
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?gg ?pp ?oo }
+}
+```
+
+_biomarkerkg × spoke-genelab_
+
+```sparql
+SELECT (COUNT(DISTINCT ?ez) AS ?n) WHERE {
+  { SELECT DISTINCT ?ez WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> {
+        VALUES ?bp { <http://purl.obolibrary.org/obo/OBCI_1000009>
+                     <http://purl.obolibrary.org/obo/OBCI_1000015>
+                     <http://purl.obolibrary.org/obo/OBCI_1000016>
+                     <http://purl.obolibrary.org/obo/OBCI_1000017> }
+        ?s ?bp ?g . FILTER(STRSTARTS(STR(?g),'https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID')) }
+      BIND(REPLACE(STR(?g),'^.*/gene/GID','') AS ?ez) } }
+  BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',?ez)) AS ?gg)
+  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?gg ?pp ?oo }
+}
+```
+
+_biomarkerkg × digcfdekg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?ez) AS ?n) WHERE {
+  { SELECT DISTINCT ?ez WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> {
+        VALUES ?bp { <http://purl.obolibrary.org/obo/OBCI_1000009>
+                     <http://purl.obolibrary.org/obo/OBCI_1000015>
+                     <http://purl.obolibrary.org/obo/OBCI_1000016>
+                     <http://purl.obolibrary.org/obo/OBCI_1000017> }
+        ?s ?bp ?g . FILTER(STRSTARTS(STR(?g),'https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID')) }
+      BIND(REPLACE(STR(?g),'^.*/gene/GID','') AS ?ez) } }
+  BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',?ez)) AS ?gg)
+  GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?gg ?pp ?oo }
+}
+```
+
+_biomarkerkg × rdkg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?ez) AS ?n) WHERE {
+  { SELECT DISTINCT ?ez WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> {
+        VALUES ?bp { <http://purl.obolibrary.org/obo/OBCI_1000009>
+                     <http://purl.obolibrary.org/obo/OBCI_1000015>
+                     <http://purl.obolibrary.org/obo/OBCI_1000016>
+                     <http://purl.obolibrary.org/obo/OBCI_1000017> }
+        ?s ?bp ?g . FILTER(STRSTARTS(STR(?g),'https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID')) }
+      BIND(REPLACE(STR(?g),'^.*/gene/GID','') AS ?ez) } }
+  BIND(IRI(CONCAT('http://identifiers.org/ncbigene/',?ez)) AS ?gg)
+  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?gg ?pp ?oo }
+}
+```
+
 **HGNC→Entrez (bridged)** — `http://identifiers.org/hgnc/{N} (prokn) -> http://www.ncbi.nlm.nih.gov/gene/{entrez} (spoke-okn)`: prokn → wikidata → spoke-okn(16,298).
 
 ```sparql
@@ -1182,14 +1272,15 @@ SELECT (COUNT(DISTINCT ?g2) AS ?n) WHERE {
 
 ### GEOSPATIAL
 
-**S2_L13** — `http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.`: fiokg × sawgraph(4,712), fiokg × spatialkg(681,045), hydrologykg × spatialkg(106,138), sawgraph × spatialkg(88,007), sockg × spatialkg(1,069), sockg × sawgraph(2), ufokn × spatialkg(97,087), ufokn × fiokg(2,461), sudokn × spatialkg(42,560).
+**S2_L13** — `http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.`: fiokg × sawgraph(4,712), fiokg × spatialkg(681,045), hydrologykg × spatialkg(106,138), sawgraph × spatialkg(88,007), sockg × spatialkg(1,069), sockg × sawgraph(2), ufokn × spatialkg(97,087), ufokn × fiokg(19,252), sudokn × spatialkg(42,560).
 
 _fiokg × sawgraph_
 
 ```sparql
 SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {
-  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?cell . FILTER(STRSTARTS(STR(?cell),'http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.')) }
+  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?cell . }
   GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?s <http://www.w3.org/2002/07/owl#sameAs> ?cell . }
+  FILTER(STRSTARTS(STR(?cell),'http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.'))
 }
 ```
 
@@ -1197,7 +1288,7 @@ _fiokg × spatialkg_
 
 ```sparql
 SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {
-  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?cell . FILTER(STRSTARTS(STR(?cell),'http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.')) }
+  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?cell . }
   GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }
 }
 ```
@@ -1238,31 +1329,33 @@ SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {
 }
 ```
 
-_ufokn × spatialkg_ (skeleton not re-verified)
+_ufokn × spatialkg_
 
 ```sparql
 SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {
   { SELECT DISTINCT ?cell WHERE {
-    GRAPH <https://purl.org/okn/frink/kg/ufokn> {
-      ?bn ?pn "s2Level13" .
-      ?bn ?pv ?s2id .
-      FILTER(CONTAINS(STR(?pv),'schema.org/value'))
-    }
-    BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.',STR(?s2id))) AS ?cell)
-  } }
+      { SELECT DISTINCT ?s2id WHERE {
+          GRAPH <https://purl.org/okn/frink/kg/ufokn> {
+            BIND(IRI(CONCAT('https://schema.org/','name')) AS ?pn)
+            BIND(IRI(CONCAT('https://schema.org/','value')) AS ?pv)
+            ?bn ?pn "s2Level13" ; ?pv ?s2id . } } }
+      BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.',STR(?s2id))) AS ?cell) } }
   GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }
 }
 ```
 
-_ufokn × fiokg_ (skeleton not re-verified)
+_ufokn × fiokg_
 
 ```sparql
-SELECT (COUNT(DISTINCT ?cell) AS ?sampleCells) (COUNT(DISTINCT ?shared) AS ?inFiokg) WHERE {
-  { SELECT ?cell WHERE {
-      GRAPH <https://purl.org/okn/frink/kg/ufokn> { ?bn ?pn "s2Level13" . ?bn ?pv ?s2id . FILTER(CONTAINS(STR(?pv),'schema.org/value')) }
-      BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.',STR(?s2id))) AS ?cell)
-  } LIMIT 5000 }
-  OPTIONAL { GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?cell } BIND(?cell AS ?shared) }
+SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {
+  { SELECT DISTINCT ?cell WHERE {
+      { SELECT DISTINCT ?s2id WHERE {
+          GRAPH <https://purl.org/okn/frink/kg/ufokn> {
+            BIND(IRI(CONCAT('https://schema.org/','name')) AS ?pn)
+            BIND(IRI(CONCAT('https://schema.org/','value')) AS ?pv)
+            ?bn ?pn "s2Level13" ; ?pv ?s2id . } } }
+      BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.',STR(?s2id))) AS ?cell) } }
+  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?cell . }
 }
 ```
 
@@ -1274,9 +1367,8 @@ _fiokg × spatialkg_
 
 ```sparql
 SELECT (COUNT(DISTINCT ?reg) AS ?n) WHERE {
-  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?reg . FILTER(STRSTARTS(STR(?reg),'http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.')) }
-  FILTER(STRLEN(REPLACE(STR(?reg),'^.*administrativeRegion[.]USA[.]',''))=5)
   GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_2> . }
+  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?reg . }
 }
 ```
 
@@ -1284,11 +1376,14 @@ _fiokg × spoke-okn_
 
 ```sparql
 SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {
-  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?reg . FILTER(STRSTARTS(STR(?reg),'http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.')) }
-  BIND(REPLACE(STR(?reg),'^.*administrativeRegion\\.USA\\.','') AS ?fips)
-  FILTER(STRLEN(?fips)=5)
-  BIND(IRI(CONCAT('https://purl.org/okn/frink/kg/spoke-okn/location/',?fips)) AS ?loc)
-  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc ?p ?o . }
+  { SELECT DISTINCT ?fips WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+        BIND(IRI(CONCAT('https://schema.org/','AdministrativeArea')) AS ?t)
+        ?loc a ?t . }
+      BIND(REPLACE(STR(?loc),'^.*/location/','') AS ?fips)
+      FILTER(REGEX(?fips,'^[0-9]{5}$')) } }
+  BIND(IRI(CONCAT('http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.',?fips)) AS ?reg)
+  GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://www.w3.org/2002/07/owl#sameAs> ?reg . }
 }
 ```
 
@@ -1340,8 +1435,18 @@ _wildlifekn × spatialkg_
 
 ```sparql
 SELECT (COUNT(DISTINCT ?fips5) AS ?n) WHERE {
-  { SELECT DISTINCT ?county WHERE { GRAPH <https://purl.org/okn/frink/kg/wildlifekn> { ?loc a <https://wildlife.proto-okn.net/kg/Location> ; <http://www.w3.org/2000/01/rdf-schema#label> ?county . FILTER(STRENDS(STR(?county),'County')) } } }
-  { SELECT DISTINCT ?county ?fips5 WHERE { GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?reg <http://www.w3.org/2000/01/rdf-schema#label> ?rl . FILTER(CONTAINS(STR(?rl),' County, Florida')) BIND(REPLACE(STR(?rl),'^.*?([^,]+ County), Florida.*$','$1') AS ?county) BIND(SUBSTR(REPLACE(STR(?reg),'^.*administrativeRegion[.]USA[.]',''),1,5) AS ?fips5) } } }
+  { SELECT DISTINCT ?county WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/wildlifekn> {
+        ?loc a <https://wildlife.proto-okn.net/kg/Location> ;
+             <http://www.w3.org/2000/01/rdf-schema#label> ?county . }
+      FILTER(STRENDS(STR(?county),'County')) } }
+  { SELECT DISTINCT ?county ?fips5 WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/spatialkg> {
+        ?reg a <http://stko-kwg.geog.ucsb.edu/lod/ontology/AdministrativeRegion_2> ;
+             <http://www.w3.org/2000/01/rdf-schema#label> ?rl . }
+      FILTER(CONTAINS(STR(?rl),' County, Florida'))
+      BIND(REPLACE(STR(?rl),'^.*?([^,]+ County), Florida.*$','$1') AS ?county)
+      BIND(SUBSTR(REPLACE(STR(?reg),'^.*administrativeRegion[.]USA[.]',''),1,5) AS ?fips5) } }
 }
 ```
 
@@ -1487,7 +1592,7 @@ SELECT (COUNT(DISTINCT ?reg) AS ?n) WHERE {
 }
 ```
 
-**ZIP5** — `bare 5-digit U.S. ZIP code, xsd:string literal (no IRI namespace)`: spoke-okn × dreamkg(53), spoke-okn × ruralkg(5,390), ruralkg × scales(5,297), dreamkg × scales(53), dreamkg × ruralkg(30), spoke-okn × sudokn(13,647).
+**ZIP5** — `bare 5-digit U.S. ZIP code, xsd:string literal (no IRI namespace)`: spoke-okn × dreamkg(53), spoke-okn × ruralkg(5,390), ruralkg × scales(5,297), dreamkg × scales(53), dreamkg × ruralkg(30), spoke-okn × sudokn(13,647), medical-device-kg × spoke-okn(19,563), medical-device-kg × scales(19,089), medical-device-kg × sudokn(11,067), medical-device-kg × ruralkg(5,118), medical-device-kg × dreamkg(50).
 
 _spoke-okn × dreamkg_
 
@@ -1579,6 +1684,101 @@ SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {
 }
 ```
 
+_medical-device-kg × spoke-okn_
+
+```sparql
+SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {
+  { SELECT DISTINCT ?zip WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> {
+        { ?s <http://medicaldevice.com/ontology/zip> ?z0 } UNION
+        { ?s <http://medicaldevice.com/ontology/postalCode> ?z0 } }
+      BIND(REPLACE(STR(?z0),"[^0-9]","") AS ?d)
+      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip)
+      FILTER(REGEX(?zip,"^[0-9]{5}$")) } }
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc <http://www.w3.org/2000/01/rdf-schema#label> ?zip .
+      FILTER(REGEX(STR(?loc),'/location/[A-Z]{2}-[0-9]+')) }
+}
+```
+
+_medical-device-kg × scales_
+
+```sparql
+SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {
+  { SELECT DISTINCT ?zip WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> {
+        { ?s <http://medicaldevice.com/ontology/zip> ?z0 } UNION
+        { ?s <http://medicaldevice.com/ontology/postalCode> ?z0 } }
+      BIND(REPLACE(STR(?z0),"[^0-9]","") AS ?d)
+      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip)
+      FILTER(REGEX(?zip,"^[0-9]{5}$")) } }
+  { SELECT DISTINCT ?zip WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/scales> {
+        ?court <http://release.niem.gov/niem/niem-core/5.0/#AddressPostalCode> ?z1 . }
+      BIND(REPLACE(STR(?z1),"[^0-9]","") AS ?e)
+      BIND(IF(STRLEN(?e)=3, CONCAT("00",?e),
+           IF(STRLEN(?e)=4, CONCAT("0",?e), SUBSTR(?e,1,5))) AS ?zip) } }
+}
+```
+
+_medical-device-kg × sudokn_
+
+```sparql
+SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {
+  { SELECT DISTINCT ?zip WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> {
+        { ?s <http://medicaldevice.com/ontology/zip> ?z0 } UNION
+        { ?s <http://medicaldevice.com/ontology/postalCode> ?z0 } }
+      BIND(REPLACE(STR(?z0),"[^0-9]","") AS ?d)
+      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip)
+      FILTER(REGEX(?zip,"^[0-9]{5}$")) } }
+  { SELECT DISTINCT ?zip WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/sudokn> {
+        BIND(IRI(CONCAT('https://schema.org/','postalCode')) AS ?pp)
+        ?addr ?pp ?z1 . }
+      BIND(REPLACE(STR(?z1),"[^0-9]","") AS ?e)
+      BIND(IF(STRLEN(?e)=4, CONCAT("0",?e), SUBSTR(?e,1,5)) AS ?zip) } }
+}
+```
+
+_medical-device-kg × ruralkg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {
+  { SELECT DISTINCT ?zip WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> {
+        { ?s <http://medicaldevice.com/ontology/zip> ?z0 } UNION
+        { ?s <http://medicaldevice.com/ontology/postalCode> ?z0 } }
+      BIND(REPLACE(STR(?z0),"[^0-9]","") AS ?d)
+      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip)
+      FILTER(REGEX(?zip,"^[0-9]{5}$")) } }
+  { SELECT DISTINCT ?zip WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/ruralkg> {
+        BIND(IRI(CONCAT('https://schema.org/','postalCode')) AS ?pp)
+        ?r ?pp ?z1 . }
+      BIND(REPLACE(STR(?z1),"[^0-9]","") AS ?e)
+      BIND(IF(STRLEN(?e)=4, CONCAT("0",?e), SUBSTR(?e,1,5)) AS ?zip) } }
+}
+```
+
+_medical-device-kg × dreamkg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {
+  { SELECT DISTINCT ?zip WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> {
+        { ?s <http://medicaldevice.com/ontology/zip> ?z0 } UNION
+        { ?s <http://medicaldevice.com/ontology/postalCode> ?z0 } }
+      BIND(REPLACE(STR(?z0),"[^0-9]","") AS ?d)
+      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip)
+      FILTER(REGEX(?zip,"^[0-9]{5}$")) } }
+  { SELECT DISTINCT ?zip WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/dreamkg> {
+        ?loc <http://schema.org/postalCode> ?z1 . }
+      BIND(REPLACE(STR(?z1),"[^0-9]","") AS ?e)
+      BIND(IF(STRLEN(?e)=4, CONCAT("0",?e), SUBSTR(?e,1,5)) AS ?zip) } }
+}
+```
+
 **GeoNames** — `climatemodelskg <https://climatepub4kg.github.io/ontology#geonameid> (bare GeoNames integer) <-> spoke-okn <https://purl.org/okn/frink/kg/spoke-okn/schema/code> (GeoNames code on schema:AdministrativeArea)`: climatemodelskg × spoke-okn(106).
 
 ```sparql
@@ -1656,6 +1856,31 @@ SELECT (COUNT(DISTINCT ?model) AS ?n) WHERE {
 }
 ```
 
+**company name** — `medical-device-kg <http://medicaldevice.com/ontology/establishmentName> <-> sudokn <http://www.w3.org/2000/01/rdf-schema#label> on a Manufacturer. Both plain string literals — NOT an identifier join. medical-device-kg's own company key is the FDA establishment identifier (mdo:feiNumber), which no other federation KG carries; sudokn mints company IRIs from the firm's web domain (…/{domain}-company-instance), which medical-device-kg does not publish. So the name is the only surface the two share.`: medical-device-kg × sudokn(361).
+
+```sparql
+SELECT (COUNT(DISTINCT ?nm) AS ?n) WHERE {
+  { SELECT DISTINCT ?nm WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?s <http://medicaldevice.com/ontology/establishmentName> ?raw }
+      BIND(LCASE(STR(?raw)) AS ?m0)
+      BIND(REPLACE(?m0, "[^a-z0-9 ]", " ") AS ?m1)
+      BIND(REPLACE(?m1, " +", " ") AS ?m2)
+      BIND(REPLACE(?m2, "^ | $", "") AS ?m3)
+      BIND(REPLACE(?m3, " (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$", "") AS ?m4)
+      BIND(REPLACE(?m4, " (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$", "") AS ?m5)
+      BIND(REPLACE(?m5, "^ | $", "") AS ?nm) } }
+  { SELECT DISTINCT ?nm WHERE { GRAPH <https://purl.org/okn/frink/kg/sudokn> {
+        ?o <http://asu.edu/semantics/SUDOKN/organizationLocatedIn> ?a ;
+           <http://www.w3.org/2000/01/rdf-schema#label> ?l }
+      BIND(LCASE(STR(?l)) AS ?s0)
+      BIND(REPLACE(?s0, "[^a-z0-9 ]", " ") AS ?s1)
+      BIND(REPLACE(?s1, " +", " ") AS ?s2)
+      BIND(REPLACE(?s2, "^ | $", "") AS ?s3)
+      BIND(REPLACE(?s3, " (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$", "") AS ?s4)
+      BIND(REPLACE(?s4, " (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$", "") AS ?s5)
+      BIND(REPLACE(?s5, "^ | $", "") AS ?nm) } }
+}
+```
+
 ### JUSTICE & PUBLIC SAFETY
 
 **NIBRS_offense_category** — `FBI NIBRS/UCR offense-category NAME as a plain string literal, identical on both sides (e.g. 'Aggravated Assault', 'Drug/Narcotic Violations', 'Robbery'). scales attaches it to jxdm:Charge nodes via fbi:OffenseUCRCode; ruralkg attaches it to NIBRSAnswer nodes via variable/answerContent (which also carry the matching NIBRS variable/answerCode, e.g. 131 = Aggravated Assault, 351 = Drug/Narcotic Violations). Both sides ingest the FBI NIBRS crime taxonomy, so this is a CONTROLLED-vocabulary match, not fuzzy label collision.`: scales × ruralkg(37).
@@ -1671,7 +1896,7 @@ SELECT (COUNT(DISTINCT ?off) AS ?n) WHERE {
 
 ### PROTEINS
 
-**UniProt** — `https://identifiers.org/uniprot/ ; http://purl.uniprot.org/uniprot/`: biobricks-aopwiki × prokn(1,805), ncipidkg × prokn(12), biomarkerkg × prokn(209), biomarkerkg × biobricks-aopwiki(86).
+**UniProt** — `https://identifiers.org/uniprot/ ; http://purl.uniprot.org/uniprot/`: biobricks-aopwiki × prokn(1,805), ncipidkg × prokn(1,979), biomarkerkg × prokn(209), biomarkerkg × biobricks-aopwiki(86), nestkg × prokn(16,729), biobricks-aopwiki × nestkg(1,376), nestkg × ncipidkg(526), nestkg × biomarkerkg(230).
 
 _biobricks-aopwiki × prokn_
 
@@ -1686,10 +1911,10 @@ SELECT (COUNT(DISTINCT ?p2) AS ?n) WHERE {
 _ncipidkg × prokn_
 
 ```sparql
-SELECT (COUNT(DISTINCT ?p2) AS ?n) WHERE {
-  GRAPH <https://purl.org/okn/frink/kg/ncipidkg> { ?s <http://www.w3.org/2002/07/owl#sameAs> ?u . FILTER(STRSTARTS(STR(?u),'http://identifiers.org/uniprot/')) }
-  BIND(IRI(CONCAT('http://purl.uniprot.org/uniprot/',REPLACE(STR(?u),'^.*/uniprot/',''))) AS ?p2)
-  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?p2 ?pp ?op . }
+SELECT (COUNT(DISTINCT ?u) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/ncipidkg> { ?s <http://www.w3.org/2002/07/owl#sameAs> ?u .
+    FILTER(STRSTARTS(STR(?u),'http://purl.uniprot.org/uniprot/')) }
+  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?u ?pp ?op . }
 }
 ```
 
@@ -1713,9 +1938,46 @@ SELECT (COUNT(DISTINCT ?acc) AS ?n) WHERE {
 }
 ```
 
+_nestkg × prokn_
+
+```sparql
+SELECT (COUNT(DISTINCT ?up) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?up a <http://semanticscience.org/resource/SIO_010043> . }
+  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?up ?p ?o . }
+}
+```
+
+_biobricks-aopwiki × nestkg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?p2) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?y <http://www.w3.org/2004/02/skos/core#exactMatch> ?u . FILTER(STRSTARTS(STR(?u),'https://identifiers.org/uniprot/')) }
+  BIND(IRI(CONCAT('http://purl.uniprot.org/uniprot/',REPLACE(STR(?u),'^.*/uniprot/',''))) AS ?p2)
+  GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?p2 a <http://semanticscience.org/resource/SIO_010043> . }
+}
+```
+
+_nestkg × ncipidkg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?up) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?up a <http://semanticscience.org/resource/SIO_010043> . }
+  GRAPH <https://purl.org/okn/frink/kg/ncipidkg> { ?up ?p ?o . }
+}
+```
+
+_nestkg × biomarkerkg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?up) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?up a <http://semanticscience.org/resource/SIO_010043> . }
+  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?bp ?up . FILTER(STRSTARTS(STR(?up),'http://purl.uniprot.org/uniprot/')) }
+}
+```
+
 ### PUBLICATIONS
 
-**DOI** — `climatemodelskg <https://climatepub4kg.github.io/ontology#doi> (DOI as string literal, https://doi.org/ form) <-> nasa-gesdisc-kg <http://purl.org/ontology/bibo/doi> (DOI as IRI, http://dx.doi.org/ form)`: climatemodelskg × nasa-gesdisc-kg(651).
+**DOI** — `climatemodelskg <https://climatepub4kg.github.io/ontology#doi> (DOI as string literal, https://doi.org/ form) <-> nasa-gesdisc-kg <http://purl.org/ontology/bibo/doi> (DOI as IRI, http://dx.doi.org/ form)`: climatemodelskg × nasa-gesdisc-kg(3,660).
 
 ```sparql
 SELECT (COUNT(DISTINCT ?bare) AS ?n) WHERE {
@@ -1726,7 +1988,7 @@ SELECT (COUNT(DISTINCT ?bare) AS ?n) WHERE {
 }
 ```
 
-**author name (string; NOT an ORCID — see the entry's caveat)** — `climatemodelskg <https://climatepub4kg.github.io/ontology#name> <-> nasa-gesdisc-kg <http://www.w3.org/2000/01/rdf-schema#label>, both plain string literals. NOT an identifier join — there is no shared ORCID.`: climatemodelskg × nasa-gesdisc-kg(8,391).
+**author name (string; NOT an ORCID — see the entry's caveat)** — `climatemodelskg <https://climatepub4kg.github.io/ontology#name> <-> nasa-gesdisc-kg <http://www.w3.org/2000/01/rdf-schema#label>, both plain string literals. NOT an identifier join — there is no shared ORCID.`: climatemodelskg × nasa-gesdisc-kg(32,586).
 
 ```sparql
 SELECT (COUNT(DISTINCT ?nm) AS ?n) WHERE {
@@ -1858,19 +2120,24 @@ SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {
 }
 ```
 
-_spoke-genelab → ubergraph → spoke-okn_ (skeleton not re-verified)
+_spoke-genelab → ubergraph → spoke-okn_
 
 ```sparql
-SELECT (COUNT(DISTINCT ?desc) AS ?n) WHERE {
-  { SELECT DISTINCT ?genus WHERE {
-    GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?node a <https://purl.org/okn/frink/kg/spoke-genelab/schema/Organism> . }
-    BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?node),'^.*/node/([0-9]+).*$','$1'))) AS ?genus)
-  } }
-  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?desc <http://www.w3.org/2000/01/rdf-schema#subClassOf>* ?genus . }
-  { SELECT DISTINCT ?desc WHERE {
-    GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?ot a <https://w3id.org/biolink/vocab/OrganismTaxon> }
-    BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?ot),'^.*/organism/([0-9]+).*$','$1'))) AS ?desc)
-  } }
+SELECT (COUNT(DISTINCT ?b) AS ?n) WHERE {
+  { SELECT DISTINCT ?a WHERE {
+      { { GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
+            ?_a1 <https://purl.org/okn/frink/kg/spoke-genelab/schema/taxonomy> ?_a2 .
+            FILTER(STRSTARTS(STR(?_a2),'http://purl.obolibrary.org/obo/NCBITaxon_')) }
+          BIND(IRI(STR(?_a2)) AS ?a) }
+        UNION
+        { GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
+            ?_a3 a <https://purl.org/okn/frink/kg/spoke-genelab/schema/Organism> . }
+          BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?_a3),'^.*/node/([0-9]+).*$','$1'))) AS ?a) } }
+      FILTER(?a = <http://purl.obolibrary.org/obo/NCBITaxon_2>) } }
+  { SELECT DISTINCT ?b WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?_b1 a <https://w3id.org/biolink/vocab/OrganismTaxon> }
+      BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?_b1),'^.*/organism/([0-9]+).*$','$1'))) AS ?b) } }
+  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?b <http://www.w3.org/2000/01/rdf-schema#subClassOf>* <http://purl.obolibrary.org/obo/NCBITaxon_2> . }
 }
 ```
 
@@ -1980,8 +2247,57 @@ SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {
 }
 ```
 
+### VARIANTS
+
+**dbSNP rsID** — `pankgraph <https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/{rsid}> (bare number) <-> biomarkerkg <https://www.ncbi.nlm.nih.gov/snp/rs{rsid}> (rs-prefixed)`: pankgraph × biomarkerkg(214), prokn × biomarkerkg(3,241), prokn × pankgraph(214).
+
+_pankgraph × biomarkerkg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?rs) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/pankgraph> { ?g <http://www.w3.org/2000/01/rdf-schema#seeAlso> ?snp .
+    FILTER(STRSTARTS(STR(?snp),'https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/')) }
+  BIND(REPLACE(STR(?snp),'^.*/refsnp/','') AS ?rs)
+  BIND(IRI(CONCAT('https://www.ncbi.nlm.nih.gov/snp/rs',?rs)) AS ?b)
+  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?b . }
+}
+```
+
+_prokn × biomarkerkg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?rs) AS ?n) WHERE {
+  { SELECT DISTINCT ?rs WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/prokn> {
+        ?v a <http://purl.uniprot.org/core/Natural_Variant_Annotation> ;
+           <http://schema.org/description> ?d . }
+      FILTER(CONTAINS(STR(?d),'dbSNP:rs'))
+      BIND(REPLACE(STR(?d),'^.*dbSNP:rs([0-9]+).*$','$1') AS ?rs) } }
+  BIND(IRI(CONCAT('https://www.ncbi.nlm.nih.gov/snp/rs',?rs)) AS ?b)
+  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?p ?b . }
+}
+```
+
+_prokn × pankgraph_
+
+```sparql
+SELECT (COUNT(DISTINCT ?rs) AS ?n) WHERE {
+  { SELECT DISTINCT ?rs WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/prokn> {
+        ?v a <http://purl.uniprot.org/core/Natural_Variant_Annotation> ;
+           <http://schema.org/description> ?d . }
+      FILTER(CONTAINS(STR(?d),'dbSNP:rs'))
+      BIND(REPLACE(STR(?d),'^.*dbSNP:rs([0-9]+).*$','$1') AS ?rs) } }
+  { SELECT DISTINCT ?rs WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/pankgraph> {
+        ?g <http://www.w3.org/2000/01/rdf-schema#seeAlso> ?snp . }
+      FILTER(CONTAINS(STR(?snp),'/refsnp/'))
+      BIND(REPLACE(STR(?snp),'^.*/refsnp/','') AS ?rs) } }
+}
+```
+
 ### NOTES
 
 - **Skeletons are COUNT queries by design.** Each proves the key still joins and reproduces the table's `verified_count`; run it first, then extend it with your payload rather than rebuilding the normalization boilerplate.
 - **The identifier, not the entity, is what matches.** Counts are `COUNT(DISTINCT <shared key>)` — shared identifiers, not shared rows. A KG may mint several nodes carrying the same id.
-- **Sources:** the crosswalk table served by `list_crosswalks` / `get_join_strategy` (verified 2026-07-12).
+- **Sources:** the crosswalk table served by `list_crosswalks` / `get_join_strategy` (verified 2026-09-01).

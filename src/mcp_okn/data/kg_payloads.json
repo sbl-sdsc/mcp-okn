@@ -1,6 +1,6 @@
 {
   "$schema_note": "Curated 'payload' tags: WHAT each KG supplies, not just how it joins. Each tag is a controlled-vocabulary context type (see 'vocabulary'). Sourced from the registry long descriptions + each KG's curated entity schema (classes/predicates) + its verified crosswalk shared-keys. The value-add types that are NOT join keys (gene_set, trait, pathway, tox_assay, expression, biomarker, variant, ...) are the curated part this file exists to surface. Edit this file (the source of record under metadata/) and run scripts/refresh_snapshot.py to sync the bundled copy.",
-  "verified_on": "2026-07-12",
+  "verified_on": "2026-09-01",
   "vocabulary": {
     "disease": "Disease concepts or disease-entity associations (MONDO/DOID/OMIM/EFO/Orphanet)",
     "phenotype": "Phenotypes / clinical signs (HP)",
@@ -94,6 +94,10 @@
       "biomarker",
       "disease",
       "protein",
+      "gene",
+      "variant",
+      "chemical",
+      "anatomy",
       "cell_type"
     ],
     "climatemodelskg": [
@@ -146,7 +150,9 @@
     ],
     "medical-device-kg": [
       "adverse_event",
-      "medical_device"
+      "medical_device",
+      "facility",
+      "geospatial"
     ],
     "nasa-gesdisc-kg": [
       "dataset",
@@ -154,12 +160,21 @@
     ],
     "ncipidkg": [
       "pathway",
-      "protein"
+      "protein",
+      "gene",
+      "chemical"
     ],
     "nde": [
       "dataset",
       "disease",
       "organism"
+    ],
+    "nestkg": [
+      "protein",
+      "gene",
+      "gene_set",
+      "pathway",
+      "disease"
     ],
     "nikg": [
       "justice",

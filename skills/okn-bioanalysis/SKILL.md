@@ -4,7 +4,7 @@ description: >-
   Methodology for biomedical knowledge-graph analysis and cross-KG hypotheses over the
   OKN federated SPARQL endpoint via the mcp-okn tools. Works across the federation's bio graphs
   (spoke-okn, prokn, rdkg, digcfdekg, gene-expression-atlas-okn, biobricks-aopwiki, biomarkerkg,
-  ncipidkg, oard-kg, pankgraph, spoke-genelab, ubergraph),
+  ncipidkg, nestkg, oard-kg, pankgraph, spoke-genelab, ubergraph),
   integrating on shared identifiers — gene, protein, disease (MONDO/DOID), phenotype (HP),
   taxon (NCBITaxon), GO/Reactome, chemical/drug — and can LINK bio entities to place-based data (exposure, facilities,
   social determinants) via geography (FIPS / ZIP / S2). Use whenever a task involves

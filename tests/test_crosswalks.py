@@ -59,10 +59,22 @@ async def test_known_non_join_pair_is_flagged_not_verified():
 
 @pytest.mark.asyncio
 async def test_single_kg_non_join_blocks_any_pairing():
-    # medical-device-kg is a profiled island (single-KG known_non_join record): nothing to
-    # join, with anything. The bare-"kg" record must block pairing it with prokn.
-    out = await get_join_strategy("medical-device-kg", "prokn")
+    # evoweb is a profiled island (single-KG known_non_join record): its members are
+    # bacterial RefSeq WP_ protein accessions with no federation partner, so there is
+    # nothing to join, with anything. The bare-"kg" record must block pairing it with
+    # prokn. (medical-device-kg held this role until 2026-09-01, when the redeployed
+    # graph's address block put it on the ZIP5 cluster — see J7-J11.)
+    out = await get_join_strategy("evoweb", "prokn")
     assert out["status"] == "known_non_join"
+
+
+@pytest.mark.asyncio
+async def test_de_islanded_kg_reports_its_new_join():
+    # The reverse guard: a KG whose island record has been superseded must return the
+    # recipe, not the stale verdict. medical-device-kg joins spoke-okn on ZIP5.
+    out = await get_join_strategy("medical-device-kg", "spoke-okn")
+    assert out["status"] == "verified"
+    assert any(r["shared_key"] == "ZIP5" for r in out["joins"])
 
 
 @pytest.mark.asyncio
@@ -368,9 +380,12 @@ async def test_oardkg_prokn_disease_linkages_flagged_complementary():
 
 
 def test_island_status_for_island_kg():
-    assert cw.island_status("medical-device-kg") is not None
-    assert cw.island_status("medical-device-kg")["island"] is True
+    assert cw.island_status("evoweb") is not None
+    assert cw.island_status("evoweb")["island"] is True
     assert cw.island_status("prokn") is None  # not an island
+    # De-islanded 2026-09-01 (J7-J11): must no longer report as an island.
+    status = cw.island_status("medical-device-kg")
+    assert status is None or status["island"] is False
 
 
 def test_thin_thread_kg_surfaces_threads_without_being_an_island():

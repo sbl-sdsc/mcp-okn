@@ -28,7 +28,11 @@ _RAW_BASE = (
 
 # KGs listed in the registry but excluded from results — e.g. not loaded in the
 # federation under their expected named graph (queries return no rows).
-EXCLUDED_KGS = {"semopenalex"}
+# `babel` joined the registry in the 2026-09-01 refresh but is NOT loaded: every
+# candidate graph IRI (…/kg/babel, …/kg/babel/, frink.renci.org/kg/babel) counts
+# 0 triples on the federation endpoint, so serving it would advertise a graph that
+# answers nothing. Drop it from this set once the federation loads it.
+EXCLUDED_KGS = {"semopenalex", "babel"}
 
 # Process-lifetime caches (the registry changes rarely).
 _shortnames_cache: list[str] | None = None

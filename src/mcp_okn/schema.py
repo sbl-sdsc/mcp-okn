@@ -61,6 +61,33 @@ def _is_provenance_uri(uri: str) -> bool:
     return uri in _PROVENANCE_URIS or uri.startswith(_PROVENANCE_NAMESPACES)
 
 
+#: Template for KGs whose curated ``*_entities.csv`` runs AHEAD of the graph the
+#: federation actually serves. ``get_schema`` reads those CSVs live from the
+#: upstream repo, so when a KG's metadata is refreshed before (or without) a
+#: redeploy, the schema advertises predicates and classes that return 0 rows — a
+#: silent failure the client reads as "no data" rather than "not deployed yet".
+#: Counts are from a live per-predicate census; re-run
+#: ``scripts/check_payload_drift.py`` and re-census after a redeploy.
+SCHEMA_AHEAD_OF_DEPLOY_GUIDANCE = """\
+DEPLOYMENT LAG — this schema is AHEAD of the served graph. {absent} of the
+{total} predicates in {shortname}'s curated schema have ZERO triples in the
+deployed named graph (censused {checked}). Querying one returns an empty result
+that looks like missing data, not like a missing release.
+
+{detail}
+
+Before building on any predicate from this schema, confirm it is populated:
+run the ASK below (or a COUNT) for it. Treat a 0 as "not deployed yet", and
+prefer a predicate you have confirmed live.\
+"""
+
+#: Companion snippet: the cheapest live/not-live check for a single predicate.
+SCHEMA_AHEAD_OF_DEPLOY_SNIPPET = """\
+# Is this predicate actually deployed? false => in the schema, not in the graph.
+ASK {{ GRAPH <https://purl.org/okn/frink/kg/{shortname}> {{
+  ?s <{predicate}> ?o . }} }}\
+"""
+
 #: Per-KG usage notes surfaced on ``get_schema`` (attached by the tool wrapper in
 #: :mod:`mcp_okn.tools.schema_tools`), delivered exactly when a client is about to
 #: write SPARQL for that KG. Only KGs with domain rules that the schema alone does
@@ -69,6 +96,65 @@ _KG_USAGE_NOTES: dict[str, dict[str, str]] = {
     "spoke-genelab": {
         "guidance": SPOKE_GENELAB_CONTRAST_GUIDANCE,
         "query_snippet": SPOKE_GENELAB_CONTRAST_SNIPPET,
+    },
+    "medical-device-kg": {
+        "guidance": SCHEMA_AHEAD_OF_DEPLOY_GUIDANCE.format(
+            shortname="medical-device-kg",
+            absent=152,
+            total=296,
+            checked="2026-09-01",
+            detail=(
+                "The curated schema describes a LATER release than the federation "
+                "serves. Live and queryable: 510(k) (mdo:k510Number, 175,299), PMA "
+                "(mdo:pmaNumber, 111,720), De Novo, HDE, recalls (mdo:recallNumber, "
+                "39,223), MAUDE events (mdo:eventType, 15,279), FDA establishment "
+                "registration (mdo:feiNumber, 964,478), X-ray assembler sites, MQSA "
+                "mammography facilities, 522 postmarket studies, product codes, "
+                "regulation numbers and the address block (mdo:zip / mdo:postalCode / "
+                "city / state / country — the ZIP5 join surface behind crosswalks "
+                "J7-J11). NOT in the deployed graph, though the schema lists them: the "
+                "whole AccessGUDID / UDI block (device identifiers, brand names, "
+                "packaging, implant and sterility status), CLIA test systems and "
+                "waived analytes, GMDN terms, device materials and components, "
+                "software features, design changes, patient outcomes, safety signals "
+                "and MedSun reports."
+            ),
+        ),
+        "query_snippet": SCHEMA_AHEAD_OF_DEPLOY_SNIPPET.format(
+            shortname="medical-device-kg",
+            predicate="http://medicaldevice.com/ontology/hasDeviceIdentifier",
+        ),
+    },
+    "ncipidkg": {
+        "guidance": SCHEMA_AHEAD_OF_DEPLOY_GUIDANCE.format(
+            shortname="ncipidkg",
+            absent=9,
+            total=20,
+            checked="2026-09-01",
+            detail=(
+                "The curated schema describes a LATER release than the federation "
+                "serves, and the two disagree on a whole VOCABULARY NAMESPACE. The "
+                "deployed graph publishes its edge metadata under "
+                "<http://example.org/okn/> (evidenceCount 83,704, evidenceUrl 83,704, "
+                "processType 10,662), NOT the <https://www.ndexbio.org/vocab/ncipid/> "
+                "form the schema lists — query the example.org form or you get 0 rows. "
+                "Also absent from the deployed graph: obo:RO_0000056 'participates in', "
+                "skos:exactMatch, owl:equivalentClass, ndexbio inPathway, and the "
+                "biolink:Pathway / obo:SO_0000655 ncRNA / obo:CHEBI_23367 "
+                "molecular-entity classes (0 instances each). Live instead: the reified "
+                "INDRA interaction statements (rdf:subject/predicate/object over "
+                "obo:RO_0002436 / RO_0002578 / RO_0002629 / RO_0002630 / RO_0002211), "
+                "owl:sameAs (11,760) and biolink:GeneFamily (20). NOTE the deployed "
+                "typing flaw the new schema fixes: sio:SIO_010043 'protein' types 2,588 "
+                "nodes that INCLUDE bare CHEBI CURIE strings (e.g. 'CHEBI:15354'), so "
+                "filter to <http://purl.uniprot.org/uniprot/> IRIs when you want "
+                "proteins."
+            ),
+        ),
+        "query_snippet": SCHEMA_AHEAD_OF_DEPLOY_SNIPPET.format(
+            shortname="ncipidkg",
+            predicate="https://www.ndexbio.org/vocab/ncipid/evidenceCount",
+        ),
     },
 }
 

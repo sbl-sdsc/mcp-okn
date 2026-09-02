@@ -29,8 +29,11 @@ The HTML additionally links every example question to the transcript of the work
 example that answers it (``crosswalks_examples/*.md``, linked through GitHub's blob
 view so the Markdown RENDERS — see :func:`blob_url`). Those links are re-derived
 from ``crosswalks_example.md``'s catalog table on every build — see
-:func:`transcript_links` — so adding a crosswalk without working an example, or
-renaming a transcript, fails the build loudly instead of shipping a dead link.
+:func:`transcript_links` — so renaming or dropping a transcript fails the build
+loudly instead of shipping a dead link. A crosswalk with NO worked example yet
+renders its questions as plain text and is reported on stderr, so a batch of newly
+catalogued joins can ship before their transcripts are authored; a stem pointing at
+no crosswalk row is still a hard error.
 """
 
 from __future__ import annotations
@@ -323,14 +326,19 @@ def transcript_links(rows: list[dict]) -> dict[tuple, list[tuple[str, str]]]:
         best = max(cands, key=lambda r: len(_key_tokens(r["shared_key"]) & want))
         links[(_core_kgs(best["kgs"]), best["shared_key"])].append((paths[1], paths[2]))
 
+    # A row with no worked example is REPORTED, not fatal: crosswalks are catalogued
+    # (verified skeleton + two example questions) as soon as they are discovered, and
+    # their transcripts are authored afterwards. The reverse — a catalog stem that
+    # matches no row — stays fatal above, since that is a dead link or a dropped row.
     unlinked = [r for r in rows if (_core_kgs(r["kgs"]), r["shared_key"]) not in links]
     if unlinked:
         listing = "; ".join(
             f"{'+'.join(r['kgs'])} on {r['shared_key']}" for r in unlinked
         )
-        raise SystemExit(
-            f"{len(unlinked)} crosswalk(s) have no worked example in {CATALOG.name}: "
-            f"{listing}"
+        print(
+            f"note: {len(unlinked)} crosswalk(s) have no worked example in "
+            f"{CATALOG.name} yet — questions render unlinked: {listing}",
+            file=sys.stderr,
         )
     return links
 
@@ -561,14 +569,14 @@ def fmt_examples_html(r: dict, links: dict) -> str:
         [r["example_question"]] if r.get("example_question") else []
     )
     pairs = row_links(links, r)
-    primary = pairs[0]
+    # No worked example yet (a freshly catalogued crosswalk): render the questions
+    # as plain text rather than linking them to a transcript that does not exist.
+    primary = pairs[0] if pairs else ()
     cells = [
         f'<a class="q" href="{blob_url(p)}">{esc(q)}</a>'
         for q, p in zip(qs, primary, strict=False)
     ]
-    cells += [
-        esc(q) for q in qs[len(primary) :] if q
-    ]  # never hit while every row is q1+q2
+    cells += [esc(q) for q in qs[len(primary) :] if q]
     for extra in pairs[1:]:
         also = " · ".join(
             f'<a href="{blob_url(p)}">example {i}</a>' for i, p in enumerate(extra, 1)

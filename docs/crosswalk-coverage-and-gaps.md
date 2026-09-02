@@ -3,6 +3,17 @@
 _Survey date: 2026-06-14 · 41 served KGs · federation endpoint
 `https://apps.okn.us/federation/sparql`_
 
+> **Dated snapshot — three findings below are superseded (2026-09-01).** This page is
+> kept as the 2026-06-14 survey, not rewritten. Since then: (1) **medical-device-kg is
+> no longer an island** — the v0.0.3 redeploy (2026-07-28) added establishment,
+> facility, applicant and recalling-firm addresses, so it joins the ZIP5 cluster on five
+> pairs (J7–J11); (2) **biomarkerkg's non-protein axes are now catalogued** — the class
+> lists that timed out here hide 147,386 dbSNP variants, 201 PubChem gene IRIs (whose
+> GID number is the Entrez id), 63 PubChem compounds and 53 UBERON sample sources,
+> yielding C18–C21, AN7 and V1; (3) a **new KG, nestkg**, is served (43 KGs now) and
+> joins the UniProt cluster (G5–G8) and the MONDO axis (A30). See
+> `metadata/crosswalks.json` for the current table.
+
 **What this is.** An exhaustive sweep of the entity types and ontologies/identifier
 schemes carried by every served Proto-OKN KG, cross-referenced against the curated
 crosswalk table (`metadata/crosswalks.json`) to find **crosswalks that have not yet
@@ -154,6 +165,10 @@ retry to join climatemodelskg geography to `spoke-okn`/`spatialkg` county FIPS.
 - **phaseskg** GO/OBO terms are ontology scaffolding (no instance data) — island.
 - **Islands / no public key:** medical-device-kg (FDA product codes), nasa-gesdisc-kg
   (GeoNames/keywords), wildlifekn (species as label strings), evoweb (custom gene IRIs).
+  *(Superseded in part: medical-device-kg was de-islanded on ZIP5 2026-09-01, and
+  nasa-gesdisc-kg / wildlifekn are thin threads rather than islands — DOI + GCMD labels
+  and label-bridged NCBITaxon + county FIPS respectively. evoweb remains the one
+  confirmed island.)*
 - **Meta / bridge graphs** excluded as data endpoints: ubergraph (ontology backbone),
   okn-void (VOID metadata), identifier-mappings, wikidata.
 - **Sampling limit:** `biomarkerkg` and `oard-kg` class lists timed out (data present,

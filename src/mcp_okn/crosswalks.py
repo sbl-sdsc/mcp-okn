@@ -160,6 +160,9 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "COMID": "Hydrology",
     "NAICS": "Industry & supply chain",
     "SUDOKN_industry_sector": "Industry & supply chain",
+    # medical-device-kg <-> sudokn: the firms themselves, matched by normalized
+    # company name (no NAICS on the FDA side) — see the entry's caveat.
+    "company name": "Industry & supply chain",
     "DOI": "Publications",
     "author name (string; NOT an ORCID — see the entry's caveat)": "Publications",
     "GCMD instrument": "Earth observation",
@@ -172,6 +175,8 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "EFO / Orphanet / MONDO (direct, multi-vocabulary)": "Disease & phenotype",
     "Entrez -> HGNC (bridged)": "Genes",
     "Entrez -> Ensembl (bridged)": "Genes",
+    # Sequence-variant identity (pankgraph <-> biomarkerkg)
+    "dbSNP rsID": "Variants",
 }
 
 # Canonical spelling for explicit per-row ``domain`` values that vary only by
