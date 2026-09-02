@@ -29,12 +29,12 @@ Yes for 214 variants. Worked examples — the shared rsID, the ProKN protein/res
 |---|---|---|
 | **P12259_R534Q** (Coagulation factor V) | rs6025 | **in THPH2; factor V Leiden; risk factor for Budd-Chiari syndrome; risk factor for ischemic stroke** |
 | P07902_N314D (GALT) | rs2070074 | in GALAC1; allele Duarte; Duarte-1 normal or increased activity, Duarte-2 reduced to ~35-45% of normal |
-| P10635_S486T (CYP2D6) | rs1135840 | in alleles CYP2D6*2/*10/*12/*14/*17/*45/*46; **impaired metabolism of sparteine** |
-| P08686_S269T (CYP21A2) | rs6472 | in allele CYP21A2*5 |
+| P10635_S486T (CYP2D6) | rs1135840 | in alleles CYP2D6\*2/\*10/\*12/\*14/\*17/\*45/\*46; **impaired metabolism of sparteine** |
+| P08686_S269T (CYP21A2) | rs6472 | in allele CYP21A2\*5 |
 | O15228_D519G (GNPAT) | rs11558492 | in RCDP2; likely benign; decreased glycerone-phosphate O-acyltransferase activity |
 | P06681_E318D (Complement C2) | rs9332739 | may be associated with a reduced risk for age-related macular degeneration |
 | P17405_V36A (SMPD1) | rs1050228 | does not affect enzymatic activity |
-| P01889_A65T / E69K (HLA-B) | rs1050529 / rs9266178 | in HLA-B alleles B*13:02, B*40:01, B*44:02 and others |
+| P01889_A65T / E69K (HLA-B) | rs1050529 / rs9266178 | in HLA-B alleles B\*13:02, B\*40:01, B\*44:02 and others |
 | P04440_F64Y / K98E / L37V (HLA-DPB1) | rs1042117 / rs1042140 / rs1126504 | each 'in allele DPB1*…' running to 20–58 alleles |
 
 **Why this answers the question.** PanKgraph names a variant by rsID and nothing else about the protein. ProKN supplies the protein, the exact substitution, and a curated functional note — and for several of these the note is clinically decisive:
@@ -43,7 +43,7 @@ Yes for 214 variants. Worked examples — the shared rsID, the ProKN protein/res
 - **rs1135840 (CYP2D6 S486T)** is a pharmacogenomic star-allele marker — ProKN lists the eight CYP2D6 alleles it appears in and the impaired-metabolism phenotype.
 - **rs2070074 (GALT N314D)** is the Duarte galactosaemia allele, with ProKN distinguishing Duarte-1 (normal or increased activity) from Duarte-2 (35–45% of normal).
 
-**The HLA rows are a caution, not a find.** rs1042140, rs1126504 and their neighbours are annotated as "in allele DPB1*02:01, …" running to dozens of alleles apiece. These are common haplotype-defining polymorphisms in the MHC, not variants with an individual functional consequence, and they are over-represented in any rsID intersection because the MHC is both hyper-polymorphic and heavily genotyped. (The full allele lists are long enough to dominate a results table, which is why only the first four rows of each query are rendered below.)
+**The HLA rows are a caution, not a find.** rs1042140, rs1126504 and their neighbours are annotated as "in allele DPB1\*02:01, …" running to dozens of alleles apiece. These are common haplotype-defining polymorphisms in the MHC, not variants with an individual functional consequence, and they are over-represented in any rsID intersection because the MHC is both hyper-polymorphic and heavily genotyped. (The full allele lists are long enough to dominate a results table, which is why only the first four rows of each query are rendered below.)
 
 **Method.** Both sides reduced to the bare rsID inside their own `DISTINCT` sub-SELECT, then joined on that string — the only shape that works when neither graph offers a matchable IRI. Note also that PanKgraph's `rdfs:seeAlso` subject carries no `rdfs:label`: adding one to the join silently returns zero rows, so the gene name is not available on this side.
 
@@ -108,6 +108,6 @@ _15 row(s) — showing first 4_
 | rs | proknVariant | proknAnnotation |
 | --- | --- | --- |
 | 11558492 | O15228_D519G | in RCDP2; likely benign; decreased glycerone-phosphate O-acyltransferase activity |
-| 1050529 | P01889_A65T | in allele B*13:02, allele B*40:01, allele B*40:02, allele B*41:01, allele B*44:02, allele B*45:01, allele B*47:01, allele B*49:01 and allele B*50:01 |
-| 9266178 | P01889_E69K | in allele B*40:01, allele B*40:02, allele B*41:01, allele B*44:02, allele B*45:01, allele B*47:01, allele B*49:01 and allele B*50:01 |
-| 199474457 | P04439_T97I | in allele A*31:01 and allele A*33:01 |
+| 1050529 | P01889_A65T | in allele B\*13:02, allele B\*40:01, allele B\*40:02, allele B\*41:01, allele B\*44:02, allele B\*45:01, allele B\*47:01, allele B\*49:01 and allele B\*50:01 |
+| 9266178 | P01889_E69K | in allele B\*40:01, allele B\*40:02, allele B\*41:01, allele B\*44:02, allele B\*45:01, allele B\*47:01, allele B\*49:01 and allele B\*50:01 |
+| 199474457 | P04439_T97I | in allele A\*31:01 and allele A\*33:01 |

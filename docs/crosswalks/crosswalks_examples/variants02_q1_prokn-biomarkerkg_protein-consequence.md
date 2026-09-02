@@ -34,7 +34,7 @@ Research question: for a variant BiomarkerKG uses as a clinical marker, what pro
 | Q8WX94_K379N (NLRP7) | rs10418277 | in HYDM1; uncertain significance |
 | Q14790_D285H (CASP8) | rs1045485 | **associated with protection against breast cancer**; also a lower risk of cutaneous melanoma |
 | Q10981_I140F (FUT2) | rs1047781 | in allele Sej; non-secretor phenotype |
-| P19827_Q595R (ITIH1) | rs1042779 | in allele ITIH1*2 and ITIH1*3 |
+| P19827_Q595R (ITIH1) | rs1042779 | in allele ITIH1\*2 and ITIH1\*3 |
 
 **Which proteins carry the most shared variants:**
 
