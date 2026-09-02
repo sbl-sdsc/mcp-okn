@@ -1,6 +1,6 @@
 # Proto-OKN Crosswalk Inventory
 
-- **Date:** 2026-09-01
+- **Date:** 2026-09-02
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 181 precomputed cross-KG crosswalks (verified through 2026-09-01), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
+Here are all 181 precomputed cross-KG crosswalks (verified through 2026-09-02), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
 
 ## Anatomy & Cell Type
 
