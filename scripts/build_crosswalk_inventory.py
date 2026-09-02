@@ -155,8 +155,10 @@ CATALOG_KG_ALIAS = {
     "HydrologyKG": "hydrologykg",
     "ICE": "biobricks-ice",
     "MeSH": "biobricks-mesh",
+    "medical-device-kg": "medical-device-kg",
     "NASA-GESDISC": "nasa-gesdisc-kg",
     "NCI-PID": "ncipidkg",
+    "NeST": "nestkg",
     "NDE": "nde",
     "NIKG": "nikg",
     "OARD": "oard-kg",
@@ -208,6 +210,7 @@ CATALOG_DOMAIN = {
     "PW": "Function & Pathways",
     "SDOH": "Social Determinants & Services",
     "T": "Taxonomy",
+    "V": "Variants",
 }
 
 # The three stems the KG-set match cannot resolve, all documented in

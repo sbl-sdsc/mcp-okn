@@ -99,20 +99,20 @@ geospatial and industrial joins against their authoritative shared standard):
   key, row count, and a one-line note on what each answers. Start here to see which
   graphs connect and on what identifier.
 - **[Cross-KG crosswalk catalog](docs/crosswalks/crosswalks_example.md)** —
-  **328 example questions** worked end-to-end, each with a full transcript (the live
-  SPARQL and its results), across 15 domains (Anatomy & Cell Type, Chemicals, Disease &
+  **366 example questions** worked end-to-end, each with a full transcript (the live
+  SPARQL and its results), across 16 domains (Anatomy & Cell Type, Chemicals, Disease &
   Phenotype, Earth Observation, Environmental Toxicology, Function & Pathways, Genes,
   Geospatial, Hydrology, Industry & Supply Chain, Justice & Public Safety, Proteins,
-  Publications, Social Determinants & Services, Taxonomy). Every crosswalk is now worked
+  Publications, Social Determinants & Services, Taxonomy, Variants). Every crosswalk is now worked
   twice — the inventory carries
   **362 questions — two for every one of the 181 crosswalks** — and the catalog has a
-  transcript behind each of the 162 crosswalks catalogued through 2026-07-17, plus four
-  questions on two extra stems (a second example on the spoke-genelab×spoke-okn Entrez
-  axis, and the three-way gene dossier whose clique row was retired). The 19 crosswalks
-  added in the 2026-09-01 upstream-metadata pass (nestkg, medical-device-kg into both the
-  ZIP and manufacturing clusters, BiomarkerKG's gene / variant / anatomy axes, and the
-  dbSNP variant cluster) carry a verified skeleton and two example questions each; their
-  transcripts are not yet worked.
+  transcript behind each one, plus four questions on two extra stems (a second example on
+  the spoke-genelab×spoke-okn Entrez axis, and the three-way gene dossier whose clique row
+  was retired). All 19 crosswalks added in the 2026-09-01 upstream-metadata pass are
+  worked: the five nestkg joins (P05–P08, D39), the five medical-device-kg ZIP joins
+  (GEO35–GEO39), BiomarkerKG's four Entrez joins (G22–G25) and its UBERON join (AN09),
+  the medical-device-kg×SUDOKN company-name join (I06), and the new **Variants** domain
+  (V01–V03).
 
 Every catalog row links to a standalone, replayable transcript — the prompt, the
 answer, and every verbatim SPARQL query with its result.
