@@ -89,14 +89,20 @@ ASK {{ GRAPH <https://purl.org/okn/frink/kg/{shortname}> {{
 """
 
 #: ncipidkg no longer has a deployment gap. Upstream commit 422b460 (2026-09-02)
-#: realigned ``ncipidkg_entities.csv`` with the served graph: the three
-#: uninstantiated classes and the six absent predicates were dropped, the edge
-#: metadata was moved to its deployed ``http://example.org/okn/`` namespace, and
-#: the SIO_010043 typing flaw and ``owl:sameAs`` semantics are now documented in
-#: the CSV itself. A live census on 2026-09-02 confirms the CSV's 3 classes and
-#: 14 predicates are exactly the deployed set, so NO schema-ahead-of-deploy
-#: warning applies. What remains below is the guidance the CSV still does not
-#: carry: identifier hygiene and how to join the graph.
+#: realigned ``ncipidkg_entities.csv`` with the served graph: the uninstantiated
+#: classes and absent predicates were dropped, and the SIO_010043 typing flaw and
+#: ``owl:sameAs`` semantics are now documented in the CSV itself.
+#:
+#: THE EDGE-METADATA NAMESPACE MOVED, and an earlier version of this comment named
+#: the wrong one. ncipidkg served placeholder ``http://example.org/okn/`` predicates
+#: as recently as 2026-09-01; it now serves ``https://www.ndexbio.org/vocab/ncipid/``
+#: (evidenceCount, evidenceUrl, inPathway, processType). The CSV tracks the new
+#: namespace correctly, so ``get_schema`` is right — but any query written against
+#: the old one returns ZERO ROWS rather than an error, which is how it hides. That
+#: is exactly how the proteins07_q1 worked example broke: it went from 18 rows to 0
+#: with no other change, and the substantive results were identical once repointed.
+#: A live census on 2026-09-02 counts 21 distinct deployed predicates against the
+#: CSV's 20 (the extra is ``rdf:type``), so the curated schema matches the graph.
 NCIPIDKG_GUIDANCE = """\
 IDENTIFIER AND JOIN NOTES (the curated schema matches the deployed graph as of
 2026-09-02; these are the things it still does not tell you).
