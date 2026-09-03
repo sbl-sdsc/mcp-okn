@@ -1896,7 +1896,7 @@ SELECT (COUNT(DISTINCT ?off) AS ?n) WHERE {
 
 ### PROTEINS
 
-**UniProt** — `https://identifiers.org/uniprot/ ; http://purl.uniprot.org/uniprot/`: biobricks-aopwiki × prokn(1,805), ncipidkg × prokn(2,493), biomarkerkg × prokn(209), biomarkerkg × biobricks-aopwiki(86), nestkg × prokn(16,729), biobricks-aopwiki × nestkg(1,376), nestkg × ncipidkg(526), nestkg × biomarkerkg(230).
+**UniProt** — `https://identifiers.org/uniprot/ ; http://purl.uniprot.org/uniprot/`: biobricks-aopwiki × prokn(1,805), ncipidkg × prokn(2,493), biomarkerkg × prokn(209), biomarkerkg × biobricks-aopwiki(86), nestkg × prokn(16,729), biobricks-aopwiki × nestkg(1,376), nestkg × ncipidkg(2,451), nestkg × biomarkerkg(230).
 
 _biobricks-aopwiki × prokn_
 
@@ -1973,8 +1973,17 @@ _nestkg × ncipidkg_
 
 ```sparql
 SELECT (COUNT(DISTINCT ?up) AS ?n) WHERE {
-  GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?up a <http://semanticscience.org/resource/SIO_010043> . }
-  GRAPH <https://purl.org/okn/frink/kg/ncipidkg> { ?up ?p ?o . }
+  {
+    SELECT DISTINCT ?up WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?up a <http://semanticscience.org/resource/SIO_010043> . }
+      GRAPH <https://purl.org/okn/frink/kg/ncipidkg> { ?up ?p ?o . }
+    }
+  } UNION {
+    SELECT DISTINCT ?up WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?up a <http://semanticscience.org/resource/SIO_010043> . }
+      GRAPH <https://purl.org/okn/frink/kg/ncipidkg> { ?s <http://www.w3.org/2002/07/owl#sameAs> ?up . }
+    }
+  }
 }
 ```
 

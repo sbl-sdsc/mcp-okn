@@ -23,71 +23,99 @@ Research question: Which NCI-PID signalling interactions run between two protein
 
 🧠 **Assistant**
 
-**Why this transcript was rebuilt (2026-09-02).** ncipidkg moved its predicates off placeholder `http://example.org/okn/` IRIs onto `https://www.ndexbio.org/vocab/ncipid/` — the same redeploy that re-keyed crosswalk G2. The evidence count now lives on `ncipid:evidenceCount` (83,704 statements, alongside `inPathway`, `evidenceUrl` and `processType`), so the original query silently returned **0 rows**: no error, just an empty result, which is exactly the failure mode that hides. Only the predicate IRI changed. Every substantive value below — pairs, relations, `maxEvidence`, `sharedSystems` — is identical to the original run.
+**The premise in the question is wrong, and correcting it changes the answer completely.** "Both mint the same UniProt IRIs, so the join is a direct IRI match" is only true for a minority of ncipidkg's proteins. ncipidkg also carries a UniProt-to-UniProt `owl:sameAs` alias table — `A0A024R986 sameAs P78543, Q3KR25, Q5VUT0` — mapping secondary and isoform accessions onto the one it uses internally. When NeST records a protein under a different accession from ncipidkg, a direct IRI match silently fails.
 
-One further change, made because the rebuild exposed it: the representative system column was `SAMPLE(?sysLabel)`, which is non-deterministic, so it returned different labels on different runs and the original prose built its argument on whichever label happened to come back. It is now `MIN(?sysLabel)` (stable), and a second query enumerates *all* shared systems for the headline pairs, so the claims below cite systems that have been verified rather than sampled.
+That matters doubly here, because this query requires **both** interaction partners to match. Requiring two independent direct hits compounds the loss:
 
-Interactions with at least 40 INDRA evidence records where **both** partners are members of the same NeST system, aggregated per protein pair:
+| Matching method | Qualifying statements (evidence ≥ 40, shared NeST system) |
+|---|---|
+| direct IRI match only (the published form) | 87 |
+| per-participant alias resolution | **1,922** |
+
+**22× more.** Each participant is now resolved independently — it is a NeST protein itself, *or* it aliases to one — which also catches mixed pairs where one partner matches directly and the other through an alias. (Resolving both partners by the same route only reaches 1,246, so the mixed cases are a substantial share of the gain.)
+
+**The single most telling omission:** the published version listed **TP53 ↔ MDM4** (1,145 evidence) but did not contain **TP53 ↔ MDM2** at all. MDM4 is the paralog; MDM2 is p53's principal E3 ligase and the most heavily evidenced interaction in the entire set at **11,463** records. The direct-match query saw the minor partner and lost the major one. Its claim that TP53 → CDKN1A was "the strongest edge in the set" at 2,324 was wrong by roughly 5×.
+
+Interactions with at least 40 INDRA evidence records where **both** partners resolve to members of the same NeST system:
 
 | A | Relation | B | Max evidence | Shared systems |
 |---|---|---|---|---|
+| TP53 | molecularly interacts with | MDM2 | 11,463 | 9 |
+| CD40LG | molecularly interacts with | CD40 | 5,445 | 1 |
+| IL6 | directly positively regulates | STAT3 | 5,054 | 1 |
+| MDM2 | directly negatively regulates | TP53 | 3,754 | 9 |
+| EGF | directly positively regulates | EGFR | 3,174 | 7 |
+| TSC2 | molecularly interacts with | TSC1 | 2,801 | 2 |
+| EGFR | molecularly interacts with | EGF | 2,648 | 7 |
+| EGF | molecularly interacts with | EGFR | 2,648 | 7 |
+| GSK3B | directly regulates | CTNNB1 | 2,514 | 2 |
+| MYC | molecularly interacts with | MAX | 2,401 | 1 |
+| EP300 | molecularly interacts with | CREBBP | 2,386 | 11 |
 | TP53 | directly positively regulates | CDKN1A | 2,324 | 10 |
-| TP53 | molecularly interacts with | MDM4 | 1,145 | 3 |
-| CDKN1A | directly positively regulates | TP53 | 659 | 10 |
-| MDM4 | directly negatively regulates | TP53 | 591 | 3 |
-| ATR | directly regulates | TP53 | 410 | 2 |
-| IL6 | molecularly interacts with | IL10 | 362 | 2 |
-| IL10 | directly negatively regulates | IL6 | 360 | 2 |
-| MTOR | directly regulates | ULK1 | 340 | 2 |
-| IL6 | directly positively regulates | IL10 | 338 | 2 |
-| TGFBR1 | directly regulates | SMAD2 | 331 | 2 |
-| INSR | directly regulates | IRS1 | 317 | 1 |
-| TP53 | directly negatively regulates | CDKN1A | 264 | 10 |
-| IRS1 | molecularly interacts with | INSR | 250 | 1 |
-| MDM4 | directly positively regulates | TP53 | 227 | 3 |
-| IL4 | directly positively regulates | IL10 | 217 | 2 |
-| CDKN1A | molecularly interacts with | CDKN1B | 199 | 8 |
-| CDKN1B | molecularly interacts with | CDKN1A | 199 | 8 |
-| ATR | directly regulates | RPA2 | 193 | 1 |
+| ERBB3 | molecularly interacts with | ERBB2 | 2,016 | 6 |
+| IL6 | directly regulates | STAT3 | 1,973 | 1 |
+| TNF | molecularly interacts with | TNFRSF1A | 1,862 | 1 |
+| CTNNB1 | molecularly interacts with | CDH1 | 1,845 | 4 |
+| CDH1 | molecularly interacts with | CTNNB1 | 1,845 | 4 |
+| IFNG | directly positively regulates | STAT1 | 1,806 | 2 |
 
-**Why this answers the question.** Every high-evidence pair lands in a NeST system whose *name* describes the very signalling event NCI-PID asserts, and the two graphs derived those independently — NCI-PID from curated literature, NeST from protein-interaction and proteomics data. The second query below lists the full membership, so these are checked, not inferred from one label:
+**Why this answers the question.** Every high-evidence pair lands in a NeST system, and the two resources derived those facts independently — NCI-PID from curated literature, NeST from protein-interaction and proteomics data. The corrected list is a roll-call of canonical signalling axes that the published version could not see: the p53–MDM2 regulatory loop (both directions, 9 shared systems), receptor–ligand pairs (EGF–EGFR, CD40LG–CD40, TNF–TNFRSF1A), cytokine–STAT couplings (IL6–STAT3, IFNG–STAT1), the TSC1–TSC2 complex, MYC–MAX dimerisation, the EP300–CREBBP co-activator pair, and the Wnt/adhesion node CTNNB1 with GSK3B and CDH1.
 
-- **TP53 → CDKN1A** (2,324 evidence records, the strongest edge in the set) sits inside 10 NeST systems at once, including "TP53 regulates transcription of cell cycle genes", "Cell cycle arrest", "G1 to S cell cycle control" and "Regulation of CDK activity". The nesting is the point: p53's induction of p21 is not confined to one assembly, it is the hinge between several.
-- **TP53 ↔ MDM4** and **MDM4 ⊣ TP53** share "MDM2-p53 pathway" (with "Cell cycle arrest" and "BRCA1 mediated protein ubiquitination") — the curated inhibitory edge and the data-derived complex naming the same axis.
-- **MTOR → ULK1** shares "Regulatory in autophagy via inhibition of mTORC1" and "AKT/MTOR pathway II"; **TGFBR1 → SMAD2** shares "SMAD-TGFbeta signaling" and "TGF-beta pathway/SMAD protein complex"; **INSR → IRS1** sits in "EGFR-insulin receptor cross-talk". Each is the textbook first step of the pathway its NeST system is named for.
-- **IL6 ↔ IL10** appears with both signs (IL6 positively regulating IL10, IL10 negatively regulating IL6) inside "Regulation of interleukin production" and "Lymphocyte activation" — a feedback loop reconstructed from two directed statements.
+**The p53 loop is the clearest demonstration of what the join buys.** TP53 ↔ MDM2 appears with both signs — the physical interaction at 11,463 records and MDM2's negative regulation of TP53 at 3,754 — and both sit inside 9 shared NeST systems. NCI-PID supplies the direction and the evidence weight; NeST supplies the assemblies. Neither graph holds both halves.
 
-**What the join buys.** NeST tells you a set of proteins is one assembly under mutational selection but not who acts on whom; NCI-PID tells you who acts on whom but not which assembly it belongs to. Joined, you get *directed, evidence-weighted signalling within a named cancer system* — the shape you need to ask which edge of a mutated system is the actionable one.
+**Three reading caveats.**
 
-**Three reading caveats.** (1) Opposite-sign statements coexist for the same pair (TP53 both positively and negatively regulating CDKN1A) because INDRA aggregates the literature, including context-dependent and contradictory reports; the evidence counts, not the sign alone, carry the weight. (2) `sharedSystems` counts NeST's *nested* systems, so one interaction can legitimately be inside ten of them — that is containment, not ten independent confirmations. (3) Not every NeST system is named: TP53/CDKN1A's ten include a bare `NEST:91`, so a shared-system count mixes interpretable assemblies with unlabelled ones.
+1. **These are 18 statements, not 18 distinct protein pairs.** A pair recurs when it is asserted under several relation types or in both directions — EGF/EGFR occupies three rows, TP53/MDM2, IL6/STAT3 and CTNNB1/CDH1 two each. The 18 rows cover roughly 13 distinct pairs.
+2. **Opposite-sign statements coexist** for the same pair, because INDRA aggregates the literature including context-dependent and contradictory reports. The evidence counts, not the sign alone, carry the weight.
+3. **`sharedSystems` counts NeST's *nested* systems**, so one interaction can legitimately sit inside eleven of them (EP300/CREBBP). That is containment, not eleven independent confirmations — and some of those systems are unnamed `NEST:n` identifiers rather than interpretable assemblies.
+
+**Query-shape note.** The resolution map is built once as an uncorrelated `DISTINCT` sub-SELECT per participant and then joined, which runs in **2.7 s**. Expressing the same logic as a UNION of the two whole-pattern branches takes 27–77 s — slow enough to be exactly the kind of fragile query that fails when the endpoint is busy.
 
 ## SPARQL queries executed
 
 #### Query 1
 
-_2026-09-02T23:44:50+00:00 · `ncipidkg`, `nestkg`_
+_2026-09-03T01:10:58+00:00 · `ncipidkg`, `nestkg`_
 
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX blv: <https://w3id.org/biolink/vocab/>
 PREFIX ncipid: <https://www.ndexbio.org/vocab/ncipid/>
+PREFIX sio: <http://semanticscience.org/resource/>
+# NCI-PID signalling statements whose BOTH participants belong to a shared NeST system.
+# Each participant is resolved to a NeST protein INDEPENDENTLY — either it is a NeST
+# protein itself, or ncipidkg's uniprot-to-uniprot owl:sameAs alias table maps it onto
+# one. Matching only on direct IRI identity (the previous form) sees a small fraction:
+# it requires BOTH partners to happen to use the same accession NeST does.
 SELECT ?symbolA ?relation ?symbolB (MAX(?evidence) AS ?maxEvidence)
-       (COUNT(DISTINCT ?sys) AS ?sharedSystems) (MIN(?sysLabel) AS ?exampleSystem) WHERE {
+       (COUNT(DISTINCT ?sys) AS ?sharedSystems) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/ncipidkg> {
     ?st rdf:subject ?a ; rdf:predicate ?rel ; rdf:object ?b ; ncipid:evidenceCount ?evidence .
     FILTER(?evidence >= 40)
   }
+  { SELECT DISTINCT ?a ?na WHERE {
+      { GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?a a sio:SIO_010043 } BIND(?a AS ?na) }
+      UNION
+      { GRAPH <https://purl.org/okn/frink/kg/ncipidkg> { ?a owl:sameAs ?na }
+        GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?na a sio:SIO_010043 } } } }
+  { SELECT DISTINCT ?b ?nb WHERE {
+      { GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?b a sio:SIO_010043 } BIND(?b AS ?nb) }
+      UNION
+      { GRAPH <https://purl.org/okn/frink/kg/ncipidkg> { ?b owl:sameAs ?nb }
+        GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?nb a sio:SIO_010043 } } } }
   GRAPH <https://purl.org/okn/frink/kg/nestkg> {
-    ?sys blv:has_member ?a , ?b ; rdfs:label ?sysLabel .
-    ?a rdfs:label ?symbolA . ?b rdfs:label ?symbolB .
+    ?sys blv:has_member ?na , ?nb .
+    ?na rdfs:label ?symbolA . ?nb rdfs:label ?symbolB
   }
   BIND(IF(STRENDS(STR(?rel),'RO_0002629'),'directly positively regulates',
        IF(STRENDS(STR(?rel),'RO_0002630'),'directly negatively regulates',
        IF(STRENDS(STR(?rel),'RO_0002436'),'molecularly interacts with',
        IF(STRENDS(STR(?rel),'RO_0002578'),'directly regulates','regulates')))) AS ?relation)
-} GROUP BY ?symbolA ?relation ?symbolB
-  ORDER BY DESC(?maxEvidence) LIMIT 18
+}
+GROUP BY ?symbolA ?relation ?symbolB
+ORDER BY DESC(?maxEvidence) LIMIT 18
 ```
 
 ```mermaid
@@ -95,80 +123,143 @@ graph TD
 classDef projected fill:lightgreen;
 classDef literal fill:orange;
 classDef iri fill:yellow;
-  q0v17("?a")
-  q0v16("?b")
-  q0v14("?evidence")
-  q0v1("?exampleSystem"):::projected 
-  q0v3("?maxEvidence"):::projected 
-  q0v13("?rel")
-  q0v5("?relation"):::projected 
-  q0v2("?sharedSystems"):::projected 
-  q0v15("?st")
-  q0v6("?symbolA"):::projected 
-  q0v4("?symbolB"):::projected 
+  q0v15("?a")
+  q0v14("?b")
+  q0v12("?evidence")
+  q0v2("?maxEvidence"):::projected 
+  q0v16("?na")
+  q0v17("?nb")
+  q0v11("?rel")
+  q0v4("?relation"):::projected 
+  q0v1("?sharedSystems"):::projected 
+  q0v13("?st")
+  q0v5("?symbolA"):::projected 
+  q0v3("?symbolB"):::projected 
   q0v18("?sys")
-  q0v19("?sysLabel")
   subgraph q0graph0["GRAPH https://purl.org/okn/frink/kg/ncipidkg"]
     style q0graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
     q0graph0f0[["?evidence >= '40^^xsd:integer'"]]
-    q0graph0f0 --> q0v14
-    q0v15 --"rdf:object"--> q0v16
-    q0v15 --"rdf:predicate"--> q0v13
-    q0v15 --"rdf:subject"--> q0v17
-    q0v15 --"ncipid:evidenceCount"--> q0v14
+    q0graph0f0 --> q0v12
+    q0v13 --"rdf:object"--> q0v14
+    q0v13 --"rdf:predicate"--> q0v11
+    q0v13 --"rdf:subject"--> q0v15
+    q0v13 --"ncipid:evidenceCount"--> q0v12
   end
-  subgraph q0graph1["GRAPH https://purl.org/okn/frink/kg/nestkg"]
-    style q0graph1 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
-    q0v18 --"blv:has_member"--> q0v17
+  subgraph q0union0[" Union "]
+  style q0union0 color:#000;
+    subgraph q0graph1["GRAPH https://purl.org/okn/frink/kg/ncipidkg"]
+      style q0graph1 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+      q0v15 --"owl:sameAs"--> q0v16
+    end
+    subgraph q0graph2["GRAPH https://purl.org/okn/frink/kg/nestkg"]
+      style q0graph2 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+      q0graph2c2(["sio:SIO_010043"]):::iri 
+      q0v16 --"a"--> q0graph2c2
+    end
+  subgraph q0union0r[" "]
+    style q0union0r fill:#abf,stroke-dasharray: 3 3;
+    subgraph q0graph3["GRAPH https://purl.org/okn/frink/kg/nestkg"]
+      style q0graph3 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+      q0graph3c2(["sio:SIO_010043"]):::iri 
+      q0v15 --"a"--> q0graph3c2
+    end
+    q0bind0[/"?a"/]
+    q0v15 --o q0bind0
+    q0bind0 --as--o q0v16
+  end
+  end
+  subgraph q0union1[" Union "]
+  style q0union1 color:#000;
+    subgraph q0graph4["GRAPH https://purl.org/okn/frink/kg/ncipidkg"]
+      style q0graph4 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+      q0v14 --"owl:sameAs"--> q0v17
+    end
+    subgraph q0graph5["GRAPH https://purl.org/okn/frink/kg/nestkg"]
+      style q0graph5 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+      q0graph5c2(["sio:SIO_010043"]):::iri 
+      q0v17 --"a"--> q0graph5c2
+    end
+  subgraph q0union1r[" "]
+    style q0union1r fill:#abf,stroke-dasharray: 3 3;
+    subgraph q0graph6["GRAPH https://purl.org/okn/frink/kg/nestkg"]
+      style q0graph6 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+      q0graph6c2(["sio:SIO_010043"]):::iri 
+      q0v14 --"a"--> q0graph6c2
+    end
+    q0bind1[/"?b"/]
+    q0v14 --o q0bind1
+    q0bind1 --as--o q0v17
+  end
+  end
+  subgraph q0graph7["GRAPH https://purl.org/okn/frink/kg/nestkg"]
+    style q0graph7 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
     q0v18 --"blv:has_member"--> q0v16
-    q0v18 --"rdfs:label"--> q0v19
-    q0v17 --"rdfs:label"--> q0v6
-    q0v16 --"rdfs:label"--> q0v4
+    q0v18 --"blv:has_member"--> q0v17
+    q0v16 --"rdfs:label"--> q0v5
+    q0v17 --"rdfs:label"--> q0v3
   end
-  q0bind0[/"if(strends(str(?rel),'RO_0002629'),'directly positively regulates',if(strends(str(?rel),'RO_0002630'),'directly negatively regulates',if(strends(str(?rel),'RO_0002436'),'molecularly interacts with',if(strends(str(?rel),'RO_0002578'),'directly regulates','regulates'))))"/]
-  q0v13 --o q0bind0
-  q0bind0 --as--o q0v5
-  q0bind1[/"max(?evidence)"/]
-  q0bind1 --as--o q0v3
-  q0bind2[/"count(?sys)"/]
-  q0bind2 --as--o q0v2
-  q0bind3[/"min(?sysLabel)"/]
-  q0bind3 --as--o q0v1
+  q0bind2[/"if(strends(str(?rel),'RO_0002629'),'directly positively regulates',if(strends(str(?rel),'RO_0002630'),'directly negatively regulates',if(strends(str(?rel),'RO_0002436'),'molecularly interacts with',if(strends(str(?rel),'RO_0002578'),'directly regulates','regulates'))))"/]
+  q0v11 --o q0bind2
+  q0bind2 --as--o q0v4
+  q0bind3[/"max(?evidence)"/]
+  q0bind3 --as--o q0v2
+  q0bind4[/"count(?sys)"/]
+  q0bind4 --as--o q0v1
 ```
 
 _18 row(s) — showing first 3_
 
-| symbolA | relation | symbolB | maxEvidence | sharedSystems | exampleSystem |
-| --- | --- | --- | --- | --- | --- |
-| TP53 | directly positively regulates | CDKN1A | 2324 | 10 | CDK holoenzyme complex I |
-| TP53 | molecularly interacts with | MDM4 | 1145 | 3 | BRCA1 mediated protein ubiquitination |
-| CDKN1A | directly positively regulates | TP53 | 659 | 10 | CDK holoenzyme complex I |
+| symbolA | relation | symbolB | maxEvidence | sharedSystems |
+| --- | --- | --- | --- | --- |
+| TP53 | molecularly interacts with | MDM2 | 11463 | 9 |
+| CD40LG | molecularly interacts with | CD40 | 5445 | 1 |
+| IL6 | directly positively regulates | STAT3 | 5054 | 1 |
 
 #### Query 2
 
-_2026-09-02T23:45:24+00:00 · `nestkg`_
+_2026-09-03T01:11:15+00:00 · `ncipidkg`, `nestkg`_
 
 ```sparql
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX blv: <https://w3id.org/biolink/vocab/>
-# Which NeST systems do the headline pairs actually share? The aggregate above
-# collapses this to one representative label; this enumerates them so the prose
-# can cite a system it has verified rather than an arbitrarily sampled one.
-SELECT ?pair (GROUP_CONCAT(DISTINCT ?sysLabel; SEPARATOR=" | ") AS ?sharedSystems) WHERE {
-  VALUES (?symbolA ?symbolB ?pair) {
-    ("TP53" "CDKN1A" "TP53 / CDKN1A")
-    ("TP53" "MDM4"   "TP53 / MDM4")
-    ("MTOR" "ULK1"   "MTOR / ULK1")
-    ("IL6"  "IL10"   "IL6 / IL10")
-    ("TGFBR1" "SMAD2" "TGFBR1 / SMAD2")
-  }
-  GRAPH <https://purl.org/okn/frink/kg/nestkg> {
-    ?a rdfs:label ?symbolA . ?b rdfs:label ?symbolB .
-    ?sys blv:has_member ?a , ?b ; rdfs:label ?sysLabel .
+PREFIX ncipid: <https://www.ndexbio.org/vocab/ncipid/>
+PREFIX sio: <http://semanticscience.org/resource/>
+# How much does alias resolution add? Same evidence>=40 threshold, same
+# shared-system requirement; the only difference is whether each participant may
+# be resolved through ncipidkg's owl:sameAs alias table before matching NeST.
+SELECT ?method (COUNT(*) AS ?qualifyingStatements) WHERE {
+  {
+    SELECT ("direct IRI match only (the published form)" AS ?method) ?a ?rel ?b WHERE {
+      SELECT DISTINCT ?a ?rel ?b WHERE {
+        GRAPH <https://purl.org/okn/frink/kg/ncipidkg> {
+          ?st rdf:subject ?a ; rdf:predicate ?rel ; rdf:object ?b ; ncipid:evidenceCount ?e .
+          FILTER(?e >= 40) }
+        GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?sys blv:has_member ?a , ?b . }
+      }
+    }
+  } UNION {
+    SELECT ("per-participant alias resolution" AS ?method) ?a ?rel ?b WHERE {
+      SELECT DISTINCT ?a ?rel ?b WHERE {
+        GRAPH <https://purl.org/okn/frink/kg/ncipidkg> {
+          ?st rdf:subject ?a ; rdf:predicate ?rel ; rdf:object ?b ; ncipid:evidenceCount ?e .
+          FILTER(?e >= 40) }
+        { SELECT DISTINCT ?a ?na WHERE {
+            { GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?a a sio:SIO_010043 } BIND(?a AS ?na) }
+            UNION
+            { GRAPH <https://purl.org/okn/frink/kg/ncipidkg> { ?a owl:sameAs ?na }
+              GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?na a sio:SIO_010043 } } } }
+        { SELECT DISTINCT ?b ?nb WHERE {
+            { GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?b a sio:SIO_010043 } BIND(?b AS ?nb) }
+            UNION
+            { GRAPH <https://purl.org/okn/frink/kg/ncipidkg> { ?b owl:sameAs ?nb }
+              GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?nb a sio:SIO_010043 } } } }
+        GRAPH <https://purl.org/okn/frink/kg/nestkg> { ?sys blv:has_member ?na , ?nb . }
+      }
+    }
   }
 }
-GROUP BY ?pair
-ORDER BY ?pair
+GROUP BY ?method ORDER BY ?qualifyingStatements
 ```
 
 ```mermaid
@@ -176,44 +267,111 @@ graph TD
 classDef projected fill:lightgreen;
 classDef literal fill:orange;
 classDef iri fill:yellow;
-  q1v8("?a")
-  q1v9("?b")
-  q1v2("?pair"):::projected 
-  q1v1("?sharedSystems"):::projected 
-  q1v5("?symbolA")
-  q1v6("?symbolB")
-  q1v7("?sys")
-  q1v10("?sysLabel")
-  q1bind0[/"VALUES ?pair ?symbolA ?symbolB"/]
-  q1bind0-->q1v2
-  q1bind0-->q1v5
-  q1bind0-->q1v6
-  q1bind00(["TP53"])
-  q1bind00 --> q1bind0
-  q1bind01(["CDKN1A"])
-  q1bind01 --> q1bind0
-  q1bind02(["TP53 / CDKN1A"])
-  q1bind02 --> q1bind0
-  q1bind0more([+12 more])
-  q1bind0more --> q1bind0
-  subgraph q1graph0["GRAPH https://purl.org/okn/frink/kg/nestkg"]
-    style q1graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
-    q1v7 --"blv:has_member"--> q1v8
-    q1v7 --"blv:has_member"--> q1v9
-    q1v7 --"rdfs:label"--> q1v10
-    q1v8 --"rdfs:label"--> q1v5
-    q1v9 --"rdfs:label"--> q1v6
+  q1v9("?a")
+  q1v7("?b")
+  q1v5("?e")
+  q1v2("?method"):::projected 
+  q1v11("?na")
+  q1v12("?nb")
+  q1v1("?qualifyingStatements"):::projected 
+  q1v8("?rel")
+  q1v6("?st")
+  q1v10("?sys")
+  subgraph q1union0[" Union "]
+  style q1union0 color:#000;
+  subgraph q1union0l[" "]
+    style q1union0l fill:#abf,stroke-dasharray: 3 3;
+    subgraph q1graph0["GRAPH https://purl.org/okn/frink/kg/ncipidkg"]
+      style q1graph0 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+      q1graph0f0[["?e >= '40^^xsd:integer'"]]
+      q1graph0f0 --> q1v5
+      q1v6 --"rdf:object"--> q1v7
+      q1v6 --"rdf:predicate"--> q1v8
+      q1v6 --"rdf:subject"--> q1v9
+      q1v6 --"ncipid:evidenceCount"--> q1v5
+    end
+    subgraph q1union1[" Union "]
+    style q1union1 color:#000;
+      subgraph q1graph1["GRAPH https://purl.org/okn/frink/kg/ncipidkg"]
+        style q1graph1 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+        q1v9 --"owl:sameAs"--> q1v11
+      end
+      subgraph q1graph2["GRAPH https://purl.org/okn/frink/kg/nestkg"]
+        style q1graph2 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+        q1graph2c2(["sio:SIO_010043"]):::iri 
+        q1v11 --"a"--> q1graph2c2
+      end
+    subgraph q1union1r[" "]
+      style q1union1r fill:#abf,stroke-dasharray: 3 3;
+      subgraph q1graph3["GRAPH https://purl.org/okn/frink/kg/nestkg"]
+        style q1graph3 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+        q1graph3c2(["sio:SIO_010043"]):::iri 
+        q1v9 --"a"--> q1graph3c2
+      end
+      q1bind0[/"?a"/]
+      q1v9 --o q1bind0
+      q1bind0 --as--o q1v11
+    end
+    end
+    subgraph q1union2[" Union "]
+    style q1union2 color:#000;
+      subgraph q1graph4["GRAPH https://purl.org/okn/frink/kg/ncipidkg"]
+        style q1graph4 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+        q1v7 --"owl:sameAs"--> q1v12
+      end
+      subgraph q1graph5["GRAPH https://purl.org/okn/frink/kg/nestkg"]
+        style q1graph5 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+        q1graph5c2(["sio:SIO_010043"]):::iri 
+        q1v12 --"a"--> q1graph5c2
+      end
+    subgraph q1union2r[" "]
+      style q1union2r fill:#abf,stroke-dasharray: 3 3;
+      subgraph q1graph6["GRAPH https://purl.org/okn/frink/kg/nestkg"]
+        style q1graph6 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+        q1graph6c2(["sio:SIO_010043"]):::iri 
+        q1v7 --"a"--> q1graph6c2
+      end
+      q1bind1[/"?b"/]
+      q1v7 --o q1bind1
+      q1bind1 --as--o q1v12
+    end
+    end
+    subgraph q1graph7["GRAPH https://purl.org/okn/frink/kg/nestkg"]
+      style q1graph7 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+      q1v10 --"blv:has_member"--> q1v11
+      q1v10 --"blv:has_member"--> q1v12
+    end
+    q1bind2[/"'per-participant alias resolution'"/]
+    q1bind2 --as--o q1v2
   end
-  q1bind1[/"group_concat(?sysLabel)"/]
-  q1bind1 --as--o q1v1
+  subgraph q1union0r[" "]
+    style q1union0r fill:#abf,stroke-dasharray: 3 3;
+    subgraph q1graph8["GRAPH https://purl.org/okn/frink/kg/ncipidkg"]
+      style q1graph8 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+      q1graph8f1[["?e >= '40^^xsd:integer'"]]
+      q1graph8f1 --> q1v5
+      q1v6 --"rdf:object"--> q1v7
+      q1v6 --"rdf:predicate"--> q1v8
+      q1v6 --"rdf:subject"--> q1v9
+      q1v6 --"ncipid:evidenceCount"--> q1v5
+    end
+    subgraph q1graph9["GRAPH https://purl.org/okn/frink/kg/nestkg"]
+      style q1graph9 fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#000;
+      q1v10 --"blv:has_member"--> q1v9
+      q1v10 --"blv:has_member"--> q1v7
+    end
+    q1bind3[/"'direct IRI match only (the published form)'"/]
+    q1bind3 --as--o q1v2
+  end
+  q1union0r <== or ==> q1union0l
+  end
+  q1bind4[/"count(*)"/]
+  q1bind4 --as--o q1v1
 ```
 
-_5 row(s)_
+_2 row(s)_
 
-| pair | sharedSystems |
+| method | qualifyingStatements |
 | --- | --- |
-| IL6 / IL10 | Lymphocyte activation \| Regulation of interleukin production |
-| MTOR / ULK1 | AKT/MTOR pathway II \| Regulatory in autophagy via inhibition of mTORC1 |
-| TGFBR1 / SMAD2 | SMAD-TGFbeta signaling \| TGF-beta pathway/SMAD protein complex |
-| TP53 / CDKN1A | TP53 regulates transcription of cell cycle genes \| Cyclin D associated events in G1 \| Cell cycle arrest \| NEST:91 \| Regulation of CDK activity \| DNA metabolic process \| G1 to S cell cycle control \| CDK holoenzyme complex I \| CDK holoenzyme complex II \| MDM2-p53 pathway |
-| TP53 / MDM4 | MDM2-p53 pathway \| BRCA1 mediated protein ubiquitination \| Cell cycle arrest |
+| direct IRI match only (the published form) | 87 |
+| per-participant alias resolution | 1922 |
