@@ -53,3 +53,6 @@ metadata/*_20[0-9][0-9]-[0-1][0-9]-*.json
 # Local scratch export
 mcp.html
 scripts/.transcript_results.json
+
+# Local benchmark scratch (the benchmark itself lives in the mcp-okn-benchmark repo)
+benchmark/
