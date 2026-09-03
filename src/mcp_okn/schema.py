@@ -107,13 +107,33 @@ NCIPIDKG_GUIDANCE = """\
 IDENTIFIER AND JOIN NOTES (the curated schema matches the deployed graph as of
 2026-09-02; these are the things it still does not tell you).
 
-JOIN ON BOTH LEGS. ncipidkg exposes UniProt accessions twice, and the two are
-near-disjoint views of the same protein set: owl:sameAs (11,760 triples, 11,736
-distinct accessions) and its own sio:SIO_010043-typed
-<http://purl.uniprot.org/uniprot/{acc}> node IRIs (2,527). Against prokn,
-sameAs matches 1,979 and the node-IRI leg 537 - but 514 of that 537 are NOT
-reachable through sameAs. UNION the two legs (crosswalk G2, 2,493); either
-alone understates the join by about a quarter.
+TWO UNIPROT LEGS, AND THEY ARE NOT THE SAME KIND OF THING. ncipidkg's own
+sio:SIO_010043-typed <http://purl.uniprot.org/uniprot/{acc}> node IRIs (2,527)
+ARE the entities - the things that hold a reified-statement role. owl:sameAs
+(11,760 triples, 11,736 distinct objects) is an outward accession ALIAS TABLE
+hung off those entities: secondary, isoform and merged-away accessions. Only 5
+of the 11,736 alias objects ever play a statement role, so an alias is a ROUTE
+to another graph, never a participant in this one.
+
+WHICH LEG YOU WANT DEPENDS ON THE UNIT OF THE ANSWER.
+  * Counting or listing the IDENTIFIERS two graphs SHARE - UNION both legs.
+    Against prokn, sameAs matches 1,979 accessions and the node-IRI leg 537, of
+    which 514 are unreachable via sameAs: 2,493 together (crosswalk G2). Either
+    leg alone understates that overlap by about a quarter.
+  * Answering about ncipidkg PROTEINS - who interacts, who participates, one row
+    per protein - the PARTICIPANT is the answer's identity. Bind it from
+    rdf:subject / rdf:object (or the typed node IRI), keep THAT in the SELECT,
+    and use owl:sameAs only as the join key, aggregating the far graph back onto
+    the participant (the snippet below). Projecting the alias instead swaps a
+    merged-away accession in for the protein and multiplies the rows: the 462
+    participants of GO_0016567 ubiquitination statements expand to 2,382 alias
+    accessions.
+  Whether to follow the alias at all is a modelling CHOICE, not a correctness
+  rule - it attributes a canonical entry's data to a participant recorded under
+  a different accession. It is often what you want here, because ncipidkg
+  records many participants under TrEMBL accessions: of those 462 participants,
+  73 carry prokn sequence variants under their own accession and a further 319
+  only under an alias. Say which reading you took.
 
 NON-CANONICAL UNIPROT ACCESSIONS. Four accession strings carry a GenBank-style
 sequence-version suffix that UniProt IRIs never use: P29353.1 (with owl:sameAs
@@ -132,20 +152,33 @@ reified INDRA statements over obo:RO_0002436 / RO_0002578 / RO_0002629 /
 RO_0002630 / RO_0002211 - not about pathway names.\
 """
 
-#: Companion snippet: the two-leg UniProt join, which is the thing most callers
-#: get wrong on this KG.
+#: Companion snippet: the entity-preserving UniProt join. The thing most callers
+#: get wrong on this KG is projecting the owl:sameAs alias as if it were the
+#: protein; ``owl:sameAs?`` (zero-or-one) keeps the participant as the identity
+#: and folds the alias route into the same key. Do NOT write this as
+#: ``{ BIND(?protein AS ?key) } UNION { ?protein owl:sameAs ?key }`` - ?protein
+#: is out of scope inside the BIND branch, so ?key comes back unbound and the
+#: far-graph pattern scans the whole relation.
 NCIPIDKG_SNIPPET = """\
-# ncipidkg UniProt: BOTH legs. Either alone understates the join.
-SELECT (COUNT(DISTINCT ?u) AS ?n) WHERE {
-  { GRAPH <https://purl.org/okn/frink/kg/ncipidkg> {
-      ?s <http://www.w3.org/2002/07/owl#sameAs> ?u .
-      FILTER(STRSTARTS(STR(?u),'http://purl.uniprot.org/uniprot/')) } }
-  UNION
-  { GRAPH <https://purl.org/okn/frink/kg/ncipidkg> {
-      ?u a <http://semanticscience.org/resource/SIO_010043> .
-      FILTER(STRSTARTS(STR(?u),'http://purl.uniprot.org/uniprot/')) } }
-  # ... join ?u to the other graph here
-}\
+# ncipidkg UniProt, per-protein: the PARTICIPANT is the answer's identity and the
+# owl:sameAs alias is only the join key. SELECT ?protein, aggregate onto it.
+SELECT ?symbol ?protein (COUNT(DISTINCT ?far) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/ncipidkg> {
+    ?st <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>|
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> ?protein .
+    ?protein <http://www.w3.org/2000/01/rdf-schema#label> ?symbol .
+    FILTER(STRSTARTS(STR(?protein),'http://purl.uniprot.org/uniprot/'))
+    # zero-or-one: ?key is the participant itself, or one of its aliases.
+    # To answer on the participant's OWN accession only, drop this line and
+    # join the other graph on ?protein directly.
+    ?protein <http://www.w3.org/2002/07/owl#sameAs>? ?key .
+  }
+  GRAPH <OTHER_KG> { ?key <SOME_PREDICATE> ?far . }
+}
+GROUP BY ?symbol ?protein
+# For the different question "how many accessions do the two graphs SHARE?",
+# count the keys instead: UNION the sameAs leg and the SIO_010043 node-IRI leg
+# (crosswalk G2's skeleton_query).\
 """
 
 #: Per-KG usage notes surfaced on ``get_schema`` (attached by the tool wrapper in
