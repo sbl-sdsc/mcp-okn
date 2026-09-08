@@ -140,10 +140,13 @@ verify each as live SPARQL, and validate the findings against the literature.
 
 ### Case studies
 
-Fourteen end-to-end analyses that federate many Proto-OKN graphs into a single
-evidence-backed map — five of a disease's biology (genes, variants,
-pathways/gene sets, drugs, altered-activity signatures, and clinical/biomarker
-features), four of environmental exposure and justice (PFAS source
+Sixteen end-to-end analyses, over fourteen distinct questions, that federate many
+Proto-OKN graphs into a single evidence-backed map — five of a disease's biology
+(genes, variants, pathways/gene sets, drugs, altered-activity signatures, and
+clinical/biomarker features), one a reproduction of a published spaceflight
+experiment (whether the 2019 finding of lipid dysregulation in flown-mouse liver
+re-emerges from the federation's stored differential-expression results),
+four of environmental exposure and justice (PFAS source
 attribution, the bisphenol chemical exposome, cumulative environmental-justice
 burden across U.S. counties, and flood-mobilised contamination routed downstream
 through the stream network), one of urban scaling (how disease, mortality
@@ -158,9 +161,11 @@ source(s) and evidence kind, then ranked by cross-source agreement. Every case s
 interactive HTML report, a reproducibility record preserving every verbatim
 SPARQL query, and an Excel workbook.
 
-That last question is answered twice — once by `claude-opus-5`, once by
-`gpt-5.6-sol`, from the same prompt against the same two graphs — so the two
-runs can be read side by side.
+Two of the questions are answered twice, each pair from the same prompt, so the
+runs can be read side by side: the spaceflight-liver reproduction by
+`claude-opus-5` and `GPT-6-Astra`, which reached for different augmenting graphs
+(seven against five), and instrument criticality by `claude-opus-5` and
+`gpt-5.6-sol`, against the same two graphs.
 
 **Prerequisites for re-running a case study:**
 
@@ -174,6 +179,8 @@ runs can be read side by side.
 | **Multiple sclerosis** — 14 KGs | `claude-opus-4-8` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/MS/MS_report.html) | [md](docs/examples/MS/MS_literature_comparison.md) | [xlsx](docs/examples/MS/MS_results.xlsx) | [md](docs/examples/MS/MS_reproducibility.md) | [files](docs/examples/MS/) |
 | **Spaceflight-induced bone loss** — 8 KGs | `claude-opus-4-8` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Bone-Health/Bone-Health_report.html) | [md](docs/examples/Bone-Health/Bone-Health_literature_comparison.md) | [xlsx](docs/examples/Bone-Health/Bone-Health_results.xlsx) | [md](docs/examples/Bone-Health/Bone-Health_reproducibility.md) | [files](docs/examples/Bone-Health/) |
 | **Spaceflight-associated neuro-ocular syndrome (SANS)** — 6 KGs | `claude-opus-4-8` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/SANS/SANS_report.html) | [md](docs/examples/SANS/SANS_literature_comparison.md) | [xlsx](docs/examples/SANS/SANS_results.xlsx) | [md](docs/examples/SANS/SANS_reproducibility.md) | [files](docs/examples/SANS/) |
+| **Spaceflight-liver lipid dysregulation** — 7 KGs | `claude-opus-5` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Liver-Lipid/Liver-Lipid_report.html) | [md](docs/examples/Liver-Lipid/Liver-Lipid_literature_comparison.md) | [xlsx](docs/examples/Liver-Lipid/Liver-Lipid_results.xlsx) | [md](docs/examples/Liver-Lipid/Liver-Lipid_reproducibility.md) | [files](docs/examples/Liver-Lipid/) |
+| **Spaceflight-liver lipid dysregulation** — 5 KGs | `GPT-6-Astra` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Liver-Lipid-GPT/Liver-Lipid-GPT_report.html) | [md](docs/examples/Liver-Lipid-GPT/Liver-Lipid-GPT_literature_comparison.md) | [xlsx](docs/examples/Liver-Lipid-GPT/Liver-Lipid-GPT_results.xlsx) | [md](docs/examples/Liver-Lipid-GPT/Liver-Lipid-GPT_reproducibility.md) | [files](docs/examples/Liver-Lipid-GPT/) |
 | **PFAS source prioritization** — 5 KGs | `claude-opus-4-8` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/PFAS/PFAS_report.html) | [md](docs/examples/PFAS/PFAS_literature_comparison.md) | [xlsx](docs/examples/PFAS/PFAS_results.xlsx) | [md](docs/examples/PFAS/PFAS_reproducibility.md) | [files](docs/examples/PFAS/) |
 | **Bisphenol chemical exposome** — 7 KGs | `claude-opus-4-8` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Bisphenol-Exposome/Bisphenol-Exposome_report.html) | [md](docs/examples/Bisphenol-Exposome/Bisphenol-Exposome_literature_comparison.md) | [xlsx](docs/examples/Bisphenol-Exposome/Bisphenol-Exposome_results.xlsx) | [md](docs/examples/Bisphenol-Exposome/Bisphenol-Exposome_reproducibility.md) | [files](docs/examples/Bisphenol-Exposome/) |
 | **Cumulative environmental-justice burden** — 8 KGs | `claude-opus-4-8` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Environmental-Justice/Environmental-Justice_report.html) | [md](docs/examples/Environmental-Justice/Environmental-Justice_literature_comparison.md) | [xlsx](docs/examples/Environmental-Justice/Environmental-Justice_results.xlsx) | [md](docs/examples/Environmental-Justice/Environmental-Justice_reproducibility.md) | [files](docs/examples/Environmental-Justice/) |

@@ -1,0 +1,24 @@
+category	label	K	k	n	N	expected	fold	p	fdr	id
+http://purl.obolibrary.org/obo/GO_0016042	lipid catabolic process	20	4	61	2160	0.56	7.08	0.0019884470985566762	0.027416799277727395	GO_0016042
+http://purl.obolibrary.org/obo/GO_0006954	inflammatory response	50	6	61	2160	1.41	4.25	0.002384069502411078	0.027416799277727395	GO_0006954
+http://purl.obolibrary.org/obo/GO_0008285	negative regulation of cell population proliferation	42	5	61	2160	1.19	4.22	0.005796344520189972	0.04443864132145645	GO_0008285
+http://purl.obolibrary.org/obo/GO_0001822	kidney development	18	3	61	2160	0.51	5.9	0.01292777191947544	0.0665142194853962	GO_0001822
+http://purl.obolibrary.org/obo/GO_0006629	lipid metabolic process	165	10	61	2160	4.66	2.15	0.015261301400852682	0.0665142194853962	GO_0006629
+http://purl.obolibrary.org/obo/GO_0006986	response to unfolded protein	20	3	61	2160	0.56	5.31	0.01735153551792944	0.0665142194853962	GO_0006986
+http://purl.obolibrary.org/obo/GO_0034220	monoatomic ion transmembrane transport	23	3	61	2160	0.65	4.62	0.025387951635366286	0.08341755537334637	GO_0034220
+http://purl.obolibrary.org/obo/GO_0005975	carbohydrate metabolic process	27	3	61	2160	0.76	3.93	0.03872423855817517	0.1113321858547536	GO_0005975
+http://purl.obolibrary.org/obo/GO_0006631	fatty acid metabolic process	51	4	61	2160	1.44	2.78	0.053543523768386225	0.13683344963032035	GO_0006631
+http://purl.obolibrary.org/obo/GO_0007165	signal transduction	187	9	61	2160	5.28	1.7	0.07565453981589627	0.17400544157656145	GO_0007165
+http://purl.obolibrary.org/obo/GO_0007186	G protein-coupled receptor signaling pathway	61	4	61	2160	1.72	2.32	0.09096772443732282	0.19020524200531136	GO_0007186
+http://purl.obolibrary.org/obo/GO_0006811	monoatomic ion transport	66	4	61	2160	1.86	2.15	0.11339786143173078	0.217345901077484	GO_0006811
+http://purl.obolibrary.org/obo/GO_0006457	protein folding	45	3	61	2160	1.27	2.36	0.13199515933941364	0.23352989729280876	GO_0006457
+http://purl.obolibrary.org/obo/GO_0055085	transmembrane transport	61	3	61	2160	1.72	1.74	0.24649426230809177	0.40495485950615073	GO_0055085
+http://purl.obolibrary.org/obo/GO_0007155	cell adhesion	67	3	61	2160	1.89	1.59	0.2931021727788816	0.42846470389773467	GO_0007155
+http://purl.obolibrary.org/obo/GO_0000122	negative regulation of transcription by RNA polymerase II	98	4	61	2160	2.77	1.45	0.2986833927594847	0.42846470389773467	GO_0000122
+http://purl.obolibrary.org/obo/GO_0006357	regulation of transcription by RNA polymerase II	70	3	61	2160	1.98	1.52	0.31669130288093433	0.42846470389773467	GO_0006357
+http://purl.obolibrary.org/obo/GO_0045087	innate immune response	77	3	61	2160	2.17	1.38	0.37181529758641274	0.4750973246937496	GO_0045087
+http://purl.obolibrary.org/obo/GO_0045944	positive regulation of transcription by RNA polymerase II	148	5	61	2160	4.18	1.2	0.40770705253778816	0.49354011622995414	GO_0045944
+http://purl.obolibrary.org/obo/GO_0006355	regulation of DNA-templated transcription	128	4	61	2160	3.61	1.11	0.49364638388974935	0.5676933414732117	GO_0006355
+http://purl.obolibrary.org/obo/GO_0002376	immune system process	114	3	61	2160	3.22	0.93	0.6345467864314085	0.6752000635765187	GO_0002376
+http://purl.obolibrary.org/obo/GO_0045893	positive regulation of DNA-templated transcription	119	3	61	2160	3.36	0.89	0.6639230174113735	0.6752000635765187	GO_0045893
+http://purl.obolibrary.org/obo/GO_0006915	apoptotic process	121	3	61	2160	3.42	0.88	0.6752000635765187	0.6752000635765187	GO_0006915
