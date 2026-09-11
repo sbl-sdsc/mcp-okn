@@ -96,7 +96,7 @@ GRAPH_URI = "https://purl.org/okn/frink/kg/{shortname}"
 _ACCEPT = {
     "json": "application/sparql-results+json",
     "csv": "text/csv",
-    "tsv": "text/tsv",
+    "tsv": "text/tab-separated-values",
 }
 
 
