@@ -79,7 +79,7 @@ where a question one graph can't answer alone becomes answerable by combining tw
 This section catalogs the verified crosswalks and shows the queries that exercise
 them.
 
-A visual map of the whole network — all 181 crosswalks across 37 graphs, drawn as
+A visual map of the whole network — all 182 crosswalks across 37 graphs, drawn as
 direct KG-to-KG edges (edge width ∝ log of the verified join count). Each crosswalk is
 its own edge, so multiple crosswalks between the same pair of graphs fan out as parallel
 arcs. Identifier-bridged joins (e.g. `DOID↔MONDO` via `ubergraph`, `HGNC→Entrez` via
@@ -105,7 +105,7 @@ geospatial and industrial joins against their authoritative shared standard):
   Geospatial, Hydrology, Industry & Supply Chain, Justice & Public Safety, Proteins,
   Publications, Social Determinants & Services, Taxonomy, Variants). Every crosswalk is now worked
   twice — the inventory carries
-  **362 questions — two for every one of the 181 crosswalks** — and the catalog has a
+  **364 questions — two for every one of the 182 crosswalks** — and the catalog has a
   transcript behind each one, plus four questions on two extra stems (a second example on
   the spoke-genelab×spoke-okn Entrez axis, and the three-way gene dossier whose clique row
   was retired). All 19 crosswalks added in the 2026-09-01 upstream-metadata pass are

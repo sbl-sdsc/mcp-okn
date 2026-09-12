@@ -58,7 +58,7 @@ For each crosswalk, list the join key and the SPARQL skeleton
 
 🧠 **Assistant**
 
-The OKN federation has **181 crosswalks**, which collapse into **57 join-key families** (a domain + a shared identifier). They are grouped below by domain and key family — each entry lists every KG pair sharing that key (with its verified `COUNT(DISTINCT)`), the identifier scheme/namespace, and a runnable `COUNT(DISTINCT)` skeleton with the IRI normalization already applied (a naive join on the raw id usually returns 0 rows).
+The OKN federation has **182 crosswalks**, which collapse into **58 join-key families** (a domain + a shared identifier). They are grouped below by domain and key family — each entry lists every KG pair sharing that key (with its verified `COUNT(DISTINCT)`), the identifier scheme/namespace, and a runnable `COUNT(DISTINCT)` skeleton with the IRI normalization already applied (a naive join on the raw id usually returns 0 rows).
 
 **Pairs in one family often need different SPARQL**, so where a family's members diverge, every distinct skeleton is shown and labelled with the pairs it applies to. The CAS family is the clearest case: the biobricks graphs hang the id off `edam:has_identifier`, MeSH exposes it as `meshv:registryNumber`, and SAWGraph/SOCKG store it as a bare literal that must be rebuilt into an IRI. Copy the skeleton for YOUR pair, then extend it with your payload.
 
@@ -1878,6 +1878,19 @@ SELECT (COUNT(DISTINCT ?nm) AS ?n) WHERE {
       BIND(REPLACE(?s3, " (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$", "") AS ?s4)
       BIND(REPLACE(?s4, " (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$", "") AS ?s5)
       BIND(REPLACE(?s5, "^ | $", "") AS ?nm) } }
+}
+```
+
+**SUDOKN_product_IRI** — `http://asu.edu/semantics/SUDOKN/{vendor-domain}-{product-name}-product-instance — asserted as the OBJECT of owl:sameAs in securechainkg, where the SUBJECT is always a https://w3id.org/secure-chain/HardwareVersion. The IRIs are byte-identical on both sides by design — the SecureChain team minted its hardware-version identity links against SUDOKN's product IRIs by agreement with the SUDOKN team — so no rewriting is required and the join is stable across releases of either graph.`: securechainkg × sudokn(17,644).
+
+```sparql
+SELECT (COUNT(DISTINCT ?product) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/securechainkg> {
+    ?hv <http://www.w3.org/2002/07/owl#sameAs> ?product .
+  }
+  GRAPH <https://purl.org/okn/frink/kg/sudokn> {
+    ?m <http://asu.edu/semantics/SUDOKN/manufactures> ?product .
+  }
 }
 ```
 
