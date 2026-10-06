@@ -124,6 +124,7 @@ def _ordered_kgs(entry: dict[str, Any]) -> list[str]:
 _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "DOID": "Disease & phenotype",
     "MONDO": "Disease & phenotype",
+    "MONDO (bio101 label)": "Disease & phenotype",
     "HP": "Disease & phenotype",
     "DOID<->MONDO": "Disease & phenotype",
     "MONDO<->OMIM (bridged)": "Disease & phenotype",
@@ -137,13 +138,16 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "UMLS<->MONDO<->DOID (two-hop)": "Disease & phenotype",
     "UMLS<->UBERON": "Anatomy & Cell Type",
     "UBERON": "Anatomy & Cell Type",
+    "UBERON (bio101 label)": "Anatomy & Cell Type",
     "CL": "Anatomy & Cell Type",
+    "CL (bio101 label)": "Anatomy & Cell Type",
     "Ensembl": "Genes",
     "Entrez": "Genes",
     "HGNC -> Entrez (bridged)": "Genes",
     "UniProt": "Proteins",
     "CAS": "Chemicals",
     "CHEBI<->CAS": "Chemicals",
+    "CHEBI (bio101 label)": "Chemicals",
     "PubChem CID": "Chemicals",
     "DrugBank": "Chemicals",
     "DrugBank -> ChEMBL (bridged)": "Chemicals",
@@ -173,6 +177,7 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "GCMD instrument": "Earth observation",
     "GCMD platform": "Earth observation",
     "GO": "Function & Pathways",
+    "GO (bio101 label)": "Function & Pathways",
     "Reactome": "Function & Pathways",
     # digcfdekg multi-vocabulary disease joins (verbose composite keys)
     "DOID<->MONDO (+ EFO/Orphanet -> MONDO)": "Disease & phenotype",
@@ -182,6 +187,8 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "Entrez -> Ensembl (bridged)": "Genes",
     # Sequence-variant identity (pankgraph <-> biomarkerkg)
     "dbSNP rsID": "Variants",
+    # bio101 (KB Bio 101 textbook ontology) <-> biohealth, type-scoped name match
+    "concept label (bio101 concept name <-> UMLS concept name)": "Biology concepts",
 }
 
 # Canonical spelling for explicit per-row ``domain`` values that vary only by

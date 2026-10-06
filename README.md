@@ -79,7 +79,7 @@ where a question one graph can't answer alone becomes answerable by combining tw
 This section catalogs the verified crosswalks and shows the queries that exercise
 them.
 
-A visual map of the whole network — all 195 crosswalks across 37 graphs, drawn as
+A visual map of the whole network — all 202 crosswalks across 38 graphs, drawn as
 direct KG-to-KG edges (edge width ∝ log of the verified join count). Each crosswalk is
 its own edge, so multiple crosswalks between the same pair of graphs fan out as parallel
 arcs. Identifier-bridged joins (e.g. `DOID↔MONDO` via `ubergraph`, `HGNC→Entrez` via
@@ -99,20 +99,23 @@ geospatial and industrial joins against their authoritative shared standard):
   key, row count, and a one-line note on what each answers. Start here to see which
   graphs connect and on what identifier.
 - **[Cross-KG crosswalk catalog](docs/crosswalks/crosswalks_example.md)** —
-  **394 example questions** worked end-to-end, each with a full transcript (the live
-  SPARQL and its results), across 16 domains (Anatomy & Cell Type, Chemicals, Disease &
+  **408 example questions** worked end-to-end, each with a full transcript (the live
+  SPARQL and its results), across 17 domains (Anatomy & Cell Type, Biology Concepts, Chemicals, Disease &
   Phenotype, Earth Observation, Environmental Toxicology, Function & Pathways, Genes,
   Geospatial, Hydrology, Industry & Supply Chain, Justice & Public Safety, Proteins,
   Publications, Social Determinants & Services, Taxonomy, Variants). Every crosswalk is now worked
   twice — the inventory carries
-  **390 questions — two for every one of the 195 crosswalks** — and the catalog has a
+  **404 questions — two for every one of the 202 crosswalks** — and the catalog has a
   transcript behind each one, plus four questions on two extra stems (a second example on
   the spoke-genelab×spoke-okn Entrez axis, and the three-way gene dossier whose clique row
   was retired). All 19 crosswalks added in the 2026-09-01 upstream-metadata pass are
   worked: the five nestkg joins (P05–P08, D39), the five medical-device-kg ZIP joins
   (GEO35–GEO39), BiomarkerKG's four Entrez joins (G22–G25) and its UBERON join (AN09),
   the medical-device-kg×SUDOKN company-name join (I06), and the new **Variants** domain
-  (V01–V03). The contributed securechainkg×SUDOKN product-identity join (I07) is worked too.
+  (V01–V03). The contributed securechainkg×SUDOKN product-identity join (I07) is worked too, and so are
+  the seven KB Bio 101 name bridges added 2026-10-05 (MF02–MF03, AN10–AN11, D42, C27 and the
+  new **Biology Concepts** domain, BIO01) — bio101 has no external identifiers, so each joins
+  by concept name.
 
 Every catalog row links to a standalone, replayable transcript — the prompt, the
 answer, and every verbatim SPARQL query with its result.

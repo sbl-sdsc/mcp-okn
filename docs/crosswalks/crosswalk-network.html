@@ -48,7 +48,7 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>37 knowledge graphs, 195 verified crosswalks (verified 2026-09-26). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
+  <p>38 knowledge graphs, 202 verified crosswalks (verified 2026-10-05). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
   <p class="tip">&#9654; <b>Hover</b> a node or edge for detail · <b>drag</b> to rearrange · <b>scroll</b> to zoom · <b>double-click</b> a node to unpin it.<br>&#9654; <b>Click a legend item</b> &mdash; a domain (e.g. <b>Chemicals</b>) or a line style (e.g. <b>via ubergraph</b>) &mdash; to toggle those edges.</p>
 </header>
 <div class="bar" id="legend"></div>
@@ -76,7 +76,7 @@
 // Static-render mode (see the body.static CSS): set BEFORE the layout runs, so the
 // figure is fitted to the taller canvas the PNG uses.
 if(/[?&]static=1/.test(location.search))document.body.classList.add("static");
-const DOM={A:["Anatomy & Cell Type","#0C8599"],C:["Chemicals","#E8590C"],D:["Disease & phenotype","#D6336C"],W:["Earth observation","#0B7285"],E:["Environmental toxicology","#5C940D"],F:["Function & Pathways","#9C36B5"],G:["Genes","#7048E8"],S:["Geospatial","#1C7ED6"],H:["Hydrology","#1098AD"],I:["Industry & supply chain","#C9920A"],J:["Justice & Public Safety","#A61E4D"],P:["Proteins","#2B8A3E"],B:["Publications","#3B5BDB"],L:["Social Determinants & Services","#15AABF"],T:["Taxonomy","#82C91E"],V:["Variants","#BE4BDB"]};
+const DOM={A:["Anatomy & Cell Type","#0C8599"],K:["Biology concepts","#20C997"],C:["Chemicals","#E8590C"],D:["Disease & phenotype","#D6336C"],W:["Earth observation","#0B7285"],E:["Environmental toxicology","#5C940D"],F:["Function & Pathways","#9C36B5"],G:["Genes","#7048E8"],S:["Geospatial","#1C7ED6"],H:["Hydrology","#1098AD"],I:["Industry & supply chain","#C9920A"],J:["Justice & Public Safety","#A61E4D"],P:["Proteins","#2B8A3E"],B:["Publications","#3B5BDB"],L:["Social Determinants & Services","#15AABF"],T:["Taxonomy","#82C91E"],V:["Variants","#BE4BDB"]};
 const BRIDGES=new Set();
 const R=[
 ["A",["biomarkerkg","gene-expression-atlas-okn"],8,"CL"],
@@ -84,10 +84,14 @@ const R=[
 ["A",["gene-expression-atlas-okn","prokn"],31,"CL"],
 ["A",["spoke-genelab","gene-expression-atlas-okn"],4,"CL"],
 ["A",["spoke-genelab","prokn"],1,"CL"],
+["A",["bio101","gene-expression-atlas-okn"],35,"CL (bio101 label) (ubergraph)"],
 ["A",["biomarkerkg","gene-expression-atlas-okn"],27,"UBERON"],
 ["A",["spoke-genelab","gene-expression-atlas-okn"],27,"UBERON"],
+["A",["bio101","gene-expression-atlas-okn"],105,"UBERON (bio101 label) (ubergraph)"],
 ["A",["biohealth","gene-expression-atlas-okn"],249,"UMLS↔UBERON (ubergraph)"],
 ["A",["biohealth","spoke-genelab"],35,"UMLS↔UBERON (ubergraph)"],
+
+["K",["bio101","biohealth"],1213,"concept label (bio101 concept name ↔ UMLS concept name)"],
 
 ["C",["biobricks-aopwiki","biobricks-toxcast"],290,"CAS"],
 ["C",["biobricks-ice","biobricks-toxcast"],9421,"CAS"],
@@ -102,6 +106,7 @@ const R=[
 ["C",["biobricks-toxcast","prokn"],2504,"CAS→ChEMBL (babel)"],
 ["C",["biobricks-tox21","rdkg"],920,"CAS→DrugBank (babel)"],
 ["C",["biobricks-toxcast","rdkg"],928,"CAS→DrugBank (babel)"],
+["C",["bio101","spoke-okn"],86,"CHEBI (bio101 label) (ubergraph)"],
 ["C",["spoke-okn","biobricks-ice"],712,"CHEBI↔CAS (ubergraph)"],
 ["C",["spoke-okn","biobricks-tox21"],480,"CHEBI↔CAS (ubergraph)"],
 ["C",["spoke-okn","biobricks-toxcast"],496,"CHEBI↔CAS (ubergraph)"],
@@ -140,6 +145,7 @@ const R=[
 ["D",["biomarkerkg","digcfdekg"],193,"MONDO (+ EFO/Orphanet→MONDO bridged) (ubergraph)"],
 ["D",["digcfdekg","oard-kg"],402,"MONDO (+ EFO/Orphanet→MONDO bridged) (ubergraph)"],
 ["D",["digcfdekg","rdkg"],1045,"MONDO (+ EFO/Orphanet→MONDO bridged) (ubergraph)"],
+["D",["bio101","rdkg"],57,"MONDO (bio101 label) (ubergraph)"],
 ["D",["spoke-okn","biomarkerkg"],107,"MONDO↔DOID (ubergraph)"],
 ["D",["oard-kg","prokn"],11,"MONDO↔OMIM (ubergraph)"],
 ["D",["oard-kg","prokn"],316,"MONDO↔Orphanet (ubergraph)"],
@@ -165,6 +171,8 @@ const R=[
 ["E",["sockg","biobricks-toxcast"],59,"CAS"],
 
 ["F",["pankgraph","prokn"],16970,"GO"],
+["F",["bio101","pankgraph"],201,"GO (bio101 label) (ubergraph)"],
+["F",["bio101","prokn"],310,"GO (bio101 label) (ubergraph)"],
 ["F",["gene-expression-atlas-okn","prokn"],1068,"Reactome"],
 
 ["G",["biobricks-aopwiki","gene-expression-atlas-okn"],1355,"Ensembl"],

@@ -3,7 +3,7 @@
 _Survey date: 2026-06-14 · 41 served KGs · federation endpoint
 `https://apps.okn.us/federation/sparql`_
 
-> **Dated snapshot — four findings below are superseded (2026-09-01, extended 2026-09-02).** This page is
+> **Dated snapshot — findings below are superseded (2026-09-01, extended 2026-09-02 and 2026-10-05).** This page is
 > kept as the 2026-06-14 survey, not rewritten. Since then: (1) **medical-device-kg is
 > no longer an island** — the v0.0.3 redeploy (2026-07-28) added establishment,
 > facility, applicant and recalling-firm addresses, so it joins the ZIP5 cluster on five
@@ -17,7 +17,10 @@ _Survey date: 2026-06-14 · 41 served KGs · federation endpoint
 > every candidate graph IRI and added to `registry.EXCLUDED_KGS`, so `list_kgs` now
 > returns **42 KGs**, superseding the 43 in (3). Note also that §D pairs bio101 with
 > digcfdekg; that pairing is stale, as digcfdekg has since been loaded and is queried
-> by several worked examples. See
+> by several worked examples. (5) **bio101 is served again** (2026-10-05, v0.0.1) and
+> was dropped from `EXCLUDED_KGS`: it is a pure OWL ontology with no external
+> identifiers, so its `known_non_join` now records it as an identifier **island**, not
+> as unmaterialized. See
 > `metadata/crosswalks.json` for the current table.
 
 **What this is.** An exhaustive sweep of the entity types and ontologies/identifier

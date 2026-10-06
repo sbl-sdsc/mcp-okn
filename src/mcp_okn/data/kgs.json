@@ -7,6 +7,13 @@
     "named_graph": "https://purl.org/okn/frink/kg/babel"
   },
   {
+    "shortname": "bio101",
+    "title": "KB Bio 101",
+    "description": "A knowledge base created from an introductory biology textbook",
+    "homepage": "https://www.ai.sri.com/~halo/public/exported-kb/biokb.html",
+    "named_graph": "https://purl.org/okn/frink/kg/bio101"
+  },
+  {
     "shortname": "biobricks-aopwiki",
     "title": "BioBricks AOP-Wiki",
     "description": "BioBricks AOP-Wiki is an open knowledge graph for Adverse Outcome Pathways from the AOP-Wiki.",
@@ -100,7 +107,7 @@
   {
     "shortname": "gene-expression-atlas-okn",
     "title": "Gene Expression Atlas",
-    "description": "Query pre-computed differential gene expression (log2 fold changes and adjusted p-values) for genes across diseases, tissues, cell types, developmental stages, and sex, drawn from a curated selection of 243 EMBL-EBI Expression Atlas studies. Use this graph to retrieve computed differential-expression results and expression associations for the studies it includes. It is a hand-picked subset, NOT a comprehensive index of the gene-expression datasets available for a given disease — to discover the full set of datasets for a condition (for example when assembling studies for your own pooled or meta-analysis), use a dataset-discovery index such as the NIAID Data Ecosystem (nde) graph.",
+    "description": "Query pre-computed differential gene expression (log2 fold changes and adjusted p-values) for genes across diseases, tissues, cell types, developmental stages, and sex, derived from the bulk EMBL-EBI Expression Atlas — 4,668 studies and 14,850 contrasts carrying 8.8 million differential-expression associations across 70 organisms. Use this graph to retrieve computed differential-expression values. It covers essentially all of the bulk Expression Atlas, but it is NOT a cross-repository dataset-discovery index — the Single Cell Expression Atlas is excluded entirely, baseline (non-differential) experiments carry no expression values, and disease annotation is sparse free text. To discover the full set of datasets for a condition (for example when assembling studies for your own pooled or meta-analysis), use a dataset-discovery index such as the NIAID Data Ecosystem (nde) graph.",
     "homepage": "https://www.ebi.ac.uk/gxa/home",
     "named_graph": "https://purl.org/okn/frink/kg/gene-expression-atlas-okn"
   },

@@ -1,6 +1,6 @@
 # OKN / Proto-OKN Crosswalk Reference — Join Keys & SPARQL Skeletons
 
-- **Date:** 2026-09-26
+- **Date:** 2026-10-05
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
@@ -48,6 +48,7 @@
 - `babel` — <https://purl.org/okn/frink/kg/babel>
 - `nestkg` — <https://purl.org/okn/frink/kg/nestkg>
 - `medical-device-kg` — <https://purl.org/okn/frink/kg/medical-device-kg>
+- `bio101` — <https://purl.org/okn/frink/kg/bio101>
 
 ## Conversation
 
@@ -59,11 +60,11 @@ For each crosswalk, list the join key and the SPARQL skeleton
 
 🧠 **Assistant**
 
-The OKN federation has **195 crosswalks**, which collapse into **61 join-key families** (a domain + a shared identifier). They are grouped below by domain and key family — each entry lists every KG pair sharing that key (with its verified `COUNT(DISTINCT)`), the identifier scheme/namespace, and a runnable `COUNT(DISTINCT)` skeleton with the IRI normalization already applied (a naive join on the raw id usually returns 0 rows).
+The OKN federation has **202 crosswalks**, which collapse into **67 join-key families** (a domain + a shared identifier). They are grouped below by domain and key family — each entry lists every KG pair sharing that key (with its verified `COUNT(DISTINCT)`), the identifier scheme/namespace, and a runnable `COUNT(DISTINCT)` skeleton with the IRI normalization already applied (a naive join on the raw id usually returns 0 rows).
 
 **Pairs in one family often need different SPARQL**, so where a family's members diverge, every distinct skeleton is shown and labelled with the pairs it applies to. The CAS family is the clearest case: the biobricks graphs hang the id off `edam:has_identifier`, MeSH exposes it as `meshv:registryNumber`, and SAWGraph/SOCKG store it as a bare literal that must be rebuilt into an IRI. Copy the skeleton for YOUR pair, then extend it with your payload.
 
-Counts verified 2026-09-26. For any pair, `get_join_strategy(kg_a, kg_b)` returns the same skeleton plus the full recipe (predicates, roles, normalization); `taxon_overlap(kg_a, kg_b)` returns runnable skeletons for the NCBITaxon hub, whose overlaps are two-valued (exact id vs clade membership) and therefore not a single count.
+Counts verified 2026-10-05. For any pair, `get_join_strategy(kg_a, kg_b)` returns the same skeleton plus the full recipe (predicates, roles, normalization); `taxon_overlap(kg_a, kg_b)` returns runnable skeletons for the NCBITaxon hub, whose overlaps are two-valued (exact id vs clade membership) and therefore not a single count.
 
 ### ANATOMY & CELL TYPE
 
@@ -165,6 +166,82 @@ _biomarkerkg × prokn_
 SELECT (COUNT(DISTINCT ?cl) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s <http://purl.obolibrary.org/obo/OBCI_1000009> ?cl . FILTER(STRSTARTS(STR(?cl),'http://purl.obolibrary.org/obo/CL_')) }
   GRAPH <https://purl.org/okn/frink/kg/prokn> { ?st <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> ?cl . }
+}
+```
+
+**UBERON (bio101 label)** — `bio101 concept name <-> ubergraph UBERON rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/UBERON_{n} (gene-expression-atlas-okn); exact-name match`: bio101 → ubergraph → gene-expression-atlas-okn(105).
+
+```sparql
+SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
+  { SELECT DISTINCT ?c ?t WHERE {
+  { SELECT DISTINCT ?c ?name WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/bio101> { ?c a <http://www.w3.org/2002/07/owl#Class> .
+        FILTER(isIRI(?c) && STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#') && !STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#ID-')) }
+      FILTER(?c NOT IN (<http://www.projecthalo.com/aura#Lens>, <http://www.projecthalo.com/aura#Fat>))  # homonyms (spot-checked 2026-10-05)
+      BIND(REPLACE(STRAFTER(STR(?c),'#'),'-',' ') AS ?raw)
+      VALUES ?k { 0 1 2 3 }  # as-is, all lower, first letter lowered, sentence case
+      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), IF(?k = 2, CONCAT(LCASE(SUBSTR(?raw,1,1)),SUBSTR(?raw,2)),
+                CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2)))))) AS ?name)
+  } }
+    GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label>|<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?name .
+      FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/UBERON_') && ?t != <http://purl.obolibrary.org/obo/UBERON_0000479> && ?t != <http://purl.obolibrary.org/obo/UBERON_0000061> && ?t != <http://purl.obolibrary.org/obo/UBERON_0001062>) }
+  } }
+  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?s <https://w3id.org/biolink/vocab/has_attribute> ?t . }
+}
+```
+
+**CL (bio101 label)** — `bio101 concept name <-> ubergraph CL rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/CL_{n} (gene-expression-atlas-okn); exact-name match`: bio101 → ubergraph → gene-expression-atlas-okn(35).
+
+```sparql
+SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
+  { SELECT DISTINCT ?c ?t WHERE {
+  { SELECT DISTINCT ?c ?name WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/bio101> { ?c a <http://www.w3.org/2002/07/owl#Class> .
+        FILTER(isIRI(?c) && STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#') && !STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#ID-')) }
+      FILTER(?c NOT IN (<http://www.projecthalo.com/aura#Myofibril>))  # homonyms (spot-checked 2026-10-05)
+      BIND(REPLACE(STRAFTER(STR(?c),'#'),'-',' ') AS ?raw)
+      VALUES ?k { 0 1 2 3 }  # as-is, all lower, first letter lowered, sentence case
+      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), IF(?k = 2, CONCAT(LCASE(SUBSTR(?raw,1,1)),SUBSTR(?raw,2)),
+                CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2)))))) AS ?name)
+  } }
+    GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label>|<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?name .
+      FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/CL_') && ?t != <http://purl.obolibrary.org/obo/CL_0000000>) }
+  } }
+  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?s <https://w3id.org/biolink/vocab/has_attribute> ?t . }
+}
+```
+
+### BIOLOGY CONCEPTS
+
+**concept label (bio101 concept name ↔ UMLS concept name)** — `bio101 concept name (from the aura: IRI) <-> biohealth rdfs:label (UMLS concept name), exact match, TYPE-SCOPED: the bio101 upper class and the UMLS semantic group of the biohealth node's biolink:category must agree`: bio101 × biohealth(1,213).
+
+```sparql
+SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
+  { SELECT DISTINCT ?c ?bh ?cat WHERE {
+  { SELECT DISTINCT ?c ?name WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/bio101> { ?c a <http://www.w3.org/2002/07/owl#Class> .
+        FILTER(isIRI(?c) && STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#') && !STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#ID-')) }
+      BIND(REPLACE(STRAFTER(STR(?c),'#'),'-',' ') AS ?raw)
+      VALUES ?k { 0 1 2 3 }  # as-is, all lower, first letter lowered, sentence case
+      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), IF(?k = 2, CONCAT(LCASE(SUBSTR(?raw,1,1)),SUBSTR(?raw,2)),
+                CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2)))))) AS ?name)
+  } }
+    GRAPH <https://purl.org/okn/frink/kg/biohealth> { ?bh <http://www.w3.org/2000/01/rdf-schema#label> ?name ;
+        <https://w3id.org/biolink/vocab/category> ?cat . }
+  } }
+  # type agreement: the bio101 upper class and the UMLS semantic group of ?cat must agree
+  VALUES (?root ?rx) {
+    (<http://www.projecthalo.com/aura#Disease> "(^|_)(acab|anab|cgab|comd|dsyn|emod|fndg|inpo|mobd|neop|patf|sosy)(_|$)")  # Disease <-> UMLS group DISO
+    (<http://www.projecthalo.com/aura#Gene> "(^|_)(amas|crbs|gngm|mosq|nusq)(_|$)")  # Gene <-> UMLS group GENE
+    (<http://www.projecthalo.com/aura#Organism> "(^|_)(alga|amph|anim|arch|bact|bird|euka|fish|fngs|humn|invt|mamm|orgm|plnt|rept|virs|vtbt)(_|$)")  # Organism <-> UMLS group LIVB
+    (<http://www.projecthalo.com/aura#Cell> "(^|_)(anst|bdsu|bdsy|blor|bpoc|bsoj|celc|cell|emst|ffas|tisu)(_|$)")  # Cell <-> UMLS group ANAT
+    (<http://www.projecthalo.com/aura#Chemical-Entity> "(^|_)(aapp|amas|antb|bacs|bodm|carb|chem|chvf|chvs|clnd|crbs|eico|elii|enzy|gngm|hops|horm|imft|inch|irda|lipd|mosq|nnon|nsba|nusq|opco|orch|phsu|rcpt|strd|vita)(_|$)")  # Chemical-Entity <-> UMLS group CHEM/GENE
+    (<http://www.projecthalo.com/aura#Living-Entity> "(^|_)(alga|amph|anim|anst|arch|bact|bdsu|bdsy|bird|blor|bpoc|bsoj|celc|cell|emst|euka|ffas|fish|fngs|humn|invt|mamm|orgm|plnt|rept|tisu|virs|vtbt)(_|$)")  # Living-Entity <-> UMLS group ANAT/LIVB
+    (<http://www.projecthalo.com/aura#Event> "(^|_)(acab|acty|anab|bhvr|biof|bmod|celf|cgab|clna|comd|diap|dora|dsyn|edac|eehu|emod|evnt|fndg|genf|gora|hcpp|hlca|inbe|inpo|lbpr|lbtr|mbrt|mcha|menp|mobd|moft|neop|npop|ocac|ocdi|orga|orgf|ortf|patf|phpr|phsf|resa|socb|sosy|topp)(_|$)")  # Event <-> UMLS group PHYS/PHEN/PROC/ACTI/OCCU/DISO
+    (<http://www.projecthalo.com/aura#Tangible-Entity> "(^|_)(aapp|anst|antb|bacs|bdsu|bdsy|blor|bodm|bpoc|bsoj|carb|celc|cell|chem|chvf|chvs|clnd|eico|elii|emst|enzy|ffas|hops|horm|imft|inch|irda|lipd|nnon|nsba|opco|orch|phsu|rcpt|strd|tisu|vita)(_|$)")  # Tangible-Entity <-> UMLS group ANAT/CHEM
+  }
+  FILTER(REGEX(STRAFTER(STR(?cat), '/semtype/'), ?rx))
+  GRAPH <https://purl.org/okn/frink/kg/bio101> { ?c (<http://www.w3.org/2000/01/rdf-schema#subClassOf>/(<http://www.w3.org/2002/07/owl#intersectionOf>/<http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>*/<http://www.w3.org/1999/02/22-rdf-syntax-ns#first>)*)+ ?root . }
 }
 ```
 
@@ -519,6 +596,26 @@ SELECT (COUNT(DISTINCT ?ent) AS ?n) WHERE {
     GRAPH <https://purl.org/okn/frink/kg/babel> { ?member <http://www.w3.org/2004/02/skos/core#exactMatch> ?pref } } }
   FILTER(STRSTARTS(STR(?member),'http://identifiers.org/drugbank/'))
   GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?member a <https://w3id.org/biolink/vocab/Drug> }
+}
+```
+
+**CHEBI (bio101 label)** — `bio101 concept name <-> ubergraph CHEBI rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/CHEBI_{n} (spoke-okn); exact-name match`: bio101 → ubergraph → spoke-okn(86).
+
+```sparql
+SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
+  { SELECT DISTINCT ?c ?t WHERE {
+  { SELECT DISTINCT ?c ?name WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/bio101> { ?c a <http://www.w3.org/2002/07/owl#Class> .
+        FILTER(isIRI(?c) && STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#') && !STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#ID-')) }
+      BIND(REPLACE(STRAFTER(STR(?c),'#'),'-',' ') AS ?raw)
+      VALUES ?k { 0 1 2 3 }  # as-is, all lower, first letter lowered, sentence case
+      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), IF(?k = 2, CONCAT(LCASE(SUBSTR(?raw,1,1)),SUBSTR(?raw,2)),
+                CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2)))))) AS ?name)
+  } }
+    GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label>|<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?name .
+      FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/CHEBI_')) }
+  } }
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?cmp <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?t . }
 }
 ```
 
@@ -1010,6 +1107,27 @@ SELECT (COUNT(DISTINCT ?bh) AS ?n) WHERE {
 }
 ```
 
+**MONDO (bio101 label)** — `bio101 concept name <-> ubergraph MONDO rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/MONDO_{n} (rdkg); exact-name match`: bio101 → ubergraph → rdkg(57).
+
+```sparql
+SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
+  { SELECT DISTINCT ?c ?t WHERE {
+  { SELECT DISTINCT ?c ?name WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/bio101> { ?c a <http://www.w3.org/2002/07/owl#Class> .
+        FILTER(isIRI(?c) && STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#') && !STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#ID-')) }
+      GRAPH <https://purl.org/okn/frink/kg/bio101> { ?c (<http://www.w3.org/2000/01/rdf-schema#subClassOf>/(<http://www.w3.org/2002/07/owl#intersectionOf>/<http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>*/<http://www.w3.org/1999/02/22-rdf-syntax-ns#first>)*)+ <http://www.projecthalo.com/aura#Disease> . }
+      BIND(REPLACE(STRAFTER(STR(?c),'#'),'-',' ') AS ?raw)
+      VALUES ?k { 0 1 2 3 }  # as-is, all lower, first letter lowered, sentence case
+      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), IF(?k = 2, CONCAT(LCASE(SUBSTR(?raw,1,1)),SUBSTR(?raw,2)),
+                CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2)))))) AS ?name)
+  } }
+    GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label>|<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?name .
+      FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/MONDO_') && ?t != <http://purl.obolibrary.org/obo/MONDO_0000001>) }
+  } }
+  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?t ?p ?o . }
+}
+```
+
 ### EARTH OBSERVATION
 
 **GCMD instrument** — `climatemodelskg <https://climatepub4kg.github.io/ontology#name> on a climatepub4kg:Instrument node <-> nasa-gesdisc-kg <http://www.w3.org/2000/01/rdf-schema#label> on a GCMD Instrument node (reached via nasa <https://purl.org/okn/frink/kg/nasa-gesdisc/schema/HAS_INSTRUMENT>). Match on the case-normalized instrument name.`: climatemodelskg × nasa-gesdisc-kg(342).
@@ -1115,6 +1233,50 @@ SELECT (COUNT(DISTINCT ?proknReact) AS ?n) WHERE {
       BIND(IRI(CONCAT('https://identifiers.org/reactome/',REPLACE(STR(?gxaReact),'^.*/detail/',''))) AS ?proknReact)
   } }
   GRAPH <https://purl.org/okn/frink/kg/prokn> { ?prot <http://purl.obolibrary.org/obo/RO_0000056> ?proknReact . }
+}
+```
+
+**GO (bio101 label)** — `bio101 concept name <-> ubergraph GO rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/GO_{n} (prokn); exact-name match`: bio101 → ubergraph → prokn(310), bio101 → ubergraph → pankgraph(201).
+
+_bio101 → ubergraph → prokn_
+
+```sparql
+SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
+  { SELECT DISTINCT ?c ?t WHERE {
+  { SELECT DISTINCT ?c ?name WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/bio101> { ?c a <http://www.w3.org/2002/07/owl#Class> .
+        FILTER(isIRI(?c) && STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#') && !STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#ID-')) }
+      FILTER(?c NOT IN (<http://www.projecthalo.com/aura#Internode>, <http://www.projecthalo.com/aura#Pore>, <http://www.projecthalo.com/aura#Degradation>))  # homonyms (spot-checked 2026-10-05)
+      BIND(REPLACE(STRAFTER(STR(?c),'#'),'-',' ') AS ?raw)
+      VALUES ?k { 0 1 2 3 }  # as-is, all lower, first letter lowered, sentence case
+      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), IF(?k = 2, CONCAT(LCASE(SUBSTR(?raw,1,1)),SUBSTR(?raw,2)),
+                CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2)))))) AS ?name)
+  } }
+    GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label>|<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?name .
+      FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/GO_') && ?t != <http://purl.obolibrary.org/obo/GO_0008150> && ?t != <http://purl.obolibrary.org/obo/GO_0005575> && ?t != <http://purl.obolibrary.org/obo/GO_0003674>) }
+  } }
+  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?p ?pred ?t . }
+}
+```
+
+_bio101 → ubergraph → pankgraph_
+
+```sparql
+SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
+  { SELECT DISTINCT ?c ?t WHERE {
+  { SELECT DISTINCT ?c ?name WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/bio101> { ?c a <http://www.w3.org/2002/07/owl#Class> .
+        FILTER(isIRI(?c) && STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#') && !STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#ID-')) }
+      FILTER(?c NOT IN (<http://www.projecthalo.com/aura#Internode>, <http://www.projecthalo.com/aura#Pore>, <http://www.projecthalo.com/aura#Degradation>))  # homonyms (spot-checked 2026-10-05)
+      BIND(REPLACE(STRAFTER(STR(?c),'#'),'-',' ') AS ?raw)
+      VALUES ?k { 0 1 2 3 }  # as-is, all lower, first letter lowered, sentence case
+      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), IF(?k = 2, CONCAT(LCASE(SUBSTR(?raw,1,1)),SUBSTR(?raw,2)),
+                CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2)))))) AS ?name)
+  } }
+    GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label>|<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?name .
+      FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/GO_') && ?t != <http://purl.obolibrary.org/obo/GO_0008150> && ?t != <http://purl.obolibrary.org/obo/GO_0005575> && ?t != <http://purl.obolibrary.org/obo/GO_0003674>) }
+  } }
+  GRAPH <https://purl.org/okn/frink/kg/pankgraph> { ?s ?pred ?t . }
 }
 ```
 
@@ -2533,4 +2695,4 @@ SELECT (COUNT(DISTINCT ?rs) AS ?n) WHERE {
 
 - **Skeletons are COUNT queries by design.** Each proves the key still joins and reproduces the table's `verified_count`; run it first, then extend it with your payload rather than rebuilding the normalization boilerplate.
 - **The identifier, not the entity, is what matches.** Counts are `COUNT(DISTINCT <shared key>)` — shared identifiers, not shared rows. A KG may mint several nodes carrying the same id.
-- **Sources:** the crosswalk table served by `list_crosswalks` / `get_join_strategy` (verified 2026-09-26).
+- **Sources:** the crosswalk table served by `list_crosswalks` / `get_join_strategy` (verified 2026-10-05).

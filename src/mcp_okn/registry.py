@@ -32,16 +32,12 @@ _RAW_BASE = (
 # 2026-09-01 refresh while still empty and was excluded here; it was loaded by
 # 2026-09-26 and restored, now as an identifier-mapping bridge KG (see the
 # `babel` usage notes in schema.py).
-# `bio101` (KB Bio 101) is still empty, and has been since at least 2026-06-18
-# when it was first recorded in crosswalks.json `known_non_joins` as
-# "unmaterialized" — it stayed in the listing for months while answering nothing.
-# Re-verified empty 2026-09-02: COUNT(*) = 0, no row on LIMIT 1, and no distinct
-# predicate, under every candidate graph IRI; the other 42 registered KGs
-# returned data at the time. Excluding it also retired the payload tag
-# `biology_concept` ("General biology concepts and causal mechanisms
-# (textbook-derived)"), whose only carrier it was — the payload vocabulary must contain no term without a
-# supplier, or find_context_sources would advertise a capability nothing answers.
-# Restore both together if bio101 is loaded.
+# `bio101` (KB Bio 101) was empty from at least 2026-06-18 (recorded in
+# crosswalks.json `known_non_joins` as "unmaterialized") and was excluded on
+# 2026-09-02, which also retired its only payload tag `biology_concept`. It was
+# loaded as v0.0.1 by 2026-10-05 and restored together with that tag: a pure
+# OWL2 ontology (~6,300 owl:Class concepts, relations only inside
+# owl:Restriction axioms) with no external identifiers.
 # `glygenkg` (GlyGen: glycans, glycoproteins, glycosylation sites) joined the
 # registry by 2026-09-26 but is NOT loaded: LIMIT 1 returns no row under every
 # candidate graph IRI (.../kg/glygenkg, .../kg/glygenkg/, frink.renci.org/kg/
@@ -50,7 +46,7 @@ _RAW_BASE = (
 # integrating it (payload tags, schema, crosswalks — likely UniProt/Entrez into
 # the protein and gene clusters) is its own pass once it is served.
 # Drop a name from this set once the federation loads it.
-EXCLUDED_KGS = {"semopenalex", "bio101", "glygenkg"}
+EXCLUDED_KGS = {"semopenalex", "glygenkg"}
 
 # Process-lifetime caches (the registry changes rarely).
 _shortnames_cache: list[str] | None = None

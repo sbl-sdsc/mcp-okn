@@ -146,6 +146,7 @@ def fmt_examples(r: dict) -> str:
 CATALOG_KG_ALIAS = {
     "AOP-Wiki": "biobricks-aopwiki",
     "BioHealthKG": "biohealth",
+    "KB Bio 101": "bio101",
     "BiomarkerKG": "biomarkerkg",
     "ClimateModelsKG": "climatemodelskg",
     "DreamKG": "dreamkg",
@@ -196,6 +197,7 @@ BRIDGE_KGS = {"babel", "ubergraph", "wikidata"}
 # Catalog stem-id prefix -> crosswalk domain.
 CATALOG_DOMAIN = {
     "AN": "Anatomy & Cell Type",
+    "BIO": "Biology concepts",
     "C": "Chemicals",
     "CJ": "Justice & Public Safety",
     "D": "Disease & phenotype",

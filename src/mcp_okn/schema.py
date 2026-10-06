@@ -254,6 +254,77 @@ SELECT (COUNT(DISTINCT ?mine) AS ?n) WHERE {
 }\
 """
 
+BIO101_GUIDANCE = """\
+ONTOLOGY, NOT INSTANCE DATA (verified live 2026-10-05). KB Bio 101 encodes an
+introductory biology textbook as OWL2 axioms: every concept (aura:Mitochondrion,
+aura:Glycolysis, aura:Ribosome) is an owl:Class. The aura relations in this
+schema (has-part, agent, raw-material, result, site, subevent, has-function,
+...) are NEVER asserted as direct triples - `?s aura:has-part ?o` returns ZERO
+rows. They occur only as owl:onProperty of anonymous owl:Restriction nodes.
+
+READING A CONCEPT. A concept's axioms hang off rdfs:subClassOf, usually through
+an anonymous owl:Class whose owl:intersectionOf RDF list holds its named
+parent(s) and its restrictions; the lists nest. Walk them with the path
+  rdfs:subClassOf/(owl:intersectionOf/rdf:rest*/rdf:first)*
+then keep IRIs (named parents) or nodes with owl:onProperty (restrictions).
+A restriction's filler is on owl:someValuesFrom, owl:onClass (with a
+qualified cardinality) or owl:hasValue, and is itself usually an intersection:
+follow (owl:intersectionOf/rdf:rest*/rdf:first)* from it to its classes.
+
+ONE FILLER, SEVERAL CLASSES. A filler node is conjoined with all its types
+(e.g. Glucose & Monosaccharide & Aldose & Chemical-Entity), so group the
+classes PER RESTRICTION (see the snippet) - listing them flat turns one raw
+material into six. The most specific class names the slot. The same node can
+also appear under several restrictions (existential plus cardinality), so
+expect repeated rows; count distinct specific classes, not restriction rows.
+
+aura:ID-N CLASSES ARE BOOKKEEPING. ~21,000 aura:ID-N classes mark shared nodes
+of a concept's prototype graph (two fillers with the same ID-N are the same
+node). Exclude them with FILTER(!STRSTARTS(STR(?x),
+"http://www.projecthalo.com/aura#ID-")), or join on them to follow
+co-references.
+
+FINDING A CONCEPT. There is no rdfs:label: concepts are named only by their
+IRI local name (hyphenated, e.g. aura:Citric-Acid-Cycle-In-Eukaryote,
+aura:NAD-Plus, aura:MRNA), and aura:concept2words is declared but unpopulated.
+Match on STR(?c) or on the textbook definition in aura:user-description
+(present on 5,722 concepts).
+
+NO EXTERNAL IDENTIFIERS - JOIN BY NAME. Nothing in the graph is outside the
+aura:, RDF, RDFS or OWL namespaces (no GO/CHEBI/UBERON ids, no xrefs, no
+sameAs), so bio101 joins other KGs only through the concept NAME: hyphens to
+spaces, matched as a bound literal against ubergraph rdfs:label /
+oboInOwl:hasExactSynonym (GO, UBERON, CL, MONDO, CHEBI) or biohealth's UMLS
+names. Call get_join_strategy("bio101", <kg>) for the verified recipes
+(crosswalks KB1-KB7). Names are homonym-prone (Lens is an optical device, not
+the eye lens), so scope by bio101's class hierarchy as those recipes do.\
+"""
+
+#: Companion snippet: what a concept is made of / takes in / produces, one row
+#: per restriction with the filler's classes grouped. Verified 2026-10-05:
+#: Glycolysis returns 27 rows in ~4s (raw-material Glucose, ADP, NAD-Plus;
+#: result ATP, Pyruvate, NADH; two subevent phases; site Cytosol).
+BIO101_SNIPPET = """\
+# Every relation axiom on one concept (swap aura:Glycolysis for any concept).
+PREFIX aura: <http://www.projecthalo.com/aura#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?relation
+       (GROUP_CONCAT(DISTINCT STRAFTER(STR(?cls), "#"); separator=" & ") AS ?filler)
+WHERE { GRAPH <https://purl.org/okn/frink/kg/bio101> {
+  aura:Glycolysis rdfs:subClassOf/(owl:intersectionOf/rdf:rest*/rdf:first)* ?r .
+  ?r owl:onProperty ?relation .
+  { ?r owl:someValuesFrom ?f } UNION { ?r owl:onClass ?f } UNION { ?r owl:hasValue ?f }
+  ?f (owl:intersectionOf/rdf:rest*/rdf:first)* ?cls .
+  FILTER(isIRI(?cls) && !STRSTARTS(STR(?cls), "http://www.projecthalo.com/aura#ID-"))
+} }
+GROUP BY ?r ?relation
+ORDER BY ?relation ?filler
+# Named parents only: keep the path, drop the other lines, and FILTER
+# isIRI(?r) with the same aura#ID- exclusion.\
+"""
+
 #: Per-KG usage notes surfaced on ``get_schema`` (attached by the tool wrapper in
 #: :mod:`mcp_okn.tools.schema_tools`), delivered exactly when a client is about to
 #: write SPARQL for that KG. Only KGs with domain rules that the schema alone does
@@ -263,6 +334,11 @@ _KG_USAGE_NOTES: dict[str, dict[str, str]] = {
         "title": "Identifier-mapping notes",
         "guidance": BABEL_GUIDANCE,
         "query_snippet": BABEL_SNIPPET,
+    },
+    "bio101": {
+        "title": "Ontology-reading notes",
+        "guidance": BIO101_GUIDANCE,
+        "query_snippet": BIO101_SNIPPET,
     },
     "spoke-genelab": {
         "guidance": SPOKE_GENELAB_CONTRAST_GUIDANCE,
