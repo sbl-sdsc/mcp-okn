@@ -274,3 +274,9 @@ def test_canonicalize_schema_org_iri_rewrites_bare_iri():
 )
 def test_to_uri(term, expected):
     assert _to_uri(term) == expected
+
+
+def test_tsv_accept_header_is_the_registered_media_type():
+    # The endpoint rejects the unregistered `text/tsv` with HTTP 406; the IANA
+    # type is text/tab-separated-values (PR #7).
+    assert sparql_mod._ACCEPT["tsv"] == "text/tab-separated-values"
