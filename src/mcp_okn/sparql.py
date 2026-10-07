@@ -11,15 +11,17 @@ from __future__ import annotations
 import asyncio
 import contextlib
 import json
+import os
 import random
 import re
 import weakref
 from typing import Any
 
+
 import httpx
 
 #: The single federation endpoint. Do not query per-KG endpoints.
-FEDERATION_ENDPOINT = "https://apps.okn.us/federation/sparql"
+FEDERATION_ENDPOINT = os.environ.get("FEDERATION_ENDPOINT", "https://apps.okn.us/federation/sparql")
 
 #: Statuses worth retrying: the endpoint's server-side operation limit (429) and the
 #: gateway/overload family. QLever's own query errors come back as 400 with an
