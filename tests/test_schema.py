@@ -109,11 +109,36 @@ https://ex.org/schema/adj_p,adj_p,Adjusted p-value.,EdgeProperty,ABUNDANCE,,
 
 
 def test_generate_query_template_shape():
-    props = [{"label": "score"}]
+    props = [
+        {"uri": "https://purl.org/okn/frink/kg/demo/schema/score", "label": "score"}
+    ]
     tmpl = _generate_query_template("demo", "RELATES", "Foo", "Bar", props)
     assert "SELECT ?foo ?bar ?score" in tmpl
     assert "schema:RELATES" in tmpl
+    assert "GRAPH <https://purl.org/okn/frink/kg/demo>" in tmpl
     assert tmpl.rstrip().endswith("}")
+
+
+def test_generate_query_template_properties_optional_by_local_name():
+    # Edge properties are sparse, so each must be OPTIONAL; a prose label must
+    # not leak into the predicate or variable (spoke-okn "Activity Sources").
+    ns = "https://purl.org/okn/frink/kg/demo/schema/"
+    props = [
+        {"uri": ns + "act_sources", "label": "Activity Sources"},
+        {"uri": ns + "phase", "label": "Phase"},
+    ]
+    tmpl = _generate_query_template("demo", "TREATS", "Chem", "Disease", props)
+    assert "OPTIONAL { ?stmt schema:act_sources ?act_sources }" in tmpl
+    assert "OPTIONAL { ?stmt schema:phase ?phase }" in tmpl
+    assert "Activity Sources" not in tmpl
+    assert "rdf:object ?disease ." in tmpl
+
+
+def test_generate_query_template_same_class_gets_distinct_vars():
+    props = [{"uri": "https://purl.org/okn/frink/kg/demo/schema/odds", "label": "Odds"}]
+    tmpl = _generate_query_template("demo", "RESEMBLES", "Disease", "Disease", props)
+    assert "rdf:subject ?disease_1" in tmpl
+    assert "rdf:object ?disease_2" in tmpl
 
 
 def test_should_exclude_rdf_syntax_uris():

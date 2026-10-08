@@ -472,27 +472,55 @@ def _generate_query_template(
     target_class: str,
     properties: list[dict[str, Any]],
 ) -> str:
-    """Generate a SPARQL template for a reified relationship with edge properties."""
-    source_var = source_class.lower() if source_class else "source"
-    target_var = target_class.lower() if target_class else "target"
+    """Generate a SPARQL template for a reified relationship with edge properties.
+
+    Each edge property is wrapped in its own OPTIONAL: properties are sparse
+    (e.g. spoke-genelab abundance edges carry adj_p_value on 54 of 193
+    statements), so requiring all of them silently drops most rows. Predicates
+    and variables come from the property URI's local name, not its display
+    label, which may be prose ("Activity Sources").
+    """
+    source_var = _sparql_var(source_class) or "source"
+    target_var = _sparql_var(target_class) or "target"
+    if source_var == target_var:
+        source_var, target_var = f"{source_var}_1", f"{target_var}_2"
     schema_ns = _SCHEMA_NS.format(shortname=shortname)
 
-    prop_selects = [f"?{p['label']}" for p in properties]
-    prop_patterns = [f"        schema:{p['label']} ?{p['label']} ;" for p in properties]
-    if prop_patterns:
-        prop_patterns[-1] = prop_patterns[-1].rstrip(" ;") + " ."
+    prop_selects: list[str] = []
+    prop_patterns: list[str] = []
+    for p in properties:
+        uri = p.get("uri") or ""
+        local = _local_name(uri) if uri else p.get("label", "")
+        var = _sparql_var(local)
+        if not var:
+            continue
+        pred = (
+            f"schema:{local}"
+            if uri.startswith(schema_ns) and local == _sparql_var(local)
+            else f"<{uri}>"
+        )
+        prop_selects.append(f"?{var}")
+        prop_patterns.append(f"    OPTIONAL {{ ?stmt {pred} ?{var} }}")
 
     return (
         "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
         f"PREFIX schema: <{schema_ns}>\n\n"
         f"SELECT ?{source_var} ?{target_var} {' '.join(prop_selects)}\n"
         "WHERE {\n"
-        f"  ?stmt rdf:subject ?{source_var} ;\n"
-        f"        rdf:predicate schema:{relationship_label} ;\n"
-        f"        rdf:object ?{target_var} ;\n"
+        f"  GRAPH <{named_graph(shortname)}> {{\n"
+        f"    ?stmt rdf:subject ?{source_var} ;\n"
+        f"          rdf:predicate schema:{relationship_label} ;\n"
+        f"          rdf:object ?{target_var} .\n"
+        "    # Edge properties are sparse: keep OPTIONAL except on ones you filter by.\n"
         f"{chr(10).join(prop_patterns)}\n"
+        "  }\n"
         "}"
     )
+
+
+def _sparql_var(name: str) -> str:
+    """Lowercase-safe SPARQL variable name: keep [A-Za-z0-9_], drop the rest."""
+    return re.sub(r"[^A-Za-z0-9_]", "", name.replace(" ", "_")).lower()
 
 
 def _build_schema_from_metadata(
