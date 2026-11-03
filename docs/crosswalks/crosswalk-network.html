@@ -48,7 +48,7 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>39 knowledge graphs, 244 verified crosswalks (verified 2026-10-14). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
+  <p>39 knowledge graphs, 249 verified crosswalks (verified 2026-10-14). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
   <p class="tip">&#9654; <b>Hover</b> a node or edge for detail · <b>drag</b> to rearrange · <b>scroll</b> to zoom · <b>double-click</b> a node to unpin it.<br>&#9654; <b>Click a legend item</b> &mdash; a domain (e.g. <b>Chemicals</b>) or a line style (e.g. <b>via ubergraph</b>) &mdash; to toggle those edges.</p>
 </header>
 <div class="bar" id="legend"></div>
@@ -84,9 +84,11 @@ const R=[
 ["A",["gene-expression-atlas-okn","prokn"],31,"CL"],
 ["A",["spoke-genelab","gene-expression-atlas-okn"],4,"CL"],
 ["A",["spoke-genelab","prokn"],1,"CL"],
+["A",["bio101","biobricks-aopwiki"],24,"CL (bio101 label) (ubergraph)"],
 ["A",["bio101","gene-expression-atlas-okn"],35,"CL (bio101 label) (ubergraph)"],
 ["A",["biomarkerkg","gene-expression-atlas-okn"],27,"UBERON"],
 ["A",["spoke-genelab","gene-expression-atlas-okn"],27,"UBERON"],
+["A",["bio101","biobricks-aopwiki"],48,"UBERON (bio101 label) (ubergraph)"],
 ["A",["bio101","gene-expression-atlas-okn"],105,"UBERON (bio101 label) (ubergraph)"],
 ["A",["biohealth","gene-expression-atlas-okn"],249,"UMLS↔UBERON (ubergraph)"],
 ["A",["biohealth","spoke-genelab"],35,"UMLS↔UBERON (ubergraph)"],
@@ -109,6 +111,7 @@ const R=[
 ["C",["sawgraph","prokn"],6,"CAS→ChEMBL/PubChem (babel)"],
 ["C",["biobricks-tox21","rdkg"],920,"CAS→DrugBank (babel)"],
 ["C",["biobricks-toxcast","rdkg"],928,"CAS→DrugBank (babel)"],
+["C",["bio101","biobricks-aopwiki"],33,"CHEBI (bio101 label) (ubergraph)"],
 ["C",["bio101","spoke-okn"],86,"CHEBI (bio101 label) (ubergraph)"],
 ["C",["spoke-okn","biobricks-ice"],712,"CHEBI↔CAS (ubergraph)"],
 ["C",["spoke-okn","biobricks-tox21"],480,"CHEBI↔CAS (ubergraph)"],
@@ -162,6 +165,7 @@ const R=[
 ["D",["biomarkerkg","digcfdekg"],193,"MONDO (+ EFO/Orphanet→MONDO bridged) (ubergraph)"],
 ["D",["digcfdekg","oard-kg"],402,"MONDO (+ EFO/Orphanet→MONDO bridged) (ubergraph)"],
 ["D",["digcfdekg","rdkg"],1045,"MONDO (+ EFO/Orphanet→MONDO bridged) (ubergraph)"],
+["D",["bio101","nde"],60,"MONDO (bio101 label) (ubergraph)"],
 ["D",["bio101","rdkg"],57,"MONDO (bio101 label) (ubergraph)"],
 ["D",["spoke-okn","biomarkerkg"],107,"MONDO↔DOID (ubergraph)"],
 ["D",["oard-kg","prokn"],11,"MONDO↔OMIM (ubergraph)"],
@@ -195,6 +199,7 @@ const R=[
 ["E",["sockg","biobricks-toxcast"],59,"CAS"],
 
 ["F",["pankgraph","prokn"],16970,"GO"],
+["F",["bio101","biobricks-aopwiki"],47,"GO (bio101 label) (ubergraph)"],
 ["F",["bio101","pankgraph"],201,"GO (bio101 label) (ubergraph)"],
 ["F",["bio101","prokn"],310,"GO (bio101 label) (ubergraph)"],
 ["F",["gene-expression-atlas-okn","prokn"],1068,"Reactome"],

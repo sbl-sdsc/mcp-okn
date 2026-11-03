@@ -75,7 +75,7 @@ graphs on a shared identifier. Because the graphs are built by different teams o
 different ontologies, each crosswalk is an *integration opportunity*: a question one
 graph can't answer alone becomes answerable by combining two.
 
-The network map below shows all 244 crosswalks across 39 graphs as KG-to-KG edges
+The network map below shows all 249 crosswalks across 39 graphs as KG-to-KG edges
 (edge width ∝ log of the verified join count; dashed/dotted lines mark joins bridged
 through `ubergraph`/`wikidata`).
 
@@ -87,7 +87,7 @@ through `ubergraph`/`wikidata`).
   — one page listing every verified crosswalk: the joined KGs, shared key, row
   count, and what it answers.
 - **[Cross-KG crosswalk catalog](docs/crosswalks/crosswalks_example.md)** —
-  **496 example questions**, at least two per crosswalk, each worked end-to-end as
+  **506 example questions**, at least two per crosswalk, each worked end-to-end as
   live federated SPARQL with a standalone, replayable transcript.
 
 The catalog was generated with the

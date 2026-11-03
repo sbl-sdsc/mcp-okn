@@ -13,7 +13,7 @@
   },
   "timing_s": {
     "babel": 2.0,
-    "bio101": 14.0,
+    "bio101": 21.8,
     "biobricks-aopwiki": 3.3,
     "biobricks-ice": 2.8,
     "biobricks-mesh": 3.8,
@@ -65,10 +65,10 @@
       "matches": true
     },
     "bio101": {
-      "void_triples": 1060849,
-      "version": "v0.0.1",
-      "last_updated": "2026-10-01T21:07:13.254+00:00",
-      "served_triples": 1060849,
+      "void_triples": 1094330,
+      "version": "v0.0.2",
+      "last_updated": "2026-10-27T21:20:45.113+00:00",
+      "served_triples": 1094330,
       "matches": true
     },
     "biobricks-aopwiki": {
@@ -367,6 +367,7 @@
     }
   },
   "schema_source": {
+    "bio101": "void",
     "biomarkerkg": "graph",
     "nikg": "graph",
     "spatialkg": "graph"
