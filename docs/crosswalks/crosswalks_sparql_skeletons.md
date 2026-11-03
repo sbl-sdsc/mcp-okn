@@ -1653,7 +1653,7 @@ SELECT (COUNT(DISTINCT ?proknReact) AS ?n) WHERE {
 }
 ```
 
-**GO (bio101 label)** — `bio101 concept name <-> ubergraph GO rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/GO_{n} (prokn); exact-name match`: bio101 → ubergraph → prokn(310), bio101 → ubergraph → pankgraph(201), bio101 → ubergraph → biobricks-aopwiki(47).
+**GO (bio101 label)** — `bio101 concept name <-> ubergraph GO rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/GO_{n} (prokn); exact-name match`: bio101 → ubergraph → prokn(309), bio101 → ubergraph → pankgraph(200), bio101 → ubergraph → biobricks-aopwiki(47).
 
 _bio101 → ubergraph → prokn_
 
