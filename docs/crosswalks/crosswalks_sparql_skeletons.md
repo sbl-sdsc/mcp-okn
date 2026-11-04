@@ -61,7 +61,7 @@ For each crosswalk, list the join key and the SPARQL skeleton
 
 🧠 **Assistant**
 
-The OKN federation has **263 crosswalks**, which collapse into **81 join-key families** (a domain + a shared identifier). They are grouped below by domain and key family — each entry lists every KG pair sharing that key (with its verified `COUNT(DISTINCT)`), the identifier scheme/namespace, and a runnable `COUNT(DISTINCT)` skeleton with the IRI normalization already applied (a naive join on the raw id usually returns 0 rows).
+The OKN federation has **268 crosswalks**, which collapse into **83 join-key families** (a domain + a shared identifier). They are grouped below by domain and key family — each entry lists every KG pair sharing that key (with its verified `COUNT(DISTINCT)`), the identifier scheme/namespace, and a runnable `COUNT(DISTINCT)` skeleton with the IRI normalization already applied (a naive join on the raw id usually returns 0 rows).
 
 **Pairs in one family often need different SPARQL**, so where a family's members diverge, every distinct skeleton is shown and labelled with the pairs it applies to. The CAS family is the clearest case: the biobricks graphs hang the id off `edam:has_identifier`, MeSH exposes it as `meshv:registryNumber`, and SAWGraph/SOCKG store it as a bare literal that must be rebuilt into an IRI. Copy the skeleton for YOUR pair, then extend it with your payload.
 
@@ -1515,6 +1515,42 @@ SELECT (COUNT(DISTINCT ?bh) AS ?n) WHERE {
 }
 ```
 
+**HP (MAUDE patient-problem label)** — `medical-device-kg mdo:patientProblem string <-> ubergraph HP rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/HP_{n} (oard-kg); exact-name match`: medical-device-kg → ubergraph → oard-kg(314), medical-device-kg → ubergraph → rdkg(315).
+
+_medical-device-kg → ubergraph → oard-kg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?raw) AS ?n) WHERE {
+  { SELECT DISTINCT ?raw ?t WHERE {
+  { SELECT DISTINCT ?raw ?name WHERE {
+      { SELECT DISTINCT ?raw WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?e a <https://bmedesign.org/medical-device-kg/ns/MAUDEReport> ; <https://bmedesign.org/medical-device-kg/ns/patientProblem> ?raw . } } }
+      VALUES ?k { 0 1 2 }  # as-is, all lower, sentence case
+      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2))))) AS ?name)
+  } }
+    GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label>|<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?name .
+      FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/HP_') && ?t != <http://purl.obolibrary.org/obo/HP_0000001> && ?t != <http://purl.obolibrary.org/obo/HP_0000118> && ?t != <http://purl.obolibrary.org/obo/HP_0000005>) }
+  } }
+  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { ?as <https://w3id.org/biolink/vocab/subject>|<https://w3id.org/biolink/vocab/object> ?t . }
+}
+```
+
+_medical-device-kg → ubergraph → rdkg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?raw) AS ?n) WHERE {
+  { SELECT DISTINCT ?raw ?t WHERE {
+  { SELECT DISTINCT ?raw ?name WHERE {
+      { SELECT DISTINCT ?raw WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?e a <https://bmedesign.org/medical-device-kg/ns/MAUDEReport> ; <https://bmedesign.org/medical-device-kg/ns/patientProblem> ?raw . } } }
+      VALUES ?k { 0 1 2 }  # as-is, all lower, sentence case
+      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2))))) AS ?name)
+  } }
+    GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label>|<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?name .
+      FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/HP_') && ?t != <http://purl.obolibrary.org/obo/HP_0000001> && ?t != <http://purl.obolibrary.org/obo/HP_0000118> && ?t != <http://purl.obolibrary.org/obo/HP_0000005>) }
+  } }
+  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?d <https://w3id.org/biolink/vocab/has_phenotype> ?t . }
+}
+```
+
 **MONDO (bio101 label)** — `bio101 concept name <-> ubergraph MONDO rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/MONDO_{n} (rdkg); exact-name match`: bio101 → ubergraph → rdkg(57), bio101 → ubergraph → nde(60), bio101 → ubergraph → biomarkerkg(40), bio101 → ubergraph → oard-kg(25), bio101 → ubergraph → prokn(32), bio101 → ubergraph → gene-expression-atlas-okn(27), bio101 → ubergraph → digcfdekg(20).
 
 _bio101 → ubergraph → rdkg_
@@ -2458,7 +2494,7 @@ SELECT (COUNT(DISTINCT ?ent) AS ?n) WHERE {
 
 ### GEOSPATIAL
 
-**S2_L13** — `http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.`: fiokg × sawgraph(2,166), fiokg × spatialkg(681,045), hydrologykg × spatialkg(106,138), sawgraph × spatialkg(4,814), sockg × spatialkg(1,069), sockg × sawgraph(2), ufokn × spatialkg(97,087), ufokn × fiokg(19,252), sudokn × spatialkg(42,560).
+**S2_L13** — `http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.`: fiokg × sawgraph(2,166), fiokg × spatialkg(681,045), hydrologykg × spatialkg(106,138), sawgraph × spatialkg(4,814), sockg × spatialkg(1,069), sockg × sawgraph(2), ufokn × spatialkg(97,087), ufokn × fiokg(19,252), sudokn × spatialkg(42,560), medical-device-kg × spatialkg(16,977).
 
 _fiokg × sawgraph_
 
@@ -2546,6 +2582,8 @@ SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {
 ```
 
 _sudokn × spatialkg_ — no static skeleton: the key is COMPUTED at query time (call the `spatial_bridge` tool, which derives the S2 cell from the KG's lat/long).
+
+_medical-device-kg × spatialkg_ — no static skeleton: the key is COMPUTED at query time (call the `spatial_bridge` tool, which derives the S2 cell from the KG's lat/long).
 
 **county_FIPS** — `http://stko-kwg.geog.ucsb.edu/lod/resource/administrativeRegion.USA.{FIPS5}`: fiokg × spatialkg(3,031), fiokg × spoke-okn(3,032), geoconnex × spatialkg(3,114), geoconnex × spoke-okn(3,184), nikg × spatialkg(2), nikg × spoke-okn(2), wildlifekn × spatialkg(63), wildlifekn × spoke-okn(2,810), scales × spatialkg(3,029), scales × spoke-okn(3,096), spoke-okn × ruralkg(3,196), spoke-okn × sockg(31), spoke-okn × spatialkg(3,122), climatemodelskg → spoke-okn → spatialkg(947).
 
@@ -3006,6 +3044,15 @@ SELECT (COUNT(DISTINCT ?g) AS ?n) WHERE {
 }
 ```
 
+**country code (FIPS 10-4 / ISO 3166-1 alpha-2)** — `plain two-letter literals on both sides; no IRI. MAUDE fields = FIPS 10-4 (GeoNames 'fips' column); address mdo:country = ISO 3166-1 alpha-2 (GeoNames 'iso' column)`: medical-device-kg × climatemodelskg(145).
+
+```sparql
+SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
+  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?r <https://bmedesign.org/medical-device-kg/ns/deviceManufacturerCountry> ?code } } }
+  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> { ?c a <https://climatepub4kg.github.io/ontology#Country> ; <https://climatepub4kg.github.io/ontology#fips> ?code }
+}
+```
+
 ### HYDROLOGY
 
 **COMID** — `https://geoconnex.us/nhdplusv2/comid/{COMID} - the SAME IRI on both sides (geoconnex as the object of wd:P885/P403; hydrologykg as its reach subject IRI)`: geoconnex × hydrologykg(11,392).
@@ -3092,7 +3139,9 @@ SELECT (COUNT(DISTINCT ?model) AS ?n) WHERE {
 }
 ```
 
-**company name** — `medical-device-kg <https://bmedesign.org/medical-device-kg/ns/name> on an mdo:RegistrationListingRecord <-> sudokn <http://www.w3.org/2000/01/rdf-schema#label> on a Manufacturer. Both plain string literals — NOT an identifier join. medical-device-kg's own company key is the FDA establishment identifier (mdo:feiNumber), which no other federation KG carries; sudokn mints company IRIs from the firm's web domain (…/{domain}-company-instance), which medical-device-kg does not publish. So the name is the only surface the two share.`: medical-device-kg × sudokn(364).
+**company name** — `medical-device-kg <https://bmedesign.org/medical-device-kg/ns/name> on an mdo:RegistrationListingRecord <-> sudokn <http://www.w3.org/2000/01/rdf-schema#label> on a Manufacturer. Both plain string literals — NOT an identifier join. medical-device-kg's own company key is the FDA establishment identifier (mdo:feiNumber), which no other federation KG carries; sudokn mints company IRIs from the firm's web domain (…/{domain}-company-instance), which medical-device-kg does not publish. So the name is the only surface the two share.`: medical-device-kg × sudokn(364), medical-device-kg × securechainkg(195).
+
+_medical-device-kg × sudokn_
 
 ```sparql
 SELECT (COUNT(DISTINCT ?nm) AS ?n) WHERE {
@@ -3107,6 +3156,29 @@ SELECT (COUNT(DISTINCT ?nm) AS ?n) WHERE {
   { SELECT DISTINCT ?nm WHERE { GRAPH <https://purl.org/okn/frink/kg/sudokn> {
         ?o <http://asu.edu/semantics/SUDOKN/organizationLocatedIn> ?a ;
            <http://www.w3.org/2000/01/rdf-schema#label> ?l }
+      BIND(LCASE(STR(?l)) AS ?s0)
+      BIND(REPLACE(?s0, "[^a-z0-9 ]", " ") AS ?s1)
+      BIND(REPLACE(?s1, " +", " ") AS ?s2)
+      BIND(REPLACE(?s2, "^ | $", "") AS ?s3)
+      BIND(REPLACE(?s3, " (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$", "") AS ?s4)
+      BIND(REPLACE(?s4, " (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$", "") AS ?s5)
+      BIND(REPLACE(?s5, "^ | $", "") AS ?nm) } }
+}
+```
+
+_medical-device-kg × securechainkg_
+
+```sparql
+SELECT (COUNT(DISTINCT ?nm) AS ?n) WHERE {
+  { SELECT DISTINCT ?nm WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?s a <https://bmedesign.org/medical-device-kg/ns/RegistrationListingRecord> ; <https://bmedesign.org/medical-device-kg/ns/name> ?raw }
+      BIND(LCASE(STR(?raw)) AS ?m0)
+      BIND(REPLACE(?m0, "[^a-z0-9 ]", " ") AS ?m1)
+      BIND(REPLACE(?m1, " +", " ") AS ?m2)
+      BIND(REPLACE(?m2, "^ | $", "") AS ?m3)
+      BIND(REPLACE(?m3, " (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$", "") AS ?m4)
+      BIND(REPLACE(?m4, " (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$", "") AS ?m5)
+      BIND(REPLACE(?m5, "^ | $", "") AS ?nm) } }
+  { SELECT DISTINCT ?nm WHERE { GRAPH <https://purl.org/okn/frink/kg/securechainkg> { ?o a <https://spec.industrialontologies.org/ontology/core/Core/Manufacturer> ; <http://www.w3.org/2000/01/rdf-schema#label> ?l }
       BIND(LCASE(STR(?l)) AS ?s0)
       BIND(REPLACE(?s0, "[^a-z0-9 ]", " ") AS ?s1)
       BIND(REPLACE(?s1, " +", " ") AS ?s2)

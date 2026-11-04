@@ -139,6 +139,10 @@ INTROSPECT_TIMEOUT = 900.0
 INTROSPECT_RETRY_S = 30.0
 #: Statements sampled per reified predicate when the exact count times out.
 EDGE_SAMPLE_LIMIT = 1000
+#: Objects sampled to name a (property, class) datatype the exact split cannot count.
+DATATYPE_SAMPLE_LIMIT = 10000
+#: Retries of one builder query whose connection dropped (an httpx transport error).
+TRANSPORT_RETRIES = 2
 
 Log = Callable[[str], None]
 
@@ -203,8 +207,23 @@ async def _run(query: str, **kw: Any) -> dict[str, Any]:
     run_sparql rewrites ``<https://schema.org/…>`` to ``http`` for hand-written
     queries; the builder queries IRIs it read from the data, and several KGs store
     the https form (phaseskg's schema:alternateName matched nothing before this).
+
+    A dropped connection (an httpx transport error, which run_sparql does not turn
+    into a SparqlError) is retried and then raised as a SparqlError, so one reset
+    socket degrades a single partition instead of aborting an hours-long build
+    (medical-device-kg, 2026-11-04: a bare ``httpx`` error after ~4 h wrote nothing).
     """
-    return await run_sparql(query, normalize_schema=False, **kw)
+    for attempt in range(TRANSPORT_RETRIES + 1):
+        try:
+            return await run_sparql(query, normalize_schema=False, **kw)
+        except httpx.TransportError as exc:
+            if attempt == TRANSPORT_RETRIES:
+                raise SparqlError(
+                    f"connection failed {attempt + 1} times: "
+                    f"{type(exc).__name__}: {exc}"
+                ) from exc
+            await asyncio.sleep(INTROSPECT_RETRY_S)
+    raise AssertionError("unreachable")
 
 
 # --------------------------------------------------------------------------- queries
@@ -428,6 +447,24 @@ SELECT ?cls{target} (COUNT(*) AS ?n) WHERE {{
   GRAPH <{kg_iri(kg)}> {{ {pattern} }}
 }}
 GROUP BY ?cls{target}"""
+
+
+def datatype_sample_query(kg: str, prop: str, cls: str) -> str:
+    """Datatypes of a sample of ``prop``'s objects on subjects of ``cls``.
+
+    The fallback when the exact datatype split of a huge literal property cannot
+    finish (medical-device-kg's MAUDE narratives, ~10^8 literals). IRIs and blank
+    nodes come back as ``?kind`` "node" so a mixed property is recognisable.
+    """
+    return f"""\
+SELECT ?target (COUNT(*) AS ?n) WHERE {{
+  {{ SELECT ?o WHERE {{
+    GRAPH <{kg_iri(kg)}> {{ VALUES ?cls {{ <{cls}> }} ?s <{prop}> ?o . ?s a ?cls . }}
+  }} LIMIT {DATATYPE_SAMPLE_LIMIT} }}
+  BIND(IF(!isLiteral(?o), "node",
+       IF(LANG(?o) != "", <{RDF}langString>, DATATYPE(?o))) AS ?target)
+}}
+GROUP BY ?target"""
 
 
 def text_lookup_query(graph: str, uris: Iterable[str]) -> str:
@@ -967,7 +1004,10 @@ async def introspect_partitions(
     describes a different release than the one served (see :func:`check_freshness`).
     A partition query the endpoint cannot answer whole (spatialkg's S2-cell
     relations need more memory than it has free) is retried one subject class at a
-    time; a class that still fails is left out and named in ``notes``.
+    time, over only the classes the property's total split found; a class that
+    still fails is left out and named in ``notes``. A datatype partition that still
+    fails is filled from a sample instead when every sampled object is a literal of
+    one datatype: the count is then that class's total for the property.
     """
     classes = (await _run(graph_classes_query(kg), client=client))["rows"]
     ds_props = (await _run(graph_properties_query(kg), client=client))["rows"]
@@ -985,28 +1025,68 @@ async def introspect_partitions(
         )
         return [{**r, "prop": prop, "kind": kind} for r in res["rows"] if r.get("cls")]
 
+    async def sampled_datatype(prop: str, cls: str, total: int | None) -> str:
+        """Fill one failed datatype partition from a sample; return a note."""
+        try:
+            res = await _run(
+                datatype_sample_query(kg, prop, cls),
+                client=client,
+                timeout=INTROSPECT_TIMEOUT,
+            )
+        except SparqlError as exc:
+            return f"sample failed too ({str(exc)[:80]}); left out"
+        seen = sorted({str(r.get("target") or "") for r in res["rows"]})
+        if total is None:
+            return "no class total to scale a sample by; left out"
+        if len(seen) != 1 or seen[0] in ("", "node"):
+            return f"sample is not one literal datatype ({seen}); left out"
+        dt = seen[0]
+        partitions.append(
+            {"cls": cls, "target": dt, "n": total, "prop": prop, "kind": "datatype"}
+        )
+        return f"datatype {dt} from a {DATATYPE_SAMPLE_LIMIT:,}-object sample"
+
     for prop in props:
+        totals: dict[str, int | None] | None = None  # subject classes carrying prop
         for kind in ("total", "class", "datatype"):
             try:
-                partitions.extend(await rows(prop, kind))
+                found = await rows(prop, kind)
+                partitions.extend(found)
+                if kind == "total":
+                    totals = {r["cls"]: _int(r.get("n")) for r in found}
                 continue
             except SparqlError as exc:
                 log(
                     f"  {kind} split of {prop} failed whole ({str(exc)[:80]}); retrying per class"
                 )
-            for cls in class_iris:
+            # Every pattern requires `?s a ?cls`, so only the classes the total split
+            # found can contribute; querying the others just spends endpoint time.
+            split: dict[str, int | None] = {}
+            complete = True
+            for cls in class_iris if totals is None else sorted(totals):
                 for attempt in (1, 2):
                     try:
-                        partitions.extend(await rows(prop, kind, cls))
+                        found = await rows(prop, kind, cls)
+                        partitions.extend(found)
+                        split.update((r["cls"], _int(r.get("n"))) for r in found)
                         break
                     except SparqlError as exc:
                         if attempt == 2:
+                            complete = False
+                            why = f"failed ({str(exc)[:80]})"
+                            if kind == "datatype":
+                                n = (totals or {}).get(cls)
+                                why += "; " + await sampled_datatype(prop, cls, n)
+                            else:
+                                why += "; left out"
                             notes.append(
-                                f"introspection: {kind} split of {prop} on {cls} "
-                                f"failed ({str(exc)[:80]}); left out"
+                                f"introspection: {kind} split of {prop} on {cls} {why}"
                             )
+                            log(f"    {notes[-1]}")
                         else:
                             await asyncio.sleep(INTROSPECT_RETRY_S)
+            if kind == "total" and complete:
+                totals = split
     return classes, partitions, ds_props, notes
 
 

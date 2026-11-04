@@ -160,6 +160,165 @@ hydrologykg,http://stko-kwg.geog.ucsb.edu/lod/ontology/sfEquals,Predicate,,sfEqu
 hydrologykg,http://www.w3.org/2004/02/skos/core#description,Predicate,,description
 hydrologykg,https://www.opengis.net/def/schema/hy_features/hyf/encompassingCatchment,Predicate,,encompassingCatchment
 hydrologykg,https://www.opengis.net/def/schema/hy_features/hyf/upstreamFlowPath,Predicate,,upstreamFlowPath
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/CliaTestSystem,Class,,CLIA Test System
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/fax,Predicate,,facility business fax number as published by FDA
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mobileUnit,Predicate,,facility name identifies a mobile unit
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mqsaCertified,Predicate,,listed by FDA as MQSA certified on the retrieval date
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/ownerOperatorName,Predicate,,owner/operator firm name (firm only; no contact persons)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/ownerOperatorNumber,Predicate,,owner/operator number
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/registrationExpiryYear,Predicate,,registration expiry year as published
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/relatedPMARecord,Predicate,,device approved under this PMA
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/statusCode,Predicate,,registration status code
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/cfrCitation,Predicate,,Federal Register source citation
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/classificationText,Predicate,,(b) Classification paragraph
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/identificationText,Predicate,,(a) Identification -- the legal definition of the device type
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/inCfrPart,Predicate,,in 21 CFR part
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/regulationText,Predicate,,"regulation text (all paragraphs, in full)"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/cfrPartNumber,Predicate,,21 CFR part number
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceRegulationPart,Predicate,,"part is a device or radiological-health part of 21 CFR (800-898, 1000-1050)"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/categorizedBy,Predicate,,agency that categorized the test (FDA or CDC)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/qualifier,Predicate,,test system qualifier as published
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/describesRecord,Predicate,,the full premarket record this catalog entry describes
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceProblem,Predicate,,device problem (literal)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/normalizedName,Predicate,,normalized organization name
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/gmdnCodeStatus,Predicate,,gmdnCodeStatus
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/gmdnImplantable,Predicate,,GMDN term is implantable
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/approvalOrderStatement,Predicate,,approval order statement
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasApplicantFirm,Predicate,,has applicant firm (as named)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/supplementOf,Predicate,,supplement of (PMA or HDE base record)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mappingDate,Predicate,,date the mapping was computed
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mappingEvidence,Predicate,,mapping evidence
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mappingObject,Predicate,,mapping object
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mappingStatus,Predicate,,mapping status (accepted/candidate)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mappingSubject,Predicate,,mapping subject
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/kNumber,Predicate,,510(k) / De Novo number
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dunsNumber,Predicate,,labeler DUNS number
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateManufacturerReceived,Predicate,,date the manufacturer received the information
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceAgeText,Predicate,,device age as reported
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceAvailability,Predicate,,device available for evaluation
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceEvaluatedByManufacturer,Predicate,,device evaluated by the manufacturer (Y/N/R)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceManufacturerCountry,Predicate,,device manufacturer country as reported
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceManufacturerName,Predicate,,device manufacturer name as reported
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/eventLocation,Predicate,,"where the event occurred (hospital, home, ...)"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/manufacturerNarrative,Predicate,,additional manufacturer narrative (FDA-published)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mdrReportKey,Predicate,,MDR report key
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/patientOutcome,Predicate,,patient outcome (literal)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/patientProblem,Predicate,,patient problem (literal)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/patientTreatment,Predicate,,treatment the patient received
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/relatedHDE,Predicate,,related HDE
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reportSourceCode,Predicate,,report source code
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reporterCountry,Predicate,,reporter country code
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reporterOccupation,Predicate,,reporter occupation
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/summaryReportFlag,Predicate,,summary (alternative summary) report
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/typeOfReport,Predicate,,"type of report (initial, follow-up, ...)"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/udiPublic,Predicate,,full human-readable UDI as reported
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deathReportCount,Predicate,,MDR reports with event type Death
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/injuryReportCount,Predicate,,MDR reports with event type Injury
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/malfunctionReportCount,Predicate,,MDR reports with event type Malfunction
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/otherReportCount,Predicate,,MDR reports with another or no event type
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/outcomeType,Predicate,,"outcome kind ('outcome' such as Death/Hospitalization, or 'patient problem' such as Burn)"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/analysisType,Predicate,,analysis type
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/comparisonGroup,Predicate,,comparison group
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/currentPlanAcceptedDate,Predicate,,date current study plan accepted
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/finalEffectivenessFindings,Predicate,,final effectiveness findings
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/finalSafetyFindings,Predicate,,final safety findings
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/followUp,Predicate,,follow-up visits and length of follow-up
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/keyStudyEndpoints,Predicate,,key study endpoints
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/labelingRecommendations,Predicate,,recommendations for labeling changes
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/orderDate,Predicate,,date of the 522 order
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/originalPlanAcceptedDate,Predicate,,date original study plan accepted
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/patientFollowupRate,Predicate,,"patient follow-up rate, as published"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/patientsEnrolled,Predicate,,"actual number of patients enrolled, as published"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sitesEnrolled,Predicate,,"actual number of sites enrolled, as published"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/studyId,Predicate,,FDA study id (pss.cfm t_id)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/studyPopulation,Predicate,,study population
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/studyPopulationDescription,Predicate,,study population description
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/studyStrengthsWeaknesses,Predicate,,study strengths and weaknesses
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/medicalSpecialtyCode,Predicate,,medical specialty two-letter code
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/implantable,Predicate,,implantable (on product-code hub)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/lifeSustaining,Predicate,,life-sustaining (on product-code hub)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recallEventNumber,Predicate,,recall event number
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/cfresId,Predicate,,FDA recall database (CFRES) id
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/cfresStatus,Predicate,,"recall status as shown on FDA's recall page (e.g. 'Terminated on March 24, 2004')"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/distributedInUS,Predicate,,false when FDA states no US distribution
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/distributedNationwide,Predicate,,distribution stated only as US nationwide
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/distributedToCountry,Predicate,,distributed to country (outside US)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/eventDateCreated,Predicate,,date the recall event was created in FDA's recall database
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/eventDatePosted,Predicate,,date posted by FDA
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/firmFEINumber,Predicate,,recalling firm FEI number
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasRecallingFirm,Predicate,,has recalling firm (as named)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasRecallingManufacturer,Predicate,,has recalling manufacturer (FEI-exact)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/partOfRecallEvent,Predicate,,part of recall event
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/productType,Predicate,,product type (enforcement report)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/quotedDeviceIdentifier,Predicate,,"GS1 device identifier (GTIN-14, valid check digit) quoted in the recall's published code information"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recallNumberStatus,Predicate,,recall number status ('not yet assigned by FDA' for reports posted before numbering)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/rootCauseDescription,Predicate,,FDA-assigned recall root cause
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/citesRegulation,Predicate,,FDA lists 21 CFR regulation
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/extentOfRecognition,Predicate,,extent of recognition (Complete standard / Partial)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/fdaStandardId,Predicate,,FDA standards database id
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/frRecognitionList,Predicate,,Federal Register recognition list number
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/identicalAdoption,Predicate,,identical national adoption (e.g. ANSI AAMI ISO ...)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/partialRecognitionText,Predicate,,"what is (not) recognized, when partial"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recognitionArea,Predicate,,recognition-number prefix (FDA specialty area code)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recognitionDate,Predicate,,date of entry on the recognition list
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recognitionRationale,Predicate,,rationale for recognition
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/relevantGuidance,Predicate,,relevant FDA guidance
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/scope,Predicate,,"scope / abstract (FDA summary, not the standard text)"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/specialtyTaskGroup,Predicate,,FDA specialty task group
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/standardsDevelopmentOrganization,Predicate,,standards development organization (abbreviation)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/transitionNote,Predicate,,transition note
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/transitionPeriodEnd,Predicate,,end of transition period (superseded recognition)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/usAgentBusinessName,Predicate,,"US agent business name (business only; agent person, phone and e-mail not ingested)"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/appliesToDevice,Predicate,,storage condition applies to device
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/specialConditions,Predicate,,specialConditions
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/storageHighUnit,Predicate,,storageHighUnit
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/storageHighValue,Predicate,,storageHighValue
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/storageLowUnit,Predicate,,storageLowUnit
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/storageLowValue,Predicate,,storageLowValue
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/storageType,Predicate,,storageType
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/firstReportDate,Predicate,,earliest MDR receipt date for the product code
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/lastReportDate,Predicate,,latest MDR receipt date for the product code
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/commercialDistributionEndDate,Predicate,,date commercial distribution ended
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceCountInBasePackage,Predicate,,device count in base package
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceSize,Predicate,,clinically relevant size ('<size type>: <value> <unit>; <text>')
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasDonationIdNumber,Predicate,,hasDonationIdNumber
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasExpirationDate,Predicate,,has expiration date
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasLabeler,Predicate,,"has labeler (UDI, DUNS-keyed)"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasLotOrBatchNumber,Predicate,,has lot or batch number
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasManufacturingDate,Predicate,,hasManufacturingDate
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasSerialNumber,Predicate,,has serial number
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasStorageCondition,Predicate,,has storage condition
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/isDirectMarkingExempt,Predicate,,isDirectMarkingExempt
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/isHCTP,Predicate,,is HCT/P
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/isLabeledAsNRL,Predicate,,is labeled as containing natural rubber latex
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/isLabeledAsNoNRL,Predicate,,is labeled as NOT made with natural rubber latex
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/isOTC,Predicate,,is over-the-counter
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/isPremarketExempt,Predicate,,isPremarketExempt
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/isRx,Predicate,,is prescription (Rx)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/premarketSubmissionNumber,Predicate,,premarket submission number on a UDI record (510(k)/PMA/De Novo)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/publicVersionDate,Predicate,,public version date
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/publicVersionNumber,Predicate,,GUDID public version number
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/publicVersionStatus,Predicate,,GUDID public version status
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/requiresSterilizationPriorToUse,Predicate,,requires sterilization prior to use
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sterilizationMethod,Predicate,,sterilization method
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/packageDiscontinueDate,Predicate,,package discontinue date
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/packageStatus,Predicate,,package status
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/assemblerReportId,Predicate,,assembler report id (assem.txt ID)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/equipmentUseCode,Predicate,,equipment use code as published (assem.txt use1..use4)
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/installationDate,Predicate,,date the X-ray components were installed
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/codeInfoLength,Predicate,,"original length of the code information, in characters"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dataCollection,Predicate,,data collection
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateEffectiveText,Predicate,,"effective date as published, when it is not a valid date"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateManufacturerReceivedText,Predicate,,"manufacturer-received date as published, when it is not a valid calendar date"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateOfEventText,Predicate,,"date of event as published, when it is not a valid calendar date"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateReceivedText,Predicate,,"date received as published, when it is not a valid calendar date"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateText,Predicate,,"a date field as published, when it is not a valid date ('<field>: <value>')"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasCfrPart,Predicate,,belongs to 21 CFR part
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/interimSafetyInformation,Predicate,,interim safety information
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mdrText,Predicate,,other MDR narrative text
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reportDateText,Predicate,,"report date as published, when it is not a valid calendar date"
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reviewCode,Predicate,,review code
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/studyDesignDescription,Predicate,,study design description
 nikg,https://metadata.phila.gov/mesh_D000091368,Class,,mesh D000091368
 nikg,https://metadata.phila.gov/mesh_D005842,Class,,mesh D005842
 phaseskg,http://protege.stanford.edu/plugins/owl/protege#defaultLanguage,Predicate,,defaultLanguage
