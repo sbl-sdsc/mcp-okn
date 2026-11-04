@@ -2799,7 +2799,7 @@ SELECT (COUNT(DISTINCT ?reg) AS ?n) WHERE {
 }
 ```
 
-**ZIP5** — `bare 5-digit U.S. ZIP code, xsd:string literal (no IRI namespace)`: spoke-okn × dreamkg(235), spoke-okn × ruralkg(5,390), ruralkg × scales(5,297), dreamkg × scales(235), dreamkg × ruralkg(127), spoke-okn × sudokn(13,647), medical-device-kg × spoke-okn(19,563), medical-device-kg × scales(19,089), medical-device-kg × sudokn(11,067), medical-device-kg × ruralkg(5,118), medical-device-kg × dreamkg(231), securechainkg × spoke-okn(4,375).
+**ZIP5** — `bare 5-digit U.S. ZIP code, xsd:string literal (no IRI namespace)`: spoke-okn × dreamkg(235), spoke-okn × ruralkg(5,390), ruralkg × scales(5,297), dreamkg × scales(235), dreamkg × ruralkg(127), spoke-okn × sudokn(13,647), medical-device-kg × spoke-okn(19,095), medical-device-kg × scales(18,654), medical-device-kg × sudokn(10,697), medical-device-kg × ruralkg(5,141), medical-device-kg × dreamkg(232), securechainkg × spoke-okn(4,375).
 
 _spoke-okn × dreamkg_
 
@@ -2897,11 +2897,10 @@ _medical-device-kg × spoke-okn_
 SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {
   { SELECT DISTINCT ?zip WHERE {
       GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> {
-        { ?s <http://medicaldevice.com/ontology/zip> ?z0 } UNION
-        { ?s <http://medicaldevice.com/ontology/postalCode> ?z0 } }
+        ?s <https://bmedesign.org/medical-device-kg/ns/postalCode> ?z0 OPTIONAL { ?s <https://bmedesign.org/medical-device-kg/ns/country> ?cc } }
       BIND(REPLACE(STR(?z0),"[^0-9]","") AS ?d)
-      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip)
-      FILTER(REGEX(?zip,"^[0-9]{5}$")) } }
+      FILTER(STRLEN(?d) IN (4, 5, 9) && (!BOUND(?cc) || ?cc IN ("US", "United States", "PR")))
+      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip) } }
   GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?loc <http://www.w3.org/2000/01/rdf-schema#label> ?zip .
       FILTER(REGEX(STR(?loc),'/location/[A-Z]{2}-[0-9]+')) }
 }
@@ -2913,11 +2912,10 @@ _medical-device-kg × scales_
 SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {
   { SELECT DISTINCT ?zip WHERE {
       GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> {
-        { ?s <http://medicaldevice.com/ontology/zip> ?z0 } UNION
-        { ?s <http://medicaldevice.com/ontology/postalCode> ?z0 } }
+        ?s <https://bmedesign.org/medical-device-kg/ns/postalCode> ?z0 OPTIONAL { ?s <https://bmedesign.org/medical-device-kg/ns/country> ?cc } }
       BIND(REPLACE(STR(?z0),"[^0-9]","") AS ?d)
-      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip)
-      FILTER(REGEX(?zip,"^[0-9]{5}$")) } }
+      FILTER(STRLEN(?d) IN (4, 5, 9) && (!BOUND(?cc) || ?cc IN ("US", "United States", "PR")))
+      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip) } }
   { SELECT DISTINCT ?zip WHERE {
       GRAPH <https://purl.org/okn/frink/kg/scales> {
         ?court <http://release.niem.gov/niem/niem-core/5.0/#AddressPostalCode> ?z1 . }
@@ -2933,11 +2931,10 @@ _medical-device-kg × sudokn_
 SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {
   { SELECT DISTINCT ?zip WHERE {
       GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> {
-        { ?s <http://medicaldevice.com/ontology/zip> ?z0 } UNION
-        { ?s <http://medicaldevice.com/ontology/postalCode> ?z0 } }
+        ?s <https://bmedesign.org/medical-device-kg/ns/postalCode> ?z0 OPTIONAL { ?s <https://bmedesign.org/medical-device-kg/ns/country> ?cc } }
       BIND(REPLACE(STR(?z0),"[^0-9]","") AS ?d)
-      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip)
-      FILTER(REGEX(?zip,"^[0-9]{5}$")) } }
+      FILTER(STRLEN(?d) IN (4, 5, 9) && (!BOUND(?cc) || ?cc IN ("US", "United States", "PR")))
+      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip) } }
   { SELECT DISTINCT ?zip WHERE {
       GRAPH <https://purl.org/okn/frink/kg/sudokn> {
         BIND(IRI(CONCAT('https://schema.org/','postalCode')) AS ?pp)
@@ -2953,11 +2950,10 @@ _medical-device-kg × ruralkg_
 SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {
   { SELECT DISTINCT ?zip WHERE {
       GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> {
-        { ?s <http://medicaldevice.com/ontology/zip> ?z0 } UNION
-        { ?s <http://medicaldevice.com/ontology/postalCode> ?z0 } }
+        ?s <https://bmedesign.org/medical-device-kg/ns/postalCode> ?z0 OPTIONAL { ?s <https://bmedesign.org/medical-device-kg/ns/country> ?cc } }
       BIND(REPLACE(STR(?z0),"[^0-9]","") AS ?d)
-      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip)
-      FILTER(REGEX(?zip,"^[0-9]{5}$")) } }
+      FILTER(STRLEN(?d) IN (4, 5, 9) && (!BOUND(?cc) || ?cc IN ("US", "United States", "PR")))
+      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip) } }
   { SELECT DISTINCT ?zip WHERE {
       GRAPH <https://purl.org/okn/frink/kg/ruralkg> {
         BIND(IRI(CONCAT('https://schema.org/','postalCode')) AS ?pp)
@@ -2973,11 +2969,10 @@ _medical-device-kg × dreamkg_
 SELECT (COUNT(DISTINCT ?zip) AS ?n) WHERE {
   { SELECT DISTINCT ?zip WHERE {
       GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> {
-        { ?s <http://medicaldevice.com/ontology/zip> ?z0 } UNION
-        { ?s <http://medicaldevice.com/ontology/postalCode> ?z0 } }
+        ?s <https://bmedesign.org/medical-device-kg/ns/postalCode> ?z0 OPTIONAL { ?s <https://bmedesign.org/medical-device-kg/ns/country> ?cc } }
       BIND(REPLACE(STR(?z0),"[^0-9]","") AS ?d)
-      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip)
-      FILTER(REGEX(?zip,"^[0-9]{5}$")) } }
+      FILTER(STRLEN(?d) IN (4, 5, 9) && (!BOUND(?cc) || ?cc IN ("US", "United States", "PR")))
+      BIND(IF(STRLEN(?d)=4, CONCAT("0",?d), SUBSTR(?d,1,5)) AS ?zip) } }
   { SELECT DISTINCT ?zip WHERE {
       GRAPH <https://purl.org/okn/frink/kg/dreamkg> {
         ?loc <http://schema.org/postalCode> ?z1 . }
@@ -3065,7 +3060,7 @@ _medical-device-kg × fiokg_
 
 ```sparql
 SELECT (COUNT(DISTINCT ?code) AS ?n) WHERE {
-  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?m <http://asu.edu/semantics/SUDOKN/hasNAICSClassifier> ?c . ?c <http://medicaldevice.com/ontology/naicsCode> ?c0 . } BIND(STR(?c0) AS ?code) } }
+  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?m a <https://bmedesign.org/medical-device-kg/ns/Manufacturer> ; <http://asu.edu/semantics/SUDOKN/hasNAICSClassifier> ?c . ?c <https://bmedesign.org/medical-device-kg/ns/naicsCode> ?c0 . } BIND(STR(?c0) AS ?code) } }
   { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/fiokg> { ?f <http://w3id.org/fio/v1/epa-frs#ofPrimaryIndustry>|<http://w3id.org/fio/v1/epa-frs#ofSecondaryIndustry> ?ind . } BIND(REPLACE(STR(?ind),'^.*naics#NAICS-([0-9]+)$','$1') AS ?code) } }
 }
 ```
@@ -3074,7 +3069,7 @@ _medical-device-kg × securechainkg_
 
 ```sparql
 SELECT (COUNT(DISTINCT ?code) AS ?n) WHERE {
-  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?m <http://asu.edu/semantics/SUDOKN/hasNAICSClassifier> ?c . ?c <http://medicaldevice.com/ontology/naicsCode> ?c0 . } BIND(STR(?c0) AS ?code) } }
+  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?m a <https://bmedesign.org/medical-device-kg/ns/Manufacturer> ; <http://asu.edu/semantics/SUDOKN/hasNAICSClassifier> ?c . ?c <https://bmedesign.org/medical-device-kg/ns/naicsCode> ?c0 . } BIND(STR(?c0) AS ?code) } }
   { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/securechainkg> { ?a <http://asu.edu/semantics/SUDOKN/hasPrimaryNAICSClassifier> ?sn . } BIND(REPLACE(STR(?sn),'^.*/naics-([0-9]+)\\.0-inst$','$1') AS ?code) } }
 }
 ```
@@ -3097,11 +3092,11 @@ SELECT (COUNT(DISTINCT ?model) AS ?n) WHERE {
 }
 ```
 
-**company name** — `medical-device-kg <http://medicaldevice.com/ontology/establishmentName> <-> sudokn <http://www.w3.org/2000/01/rdf-schema#label> on a Manufacturer. Both plain string literals — NOT an identifier join. medical-device-kg's own company key is the FDA establishment identifier (mdo:feiNumber), which no other federation KG carries; sudokn mints company IRIs from the firm's web domain (…/{domain}-company-instance), which medical-device-kg does not publish. So the name is the only surface the two share.`: medical-device-kg × sudokn(361).
+**company name** — `medical-device-kg <https://bmedesign.org/medical-device-kg/ns/name> on an mdo:RegistrationListingRecord <-> sudokn <http://www.w3.org/2000/01/rdf-schema#label> on a Manufacturer. Both plain string literals — NOT an identifier join. medical-device-kg's own company key is the FDA establishment identifier (mdo:feiNumber), which no other federation KG carries; sudokn mints company IRIs from the firm's web domain (…/{domain}-company-instance), which medical-device-kg does not publish. So the name is the only surface the two share.`: medical-device-kg × sudokn(364).
 
 ```sparql
 SELECT (COUNT(DISTINCT ?nm) AS ?n) WHERE {
-  { SELECT DISTINCT ?nm WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?s <http://medicaldevice.com/ontology/establishmentName> ?raw }
+  { SELECT DISTINCT ?nm WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?s a <https://bmedesign.org/medical-device-kg/ns/RegistrationListingRecord> ; <https://bmedesign.org/medical-device-kg/ns/name> ?raw }
       BIND(LCASE(STR(?raw)) AS ?m0)
       BIND(REPLACE(?m0, "[^a-z0-9 ]", " ") AS ?m1)
       BIND(REPLACE(?m1, " +", " ") AS ?m2)
