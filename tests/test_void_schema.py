@@ -5,6 +5,9 @@ The canned bindings are trimmed from the live spoke-genelab VoID description
 run_sparql is patched on the void_schema module for the driver test.
 """
 
+import httpx
+import pytest
+
 from mcp_okn import void_schema as vs
 
 SG = "https://purl.org/okn/frink/kg/spoke-genelab/schema/"
@@ -499,9 +502,101 @@ async def test_introspection_splits_a_failing_property_by_subject_class(monkeypa
             if "VALUES ?cls" not in q or f"<{b}>" in q:
                 raise vs.SparqlError("Tried to allocate 5.9 GB")
             return {"rows": [{"cls": a, "target": b, "n": 1}]}
+        if "DATATYPE(?o)" in q:
+            return {"rows": []}
+        if "?s a ?cls" in q:  # the total split: both subject classes carry DE
+            return {"rows": [{"cls": a, "n": 1}, {"cls": b, "n": 1}]}
         return {"rows": []}
 
     monkeypatch.setattr(vs, "run_sparql", fake)
     _c, partitions, _d, notes = await vs.introspect_partitions("spatialkg", log=print)
-    assert partitions == [{"cls": a, "target": b, "n": 1, "prop": DE, "kind": "class"}]
+    assert [p for p in partitions if p["kind"] == "class"] == [
+        {"cls": a, "target": b, "n": 1, "prop": DE, "kind": "class"}
+    ]
     assert len(notes) == 1 and f"class split of {DE} on {b}" in notes[0]
+
+
+async def test_introspection_retries_only_classes_carrying_the_property(monkeypatch):
+    """medical-device-kg 2026-11-04: a failed split was retried over all 44 subject
+    classes; only those the total split found can contribute a row."""
+    a, b = OBI, BL + "Gene"
+    monkeypatch.setattr(vs, "INTROSPECT_RETRY_S", 0)
+    per_class = []
+
+    async def fake(q, client=None, **kw):
+        if "(COUNT(?s) AS ?entities)" in q:
+            return {"rows": [{"cls": a, "entities": 1}, {"cls": b, "entities": 1}]}
+        if "?s ?prop ?o" in q:
+            return {"rows": [{"prop": DE, "n": 5}]}
+        if "?o a ?target" in q:
+            if "VALUES ?cls" not in q:
+                raise vs.SparqlError("Operation timed out")
+            per_class.append(q)
+            return {"rows": [{"cls": a, "target": b, "n": 5}]}
+        if "DATATYPE(?o)" in q:
+            return {"rows": []}
+        return {"rows": [{"cls": a, "n": 5}]}  # total: only `a` carries DE
+
+    monkeypatch.setattr(vs, "run_sparql", fake)
+    _c, _p, _d, notes = await vs.introspect_partitions("medical-device-kg", log=print)
+    assert len(per_class) == 1 and f"<{a}>" in per_class[0]
+    assert notes == []
+
+
+async def test_introspection_samples_a_datatype_it_cannot_count(monkeypatch):
+    """A literal property too big for an exact datatype split (MAUDE narratives)
+    takes its datatype from a sample and its count from the class total; a sample
+    that mixes IRIs and literals is left out rather than guessed."""
+    a, b = OBI, BL + "Gene"
+    xs = "http://www.w3.org/2001/XMLSchema#string"
+    monkeypatch.setattr(vs, "INTROSPECT_RETRY_S", 0)
+
+    async def fake(q, client=None, **kw):
+        if "(COUNT(?s) AS ?entities)" in q:
+            return {"rows": [{"cls": a, "entities": 1}, {"cls": b, "entities": 1}]}
+        if "?s ?prop ?o" in q:
+            return {"rows": [{"prop": DE, "n": 9}]}
+        if f"LIMIT {vs.DATATYPE_SAMPLE_LIMIT}" in q:
+            if f"<{a}>" in q:
+                return {"rows": [{"target": xs, "n": 10000}]}
+            return {"rows": [{"target": xs, "n": 9000}, {"target": "node", "n": 1000}]}
+        if "DATATYPE(?o)" in q:
+            raise vs.SparqlError("Operation timed out")
+        if "?o a ?target" in q:
+            return {"rows": []}
+        return {"rows": [{"cls": a, "n": 7}, {"cls": b, "n": 2}]}
+
+    monkeypatch.setattr(vs, "run_sparql", fake)
+    _c, partitions, _d, notes = await vs.introspect_partitions(
+        "medical-device-kg", log=print
+    )
+    assert [p for p in partitions if p["kind"] == "datatype"] == [
+        {"cls": a, "target": xs, "n": 7, "prop": DE, "kind": "datatype"}
+    ]
+    assert len(notes) == 2
+    assert "sample" in notes[0] and f"on {a}" in notes[0]
+    assert "left out" in notes[1] and f"on {b}" in notes[1]
+
+
+async def test_builder_query_retries_a_dropped_connection(monkeypatch):
+    """A bare httpx transport error escaped every except clause and aborted a ~4 h
+    build; the builder retries it, then raises it as a SparqlError."""
+
+    monkeypatch.setattr(vs, "INTROSPECT_RETRY_S", 0)
+    calls = []
+
+    async def flaky(q, **kw):
+        calls.append(q)
+        if len(calls) < 2:
+            raise httpx.ReadError("")
+        return {"rows": [{"n": 1}]}
+
+    monkeypatch.setattr(vs, "run_sparql", flaky)
+    assert (await vs._run("Q"))["rows"] == [{"n": 1}] and len(calls) == 2
+
+    async def dead(q, **kw):
+        raise httpx.RemoteProtocolError("")
+
+    monkeypatch.setattr(vs, "run_sparql", dead)
+    with pytest.raises(vs.SparqlError, match="connection failed 3 times"):
+        await vs._run("Q")

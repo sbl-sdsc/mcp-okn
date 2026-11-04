@@ -162,6 +162,7 @@
     "medical-device-kg": [
       "adverse_event",
       "medical_device",
+      "phenotype",
       "facility",
       "geospatial",
       "industry"

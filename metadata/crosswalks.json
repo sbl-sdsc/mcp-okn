@@ -5108,6 +5108,153 @@
       "verified_on": "2026-11-03"
     },
     {
+      "id": "MD1-s2computed-medicaldevice-spatialkg",
+      "join_type": "computed",
+      "left_kg": "medical-device-kg",
+      "left_predicate": "geo:lat + geo:long (http://www.w3.org/2003/01/geo/wgs84_pos#) on geocoded mdo:RegistrationListingRecord establishments (9,246) and mdo:MammographyFacility sites (7,819); US Census Geocoder (mdo:geocodingSource, mdo:geocodingConfidence); also geo:hasGeometry/geo:asWKT POINT. mdo: = https://bmedesign.org/medical-device-kg/ns/",
+      "left_role": "point",
+      "right_kg": "spatialkg",
+      "right_predicate": "rdf:type kwg-ont:S2Cell_Level13 ; kwg-ont:sfWithin AdministrativeRegion_2/_1 (kwg-ont:sfOverlaps for a cell that crosses a county line)",
+      "right_role": "subject",
+      "shared_key": "S2_L13",
+      "key_namespace": "http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.{Google S2 CellId.id() at level 13, computed from lat/long}",
+      "bridge_kg": null,
+      "executor": "mcp-okn s2_bridge: spatial_bridge tool or point_to_s2_iri (compute-and-inject; key derived at query time, not stored in OKN)",
+      "iri_normalization": "medical-device-kg stores no county, FIPS or S2 cell, and OKN/QLever has no point-in-polygon, so the S2 cell is computed: take each site's geo:lat/geo:long, compute the standard Google S2 Level-13 CellId (mcp_okn s2_bridge point_to_s2_iri), format the spatialkg IRI http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.{id}, inject the (site, cell) pairs as a VALUES block, then join spatialkg ?cell a kwg-ont:S2Cell_Level13 ; kwg-ont:sfWithin ?county (restrict ?county to the .../resource/ KWG namespace; spatialkg also mirrors regions as datacommons geoId nodes). COUNTY-LINE CELLS: a cell that crosses a county boundary is sfWithin only the STATE and is linked to each county it touches by kwg-ont:sfOverlaps - in Minnesota 15 of 341 geocoded establishments (4.4%) sit on such cells, each overlapping exactly two counties, so an sfWithin-only county roll-up silently drops them (GEO43-Q1). Use PREFIXes for the injected IRIs to keep a logged query small.",
+      "verified_count": 16977,
+      "verified_count_secondary": {
+        "medicaldevice_sites_with_coords": 17065,
+        "establishments_placed": "9,239 of 9,246",
+        "mammography_facilities_placed": "7,738 of 7,819",
+        "unplaced": "88: Puerto Rico 57 (50 mammography + 7 establishments), Alaska 29, Guam 2 - none of their computed cells exists in spatialkg; all 36 Hawaii sites are placed",
+        "distinct_cells_placed": 13546
+      },
+      "verified_count_note": "16,977 of medical-device-kg's 17,065 geocoded sites (99.5%) land on a spatialkg S2 Level-13 cell, measured 2026-11-04 by computing every point's cell and checking it against spatialkg in 1,500-cell batches (13,546 of 13,623 distinct cells present). The 88 misses are re-queried in GEO43-Q2: every Puerto Rico, Alaska and Guam site, none of Hawaii's.",
+      "hinge_note": "COMPUTED crosswalk (no stored shared key), the second after SU2 (sudokn). Geocoding arrived with medical-device-kg's 2026-11 redeploy. Reaches county and cell grain where the ZIP crosswalks (J7-J11) reach ZIP; once placed, FDA establishments and mammography facilities co-locate with any other S2 leaf (fiokg facilities, sawgraph samples, ufokn features, computed sudokn sites) in shared cells. Scope by state or type to keep the injected VALUES set small (s2_bridge MAX_POINTS guard).",
+      "example_question": "In which Minnesota counties do the state's FDA-registered medical-device establishments sit, placed on computed S2 Level-13 cells and rolled up through spatialkg - and what happens to an establishment whose cell crosses a county line?",
+      "example_questions": [
+        "In which Minnesota counties do the state's FDA-registered medical-device establishments sit, placed on computed S2 Level-13 cells and rolled up through spatialkg - and what happens to an establishment whose cell crosses a county line?",
+        "How many geocoded medical-device-kg sites (establishments and mammography facilities) resolve to a spatialkg S2 Level-13 cell, and which fall outside the grid?"
+      ],
+      "verified_on": "2026-11-04",
+      "domain": "Geospatial"
+    },
+    {
+      "id": "MD2-hp-label-medicaldevice-oard",
+      "left_kg": "medical-device-kg",
+      "left_predicate": "mdo:patientProblem (plain-string FDA patient-problem term) on mdo:MAUDEReport (31,048,578 term mentions, 1,133 distinct terms). mdo: = https://bmedesign.org/medical-device-kg/ns/",
+      "left_role": "object-label",
+      "right_kg": "oard-kg",
+      "right_predicate": "biolink:subject / biolink:object (the HP term of an OARD EHR co-occurrence association) - as A1 / KB16",
+      "right_role": "object",
+      "bridge_kg": "ubergraph",
+      "shared_key": "HP (MAUDE patient-problem label)",
+      "key_namespace": "medical-device-kg mdo:patientProblem string <-> ubergraph HP rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/HP_{n} (oard-kg); exact-name match",
+      "iri_normalization": "medical-device-kg's MAUDE patient problems carry no ontology id: mdo:patientProblem is a plain string (an FDA patient-problem term, e.g. 'Hyperglycemia', 'Capsular Contracture'). Drive from the bounded set of DISTINCT terms on mdo:MAUDEReport nodes (1,133 terms over 31,048,578 mentions), build three case forms (as written, all lower-case, sentence case), and match each as a BOUND literal against ubergraph rdfs:label|oboInOwl:hasExactSynonym scoped to the HP_ prefix, excluding the HP roots (All, Phenotypic abnormality, Mode of inheritance). 322 terms map to 301 HP classes; several FDA wordings collapse onto one class (Hearing Impairment and Deafness -> Hearing impairment). Most matches are label-for-label; some come through an exact synonym (Numbness -> Hypoesthesia, Joint Laxity -> Joint hypermobility, Skin Infection -> Cellulitis). Do NOT drive from the 31M report triples inside the label join; take the DISTINCT terms first (sub-select), then join.",
+      "verified_count": 314,
+      "verified_count_note": "314 of the 322 HP-mapped MAUDE patient-problem terms reach an OARD association (97.5%); measured 2026-11-04. The 8 misses are mostly high-numbered HP classes (Abnormal vaginal discharge HP_0034269, Pelvic pain, Hypopyon, Joint contracture, Bronchial hemorrhage, Mediastinal shift, Urolithiasis, Loose body in joint). Device reporting and EHR breadth diverge: Hyperglycemia (1,150,740 reports) reaches 399 OARD diseases, Osteolysis (73,474 reports, an implant complication) only 9, Fatigue (46,128) 1,045.",
+      "caveat": "LABEL BRIDGE, exact-name lower bound. The 811 unmapped terms are mostly NOT phenotypes - MAUDE's null and administrative codes ('No Clinical Signs, Symptoms or Conditions' 9,259,645 mentions, 'No Consequences Or Impact To Patient', 'Insufficient Information', 'No Code Available', 'Unknown') and device events ('Failure of Implant') - which the bridge correctly leaves out; but a few genuine phenotypes miss the exact-name rule ('Unspecified Infection', 'Fibrosis', 'Inflammation'). The join links a device-REPORTED phenotype to diseases that present the same phenotype; it is not a causal device->disease link. 'Pain' maps to the generic HP class.",
+      "example_question": "For the most-reported MAUDE patient problems that are HP phenotypes, how many device reports carry each, and how many OARD disease-to-phenotype associations involve that phenotype?",
+      "example_questions": [
+        "For the most-reported MAUDE patient problems that are HP phenotypes, how many device reports carry each, and how many OARD disease-to-phenotype associations involve that phenotype?",
+        "How many MAUDE patient-problem terms map to an HP class by name, how many reach OARD, and which mapped terms does OARD lack?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?raw) AS ?n) WHERE {\n  { SELECT DISTINCT ?raw ?t WHERE {\n  { SELECT DISTINCT ?raw ?name WHERE {\n      { SELECT DISTINCT ?raw WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?e a <https://bmedesign.org/medical-device-kg/ns/MAUDEReport> ; <https://bmedesign.org/medical-device-kg/ns/patientProblem> ?raw . } } }\n      VALUES ?k { 0 1 2 }  # as-is, all lower, sentence case\n      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2))))) AS ?name)\n  } }\n    GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label>|<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?name .\n      FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/HP_') && ?t != <http://purl.obolibrary.org/obo/HP_0000001> && ?t != <http://purl.obolibrary.org/obo/HP_0000118> && ?t != <http://purl.obolibrary.org/obo/HP_0000005>) }\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/oard-kg> { ?as <https://w3id.org/biolink/vocab/subject>|<https://w3id.org/biolink/vocab/object> ?t . }\n}",
+      "skeleton_verified": true,
+      "verified_on": "2026-11-04",
+      "domain": "Disease & phenotype"
+    },
+    {
+      "id": "MD3-hp-label-medicaldevice-rdkg",
+      "left_kg": "medical-device-kg",
+      "left_predicate": "mdo:patientProblem (plain-string FDA patient-problem term) on mdo:MAUDEReport; mdo:productCode on the same report scopes it to a device class. mdo: = https://bmedesign.org/medical-device-kg/ns/",
+      "left_role": "object-label",
+      "right_kg": "rdkg",
+      "right_predicate": "biolink:has_phenotype (rare disease -> HP) - as KB17",
+      "right_role": "object",
+      "bridge_kg": "ubergraph",
+      "shared_key": "HP (MAUDE patient-problem label)",
+      "key_namespace": "medical-device-kg mdo:patientProblem string <-> ubergraph HP rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/HP_{n} (rdkg); exact-name match",
+      "iri_normalization": "medical-device-kg's MAUDE patient problems carry no ontology id: mdo:patientProblem is a plain string (an FDA patient-problem term, e.g. 'Hyperglycemia', 'Capsular Contracture'). Drive from the bounded set of DISTINCT terms on mdo:MAUDEReport nodes (1,133 terms over 31,048,578 mentions), build three case forms (as written, all lower-case, sentence case), and match each as a BOUND literal against ubergraph rdfs:label|oboInOwl:hasExactSynonym scoped to the HP_ prefix, excluding the HP roots (All, Phenotypic abnormality, Mode of inheritance). 322 terms map to 301 HP classes; several FDA wordings collapse onto one class (Hearing Impairment and Deafness -> Hearing impairment). Most matches are label-for-label; some come through an exact synonym (Numbness -> Hypoesthesia, Joint Laxity -> Joint hypermobility, Skin Infection -> Cellulitis). Do NOT drive from the 31M report triples inside the label join; take the DISTINCT terms first (sub-select), then join.",
+      "verified_count": 315,
+      "verified_count_secondary": {
+        "rdkg_rare_diseases_reached": 8365
+      },
+      "verified_count_note": "315 of the 322 HP-mapped MAUDE patient-problem terms reach an RDKG rare disease (97.8%), touching 8,365 distinct RDKG diseases; measured 2026-11-04. The 7 misses: Abnormal vaginal discharge, Ageusia, Breast mass, Bronchial hemorrhage, Cardiac tamponade, Loose body in joint, Nasal dryness. Breadth is dominated by hub phenotypes (Seizure 2,503 diseases, Hypotonia 1,812). Scoped to insulin-delivery product codes (OZP, OZO, QFG, OYC, LZG) the reports are dominated by Hyperglycemia (868,769) and Hypoglycemia (190,946), and 11 RDKG rare diseases present both (Rabson-Mendenhall, Wolcott-Rallison, mitochondrial complex III deficiency ...).",
+      "caveat": "LABEL BRIDGE, exact-name lower bound. The 811 unmapped terms are mostly NOT phenotypes - MAUDE's null and administrative codes ('No Clinical Signs, Symptoms or Conditions' 9,259,645 mentions, 'No Consequences Or Impact To Patient', 'Insufficient Information', 'No Code Available', 'Unknown') and device events ('Failure of Implant') - which the bridge correctly leaves out; but a few genuine phenotypes miss the exact-name rule ('Unspecified Infection', 'Fibrosis', 'Inflammation'). The join links a device-REPORTED phenotype to diseases that present the same phenotype; it is not a causal device->disease link. 'Pain' maps to the generic HP class.",
+      "example_question": "For insulin-delivery devices (MAUDE product codes OZP, OZO, QFG, OYC, LZG), which patient problems that are HP phenotypes are reported most, how many RDKG rare diseases present each, and which rare diseases present both of the top two?",
+      "example_questions": [
+        "For insulin-delivery devices (MAUDE product codes OZP, OZO, QFG, OYC, LZG), which patient problems that are HP phenotypes are reported most, how many RDKG rare diseases present each, and which rare diseases present both of the top two?",
+        "How many HP-mapped MAUDE patient-problem terms reach an RDKG rare disease, how many rare diseases does the bridge touch, and which phenotypes connect to the most?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?raw) AS ?n) WHERE {\n  { SELECT DISTINCT ?raw ?t WHERE {\n  { SELECT DISTINCT ?raw ?name WHERE {\n      { SELECT DISTINCT ?raw WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?e a <https://bmedesign.org/medical-device-kg/ns/MAUDEReport> ; <https://bmedesign.org/medical-device-kg/ns/patientProblem> ?raw . } } }\n      VALUES ?k { 0 1 2 }  # as-is, all lower, sentence case\n      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2))))) AS ?name)\n  } }\n    GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label>|<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?name .\n      FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/HP_') && ?t != <http://purl.obolibrary.org/obo/HP_0000001> && ?t != <http://purl.obolibrary.org/obo/HP_0000118> && ?t != <http://purl.obolibrary.org/obo/HP_0000005>) }\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?d <https://w3id.org/biolink/vocab/has_phenotype> ?t . }\n}",
+      "skeleton_verified": true,
+      "verified_on": "2026-11-04",
+      "domain": "Disease & phenotype"
+    },
+    {
+      "id": "I8-companyname-medicaldevice-securechainkg",
+      "left_kg": "medical-device-kg",
+      "left_predicate": "mdo:name on an mdo:RegistrationListingRecord (the FDA-registered establishment's legal name; 25,709 records), with mdo:postalCode / mdo:country for ZIP confirmation. mdo: = https://bmedesign.org/medical-device-kg/ns/",
+      "left_role": "object",
+      "right_kg": "securechainkg",
+      "right_predicate": "rdfs:label on an iof:Manufacturer (https://spec.industrialontologies.org/ontology/core/Core/Manufacturer; 13,921 manufacturers described in SUDOKN vocabulary), ZIP via SUDOKN:organizationLocatedIn -> hasZIPcode -> hasIntegerValue",
+      "right_role": "object",
+      "shared_key": "company name",
+      "key_namespace": "medical-device-kg <https://bmedesign.org/medical-device-kg/ns/name> on an mdo:RegistrationListingRecord <-> securechainkg <http://www.w3.org/2000/01/rdf-schema#label> on an iof:Manufacturer. Both plain string literals - NOT an identifier join (medical-device-kg's company key is the FDA FEI number, which securechainkg does not carry).",
+      "bridge_kg": null,
+      "iri_normalization": "Same legal-suffix normalization as I3 on both sides: lowercase, replace every non-alphanumeric with a space, collapse spaces, trim, strip a trailing corporate suffix TWICE (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty). Intersect two DISTINCT sub-SELECTs on a shared ?nm. For ZIP confirmation carry each side's ZIP5 through its own sub-select (medical-device-kg: US records only, as J7; securechainkg: strip a trailing '.0' FIRST, as J12, then non-digits, left-pad 4 digits) and test agreement AFTER the name join with BIND(IF(?fdaZip = ?sccZip, ?nm, ?unbound) AS ?agree) - never join on two computed keys at once.",
+      "verified_count": 195,
+      "verified_count_secondary": {
+        "names_with_zip_on_both_sides": 131,
+        "names_with_matching_zip": 80,
+        "names_on_several_securechainkg_companies": 7,
+        "shared_names_also_matching_sudokn": 116
+      },
+      "verified_count_note": "195 normalized company names are shared between medical-device-kg's FDA establishment registrations and securechainkg's manufacturers (2026-11-04). 131 carry a US ZIP on both sides and 80 of those agree (61.1%) - a lower confirmation rate than I3's SUDOKN bridge. 7 names map to more than one securechainkg manufacturer (at most 4). 116 of the 195 also match a SUDOKN manufacturer name (securechainkg's manufacturer layer uses SUDOKN vocabulary), so 79 names are reachable through securechainkg only - and through it, its hardware/software supply-chain graph.",
+      "caveat": "NAME JOIN, NOT AN IDENTIFIER JOIN. For a claim about a specific company REQUIRE ZIP agreement (the 80) or verify the pair by hand; use the 195 only for cohort questions. Failure modes as I3: generic names shared by unrelated firms, and multi-site firms where a ZIP mismatch is the same company at another site. securechainkg's industry labels come in two cases ('aerospace' / 'Aerospace'); deduplicate case-insensitively.",
+      "example_question": "Which FDA-registered device establishments match a SecureChainKG manufacturer on both normalized name and ZIP, and what does SecureChainKG record about what they make and which industries they supply?",
+      "example_questions": [
+        "Which FDA-registered device establishments match a SecureChainKG manufacturer on both normalized name and ZIP, and what does SecureChainKG record about what they make and which industries they supply?",
+        "How many company names do medical-device-kg and SecureChainKG share, how many are ZIP-confirmed, and how many would the medical-device-kg x SUDOKN name bridge reach anyway?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?nm) AS ?n) WHERE {\n  { SELECT DISTINCT ?nm WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?s a <https://bmedesign.org/medical-device-kg/ns/RegistrationListingRecord> ; <https://bmedesign.org/medical-device-kg/ns/name> ?raw }\n      BIND(LCASE(STR(?raw)) AS ?m0)\n      BIND(REPLACE(?m0, \"[^a-z0-9 ]\", \" \") AS ?m1)\n      BIND(REPLACE(?m1, \" +\", \" \") AS ?m2)\n      BIND(REPLACE(?m2, \"^ | $\", \"\") AS ?m3)\n      BIND(REPLACE(?m3, \" (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$\", \"\") AS ?m4)\n      BIND(REPLACE(?m4, \" (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$\", \"\") AS ?m5)\n      BIND(REPLACE(?m5, \"^ | $\", \"\") AS ?nm) } }\n  { SELECT DISTINCT ?nm WHERE { GRAPH <https://purl.org/okn/frink/kg/securechainkg> { ?o a <https://spec.industrialontologies.org/ontology/core/Core/Manufacturer> ; <http://www.w3.org/2000/01/rdf-schema#label> ?l }\n      BIND(LCASE(STR(?l)) AS ?s0)\n      BIND(REPLACE(?s0, \"[^a-z0-9 ]\", \" \") AS ?s1)\n      BIND(REPLACE(?s1, \" +\", \" \") AS ?s2)\n      BIND(REPLACE(?s2, \"^ | $\", \"\") AS ?s3)\n      BIND(REPLACE(?s3, \" (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$\", \"\") AS ?s4)\n      BIND(REPLACE(?s4, \" (inc|incorporated|llc|llp|lp|corp|corporation|co|company|ltd|limited|plc|gmbh|sa|ag|nv|bv|pty)$\", \"\") AS ?s5)\n      BIND(REPLACE(?s5, \"^ | $\", \"\") AS ?nm) } }\n}",
+      "skeleton_verified": true,
+      "verified_on": "2026-11-04",
+      "domain": "Industry & supply chain"
+    },
+    {
+      "id": "MD4-countrycode-medicaldevice-climatemodelskg",
+      "left_kg": "medical-device-kg",
+      "left_predicate": "mdo:deviceManufacturerCountry and mdo:reporterCountry on mdo:MAUDEReport (FIPS 10-4 two-letter code literals); mdo:country on structured addresses (ISO 3166-1 alpha-2, or a spelled-out name). mdo: = https://bmedesign.org/medical-device-kg/ns/",
+      "left_role": "object",
+      "right_kg": "climatemodelskg",
+      "right_predicate": "cm:fips (FIPS 10-4) / cm:iso (ISO 3166-1 alpha-2) / cm:country (name) on cm:Country (252 GeoNames countries). cm: = https://climatepub4kg.github.io/ontology#",
+      "right_role": "object",
+      "shared_key": "country code (FIPS 10-4 / ISO 3166-1 alpha-2)",
+      "key_namespace": "plain two-letter literals on both sides; no IRI. MAUDE fields = FIPS 10-4 (GeoNames 'fips' column); address mdo:country = ISO 3166-1 alpha-2 (GeoNames 'iso' column)",
+      "bridge_kg": null,
+      "iri_normalization": "No rewrite: match the literals directly, but PICK THE COLUMN BY FIELD. MAUDE's mdo:deviceManufacturerCountry and mdo:reporterCountry are FIPS 10-4 - join cm:fips (99.85% / 99.18% of records) - NOT cm:iso, which still matches 88.7% / 90.2% of records but through codes that name a DIFFERENT country in ISO: SZ Switzerland->Eswatini (1,031,495 manufacturer reports), GM Germany->Gambia (536,487), CH China->Switzerland (326,812), CS Costa Rica->Serbia and Montenegro, SN Singapore->Senegal, IS Israel->Iceland, AS Australia->American Samoa, AU Austria->Australia. The address field mdo:country is the opposite: ISO alpha-2 (121 of 164 values) mixed with spelled-out names ('United States' 36,364) - join cm:iso, falling back to cm:country by name ('Netherlands' misses). Drive from the DISTINCT codes (a GROUP BY sub-select over the ~22M report triples runs in seconds), then join climatemodelskg.",
+      "verified_count": 145,
+      "verified_count_secondary": {
+        "manufacturer_country_codes": "145 of 157 match cm:fips (22,603,809 of 22,637,863 records); 116 match cm:iso",
+        "reporter_country_codes": "235 of 303 match cm:fips (23,651,988 of 23,846,605 records); 201 match cm:iso",
+        "address_country_values": "121 of 164 match cm:iso (202,862 of 243,317 records); spelled-out names match cm:country",
+        "iso_leakage_in_maude": "the 12 manufacturer codes with no FIPS reading are ISO codes (PR 17,948, DE 12,589, IE 3,001, IL 275, DK 120, CR 69, JP 33, ...) except UN (3)"
+      },
+      "verified_count_note": "145 = distinct climatemodelskg countries reached by MAUDE manufacturer-country codes on cm:fips (skeleton), measured 2026-11-04. Found in the post-redeploy schema review: the MAUDE fields arrived with medical-device-kg's 2026-11 release.",
+      "caveats": "Country grain only. A minority of MAUDE rows is ISO-coded (the no-FIPS codes are all ISO), so collision codes whose FIPS reading is implausible for a device maker are ambiguous: SE 105,319 reports (FIPS Seychelles / ISO Sweden), SG 14,036 (Senegal / Singapore), CN 2,195 (Comoros / China) - the code alone cannot settle them. climatemodelskg's hazards (AFFECTED_REGION / IMPACTED_REGION) are literature-mined free-text terms, so a hazard count measures how much climate literature discusses the hazard for the country, not physical exposure; near-synonyms ('flood', 'floods') count separately.",
+      "example_question": "Which countries manufacture the devices behind the most MAUDE adverse-event reports, and how much flood, drought, heat, fire and storm literature does climatemodelskg link to each of the top ten outside the US?",
+      "example_questions": [
+        "Which countries manufacture the devices behind the most MAUDE adverse-event reports, and how much flood, drought, heat, fire and storm literature does climatemodelskg link to each of the top ten outside the US?",
+        "Which code system do MAUDE's country fields use - FIPS 10-4 or ISO 3166-1 - and which codes name a different country in each, so that an ISO join silently relocates reports?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {\n  { SELECT DISTINCT ?code WHERE { GRAPH <https://purl.org/okn/frink/kg/medical-device-kg> { ?r <https://bmedesign.org/medical-device-kg/ns/deviceManufacturerCountry> ?code } } }\n  GRAPH <https://purl.org/okn/frink/kg/climatemodelskg> { ?c a <https://climatepub4kg.github.io/ontology#Country> ; <https://climatepub4kg.github.io/ontology#fips> ?code }\n}",
+      "skeleton_verified": true,
+      "verified_on": "2026-11-04",
+      "domain": "Geospatial"
+    },
+    {
       "id": "I7-company-iri-scales-sudokn",
       "left_kg": "scales",
       "left_predicate": "scales:CIKNumber on a http://asu.edu/semantics/SUDOKN/{domain}-company-instance node (the node IRI is the key)",

@@ -2247,558 +2247,558 @@ hydrologykg,https://www.opengis.net/def/schema/hy_features/hyf/downstreamFlowPat
 hydrologykg,https://www.opengis.net/def/schema/hy_features/hyf/downstreamFlowPathTC,Predicate,,downstream flow path (transitive closure),Links a flow path to all flow paths that are downstream (transitive property).
 hydrologykg,https://www.opengis.net/def/schema/hy_features/hyf/upstreamWaterBody,Predicate,,hyf:upstreamWaterBody,"Identifies another waterbody immediately upstream, allowing network navigation without knowing an inflow or outflow of the catchment realized by the waterbody"
 medical-device-kg,http://asu.edu/semantics/SUDOKN/NAICSClassifier,Class,,NAICS Classifier (SUDOKN),"The SUDOKN class for NAICS classifiers, asserted as a second type on the 13 NAICS Industry Classification nodes to align this graph with the SUDOKN manufacturing graph. Read the codes through md:naicsCode."
-medical-device-kg,http://medicaldevice.com/ontology/AccessGUDIDRecord,Class,,AccessGUDID / UDI Record,"A device record from AccessGUDID, the public view of the Global Unique Device Identification Database. A subclass of FDA Data Record. Declared in the schema but not populated in the current release."
-medical-device-kg,http://medicaldevice.com/ontology/AdverseEventReport,Class,,Adverse Event Report,"The parent class of device adverse-event report classes, including MAUDE and MedSun reports. A subclass of FDA Data Record. Declared in the schema but not populated in the current release."
-medical-device-kg,http://medicaldevice.com/ontology/Analyte,Class,,Analyte,A substance or constituent measured by a diagnostic test. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/ApprovalPathway,Class,,Approval Pathway,"The regulatory pathway by which a device reached the market, such as 510(k), PMA, De Novo, or HDE. Declared in the schema but not populated in the current release."
-medical-device-kg,http://medicaldevice.com/ontology/CFRTitle21Section,Class,,21 CFR Section,"A section of Title 21 of the Code of Federal Regulations, with its authority and full regulatory text."
-medical-device-kg,http://medicaldevice.com/ontology/CLIARecord,Class,,CLIA Laboratory Test System Record,A laboratory test system record under the Clinical Laboratory Improvement Amendments. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/CLIAWaivedRecord,Class,,CLIA Waived Analyte Record,A record of an analyte waived from routine CLIA oversight. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/CfrPart,Class,,21 CFR Part,A part of Title 21 of the Code of Federal Regulations that groups related sections.
-medical-device-kg,http://medicaldevice.com/ontology/CliaWaivedAnalyte,Class,,CLIA Waived Analyte,An analyte whose test is waived from routine regulatory oversight under the Clinical Laboratory Improvement Amendments.
-medical-device-kg,http://medicaldevice.com/ontology/Component,Class,,Component,A component of a medical device. A subclass of Device Component. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/Dataset,Class,,FDA Source Dataset,An FDA source dataset that records in the graph were extracted from. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/DeNovoRecord,Class,,De Novo Authorization,A De Novo classification request granting marketing authorization to a novel low-to-moderate risk device that has no valid predicate. A subclass of Regulatory Submission.
-medical-device-kg,http://medicaldevice.com/ontology/DesignChange,Class,,Design Change,A change to a device design; the parent class of PMA supplements. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/DeviceComponent,Class,,Device Component,The parent class for device components. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/DeviceFDARecord,Class,,Devices@FDA Catalog Record,"An entry in the Devices@FDA catalog, linking a marketed device to the submission and pathway under which it reached the market."
-medical-device-kg,http://medicaldevice.com/ontology/DeviceIdentifier,Class,,Device Identifier (UDI),The device identifier portion of a Unique Device Identification code. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/DeviceListing,Class,,FDA Device Listing,A device listing filed by a registered establishment. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/DeviceMaterial,Class,,Device Material,The parent class for device materials. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/DeviceProblem,Class,,Device Problem,"A device problem code reported on MDRs for a TPLC product code, with its report and event counts."
-medical-device-kg,http://medicaldevice.com/ontology/DevicesFDARecord,Class,,Devices@FDA Catalog Record (declared),The declared class for Devices@FDA catalog entries. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/FDADataRecord,Class,,FDA Data Record,The root class for records extracted from an FDA source dataset; all dataset-specific record classes are subclasses of it. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/Facility,Class,,Geocoded Facility,"An FDA-registered establishment whose registration address has been geocoded. A subclass of FDA Registration and Listing Record: each of the 9,120 facilities is also typed md:RegistrationListingRecord and geo:Feature, keeps all registration properties, and adds a point geometry, latitude and longitude, a normalized address, and the geocoder's source and confidence. Almost all are U.S. addresses; the other 16,012 registration records have no coordinates. Reach the NAICS industry of a facility through md:hasManufacturer and md:hasNAICSClassification (3,452 facilities have one)."
-medical-device-kg,http://medicaldevice.com/ontology/GMDNTerm,Class,,GMDN Term,A Global Medical Device Nomenclature term describing a generic device group. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/HDERecord,Class,,Humanitarian Device Exemption Record,The declared record class for Humanitarian Device Exemptions. A subclass of Regulatory Submission. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/HumanitarianDeviceExemption,Class,,Humanitarian Device Exemption,"A Humanitarian Device Exemption record, covering a device intended to treat or diagnose a condition affecting a small patient population."
-medical-device-kg,http://medicaldevice.com/ontology/IVDHomeUseTest,Class,,IVD Home-Use Test,An in vitro diagnostic test cleared or approved for home (over-the-counter) use.
-medical-device-kg,http://medicaldevice.com/ontology/IVDRecord,Class,,IVD Home-Use Test Record,The declared class for in vitro diagnostic home-use test records. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/K510Record,Class,,510(k) Submission,"A premarket notification submission under section 510(k), by which a device is cleared for market on the basis of substantial equivalence to a legally marketed predicate device. A subclass of Regulatory Submission."
-medical-device-kg,http://medicaldevice.com/ontology/MAUDEReport,Class,,MAUDE Adverse Event Report,"A Medical Device Report (MDR) from the FDA Manufacturer and User Facility Device Experience (MAUDE) system, describing a suspected device-associated death, serious injury, or malfunction. A subclass of Adverse Event Report."
-medical-device-kg,http://medicaldevice.com/ontology/MDRStatistic,Class,,MDR Statistic,A yearly count of medical device reports and events for a TPLC product code.
-medical-device-kg,http://medicaldevice.com/ontology/MammographyFacility,Class,,MQSA Certified Mammography Facility,A mammography facility certified under the Mammography Quality Standards Act. A subclass of FDA Data Record.
-medical-device-kg,http://medicaldevice.com/ontology/Manufacturer,Class,,Manufacturer,"A firm or establishment named on an FDA record, identified where possible by its FDA Establishment Identifier (FEI). The 10,432 manufacturers that carry a NAICS classification are also typed iof:Manufacturer."
-medical-device-kg,http://medicaldevice.com/ontology/Material,Class,,Material,A material a device is made from. A subclass of Device Material. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/MedSunReport,Class,,MedSun Safety Report,"A report from MedSun, the Medical Product Safety Network of sentinel reporting facilities. A subclass of Adverse Event Report. Declared in the schema but not populated in the current release."
-medical-device-kg,http://medicaldevice.com/ontology/MedicalDevice,Class,,Medical Device,"A medical device, the hub entity that FDA records about the same product are attached to."
-medical-device-kg,http://medicaldevice.com/ontology/NAICSClassification,Class,,NAICS Industry Classification,"A North American Industry Classification System (NAICS) industry, with its six-digit code in md:naicsCode, the NAICS version in md:naicsVersion, and the industry title in rdfs:label. The graph holds 13 NAICS 2022 industries (e.g., 339112 Surgical and Medical Instrument Manufacturing), assigned to manufacturers and FDA product codes by the knowledge graph's own crosswalk, not by FDA. The same nodes are also typed sud:NAICSClassifier."
-medical-device-kg,http://medicaldevice.com/ontology/PMAChangeMemo,Class,,PMA Supplement,"A supplement to an approved PMA covering a change to the device, its manufacturing, or its labeling. A subclass of Design Change."
-medical-device-kg,http://medicaldevice.com/ontology/PMARecord,Class,,PMA Submission,"A Premarket Approval application, the FDA scientific and regulatory review pathway required for Class III devices. A subclass of Regulatory Submission."
-medical-device-kg,http://medicaldevice.com/ontology/PatientOutcome,Class,,Patient Outcome,"A patient outcome code reported on MDRs for a TPLC product code, with its report and event counts."
-medical-device-kg,http://medicaldevice.com/ontology/Postmarket522Study,Class,,522 Postmarket Surveillance Study,"A postmarket surveillance study ordered under section 522 of the Federal Food, Drug, and Cosmetic Act. A subclass of FDA Data Record."
-medical-device-kg,http://medicaldevice.com/ontology/ProductClassificationRecord,Class,,FDA Product Classification Record,"The FDA classification record for a product code, giving its device class, regulation, review panel, and regulatory flags. A subclass of FDA Data Record. Its nodes (IRIs ending productcode/<code>) are separate from the FDA Product Code nodes (IRIs ending product-code/<code>); only 443 nodes carry both types, so join the two on the md:productCode literal. 1,589 of the 7,071 records carry a NAICS industry through md:hasNAICSClassification."
-medical-device-kg,http://medicaldevice.com/ontology/ProductCode,Class,,FDA Product Code,"A three-letter FDA product code identifying a device type; the key most FDA device datasets join on. Its nodes (IRIs ending product-code/<code>) are separate from the FDA Product Classification Record nodes (IRIs ending productcode/<code>); only 443 nodes carry both types, so join the two on the md:productCode literal."
-medical-device-kg,http://medicaldevice.com/ontology/ProductCodeNAICSMapping,Class,,Product Code to NAICS Mapping,"A crosswalk assertion that assigns a NAICS industry to an FDA product code, recording the method, source, confidence, review status, and justification of the assignment. The mappings are inferred by the knowledge graph's builders and are not supplied by FDA."
-medical-device-kg,http://medicaldevice.com/ontology/ProvenanceRecord,Class,,Provenance Record,An extraction audit record describing how and when data was harvested. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/Recall,Class,,Recall,"A recall event summarised on a TPLC product-code record, giving its class and date."
-medical-device-kg,http://medicaldevice.com/ontology/RecallRecord,Class,,Device Recall Record,"A device recall enforcement record from the openFDA recall dataset, with the recalling firm, reason, classification, and distribution. A subclass of FDA Data Record."
-medical-device-kg,http://medicaldevice.com/ontology/RecognizedConsensusStandard,Class,,Recognized Consensus Standard,A voluntary consensus standard recognized by FDA for use in device premarket submissions.
-medical-device-kg,http://medicaldevice.com/ontology/RecognizedStandard,Class,,FDA Recognized Consensus Standard,The declared class for FDA-recognized voluntary consensus standards. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/RegistrationListingRecord,Class,,FDA Registration and Listing Record,"An establishment registration and device listing record, giving the registered facility, its status, and its registration number. A subclass of FDA Data Record. The 9,120 records with a geocoded address are also typed md:Facility."
-medical-device-kg,http://medicaldevice.com/ontology/RegulationNumber,Class,,Regulation Number,A 21 CFR regulation number under which a device type is classified.
-medical-device-kg,http://medicaldevice.com/ontology/RegulatorySubmission,Class,,Regulatory Submission,"A premarket submission to FDA; the parent class of the 510(k), PMA, De Novo, and HDE record classes. A subclass of FDA Data Record. Declared in the schema but not populated in the current release."
-medical-device-kg,http://medicaldevice.com/ontology/SafetyReport,Class,,Safety Report,A device safety report; a parent class for adverse-event reporting sources. A subclass of Adverse Event Report. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/SafetySignal,Class,,Safety Signal,A derived safety signal identified from postmarket data. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/SoftwareFeature,Class,,Software Feature,A software feature or function of a device. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/SourceRecord,Class,,Source Record,The raw FDA record a graph entity was derived from. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/Specialty,Class,,CLIA Laboratory Specialty,A laboratory specialty or subspecialty recognized under CLIA. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/TPLCRecord,Class,,TPLC Device Record,"A Total Product Life Cycle record, aggregating device problems, patient outcomes, MDR trends, and recalls for one FDA product code. A subclass of FDA Data Record."
-medical-device-kg,http://medicaldevice.com/ontology/TestSystem,Class,,CLIA Test System,"A test system, assay, or instrument categorised under CLIA. Declared in the schema but not populated in the current release."
-medical-device-kg,http://medicaldevice.com/ontology/UDIIdentifier,Class,,UDI Identifier,"One entry from the AccessGUDID identifiers list; may be a primary DI, package DI, or unit-of-use DI. Declared in the schema but not populated in the current release."
-medical-device-kg,http://medicaldevice.com/ontology/XRayAssemblerRecord,Class,,FDA X-Ray Assembler Record,The declared class for FDA x-ray assembler reports. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/XrayAssemblerRecord,Class,,X-Ray Assembler Record,An FDA x-ray assembler report recording the installation of diagnostic x-ray equipment at a named site.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/AccessGUDIDRecord,Class,,AccessGUDID / UDI Record,"A device record from AccessGUDID, the public view of the Global Unique Device Identification Database. A subclass of FDA Data Record. Declared in the schema but not populated in the current release."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/AdverseEventReport,Class,,Adverse Event Report,"The parent class of device adverse-event report classes, including MAUDE and MedSun reports. A subclass of FDA Data Record. Declared in the schema but not populated in the current release."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/Analyte,Class,,Analyte,A substance or constituent measured by a diagnostic test. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/ApprovalPathway,Class,,Approval Pathway,"The regulatory pathway by which a device reached the market, such as 510(k), PMA, De Novo, or HDE. Declared in the schema but not populated in the current release."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/CFRTitle21Section,Class,,21 CFR Section,"A section of Title 21 of the Code of Federal Regulations, with its authority and full regulatory text."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/CLIARecord,Class,,CLIA Laboratory Test System Record,A laboratory test system record under the Clinical Laboratory Improvement Amendments. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/CLIAWaivedRecord,Class,,CLIA Waived Analyte Record,A record of an analyte waived from routine CLIA oversight. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/CfrPart,Class,,21 CFR Part,A part of Title 21 of the Code of Federal Regulations that groups related sections.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/CliaWaivedAnalyte,Class,,CLIA Waived Analyte,An analyte whose test is waived from routine regulatory oversight under the Clinical Laboratory Improvement Amendments.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/Component,Class,,Component,A component of a medical device. A subclass of Device Component. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/Dataset,Class,,FDA Source Dataset,An FDA source dataset that records in the graph were extracted from. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/DeNovoRecord,Class,,De Novo Authorization,A De Novo classification request granting marketing authorization to a novel low-to-moderate risk device that has no valid predicate. A subclass of Regulatory Submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/DesignChange,Class,,Design Change,A change to a device design; the parent class of PMA supplements. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/DeviceComponent,Class,,Device Component,The parent class for device components. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/DeviceFDARecord,Class,,Devices@FDA Catalog Record,"An entry in the Devices@FDA catalog, linking a marketed device to the submission and pathway under which it reached the market."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/DeviceIdentifier,Class,,Device Identifier (UDI),The device identifier portion of a Unique Device Identification code. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/DeviceListing,Class,,FDA Device Listing,A device listing filed by a registered establishment. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/DeviceMaterial,Class,,Device Material,The parent class for device materials. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/DeviceProblem,Class,,Device Problem,"A device problem code reported on MDRs for a TPLC product code, with its report and event counts."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/DevicesFDARecord,Class,,Devices@FDA Catalog Record (declared),The declared class for Devices@FDA catalog entries. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/FDADataRecord,Class,,FDA Data Record,The root class for records extracted from an FDA source dataset; all dataset-specific record classes are subclasses of it. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/Facility,Class,,Geocoded Facility,"An FDA-registered establishment whose registration address has been geocoded. A subclass of FDA Registration and Listing Record: each of the 9,120 facilities is also typed md:RegistrationListingRecord and geo:Feature, keeps all registration properties, and adds a point geometry, latitude and longitude, a normalized address, and the geocoder's source and confidence. Almost all are U.S. addresses; the other 16,012 registration records have no coordinates. Reach the NAICS industry of a facility through md:hasManufacturer and md:hasNAICSClassification (3,452 facilities have one)."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/GMDNTerm,Class,,GMDN Term,A Global Medical Device Nomenclature term describing a generic device group.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/HDERecord,Class,,Humanitarian Device Exemption Record,The declared record class for Humanitarian Device Exemptions. A subclass of Regulatory Submission. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/HumanitarianDeviceExemption,Class,,Humanitarian Device Exemption,"A Humanitarian Device Exemption record, covering a device intended to treat or diagnose a condition affecting a small patient population."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/IVDHomeUseTest,Class,,IVD Home-Use Test,An in vitro diagnostic test cleared or approved for home (over-the-counter) use.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/IVDRecord,Class,,IVD Home-Use Test Record,The declared class for in vitro diagnostic home-use test records. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/K510Record,Class,,510(k) Submission,"A premarket notification submission under section 510(k), by which a device is cleared for market on the basis of substantial equivalence to a legally marketed predicate device. A subclass of Regulatory Submission."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/MAUDEReport,Class,,MAUDE Adverse Event Report,"A Medical Device Report (MDR) from the FDA Manufacturer and User Facility Device Experience (MAUDE) system, describing a suspected device-associated death, serious injury, or malfunction. A subclass of Adverse Event Report."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/MDRStatistic,Class,,MDR Statistic,A yearly count of medical device reports and events for a TPLC product code.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/MammographyFacility,Class,,MQSA Certified Mammography Facility,A mammography facility certified under the Mammography Quality Standards Act. A subclass of FDA Data Record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/Manufacturer,Class,,Manufacturer,"A firm or establishment named on an FDA record, identified where possible by its FDA Establishment Identifier (FEI). The 10,432 manufacturers that carry a NAICS classification are also typed iof:Manufacturer."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/Material,Class,,Material,A material a device is made from. A subclass of Device Material. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/MedSunReport,Class,,MedSun Safety Report,"A report from MedSun, the Medical Product Safety Network of sentinel reporting facilities. A subclass of Adverse Event Report. Declared in the schema but not populated in the current release."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/MedicalDevice,Class,,Medical Device,"A medical device, the hub entity that FDA records about the same product are attached to."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/NAICSClassification,Class,,NAICS Industry Classification,"A North American Industry Classification System (NAICS) industry, with its six-digit code in md:naicsCode, the NAICS version in md:naicsVersion, and the industry title in rdfs:label. The graph holds 13 NAICS 2022 industries (e.g., 339112 Surgical and Medical Instrument Manufacturing), assigned to manufacturers and FDA product codes by the knowledge graph's own crosswalk, not by FDA. The same nodes are also typed sud:NAICSClassifier."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/PMAChangeMemo,Class,,PMA Supplement,"A supplement to an approved PMA covering a change to the device, its manufacturing, or its labeling. A subclass of Design Change."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/PMARecord,Class,,PMA Submission,"A Premarket Approval application, the FDA scientific and regulatory review pathway required for Class III devices. A subclass of Regulatory Submission."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/PatientOutcome,Class,,Patient Outcome,"A patient outcome code reported on MDRs for a TPLC product code, with its report and event counts."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/Postmarket522Study,Class,,522 Postmarket Surveillance Study,"A postmarket surveillance study ordered under section 522 of the Federal Food, Drug, and Cosmetic Act. A subclass of FDA Data Record."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/ProductClassificationRecord,Class,,FDA Product Classification Record,"The FDA classification record for a product code, giving its device class, regulation, review panel, and regulatory flags. A subclass of FDA Data Record. Its nodes (IRIs ending productcode/<code>) are separate from the FDA Product Code nodes (IRIs ending product-code/<code>); only 443 nodes carry both types, so join the two on the md:productCode literal. 1,589 of the 7,071 records carry a NAICS industry through md:hasNAICSClassification."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/ProductCode,Class,,FDA Product Code,"A three-letter FDA product code identifying a device type; the key most FDA device datasets join on. Its nodes (IRIs ending product-code/<code>) are separate from the FDA Product Classification Record nodes (IRIs ending productcode/<code>); only 443 nodes carry both types, so join the two on the md:productCode literal."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/ProductCodeNAICSMapping,Class,,Product Code to NAICS Mapping,"A crosswalk assertion that assigns a NAICS industry to an FDA product code, recording the method, source, confidence, review status, and justification of the assignment. The mappings are inferred by the knowledge graph's builders and are not supplied by FDA."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/ProvenanceRecord,Class,,Provenance Record,An extraction audit record describing how and when data was harvested. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/Recall,Class,,Recall,"A recall event summarised on a TPLC product-code record, giving its class and date."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/RecallRecord,Class,,Device Recall Record,"A device recall enforcement record from the openFDA recall dataset, with the recalling firm, reason, classification, and distribution. A subclass of FDA Data Record."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/RecognizedConsensusStandard,Class,,Recognized Consensus Standard,A voluntary consensus standard recognized by FDA for use in device premarket submissions.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/RecognizedStandard,Class,,FDA Recognized Consensus Standard,The declared class for FDA-recognized voluntary consensus standards. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/RegistrationListingRecord,Class,,FDA Registration and Listing Record,"An establishment registration and device listing record, giving the registered facility, its status, and its registration number. A subclass of FDA Data Record. The 9,120 records with a geocoded address are also typed md:Facility."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/RegulationNumber,Class,,Regulation Number,A 21 CFR regulation number under which a device type is classified.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/RegulatorySubmission,Class,,Regulatory Submission,"A premarket submission to FDA; the parent class of the 510(k), PMA, De Novo, and HDE record classes. A subclass of FDA Data Record. Declared in the schema but not populated in the current release."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/SafetyReport,Class,,Safety Report,A device safety report; a parent class for adverse-event reporting sources. A subclass of Adverse Event Report. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/SafetySignal,Class,,Safety Signal,A derived safety signal identified from postmarket data. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/SoftwareFeature,Class,,Software Feature,A software feature or function of a device. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/SourceRecord,Class,,Source Record,The raw FDA record a graph entity was derived from. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/Specialty,Class,,CLIA Laboratory Specialty,A laboratory specialty or subspecialty recognized under CLIA. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/TPLCRecord,Class,,TPLC Device Record,"A Total Product Life Cycle record, aggregating device problems, patient outcomes, MDR trends, and recalls for one FDA product code. A subclass of FDA Data Record."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/TestSystem,Class,,CLIA Test System,"A test system, assay, or instrument categorised under CLIA. Declared in the schema but not populated in the current release."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/UDIIdentifier,Class,,UDI Identifier,"One entry from the AccessGUDID identifiers list; may be a primary DI, package DI, or unit-of-use DI."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/XRayAssemblerRecord,Class,,FDA X-Ray Assembler Record,The declared class for FDA x-ray assembler reports. A subclass of FDA Data Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/XrayAssemblerRecord,Class,,X-Ray Assembler Record,An FDA x-ray assembler report recording the installation of diagnostic x-ray equipment at a named site.
 medical-device-kg,http://www.opengis.net/ont/geosparql#Feature,Class,,Feature,"A GeoSPARQL feature, a thing that can have a spatial location; here a second type on every geocoded facility (md:Facility)."
 medical-device-kg,http://www.opengis.net/ont/geosparql#Geometry,Class,,Geometry,"A coherent set of direct positions in space (GeoSPARQL); here the point geometry of a geocoded facility, read through geo:asWKT."
 medical-device-kg,http://www.w3.org/2000/01/rdf-schema#Class,Class,,Class,Class.
 medical-device-kg,https://spec.industrialontologies.org/ontology/core/Core/Manufacturer,Class,,Manufacturer (IOF),"The Industrial Ontologies Foundation (IOF) Core class for an organization that manufactures products; here a second type on the 10,432 md:Manufacturer nodes that carry a NAICS classification, aligning them with the SUDOKN manufacturing graph."
 medical-device-kg,http://asu.edu/semantics/SUDOKN/hasNAICSClassifier,Predicate,,has NAICS classifier (SUDOKN),"The SUDOKN property linking a manufacturer to a NAICS industry. It repeats the manufacturer links of md:hasNAICSClassification (the same 13,972 triples) in SUDOKN and IOF terms. The assignments are inferred by the knowledge graph's crosswalk and are not supplied by FDA."
-medical-device-kg,http://medicaldevice.com/ontology/accreditationBody,Predicate,,accreditation body,Accreditation body. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/address,Predicate,,address,Street address given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/address,Predicate,,address,Street address given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/address,Predicate,,address,Street address given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/adverseEventFlag,Predicate,,adverse event flag,Adverse event flag. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/advisoryCommittee,Predicate,,advisory committee,FDA advisory committee code for the device type.
-medical-device-kg,http://medicaldevice.com/ontology/advisoryCommittee,Predicate,,advisory committee,FDA advisory committee code for the device type.
-medical-device-kg,http://medicaldevice.com/ontology/advisoryCommittee,Predicate,,advisory committee,FDA advisory committee code for the device type.
-medical-device-kg,http://medicaldevice.com/ontology/advisoryCommittee,Predicate,,advisory committee,FDA advisory committee code for the device type.
-medical-device-kg,http://medicaldevice.com/ontology/advisoryCommitteeDescription,Predicate,,advisory committee description,FDA advisory committee that reviews the device type.
-medical-device-kg,http://medicaldevice.com/ontology/advisoryCommitteeDescription,Predicate,,advisory committee description,FDA advisory committee that reviews the device type.
-medical-device-kg,http://medicaldevice.com/ontology/affectsComponent,Predicate,,affects component,Affects component. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/affectsLabeling,Predicate,,affects labeling,Affects labeling. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/affectsMaterial,Predicate,,affects material,Affects material. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/affectsPackaging,Predicate,,affects packaging,Affects packaging. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/affectsSoftware,Predicate,,affects software,Affects software. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/affectsSterility,Predicate,,affects sterility,Affects sterility. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/analyteId,Predicate,,Analyte ID,Analyte ID. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/analyteName,Predicate,,Analyte Name,Name of the analyte measured by the waived test.
-medical-device-kg,http://medicaldevice.com/ontology/applicant,Predicate,,applicant,Name of the firm that submitted the application.
-medical-device-kg,http://medicaldevice.com/ontology/applicant,Predicate,,applicant,Name of the firm that submitted the application.
-medical-device-kg,http://medicaldevice.com/ontology/applicant,Predicate,,applicant,Name of the firm that submitted the application.
-medical-device-kg,http://medicaldevice.com/ontology/applicant,Predicate,,applicant,Name of the firm that submitted the application.
-medical-device-kg,http://medicaldevice.com/ontology/applicant,Predicate,,applicant,Name of the firm that submitted the application.
-medical-device-kg,http://medicaldevice.com/ontology/applicant,Predicate,,applicant,Name of the firm that submitted the application.
-medical-device-kg,http://medicaldevice.com/ontology/approvalDate,Predicate,,approval date,Approval date. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/ascaPilot,Predicate,,ASCA pilot program flag,ASCA pilot program flag. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/assemblerAddress,Predicate,,x-ray assembler address,X-ray assembler address. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/assemblerId,Predicate,,assembler ID,FDA identifier of the x-ray equipment assembler.
-medical-device-kg,http://medicaldevice.com/ontology/assemblerName,Predicate,,x-ray assembler name,X-ray assembler name. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/assignedNAICS,Predicate,,assigned NAICS,Links a product code to NAICS mapping to the NAICS industry it assigns.
-medical-device-kg,http://medicaldevice.com/ontology/authority,Predicate,,authority,Statutory authority under which the CFR part is issued.
-medical-device-kg,http://medicaldevice.com/ontology/authority,Predicate,,authority,Statutory authority under which the CFR part is issued.
-medical-device-kg,http://medicaldevice.com/ontology/belongsToDevice,Predicate,,belongs to device,Links a UDI Identifier to a AccessGUDID / UDI Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/brandName,Predicate,,brand name,Brand name. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/cId,Predicate,,FDA c-ID,FDA internal identifier used on the 522 study page.
-medical-device-kg,http://medicaldevice.com/ontology/catalogNumber,Predicate,,catalog number,Catalog number. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/centerClassificationDate,Predicate,,FDA center classification date,Date FDA classified the recall.
-medical-device-kg,http://medicaldevice.com/ontology/certificateNumber,Predicate,,MQSA certificate number,MQSA certificate number. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/changeDescription,Predicate,,change description,Change description. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/changeReason,Predicate,,change reason,Change reason. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/city,Predicate,,city,City given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/city,Predicate,,city,City given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/city,Predicate,,city,City given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/city,Predicate,,city,City given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/city,Predicate,,city,City given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/city,Predicate,,city,City given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/clearanceType,Predicate,,510(k) clearance type,"Type of 510(k) clearance, such as traditional, special, or abbreviated."
-medical-device-kg,http://medicaldevice.com/ontology/codeInfo,Predicate,,lot / model / serial code info,"Lot, model, or serial numbers identifying the recalled units."
-medical-device-kg,http://medicaldevice.com/ontology/commercialDistributionStatus,Predicate,,commercial distribution status,Commercial distribution status. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/companyName,Predicate,,company name,Company name. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/complexity,Predicate,,CLIA complexity level,CLIA complexity level. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/componentDescription,Predicate,,component description,Component description. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/country,Predicate,,country,Country given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/country,Predicate,,country,Country given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/dataSource,Predicate,,data source,Data source used by the 522 study.
-medical-device-kg,http://medicaldevice.com/ontology/dateCurrentPlanAccepted,Predicate,,date current plan accepted,Date FDA accepted the current 522 study plan.
-medical-device-kg,http://medicaldevice.com/ontology/dateEffective,Predicate,,date effective,Date effective. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/dateOfEvent,Predicate,,date of event,Date on which the reported adverse event occurred.
-medical-device-kg,http://medicaldevice.com/ontology/dateOrder,Predicate,,522 order date,522 order date. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/dateOriginalPlanAccepted,Predicate,,date original plan accepted,Date FDA accepted the original 522 study plan.
-medical-device-kg,http://medicaldevice.com/ontology/dateReceived,Predicate,,date received,Date on which FDA received the submission.
-medical-device-kg,http://medicaldevice.com/ontology/dateReceived,Predicate,,date received,Date on which FDA received the submission.
-medical-device-kg,http://medicaldevice.com/ontology/dateReceived,Predicate,,date received,Date on which FDA received the submission.
-medical-device-kg,http://medicaldevice.com/ontology/dateReceived,Predicate,,date received,Date on which FDA received the submission.
-medical-device-kg,http://medicaldevice.com/ontology/dateReceived,Predicate,,date received,Date on which FDA received the submission.
-medical-device-kg,http://medicaldevice.com/ontology/dateReceived,Predicate,,date received,Date on which FDA received the submission.
-medical-device-kg,http://medicaldevice.com/ontology/deNovoNumber,Predicate,,De Novo number,De Novo request number.
-medical-device-kg,http://medicaldevice.com/ontology/decisionCode,Predicate,,decision code,FDA decision code for the submission.
-medical-device-kg,http://medicaldevice.com/ontology/decisionCode,Predicate,,decision code,FDA decision code for the submission.
-medical-device-kg,http://medicaldevice.com/ontology/decisionCode,Predicate,,decision code,FDA decision code for the submission.
-medical-device-kg,http://medicaldevice.com/ontology/decisionCode,Predicate,,decision code,FDA decision code for the submission.
-medical-device-kg,http://medicaldevice.com/ontology/decisionDate,Predicate,,decision date,Date of the FDA decision on the submission.
-medical-device-kg,http://medicaldevice.com/ontology/decisionDate,Predicate,,decision date,Date of the FDA decision on the submission.
-medical-device-kg,http://medicaldevice.com/ontology/decisionDate,Predicate,,decision date,Date of the FDA decision on the submission.
-medical-device-kg,http://medicaldevice.com/ontology/decisionDate,Predicate,,decision date,Date of the FDA decision on the submission.
-medical-device-kg,http://medicaldevice.com/ontology/decisionDate,Predicate,,decision date,Date of the FDA decision on the submission.
-medical-device-kg,http://medicaldevice.com/ontology/decisionDate,Predicate,,decision date,Date of the FDA decision on the submission.
-medical-device-kg,http://medicaldevice.com/ontology/decisionDateRaw,Predicate,,decision date (raw string from source),Decision date (raw string from source). Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/decisionDescription,Predicate,,decision description,Description of the FDA decision on the submission.
-medical-device-kg,http://medicaldevice.com/ontology/decisionDescription,Predicate,,decision description,Description of the FDA decision on the submission.
-medical-device-kg,http://medicaldevice.com/ontology/definition,Predicate,,definition,The FDA definition of the device type identified by a product code.
-medical-device-kg,http://medicaldevice.com/ontology/definition,Predicate,,definition,The FDA definition of the device type identified by a product code.
-medical-device-kg,http://medicaldevice.com/ontology/definition,Predicate,,definition,The FDA definition of the device type identified by a product code.
-medical-device-kg,http://medicaldevice.com/ontology/designChangeSummary,Predicate,,design change summary,Design change summary. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/detailUrl,Predicate,,detail URL,URL of the FDA detail page for the 522 study.
-medical-device-kg,http://medicaldevice.com/ontology/deviceBrandName,Predicate,,device brand name,Device brand name. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/deviceClass,Predicate,,device class,"FDA device class: I, II, or III, in increasing order of regulatory control."
-medical-device-kg,http://medicaldevice.com/ontology/deviceClass,Predicate,,device class,"FDA device class: I, II, or III, in increasing order of regulatory control."
-medical-device-kg,http://medicaldevice.com/ontology/deviceClass,Predicate,,device class,"FDA device class: I, II, or III, in increasing order of regulatory control."
-medical-device-kg,http://medicaldevice.com/ontology/deviceClass,Predicate,,device class,"FDA device class: I, II, or III, in increasing order of regulatory control."
-medical-device-kg,http://medicaldevice.com/ontology/deviceClassType,Predicate,,device class type,Device class type. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/deviceDescription,Predicate,,device description,Device description. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/deviceName,Predicate,,device name,FDA device name for the record.
-medical-device-kg,http://medicaldevice.com/ontology/deviceName,Predicate,,device name,FDA device name for the record.
-medical-device-kg,http://medicaldevice.com/ontology/deviceName,Predicate,,device name,FDA device name for the record.
-medical-device-kg,http://medicaldevice.com/ontology/deviceName,Predicate,,device name,FDA device name for the record.
-medical-device-kg,http://medicaldevice.com/ontology/deviceName,Predicate,,device name,FDA device name for the record.
-medical-device-kg,http://medicaldevice.com/ontology/deviceName,Predicate,,device name,FDA device name for the record.
-medical-device-kg,http://medicaldevice.com/ontology/deviceName,Predicate,,device name,FDA device name for the record.
-medical-device-kg,http://medicaldevice.com/ontology/deviceOperator,Predicate,,device operator setting,Device operator setting. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/devicePublishDate,Predicate,,device publish date,Device publish date. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/distributionPattern,Predicate,,distribution pattern,Geographic distribution of the recalled product.
-medical-device-kg,http://medicaldevice.com/ontology/docketNumber,Predicate,,docket number,Federal Register docket number.
-medical-device-kg,http://medicaldevice.com/ontology/document,Predicate,,document,Reference to the FDA document describing the test.
-medical-device-kg,http://medicaldevice.com/ontology/documentNumber,Predicate,,document number (K / P / H / DEN),"FDA document number of the submission (K, P, H, or DEN prefix)."
-medical-device-kg,http://medicaldevice.com/ontology/effectiveDate,Predicate,,effective date,Date the record took effect.
-medical-device-kg,http://medicaldevice.com/ontology/effectiveDateRaw,Predicate,,effective date (raw string),Effective date (raw string). Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/equipmentType,Predicate,,equipment type,Type of diagnostic x-ray equipment installed.
-medical-device-kg,http://medicaldevice.com/ontology/establishmentName,Predicate,,establishment name,Name of the registered establishment.
-medical-device-kg,http://medicaldevice.com/ontology/establishmentType,Predicate,,establishment type,Establishment type. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/eventCount,Predicate,,event count,Number of adverse events carrying this code or year.
-medical-device-kg,http://medicaldevice.com/ontology/eventCount,Predicate,,event count,Number of adverse events carrying this code or year.
-medical-device-kg,http://medicaldevice.com/ontology/eventCount,Predicate,,event count,Number of adverse events carrying this code or year.
-medical-device-kg,http://medicaldevice.com/ontology/eventDate,Predicate,,event date,Event date. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/eventId,Predicate,,event ID,Event ID. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/eventNarrative,Predicate,,event narrative,Event narrative. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/eventType,Predicate,,event type,"Type of adverse event reported: death, injury, or malfunction."
-medical-device-kg,http://medicaldevice.com/ontology/expeditedReviewFlag,Predicate,,expedited review flag,Whether the submission received expedited review.
-medical-device-kg,http://medicaldevice.com/ontology/expeditedReviewFlag,Predicate,,expedited review flag,Whether the submission received expedited review.
-medical-device-kg,http://medicaldevice.com/ontology/extractedAt,Predicate,,timestamp when record was extracted,Timestamp at which the record was extracted into the graph. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/extractionVersion,Predicate,,kg-json extraction version tag,Version tag of the extraction pipeline that produced the record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/facilityName,Predicate,,facility name,Name of the certified mammography facility.
-medical-device-kg,http://medicaldevice.com/ontology/fedRegNoticeDate,Predicate,,Federal Register notice date,Date of the Federal Register notice.
-medical-device-kg,http://medicaldevice.com/ontology/feiNumber,Predicate,,FDA establishment identifier (FEI),FDA Establishment Identifier (FEI) of the firm.
-medical-device-kg,http://medicaldevice.com/ontology/feiNumber,Predicate,,FDA establishment identifier (FEI),FDA Establishment Identifier (FEI) of the firm.
-medical-device-kg,http://medicaldevice.com/ontology/feiNumber,Predicate,,FDA establishment identifier (FEI),FDA Establishment Identifier (FEI) of the firm.
-medical-device-kg,http://medicaldevice.com/ontology/fromDataset,Predicate,,sourced from dataset,Links a record to a FDA Source Dataset. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/genericDeviceName,Predicate,,generic device name,Generic device name. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/genericName,Predicate,,generic name,Generic (common) name of the device.
-medical-device-kg,http://medicaldevice.com/ontology/genericName,Predicate,,generic name,Generic (common) name of the device.
-medical-device-kg,http://medicaldevice.com/ontology/genericNameHDE,Predicate,,HDE generic device name,HDE generic device name. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/geocodingConfidence,Predicate,,geocoding confidence,Confidence score between 0 and 1 returned by the geocoder for the facility address; the values are 1.0 and 0.7.
-medical-device-kg,http://medicaldevice.com/ontology/geocodingSource,Predicate,,geocoding source,Geocoding provider that located the facility address. Every value in this release is census_batch.
-medical-device-kg,http://medicaldevice.com/ontology/gmdnTermCode,Predicate,,GMDN term code,GMDN term code. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/gmdnTermDefinition,Predicate,,GMDN term definition,GMDN term definition. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/gmdnTermName,Predicate,,GMDN term name,GMDN term name. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/gmpExemptFlag,Predicate,,GMP exempt flag (Y/N),Whether the device type is exempt from Good Manufacturing Practice requirements.
-medical-device-kg,http://medicaldevice.com/ontology/gmpExemptFlag,Predicate,,GMP exempt flag (Y/N),Whether the device type is exempt from Good Manufacturing Practice requirements.
-medical-device-kg,http://medicaldevice.com/ontology/has510kRecord,Predicate,,has 510(k) record,Links a Medical Device to a 510(k) Submission. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasAccessGUDIDRecord,Predicate,,has AccessGUDID record,Links a Medical Device to a AccessGUDID / UDI Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasAnalyte,Predicate,,has analyte,Links a record to a Analyte. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasApprovalPathway,Predicate,,has approval pathway,Links a record to a Approval Pathway. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasCLIARecord,Predicate,,has CLIA record,Links a record to a CLIA Laboratory Test System Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasClassificationRecord,Predicate,,has classification record,Links a FDA Product Code to a FDA Product Classification Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasComponent,Predicate,,has component,Links a record to a Component. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasDeNovoRecord,Predicate,,has De Novo record,Links a Medical Device to a De Novo Authorization. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasDesignChange,Predicate,,has design change,Links a Medical Device to a PMA Supplement. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasDeviceIdentifier,Predicate,,has device identifier,Links a record to a Device Identifier (UDI). Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasDeviceListing,Predicate,,has device listing,Links a FDA Registration and Listing Record to a FDA Device Listing. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasDeviceProblem,Predicate,,has device problem,Links a TPLC record to a device problem code reported against it.
-medical-device-kg,http://medicaldevice.com/ontology/hasFDARecord,Predicate,,has FDA record,Links a record to a FDA Data Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasGMDNTerm,Predicate,,has GMDN term,Links a record to a GMDN Term. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasHDERecord,Predicate,,has HDE record,Links a Medical Device to a Humanitarian Device Exemption Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasIdentifier,Predicate,,has identifier,Links a AccessGUDID / UDI Record to a UDI Identifier. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasImplantStatus,Predicate,,has implant status,Has implant status. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasMAUDEReport,Predicate,,has MAUDE report,Links a Medical Device to a MAUDE Adverse Event Report. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasMDRStatistic,Predicate,,has MDR statistic,Links a TPLC Device Record to a MDR Statistic. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasMRIStatus,Predicate,,has MRI status,Has MRI status. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasMammographyFacility,Predicate,,has mammography facility,Links a record to a MQSA Certified Mammography Facility. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
-medical-device-kg,http://medicaldevice.com/ontology/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
-medical-device-kg,http://medicaldevice.com/ontology/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
-medical-device-kg,http://medicaldevice.com/ontology/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
-medical-device-kg,http://medicaldevice.com/ontology/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
-medical-device-kg,http://medicaldevice.com/ontology/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
-medical-device-kg,http://medicaldevice.com/ontology/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
-medical-device-kg,http://medicaldevice.com/ontology/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
-medical-device-kg,http://medicaldevice.com/ontology/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
-medical-device-kg,http://medicaldevice.com/ontology/hasMaterial,Predicate,,has material,Links a record to a Material. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasMedSunReport,Predicate,,has MedSun report,Links a Medical Device to a MedSun Safety Report. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasNAICSClassification,Predicate,,has NAICS classification,"Links a manufacturer or an FDA product classification record to its NAICS industry. 10,432 of the 53,499 manufacturers carry between one and nine industries, and 1,589 classification records carry one. The links sit on the classification-record nodes (IRIs ending productcode/<code>) and on the 132 of them that are also typed FDA Product Code. md:hasProductCode mostly leads to the separate product-code/<code> nodes, which have no NAICS link (no 510(k) record reaches one that way), so join submissions to a NAICS industry on the md:productCode literal. The assignments are inferred by the knowledge graph's crosswalk and are not supplied by FDA."
-medical-device-kg,http://medicaldevice.com/ontology/hasNAICSClassification,Predicate,,has NAICS classification,"Links a manufacturer or an FDA product classification record to its NAICS industry. 10,432 of the 53,499 manufacturers carry between one and nine industries, and 1,589 classification records carry one. The links sit on the classification-record nodes (IRIs ending productcode/<code>) and on the 132 of them that are also typed FDA Product Code. md:hasProductCode mostly leads to the separate product-code/<code> nodes, which have no NAICS link (no 510(k) record reaches one that way), so join submissions to a NAICS industry on the md:productCode literal. The assignments are inferred by the knowledge graph's crosswalk and are not supplied by FDA."
-medical-device-kg,http://medicaldevice.com/ontology/hasNAICSClassification,Predicate,,has NAICS classification,"Links a manufacturer or an FDA product classification record to its NAICS industry. 10,432 of the 53,499 manufacturers carry between one and nine industries, and 1,589 classification records carry one. The links sit on the classification-record nodes (IRIs ending productcode/<code>) and on the 132 of them that are also typed FDA Product Code. md:hasProductCode mostly leads to the separate product-code/<code> nodes, which have no NAICS link (no 510(k) record reaches one that way), so join submissions to a NAICS industry on the md:productCode literal. The assignments are inferred by the knowledge graph's crosswalk and are not supplied by FDA."
-medical-device-kg,http://medicaldevice.com/ontology/hasNAICSMapping,Predicate,,has NAICS mapping,"Links an FDA product classification record to the crosswalk assertion that records how its NAICS industry was assigned. The links sit on the classification-record nodes (IRIs ending productcode/<code>) and on the 132 of them that are also typed FDA Product Code. md:hasProductCode mostly leads to the separate product-code/<code> nodes, which have no NAICS link (no 510(k) record reaches one that way), so join submissions to a NAICS industry on the md:productCode literal."
-medical-device-kg,http://medicaldevice.com/ontology/hasNAICSMapping,Predicate,,has NAICS mapping,"Links an FDA product classification record to the crosswalk assertion that records how its NAICS industry was assigned. The links sit on the classification-record nodes (IRIs ending productcode/<code>) and on the 132 of them that are also typed FDA Product Code. md:hasProductCode mostly leads to the separate product-code/<code> nodes, which have no NAICS link (no 510(k) record reaches one that way), so join submissions to a NAICS industry on the md:productCode literal."
-medical-device-kg,http://medicaldevice.com/ontology/hasOutcome,Predicate,,has outcome,Links a record to a Patient Outcome. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasPMADesignChange,Predicate,,has PMA design change,Links a Medical Device to a PMA Supplement. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasPMARecord,Predicate,,has PMA record,Links a Medical Device to a PMA Submission. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasPatientOutcome,Predicate,,has patient outcome,Links a TPLC record to a patient outcome code reported against it.
-medical-device-kg,http://medicaldevice.com/ontology/hasPostmarket522Study,Predicate,,has 522 postmarket study,Links a record to a 522 Postmarket Surveillance Study. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasPredicateDevice,Predicate,,has predicate device,Has predicate device. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasProblem,Predicate,,has problem,Links a record to a Device Problem. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasProductCode,Predicate,,has product code,Links a record to the FDA product code classifying the device.
-medical-device-kg,http://medicaldevice.com/ontology/hasProductCode,Predicate,,has product code,Links a record to the FDA product code classifying the device.
-medical-device-kg,http://medicaldevice.com/ontology/hasProductCode,Predicate,,has product code,Links a record to the FDA product code classifying the device.
-medical-device-kg,http://medicaldevice.com/ontology/hasProductCode,Predicate,,has product code,Links a record to the FDA product code classifying the device.
-medical-device-kg,http://medicaldevice.com/ontology/hasProductCode,Predicate,,has product code,Links a record to the FDA product code classifying the device.
-medical-device-kg,http://medicaldevice.com/ontology/hasProductCode,Predicate,,has product code,Links a record to the FDA product code classifying the device.
-medical-device-kg,http://medicaldevice.com/ontology/hasProvenance,Predicate,,has provenance record,Links a record to a Provenance Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasRecall,Predicate,,has recall,Links a TPLC record to a recall of the device type.
-medical-device-kg,http://medicaldevice.com/ontology/hasRecallRecord,Predicate,,has recall record,Links a Medical Device to a Device Recall Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasRecognizedStandard,Predicate,,has recognized standard,Links a record to a FDA Recognized Consensus Standard. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasRegistrationRecord,Predicate,,has registration record,Links a Manufacturer to a FDA Registration and Listing Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasRegulationNumber,Predicate,,has regulation number,Links a record to the 21 CFR regulation number the device type falls under.
-medical-device-kg,http://medicaldevice.com/ontology/hasRegulationNumber,Predicate,,has regulation number,Links a record to the 21 CFR regulation number the device type falls under.
-medical-device-kg,http://medicaldevice.com/ontology/hasSafetySignal,Predicate,,has safety signal,Links a record to a Safety Signal. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasSoftware,Predicate,,has software,Links a record to a Software Feature. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasSpecialty,Predicate,,has specialty,Links a CLIA Laboratory Test System Record to a CLIA Laboratory Specialty. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasSterilityStatus,Predicate,,has sterility status,Has sterility status. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasTPLCRecord,Predicate,,has TPLC record,Links a Medical Device to a TPLC Device Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasTestSystem,Predicate,,has test system,Links a CLIA Laboratory Test System Record to a CLIA Test System. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/hasYearlyTrend,Predicate,,has yearly trend,Links a TPLC record to its yearly MDR report and event counts.
-medical-device-kg,http://medicaldevice.com/ontology/hdeNumber,Predicate,,HDE number,HDE number assigned to the Humanitarian Device Exemption.
-medical-device-kg,http://medicaldevice.com/ontology/identifierId,Predicate,,identifier ID,"UDI identifier value â the DI, Package DI, or PI string (e.g. GTIN-14). Declared in the schema but not populated in the current release."
-medical-device-kg,http://medicaldevice.com/ontology/identifierStatus,Predicate,,identifier status,Device identifier status: Active / Inactive / Deprecated. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/identifierType,Predicate,,identifier type,UDI identifier type: Primary DI / Package DI / Unit of Use DI. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/implantFlag,Predicate,,implant flag (Y/N),Whether the device type is an implant.
-medical-device-kg,http://medicaldevice.com/ontology/implantFlag,Predicate,,implant flag (Y/N),Whether the device type is an implant.
-medical-device-kg,http://medicaldevice.com/ontology/inPart,Predicate,,in part,Links a 21 CFR section to the part that contains it.
-medical-device-kg,http://medicaldevice.com/ontology/initialFirmNotification,Predicate,,initial firm notification method,How the firm first notified its customers of the recall.
-medical-device-kg,http://medicaldevice.com/ontology/initialImporterFlag,Predicate,,initial importer flag (Y/N),Whether the establishment is an initial importer.
-medical-device-kg,http://medicaldevice.com/ontology/installed,Predicate,,installed,Date the x-ray equipment was installed.
-medical-device-kg,http://medicaldevice.com/ontology/installedDate,Predicate,,x-ray equipment installed date,X-ray equipment installed date. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/intendedUse,Predicate,,intended use,Intended use. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/involvesDevice,Predicate,,involves device,Links a MAUDE report to the device involved in the reported event.
-medical-device-kg,http://medicaldevice.com/ontology/isCombinationProduct,Predicate,,is combination product,Is combination product. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/isKit,Predicate,,is kit,Is kit. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/isSingleUse,Predicate,,is single use,Is single use. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/isSterile,Predicate,,is sterile,Is sterile. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/issuingAgency,Predicate,,issuing agency,UDI issuing agency: GS1 / HIBCC / ICCBBA / NDC. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/k510Number,Predicate,,510(k) number,510(k) number assigned to the premarket notification.
-medical-device-kg,http://medicaldevice.com/ontology/label,Predicate,,device label,A human-readable name for the resource.
-medical-device-kg,http://medicaldevice.com/ontology/labelingDescription,Predicate,,labeling description,Labeling description. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/lifeSustainSupportFlag,Predicate,,life sustain support flag (Y/N),Whether the device type is life-sustaining or life-supporting.
-medical-device-kg,http://medicaldevice.com/ontology/lifeSustainSupportFlag,Predicate,,life sustain support flag (Y/N),Whether the device type is life-sustaining or life-supporting.
-medical-device-kg,http://medicaldevice.com/ontology/linkedMedicalDevice,Predicate,,linked medical device,Links a record to a Medical Device. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/linkedProductCode,Predicate,,linked product code,Links a record to a FDA Product Code. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/listingNumber,Predicate,,FDA device listing number,FDA device listing number. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/lotBatchNumber,Predicate,,lot or batch number,Lot or batch number. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/lotNumber,Predicate,,lot number,Lot number. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/madeBy,Predicate,,made by,Links a record to a Manufacturer. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/manufacturer,Predicate,,manufacturer,Name of the manufacturer responsible for the study.
-medical-device-kg,http://medicaldevice.com/ontology/manufacturerName,Predicate,,manufacturer name,Name of the manufacturer as given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/manufacturerName,Predicate,,manufacturer name,Name of the manufacturer as given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/mappingConfidence,Predicate,,mapping confidence,"Confidence score between 0 and 1 for the NAICS mapping; the values are 0.65, 0.75, and 0.95."
-medical-device-kg,http://medicaldevice.com/ontology/mappingMethod,Predicate,,mapping method,"How the NAICS mapping was derived: definition_match, llm_assisted, manual_review, or unmapped. Every mapping in this release is definition_match."
-medical-device-kg,http://medicaldevice.com/ontology/mappingReason,Predicate,,mapping reason,"Human-readable evidence for the NAICS mapping, such as the keywords matched in the FDA device name, definition, or specialty text of the product code."
-medical-device-kg,http://medicaldevice.com/ontology/mappingReviewStatus,Predicate,,mapping review status,"Review status of the NAICS mapping, approved or manual_review. Every mapping in this release is approved."
-medical-device-kg,http://medicaldevice.com/ontology/mappingSource,Predicate,,mapping source,"Provenance label of the NAICS mapping. Every value is internal_crosswalk: the code was assigned by the knowledge graph's crosswalk, not by FDA."
-medical-device-kg,http://medicaldevice.com/ontology/materialDescription,Predicate,,material description,Material description. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/medicalSpecialty,Predicate,,medical specialty code,FDA medical specialty code for the device type.
-medical-device-kg,http://medicaldevice.com/ontology/medicalSpecialty,Predicate,,medical specialty code,FDA medical specialty code for the device type.
-medical-device-kg,http://medicaldevice.com/ontology/medicalSpecialtyDescription,Predicate,,medical specialty description,FDA medical specialty the device type is reviewed under.
-medical-device-kg,http://medicaldevice.com/ontology/medicalSpecialtyDescription,Predicate,,medical specialty description,FDA medical specialty the device type is reviewed under.
-medical-device-kg,http://medicaldevice.com/ontology/medicalSpecialtyDescription,Predicate,,medical specialty description,FDA medical specialty the device type is reviewed under.
-medical-device-kg,http://medicaldevice.com/ontology/modelNumber,Predicate,,model number,Model number. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/mriSafetyStatus,Predicate,,MRI safety status,MRI safety status. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/naicsCode,Predicate,,NAICS code,"Six-digit NAICS industry code as a string (e.g., 339112); the key for joining to NAICS codes in other graphs."
-medical-device-kg,http://medicaldevice.com/ontology/naicsVersion,Predicate,,NAICS version,Version of the NAICS taxonomy the code belongs to; 2022 for every node.
-medical-device-kg,http://medicaldevice.com/ontology/name,Predicate,,name,Name of the site at which the x-ray equipment was installed.
-medical-device-kg,http://medicaldevice.com/ontology/narrative,Predicate,,narrative,Free-text narrative supplied with the report. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/normalizedAddress,Predicate,,normalized address,"Single-line normalized form of the registration address that was sent to the geocoder (e.g., 555 N Point Ctr E, Alpharetta, GA 30022, US)."
-medical-device-kg,http://medicaldevice.com/ontology/orderNumber,Predicate,,522 order number,FDA 522 order number.
-medical-device-kg,http://medicaldevice.com/ontology/organization,Predicate,,standards organization,Standards organization. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/outcomeCode,Predicate,,outcome code,Outcome code. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/packageType,Predicate,,package type,"Package type description associated with this identifier (e.g. Box, Case). Declared in the schema but not populated in the current release."
-medical-device-kg,http://medicaldevice.com/ontology/packagingDescription,Predicate,,packaging description,Packaging description. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/partNumber,Predicate,,part number,Number of the 21 CFR part.
-medical-device-kg,http://medicaldevice.com/ontology/partNumber,Predicate,,part number,Number of the 21 CFR part.
-medical-device-kg,http://medicaldevice.com/ontology/partTitle,Predicate,,part title,Title of the 21 CFR part.
-medical-device-kg,http://medicaldevice.com/ontology/partTitle,Predicate,,part title,Title of the 21 CFR part.
-medical-device-kg,http://medicaldevice.com/ontology/pathway,Predicate,,regulatory pathway (510k / pma / hde / de_novo),"Regulatory pathway by which the device reached the market: 510k, pma, hde, or de_novo."
-medical-device-kg,http://medicaldevice.com/ontology/phone,Predicate,,phone number,Telephone number given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/phone,Predicate,,phone number,Telephone number given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/physicalState,Predicate,,physical state,Physical state. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/pmaNumber,Predicate,,PMA number,PMA number assigned to the premarket approval application.
-medical-device-kg,http://medicaldevice.com/ontology/pmaNumber,Predicate,,PMA number,PMA number assigned to the premarket approval application.
-medical-device-kg,http://medicaldevice.com/ontology/possiblySameDeviceAs,Predicate,,possibly same device as,Possibly same device as. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/postalCode,Predicate,,postal code,Postal code given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/postalCode,Predicate,,postal code,Postal code given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/postalCode,Predicate,,postal code,Postal code given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/predicateDevice,Predicate,,predicate device,Predicate device. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/primaryDI,Predicate,,primary device identifier (DI),Primary device identifier (DI). Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/problemCode,Predicate,,problem code,Problem code. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/problemCodes,Predicate,,problem codes,Device problem codes (semicolon-separated). Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/problemDescription,Predicate,,problem description,Text of the device problem code.
-medical-device-kg,http://medicaldevice.com/ontology/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
-medical-device-kg,http://medicaldevice.com/ontology/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
-medical-device-kg,http://medicaldevice.com/ontology/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
-medical-device-kg,http://medicaldevice.com/ontology/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
-medical-device-kg,http://medicaldevice.com/ontology/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
-medical-device-kg,http://medicaldevice.com/ontology/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
-medical-device-kg,http://medicaldevice.com/ontology/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
-medical-device-kg,http://medicaldevice.com/ontology/productDescription,Predicate,,product description,Description of the recalled product.
-medical-device-kg,http://medicaldevice.com/ontology/productProblemFlag,Predicate,,product problem flag,Product problem flag. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/productQuantity,Predicate,,product quantity involved in recall,Quantity of product covered by the recall.
-medical-device-kg,http://medicaldevice.com/ontology/proprietaryName,Predicate,,proprietary (brand) name,Proprietary (brand) name. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/publicDeviceRecordKey,Predicate,,public device record key,Public device record key. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/qualifier1,Predicate,,CLIA Qualifier 1,CLIA Qualifier 1. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/qualifier2,Predicate,,CLIA Qualifier 2,CLIA Qualifier 2. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/quantityPerUnitOfUse,Predicate,,quantity per unit of use,Quantity of base devices contained in this package unit. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/rawRecord,Predicate,,raw record,JSON literal of the complete raw FDA record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/reasonForRecall,Predicate,,reason for recall,Reason the product was recalled.
-medical-device-kg,http://medicaldevice.com/ontology/recallAction,Predicate,,corrective action taken,Corrective action taken. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/recallClass,Predicate,,recall class,"Recall class I, II, or III, indicating the severity of the hazard."
-medical-device-kg,http://medicaldevice.com/ontology/recallClassification,Predicate,,recall classification (Class I/II/III),"FDA recall classification: Class I, II, or III."
-medical-device-kg,http://medicaldevice.com/ontology/recallDate,Predicate,,recall date,Date of the recall.
-medical-device-kg,http://medicaldevice.com/ontology/recallEventId,Predicate,,recall event ID,FDA recall event identifier grouping the products in one recall.
-medical-device-kg,http://medicaldevice.com/ontology/recallInitiationDate,Predicate,,recall initiation date,Date the firm began the recall.
-medical-device-kg,http://medicaldevice.com/ontology/recallNumber,Predicate,,recall number,FDA recall number.
-medical-device-kg,http://medicaldevice.com/ontology/recallStatus,Predicate,,recall status,Current status of the recall.
-medical-device-kg,http://medicaldevice.com/ontology/recallingFirm,Predicate,,recalling firm name,Name of the firm conducting the recall.
-medical-device-kg,http://medicaldevice.com/ontology/recallingFirmAddress,Predicate,,recalling firm address,Address of the recalling firm.
-medical-device-kg,http://medicaldevice.com/ontology/recognitionNumber,Predicate,,FDA recognition number,FDA recognition number of the consensus standard.
-medical-device-kg,http://medicaldevice.com/ontology/recordStatus,Predicate,,record status,Status of the record in its source dataset. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/regExpiryDateYear,Predicate,,registration expiry year,Year in which the establishment registration expires.
-medical-device-kg,http://medicaldevice.com/ontology/registeredAt,Predicate,,registered at establishment,Links a FDA Device Listing to a FDA Registration and Listing Record. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/registrationAddress,Predicate,,registration address,Address of the registered establishment.
-medical-device-kg,http://medicaldevice.com/ontology/registrationNumber,Predicate,,FDA registration number,FDA establishment registration number.
-medical-device-kg,http://medicaldevice.com/ontology/registrationNumber,Predicate,,FDA registration number,FDA establishment registration number.
-medical-device-kg,http://medicaldevice.com/ontology/registrationStatus,Predicate,,registration status code,Status of the establishment registration.
-medical-device-kg,http://medicaldevice.com/ontology/regulationArea,Predicate,,regulation area,Regulation area. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/regulationDescription,Predicate,,regulation description,Description of the regulation the device type falls under.
-medical-device-kg,http://medicaldevice.com/ontology/regulationNumber,Predicate,,regulation number,21 CFR regulation number under which the device type is classified.
-medical-device-kg,http://medicaldevice.com/ontology/regulationNumber,Predicate,,regulation number,21 CFR regulation number under which the device type is classified.
-medical-device-kg,http://medicaldevice.com/ontology/regulationNumber,Predicate,,regulation number,21 CFR regulation number under which the device type is classified.
-medical-device-kg,http://medicaldevice.com/ontology/regulationNumber,Predicate,,regulation number,21 CFR regulation number under which the device type is classified.
-medical-device-kg,http://medicaldevice.com/ontology/regulationNumber,Predicate,,regulation number,21 CFR regulation number under which the device type is classified.
-medical-device-kg,http://medicaldevice.com/ontology/regulationNumber,Predicate,,regulation number,21 CFR regulation number under which the device type is classified.
-medical-device-kg,http://medicaldevice.com/ontology/relatedProductCode,Predicate,,related product code,Links a record to a FDA Product Code. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/relatedTPLC,Predicate,,related TPLC product code record,Links a record to the TPLC product-code record that aggregates its lifecycle data.
-medical-device-kg,http://medicaldevice.com/ontology/relatedTPLC,Predicate,,related TPLC product code record,Links a record to the TPLC product-code record that aggregates its lifecycle data.
-medical-device-kg,http://medicaldevice.com/ontology/relatedTPLC,Predicate,,related TPLC product code record,Links a record to the TPLC product-code record that aggregates its lifecycle data.
-medical-device-kg,http://medicaldevice.com/ontology/relatedTPLC,Predicate,,related TPLC product code record,Links a record to the TPLC product-code record that aggregates its lifecycle data.
-medical-device-kg,http://medicaldevice.com/ontology/relatedTPLC,Predicate,,related TPLC product code record,Links a record to the TPLC product-code record that aggregates its lifecycle data.
-medical-device-kg,http://medicaldevice.com/ontology/relatedTPLC,Predicate,,related TPLC product code record,Links a record to the TPLC product-code record that aggregates its lifecycle data.
-medical-device-kg,http://medicaldevice.com/ontology/remedialAction,Predicate,,remedial action taken,Remedial action taken. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/removalCorrectionNumber,Predicate,,removal / correction number (recall link),Removal / correction number (recall link). Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/reportCount,Predicate,,report count,Number of medical device reports carrying this code or year.
-medical-device-kg,http://medicaldevice.com/ontology/reportCount,Predicate,,report count,Number of medical device reports carrying this code or year.
-medical-device-kg,http://medicaldevice.com/ontology/reportCount,Predicate,,report count,Number of medical device reports carrying this code or year.
-medical-device-kg,http://medicaldevice.com/ontology/reportDate,Predicate,,report date,Date the record was reported.
-medical-device-kg,http://medicaldevice.com/ontology/reportKey,Predicate,,MDR report key,MDR report key. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/reportNumber,Predicate,,report number,Report number. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/reportToFDA,Predicate,,report to FDA flag,Report to FDA flag. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/reportedBy,Predicate,,reported by,Links a record to a Manufacturer. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/reporterOccupationCode,Predicate,,reporter occupation code,Reporter occupation code. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/reprocessedFlag,Predicate,,reprocessed and reused flag,Reprocessed and reused flag. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/requirementNumber,Predicate,,requirement number,FDA 522 requirement number.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
-medical-device-kg,http://medicaldevice.com/ontology/reviewAdvisoryCommittee,Predicate,,review advisory committee,Advisory committee that reviewed the submission.
-medical-device-kg,http://medicaldevice.com/ontology/reviewGranted,Predicate,,review granted,Whether the review was granted.
-medical-device-kg,http://medicaldevice.com/ontology/reviewPanel,Predicate,,review panel,FDA review panel for the device type.
-medical-device-kg,http://medicaldevice.com/ontology/reviewPanel,Predicate,,review panel,FDA review panel for the device type.
-medical-device-kg,http://medicaldevice.com/ontology/room,Predicate,,room,Room in which the x-ray equipment was installed.
-medical-device-kg,http://medicaldevice.com/ontology/roomIdentifier,Predicate,,x-ray room identifier,Identifier of the room the x-ray equipment was installed in. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/rootDocumentNumber,Predicate,,root document number,Root FDA document number the 522 order derives from.
-medical-device-kg,http://medicaldevice.com/ontology/sameProductCodeAs,Predicate,,same product code as,Same product code as. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/sampleSize,Predicate,,sample size,Planned sample size of the 522 study.
-medical-device-kg,http://medicaldevice.com/ontology/sectionNumber,Predicate,,section number,Number of the 21 CFR section.
-medical-device-kg,http://medicaldevice.com/ontology/sectionTitle,Predicate,,section title,Title of the 21 CFR section.
-medical-device-kg,http://medicaldevice.com/ontology/singleUseFlag,Predicate,,single use flag,Single use flag. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/softwareDescription,Predicate,,software description,Software description. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
-medical-device-kg,http://medicaldevice.com/ontology/sourceNote,Predicate,,source note,Free-text note about the source of the record.
-medical-device-kg,http://medicaldevice.com/ontology/sourceNote,Predicate,,source note,Free-text note about the source of the record.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceType,Predicate,,source type,Type of the source the record came from. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
-medical-device-kg,http://medicaldevice.com/ontology/specialtyId,Predicate,,CLIA Specialty ID,CLIA Specialty ID. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/specialtyName,Predicate,,CLIA Specialty Name,CLIA Specialty Name. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/standardDesignation,Predicate,,standard designation number,Standard designation number. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/state,Predicate,,state or province,State or province given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/state,Predicate,,state or province,State or province given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/state,Predicate,,state or province,State or province given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/state,Predicate,,state or province,State or province given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/state,Predicate,,state or province,State or province given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/state,Predicate,,state or province,State or province given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/statementOrSummary,Predicate,,510(k) statement or summary type,Whether the 510(k) was supported by a summary or a statement.
-medical-device-kg,http://medicaldevice.com/ontology/sterilityDescription,Predicate,,sterility description,Sterility description. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/studyDesign,Predicate,,study design,Design of the 522 postmarket surveillance study.
-medical-device-kg,http://medicaldevice.com/ontology/studyName,Predicate,,522 study name,Name of the 522 postmarket surveillance study.
-medical-device-kg,http://medicaldevice.com/ontology/studyObjectives,Predicate,,study objectives,Objectives of the 522 postmarket surveillance study.
-medical-device-kg,http://medicaldevice.com/ontology/studyStatus,Predicate,,522 study status,Status of the 522 postmarket surveillance study.
-medical-device-kg,http://medicaldevice.com/ontology/submissionNumber,Predicate,,submission number,Submission number. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/submissionType,Predicate,,submission type,Type of PMA submission.
-medical-device-kg,http://medicaldevice.com/ontology/submissionTypeId,Predicate,,submission type ID,FDA submission type identifier for the device type.
-medical-device-kg,http://medicaldevice.com/ontology/submissionTypeId,Predicate,,submission type ID,FDA submission type identifier for the device type.
-medical-device-kg,http://medicaldevice.com/ontology/summary,Predicate,,summary,Summary text supplied with the record.
-medical-device-kg,http://medicaldevice.com/ontology/summary,Predicate,,summary,Summary text supplied with the record.
-medical-device-kg,http://medicaldevice.com/ontology/summaryMalfunctionReporting,Predicate,,summary malfunction reporting (SMR) code,Summary malfunction reporting eligibility of the device type.
-medical-device-kg,http://medicaldevice.com/ontology/summaryMalfunctionReporting,Predicate,,summary malfunction reporting (SMR) code,Summary malfunction reporting eligibility of the device type.
-medical-device-kg,http://medicaldevice.com/ontology/summaryUrl,Predicate,,URL to summary / PDF document,URL of the summary or decision PDF for the submission.
-medical-device-kg,http://medicaldevice.com/ontology/supplementNumber,Predicate,,supplement number,Number of the PMA supplement.
-medical-device-kg,http://medicaldevice.com/ontology/supplementNumber,Predicate,,supplement number,Number of the PMA supplement.
-medical-device-kg,http://medicaldevice.com/ontology/supplementNumber,Predicate,,supplement number,Number of the PMA supplement.
-medical-device-kg,http://medicaldevice.com/ontology/supplementReason,Predicate,,PMA supplement reason,Reason given for the PMA supplement.
-medical-device-kg,http://medicaldevice.com/ontology/supplementReason,Predicate,,PMA supplement reason,Reason given for the PMA supplement.
-medical-device-kg,http://medicaldevice.com/ontology/supplementReason,Predicate,,PMA supplement reason,Reason given for the PMA supplement.
-medical-device-kg,http://medicaldevice.com/ontology/supplementType,Predicate,,supplement type,Type of the HDE supplement.
-medical-device-kg,http://medicaldevice.com/ontology/supplementsPMA,Predicate,,supplements PMA,Links a PMA supplement to the original PMA it modifies.
-medical-device-kg,http://medicaldevice.com/ontology/tId,Predicate,,FDA t-ID,FDA internal identifier used on the 522 study page.
-medical-device-kg,http://medicaldevice.com/ontology/targetArea,Predicate,,target area,Target area. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/technicalMethod,Predicate,,technical method,Technical method. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/technologicalCharacteristics,Predicate,,technological characteristics,Technological characteristics. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/terminationDate,Predicate,,recall termination date,Date FDA terminated the recall.
-medical-device-kg,http://medicaldevice.com/ontology/testName,Predicate,,IVD test name,Name of the in vitro diagnostic home-use test.
-medical-device-kg,http://medicaldevice.com/ontology/testSystemId,Predicate,,CLIA Test System ID,CLIA Test System ID. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/testSystemName,Predicate,,CLIA Test System Name,CLIA Test System Name. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/testType,Predicate,,IVD test type,Type of the in vitro diagnostic home-use test.
-medical-device-kg,http://medicaldevice.com/ontology/text,Predicate,,text,Full regulatory text of the CFR section.
-medical-device-kg,http://medicaldevice.com/ontology/thirdPartyFlag,Predicate,,third party review eligibility flag,Whether the device type is eligible for third-party review.
-medical-device-kg,http://medicaldevice.com/ontology/thirdPartyFlag,Predicate,,third party review eligibility flag,Whether the device type is eligible for third-party review.
-medical-device-kg,http://medicaldevice.com/ontology/thirdPartyReviewFlag,Predicate,,third party review flag,Whether the submission was reviewed by an accredited third party.
-medical-device-kg,http://medicaldevice.com/ontology/tradeName,Predicate,,trade name,Trade name under which the device is marketed.
-medical-device-kg,http://medicaldevice.com/ontology/tradeName,Predicate,,trade name,Trade name under which the device is marketed.
-medical-device-kg,http://medicaldevice.com/ontology/tradeName,Predicate,,trade name,Trade name under which the device is marketed.
-medical-device-kg,http://medicaldevice.com/ontology/unclassifiedReason,Predicate,,unclassified reason,Reason the device type has not been classified.
-medical-device-kg,http://medicaldevice.com/ontology/unclassifiedReason,Predicate,,unclassified reason,Reason the device type has not been classified.
-medical-device-kg,http://medicaldevice.com/ontology/unitOfUseId,Predicate,,unit-of-use ID,Unit-of-Use identifier string (UoU DI). Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/use1,Predicate,,use1,Primary clinical use of the installed x-ray equipment.
-medical-device-kg,http://medicaldevice.com/ontology/use2,Predicate,,use2,Additional clinical use of the installed x-ray equipment.
-medical-device-kg,http://medicaldevice.com/ontology/use3,Predicate,,use3,Additional clinical use of the installed x-ray equipment.
-medical-device-kg,http://medicaldevice.com/ontology/use4,Predicate,,use4,Additional clinical use of the installed x-ray equipment.
-medical-device-kg,http://medicaldevice.com/ontology/versionModelNumber,Predicate,,version or model number,Version or model number. Declared in the schema but not populated in the current release.
-medical-device-kg,http://medicaldevice.com/ontology/voluntaryMandated,Predicate,,voluntary or mandated,Whether the recall was voluntary or mandated by FDA.
-medical-device-kg,http://medicaldevice.com/ontology/year,Predicate,,year,Calendar year the MDR counts apply to.
-medical-device-kg,http://medicaldevice.com/ontology/zip,Predicate,,zip,ZIP code given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/zip,Predicate,,zip,ZIP code given on the record.
-medical-device-kg,http://medicaldevice.com/ontology/zipCode,Predicate,,ZIP / postal code,ZIP / postal code. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/accreditationBody,Predicate,,accreditation body,Accreditation body. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/address,Predicate,,address,Street address given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/address,Predicate,,address,Street address given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/address,Predicate,,address,Street address given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/adverseEventFlag,Predicate,,adverse event flag,Adverse event flag.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/advisoryCommittee,Predicate,,advisory committee,FDA advisory committee code for the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/advisoryCommittee,Predicate,,advisory committee,FDA advisory committee code for the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/advisoryCommittee,Predicate,,advisory committee,FDA advisory committee code for the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/advisoryCommittee,Predicate,,advisory committee,FDA advisory committee code for the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/advisoryCommitteeDescription,Predicate,,advisory committee description,FDA advisory committee that reviews the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/advisoryCommitteeDescription,Predicate,,advisory committee description,FDA advisory committee that reviews the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/affectsComponent,Predicate,,affects component,Affects component. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/affectsLabeling,Predicate,,affects labeling,Affects labeling. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/affectsMaterial,Predicate,,affects material,Affects material. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/affectsPackaging,Predicate,,affects packaging,Affects packaging. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/affectsSoftware,Predicate,,affects software,Affects software. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/affectsSterility,Predicate,,affects sterility,Affects sterility. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/analyteId,Predicate,,Analyte ID,Analyte ID.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/analyteName,Predicate,,Analyte Name,Name of the analyte measured by the waived test.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/applicant,Predicate,,applicant,Name of the firm that submitted the application.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/applicant,Predicate,,applicant,Name of the firm that submitted the application.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/applicant,Predicate,,applicant,Name of the firm that submitted the application.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/applicant,Predicate,,applicant,Name of the firm that submitted the application.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/applicant,Predicate,,applicant,Name of the firm that submitted the application.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/applicant,Predicate,,applicant,Name of the firm that submitted the application.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/approvalDate,Predicate,,approval date,Approval date.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/ascaPilot,Predicate,,ASCA pilot program flag,ASCA pilot program flag. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/assemblerAddress,Predicate,,x-ray assembler address,X-ray assembler address. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/assemblerId,Predicate,,assembler ID,FDA identifier of the x-ray equipment assembler.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/assemblerName,Predicate,,x-ray assembler name,X-ray assembler name. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/assignedNAICS,Predicate,,assigned NAICS,Links a product code to NAICS mapping to the NAICS industry it assigns.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/authority,Predicate,,authority,Statutory authority under which the CFR part is issued.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/authority,Predicate,,authority,Statutory authority under which the CFR part is issued.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/belongsToDevice,Predicate,,belongs to device,Links a UDI Identifier to a AccessGUDID / UDI Record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/brandName,Predicate,,brand name,Brand name.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/cId,Predicate,,FDA c-ID,FDA internal identifier used on the 522 study page.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/catalogNumber,Predicate,,catalog number,Catalog number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/centerClassificationDate,Predicate,,FDA center classification date,Date FDA classified the recall.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/certificateNumber,Predicate,,MQSA certificate number,MQSA certificate number. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/changeDescription,Predicate,,change description,Change description. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/changeReason,Predicate,,change reason,Change reason. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/city,Predicate,,city,City given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/city,Predicate,,city,City given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/city,Predicate,,city,City given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/city,Predicate,,city,City given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/city,Predicate,,city,City given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/city,Predicate,,city,City given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/clearanceType,Predicate,,510(k) clearance type,"Type of 510(k) clearance, such as traditional, special, or abbreviated."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/codeInfo,Predicate,,lot / model / serial code info,"Lot, model, or serial numbers identifying the recalled units."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/commercialDistributionStatus,Predicate,,commercial distribution status,Commercial distribution status.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/companyName,Predicate,,company name,Company name.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/complexity,Predicate,,CLIA complexity level,CLIA complexity level.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/componentDescription,Predicate,,component description,Component description. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/country,Predicate,,country,Country given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/country,Predicate,,country,Country given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dataSource,Predicate,,data source,Data source used by the 522 study.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateCurrentPlanAccepted,Predicate,,date current plan accepted,Date FDA accepted the current 522 study plan.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateEffective,Predicate,,date effective,Date effective.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateOfEvent,Predicate,,date of event,Date on which the reported adverse event occurred.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateOrder,Predicate,,522 order date,522 order date. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateOriginalPlanAccepted,Predicate,,date original plan accepted,Date FDA accepted the original 522 study plan.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateReceived,Predicate,,date received,Date on which FDA received the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateReceived,Predicate,,date received,Date on which FDA received the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateReceived,Predicate,,date received,Date on which FDA received the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateReceived,Predicate,,date received,Date on which FDA received the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateReceived,Predicate,,date received,Date on which FDA received the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/dateReceived,Predicate,,date received,Date on which FDA received the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deNovoNumber,Predicate,,De Novo number,De Novo request number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionCode,Predicate,,decision code,FDA decision code for the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionCode,Predicate,,decision code,FDA decision code for the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionCode,Predicate,,decision code,FDA decision code for the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionCode,Predicate,,decision code,FDA decision code for the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionDate,Predicate,,decision date,Date of the FDA decision on the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionDate,Predicate,,decision date,Date of the FDA decision on the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionDate,Predicate,,decision date,Date of the FDA decision on the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionDate,Predicate,,decision date,Date of the FDA decision on the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionDate,Predicate,,decision date,Date of the FDA decision on the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionDate,Predicate,,decision date,Date of the FDA decision on the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionDateRaw,Predicate,,decision date (raw string from source),Decision date (raw string from source). Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionDescription,Predicate,,decision description,Description of the FDA decision on the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/decisionDescription,Predicate,,decision description,Description of the FDA decision on the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/definition,Predicate,,definition,The FDA definition of the device type identified by a product code.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/definition,Predicate,,definition,The FDA definition of the device type identified by a product code.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/definition,Predicate,,definition,The FDA definition of the device type identified by a product code.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/designChangeSummary,Predicate,,design change summary,Design change summary. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/detailUrl,Predicate,,detail URL,URL of the FDA detail page for the 522 study.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceBrandName,Predicate,,device brand name,Device brand name. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceClass,Predicate,,device class,"FDA device class: I, II, or III, in increasing order of regulatory control."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceClass,Predicate,,device class,"FDA device class: I, II, or III, in increasing order of regulatory control."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceClass,Predicate,,device class,"FDA device class: I, II, or III, in increasing order of regulatory control."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceClass,Predicate,,device class,"FDA device class: I, II, or III, in increasing order of regulatory control."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceClassType,Predicate,,device class type,Device class type. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceDescription,Predicate,,device description,Device description.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceName,Predicate,,device name,FDA device name for the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceName,Predicate,,device name,FDA device name for the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceName,Predicate,,device name,FDA device name for the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceName,Predicate,,device name,FDA device name for the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceName,Predicate,,device name,FDA device name for the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceName,Predicate,,device name,FDA device name for the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceName,Predicate,,device name,FDA device name for the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/deviceOperator,Predicate,,device operator setting,Device operator setting.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/devicePublishDate,Predicate,,device publish date,Device publish date.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/distributionPattern,Predicate,,distribution pattern,Geographic distribution of the recalled product.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/docketNumber,Predicate,,docket number,Federal Register docket number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/document,Predicate,,document,Reference to the FDA document describing the test.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/documentNumber,Predicate,,document number (K / P / H / DEN),"FDA document number of the submission (K, P, H, or DEN prefix)."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/effectiveDate,Predicate,,effective date,Date the record took effect.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/effectiveDateRaw,Predicate,,effective date (raw string),Effective date (raw string). Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/equipmentType,Predicate,,equipment type,Type of diagnostic x-ray equipment installed.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/establishmentName,Predicate,,establishment name,Name of the registered establishment.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/establishmentType,Predicate,,establishment type,Establishment type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/eventCount,Predicate,,event count,Number of adverse events carrying this code or year.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/eventCount,Predicate,,event count,Number of adverse events carrying this code or year.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/eventCount,Predicate,,event count,Number of adverse events carrying this code or year.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/eventDate,Predicate,,event date,Event date. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/eventId,Predicate,,event ID,Event ID.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/eventNarrative,Predicate,,event narrative,Event narrative. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/eventType,Predicate,,event type,"Type of adverse event reported: death, injury, or malfunction."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/expeditedReviewFlag,Predicate,,expedited review flag,Whether the submission received expedited review.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/expeditedReviewFlag,Predicate,,expedited review flag,Whether the submission received expedited review.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/extractedAt,Predicate,,timestamp when record was extracted,Timestamp at which the record was extracted into the graph. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/extractionVersion,Predicate,,kg-json extraction version tag,Version tag of the extraction pipeline that produced the record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/facilityName,Predicate,,facility name,Name of the certified mammography facility.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/fedRegNoticeDate,Predicate,,Federal Register notice date,Date of the Federal Register notice.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/feiNumber,Predicate,,FDA establishment identifier (FEI),FDA Establishment Identifier (FEI) of the firm.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/feiNumber,Predicate,,FDA establishment identifier (FEI),FDA Establishment Identifier (FEI) of the firm.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/feiNumber,Predicate,,FDA establishment identifier (FEI),FDA Establishment Identifier (FEI) of the firm.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/fromDataset,Predicate,,sourced from dataset,Links a record to a FDA Source Dataset. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/genericDeviceName,Predicate,,generic device name,Generic device name. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/genericName,Predicate,,generic name,Generic (common) name of the device.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/genericName,Predicate,,generic name,Generic (common) name of the device.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/genericNameHDE,Predicate,,HDE generic device name,HDE generic device name. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/geocodingConfidence,Predicate,,geocoding confidence,Confidence score between 0 and 1 returned by the geocoder for the facility address; the values are 1.0 and 0.7.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/geocodingSource,Predicate,,geocoding source,Geocoding provider that located the facility address. Every value in this release is census_batch.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/gmdnTermCode,Predicate,,GMDN term code,GMDN term code.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/gmdnTermDefinition,Predicate,,GMDN term definition,GMDN term definition.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/gmdnTermName,Predicate,,GMDN term name,GMDN term name.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/gmpExemptFlag,Predicate,,GMP exempt flag (Y/N),Whether the device type is exempt from Good Manufacturing Practice requirements.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/gmpExemptFlag,Predicate,,GMP exempt flag (Y/N),Whether the device type is exempt from Good Manufacturing Practice requirements.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/has510kRecord,Predicate,,has 510(k) record,Links a Medical Device to a 510(k) Submission. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasAccessGUDIDRecord,Predicate,,has AccessGUDID record,Links a Medical Device to a AccessGUDID / UDI Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasAnalyte,Predicate,,has analyte,Links a record to a Analyte.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasApprovalPathway,Predicate,,has approval pathway,Links a record to a Approval Pathway. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasCLIARecord,Predicate,,has CLIA record,Links a record to a CLIA Laboratory Test System Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasClassificationRecord,Predicate,,has classification record,Links a FDA Product Code to a FDA Product Classification Record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasComponent,Predicate,,has component,Links a record to a Component. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasDeNovoRecord,Predicate,,has De Novo record,Links a Medical Device to a De Novo Authorization. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasDesignChange,Predicate,,has design change,Links a Medical Device to a PMA Supplement. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasDeviceIdentifier,Predicate,,has device identifier,Links a record to a Device Identifier (UDI). Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasDeviceListing,Predicate,,has device listing,Links a FDA Registration and Listing Record to a FDA Device Listing. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasDeviceProblem,Predicate,,has device problem,Links a TPLC record to a device problem code reported against it.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasFDARecord,Predicate,,has FDA record,Links a record to a FDA Data Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasGMDNTerm,Predicate,,has GMDN term,Links a record to a GMDN Term.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasHDERecord,Predicate,,has HDE record,Links a Medical Device to a Humanitarian Device Exemption Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasIdentifier,Predicate,,has identifier,Links a AccessGUDID / UDI Record to a UDI Identifier.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasImplantStatus,Predicate,,has implant status,Has implant status. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasMAUDEReport,Predicate,,has MAUDE report,Links a Medical Device to a MAUDE Adverse Event Report. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasMDRStatistic,Predicate,,has MDR statistic,Links a TPLC Device Record to a MDR Statistic.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasMRIStatus,Predicate,,has MRI status,Has MRI status. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasMammographyFacility,Predicate,,has mammography facility,Links a record to a MQSA Certified Mammography Facility. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasManufacturer,Predicate,,has manufacturer,Links a record to the manufacturer or firm responsible for it.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasMaterial,Predicate,,has material,Links a record to a Material. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasMedSunReport,Predicate,,has MedSun report,Links a Medical Device to a MedSun Safety Report. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasNAICSClassification,Predicate,,has NAICS classification,"Links a manufacturer or an FDA product classification record to its NAICS industry. 10,432 of the 53,499 manufacturers carry between one and nine industries, and 1,589 classification records carry one. The links sit on the classification-record nodes (IRIs ending productcode/<code>) and on the 132 of them that are also typed FDA Product Code. md:hasProductCode mostly leads to the separate product-code/<code> nodes, which have no NAICS link (no 510(k) record reaches one that way), so join submissions to a NAICS industry on the md:productCode literal. The assignments are inferred by the knowledge graph's crosswalk and are not supplied by FDA."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasNAICSClassification,Predicate,,has NAICS classification,"Links a manufacturer or an FDA product classification record to its NAICS industry. 10,432 of the 53,499 manufacturers carry between one and nine industries, and 1,589 classification records carry one. The links sit on the classification-record nodes (IRIs ending productcode/<code>) and on the 132 of them that are also typed FDA Product Code. md:hasProductCode mostly leads to the separate product-code/<code> nodes, which have no NAICS link (no 510(k) record reaches one that way), so join submissions to a NAICS industry on the md:productCode literal. The assignments are inferred by the knowledge graph's crosswalk and are not supplied by FDA."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasNAICSClassification,Predicate,,has NAICS classification,"Links a manufacturer or an FDA product classification record to its NAICS industry. 10,432 of the 53,499 manufacturers carry between one and nine industries, and 1,589 classification records carry one. The links sit on the classification-record nodes (IRIs ending productcode/<code>) and on the 132 of them that are also typed FDA Product Code. md:hasProductCode mostly leads to the separate product-code/<code> nodes, which have no NAICS link (no 510(k) record reaches one that way), so join submissions to a NAICS industry on the md:productCode literal. The assignments are inferred by the knowledge graph's crosswalk and are not supplied by FDA."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasNAICSMapping,Predicate,,has NAICS mapping,"Links an FDA product classification record to the crosswalk assertion that records how its NAICS industry was assigned. The links sit on the classification-record nodes (IRIs ending productcode/<code>) and on the 132 of them that are also typed FDA Product Code. md:hasProductCode mostly leads to the separate product-code/<code> nodes, which have no NAICS link (no 510(k) record reaches one that way), so join submissions to a NAICS industry on the md:productCode literal."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasNAICSMapping,Predicate,,has NAICS mapping,"Links an FDA product classification record to the crosswalk assertion that records how its NAICS industry was assigned. The links sit on the classification-record nodes (IRIs ending productcode/<code>) and on the 132 of them that are also typed FDA Product Code. md:hasProductCode mostly leads to the separate product-code/<code> nodes, which have no NAICS link (no 510(k) record reaches one that way), so join submissions to a NAICS industry on the md:productCode literal."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasOutcome,Predicate,,has outcome,Links a record to a Patient Outcome. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasPMADesignChange,Predicate,,has PMA design change,Links a Medical Device to a PMA Supplement. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasPMARecord,Predicate,,has PMA record,Links a Medical Device to a PMA Submission. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasPatientOutcome,Predicate,,has patient outcome,Links a TPLC record to a patient outcome code reported against it.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasPostmarket522Study,Predicate,,has 522 postmarket study,Links a record to a 522 Postmarket Surveillance Study. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasPredicateDevice,Predicate,,has predicate device,Has predicate device. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasProblem,Predicate,,has problem,Links a record to a Device Problem. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasProductCode,Predicate,,has product code,Links a record to the FDA product code classifying the device.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasProductCode,Predicate,,has product code,Links a record to the FDA product code classifying the device.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasProductCode,Predicate,,has product code,Links a record to the FDA product code classifying the device.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasProductCode,Predicate,,has product code,Links a record to the FDA product code classifying the device.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasProductCode,Predicate,,has product code,Links a record to the FDA product code classifying the device.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasProductCode,Predicate,,has product code,Links a record to the FDA product code classifying the device.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasProvenance,Predicate,,has provenance record,Links a record to a Provenance Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasRecall,Predicate,,has recall,Links a TPLC record to a recall of the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasRecallRecord,Predicate,,has recall record,Links a Medical Device to a Device Recall Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasRecognizedStandard,Predicate,,has recognized standard,Links a record to a FDA Recognized Consensus Standard. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasRegistrationRecord,Predicate,,has registration record,Links a Manufacturer to a FDA Registration and Listing Record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasRegulationNumber,Predicate,,has regulation number,Links a record to the 21 CFR regulation number the device type falls under.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasRegulationNumber,Predicate,,has regulation number,Links a record to the 21 CFR regulation number the device type falls under.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasSafetySignal,Predicate,,has safety signal,Links a record to a Safety Signal. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasSoftware,Predicate,,has software,Links a record to a Software Feature. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasSpecialty,Predicate,,has specialty,Links a CLIA Laboratory Test System Record to a CLIA Laboratory Specialty. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasSterilityStatus,Predicate,,has sterility status,Has sterility status. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasTPLCRecord,Predicate,,has TPLC record,Links a Medical Device to a TPLC Device Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasTestSystem,Predicate,,has test system,Links a CLIA Laboratory Test System Record to a CLIA Test System.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hasYearlyTrend,Predicate,,has yearly trend,Links a TPLC record to its yearly MDR report and event counts.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/hdeNumber,Predicate,,HDE number,HDE number assigned to the Humanitarian Device Exemption.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/identifierId,Predicate,,identifier ID,"UDI identifier value â the DI, Package DI, or PI string (e.g. GTIN-14)."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/identifierStatus,Predicate,,identifier status,Device identifier status: Active / Inactive / Deprecated. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/identifierType,Predicate,,identifier type,UDI identifier type: Primary DI / Package DI / Unit of Use DI.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/implantFlag,Predicate,,implant flag (Y/N),Whether the device type is an implant.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/implantFlag,Predicate,,implant flag (Y/N),Whether the device type is an implant.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/inPart,Predicate,,in part,Links a 21 CFR section to the part that contains it.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/initialFirmNotification,Predicate,,initial firm notification method,How the firm first notified its customers of the recall.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/initialImporterFlag,Predicate,,initial importer flag (Y/N),Whether the establishment is an initial importer.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/installed,Predicate,,installed,Date the x-ray equipment was installed.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/installedDate,Predicate,,x-ray equipment installed date,X-ray equipment installed date. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/intendedUse,Predicate,,intended use,Intended use. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/involvesDevice,Predicate,,involves device,Links a MAUDE report to the device involved in the reported event.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/isCombinationProduct,Predicate,,is combination product,Is combination product.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/isKit,Predicate,,is kit,Is kit.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/isSingleUse,Predicate,,is single use,Is single use.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/isSterile,Predicate,,is sterile,Is sterile.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/issuingAgency,Predicate,,issuing agency,UDI issuing agency: GS1 / HIBCC / ICCBBA / NDC.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/k510Number,Predicate,,510(k) number,510(k) number assigned to the premarket notification.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/label,Predicate,,device label,A human-readable name for the resource.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/labelingDescription,Predicate,,labeling description,Labeling description. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/lifeSustainSupportFlag,Predicate,,life sustain support flag (Y/N),Whether the device type is life-sustaining or life-supporting.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/lifeSustainSupportFlag,Predicate,,life sustain support flag (Y/N),Whether the device type is life-sustaining or life-supporting.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/linkedMedicalDevice,Predicate,,linked medical device,Links a record to a Medical Device. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/linkedProductCode,Predicate,,linked product code,Links a record to a FDA Product Code. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/listingNumber,Predicate,,FDA device listing number,FDA device listing number. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/lotBatchNumber,Predicate,,lot or batch number,Lot or batch number. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/lotNumber,Predicate,,lot number,Lot number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/madeBy,Predicate,,made by,Links a record to a Manufacturer. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/manufacturer,Predicate,,manufacturer,Name of the manufacturer responsible for the study.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/manufacturerName,Predicate,,manufacturer name,Name of the manufacturer as given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/manufacturerName,Predicate,,manufacturer name,Name of the manufacturer as given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mappingConfidence,Predicate,,mapping confidence,"Confidence score between 0 and 1 for the NAICS mapping; the values are 0.65, 0.75, and 0.95."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mappingMethod,Predicate,,mapping method,"How the NAICS mapping was derived: definition_match, llm_assisted, manual_review, or unmapped. Every mapping in this release is definition_match."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mappingReason,Predicate,,mapping reason,"Human-readable evidence for the NAICS mapping, such as the keywords matched in the FDA device name, definition, or specialty text of the product code."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mappingReviewStatus,Predicate,,mapping review status,"Review status of the NAICS mapping, approved or manual_review. Every mapping in this release is approved."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mappingSource,Predicate,,mapping source,"Provenance label of the NAICS mapping. Every value is internal_crosswalk: the code was assigned by the knowledge graph's crosswalk, not by FDA."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/materialDescription,Predicate,,material description,Material description. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/medicalSpecialty,Predicate,,medical specialty code,FDA medical specialty code for the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/medicalSpecialty,Predicate,,medical specialty code,FDA medical specialty code for the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/medicalSpecialtyDescription,Predicate,,medical specialty description,FDA medical specialty the device type is reviewed under.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/medicalSpecialtyDescription,Predicate,,medical specialty description,FDA medical specialty the device type is reviewed under.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/medicalSpecialtyDescription,Predicate,,medical specialty description,FDA medical specialty the device type is reviewed under.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/modelNumber,Predicate,,model number,Model number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/mriSafetyStatus,Predicate,,MRI safety status,MRI safety status.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/naicsCode,Predicate,,NAICS code,"Six-digit NAICS industry code as a string (e.g., 339112); the key for joining to NAICS codes in other graphs."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/naicsVersion,Predicate,,NAICS version,Version of the NAICS taxonomy the code belongs to; 2022 for every node.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/name,Predicate,,name,Name of the site at which the x-ray equipment was installed.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/narrative,Predicate,,narrative,Free-text narrative supplied with the report. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/normalizedAddress,Predicate,,normalized address,"Single-line normalized form of the registration address that was sent to the geocoder (e.g., 555 N Point Ctr E, Alpharetta, GA 30022, US)."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/orderNumber,Predicate,,522 order number,FDA 522 order number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/organization,Predicate,,standards organization,Standards organization. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/outcomeCode,Predicate,,outcome code,Outcome code. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/packageType,Predicate,,package type,"Package type description associated with this identifier (e.g. Box, Case)."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/packagingDescription,Predicate,,packaging description,Packaging description. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/partNumber,Predicate,,part number,Number of the 21 CFR part.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/partNumber,Predicate,,part number,Number of the 21 CFR part.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/partTitle,Predicate,,part title,Title of the 21 CFR part.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/partTitle,Predicate,,part title,Title of the 21 CFR part.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/pathway,Predicate,,regulatory pathway (510k / pma / hde / de_novo),"Regulatory pathway by which the device reached the market: 510k, pma, hde, or de_novo."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/phone,Predicate,,phone number,Telephone number given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/phone,Predicate,,phone number,Telephone number given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/physicalState,Predicate,,physical state,Physical state. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/pmaNumber,Predicate,,PMA number,PMA number assigned to the premarket approval application.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/pmaNumber,Predicate,,PMA number,PMA number assigned to the premarket approval application.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/possiblySameDeviceAs,Predicate,,possibly same device as,Possibly same device as. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/postalCode,Predicate,,postal code,Postal code given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/postalCode,Predicate,,postal code,Postal code given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/postalCode,Predicate,,postal code,Postal code given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/predicateDevice,Predicate,,predicate device,Predicate device. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/primaryDI,Predicate,,primary device identifier (DI),Primary device identifier (DI). Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/problemCode,Predicate,,problem code,Problem code. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/problemCodes,Predicate,,problem codes,Device problem codes (semicolon-separated). Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/problemDescription,Predicate,,problem description,Text of the device problem code.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/productCode,Predicate,,product code,Three-letter FDA product code classifying the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/productDescription,Predicate,,product description,Description of the recalled product.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/productProblemFlag,Predicate,,product problem flag,Product problem flag.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/productQuantity,Predicate,,product quantity involved in recall,Quantity of product covered by the recall.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/proprietaryName,Predicate,,proprietary (brand) name,Proprietary (brand) name.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/publicDeviceRecordKey,Predicate,,public device record key,Public device record key.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/qualifier1,Predicate,,CLIA Qualifier 1,CLIA Qualifier 1. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/qualifier2,Predicate,,CLIA Qualifier 2,CLIA Qualifier 2. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/quantityPerUnitOfUse,Predicate,,quantity per unit of use,Quantity of base devices contained in this package unit.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/rawRecord,Predicate,,raw record,JSON literal of the complete raw FDA record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reasonForRecall,Predicate,,reason for recall,Reason the product was recalled.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recallAction,Predicate,,corrective action taken,Corrective action taken.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recallClass,Predicate,,recall class,"Recall class I, II, or III, indicating the severity of the hazard."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recallClassification,Predicate,,recall classification (Class I/II/III),"FDA recall classification: Class I, II, or III."
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recallDate,Predicate,,recall date,Date of the recall.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recallEventId,Predicate,,recall event ID,FDA recall event identifier grouping the products in one recall.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recallInitiationDate,Predicate,,recall initiation date,Date the firm began the recall.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recallNumber,Predicate,,recall number,FDA recall number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recallStatus,Predicate,,recall status,Current status of the recall.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recallingFirm,Predicate,,recalling firm name,Name of the firm conducting the recall.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recallingFirmAddress,Predicate,,recalling firm address,Address of the recalling firm.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recognitionNumber,Predicate,,FDA recognition number,FDA recognition number of the consensus standard.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/recordStatus,Predicate,,record status,Status of the record in its source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/regExpiryDateYear,Predicate,,registration expiry year,Year in which the establishment registration expires.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/registeredAt,Predicate,,registered at establishment,Links a FDA Device Listing to a FDA Registration and Listing Record. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/registrationAddress,Predicate,,registration address,Address of the registered establishment.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/registrationNumber,Predicate,,FDA registration number,FDA establishment registration number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/registrationNumber,Predicate,,FDA registration number,FDA establishment registration number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/registrationStatus,Predicate,,registration status code,Status of the establishment registration.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/regulationArea,Predicate,,regulation area,Regulation area. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/regulationDescription,Predicate,,regulation description,Description of the regulation the device type falls under.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/regulationNumber,Predicate,,regulation number,21 CFR regulation number under which the device type is classified.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/regulationNumber,Predicate,,regulation number,21 CFR regulation number under which the device type is classified.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/regulationNumber,Predicate,,regulation number,21 CFR regulation number under which the device type is classified.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/regulationNumber,Predicate,,regulation number,21 CFR regulation number under which the device type is classified.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/regulationNumber,Predicate,,regulation number,21 CFR regulation number under which the device type is classified.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/regulationNumber,Predicate,,regulation number,21 CFR regulation number under which the device type is classified.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/relatedProductCode,Predicate,,related product code,Links a record to a FDA Product Code. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/relatedTPLC,Predicate,,related TPLC product code record,Links a record to the TPLC product-code record that aggregates its lifecycle data.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/relatedTPLC,Predicate,,related TPLC product code record,Links a record to the TPLC product-code record that aggregates its lifecycle data.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/relatedTPLC,Predicate,,related TPLC product code record,Links a record to the TPLC product-code record that aggregates its lifecycle data.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/relatedTPLC,Predicate,,related TPLC product code record,Links a record to the TPLC product-code record that aggregates its lifecycle data.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/relatedTPLC,Predicate,,related TPLC product code record,Links a record to the TPLC product-code record that aggregates its lifecycle data.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/relatedTPLC,Predicate,,related TPLC product code record,Links a record to the TPLC product-code record that aggregates its lifecycle data.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/remedialAction,Predicate,,remedial action taken,Remedial action taken.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/removalCorrectionNumber,Predicate,,removal / correction number (recall link),Removal / correction number (recall link).
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reportCount,Predicate,,report count,Number of medical device reports carrying this code or year.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reportCount,Predicate,,report count,Number of medical device reports carrying this code or year.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reportCount,Predicate,,report count,Number of medical device reports carrying this code or year.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reportDate,Predicate,,report date,Date the record was reported.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reportKey,Predicate,,MDR report key,MDR report key. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reportNumber,Predicate,,report number,Report number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reportToFDA,Predicate,,report to FDA flag,Report to FDA flag. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reportedBy,Predicate,,reported by,Links a record to a Manufacturer. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reporterOccupationCode,Predicate,,reporter occupation code,Reporter occupation code. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reprocessedFlag,Predicate,,reprocessed and reused flag,Reprocessed and reused flag. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/requirementNumber,Predicate,,requirement number,FDA 522 requirement number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/retrievedAt,Predicate,,timestamp when record was retrieved,Timestamp at which the source FDA record was retrieved.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reviewAdvisoryCommittee,Predicate,,review advisory committee,Advisory committee that reviewed the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reviewGranted,Predicate,,review granted,Whether the review was granted.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reviewPanel,Predicate,,review panel,FDA review panel for the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/reviewPanel,Predicate,,review panel,FDA review panel for the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/room,Predicate,,room,Room in which the x-ray equipment was installed.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/roomIdentifier,Predicate,,x-ray room identifier,Identifier of the room the x-ray equipment was installed in. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/rootDocumentNumber,Predicate,,root document number,Root FDA document number the 522 order derives from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sameProductCodeAs,Predicate,,same product code as,Same product code as. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sampleSize,Predicate,,sample size,Planned sample size of the 522 study.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sectionNumber,Predicate,,section number,Number of the 21 CFR section.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sectionTitle,Predicate,,section title,Title of the 21 CFR section.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/singleUseFlag,Predicate,,single use flag,Single use flag. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/softwareDescription,Predicate,,software description,Software description. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceDataset,Predicate,,source dataset,Name of the FDA or openFDA dataset the record was extracted from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceNote,Predicate,,source note,Free-text note about the source of the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceNote,Predicate,,source note,Free-text note about the source of the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceRecordId,Predicate,,source record ID (original FDA identifier),Identifier of the record in the original FDA source dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceType,Predicate,,source type,Type of the source the record came from.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sourceUrl,Predicate,,source URL,URL of the source FDA record or dataset.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/specialtyId,Predicate,,CLIA Specialty ID,CLIA Specialty ID.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/specialtyName,Predicate,,CLIA Specialty Name,CLIA Specialty Name. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/standardDesignation,Predicate,,standard designation number,Standard designation number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/state,Predicate,,state or province,State or province given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/state,Predicate,,state or province,State or province given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/state,Predicate,,state or province,State or province given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/state,Predicate,,state or province,State or province given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/state,Predicate,,state or province,State or province given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/state,Predicate,,state or province,State or province given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/statementOrSummary,Predicate,,510(k) statement or summary type,Whether the 510(k) was supported by a summary or a statement.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/sterilityDescription,Predicate,,sterility description,Sterility description. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/studyDesign,Predicate,,study design,Design of the 522 postmarket surveillance study.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/studyName,Predicate,,522 study name,Name of the 522 postmarket surveillance study.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/studyObjectives,Predicate,,study objectives,Objectives of the 522 postmarket surveillance study.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/studyStatus,Predicate,,522 study status,Status of the 522 postmarket surveillance study.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/submissionNumber,Predicate,,submission number,Submission number. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/submissionType,Predicate,,submission type,Type of PMA submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/submissionTypeId,Predicate,,submission type ID,FDA submission type identifier for the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/submissionTypeId,Predicate,,submission type ID,FDA submission type identifier for the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/summary,Predicate,,summary,Summary text supplied with the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/summary,Predicate,,summary,Summary text supplied with the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/summaryMalfunctionReporting,Predicate,,summary malfunction reporting (SMR) code,Summary malfunction reporting eligibility of the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/summaryMalfunctionReporting,Predicate,,summary malfunction reporting (SMR) code,Summary malfunction reporting eligibility of the device type.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/summaryUrl,Predicate,,URL to summary / PDF document,URL of the summary or decision PDF for the submission.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/supplementNumber,Predicate,,supplement number,Number of the PMA supplement.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/supplementNumber,Predicate,,supplement number,Number of the PMA supplement.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/supplementNumber,Predicate,,supplement number,Number of the PMA supplement.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/supplementReason,Predicate,,PMA supplement reason,Reason given for the PMA supplement.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/supplementReason,Predicate,,PMA supplement reason,Reason given for the PMA supplement.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/supplementReason,Predicate,,PMA supplement reason,Reason given for the PMA supplement.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/supplementType,Predicate,,supplement type,Type of the HDE supplement.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/supplementsPMA,Predicate,,supplements PMA,Links a PMA supplement to the original PMA it modifies.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/tId,Predicate,,FDA t-ID,FDA internal identifier used on the 522 study page.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/targetArea,Predicate,,target area,Target area. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/technicalMethod,Predicate,,technical method,Technical method. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/technologicalCharacteristics,Predicate,,technological characteristics,Technological characteristics. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/terminationDate,Predicate,,recall termination date,Date FDA terminated the recall.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/testName,Predicate,,IVD test name,Name of the in vitro diagnostic home-use test.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/testSystemId,Predicate,,CLIA Test System ID,CLIA Test System ID.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/testSystemName,Predicate,,CLIA Test System Name,CLIA Test System Name. Declared in the schema but not populated in the current release.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/testType,Predicate,,IVD test type,Type of the in vitro diagnostic home-use test.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/text,Predicate,,text,Full regulatory text of the CFR section.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/thirdPartyFlag,Predicate,,third party review eligibility flag,Whether the device type is eligible for third-party review.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/thirdPartyFlag,Predicate,,third party review eligibility flag,Whether the device type is eligible for third-party review.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/thirdPartyReviewFlag,Predicate,,third party review flag,Whether the submission was reviewed by an accredited third party.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/tradeName,Predicate,,trade name,Trade name under which the device is marketed.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/tradeName,Predicate,,trade name,Trade name under which the device is marketed.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/tradeName,Predicate,,trade name,Trade name under which the device is marketed.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/unclassifiedReason,Predicate,,unclassified reason,Reason the device type has not been classified.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/unclassifiedReason,Predicate,,unclassified reason,Reason the device type has not been classified.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/unitOfUseId,Predicate,,unit-of-use ID,Unit-of-Use identifier string (UoU DI).
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/use1,Predicate,,use1,Primary clinical use of the installed x-ray equipment.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/use2,Predicate,,use2,Additional clinical use of the installed x-ray equipment.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/use3,Predicate,,use3,Additional clinical use of the installed x-ray equipment.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/use4,Predicate,,use4,Additional clinical use of the installed x-ray equipment.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/versionModelNumber,Predicate,,version or model number,Version or model number.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/voluntaryMandated,Predicate,,voluntary or mandated,Whether the recall was voluntary or mandated by FDA.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/year,Predicate,,year,Calendar year the MDR counts apply to.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/zip,Predicate,,zip,ZIP code given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/zip,Predicate,,zip,ZIP code given on the record.
+medical-device-kg,https://bmedesign.org/medical-device-kg/ns/zipCode,Predicate,,ZIP / postal code,ZIP / postal code. Declared in the schema but not populated in the current release.
 medical-device-kg,http://www.opengis.net/ont/geosparql#asWKT,Predicate,,as WKT,"The Well-Known Text serialization of a geometry, here a point such as POINT(-84.300679 34.045787) in longitude latitude order."
 medical-device-kg,http://www.opengis.net/ont/geosparql#defaultGeometry,Predicate,,default geometry,The default geometry to be used in spatial calculations; here the same point geometry as geo:hasGeometry.
 medical-device-kg,http://www.opengis.net/ont/geosparql#hasGeometry,Predicate,,has geometry,Links a geocoded facility to its point geometry.

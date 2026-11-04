@@ -10890,6 +10890,2396 @@
   "http://xmlns.com/foaf/0.1/depiction": [],
   "http://xmlns.com/foaf/0.1/homepage": [],
   "http://xmlns.com/foaf/0.1/page": [],
+  "https://bmedesign.org/medical-device-kg/ns/CliaTestSystem": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "CLIA Test System",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/CliaTestSystem"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/address": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "street address",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/address"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/adverseEventFlag": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "report describes an adverse event",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/adverseEventFlag"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/advisoryCommittee": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "advisory committee code",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/advisoryCommittee"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/analysisType": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "analysis type",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/analysisType"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/analyteId": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "CLIA analyte id",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/analyteId"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/analyteName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "analyte name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/analyteName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/applicant": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "applicant",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/applicant"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/appliesToDevice": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "storage condition applies to device",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/appliesToDevice"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/approvalDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "approval date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/approvalDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/approvalOrderStatement": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "approval order statement",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/approvalOrderStatement"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/assemblerReportId": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "assembler report id (assem.txt ID)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/assemblerReportId"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/assignedNAICS": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "NAICS code assigned by this mapping",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/assignedNAICS"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/belongsToDevice": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "identifier belongs to device",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/belongsToDevice"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/brandName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "brand name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/brandName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/catalogNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "catalog number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/catalogNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/categorizedBy": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "agency that categorized the test (FDA or CDC)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/categorizedBy"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/centerClassificationDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA center classification date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/centerClassificationDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/cfrCitation": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "Federal Register source citation",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/cfrCitation"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/cfrPartNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "21 CFR part number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/cfrPartNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/cfresId": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA recall database (CFRES) id",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/cfresId"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/cfresStatus": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recall status as shown on FDA's recall page (e.g. 'Terminated on March 24, 2004')",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/cfresStatus"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/citesRegulation": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA lists 21 CFR regulation",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/citesRegulation"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/city": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "city",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/city"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/classificationText": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "(b) Classification paragraph",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/classificationText"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/clearanceType": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "510(k) clearance type (Traditional/Special/Abbreviated)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/clearanceType"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/codeInfoLength": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "original length of the code information, in characters",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/codeInfoLength"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/commercialDistributionEndDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date commercial distribution ended",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/commercialDistributionEndDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/commercialDistributionStatus": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "commercial distribution status",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/commercialDistributionStatus"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/companyName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "company name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/companyName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/comparisonGroup": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "comparison group",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/comparisonGroup"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/complexity": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "CLIA complexity (WAIVED, MODERATE, HIGH)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/complexity"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/country": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "country",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/country"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/currentPlanAcceptedDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date current study plan accepted",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/currentPlanAcceptedDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/dataCollection": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "data collection",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/dataCollection"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/dataSource": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "data source",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/dataSource"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/dateEffective": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "effective date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/dateEffective"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/dateEffectiveText": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "effective date as published, when it is not a valid date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/dateEffectiveText"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/dateManufacturerReceived": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date the manufacturer received the information",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/dateManufacturerReceived"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/dateManufacturerReceivedText": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "manufacturer-received date as published, when it is not a valid calendar date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/dateManufacturerReceivedText"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/dateOfEvent": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date of event",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/dateOfEvent"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/dateOfEventText": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date of event as published, when it is not a valid calendar date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/dateOfEventText"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/dateReceived": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date received",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/dateReceived"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/dateReceivedText": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date received as published, when it is not a valid calendar date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/dateReceivedText"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/dateText": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "a date field as published, when it is not a valid date ('<field>: <value>')",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/dateText"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deathReportCount": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "MDR reports with event type Death",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deathReportCount"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/decisionCode": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA decision code",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/decisionCode"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/decisionDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "decision date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/decisionDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/decisionDescription": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA decision description",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/decisionDescription"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/definition": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "definition",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/definition"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/describesRecord": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "the full premarket record this catalog entry describes",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/describesRecord"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceAgeText": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device age as reported",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceAgeText"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceAvailability": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device available for evaluation",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceAvailability"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceClass": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device class (1/2/3)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceClass"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceCountInBasePackage": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device count in base package",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceCountInBasePackage"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceDescription": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device description",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceDescription"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceEvaluatedByManufacturer": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device evaluated by the manufacturer (Y/N/R)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceEvaluatedByManufacturer"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceManufacturerCountry": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device manufacturer country as reported",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceManufacturerCountry"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceManufacturerName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device manufacturer name as reported",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceManufacturerName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceOperator": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "who operated the device",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceOperator"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceProblem": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device problem (literal)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceProblem"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/devicePublishDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device publish date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/devicePublishDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceRegulationPart": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "part is a device or radiological-health part of 21 CFR (800-898, 1000-1050)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceRegulationPart"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/deviceSize": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "clinically relevant size ('<size type>: <value> <unit>; <text>')",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/deviceSize"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/distributedInUS": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "false when FDA states no US distribution",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/distributedInUS"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/distributedNationwide": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "distribution stated only as US nationwide",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/distributedNationwide"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/distributedToCountry": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "distributed to country (outside US)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/distributedToCountry"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/docketNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "docket number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/docketNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/documentNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA decision document number (510(k), De Novo, PMA, HDE, or CLIA document id) as published",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/documentNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/dunsNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "labeler DUNS number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/dunsNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/equipmentType": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "equipment type code as published (assem.txt typ)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/equipmentType"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/equipmentUseCode": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "equipment use code as published (assem.txt use1..use4)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/equipmentUseCode"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/establishmentName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "establishment name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/establishmentName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/establishmentType": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "establishment type",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/establishmentType"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/eventCount": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "event count",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/eventCount"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/eventDateCreated": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date the recall event was created in FDA's recall database",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/eventDateCreated"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/eventDatePosted": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date posted by FDA",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/eventDatePosted"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/eventId": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recall event id (enforcement feed)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/eventId"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/eventLocation": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "where the event occurred (hospital, home, ...)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/eventLocation"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/eventType": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "adverse event type (death/injury/malfunction)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/eventType"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/expeditedReviewFlag": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "expedited review",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/expeditedReviewFlag"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/extentOfRecognition": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "extent of recognition (Complete standard / Partial)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/extentOfRecognition"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/facilityName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "facility name as published by FDA",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/facilityName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/fax": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "facility business fax number as published by FDA",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/fax"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/fdaStandardId": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA standards database id",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/fdaStandardId"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/fedRegNoticeDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "Federal Register notice date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/fedRegNoticeDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/feiNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA establishment identifier (FEI)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/feiNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/finalEffectivenessFindings": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "final effectiveness findings",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/finalEffectivenessFindings"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/finalSafetyFindings": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "final safety findings",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/finalSafetyFindings"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/firmFEINumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recalling firm FEI number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/firmFEINumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/firstReportDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "earliest MDR receipt date for the product code",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/firstReportDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/followUp": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "follow-up visits and length of follow-up",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/followUp"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/frRecognitionList": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "Federal Register recognition list number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/frRecognitionList"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/genericName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "generic name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/genericName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/geocodingConfidence": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "geocoding confidence (0.0-1.0)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/geocodingConfidence"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/geocodingSource": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "geocoding provider",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/geocodingSource"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/gmdnCodeStatus": [],
+  "https://bmedesign.org/medical-device-kg/ns/gmdnImplantable": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "GMDN term is implantable",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/gmdnImplantable"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/gmdnTermCode": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "GMDN term code",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/gmdnTermCode"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/gmdnTermDefinition": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "GMDN term definition",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/gmdnTermDefinition"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/gmdnTermName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "GMDN term name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/gmdnTermName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/gmpExemptFlag": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "GMP exempt",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/gmpExemptFlag"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasAnalyte": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "analyte",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasAnalyte"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasApplicantFirm": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has applicant firm (as named)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasApplicantFirm"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasCfrPart": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "belongs to 21 CFR part",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasCfrPart"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasClassificationRecord": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has classification record",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasClassificationRecord"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasDeviceProblem": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has device problem",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasDeviceProblem"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasDonationIdNumber": [],
+  "https://bmedesign.org/medical-device-kg/ns/hasExpirationDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has expiration date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasExpirationDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasGMDNTerm": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has GMDN term",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasGMDNTerm"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasIdentifier": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has UDI identifier",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasIdentifier"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasLabeler": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has labeler (UDI, DUNS-keyed)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasLabeler"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasLotOrBatchNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has lot or batch number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasLotOrBatchNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasMDRStatistic": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has MDR statistic (yearly trend)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasMDRStatistic"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasManufacturer": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has manufacturer",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasManufacturer"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasManufacturingDate": [],
+  "https://bmedesign.org/medical-device-kg/ns/hasNAICSMapping": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has NAICS crosswalk mapping (provenance-bearing)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasNAICSMapping"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasPatientOutcome": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has patient outcome",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasPatientOutcome"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasRecall": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has recall",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasRecall"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasRecallingFirm": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has recalling firm (as named)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasRecallingFirm"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasRecallingManufacturer": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has recalling manufacturer (FEI-exact)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasRecallingManufacturer"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasRegistrationRecord": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has registration record",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasRegistrationRecord"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasRegulationNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has regulation number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasRegulationNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasSerialNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has serial number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasSerialNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasStorageCondition": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "has storage condition",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasStorageCondition"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hasTestSystem": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "test system",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hasTestSystem"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/hdeNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "HDE number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/hdeNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/identicalAdoption": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "identical national adoption (e.g. ANSI AAMI ISO ...)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/identicalAdoption"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/identificationText": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "(a) Identification -- the legal definition of the device type",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/identificationText"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/identifierId": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "UDI identifier value (DI/PI string)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/identifierId"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/identifierType": [],
+  "https://bmedesign.org/medical-device-kg/ns/implantFlag": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "implant (classification record)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/implantFlag"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/implantable": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "implantable (on product-code hub)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/implantable"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/inCfrPart": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "in 21 CFR part",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/inCfrPart"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/initialFirmNotification": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "how the firm first notified customers",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/initialFirmNotification"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/initialImporterFlag": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "initial importer",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/initialImporterFlag"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/injuryReportCount": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "MDR reports with event type Injury",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/injuryReportCount"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/installationDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date the X-ray components were installed",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/installationDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/interimSafetyInformation": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "interim safety information",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/interimSafetyInformation"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/isCombinationProduct": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "is combination product",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/isCombinationProduct"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/isDirectMarkingExempt": [],
+  "https://bmedesign.org/medical-device-kg/ns/isHCTP": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "is HCT/P",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/isHCTP"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/isKit": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "is kit",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/isKit"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/isLabeledAsNRL": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "is labeled as containing natural rubber latex",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/isLabeledAsNRL"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/isLabeledAsNoNRL": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "is labeled as NOT made with natural rubber latex",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/isLabeledAsNoNRL"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/isOTC": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "is over-the-counter",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/isOTC"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/isPremarketExempt": [],
+  "https://bmedesign.org/medical-device-kg/ns/isRx": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "is prescription (Rx)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/isRx"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/isSingleUse": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "is single use",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/isSingleUse"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/isSterile": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "is sterile",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/isSterile"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/issuingAgency": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "UDI issuing agency (GS1/HIBCC/ICCBBA/NDC)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/issuingAgency"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/kNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "510(k) / De Novo number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/kNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/keyStudyEndpoints": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "key study endpoints",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/keyStudyEndpoints"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/labelingRecommendations": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recommendations for labeling changes",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/labelingRecommendations"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/lastReportDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "latest MDR receipt date for the product code",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/lastReportDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/lifeSustainSupportFlag": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "life-sustaining/supporting (classification record)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/lifeSustainSupportFlag"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/lifeSustaining": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "life-sustaining (on product-code hub)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/lifeSustaining"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/lotNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device lot number as reported",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/lotNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/malfunctionReportCount": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "MDR reports with event type Malfunction",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/malfunctionReportCount"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/manufacturerName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "manufacturer name as reported",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/manufacturerName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/manufacturerNarrative": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "additional manufacturer narrative (FDA-published)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/manufacturerNarrative"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mappingConfidence": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "mapping confidence (0.0-1.0)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mappingConfidence"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mappingDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date the mapping was computed",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mappingDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mappingEvidence": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "mapping evidence",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mappingEvidence"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mappingMethod": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "how the mapping was derived",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mappingMethod"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mappingObject": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "mapping object",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mappingObject"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mappingSource": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "provenance label (never claims FDA supplied the code)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mappingSource"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mappingStatus": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "mapping status (accepted/candidate)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mappingStatus"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mappingSubject": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "mapping subject",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mappingSubject"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mdrReportKey": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "MDR report key",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mdrReportKey"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mdrText": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "other MDR narrative text",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mdrText"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/medicalSpecialtyCode": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "medical specialty two-letter code",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/medicalSpecialtyCode"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/medicalSpecialtyDescription": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "medical specialty description",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/medicalSpecialtyDescription"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mobileUnit": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "facility name identifies a mobile unit",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mobileUnit"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/modelNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device model number as reported",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/modelNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mqsaCertified": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "listed by FDA as MQSA certified on the retrieval date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mqsaCertified"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/mriSafetyStatus": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "MRI safety status",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/mriSafetyStatus"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/naicsCode": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "six-digit NAICS code (cross-graph join key)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/naicsCode"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/naicsVersion": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "NAICS taxonomy version",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/naicsVersion"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/name": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "establishment name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/name"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/normalizedAddress": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "normalized single-line address",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/normalizedAddress"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/normalizedName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "normalized organization name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/normalizedName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/orderDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date of the 522 order",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/orderDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/orderNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "522 order number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/orderNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/originalPlanAcceptedDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date original study plan accepted",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/originalPlanAcceptedDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/otherReportCount": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "MDR reports with another or no event type",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/otherReportCount"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/outcomeType": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "outcome kind ('outcome' such as Death/Hospitalization, or 'patient problem' such as Burn)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/outcomeType"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/ownerOperatorName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "owner/operator firm name (firm only; no contact persons)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/ownerOperatorName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/ownerOperatorNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "owner/operator number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/ownerOperatorNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/packageDiscontinueDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "package discontinue date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/packageDiscontinueDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/packageStatus": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "package status",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/packageStatus"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/packageType": [],
+  "https://bmedesign.org/medical-device-kg/ns/partOfRecallEvent": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "part of recall event",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/partOfRecallEvent"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/partialRecognitionText": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "what is (not) recognized, when partial",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/partialRecognitionText"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/pathway": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "premarket pathway (510(k), De Novo, PMA, PMA supplement, HDE, HDE supplement)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/pathway"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/patientFollowupRate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "patient follow-up rate, as published",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/patientFollowupRate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/patientOutcome": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "patient outcome (literal)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/patientOutcome"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/patientProblem": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "patient problem (literal)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/patientProblem"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/patientTreatment": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "treatment the patient received",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/patientTreatment"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/patientsEnrolled": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "actual number of patients enrolled, as published",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/patientsEnrolled"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/phone": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "facility business telephone number as published by FDA",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/phone"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/pmaNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "PMA number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/pmaNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/postalCode": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "postal / ZIP code (cross-graph join key to sudokn)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/postalCode"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/premarketSubmissionNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "premarket submission number on a UDI record (510(k)/PMA/De Novo)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/premarketSubmissionNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/productCode": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "product code (literal)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/productCode"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/productDescription": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "product description",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/productDescription"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/productProblemFlag": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "report describes a product problem",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/productProblemFlag"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/productQuantity": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "product quantity in recall",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/productQuantity"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/productType": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "product type (enforcement report)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/productType"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/proprietaryName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "proprietary (brand) name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/proprietaryName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/publicDeviceRecordKey": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "public device record key",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/publicDeviceRecordKey"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/publicVersionDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "public version date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/publicVersionDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/publicVersionNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "GUDID public version number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/publicVersionNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/publicVersionStatus": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "GUDID public version status",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/publicVersionStatus"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/qualifier": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "test system qualifier as published",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/qualifier"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/quantityPerUnitOfUse": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "quantity per unit of use",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/quantityPerUnitOfUse"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/quotedDeviceIdentifier": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "GS1 device identifier (GTIN-14, valid check digit) quoted in the recall's published code information",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/quotedDeviceIdentifier"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/reasonForRecall": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "reason for recall",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/reasonForRecall"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recallAction": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "action the firm instructed",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recallAction"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recallClassification": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recall classification (Class I/II/III)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recallClassification"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recallEventNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recall event number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recallEventNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recallInitiationDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recall initiation date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recallInitiationDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recallNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recall (product) number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recallNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recallNumberStatus": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recall number status ('not yet assigned by FDA' for reports posted before numbering)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recallNumberStatus"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recallStatus": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recall status",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recallStatus"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recallingFirm": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recalling firm name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recallingFirm"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recognitionArea": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recognition-number prefix (FDA specialty area code)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recognitionArea"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recognitionDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date of entry on the recognition list",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recognitionDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recognitionNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA recognition number (e.g. 3-96)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recognitionNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recognitionRationale": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "rationale for recognition",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recognitionRationale"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/recordStatus": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "record status",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/recordStatus"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/registrationExpiryYear": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "registration expiry year as published",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/registrationExpiryYear"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/registrationNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA registration number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/registrationNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/regulationNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "regulation number (literal)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/regulationNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/regulationText": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "regulation text (all paragraphs, in full)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/regulationText"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/relatedHDE": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "related HDE",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/relatedHDE"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/relatedPMARecord": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "device approved under this PMA",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/relatedPMARecord"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/relatedTPLC": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "related TPLC record",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/relatedTPLC"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/relevantGuidance": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "relevant FDA guidance",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/relevantGuidance"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/remedialAction": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "remedial action taken (recall, repair, notification, ...)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/remedialAction"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/removalCorrectionNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "correction/removal report number (21 CFR 806)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/removalCorrectionNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/reportCount": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "report count",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/reportCount"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/reportDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "report date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/reportDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/reportDateText": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "report date as published, when it is not a valid calendar date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/reportDateText"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/reportNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "MDR report number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/reportNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/reportSourceCode": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "report source code",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/reportSourceCode"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/reporterCountry": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "reporter country code",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/reporterCountry"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/reporterOccupation": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "reporter occupation",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/reporterOccupation"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/requiresSterilizationPriorToUse": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "requires sterilization prior to use",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/requiresSterilizationPriorToUse"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/retrievedAt": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "date retrieved from source",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/retrievedAt"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/reviewAdvisoryCommittee": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "review advisory committee",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/reviewAdvisoryCommittee"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/reviewCode": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "review code",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/reviewCode"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/reviewGranted": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "HDE review granted",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/reviewGranted"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/reviewPanel": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "review panel",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/reviewPanel"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/room": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "room / location label at the facility",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/room"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/rootCauseDescription": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA-assigned recall root cause",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/rootCauseDescription"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/rootDocumentNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "root premarket document number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/rootDocumentNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/sampleSize": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "sample size as published",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/sampleSize"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/scope": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "scope / abstract (FDA summary, not the standard text)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/scope"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/sectionNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "21 CFR section number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/sectionNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/sitesEnrolled": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "actual number of sites enrolled, as published",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/sitesEnrolled"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/sourceDataset": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "source dataset",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/sourceDataset"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/sourceRecordId": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "source record ID (original FDA identifier)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/sourceRecordId"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/sourceType": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "MDR source type",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/sourceType"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/sourceUrl": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "source URL",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/sourceUrl"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/specialConditions": [],
+  "https://bmedesign.org/medical-device-kg/ns/specialtyId": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "CLIA specialty id as published",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/specialtyId"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/specialtyTaskGroup": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA specialty task group",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/specialtyTaskGroup"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/standardDesignation": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "standard designation and edition",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/standardDesignation"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/standardsDevelopmentOrganization": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "standards development organization (abbreviation)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/standardsDevelopmentOrganization"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/state": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "state or province",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/state"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/statementOrSummary": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "510(k) statement or summary",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/statementOrSummary"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/statusCode": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "registration status code",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/statusCode"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/sterilizationMethod": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "sterilization method",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/sterilizationMethod"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/storageHighUnit": [],
+  "https://bmedesign.org/medical-device-kg/ns/storageHighValue": [],
+  "https://bmedesign.org/medical-device-kg/ns/storageLowUnit": [],
+  "https://bmedesign.org/medical-device-kg/ns/storageLowValue": [],
+  "https://bmedesign.org/medical-device-kg/ns/storageType": [],
+  "https://bmedesign.org/medical-device-kg/ns/studyDesign": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "study design",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/studyDesign"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/studyDesignDescription": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "study design description",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/studyDesignDescription"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/studyId": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "FDA study id (pss.cfm t_id)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/studyId"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/studyName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "study name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/studyName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/studyObjectives": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "study objectives",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/studyObjectives"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/studyPopulation": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "study population",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/studyPopulation"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/studyPopulationDescription": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "study population description",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/studyPopulationDescription"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/studyStatus": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "study status",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/studyStatus"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/studyStrengthsWeaknesses": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "study strengths and weaknesses",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/studyStrengthsWeaknesses"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/submissionTypeId": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "submission type id",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/submissionTypeId"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/summaryMalfunctionReporting": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "eligible for summary malfunction reporting (classification)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/summaryMalfunctionReporting"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/summaryReportFlag": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "summary (alternative summary) report",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/summaryReportFlag"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/supplementNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "supplement number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/supplementNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/supplementOf": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "supplement of (PMA or HDE base record)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/supplementOf"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/supplementReason": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "reason for supplement",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/supplementReason"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/supplementType": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "supplement type / review track",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/supplementType"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/terminationDate": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "recall termination date",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/terminationDate"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/testName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "test name as published",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/testName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/testSystemId": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "CLIA test system id",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/testSystemId"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/thirdPartyFlag": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "eligible for / reviewed by third party",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/thirdPartyFlag"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/tradeName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "trade name",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/tradeName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/transitionNote": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "transition note",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/transitionNote"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/transitionPeriodEnd": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "end of transition period (superseded recognition)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/transitionPeriodEnd"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/typeOfReport": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "type of report (initial, follow-up, ...)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/typeOfReport"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/udiPublic": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "full human-readable UDI as reported",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/udiPublic"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/unclassifiedReason": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "reason a product code is unclassified",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/unclassifiedReason"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/unitOfUseId": [],
+  "https://bmedesign.org/medical-device-kg/ns/usAgentBusinessName": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "US agent business name (business only; agent person, phone and e-mail not ingested)",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/usAgentBusinessName"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/versionModelNumber": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "version or model number",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/versionModelNumber"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/voluntaryMandated": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "voluntary or FDA-mandated",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/voluntaryMandated"
+   }
+  ],
+  "https://bmedesign.org/medical-device-kg/ns/year": [
+   {
+    "g": "https://purl.org/okn/frink/kg/medical-device-kg",
+    "o": "year",
+    "p": "http://www.w3.org/2000/01/rdf-schema#label",
+    "u": "https://bmedesign.org/medical-device-kg/ns/year"
+   }
+  ],
   "https://idir.uta.edu/sockg-ontology#hasStandardDeviation": [],
   "https://metadata.phila.gov/happened_at": [],
   "https://metadata.phila.gov/mesh_D000091368": [],
@@ -15058,6 +17448,11 @@
    "source": ""
   },
   "http://www.w3.org/ns/sparql-service-description#url": null,
+  "https://bmedesign.org/medical-device-kg/ns/CliaTestSystem": null,
+  "https://bmedesign.org/medical-device-kg/ns/address": null,
+  "https://bmedesign.org/medical-device-kg/ns/adverseEventFlag": null,
+  "https://bmedesign.org/medical-device-kg/ns/analysisType": null,
+  "https://bmedesign.org/medical-device-kg/ns/appliesToDevice": null,
   "https://idir.uta.edu/sockg-ontology#hasStandardDeviation": null,
   "https://metadata.phila.gov/happened_at": null,
   "https://metadata.phila.gov/mesh_D000091368": null,

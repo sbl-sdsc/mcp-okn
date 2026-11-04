@@ -48,7 +48,7 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>39 knowledge graphs, 263 verified crosswalks (verified 2026-10-14). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
+  <p>39 knowledge graphs, 268 verified crosswalks (verified 2026-10-14). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
   <p class="tip">&#9654; <b>Hover</b> a node or edge for detail · <b>drag</b> to rearrange · <b>scroll</b> to zoom · <b>double-click</b> a node to unpin it.<br>&#9654; <b>Click a legend item</b> &mdash; a domain (e.g. <b>Chemicals</b>) or a line style (e.g. <b>via ubergraph</b>) &mdash; to toggle those edges.</p>
 </header>
 <div class="bar" id="legend"></div>
@@ -155,6 +155,8 @@ const R=[
 ["D",["gene-expression-atlas-okn","oard-kg"],13,"HP"],
 ["D",["gene-expression-atlas-okn","prokn"],12,"HP"],
 ["D",["oard-kg","prokn"],4941,"HP"],
+["D",["medical-device-kg","oard-kg"],314,"HP (MAUDE patient-problem label) (ubergraph)"],
+["D",["medical-device-kg","rdkg"],315,"HP (MAUDE patient-problem label) (ubergraph)"],
 ["D",["bio101","oard-kg"],33,"HP (bio101 label) (ubergraph)"],
 ["D",["bio101","prokn"],9,"HP (bio101 label) (ubergraph)"],
 ["D",["bio101","rdkg"],33,"HP (bio101 label) (ubergraph)"],
@@ -260,6 +262,7 @@ const R=[
 ["S",["fiokg","sawgraph"],2166,"S2_L13"],
 ["S",["fiokg","spatialkg"],681045,"S2_L13"],
 ["S",["hydrologykg","spatialkg"],106138,"S2_L13"],
+["S",["medical-device-kg","spatialkg"],16977,"S2_L13"],
 ["S",["sawgraph","spatialkg"],4814,"S2_L13"],
 ["S",["sockg","sawgraph"],2,"S2_L13"],
 ["S",["sockg","spatialkg"],1069,"S2_L13"],
@@ -278,6 +281,7 @@ const R=[
 ["S",["spoke-okn","dreamkg"],235,"ZIP5"],
 ["S",["spoke-okn","ruralkg"],5390,"ZIP5"],
 ["S",["spoke-okn","sudokn"],13647,"ZIP5"],
+["S",["medical-device-kg","climatemodelskg"],145,"country code (FIPS 10-4 / ISO 3166-1 alpha-2)"],
 ["S",["climatemodelskg","spatialkg"],947,"county_FIPS (spoke-okn)"],
 ["S",["fiokg","spatialkg"],3031,"county_FIPS"],
 ["S",["fiokg","spoke-okn"],3032,"county_FIPS"],
@@ -308,6 +312,7 @@ const R=[
 ["I",["securechainkg","sudokn"],58,"SUDOKN_industry_sector"],
 ["I",["securechainkg","sudokn"],17644,"SUDOKN_product_IRI"],
 ["I",["climatemodelskg","securechainkg"],3,"climatemodelskg Source IRI"],
+["I",["medical-device-kg","securechainkg"],195,"company name"],
 ["I",["medical-device-kg","sudokn"],364,"company name"],
 
 ["J",["scales","ruralkg"],37,"NIBRS_offense_category"],

@@ -7,6 +7,16 @@
   },
   "failed": {},
   "notes": {
+    "medical-device-kg": [
+      "introspection: datatype split of https://bmedesign.org/medical-device-kg/ns/deviceName on https://bmedesign.org/medical-device-kg/ns/MAUDEReport failed (SPARQL endpoint returned HTTP 429 after 2 attempts: Operation timed out. Last op); datatype http://www.w3.org/2001/XMLSchema#string from a 10,000-object sample",
+      "introspection: datatype split of https://bmedesign.org/medical-device-kg/ns/deviceProblem on https://bmedesign.org/medical-device-kg/ns/MAUDEReport failed (SPARQL endpoint returned HTTP 429 after 2 attempts: Operation timed out. Last op); datatype http://www.w3.org/2001/XMLSchema#string from a 10,000-object sample",
+      "introspection: datatype split of https://bmedesign.org/medical-device-kg/ns/eventDescription on https://bmedesign.org/medical-device-kg/ns/MAUDEReport failed (SPARQL endpoint returned HTTP 429 after 2 attempts: Operation timed out. Last op); datatype http://www.w3.org/2001/XMLSchema#string from a 10,000-object sample",
+      "introspection: datatype split of https://bmedesign.org/medical-device-kg/ns/manufacturerNarrative on https://bmedesign.org/medical-device-kg/ns/MAUDEReport failed (SPARQL endpoint returned HTTP 429 after 2 attempts: Operation timed out. Last op); datatype http://www.w3.org/2001/XMLSchema#string from a 10,000-object sample",
+      "introspection: datatype split of https://bmedesign.org/medical-device-kg/ns/patientProblem on https://bmedesign.org/medical-device-kg/ns/MAUDEReport failed (SPARQL endpoint returned HTTP 429 after 2 attempts: Operation timed out. Last op); datatype http://www.w3.org/2001/XMLSchema#string from a 10,000-object sample",
+      "introspection: datatype split of https://bmedesign.org/medical-device-kg/ns/sourceType on https://bmedesign.org/medical-device-kg/ns/MAUDEReport failed (SPARQL endpoint returned HTTP 429 after 2 attempts: Operation timed out. Last op); datatype http://www.w3.org/2001/XMLSchema#string from a 10,000-object sample",
+      "introspection: datatype split of https://bmedesign.org/medical-device-kg/ns/typeOfReport on https://bmedesign.org/medical-device-kg/ns/MAUDEReport failed (SPARQL endpoint returned HTTP 429 after 2 attempts: Operation timed out. Last op); datatype http://www.w3.org/2001/XMLSchema#string from a 10,000-object sample",
+      "schema counted from the served graph: its VoID is stale"
+    ],
     "spatialkg": [
       "schema counted from the served graph: its VoID is stale"
     ]
@@ -32,7 +42,7 @@
     "glygenkg": 2.7,
     "hydrologykg": 9.8,
     "identifier-mappings": 1.5,
-    "medical-device-kg": 5.4,
+    "medical-device-kg": 32609.1,
     "nasa-gesdisc-kg": 10.9,
     "ncipidkg": 9.8,
     "nde": 2.2,
@@ -208,8 +218,8 @@
       "void_triples": 17857085,
       "version": "v0.0.4",
       "last_updated": "2026-09-09T00:26:46.368+00:00",
-      "served_triples": 17857085,
-      "matches": true
+      "served_triples": 1285482635,
+      "matches": false
     },
     "nasa-gesdisc-kg": {
       "void_triples": 30013241,
@@ -369,6 +379,7 @@
   "schema_source": {
     "bio101": "void",
     "biomarkerkg": "graph",
+    "medical-device-kg": "graph",
     "nikg": "graph",
     "spatialkg": "graph"
   }
