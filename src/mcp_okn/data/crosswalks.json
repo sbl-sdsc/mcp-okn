@@ -5715,6 +5715,54 @@
       "domain": "Anatomy & Cell Type"
     },
     {
+      "id": "KB25-mondo-label-bio101-digcfdekg",
+      "left_kg": "bio101",
+      "left_predicate": "owl:Class IRI local name (aura:{Name}; hyphens -> spaces). bio101 carries no rdfs:label, xref or external id, so the concept NAME is the only key - label-bridged",
+      "left_role": "subject",
+      "right_kg": "digcfdekg",
+      "right_predicate": "digcfdekg:geneToTrait (NCBI Gene -> trait; PIGEAN, reified as digcfdekg:GeneTraitAssociation with digcfdekg:weight); the trait is the matched MONDO term itself OR the EFO / Orphanet term it skos:exactMatch-es in ubergraph (as A25)",
+      "right_role": "object",
+      "bridge_kg": "ubergraph",
+      "shared_key": "MONDO (bio101 label)",
+      "key_namespace": "bio101 concept name <-> ubergraph MONDO rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/MONDO_{n} (digcfdekg); exact-name match; or MONDO -[ubergraph skos:exactMatch]-> EFO / Orphanet trait",
+      "iri_normalization": "bio101 has no identifier to rewrite. Build the name from the IRI: REPLACE(STRAFTER(STR(?c),'#'),'-',' '), in four case forms (as-is, all lower-case, first letter lowered, and sentence case - first letter kept, rest lower-cased), and match it as a BOUND literal (indexed; ubergraph labels are plain xsd:string). Drive from bio101's bounded ~6,300 named concepts (owl:Class, aura: namespace, excluding the aura:ID-N node markers). Then join ubergraph rdfs:label|oboInOwl:hasExactSynonym on that literal, scoped to the target ontology's obo prefix. Same name recipe as KB1-KB7. bio101 v0.0.2 (2026-10-27) added a word lexicon (aura:Concept-Word-Frame, aura:synonym-for), deliberately NOT used: its verb entries map one word to many concepts ('transport' -> about 30) and some noun entries are homonyms (Fat -> 'tag'), so it would add false matches.",
+      "verified_count": 20,
+      "verified_count_note": "20 bio101 diseases reach 21 digcfdekg traits (Color-Blindness reaches both MONDO_0001703 and Orphanet_98658) - 12 directly as MONDO, 7 only through ubergraph skos:exactMatch to an Orphanet trait, Color-Blindness both - carrying PIGEAN scores for 7,965 distinct genes. Inborn-Error-Of-Metabolism leads (2,046 genes, 814 with weight >= 5, max 13.9), then Major-Depression 1,466 (only 4 >= 5), Color-Blindness 1,336, Chromosomal-Disorder 1,093 and Multiple-Sclerosis 1,059; Encephalitis has 10. CFTR is the top cystic fibrosis gene (5.97, twice the next). The skeleton applies the exact match as a zero-or-one path (skos:exactMatch?), as KB23. Ranking genes within a trait by a self-join on weight exhausts endpoint memory for the large class-level traits; use MAX(weight) + a join back instead. Exact-name lower bound: misses spelling variants and names that are neither a label nor an exact synonym of the MONDO term. Label-bridged, so verify identity before asserting it. SCOPED to bio101's Disease subtree, as KB5/KB12/KB13/KB20/KB23: bare MONDO name matches are homonym-prone (Cold, Cud, Ion, Vibrio-Cholerae), and the scope also drops true matches bio101 files outside its Disease subtree (Allergy, Heart-Attack, Obesity). MONDO root 'disease' excluded. Exact COUNT(DISTINCT) on 2026-11-03. Homonyms spot-checked 2026-11-03 against bio101's own class hierarchy; the ones found are excluded in the skeleton.",
+      "example_question": "Which diseases KB Bio 101 teaches carry PIGEAN gene associations in digcfdekg, how many genes each, how many of them strongly (weight ≥ 5), and under which trait identifier? Rank them.",
+      "example_questions": [
+        "Which diseases KB Bio 101 teaches carry PIGEAN gene associations in digcfdekg, how many genes each, how many of them strongly (weight ≥ 5), and under which trait identifier? Rank them.",
+        "For the disorders KB Bio 101 itself classifies as genetic disorders (under `aura:Genetic-Disorder`), which gene does PIGEAN score highest, and how many genes does it score strongly (weight ≥ 5)? For cystic fibrosis, the textbook single-gene example, does CFTR come first?"
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {\n  { SELECT DISTINCT ?c ?t WHERE {\n  { SELECT DISTINCT ?c ?name WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/bio101> { ?c a <http://www.w3.org/2002/07/owl#Class> .\n        FILTER(isIRI(?c) && STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#') && !STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#ID-')) }\n      GRAPH <https://purl.org/okn/frink/kg/bio101> { ?c (<http://www.w3.org/2000/01/rdf-schema#subClassOf>/(<http://www.w3.org/2002/07/owl#intersectionOf>/<http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>*/<http://www.w3.org/1999/02/22-rdf-syntax-ns#first>)*)+ <http://www.projecthalo.com/aura#Disease> . }\n      BIND(REPLACE(STRAFTER(STR(?c),'#'),'-',' ') AS ?raw)\n      VALUES ?k { 0 1 2 3 }  # as-is, all lower, first letter lowered, sentence case\n      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), IF(?k = 2, CONCAT(LCASE(SUBSTR(?raw,1,1)),SUBSTR(?raw,2)),\n                CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2)))))) AS ?name)\n  } }\n    GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label>|<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?name .\n      FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/MONDO_') && ?t != <http://purl.obolibrary.org/obo/MONDO_0000001>) }\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2004/02/skos/core#exactMatch>? ?d . }\n  GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?d . }\n}",
+      "skeleton_verified": true,
+      "verified_on": "2026-11-03",
+      "domain": "Disease & phenotype"
+    },
+    {
+      "id": "KB26-uberon-label-bio101-spokegenelab",
+      "left_kg": "bio101",
+      "left_predicate": "owl:Class IRI local name (aura:{Name}; hyphens -> spaces). bio101 carries no rdfs:label, xref or external id, so the concept NAME is the only key - label-bridged",
+      "left_role": "subject",
+      "right_kg": "spoke-genelab",
+      "right_predicate": "https://purl.org/okn/frink/kg/spoke-genelab/schema/INVESTIGATED_ASiA (Assay investigated anatomy; UBERON) - as AN1/BH10",
+      "right_role": "object",
+      "bridge_kg": "ubergraph",
+      "shared_key": "UBERON (bio101 label)",
+      "key_namespace": "bio101 concept name <-> ubergraph UBERON rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/UBERON_{n} (spoke-genelab); exact-name match",
+      "iri_normalization": "bio101 has no identifier to rewrite. Build the name from the IRI: REPLACE(STRAFTER(STR(?c),'#'),'-',' '), in four case forms (as-is, all lower-case, first letter lowered, and sentence case - first letter kept, rest lower-cased), and match it as a BOUND literal (indexed; ubergraph labels are plain xsd:string). Drive from bio101's bounded ~6,300 named concepts (owl:Class, aura: namespace, excluding the aura:ID-N node markers). Then join ubergraph rdfs:label|oboInOwl:hasExactSynonym on that literal, scoped to the target ontology's obo prefix. Same name recipe as KB1-KB7. bio101 v0.0.2 (2026-10-27) added a word lexicon (aura:Concept-Word-Frame, aura:synonym-for), deliberately NOT used: its verb entries map one word to many concepts ('transport' -> about 30) and some noun entries are homonyms (Fat -> 'tag'), so it would add false matches.",
+      "verified_count": 17,
+      "verified_count_note": "17 bio101 anatomical concepts reach 17 UBERON terms investigated by 3,822 spoke-genelab (NASA OSDR) assays from 59 studies. Multicellular-Organism (UBERON's whole-body term, used for fly, worm and plant samples) leads with 1,242 assays, then Blood 1,216 (mouse and human), Liver 494 (11 studies, 5 missions), Larva 228 and Retina 162; Cardiac-Muscle has 2. Liver has the broadest spaceflight-vs-ground-control evidence (66 mouse assays, 8 studies). Flight-vs-ground assays can be covariate-confounded - use get_valid_contrasts for clean ones. Exact-name lower bound: misses spelling variants and names that are neither a label nor an exact synonym of the UBERON term. Label-bridged, so verify identity before asserting it. Same exclusions as KB21: the roots tissue / anatomical structure / anatomical entity and the homonyms Lens, Fat and Cortex. Exact COUNT(DISTINCT) on 2026-11-03. Homonyms spot-checked 2026-11-03 against bio101's own class hierarchy; the ones found are excluded in the skeleton.",
+      "example_question": "Which organs and tissues KB Bio 101 teaches have been assayed in NASA OSDR spaceflight omics, in how many assays, studies and missions, and in which organisms? Rank them.",
+      "example_questions": [
+        "Which organs and tissues KB Bio 101 teaches have been assayed in NASA OSDR spaceflight omics, in how many assays, studies and missions, and in which organisms? Rank them.",
+        "For the organs and tissues KB Bio 101 teaches, how many spoke-genelab assays directly compare spaceflight samples with ground-control samples, in which organisms, and on which missions? Rank them."
+      ],
+      "skeleton_query": "SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {\n  { SELECT DISTINCT ?c ?t WHERE {\n  { SELECT DISTINCT ?c ?name WHERE {\n      GRAPH <https://purl.org/okn/frink/kg/bio101> { ?c a <http://www.w3.org/2002/07/owl#Class> .\n        FILTER(isIRI(?c) && STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#') && !STRSTARTS(STR(?c),'http://www.projecthalo.com/aura#ID-')) }\n      FILTER(?c NOT IN (<http://www.projecthalo.com/aura#Lens>, <http://www.projecthalo.com/aura#Fat>, <http://www.projecthalo.com/aura#Cortex>))  # homonyms (spot-checked 2026-11-03)\n      BIND(REPLACE(STRAFTER(STR(?c),'#'),'-',' ') AS ?raw)\n      VALUES ?k { 0 1 2 3 }  # as-is, all lower, first letter lowered, sentence case\n      BIND(IF(?k = 0, ?raw, IF(?k = 1, LCASE(?raw), IF(?k = 2, CONCAT(LCASE(SUBSTR(?raw,1,1)),SUBSTR(?raw,2)),\n                CONCAT(SUBSTR(?raw,1,1),LCASE(SUBSTR(?raw,2)))))) AS ?name)\n  } }\n    GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label>|<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?name .\n      FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/UBERON_') && ?t != <http://purl.obolibrary.org/obo/UBERON_0000479> && ?t != <http://purl.obolibrary.org/obo/UBERON_0000061> && ?t != <http://purl.obolibrary.org/obo/UBERON_0001062>) }\n  } }\n  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> { ?a <https://purl.org/okn/frink/kg/spoke-genelab/schema/INVESTIGATED_ASiA> ?t . }\n}",
+      "skeleton_verified": true,
+      "verified_on": "2026-11-03",
+      "domain": "Anatomy & Cell Type"
+    },
+    {
       "id": "G9-uniprot-glygenkg-prokn",
       "left_kg": "glygenkg",
       "left_predicate": "node-iri (up:Protein; the node IRI IS the UniProt IRI)",
