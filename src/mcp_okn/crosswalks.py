@@ -126,6 +126,7 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "MONDO": "Disease & phenotype",
     "MONDO (bio101 label)": "Disease & phenotype",
     "HP": "Disease & phenotype",
+    "HP (bio101 label)": "Disease & phenotype",
     "DOID<->MONDO": "Disease & phenotype",
     "MONDO<->OMIM (bridged)": "Disease & phenotype",
     "MONDO<->Orphanet (bridged)": "Disease & phenotype",
