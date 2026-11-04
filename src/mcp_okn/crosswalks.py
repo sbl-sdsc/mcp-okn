@@ -140,6 +140,7 @@ _DOMAIN_BY_SHARED_KEY: dict[str, str] = {
     "UMLS<->UBERON": "Anatomy & Cell Type",
     "UBERON": "Anatomy & Cell Type",
     "UBERON (bio101 label)": "Anatomy & Cell Type",
+    "PO (bio101 label)": "Anatomy & Cell Type",
     "CL": "Anatomy & Cell Type",
     "CL (bio101 label)": "Anatomy & Cell Type",
     "Ensembl": "Genes",
