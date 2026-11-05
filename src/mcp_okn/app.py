@@ -214,9 +214,10 @@ mcp = FastMCP("mcp-okn", instructions=INSTRUCTIONS)
 # Unauthenticated liveness/readiness endpoints for k8s probes / load balancers.
 # Registered on the HTTP transport's Starlette app; inert under stdio.
 def _register_health_routes() -> None:
+    from starlette.requests import Request
     from starlette.responses import PlainTextResponse
 
-    async def _ok(_request):
+    async def _ok(_request: Request) -> PlainTextResponse:
         return PlainTextResponse("ok")
 
     for _path in ("/health", "/healthz", "/livez", "/readyz"):
