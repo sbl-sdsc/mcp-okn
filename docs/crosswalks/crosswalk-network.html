@@ -48,7 +48,7 @@
 <body>
 <header>
   <h1>Proto-OKN cross-KG crosswalk network</h1>
-  <p>39 knowledge graphs, 268 verified crosswalks (verified 2026-10-14). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
+  <p>39 knowledge graphs, 268 verified crosswalks (verified 2026-11-04). One edge per crosswalk &mdash; parallel crosswalks between a pair fan out as arcs · color = data domain · width &#8733; log&#8321;&#8320;(verified count).</p>
   <p class="tip">&#9654; <b>Hover</b> a node or edge for detail · <b>drag</b> to rearrange · <b>scroll</b> to zoom · <b>double-click</b> a node to unpin it.<br>&#9654; <b>Click a legend item</b> &mdash; a domain (e.g. <b>Chemicals</b>) or a line style (e.g. <b>via ubergraph</b>) &mdash; to toggle those edges.</p>
 </header>
 <div class="bar" id="legend"></div>
@@ -379,8 +379,8 @@ const deg={};nodeSet.forEach(n=>deg[n]=nbr[n].size);
 const nodes=[...nodeSet].map(id=>({id,bridge:BRIDGES.has(id),deg:deg[id]}));
 
 // ---- Domain clustering -------------------------------------------------------
-// A plain force layout collapses this graph into one hairball: ~15 of the 35 KGs
-// are biomedical and carry most of the 161 edges, so they clump, drift outward and
+// A plain force layout collapses this graph into one hairball: the biomedical KGs
+// carry most of the edges, so they clump, drift outward and
 // pile up against the viewport edge. Instead, give every DOMAIN an anchor point on
 // a ring, and pull each KG toward the WEIGHTED CENTROID of the domains it actually
 // joins on (weighted by how many crosswalks it has in each).
