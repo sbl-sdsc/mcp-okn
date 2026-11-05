@@ -1,0 +1,61 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# mcp-okn — default Helm values
+# ──────────────────────────────────────────────────────────────────────────────
+
+# -- Container image configuration
+image:
+  repository: containers.renci.org/frink/okn-mcp
+  pullPolicy: Always
+  # Defaults to the chart appVersion when blank
+  tag: "v0.1.0"
+
+
+
+# ── Application ───────────────────────────────────────────────────────────────
+
+extraEnv:
+  - name: MCP_OKN_BUILD
+    value: 7687738-dirty
+  - name: FEDERATION_ENDPOINT
+    value: http://frink-federation-qlever-server:7001
+
+basePath: /okn-mcp-dev
+
+ingress:
+  enabled: false
+
+gateway:
+  enabled: true
+
+  # parentRefs list — references one or more existing Gateway resources.
+  parentRefs:
+    - name: ingress-gateway
+      namespace: ingress
+      # sectionName: https   # optional listener section
+
+  # Hostname matched by the HTTPRoute
+  host: apps.okn.us
+
+  # GKE-only: long-lived backend timeout + graceful drain on rollout
+  gcpBackendPolicy:
+    enabled: true
+    timeoutSec: 3600
+    connectionDrainingTimeoutSec: 60
+
+  # GKE-only: explicit LB health check (otherwise GKE infers from readiness)
+  healthCheckPolicy:
+    enabled: true
+    checkIntervalSec: 10
+    timeoutSec: 5
+    healthyThreshold: 2
+    unhealthyThreshold: 2
+    requestPath: /health
+
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 500Mi
+  limits:
+    cpu: 2
+    memory: 2Gi

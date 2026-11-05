@@ -1,0 +1,23 @@
+apiVersion: v2
+name: mcp-okn
+description: >
+  Helm chart for the mcp-okn server. Exposes a Model Context Protocol
+  endpoint for querying the FRINK federated SPARQL endpoint over
+  Proto-OKN knowledge graphs.
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+
+keywords:
+  - mcp
+  - sparql
+  - knowledge-graph
+  - okn
+  - frink
+
+home: https://github.com/frink-okn/mcp-okn
+sources:
+  - https://github.com/frink-okn/mcp-okn
+
+maintainers:
+  - name: frink-okn

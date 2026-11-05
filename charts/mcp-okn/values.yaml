@@ -1,0 +1,166 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# mcp-okn — default Helm values
+# ──────────────────────────────────────────────────────────────────────────────
+
+# -- Container image configuration
+image:
+  repository: ghcr.io/frink-okn/mcp-okn
+  pullPolicy: IfNotPresent
+  # Defaults to the chart appVersion when blank
+  tag: ""
+
+imagePullSecrets: []
+
+# -- Deployment replica count
+replicaCount: 1
+
+# ── Application ───────────────────────────────────────────────────────────────
+# mcp-okn queries the FRINK federated endpoint (default
+# https://apps.okn.us/federation/sparql; override via FEDERATION_ENDPOINT in
+# extraEnv), no auth. The container always serves streamable-http on the port below.
+
+port: 8000
+
+# -- Extra environment variables injected into the container
+extraEnv: []
+# - name: MY_VAR
+#   value: "my-value"
+
+# -- Extra volumes / mounts (e.g. custom registry.json)
+extraVolumes: []
+extraVolumeMounts: []
+
+# ── Networking ────────────────────────────────────────────────────────────────
+
+service:
+  type: ClusterIP
+  port: 80
+  # Annotations for cloud LB or Prometheus scraping
+  annotations: {}
+
+# -- Sub-path routing under a shared domain
+# All ingress rules below are relative to basePath
+basePath: /mcp/okn
+
+ingress:
+  enabled: true
+
+  # Ingress class — set to your controller:
+  #   nginx  → kubernetes.io/ingress.class: nginx  (or ingressClassName: nginx)
+  #   traefik → ingressClassName: traefik
+  className: nginx
+
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    # Strip the basePath prefix before forwarding to the container.
+    # The container's MCP endpoint is at /mcp — the rewrite-target above
+    # maps  /mcp/okn(/mcp/.*)  →  /mcp/...
+
+  # Shared domain — override per environment
+  host: platform.example.com
+
+  # TLS — reference an existing cert-manager certificate or a manually created Secret
+  tls:
+    enabled: true
+    secretName: platform-tls
+
+# ── Gateway API (alongside or instead of Ingress) ────────────────────────────
+# Both ingress.enabled and gateway.enabled may be true at the same time so
+# multiple traffic paths can coexist. On GKE the GCPBackendPolicy and
+# HealthCheckPolicy mirror the wobd chart pattern.
+gateway:
+  enabled: false
+
+  # parentRefs list — references one or more existing Gateway resources.
+  parentRefs:
+    - name: ingress-gateway
+      namespace: ingress
+      # sectionName: https   # optional listener section
+
+  # Hostname matched by the HTTPRoute
+  host: platform.example.com
+
+  # GKE-only: long-lived backend timeout + graceful drain on rollout
+  gcpBackendPolicy:
+    enabled: false
+    timeoutSec: 600
+    connectionDrainingTimeoutSec: 60
+
+  # GKE-only: explicit LB health check (otherwise GKE infers from readiness)
+  healthCheckPolicy:
+    enabled: false
+    checkIntervalSec: 10
+    timeoutSec: 5
+    healthyThreshold: 2
+    unhealthyThreshold: 2
+    requestPath: /health
+
+# ── Resource requests / limits ────────────────────────────────────────────────
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+# ── Autoscaling ───────────────────────────────────────────────────────────────
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 80
+
+# ── Pod configuration ─────────────────────────────────────────────────────────
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext:
+  runAsNonRoot: true
+  runAsUser: 1000
+  fsGroup: 1000
+
+securityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  capabilities:
+    drop:
+      - ALL
+
+# ── Probes ────────────────────────────────────────────────────────────────────
+# FORWARDED_ALLOW_IPS=* in the image means uvicorn accepts any Host header,
+# so standard httpGet probes (which send the pod IP as Host) work fine.
+
+livenessProbe:
+  httpGet:
+    path: /health
+    port: http
+  initialDelaySeconds: 10
+  periodSeconds: 30
+  timeoutSeconds: 5
+  failureThreshold: 3
+
+readinessProbe:
+  httpGet:
+    path: /health
+    port: http
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 3
+  failureThreshold: 3
+
+# ── Scheduling ────────────────────────────────────────────────────────────────
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
