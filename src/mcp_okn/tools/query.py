@@ -98,40 +98,27 @@ async def sparql_query(
 ) -> Any:
     """Run a SPARQL query against the OKN federation endpoint.
 
-    AVOID FULL SCANS. They are what times out (each query is stopped after about
-    60 s). Bind known values exactly: `?s rdfs:label "asthma"@en`, or
-    `?s ?p "E-MTAB-5477"`. An all-variable `?s ?p ?o` constrained only by
-    `FILTER(CONTAINS/REGEX/LCASE(STR(..)))` reads every triple in the graph. To
-    find a predicate by name use `get_schema(kg, match="term")`. To find an
-    ontology term's IRI from its name use `lookup_term("term")`. Scope a
-    COUNT/GROUP BY to one class. Each UNION branch, MINUS and EXISTS is
-    evaluated on its own: repeat the anchor (VALUES, `?x a <Class>`) inside each
-    branch. A FILTER or BIND sees only its own group, so put one that compares
-    two GRAPH blocks after both blocks, not inside either.
+    AVOID FULL SCANS; they are what times out (queries stop after about 60 s). Bind
+    known values exactly (`?s rdfs:label "asthma"@en`, `?s ?p "E-MTAB-5477"`): an
+    all-variable `?s ?p ?o` constrained only by a string FILTER reads every triple
+    in the graph. Find a predicate by name with `get_schema(kg, match="term")`, and
+    an ontology term's IRI with `lookup_term("term")`. Scope a COUNT/GROUP BY to one
+    class. Each UNION branch, MINUS and EXISTS is evaluated on its own: repeat the
+    anchor (VALUES, `?x a <Class>`) inside each. A FILTER or BIND sees only its own
+    group, so put one that compares two GRAPH blocks after both blocks.
 
-    Scope each knowledge graph with its named graph, e.g.::
+    Scope each KG with its named graph:
+    `GRAPH <https://purl.org/okn/frink/kg/prokn> { ... }`. Before joining a KG on
+    ontology terms, check which namespace it stores for the predicate with
+    `probe_namespaces(shortname, predicate)`: KGs often carry several (NDE's
+    `schema:healthCondition` holds MONDO, DOID, HP and NCIT), and the sparse one,
+    or one with no `subClassOf*` hierarchy in ubergraph, gives a fraction of the
+    results.
 
-        PREFIX up: <http://purl.uniprot.org/core/>
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        SELECT DISTINCT ?mondo ?label WHERE {
-          GRAPH <https://purl.org/okn/frink/kg/prokn> {
-            ?d a up:Disease ; rdfs:seeAlso ?mondo .
-          }
-        }
+    For category questions ("all cardiovascular diseases", "subtypes of X"), expand
+    the category INLINE with ubergraph's transitive closure, joined to the target KG
+    in the SAME query, not level by level::
 
-    BEFORE joining a target KG on an ontology term (the `<...MONDO_...>` IRIs
-    below), confirm which namespace that KG actually stores for the predicate by
-    calling `probe_namespaces(shortname, predicate)` first. KGs routinely carry
-    several ontologies for the same field (e.g. NDE's `schema:healthCondition`
-    holds MONDO, DOID, HP and NCIT), and picking the sparse one — or one with no
-    `subClassOf*` hierarchy in ubergraph — yields a fraction of the results.
-
-    For category/subtype questions ("all cardiovascular diseases", "any asthma",
-    "subtypes of X"), expand the category INLINE using ubergraph's precomputed
-    transitive closure and join it to the target KG in the SAME query — do not
-    walk the hierarchy level by level or fetch the tree separately::
-
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         SELECT DISTINCT ?disease ?label WHERE {
           GRAPH <https://purl.org/okn/frink/kg/ubergraph> {
             ?disease rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0004995> .
@@ -143,30 +130,27 @@ async def sparql_query(
         }
 
     Args:
-        query: A complete SPARQL query string. Undeclared standard prefixes
-            (rdf, rdfs, xsd, owl, skos, dcterms, ...) and those `get_schema`
-            printed for the GRAPHs it names (biolink, ...) are added for you.
-        format: `json` (default; parsed into rows), `csv`, or `tsv` (raw text).
-        exploratory: True for schema probes, samples and trial-and-error you
-            don't want in the transcript (never logged). Queries that error or
-            return no rows are skipped automatically.
-        compact: json rows as `{"columns", "data": [[...]], "count"}` (default);
-            False gives `{"vars", "rows": [{...}], "row_count"}`.
-        scope: Log scope, only for SEVERAL analyses running concurrently on one
-            server (e.g. parallel subagents): pass the same unique label to
-            `reset_query_log`, `sparql_query` and `create_chat_transcript`.
-        allow_scan: Full time limit for a query with a known scan shape (which
-            otherwise gets 15 s and a rewrite), and send one the server would
-            refuse as certain to fail.
+        query: A complete SPARQL query. Undeclared standard prefixes (rdf, rdfs,
+            xsd, owl, skos, ...) and those `get_schema` printed for the GRAPHs it
+            names (biolink, ...) are added for you.
+        format: `json` (default), `csv` or `tsv` (raw text).
+        exploratory: True for probes and trial-and-error to keep out of the
+            transcript. Queries that error or return no rows are skipped anyway.
+        compact: False gives `{"vars", "rows": [{...}], "row_count"}`.
+        scope: Log scope, only for SEVERAL analyses on one server at once
+            (parallel subagents): pass the same label to `reset_query_log`,
+            `sparql_query` and `create_chat_transcript`.
+        allow_scan: Give a known scan shape the full time limit (otherwise 15 s
+            and a rewrite), and send one the server would refuse as certain to
+            fail.
 
     Returns:
-        `{"columns", "data", "count"}`, or `{"format", "text"}` for csv/tsv.
-        Over ~40,000 characters the rows are cut (`truncated: true`, with
-        `returned` and the full count): aggregate or LIMIT instead of re-running.
-        A zero-row reply adds a `diagnosis` (which pattern or term matched
-        nothing, or the join values on each side) and a `hint`; `warnings` flag
-        a BIND/FILTER that cannot see its variable; `prefixes_added` lists
-        declarations added.
+        `{"columns", "data", "count"}`, or `{"format", "text"}` for csv/tsv. Over
+        about 40,000 characters the rows are cut (`truncated`, `returned`, full
+        `count`): aggregate or LIMIT instead of re-running. A zero-row reply adds a
+        `diagnosis` (what matched nothing, or the join values on each side) and a
+        `hint`; `warnings` flag a BIND/FILTER that cannot see its variable;
+        `prefixes_added` lists declarations added.
     """
     # Normalize up front so the logged/transcript query matches what executes
     # (run_sparql normalizes again; the substitution is idempotent).
@@ -280,27 +264,20 @@ async def expand_ontology_term(
 ) -> Any:
     """Expand an ontology term to its full subtree/closure via `ubergraph`.
 
-    USE THIS (or the equivalent inline `rdfs:subClassOf*` pattern) for any
-    "all X under category Y" / "subtypes of" / "descendants of" question, e.g.
-    "all cardiovascular diseases". Ubergraph stores precomputed inferred edges,
-    so this returns the COMPLETE subtree in one call. Do not walk the hierarchy
-    level by level or fetch the tree separately.
+    USE THIS (or the inline `rdfs:subClassOf*` pattern) for any "all X under
+    category Y" / "subtypes of" / "descendants of" question. Ubergraph stores
+    precomputed inferred edges, so this returns the COMPLETE subtree in one call.
+    Do not walk the hierarchy level by level.
 
     Args:
-        term: The ontology term as a full URI
-            (e.g. `http://purl.obolibrary.org/obo/MONDO_0003847`) or a CURIE
-            with an OBO prefix (e.g. `MONDO:0003847`, `CHEBI:24431`).
+        term: A full URI (`http://purl.obolibrary.org/obo/MONDO_0003847`) or an
+            OBO CURIE (`MONDO:0003847`, `CHEBI:24431`).
         relation: `subClassOf` (default) or `partOf`.
         direction: `descendants` (terms under `term`) or `ancestors`.
-        include_self: If True (default), include `term` itself in the results
-            (reflexive `*` path); if False, return only strict descendants/
-            ancestors (non-reflexive `+` path).
+        include_self: True (default) includes `term` itself (`*` path); False
+            returns only strict descendants/ancestors (`+` path).
         limit: Max rows to return.
-        scope: OPTIONAL log scope — the same string passed to `sparql_query` and
-            `create_chat_transcript`. Omit for a normal single analysis; pass a
-            unique label when several analyses run concurrently against this
-            server (parallel subagents share one MCP session, so an unscoped log
-            mixes their entries).
+        scope: Optional log scope, as for `sparql_query`.
 
     Returns the matching terms with their `rdfs:label`.
     """

@@ -96,56 +96,39 @@ def _join_index(full: dict[str, Any]) -> dict[str, Any]:
 async def get_join_strategy(kg_a: str, kg_b: str | None = None) -> dict[str, Any]:
     """Look up a PRECOMPUTED, verified recipe for joining two KGs.
 
-    Call this FIRST whenever a question spans two graphs — BEFORE `find_crosswalks`
-    and before writing any federated join query. `find_crosswalks` discovers join
-    keys live and frequently times out on large graphs; this serves a curated,
-    hand-verified table (exact `COUNT(DISTINCT)` over the named graphs on
-    `verified_on`) instead, so it is fast and reliable. It tells you not just THAT
-    two KGs join but exactly HOW: the predicates and roles on each side, the shared
-    identifier and its namespace, any bridge graph, and — critically — a runnable
-    `skeleton_query`: a verified, minimal `COUNT(DISTINCT <shared key>)` join that
-    already applies every IRI rewrite (the same id often appears in 2-3 IRI forms,
-    so a naive join silently returns nothing). Start from that query — actually
-    RUN it (non-exploratory, so it lands in the transcript) to confirm the key
-    still joins, then extend that same query with your own payload instead of
-    rebuilding the boilerplate. Do NOT decompose the join into separate
-    exploratory lookups, read an id off one, and hard-code it as a constant IRI:
-    that is the join the whole cross-KG claim rests on, so the query that
-    establishes it must be logged — otherwise the transcript can't reproduce its
-    own headline result.
+    Call this FIRST when a question spans two graphs, before `find_crosswalks`
+    (which scans live and often times out) and before writing a federated join;
+    call `get_schema` for each KG in the same turn. A recipe gives the predicates
+    and roles on each side, the shared identifier and its namespace, any bridge
+    graph, and a runnable `skeleton_query`: a verified `COUNT(DISTINCT <shared
+    key>)` join that already applies every IRI rewrite (one id often appears in 2-3
+    IRI forms, so a naive join silently returns nothing). RUN it non-exploratory,
+    so the join lands in the transcript, then extend that same query with your own
+    payload. Do NOT split the join into exploratory lookups and hard-code an id
+    read off one: the query that establishes the join must be logged, or the
+    transcript can't reproduce its own result.
 
     Args:
         kg_a: a KG shortname (as from `list_kgs`).
         kg_b: optional second shortname. Omit to list everything `kg_a` can join.
 
     Returns (kg_b given) one of:
-      * `{"status": "verified", "joins": [recipe, ...]}` — apply the recipe.
-        Each recipe carries `left_kg/right_kg`, `left_predicate/right_predicate`
-        (`"node-iri"` means the id IS the entity's own IRI — join directly on it),
-        `left_role/right_role`, `shared_key`, `key_namespace`, `bridge_kg`,
-        `domain`, `verified_count`, `example_questions`, and a runnable
-        `skeleton_query` — the example SPARQL to copy and build on (it encodes the
-        IRI-normalization, so no separate prose recipe is returned).
-        `skeleton_verified: true` means it reproduced `verified_count` exactly when
-        last run on `verified_on`. When two recipes link the same entity through
-        different identifiers (e.g. direct MONDO AND an OMIM bridge), each carries
-        a `complementary_note` and a top-level `note` flags that they are
-        COMPLEMENTARY — UNION them for complete coverage rather than picking one.
-      * `{"status": "known_non_join", "non_joins": [...]}` — this pair was CHECKED
+      * `{"status": "verified", "joins": [recipe, ...]}`: apply the recipe
+        (`list_crosswalks(include_examples=True)` has example questions). A
+        predicate of `"node-iri"` means the id IS the entity's own IRI (join on
+        it directly). `skeleton_verified: true` means the skeleton reproduced
+        `verified_count` on `verified_on`. Recipes that link the same entity
+        through different identifiers carry a `complementary_note`, and a
+        top-level `note` flags them as COMPLEMENTARY: UNION them for complete
+        coverage rather than picking one.
+      * `{"status": "known_non_join", "non_joins": [...]}`: this pair was CHECKED
         and does not join on the obvious key. Do NOT attempt it; read `diagnosis`.
-      * `{"status": "unknown", ...}` — nothing precomputed. Fall back to
+      * `{"status": "unknown", ...}`: nothing precomputed. Fall back to
         `find_crosswalks(kg_a)` / `find_crosswalks(kg_b)` to discover a key live.
-    Returns (kg_b omitted) `{"shortname", "joins": [...], "island": {...}|None,
-    "known_non_joins": [...]}` — every verified join touching `kg_a`, the `joins`
-    grouped by `domain` (sorted by `(domain, shared_key)`) like `list_crosswalks`.
-    When that listing is too large to send whole (hub KGs such as ubergraph,
-    spoke-okn, prokn), it comes back as an index (`"detail": "index"`): one line
-    per join with its partners, `shared_key` and `verified_count`. Ask for the
-    pair to get the recipe.
-
-    `island`/`known_non_join` context is included whenever present so you can tell
-    apart "not yet profiled" from "verified to share no key". `verified_on` dates
-    every answer so staleness is visible.
+    Returns (kg_b omitted) every verified join touching `kg_a`, grouped by
+    `domain`, with `island` and `known_non_joins`; for hub KGs (ubergraph,
+    spoke-okn, prokn) an index (`"detail": "index"`), one line per join. Ask for
+    the pair to get the recipe.
     """
     verified_on = crosswalk_table.verified_on()
     if kg_b is None:
@@ -158,7 +141,16 @@ async def get_join_strategy(kg_a: str, kg_b: str | None = None) -> dict[str, Any
         }
         return full if reply_size(full) <= REPLY_CHAR_BUDGET else _join_index(full)
 
-    joins = crosswalk_table.join_between(kg_a, kg_b)
+    # The catalogue's example questions describe what the join is good for, not
+    # how to run it; they were ~17% of a pair reply (list_crosswalks has them).
+    joins = [
+        {
+            k: v
+            for k, v in j.items()
+            if k not in ("example_questions", "example_question")
+        }
+        for j in crosswalk_table.join_between(kg_a, kg_b)
+    ]
     if joins:
         out = {"status": "verified", "verified_on": verified_on, "joins": joins}
         complementary = _complementary_note(joins)

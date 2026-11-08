@@ -14,50 +14,34 @@ async def get_schema(
 ) -> dict[str, Any]:
     """Get the schema (classes, predicates, edge/node properties) for one KG.
 
-    Call this BEFORE writing a `sparql_query` for a KG, to learn its specific
-    entity types, predicates, and property names. Prefers curated metadata and
-    falls back to probing the federation endpoint for the distinct classes and
-    predicates used in the KG's named graph.
+    Call this BEFORE writing a `sparql_query` for a KG. For several KGs, call it
+    for each in the same turn (with `get_join_strategy` for a pair).
 
     Args:
-        shortname: The KG shortname (e.g. `prokn`, `sawgraph`), as returned by
-            `list_kgs`.
-        compact: If True (default), return the compact schema. Set False to also
-            include an `edge_property_summary` highlighting relationships that
-            carry edge properties (with ready-to-use reification query templates).
-        match: Optional search term. Returns only the classes, predicates and
-            properties whose IRI, label or description contains it (case-
-            insensitive; separate alternatives with `|`, e.g.
-            `"prevalence|population"`), with full detail, plus the classes they
-            connect. Use it when the overview was trimmed to fit (`schema_view`
-            says so) or to find where a concept lives before writing SPARQL —
-            it reads the schema metadata, so it is instant, unlike scanning the
-            live graph's predicates.
+        shortname: The KG shortname (e.g. `prokn`), as returned by `list_kgs`.
+        compact: True (default) for the compact schema; False also includes an
+            `edge_property_summary` with reification query templates.
+        match: Optional search term (case-insensitive; `|` separates
+            alternatives, e.g. `"prevalence|population"`). Returns only the
+            classes, predicates and properties whose IRI, label or description
+            contains it, in full detail, plus the classes they connect. Use it to
+            find where a concept lives, or for the rest when `schema_view` says
+            the overview was trimmed. It reads metadata, so it is instant.
 
     Returns:
-        `{"shortname": ..., "schema": {"classes", "predicates",
-        "edge_properties", "node_properties"}, "sparql_prefixes": ...}`. IRIs
-        are written `prefix:local`; `sparql_prefixes` holds the PREFIX lines to
-        paste into your query. Each of `classes`/`predicates`/
-        `node_properties` is a `{"columns", "data", "count"}` table;
-        `edge_properties` maps relationship names to their properties and a
-        `query_template` showing the RDF reification pattern to query them.
-        When the predicates table has a `pattern` column (how each predicate is
-        stored: `direct`, `reified`, `axiom`, `declared`, `;`-joined), check it
-        before writing `?s <p> ?o`: `pattern_guidance` says what each
-        non-direct pattern means for the query and gives an OWL-restriction
-        `query_template` for `axiom` predicates, which have no direct triples.
-        Also includes `next_step` reminding you to `probe_namespaces` for any
-        predicate whose objects are ontology terms before writing the query. For
-        KGs with domain rules the schema alone does not convey (e.g.
-        `spoke-genelab`), also includes `usage_notes` with `guidance` prose and a
-        reusable `query_snippet`.
-
-        The reply is kept under about 40,000 characters so clients deliver it
-        whole. When the full schema is larger, detail is trimmed (repeated
-        sections, then descriptions, then the smallest rows) and `schema_view`
-        lists what was trimmed and how many rows were left out; call again with
-        `match` for the rest.
+        `{"shortname", "schema": {"classes", "predicates", "edge_properties",
+        "node_properties"}, "sparql_prefixes"}`. IRIs are written `prefix:local`
+        (`sparql_prefixes` holds the PREFIX lines; `sparql_query` also adds them).
+        Tables are `{"columns", "data", "count"}`; a label is left out when it
+        only restates the IRI's local name. A predicate's `pattern` says how it
+        is stored (`direct`, `reified`, `axiom`, `declared`, `;`-joined): check it
+        before writing `?s <p> ?o`; `pattern_guidance` explains the non-direct
+        ones (an `axiom` predicate has no direct triples). `edge_properties` maps
+        relationships to their properties and reification `query_template`.
+        `next_step` reminds you to `probe_namespaces` ontology-valued predicates;
+        `usage_notes` carries domain rules for some KGs (e.g. `spoke-genelab`).
+        Replies stay under about 40,000 characters; `schema_view` lists anything
+        trimmed (call again with `match` for it).
     """
     result = await schema.get_schema(shortname, compact=compact)
     notes = schema.usage_notes(shortname)

@@ -351,6 +351,14 @@ async def run_sparql(
         return {"format": fmt, "text": text}
 
     payload = resp.json()
+    if isinstance(payload.get("boolean"), bool):
+        # An ASK query: one row holding the answer. Dropping it read as zero rows,
+        # i.e. "false", whatever the answer was.
+        return {
+            "vars": ["boolean"],
+            "rows": [{"boolean": payload["boolean"]}],
+            "row_count": 1,
+        }
     rows = _flatten_bindings(payload)
     return {
         "vars": payload.get("head", {}).get("vars", []),

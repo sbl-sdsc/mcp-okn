@@ -794,3 +794,12 @@ def test_example_question_count_matches_files():
     assert int(m.group(1)) == n_files, (
         f"README cites {m.group(1)} example questions; {n_files} transcript files exist"
     )
+
+
+async def test_pair_recipe_leaves_out_example_questions():
+    out = await get_join_strategy("biobricks-aopwiki", "rdkg")
+    assert out["joins"]
+    assert all(
+        "example_questions" not in j and "example_question" not in j
+        for j in out["joins"]
+    )

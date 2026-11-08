@@ -319,3 +319,32 @@ def test_generic_usage_line_is_dropped_but_a_specific_one_kept():
     entry["usage"] = "The direct triple ALSO holds GO NOT annotations."
     out = compact_reply(reply)["schema"]["edge_properties"]["p0"]
     assert out["usage"] == "The direct triple ALSO holds GO NOT annotations."
+
+
+def test_labels_that_restate_the_local_name_are_blanked():
+    from mcp_okn.schema_view import compact_reply
+
+    reply = {
+        "shortname": "x",
+        "schema": {
+            "predicates": {
+                "columns": ["uri", "label"],
+                "data": [
+                    ["https://w3id.org/biolink/vocab/has_phenotype", "has phenotype"],
+                    [
+                        "http://purl.obolibrary.org/obo/RO_0002410",
+                        "causally related to",
+                    ],
+                ],
+                "count": 2,
+            },
+            "classes": {
+                "columns": ["uri", "label"],
+                "data": [["https://w3id.org/biolink/vocab/Gene", "Gene"]],
+                "count": 1,
+            },
+        },
+    }
+    out = compact_reply(reply)["schema"]
+    assert [r[1] for r in out["predicates"]["data"]] == [None, "causally related to"]
+    assert "label" not in out["classes"]["columns"]  # every label echoed
