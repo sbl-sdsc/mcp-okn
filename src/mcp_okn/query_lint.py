@@ -235,6 +235,75 @@ def unambiguous_prefixes(per_kg: Mapping[str, Mapping[str, str]]) -> dict[str, s
     return {n: ns for n, ns in out.items() if n not in clash}
 
 
+_GRAPH_OPEN = re.compile(
+    r"(?i)\bGRAPH\s*(?:<https?://purl\.org/okn/frink/kg/([A-Za-z0-9_.\-]+)>|[?$]\w+)\s*\{"
+)
+
+
+def _graph_spans(query: str) -> list[tuple[int, int, str | None]]:
+    """``(start, end, kg)`` for every GRAPH block; ``kg`` is None for ``GRAPH ?g``.
+
+    Strings and comments are blanked first (keeping offsets), so a brace or the
+    word GRAPH inside them is not read as syntax.
+    """
+    texts = _OPAQUE.sub(
+        lambda m: m.group() if m.group().startswith("<") else " " * len(m.group()),
+        query,
+    )
+    bare = _OPAQUE.sub(lambda m: " " * len(m.group()), query)
+    spans: list[tuple[int, int, str | None]] = []
+    for m in _GRAPH_OPEN.finditer(texts):
+        depth, i = 0, m.end() - 1
+        while i < len(bare):
+            if bare[i] == "{":
+                depth += 1
+            elif bare[i] == "}":
+                depth -= 1
+                if depth == 0:
+                    break
+            i += 1
+        spans.append((m.end(), i, m.group(1)))
+    return spans
+
+
+def graph_scoped_prefixes(
+    query: str, per_kg: Mapping[str, Mapping[str, str]]
+) -> dict[str, str]:
+    """Undeclared prefixes resolved by the GRAPH blocks they are used in.
+
+    A name used only inside ``GRAPH <…/kg/spoke-okn>`` blocks means what
+    spoke-okn's ``get_schema`` printed, even when another named graph prints the
+    same name for its own namespace (``kg:`` is one per graph). A use outside
+    every named-graph block, or inside ``GRAPH ?g``, falls back to all the graphs
+    in ``per_kg``, which must agree. Either way :func:`unambiguous_prefixes`
+    decides over the graphs consulted.
+    """
+    bare = _OPAQUE.sub(lambda m: " " * len(m.group()), query)
+    declared = {m.group(1) or "" for m in _DECLARED.finditer(bare)}
+    bare = _DECLARED.sub(lambda m: " " * len(m.group()), bare)
+    spans = _graph_spans(query)
+    users: dict[str, set[str]] = {}
+    unscoped: set[str] = set()
+    for m in _USED.finditer(bare):
+        name = m.group(1)
+        if name in declared:
+            continue
+        inner = [s for s in spans if s[0] <= m.start() < s[1]]
+        kg = min(inner, key=lambda s: s[1] - s[0])[2] if inner else None
+        users.setdefault(name, set())
+        if kg is None or kg not in per_kg:
+            unscoped.add(name)
+        else:
+            users[name].add(kg)
+    out: dict[str, str] = {}
+    for name, kgs in users.items():
+        consulted = per_kg if name in unscoped else {k: per_kg[k] for k in kgs}
+        ns = unambiguous_prefixes(consulted).get(name)
+        if ns:
+            out[name] = ns
+    return out
+
+
 # ── algebra helpers ──────────────────────────────────────────────────────────
 
 
