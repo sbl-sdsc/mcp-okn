@@ -256,6 +256,33 @@ def _local_name(iri: Any) -> str | None:
     return parts[1] if parts else None
 
 
+def _words(text: str) -> str:
+    """``has_phenotype``, ``hasPhenotype`` and ``Has phenotype`` all read the same."""
+    spaced = re.sub(r"([a-z0-9])([A-Z])", r"\1 \2", text).replace("_", " ")
+    return " ".join(spaced.replace("-", " ").lower().split())
+
+
+def _drop_echo_labels(table: dict[str, Any] | None) -> None:
+    """Blank each label that only restates its IRI's local name.
+
+    A column left with no label at all is dropped. In the perf2 benchmark these
+    labels were 69% of the label text and 2.9% of every ``get_schema`` reply.
+    """
+    if not isinstance(table, dict):
+        return
+    cols = table.get("columns") or []
+    if "label" not in cols or "uri" not in cols:
+        return
+    i, u = cols.index("label"), cols.index("uri")
+    for row in table.get("data") or []:
+        local = _local_name(row[u])
+        if isinstance(row[i], str) and local and _words(row[i]) == _words(local):
+            row[i] = None
+    if all(row[i] is None for row in table.get("data") or []):
+        table["columns"] = cols[:i] + cols[i + 1 :]
+        table["data"] = [row[:i] + row[i + 1 :] for row in table.get("data") or []]
+
+
 def compact_reply(reply: dict[str, Any], templates: bool = True) -> dict[str, Any]:
     """Rewrite a ``get_schema`` reply more compactly, keeping every fact.
 
@@ -267,6 +294,8 @@ def compact_reply(reply: dict[str, Any], templates: bool = True) -> dict[str, An
     * ``has_edge_properties`` when ``edge_properties`` lists the same predicates;
     * an edge property's constant ``"type": "EdgeProperty"``, and its ``label``
       when it only repeats the IRI's local name;
+    * a class, predicate or node-property label that only restates the IRI's
+      local name (``has_phenotype`` / "has phenotype"), left ``null``;
     * namespaces written out on every IRI: they become ``prefix:local``, with the
       PREFIX lines once in ``sparql_prefixes`` (paste them into the query).
 
@@ -281,6 +310,8 @@ def compact_reply(reply: dict[str, Any], templates: bool = True) -> dict[str, An
     edges: dict[str, Any] = schema.get("edge_properties") or {}
     if edges:
         _drop_column(schema.get("predicates"), "has_edge_properties")
+    for key in ("classes", "predicates", "node_properties"):
+        _drop_echo_labels(schema.get(key))
     rows = {r.get("uri"): r for r in _rows(schema.get("predicates") or {})}
     for name, entry in edges.items():
         for prop in entry.get("properties", []):

@@ -348,3 +348,12 @@ def test_tsv_accept_header_is_the_registered_media_type():
     # The endpoint rejects the unregistered `text/tsv` with HTTP 406; the IANA
     # type is text/tab-separated-values (PR #7).
     assert sparql_mod._ACCEPT["tsv"] == "text/tab-separated-values"
+
+
+async def test_ask_answer_is_one_row_not_an_empty_result():
+    class _AskResp(_Resp):
+        def json(self):
+            return {"head": {}, "boolean": True}
+
+    out = await run_sparql("ASK { ?s ?p ?o }", client=_ScriptedClient(_AskResp()))
+    assert out == {"vars": ["boolean"], "rows": [{"boolean": True}], "row_count": 1}
