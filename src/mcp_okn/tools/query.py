@@ -14,8 +14,8 @@ from ..query_lint import (
     SCAN_TIMEOUT,
     add_missing_prefixes,
     check_query,
+    graph_scoped_prefixes,
     named_kgs,
-    unambiguous_prefixes,
     undeclared_prefixes,
 )
 from ..sparql import (
@@ -55,14 +55,16 @@ async def _graph_prefixes(query: str) -> dict[str, str]:
 
     Agents copy ``biolink:Gene`` from a schema reply and leave out the
     ``sparql_prefixes`` block, a guaranteed HTTP 400. Only the graphs the query
-    names are consulted, and a name two of them define differently is left out.
+    names are consulted. A name two of them define differently (``kg:``) is
+    resolved by the GRAPH blocks it is used in, and left out when that does not
+    settle it.
     """
     if not undeclared_prefixes(query):
         return {}
     kgs = named_kgs(query)
     if not kgs:
         return {}
-    return unambiguous_prefixes({kg: await _kg_prefixes(kg) for kg in kgs})
+    return graph_scoped_prefixes(query, {kg: await _kg_prefixes(kg) for kg in kgs})
 
 
 def _compact(result: dict[str, Any]) -> dict[str, Any]:

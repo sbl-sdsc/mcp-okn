@@ -7,6 +7,7 @@ from mcp_okn.query_lint import (
     SCAN_TIMEOUT,
     add_missing_prefixes,
     check_query,
+    graph_scoped_prefixes,
     named_kgs,
     scan_problem,
     unambiguous_prefixes,
@@ -357,3 +358,61 @@ async def test_out_of_memory_error_gets_advice_without_the_echoed_query(monkeypa
     out = await sparql_query("SELECT ?s WHERE { ?s a <http://x/C> }")
     assert "Query:" not in out["error"]
     assert "UNION branch" in out["hint"]
+
+
+SPOKE = "<https://purl.org/okn/frink/kg/spoke-okn>"
+DIG = "<https://purl.org/okn/frink/kg/digcfdekg>"
+KG_PER_GRAPH = {
+    "spoke-okn": {"kg": "https://purl.org/okn/frink/kg/spoke-okn/schema/"},
+    "digcfdekg": {"kg": "https://purl.org/okn/frink/kg/digcfdekg/schema/"},
+}
+
+
+def test_a_clashing_prefix_takes_the_meaning_of_the_graph_it_is_used_in():
+    q = (
+        f"SELECT ?g ?t WHERE {{ {{ SELECT DISTINCT ?g WHERE {{ GRAPH {SPOKE} "
+        f"{{ <http://d/1> kg:ASSOCIATES_DaG ?g }} }} }} "
+        f"GRAPH {DIG} {{ ?st <http://p> ?g ; <http://o> ?t }} }}"
+    )
+    assert graph_scoped_prefixes(q, KG_PER_GRAPH) == {
+        "kg": "https://purl.org/okn/frink/kg/spoke-okn/schema/"
+    }
+
+
+@pytest.mark.parametrize(
+    "where",
+    [
+        # used in both graphs: one PREFIX line cannot mean both
+        f"GRAPH {SPOKE} {{ ?a kg:x ?g }} GRAPH {DIG} {{ ?g kg:y ?t }}",
+        # used outside every GRAPH block: every named graph must agree
+        f"GRAPH {SPOKE} {{ ?a <http://x> ?g }} GRAPH {DIG} {{ ?g <http://y> ?t }} "
+        "?t kg:z ?w",
+        # inside GRAPH ?g: the graph is unknown
+        f"GRAPH {SPOKE} {{ ?a <http://x> ?g }} GRAPH ?h {{ ?g kg:y ?t }} "
+        f"GRAPH {DIG} {{ ?t <http://y> ?w }}",
+    ],
+)
+def test_a_clashing_prefix_stays_undeclared_when_its_graph_is_not_settled(where):
+    assert graph_scoped_prefixes(f"SELECT * WHERE {{ {where} }}", KG_PER_GRAPH) == {}
+
+
+def test_graph_scope_ignores_strings_comments_and_declared_names():
+    q = (
+        "PREFIX ex: <http://ex/>\n"
+        f'SELECT * WHERE {{ GRAPH {SPOKE} {{ ?a kg:x "}} kg:y" ; ex:p ?b }} '
+        f"# GRAPH {DIG} {{ kg:z\n"
+        f"GRAPH {DIG} {{ ?b <http://y> ?c }} }}"
+    )
+    per_kg = {
+        **KG_PER_GRAPH,
+        "spoke-okn": {**KG_PER_GRAPH["spoke-okn"], "ex": "http://no/"},
+    }
+    assert graph_scoped_prefixes(q, per_kg) == {
+        "kg": "https://purl.org/okn/frink/kg/spoke-okn/schema/"
+    }
+
+
+def test_graph_scope_keeps_agreeing_prefixes_used_anywhere():
+    per_kg = {"a": {"biolink": "https://b/"}, "b": {"biolink": "https://b/"}}
+    q = f"SELECT * {{ GRAPH {GXA} {{ ?g a biolink:Gene }} ?g a biolink:Gene }}"
+    assert graph_scoped_prefixes(q, per_kg) == {"biolink": "https://b/"}
