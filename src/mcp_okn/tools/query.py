@@ -7,7 +7,7 @@ import re
 from typing import Any
 
 from .. import schema, schema_view, session
-from ..app import mcp
+from ..app import ALWAYS_LOAD, mcp
 from ..budget import fit_sparql_result
 from ..diagnose import diagnose_empty
 from ..query_lint import (
@@ -89,7 +89,7 @@ def _compact(result: dict[str, Any]) -> dict[str, Any]:
     return out
 
 
-@mcp.tool()
+@mcp.tool(meta=ALWAYS_LOAD)
 async def sparql_query(
     query: str,
     format: str = "json",

@@ -215,6 +215,13 @@ INSTRUCTIONS += (
 
 mcp = FastMCP("mcp-okn", instructions=INSTRUCTIONS)
 
+#: ``_meta`` for the tools nearly every question needs. Claude Code (v2.1.285+)
+#: otherwise defers MCP tools behind ToolSearch: the agent spends a turn loading
+#: them, and their definitions land mid-conversation, so every session writes
+#: them to the prompt cache again. Marked tools load with the system prompt,
+#: which sessions share. Other clients ignore the key.
+ALWAYS_LOAD = {"anthropic/alwaysLoad": True}
+
 # Dict replies go out as compact JSON, not FastMCP's indent=2 (see compact_output).
 compact_output.install()
 

@@ -5,10 +5,10 @@ from __future__ import annotations
 from typing import Any
 
 from .. import schema, schema_view, session
-from ..app import mcp
+from ..app import ALWAYS_LOAD, mcp
 
 
-@mcp.tool()
+@mcp.tool(meta=ALWAYS_LOAD)
 async def get_schema(
     shortname: str, compact: bool = True, match: str | None = None
 ) -> dict[str, Any]:
