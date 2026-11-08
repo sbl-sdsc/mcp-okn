@@ -181,3 +181,29 @@ async def test_tool_resolves_tissue_curie(monkeypatch):
         "schema:INVESTIGATED_ASiA <http://purl.obolibrary.org/obo/UBERON_0002371>"
         in captured["query"]
     )
+
+
+async def test_unscoped_reply_fits_budget_with_tissue_tally(monkeypatch):
+    """Unscoped, the real reply was ~670K chars; over budget it slims each
+    contrast, tallies tissues, and cuts the list — counting what it cut."""
+    from mcp_okn.budget import REPLY_CHAR_BUDGET, reply_size
+
+    many = []
+    for i in range(3000):
+        row = dict(_fake_rows()["rows"][i % 2])
+        row["assay"] = f"https://example.org/spoke-genelab/assay/{i:05d}"
+        row["tissues"] = "UBERON_0002371" if i % 3 else "UBERON_0000955"
+        many.append(row)
+
+    async def fake(query: str, fmt: str = "json") -> dict[str, Any]:
+        return {"rows": many, "row_count": len(many)}
+
+    monkeypatch.setattr(contrasts_tools, "run_sparql", fake)
+    out = await contrasts_tools.get_valid_contrasts(include_confounded=True)
+    assert reply_size(out) <= REPLY_CHAR_BUDGET
+    assert out["detail"] == "slim"
+    assert out["clean_count"] + out["confounded_count"] == 3000
+    assert len(out["contrasts"]) + out.get("contrasts_omitted", 0) == 3000
+    assert sum(sum(t.values()) for t in out["by_tissue"].values()) == 3000
+    assert "factors_1" not in out["contrasts"][0]
+    assert "tissue=" in out["note"]

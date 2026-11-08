@@ -81,6 +81,11 @@ def for_query(entry: dict[str, Any]) -> dict[str, Any]:
     so a multi-join listing groups consistently with ``list_crosswalks``.
     """
     out = {k: v for k, v in entry.items() if k not in _RECIPE_ONLY_FIELDS}
+    # `example_question` is pinned to example_questions[0] for back-compat in the
+    # table; sending both repeats the question in every recipe.
+    qs = out.get("example_questions")
+    if qs and out.get("example_question") == qs[0]:
+        out.pop("example_question")
     out["domain"] = domain_of(entry)
     return out
 

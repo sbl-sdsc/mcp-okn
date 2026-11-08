@@ -165,13 +165,46 @@ async def test_retries_transient_status_then_succeeds(no_real_sleep):
 
 
 async def test_retries_are_bounded_and_report_the_attempts():
-    """Retries stop at max_retries, and the error says how many times we tried — so
-    "endpoint still overloaded" reads differently from "your query is wrong"."""
-    client = _ScriptedClient(_Resp(503), _Resp(503), _Resp(503), _Resp(503))
+    """Retries stop at their budget, and the error says how many times we tried —
+    so "endpoint still overloaded" reads differently from "your query is wrong".
+    A quick gateway failure (an endpoint restart) gets the longer gateway budget."""
+    client = _ScriptedClient(*[_Resp(503)] * 8)
     with pytest.raises(SparqlError) as excinfo:
         await run_sparql("SELECT * WHERE { ?s ?p ?o }", client=client)
-    assert client.calls == 3  # the initial attempt + 2 retries
-    assert "after 3 attempts" in str(excinfo.value)
+    assert client.calls == 5  # the initial attempt + 4 gateway retries
+    assert "after 5 attempts" in str(excinfo.value)
+
+
+async def test_max_retries_zero_disables_gateway_retries():
+    client = _ScriptedClient(_Resp(503), _Resp(200))
+    with pytest.raises(SparqlError):
+        await run_sparql("SELECT * WHERE { ?s ?p ?o }", client=client, max_retries=0)
+    assert client.calls == 1
+
+
+async def test_gateway_html_is_reduced_to_its_title():
+    body = "<html><head><title>502 Bad Gateway</title></head><body>nginx</body></html>"
+    client = _ScriptedClient(*[_Resp(502, text=body)] * 8)
+    with pytest.raises(SparqlError) as excinfo:
+        await run_sparql("SELECT * WHERE { ?s ?p ?o }", client=client)
+    assert "502 Bad Gateway" in str(excinfo.value)
+    assert "<html>" not in str(excinfo.value)
+
+
+def test_error_summary_drops_the_echoed_query():
+    from mcp_okn.sparql import error_summary
+
+    exc = SparqlError("SPARQL endpoint returned HTTP 400: bad\nQuery:\nSELECT 1")
+    assert error_summary(exc) == "SPARQL endpoint returned HTTP 400: bad"
+
+
+def test_all_unbound_row_is_an_empty_row():
+    from mcp_okn.sparql import _flatten_bindings
+
+    payload = {
+        "results": {"bindings": [None, {"x": {"type": "literal", "value": "1"}}]}
+    }
+    assert _flatten_bindings(payload) == [{}, {"x": "1"}]
 
 
 async def test_429_gets_a_single_retry_however_high_max_retries_is():
@@ -186,7 +219,7 @@ async def test_429_gets_a_single_retry_however_high_max_retries_is():
     gateway = _ScriptedClient(_Resp(502), _Resp(502), _Resp(502), _Resp(502))
     with pytest.raises(SparqlError):
         await run_sparql("SELECT * WHERE { ?s ?p ?o }", client=gateway, max_retries=3)
-    assert gateway.calls == 4
+    assert gateway.calls == 5  # a quick gateway failure gets at least 4 retries
 
 
 async def test_query_error_is_not_retried():
@@ -208,7 +241,42 @@ async def test_timeout_is_not_retried():
     with pytest.raises(SparqlError) as excinfo:
         await run_sparql("SELECT * WHERE { ?s ?p ?o }", client=client, timeout=1.0)
     assert client.calls == 1
-    assert "narrow it with a sample/LIMIT" in str(excinfo.value)
+    assert "scanned too much" in str(excinfo.value)
+    assert "lookup_term" in str(excinfo.value)
+
+
+class _DataClient(_CaptureClient):
+    async def post(self, url, data=None, headers=None, timeout=None):
+        self.data, self.http_timeout = data, timeout
+        return _Resp()
+
+
+async def test_server_side_timeout_is_sent():
+    """QLever stops the scan itself when the request carries `timeout=<n>s`."""
+    client = _DataClient()
+    await run_sparql("SELECT * {}", client=client, timeout=42)
+    assert client.data["timeout"] == "42s"
+    assert client.http_timeout > 42  # the HTTP wait outlasts the server limit
+
+
+async def test_default_timeout_is_below_common_client_limits():
+    client = _DataClient()
+    await run_sparql("SELECT * {}", client=client)
+    assert client.data["timeout"] == f"{round(sparql_mod.DEFAULT_TIMEOUT)}s"
+    assert client.http_timeout < 120
+
+
+async def test_429_at_the_limit_is_not_retried(monkeypatch):
+    """A 429 arriving after the full limit is QLever enforcing OUR timeout; the
+    same query would hit it again, so fail fast with the rewrite advice."""
+    clock = iter([0.0, 50.0])
+    monkeypatch.setattr(sparql_mod, "_now", lambda: next(clock))
+    client = _ScriptedClient(_Resp(429), _Resp(200))
+    with pytest.raises(SparqlError) as excinfo:
+        await run_sparql("SELECT * {}", client=client, timeout=50)
+    assert client.calls == 1
+    assert "Operation timed out" in str(excinfo.value)
+    assert "scanned too much" in str(excinfo.value)
 
 
 async def test_max_retries_zero_disables_retrying():

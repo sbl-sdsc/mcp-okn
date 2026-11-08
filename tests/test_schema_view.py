@@ -1,9 +1,11 @@
+import copy
 import json
 
 import mcp_okn.server as srv
 from mcp_okn.schema import _generate_query_template
 from mcp_okn.schema_view import (
     compact_iris,
+    compact_reply,
     fit_to_budget,
     match_schema,
     reply_size,
@@ -195,3 +197,125 @@ async def test_tool_applies_match_and_budget(monkeypatch):
     found = await srv.get_schema("demo", match="C1999")
     rows = found["schema"]["classes"]["data"]
     assert [r[0] for r in rows] == [f"{BIOLINK}C1999"]
+
+
+def test_match_short_term_is_whole_token():
+    reply = {
+        "schema": {
+            "classes": {
+                "columns": ["uri", "label", "instances"],
+                "data": [
+                    ["http://purl.obolibrary.org/obo/GO_0008150", "process", 5],
+                    ["http://example.org/Category", "category", 9],
+                    ["http://example.org/GOTerm", "GO term", 3],
+                ],
+                "count": 3,
+            },
+            "predicates": {"columns": ["uri", "label"], "data": [], "count": 0},
+        }
+    }
+    out = match_schema(reply, "GO")
+    labels = [row[1] for row in out["schema"]["classes"]["data"]]
+    assert labels == ["process", "GO term"]
+    # longer terms keep substring matching
+    out = match_schema(reply, "categ")
+    assert [row[1] for row in out["schema"]["classes"]["data"]] == ["category"]
+
+
+def test_compact_reply_is_lossless():
+    """Every IRI comes back exactly from `sparql_prefixes`; only constant or
+    repeated cells go; the input is untouched."""
+    reply = _reply()
+    out = compact_reply(reply)
+    assert reply_size(out) < reply_size(reply)
+    prefixes = dict(
+        line[len("PREFIX ") :].split(": ", 1)
+        for line in out["sparql_prefixes"].split("\n")
+    )
+    prefixes = {k: v.strip("<>") for k, v in prefixes.items()}
+
+    def expand(v):
+        name, _, local = v.partition(":")
+        return prefixes[name] + local if name in prefixes else v
+
+    for table in ("classes", "predicates"):
+        before = reply["schema"][table]
+        after = out["schema"][table]
+        assert "type" not in after["columns"]  # constant: Class / Predicate
+        assert len(after["data"]) == len(before["data"])
+        i = after["columns"].index("uri")
+        assert [expand(r[i]) for r in after["data"]] == [r[0] for r in before["data"]]
+    assert "has_edge_properties" not in out["schema"]["predicates"]["columns"]
+    entry = out["schema"]["edge_properties"]["p0"]
+    [uri] = entry["properties"]  # each property defined once, listed by IRI
+    defn = out["schema"]["edge_property_defs"][uri]
+    assert expand(uri) == f"{NS}state_abbr"
+    assert "type" not in defn
+    assert defn["label"] == "State Abbreviation"  # a real label is kept
+    # The relationship's own facts stay in its predicates row, not repeated here.
+    for key in ("label", "description", "source_class", "target_class"):
+        assert key not in entry
+    assert expand(entry["uri"]) == f"{NS}p0"
+    assert "type" in reply["schema"]["classes"]["columns"]  # input not modified
+
+
+def test_compact_reply_drops_label_that_repeats_local_name():
+    reply = _reply()
+    reply["schema"]["edge_properties"]["p0"]["properties"][0]["label"] = "state_abbr"
+    out = compact_reply(reply)
+    [uri] = out["schema"]["edge_properties"]["p0"]["properties"]
+    assert "label" not in out["schema"]["edge_property_defs"][uri]
+
+
+def test_compact_reply_keeps_edge_facts_that_differ_from_the_row():
+    reply = _reply()
+    reply["schema"]["edge_properties"]["p0"]["description"] = "something else"
+    out = compact_reply(reply)
+    assert out["schema"]["edge_properties"]["p0"]["description"] == "something else"
+
+
+def test_compact_reply_keeps_conflicting_property_definitions_inline():
+    reply = _reply()
+    edges = reply["schema"]["edge_properties"]
+    other = copy.deepcopy(edges["p0"])
+    other["uri"] = f"{NS}p1"
+    other["properties"][0]["description"] = "a different meaning"
+    edges["p1"] = other
+    out = compact_reply(reply)
+    first = out["schema"]["edge_properties"]["p0"]["properties"][0]
+    second = out["schema"]["edge_properties"]["p1"]["properties"][0]
+    assert isinstance(first, str)
+    assert second["description"] == "a different meaning"
+
+
+def test_unmatched_view_shares_one_statement_template():
+    reply = _reply()
+    reply["schema"]["edge_properties"]["p0"]["pattern"] = "direct;reified"
+    reply["schema"]["pattern_guidance"] = {
+        "direct;reified": {
+            "guidance": "use the relationship's edge_properties query_template "
+            "to read edge properties",
+            "count": 1,
+        }
+    }
+    out = compact_reply(reply, templates=False)
+    assert "query_template" not in out["schema"]["edge_properties"]["p0"]
+    guidance = out["schema"]["pattern_guidance"]["direct;reified"]
+    assert "statement_template" in guidance
+    assert "kg/demo>" in guidance["statement_template"]
+    assert "statement_template" in guidance["guidance"]
+    # match= views keep the per-relationship template
+    kept = compact_reply(reply, templates=True)
+    assert "query_template" in kept["schema"]["edge_properties"]["p0"]
+
+
+def test_generic_usage_line_is_dropped_but_a_specific_one_kept():
+    reply = _reply()
+    entry = reply["schema"]["edge_properties"]["p0"]
+    entry["usage"] = (
+        f"Also a direct triple: use `?s <{NS}p0> ?o` unless you need edge properties."
+    )
+    assert "usage" not in compact_reply(reply)["schema"]["edge_properties"]["p0"]
+    entry["usage"] = "The direct triple ALSO holds GO NOT annotations."
+    out = compact_reply(reply)["schema"]["edge_properties"]["p0"]
+    assert out["usage"] == "The direct triple ALSO holds GO NOT annotations."

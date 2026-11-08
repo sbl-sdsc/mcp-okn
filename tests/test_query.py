@@ -197,6 +197,13 @@ async def test_sparql_query_csv_passthrough(monkeypatch):
 # --- compact format ----------------------------------------------------------
 
 
+async def test_compact_is_the_default(monkeypatch):
+    fake, _ = _capturing({"vars": ["s"], "rows": [{"s": "x"}], "row_count": 1})
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await sparql_query("SELECT ?s {}")
+    assert out == {"columns": ["s"], "data": [["x"]], "count": 1}
+
+
 async def test_compact_reshapes_rows_into_positional_arrays(monkeypatch):
     fake, _ = _capturing(
         {
@@ -220,7 +227,7 @@ async def test_compact_reshapes_rows_into_positional_arrays(monkeypatch):
 async def test_compact_false_keeps_dict_rows(monkeypatch):
     fake, _ = _capturing({"vars": ["s"], "rows": [{"s": "x"}], "row_count": 1})
     monkeypatch.setattr(query_mod, "run_sparql", fake)
-    out = await sparql_query("SELECT ?s {}")
+    out = await sparql_query("SELECT ?s {}", compact=False)
     assert out["rows"] == [{"s": "x"}]
     assert "columns" not in out
 
@@ -260,3 +267,109 @@ async def test_compact_passes_csv_through_unchanged(monkeypatch):
     monkeypatch.setattr(query_mod, "run_sparql", fake)
     out = await sparql_query("SELECT ?s {}", format="csv", compact=True)
     assert out == {"format": "csv", "text": "s\nx"}  # csv not reshaped
+
+
+# --- reply budget -------------------------------------------------------------
+
+
+async def test_large_result_is_capped_but_logged_whole(monkeypatch):
+    rows = [{"s": f"http://example.org/entity/{i:06d}", "n": i} for i in range(5000)]
+    fake, _ = _capturing({"vars": ["s", "n"], "rows": rows, "row_count": 5000})
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await sparql_query("SELECT ?s ?n {}")
+    assert out["truncated"] is True
+    assert out["count"] == 5000
+    assert 0 < out["returned"] == len(out["data"]) < 5000
+    assert out["data"][0] == ["http://example.org/entity/000000", 0]  # order kept
+    assert "LIMIT" in out["hint"]
+    from mcp_okn.budget import REPLY_CHAR_BUDGET, reply_size
+
+    assert reply_size(out) <= REPLY_CHAR_BUDGET
+    [entry] = session.entries()
+    assert entry["row_count"] == 5000  # transcript keeps the full result
+
+
+async def test_small_result_is_not_marked_truncated(monkeypatch):
+    fake, _ = _capturing({"vars": ["s"], "rows": [{"s": "x"}], "row_count": 1})
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await sparql_query("SELECT ?s {}")
+    assert "truncated" not in out
+
+
+async def test_large_csv_is_capped(monkeypatch):
+    text = "s\n" + "".join(f"http://example.org/{i:08d}\n" for i in range(5000))
+
+    async def fake(q, fmt="json", **kw):
+        return {"format": fmt, "text": text}
+
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await sparql_query("SELECT ?s {}", format="csv")
+    assert out["truncated"] is True and out["total_rows"] == 5000
+    assert out["text"].startswith("s\nhttp://example.org/00000000\n")
+
+
+# --- lookup_term --------------------------------------------------------------
+
+
+async def test_lookup_term_builds_exact_literal_lookup(monkeypatch):
+    from mcp_okn.tools.query import lookup_term
+
+    rows = [
+        {
+            "term": "http://purl.obolibrary.org/obo/MONDO_0004995",
+            "label": "cardiovascular disorder",
+            "matched_on": "exact_synonym",
+            "matched_text": "cardiovascular disease",
+        },
+        {
+            "term": "http://purl.obolibrary.org/obo/NCIT_C2931",
+            "label": "Cardiovascular Disorder",
+            "matched_on": "label",
+            "matched_text": "Cardiovascular Disease",
+        },
+    ]
+    fake, captured = _capturing(
+        {
+            "vars": ["term", "label", "matched_on", "matched_text"],
+            "rows": rows,
+            "row_count": 2,
+        }
+    )
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await lookup_term("Cardiovascular  disease", ontology="mondo")
+    q = captured["query"]
+    # exact literals (case variants, with/without @en) — never a FILTER scan on labels
+    assert '"cardiovascular disease"@en' in q and '"Cardiovascular disease"' in q
+    assert "CONTAINS" not in q and "LCASE" not in q
+    assert "oio:hasExactSynonym" in q and "kg/ubergraph" in q
+    assert 'obo/MONDO_"' in q
+    # label matches rank ahead of synonym matches
+    assert out["columns"] == ["term", "label", "matched_on", "matched_text"]
+    assert out["data"][0][2] == "label"
+    assert len(session.entries()) == 1  # logged, like expand_ontology_term
+
+
+async def test_lookup_term_one_row_per_term(monkeypatch):
+    from mcp_okn.tools.query import lookup_term
+
+    hp = "http://purl.obolibrary.org/obo/HP_0000707"
+    rows = [
+        {"term": hp, "label": "Abnormality", "matched_on": "exact_synonym"},
+        {"term": hp, "label": "Abnormality", "matched_on": "label"},
+    ]
+    fake, _ = _capturing(
+        {"vars": ["term", "label", "matched_on"], "rows": rows, "row_count": 2}
+    )
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await lookup_term("abnormality")
+    assert out["count"] == 1 and out["data"][0][2] == "label"
+
+
+async def test_lookup_term_empty_result_hints_without_scan(monkeypatch):
+    from mcp_okn.tools.query import lookup_term
+
+    fake, _ = _capturing({"vars": ["term"], "rows": [], "row_count": 0})
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await lookup_term("neurological involvement")
+    assert out["count"] == 0
+    assert "formal name" in out["hint"]

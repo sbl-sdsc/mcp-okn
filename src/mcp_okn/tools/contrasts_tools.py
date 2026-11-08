@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 from ..app import mcp
+from ..budget import REPLY_CHAR_BUDGET, cap_items, reply_size
 from ..contrasts import classify_contrast
 from ..sparql import SparqlError, named_graph, run_sparql
 from ._shared import _to_uri
@@ -171,4 +172,58 @@ async def get_valid_contrasts(
             "covariate or material). Call with include_confounded=True to inspect "
             "them with their confound_reason."
         )
+    return _fit_contrasts(out, contrasts)
+
+
+#: Per-contrast fields kept when the full records do not fit.
+_SLIM_FIELDS = (
+    "assay",
+    "measurement",
+    "tissues",
+    "is_clean_contrast",
+    "confound_reason",
+    "contrast_label",
+)
+
+
+def _fit_contrasts(
+    out: dict[str, Any], contrasts: list[dict[str, Any]]
+) -> dict[str, Any]:
+    """Keep the reply deliverable when no tissue narrows it.
+
+    Unscoped, the full records run to ~670K characters and reach the agent as a
+    spilled file. Over budget, the reply gains a per-tissue tally (so the right
+    `tissue=` is one look away), each contrast keeps only the fields needed to
+    pick it, and the list is cut to fit, with the cut counted.
+    """
+    if reply_size(out) <= REPLY_CHAR_BUDGET:
+        return out
+    by_tissue: dict[str, dict[str, int]] = {}
+    for c in contrasts:
+        for t in c.get("tissues") or ["(none)"]:
+            tally = by_tissue.setdefault(t, {"clean": 0, "confounded": 0})
+            tally["clean" if c["is_clean_contrast"] else "confounded"] += 1
+    out["by_tissue"] = dict(
+        sorted(
+            by_tissue.items(), key=lambda kv: -(kv[1]["clean"] + kv[1]["confounded"])
+        )
+    )
+    full = out["contrasts"]
+    out["contrasts"] = [
+        {k: c.get(k) for k in _SLIM_FIELDS if c.get(k) is not None} for c in full
+    ]
+    out["detail"] = "slim"
+    out["note"] = (
+        out.get("note", "") + " The full records are too large to send unscoped, "
+        "so each contrast keeps only assay, measurement, tissues and its verdict. "
+        "Pass tissue= (see by_tissue) for the full records."
+    ).strip()
+    slim = out["contrasts"]
+
+    def put(kept: list[Any]) -> None:
+        out["contrasts"] = kept
+
+    cut = cap_items(out, lambda: slim, put)
+    if cut:
+        out["contrasts_omitted"] = cut
     return out

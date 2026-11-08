@@ -18,16 +18,18 @@ endpoint round trip.
 from __future__ import annotations
 
 import copy
-import json
 import re
 from collections import Counter
 from collections.abc import Callable
 from typing import Any
 
-#: Characters of compact JSON a reply may use. Claude Code delivered a 43,920-
-#: character schema and spilled a 49,800-character one; 40,000 leaves room for
-#: clients that count more conservatively.
-SCHEMA_CHAR_BUDGET = 40_000
+from .budget import REPLY_CHAR_BUDGET, cap_items, reply_size
+
+#: Characters of compact JSON a reply may use (the budget all bulk tools share).
+SCHEMA_CHAR_BUDGET = REPLY_CHAR_BUDGET
+
+#: A ``match`` term this short or shorter must match a whole token.
+SHORT_TERM_CHARS = 3
 
 #: Rows each table keeps before the last-resort pass may cut it further.
 ROW_FLOORS = {"classes": 50, "node_properties": 50, "edge_properties": 20}
@@ -39,11 +41,6 @@ MATCH_HINT = (
     "match='prevalence|population'. It reads the same schema metadata, so it is "
     "instant, unlike scanning the live graph."
 )
-
-
-def reply_size(reply: dict[str, Any]) -> int:
-    """Length of ``reply`` as compact JSON, the form a client receives."""
-    return len(json.dumps(reply, separators=(",", ":")))
 
 
 # ── tables ───────────────────────────────────────────────────────────────────
@@ -88,7 +85,7 @@ def _drop_constant_columns(schema: dict[str, Any]) -> bool:
         if not isinstance(table, dict) or "type" not in table.get("columns", []):
             continue
         i = table["columns"].index("type")
-        if len({row[i] for row in table["data"]}) <= 1:
+        if table.get("data") and len({row[i] for row in table["data"]}) <= 1:
             hit = _drop_column(table, "type") or hit
     return hit
 
@@ -195,10 +192,14 @@ def _iri_cells(schema: dict[str, Any]) -> list[tuple[Any, Any]]:
         if not isinstance(table, dict):
             continue
         idx = [i for i, c in enumerate(table.get("columns", [])) if c in iri_cols]
-        cells += [(row, i) for row in table["data"] for i in idx]
+        cells += [(row, i) for row in table.get("data", []) for i in idx]
     for entry in (schema.get("edge_properties") or {}).values():
-        cells += [(entry, k) for k in ("uri", "source_class", "target_class")]
-        cells += [(p, "uri") for p in entry.get("properties", [])]
+        cells += [
+            (entry, k) for k in ("uri", "source_class", "target_class") if k in entry
+        ]
+        props = entry.get("properties", [])
+        for i, p in enumerate(props):
+            cells.append((props, i) if isinstance(p, str) else (p, "uri"))
     for entry in (schema.get("pattern_guidance") or {}).values():
         uris = entry.get("predicates")
         if isinstance(uris, list):
@@ -247,33 +248,133 @@ def compact_iris(schema: dict[str, Any]) -> dict[str, str]:
     return {name: ns for ns, name in prefixes.items()}
 
 
-# ── budget ───────────────────────────────────────────────────────────────────
+# ── lossless compaction ──────────────────────────────────────────────────────
 
 
-def _cap(
-    reply: dict[str, Any],
-    get: Callable[[], list[Any]],
-    put: Callable[[list[Any]], None],
-    budget: int,
-    floor: int,
-) -> int:
-    """Keep the longest prefix of ``get()`` (not below ``floor``) that fits.
+def _local_name(iri: Any) -> str | None:
+    parts = _split(iri) if isinstance(iri, str) else None
+    return parts[1] if parts else None
 
-    Returns how many items were removed.
+
+def compact_reply(reply: dict[str, Any], templates: bool = True) -> dict[str, Any]:
+    """Rewrite a ``get_schema`` reply more compactly, keeping every fact.
+
+    Applied to every reply. In the v0.3.0 benchmark tool results were the main
+    cost: cache writes were 71% of spend, about 0.36 tokens per reply character.
+    Each step removes only what can be read back from what stays:
+
+    * a column whose value is the same on every row (``type``);
+    * ``has_edge_properties`` when ``edge_properties`` lists the same predicates;
+    * an edge property's constant ``"type": "EdgeProperty"``, and its ``label``
+      when it only repeats the IRI's local name;
+    * namespaces written out on every IRI: they become ``prefix:local``, with the
+      PREFIX lines once in ``sparql_prefixes`` (paste them into the query).
+
+    Replayed over the twelve benchmark KGs' schemas this is about 20% shorter.
+    Run :func:`match_schema` first: it matches against full IRIs.
     """
-    items = get()
-    if reply_size(reply) <= budget or len(items) <= floor:
-        return 0
-    lo, hi = floor, len(items)
-    while lo < hi:
-        mid = (lo + hi + 1) // 2
-        put(items[:mid])
-        if reply_size(reply) <= budget:
-            lo = mid
-        else:
-            hi = mid - 1
-    put(items[:lo])
-    return len(items) - lo
+    if "schema" not in reply:
+        return reply
+    reply = copy.deepcopy(reply)
+    schema = reply["schema"]
+    _drop_constant_columns(schema)
+    edges: dict[str, Any] = schema.get("edge_properties") or {}
+    if edges:
+        _drop_column(schema.get("predicates"), "has_edge_properties")
+    rows = {r.get("uri"): r for r in _rows(schema.get("predicates") or {})}
+    for name, entry in edges.items():
+        for prop in entry.get("properties", []):
+            if prop.get("type") == "EdgeProperty":
+                prop.pop("type")
+            if prop.get("label") and prop.get("label") == _local_name(prop.get("uri")):
+                prop.pop("label")
+        # The relationship's own facts are in its predicates row already.
+        if entry.get("label") == name:
+            entry.pop("label")
+        row = rows.get(entry.get("uri"))
+        for key in ("description", "source_class", "target_class"):
+            if row is not None and key in entry and row.get(key) == entry[key]:
+                entry.pop(key)
+        # The generic one-liner restates pattern_guidance, with the full IRI.
+        if _GENERIC_USAGE.match(entry.get("usage", "")):
+            entry.pop("usage")
+    prefixes = compact_iris(schema)
+    if prefixes:
+        reply["sparql_prefixes"] = "\n".join(
+            f"PREFIX {name}: <{ns}>" for name, ns in prefixes.items()
+        )
+    _hoist_edge_property_defs(schema)
+    if not templates:
+        _share_statement_template(schema, reply.get("shortname", "{kg}"))
+    return reply
+
+
+#: One reified-statement query for every direct;reified relationship, replacing
+#: the per-relationship ``query_template`` in the unmatched view. The templates
+#: differed only in the predicate and the property list (13 KB of pankgraph's
+#: reply); ``get_schema(kg, match=...)`` still returns them in full.
+STATEMENT_TEMPLATE = (
+    "SELECT ?s ?o ?value WHERE {{ GRAPH <https://purl.org/okn/frink/kg/{kg}> {{ "
+    "?st rdf:subject ?s ; rdf:predicate <RELATIONSHIP> ; rdf:object ?o . "
+    "OPTIONAL {{ ?st <EDGE_PROPERTY> ?value }} }} }}  (one OPTIONAL per edge "
+    "property; edge properties are sparse, so keep OPTIONAL except on those you "
+    "filter by)"
+)
+
+
+def _share_statement_template(schema: dict[str, Any], kg: str) -> None:
+    edges: dict[str, Any] = schema.get("edge_properties") or {}
+    shared = False
+    for entry in edges.values():
+        if entry.get("pattern") == "direct;reified" and "query_template" in entry:
+            entry.pop("query_template")
+            shared = True
+    guidance = (schema.get("pattern_guidance") or {}).get("direct;reified")
+    if shared and isinstance(guidance, dict):
+        guidance["guidance"] = str(guidance.get("guidance", "")).replace(
+            "use the relationship's edge_properties query_template",
+            "use statement_template",
+        )
+        guidance["statement_template"] = STATEMENT_TEMPLATE.format(kg=kg)
+
+
+#: The per-entry usage line ``schema.py`` writes for a direct;reified predicate.
+_GENERIC_USAGE = re.compile(
+    r"^Also a direct triple: use `\?s <[^>]+> \?o` unless you need edge properties\.$"
+)
+
+
+def _hoist_edge_property_defs(schema: dict[str, Any]) -> None:
+    """Define each edge property once, in ``edge_property_defs``.
+
+    Reified graphs attach the same properties (source, date, evidence, …) to many
+    relationships, and each entry used to repeat their labels and descriptions.
+    Entries now list property IRIs; a property whose definition differs between
+    entries stays inline as a dict, so nothing is lost.
+    """
+    edges: dict[str, Any] = schema.get("edge_properties") or {}
+    defs: dict[str, dict[str, Any]] = {}
+    for entry in edges.values():
+        props = entry.get("properties")
+        if not isinstance(props, list):
+            continue
+        out: list[Any] = []
+        for prop in props:
+            if not isinstance(prop, dict) or "uri" not in prop:
+                out.append(prop)
+                continue
+            uri = prop["uri"]
+            rest = {k: v for k, v in prop.items() if k != "uri"}
+            if not rest or defs.setdefault(uri, rest) == rest:
+                out.append(uri)
+            else:
+                out.append(prop)
+        entry["properties"] = out
+    if defs:
+        schema["edge_property_defs"] = defs
+
+
+# ── budget ───────────────────────────────────────────────────────────────────
 
 
 def fit_to_budget(
@@ -308,8 +409,11 @@ def fit_to_budget(
         hit = False
         for entry in edges.values():
             for prop in entry.get("properties", []):
-                hit = prop.pop("description", None) is not None or hit
-                prop.pop("type", None)
+                if isinstance(prop, dict):
+                    hit = prop.pop("description", None) is not None or hit
+                    prop.pop("type", None)
+        for definition in (schema.get("edge_property_defs") or {}).values():
+            hit = definition.pop("description", None) is not None or hit
         return hit
 
     def prefix_iris() -> bool:
@@ -373,7 +477,7 @@ def fit_to_budget(
         before = omitted.get(name, 0)
         omitted[name] = before + len(table.get("data", []))
         table.setdefault("total", total)
-        cut = _cap(reply, lambda: list(table["data"]), put, budget, floor)
+        cut = cap_items(reply, lambda: list(table["data"]), put, budget, floor)
         omitted[name] = before + cut
         if not cut and table["total"] == table["count"]:
             del table["total"]
@@ -390,7 +494,7 @@ def fit_to_budget(
 
         before = omitted.get("edge_properties", 0)
         omitted["edge_properties"] = before + len(names)
-        cut = _cap(reply, lambda: names, put_from_snapshot, budget, floor)
+        cut = cap_items(reply, lambda: names, put_from_snapshot, budget, floor)
         omitted["edge_properties"] = before + cut
 
     # Rows go last, longest lists first, each down to a floor; then, only if
@@ -421,7 +525,9 @@ def match_schema(reply: dict[str, Any], term: str) -> dict[str, Any]:
     """Keep only the schema entries ``term`` finds, with their full detail.
 
     ``term`` is a case-insensitive substring tested against each entry's IRI,
-    label and description; ``|`` separates alternatives. A predicate is kept
+    label and description; ``|`` separates alternatives. A term of three
+    characters or fewer must match a whole token (``GO`` finds ``GO_0008150``
+    and "GO term", not "category"). A predicate is kept
     when it matches, when its source or target class matches, or when one of
     its edge properties matches; the classes those predicates connect are kept
     with them, so the reply is a usable neighbourhood rather than a word list.
@@ -429,12 +535,23 @@ def match_schema(reply: dict[str, Any], term: str) -> dict[str, Any]:
     if "schema" not in reply:
         return reply
     terms = [t.strip().lower() for t in term.split("|") if t.strip()]
+    # A short term matches only as a whole token: as a substring, "GO" hits
+    # "category" and "algorithm", and the reply stays as large as the overview.
+    # `_` and `/` count as boundaries, so "GO" still finds obo:GO_0008150.
+    short = [
+        re.compile(rf"(?<![a-z0-9]){re.escape(t)}(?![a-z0-9])")
+        for t in terms
+        if len(t) <= SHORT_TERM_CHARS
+    ]
+    long_terms = [t for t in terms if len(t) > SHORT_TERM_CHARS]
     reply = copy.deepcopy(reply)
     schema = reply["schema"]
 
     def hit(*values: Any) -> bool:
         text = " ".join(str(v) for v in values if v).lower()
-        return any(t in text for t in terms)
+        return any(t in text for t in long_terms) or any(
+            rx.search(text) for rx in short
+        )
 
     classes = _rows(schema.get("classes") or {})
     preds = _rows(schema.get("predicates") or {})
