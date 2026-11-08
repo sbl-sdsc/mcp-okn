@@ -31,28 +31,48 @@ async def get_server_info() -> dict[str, Any]:
 
 
 @mcp.tool()
-async def list_kgs() -> list[dict[str, Any]]:
+async def list_kgs() -> dict[str, Any]:
     """List all Proto-OKN knowledge graphs available on the OKN federation.
 
-    Returns one entry per KG with its `shortname`, `title`, `description`,
-    `homepage`, the `named_graph` URI to use inside `GRAPH <...> { ... }` blocks,
-    and a `payload` list — the curated context types that KG SUPPLIES (e.g.
-    `digcfdekg` → `["gene", "gene_set", "trait", "disease"]`, `prokn` → `["protein",
-    "gene", "GO", "Reactome", "pathway", ...]`). The `payload` tags say what a graph
-    adds, not just how it joins — judge a graph by them, NOT by its name (a graph
-    named for one thing often carries much more). To go the other way — "which KGs
-    SUPPLY pathway/GO/trait for a gene I can join on Entrez?" — call
-    `find_context_sources(want=[...], join_key=...)`.
+    Returns a table, one row per KG: `shortname`, `title`, a one-line
+    `description`, and a `payload` list, the curated context types that KG
+    SUPPLIES (e.g. `digcfdekg` → `["gene", "gene_set", "trait", "disease"]`,
+    `prokn` → `["protein", "gene", "GO", "Reactome", "pathway", ...]`). Judge a
+    graph by its `payload` tags, NOT by its name: a graph named for one thing
+    often carries much more. To go the other way ("which KGs SUPPLY pathway/GO/
+    trait for a gene I can join on Entrez?"), call
+    `find_context_sources(want=[...], join_key=...)`. Every KG's named graph is
+    `https://purl.org/okn/frink/kg/{shortname}` (given once as `named_graph`).
 
     Use the descriptions to decide which graph(s) to query. If these one-line
     descriptions are too terse to tell which KG a question targets, call
     `describe_kg(shortname, long_description=True)` on the candidates for the
-    registry's ~150-word prose description before choosing.
+    registry's ~150-word prose description (and its homepage) before choosing.
+
+    Returns `{"named_graph", "columns": ["shortname", "title", "description",
+    "payload"], "data": [[...], ...], "count"}`.
     """
     kgs = await registry.list_kgs()
     # Enrich at serve time rather than baking into the snapshot: kgs.json is
     # regenerated from the live registry, which would wipe a hand-curated field.
-    return [{**kg, "payload": payloads.payloads_for(kg["shortname"])} for kg in kgs]
+    # Columnar, without the per-row homepage (in describe_kg) and named_graph
+    # (derivable from the shortname): about a third shorter than dict rows.
+    cols = ["shortname", "title", "description", "payload"]
+    rows = [
+        [
+            kg.get("shortname"),
+            kg.get("title"),
+            kg.get("description"),
+            payloads.payloads_for(kg["shortname"]),
+        ]
+        for kg in kgs
+    ]
+    return {
+        "named_graph": "https://purl.org/okn/frink/kg/{shortname}",
+        "columns": cols,
+        "data": rows,
+        "count": len(rows),
+    }
 
 
 @mcp.tool()

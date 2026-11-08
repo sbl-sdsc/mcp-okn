@@ -5,12 +5,14 @@ get_join_strategy, taxon_overlap, list_crosswalks, find_context_sources.
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from typing import Any
 
 from .. import crosswalks as crosswalk_table
 from .. import payloads as payload_table
 from .. import taxon as taxon_hub
 from ..app import mcp
+from ..budget import REPLY_CHAR_BUDGET, cap_items, reply_size
 from ..taxon import TAXON_HUB_KGS
 
 
@@ -36,6 +38,58 @@ def _complementary_note(joins: list[dict[str, Any]]) -> str | None:
         "DISTINCT sets, so a complete answer UNIONs them — do not pick just one. "
         "See each recipe's `complementary_note` for what each path uniquely adds."
     )
+
+
+#: Fields an index row keeps: enough to pick a partner, not to run the join.
+_INDEX_FIELDS = (
+    "id",
+    "domain",
+    "left_kg",
+    "bridge_kg",
+    "right_kg",
+    "shared_key",
+    "verified_count",
+)
+
+
+def _join_index(full: dict[str, Any]) -> dict[str, Any]:
+    """Shrink a single-KG listing to one line per join when it is too big to send.
+
+    Hub KGs list dozens of recipes (ubergraph's full listing is ~235K characters),
+    and a reply that size reaches the agent as a spilled file, not data. The index
+    keeps every join's partners, key and count. The recipe and skeleton for a pair
+    are one ``get_join_strategy(kg_a, kg_b)`` call away.
+    """
+    out = dict(full)
+    out["detail"] = "index"
+    out["joins"] = [
+        {k: j.get(k) for k in _INDEX_FIELDS if j.get(k) is not None}
+        for j in full["joins"]
+    ]
+    out["known_non_joins"] = [
+        {
+            k: n.get(k)
+            for k in ("left_kg", "right_kg", "attempted_key", "result")
+            if n.get(k) is not None
+        }
+        for n in full.get("known_non_joins") or []
+    ]
+    total = len(out["joins"])
+    out["note"] = (
+        f"{total} verified joins touch {full['shortname']!r}, too many to send with "
+        "their recipes, so this is an index. Call get_join_strategy(kg_a, kg_b) for "
+        "a pair's predicates, roles and runnable skeleton_query."
+    )
+    joins = out["joins"]
+
+    def put(rows: list[Any]) -> None:
+        out["joins"] = rows
+
+    cut = cap_items(out, lambda: joins, put)
+    if cut:
+        out["joins_omitted"] = cut
+        out["note"] += f" {cut} of {total} index rows were left out to fit."
+    return out
 
 
 @mcp.tool()
@@ -69,7 +123,7 @@ async def get_join_strategy(kg_a: str, kg_b: str | None = None) -> dict[str, Any
         Each recipe carries `left_kg/right_kg`, `left_predicate/right_predicate`
         (`"node-iri"` means the id IS the entity's own IRI — join directly on it),
         `left_role/right_role`, `shared_key`, `key_namespace`, `bridge_kg`,
-        `domain`, `verified_count`, `example_question`, and a runnable
+        `domain`, `verified_count`, `example_questions`, and a runnable
         `skeleton_query` — the example SPARQL to copy and build on (it encodes the
         IRI-normalization, so no separate prose recipe is returned).
         `skeleton_verified: true` means it reproduced `verified_count` exactly when
@@ -84,6 +138,10 @@ async def get_join_strategy(kg_a: str, kg_b: str | None = None) -> dict[str, Any
     Returns (kg_b omitted) `{"shortname", "joins": [...], "island": {...}|None,
     "known_non_joins": [...]}` — every verified join touching `kg_a`, the `joins`
     grouped by `domain` (sorted by `(domain, shared_key)`) like `list_crosswalks`.
+    When that listing is too large to send whole (hub KGs such as ubergraph,
+    spoke-okn, prokn), it comes back as an index (`"detail": "index"`): one line
+    per join with its partners, `shared_key` and `verified_count`. Ask for the
+    pair to get the recipe.
 
     `island`/`known_non_join` context is included whenever present so you can tell
     apart "not yet profiled" from "verified to share no key". `verified_on` dates
@@ -91,13 +149,14 @@ async def get_join_strategy(kg_a: str, kg_b: str | None = None) -> dict[str, Any
     """
     verified_on = crosswalk_table.verified_on()
     if kg_b is None:
-        return {
+        full = {
             "shortname": kg_a,
             "verified_on": verified_on,
             "joins": crosswalk_table.verified_for(kg_a),
             "island": crosswalk_table.island_status(kg_a),
             "known_non_joins": crosswalk_table.nonjoin_for(kg_a),
         }
+        return full if reply_size(full) <= REPLY_CHAR_BUDGET else _join_index(full)
 
     joins = crosswalk_table.join_between(kg_a, kg_b)
     if joins:
@@ -224,7 +283,7 @@ async def taxon_overlap(kg_a: str, kg_b: str) -> dict[str, Any]:
 
 
 @mcp.tool()
-async def list_crosswalks(include_examples: bool = True) -> dict[str, Any]:
+async def list_crosswalks(include_examples: bool = False) -> dict[str, Any]:
     """List EVERY precomputed cross-KG integration point in one call.
 
     The federation ships a curated, hand-verified table of join recipes between
@@ -235,9 +294,12 @@ async def list_crosswalks(include_examples: bool = True) -> dict[str, Any]:
     recipe (predicates, roles, IRI-normalization snippet, counts).
 
     Args:
-        include_examples: when True (default), each row carries an
-            `example_question` describing what the join answers. Set False for a
-            more compact listing.
+        include_examples: when True, each row also carries an
+            `example_question` describing what the join answers. Off by default:
+            with examples the listing is about 180K characters, more than clients
+            deliver, so they are dropped again (with a `note`) whenever the result
+            would not fit. `get_join_strategy(kg_a, kg_b)` returns a pair's
+            examples.
 
     Returns:
         `{"verified_on", "count", "crosswalks": [...], "taxon_clade_note"?}`. Rows
@@ -280,6 +342,25 @@ async def list_crosswalks(include_examples: bool = True) -> dict[str, Any]:
     }
     if any(r["shared_key"] == "NCBITaxon" for r in rows):
         out["taxon_clade_note"] = crosswalk_table.TAXON_CLADE_NOTE
+    if include_examples and reply_size(out) > REPLY_CHAR_BUDGET:
+        out["crosswalks"] = crosswalk_table.all_crosswalks(include_examples=False)
+        out["note"] = (
+            "example_question was dropped from every row: with it the listing is "
+            "too large to deliver. get_join_strategy(kg_a, kg_b) returns a pair's "
+            "examples."
+        )
+    rows = out["crosswalks"]
+
+    def put(kept: list[Any]) -> None:
+        out["crosswalks"] = kept
+
+    cut = cap_items(out, lambda: rows, put)
+    if cut:
+        out["rows_omitted"] = cut
+        out["note"] = (
+            out.get("note", "") + f" {cut} of {len(rows)} rows left out to fit; "
+            "get_join_strategy(kg) lists one KG's joins."
+        ).strip()
     return out
 
 
@@ -431,4 +512,56 @@ async def find_context_sources(
     if unmatched:
         out["unmatched_want"] = unmatched
         out["vocabulary"] = vocab
+    return _fit_context_sources(out)
+
+
+def _fit_context_sources(out: dict[str, Any]) -> dict[str, Any]:
+    """Trim per-supplier join lists until the reply fits the budget.
+
+    Without a ``join_key`` every supplier lists every key it joins on, and the
+    reply reaches 87K-433K characters. Trimming never drops a SUPPLIER: the point
+    of the tool is to enumerate them all. It shortens each supplier's ``joins`` to
+    its largest few and records ``joins_omitted``. Passing ``join_key`` returns
+    the rest.
+    """
+    if reply_size(out) <= REPLY_CHAR_BUDGET:
+        return out
+    out["note"] += (
+        " To fit, each supplier lists only its largest join(s), with "
+        "`joins_omitted` counting the rest. Pass `join_key` (or fewer `want` "
+        "types) for the complete join lists."
+    )
+
+    def shorten(keep: int) -> None:
+        for suppliers in out["sources"].values():
+            for supplier in suppliers:
+                joins = supplier["joins"]
+                if len(joins) > keep:
+                    if keep == 0:
+                        # Keep the headline even when the list goes.
+                        supplier["largest_join"] = {
+                            "shared_key": joins[0].get("shared_key"),
+                            "size": joins[0].get("size"),
+                        }
+                    supplier["joins_omitted"] = supplier.get("joins_omitted", 0) + (
+                        len(joins) - keep
+                    )
+                    supplier["joins"] = joins[:keep]
+
+    def drop_payloads() -> None:
+        # The payload list repeats for a supplier under every type it appears in.
+        for suppliers in out["sources"].values():
+            for supplier in suppliers:
+                supplier.pop("payloads", None)
+
+    steps: list[Callable[[], None]] = [
+        lambda: shorten(5),
+        drop_payloads,
+        lambda: shorten(1),
+        lambda: shorten(0),
+    ]
+    for step in steps:
+        if reply_size(out) <= REPLY_CHAR_BUDGET:
+            break
+        step()
     return out

@@ -14,6 +14,7 @@ import json
 import os
 import random
 import re
+import time
 import weakref
 from typing import Any
 
@@ -24,23 +25,63 @@ FEDERATION_ENDPOINT = os.environ.get(
     "FEDERATION_ENDPOINT", "https://apps.okn.us/federation/sparql"
 )
 
+#: Seconds a query may run on the endpoint before QLever stops it (sent as its
+#: ``timeout`` parameter, which it answers with 429 "Operation timed out"). Override
+#: with ``OKN_SPARQL_TIMEOUT``. 60 s sits below the 120 s that MCP clients commonly
+#: allow for a tool call, so the agent gets the advice below rather than a bare
+#: client timeout. In the v0.3.0 benchmark (2,005 queries) no answer query took more
+#: than 30 s. Every query that ran past 60 s was an exploratory full scan.
+DEFAULT_TIMEOUT = float(os.environ.get("OKN_SPARQL_TIMEOUT", "60"))
+
+#: Extra seconds the HTTP request waits beyond the server-side limit, so QLever's
+#: own 429 normally arrives before the client gives up.
+_HTTP_GRACE = 15.0
+
+#: What a timed-out query is told. The benchmark's slow queries were nearly all
+#: one of these shapes.
+SCAN_ADVICE = (
+    "The query scanned too much. Common causes and fixes: (1) an all-variable "
+    "triple `?s ?p ?o` constrained only by a string FILTER (CONTAINS/REGEX/"
+    "LCASE(STR(..))) reads the whole graph, so bind the value exactly instead, "
+    'e.g. `?s ?p "E-MTAB-5477"` or `?s rdfs:label "autoimmune disease"@en`; '
+    "(2) looking up an ontology term by label in ubergraph: use "
+    "`lookup_term(label)`; (3) hunting for a predicate by name: use "
+    "`get_schema(kg, match='term')`, which reads metadata instantly; (4) a "
+    "COUNT/GROUP BY over a whole large graph: scope it to one class or add a "
+    "LIMIT in a subquery."
+)
+
 #: Statuses worth retrying: the endpoint's server-side operation limit (429) and the
 #: gateway/overload family. QLever's own query errors come back as 400 with an
 #: `exception` body — deterministic, so retrying one only doubles the wait.
 _RETRY_STATUSES = frozenset({429, 502, 503, 504})
 
-#: 429 is QLever's "Operation timed out", and it does not fail fast: measured at ~30s
-#: per attempt against the live endpoint. Retrying is still right — crosswalks.json
-#: records skeletons sitting right at the limit that failed two runs in three and
-#: passed the third — but each try is expensive, so it gets ONE, where a
-#: gateway/overload status (which returns immediately) gets the full `max_retries`.
+#: 429 is QLever's "Operation timed out". A 429 that arrives at the limit sent with
+#: the query is final (see run_sparql). A quicker one reflects endpoint load:
+#: crosswalks.json records skeletons near the limit that failed two runs in three and
+#: passed on the third. It gets ONE retry, where a gateway/overload status (which
+#: returns immediately) gets the full `max_retries`.
 _SLOW_STATUS_RETRIES = {429: 1}
 
 #: Backoff before retry N (jittered).
-_BACKOFF_SECONDS = (0.5, 2.0)
+_BACKOFF_SECONDS = (0.5, 2.0, 5.0, 10.0)
+
+#: Retries for a gateway/overload status that came back quickly. An endpoint
+#: restart lasts tens of seconds: in one benchmark episode the agent spent eleven
+#: turns re-sending queries into a ~2-minute outage. Waiting ~18 s here instead
+#: costs no turns. A slow one (a gateway timeout on an expensive query) gets the
+#: ordinary `max_retries`, since repeating it would repeat the wait.
+_GATEWAY_STATUSES = frozenset({502, 503, 504})
+_GATEWAY_RETRIES = 4
+_QUICK_FAILURE_SECONDS = 10.0
 
 #: Cap on an honoured `Retry-After`, so a large one can't stall a tool call for minutes.
 _MAX_RETRY_AFTER = 30.0
+
+
+def _now() -> float:
+    """Monotonic clock for timing a request. Patched in tests."""
+    return time.monotonic()
 
 
 async def _sleep(seconds: float) -> None:
@@ -144,12 +185,39 @@ class SparqlError(RuntimeError):
     """Raised when the endpoint returns an error for a query."""
 
 
+_HTML_TITLE = re.compile(r"(?is)<title>(.*?)</title>")
+
+
+def _error_text(body: str) -> str:
+    """The useful part of an error body: QLever's ``exception``, or an HTML title."""
+    try:
+        err = json.loads(body)
+    except (json.JSONDecodeError, ValueError):
+        err = None
+    if isinstance(err, dict) and err.get("exception"):
+        return str(err["exception"])
+    title = _HTML_TITLE.search(body)
+    if title:
+        return title.group(1).strip()
+    return body
+
+
+def error_summary(exc: BaseException) -> str:
+    """An error message without the echoed query, for a tool reply.
+
+    :class:`SparqlError` messages end with ``Query:`` and the full query text,
+    which helps a log reader but only repeats to an agent what it just sent.
+    """
+    return str(exc).split("\nQuery:\n", 1)[0]
+
+
 def _flatten_bindings(payload: dict[str, Any]) -> list[dict[str, Any]]:
     """Turn SPARQL JSON results bindings into compact {var: value} rows."""
     rows: list[dict[str, Any]] = []
     for binding in payload.get("results", {}).get("bindings", []):
         row: dict[str, Any] = {}
-        for var, cell in binding.items():
+        # QLever sends `null` for a row whose variables are all unbound.
+        for var, cell in (binding or {}).items():
             value = cell.get("value")
             # Cast common numeric/boolean datatypes for convenience.
             dtype = cell.get("datatype", "")
@@ -170,7 +238,7 @@ def _flatten_bindings(payload: dict[str, Any]) -> list[dict[str, Any]]:
 async def run_sparql(
     query: str,
     fmt: str = "json",
-    timeout: float = 120.0,
+    timeout: float | None = None,
     client: httpx.AsyncClient | None = None,
     normalize_schema: bool = True,
     max_retries: int = 2,
@@ -182,7 +250,10 @@ async def run_sparql(
             ``GRAPH <https://purl.org/okn/frink/kg/{shortname}> { ... }``.
         fmt: Output format: ``json`` (default, parsed into rows), ``csv`` or
             ``tsv`` (returned as raw text).
-        timeout: Request timeout in seconds.
+        timeout: Seconds the query may run on the endpoint (default
+            :data:`DEFAULT_TIMEOUT`). It is sent as QLever's ``timeout`` parameter,
+            so the server stops the scan, and the HTTP request waits a short grace
+            period longer.
         client: Optional httpx.AsyncClient to use instead of this event loop's
             shared one. A caller-supplied client is never closed here.
         normalize_schema: Canonicalize bracketed ``<https://schema.org/…>`` IRIs
@@ -212,35 +283,51 @@ async def run_sparql(
     if normalize_schema:
         query = normalize_schema_org(query)
     headers = {"Accept": _ACCEPT[fmt]}
-    data = {"query": query}
+    limit = DEFAULT_TIMEOUT if timeout is None else timeout
+    data = {"query": query, "timeout": f"{max(1, round(limit))}s"}
+    http_timeout = limit + _HTTP_GRACE
 
     # A caller-supplied client belongs to the caller; the shared one is reused across
     # queries. Either way this call never closes it.
     if client is None:
-        client = _shared_client(timeout)
+        client = _shared_client(http_timeout)
 
     attempts = 0
     while True:
         attempts += 1
+        started = _now()
         try:
             resp = await client.post(
-                FEDERATION_ENDPOINT, data=data, headers=headers, timeout=timeout
+                FEDERATION_ENDPOINT, data=data, headers=headers, timeout=http_timeout
             )
         except httpx.TimeoutException as exc:
             # Surface as SparqlError so callers degrade uniformly instead of crashing
-            # on a raw httpx traceback. A timeout means the scan was too broad to
-            # finish in time — narrow it (e.g. add a `sample`/`LIMIT`). Not retried:
-            # the same query would scan the same ground and burn another `timeout`s.
+            # on a raw httpx traceback. Not retried: the same query would scan the
+            # same ground and burn another `timeout`s.
             raise SparqlError(
-                f"SPARQL request timed out after {timeout}s — the query scanned too "
-                f"much; narrow it with a sample/LIMIT.\nQuery:\n{query}"
+                f"SPARQL request timed out after {limit:g}s. {SCAN_ADVICE}"
+                f"\nQuery:\n{query}"
             ) from exc
-        # The endpoint's operation limit (429) and the gateway/overload family are
-        # transient: the same query commonly succeeds moments later. Back off and
-        # retry rather than handing the caller a failure it can do nothing about.
+        # A 429 that took (nearly) the whole limit is QLever stopping this query at
+        # the timeout we sent. The same query would hit the same limit again, so it
+        # is not retried.
+        if resp.status_code == 429 and _now() - started >= 0.9 * limit:
+            raise SparqlError(
+                f"SPARQL query stopped by the endpoint after {limit:g}s "
+                f"(Operation timed out). {SCAN_ADVICE}\nQuery:\n{query}"
+            )
+        # The gateway/overload family, and a 429 that came back quickly (load
+        # rather than this query's cost), are transient: the same query commonly
+        # succeeds moments later. Back off and retry.
         budget = min(
             max_retries, _SLOW_STATUS_RETRIES.get(resp.status_code, max_retries)
         )
+        if (
+            resp.status_code in _GATEWAY_STATUSES
+            and max_retries > 0
+            and _now() - started < _QUICK_FAILURE_SECONDS
+        ):
+            budget = max(budget, _GATEWAY_RETRIES)
         if resp.status_code in _RETRY_STATUSES and attempts <= budget:
             await _sleep(_retry_delay(resp, attempts))
             continue
@@ -251,12 +338,7 @@ async def run_sparql(
     # QLever returns HTTP 400 with a JSON body containing an "exception" field
     # (e.g. the "Read-only file system" sort error) on query failure.
     if resp.status_code != 200:
-        message = text
-        try:
-            err = json.loads(text)
-            message = err.get("exception", text)
-        except (json.JSONDecodeError, ValueError):
-            pass
+        message = _error_text(text)
         # Name the retries when there were any, so an exhausted transient failure
         # ("still overloaded after 3 tries") reads differently from a bad query.
         tried = f" after {attempts} attempts" if attempts > 1 else ""

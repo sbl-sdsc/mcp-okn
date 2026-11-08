@@ -15,6 +15,7 @@ dependencies = [
     "pyyaml>=6.0",
     "s2sphere>=0.2.5",
     "sparql-to-mermaid>=0.5.1",
+    "rdflib>=7.0",
     "markdown-it-py[linkify]>=3.0",
 ]
 

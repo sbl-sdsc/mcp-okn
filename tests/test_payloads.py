@@ -47,7 +47,10 @@ def test_payloads_for_and_kgs_with_payload_are_consistent():
 
 
 async def test_list_kgs_carries_payload_field():
-    kgs = await list_kgs()
+    out = await list_kgs()
+    kgs = [dict(zip(out["columns"], row, strict=True)) for row in out["data"]]
+    assert out["count"] == len(kgs) > 0
+    assert out["named_graph"].endswith("/kg/{shortname}")
     assert all("payload" in k for k in kgs)
     dig = next(k for k in kgs if k["shortname"] == "digcfdekg")
     assert dig["payload"] == pay.payloads_for("digcfdekg")
@@ -127,3 +130,17 @@ async def test_find_context_sources_without_join_key_lists_all_keys():
     assert not out["payload_only"]  # no key filter -> nothing excluded
     dig = next(s for s in out["sources"]["trait"] if s["kg"] == "digcfdekg")
     assert {j["shared_key"] for j in dig["joins"]}  # every key it joins on
+
+
+async def test_find_context_sources_fits_budget_without_dropping_suppliers():
+    """With no join_key every supplier lists every key it joins on (up to ~433K
+    chars). Trimming shortens join lists but never drops a supplier."""
+    from mcp_okn.budget import REPLY_CHAR_BUDGET, reply_size
+    from mcp_okn.tools import joins as joins_mod
+
+    out = await joins_mod.find_context_sources()
+    assert reply_size(out) <= REPLY_CHAR_BUDGET
+    for ptype, suppliers in out["sources"].items():
+        expected = set(joins_mod.payload_table.kgs_with_payload(ptype))
+        assert {s["kg"] for s in suppliers} == expected, ptype
+    assert "join_key" in out["note"]

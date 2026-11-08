@@ -614,6 +614,7 @@ dependencies = [
     { name = "markdown-it-py", extra = ["linkify"] },
     { name = "mcp" },
     { name = "pyyaml" },
+    { name = "rdflib" },
     { name = "s2sphere" },
     { name = "sparql-to-mermaid" },
 ]
@@ -638,6 +639,7 @@ requires-dist = [
     { name = "mcp", specifier = ">=1.2.0" },
     { name = "playwright", marker = "extra == 'pdf'", specifier = ">=1.40" },
     { name = "pyyaml", specifier = ">=6.0" },
+    { name = "rdflib", specifier = ">=7.0" },
     { name = "s2sphere", specifier = ">=0.2.5" },
     { name = "sparql-to-mermaid", specifier = ">=0.5.1" },
 ]

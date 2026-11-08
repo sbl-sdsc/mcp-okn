@@ -36,7 +36,9 @@ async def get_schema(
 
     Returns:
         `{"shortname": ..., "schema": {"classes", "predicates",
-        "edge_properties", "node_properties"}}`. Each of `classes`/`predicates`/
+        "edge_properties", "node_properties"}, "sparql_prefixes": ...}`. IRIs
+        are written `prefix:local`; `sparql_prefixes` holds the PREFIX lines to
+        paste into your query. Each of `classes`/`predicates`/
         `node_properties` is a `{"columns", "data", "count"}` table;
         `edge_properties` maps relationship names to their properties and a
         `query_template` showing the RDF reification pattern to query them.
@@ -69,18 +71,15 @@ async def get_schema(
         # tends to assume an ontology (DOID) instead of checking (MONDO).
         result["next_step"] = (
             "Before joining on a predicate whose objects are ontology terms "
-            "(diseases, chemicals, genes, anatomy), call "
-            f"probe_namespaces({shortname!r}, <predicate>) to see which identifier "
-            "scheme actually populates it (e.g. MONDO vs DOID vs NCIT) and how "
-            "many of each. Pick the richest namespace — do NOT infer the ontology "
-            "from the predicate or KG name, and do not give up if your first guess "
-            f"has no hierarchy in ubergraph. If the id you need isn't on an obvious "
-            f"predicate, call find_crosswalks({shortname!r}): ontology ids are "
-            "often attached via rdfs:seeAlso / owl:sameAs / skos:exactMatch rather "
-            "than a domain predicate."
+            "(diseases, chemicals, genes, anatomy), check which identifier scheme "
+            f"fills it with probe_namespaces({shortname!r}, <predicate>) and pick the "
+            "richest; don't infer it from names. If the id you need isn't on an "
+            f"obvious predicate, try find_crosswalks({shortname!r}) (rdfs:seeAlso / "
+            "owl:sameAs / skos:exactMatch)."
         )
     if match and match.strip():
         result = schema_view.match_schema(result, match)
+    result = schema_view.compact_reply(result, templates=bool(match))
     return schema_view.fit_to_budget(result, shortname)
 
 

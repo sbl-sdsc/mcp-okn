@@ -15,6 +15,8 @@ rely on) keep working.
 
 from __future__ import annotations
 
+import inspect
+
 from . import registry, schema, session
 from .app import INSTRUCTIONS, mcp
 from .sparql import SparqlError
@@ -115,6 +117,22 @@ __all__ = [
     "taxon_overlap",
     "visualize_schema",
 ]
+
+
+def _dedent_tool_descriptions() -> None:
+    """Strip docstring indentation from every tool description.
+
+    FastMCP sends each tool's docstring as written, with four spaces on every
+    line after the first. Clients load those descriptions into the model's
+    context, where the indentation is paid for in tokens and says nothing.
+    """
+    manager = getattr(mcp, "_tool_manager", None)
+    for tool in manager.list_tools() if manager is not None else []:
+        if tool.description:
+            tool.description = inspect.cleandoc(tool.description)
+
+
+_dedent_tool_descriptions()
 
 
 def main() -> None:

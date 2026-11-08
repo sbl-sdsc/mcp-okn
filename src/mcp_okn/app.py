@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from mcp.server.fastmcp import FastMCP
 
+from . import compact_output
 from .contrasts import (
     SPOKE_GENELAB_CONTRAST_GUIDANCE,
     SPOKE_GENELAB_CONTRAST_SNIPPET,
@@ -63,7 +64,11 @@ it" is not the same as "it isn't there"; do not conclude absence without that
 enumeration.
 4. Call `sparql_query` with a SPARQL query that scopes each KG with
    `GRAPH <https://purl.org/okn/frink/kg/{shortname}> { ... }`. A single query
-   may span multiple named graphs (that is the point of federation).
+   may span multiple named graphs (that is the point of federation). Bind known
+   values exactly (`?s rdfs:label "asthma"@en`, `?s ?p "E-MTAB-5477"`); an
+   all-variable `?s ?p ?o` filtered by CONTAINS/REGEX scans the whole graph and
+   times out. Find predicates with `get_schema(kg, match=...)`, and an ontology
+   term's IRI with `lookup_term(label)`.
 
 TRANSCRIPTS: Substantive `sparql_query`/`expand_ontology_term` calls are logged
 automatically — but queries that error or return no rows are NOT logged, and you
@@ -209,6 +214,9 @@ INSTRUCTIONS += (
 )
 
 mcp = FastMCP("mcp-okn", instructions=INSTRUCTIONS)
+
+# Dict replies go out as compact JSON, not FastMCP's indent=2 (see compact_output).
+compact_output.install()
 
 
 # Unauthenticated liveness/readiness endpoints for k8s probes / load balancers.

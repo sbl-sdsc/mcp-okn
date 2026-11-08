@@ -3,6 +3,7 @@ import json
 import pytest
 
 import mcp_okn.crosswalks as cw
+from mcp_okn.budget import REPLY_CHAR_BUDGET, reply_size
 from mcp_okn.registry import load_snapshot
 from mcp_okn.server import _complementary_note, get_join_strategy, list_crosswalks
 
@@ -291,11 +292,21 @@ def test_taxon_hub_pair_orients_clade_to_request_order():
 
 @pytest.mark.asyncio
 async def test_list_crosswalks_examples_toggle():
-    with_ex = await list_crosswalks()  # default include_examples=True
-    assert all("example_question" in row for row in with_ex["crosswalks"])
-    without_ex = await list_crosswalks(include_examples=False)
+    with_ex = cw.all_crosswalks(include_examples=True)
+    assert all("example_question" in row for row in with_ex)
+    without_ex = await list_crosswalks()  # default include_examples=False
     assert all("example_question" not in row for row in without_ex["crosswalks"])
     assert all("example_questions" not in row for row in without_ex["crosswalks"])
+
+
+@pytest.mark.asyncio
+async def test_list_crosswalks_fits_the_reply_budget():
+    """With examples the listing is ~180K chars, which clients spill; the tool
+    drops them again (and says so) rather than sending an undeliverable reply."""
+    out = await list_crosswalks(include_examples=True)
+    assert reply_size(out) <= REPLY_CHAR_BUDGET
+    assert "example_question" in out.get("note", "")
+    assert out["count"] == len(out["crosswalks"]) + out.get("rows_omitted", 0)
 
 
 @pytest.mark.asyncio
@@ -304,8 +315,7 @@ async def test_every_crosswalk_carries_two_example_questions():
     from taxon_hub.pairwise rather than from a verified_crosswalks entry — exposes
     two example questions: q1 the count/summary question, q2 the science question.
     `example_question` stays pinned to q1 for back-compat."""
-    out = await list_crosswalks()
-    for row in out["crosswalks"]:
+    for row in cw.all_crosswalks(include_examples=True):
         qs = row.get("example_questions")
         assert isinstance(qs, list) and len(qs) == 2, (row["kgs"], row["shared_key"])
         assert all(isinstance(q, str) and q.strip() for q in qs), row["kgs"]
@@ -395,9 +405,26 @@ async def test_get_join_strategy_returns_skeleton_not_recipe():
     assert "skeleton_query" in j and "COUNT(" in j["skeleton_query"]
     assert "iri_normalization" not in j
     # The single-KG listing form drops the recipe too.
-    listing = await get_join_strategy("biobricks-aopwiki")
+    listing = await get_join_strategy("nde")
+    assert "detail" not in listing  # small enough to send whole
     assert all("iri_normalization" not in e for e in listing["joins"])
     assert any("skeleton_query" in e for e in listing["joins"])
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("hub", ["ubergraph", "spoke-okn", "prokn"])
+async def test_large_single_kg_listing_becomes_an_index(hub):
+    """A hub KG's full listing (up to ~235K chars) is spilled by clients; it comes
+    back as an index that keeps every join's partners, key and count."""
+    full = cw.verified_for(hub)
+    listing = await get_join_strategy(hub)
+    assert listing["detail"] == "index"
+    assert reply_size(listing) <= REPLY_CHAR_BUDGET
+    assert len(listing["joins"]) + listing.get("joins_omitted", 0) == len(full)
+    row = listing["joins"][0]
+    assert {"domain", "shared_key"} <= set(row)
+    assert "skeleton_query" not in row
+    assert "get_join_strategy(kg_a, kg_b)" in listing["note"]
 
 
 def test_complementary_note_fires_only_for_two_tagged_linkages():
