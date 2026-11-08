@@ -11,7 +11,7 @@ from typing import Any
 from .. import crosswalks as crosswalk_table
 from .. import payloads as payload_table
 from .. import taxon as taxon_hub
-from ..app import mcp
+from ..app import ALWAYS_LOAD, mcp
 from ..budget import REPLY_CHAR_BUDGET, cap_items, reply_size
 from ..taxon import TAXON_HUB_KGS
 
@@ -92,7 +92,7 @@ def _join_index(full: dict[str, Any]) -> dict[str, Any]:
     return out
 
 
-@mcp.tool()
+@mcp.tool(meta=ALWAYS_LOAD)
 async def get_join_strategy(kg_a: str, kg_b: str | None = None) -> dict[str, Any]:
     """Look up a PRECOMPUTED, verified recipe for joining two KGs.
 

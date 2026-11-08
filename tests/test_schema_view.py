@@ -348,3 +348,88 @@ def test_labels_that_restate_the_local_name_are_blanked():
     out = compact_reply(reply)["schema"]
     assert [r[1] for r in out["predicates"]["data"]] == [None, "causally related to"]
     assert "label" not in out["classes"]["columns"]  # every label echoed
+
+
+def _template_reply(prefixes_extra=None):
+    """A matched reply whose one relationship carries a generated template."""
+    props = [
+        {"uri": f"{NS}weight", "type": "EdgeProperty"},
+        {"uri": "http://purl.org/dc/terms/source", "type": "EdgeProperty"},
+        {"uri": "http://example.org/odd/ns#flag", "type": "EdgeProperty"},
+    ]
+    tmpl = _generate_query_template(
+        "demo",
+        "TREATS",
+        f"{BIOLINK}Drug",
+        f"{BIOLINK}Disease",
+        props,
+        f"{BIOLINK}treats",
+    )
+    schema = {
+        "classes": {
+            "columns": ["uri", "label"],
+            "data": [[f"{BIOLINK}C{i}", f"c {i}"] for i in range(3)]
+            + [[f"{NS}K{i}", f"k {i}"] for i in range(3)]
+            + (prefixes_extra or []),
+        },
+        "predicates": {"columns": ["uri"], "data": []},
+        "edge_properties": {
+            "TREATS": {
+                "uri": f"{BIOLINK}treats",
+                "properties": props,
+                "query_template": tmpl,
+            }
+        },
+    }
+    return {"shortname": "demo", "schema": schema}
+
+
+def test_match_view_templates_use_the_reply_prefixes():
+    out = compact_reply(_template_reply(), templates=True)
+    tmpl = out["schema"]["edge_properties"]["TREATS"]["query_template"]
+    assert (
+        "PREFIX" not in tmpl
+    )  # kg:, biolink: are in sparql_prefixes; rdf: is standard
+    assert "schema:" not in tmpl
+    assert "kg:weight" in tmpl and "rdf:predicate biolink:treats" in tmpl
+    assert "dcterms:source" in tmpl
+    assert "<http://example.org/odd/ns#flag>" in tmpl  # no prefix covers it
+    assert "GRAPH <https://purl.org/okn/frink/kg/demo>" in tmpl
+    assert f"PREFIX kg: <{NS}>" in out["sparql_prefixes"]
+
+
+def test_template_keeps_its_own_kg_prefix_when_the_reply_has_none():
+    reply = _template_reply()
+    reply["schema"]["classes"]["data"] = reply["schema"]["classes"]["data"][:3]
+    out = compact_reply(reply, templates=True)
+    tmpl = out["schema"]["edge_properties"]["TREATS"]["query_template"]
+    assert tmpl.startswith(f"PREFIX kg: <{NS}>\n")
+    assert "kg:weight" in tmpl and "schema:" not in tmpl
+
+
+def test_template_never_borrows_a_standard_name_the_reply_rebinds():
+    # The reply calls some other namespace dcterms:, so the template must not
+    # write http://purl.org/dc/terms/source as dcterms:source (dct: is safe).
+    other = "http://other.example/terms/"
+    extra = [[f"{other}T{i}", None] for i in range(3)]
+    reply = _template_reply(extra)
+    from mcp_okn import schema_view
+
+    original = schema_view.KNOWN_PREFIXES.get(other)
+    schema_view.KNOWN_PREFIXES[other] = "dcterms"
+    try:
+        out = compact_reply(reply, templates=True)
+    finally:
+        if original is None:
+            schema_view.KNOWN_PREFIXES.pop(other)
+        else:
+            schema_view.KNOWN_PREFIXES[other] = original
+    assert f"PREFIX dcterms: <{other}>" in out["sparql_prefixes"]
+    tmpl = out["schema"]["edge_properties"]["TREATS"]["query_template"]
+    assert "dcterms:source" not in tmpl and "dct:source" in tmpl
+
+
+async def test_core_tools_load_upfront_in_claude_code():
+    tools = {t.name: t for t in await srv.mcp.list_tools()}
+    marked = {n for n, t in tools.items() if (t.meta or {}).get("anthropic/alwaysLoad")}
+    assert marked == {"sparql_query", "get_schema", "get_join_strategy"}

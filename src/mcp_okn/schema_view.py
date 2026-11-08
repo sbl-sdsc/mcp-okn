@@ -337,7 +337,76 @@ def compact_reply(reply: dict[str, Any], templates: bool = True) -> dict[str, An
     _hoist_edge_property_defs(schema)
     if not templates:
         _share_statement_template(schema, reply.get("shortname", "{kg}"))
+    else:
+        _compact_templates(schema, prefixes)
     return reply
+
+
+_TEMPLATE_PREFIX = re.compile(r"^PREFIX\s+([\w.\-]*):\s*<([^>]+)>\s*\n", re.M)
+_BRACKETED = re.compile(r"<([^<>\s]+)>")
+
+
+def _compact_templates(schema: dict[str, Any], prefixes: dict[str, str]) -> None:
+    """Write each ``query_template`` in the reply's own prefixes.
+
+    A template declared its own names (``schema:`` for the graph's namespace,
+    which ``sparql_prefixes`` calls ``kg:`` and SPARQL users read as schema.org)
+    and spelled other IRIs in full. Its PREFIX lines go when the reply's
+    ``sparql_prefixes`` or a standard prefix covers the namespace (sparql_query
+    declares both if left out), names follow the reply, and ``<iri>`` becomes
+    ``prefix:local`` under the same rule as the rest of the reply. GRAPH IRIs and
+    namespaces nothing covers stay as written.
+    """
+    from .query_lint import STANDARD_PREFIXES
+
+    # A standard name the reply binds to another namespace would change meaning
+    # once the agent pastes sparql_prefixes beside the template: skip it.
+    by_ns: dict[str, str] = {}
+    for n, ns in STANDARD_PREFIXES.items():
+        if n not in prefixes:
+            by_ns.setdefault(ns, n)  # the first name: dcterms, not its alias dct
+    by_ns.update({ns: name for name, ns in prefixes.items()})
+
+    def short(m: re.Match[str]) -> str:
+        parts = _split(m.group(1))
+        if parts and parts[0] in by_ns and not _KG_GRAPH.match(m.group(1)):
+            return f"{by_ns[parts[0]]}:{parts[1]}"
+        return m.group(0)
+
+    for entry in (schema.get("edge_properties") or {}).values():
+        text = entry.get("query_template") if isinstance(entry, dict) else None
+        if not isinstance(text, str):
+            continue
+        renames: dict[str, str] = {}
+        kept: list[str] = []
+        for name, ns in _TEMPLATE_PREFIX.findall(text):
+            if ns in by_ns:
+                renames[name] = by_ns[ns]
+                continue
+            # The graph's own namespace, too rare here to be in sparql_prefixes:
+            # still call it kg:, as every other reply does.
+            if (
+                _KG_NS.match(ns)
+                and "kg" not in prefixes
+                and "kg" not in renames.values()
+            ):
+                renames[name] = "kg"
+            kept.append(f"PREFIX {renames.get(name, name)}: <{ns}>\n")
+        body = _TEMPLATE_PREFIX.sub("", text).lstrip("\n")
+        for old, new in renames.items():
+            if old and old != new:
+                body = re.sub(rf"(?<![\w?$:/#.\-]){re.escape(old)}:", f"{new}:", body)
+        body = _BRACKETED.sub(short, body)
+        kept = [
+            line
+            for line in kept
+            if re.search(rf"(?<![\w?$:/#.\-]){re.escape(line.split()[1])}", body)
+        ]
+        entry["query_template"] = "".join(kept) + ("\n" if kept else "") + body
+
+
+#: A federation graph IRI, kept in full inside templates (``GRAPH <...>``).
+_KG_GRAPH = re.compile(r"^https?://purl\.org/okn/frink/kg/[A-Za-z0-9_.\-]+$")
 
 
 #: One reified-statement query for every direct;reified relationship, replacing
