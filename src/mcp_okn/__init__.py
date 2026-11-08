@@ -1,3 +1,3 @@
 """MCP server for the OKN federated SPARQL endpoint over Proto-OKN KGs."""
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
