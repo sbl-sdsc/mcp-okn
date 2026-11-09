@@ -365,6 +365,39 @@ async def test_lookup_term_one_row_per_term(monkeypatch):
     assert out["count"] == 1 and out["data"][0][2] == "label"
 
 
+async def test_lookup_term_drops_looser_synonyms_beside_exact_matches(monkeypatch):
+    from mcp_okn.tools.query import lookup_term
+
+    obo = "http://purl.obolibrary.org/obo/"
+    rows = [
+        {"term": obo + "MONDO_0004995", "label": "x", "matched_on": "exact_synonym"},
+        {"term": obo + "HP_0001626", "label": "y", "matched_on": "related_synonym"},
+        {"term": obo + "NCIT_C2931", "label": "z", "matched_on": "exact_synonym"},
+    ]
+    fake, _ = _capturing(
+        {"vars": ["term", "label", "matched_on"], "rows": rows, "row_count": 3}
+    )
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await lookup_term("cardiovascular disease")
+    assert [r[0] for r in out["data"]] == [obo + "MONDO_0004995", obo + "NCIT_C2931"]
+    assert "Left out 1 term" in out["note"]
+
+
+async def test_lookup_term_keeps_looser_synonyms_when_nothing_matches_exactly(
+    monkeypatch,
+):
+    from mcp_okn.tools.query import lookup_term
+
+    mondo = "http://purl.obolibrary.org/obo/MONDO_0002081"
+    rows = [{"term": mondo, "label": "x", "matched_on": "related_synonym"}]
+    fake, _ = _capturing(
+        {"vars": ["term", "label", "matched_on"], "rows": rows, "row_count": 1}
+    )
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    out = await lookup_term("musculoskeletal disorder")
+    assert out["count"] == 1 and "different concept" in out["note"]
+
+
 async def test_lookup_term_empty_result_hints_without_scan(monkeypatch):
     from mcp_okn.tools.query import lookup_term
 

@@ -432,4 +432,4 @@ def test_template_never_borrows_a_standard_name_the_reply_rebinds():
 async def test_core_tools_load_upfront_in_claude_code():
     tools = {t.name: t for t in await srv.mcp.list_tools()}
     marked = {n for n, t in tools.items() if (t.meta or {}).get("anthropic/alwaysLoad")}
-    assert marked == {"sparql_query", "get_schema", "get_join_strategy"}
+    assert marked == {"sparql_query", "get_schema", "get_join_strategy", "lookup_term"}
