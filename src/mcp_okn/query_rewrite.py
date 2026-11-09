@@ -142,6 +142,12 @@ def _range_for(prefix: str) -> tuple[str, str] | None:
         return None
     if _IRIREF_FORBIDDEN.intersection(prefix):
         return None
+    # A prefix that stops inside the host ("http://stko-kwg") matches most of a
+    # graph, so the range selects nothing and QLever range-scans it all instead
+    # of joining (2.8 s -> 51 s on the spatialkg county joins in the A/B).
+    authority = prefix.find("//")
+    if authority != -1 and prefix.find("/", authority + 2) == -1:
+        return None
     letters = [i for i, c in enumerate(prefix) if c.isascii() and c.isalpha()]
     # The scheme always has a letter; a bound cut inside it would admit nearly
     # every IRI, which is correct but useless.

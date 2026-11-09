@@ -161,3 +161,12 @@ def test_variables_bound_in_babel_are_left_to_the_join():
     out = prefilter_prefix_tests(q)
     assert "?member >=" not in out
     assert "?gene >= <http://identifiers.org/ncbigen>" in out
+
+
+@pytest.mark.parametrize("prefix", ["http://stko-kwg", "https://www.ensembl.org"])
+def test_a_host_only_prefix_is_left_alone(prefix):
+    # It matches most of a graph: the range selects nothing and turns a join
+    # into a scan of every row (spatialkg county joins: 2.8 s -> 51 s).
+    assert _range_for(prefix) is None
+    q = f"SELECT * WHERE {{ ?s ?p ?x FILTER(STRSTARTS(STR(?x), '{prefix}')) }}"
+    assert prefilter_prefix_tests(q) == q
