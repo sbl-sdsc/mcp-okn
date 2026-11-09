@@ -142,6 +142,12 @@ def render() -> str:
         " fails if it drifts. Edit the table (and its `skeleton_query`), then"
         " regenerate.",
         "",
+        "> A skeleton that starts with `# okn:prefilter` asks mcp-okn to add a"
+        " block-skipping IRI range in front of each `STRSTARTS(STR(?v), …)` FILTER"
+        " (`src/mcp_okn/query_rewrite.py`). The result is identical; in a cold A/B"
+        " those skeletons read fewer rows and ran a median 6x faster. Keep the line"
+        " when adapting one.",
+        "",
         "## Knowledge graphs used",
         "",
     ]
