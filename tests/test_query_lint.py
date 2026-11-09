@@ -220,6 +220,23 @@ def test_warns_on_filter_comparing_two_graph_blocks_from_inside_one():
     assert warnings and "?t" in warnings[0] and "FILTER" in warnings[0]
 
 
+@pytest.mark.parametrize("kind", ["EXISTS", "NOT EXISTS"])
+def test_warns_on_filter_exists_in_a_graph_block_that_does_not_bind_its_variable(
+    kind,
+):
+    # live (nde-expand_autoimmune): inside the oard-kg block the EXISTS kept every
+    # disease, the same rows as no filter; moved after the blocks it gave the key's
+    q = (
+        f"SELECT ?d WHERE {{ GRAPH {UB} {{ ?d <http://sub> <http://root> }} "
+        f"GRAPH {AOP} {{ FILTER {kind} {{ ?a <http://subject> ?d }} }} "
+        f"GRAPH {GXA} {{ ?ds <http://cond> ?d }} }}"
+    )
+    warnings = check_query(q).warnings
+    assert len(warnings) == 1
+    assert warnings[0].startswith(f"A FILTER {kind} ") and "?d" in warnings[0]
+    assert "?a" not in warnings[0]  # local to the EXISTS, not a slip
+
+
 @pytest.mark.parametrize(
     "query",
     [
@@ -235,6 +252,15 @@ def test_warns_on_filter_comparing_two_graph_blocks_from_inside_one():
         # aggregates and SELECT expressions
         f"SELECT ?s (COUNT(?o) AS ?n) (STR(?s) AS ?t) WHERE {{ GRAPH {AOP} "
         "{ ?s <http://p> ?o } } GROUP BY ?s",
+        # FILTER EXISTS where its variable is bound: after the blocks, or in its own
+        f"SELECT * WHERE {{ GRAPH {AOP} {{ ?d a <http://D> }} "
+        f"FILTER EXISTS {{ GRAPH {AOP} {{ ?a <http://subject> ?d }} }} }}",
+        f"SELECT * WHERE {{ GRAPH {AOP} {{ ?d a <http://D> }} GRAPH {AOP} "
+        "{ ?b <http://object> ?d FILTER EXISTS { ?a <http://subject> ?d } } }",
+        # an EXISTS variable the outer query also binds cannot reach a subquery
+        f"SELECT * WHERE {{ {{ SELECT ?c WHERE {{ GRAPH {AOP} {{ ?c <http://k> ?k }} "
+        f"FILTER EXISTS {{ GRAPH {AOP} {{ ?p <http://k> ?k }} }} }} }} "
+        f"GRAPH {AOP} {{ ?p <http://q> ?c }} }}",
     ],
 )
 def test_no_warning_for_correct_scoping(query):
