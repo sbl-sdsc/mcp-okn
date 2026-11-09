@@ -357,3 +357,17 @@ async def test_ask_answer_is_one_row_not_an_empty_result():
 
     out = await run_sparql("ASK { ?s ?p ?o }", client=_ScriptedClient(_AskResp()))
     assert out == {"vars": ["boolean"], "rows": [{"boolean": True}], "row_count": 1}
+
+
+async def test_run_sparql_prefilters_iri_prefix_tests_by_default():
+    q = (
+        "SELECT ?x WHERE { ?s ?p ?x "
+        "FILTER(STRSTARTS(STR(?x), 'http://purl.obolibrary.org/obo/MONDO_')) }"
+    )
+    on = _CaptureClient()
+    await run_sparql(q, client=on)
+    assert "isLiteral(?x)" in on.query  # the block-skipping range was added
+
+    off = _CaptureClient()
+    await run_sparql(q, client=off, prefilter=False)
+    assert off.query == q

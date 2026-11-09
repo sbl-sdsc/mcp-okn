@@ -442,3 +442,17 @@ def test_graph_scope_keeps_agreeing_prefixes_used_anywhere():
     per_kg = {"a": {"biolink": "https://b/"}, "b": {"biolink": "https://b/"}}
     q = f"SELECT * {{ GRAPH {GXA} {{ ?g a biolink:Gene }} ?g a biolink:Gene }}"
     assert graph_scoped_prefixes(q, per_kg) == {"biolink": "https://b/"}
+
+
+async def test_timeout_on_a_literal_prefix_test_suggests_dropping_str(monkeypatch):
+    async def fake(q, fmt="json", timeout=None, **kw):
+        raise SparqlError("SPARQL request timed out after 60s. Narrow it.")
+
+    monkeypatch.setattr(query_mod, "run_sparql", fake)
+    q = (
+        "SELECT ?m WHERE { GRAPH <https://purl.org/okn/frink/kg/ubergraph> { "
+        "?m <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x . "
+        "FILTER(STRSTARTS(STR(?x), 'UMLS:')) } }"
+    )
+    out = await sparql_query(q)
+    assert 'STRSTARTS(?x, "UMLS:")' in out["hint"]

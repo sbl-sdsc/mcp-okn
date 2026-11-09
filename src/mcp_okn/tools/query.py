@@ -18,6 +18,7 @@ from ..query_lint import (
     named_kgs,
     undeclared_prefixes,
 )
+from ..query_rewrite import literal_prefix_hint
 from ..sparql import (
     SparqlError,
     error_summary,
@@ -181,6 +182,8 @@ async def sparql_query(
         reply: dict[str, Any] = {"error": error_summary(exc)}
         if _is_out_of_memory(exc):
             reply["hint"] = MEMORY_ADVICE
+        elif _is_timeout(exc) and (literal_hint := literal_prefix_hint(query)):
+            reply["hint"] = literal_hint
         if check.warnings:
             reply["warnings"] = check.warnings
         if prefixes_added:
