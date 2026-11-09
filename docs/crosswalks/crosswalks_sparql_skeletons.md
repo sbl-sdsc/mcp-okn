@@ -6,6 +6,8 @@
 
 > **GENERATED FILE — do not edit by hand.** Rebuilt from the crosswalk table (`metadata/crosswalks.json`) by `scripts/build_skeleton_reference.py`; a test fails if it drifts. Edit the table (and its `skeleton_query`), then regenerate.
 
+> A skeleton that starts with `# okn:prefilter` asks mcp-okn to add a block-skipping IRI range in front of each `STRSTARTS(STR(?v), …)` FILTER (`src/mcp_okn/query_rewrite.py`). The result is identical; in a cold A/B those skeletons read fewer rows and ran a median 6x faster. Keep the line when adapting one.
+
 ## Knowledge graphs used
 
 - `biobricks-aopwiki` — <https://purl.org/okn/frink/kg/biobricks-aopwiki>
@@ -179,6 +181,7 @@ SELECT (COUNT(DISTINCT ?cl) AS ?n) WHERE {
 _bio101 → ubergraph → gene-expression-atlas-okn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -200,6 +203,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → biobricks-aopwiki_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -221,6 +225,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → biomarkerkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -242,6 +247,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → prokn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -263,6 +269,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → spoke-genelab_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -286,6 +293,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → gene-expression-atlas-okn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -307,6 +315,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → biobricks-aopwiki_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -328,6 +337,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → prokn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -349,6 +359,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 **PO (bio101 label)** — `bio101 concept name <-> ubergraph PO rdfs:label or oboInOwl:hasExactSynonym <-> http://purl.obolibrary.org/obo/PO_{n} (gene-expression-atlas-okn); exact-name match`: bio101 → ubergraph → gene-expression-atlas-okn(30).
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -418,6 +429,7 @@ SELECT (COUNT(DISTINCT ?c2) AS ?n) WHERE {
 _biobricks-ice × biobricks-toxcast_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> { ?a <http://edamontology.org/has_identifier> ?cas . }
   GRAPH <https://purl.org/okn/frink/kg/biobricks-toxcast> { ?b <http://edamontology.org/has_identifier> ?cas . }
@@ -446,6 +458,7 @@ SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {
 _biobricks-mesh × biobricks-ice_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?cas) AS ?n) WHERE {
   { SELECT DISTINCT ?cas WHERE {
       GRAPH <https://purl.org/okn/frink/kg/biobricks-ice> {
@@ -588,6 +601,7 @@ SELECT (COUNT(DISTINCT ?cid) AS ?n) WHERE {
 _prokn × biobricks-pubchem-annotations_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?t) AS ?n) WHERE {
   { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/prokn> { ?c a <http://purl.obolibrary.org/obo/NCIT_C43366> FILTER(STRSTARTS(STR(?c),'https://pubchem.ncbi.nlm.nih.gov/compound/')) }
       BIND(IRI(CONCAT('http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID', STRAFTER(STR(?c),'compound/'))) AS ?t) } }
@@ -810,6 +824,7 @@ SELECT (COUNT(DISTINCT ?ent) AS ?n) WHERE {
 _biobricks-toxcast → babel → rdkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?ent) AS ?n) WHERE {
   { SELECT DISTINCT ?ent ?member WHERE {
     { SELECT DISTINCT ?ent ?pref WHERE {
@@ -826,6 +841,7 @@ SELECT (COUNT(DISTINCT ?ent) AS ?n) WHERE {
 _bio101 → ubergraph → spoke-okn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -846,6 +862,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → biobricks-aopwiki_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -1046,6 +1063,7 @@ SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
 _oard-kg × prokn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
   { SELECT DISTINCT ?mondo WHERE {
       { SELECT DISTINCT ?mondo WHERE { GRAPH <https://purl.org/okn/frink/kg/oard-kg> { ?x <https://w3id.org/biolink/vocab/object> ?mondo } FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }
@@ -1076,6 +1094,7 @@ SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
 _biomarkerkg × rdkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
   { SELECT DISTINCT ?mondo WHERE { GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?mondo ?q ?o . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } } }
   GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> { ?s ?bp ?mondo . }
@@ -1085,6 +1104,7 @@ SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
 _biomarkerkg × oard-kg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
   { SELECT DISTINCT ?mondo WHERE {
       { SELECT DISTINCT ?mondo WHERE { GRAPH <https://purl.org/okn/frink/kg/oard-kg> { ?x <https://w3id.org/biolink/vocab/object> ?mondo } FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }
@@ -1282,6 +1302,7 @@ SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {
 **MONDO↔OMIM (bridged)** — `http://purl.obolibrary.org/obo/MONDO_ (oard-kg) ; https://www.omim.org/entry/{id} (prokn) — bridged on OMIM:{id} via ubergraph oboInOwl:hasDbXref`: oard-kg → ubergraph → prokn(11).
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
   { SELECT DISTINCT ?mondo WHERE {
       { SELECT DISTINCT ?mondo WHERE { GRAPH <https://purl.org/okn/frink/kg/oard-kg> { ?x <https://w3id.org/biolink/vocab/object> ?mondo } FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }
@@ -1296,6 +1317,7 @@ SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
 **MONDO↔Orphanet (bridged)** — `http://purl.obolibrary.org/obo/MONDO_ (oard-kg) ; http://www.orpha.net/ORDO/Orphanet_{id} (prokn up:Disease) — bridged on Orphanet:{id} via ubergraph oboInOwl:hasDbXref`: oard-kg → ubergraph → prokn(316).
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
   { SELECT DISTINCT ?mondo WHERE {
       { SELECT DISTINCT ?mondo WHERE { GRAPH <https://purl.org/okn/frink/kg/oard-kg> { ?x <https://w3id.org/biolink/vocab/object> ?mondo } FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }
@@ -1312,6 +1334,7 @@ SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
 _biohealth → ubergraph → rdkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {
   { SELECT DISTINCT ?cui WHERE {
     GRAPH <https://purl.org/okn/frink/kg/ubergraph> {
@@ -1366,6 +1389,7 @@ SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {
 _biohealth → ubergraph → biomarkerkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {
   { SELECT DISTINCT ?cui WHERE {
     GRAPH <https://purl.org/okn/frink/kg/ubergraph> {
@@ -1384,6 +1408,7 @@ SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {
 _biohealth → babel → digcfdekg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?ent) AS ?n) WHERE {
   { SELECT DISTINCT ?ent ?member WHERE {
     { SELECT DISTINCT ?ent ?pref WHERE {
@@ -1416,6 +1441,7 @@ SELECT (COUNT(DISTINCT ?ent) AS ?n) WHERE {
 _biohealth → ubergraph → prokn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {
   { SELECT DISTINCT ?cui WHERE {
     GRAPH <https://purl.org/okn/frink/kg/ubergraph> {
@@ -1472,6 +1498,7 @@ SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {
 **UMLS↔MONDO↔DOID (two-hop)** — `https://biohealthkg.proto-okn.net/kg/node/C{cui} (biohealth) ; http://purl.obolibrary.org/obo/DOID_ (spoke-okn biolink:Disease) — bridged through ubergraph: MONDO oboInOwl:hasDbXref 'UMLS:{cui}' AND MONDO skos:exactMatch DOID`: biohealth → ubergraph → spoke-okn(173).
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/ubergraph> {
     ?mondo <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?x .
@@ -1492,6 +1519,7 @@ SELECT (COUNT(DISTINCT ?cui) AS ?n) WHERE {
 _digcfdekg → ubergraph → rdkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
   { SELECT DISTINCT ?mondo WHERE {
     { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }
@@ -1504,6 +1532,7 @@ SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
 _digcfdekg → ubergraph → oard-kg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
   { SELECT DISTINCT ?mondo WHERE {
     { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }
@@ -1516,6 +1545,7 @@ SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
 _biomarkerkg → ubergraph → digcfdekg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
   { SELECT DISTINCT ?mondo WHERE {
     { GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?x <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ?mondo . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) } }
@@ -1528,6 +1558,7 @@ SELECT (COUNT(DISTINCT ?mondo) AS ?n) WHERE {
 **DOID↔MONDO (+ EFO/Orphanet→MONDO)** — `http://purl.obolibrary.org/obo/DOID_ (spoke-okn) <-> http://purl.obolibrary.org/obo/MONDO_ (digcfdekg, direct+bridged)`: spoke-okn → ubergraph → digcfdekg(50).
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?doid) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?doid a <https://w3id.org/biolink/vocab/Disease> . FILTER(STRSTARTS(STR(?doid),'http://purl.obolibrary.org/obo/DOID_')) }
   GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_')) }
@@ -1564,6 +1595,7 @@ SELECT (COUNT(DISTINCT ?bh) AS ?n) WHERE {
 _medical-device-kg → ubergraph → oard-kg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?raw) AS ?n) WHERE {
   { SELECT DISTINCT ?raw ?t WHERE {
   { SELECT DISTINCT ?raw ?name WHERE {
@@ -1581,6 +1613,7 @@ SELECT (COUNT(DISTINCT ?raw) AS ?n) WHERE {
 _medical-device-kg → ubergraph → rdkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?raw) AS ?n) WHERE {
   { SELECT DISTINCT ?raw ?t WHERE {
   { SELECT DISTINCT ?raw ?name WHERE {
@@ -1600,6 +1633,7 @@ SELECT (COUNT(DISTINCT ?raw) AS ?n) WHERE {
 _bio101 → ubergraph → rdkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -1621,6 +1655,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → nde_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -1642,6 +1677,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → biomarkerkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -1663,6 +1699,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → oard-kg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -1684,6 +1721,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → prokn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -1705,6 +1743,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → gene-expression-atlas-okn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -1727,6 +1766,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → digcfdekg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -1751,6 +1791,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → oard-kg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -1772,6 +1813,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → rdkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -1793,6 +1835,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → prokn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -2015,6 +2058,7 @@ SELECT (COUNT(DISTINCT ?proknReact) AS ?n) WHERE {
 _bio101 → ubergraph → prokn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -2036,6 +2080,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → pankgraph_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -2057,6 +2102,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → biobricks-aopwiki_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -2078,6 +2124,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _bio101 → ubergraph → gene-expression-atlas-okn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
   { SELECT DISTINCT ?c ?t WHERE {
   { SELECT DISTINCT ?c ?name WHERE {
@@ -2103,6 +2150,7 @@ SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
 _biobricks-aopwiki × gene-expression-atlas-okn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?s <http://www.w3.org/2004/02/skos/core#exactMatch> ?e . FILTER(STRSTARTS(STR(?e),'https://identifiers.org/ensembl/')) }
   BIND(IRI(REPLACE(STR(?e),'https://identifiers.org/ensembl/','http://identifiers.org/ensembl/')) AS ?gene)
@@ -2113,6 +2161,7 @@ SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {
 _biobricks-aopwiki × spoke-okn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?s <http://www.w3.org/2004/02/skos/core#exactMatch> ?e . FILTER(STRSTARTS(STR(?e),'https://identifiers.org/ensembl/')) }
   BIND(IRI(REPLACE(STR(?e),'https://identifiers.org/ensembl/','http://identifiers.org/ensembl/')) AS ?gene)
@@ -2208,6 +2257,7 @@ SELECT (COUNT(DISTINCT ?ens) AS ?n) WHERE {
 _biobricks-aopwiki × rdkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?s <http://www.w3.org/2004/02/skos/core#exactMatch> ?e . FILTER(STRSTARTS(STR(?e),'https://identifiers.org/ncbigene/')) }
   BIND(IRI(REPLACE(STR(?e),'https://identifiers.org/ncbigene/','http://identifiers.org/ncbigene/')) AS ?gene)
@@ -2218,6 +2268,7 @@ SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {
 _biobricks-aopwiki × spoke-genelab_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?gene) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?s <http://www.w3.org/2004/02/skos/core#exactMatch> ?e . FILTER(STRSTARTS(STR(?e),'https://identifiers.org/ncbigene/')) }
   BIND(IRI(CONCAT('http://www.ncbi.nlm.nih.gov/gene/',REPLACE(STR(?e),'^.*/ncbigene/',''))) AS ?gene)
@@ -2562,6 +2613,7 @@ SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {
 _hydrologykg × spatialkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?cell) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/hydrologykg> { ?h <http://stko-kwg.geog.ucsb.edu/lod/ontology/sfWithin> ?cell . FILTER(STRSTARTS(STR(?cell),'http://stko-kwg.geog.ucsb.edu/lod/resource/s2.level13.')) }
   GRAPH <https://purl.org/okn/frink/kg/spatialkg> { ?cell a <http://stko-kwg.geog.ucsb.edu/lod/ontology/S2Cell_Level13> . }
@@ -2680,6 +2732,7 @@ SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {
 _nikg × spatialkg_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/nikg> { ?x <http://stko-kwg.geog.ucsb.edu/lod/ontology/sfWithin> ?o . FILTER(STRSTARTS(STR(?o),'https://metadata.phila.gov/kwgr_administrativeRegion_USA_')) }
   BIND(REPLACE(STR(?o),'^.*administrativeRegion_USA_([0-9]{5}).*$','$1') AS ?fips)
@@ -2691,6 +2744,7 @@ SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {
 _nikg × spoke-okn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?fips) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/nikg> { ?x <http://stko-kwg.geog.ucsb.edu/lod/ontology/sfWithin> ?o . FILTER(STRSTARTS(STR(?o),'https://metadata.phila.gov/kwgr_administrativeRegion_USA_')) }
   BIND(REPLACE(STR(?o),'^.*administrativeRegion_USA_([0-9]{5}).*$','$1') AS ?fips)
@@ -3275,6 +3329,7 @@ SELECT (COUNT(DISTINCT ?off) AS ?n) WHERE {
 _biobricks-aopwiki × prokn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?p2) AS ?n) WHERE {
   { SELECT DISTINCT ?u WHERE {
       GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?u ?pa ?oa . }
@@ -3288,6 +3343,7 @@ SELECT (COUNT(DISTINCT ?p2) AS ?n) WHERE {
 _ncipidkg × prokn_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?u) AS ?n) WHERE {
   {
     GRAPH <https://purl.org/okn/frink/kg/ncipidkg> {
@@ -3410,6 +3466,7 @@ SELECT (COUNT(DISTINCT ?u) AS ?n) WHERE {
 _glygenkg × biobricks-aopwiki_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?up) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/biobricks-aopwiki> { ?y <http://www.w3.org/2004/02/skos/core#exactMatch> ?u . FILTER(STRSTARTS(STR(?u),'https://identifiers.org/uniprot/')) }
   BIND(IRI(CONCAT('http://purl.uniprot.org/uniprot/',REPLACE(STR(?u),'^.*/uniprot/',''))) AS ?up)
@@ -3629,6 +3686,7 @@ SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {
 _wildlifekn → ubergraph → nde_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?t) AS ?shared) WHERE {
   { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/wildlifekn> { VALUES ?_tc { <https://wildlife.proto-okn.net/kg/Bird_name> <https://wildlife.proto-okn.net/kg/Amphibian_name> } ?_t1 a ?_tc ; <http://www.w3.org/2000/01/rdf-schema#label> ?_t2 . BIND(REPLACE(STR(?_t2),'^([^ ]+ [^ ]+).*$','$1') AS ?_t3) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label> ?_t3 . FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/NCBITaxon_')) } } }
   { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/nde> { ?_n1 <http://schema.org/species> ?_n2 . FILTER(CONTAINS(STR(?_n2),'/taxonomy/')) } BIND(IRI(CONCAT('http://purl.obolibrary.org/obo/NCBITaxon_',REPLACE(STR(?_n2),'^.*/taxonomy/([0-9]+).*$','$1'))) AS ?t) } }
@@ -3638,6 +3696,7 @@ SELECT (COUNT(DISTINCT ?t) AS ?shared) WHERE {
 _wildlifekn → ubergraph → sawgraph_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?t) AS ?shared) WHERE {
   { SELECT DISTINCT ?t WHERE { GRAPH <https://purl.org/okn/frink/kg/wildlifekn> { VALUES ?_tc { <https://wildlife.proto-okn.net/kg/Bird_name> <https://wildlife.proto-okn.net/kg/Amphibian_name> } ?_t1 a ?_tc ; <http://www.w3.org/2000/01/rdf-schema#label> ?_t2 . BIND(REPLACE(STR(?_t2),'^([^ ]+ [^ ]+).*$','$1') AS ?_t3) } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label> ?_t3 . FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/NCBITaxon_')) } } }
   { SELECT DISTINCT ?t WHERE { { GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?_t1 a <http://w3id.org/sawgraph/v1/us-wqp#Taxon> ; <http://www.w3.org/2000/01/rdf-schema#label> ?_t2 . } GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?t <http://www.w3.org/2000/01/rdf-schema#label> ?_t2 . FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/NCBITaxon_')) } } UNION { GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?t <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?_t3 . FILTER(STRSTARTS(STR(?t),'http://purl.obolibrary.org/obo/NCBITaxon_')) } MINUS { GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?_t4 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?t . FILTER(?_t4 != ?t && STRSTARTS(STR(?_t4),'http://purl.obolibrary.org/obo/NCBITaxon_')) } } } } }
@@ -3647,6 +3706,7 @@ SELECT (COUNT(DISTINCT ?t) AS ?shared) WHERE {
 _wildlifekn × ubergraph_
 
 ```sparql
+# okn:prefilter
 SELECT (COUNT(DISTINCT ?taxon) AS ?n) WHERE {
   GRAPH <https://purl.org/okn/frink/kg/wildlifekn> { VALUES ?cls { <https://wildlife.proto-okn.net/kg/Bird_name> <https://wildlife.proto-okn.net/kg/Amphibian_name> } ?s a ?cls ; <http://www.w3.org/2000/01/rdf-schema#label> ?l . BIND(REPLACE(?l,'^(\\S+\\s+\\S+).*$','$1') AS ?binom) }
   GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?taxon <http://www.w3.org/2000/01/rdf-schema#label> ?binom . FILTER(STRSTARTS(STR(?taxon),'http://purl.obolibrary.org/obo/NCBITaxon_')) }

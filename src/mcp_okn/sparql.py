@@ -20,7 +20,7 @@ from typing import Any
 
 import httpx
 
-from .query_rewrite import prefilter_prefix_tests
+from .query_rewrite import prefilter_prefix_tests, wants_prefilter
 
 #: The single federation endpoint. Do not query per-KG endpoints.
 FEDERATION_ENDPOINT = os.environ.get(
@@ -244,7 +244,7 @@ async def run_sparql(
     client: httpx.AsyncClient | None = None,
     normalize_schema: bool = True,
     max_retries: int = 2,
-    prefilter: bool = True,
+    prefilter: bool | None = None,
 ) -> dict[str, Any]:
     """Run a SPARQL query against the OKN federation endpoint.
 
@@ -271,8 +271,10 @@ async def run_sparql(
             and request timeouts are never retried: they are deterministic, so a
             retry only doubles the wait.
         prefilter: Add a block-skipping IRI range in front of each FILTER's
-            ``STRSTARTS(STR(?v), "<iri prefix>")`` (default True). The result is
-            identical; see :mod:`mcp_okn.query_rewrite`.
+            ``STRSTARTS(STR(?v), "<iri prefix>")``. None (the default) does it
+            only for a query with a ``# okn:prefilter`` comment line; True and
+            False force it on or off. The result is identical either way; see
+            :mod:`mcp_okn.query_rewrite` for when it is faster.
 
     Returns:
         For ``json``: ``{"vars": [...], "rows": [...], "row_count": N}``.
@@ -288,7 +290,7 @@ async def run_sparql(
 
     if normalize_schema:
         query = normalize_schema_org(query)
-    if prefilter:
+    if prefilter or (prefilter is None and wants_prefilter(query)):
         query = prefilter_prefix_tests(query)
     headers = {"Accept": _ACCEPT[fmt]}
     limit = DEFAULT_TIMEOUT if timeout is None else timeout

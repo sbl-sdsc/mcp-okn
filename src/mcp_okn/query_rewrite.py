@@ -52,11 +52,26 @@ only the blocks of those leaders. Given a range on ``?member`` it reads every
 babel row in that namespace instead: in the 2026-11 A/B over the catalog's 143
 rewritable skeletons, the six that got slower (up to 12x) were all of this shape,
 and none of this shape got faster.
+
+**It is opt-in, per query.** A query asks for it with a comment line
+``# okn:prefilter`` (:data:`PRAGMA`); :func:`mcp_okn.sparql.run_sparql` then
+rewrites it. The range helps when the filtered variable drives the scan: 52
+catalog skeletons take 421 s without it and 69 s with it (cold, November 2026),
+and those carry the line. It hurts when the variable is already pinned by a
+selective join, because QLever then range-scans the namespace instead of
+following the join: over the 230 slowest rewritable queries in the worked-example
+transcripts, mostly written that way, it saved about 1% in total, made a few
+queries 5-20x slower (1.7 s to 19 s) and pushed two past the time limit. Nothing
+in the query text tells the two apart, so the default leaves queries alone.
 """
 
 from __future__ import annotations
 
 import re
+
+#: The comment line that asks for the rewrite (see the module docstring).
+PRAGMA = "# okn:prefilter"
+_PRAGMA = re.compile(r"^[ \t]*#[ \t]*okn:prefilter\b", re.M | re.I)
 
 #: Sorts after every assigned character (see the module docstring).
 _HIGH = "\U000efffd"
@@ -223,6 +238,11 @@ def _rewrite_expr(query: str, mask: str, lo: int, hi: int, skip: set[str]) -> st
         if len(parts) > 1:
             return op.join(_rewrite_expr(query, mask, a, b, skip) for a, b in parts)
     return _rewrite_atom(query[lo:hi], skip)
+
+
+def wants_prefilter(query: str) -> bool:
+    """True when ``query`` carries the :data:`PRAGMA` comment line."""
+    return bool(_PRAGMA.search(query))
 
 
 def prefilter_prefix_tests(query: str) -> str:

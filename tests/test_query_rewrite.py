@@ -12,6 +12,7 @@ from mcp_okn.query_rewrite import (
     _range_for,
     literal_prefix_hint,
     prefilter_prefix_tests,
+    wants_prefilter,
 )
 
 MONDO = "http://purl.obolibrary.org/obo/MONDO_"
@@ -170,3 +171,16 @@ def test_a_host_only_prefix_is_left_alone(prefix):
     assert _range_for(prefix) is None
     q = f"SELECT * WHERE {{ ?s ?p ?x FILTER(STRSTARTS(STR(?x), '{prefix}')) }}"
     assert prefilter_prefix_tests(q) == q
+
+
+@pytest.mark.parametrize(
+    ("query", "wanted"),
+    [
+        ("# okn:prefilter\nSELECT * WHERE { ?s ?p ?o }", True),
+        ("PREFIX a: <http://a/>\n  #okn:prefilter\nSELECT * WHERE { ?s ?p ?o }", True),
+        ("SELECT * WHERE { ?s ?p ?o }", False),
+        ("SELECT * WHERE { ?s <http://x/#okn:prefilter> ?o }", False),
+    ],
+)
+def test_wants_prefilter_reads_the_comment_line(query, wanted):
+    assert wants_prefilter(query) is wanted
