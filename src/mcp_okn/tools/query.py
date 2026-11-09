@@ -324,6 +324,9 @@ _LOOKUP_PREDICATES = (
     ("broad_synonym", "oio:hasBroadSynonym"),
 )
 
+#: Matches that make a term the named concept, not a neighbour of it.
+_EQUIVALENT_MATCHES = frozenset({"label", "exact_synonym"})
+
 
 def _case_variants(label: str) -> list[str]:
     """The label as given plus its common capitalizations, deduplicated."""
@@ -381,10 +384,11 @@ async def lookup_term(
     scans every label in the federation's largest graph and times out.
 
     Matching is EXACT on the whole name (ignoring case), against `rdfs:label` and
-    the OBO exact, related, narrow and broad synonyms, with or without an `@en`
-    tag. Rows are ranked label first, then exact synonym, and so on. A name can
-    match terms in several ontologies (MONDO, NCIT, DOID, …). Pass `ontology` to
-    keep one, and pick the ontology the target KG actually stores (see
+    the OBO exact synonyms, with or without an `@en` tag. Only when neither
+    matches are related, narrow and broad synonyms returned, flagged in `note`:
+    they may name a different concept. A name can match terms in several
+    ontologies (MONDO, NCIT, DOID, …) that mean the same thing. Pass `ontology`
+    to keep one, and pick the ontology the target KG actually stores (see
     `probe_namespaces`).
 
     Args:
@@ -418,9 +422,30 @@ async def lookup_term(
     best: dict[Any, dict[str, Any]] = {}
     for row in result["rows"]:
         best.setdefault(row.get("term"), row)
-    result["rows"] = list(best.values())
-    result["row_count"] = len(result["rows"])
+    rows = list(best.values())
+    # A related/narrow/broad synonym names a neighbouring concept, not this one
+    # (HP_0001626 "Abnormality of the cardiovascular system" carries "Cardiovascular
+    # disease" as a related synonym). Offered beside true matches, agents took it
+    # for the term itself, so it is returned only when nothing matches exactly.
+    exact = [r for r in rows if r.get("matched_on") in _EQUIVALENT_MATCHES]
+    note = None
+    if exact and len(exact) < len(rows):
+        note = (
+            f"Left out {len(rows) - len(exact)} term(s) matching only a related, "
+            "narrow or broad synonym: they name a different concept."
+        )
+        rows = exact
+    elif rows and not exact:
+        note = (
+            f"No term has {label!r} as its label or exact synonym. These match only "
+            "a related, narrow or broad synonym, so each may name a different "
+            "concept: check its label before using it."
+        )
+    result["rows"] = rows
+    result["row_count"] = len(rows)
     out = _compact(result)
+    if note:
+        out["note"] = note
     if not out["count"]:
         out["hint"] = (
             f"No term in ubergraph is named exactly {label!r}"
