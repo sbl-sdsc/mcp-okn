@@ -24,8 +24,10 @@ and often several, and each comes from one of a few shapes, checked here:
 4. **Scoping slips** (:func:`scope_warnings`). ``{ BIND(?s AS ?x) } UNION
    { BIND(?o AS ?x) }`` binds nothing: a group's BIND sees only that group, so
    ``?x`` stays unbound and the query silently matches everything. The same goes
-   for a FILTER inside a branch that names a variable bound outside it. These
-   queries run, and the reply carries a warning.
+   for a FILTER inside a branch that names a variable bound outside it, and for a
+   ``FILTER EXISTS { … ?x … }`` in a GRAPH block that does not bind ``?x``: there
+   ``?x`` matches anything, so the FILTER keeps every row (NOT EXISTS drops every
+   row). These queries run, and the reply carries a warning.
 5. **Undeclared standard prefixes** (:func:`add_missing_prefixes`): ``xsd:`` above
    all (52 of 71 such errors across the recorded runs). The declaration is added
    and the reply says so.
@@ -131,6 +133,21 @@ FILTER_SCOPE_WARNING = (
     "GRAPH blocks, e.g. `GRAPH <a> {{ … ?x … }} GRAPH <b> {{ … ?y … }} "
     "FILTER(?x = ?y)`."
 )
+
+EXISTS_SCOPE_WARNING = (
+    "A FILTER {kind} inside a GRAPH block, nested {{ }} group or UNION branch uses "
+    "{vars}, which is bound only outside that group. The group is evaluated on "
+    "its own, so inside the {kind} pattern {vars} is unbound and matches any value: "
+    "the FILTER {effect}. Put the FILTER where {vars} is bound, with the GRAPH "
+    "inside it: `GRAPH <a> {{ … ?x … }} FILTER {kind} {{ GRAPH <b> {{ ?s <p> ?x }} "
+    "}}`."
+)
+
+#: What a misplaced FILTER (NOT) EXISTS does, by kind.
+_EXISTS_EFFECT = {
+    "EXISTS": "keeps every row whenever the pattern matches anything at all",
+    "NOT EXISTS": "drops every row whenever the pattern matches anything at all",
+}
 
 
 # ── standard prefixes ────────────────────────────────────────────────────────
@@ -398,6 +415,30 @@ def _expr_vars(expr: Any) -> set[Variable]:
     return found
 
 
+def _exists_slips(expr: Any) -> list[tuple[str, set[Variable]]]:
+    """(kind, variables) for each EXISTS / NOT EXISTS in a FILTER expression."""
+    found: list[tuple[str, set[Variable]]] = []
+
+    def visit(node: Any) -> None:
+        name = getattr(node, "name", None)
+        if name in ("Builtin_EXISTS", "Builtin_NOTEXISTS"):
+            pattern = _exists_pattern(node)
+            if pattern is not None:
+                kind = "EXISTS" if name == "Builtin_EXISTS" else "NOT EXISTS"
+                found.append((kind, _all_vars(pattern)))
+            return
+        if isinstance(node, dict):
+            for key, value in node.items():
+                if key != "_vars":
+                    visit(value)
+        elif isinstance(node, list | tuple):
+            for value in node:
+                visit(value)
+
+    visit(expr)
+    return found
+
+
 def _is_constant(term: Any) -> bool:
     return isinstance(term, URIRef | Literal)
 
@@ -600,11 +641,14 @@ def _all_vars(algebra: Any) -> set[Variable]:
 
 def scope_warnings(algebra: Any) -> list[str]:
     """Shape 4: a BIND or FILTER naming a variable its group cannot see."""
-    bindable = _bindable_vars(algebra)
     warnings: list[str] = []
 
-    def visit(node: Any, nested: bool) -> None:
+    def visit(node: Any, nested: bool, bindable: set[Variable]) -> None:
         name = getattr(node, "name", None)
+        if name == "Project":
+            # A subquery sees only its own variables: one the outer query binds
+            # cannot reach in, so it is no slip to leave it free in here.
+            bindable = _bindable_vars(node)
         if name == "Extend":
             missing = sorted(
                 (_expr_vars(node.get("expr")) & bindable) - _scope(node.get("p"))
@@ -626,6 +670,20 @@ def scope_warnings(algebra: Any) -> list[str]:
                         vars=", ".join(f"?{v}" for v in missing)
                     )
                 )
+            # An EXISTS pattern sees the FILTER's group, not the query: a
+            # variable bound only outside that group is free inside the EXISTS.
+            # `bindable` leaves out variables that occur only in EXISTS patterns.
+            own = _scope(node.get("p"))
+            for kind, used in _exists_slips(node.get("expr")):
+                free = sorted((used & bindable) - own)
+                if free:
+                    warnings.append(
+                        EXISTS_SCOPE_WARNING.format(
+                            kind=kind,
+                            vars=", ".join(f"?{v}" for v in free),
+                            effect=_EXISTS_EFFECT[kind],
+                        )
+                    )
         for key in ("p", "p1", "p2"):
             if isinstance(node, dict) and key in node:
                 # The operands of a join, a union and a MINUS are groups of their
@@ -635,9 +693,9 @@ def scope_warnings(algebra: Any) -> list[str]:
                     or name in ("Union", "Join", "Minus")
                     or (name == "LeftJoin" and key == "p2")
                 )
-                visit(node[key], child_nested)
+                visit(node[key], child_nested, bindable)
 
-    visit(algebra, False)
+    visit(algebra, False, _bindable_vars(algebra))
     # One of each kind is enough to point at the slip.
     return list(dict.fromkeys(warnings))[:3]
 
