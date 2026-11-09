@@ -220,6 +220,10 @@ mcp = FastMCP("mcp-okn", instructions=INSTRUCTIONS)
 #: them, and their definitions land mid-conversation, so every session writes
 #: them to the prompt cache again. Marked tools load with the system prompt,
 #: which sessions share. Other clients ignore the key.
+#:
+#: ``lookup_term`` is marked too. Left deferred beside an upfront
+#: ``sparql_query``, agents stopped loading it: 0.22 calls per ontology-corpus
+#: attempt in the 0.6.0 benchmark, against 0.83 in 0.5.0.
 ALWAYS_LOAD = {"anthropic/alwaysLoad": True}
 
 # Dict replies go out as compact JSON, not FastMCP's indent=2 (see compact_output).

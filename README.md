@@ -172,9 +172,9 @@ universal access):
 
 Verify with `/mcp` — you should see `mcp-okn-dev` listed as connected.
 
-Claude Code defers MCP tools behind its tool search. `sparql_query`, `get_schema` and
-`get_join_strategy` are marked `anthropic/alwaysLoad`, so they load with the session (Claude
-Code 2.1.285 or later); the rest load on demand.
+Claude Code defers MCP tools behind its tool search. `sparql_query`, `get_schema`,
+`get_join_strategy` and `lookup_term` are marked `anthropic/alwaysLoad`, so they load with the
+session (Claude Code 2.1.285 or later); the rest load on demand.
 
 ### ChatGPT
 

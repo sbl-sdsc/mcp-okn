@@ -365,7 +365,7 @@ SELECT DISTINCT ?term ?label ?matched_on ?matched_text WHERE {{
 }} LIMIT {int(limit)}"""
 
 
-@mcp.tool()
+@mcp.tool(meta=ALWAYS_LOAD)
 async def lookup_term(
     label: str,
     ontology: str | None = None,
