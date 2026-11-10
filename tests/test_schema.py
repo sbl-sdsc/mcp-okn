@@ -928,3 +928,20 @@ async def test_default_schema_reads_the_shipped_file(monkeypatch):
     meta = await schema_mod.fetch_entity_metadata("prokn", refresh=True)
     assert meta
     assert schema_mod.metadata_source("prokn") == schema_mod.ENTITY_METADATA_BASE
+
+
+def test_biomarkerkg_notes_name_the_protein_predicates():
+    notes = usage_notes("biomarkerkg")
+    assert notes is not None
+    for curie in ("OBCI_1000009", "OBCI_1000015", "OBCI_1000016", "OBCI_1000017"):
+        assert curie in notes["guidance"]
+        assert curie in notes["query_snippet"]
+    # facts only: the note must not tell agents which legs to combine
+    assert "UNION" not in notes["guidance"]
+
+
+def test_rdkg_notes_say_how_to_find_a_disease_by_name():
+    notes = usage_notes("rdkg")
+    assert notes is not None
+    assert '?d rdfs:label "Fabry disease"' in notes["guidance"]
+    assert "lookup_term" in notes["guidance"]

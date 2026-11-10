@@ -116,6 +116,18 @@ EQUIVALENT = [
          VALUES ?d { <http://example.org/d1> <http://example.org/d2> }
          GRAPH <http://example.org/g1> { ?a ?p ?d . ?b ?q ?a }
        }""",
+    # one value with a bound predicate: written in place, no branches
+    """SELECT * WHERE {
+         VALUES ?d { <http://example.org/d1> }
+         GRAPH <http://example.org/g1> { ?a <http://example.org/subject> ?d } }""",
+    # one value outside a UNION whose branches use it (QLever evaluates each
+    # branch alone, so the VALUES row never reached them)
+    """SELECT ?a ?o ?dir WHERE {
+         VALUES ?d { <http://example.org/d2> }
+         GRAPH <http://example.org/g1> {
+           { ?a <http://example.org/subject> ?d BIND("s" AS ?dir) }
+           UNION { ?a <http://example.org/object> ?d BIND("o" AS ?dir) }
+           OPTIONAL { ?a a ?o } } }""",
     # VALUES inside a UNION branch: the rewrite stays local to that branch
     """SELECT * WHERE {
          { VALUES ?d { <http://example.org/d1> <http://example.org/d2> }
@@ -151,9 +163,6 @@ def test_single_value_needs_no_union():
 
 
 LEFT_ALONE = {
-    "bound predicate": """SELECT * WHERE {
-        VALUES ?d { <http://example.org/d1> }
-        GRAPH <http://example.org/g1> { ?a <http://example.org/subject> ?d } }""",
     "use inside OPTIONAL": """SELECT * WHERE {
         VALUES ?d { <http://example.org/d1> }
         GRAPH <http://example.org/g1> { ?a ?p ?o OPTIONAL { ?a ?q ?d } } }""",
@@ -200,6 +209,9 @@ LEFT_ALONE = {
     "too many values": "SELECT * WHERE { VALUES ?d { "
     + " ".join(f"<http://example.org/d{i}>" for i in range(MAX_INLINE_VALUES + 1))
     + " } ?a ?p ?d }",
+    "one value with a bound predicate, used inside MINUS": """SELECT * WHERE {
+        VALUES ?d { <http://example.org/d1> }
+        ?a <http://example.org/subject> ?o MINUS { ?a <http://example.org/object> ?d } }""",
     "VALUES feeding a predicate variable": """SELECT * WHERE {
         VALUES ?p { <http://example.org/subject> <http://example.org/object> }
         GRAPH <http://example.org/g1> { ?go ?p ?name . ?go ?q ?other } }""",

@@ -585,7 +585,58 @@ phenotype (328,805 edges) rdkg holds 151,304 phenotype -> disease edges
 (subject an HP term), and every one of them mirrors a forward edge. Match
 the forward direction only (disease as subject, HP term as object): it is
 complete, and an undirected pattern or a UNION of both directions counts a
-mirrored pair twice.\
+mirrored pair twice.
+
+FINDING A DISEASE BY NAME. rdkg's rdfs:label values are plain strings, so the
+exact literal is an index lookup: `?d rdfs:label "Fabry disease"` returns
+MONDO_0010526 in 0.4 s. oard-kg's labels carry a language tag
+(`"Fabry disease"@en`). `lookup_term("Fabry disease")` gives the MONDO IRI
+too. A FILTER on the label (`FILTER(LCASE(STR(?l)) = "fabry disease")`) reads
+every rdfs:label in the federation first: 11-34 s on a cold cache in the
+benchmark runs.\
+"""
+
+#: biomarkerkg: where the UniProt proteins are, so agents need not scan every
+#: triple to find out (a ``?b ?p ?o`` census with a namespace FILTER took 5-30 s
+#: cold in the v0.6.4 benchmark runs).
+BIOMARKERKG_GUIDANCE = """\
+WHERE THE PROTEINS ARE (verified live 2026-11-10). A biomarker record names the
+entity it measures through four "assessed entity" predicates, and these four
+are the only predicates with UniProt proteins as objects:
+  obo:OBCI_1000009 indicated by above normal level of  213 proteins (340 edges)
+  obo:OBCI_1000015 indicated by below normal level of    46 proteins (76 edges)
+  obo:OBCI_1000016 indicated by presence of               1 protein
+                   (its other 196,058 objects are dbSNP variants)
+  obo:OBCI_1000017 indicated by absence of                1 protein
+Proteins are http://purl.uniprot.org/uniprot/<accession> and typed
+<http://purl.uniprot.org/core/Protein> (one, L0R6I3, is untyped; one IRI,
+uniprot/HINT1, is a symbol, not an accession). The same predicates also point
+to PubChem genes (pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID...), PubChem
+compounds, CHEBI and CL terms, GlyTouCan glycans, miRBase and RNAcentral ids.
+A protein's rdfs:label is its protein NAME ("Tumor necrosis factor receptor
+superfamily member 11B"), not a gene symbol.
+
+THE ROLE IS THE DISEASE EDGE: obo:OBCI_1000002 diagnostic for (2,500 records;
+objects 2,465 MONDO, 31 DOID, 4 OMIM), OBCI_1000006 prognostic for,
+OBCI_1000008 indicates risk of developing, OBCI_1000003 monitors status of.
+The record's class (a obo:OBCI_0000002 ...) and obo:OBCI_1000011 (has BEST
+classification) restate it: 2,497 of the 2,500 diagnostic-for records are
+typed OBCI_0000002.\
+"""
+
+#: Companion snippet: the census agents ran by scanning, as index lookups.
+BIOMARKERKG_SNIPPET = """\
+# Which assessed-entity predicate carries the proteins of diagnostic
+# biomarkers, and how many. Each predicate is bound, so this is an index
+# lookup (< 1 s); `?b ?p ?up` with a namespace FILTER reads every triple.
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+SELECT ?level (COUNT(DISTINCT ?up) AS ?proteins) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> {
+    VALUES ?level { obo:OBCI_1000009 obo:OBCI_1000015 obo:OBCI_1000016 obo:OBCI_1000017 }
+    ?b obo:OBCI_1000002 ?disease ; ?level ?up .
+    ?up a <http://purl.uniprot.org/core/Protein> .
+  }
+} GROUP BY ?level\
 """
 
 #: Companion snippet: the diseases under a category, without a property path.
@@ -637,6 +688,11 @@ _KG_USAGE_NOTES: dict[str, dict[str, str]] = {
         "title": "Location-kind notes",
         "guidance": SPOKE_OKN_GUIDANCE,
         "query_snippet": SPOKE_OKN_SNIPPET,
+    },
+    "biomarkerkg": {
+        "title": "Assessed-entity notes",
+        "guidance": BIOMARKERKG_GUIDANCE,
+        "query_snippet": BIOMARKERKG_SNIPPET,
     },
     "rdkg": {
         "title": "Disease-hierarchy notes",

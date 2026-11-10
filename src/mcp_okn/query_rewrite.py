@@ -363,11 +363,17 @@ def literal_prefix_hint(query: str) -> str | None:
 # * a use inside an expression is in G itself, in a FILTER (scoped to the whole
 #   group) or a BIND after the VALUES clause. A nested group's FILTER or BIND
 #   cannot see the outer ?x, so the substitution would change it;
-# * ?x is the subject or object of a triple whose predicate is a variable --
-#   the shape that is slow. Other VALUES blocks are left as written;
-# * no all-variable triple (``?a ?b ?c``) without ?x would run on its own --
-#   inside a nested group, or sharing no variable with a triple using ?x:
-#   every branch repeats the group, so such a scan would run once per value.
+# * with two or more values, ?x is the subject or object of a triple whose
+#   predicate is a variable -- the shape that is slow -- and no all-variable
+#   triple (``?a ?b ?c``) without ?x would run on its own -- inside a nested
+#   group, or sharing no variable with a triple using ?x: every branch repeats
+#   the group, so such a scan would run once per value. Other VALUES blocks
+#   with several values are left as written;
+# * a single value is always written in place (no branches, nothing repeated).
+#   In the v0.6.3 benchmark, ``VALUES ?d { <MONDO_…> }`` outside a UNION over
+#   oard-kg associations took 8.5-12.5 s cold: QLever computed the branches over
+#   all 5.2 million associations before joining the one disease. With the
+#   constant in each branch the same query took 2.0 s cold.
 
 #
 # Replayed live on 2026-11-09 against every logged benchmark query it would have
@@ -548,9 +554,12 @@ def _inline_one(query: str, mask: str, values: re.Match[str]) -> str | None:
     open_predicate = re.search(
         rf"(?:[?$]\w+|_+|[\w\-.]*:[\w\-.%]*|;)\s+[?$]\w+\s+[?$]{var}\b", rest_mask
     ) or re.search(rf"(?:^|[{{}}.])\s*[?$]{var}\s+[?$]\w+\s+\S", rest_mask)
-    if not open_predicate:
-        return None
-    if _repeats_a_scan(rest_mask, var):
+    # One value needs no branches, so nothing is repeated: the constant in place
+    # is an index lookup whatever the predicate, where QLever otherwise computes
+    # a group the VALUES row cannot reach (a UNION branch, say) over the whole
+    # relation first. Two or more values copy the group, which pays only where
+    # the predicate is open.
+    if len(data) > 1 and (not open_predicate or _repeats_a_scan(rest_mask, var)):
         return None
 
     def branch(datum: str) -> str:
