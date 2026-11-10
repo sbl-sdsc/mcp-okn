@@ -16,10 +16,17 @@ import random
 import re
 import time
 import weakref
+from collections.abc import Callable
 from typing import Any
 
 import httpx
 
+from .group_rewrite import (
+    anchor_optionals,
+    delay_comparison_filters,
+    filter_equality_to_join,
+    not_exists_to_minus,
+)
 from .query_rewrite import (
     inline_values_for_open_predicates,
     prefilter_prefix_tests,
@@ -241,6 +248,20 @@ def _flatten_bindings(payload: dict[str, Any]) -> list[dict[str, Any]]:
     return rows
 
 
+def _exact_rewrite(rewrite: Callable[[str], str], query: str, wanted: bool) -> str:
+    """``rewrite(query)`` if wanted; the query as written if the rewrite fails.
+
+    The rewrites only change how QLever plans a query, never its result, so a bug
+    in one must not cost the agent its query.
+    """
+    if not wanted:
+        return query
+    try:
+        return rewrite(query)
+    except Exception:  # pragma: no cover - defensive
+        return query
+
+
 async def run_sparql(
     query: str,
     fmt: str = "json",
@@ -250,6 +271,7 @@ async def run_sparql(
     max_retries: int = 2,
     prefilter: bool | None = None,
     inline_values: bool = True,
+    rewrite_groups: bool = True,
 ) -> dict[str, Any]:
     """Run a SPARQL query against the OKN federation endpoint.
 
@@ -287,6 +309,14 @@ async def run_sparql(
             result is identical; the rewrite is skipped wherever it could not
             be (see :func:`mcp_okn.query_rewrite.inline_values_for_open_predicates`).
             Error messages show the query before this rewrite.
+        rewrite_groups: Write ``FILTER NOT EXISTS { P }`` as ``MINUS { P }``, and
+            repeat the triple that pins an OPTIONAL's shared variable inside the
+            OPTIONAL, where either is exact (default True). QLever plans the
+            first slowly and computes an OPTIONAL's body on its own, so on a cold
+            cache both read whole relations. A comparison FILTER is also made to
+            wait for the group's anchored side, and a cross-block
+            ``FILTER(?x = IRI(…))`` becomes a join on ``?x``. See
+            :mod:`mcp_okn.group_rewrite`.
 
     Returns:
         For ``json``: ``{"vars": [...], "rows": [...], "row_count": N}``.
@@ -304,7 +334,11 @@ async def run_sparql(
         query = normalize_schema_org(query)
     if prefilter or (prefilter is None and wants_prefilter(query)):
         query = prefilter_prefix_tests(query)
-    sent = inline_values_for_open_predicates(query) if inline_values else query
+    sent = _exact_rewrite(not_exists_to_minus, query, rewrite_groups)
+    sent = _exact_rewrite(inline_values_for_open_predicates, sent, inline_values)
+    sent = _exact_rewrite(filter_equality_to_join, sent, rewrite_groups)
+    sent = _exact_rewrite(anchor_optionals, sent, rewrite_groups)
+    sent = _exact_rewrite(delay_comparison_filters, sent, rewrite_groups)
     headers = {"Accept": _ACCEPT[fmt]}
     limit = DEFAULT_TIMEOUT if timeout is None else timeout
     data = {"query": sent, "timeout": f"{max(1, round(limit))}s"}
