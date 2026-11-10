@@ -20,7 +20,11 @@ from typing import Any
 
 import httpx
 
-from .query_rewrite import prefilter_prefix_tests, wants_prefilter
+from .query_rewrite import (
+    inline_values_for_open_predicates,
+    prefilter_prefix_tests,
+    wants_prefilter,
+)
 
 #: The single federation endpoint. Do not query per-KG endpoints.
 FEDERATION_ENDPOINT = os.environ.get(
@@ -245,6 +249,7 @@ async def run_sparql(
     normalize_schema: bool = True,
     max_retries: int = 2,
     prefilter: bool | None = None,
+    inline_values: bool = True,
 ) -> dict[str, Any]:
     """Run a SPARQL query against the OKN federation endpoint.
 
@@ -275,6 +280,13 @@ async def run_sparql(
             only for a query with a ``# okn:prefilter`` comment line; True and
             False force it on or off. The result is identical either way; see
             :mod:`mcp_okn.query_rewrite` for when it is faster.
+        inline_values: Write a VALUES block's IRIs into the group when they meet
+            a triple with an open predicate (``?s ?p ?x``), as a UNION with one
+            branch per IRI (default True). QLever plans that shape as a scan of
+            the whole graph; with the IRIs in place it is an index lookup. The
+            result is identical; the rewrite is skipped wherever it could not
+            be (see :func:`mcp_okn.query_rewrite.inline_values_for_open_predicates`).
+            Error messages show the query before this rewrite.
 
     Returns:
         For ``json``: ``{"vars": [...], "rows": [...], "row_count": N}``.
@@ -292,9 +304,10 @@ async def run_sparql(
         query = normalize_schema_org(query)
     if prefilter or (prefilter is None and wants_prefilter(query)):
         query = prefilter_prefix_tests(query)
+    sent = inline_values_for_open_predicates(query) if inline_values else query
     headers = {"Accept": _ACCEPT[fmt]}
     limit = DEFAULT_TIMEOUT if timeout is None else timeout
-    data = {"query": query, "timeout": f"{max(1, round(limit))}s"}
+    data = {"query": sent, "timeout": f"{max(1, round(limit))}s"}
     http_timeout = limit + _HTTP_GRACE
 
     # A caller-supplied client belongs to the caller; the shared one is reused across

@@ -321,3 +321,270 @@ def literal_prefix_hint(query: str) -> str | None:
                 "skips index blocks and the filter is often 10-100x faster."
             )
     return None
+
+
+# --- VALUES feeding an open predicate ----------------------------------------
+#
+# ``VALUES ?x { <a> <b> }`` joined with ``?s ?p ?x`` -- the predicate left open --
+# is a QLever planning trap. With the IRI written in place, ``?s ?p <a>`` is an
+# index lookup; with it supplied by VALUES, QLever plans the open-predicate scan
+# first and joins the VALUES afterwards, so it reads the whole graph. On the
+# federation endpoint (November 2026), an agent's probe
+#
+#     VALUES ?cond { <MONDO_0007179> <NCIT_C2889> }
+#     GRAPH <…/oard-kg> { ?a ?p ?cond . ?a a ?cls }
+#
+# took 179 s, and with one IRI in the VALUES block it ran past 180 s; written as
+# a UNION of the same group with each IRI in place it took 0.6 s. In the
+# benchmark logs, this shape was 158 of 4,013 agent queries and 1,020 s of their
+# 16,577 s of endpoint time.
+#
+# :func:`inline_values_for_open_predicates` makes that rewrite. For a group G
+# that holds ``VALUES ?x { v1 … vk }`` it produces
+#
+#     { G' [?x := v1]  BIND(v1 AS ?x) } UNION … UNION { G' [?x := vk]  BIND(vk AS ?x) }
+#
+# where G' is G without the VALUES clause. A VALUES clause joins its rows with
+# the rest of the group, so G is the union over i of (G' joined with ?x = vi),
+# and substituting a variable fixed to vi by vi itself is the same pattern. Each
+# VALUES clause is rewritten on its own, and only where the substitution is
+# exact:
+#
+# * the clause is on one variable, with 1 to :data:`MAX_INLINE_VALUES` IRIs or
+#   prefixed names (no literals, no UNDEF), and sits inside a group (not
+#   trailing the query); the rest of the group holds no other VALUES clause,
+#   subquery or SERVICE, and nothing in it assigns ?x (``AS ?x``);
+# * every use of ?x is a join. Plain and GRAPH groups and UNION branches pass:
+#   a join distributes over UNION (and QLever evaluates each branch alone, so
+#   there the rewrite matters most). An OPTIONAL passes only as a direct child
+#   of G written after the VALUES clause: a left join evaluated before ?x is
+#   fixed keeps rows that the substitution would drop. MINUS, EXISTS and
+#   deeper OPTIONALs fail;
+# * a use inside an expression is in G itself, in a FILTER (scoped to the whole
+#   group) or a BIND after the VALUES clause. A nested group's FILTER or BIND
+#   cannot see the outer ?x, so the substitution would change it;
+# * ?x is the subject or object of a triple whose predicate is a variable --
+#   the shape that is slow. Other VALUES blocks are left as written;
+# * no all-variable triple (``?a ?b ?c``) without ?x would run on its own --
+#   inside a nested group, or sharing no variable with a triple using ?x:
+#   every branch repeats the group, so such a scan would run once per value.
+
+#
+# Replayed live on 2026-11-09 against every logged benchmark query it would have
+# changed under looser rules (207), each form run separately: the 98 these rules
+# still rewrite went from 541 s to 57 s where both forms finished, 18 that had
+# failed (timeouts, out-of-memory) returned rows, none got slower, and every
+# result matched up to what SPARQL leaves open (SAMPLE, GROUP_CONCAT order, a
+# LIMIT without ORDER BY). The 109 the guards leave alone held every case the
+# rewrite made slower -- VALUES feeding a predicate, an OPTIONAL scan repeated
+# per branch -- and the one it made time out.
+
+#: More values than this are left as a VALUES block: each value copies the group.
+MAX_INLINE_VALUES = 20
+
+_VALUES = re.compile(r"\bVALUES\b", re.I)
+_VALUES_HEAD = re.compile(r"\s*[?$](\w+)\s*\{")
+#: One VALUES datum: an IRI or a prefixed name.
+_DATUM = re.compile(
+    r'<[^<>"{}|^`\\\x00-\x20]*>|(?:[A-Za-z][\w\-.]*)?:[\w\-%]+(?:[\w\-.%]*[\w\-%])?'
+)
+#: Text before a group's ``{`` that makes it a negation, a subquery or remote:
+#: a use of ?x there is never substituted.
+_BLOCKING_GROUP_HEAD = re.compile(
+    r"(?:\bMINUS|\bEXISTS|\bSERVICE\b[^{]*|\bWHERE|\bSELECT\b[^{]*)$", re.I
+)
+_OPTIONAL_HEAD = re.compile(r"\bOPTIONAL$", re.I)
+_EXPRESSION_HEAD = re.compile(r"\b(FILTER|BIND)\s*$", re.I)
+_SUBQUERY_OR_REMOTE = re.compile(r"\b(?:SELECT|VALUES|SERVICE)\b", re.I)
+#: Three variables in a row: a triple pattern with nothing bound.
+_ALL_VARIABLE_TRIPLE = re.compile(r"[?$]\w+\s+[?$]\w+\s+[?$]\w+\b")
+
+
+def _enclosing_brace(mask: str, pos: int) -> int | None:
+    """Index of the ``{`` of the innermost group around ``pos``, or None."""
+    depth = 0
+    for i in range(pos - 1, -1, -1):
+        if mask[i] == "}":
+            depth += 1
+        elif mask[i] == "{":
+            if depth == 0:
+                return i
+            depth -= 1
+    return None
+
+
+def _open_groups(mask: str, pos: int) -> list[int]:
+    """The ``{`` of every group around ``pos`` in ``mask``, outermost first."""
+    stack: list[int] = []
+    for i in range(pos):
+        if mask[i] == "{":
+            stack.append(i)
+        elif mask[i] == "}" and stack:
+            stack.pop()
+    return stack
+
+
+def _expression_head(mask: str, start: int, pos: int) -> str | None:
+    """The expression keyword ``pos`` sits under, between ``start`` and ``pos``.
+
+    ``""`` if ``pos`` is outside parentheses, else the keyword (FILTER or BIND)
+    before the outermost open one, or None if there is none.
+    """
+    opened: list[int] = []
+    for i in range(start, pos):
+        if mask[i] == "(":
+            opened.append(i)
+        elif mask[i] == ")" and opened:
+            opened.pop()
+    if not opened:
+        return ""
+    head = _EXPRESSION_HEAD.search(mask[: opened[0]])
+    return head.group(1).upper() if head else None
+
+
+def _uses_are_joins(mask: str, uses: list[int], values_at: int) -> bool:
+    """True if substituting each use in ``mask`` by a constant keeps the result exact.
+
+    ``mask`` is the group without its VALUES clause, which stood at ``values_at``.
+    """
+    for u in uses:
+        groups = _open_groups(mask, u)
+        for depth, b in enumerate(groups):
+            head = mask[:b].rstrip()
+            if _BLOCKING_GROUP_HEAD.search(head):
+                return False
+            if _OPTIONAL_HEAD.search(head) and (depth > 0 or b < values_at):
+                return False
+        expression = _expression_head(mask, groups[-1] + 1 if groups else 0, u)
+        if expression == "":
+            continue
+        if groups or expression is None:
+            return False
+        if expression == "BIND" and u < values_at:
+            return False
+    return True
+
+
+def _evaluated_alone(mask: str, brace: int) -> bool:
+    """Is the group opened at ``brace`` evaluated apart from its siblings?
+
+    True for OPTIONAL, MINUS, EXISTS and UNION branches; plain and GRAPH groups
+    are joins with what surrounds them.
+    """
+    head = mask[:brace].rstrip()
+    if (
+        _OPTIONAL_HEAD.search(head)
+        or _BLOCKING_GROUP_HEAD.search(head)
+        or head[-5:].upper() == "UNION"
+    ):
+        return True
+    close = _matching_brace(mask, brace)
+    return close is not None and mask[close + 1 :].lstrip()[:5].upper() == "UNION"
+
+
+def _repeats_a_scan(mask: str, var: str) -> bool:
+    """Would each branch repeat a full scan that does not involve ?x?
+
+    Every branch repeats the rest of the group, so a triple of three variables
+    evaluated on its own runs once per value: an ``OPTIONAL { ?o ?p2 ?o2 }``
+    took 109 s once and ran past 180 s twice. One inside an OPTIONAL, MINUS,
+    EXISTS or UNION branch is evaluated on its own, and so is one that shares no
+    variable with a triple using ?x. One that
+    joins such a triple -- ``?a ?p ?x . ?b ?q ?a`` -- is a further hop from
+    the bound value, which the rewrite speeds up too (past 180 s to 8 s).
+    """
+    x = re.compile(rf"[?$]{var}\b")
+    # Statements (between braces and dots) that use ?x, and their variables.
+    near = {
+        v
+        for stmt in re.findall(r"[^{}.]+", mask)
+        if x.search(stmt)
+        for v in re.findall(r"[?$](\w+)", stmt)
+    }
+    for triple in _ALL_VARIABLE_TRIPLE.finditer(mask):
+        if x.search(triple.group(0)):
+            continue
+        if any(_evaluated_alone(mask, b) for b in _open_groups(mask, triple.start())):
+            return True
+        if not near & set(re.findall(r"[?$](\w+)", triple.group(0))):
+            return True
+    return False
+
+
+def _inline_one(query: str, mask: str, values: re.Match[str]) -> str | None:
+    """The query with one VALUES clause inlined, or None if that is not exact."""
+    head = _VALUES_HEAD.match(mask, values.end())
+    if head is None:
+        return None
+    var = head.group(1)
+    data_open = head.end() - 1
+    data_close = _matching_brace(mask, data_open)
+    if data_close is None:
+        return None
+    body = query[data_open + 1 : data_close]
+    data = _DATUM.findall(body)
+    if not data or len(data) > MAX_INLINE_VALUES or _DATUM.sub("", body).strip():
+        return None
+
+    group_open = _enclosing_brace(mask, values.start())
+    group_close = _matching_brace(mask, group_open) if group_open is not None else None
+    if group_open is None or group_close is None or group_close < data_close:
+        return None
+
+    # The group without its VALUES clause, as text and as mask, aligned.
+    values_at = values.start() - group_open - 1
+    rest = query[group_open + 1 : values.start()] + query[data_close + 1 : group_close]
+    rest_mask = (
+        mask[group_open + 1 : values.start()] + mask[data_close + 1 : group_close]
+    )
+    if _SUBQUERY_OR_REMOTE.search(rest_mask) or re.search(
+        rf"\bAS\s+[?$]{var}\b", rest_mask, re.I
+    ):
+        return None
+    uses = [m.start() for m in re.finditer(rf"[?$]{var}\b", rest_mask)]
+    if not uses or not _uses_are_joins(rest_mask, uses, values_at):
+        return None
+    # ?x as the object, or (starting a triple) the subject, of a variable predicate.
+    open_predicate = re.search(
+        rf"(?:[?$]\w+|_+|[\w\-.]*:[\w\-.%]*|;)\s+[?$]\w+\s+[?$]{var}\b", rest_mask
+    ) or re.search(rf"(?:^|[{{}}.])\s*[?$]{var}\s+[?$]\w+\s+\S", rest_mask)
+    if not open_predicate:
+        return None
+    if _repeats_a_scan(rest_mask, var):
+        return None
+
+    def branch(datum: str) -> str:
+        out, last = [], 0
+        for u in uses:
+            out.append(rest[last:u])
+            out.append(datum)
+            last = u + 1 + len(var)
+        out.append(rest[last:])
+        return "".join(out).strip() + f"\n    BIND({datum} AS ?{var})"
+
+    if len(data) == 1:
+        inner = "  " + branch(data[0])
+    else:
+        inner = "\n  UNION\n".join("  {\n    " + branch(d) + "\n  }" for d in data)
+    return query[: group_open + 1] + "\n" + inner + "\n" + query[group_close:]
+
+
+def inline_values_for_open_predicates(query: str) -> str:
+    """Write VALUES blocks' IRIs into the groups where open predicates meet them.
+
+    See the comment above :data:`MAX_INLINE_VALUES` for why and when. A VALUES
+    clause is left as written whenever any condition for an exact rewrite fails.
+    """
+    skip = 0
+    while True:
+        mask = _mask(query)
+        heads = list(_VALUES.finditer(mask))
+        if skip >= len(heads):
+            return query
+        # Each success removes one clause, so this ends; after one, retry all
+        # (an enclosing clause may qualify once the inner one is inlined).
+        out = _inline_one(query, mask, heads[len(heads) - 1 - skip])
+        if out is None:
+            skip += 1
+        else:
+            query, skip = out, 0
