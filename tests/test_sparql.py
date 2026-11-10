@@ -379,3 +379,18 @@ async def test_run_sparql_prefilters_only_when_the_query_asks():
     forced_on = _CaptureClient()
     await run_sparql(q, client=forced_on, prefilter=True)
     assert "isLiteral(?x)" in forced_on.query
+
+
+async def test_run_sparql_inlines_values_that_meet_an_open_predicate():
+    q = (
+        "SELECT * WHERE { VALUES ?x { <http://example.org/a> <http://example.org/b> } "
+        "?s ?p ?x . ?s a ?t }"
+    )
+    sent = _CaptureClient()
+    await run_sparql(q, client=sent)
+    assert "VALUES" not in sent.query
+    assert "?s ?p <http://example.org/a>" in sent.query
+
+    kept = _CaptureClient()
+    await run_sparql(q, client=kept, inline_values=False)
+    assert kept.query == q

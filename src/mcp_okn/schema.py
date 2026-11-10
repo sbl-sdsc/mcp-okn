@@ -561,6 +561,49 @@ ORDER BY ?position
 # REPLACE(STR(?glycan), "^.*/", "").\
 """
 
+RDKG_GUIDANCE = """\
+biolink:subclass_of IS MATERIALIZED TRANSITIVELY (verified live 2026-11-09).
+Every disease links to EVERY MONDO ancestor, not just its parent: 1,832
+diseases carry `bl:subclass_of <MONDO_0002081>` (musculoskeletal system
+disorder) directly, and SLE (MONDO_0007915) links to all 7 of its MONDO
+ancestors. There is no reflexive edge (a term is not subclass_of itself).
+So:
+  - `?d bl:subclass_of <X>` already means "a descendant of X" - no `*` path
+    needed, and adding one only repeats rows. Add X itself if you want it.
+  - "Diseases rdkg links to X", "using X exactly" or "not expanded" means
+    edges that name X itself (has_phenotype, related_to, treats, ...), NOT
+    subclass_of: reading the subclass_of rows answers the expanded question.
+  - Parent/child structure (immediate parent, depth) is not recoverable
+    here; use ubergraph's non-transitive rdfs:subClassOf for that.
+  - The subjects include rdaccelerate disease groups
+    (https://rdaccelerate.org/resource/MONDO_GROUPED_...) besides MONDO terms:
+    104 of the 1,832 under MONDO_0002081. Say which you count; keep MONDO only
+    with FILTER(STRSTARTS(STR(?d), "http://purl.obolibrary.org/obo/MONDO_")).
+
+biolink:has_phenotype IS ALSO STORED IN REVERSE. Besides disease ->
+phenotype (328,805 edges) rdkg holds 151,304 phenotype -> disease edges
+(subject an HP term), and every one of them mirrors a forward edge. Match
+the forward direction only (disease as subject, HP term as object): it is
+complete, and an undirected pattern or a UNION of both directions counts a
+mirrored pair twice.\
+"""
+
+#: Companion snippet: the diseases under a category, without a property path.
+RDKG_SNIPPET = """\
+# rdkg diseases under musculoskeletal system disorder and their phenotype
+# counts. subclass_of is already transitive: no `*`, one hop reaches every
+# descendant. has_phenotype is read forward only (disease -> HP). The FILTER
+# keeps MONDO terms and drops rdaccelerate's MONDO_GROUPED_ disease groups.
+PREFIX bl: <https://w3id.org/biolink/vocab/>
+SELECT ?disease (COUNT(DISTINCT ?hp) AS ?phenotypes) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/rdkg> {
+    ?disease bl:subclass_of <http://purl.obolibrary.org/obo/MONDO_0002081> ;
+             bl:has_phenotype ?hp .
+  }
+  FILTER(STRSTARTS(STR(?disease), "http://purl.obolibrary.org/obo/MONDO_"))
+} GROUP BY ?disease ORDER BY DESC(?phenotypes) LIMIT 20\
+"""
+
 #: Per-KG usage notes surfaced on ``get_schema`` (attached by the tool wrapper in
 #: :mod:`mcp_okn.tools.schema_tools`), delivered exactly when a client is about to
 #: write SPARQL for that KG. Only KGs with domain rules that the schema alone does
@@ -594,6 +637,11 @@ _KG_USAGE_NOTES: dict[str, dict[str, str]] = {
         "title": "Location-kind notes",
         "guidance": SPOKE_OKN_GUIDANCE,
         "query_snippet": SPOKE_OKN_SNIPPET,
+    },
+    "rdkg": {
+        "title": "Disease-hierarchy notes",
+        "guidance": RDKG_GUIDANCE,
+        "query_snippet": RDKG_SNIPPET,
     },
     "ncipidkg": {
         "guidance": NCIPIDKG_GUIDANCE,

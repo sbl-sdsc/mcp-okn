@@ -1,6 +1,6 @@
 # Proto-OKN Crosswalk Inventory
 
-- **Date:** 2026-11-04
+- **Date:** 2026-11-09
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
@@ -18,7 +18,7 @@ list crosswalks with examples
 
 🧠 **Assistant**
 
-Here are all 268 precomputed cross-KG crosswalks (verified through 2026-11-04), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
+Here are all 269 precomputed cross-KG crosswalks (verified through 2026-11-09), grouped by domain. Each shows the knowledge graphs joined, the shared identifier, the verified overlap count, and example questions the join answers.
 
 ## Anatomy & Cell Type
 
@@ -213,6 +213,7 @@ Here are all 268 precomputed cross-KG crosswalks (verified through 2026-11-04), 
 | digcfdekg ↔ rdkg | Entrez | 8,934 | Rare-disease genes (rdkg) with the disease-mechanism factors and trait associations CFDE REVEAL infers for them.<br><br>Which CFDE REVEAL-inferred traits recur across the most rdkg rare-disease genes, and for which rare diseases? |
 | digcfdekg ↔ spoke-genelab | Entrez | 19,747 | CFDE REVEAL gene/trait/factor inferences for genes that also have spaceflight/omics observations in spoke-genelab (NASA GeneLab).<br><br>How many genes carry both a CFDE REVEAL trait/factor inference and a spaceflight expression change in spoke-genelab? |
 | digcfdekg ↔ spoke-okn | Entrez | 16,052 | CFDE REVEAL gene/trait/factor inferences enriched with that gene's network/disease/compound associations in spoke-okn.<br><br>For a spoke-okn drug's target genes, what trait and disease-mechanism factor inferences does CFDE REVEAL provide? |
+| rdkg ↔ gene-expression-atlas-okn | Entrez | 9,219 | Which RDKG genes with a variant on record as causing a rare disease are strongly differentially expressed in human Expression Atlas contrasts?<br><br>How many RDKG genes are also Expression Atlas gene nodes, and how many of RDKG's causal-variant genes have expression records there? |
 | rdkg ↔ spoke-genelab | Entrez | 9,034 | Rare-disease genes (rdkg) with their spaceflight/omics observations in spoke-genelab (NASA GeneLab).<br><br>How many spoke-genelab spaceflight differentially expressed genes are known rare-disease genes in rdkg? |
 | rdkg ↔ spoke-okn | Entrez | 8,475 | Rare-disease gene associations (rdkg: gene_associated_with_condition / has_gene) enriched with that gene's network/disease/compound associations in spoke-okn.<br><br>For the causative genes of a specific rare disease in rdkg, which spoke-okn compounds and pathways are associated? |
 | spoke-genelab ↔ spoke-okn | Entrez | 16,326 | GeneLab spaceflight/omics gene observations (spoke-genelab) joined to that gene's network/disease/compound associations in spoke-okn, directly on the shared Entrez gene id.<br><br>For a spoke-okn disease of interest, which of its associated genes show spaceflight expression changes in spoke-genelab on the shared Entrez id? |

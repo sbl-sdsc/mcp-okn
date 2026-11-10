@@ -346,8 +346,12 @@ def _lookup_query(label: str, ontology: str | None, limit: int) -> str:
     values = " ".join(
         f"{lit} {lit}@en" for lit in map(_sparql_string, _case_variants(label))
     )
+    # VALUES inside each branch: QLever evaluates a UNION branch on its own, so
+    # with VALUES outside the UNION every branch scans its whole predicate
+    # (2.6 s against 1.0 s, and an out-of-memory error under endpoint load).
     branches = "\n    UNION\n    ".join(
-        f'{{ ?term {pred} ?lit . BIND("{name}" AS ?matched_on) }}'
+        f"{{ VALUES ?lit {{ {values} }} ?term {pred} ?lit . "
+        f'BIND("{name}" AS ?matched_on) }}'
         for name, pred in _LOOKUP_PREDICATES
     )
     scope = ""
@@ -363,7 +367,6 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
 SELECT DISTINCT ?term ?label ?matched_on ?matched_text WHERE {{
   GRAPH <{graph}> {{
-    VALUES ?lit {{ {values} }}
     {branches}
     OPTIONAL {{ ?term rdfs:label ?label }}
   }}

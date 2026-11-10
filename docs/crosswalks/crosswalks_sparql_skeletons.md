@@ -1,6 +1,6 @@
 # OKN / Proto-OKN Crosswalk Reference — Join Keys & SPARQL Skeletons
 
-- **Date:** 2026-11-04
+- **Date:** 2026-11-09
 - **Model:** claude-opus-4-8
 - **SPARQL endpoint:** https://apps.okn.us/federation/sparql
 
@@ -63,11 +63,11 @@ For each crosswalk, list the join key and the SPARQL skeleton
 
 🧠 **Assistant**
 
-The OKN federation has **268 crosswalks**, which collapse into **83 join-key families** (a domain + a shared identifier). They are grouped below by domain and key family — each entry lists every KG pair sharing that key (with its verified `COUNT(DISTINCT)`), the identifier scheme/namespace, and a runnable `COUNT(DISTINCT)` skeleton with the IRI normalization already applied (a naive join on the raw id usually returns 0 rows).
+The OKN federation has **269 crosswalks**, which collapse into **83 join-key families** (a domain + a shared identifier). They are grouped below by domain and key family — each entry lists every KG pair sharing that key (with its verified `COUNT(DISTINCT)`), the identifier scheme/namespace, and a runnable `COUNT(DISTINCT)` skeleton with the IRI normalization already applied (a naive join on the raw id usually returns 0 rows).
 
 **Pairs in one family often need different SPARQL**, so where a family's members diverge, every distinct skeleton is shown and labelled with the pairs it applies to. The CAS family is the clearest case: the biobricks graphs hang the id off `edam:has_identifier`, MeSH exposes it as `meshv:registryNumber`, and SAWGraph/SOCKG store it as a bare literal that must be rebuilt into an IRI. Copy the skeleton for YOUR pair, then extend it with your payload.
 
-Counts verified 2026-11-04. For any pair, `get_join_strategy(kg_a, kg_b)` returns the same skeleton plus the full recipe (predicates, roles, normalization); `taxon_overlap(kg_a, kg_b)` returns runnable skeletons for the NCBITaxon hub, whose overlaps are two-valued (exact id vs clade membership) and therefore not a single count.
+Counts verified 2026-11-09. For any pair, `get_join_strategy(kg_a, kg_b)` returns the same skeleton plus the full recipe (predicates, roles, normalization); `taxon_overlap(kg_a, kg_b)` returns runnable skeletons for the NCBITaxon hub, whose overlaps are two-valued (exact id vs clade membership) and therefore not a single count.
 
 ### ANATOMY & CELL TYPE
 
@@ -2252,7 +2252,7 @@ SELECT (COUNT(DISTINCT ?ens) AS ?n) WHERE {
 }
 ```
 
-**Entrez** — `https://identifiers.org/ncbigene/ (aopwiki) ; http://identifiers.org/ncbigene/ (rdkg)`: biobricks-aopwiki × rdkg(1,193), biobricks-aopwiki × spoke-genelab(1,472), rdkg × spoke-genelab(9,034), rdkg × spoke-okn(8,475), spoke-genelab × spoke-okn(16,326), digcfdekg × spoke-okn(16,052), digcfdekg × spoke-genelab(19,747), digcfdekg × rdkg(8,934), biobricks-ice × rdkg(358), biomarkerkg × spoke-okn(191), biomarkerkg × spoke-genelab(200), biomarkerkg × digcfdekg(200), biomarkerkg × rdkg(167).
+**Entrez** — `https://identifiers.org/ncbigene/ (aopwiki) ; http://identifiers.org/ncbigene/ (rdkg)`: biobricks-aopwiki × rdkg(1,193), biobricks-aopwiki × spoke-genelab(1,472), rdkg × spoke-genelab(9,034), rdkg × spoke-okn(8,475), spoke-genelab × spoke-okn(16,326), digcfdekg × spoke-okn(16,052), digcfdekg × spoke-genelab(19,747), digcfdekg × rdkg(8,934), biobricks-ice × rdkg(358), biomarkerkg × spoke-okn(191), biomarkerkg × spoke-genelab(200), biomarkerkg × digcfdekg(200), biomarkerkg × rdkg(167), rdkg × gene-expression-atlas-okn(9,219).
 
 _biobricks-aopwiki × rdkg_
 
@@ -2413,6 +2413,18 @@ SELECT (COUNT(DISTINCT ?ez) AS ?n) WHERE {
       BIND(REPLACE(STR(?g),'^.*/gene/GID','') AS ?ez) } }
   BIND(IRI(CONCAT('http://identifiers.org/ncbigene/',?ez)) AS ?gg)
   GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?gg ?pp ?oo }
+}
+```
+
+_rdkg × gene-expression-atlas-okn_
+
+```sparql
+SELECT (COUNT(DISTINCT ?gx) AS ?n) WHERE {
+  { SELECT DISTINCT ?g WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/rdkg> { ?g a <https://w3id.org/biolink/vocab/Gene> }
+      FILTER(STRSTARTS(STR(?g), 'http://identifiers.org/ncbigene/')) } }
+  BIND(IRI(CONCAT('https://www.ncbi.nlm.nih.gov/gene/', STRAFTER(STR(?g), 'ncbigene/'))) AS ?gx)
+  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> { ?gx a <https://w3id.org/biolink/vocab/Gene> }
 }
 ```
 
@@ -3849,4 +3861,4 @@ SELECT (COUNT(DISTINCT ?rs) AS ?n) WHERE {
 
 - **Skeletons are COUNT queries by design.** Each proves the key still joins and reproduces the table's `verified_count`; run it first, then extend it with your payload rather than rebuilding the normalization boilerplate.
 - **The identifier, not the entity, is what matches.** Counts are `COUNT(DISTINCT <shared key>)` — shared identifiers, not shared rows. A KG may mint several nodes carrying the same id.
-- **Sources:** the crosswalk table served by `list_crosswalks` / `get_join_strategy` (verified 2026-11-04).
+- **Sources:** the crosswalk table served by `list_crosswalks` / `get_join_strategy` (verified 2026-11-09).
