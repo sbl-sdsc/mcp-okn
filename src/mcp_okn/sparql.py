@@ -262,6 +262,44 @@ def _exact_rewrite(rewrite: Callable[[str], str], query: str, wanted: bool) -> s
         return query
 
 
+def _canonical_form(query: str, normalize_schema: bool, prefilter: bool | None) -> str:
+    """The schema.org canonicalization and opt-in prefilter, as ``run_sparql`` does them."""
+    if normalize_schema:
+        query = normalize_schema_org(query)
+    if prefilter or (prefilter is None and wants_prefilter(query)):
+        query = prefilter_prefix_tests(query)
+    return query
+
+
+def _plan_rewrites(query: str, inline_values: bool, rewrite_groups: bool) -> str:
+    """The exact, result-neutral QLever plan rewrites ``run_sparql`` applies."""
+    sent = _exact_rewrite(not_exists_to_minus, query, rewrite_groups)
+    sent = _exact_rewrite(inline_values_for_open_predicates, sent, inline_values)
+    sent = _exact_rewrite(filter_equality_to_join, sent, rewrite_groups)
+    sent = _exact_rewrite(anchor_optionals, sent, rewrite_groups)
+    return _exact_rewrite(delay_comparison_filters, sent, rewrite_groups)
+
+
+def prepare_query(
+    query: str,
+    normalize_schema: bool = True,
+    prefilter: bool | None = None,
+    inline_values: bool = True,
+    rewrite_groups: bool = True,
+) -> str:
+    """Return the exact text :func:`run_sparql` would POST for ``query``.
+
+    Every step is deterministic, so a client that sends this text straight to
+    :data:`FEDERATION_ENDPOINT` runs what the server ran, without needing mcp-okn
+    installed. The plan rewrites never change the result, but some change the
+    run time a lot (an inline-VALUES rewrite took one query from 179 s to 0.6 s),
+    so a notebook that replays a study should send this form. The arguments
+    mean what they mean for :func:`run_sparql`.
+    """
+    query = _canonical_form(query, normalize_schema, prefilter)
+    return _plan_rewrites(query, inline_values, rewrite_groups)
+
+
 async def run_sparql(
     query: str,
     fmt: str = "json",
@@ -330,15 +368,8 @@ async def run_sparql(
     if fmt not in _ACCEPT:
         raise ValueError(f"Unsupported format {fmt!r}; use one of {sorted(_ACCEPT)}")
 
-    if normalize_schema:
-        query = normalize_schema_org(query)
-    if prefilter or (prefilter is None and wants_prefilter(query)):
-        query = prefilter_prefix_tests(query)
-    sent = _exact_rewrite(not_exists_to_minus, query, rewrite_groups)
-    sent = _exact_rewrite(inline_values_for_open_predicates, sent, inline_values)
-    sent = _exact_rewrite(filter_equality_to_join, sent, rewrite_groups)
-    sent = _exact_rewrite(anchor_optionals, sent, rewrite_groups)
-    sent = _exact_rewrite(delay_comparison_filters, sent, rewrite_groups)
+    query = _canonical_form(query, normalize_schema, prefilter)
+    sent = _plan_rewrites(query, inline_values, rewrite_groups)
     headers = {"Accept": _ACCEPT[fmt]}
     limit = DEFAULT_TIMEOUT if timeout is None else timeout
     data = {"query": sent, "timeout": f"{max(1, round(limit))}s"}
