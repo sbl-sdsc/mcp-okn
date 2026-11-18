@@ -32,6 +32,7 @@ from .tools.joins import (
     taxon_overlap,
 )
 from .tools.mermaid_tools import sparql_to_mermaid
+from .tools.notebook_tools import create_jupyter_notebook, enable_local_writes
 from .tools.probe import (
     _CROSSWALK_PREDICATES,
     _NODE_ID_IRI_PREFIXES,
@@ -85,6 +86,7 @@ __all__ = [
     "_to_uri",
     "_undercount_note",
     "create_chat_transcript",
+    "create_jupyter_notebook",
     "create_reproducibility_record",
     "describe_kg",
     "expand_ontology_term",
@@ -137,6 +139,9 @@ _dedent_tool_descriptions()
 
 def main() -> None:
     """Console entry point: run the server over stdio."""
+    # Over stdio the server runs on the user's machine, so create_jupyter_notebook
+    # may write its folder to a caller-chosen output_dir. A hosted server may not.
+    enable_local_writes()
     mcp.run()
 
 

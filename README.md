@@ -382,6 +382,80 @@ request rather than a command; this script is how you confirm one landed.
 
 ---
 
+## Jupyter notebooks
+
+A notebook turns a chat into a study that anyone can rerun and check. It holds the
+SPARQL queries behind the answers, taken verbatim from the session log with the rows each
+one returned; any code Claude wrote for the analysis (e.g. for a plot), along with its
+figures; and where the results came from: the model, the skills, the knowledge graphs,
+the endpoint, and the mcp-okn version and build.
+
+**Prerequisite:** running a notebook needs [uv](https://docs.astral.sh/uv/), which
+installs Python, JupyterLab and the notebook's packages on first run. Install it with the
+[uv installer](https://docs.astral.sh/uv/getting-started/installation/) (macOS/Linux:
+`curl -LsSf https://astral.sh/uv/install.sh | sh`; Windows:
+`powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`).
+
+### Create a notebook in a chat
+
+At the end of an analysis, or in the same prompt, ask for one and name the folder to put
+it in:
+
+```text
+Create a Jupyter notebook named kidney-cancer-genes that reruns this analysis, in ~/results
+```
+
+Claude calls `create_jupyter_notebook`, which builds a self-contained folder,
+here `~/results/kidney-cancer-genes/`:
+
+| Path | Contents |
+| --- | --- |
+| `kidney-cancer-genes.ipynb` | The notebook: provenance, one cell per query with its recorded result, then the analysis |
+| `queries/` | Each query as a `.rq` file, plus `manifest.json` with the graphs and logged row count of each |
+| `data/` | The rows each query returned during the chat |
+| `okn_sparql.py` | `run_query()` and `verify_all()`; needs only pandas |
+| `analysis.py`, `figures/`, … | Code Claude wrote, which the notebook imports, and the figures it made |
+| `requirements.txt`, `README.md` | What the notebook needs, and how to run it |
+
+When mcp-okn runs on your own machine (stdio), the server writes the folder. When Claude
+uses the hosted server, Claude saves it, because a remote server cannot write to your disk.
+Either way, Claude's reply ends with the command to open the notebook, with your path
+filled in.
+
+### Run a notebook
+
+The folder brings its own requirements, so you need only [uv](https://docs.astral.sh/uv/),
+not an mcp-okn installation:
+
+```bash
+cd ~/results/kidney-cancer-genes
+uv run --with jupyterlab --with-requirements requirements.txt jupyter lab kidney-cancer-genes.ipynb
+```
+
+Then choose **Run → Run All Cells**. The query cells load the recorded rows from `data/`,
+so the notebook shows the original results and runs offline. To query the live
+endpoint instead, set `RERUN = True` in the setup cell. The last cell, `verify_all()`,
+reruns every query live and marks each one `ok` when its row count matches the recorded
+one, or `drift` when it doesn't. Drift usually means the knowledge graph was redeployed
+after the chat, not that the analysis is wrong. To rerun every query live without opening
+Jupyter, writing a copy with the new results:
+
+```bash
+cd ~/results/kidney-cancer-genes
+OKN_RERUN=1 uv run --with nbconvert --with ipykernel --with-requirements requirements.txt \
+  jupyter nbconvert --to notebook --execute --output kidney-cancer-genes-rerun.ipynb kidney-cancer-genes.ipynb
+```
+
+Without uv, run `pip install -r requirements.txt jupyterlab` and then
+`jupyter lab kidney-cancer-genes.ipynb`. VS Code works too: open the notebook with the
+folder as the working directory.
+
+Some things are not recomputed. The session log keeps at most 1,000 rows per query, so a
+larger result is recorded in part (`queries/manifest.json` says which ones, and a live rerun
+fetches every row). Figures are kept as recorded unless an analysis cell writes them again.
+
+---
+
 ## Tools and resources
 
 ### Tools
@@ -417,6 +491,7 @@ query → record**. The single table below is grouped in that order.
 | `get_query_log()` | Return the queries logged so far this session (only those that returned rows and weren't exploratory). |
 | `create_chat_transcript(model, exchanges, ...)` | Emit a reproducible markdown (or JSON) record of a session — prompts, answers, the verbatim queries + results that produced findings, and any `visualize_schema` diagrams. Call at the **end** of an analysis. |
 | `create_reproducibility_record(model, supporting, ...)` | Emit a **lean** reproducibility record — header + the verbatim supporting queries + row counts + per-query diagrams (gated by size), no conversation prose or result tables. Small enough to return **inline** so it saves directly; use it for the reproducibility deliverable. `supporting` optionally curates the log to the queries that underpin the findings. |
+| `create_jupyter_notebook(model, code_files, cells, figures, ...)` | Build a **re-runnable** Jupyter study folder: a notebook with the provenance header and one cell per logged query (cached results shown), `queries/*.rq`, the logged rows in `data/`, a pandas-only `okn_sparql.py` (`run_query` / `verify_all`), and your own code files, analysis cells and figures. A hosted server returns the folder as a `{path: content}` map to save verbatim; over stdio, pass `output_dir` and it writes the folder itself. |
 
 ### Resources
 
@@ -466,6 +541,7 @@ src/mcp_okn/
 ├── void.py           # per-KG version / last-updated from the okn-void graph
 ├── taxon.py          # NCBITaxon hub: taxon-overlap skeleton composition
 ├── session.py        # in-memory query/diagram log for transcripts
+├── notebook.py       # re-runnable study folder (notebook + queries + data) builder
 ├── build_info.py     # which BUILD is running (MCP_OKN_BUILD / git HEAD)
 ├── data/             # bundled snapshots: kgs.json, crosswalks.json, kg_payloads.json
 └── tools/            # one module per concern; each registers via @mcp.tool()
@@ -475,6 +551,7 @@ src/mcp_okn/
     ├── probe.py          # probe_namespaces, find_crosswalks
     ├── joins.py          # get_join_strategy, taxon_overlap, list_crosswalks, find_context_sources
     ├── query.py          # sparql_query, expand_ontology_term
+    ├── notebook_tools.py # create_jupyter_notebook (folder layout in notebook.py)
     └── transcript.py     # reset/get_query_log, create_chat_transcript, create_reproducibility_record, resource
 ```
 

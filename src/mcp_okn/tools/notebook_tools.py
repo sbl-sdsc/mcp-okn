@@ -1,0 +1,310 @@
+"""create_jupyter_notebook: a re-runnable study folder built from the query log."""
+
+from __future__ import annotations
+
+import os
+import shutil
+from datetime import date as _date
+from pathlib import Path
+from typing import Any
+
+from .. import __version__, session
+from ..app import mcp
+from ..build_info import build_suffix
+from ..notebook import build_study, run_commands
+from ..sparql import FEDERATION_ENDPOINT
+from .transcript import _clean_entries, _resolve_sources, _skills_warning
+
+#: Set by the stdio entry point (`mcp_okn.server.main`), where the server runs on
+#: the user's own machine. A hosted (HTTP) server never writes a caller-chosen
+#: path: a remote client could otherwise make it write anywhere on its disk.
+_local_writes = False
+
+
+def enable_local_writes() -> None:
+    """Allow `output_dir` writes; called when the server runs over stdio."""
+    global _local_writes
+    _local_writes = True
+
+
+def local_writes_enabled() -> bool:
+    """True under stdio, or when ``MCP_OKN_LOCAL_WRITES=1`` opts a local HTTP run in."""
+    return _local_writes or os.environ.get("MCP_OKN_LOCAL_WRITES", "") == "1"
+
+
+def _select(
+    log: list[dict[str, Any]], supporting: list[dict[str, Any] | int] | None
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """The curated subset of the log, as `create_reproducibility_record` reads it."""
+    if supporting is None:
+        return list(log), []
+    selected: list[dict[str, Any]] = []
+    warnings: list[str] = []
+    for item in supporting:
+        if isinstance(item, dict):
+            idx, desc = item.get("index"), item.get("description")
+        else:
+            idx, desc = item, None
+        if (
+            not isinstance(idx, int)
+            or isinstance(idx, bool)
+            or not 1 <= idx <= len(log)
+        ):
+            warnings.append(
+                f"`supporting` index {idx!r} is out of range for a log of {len(log)} "
+                "queries — skipped."
+            )
+            continue
+        entry = dict(log[idx - 1])
+        if desc:
+            entry["description"] = desc
+        selected.append(entry)
+    return selected, warnings
+
+
+def _write_folder(
+    root: Path, files: dict[str, str], figures: list[dict[str, str]], overwrite: bool
+) -> tuple[list[str], list[dict[str, str]]]:
+    """Write the folder; copy each figure that names a readable `source`.
+
+    Returns ``(warnings, figures still to copy)``.
+    """
+    if root.exists() and any(root.iterdir()) and not overwrite:
+        raise FileExistsError(
+            f"{root} exists and is not empty; pass overwrite=True or another output_dir"
+        )
+    for rel, text in files.items():
+        path = root / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+    warnings: list[str] = []
+    pending: list[dict[str, str]] = []
+    for fig in figures:
+        source = Path(fig["source"]).expanduser() if fig.get("source") else None
+        if source is not None and source.is_file():
+            dest = root / fig["path"]
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, dest)
+        else:
+            if source is not None:
+                warnings.append(
+                    f"figure source {str(source)!r} not found — copy it in."
+                )
+            pending.append(fig)
+    return warnings, pending
+
+
+def _show_command(folder: str, notebook: str, saved_by_you: bool) -> dict[str, str]:
+    """The run commands, and the instruction to end the reply with the first one."""
+    commands = run_commands(folder, notebook)
+    where = (
+        f" Replace `{folder}` in it with the absolute path of the folder you saved."
+        if saved_by_you
+        else ""
+    )
+    return {
+        "run_command": commands["jupyter"],
+        "rerun_command": commands["nbconvert"],
+        "show_user": (
+            "Show the user how to run the notebook: at the END of your reply, give "
+            "`run_command` in a bash code block, as given, and say to choose Run → "
+            "Run All Cells once JupyterLab opens. It needs only uv; the folder's "
+            "requirements.txt supplies the rest." + where
+        ),
+    }
+
+
+@mcp.tool()
+async def create_jupyter_notebook(
+    model: str,
+    title: str = "OKN Study",
+    folder_name: str | None = None,
+    kgs_used: list[str] | None = None,
+    supporting: list[dict[str, Any] | int] | None = None,
+    code_files: dict[str, str] | None = None,
+    cells: list[dict[str, Any]] | None = None,
+    figures: list[dict[str, Any]] | None = None,
+    requirements: list[str] | None = None,
+    include_data: bool = True,
+    prompt: str | None = None,
+    notes: str | None = None,
+    skills: list[str] | None = None,
+    external_mcp_servers: list[str] | None = None,
+    date: str | None = None,
+    scope: str | None = None,
+    output_dir: str | None = None,
+    overwrite: bool = False,
+    max_inline_chars: int | None = 150_000,
+) -> dict[str, Any]:
+    """Build a re-runnable Jupyter study folder: notebook, queries, data, code.
+
+    The rerunnable companion to `create_reproducibility_record`. The queries and
+    their results come from the session log (every non-exploratory, row-returning
+    `sparql_query`), verbatim, so do not hand-write them. The parts only YOU have —
+    your analysis code, the cells that use it, your figures — you pass in. Folder:
+
+        <folder>/<folder>.ipynb   provenance header, a cell per query (cached
+                                  results shown), then your `cells`
+        okn_sparql.py             run_query("q01") / verify_all(); needs only pandas
+        queries/qNN.rq            each query verbatim (+ sent/qNN.rq: the text the
+                                  server POSTed, when its plan rewrites changed it)
+        queries/manifest.json     graphs, timestamp, logged row count per query
+        data/qNN.csv              the logged rows (up to 1,000 per query)
+        <your code_files>         e.g. analysis.py, importable from the notebook
+        requirements.txt, README.md
+
+    In the notebook, query k's rows are `data["qNN"]` (a pandas DataFrame, k
+    zero-padded), loaded from `data/` unless `RERUN = True`.
+
+    DELIVERY. On a hosted server the result's `files` maps each relative path to
+    its content: save every entry VERBATIM under `<folder>/` (never retype or
+    summarize one), then copy each `figures_to_copy` image to its `path`. When
+    the server runs on your machine (stdio) and you pass `output_dir`, it writes
+    the folder itself, copies figures that name a `source`, and returns only the
+    manifest.
+
+    Args:
+        model: The EXACT runtime model id (e.g. `claude-opus-4-8`), as for
+            `create_reproducibility_record`. If you cannot determine it, ASK.
+        title: Notebook title (H1); also the folder name unless `folder_name`.
+        folder_name: Folder (and notebook) name; slugged.
+        kgs_used: KG shortnames the study is about; inferred from the queries if
+            omitted. Same guards as the transcript tools: a query touching none of
+            them is dropped as foreign, a named KG no query touched is flagged.
+        supporting: OPTIONAL curation of the log, as for
+            `create_reproducibility_record`: 1-based indices, or
+            `{"index": int, "description": str}` dicts (the description becomes the
+            query's heading). None = every logged query, in order.
+        code_files: Your generated text files, relative path → content (e.g.
+            `{"analysis.py": "<source>"}`), written verbatim. Put reusable logic
+            here and import it from `cells` (`from analysis import plot_overlap`),
+            so the notebook stays readable and the functions stay testable.
+        cells: Analysis cells after the query cells, in order, each
+            `{"type": "markdown" | "code", "source": str}`. Code cells can use
+            `data["q01"]` … and your `code_files` modules; they are saved without
+            outputs. Make a figure cell save its image to the `figures` path, so a
+            re-run regenerates it.
+        figures: Images the study produced, each `{"path": "figures/fig1.png",
+            "caption": str, "source": str?}`; embedded in a Figures section.
+            `source` is the image's current location, used by a local write.
+        requirements: Extra pip requirements your code needs (pandas is always
+            listed; the run command adds JupyterLab), e.g. `["matplotlib>=3.7"]`.
+        include_data: Cache each query's logged rows under `data/` (default True).
+            False makes the notebook re-run every query live, and keeps the result
+            small when the log holds large results.
+        prompt: The originating user prompt, verbatim, for the header.
+        notes: A short methodology note for the header.
+        skills: Skills that shaped the study, each `"<name> v<version>"`; the
+            server cannot see them, so pass them (a warning says when you don't).
+        external_mcp_servers: Other MCP servers whose calls fed the analysis.
+        date: ISO date for the header; defaults to today.
+        scope: The log scope passed to `sparql_query`, when subagents share a session.
+        output_dir: Absolute directory to write `<folder>/` into. Only honored
+            when the server runs locally; a hosted server returns `files` instead.
+        overwrite: Allow writing into an existing non-empty `<folder>/`.
+        max_inline_chars: When the files total more than this, `files` is left out
+            and the result says how to shrink it (`include_data=False`, or curate
+            `supporting`). None = no limit.
+
+    Returns:
+        `{"folder", "notebook", "files" | "written_to", "manifest" (path, chars),
+        "figures_to_copy", "instructions", "run_command", "rerun_command",
+        "show_user", "warnings"?}`. Follow `show_user`: end your reply with
+        `run_command` in a bash block, so the user can open the notebook.
+    """
+    when = date or _date.today().isoformat()
+    skill_list = _clean_entries(skills)
+    server_list = _clean_entries(external_mcp_servers)
+
+    selected, warnings = _select(session.entries(scope), supporting)
+    selected, kgs, guard_warnings = _resolve_sources(
+        selected, [], kgs_used, check_phantom=True
+    )
+    warnings += guard_warnings
+    if not skill_list:
+        warnings.append(_skills_warning("notebook"))
+
+    study = build_study(
+        title=title,
+        when=when,
+        model=model,
+        entries=selected,
+        kgs=kgs,
+        endpoint=FEDERATION_ENDPOINT,
+        generated_by=f"{mcp.name} v{__version__}{build_suffix()}",
+        skills=skill_list,
+        mcp_servers=server_list,
+        prompt=prompt or "",
+        notes=notes or "",
+        folder_name=folder_name,
+        code_files=code_files,
+        cells=cells,
+        figures=figures,
+        requirements=requirements,
+        include_data=include_data,
+    )
+    warnings += study.warnings
+    manifest: list[dict[str, Any]] = [
+        {"path": p, "chars": len(t)} for p, t in study.files.items()
+    ]
+    total = sum(m["chars"] for m in manifest)
+    out: dict[str, Any] = {
+        "folder": study.name,
+        "notebook": f"{study.name}/{study.notebook}",
+        "queries": len(selected),
+        "manifest": manifest,
+    }
+
+    if output_dir:
+        if not local_writes_enabled():
+            warnings.append(
+                "output_dir ignored: this server is hosted, so it cannot write to your "
+                "machine. Save the returned `files` yourself."
+            )
+        elif not Path(output_dir).expanduser().is_absolute():
+            warnings.append("output_dir must be an absolute path — nothing written.")
+        else:
+            root = Path(output_dir).expanduser() / study.name
+            try:
+                write_warnings, pending = _write_folder(
+                    root, study.files, study.figures, overwrite
+                )
+            except (OSError, FileExistsError) as exc:
+                warnings.append(f"could not write {root}: {exc}")
+            else:
+                warnings += write_warnings
+                out["written_to"] = str(root)
+                out["figures_to_copy"] = pending
+                out.update(_show_command(str(root), study.notebook, saved_by_you=False))
+                out["instructions"] = f"Wrote {len(study.files)} files to {root}. " + (
+                    "Copy each `figures_to_copy` image to its path in the folder."
+                    if pending
+                    else "Nothing left to copy."
+                )
+                if warnings:
+                    out["warnings"] = warnings
+                return out
+
+    out["figures_to_copy"] = study.figures
+    if max_inline_chars is not None and total > max_inline_chars:
+        biggest = sorted(manifest, key=lambda m: -m["chars"])[:5]
+        out["instructions"] = (
+            f"The folder is {total:,} characters, over max_inline_chars "
+            f"({max_inline_chars:,}), so `files` was left out rather than risk a "
+            "truncated copy. Largest files: "
+            + ", ".join(f"{m['path']} ({m['chars']:,})" for m in biggest)
+            + ". Call again with include_data=False (the notebook then re-runs the "
+            "queries live), curate `supporting`, or raise max_inline_chars."
+        )
+    else:
+        out["files"] = study.files
+        out["instructions"] = (
+            f"Save every entry of `files` VERBATIM under `{study.name}/` (paths are "
+            "relative to it; create subfolders as needed). Do not retype or "
+            "summarize any file. Then copy each `figures_to_copy` image to its path."
+        )
+    if "files" in out:
+        out.update(_show_command(study.name, study.notebook, saved_by_you=True))
+    if warnings:
+        out["warnings"] = warnings
+    return out
