@@ -23,9 +23,9 @@ analyses to run, what to integrate on, and how to interpret.
 - **Which id scheme populates a predicate** → `probe_namespaces` (MONDO vs DOID, Entrez vs Ensembl,
   CHEBI vs CAS…). Pick the richest; don't infer from the name.
 - **Clean model-organism contrasts** (spoke-genelab) → `get_valid_contrasts`.
-- **Logging / versions / transcript** → `reset_query_log` (start); `get_kg_version` +
-  `create_reproducibility_record` (end; lean header + supporting queries + row counts — or
-  `create_chat_transcript` for the full prose+results transcript).
+- **Logging / versions / record** → `reset_query_log` (start); `get_kg_version` +
+  `create_jupyter_notebook` (end; a re-runnable folder of the supporting queries, their rows and the
+  analysis code — or `create_chat_transcript` for the full prose+results transcript).
 
 Dedicated bridge graphs the tools route through: **`ubergraph`** (ontology `skos:exactMatch` +
 `subClassOf*` closure) and **`identifier-mappings` / `wikidata`** (Wikidata ↔ external-id, e.g.

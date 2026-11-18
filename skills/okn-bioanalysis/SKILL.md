@@ -19,7 +19,7 @@ compatibility: >-
   ortholog-projection, and mechanistic-map scripts.
 metadata:
   author: sbl-sdsc
-  version: "0.1.2"
+  version: "0.1.3"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -81,20 +81,19 @@ surfaces after the whole analysis is done and there's no time left to turn them 
 
 ## Operating rules (non-negotiable — details in the workflow reference)
 
-1. `reset_query_log` at the start; `create_reproducibility_record` + `get_kg_version` at the end (pin
+1. `reset_query_log` at the start; `get_kg_version` + `create_jupyter_notebook` at the end (pin
    versions + dates), passing `skills=` — every skill you actually followed as `"<name> v<version>"`
-   from its frontmatter `metadata.version` (this skill is `okn-bioanalysis v0.1.2`); the server can't
+   from its frontmatter `metadata.version` (this skill is `okn-bioanalysis v0.1.3`); the server can't
    see them, so an omitted list reads as "no methodology skill was used". Pass
    `external_mcp_servers=` the same way — every OTHER MCP connector a call actually fed the analysis
    from (`["PubMed", "Paperclip", …]`), so the header shows the whole evidence base, not just the KGs.
-   `create_reproducibility_record` emits the lean deliverable (header + verbatim
-   supporting queries + row counts) that fits inline; use `create_chat_transcript` only when you also
-   need the conversation prose + result tables. **A stub return (log too large) is NOT a stopping
-   point** — re-call with curated `supporting=[1, 5, 9, …]` indices (from `get_query_log`), or batch,
-   so the transcript is never left missing. A frequent cause of the stub/spill is the per-query mermaid
-   diagrams: generate diagram-free (`include_query_diagrams=False`) then re-add via report-style's
-   `scripts/readd_query_diagrams.py`, ending on its `--check … PASS` gate — full defer-and-re-add
-   recipe in **okn-report-style `references/failure-modes.md`**. Don't mark substantive queries
+   `create_jupyter_notebook` builds the reproducibility record: a re-runnable folder with every
+   supporting query verbatim, the rows it returned, and your analysis code (`code_files` + `cells`);
+   run its `html_command` and end the reply with its `run_command`. In a report, follow
+   okn-report-style's *Reproducibility notebook* section. Use `create_chat_transcript` only when you
+   also need the conversation prose + result tables. **Withheld `files` (folder too large) is NOT a
+   stopping point** — re-call with curated `supporting=[1, 5, 9, …]` indices (from `get_query_log`) or
+   `include_data=False`, so the record is never left missing. Don't mark substantive queries
    `exploratory` — least of all the query that establishes a cross-KG bridge; that one is the point of
    the analysis and MUST be logged.
 2. Before querying a KG: `get_schema`. For cross-KG joins use the **precomputed crosswalk catalog**

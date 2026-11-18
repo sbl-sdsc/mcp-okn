@@ -3,8 +3,8 @@
 validate_okn_report.py — the ONE blocking, package-level gate for an okn-report-style deliverable.
 
 A complete report is a FOLDER (see SKILL.md "Deliverable set"), and the skill's rules for what may and
-may not appear in it were, until this script, enforced only piecemeal by two content-level gates
-(`check_report_parity` for the HTML, `readd_query_diagrams --check` for the transcript). Nothing checked
+may not appear in it were, until this script, enforced only piecemeal by a content-level gate
+(`check_report_parity` for the HTML). Nothing checked
 the PACKAGE: that the top-level file set is exactly right, that `data/` holds only machine extracts, that
 no anti-pattern builder or scratch/QA artifact leaked in, that the workbook and section order are as
 mandated. Working files kept leaking into delivered folders because each defect was only ever caught by
@@ -21,11 +21,12 @@ It COMPOSES the existing content gates rather than reimplementing them:
   - `build_report_html.check_report_parity`     — HTML is the same report as the .md (headings, words, one
                                                    well-formed doc, consecutive figures).
   - `build_report_html.check_figure_numbering`  — captions/filenames consecutive 1..N (also inside parity).
-  - `readd_query_diagrams.check`                — every ```sparql block has a faithful ```mermaid diagram.
-And ADDS the package-level checks that had no home: the top-level allowlist, naming prefix, single
-reproducibility file, `data/` = flat CSV/TSV/JSON only, `scripts/` anti-pattern rejection, workbook sheet
-names, report section order (…Reproducibility → References last), the reproducibility header's `Skills`
-provenance line, an exact model id recorded identically in the .md / .html / record, figure
+And ADDS the package-level checks that had no home: the top-level allowlist, naming prefix, the
+`<study>_notebook/` reproducibility folder from `create_jupyter_notebook` (complete, executed to HTML, and
+not shadowed by a stale `_reproducibility.md` / transcript / spec), `data/` = flat CSV/TSV/JSON only,
+`scripts/` anti-pattern rejection, workbook sheet names, report section order (…Reproducibility →
+References last), the notebook header's `Skills` provenance line, an exact model id recorded identically
+in the .md / .html / notebook, figure
 file/reference cross-check, a recursive scan for QA/temp/scratch junk, and no map tiles from OpenStreetMap's
 own server (blocked when the report is opened from disk).
 Stdlib-only (an .xlsx is a zip — sheet names are read straight from `xl/workbook.xml`), so it runs
@@ -35,6 +36,7 @@ wherever a report is built, exactly like the sibling gates.
 from __future__ import annotations
 
 import html
+import json
 import re
 import sys
 import zipfile
@@ -44,19 +46,23 @@ from pathlib import Path
 # both from the skill dir and from inside a delivered package. build_report_html is stdlib-only.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_report_html as _brh
-import readd_query_diagrams as _rqd
 
 # ── The mandated package (SKILL.md "Deliverable set") ────────────────────────────────────────────────
 REQUIRED_FILE_SUFFIXES = [
     "_report.md",
     "_report.html",
     "_results.xlsx",
-    "_reproducibility.md",
 ]
 # Present only when §8 (Comparison with prior work) was done — the skill allows §8 to be omitted (stated,
 # not silently dropped), in which case there is no companion. Allowed at the top level, never required.
 OPTIONAL_FILE_SUFFIXES = ["_literature_comparison.md"]
 REQUIRED_DIRS = ["figures", "data", "scripts"]
+
+# The reproducibility record is the folder `create_jupyter_notebook(folder_name="<study>_notebook")`
+# builds: the notebook, its query files, the cached rows, the helper module — plus the HTML page the
+# caller renders with the tool's `html_command`. These are the files that make it re-runnable.
+NOTEBOOK_SUFFIX = "_notebook"
+NOTEBOOK_REQUIRED = ["okn_sparql.py", "requirements.txt", "queries/manifest.json"]
 
 # data/ holds machine extracts and reproducibility intermediates (SKILL.md: "*.tsv / *.json — intermediate
 # extracts (for reproducibility)"). That legitimately includes diagram caches (diagrams.json), mermaid/
@@ -85,7 +91,7 @@ _JUNK_SUFFIXES = (".tmp", "~", ".queries.json")
 _JUNK_SUBSTRINGS = ("_old", "copy")
 _JUNK_PREFIXES = ("preview", "worklist", "inspect", "qa_")
 _JUNK_EXACT = {".DS_Store"}
-_JUNK_DIRS = {"__pycache__"}
+_JUNK_DIRS = {"__pycache__", ".ipynb_checkpoints"}
 
 
 def _is_junk(name: str) -> bool:
@@ -130,7 +136,7 @@ def _level2_headings(md_text: str) -> list[str]:
     return out
 
 
-# ── The reproducibility header (written by create_reproducibility_record) ────────────────────────────
+# ── The notebook header (the first cell create_jupyter_notebook writes) ──────────────────────────────
 # `skills=` and `model=` are the two header fields the server cannot derive on its own: it knows its own
 # version, the endpoint and the query log, but NOT which skills the session loaded and NOT which model is
 # calling it — `model` is a caller-supplied string it stores verbatim without inspecting. So an absent
@@ -144,7 +150,7 @@ _VERSIONED = re.compile(r"\sv\d+(?:\.\d+)*\b")  # the " v1.2.3" in "<skill> v1.2
 # ── Model provenance (SKILL.md "Exact model provenance") ─────────────────────────────────────────────
 # The model id is written into THREE artifacts by three different paths — hand-authored in the report
 # `.md` title block, lifted verbatim from that line into the `.html` header by build_report_from_markdown,
-# and passed as `create_reproducibility_record(model=…)` into the record header — and NOTHING reconciles
+# and passed as `create_jupyter_notebook(model=…)` into the notebook header — and NOTHING reconciles
 # them. Nor does anything check the value itself: the server stores whatever string it is handed, so a
 # family name ("Claude"), a product name, an inferred id, or a placeholder is indistinguishable from the
 # real thing. Reproducibility metadata that names the wrong model is worse than none, so this gate
@@ -228,16 +234,23 @@ def _check_toplevel(study: Path, token: str, r: _Report) -> dict:
     """Check the top-level allowlist + naming, and return the resolved required paths for later checks."""
     required_files = {f"{token}{suf}": suf for suf in REQUIRED_FILE_SUFFIXES}
     optional_files = {f"{token}{suf}" for suf in OPTIONAL_FILE_SUFFIXES}
-    allowed = set(required_files) | optional_files | set(REQUIRED_DIRS)
+    notebook_dir = f"{token}{NOTEBOOK_SUFFIX}"
+    required_dirs = [*REQUIRED_DIRS, notebook_dir]
+    allowed = set(required_files) | optional_files | set(required_dirs)
 
     present = {p.name for p in study.iterdir()}
     for fname in required_files:
         fp = study / fname
         if not fp.is_file():
             r.err(f"missing required file: {fname}")
-    for d in REQUIRED_DIRS:
+    for d in required_dirs:
         dp = study / d
-        if not dp.is_dir():
+        if not dp.is_dir() and d == notebook_dir:
+            r.err(
+                f"missing required directory: {d}/ — the reproducibility notebook; build it with "
+                f"create_jupyter_notebook(folder_name='{notebook_dir}', ...) into this folder"
+            )
+        elif not dp.is_dir():
             r.err(f"missing required directory: {d}/")
 
     for name in sorted(present):
@@ -246,7 +259,7 @@ def _check_toplevel(study: Path, token: str, r: _Report) -> dict:
             # A required name that is the wrong kind (dir where a file belongs, or vice-versa).
             if name in required_files and not entry.is_file():
                 r.err(f"'{name}' must be a file")
-            if name in REQUIRED_DIRS and not entry.is_dir():
+            if name in required_dirs and not entry.is_dir():
                 r.err(f"'{name}/' must be a directory")
             continue
         kind = "directory" if entry.is_dir() else "file"
@@ -264,35 +277,144 @@ def _check_toplevel(study: Path, token: str, r: _Report) -> dict:
         "report_md": study / f"{token}_report.md",
         "report_html": study / f"{token}_report.html",
         "xlsx": study / f"{token}_results.xlsx",
-        "repro_md": study / f"{token}_reproducibility.md",
         "litcomp_md": study / f"{token}_literature_comparison.md",
+        "notebook_dir": study / notebook_dir,
+        "notebook": study / notebook_dir / f"{notebook_dir}.ipynb",
+        "notebook_html": study / notebook_dir / f"{notebook_dir}.html",
     }
 
 
-#: Names that mark a second spec/record document. `_spec` needs the lookahead: a bare substring test
-#: matched `_species`, so a study with `wl_species_summary.csv` in `data/` failed this check on a CSV.
-#: `transcript` deliberately has no lookahead — a plural `_transcripts.md` IS the split anti-pattern.
+#: Names of a prose record that the notebook folder replaces. `_spec` needs the lookahead: a bare
+#: substring test matched `_species`, so a study with `wl_species_summary.csv` in `data/` failed on a CSV.
+#: `transcript` deliberately has no lookahead — a plural `_transcripts.md` is caught too.
 _SPLIT_DOC_RE = re.compile(r"reproducibility|transcript|_spec(?![a-z])", re.I)
 
 #: Only prose documents can BE a spec or a record; data and figures never are.
 _DOC_SUFFIXES = {".md", ".html", ".htm", ".txt", ".pdf", ".docx"}
 
 
-def _check_single_reproducibility(study: Path, token: str, r: _Report) -> None:
-    """Exactly ONE reproducibility file — spec + verbatim queries live together (SKILL.md: "do not split
-    them back into two"). Any second reproducibility/transcript/spec DOCUMENT is the split anti-pattern."""
-    hits = []
-    for p in study.rglob("*"):
-        if not p.is_file() or p.suffix.lower() not in _DOC_SUFFIXES:
-            continue
-        if _SPLIT_DOC_RE.search(p.name):
-            hits.append(p.relative_to(study).as_posix())
-    canonical = f"{token}_reproducibility.md"
-    extra = [h for h in hits if Path(h).name != canonical]
-    if extra:
+def _check_single_record(study: Path, r: _Report) -> None:
+    """The notebook folder is the ONE reproducibility record. A `_reproducibility.md`, a transcript or a
+    separate spec document beside it is a second copy of the queries and the spec, which drifts from the
+    first — the spec belongs in the notebook's markdown cells."""
+    hits = sorted(
+        p.relative_to(study).as_posix()
+        for p in study.rglob("*")
+        if p.is_file()
+        and p.suffix.lower() in _DOC_SUFFIXES
+        and _SPLIT_DOC_RE.search(p.name)
+    )
+    if hits:
         r.err(
-            "more than one reproducibility/transcript/spec file — the spec + verbatim queries must be "
-            f"ONE file ({canonical}); also found: {', '.join(sorted(extra))}"
+            "a second reproducibility/transcript/spec document — the notebook folder is the record "
+            "(queries, results, spec in its markdown cells); remove: " + ", ".join(hits)
+        )
+
+
+def _notebook_cells(nb_path: Path) -> list[dict] | None:
+    """The notebook's cells, or None when the file is not a readable nbformat-4 notebook."""
+    try:
+        nb = json.loads(nb_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    cells = nb.get("cells") if isinstance(nb, dict) else None
+    if not isinstance(cells, list) or nb.get("nbformat") != 4:
+        return None
+    return cells
+
+
+def _cell_text(cell: dict) -> str:
+    src = cell.get("source", "")
+    return "".join(src) if isinstance(src, list) else str(src)
+
+
+def _notebook_header(nb_path: Path) -> str | None:
+    """The provenance header: the notebook's FIRST cell, as create_jupyter_notebook writes it, cut at its
+    first ``##`` (Prompt / Notes follow there). None when the notebook is unreadable or starts otherwise."""
+    cells = _notebook_cells(nb_path) if nb_path.is_file() else None
+    if not cells or cells[0].get("cell_type") != "markdown":
+        return None
+    return re.split(r"^##\s", _cell_text(cells[0]), maxsplit=1, flags=re.M)[0]
+
+
+def _check_notebook(paths: dict, r: _Report) -> None:
+    """The notebook folder is complete, re-runnable, and rendered.
+
+    Hosted servers hand the folder back as a file map that the agent saves, so a file can be missed or
+    an image never copied; this catches both. The HTML is the executed notebook (`html_command`), which
+    the tool cannot make itself; a page older than the notebook was rendered before its last edit.
+    """
+    nb_dir, nb = paths["notebook_dir"], paths["notebook"]
+    if not nb_dir.is_dir():
+        return  # already a top-level error
+    label = nb_dir.name
+    if not nb.is_file():
+        r.err(
+            f"{label}/: missing the notebook {nb.name} — pass folder_name='{label}' so the notebook "
+            "is named after its folder"
+        )
+        return
+    cells = _notebook_cells(nb)
+    if cells is None:
+        r.err(
+            f"{label}/{nb.name} is not a valid nbformat-4 notebook — save the tool's file verbatim"
+        )
+        return
+    for rel in NOTEBOOK_REQUIRED:
+        if not (nb_dir / rel).is_file():
+            r.err(
+                f"{label}/: missing {rel} — save every entry of the tool's `files` verbatim"
+            )
+
+    manifest_path = nb_dir / "queries" / "manifest.json"
+    if manifest_path.is_file():
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except ValueError:
+            manifest = None
+        if not isinstance(manifest, list):
+            r.err(
+                f"{label}/queries/manifest.json is not the tool's query list — save it verbatim"
+            )
+        elif not manifest:
+            r.err(
+                f"{label}/: the notebook records no queries — every finding needs a logged, "
+                "non-exploratory query behind it; check `scope=` and the session log"
+            )
+        else:
+            for q in manifest:
+                if not isinstance(q, dict):
+                    continue
+                for rel in (f"queries/{q.get('name')}.rq", q.get("cache")):
+                    if rel and not (nb_dir / rel).is_file():
+                        r.err(
+                            f"{label}/: missing {rel} (listed in queries/manifest.json)"
+                        )
+
+    # Figures the notebook embeds (`![caption](figures/x.png)`) must be in its folder.
+    for cell in cells:
+        if cell.get("cell_type") != "markdown":
+            continue
+        for dest in re.findall(r"!\[[^\]]*\]\(([^)\s]+)\)", _cell_text(cell)):
+            if (
+                not re.match(r"(?:https?:|data:)", dest)
+                and not (nb_dir / dest).is_file()
+            ):
+                r.err(
+                    f"{label}/: the notebook shows {dest}, which is not in the folder — copy each "
+                    "`figures_to_copy` image to its path"
+                )
+
+    html_path = paths["notebook_html"]
+    if not html_path.is_file():
+        r.err(
+            f"{label}/: missing {html_path.name} — run the tool's `html_command` (it executes the "
+            "notebook from the cached rows and writes the page beside it)"
+        )
+    elif html_path.stat().st_mtime < nb.stat().st_mtime:
+        r.warn(
+            f"{label}/{html_path.name} is older than the notebook — re-run `html_command` so the page "
+            "shows the current version"
         )
 
 
@@ -430,40 +552,40 @@ def _check_section_order(report_md: Path, r: _Report) -> None:
             )
 
 
-def _check_repro_skills(repro_md: Path, r: _Report) -> None:
-    """The reproducibility header must record the skills the run followed.
+def _check_repro_skills(nb_path: Path, r: _Report) -> None:
+    """The notebook header must record the skills the run followed.
 
-    Only the HEADER counts (everything above the first ``##`` section): the line is provenance, and a
+    Only the HEADER counts (the first cell, above its first ``##``): the line is provenance, and a
     mention down in the spec or a query description is not the tool-generated header field. Naming
     `okn-report-style` is mandatory — this validator is running, so the package was built with it. An
     entry carrying no version is a warning, not an error: it still identifies the methodology, it just
     doesn't pin it.
     """
-    if not repro_md.is_file():
-        return
-    text = repro_md.read_text(encoding="utf-8", errors="ignore")
-    header = re.split(r"^##\s", text, maxsplit=1, flags=re.M)[0]
+    header = _notebook_header(nb_path)
+    if header is None:
+        return  # a missing or unreadable notebook is already an error
+    label = nb_path.name
     m = _SKILLS_LINE.search(header)
     if not m:
         r.err(
-            f"{repro_md.name}: the header has no '- **Skills:**' line — pass `skills=[...]` to "
-            "create_reproducibility_record (e.g. `skills=['okn-bioanalysis v0.1.2', "
-            "'okn-report-style v0.1.7']`, versions from each skill's frontmatter `metadata.version`). "
+            f"{label}: the header has no '- **Skills:**' line — pass `skills=[...]` to "
+            "create_jupyter_notebook (e.g. `skills=['okn-bioanalysis v0.1.3', "
+            "'okn-report-style v0.2.0']`, versions from each skill's frontmatter `metadata.version`). "
             "The server cannot see which skills your session loaded, so an omitted list leaves the "
-            "record claiming no methodology at all; do NOT hand-add the line — regenerate the record"
+            "record claiming no methodology at all; do NOT hand-edit the cell — regenerate the notebook"
         )
         return
     entries = [e.strip() for e in m.group(1).split("·") if e.strip()]
     if not any(e.startswith("okn-report-style") for e in entries):
         r.err(
-            f"{repro_md.name}: the header's Skills line does not name okn-report-style "
+            f"{label}: the header's Skills line does not name okn-report-style "
             f"(has: {', '.join(entries) or '—'}) — this package was built with it, so it belongs in "
             "the record; add it to `skills=` and regenerate"
         )
     unversioned = [e for e in entries if not _VERSIONED.search(e)]
     if unversioned:
         r.warn(
-            f"{repro_md.name}: Skills entries without a version: {', '.join(unversioned)} — give each "
+            f"{label}: Skills entries without a version: {', '.join(unversioned)} — give each "
             "as '<name> v<version>' (from the skill's frontmatter `metadata.version`) so the "
             "methodology is pinned, not just named"
         )
@@ -486,7 +608,7 @@ def _model_in(text: str, *, header_only: bool) -> str | None:
 
 
 def _check_model(paths: dict, r: _Report) -> None:
-    """The report `.md`, the report `.html`, and the reproducibility record must all name the SAME
+    """The report `.md`, the report `.html`, and the notebook header must all name the SAME
     exact model id, and it must actually identify a model.
 
     Three separate authoring paths write this value (see the `_MODEL_VALUE` note above), so the gate is
@@ -494,23 +616,27 @@ def _check_model(paths: dict, r: _Report) -> None:
     product name from `_GENERIC_MODELS`, or when it carries no version token at all — "claude-opus-5"
     and "gpt-5.6-sol" identify a run; "Claude" and "the latest model" do not.
     """
-    artifacts = [
+    texts = []
+    for label, path, header_only in (
         ("report .md", paths["report_md"], True),
         ("report .html", paths["report_html"], False),
-        (paths["repro_md"].name, paths["repro_md"], True),
-    ]
+    ):
+        if path.is_file():  # a missing artifact is already a top-level error
+            texts.append(
+                (label, path.read_text(encoding="utf-8", errors="ignore"), header_only)
+            )
+    nb_header = _notebook_header(paths["notebook"])
+    if nb_header is not None:
+        texts.append((paths["notebook"].name, nb_header, True))
+
     found: dict[str, str] = {}
-    for label, path, header_only in artifacts:
-        if not path.is_file():
-            continue  # a missing artifact is already a top-level error
-        value = _model_in(
-            path.read_text(encoding="utf-8", errors="ignore"), header_only=header_only
-        )
+    for label, text, header_only in texts:
+        value = _model_in(text, header_only=header_only)
         if value is None:
             r.err(
                 f"{label}: no model recorded — the title block needs "
-                "'**Date:** … · **Endpoint:** … · **Model:** <exact model id>' and the record needs a "
-                "'- **Model:**' line from `create_reproducibility_record(model=...)`. Record the exact "
+                "'**Date:** … · **Endpoint:** … · **Model:** <exact model id>' and the notebook needs a "
+                "'- **Model:**' line from `create_jupyter_notebook(model=...)`. Record the exact "
                 "runtime model identifier from session metadata (e.g. `claude-opus-5`); if you cannot "
                 "determine it, ASK the user rather than guessing or omitting it"
             )
@@ -531,14 +657,15 @@ def _check_model(paths: dict, r: _Report) -> None:
         detail = " · ".join(f"{label}: '{value}'" for label, value in found.items())
         r.err(
             f"the recorded model differs across the package ({detail}) — the Markdown title block, the "
-            "rendered HTML header, and the reproducibility record must carry the IDENTICAL identifier"
+            "rendered HTML header, and the notebook header must carry the IDENTICAL identifier"
         )
 
 
 def _check_junk(study: Path, r: _Report) -> None:
     """Recursive scan of the subdirectories for QA/temp/scratch junk (the top level is covered by the
-    allowlist). __pycache__ is gitignored/excluded from the skill zip but must not ship in a package."""
-    for d in REQUIRED_DIRS:
+    allowlist). __pycache__ is gitignored/excluded from the skill zip but must not ship in a package;
+    running the notebook in Jupyter leaves one (and .ipynb_checkpoints/) in the notebook folder."""
+    for d in [*REQUIRED_DIRS, f"{study.name}{NOTEBOOK_SUFFIX}"]:
         base = study / d
         if not base.is_dir():
             continue
@@ -584,17 +711,6 @@ def _check_parity(paths: dict, r: _Report) -> None:
             )
 
 
-def _check_diagrams(paths: dict, r: _Report) -> None:
-    repro = paths["repro_md"]
-    if repro.is_file():
-        code = _rqd.check(repro, repro.read_text(encoding="utf-8"))
-        if code != 0:
-            r.err(
-                "SPARQL→Mermaid gate FAILED (see [readd_query_diagrams] line) — every ```sparql block "
-                "must have a faithful ```mermaid diagram and no stale warning notice"
-            )
-
-
 def validate(study_dir: str) -> _Report:
     study = Path(study_dir)
     r = _Report()
@@ -604,19 +720,19 @@ def validate(study_dir: str) -> _Report:
     token = study.name
 
     paths = _check_toplevel(study, token, r)
-    _check_single_reproducibility(study, token, r)
+    _check_single_record(study, r)
+    _check_notebook(paths, r)
     _check_data_dir(study, r)
     _check_scripts_dir(study, r)
     _check_figures(study, paths["report_md"], r)
     _check_workbook(paths["xlsx"], r)
     _check_section_order(paths["report_md"], r)
-    _check_repro_skills(paths["repro_md"], r)
+    _check_repro_skills(paths["notebook"], r)
     _check_model(paths, r)
     _check_junk(study, r)
     _check_basemap(study, paths, r)
-    # Content gates last (they each print their own PASS/FAIL line).
+    # Content gate last (it prints its own PASS/FAIL line).
     _check_parity(paths, r)
-    _check_diagrams(paths, r)
     return r
 
 

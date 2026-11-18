@@ -35,11 +35,9 @@ LATEST_URI = "transcript://session/latest"
 LATEST_HTML_URI = "transcript://session/latest.html"
 LATEST_PDF_URI = "transcript://session/latest.pdf"
 
-# NOTE: turning per-query diagrams OFF (include_query_diagrams=False) is only HALF the defer-and-re-add
-# flow — the diagrams must be re-added before delivering (see the `include_query_diagrams` arg doc and
-# report-style's expand_query_diagrams.py / `readd_query_diagrams.py --check` delivery gate). The server
-# deliberately does NOT prepend a re-add reminder to the returned document: it was an HTML comment the
-# caller saved verbatim, so it stayed baked into the artifact (and read stale once diagrams were added).
+# NOTE: the server deliberately does NOT prepend a reminder to a document generated with
+# include_query_diagrams=False: it was an HTML comment the caller saved verbatim, so it stayed baked
+# into the artifact.
 
 
 @mcp.tool()
@@ -177,7 +175,6 @@ def _render_stub(
     n_viz: int,
     skills: list[str] | None = None,
     mcp_servers: list[str] | None = None,
-    recovery: str = "",
     resource: str = LATEST_URI,
     kind: str = "markdown",
 ) -> str:
@@ -185,10 +182,7 @@ def _render_stub(
 
     Over `max_inline_chars`, the complete document is published verbatim at the
     resource `transcript://session/latest`; this stub carries the provenance + size
-    and points the caller there, so it never reconstructs a truncated one. When
-    ``recovery`` is given, it is appended as a second blockquote — a tool-specific,
-    ACTIONABLE way to obtain an inline-fitting document (e.g. curating a lean record's
-    `supporting` set), so the stub is a next step, not a dead end. ``resource`` and
+    and points the caller there, so it never reconstructs a truncated one. ``resource`` and
     ``kind`` name where the full document lives and what it is (the HTML rendering
     is published at its own resource).
     """
@@ -218,8 +212,6 @@ def _render_stub(
         "the server is hosted remotely). Point the user there — do NOT "
         "hand-write, summarize, or reconstruct a substitute transcript.",
     ]
-    if recovery:
-        lines += ["", f"> **To return it inline instead:** {recovery}"]
     return "\n".join(lines)
 
 
@@ -232,7 +224,7 @@ def _resolve_sources(
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[str]]:
     """Resolve the KGs a transcript is about and guard its provenance.
 
-    Shared by ``create_chat_transcript`` and ``create_reproducibility_record``.
+    Shared by ``create_chat_transcript`` and ``create_jupyter_notebook``.
     Returns ``(log, kgs, warnings)`` where ``log`` has any FOREIGN auto-logged
     queries removed (entries touching none of an explicitly named ``kgs_used`` —
     almost always another concurrent subagent's work leaking through a shared,
@@ -408,7 +400,6 @@ def _finalize_document(
     n_viz_for_stub: int,
     scope: str | None,
     max_inline_chars: int | None,
-    stub_recovery: str = "",
     active_window: str = "",
     window_label: str = "Study active window",
     prompt: str = "",
@@ -418,8 +409,7 @@ def _finalize_document(
 ) -> str:
     """Assemble header + Contents manifest + body, publish, and return the document.
 
-    Shared by ``create_chat_transcript`` and ``create_reproducibility_record``. The
-    Contents manifest is derived from what actually rendered (fenced-block counts),
+    Used by ``create_chat_transcript``. The Contents manifest is derived from what actually rendered (fenced-block counts),
     so it is a checkable invariant. The full markdown is always published to the
     ``transcript://session/latest`` resource; the return value is that markdown, or
     a compact stub when it exceeds ``max_inline_chars`` (the full body still on the
@@ -439,9 +429,6 @@ def _finalize_document(
         n_viz_for_stub: Visualization count reported in the stub.
         scope: Log scope the document is published under.
         max_inline_chars: Return a stub above this size (None = never).
-        stub_recovery: Optional actionable recovery hint appended to the stub (e.g.
-            how to curate a lean record so it fits inline), so an over-size result is
-            a next step rather than a dead end.
         active_window: Optional "first → last (elapsed)" window string; added as a
             header line when non-empty. Either the study active-query window (from
             ``_active_window``) or the whole-chat window (from ``_chat_window``).
@@ -530,7 +517,6 @@ def _finalize_document(
             n_viz=n_viz_for_stub,
             skills=skills,
             mcp_servers=mcp_servers,
-            recovery=stub_recovery,
         )
     else:
         out = markdown
@@ -647,11 +633,8 @@ async def create_chat_transcript(
             so the transcript shows the shape of every query. A query that cannot
             be parsed into a diagram is skipped silently (its text still shows).
             Set false to omit the per-query diagrams (right when a large record
-            would otherwise spill) — but that is only HALF the flow: RE-ADD the
-            diagrams before delivering, via report-style's
-            `scripts/expand_query_diagrams.py`, and verify with
-            `readd_query_diagrams.py --check` (the delivery gate). Skip the re-add
-            only if the user asked for no diagrams.
+            would otherwise spill); the `sparql_to_mermaid` tool draws any of them
+            on request.
         diagram_max_chars: OPTIONAL cap on a per-query diagram's size. When set,
             a diagram longer than this many characters is dropped (its query text
             still shows) so a huge diagram never bloats the transcript. Default
@@ -1007,299 +990,6 @@ async def _deliver_pdf(
     ]
 
 
-@mcp.tool()
-async def create_reproducibility_record(
-    model: str,
-    kgs_used: list[str] | None = None,
-    supporting: list[dict[str, Any] | int] | None = None,
-    date: str | None = None,
-    format: str = "markdown",
-    title: str = "Proto-OKN Reproducibility Record",
-    include_query_diagrams: bool = True,
-    diagram_max_chars: int = 1500,
-    scope: str | None = None,
-    max_inline_chars: int | None = 100_000,
-    notes: str | None = None,
-    chat_started: str | None = None,
-    chat_ended: str | None = None,
-    appendix: str | None = None,
-    prompt: str | None = None,
-    skills: list[str] | None = None,
-    external_mcp_servers: list[str] | None = None,
-) -> Any:
-    """Build the reproducibility record: header + replicator spec + supporting queries.
-
-    The SINGLE reproducibility deliverable (`<study>_reproducibility.md`): it merges
-    what were two files — the replicator SPEC (rules, thresholds, joins, verified
-    quantities, limitations) you pass as `appendix`, and the verbatim query record
-    this tool generates. A compact alternative to `create_chat_transcript`, it keeps
-    only what lets someone RE-RUN the analysis — a provenance header, your `appendix`
-    spec, and the SPARQL queries that support the reported findings (verbatim, pulled
-    from the session log, NOT re-typed), each query's row COUNT, and a per-query
-    diagram when it fits — and drops the conversation prose, the full result tables,
-    and schema visualizations. That keeps it small enough to return INLINE in the
-    common case, so you save the returned string DIRECTLY to the `.md` file — no
-    resource round-trip, no stub.
-
-    Run the analysis first: the queries come from the auto-log (every
-    non-exploratory, row-returning `sparql_query`), so DO NOT hand-write this record.
-    The full result data belongs in the workbook / `data/` extracts, not here.
-
-    Args:
-        model: The EXACT runtime model identifier producing the analysis (e.g.
-            `claude-opus-4-8`, `gpt-5.6-sol`), taken from trusted session metadata
-            or supplied by the user — never a family or product name (`Claude`,
-            `GPT-5`, `Codex`), a placeholder, or an inferred id. The server stores
-            it verbatim and cannot check it; it must match the report's title-block
-            `**Model:**` exactly. If you cannot determine it, ASK the user.
-        kgs_used: Shortnames of the knowledge graphs this record is about. If
-            omitted, inferred from the selected queries. When given, drives the same
-            guards as `create_chat_transcript`: a logged query touching none of them
-            is dropped as foreign (a concurrent subagent's leak — pass a unique
-            `scope`), and a named KG that no selected query touched is flagged a
-            phantom source (its contribution cannot be reproduced — re-run the
-            establishing query non-exploratory, or drop the KG).
-        supporting: OPTIONAL curation. None = all logged queries in log order.
-            Otherwise a list where each item is either a bare 1-based index (e.g.
-            `supporting=[1, 5, 9]`) or a `{"index": int, "description": str | None}`
-            dict (the `description` is an optional heading label); `index` is a
-            position into the log in the order `get_query_log` shows. Use it to keep
-            only the queries that underpin reported findings, in the order given — the
-            lever for shrinking a large log so the record fits inline. **If the record
-            comes back as a stub (over `max_inline_chars`), that is not a stopping
-            point: you know there are N queries, so re-call with `supporting` to curate
-            to the findings-supporting subset, or batch (`list(range(1, 41))`, then
-            `range(41, 81)`, …) — never leave the transcript missing.** An out-of-range
-            index is skipped with a warning.
-        date: ISO date for the header; defaults to today.
-        format: `markdown` (default) or `json`.
-        title: Document title.
-        include_query_diagrams: If true (default), render a Mermaid `graph TD`
-            diagram beneath each query, subject to `diagram_max_chars`. Set false
-            when a large record would spill — but then RE-ADD the diagrams before
-            delivering (report-style's `scripts/expand_query_diagrams.py`; verify
-            with `readd_query_diagrams.py --check`), unless the user asked for none.
-        diagram_max_chars: Drop a per-query diagram longer than this many characters
-            (default 1500) so an oversized diagram never bloats the record; the
-            query's SPARQL text still shows.
-        scope: OPTIONAL log scope — the same string passed to `reset_query_log` /
-            `sparql_query`. Pass a unique label when parallel subagents share one
-            MCP session.
-        max_inline_chars: Return a compact stub above this size (default 100_000),
-            with the full body published to `transcript://session/latest`. A record
-            of many verbatim queries with large `VALUES` lists can still exceed this
-            — curate `supporting` to fewer queries, or raise this on a client that
-            can handle a larger inline result.
-        chat_started: OPTIONAL ISO-8601 timestamp of when the CHAT began (e.g.
-            `2026-07-18T09:00:00Z`). When given, the header's timing line shows the
-            WHOLE-CHAT elapsed time — `- **Elapsed time:** <start>–<end> UTC
-            (<elapsed>)` — INSTEAD of the "Study active window" (which spans only the
-            first-to-last logged query and so undercounts, badly if large extraction
-            queries went unlogged). The server cannot know the chat's duration on its
-            own, so YOU must pass this — the caller is the only party that knows when
-            the conversation started. Omit it to keep the active-query-window line.
-        chat_ended: OPTIONAL ISO-8601 end timestamp for the whole-chat window; only
-            used with `chat_started`. Defaults to now (UTC) — the record's generation
-            moment, a fair stand-in for the end of the chat.
-        notes: OPTIONAL methodology note, rendered as a VISIBLE `## Notes` section
-            just under the header. This is the SANCTIONED place for provenance
-            context — e.g. that the logged queries are compact COUNT/aggregate
-            re-registrations while the full extraction SELECTs (auto-saved to
-            tool-result files, hence unlogged) live in `scripts/`. Put such context
-            HERE rather than hand-editing the saved `.md` after the fact: the record
-            must be saved exactly as returned, so any note added outside the tool
-            (e.g. an HTML-comment preamble) both breaks that contract and, being an
-            HTML comment, is invisible to a reader anyway.
-        prompt: OPTIONAL originating user prompt — the request that kicked off the
-            study — rendered as a `## Prompt` section at the TOP of the record so the
-            document is self-contained (a replicator sees the question the analysis
-            answered). Paste the user's prompt VERBATIM; don't paraphrase it.
-        appendix: OPTIONAL replicator SPEC in Markdown — the rules, thresholds, join
-            definitions, key verified quantities, downstream computation, and
-            reproducibility limitations that used to be a SEPARATE
-            `<study>_reproducibility_appendix.md`. Passing it here merges the two
-            reproducibility files into ONE: the content is rendered as its own
-            section(s) between the header and the `## SPARQL queries` record (author
-            it with your own `##` headings; it is inserted verbatim). This is the
-            human-readable spec; the queries below are the machine-checkable evidence.
-            Unlike `notes` (a short caption), this is the full multi-section document.
-            It is authored by you (the queries can't express thresholds/limitations),
-            so — like `notes` — put it here, never by hand-editing the saved file.
-        skills: The agent skills that shaped this study, each as `"<name> v<version>"`
-            (e.g. `["okn-bioanalysis v0.1.0", "okn-report-style v0.1.1"]`) — the version
-            is the skill's frontmatter `metadata.version`. Rendered as a `- **Skills:**`
-            header line directly beneath "Model" (together they are the agent's
-            configuration: which model, following which methodology). Technically
-            optional, but PASS IT whenever a skill was followed: the server cannot see
-            which skills your session loaded, so omitting it silently publishes a record
-            that claims no methodology — the tool returns a WARNING when you do, and the
-            fix is to call again with `skills=[...]`, never to hand-add the line to the
-            saved file. List only skills you actually followed — naming one you didn't
-            is a phantom source, same as an unqueried KG.
-        external_mcp_servers: OTHER MCP servers this session actually CALLED —
-            connectors the user enabled that supplied evidence beyond this server's
-            KGs (e.g. `["PubMed", "Paperclip", "Open Targets"]`; append a version
-            when the connector reports one). Rendered as an
-            `- **External MCP servers:**` header line beneath "Skills". Like `skills`,
-            the server cannot see your other connectors, so this is caller-supplied —
-            and the same two rules apply: list a server only if a call to it fed the
-            analysis (an enabled-but-unused connector is a phantom source, exactly
-            like an unqueried KG), and don't leave a used one off (the record's KG
-            list then reads as the whole evidence base when it wasn't).
-
-    Returns:
-        A Markdown string (or a dict when `format="json"`): the header, any `appendix`
-        spec, a `## SPARQL queries` section (one verbatim query + row count + optional
-        diagram each), and a Contents manifest. Provenance warnings, if any, are
-        prepended as HTML comments (invisible in a saved `.md`).
-    """
-    when = date or _date.today().isoformat()
-    skill_list = _clean_entries(skills)
-    server_list = _clean_entries(external_mcp_servers)
-    log = session.entries(scope)
-
-    # Curate to the supporting subset (1-based indices into the log), in the order
-    # given, attaching any per-item heading label. None -> the whole log in order.
-    warnings: list[str] = []
-    if supporting is None:
-        selected = list(log)
-    else:
-        selected = []
-        for item in supporting:
-            # An item may be a bare 1-based index (easy batching:
-            # `supporting=[1, 2, 3]`) or a `{"index": int, "description": str}` dict.
-            if isinstance(item, dict):
-                idx = item.get("index")
-                desc = item.get("description")
-            else:
-                idx, desc = item, None
-            if (
-                not isinstance(idx, int)
-                or isinstance(idx, bool)
-                or not (1 <= idx <= len(log))
-            ):
-                plural = "y" if len(log) == 1 else "ies"
-                warnings.append(
-                    f"`supporting` index {idx!r} is out of range for a log of "
-                    f"{len(log)} quer{plural} — skipped."
-                )
-                continue
-            entry = dict(log[idx - 1])
-            if desc:
-                entry["description"] = desc
-            selected.append(entry)
-
-    # Same foreign-drop / KG-inference / phantom guards as the full transcript, run
-    # against the SELECTED queries (the record is about those). No visualizations.
-    selected, kgs, guard_warnings = _resolve_sources(
-        selected, [], kgs_used, check_phantom=True
-    )
-    warnings += guard_warnings
-    if not skill_list:
-        warnings.append(_skills_warning("record"))
-
-    # Choose the header timing line. When the caller supplied a chat start, show the
-    # WHOLE-CHAT elapsed window (only the caller knows when the chat began); otherwise
-    # fall back to the active-query window, which spans the whole scoped log (not just
-    # the curated `supporting` subset) — the study took that long regardless of which
-    # queries the record keeps.
-    window = _chat_window(chat_started, chat_ended) if chat_started else None
-    if chat_started and window is None:
-        warnings.append(
-            f"chat_started={chat_started!r} (or chat_ended) is not a parseable ISO-8601 "
-            "timestamp — fell back to the active-query window for the timing line."
-        )
-    if window is not None:
-        window_label = "Elapsed time"
-    else:
-        window, window_label = _active_window(log), "Study active window"
-
-    if format == "json":
-        payload: dict[str, Any] = {
-            "title": title,
-            "date": when,
-            "model": model,
-            "knowledge_graphs": kgs,
-            "query_log": selected,
-            "sparql_endpoint": FEDERATION_ENDPOINT,
-            "generated_by": {
-                "service": mcp.name,
-                "version": __version__,
-                "build": build_id(),
-            },
-        }
-        if prompt and prompt.strip():
-            payload["prompt"] = prompt.strip()
-        if skill_list:
-            payload["skills"] = skill_list
-        if server_list:
-            payload["external_mcp_servers"] = server_list
-        if window:
-            payload["elapsed_window"] = {"label": window_label, "value": window}
-        if notes and notes.strip():
-            payload["notes"] = notes.strip()
-        if appendix and appendix.strip():
-            payload["appendix"] = appendix.strip()
-        if warnings:
-            payload["warnings"] = warnings
-        return payload
-
-    if format != "markdown":
-        return {"error": f"Unsupported format {format!r}; use 'markdown' or 'json'."}
-
-    # The authored replicator spec (former separate appendix file) leads, then the
-    # machine-checkable query record. Inserted verbatim, with the author's own headings.
-    body: list[str] = []
-    if appendix and appendix.strip():
-        body += [appendix.strip(), ""]
-    body += ["## SPARQL queries", ""]
-    if not selected:
-        body += ["_No queries logged._", ""]
-    for k, entry in enumerate(selected, start=1):
-        ctx = entry.get("timestamp", "")
-        graphs = entry.get("graphs") or []
-        if graphs:
-            ctx += " · " + ", ".join(f"`{g}`" for g in graphs)
-        body += _render_query(
-            entry,
-            f"Query {k}",
-            subheading=ctx,
-            counts_only=True,
-            diagram=include_query_diagrams,
-            diagram_max_chars=diagram_max_chars,
-        )
-
-    return _finalize_document(
-        title=title,
-        when=when,
-        model=model,
-        kgs=kgs,
-        body=body,
-        warnings=warnings,
-        n_schema_diagrams=0,
-        n_queries_for_stub=len(selected),
-        n_viz_for_stub=0,
-        scope=scope,
-        max_inline_chars=max_inline_chars,
-        active_window=window,
-        window_label=window_label,
-        prompt=prompt or "",
-        notes=notes or "",
-        skills=skill_list,
-        mcp_servers=server_list,
-        stub_recovery=(
-            "a too-large record is NOT a reason to leave the transcript missing. "
-            "The queries are all logged, so CURATE (not fabricate) an inline-fitting "
-            "record: call again with `supporting=[1, 5, 9, …]` — bare 1-based "
-            f"positions into the log (there are {len(selected)}; `get_query_log` "
-            "lists them in order, so you always know the indices) — keeping the "
-            "queries that support your reported findings. If you genuinely need every "
-            "query, split into batches (`supporting=list(range(1, 41))`, then "
-            "`range(41, 81)`, …) and save each. Don't just point at the resource and stop."
-        ),
-    )
-
-
 @mcp.resource(
     "transcript://session/latest",
     name="Latest chat transcript",
@@ -1397,14 +1087,10 @@ def _render_query(
     max_rows: int | None = None,
     diagram: bool = False,
     diagram_max_chars: int | None = None,
-    counts_only: bool = False,
 ) -> list[str]:
     """Render one query (verbatim text + results or error) as markdown lines.
 
-    When ``counts_only`` is True, no result table or preview is rendered — only a
-    ``_N row(s)_`` line from the entry's ``row_count`` — for a lean reproducibility
-    record where the queries (not their data) are the point. Otherwise, when
-    ``show_results`` is True the result table is rendered, capped at ``max_rows``
+    When ``show_results`` is True the result table is rendered, capped at ``max_rows``
     (``None`` = uncapped); when False, a compact PREVIEW of the rows is shown (a
     single-row result in full, otherwise the first 3 rows) — used for intermediate
     queries in the log appendix.
@@ -1428,9 +1114,6 @@ def _render_query(
             lines += ["```mermaid", mermaid, "```", ""]
     if q.get("error"):
         lines += [f"**Error:** {q['error']}", ""]
-    elif counts_only:
-        count = q.get("row_count")
-        lines += [f"_{count} row(s)_" if count is not None else "_results omitted_", ""]
     elif show_results:
         lines += _render_results(q.get("results"), max_rows=max_rows)
     else:

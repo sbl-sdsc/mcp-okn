@@ -12,7 +12,7 @@ from pathlib import Path
 import pytest
 
 from mcp_okn import session
-from mcp_okn.notebook import build_study, safe_relative_path, slugify
+from mcp_okn.notebook import build_study, folder_slug, safe_relative_path, slugify
 from mcp_okn.sparql import prepare_query
 from mcp_okn.tools import notebook_tools
 from mcp_okn.tools.notebook_tools import create_jupyter_notebook
@@ -271,6 +271,9 @@ def test_truncated_cache_is_flagged():
 def test_helpers():
     assert slugify("Kidney Cancer: Study #2") == "kidney-cancer-study-2"
     assert slugify("!!!") == "okn-study"
+    assert folder_slug("MS_notebook", "ignored") == "MS_notebook"  # kept as given
+    assert folder_slug("My notebook!", "ignored") == "my-notebook"
+    assert folder_slug(None, "Kidney Study") == "kidney-study"
     assert safe_relative_path("figures/a.png") == "figures/a.png"
     for bad in ("../a", "/a", "a\\b", "", "a//b/../c"):
         assert safe_relative_path(bad) is None, bad
@@ -304,6 +307,14 @@ async def test_run_command_shown_to_user(tmp_path):
     )
     assert "OKN_RERUN=1" in hosted["rerun_command"]
     assert "--output my-study-rerun.ipynb" in hosted["rerun_command"]
+    assert hosted["html_command"].endswith(
+        "jupyter nbconvert --to html --execute --embed-images "
+        "--output my-study.html my-study.ipynb"
+    )
+    assert "OKN_RERUN" not in hosted["html_command"]  # renders the cached rows
+    assert "PYTHONDONTWRITEBYTECODE=1 uv run" in hosted["html_command"]
+    assert "run `html_command`" in hosted["show_user"]
+    assert hosted["html_command"].split("\n")[1] in hosted["files"]["README.md"]
     assert "END of your reply" in hosted["show_user"]
     assert "absolute path of the folder you saved" in hosted["show_user"]
     assert hosted["run_command"].split("\n")[1] in hosted["files"]["README.md"]
@@ -316,6 +327,7 @@ async def test_run_command_shown_to_user(tmp_path):
     # Withheld files: nothing saved yet, so no command to show.
     big = await _build(max_inline_chars=10)
     assert "run_command" not in big
+    assert "html_command" not in big
 
 
 def test_rerun_env_switch(monkeypatch):
@@ -438,3 +450,18 @@ def test_verify_all_reuses_live_runs(helper, monkeypatch):
     assert str(report["live_rows"].dtype) == "Int64"
     helper.verify_all(fresh=True)
     assert len(sent) == 4
+
+
+async def test_header_timing_line():
+    _log_two()
+    out = await _build(title="Timed")
+    header = "".join(json.loads(out["files"]["timed.ipynb"])["cells"][0]["source"])
+    assert "- **Study active window:** " in header
+
+    out = await _build(title="Timed", chat_started="2026-07-25T10:00:00Z")
+    header = "".join(json.loads(out["files"]["timed.ipynb"])["cells"][0]["source"])
+    assert "- **Elapsed time:** 2026-07-25" in header
+    assert "Study active window" not in header
+
+    out = await _build(title="Timed", chat_started="not a time")
+    assert any("chat_started" in w for w in out["warnings"])

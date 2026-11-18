@@ -1,8 +1,8 @@
 # Common failure modes (all seen in real reports)
 
 Skim this before delivering a report. Each is a mistake that shipped in a real deliverable, with its
-fix. The most damaging — a hand-built "highlights-reel" HTML and a dropped reproducibility
-transcript — have their full procedures at the end.
+fix. The most damaging — a hand-built "highlights-reel" HTML and an incomplete reproducibility
+notebook — have their full procedures at the end.
 
 - Legend overlapping a donut / pie or bar → move it out; regenerate; re-read the PNG.
 - Figure caption text baked into the PNG → move to the legend below.
@@ -20,7 +20,8 @@ transcript — have their full procedures at the end.
   row per KG actually queried.
 - Phantom source: a KG credited in the Sources table / as a pill though no logged query touched it
   (its "contribution" came from an exploratory or unlogged query) → drop it, or re-run the bridge
-  query non-exploratory so it's in the transcript. Every source must trace to a logged query.
+  query non-exploratory so it's in the session log (and so in the notebook). Every source must trace
+  to a logged query.
 - No closing recap / limitations → end with **Summary of findings & limitations** (findings recap +
   numbered caveats).
 - Undefined acronyms → add the Abbreviations block and expand each at first use.
@@ -63,64 +64,36 @@ you built the HTML any other way, you MUST run it yourself (`check_report_parity
 every `##`/`###` heading from the `.md` is present and the visible word count is within `min_word_ratio`
 (default 0.85). Treat a FAIL (or never having run it) as blocking.
 
-## Reproducibility transcript dropped, stubbed, or diagram-bloated
+## Reproducibility notebook incomplete, unrendered, or not re-runnable
 
-**Left missing because `create_reproducibility_record` returned a stub** (the log was too large to
-return inline) → a stub is a next step, not a stopping point. Re-call with `supporting=[1, 5, 9, …]`
-(bare 1-based indices from `get_query_log`) to curate to the findings-supporting queries, or batch them
-(`list(range(1, 41))`, then `range(41, 81)`, …). Curating the real logged queries is not the forbidden
-fabrication — never ship the report with an empty or placeholder transcript.
+The record is the `<study>_notebook/` folder from `create_jupyter_notebook` (SKILL.md *Deliverable
+set*). `validate_okn_report.py` checks it, but these are the ways it goes wrong:
 
-**Transcript bloated / spilling because of the per-query mermaid diagrams** — each ` ```sparql ` block
-is followed by a ` ```mermaid ` diagram that duplicates it, and those diagrams are 25–50%+ of the
-bytes, which is often what pushes the return over the inline limit → **generate diagram-free, then
-re-add the diagrams as a postprocessing step** (do BOTH halves — generating lean and *not* re-adding
-silently drops the diagrams; that is an omission, not a choice):
-
-1. Call `create_chat_transcript` / `create_reproducibility_record` with **`include_query_diagrams=False`**
-   (lean return, no stub/spill) and save the markdown.
-2. Re-add the diagrams with **`scripts/readd_query_diagrams.py <transcript.md>`** — the ONE-command
-   front door for this half. It auto-selects the path: if `sparql-to-mermaid` is importable (a dev
-   checkout, or any env where you can `pip install sparql-to-mermaid` — it is on PyPI) it generates
-   every diagram and injects them in that single call; if not (the usual report session, which can't
-   install packages) it writes the exact
-   WORK-LIST of un-diagrammed queries to `<transcript.md>.queries.json` and exits non-zero so you can't
-   mistake it for done. Turn that list into diagrams by calling the **`sparql_to_mermaid` TOOL**
-   (available over MCP) on **each verbatim** query (never a shortened copy, and never a hand-drawn or
-   paraphrased diagram — the diagram must be the tool's exact output; anything else is a fidelity break
-   the `--check` gate now rejects), save `[{sparql, mermaid}, …]` as `diagrams.json`, then re-run
-   `python scripts/readd_query_diagrams.py <transcript.md> --diagrams diagrams.json --max-chars 4000`
-   (dependency-free injection, idempotent). (The injection engine is `scripts/expand_query_diagrams.py`;
-   the helper is a thin front door over it.) Do **not** write a bespoke per-study script that emits
-   diagram strings — that bypass is exactly what once shipped diagrams missing their KG box.
-
-**Cap the diagrams** (`--max-chars 4000`, mirroring the server's `diagram_max_chars`): as of
-`sparql-to-mermaid` **v0.5.0** a long `VALUES` list collapses to "3 values + `+N more`" (the
-`max_values` default) **and** node labels are quoted, so the old symbol-list blowup — a 250-symbol
-query → a ~28K-char diagram of ~280 meaningless nodes — no longer happens, and an IRI with special
-characters (e.g. a Reactome / PubChem id containing `(`) no longer breaks Mermaid parsing; the cap stays
-as a backstop for any diagram that is still huge (e.g. very many distinct triples). (v0.5.0 also adds an
-opt-in `portable=True` / `--portable` mode that compacts unknown IRIs to CURIEs for stricter renderers;
-the default output used here renders in Claude's Artifact renderer and current Mermaid, so you don't
-need it unless a specific viewer rejects a diagram.) Skipped diagrams get **noted in the transcript** (a
-one-line table), the same rule the server applies inline. Don't rasterize the mermaid to SVG/PNG — leave
-it as source.
-
-**This defer-and-re-add flow applies only when you still want the diagrams in the final file.** If the
-user asks for **no** query diagrams at all, pass `include_query_diagrams=False` (and
-`include_visualizations=False` for the schema classDiagrams) and **skip the re-add step** — don't
-re-inject what they asked to omit.
-
-**Completeness + fidelity gate — the transcript is not "delivered" until `readd_query_diagrams.py
---check <transcript.md>` prints `[readd_query_diagrams] PASS`.** It checks three things, WITHOUT modifying
-and with no package needed: **(a) presence** — every ```sparql block has a ```mermaid diagram (a FAIL
-here means you generated lean and skipped the re-add); and **(b) fidelity** — every query scoped to a
-named `GRAPH` has a diagram carrying the `subgraph ["GRAPH …"]` box that `sparql_to_mermaid` always
-emits, so a boxless diagram is caught as hand-drawn / stale / from a bespoke script rather than the
-tool; and **(c) the header's `- **Contents:**` counts** match the body — the server counts only the
-diagrams it rendered, so after a re-add the header can say "17 queries · 13 query diagrams" over 17
-diagrams. The re-add run rewrites that line itself; a FAIL here means the record was re-added with an
-older script or hand-edited — re-run `readd_query_diagrams.py <transcript.md>` to fix it. This mirrors
-the HTML's `check_report_parity` gate; run it as the last step and treat FAIL (or
-never having run it) as blocking. (The only clean way to skip it is the user asking for no diagrams —
-then there are no ```sparql-without-diagram blocks to flag anyway.)
+- **`files` withheld because the folder is too large** (hosted server, over `max_inline_chars`) → a
+  next step, not a stop. Curate `supporting=[1, 5, 9, …]` (1-based indices from `get_query_log`) to the
+  queries the findings rest on, keeping every query a credited source depends on (dropping one trips
+  the phantom-source guard). If it is still too large, pass `include_data=False`: the notebook then
+  re-runs its queries live, and so does `html_command`. When the server runs locally (stdio), pass
+  `output_dir` instead; the server writes the folder itself and there is no size limit.
+- **A file not saved, or a figure not copied** (hosted server) → save every `files` entry verbatim
+  under `<study>/<study>_notebook/` and copy each `figures_to_copy` image to its path. Never retype or
+  summarize a file. The validator checks every file `queries/manifest.json` lists and every image the
+  notebook shows.
+- **The notebook only re-runs the queries.** If the analysis that turns query rows into the reported
+  numbers lives only in `scripts/` or in your head, the notebook cannot reproduce the findings. Pass
+  that code as `code_files` (e.g. `{"analysis.py": …}`) and the cells that call it on `data["q01"]` …
+  as `cells`, so running the notebook recomputes the headline numbers and regenerates the figures.
+- **The spec is missing or split off.** The replicator specification (rules, thresholds, joins,
+  verified quantities, limitations) goes in the notebook as the first markdown cell of `cells`, headed
+  `## Replicator specification`. A separate `_reproducibility.md`, transcript or spec file beside the
+  notebook is a second record that drifts from the first; the validator rejects it.
+- **No HTML page, or a stale one** → run the tool's `html_command` after the folder is saved. If it
+  fails, read the error: it is almost always an analysis cell raising. Fix the code, regenerate the
+  notebook (`overwrite=True` for a local write), and run `html_command` again. Never hand-edit the
+  `.ipynb` or produce the page any other way. If you cannot run shell commands, give the user
+  `html_command` and say the package is incomplete until it has run.
+- **Jupyter leftovers** — opening the notebook in Jupyter leaves `__pycache__/` and
+  `.ipynb_checkpoints/` in its folder. Delete them before delivering; the validator fails on both.
+- **Provenance missing** — the notebook header carries `model=`, `skills=` and
+  `external_mcp_servers=` exactly as passed. A forgotten argument is fixed by regenerating the
+  notebook, never by editing its header cell.
