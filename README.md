@@ -37,7 +37,7 @@ literature MCPs — each with a distinct role:
 | Component | Role |
 |---|---|
 | <img src="docs/overview/mcp-okn.png" width="72" alt="mcp-okn"><br>**[mcp-okn](#connecting-your-client)** | Federated OKN query service: discovers the relevant Proto-OKN graphs, writes SPARQL scoped to named graphs, aligns across KGs via crosswalks, and returns grounded rows with provenance and transcripts. |
-| <img src="docs/overview/okn-report-style.png" width="72" alt="okn-report-style"><br>**[okn-report-style](#skills)** | Report & reproducibility skill: turns an OKN analysis into a polished, reproducible deliverable (Markdown / HTML / Excel / figures / maps), tracking sources, versions, queries, and caveats. |
+| <img src="docs/overview/okn-report-style.png" width="72" alt="okn-report-style"><br>**[okn-report-style](#skills)** | Report & reproducibility skill: turns an OKN analysis into a polished, reproducible deliverable (Markdown / HTML / Excel / figures / maps, plus a re-runnable Jupyter notebook), tracking sources, versions, queries, and caveats. |
 | <img src="docs/overview/okn-bioanalysis.png" width="72" alt="okn-bioanalysis"><br>**[okn-bioanalysis](#skills)** | Biomedical workflow skill: cross-KG analysis of genes, diseases, chemicals, and drugs — enrichment, ortholog projection, mechanistic maps — ranking hypotheses by evidence and calling the literature MCPs to validate. |
 | <img src="docs/overview/pubmed-paperclip.png" width="72" alt="PubMed and Paperclip"><br>**[PubMed & Paperclip](#literature-comparison-connectors-pubmed--paperclip)** | Literature evidence validation: search PubMed and full-text collections, corroborate OKN-derived claims against sources, add citations, and flag conflicts and uncertainty. |
 
@@ -236,7 +236,8 @@ report deliverables without re-explaining conventions each time:
 
 - **[`okn-report-style`](skills/okn-report-style/)** — layout, figure, and style
   conventions for turning any OKN case study into a polished, reproducible report
-  deliverable (interactive HTML + Markdown + multi-sheet Excel + figures + maps).
+  deliverable (interactive HTML + Markdown + multi-sheet Excel + figures + maps), with a
+  re-runnable [Jupyter notebook](#jupyter-notebooks) as its reproducibility record.
 - **[`okn-bioanalysis`](skills/okn-bioanalysis/)** — methodology for biomedical
   knowledge-graph analysis and cross-KG hypothesis generation over the OKN
   federation's bio graphs (genes, proteins, diseases, phenotypes, pathways,
@@ -411,6 +412,7 @@ here `~/results/kidney-cancer-genes/`:
 | Path | Contents |
 | --- | --- |
 | `kidney-cancer-genes.ipynb` | The notebook: provenance, one cell per query with its recorded result, then the analysis |
+| `kidney-cancer-genes.html` | The executed notebook as one self-contained page, to read or share without Jupyter |
 | `queries/` | Each query as a `.rq` file, plus `manifest.json` with the graphs and logged row count of each |
 | `data/` | The rows each query returned during the chat |
 | `okn_sparql.py` | `run_query()` and `verify_all()`; needs only pandas |
@@ -419,8 +421,9 @@ here `~/results/kidney-cancer-genes/`:
 
 When mcp-okn runs on your own machine (stdio), the server writes the folder. When Claude
 uses the hosted server, Claude saves it, because a remote server cannot write to your disk.
-Either way, Claude's reply ends with the command to open the notebook, with your path
-filled in.
+Either way, Claude then executes the notebook to make the HTML page (in Claude Code; a
+client without a shell gives you the command instead), and its reply ends with the command
+to open the notebook, with your path filled in.
 
 ### Run a notebook
 
@@ -444,6 +447,15 @@ Jupyter, writing a copy with the new results:
 cd ~/results/kidney-cancer-genes
 OKN_RERUN=1 uv run --with nbconvert --with ipykernel --with-requirements requirements.txt \
   jupyter nbconvert --to notebook --execute --output kidney-cancer-genes-rerun.ipynb kidney-cancer-genes.ipynb
+```
+
+To render the HTML page again, for example after editing the analysis (it executes the
+notebook from the recorded rows):
+
+```bash
+cd ~/results/kidney-cancer-genes
+uv run --with nbconvert --with ipykernel --with-requirements requirements.txt \
+  jupyter nbconvert --to html --execute --embed-images --output kidney-cancer-genes.html kidney-cancer-genes.ipynb
 ```
 
 Without uv, run `pip install -r requirements.txt jupyterlab` and then
@@ -490,14 +502,13 @@ query → record**. The single table below is grouped in that order.
 | `reset_query_log()` | Clear the session query log. Call at the **start** of an analysis to scope a transcript. |
 | `get_query_log()` | Return the queries logged so far this session (only those that returned rows and weren't exploratory). |
 | `create_chat_transcript(model, exchanges, ...)` | Emit a reproducible markdown (or JSON) record of a session — prompts, answers, the verbatim queries + results that produced findings, and any `visualize_schema` diagrams. Call at the **end** of an analysis. |
-| `create_reproducibility_record(model, supporting, ...)` | Emit a **lean** reproducibility record — header + the verbatim supporting queries + row counts + per-query diagrams (gated by size), no conversation prose or result tables. Small enough to return **inline** so it saves directly; use it for the reproducibility deliverable. `supporting` optionally curates the log to the queries that underpin the findings. |
 | `create_jupyter_notebook(model, code_files, cells, figures, ...)` | Build a **re-runnable** Jupyter study folder: a notebook with the provenance header and one cell per logged query (cached results shown), `queries/*.rq`, the logged rows in `data/`, a pandas-only `okn_sparql.py` (`run_query` / `verify_all`), and your own code files, analysis cells and figures. A hosted server returns the folder as a `{path: content}` map to save verbatim; over stdio, pass `output_dir` and it writes the folder itself. |
 
 ### Resources
 
 | Resource | Purpose |
 | --- | --- |
-| `transcript://session/latest` (`text/markdown`) | The most recent record rendered by `create_chat_transcript` **or** `create_reproducibility_record`, so a client can fetch/save the document directly (transport-agnostic; works for remote servers). Cleared by `reset_query_log`. |
+| `transcript://session/latest` (`text/markdown`) | The most recent record rendered by `create_chat_transcript`, so a client can fetch/save the document directly (transport-agnostic; works for remote servers). Cleared by `reset_query_log`. |
 
 ---
 
@@ -552,7 +563,7 @@ src/mcp_okn/
     ├── joins.py          # get_join_strategy, taxon_overlap, list_crosswalks, find_context_sources
     ├── query.py          # sparql_query, expand_ontology_term
     ├── notebook_tools.py # create_jupyter_notebook (folder layout in notebook.py)
-    └── transcript.py     # reset/get_query_log, create_chat_transcript, create_reproducibility_record, resource
+    └── transcript.py     # reset/get_query_log, create_chat_transcript, resource
 ```
 
 ```bash

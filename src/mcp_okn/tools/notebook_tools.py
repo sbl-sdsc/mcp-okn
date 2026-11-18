@@ -13,7 +13,13 @@ from ..app import mcp
 from ..build_info import build_suffix
 from ..notebook import build_study, run_commands
 from ..sparql import FEDERATION_ENDPOINT
-from .transcript import _clean_entries, _resolve_sources, _skills_warning
+from .transcript import (
+    _active_window,
+    _chat_window,
+    _clean_entries,
+    _resolve_sources,
+    _skills_warning,
+)
 
 #: Set by the stdio entry point (`mcp_okn.server.main`), where the server runs on
 #: the user's own machine. A hosted (HTTP) server never writes a caller-chosen
@@ -35,7 +41,7 @@ def local_writes_enabled() -> bool:
 def _select(
     log: list[dict[str, Any]], supporting: list[dict[str, Any] | int] | None
 ) -> tuple[list[dict[str, Any]], list[str]]:
-    """The curated subset of the log, as `create_reproducibility_record` reads it."""
+    """The curated subset of the log named by `supporting`, in the order given."""
     if supporting is None:
         return list(log), []
     selected: list[dict[str, Any]] = []
@@ -95,21 +101,32 @@ def _write_folder(
 
 
 def _show_command(folder: str, notebook: str, saved_by_you: bool) -> dict[str, str]:
-    """The run commands, and the instruction to end the reply with the first one."""
+    """The run commands, and the instructions to render the HTML and show the first."""
     commands = run_commands(folder, notebook)
+    html = notebook.removesuffix(".ipynb") + ".html"
     where = (
-        f" Replace `{folder}` in it with the absolute path of the folder you saved."
+        f" Replace `{folder}` in these commands with the absolute path of the "
+        "folder you saved."
         if saved_by_you
         else ""
     )
     return {
         "run_command": commands["jupyter"],
         "rerun_command": commands["nbconvert"],
+        "html_command": commands["html"],
+        # The server never executes the notebook itself: its cells hold
+        # caller-written code, which belongs in the client's sandbox and under
+        # the user's permission prompts, not in the server process.
         "show_user": (
-            "Show the user how to run the notebook: at the END of your reply, give "
-            "`run_command` in a bash code block, as given, and say to choose Run → "
-            "Run All Cells once JupyterLab opens. It needs only uv; the folder's "
-            "requirements.txt supplies the rest." + where
+            f"Add the executed notebook as HTML: if you can run shell commands, run "
+            f"`html_command` now; it executes the notebook from the cached rows and "
+            f"writes `{html}` beside it (one self-contained page). Tell the user it "
+            "is there, or report the error if the command fails; if you have no "
+            "shell, give the user `html_command` instead. Then show the user how to "
+            "run the notebook: at the END of your reply, give `run_command` in a "
+            "bash code block, as given, and say to choose Run → Run All Cells once "
+            "JupyterLab opens. It needs only uv; the folder's requirements.txt "
+            "supplies the rest." + where
         ),
     }
 
@@ -131,6 +148,8 @@ async def create_jupyter_notebook(
     skills: list[str] | None = None,
     external_mcp_servers: list[str] | None = None,
     date: str | None = None,
+    chat_started: str | None = None,
+    chat_ended: str | None = None,
     scope: str | None = None,
     output_dir: str | None = None,
     overwrite: bool = False,
@@ -138,7 +157,7 @@ async def create_jupyter_notebook(
 ) -> dict[str, Any]:
     """Build a re-runnable Jupyter study folder: notebook, queries, data, code.
 
-    The rerunnable companion to `create_reproducibility_record`. The queries and
+    The session's reproducibility record. The queries and
     their results come from the session log (every non-exploratory, row-returning
     `sparql_query`), verbatim, so do not hand-write them. The parts only YOU have —
     your analysis code, the cells that use it, your figures — you pass in. Folder:
@@ -152,6 +171,8 @@ async def create_jupyter_notebook(
         data/qNN.csv              the logged rows (up to 1,000 per query)
         <your code_files>         e.g. analysis.py, importable from the notebook
         requirements.txt, README.md
+        <folder>.html             the executed notebook, once you run
+                                  `html_command` (see Returns)
 
     In the notebook, query k's rows are `data["qNN"]` (a pandas DataFrame, k
     zero-padded), loaded from `data/` unless `RERUN = True`.
@@ -165,14 +186,15 @@ async def create_jupyter_notebook(
 
     Args:
         model: The EXACT runtime model id (e.g. `claude-opus-4-8`), as for
-            `create_reproducibility_record`. If you cannot determine it, ASK.
+            `create_chat_transcript`. If you cannot determine it, ASK.
         title: Notebook title (H1); also the folder name unless `folder_name`.
-        folder_name: Folder (and notebook) name; slugged.
+        folder_name: Folder (and notebook) name. Used as given when it is letters,
+            digits, `-` and `_` (e.g. `MS_notebook`); anything else is slugged.
         kgs_used: KG shortnames the study is about; inferred from the queries if
             omitted. Same guards as the transcript tools: a query touching none of
             them is dropped as foreign, a named KG no query touched is flagged.
-        supporting: OPTIONAL curation of the log, as for
-            `create_reproducibility_record`: 1-based indices, or
+        supporting: OPTIONAL curation of the log: 1-based indices into it (the
+            order `get_query_log` shows), or
             `{"index": int, "description": str}` dicts (the description becomes the
             query's heading). None = every logged query, in order.
         code_files: Your generated text files, relative path → content (e.g.
@@ -198,6 +220,10 @@ async def create_jupyter_notebook(
             server cannot see them, so pass them (a warning says when you don't).
         external_mcp_servers: Other MCP servers whose calls fed the analysis.
         date: ISO date for the header; defaults to today.
+        chat_started: OPTIONAL ISO-8601 time the CHAT began (only you know it): the
+            header then shows the whole-chat "Elapsed time" instead of the "Study
+            active window" (first → last logged query).
+        chat_ended: OPTIONAL ISO-8601 end for `chat_started`; defaults to now.
         scope: The log scope passed to `sparql_query`, when subagents share a session.
         output_dir: Absolute directory to write `<folder>/` into. Only honored
             when the server runs locally; a hosted server returns `files` instead.
@@ -209,20 +235,33 @@ async def create_jupyter_notebook(
     Returns:
         `{"folder", "notebook", "files" | "written_to", "manifest" (path, chars),
         "figures_to_copy", "instructions", "run_command", "rerun_command",
-        "show_user", "warnings"?}`. Follow `show_user`: end your reply with
-        `run_command` in a bash block, so the user can open the notebook.
+        "html_command", "show_user", "warnings"?}`. Follow `show_user`: run
+        `html_command` to add `<folder>.html` (the executed notebook), then end
+        your reply with `run_command` in a bash block.
     """
     when = date or _date.today().isoformat()
     skill_list = _clean_entries(skills)
     server_list = _clean_entries(external_mcp_servers)
 
-    selected, warnings = _select(session.entries(scope), supporting)
+    log = session.entries(scope)
+    selected, warnings = _select(log, supporting)
     selected, kgs, guard_warnings = _resolve_sources(
         selected, [], kgs_used, check_phantom=True
     )
     warnings += guard_warnings
     if not skill_list:
         warnings.append(_skills_warning("notebook"))
+    # Timing: the whole chat when the caller knows its start, else the active-query
+    # window over the whole scoped log.
+    window = _chat_window(chat_started, chat_ended) if chat_started else None
+    window_label = "Elapsed time"
+    if chat_started and window is None:
+        warnings.append(
+            f"chat_started={chat_started!r} (or chat_ended) is not a parseable ISO-8601 "
+            "timestamp; fell back to the active-query window for the timing line."
+        )
+    if window is None:
+        window, window_label = _active_window(log), "Study active window"
 
     study = build_study(
         title=title,
@@ -242,6 +281,8 @@ async def create_jupyter_notebook(
         figures=figures,
         requirements=requirements,
         include_data=include_data,
+        window=window,
+        window_label=window_label,
     )
     warnings += study.warnings
     manifest: list[dict[str, Any]] = [

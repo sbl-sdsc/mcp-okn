@@ -4,8 +4,8 @@ A bump means editing the same number in four places — `metadata.version`, the 
 body ("this skill is `okn-bioanalysis v0.1.2`"), the example header in
 `references/report-structure.md`, and the example in the validator's error message —
 and nothing checked that they agreed. Missing one is not cosmetic: the SKILL.md body is
-what tells an agent which version string to pass to `create_reproducibility_record`, so a
-stale number there is copied verbatim into every record's provenance header, where it
+what tells an agent which version string to pass to `create_jupyter_notebook`, so a
+stale number there is copied verbatim into every notebook's provenance header, where it
 then PASSES `validate_okn_report` (which checks that a version is present, not which).
 
 Both directions are checked: a skill naming itself, and one skill naming its sibling

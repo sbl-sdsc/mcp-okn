@@ -6,11 +6,9 @@ from mcp_okn.server import (
     _clean_description,
     _rows_to_table,
     create_chat_transcript,
-    create_reproducibility_record,
     latest_transcript_resource,
 )
 from mcp_okn.sparql import FEDERATION_ENDPOINT
-from mcp_okn.tools.transcript import _render_query
 
 
 @pytest.fixture(autouse=True)
@@ -927,11 +925,10 @@ async def test_diagrams_off_does_not_bake_a_reminder():
 
     The reminder used to be a leading `<!-- mcp-okn WARNING: … -->` comment, but callers save the
     tool result verbatim, so it stayed baked into the artifact and read stale once the diagrams were
-    re-added. The re-add is now driven by the `include_query_diagrams` arg doc and enforced by the
-    `readd_query_diagrams.py --check` delivery gate instead, so the returned document stays clean."""
+    re-added, so the returned document now stays clean."""
     session.record(_q("sawgraph"), "json", result=JSON_RESULT)
     # `skills=` is passed so the header-provenance warning doesn't confound the check.
-    off = await create_reproducibility_record(
+    off = await create_chat_transcript(
         model="m", include_query_diagrams=False, skills=["okn-report-style v0.1.3"]
     )
     assert not off.startswith("<!--")  # no leading reminder comment
@@ -956,81 +953,6 @@ async def test_unparseable_query_skips_diagram_but_keeps_text():
     assert "```mermaid" not in md
 
 
-# --- create_reproducibility_record (the lean record) --------------------------
-
-
-@pytest.mark.asyncio
-async def test_record_fits_inline_with_counts_not_tables():
-    """The lean record returns an inline string with row COUNTS, not result tables
-    or conversation prose."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    session.record(_q("prokn"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(model="claude-opus-4-8")
-    assert isinstance(md, str)
-    assert "# Proto-OKN Reproducibility Record" in md
-    assert "## SPARQL queries" in md
-    assert "## Conversation" not in md
-    # row counts kept, full result table + its cell values dropped
-    assert "_2 row(s)_" in md
-    assert "| disease |" not in md
-    assert "kidney cancer" not in md
-    assert "**Contents:** 2 queries" in md
-
-
-@pytest.mark.asyncio
-async def test_record_notes_render_as_visible_section():
-    """`notes` renders a visible `## Notes` section under the header, before the
-    knowledge-graphs list — not an HTML comment."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(
-        model="m", notes="Compact COUNT re-registrations; full SELECTs in scripts/."
-    )
-    assert "## Notes" in md
-    assert "Compact COUNT re-registrations; full SELECTs in scripts/." in md
-    # visible markdown, not smuggled into an HTML comment
-    assert "<!-- Compact" not in md
-    # placed between the header and the KG list
-    assert md.index("## Notes") < md.index("## Knowledge graphs used")
-
-
-@pytest.mark.asyncio
-async def test_record_notes_omitted_when_absent():
-    """No `## Notes` section is emitted when `notes` is unset or blank."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(model="m")
-    assert "## Notes" not in md
-    blank = await create_reproducibility_record(model="m", notes="   ")
-    assert "## Notes" not in blank
-
-
-@pytest.mark.asyncio
-async def test_record_notes_in_json_payload():
-    """`notes` is carried on the JSON payload too (stripped), and absent when unset."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    payload = await create_reproducibility_record(
-        model="m", format="json", notes="  see scripts/  "
-    )
-    assert payload["notes"] == "see scripts/"
-    bare = await create_reproducibility_record(model="m", format="json")
-    assert "notes" not in bare
-
-
-@pytest.mark.asyncio
-async def test_record_skills_header_line():
-    """`skills` renders a header line directly under "Model"; absent when not passed."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(
-        model="m", skills=["okn-bioanalysis v0.1.0", "okn-report-style v0.1.1"]
-    )
-    assert "- **Skills:** okn-bioanalysis v0.1.0 · okn-report-style v0.1.1" in md
-    lines = md.splitlines()
-    assert lines.index(
-        "- **Skills:** okn-bioanalysis v0.1.0 · okn-report-style v0.1.1"
-    ) == (next(i for i, ln in enumerate(lines) if ln.startswith("- **Model:**")) + 1)
-    bare = await create_reproducibility_record(model="m")
-    assert not any(ln.startswith("- **Skills:**") for ln in bare.splitlines())
-
-
 @pytest.mark.asyncio
 async def test_generated_by_carries_the_build(monkeypatch):
     """Two records naming v0.1.0 can come from different code — the hosted server
@@ -1041,52 +963,16 @@ async def test_generated_by_carries_the_build(monkeypatch):
     monkeypatch.setenv("MCP_OKN_BUILD", "abc1234")
     build_info.build_id.cache_clear()
     try:
-        md = await create_reproducibility_record(model="m", skills=["okn-x v0.1.0"])
+        md = await create_chat_transcript(model="m", skills=["okn-x v0.1.0"])
         assert f"- **Generated by:** mcp-okn v{__version__} (build abc1234)" in md
         # An unidentifiable build prints no parenthetical rather than "(build unknown)".
         monkeypatch.setattr(build_info, "_from_git", lambda: "")
         monkeypatch.delenv("MCP_OKN_BUILD")
         build_info.build_id.cache_clear()
-        bare = await create_reproducibility_record(model="m", skills=["okn-x v0.1.0"])
+        bare = await create_chat_transcript(model="m", skills=["okn-x v0.1.0"])
         assert f"- **Generated by:** mcp-okn v{__version__}\n" in bare
     finally:
         build_info.build_id.cache_clear()
-
-
-@pytest.mark.asyncio
-async def test_external_mcp_servers_header_line():
-    """Connectors the session actually called ride in the header under "Skills" —
-    this server's KGs are only part of the evidence base, and the rest arrived
-    through servers only the client can see."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(
-        model="m",
-        skills=["okn-report-style v0.1.3"],
-        external_mcp_servers=["PubMed", "Paperclip"],
-    )
-    assert "- **External MCP servers:** PubMed · Paperclip" in md
-    lines = md.splitlines()
-    assert lines.index("- **External MCP servers:** PubMed · Paperclip") == (
-        lines.index("- **Skills:** okn-report-style v0.1.3") + 1
-    )
-    # Without skills it still sits directly under Model — the line above it, whichever
-    # that is, is never the endpoint or "Generated by".
-    no_skills = await create_reproducibility_record(
-        model="m", external_mcp_servers=["PubMed"]
-    )
-    lines = no_skills.splitlines()
-    assert lines.index("- **External MCP servers:** PubMed") == (
-        next(i for i, ln in enumerate(lines) if ln.startswith("- **Model:**")) + 1
-    )
-    # Same normalisation as skills, same JSON key, and the line is absent when unused.
-    payload = await create_reproducibility_record(
-        model="m", format="json", external_mcp_servers=[" PubMed ", "", "PubMed"]
-    )
-    assert payload["external_mcp_servers"] == ["PubMed"]
-    bare = await create_reproducibility_record(model="m", format="json")
-    assert "external_mcp_servers" not in bare
-    md_bare = await create_reproducibility_record(model="m")
-    assert "External MCP servers" not in md_bare
 
 
 @pytest.mark.asyncio
@@ -1107,25 +993,6 @@ async def test_transcript_external_mcp_servers_header_line():
 
 
 @pytest.mark.asyncio
-async def test_record_warns_when_skills_omitted():
-    """An omitted `skills=` is the one header field the server can't derive, so its
-    absence is reported at generation time — when regenerating is still one call."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    bare = await create_reproducibility_record(model="m")
-    assert "mcp-okn WARNING: no `skills=` passed" in bare
-    # The nudge is to regenerate, never to hand-add the line to the saved file.
-    assert "Do not hand-add the line" in bare
-    # Blank-only entries normalise to nothing, so they warn just the same...
-    blank = await create_reproducibility_record(model="m", skills=["  ", ""])
-    assert "no `skills=` passed" in blank
-    # ...and a real list silences it, on both output formats.
-    named = await create_reproducibility_record(model="m", skills=["okn-x v0.1.0"])
-    assert "no `skills=` passed" not in named
-    payload = await create_reproducibility_record(model="m", format="json")
-    assert any("no `skills=` passed" in w for w in payload["warnings"])
-
-
-@pytest.mark.asyncio
 async def test_transcript_warns_when_skills_omitted():
     """The full transcript carries the same header, so it carries the same tripwire —
     naming the transcript rather than the record."""
@@ -1137,23 +1004,6 @@ async def test_transcript_warns_when_skills_omitted():
     assert "no `skills=` passed" not in named
     payload = await create_chat_transcript(model="m", format="json")
     assert any("no `skills=` passed" in w for w in payload["warnings"])
-
-
-@pytest.mark.asyncio
-async def test_record_skills_normalised_and_in_json_payload():
-    """Blank/duplicate skill entries are dropped (order preserved) and the list rides
-    along on the JSON payload; the key is absent when nothing usable was passed."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(
-        model="m", skills=["  okn-report-style v0.1.1 ", "", "okn-report-style v0.1.1"]
-    )
-    assert "- **Skills:** okn-report-style v0.1.1\n" in md
-    payload = await create_reproducibility_record(
-        model="m", format="json", skills=[" okn-bioanalysis v0.1.0 "]
-    )
-    assert payload["skills"] == ["okn-bioanalysis v0.1.0"]
-    blank = await create_reproducibility_record(model="m", format="json", skills=["  "])
-    assert "skills" not in blank
 
 
 @pytest.mark.asyncio
@@ -1172,258 +1022,11 @@ async def test_transcript_skills_header_line():
 async def test_stub_carries_skills():
     """An over-size document returns a stub — its provenance keeps the skills line."""
     session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    stub = await create_reproducibility_record(
+    stub = await create_chat_transcript(
         model="m", max_inline_chars=10, skills=["okn-bioanalysis v0.1.0"]
     )
     assert "delivered via resource" in stub
     assert "- **Skills:** okn-bioanalysis v0.1.0" in stub
-
-
-@pytest.mark.asyncio
-async def test_record_default_timing_is_active_query_window():
-    """Without chat timestamps, the header shows the first→last logged-query window."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(model="m")
-    assert "**Study active window:**" in md
-    assert "**Elapsed time:**" not in md
-
-
-@pytest.mark.asyncio
-async def test_record_chat_started_shows_whole_chat_elapsed():
-    """`chat_started`/`chat_ended` replace the active-query window with the whole-chat
-    elapsed time, labelled 'Elapsed time'."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(
-        model="m",
-        chat_started="2026-07-18T09:03:00Z",
-        chat_ended="2026-07-18T11:47:00Z",
-    )
-    assert "**Study active window:**" not in md
-    assert "**Elapsed time:** 2026-07-18 09:03–11:47 UTC (2h 44m)" in md
-
-
-@pytest.mark.asyncio
-async def test_record_bad_chat_timestamp_warns_and_falls_back():
-    """An unparseable `chat_started` warns and falls back to the active-query window."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(model="m", chat_started="not-a-date")
-    assert "**Elapsed time:**" not in md
-    assert "**Study active window:**" in md
-    assert "not a parseable ISO-8601 timestamp" in md  # warning comment present
-
-
-@pytest.mark.asyncio
-async def test_record_elapsed_window_in_json_payload():
-    """The chosen timing window rides along on the JSON payload with its label."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    payload = await create_reproducibility_record(
-        model="m",
-        format="json",
-        chat_started="2026-07-18T09:03:00Z",
-        chat_ended="2026-07-18T09:05:00Z",
-    )
-    assert payload["elapsed_window"]["label"] == "Elapsed time"
-    assert "09:03–09:05 UTC (2m 0s)" in payload["elapsed_window"]["value"]
-
-
-@pytest.mark.asyncio
-async def test_record_prompt_renders_at_top():
-    """`prompt` renders a `## Prompt` section at the top — above Notes, KGs, and queries."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(
-        model="m",
-        prompt="Which proteins are shared between kidney cancer and SPOKE?",
-        notes="a note",
-    )
-    assert "## Prompt" in md
-    assert "Which proteins are shared between kidney cancer and SPOKE?" in md
-    assert md.index("## Prompt") < md.index("## Notes")
-    assert md.index("## Prompt") < md.index("## Knowledge graphs used")
-
-
-@pytest.mark.asyncio
-async def test_record_prompt_omitted_when_absent_and_in_json():
-    """No `## Prompt` when unset; present (stripped) on the JSON payload when given."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(model="m")
-    assert "## Prompt" not in md
-    payload = await create_reproducibility_record(
-        model="m", format="json", prompt="  do the thing  "
-    )
-    assert payload["prompt"] == "do the thing"
-
-
-@pytest.mark.asyncio
-async def test_record_appendix_merges_before_queries():
-    """`appendix` renders the replicator spec (verbatim, own headings) between the
-    header and the `## SPARQL queries` record — one combined file."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(
-        model="m",
-        appendix="## Rules, thresholds and joins\n- FDR < 0.05.",
-    )
-    assert "## Rules, thresholds and joins" in md
-    assert "- FDR < 0.05." in md
-    # placed after the header/KG list and before the query record
-    assert md.index("## Rules, thresholds and joins") < md.index("## SPARQL queries")
-    assert md.index("## Knowledge graphs used") < md.index(
-        "## Rules, thresholds and joins"
-    )
-
-
-@pytest.mark.asyncio
-async def test_record_appendix_omitted_when_absent():
-    """No appendix section is emitted when `appendix` is unset or blank."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(model="m")
-    assert "## SPARQL queries" in md
-    blank = await create_reproducibility_record(model="m", appendix="  ")
-    # blank appendix adds nothing before the query section
-    assert blank.count("##") == md.count("##")
-
-
-@pytest.mark.asyncio
-async def test_record_appendix_in_json_payload():
-    """`appendix` is carried on the JSON payload too (stripped)."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    payload = await create_reproducibility_record(
-        model="m", format="json", appendix="  ## Spec\n- x  "
-    )
-    assert payload["appendix"] == "## Spec\n- x"
-    bare = await create_reproducibility_record(model="m", format="json")
-    assert "appendix" not in bare
-
-
-@pytest.mark.asyncio
-async def test_record_diagram_gate_drops_and_keeps():
-    """`diagram_max_chars` drops an oversized query diagram (its SPARQL still shows)
-    and keeps one under a large budget."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    tiny = await create_reproducibility_record(model="m", diagram_max_chars=10)
-    assert "```mermaid" not in tiny
-    assert "query diagram" not in tiny  # manifest reflects the drop
-    assert "```sparql" in tiny  # the query text still shows
-    big = await create_reproducibility_record(model="m", diagram_max_chars=100_000)
-    assert "```mermaid" in big
-    assert "1 query diagram" in big
-
-
-@pytest.mark.asyncio
-async def test_record_curation_subset_and_order():
-    """`supporting` selects a subset by 1-based index, in the order given."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)  # 1
-    session.record(_q("prokn"), "json", result=JSON_RESULT)  # 2
-    session.record(_q("hydrologykg"), "json", result=JSON_RESULT)  # 3
-    md = await create_reproducibility_record(
-        model="m", supporting=[{"index": 3}, {"index": 1}]
-    )
-    assert md.count("```sparql") == 2
-    assert "kg/prokn" not in md  # index 2 excluded
-    # order honored: hydrologykg (3) appears before sawgraph (1)
-    assert md.index("kg/hydrologykg") < md.index("kg/sawgraph")
-
-
-@pytest.mark.asyncio
-async def test_record_curation_description_label():
-    """A `supporting` item's `description` becomes the query heading label."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(
-        model="m", supporting=[{"index": 1, "description": "the disease join"}]
-    )
-    assert "#### Query 1 — the disease join" in md
-
-
-@pytest.mark.asyncio
-async def test_record_out_of_range_index_warns():
-    """An out-of-range `supporting` index is skipped with a warning, not an error."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(model="m", supporting=[{"index": 9}])
-    assert md.startswith("<!--")
-    assert "out of range" in md.split("\n")[0]
-    assert md.count("```sparql") == 0  # nothing selected
-
-
-@pytest.mark.asyncio
-async def test_record_stub_when_oversized_publishes_full_to_resource():
-    """Over `max_inline_chars`, the record returns a stub; the full body is on the
-    resource (the delivery path that survives a size limit)."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(model="m", max_inline_chars=50)
-    assert "delivered via resource" in md
-    assert "transcript://session/latest" in md
-    assert "kg/sawgraph" not in md  # body withheld inline
-    full = latest_transcript_resource()
-    assert "kg/sawgraph" in full  # ...but present on the resource
-
-
-@pytest.mark.asyncio
-async def test_record_empty_log_placeholder():
-    """An empty log renders a placeholder and an empty Contents manifest."""
-    md = await create_reproducibility_record(model="m")
-    assert "_No queries logged._" in md
-    assert "**Contents:** no queries or diagrams" in md
-
-
-@pytest.mark.asyncio
-async def test_record_manifest_matches_fence_counts():
-    """The Contents manifest is a checkable invariant: its counts equal the actual
-    fenced-block counts in the document."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    session.record(_q("prokn"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(model="m")
-    assert f"**Contents:** {md.count('```sparql')} queries" in md
-    assert f"{md.count('```mermaid')} query diagrams" in md
-
-
-@pytest.mark.asyncio
-async def test_record_publishes_to_resource():
-    """A normal (inline) run still publishes the full markdown to the resource."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    md = await create_reproducibility_record(model="m", skills=["okn-x v0.1.0"])
-    assert latest_transcript_resource() == md
-    # The published document is the clean artifact — warnings are for the caller only.
-    bare = await create_reproducibility_record(model="m")
-    assert bare.startswith("<!-- mcp-okn WARNING")
-    assert latest_transcript_resource() == bare.split("-->\n", 1)[1]
-
-
-@pytest.mark.asyncio
-async def test_record_json_format():
-    """`format='json'` returns a structured payload (queries + KGs), no tables."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    out = await create_reproducibility_record(model="m", format="json")
-    assert isinstance(out, dict)
-    assert out["model"] == "m"
-    assert [e["graphs"] for e in out["query_log"]] == [["sawgraph"]]
-    assert out["knowledge_graphs"][0]["shortname"] == "sawgraph"
-    assert out["generated_by"]["version"] == __version__
-
-
-@pytest.mark.asyncio
-async def test_record_drops_foreign_and_flags_phantom():
-    """The shared provenance guards apply: a foreign query is dropped, and a named
-    KG no selected query touched is flagged phantom."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    session.record(_q("prokn"), "json", result=JSON_RESULT)  # foreign
-    md = await create_reproducibility_record(
-        model="m", kgs_used=["sawgraph", "ubergraph"]
-    )
-    warn_block = md.split("# Proto-OKN")[0]  # the HTML-comment warnings, one per line
-    assert "prokn" in warn_block  # foreign-drop warning names it
-    assert "ubergraph" in warn_block  # phantom warning names it
-    assert "kg/prokn" not in md  # dropped from the body
-
-
-def test_render_query_counts_only_unit():
-    """`_render_query(counts_only=True)` emits a row-count line and no table."""
-    lines = _render_query(
-        {"sparql": _q("sawgraph"), "row_count": 7, "results": JSON_RESULT},
-        "Query 1",
-        counts_only=True,
-    )
-    text = "\n".join(lines)
-    assert "_7 row(s)_" in text
-    assert "| disease |" not in text
 
 
 @pytest.mark.asyncio
@@ -1433,31 +1036,6 @@ async def test_chat_transcript_diagram_gate():
     md = await create_chat_transcript(model="m", diagram_max_chars=10)
     assert "```mermaid" not in md
     assert "```sparql" in md
-
-
-@pytest.mark.asyncio
-async def test_record_supporting_accepts_bare_ints():
-    """`supporting` accepts bare 1-based indices (easy batching), not only dicts."""
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)  # 1
-    session.record(_q("prokn"), "json", result=JSON_RESULT)  # 2
-    session.record(_q("hydrologykg"), "json", result=JSON_RESULT)  # 3
-    md = await create_reproducibility_record(model="m", supporting=[3, 1])
-    assert md.count("```sparql") == 2
-    assert md.index("kg/hydrologykg") < md.index("kg/sawgraph")  # order honored
-    assert "kg/prokn" not in md
-
-
-@pytest.mark.asyncio
-async def test_record_stub_surfaces_supporting_recovery():
-    """An over-size record's stub must be actionable — it points to the `supporting`
-    recovery (curate / batch), not just the resource, so the caller never gives up."""
-    for _ in range(3):
-        session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    stub = await create_reproducibility_record(model="m", max_inline_chars=50)
-    assert "transcript://session/latest" in stub  # still points to the resource
-    assert "supporting=" in stub  # ...but also the actionable recovery
-    assert "get_query_log" in stub
-    assert "missing" in stub.lower()  # framed as "never leave it missing"
 
 
 def test_active_window_elapsed_from_timestamps():
@@ -1480,24 +1058,3 @@ def test_active_window_elapsed_from_timestamps():
     ]
     win = _active_window(entries)
     assert win == "2026-07-17 14:02–15:47 UTC (1h 45m)"
-
-
-@pytest.mark.asyncio
-async def test_record_header_has_study_active_window():
-    """The reproducibility record's header carries the study active window, spanning the
-    WHOLE scoped log even when `supporting` curates the shown queries to a subset."""
-    from datetime import datetime, timedelta, timezone
-
-    session.record(_q("sawgraph"), "json", result=JSON_RESULT)
-    session.record(_q("prokn"), "json", result=JSON_RESULT)
-    ents = session.entries()
-    base = datetime(2026, 7, 17, 9, 0, 0, tzinfo=timezone.utc)
-    ents[0]["timestamp"] = base.isoformat(timespec="seconds")
-    ents[1]["timestamp"] = (base + timedelta(minutes=30)).isoformat(timespec="seconds")
-    md = await create_reproducibility_record(
-        model="m", supporting=[1], max_inline_chars=None
-    )
-    assert "- **Study active window:** 2026-07-17 09:00–09:30 UTC (30m 0s)" in md
-    assert (
-        "**Contents:** 1 query" in md
-    )  # window spans the log; contents is the curated subset

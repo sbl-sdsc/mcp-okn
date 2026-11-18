@@ -19,7 +19,7 @@ compatibility: >-
   to render the HTML report, figures, workbook, and maps.
 metadata:
   author: sbl-sdsc
-  version: "0.1.7"
+  version: "0.2.0"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -50,7 +50,7 @@ abbreviation (`T2D_…`) that disagrees with the folder.
 ├── <study>_results.xlsx         # machine-readable multi-sheet workbook
 ├── figures/  fig1_*.png …        # one PNG per figure, numbered in document order
 ├── data/     *.tsv / *.json      # intermediate extracts (for reproducibility)
-├── scripts/  *.py                # the exact scripts used (for reproducibility)
+├── scripts/  *.py                # the exact scripts that built the report (figures, workbook, HTML)
 ├── <study>_literature_comparison.md      # §8's per-claim record (OPTIONAL — present only when §8 was
 │                                  #   done; if §8 is omitted-and-stated, this file is absent):
 │                                  #   one entry per checked claim,
@@ -59,16 +59,19 @@ abbreviation (`T2D_…`) that disagrees with the folder.
 │                                  #   report's §12 entry for any shared paper; every [N] resolves
 │                                  #   here). A SIBLING deliverable — never inside data/, which
 │                                  #   holds machine extracts, not prose.
-└── <study>_reproducibility.md            # ONE file: replicator spec (rules, thresholds, joins,
-                                  #   verified quantities, limitations) + verbatim supporting queries
-                                  #   & row counts — from create_reproducibility_record (spec via appendix=)
+└── <study>_notebook/              # THE reproducibility record — a re-runnable Jupyter study from
+    ├── <study>_notebook.ipynb    #   create_jupyter_notebook(folder_name="<study>_notebook"): prompt,
+    ├── <study>_notebook.html     #   replicator spec, every supporting query verbatim with its rows,
+    ├── queries/  data/           #   the analysis code, and the executed notebook as HTML
+    ├── okn_sparql.py  <analysis>.py
+    └── requirements.txt  README.md
 ```
 
 **Build in scratch, deliver by allowlist.** Do all the messy work — previews, inspection logs, temp
 transcripts, diagram work-lists, `*_small` subsets, alternate builders — in a **scratch dir**, and copy
 **only** the allowlisted artifacts into the delivered folder. The delivered folder's top level is
-**exactly** the five `<study>_*` files above plus `figures/`, `data/`, `scripts/` — nothing else. And
-within those dirs:
+**exactly** the `<study>_*` files and the `<study>_notebook/` folder above plus `figures/`, `data/`,
+`scripts/` — nothing else. And within those dirs:
 
 - **`data/` is machine extracts + reproducibility intermediates** — `*.csv` / `*.tsv` / `*.json`
   extracts, and the reproducibility inputs that regenerate the report (a `diagrams.json` cache, a
@@ -78,15 +81,17 @@ within those dirs:
   *without* calling `build_report_from_markdown` is the highlights-reel anti-pattern. A thin per-study
   driver that builds the table/KPIs and **does** call `build_report_from_markdown` is correct (even if it
   is named `build_html.py`).
-- **No scratch/QA/temp files anywhere** — no `__pycache__/`, `.DS_Store`, `*.tmp`, `*~`, `*.queries.json`,
+- **No scratch/QA/temp files anywhere** — no `__pycache__/`, `.ipynb_checkpoints/`, `.DS_Store`, `*.tmp`,
+  `*~`, `*.queries.json`,
   `*_old*`, `*copy*`, `preview*`, `worklist*` in the deliverable. These, not the reproducibility
   intermediates above, are the junk to keep in scratch.
 
 Then present the deliverable by **linking the whole `<study>/` folder**, not a single file. The report
 is a package — the reader needs the report `.md`/`.html`, the workbook, `figures/`, `data/`, `scripts/`,
-and the reproducibility record together — so hand over the **folder** (or a zip of it) via the
+and the reproducibility notebook together — so hand over the **folder** (or a zip of it) via the
 file-presentation tool and name the key entry points inside it (open `<study>_report.html` for the
-interactive report; `<study>_results.xlsx` for the data). Surfacing only the `.html` (or only the
+interactive report; `<study>_results.xlsx` for the data; `<study>_notebook/` to rerun the study), and
+end your reply with the notebook's run command (see *Reproducibility notebook*). Surfacing only the `.html` (or only the
 `.md`) hides the rest of the package. **`python scripts/validate_okn_report.py <study>/` is the blocking
 gate that enforces all of the above** — see *Delivery gate* below; do not claim the report is done until
 it prints `[validate_okn_report] PASS`.
@@ -100,11 +105,12 @@ another or "deduplicate" them away:
   placeholder** and let the tooling fill it: `fill_stats(text, stats)` for the delivered `.md` (so it
   reads standalone), `build_report_from_markdown(..., stats=…)` for the `.html`, `kpis_from_stats(stats,
   spec)` for the KPI cards — one edit updates prose, HTML, and cards at once.
-- **`_reproducibility.md` is not a retelling.** It leads with the **originating user prompt** VERBATIM
-  (`create_reproducibility_record`'s `prompt=`), then the replicator SPEC (rules, thresholds, joins,
-  verified quantities, limitations — `appendix=`), then the **verbatim SPARQL** supporting the findings,
-  each with its row count (its unique payload — the queries exist nowhere else; full result data stays
-  in the `.xlsx` / `data/`). Spec + queries live in this ONE file — do not split them back into two.
+- **The notebook is the record, not a retelling.** Its header carries the **originating user prompt**
+  VERBATIM (`prompt=`); its first analysis cell is the replicator SPEC (rules, thresholds, joins,
+  verified quantities, limitations); then the **verbatim SPARQL** supporting the findings, each with
+  the rows it returned, and the analysis code that turns those rows into the reported numbers. The
+  queries exist nowhere else in the package. Spec + queries + code live in this ONE folder — no
+  separate `_reproducibility.md`, transcript or spec file.
 - **`.xlsx` is the data**, not a narrative.
 
 ## Report structure (Markdown)
@@ -123,7 +129,7 @@ come between them, and nothing follows References:
    and *only* those: a KG credited from an unlogged / exploratory / prior-knowledge source is a
    **phantom — cut it**. Every source must trace to a logged query.
 3. **Design & rules** — narrate the selection rules / thresholds / joins for a reader; keep the exact
-   replicator spec in the reproducibility file, not restated here.
+   replicator spec in the notebook's specification cell, not restated here.
 4. **Confidence tiers** — how results are graded (A / B / C) and the tier distribution.
 5. **Findings by axis** — one subsection per analysis axis, each with figure + legend + interpretation.
 6. **Domain analyses** — the domain deep dives. **When an analysis is a family (e.g. GO *and* Reactome
@@ -141,19 +147,11 @@ come between them, and nothing follows References:
 9. **Full ranked results** — pointer to xlsx / tsv + the interactive HTML table + a prose slice.
 10. **Summary of findings & limitations** — **always end the report here**: a findings recap, then the
     caveats as a numbered list. **This is the single home for the caveats list — don't duplicate it.**
-11. **Reproducibility** — **one sentence and a link** to the single `_reproducibility.md`, naming
-    what it contains; scripts in `scripts/`, extracts in `data/`. Do not restate the spec, list
-    script filenames, repeat KG versions or give a timing line — the record holds all of it (it
-    carries the header timing; pass `chat_started=` for whole-chat elapsed, else the active-query
-    window). Pass `model=` — the **exact runtime model identifier**, matching the report title
-    block character for character; ask the user if you cannot determine it (*Exact model
-    provenance* above). Also pass `skills=` — every skill you actually followed, `"<name>
-    v<version>"` from each one's frontmatter `metadata.version` (this skill is `okn-report-style
-    v0.1.7`) — so the header records the methodology, not just the model; and
-    `external_mcp_servers=` — every OTHER
-    MCP connector a call actually fed the analysis from (`["PubMed", "Paperclip", …]`), so the
-    header shows the whole evidence base, not just the KGs. Token/cost isn't visible to the tooling —
-    cite client figures or omit.
+11. **Reproducibility** — **one sentence, a link and the run command** for `<study>_notebook/`,
+    naming what it contains; report-building scripts in `scripts/`, extracts in `data/`. Do not
+    restate the spec, list script filenames, repeat KG versions or give a timing line — the notebook
+    holds all of it (see *Reproducibility notebook*). Token/cost isn't visible to the tooling — cite
+    client figures or omit.
 12. **References** — numbered, one fixed shape: `Author, et al. Title. *Journal*. Year. PMID:… ·
     [doi:…](…)`, plus ` — full-text-verified (<link>)` on entries read in full (the **PMC** id or a
     Paperclip line-anchored URL — never a bare marker). Fields from the NCBI `esummary`, not memory;
@@ -183,12 +181,12 @@ Record the **exact runtime model identifier** for the session that did the analy
 - **Generic values are prohibited** — `Claude`, `GPT-5`, `GPT-4`, `Codex`, `Gemini`, `OpenAI model`,
   `latest model`, `unknown`, `<model>`. Each looks filled in and identifies nothing.
 - **If the identifier is missing, inaccessible, or ambiguous, STOP and ask the user** — *"What exact
-  model identifier should I record in the report and reproducibility metadata (e.g.
+  model identifier should I record in the report and reproducibility notebook (e.g.
   `gpt-5.6-sol`)?"* Do not substitute a best guess, leave a placeholder, or silently omit the field.
 - **Use the identical string in all three artifacts**: the Markdown title block (`**Model:** …`), the
   rendered HTML header (automatic — `build_report_from_markdown` lifts the title block's date line
   verbatim, so this holds as long as you do not hand-build the HTML), and
-  `create_reproducibility_record(model=…)`.
+  `create_jupyter_notebook(model=…)`.
 
 The server stores `model=` verbatim without inspecting it — it cannot see which model is calling it,
 so nothing but this rule stands between a wrong id and a shipped report. `validate_okn_report.py`
@@ -302,11 +300,55 @@ sub-analysis, any retrieved items, and a **Methods & Rules** sheet including an 
 Professional font (Arial), header fill, wrapped text. `openpyxl` is sufficient for results data
 (not formulas); if you do add formulas, recalculate and check for errors.
 
+## Reproducibility notebook
+
+Build the record last, once the findings are final, with ONE call:
+
+```
+create_jupyter_notebook(
+    model="<exact model id>",            # identical to the report title block
+    title="<report title>", folder_name="<study>_notebook",
+    prompt="<originating user prompt, verbatim>",
+    supporting=[…],                      # OPTIONAL: curate to the findings' queries (keep every
+                                         #   query a credited source depends on)
+    code_files={"analysis.py": "…"},     # the code that turns query rows into the reported numbers
+    cells=[{"type": "markdown", "source": "## Replicator specification\n\n…"},   # FIRST
+           {"type": "code", "source": "from analysis import …"}, …],
+    figures=[{"path": "figures/fig1_….png", "caption": "…", "source": "<study>/figures/fig1_….png"}],
+    requirements=["matplotlib>=3.7", …],
+    skills=["okn-report-style v0.2.0", …],   # every skill you followed, "<name> v<version>"
+    external_mcp_servers=["PubMed", …],      # every other connector that fed the analysis
+    chat_started="<ISO-8601>",           # OPTIONAL: whole-chat elapsed time in the header
+    output_dir="<absolute path of <study>/>",   # honoured when the server runs locally
+)
+```
+
+- **Where it lands.** A local (stdio) server writes `<study>/<study>_notebook/` itself. The hosted
+  server returns `files` instead: save every entry **verbatim** under `<study>/<study>_notebook/`
+  and copy each `figures_to_copy` image to its path. `folder_name` is kept as given, so the folder
+  shares the study prefix.
+- **Make it reproduce the findings, not just the queries.** In the notebook, query k's rows are
+  `data["qNN"]` (a pandas DataFrame). Put the analysis in `code_files` and call it from `cells`, so a
+  run recomputes the headline numbers and redraws the figures (have a figure cell save to its
+  `figures` path). The spec is the first markdown cell; it is the single home of the replicator detail.
+- **Render it.** Run the result's `html_command` once the folder is saved; it executes the notebook
+  from the cached rows and writes `<study>_notebook.html` beside it. If you have no shell, give the
+  user the command and say the package is incomplete until it has run.
+- **Show how to rerun it.** End your reply with the result's `run_command` in a bash block, and say to
+  choose Run → Run All Cells once JupyterLab opens (it needs only [uv](https://docs.astral.sh/uv/)).
+
+Pass `model=` — the **exact runtime model identifier**, matching the report title block character for
+character; ask the user if you cannot determine it (*Exact model provenance* above). `skills=` records
+the methodology (this skill is `okn-report-style v0.2.0`; versions from each skill's frontmatter
+`metadata.version`), and `external_mcp_servers=` the evidence base beyond the KGs. The server can see
+neither, so only these arguments put them on the record. Failure modes and fixes:
+**`references/failure-modes.md`** (*Reproducibility notebook incomplete…*).
+
 ## Common failure modes
 
 The full catalog of real report failures and their fixes is **`references/failure-modes.md`** — skim
 it before delivering, and read it in full for the two procedures that recur most (the hand-built
-"highlights-reel" HTML and the dropped / diagram-bloated reproducibility transcript). The ones to keep
+"highlights-reel" HTML and the incomplete reproducibility notebook). The ones to keep
 front of mind:
 
 - **Hand-built / "highlights-reel" HTML** that silently drops mandatory sections (§2 Sources, §10
@@ -314,14 +356,13 @@ front of mind:
   `build_report_from_markdown` and see `[check_report_parity] PASS` before presenting. Do **not** copy
   `docs/examples/*/build_html.py` — those are the anti-pattern.
 - **Phantom source** — a KG credited with no logged query behind it → cut it, or re-run the bridge
-  query non-exploratory so it's in the transcript.
+  query non-exploratory so it's in the session log (and so in the notebook).
 - **Numbers drifting** across `.md` / `.html` / `.xlsx` → single `stats.json` + `{{key}}` placeholders,
   filled by the tooling; grep the three artifacts to confirm they match.
-- **Reproducibility transcript stubbed or bloated** — a stub (log too large) is a next step, not a stop:
-  re-call with curated `supporting=[…]` indices. If per-query mermaid diagrams cause the bloat/spill,
-  generate diagram-free (`include_query_diagrams=False`) then re-add via
-  `scripts/readd_query_diagrams.py` — do BOTH halves and end on `[readd_query_diagrams] PASS`. Full
-  defer-and-re-add recipe + the `--check` fidelity gate: **`references/failure-modes.md`**.
+- **Reproducibility notebook incomplete** — `files` withheld (too large) is a next step, not a stop:
+  curate `supporting=[…]`, or `include_data=False`; a file not saved or a figure not copied; analysis
+  code left out so the notebook only reruns the queries; no `.html` because `html_command` never ran.
+  Fixes: **`references/failure-modes.md`**.
 - **Figure problems** — legend/caption baked into the PNG, in-plot overlap, out-of-order numbering,
   bare lat/long scatter, same data split across sections → legend below, re-read the rendered PNG,
   renumber on reorder, use a street basemap, consolidate. (All expanded in the reference.)
@@ -330,8 +371,8 @@ front of mind:
 
 **A report is not "done" until `python scripts/validate_okn_report.py <study>/` prints
 `[validate_okn_report] PASS`.** Run it on the finished folder as the last step. It is the single
-package-level gate that *composes* the two content gates (`check_report_parity`,
-`readd_query_diagrams --check`) and adds the structural checks nothing else covered, so one command
+package-level gate that *composes* the content gate (`check_report_parity`) and adds the structural
+checks nothing else covered, so one command
 either passes or names every violation. A FAIL — or never having run it — is blocking; fix and re-run,
 never hand-wave a failure away. Exit code is 0 on PASS, 1 on any error (warnings never fail the build).
 
@@ -341,8 +382,11 @@ It rejects, each as a blocking error:
    or directory (the allowlist is exact).
 2. **Naming** — a top-level file not prefixed with the study token, or a workbook not named
    `<study>_results.xlsx`.
-3. **Split reproducibility** — more than one reproducibility/transcript/spec file (spec + verbatim
-   queries must be ONE file).
+3. **Reproducibility notebook** — `<study>_notebook/` missing or misnamed; its notebook unreadable; a
+   file it lists (`okn_sparql.py`, `requirements.txt`, a query, a cached-rows file) or an image it shows
+   not saved; no queries recorded; or no `<study>_notebook.html` (a page older than the notebook only
+   warns). Also any second reproducibility/transcript/spec document, such as a leftover
+   `_reproducibility.md`.
 4. **`data/` pollution** — the `<study>_literature_comparison.md` misfiled inside `data/` (it is a
    top-level sibling). Reproducibility intermediates (`diagrams.json`, `mermaid/`, the template, subset
    extracts) are allowed; an unusual extension only warns.
@@ -354,17 +398,15 @@ It rejects, each as a blocking error:
    text).
 8. **Section order** — Sources absent, sections out of the required order, or the report not ending
    Reproducibility → References.
-9. **Missing skills provenance** — the reproducibility header has no `- **Skills:**` line, or one that
+9. **Missing skills provenance** — the notebook header has no `- **Skills:**` line, or one that
    doesn't name `okn-report-style` (it built this package, so it belongs there). The server can't see
    your session's skills, so only `skills=` puts them on the record — fix it by regenerating with
-   `skills=[...]`, never by hand-adding the line. An entry without a version only warns.
-10. **Model provenance** — the report `.md` title block, the `.html` header, or the reproducibility
-    record has no `Model:` value; the value is a family/product name or placeholder (`Claude`,
+   `skills=[...]`, never by hand-editing the cell. An entry without a version only warns.
+10. **Model provenance** — the report `.md` title block, the `.html` header, or the notebook header
+    has no `Model:` value; the value is a family/product name or placeholder (`Claude`,
     `GPT-5`, `unknown`, `<model>`) rather than an exact id; or the three do not match exactly. See
     *Exact model provenance* above.
-11. **SPARQL → Mermaid** — a ```sparql block with no faithful ```mermaid diagram, a stale warning
-   notice, or a header `Contents:` count that disagrees with the body (via `readd_query_diagrams.check`).
-12. **HTML/Markdown parity** — the `.html` drops sections, is much shorter than the `.md`, or is not one
+11. **HTML/Markdown parity** — the `.html` drops sections, is much shorter than the `.md`, or is not one
     well-formed document (via `check_report_parity`).
-13. **Scratch/QA/temp junk** — `__pycache__/`, `.DS_Store`, `*.tmp`, `*~`, `*.queries.json`, `*_old*`,
+12. **Scratch/QA/temp junk** — `__pycache__/`, `.ipynb_checkpoints/`, `.DS_Store`, `*.tmp`, `*~`, `*.queries.json`, `*_old*`,
     `*copy*`, `preview*`, `worklist*` anywhere inside the folder.

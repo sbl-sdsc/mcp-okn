@@ -267,7 +267,7 @@ def _link_tag(m):
     """A Markdown link → `<a>` only when the destination is absolute.
 
     The HTML report is self-contained and gets copied around on its own, so a
-    RELATIVE destination (a sibling `_reproducibility.md`, something under
+    RELATIVE destination (the `<study>_notebook/` folder, something under
     `data/`) is a link that breaks the moment the file leaves its folder. Name
     the target instead of promising navigation to it — the `.md` beside it keeps
     the working relative link."""

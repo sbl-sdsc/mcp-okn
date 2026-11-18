@@ -18,8 +18,9 @@ SKILL's *Interactive HTML report* + failure-mode notes). Author the number once,
 
 ## Linking between deliverables
 
-§8 points at the literature comparison and §11 at the reproducibility record. Write both as
-**relative sibling links in the `.md`** — `[<study>_reproducibility.md](<study>_reproducibility.md)`.
+§8 points at the literature comparison and §11 at the reproducibility notebook. Write both as
+**relative links in the `.md`** — `[<study>_literature_comparison.md](<study>_literature_comparison.md)`,
+`[<study>_notebook/](<study>_notebook/<study>_notebook.ipynb)`.
 The folder is the unit of delivery, so the target travels with the report: the link works from a
 local folder, a zip, a shared drive, any repo, and offline.
 
@@ -64,10 +65,10 @@ stripped (`claude-opus-5[1m]` → `claude-opus-5`). Never infer it from the assi
 from wording like *"based on GPT-5"*, and never write a family name, product name, or placeholder
 (`Claude`, `GPT-5`, `Codex`, `OpenAI model`, `latest model`, `unknown`, `<model>`) — each one reads as
 filled-in provenance while identifying nothing. **If you cannot determine the exact identifier, ask
-the user for it** before generating the report or the reproducibility record; a guess, a placeholder,
+the user for it** before generating the report or the reproducibility notebook; a guess, a placeholder,
 and a silent omission are all worse than the question. The same string must appear in the rendered
 `.html` header (automatic when the HTML is rendered from this `.md`) and in
-`create_reproducibility_record(model=…)` — `validate_okn_report.py` fails the package on a missing,
+`create_jupyter_notebook(model=…)` — `validate_okn_report.py` fails the package on a missing,
 generic, or inconsistent value.
 
 ## 1. Executive summary
@@ -84,18 +85,18 @@ one missing a KG the queries touched, is incomplete. **The rule is bidirectional
 it was actually queried** (has logged queries). Never give a row — or a `sources (n)` pill — to a KG
 whose contribution came from an unlogged / exploratory query or from prior knowledge; every source
 and every cross-KG claim must trace to a logged query. A bridge graph credited with a join (e.g.
-`ubergraph` for a DOID→MONDO equivalence) must have that query in the transcript, or it is a phantom
-source — remove it. (When you curate `create_reproducibility_record`'s `supporting` set, keep every
-query a credited source depends on — leaving one out trips the same phantom-source guard.)
+`ubergraph` for a DOID→MONDO equivalence) must have that query in the session log, or it is a phantom
+source — remove it. (When you curate `create_jupyter_notebook`'s `supporting` set, keep every query a
+credited source depends on — leaving one out trips the same phantom-source guard.)
 
 ## 3. Design & rules
 **Narrate** the selection logic for a *reader*: what was included / excluded and why, the headline
 thresholds, and the join keys in plain terms — plus an **inventory / cohort table rebuilt live** with
 verified counts. Add the main design / overview figure here (Figure 1). **Do not restate the exact
 specification here** — the replicator-grade detail (every join key, the exact backgrounds, scoring
-formulas such as `1/sqrt(fanout)`) lives *only* in the **reproducibility file's spec section** (the
-`appendix=` block of `create_reproducibility_record`); cross-reference it ("full specification in the
-reproducibility file") rather than duplicating it. §3 is for a reader; the spec section is for a
+formulas such as `1/sqrt(fanout)`) lives *only* in the **notebook's `## Replicator specification`
+cell** (the first markdown cell of `create_jupyter_notebook`'s `cells`); cross-reference it ("full
+specification in the reproducibility notebook") rather than duplicating it. §3 is for a reader; the spec section is for a
 replicator — the same thresholds spelled out in both is drift waiting to happen.
 
 ## 4. Confidence tiers
@@ -254,26 +255,33 @@ Reproducibility section that ends the document (with References earlier, or abse
 a "Sources"/"Deliverables" section appended after them. §10 is the last section a reader reads as
 prose; §11 and §12 are back-matter and stay in that order.
 
-**One sentence, then the link. This section is a signpost, not a summary.** Say that everything
-needed to replicate the analysis — originating prompt, replicator specification, every supporting
-SPARQL query verbatim with its row count, verified quantities, pinned KG versions and timing — is
-in **`<study>_reproducibility.md`** (link form per *Linking between deliverables*),
-with scripts in `scripts/` and intermediate extracts in `data/`.
+**A sentence, the link, and the run command. This section is a signpost, not a summary.** Say that
+everything needed to rerun the analysis — the originating prompt, the replicator specification, every
+supporting SPARQL query verbatim with the rows it returned, the analysis code, and pinned provenance —
+is in the **`<study>_notebook/`** folder (link form per *Linking between deliverables*), that
+`<study>_notebook/<study>_notebook.html` shows it executed, and how to open it:
+
+```bash
+cd <study>/<study>_notebook
+uv run --with jupyterlab --with-requirements requirements.txt jupyter lab <study>_notebook.ipynb
+```
+
+(the tool's `run_command`, with the path made relative to the study folder; it needs only
+[uv](https://docs.astral.sh/uv/)). Report-building scripts are in `scripts/`, extracts in `data/`.
 
 Do **not** restate the spec here: no enumerated script filenames (`scripts/` is its own listing),
 no repeated KG versions (§2 pins them), no timing line, no re-derived counts. Every one of those
-already lives in the record this section points at, and a second copy is a second thing to keep in
-sync. If a fact exists *only* in §11 — a post-hoc re-verification, a corrected quantity — it
-belongs in `_reproducibility.md`; move it there rather than keeping the section long.
+already lives in the notebook this section points at, and a second copy is a second thing to keep in
+sync. If a fact exists *only* in §11 — a post-hoc re-verification, a corrected quantity — it belongs
+in the notebook's specification cell; move it there rather than keeping the section long.
 
-The record itself still carries the timing, written by `create_reproducibility_record` (the spec
-passed as `appendix=`): by default the **study active window** (first→last logged-query wall-clock,
-UTC — a lower bound that excludes pre-first-query framing and post-last-query writing, and
-collapses when large extraction queries went unlogged); for **whole-chat elapsed time** instead,
-pass `chat_started` (ISO-8601 — the server can't know it) and optionally `chat_ended`, giving
+The notebook header still carries the timing, written by `create_jupyter_notebook`: by default the
+**study active window** (first→last logged-query wall-clock, UTC — a lower bound that excludes
+pre-first-query framing and post-last-query writing); for **whole-chat elapsed time** instead, pass
+`chat_started` (ISO-8601 — the server can't know it) and optionally `chat_ended`, giving
 `**Elapsed time:** <start>–<end> UTC (<elapsed>)`.
 
-The record's header also carries the **model** — `- **Model:** claude-opus-5`, from the required
+The notebook's header also carries the **model** — `- **Model:** claude-opus-5`, from the required
 `model=` argument. The server stores that string verbatim: it cannot see which model is calling it,
 so it can neither derive the value nor tell a right one from a wrong one. Pass the **exact runtime
 model identifier**, identical to the report title block's (see *Title block* above), and ask the user
@@ -281,7 +289,7 @@ if you cannot determine it — a family name, a product name, or an inferred id 
 mis-attributes the whole analysis.
 
 The header also carries the **skills** that shaped the run — `- **Skills:** okn-bioanalysis
-v0.1.2 · okn-report-style v0.1.7` — but only if you pass `skills=[...]`: the server cannot see which
+v0.1.3 · okn-report-style v0.2.0` — but only if you pass `skills=[...]`: the server cannot see which
 skills your session loaded, so an omitted list silently reads as "no methodology skill was used".
 Give each as `"<name> v<version>"`, the version taken from that skill's frontmatter
 `metadata.version` (not guessed), and list only skills you actually followed — a skill you didn't use
