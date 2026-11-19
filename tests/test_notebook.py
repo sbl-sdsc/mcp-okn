@@ -499,3 +499,35 @@ async def test_notebook_warns_when_caption_not_in_a_cell():
         ],
     )
     assert any("caption is in no markdown cell" in w for w in out.get("warnings", []))
+
+
+async def test_sparql_folded_by_default():
+    """The query section opens folded in JupyterLab; each query's text folds everywhere."""
+    _log_two()
+    out = await _build(title="Fold Study")
+    nb = nbformat.reads(out["files"]["fold-study.ipynb"], as_version=4)
+    head = next(
+        c for c in nb.cells if "".join(c.source).startswith("## SPARQL queries")
+    )
+    assert head.metadata.get("jp-MarkdownHeadingCollapsed") is True
+    q1 = next(c for c in nb.cells if "".join(c.source).startswith("### q01"))
+    text = "".join(q1.source)
+    assert "<details><summary>SPARQL (" in text and text.rstrip().endswith("</details>")
+    assert '</summary>\n<pre><code class="language-sparql">' in text
+    assert "</code></pre>\n</details>" in text and "&lt;https://purl.org" in text
+    # One raw-HTML block: no blank line inside the fold (that would end it early).
+    fold = text[text.index("<details>") :]
+    assert "\n\n" not in fold.rstrip()
+
+
+def test_sparql_fold_keeps_blank_query_lines_inside():
+    from mcp_okn.notebook import _sparql_details
+
+    fold = "\n".join(_sparql_details("SELECT ?s WHERE {\n\n  ?s a <x> .\n}"))
+    assert "\n\n" not in fold and "\n<span></span>\n" in fold and "&lt;x&gt;" in fold
+
+
+async def test_readme_says_trust_html():
+    _log_two()
+    out = await _build(title="Trust Study")
+    assert "Trust HTML" in out["files"]["README.md"]

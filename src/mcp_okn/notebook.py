@@ -112,13 +112,42 @@ def _cell_id(n: int) -> str:
     return f"cell-{n:03d}"
 
 
-def _markdown_cell(n: int, text: str) -> dict[str, Any]:
+def _markdown_cell(
+    n: int, text: str, metadata: dict[str, Any] | None = None
+) -> dict[str, Any]:
     return {
         "cell_type": "markdown",
         "id": _cell_id(n),
-        "metadata": {},
+        "metadata": dict(metadata or {}),
         "source": _lines(text),
     }
+
+
+#: JupyterLab opens a heading cell carrying this flag folded (its section hidden until clicked).
+#: nbconvert and GitHub ignore it, so each query's text is also folded with <details> below.
+_HEADING_COLLAPSED = {"jp-MarkdownHeadingCollapsed": True}
+
+
+def _sparql_details(sparql: str) -> list[str]:
+    """The query text folded under a one-line summary, as an HTML <details> block.
+
+    JupyterLab, the nbconvert HTML page and GitHub all render it. It must be ONE raw-HTML block:
+    CommonMark ends a ``<details>`` block at the first blank line, and nbconvert's
+    ``--embed-images`` (the ``html_command``) re-parses each block on its own, closing a
+    ``<details>`` left open, so the query would land outside the fold. Hence an escaped ``<pre>``
+    rather than a fenced block, and each blank query line carries an empty ``<span>``: it
+    renders and copies as an empty line but keeps the block unbroken.
+    """
+    n = len(sparql.splitlines())
+    body = "\n".join(
+        line if line.strip() else line + "<span></span>"
+        for line in html.escape(sparql, quote=False).split("\n")
+    )
+    return [
+        f"<details><summary>SPARQL ({n} line{'s' if n != 1 else ''})</summary>",
+        f'<pre><code class="language-sparql">{body}</code></pre>',
+        "</details>",
+    ]
 
 
 def _code_cell(
@@ -376,6 +405,7 @@ def build_study(
     add(
         _markdown_cell,
         "## SPARQL queries" if entries else "## SPARQL queries\n\n_No queries logged._",
+        _HEADING_COLLAPSED if entries else None,
     )
 
     manifest: list[dict[str, Any]] = []
@@ -429,15 +459,17 @@ def build_study(
         meta = [entry.get("timestamp", "")]
         if graphs:
             meta.append(", ".join(f"`{g}`" for g in graphs))
-        meta.append(f"{total:,} rows logged" if isinstance(total, int) else "")
+        meta.append(
+            f"{total:,} row{'' if total == 1 else 's'} logged"
+            if isinstance(total, int)
+            else ""
+        )
         md = [
             heading,
             "",
             " · ".join(m for m in meta if m),
             "",
-            "```sparql",
-            sparql.strip(),
-            "```",
+            *_sparql_details(sparql.strip()),
         ]
         if rewritten:
             md += [
@@ -609,7 +641,9 @@ def _readme(
     layout = [
         f"- `{study.notebook}`: the notebook (provenance, one cell per query, analysis)",
         f"- `{study.notebook.removesuffix('.ipynb')}.html`: the executed notebook as one "
-        "self-contained page, when it has been rendered (see above)",
+        "self-contained page, when it has been rendered (see above). View it in a "
+        "browser; JupyterLab's HTML viewer blocks scripts until you click **Trust "
+        "HTML**, so interactive maps and charts stay blank there",
         "- `okn_sparql.py`: `run_query()` / `verify_all()`; needs only pandas",
         "- `queries/`: each query verbatim (`qNN.rq`), the text actually sent when the "
         "server rewrote it (`sent/qNN.rq`), and `manifest.json`",
