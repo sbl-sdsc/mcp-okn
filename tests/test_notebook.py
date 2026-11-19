@@ -119,7 +119,9 @@ async def test_folder_layout_and_valid_notebook():
     text = "".join("".join(c.source) for c in nb.cells)
     assert "**Model:** claude-test-1" in text and "okn-bioanalysis v0.1.0" in text
     assert "### q01 — disease labels" in text
-    assert "![Overlap](figures/fig1.png)" in text
+    # A code cell shows its own figures, so no static gallery repeats them.
+    assert "## Figures" not in text and "![Overlap](figures/fig1.png)" not in text
+    assert "`figures/fig1.png`" in files["README.md"]
     # Cached preview output is escaped HTML.
     q1 = next(c for c in nb.cells if 'run_query("q01"' in "".join(c.source))
     html = "".join(q1.outputs[0]["data"]["text/html"])
@@ -465,3 +467,16 @@ async def test_header_timing_line():
 
     out = await _build(title="Timed", chat_started="not a time")
     assert any("chat_started" in w for w in out["warnings"])
+
+
+async def test_notebook_figures_gallery_only_without_code_cells():
+    """Markdown-only cells can't render figures, so the static gallery shows them."""
+    _log_two()
+    out = await _build(
+        title="Gallery Study",
+        cells=[{"type": "markdown", "source": "Notes only."}],
+        figures=[{"path": "figures/fig1.png", "caption": "Overlap"}],
+    )
+    nb = nbformat.reads(out["files"]["gallery-study.ipynb"], as_version=4)
+    text = "".join("".join(c.source) for c in nb.cells)
+    assert text.count("![Overlap](figures/fig1.png)") == 1 and "## Figures" in text

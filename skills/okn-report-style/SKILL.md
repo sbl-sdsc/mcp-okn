@@ -335,7 +335,8 @@ create_jupyter_notebook(
 - **Make it reproduce the findings, not just the queries.** In the notebook, query k's rows are
   `data["qNN"]` (a pandas DataFrame). Put the analysis in `code_files` and call it from `cells`, so a
   run recomputes the headline numbers and redraws the figures (have a figure cell save to its
-  `figures` path). The spec is the first markdown cell; it is the single home of the replicator detail.
+  `figures` path and show it). Show each figure ONCE, in the cell that draws it, never again in a
+  "show all figures" cell; with code cells the tool adds no static Figures gallery. The spec is the first markdown cell; it is the single home of the replicator detail.
 - **Render it.** Run the result's `html_command` once the folder is saved; it executes the notebook
   from the cached rows and writes `<study>_notebook.html` beside it. If you have no shell, give the
   user the command and say the package is incomplete until it has run.

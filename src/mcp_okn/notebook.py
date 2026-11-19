@@ -327,7 +327,10 @@ def build_study(
             outputs (the server never saw them run); they can use
             ``data["q01"]`` … and import ``code_files`` modules.
         figures: ``{"path": "figures/x.png", "caption": str, "source"?: str}``;
-            embedded as Markdown images. The files themselves are the caller's.
+            listed in the README and copied in. They are embedded as a Markdown
+            "Figures" gallery only when ``cells`` has no code cell: otherwise the
+            cell that draws a figure shows it, and a gallery would repeat it.
+            The files themselves are the caller's.
         include_data: Write each query's logged rows to ``data/``. Without them the
             notebook re-runs every query live on first execution.
         window: Timing for the header ("first → last (elapsed)"); empty = omitted.
@@ -485,6 +488,11 @@ def build_study(
                 f"cells[{i}] has type {kind!r}; use 'markdown' or 'code' — skipped."
             )
 
+    # A code cell draws (and shows) its own figure; a gallery after it would show every image
+    # twice. Embed the static gallery only when no cell can render the figures.
+    has_code = any(
+        isinstance(c, dict) and c.get("type") == "code" for c in (cells or [])
+    )
     figure_md: list[str] = []
     for i, fig in enumerate(figures or [], start=1):
         raw = fig.get("path") if isinstance(fig, dict) else None
@@ -500,7 +508,7 @@ def build_study(
         if fig.get("source"):
             item["source"] = str(fig["source"])
         study.figures.append(item)
-    if figure_md:
+    if figure_md and not has_code:
         add(_markdown_cell, "## Figures\n\n" + "\n".join(figure_md).rstrip())
 
     add(_markdown_cell, "## Verify against the live graphs")
