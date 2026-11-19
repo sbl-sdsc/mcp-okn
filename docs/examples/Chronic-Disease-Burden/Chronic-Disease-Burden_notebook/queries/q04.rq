@@ -1,0 +1,10 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?source ?year ?method (COUNT(?stmt) AS ?n) (COUNT(DISTINCT ?sdoh) AS ?nsdoh) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?stmt rdf:predicate kg:PREVALENCEIN_SpL ; rdf:subject ?sdoh ; rdf:object ?loc .
+    ?loc <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <http://www.wikidata.org/entity/Q28575> .
+    OPTIONAL { ?stmt dcterms:source ?source } OPTIONAL { ?stmt kg:year ?year } OPTIONAL { ?stmt kg:method ?method }
+  }
+} GROUP BY ?source ?year ?method

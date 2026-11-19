@@ -1,0 +1,10 @@
+doid	doid_label	mondo	mondo_label	key
+http://purl.obolibrary.org/obo/DOID_1596	depressive disorder	http://purl.obolibrary.org/obo/MONDO_0002050	depressive disorder	depression
+http://purl.obolibrary.org/obo/DOID_2349	arteriosclerosis	http://purl.obolibrary.org/obo/MONDO_0002277	arteriosclerosis disorder	high_chol
+http://purl.obolibrary.org/obo/DOID_2841	asthma	http://purl.obolibrary.org/obo/MONDO_0004979	asthma	asthma
+http://purl.obolibrary.org/obo/DOID_3083	chronic obstructive pulmonary disease	http://purl.obolibrary.org/obo/MONDO_0005002	chronic obstructive pulmonary disease	copd
+http://purl.obolibrary.org/obo/DOID_3393	coronary artery disease	http://purl.obolibrary.org/obo/MONDO_0005010	coronary artery disorder	chd
+http://purl.obolibrary.org/obo/DOID_9351	diabetes mellitus	http://purl.obolibrary.org/obo/MONDO_0005015	diabetes mellitus	diabetes
+http://purl.obolibrary.org/obo/DOID_10763	hypertension	http://purl.obolibrary.org/obo/MONDO_0005044	hypertensive disorder	hypertension
+http://purl.obolibrary.org/obo/DOID_6713	cerebrovascular disease	http://purl.obolibrary.org/obo/MONDO_0011057	cerebrovascular disorder	stroke
+http://purl.obolibrary.org/obo/DOID_9970	obesity	http://purl.obolibrary.org/obo/MONDO_0011122	obesity disorder	obesity

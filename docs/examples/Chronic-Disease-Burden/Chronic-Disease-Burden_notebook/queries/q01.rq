@@ -1,0 +1,13 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?disease ?dlabel ?source ?year ?dvt (COUNT(?stmt) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?stmt rdf:subject ?disease ; rdf:predicate kg:PREVALENCE_DpL ; rdf:object ?loc .
+    OPTIONAL { ?stmt dcterms:source ?source }
+    OPTIONAL { ?stmt kg:year ?year }
+    OPTIONAL { ?stmt kg:data_value_type ?dvt }
+    OPTIONAL { ?disease rdfs:label ?dlabel }
+  }
+} GROUP BY ?disease ?dlabel ?source ?year ?dvt

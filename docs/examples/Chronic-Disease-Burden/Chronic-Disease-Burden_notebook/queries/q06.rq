@@ -1,0 +1,8 @@
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+SELECT ?ncounty (COUNT(?city) AS ?nplaces) WHERE {
+  { SELECT ?city (COUNT(DISTINCT ?county) AS ?ncounty) WHERE {
+    GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+      <http://purl.obolibrary.org/obo/DOID_9351> kg:PREVALENCE_DpL ?city .
+      OPTIONAL { ?city kg:PARTOF_LpL ?county . ?county <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <http://www.wikidata.org/entity/Q28575> . }
+    } } GROUP BY ?city }
+} GROUP BY ?ncounty

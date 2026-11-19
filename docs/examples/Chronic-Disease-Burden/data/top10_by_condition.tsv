@@ -1,0 +1,91 @@
+condition	rank	fips	county	prevalence_pct	pop_places
+Diabetes	1	46121	Todd County, SD	22.0	5888
+Diabetes	2	28051	Holmes County, MS	21.5	9614
+Diabetes	3	46113	Shannon County, SD	21.5	7514
+Diabetes	4	28063	Jefferson County, MS	21.4	1614
+Diabetes	5	48427	Starr County, TX	21.0	44893
+Diabetes	6	22035	East Carroll Parish, LA	20.9	3991
+Diabetes	7	48377	Presidio County, TX	20.8	6497
+Diabetes	8	28163	Yazoo County, MS	20.7	11898
+Diabetes	9	01063	Greene County, AL	20.4	4148
+Diabetes	10	48507	Zavala County, TX	20.4	10499
+Obesity	1	01105	Perry County, AL	52.5	6134
+Obesity	2	01063	Greene County, AL	52.2	4148
+Obesity	3	28051	Holmes County, MS	51.9	9614
+Obesity	4	28063	Jefferson County, MS	51.6	1614
+Obesity	5	28133	Sunflower County, MS	51.6	20298
+Obesity	6	28163	Yazoo County, MS	51.6	11898
+Obesity	7	28027	Coahoma County, MS	51.0	21703
+Obesity	8	28021	Claiborne County, MS	50.6	2584
+Obesity	9	22035	East Carroll Parish, LA	50.5	3991
+Obesity	10	22107	Tensas Parish, LA	50.5	3051
+Hypertension	1	28051	Holmes County, MS	54.4	9614
+Hypertension	2	28063	Jefferson County, MS	54.2	1614
+Hypertension	3	28163	Yazoo County, MS	53.2	11898
+Hypertension	4	28021	Claiborne County, MS	51.9	2584
+Hypertension	5	28119	Quitman County, MS	51.7	4311
+Hypertension	6	01063	Greene County, AL	50.8	4148
+Hypertension	7	28027	Coahoma County, MS	50.6	21703
+Hypertension	8	28103	Noxubee County, MS	50.6	4492
+Hypertension	9	28053	Humphreys County, MS	50.3	3484
+Hypertension	10	28083	Leflore County, MS	50.3	19510
+High cholesterol	1	54043	Lincoln County, WV	37.0	2572
+High cholesterol	2	54047	McDowell County, WV	37.0	8550
+High cholesterol	3	51105	Lee County, VA	36.9	5805
+High cholesterol	4	54039	Kanawha County, WV	36.8	117652
+High cholesterol	5	54059	Mingo County, WV	36.6	7964
+High cholesterol	6	48479	Webb County, TX	36.6	246465
+High cholesterol	7	54005	Boone County, WV	36.5	5682
+High cholesterol	8	20015	Butler County, KS	36.4	32921
+High cholesterol	9	54035	Jackson County, WV	36.4	7128
+High cholesterol	10	48377	Presidio County, TX	36.4	6497
+Coronary heart disease	1	02270	Wade Hampton Census Area, AK	11.0	6999
+Coronary heart disease	2	46121	Todd County, SD	10.9	5888
+Coronary heart disease	3	46113	Shannon County, SD	10.7	7514
+Coronary heart disease	4	46017	Buffalo County, SD	9.8	1282
+Coronary heart disease	5	54047	McDowell County, WV	9.2	8550
+Coronary heart disease	6	21129	Lee County, KY	9.1	1307
+Coronary heart disease	7	02050	Bethel Census Area, AK	9.0	16620
+Coronary heart disease	8	46031	Corson County, SD	8.8	1251
+Coronary heart disease	9	46041	Dewey County, SD	8.8	2703
+Coronary heart disease	10	22027	Claiborne Parish, LA	8.7	6036
+Stroke	1	02270	Wade Hampton Census Area, AK	6.8	6999
+Stroke	2	46121	Todd County, SD	6.6	5888
+Stroke	3	46113	Shannon County, SD	6.5	7514
+Stroke	4	28063	Jefferson County, MS	6.1	1614
+Stroke	5	46017	Buffalo County, SD	6.1	1282
+Stroke	6	22035	East Carroll Parish, LA	6.0	3991
+Stroke	7	28051	Holmes County, MS	6.0	9614
+Stroke	8	28163	Yazoo County, MS	6.0	11898
+Stroke	9	22107	Tensas Parish, LA	5.8	3051
+Stroke	10	22065	Madison Parish, LA	5.7	8196
+COPD	1	21129	Lee County, KY	15.7	1307
+COPD	2	02270	Wade Hampton Census Area, AK	14.7	6999
+COPD	3	21013	Bell County, KY	14.6	11998
+COPD	4	54047	McDowell County, WV	14.5	8550
+COPD	5	21051	Clay County, KY	14.0	1961
+COPD	6	21147	McCreary County, KY	13.7	4207
+COPD	7	54043	Lincoln County, WV	13.7	2572
+COPD	8	21053	Clinton County, KY	13.4	2052
+COPD	9	21095	Harlan County, KY	13.4	9678
+COPD	10	21153	Magoffin County, KY	13.3	1883
+Asthma	1	02270	Wade Hampton Census Area, AK	14.1	6999
+Asthma	2	46113	Shannon County, SD	13.9	7514
+Asthma	3	30035	Glacier County, MT	13.7	9087
+Asthma	4	54047	McDowell County, WV	13.7	8550
+Asthma	5	55078	Menominee County, WI	13.7	3477
+Asthma	6	46121	Todd County, SD	13.7	5888
+Asthma	7	40001	Adair County, OK	13.6	11906
+Asthma	8	21013	Bell County, KY	13.5	11998
+Asthma	9	21129	Lee County, KY	13.5	1307
+Asthma	10	35031	McKinley County, NM	13.5	40805
+Depression	1	21129	Lee County, KY	34.3	1307
+Depression	2	21153	Magoffin County, KY	34.1	1883
+Depression	3	54043	Lincoln County, WV	33.3	2572
+Depression	4	21051	Clay County, KY	32.7	1961
+Depression	5	47013	Campbell County, TN	32.7	15776
+Depression	6	54109	Wyoming County, WV	32.6	6885
+Depression	7	21013	Bell County, KY	32.3	11998
+Depression	8	47067	Hancock County, TN	32.3	1387
+Depression	9	21147	McCreary County, KY	32.2	4207
+Depression	10	47049	Fentress County, TN	32.2	4291

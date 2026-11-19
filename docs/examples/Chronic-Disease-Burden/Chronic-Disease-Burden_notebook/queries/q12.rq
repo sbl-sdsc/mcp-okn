@@ -1,0 +1,16 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+# CDC PLACES place-level age-adjusted prevalence (spoke-okn PREVALENCE_DpL) -> population-weighted county mean via PARTOF_LpL; state FIPS 30-41
+SELECT ?fips ?county (ROUND(10*SUM(IF(?d = obo:DOID_9351, ?dv*?pop, 0))/SUM(IF(?d = obo:DOID_9351, ?pop, 0)))/10 AS ?diabetes) (ROUND(10*SUM(IF(?d = obo:DOID_9970, ?dv*?pop, 0))/SUM(IF(?d = obo:DOID_9970, ?pop, 0)))/10 AS ?obesity) (ROUND(10*SUM(IF(?d = obo:DOID_10763, ?dv*?pop, 0))/SUM(IF(?d = obo:DOID_10763, ?pop, 0)))/10 AS ?hypertension) (ROUND(10*SUM(IF(?d = obo:DOID_2349, ?dv*?pop, 0))/SUM(IF(?d = obo:DOID_2349, ?pop, 0)))/10 AS ?high_chol) (ROUND(10*SUM(IF(?d = obo:DOID_3393, ?dv*?pop, 0))/SUM(IF(?d = obo:DOID_3393, ?pop, 0)))/10 AS ?chd) (ROUND(10*SUM(IF(?d = obo:DOID_6713, ?dv*?pop, 0))/SUM(IF(?d = obo:DOID_6713, ?pop, 0)))/10 AS ?stroke) (ROUND(10*SUM(IF(?d = obo:DOID_3083, ?dv*?pop, 0))/SUM(IF(?d = obo:DOID_3083, ?pop, 0)))/10 AS ?copd) (ROUND(10*SUM(IF(?d = obo:DOID_2841, ?dv*?pop, 0))/SUM(IF(?d = obo:DOID_2841, ?pop, 0)))/10 AS ?asthma) (ROUND(10*SUM(IF(?d = obo:DOID_1596, ?dv*?pop, 0))/SUM(IF(?d = obo:DOID_1596, ?pop, 0)))/10 AS ?depression) (SUM(IF(?d = obo:DOID_9351, ?pop, 0)) AS ?pop_places) (SUM(IF(?d = obo:DOID_9351, 1, 0)) AS ?n_places) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?stmt rdf:predicate kg:PREVALENCE_DpL ; rdf:subject ?d ; rdf:object ?city ;
+          dcterms:source "PLACES" ; kg:data_value ?dv ; kg:total_population ?pop .
+    ?city kg:PARTOF_LpL ?c . ?c <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <http://www.wikidata.org/entity/Q28575> ;
+          kg:state_fips ?sf ; rdfs:label ?county .
+    FILTER(?sf >= "30" && ?sf <= "41")
+    BIND(REPLACE(STR(?c), "^.*/location/", "") AS ?fips)
+  }
+} GROUP BY ?fips ?county

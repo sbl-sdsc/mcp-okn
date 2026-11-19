@@ -1,0 +1,10 @@
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Pairwise shared-gene counts among the 9 PLACES conditions (spoke-okn ASSOCIATES_DaG, disease->gene); diagonal = gene-set size
+SELECT ?d1 ?d2 (COUNT(DISTINCT ?g) AS ?shared) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    VALUES ?d1 { obo:DOID_9351 obo:DOID_9970 obo:DOID_10763 obo:DOID_2349 obo:DOID_3393 obo:DOID_6713 obo:DOID_3083 obo:DOID_2841 obo:DOID_1596 }
+    VALUES ?d2 { obo:DOID_9351 obo:DOID_9970 obo:DOID_10763 obo:DOID_2349 obo:DOID_3393 obo:DOID_6713 obo:DOID_3083 obo:DOID_2841 obo:DOID_1596 }
+    ?d1 kg:ASSOCIATES_DaG ?g . ?d2 kg:ASSOCIATES_DaG ?g .
+  }
+} GROUP BY ?d1 ?d2

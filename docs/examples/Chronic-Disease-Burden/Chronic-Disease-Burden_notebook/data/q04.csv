@@ -1,0 +1,20 @@
+source,year,method,n,nsdoh
+AHRQ SDOH Database,2010,,109512,72
+AHRQ SDOH Database,2012,,11645,4
+AHRQ SDOH Database,2014,,12594,4
+AHRQ SDOH Database,2015,,164463,88
+AHRQ SDOH Database,2016,,16990,6
+AHRQ SDOH Database,2017,,37395,12
+AHRQ SDOH Database,2018,,478775,203
+AHRQ SDOH Database,2019,,399424,144
+AHRQ SDOH Database,2020,,1525901,528
+County Health Rankings,2023,average,14578,5
+County Health Rankings,2023,average(quartile),9365,3
+County Health Rankings,2023,index,4975,2
+County Health Rankings,2023,index(quartile),3101,1
+County Health Rankings,2023,percentage,108514,39
+County Health Rankings,2023,percentage(quartile),77275,25
+CDC/ATSDR Social Vulnerability Index,2020,Percentile Ranking,3192,1
+County Health Rankings,2023,presence(quartile),3089,1
+County Health Rankings,2023,ratio,6244,2
+County Health Rankings,2023,ratio(quartile),12085,4

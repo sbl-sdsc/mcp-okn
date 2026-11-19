@@ -1,0 +1,154 @@
+disease,dlabel,source,year,dvt,n
+http://purl.obolibrary.org/obo/DOID_0050567,orofacial cleft,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_0050589,inflammatory bowel disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_0050700,cardiomyopathy,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_0050827,rheumatic heart disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_0050830,peripheral artery disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_0060041,autism spectrum disorder,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_0060060,non-Hodgkin lymphoma,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_0060262,gallbladder disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_0060329,ectopic pregnancy,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_0060478,Zika fever,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_0080074,neural tube defect,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_0080653,urolithiasis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_10079,cysticercosis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1024,leprosy,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_10241,thalassemia,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_10283,prostate cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_10314,endocarditis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_10316,pneumoconiosis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_10320,asbestosis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_10325,silicosis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1037,lymphoid leukemia,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_10534,stomach cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1063,interstitial nephritis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_10652,Alzheimer's disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_10754,otitis media,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_10763,hypertension,PLACES,,Age-adjusted prevalence,27365
+http://purl.obolibrary.org/obo/DOID_11054,urinary bladder cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1116,pertussis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_11260,rabies,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_11263,chlamydia,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_11265,trachoma,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_11338,tetanus,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_11405,diphtheria,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_11516,hypertensive heart disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_11612,polycystic ovary syndrome,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_11678,onchocerciasis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_11758,iron deficiency anemia,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_11801,protein-energy malnutrition,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_11830,myopia,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_12129,bulimia nervosa,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_12139,dysthymic disorder,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_12140,Chagas disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_12205,dengue disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_12211,filarial elephantiasis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_12336,male infertility,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_12365,malaria,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1240,leukemia,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1252,trichuriasis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_12549,hepatitis A,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1284,prolapse of female genital organ,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_12935,alcoholic cardiomyopathy,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_12995,conduct disorder,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_13189,gout,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1319,brain cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_13223,uterine fibroid,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_13258,typhoid fever,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_13589,female infertility of uterine origin,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1395,schistosomiasis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_14250,Down syndrome,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1432,blindness,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_14330,Parkinson's disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1470,major depressive disorder,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1495,cystic echinococcosis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1555,urticaria,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1574,alcohol use disorder,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1596,depressive disorder,PLACES,,Age-adjusted prevalence,27365
+http://purl.obolibrary.org/obo/DOID_1612,breast cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1686,glaucoma,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1781,thyroid cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1793,pancreatic cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1827,idiopathic generalized epilepsy,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1883,hepatitis C,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1921,Klinefelter syndrome,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1947,trichomoniasis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_1993,rectum cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_2030,anxiety disorder,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_2043,hepatitis B,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_2237,hepatitis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_231,motor neuron disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_2349,arteriosclerosis,PLACES,,Age-adjusted prevalence,27365
+http://purl.obolibrary.org/obo/DOID_2377,multiple sclerosis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_2394,ovarian cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_2513,basal cell carcinoma,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_2596,larynx cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_263,kidney cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_2723,dermatitis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_2773,contact dermatitis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_2841,asthma,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_2841,asthma,PLACES,,Age-adjusted prevalence,27365
+http://purl.obolibrary.org/obo/DOID_289,endometriosis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_2998,testicular cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_3055,paratyphoid fever,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_3083,chronic obstructive pulmonary disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_3083,chronic obstructive pulmonary disease,PLACES,,Age-adjusted prevalence,27365
+http://purl.obolibrary.org/obo/DOID_3310,atopic dermatitis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_3312,bipolar disorder,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_3393,coronary artery disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_3393,coronary artery disease,PLACES,,Age-adjusted prevalence,27365
+http://purl.obolibrary.org/obo/DOID_3488,cellulitis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_3491,Turner syndrome,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_3571,liver cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_363,uterine cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_399,tuberculosis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_4159,skin cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_4166,syphilis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_4223,pyoderma,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_4325,Ebola hemorrhagic fever,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_4362,cervical cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_4411,hepatitis E,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_456,ascariasis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_4607,biliary tract cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_4989,pancreatitis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_5041,esophageal cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_5113,nutritional deficiency disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_526,human immunodeficiency virus infectious disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_5419,schizophrenia,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_6364,migraine,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_6543,acne,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_6713,cerebrovascular disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_6713,cerebrovascular disease,PLACES,,Age-adjusted prevalence,27365
+http://purl.obolibrary.org/obo/DOID_7148,rheumatoid arthritis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_750,peptic ulcer disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_784,chronic kidney disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_820,myocarditis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8295,scabies,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_83,cataract,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8337,appendicitis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8398,osteoarthritis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8534,gastroesophageal reflux disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8552,chronic myeloid leukemia,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8567,Hodgkin's lymphoma,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8618,oral cavity cancer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8622,measles,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8670,eating disorder,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8689,anorexia nervosa,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8704,genital herpes,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8717,decubitus ulcer,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8741,seborrheic dermatitis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8893,psoriasis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_8923,skin melanoma,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_9065,leishmaniasis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_9119,acute myeloid leukemia,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_9146,visceral leishmaniasis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_9261,nasopharynx carcinoma,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_934,viral infectious disease,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_9351,diabetes mellitus,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_9351,diabetes mellitus,PLACES,,Age-adjusted prevalence,27365
+http://purl.obolibrary.org/obo/DOID_9471,meningitis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_9538,multiple myeloma,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_9588,encephalitis,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_9682,yellow fever,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_986,alopecia areata,IHME,2019,,200
+http://purl.obolibrary.org/obo/DOID_9970,obesity,PLACES,,Age-adjusted prevalence,27365

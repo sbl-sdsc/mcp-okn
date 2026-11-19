@@ -1,0 +1,263 @@
+[
+  {
+    "name": "q01",
+    "description": "Inventory: PREVALENCE_DpL statements by disease, source, year and value type",
+    "timestamp": "2026-11-19T03:01:55+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 153,
+    "cached_rows": 153,
+    "truncated": false,
+    "cache": "data/q01.csv",
+    "sent": null
+  },
+  {
+    "name": "q02",
+    "description": "Inventory: location kinds carrying diabetes prevalence (place vs county)",
+    "timestamp": "2026-11-19T03:02:05+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 1,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q02.csv",
+    "sent": "queries/sent/q02.rq"
+  },
+  {
+    "name": "q03",
+    "description": "Inventory: CDC PLACES measures, value completeness and ranges per disease",
+    "timestamp": "2026-11-19T03:02:31+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 9,
+    "cached_rows": 9,
+    "truncated": false,
+    "cache": "data/q03.csv",
+    "sent": null
+  },
+  {
+    "name": "q04",
+    "description": "Inventory: PREVALENCEIN_SpL (SDoH) statements by source, year and method",
+    "timestamp": "2026-11-19T03:03:08+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 19,
+    "cached_rows": 19,
+    "truncated": false,
+    "cache": "data/q04.csv",
+    "sent": "queries/sent/q04.rq"
+  },
+  {
+    "name": "q05",
+    "description": "Inventory: County Health Rankings variables available as county-native measures",
+    "timestamp": "2026-11-19T03:03:19+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 82,
+    "cached_rows": 82,
+    "truncated": false,
+    "cache": "data/q05.csv",
+    "sent": "queries/sent/q05.rq"
+  },
+  {
+    "name": "q06",
+    "description": "Join check: number of counties each PLACES place links to via PARTOF_LpL",
+    "timestamp": "2026-11-19T03:03:20+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 2,
+    "cached_rows": 2,
+    "truncated": false,
+    "cache": "data/q06.csv",
+    "sent": null
+  },
+  {
+    "name": "q07",
+    "description": "Pilot: population-weighted county diabetes prevalence (single-disease aggregation test)",
+    "timestamp": "2026-11-19T03:04:45+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 3057,
+    "cached_rows": 3057,
+    "truncated": false,
+    "cache": "data/q07.csv",
+    "sent": null
+  },
+  {
+    "name": "q08",
+    "description": "PLACES 9-condition county table, state FIPS 01-12",
+    "timestamp": "2026-11-19T03:05:44+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 320,
+    "cached_rows": 320,
+    "truncated": false,
+    "cache": "data/q08.csv",
+    "sent": "queries/sent/q08.rq"
+  },
+  {
+    "name": "q09",
+    "description": "Coverage: PLACES places and linked counties per state",
+    "timestamp": "2026-11-19T04:43:19+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 50,
+    "cached_rows": 50,
+    "truncated": false,
+    "cache": "data/q09.csv",
+    "sent": null
+  },
+  {
+    "name": "q10",
+    "description": "PLACES 9-condition county table, state FIPS 13-19",
+    "timestamp": "2026-11-19T04:43:48+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 497,
+    "cached_rows": 497,
+    "truncated": false,
+    "cache": "data/q10.csv",
+    "sent": "queries/sent/q10.rq"
+  },
+  {
+    "name": "q11",
+    "description": "PLACES 9-condition county table, state FIPS 20-29",
+    "timestamp": "2026-11-19T04:44:04+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 710,
+    "cached_rows": 710,
+    "truncated": false,
+    "cache": "data/q11.csv",
+    "sent": "queries/sent/q11.rq"
+  },
+  {
+    "name": "q12",
+    "description": "PLACES 9-condition county table, state FIPS 30-41",
+    "timestamp": "2026-11-19T04:44:18+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 639,
+    "cached_rows": 639,
+    "truncated": false,
+    "cache": "data/q12.csv",
+    "sent": "queries/sent/q12.rq"
+  },
+  {
+    "name": "q13",
+    "description": "PLACES 9-condition county table, state FIPS 42-56",
+    "timestamp": "2026-11-19T04:44:32+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 891,
+    "cached_rows": 891,
+    "truncated": false,
+    "cache": "data/q13.csv",
+    "sent": "queries/sent/q13.rq"
+  },
+  {
+    "name": "q14",
+    "description": "County Health Rankings 2023 covariates + validation measures, state FIPS 49-56",
+    "timestamp": "2026-11-19T04:45:13+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 362,
+    "cached_rows": 362,
+    "truncated": false,
+    "cache": "data/q14.csv",
+    "sent": "queries/sent/q14.rq"
+  },
+  {
+    "name": "q15",
+    "description": "County Health Rankings 2023 covariates + validation measures, state FIPS 01-19",
+    "timestamp": "2026-11-19T04:45:35+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 885,
+    "cached_rows": 885,
+    "truncated": false,
+    "cache": "data/q15.csv",
+    "sent": "queries/sent/q15.rq"
+  },
+  {
+    "name": "q16",
+    "description": "County Health Rankings 2023 covariates + validation measures, state FIPS 20-34",
+    "timestamp": "2026-11-19T04:45:55+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 907,
+    "cached_rows": 907,
+    "truncated": false,
+    "cache": "data/q16.csv",
+    "sent": "queries/sent/q16.rq"
+  },
+  {
+    "name": "q17",
+    "description": "County Health Rankings 2023 covariates + validation measures, state FIPS 35-48",
+    "timestamp": "2026-11-19T04:46:07+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 977,
+    "cached_rows": 977,
+    "truncated": false,
+    "cache": "data/q17.csv",
+    "sent": "queries/sent/q17.rq"
+  },
+  {
+    "name": "q18",
+    "description": "Shared disease-gene counts among the 9 conditions (spoke-okn ASSOCIATES_DaG)",
+    "timestamp": "2026-11-19T04:46:28+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 81,
+    "cached_rows": 81,
+    "truncated": false,
+    "cache": "data/q18.csv",
+    "sent": null
+  },
+  {
+    "name": "q19",
+    "description": "Gene background: all genes with any spoke-okn disease-gene association",
+    "timestamp": "2026-11-19T04:46:36+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 1,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q19.csv",
+    "sent": null
+  },
+  {
+    "name": "q20",
+    "description": "Cross-KG bridge: spoke-okn DOID -> ubergraph skos:exactMatch -> MONDO for the 9 conditions",
+    "timestamp": "2026-11-19T04:46:41+00:00",
+    "graphs": [
+      "spoke-okn",
+      "ubergraph"
+    ],
+    "row_count": 9,
+    "cached_rows": 9,
+    "truncated": false,
+    "cache": "data/q20.csv",
+    "sent": null
+  }
+]

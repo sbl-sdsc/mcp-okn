@@ -1,0 +1,12 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?disease ?sqt (COUNT(?stmt) AS ?n) (COUNT(?dv) AS ?n_value) (COUNT(?lo) AS ?n_lower) (COUNT(?pop) AS ?n_pop) (MIN(?dv) AS ?min) (MAX(?dv) AS ?max) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?stmt rdf:predicate kg:PREVALENCE_DpL ; rdf:subject ?disease ; dcterms:source "PLACES" .
+    OPTIONAL { ?stmt kg:short_question_text ?sqt }
+    OPTIONAL { ?stmt kg:data_value ?dv }
+    OPTIONAL { ?stmt kg:lower ?lo }
+    OPTIONAL { ?stmt kg:total_population ?pop }
+  }
+} GROUP BY ?disease ?sqt
