@@ -15,6 +15,7 @@ into one self-contained folder::
       figures/…           named here, copied in by the agent (or by a local server)
       requirements.txt
       README.md
+      okn_notebook.html.j2  nbconvert template for the HTML page (folds long code cells)
 
 Everything here is a pure function of its inputs, so the folder is the same whether
 the hosted server returns it as a file map or a local server writes it to disk.
@@ -45,8 +46,50 @@ from .sparql import prepare_query
 PREVIEW_ROWS = 10
 
 #: Files and folders the builder writes itself; caller files may not land on them.
-_RESERVED_FILES = ("okn_sparql.py", "requirements.txt", "README.md")
+_RESERVED_FILES = (
+    "okn_sparql.py",
+    "requirements.txt",
+    "README.md",
+    "okn_notebook.html.j2",
+)
 _RESERVED_DIRS = ("queries",)
+
+#: An analysis code cell longer than this opens folded (its output stays visible).
+FOLD_MIN_LINES = 10
+
+#: Code cell metadata that JupyterLab, Notebook 7 and VS Code open with the source folded.
+_SOURCE_HIDDEN = {"jupyter": {"source_hidden": True}}
+
+#: nbconvert template for ``html_command``: the default lab page, with each folded code cell's
+#: source under a "Python (N lines)" summary that opens on click. nbconvert has no fold of its
+#: own, and GitHub's notebook view ignores the metadata, so the source shows in full there.
+_HTML_TEMPLATE = """\
+{%- extends 'lab/index.html.j2' -%}
+{#- okn: folds code cells marked jupyter.source_hidden, as JupyterLab does. -#}
+{% block extra_css %}
+{{ super() }}
+<style>
+details.okn-fold { display: table-cell; width: 100%; }
+details.okn-fold > summary {
+  cursor: pointer; padding: 4px 6px; color: var(--jp-ui-font-color2);
+  font-family: var(--jp-code-font-family); font-size: var(--jp-code-font-size);
+  background: var(--jp-cell-editor-background);
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+}
+details.okn-fold[open] > summary { border-bottom: 0; }
+</style>
+{% endblock extra_css %}
+{% block input %}
+{%- if cell.metadata.get('jupyter', {}).get('source_hidden') -%}
+{%- set n = cell.source.splitlines() | length -%}
+<details class="okn-fold"><summary>Python ({{ n }} line{{ 's' if n != 1 }})</summary>
+{{ super() }}
+</details>
+{%- else -%}
+{{ super() }}
+{%- endif -%}
+{% endblock input %}
+"""
 
 #: Always in requirements.txt; the caller's extras are appended after these.
 BASE_REQUIREMENTS = ("pandas>=1.5",)
@@ -155,11 +198,12 @@ def _code_cell(
     text: str,
     outputs: list[dict[str, Any]] | None = None,
     count: int | None = None,
+    metadata: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     return {
         "cell_type": "code",
         "id": _cell_id(n),
-        "metadata": {},
+        "metadata": dict(metadata or {}),
         "execution_count": count if outputs else None,
         "outputs": outputs or [],
         "source": _lines(text),
@@ -311,6 +355,7 @@ def run_commands(folder: str, notebook: str) -> dict[str, str]:
         # __pycache__/ in a folder that is meant to be handed over as is.
         "html": f"{cd}\nPYTHONDONTWRITEBYTECODE=1 uv run --with nbconvert --with ipykernel "
         "--with-requirements requirements.txt jupyter nbconvert --to html "
+        "--template-file okn_notebook.html.j2 "
         f"--execute --embed-images --output {q(stem + '.html')} {q(notebook)}",
     }
 
@@ -526,7 +571,8 @@ def build_study(
         if kind == "markdown":
             add(_markdown_cell, source)
         elif kind == "code":
-            add(_code_cell, source)
+            fold = len(source.splitlines()) > FOLD_MIN_LINES
+            add(_code_cell, source, metadata=_SOURCE_HIDDEN if fold else None)
         else:
             study.warnings.append(
                 f"cells[{i}] has type {kind!r}; use 'markdown' or 'code' — skipped."
@@ -606,6 +652,7 @@ def build_study(
         if req and req not in reqs:
             reqs.append(req)
     study.files["requirements.txt"] = "\n".join(reqs) + "\n"
+    study.files["okn_notebook.html.j2"] = _HTML_TEMPLATE
     study.files["README.md"] = _readme(
         title=title,
         when=when,
@@ -652,6 +699,7 @@ def _readme(
         "browser; JupyterLab's HTML viewer blocks scripts until you click **Trust "
         "HTML**, so interactive maps and charts stay blank there",
         "- `okn_sparql.py`: `run_query()` / `verify_all()`; needs only pandas",
+        "- `okn_notebook.html.j2`: the HTML page's template; it folds long code cells",
         "- `queries/`: each query verbatim (`qNN.rq`), the text actually sent when the "
         "server rewrote it (`sent/qNN.rq`), and `manifest.json`",
         *(

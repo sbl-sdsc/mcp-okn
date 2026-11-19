@@ -1,0 +1,25 @@
+{%- extends 'lab/index.html.j2' -%}
+{#- okn: folds code cells marked jupyter.source_hidden, as JupyterLab does. -#}
+{% block extra_css %}
+{{ super() }}
+<style>
+details.okn-fold { display: table-cell; width: 100%; }
+details.okn-fold > summary {
+  cursor: pointer; padding: 4px 6px; color: var(--jp-ui-font-color2);
+  font-family: var(--jp-code-font-family); font-size: var(--jp-code-font-size);
+  background: var(--jp-cell-editor-background);
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+}
+details.okn-fold[open] > summary { border-bottom: 0; }
+</style>
+{% endblock extra_css %}
+{% block input %}
+{%- if cell.metadata.get('jupyter', {}).get('source_hidden') -%}
+{%- set n = cell.source.splitlines() | length -%}
+<details class="okn-fold"><summary>Python ({{ n }} line{{ 's' if n != 1 }})</summary>
+{{ super() }}
+</details>
+{%- else -%}
+{{ super() }}
+{%- endif -%}
+{% endblock input %}

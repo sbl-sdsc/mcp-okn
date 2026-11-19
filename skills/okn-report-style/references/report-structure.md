@@ -268,7 +268,9 @@ uv run --with jupyterlab --with-requirements requirements.txt jupyter lab <study
 ```
 
 (the tool's `run_command`, with the path made relative to the study folder; it needs only
-[uv](https://docs.astral.sh/uv/)). Report-building scripts are in `scripts/`, extracts in `data/`.
+[uv](https://docs.astral.sh/uv/)). It opens on the session's logged rows; to rerun the study from
+scratch against the live graphs, uncomment `# RERUN = True` in its setup cell. Report-building
+scripts are in `scripts/`, extracts in `data/`.
 
 Do **not** restate the spec here: no enumerated script filenames (`scripts/` is its own listing),
 no repeated KG versions (§2 pins them), no timing line, no re-derived counts. Every one of those
@@ -290,7 +292,7 @@ if you cannot determine it — a family name, a product name, or an inferred id 
 mis-attributes the whole analysis.
 
 The header also carries the **skills** that shaped the run — `- **Skills:** okn-bioanalysis
-v0.1.3 · okn-report-style v0.2.4` — but only if you pass `skills=[...]`: the server cannot see which
+v0.1.3 · okn-report-style v0.2.5` — but only if you pass `skills=[...]`: the server cannot see which
 skills your session loaded, so an omitted list silently reads as "no methodology skill was used".
 Give each as `"<name> v<version>"`, the version taken from that skill's frontmatter
 `metadata.version` (not guessed), and list only skills you actually followed — a skill you didn't use

@@ -22,7 +22,7 @@ To render the executed notebook (from the cached rows) as a self-contained HTML 
 
 ```bash
 cd /path/to/MS-2026-11-19_notebook
-PYTHONDONTWRITEBYTECODE=1 uv run --with nbconvert --with ipykernel --with-requirements requirements.txt jupyter nbconvert --to html --execute --embed-images --output MS-2026-11-19_notebook.html MS-2026-11-19_notebook.ipynb
+PYTHONDONTWRITEBYTECODE=1 uv run --with nbconvert --with ipykernel --with-requirements requirements.txt jupyter nbconvert --to html --template-file okn_notebook.html.j2 --execute --embed-images --output MS-2026-11-19_notebook.html MS-2026-11-19_notebook.ipynb
 ```
 
 Without uv: `pip install -r requirements.txt jupyterlab`, then `jupyter lab MS-2026-11-19_notebook.ipynb` from this folder.
@@ -32,6 +32,7 @@ Without uv: `pip install -r requirements.txt jupyterlab`, then `jupyter lab MS-2
 - `MS-2026-11-19_notebook.ipynb`: the notebook (provenance, one cell per query, analysis)
 - `MS-2026-11-19_notebook.html`: the executed notebook as one self-contained page, when it has been rendered (see above). View it in a browser; JupyterLab's HTML viewer blocks scripts until you click **Trust HTML**, so interactive maps and charts stay blank there
 - `okn_sparql.py`: `run_query()` / `verify_all()`; needs only pandas
+- `okn_notebook.html.j2`: the HTML page's template; it folds long code cells
 - `queries/`: each query verbatim (`qNN.rq`), the text actually sent when the server rewrote it (`sent/qNN.rq`), and `manifest.json`
 - `data/`: the rows each query returned during the session
 - `analysis.py`
