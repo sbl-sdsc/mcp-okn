@@ -442,7 +442,7 @@ uv run --with jupyterlab --with-requirements requirements.txt jupyter lab kidney
 
 Then choose **Run → Run All Cells**. The query cells load the recorded rows from `data/`,
 so the notebook shows the original results and runs offline. To query the live
-endpoint instead, set `RERUN = True` in the setup cell. The last cell, `verify_all()`,
+endpoint instead (rerun the study from scratch), uncomment `# RERUN = True` in the setup cell. The last cell, `verify_all()`,
 reruns every query live and marks each one `ok` when its row count matches the recorded
 one, or `drift` when it doesn't. Drift usually means the knowledge graph was redeployed
 after the chat, not that the analysis is wrong. To rerun every query live without opening
