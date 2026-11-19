@@ -29,6 +29,9 @@ code can't predict.
       delivery gate) FAILs unless both the `***Figure N.***` captions and the `figures/figN_*` filenames
       read `1, 2, 3 … N` in document order. Reordering for narrative flow without renumbering — captions
       like `1, 2, 5, 7, 3, 4 …` — is caught there, not by eyeballing.
+- [ ] **Same numbering in the notebook.** Each figure has its own code cell (in report order) that
+      draws and shows it, followed by a markdown cell with the report's legend verbatim
+      (`**Figure N. Title.** …`). `validate_okn_report.py` fails a report figure without one.
 
 ## Conventions
 - [ ] **Signed values** (log2 fold-change, change-vs-baseline, anomaly, z-score) → diverging map

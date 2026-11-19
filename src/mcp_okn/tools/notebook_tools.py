@@ -204,9 +204,11 @@ async def create_jupyter_notebook(
         cells: Analysis cells after the query cells, in order, each
             `{"type": "markdown" | "code", "source": str}`. Code cells can use
             `data["q01"]` … and your `code_files` modules; they are saved without
-            outputs. Make a figure cell save its image to the `figures` path AND
-            show it (`plt.show()` or `IPython.display.Image`), so a re-run
-            regenerates it in place; show each figure once, where it is drawn.
+            outputs. Draw each figure in its OWN code cell, in report order, that
+            saves it to its `figures` path and shows it, then follow it with a
+            markdown cell holding the report's numbered legend verbatim
+            (`**Figure N. Title.** …`). Never one cell that builds every figure
+            plus another that shows them all.
         figures: Images the study produced, each `{"path": "figures/fig1.png",
             "caption": str, "source": str?}`; listed in the README and copied in.
             A "Figures" gallery of them is added only when `cells` has no code

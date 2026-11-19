@@ -82,8 +82,14 @@ async def test_folder_layout_and_valid_notebook():
                 "source": "from analysis import count_labels\n"
                 'n = count_labels(data["q01"])',
             },
+            {"type": "markdown", "source": "**Figure 1. Overlap.** Labels per KG."},
         ],
-        figures=[{"path": "figures/fig1.png", "caption": "Overlap"}],
+        figures=[
+            {
+                "path": "figures/fig1.png",
+                "caption": "**Figure 1. Overlap.** Labels per KG.",
+            }
+        ],
         requirements=["matplotlib>=3.7", "pandas>=1.5"],
     )
     assert "warnings" not in out
@@ -480,3 +486,16 @@ async def test_notebook_figures_gallery_only_without_code_cells():
     nb = nbformat.reads(out["files"]["gallery-study.ipynb"], as_version=4)
     text = "".join("".join(c.source) for c in nb.cells)
     assert text.count("![Overlap](figures/fig1.png)") == 1 and "## Figures" in text
+
+
+async def test_notebook_warns_when_caption_not_in_a_cell():
+    """With code cells, each figure's legend belongs in a markdown cell after its code."""
+    _log_two()
+    out = await _build(
+        title="Legend Study",
+        cells=[{"type": "code", "source": "build_all_figures()"}],
+        figures=[
+            {"path": "figures/fig1.png", "caption": "**Figure 1. Overlap.** Labels."}
+        ],
+    )
+    assert any("caption is in no markdown cell" in w for w in out.get("warnings", []))

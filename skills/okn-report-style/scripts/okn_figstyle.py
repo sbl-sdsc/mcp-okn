@@ -28,6 +28,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import html
+import warnings
 
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
@@ -481,15 +482,39 @@ def folium_map_iframe(m, height=520, title="Interactive map"):
     )
 
 
-def finalize(fig, number, path, tight=True):
+def _in_jupyter():
+    """True inside a Jupyter kernel (JupyterLab, or nbconvert executing the notebook)."""
+    try:
+        from IPython import get_ipython
+    except ImportError:
+        return False
+    ip = get_ipython()
+    return ip is not None and "IPKernelApp" in getattr(ip, "config", {})
+
+
+def finalize(fig, number, path, tight=True, show=None):
     """Save a figure at 150 dpi with tight margins. `number` is for the log/print only — the visible
     "Figure N." belongs in the caption BELOW the image (with the interpretive legend), NOT inside the
-    PNG (see references/figure-checklist.md). Keep the PNG to panels, axis labels, and a compact key."""
+    PNG (see references/figure-checklist.md). Keep the PNG to panels, axis labels, and a compact key.
+
+    Inside a Jupyter kernel (`show=None`) the saved PNG is also displayed, so the notebook cell that
+    draws a figure shows it — exactly as the report does — and the next markdown cell carries its
+    numbered legend. Pass `show=False` to suppress that, `show=True` to force it."""
     if tight:
-        fig.tight_layout()
+        with warnings.catch_warnings():
+            # A hand-placed axes (fig.add_axes colour bar) is skipped by tight_layout, which says so on
+            # stderr; bbox_inches="tight" below still crops the figure, so the notice is noise.
+            warnings.filterwarnings(
+                "ignore", message=".*not compatible with tight_layout"
+            )
+            fig.tight_layout()
     fig.savefig(path, dpi=150, bbox_inches="tight")
     plt.close(fig)
     print(f"[okn_figstyle] saved Figure {number}: {path}")
+    if _in_jupyter() if show is None else show:
+        from IPython.display import Image, display
+
+        display(Image(filename=path))
 
 
 def _demo():
