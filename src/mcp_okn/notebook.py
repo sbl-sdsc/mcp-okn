@@ -279,6 +279,11 @@ def run_commands(folder: str, notebook: str) -> dict[str, str]:
     }
 
 
+def _norm_legend(text: str) -> str:
+    """Caption text without Markdown emphasis/blockquote markup and with collapsed spaces."""
+    return " ".join(re.sub(r"[*_>]", " ", text).split())
+
+
 def build_study(
     *,
     title: str,
@@ -508,6 +513,24 @@ def build_study(
         if fig.get("source"):
             item["source"] = str(fig["source"])
         study.figures.append(item)
+    if has_code:
+        legends = _norm_legend(
+            "\n".join(
+                _cell_text(c.get("source"))
+                for c in cells or []
+                if isinstance(c, dict) and c.get("type") == "markdown"
+            )
+        )
+        for i, fig in enumerate(figures or [], start=1):
+            caption = _norm_legend(
+                _cell_text(fig.get("caption")) if isinstance(fig, dict) else ""
+            )
+            if caption and caption[:80] not in legends:
+                study.warnings.append(
+                    f"figures[{i}] ({fig.get('path')}): its caption is in no markdown cell. Draw "
+                    "the figure in its own code cell and put its numbered legend in a markdown "
+                    "cell right after it."
+                )
     if figure_md and not has_code:
         add(_markdown_cell, "## Figures\n\n" + "\n".join(figure_md).rstrip())
 

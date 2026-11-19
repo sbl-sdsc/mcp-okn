@@ -83,6 +83,12 @@ set*). `validate_okn_report.py` checks it, but these are the ways it goes wrong:
   under `<study>/<study>_notebook/` and copy each `figures_to_copy` image to its path. Never retype or
   summarize a file. The validator checks every file `queries/manifest.json` lists and every image the
   notebook shows.
+- **The notebook shows every figure at the end, without legends** (one cell runs a build-all-figures
+  script, another loops over `figures/*.png`), **or each figure is a one-line call** (`BF.fig3()`)
+  into a script the reader never sees → put each figure's plotting code in its own code cell, in
+  report order, ending in `F.finalize(fig, N, path)` (it shows the saved PNG inside Jupyter), and
+  follow it with a markdown cell holding the report's numbered legend. Keep only reusable helpers
+  (statistics, styling) in `code_files`.
 - **The notebook only re-runs the queries.** If the analysis that turns query rows into the reported
   numbers lives only in `scripts/` or in your head, the notebook cannot reproduce the findings. Pass
   that code as `code_files` (e.g. `{"analysis.py": …}`) and the cells that call it on `data["q01"]` …

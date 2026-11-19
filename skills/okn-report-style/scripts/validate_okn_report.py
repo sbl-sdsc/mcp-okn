@@ -337,6 +337,57 @@ def _notebook_header(nb_path: Path) -> str | None:
     return re.split(r"^##\s", _cell_text(cells[0]), maxsplit=1, flags=re.M)[0]
 
 
+_LEGEND_MARKUP_RE = re.compile(r"^[\s>*_]+")
+_SAVES_FIGURE_RE = re.compile(r"\b(?:finalize|savefig)\(")
+
+
+def _check_notebook_figure_legends(paths: dict, cells: list[dict], r: _Report) -> None:
+    """Each report figure appears in the notebook where it is drawn, with its numbered legend.
+
+    The report's ``***Figure N. …***`` captions are the reference. For every N, the notebook needs a
+    markdown cell that opens with ``Figure N.`` (bold/blockquote markup allowed) right AFTER a code cell,
+    which is the cell that draws and shows that figure. A "build every figure" cell followed by a "show all
+    figures" cell (or a gallery at the end) leaves the figures away from their code and without legends.
+    That code cell must save the figure itself (``finalize(`` / ``savefig(``): a one-line ``BF.fig3()``
+    into a script hides the plotting code the notebook exists to show.
+    """
+    report_md = paths["report_md"]
+    if not report_md.is_file():
+        return
+    numbers, _ = _brh._figure_numbers(report_md.read_text(encoding="utf-8"))
+    label = paths["notebook_dir"].name
+    for n in sorted(set(numbers)):
+        head = re.compile(rf"Figures?\s+{n}\b")
+        at = [
+            i
+            for i, c in enumerate(cells)
+            if c.get("cell_type") == "markdown"
+            and head.match(_LEGEND_MARKUP_RE.sub("", _cell_text(c)))
+        ]
+        if not at:
+            r.err(
+                f"{label}/: the notebook has no legend for Figure {n} — draw each figure in its own "
+                "code cell and put the report's numbered legend (`**Figure N. …**`) in a markdown "
+                "cell right after it"
+            )
+        elif not any(i > 0 and cells[i - 1].get("cell_type") == "code" for i in at):
+            r.err(
+                f"{label}/: the Figure {n} legend does not follow a code cell — put it right after "
+                "the code cell that draws and shows the figure"
+            )
+        elif not any(
+            i > 0
+            and cells[i - 1].get("cell_type") == "code"
+            and _SAVES_FIGURE_RE.search(_cell_text(cells[i - 1]))
+            for i in at
+        ):
+            r.err(
+                f"{label}/: the code cell before the Figure {n} legend does not draw the figure "
+                "itself — put its plotting code in that cell, ending in F.finalize(fig, N, path), "
+                "instead of calling into a script"
+            )
+
+
 def _check_notebook(paths: dict, r: _Report) -> None:
     """The notebook folder is complete, re-runnable, and rendered.
 
@@ -404,6 +455,8 @@ def _check_notebook(paths: dict, r: _Report) -> None:
                     f"{label}/: the notebook shows {dest}, which is not in the folder — copy each "
                     "`figures_to_copy` image to its path"
                 )
+
+    _check_notebook_figure_legends(paths, cells, r)
 
     html_path = paths["notebook_html"]
     if not html_path.is_file():
@@ -570,7 +623,7 @@ def _check_repro_skills(nb_path: Path, r: _Report) -> None:
         r.err(
             f"{label}: the header has no '- **Skills:**' line — pass `skills=[...]` to "
             "create_jupyter_notebook (e.g. `skills=['okn-bioanalysis v0.1.3', "
-            "'okn-report-style v0.2.2']`, versions from each skill's frontmatter `metadata.version`). "
+            "'okn-report-style v0.2.3']`, versions from each skill's frontmatter `metadata.version`). "
             "The server cannot see which skills your session loaded, so an omitted list leaves the "
             "record claiming no methodology at all; do NOT hand-edit the cell — regenerate the notebook"
         )

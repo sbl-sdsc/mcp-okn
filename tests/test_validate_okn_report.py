@@ -70,6 +70,17 @@ Everything needed to rerun the analysis is in the Demo_notebook folder backing t
 
 
 DEFAULT_SKILLS = ["okn-bioanalysis v0.1.1", "okn-report-style v0.2.0"]
+# The notebook draws each report figure in its own code cell, its numbered legend right after.
+FIGURE_CELLS = [
+    {
+        "type": "code",
+        "source": 'fig, ax = plt.subplots()\nF.finalize(fig, 1, "figures/fig1_demo.png")',
+    },
+    {
+        "type": "markdown",
+        "source": "> ***Figure 1. A demonstration panel showing nothing in particular.***",
+    },
+]
 _QUERY = "SELECT ?s WHERE { GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?s a ?t } } LIMIT 1"
 
 
@@ -96,7 +107,7 @@ def _write_notebook(
         generated_by="mcp-okn test",
         skills=skills,
         folder_name=NB,
-        cells=cells,
+        cells=FIGURE_CELLS if cells is None else cells,
     )
     session.reset(scope)
     root = study / NB
@@ -388,7 +399,10 @@ def test_notebook_figure_not_copied_fails(tmp_path):
     study = _build(tmp_path)
     _write_notebook(
         study,
-        cells=[{"type": "markdown", "source": "![Figure 1](figures/fig1_demo.png)"}],
+        cells=[
+            *FIGURE_CELLS,
+            {"type": "markdown", "source": "![Figure 1](figures/fig1_demo.png)"},
+        ],
     )
     os.utime(study / NB / f"{NB}.html", None)
     r = v.validate(str(study))
@@ -444,7 +458,10 @@ def test_skills_mentioned_outside_header_does_not_satisfy_gate(tmp_path):
     _write_notebook(
         study,
         skills=[],
-        cells=[{"type": "markdown", "source": "- **Skills:** okn-report-style v0.2.0"}],
+        cells=[
+            *FIGURE_CELLS,
+            {"type": "markdown", "source": "- **Skills:** okn-report-style v0.2.0"},
+        ],
     )
     r = v.validate(str(study))
     assert any("no '- **Skills:**' line" in e for e in r.errors)
@@ -541,7 +558,11 @@ def test_model_mentioned_outside_header_does_not_satisfy_gate(tmp_path):
     # Only the provenance header counts — a `Model:` in a later cell is not the tool-written field.
     study = _build(tmp_path)
     _write_notebook(
-        study, cells=[{"type": "markdown", "source": "- **Model:** claude-opus-5"}]
+        study,
+        cells=[
+            *FIGURE_CELLS,
+            {"type": "markdown", "source": "- **Model:** claude-opus-5"},
+        ],
     )
     _set_model(study, repro="")
     r = v.validate(str(study))
@@ -669,3 +690,38 @@ def test_plotly_tile_map_in_notebook_output_fails(tmp_path):
     assert errs and "(densitymap)" in errs[0] and f"{NB}/{NB}.ipynb" in errs[0], (
         r.errors
     )
+
+
+def _with_cells(tmp_path: Path, cells: list) -> Path:
+    study = _build(tmp_path)
+    _write_notebook(study, cells=cells)
+    os.utime(study / NB / f"{NB}.html", None)
+    return study
+
+
+def test_notebook_figure_without_legend_fails(tmp_path):
+    """All figures drawn in one cell and shown at the end: no per-figure legend → error."""
+    study = _with_cells(tmp_path, [{"type": "code", "source": "build_all_figures()"}])
+    r = v.validate(str(study))
+    assert any("no legend for Figure 1" in e for e in r.errors), r.errors
+
+
+def test_notebook_figure_legend_not_after_code_fails(tmp_path):
+    cells = [
+        {"type": "markdown", "source": "Intro."},
+        {"type": "markdown", "source": "**Figure 1. Demo.** Drawn somewhere else."},
+    ]
+    r = v.validate(str(_with_cells(tmp_path, cells)))
+    assert any("Figure 1 legend does not follow a code cell" in e for e in r.errors), (
+        r.errors
+    )
+
+
+def test_notebook_figure_behind_a_call_fails(tmp_path):
+    """A one-line call into a script hides the plotting code the notebook exists to show."""
+    cells = [
+        {"type": "code", "source": "BF.fig1()"},
+        {"type": "markdown", "source": "**Figure 1. Demo.** Drawn in a script."},
+    ]
+    r = v.validate(str(_with_cells(tmp_path, cells)))
+    assert any("does not draw the figure itself" in e for e in r.errors), r.errors
