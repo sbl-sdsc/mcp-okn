@@ -246,10 +246,13 @@ report deliverables without re-explaining conventions each time:
   place-based data via geography).
 
 Each skill is a self-contained folder: a `SKILL.md` plus `references/` and
-`scripts/`. A ready-to-upload zip of each is also committed for convenience:
+`scripts/`. A ready-to-install package of each is committed in two forms with the
+same contents: a `.skill` file for Claude Desktop and claude.ai, whose upload dialog
+accepts only `.skill` (or a lone `SKILL.md`, which would drop the scripts), and a
+`.zip` for other clients:
 
-- [`skills/okn-report-style.zip`](skills/okn-report-style.zip)
-- [`skills/okn-bioanalysis.zip`](skills/okn-bioanalysis.zip)
+- `okn-report-style`: [`.skill`](skills/okn-report-style.skill) · [`.zip`](skills/okn-report-style.zip)
+- `okn-bioanalysis`: [`.skill`](skills/okn-bioanalysis.skill) · [`.zip`](skills/okn-bioanalysis.zip)
 
 ### Supported clients
 
@@ -257,8 +260,8 @@ Agent Skills work in these clients:
 
 | Client | Install method | Notes |
 | --- | --- | --- |
-| **Claude Desktop** (macOS / Windows) | Upload the zip under Settings → Capabilities → Skills | Pro, Max, Team, or Enterprise |
-| **claude.ai** (web) | Upload the zip under Settings → Capabilities → Skills | Pro, Max, Team, or Enterprise |
+| **Claude Desktop** (macOS / Windows) | Upload the `.skill` file under Settings → Capabilities → Skills; to update, upload the new `.skill` as a new version of the skill | Pro, Max, Team, or Enterprise |
+| **claude.ai** (web) | Upload the `.skill` file under Settings → Capabilities → Skills; to update, upload the new `.skill` as a new version of the skill | Pro, Max, Team, or Enterprise |
 | **ChatGPT Desktop** | Type the prompt: `Install skill from GitHub: https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/skills/{skill}.zip` | Replace `{skill}` with `okn-report-style` or `okn-bioanalysis` |
 | **Claude Code** (CLI + IDE extensions) | Copy the folder into `.claude/skills/` or `~/.claude/skills/` ([see below](#claude-code-1)) | Free tier and up |
 | **Claude Agent SDK** | Point the SDK at the skill folder | For building custom agents |
@@ -581,8 +584,9 @@ CI (`.github/workflows/ci.yml`) runs ruff lint, ruff format-check, and mypy on
 every push/PR, plus the offline test suite on Python 3.10 and 3.12. A `skills`
 job validates both Agent Skills against the
 [Agent Skills spec](https://agentskills.io/specification) with the official
-`agentskills` validator and asserts each committed `.zip` is in sync with its
-skill folder (so an edited `SKILL.md` can't ship without a rebuilt zip).
+`agentskills` validator and asserts each committed `.skill` and `.zip` is in sync
+with its skill folder (so an edited `SKILL.md` can't ship without rebuilt packages;
+rebuild both with `scripts/package_skills.sh`).
 
 ### Lint & formatting conventions
 
