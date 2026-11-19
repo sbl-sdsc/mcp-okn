@@ -1,0 +1,97 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dir ?d ?p ?x ?xlabel (GROUP_CONCAT(DISTINCT STR(?xtype); separator="|") AS ?xtypes) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/rdkg> {
+    {
+  {
+    <http://purl.obolibrary.org/obo/MONDO_0005301> ?p ?x . BIND("out" AS ?dir)
+      FILTER(?p IN (<https://w3id.org/biolink/vocab/related_to>, <https://w3id.org/biolink/vocab/contributes_to>, <https://w3id.org/biolink/vocab/contraindicated_for>, <https://w3id.org/biolink/vocab/has_onset>, <https://w3id.org/biolink/vocab/has_mode_of_inheritance>, <https://w3id.org/biolink/vocab/genetic_association>, <https://w3id.org/biolink/vocab/has_phenotype>))
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0005301> AS ?d)
+  }
+  UNION
+  {
+    <http://purl.obolibrary.org/obo/MONDO_0005314> ?p ?x . BIND("out" AS ?dir)
+      FILTER(?p IN (<https://w3id.org/biolink/vocab/related_to>, <https://w3id.org/biolink/vocab/contributes_to>, <https://w3id.org/biolink/vocab/contraindicated_for>, <https://w3id.org/biolink/vocab/has_onset>, <https://w3id.org/biolink/vocab/has_mode_of_inheritance>, <https://w3id.org/biolink/vocab/genetic_association>, <https://w3id.org/biolink/vocab/has_phenotype>))
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0005314> AS ?d)
+  }
+  UNION
+  {
+    <http://purl.obolibrary.org/obo/MONDO_0000450> ?p ?x . BIND("out" AS ?dir)
+      FILTER(?p IN (<https://w3id.org/biolink/vocab/related_to>, <https://w3id.org/biolink/vocab/contributes_to>, <https://w3id.org/biolink/vocab/contraindicated_for>, <https://w3id.org/biolink/vocab/has_onset>, <https://w3id.org/biolink/vocab/has_mode_of_inheritance>, <https://w3id.org/biolink/vocab/genetic_association>, <https://w3id.org/biolink/vocab/has_phenotype>))
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0000450> AS ?d)
+  }
+  UNION
+  {
+    <http://purl.obolibrary.org/obo/MONDO_0000451> ?p ?x . BIND("out" AS ?dir)
+      FILTER(?p IN (<https://w3id.org/biolink/vocab/related_to>, <https://w3id.org/biolink/vocab/contributes_to>, <https://w3id.org/biolink/vocab/contraindicated_for>, <https://w3id.org/biolink/vocab/has_onset>, <https://w3id.org/biolink/vocab/has_mode_of_inheritance>, <https://w3id.org/biolink/vocab/genetic_association>, <https://w3id.org/biolink/vocab/has_phenotype>))
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0000451> AS ?d)
+  }
+  UNION
+  {
+    <http://purl.obolibrary.org/obo/MONDO_0000452> ?p ?x . BIND("out" AS ?dir)
+      FILTER(?p IN (<https://w3id.org/biolink/vocab/related_to>, <https://w3id.org/biolink/vocab/contributes_to>, <https://w3id.org/biolink/vocab/contraindicated_for>, <https://w3id.org/biolink/vocab/has_onset>, <https://w3id.org/biolink/vocab/has_mode_of_inheritance>, <https://w3id.org/biolink/vocab/genetic_association>, <https://w3id.org/biolink/vocab/has_phenotype>))
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0000452> AS ?d)
+  }
+  UNION
+  {
+    <http://purl.obolibrary.org/obo/MONDO_0005284> ?p ?x . BIND("out" AS ?dir)
+      FILTER(?p IN (<https://w3id.org/biolink/vocab/related_to>, <https://w3id.org/biolink/vocab/contributes_to>, <https://w3id.org/biolink/vocab/contraindicated_for>, <https://w3id.org/biolink/vocab/has_onset>, <https://w3id.org/biolink/vocab/has_mode_of_inheritance>, <https://w3id.org/biolink/vocab/genetic_association>, <https://w3id.org/biolink/vocab/has_phenotype>))
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0005284> AS ?d)
+  }
+  UNION
+  {
+    <http://purl.obolibrary.org/obo/MONDO_0016429> ?p ?x . BIND("out" AS ?dir)
+      FILTER(?p IN (<https://w3id.org/biolink/vocab/related_to>, <https://w3id.org/biolink/vocab/contributes_to>, <https://w3id.org/biolink/vocab/contraindicated_for>, <https://w3id.org/biolink/vocab/has_onset>, <https://w3id.org/biolink/vocab/has_mode_of_inheritance>, <https://w3id.org/biolink/vocab/genetic_association>, <https://w3id.org/biolink/vocab/has_phenotype>))
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0016429> AS ?d)
+  }
+  UNION
+  {
+    <http://purl.obolibrary.org/obo/MONDO_0018784> ?p ?x . BIND("out" AS ?dir)
+      FILTER(?p IN (<https://w3id.org/biolink/vocab/related_to>, <https://w3id.org/biolink/vocab/contributes_to>, <https://w3id.org/biolink/vocab/contraindicated_for>, <https://w3id.org/biolink/vocab/has_onset>, <https://w3id.org/biolink/vocab/has_mode_of_inheritance>, <https://w3id.org/biolink/vocab/genetic_association>, <https://w3id.org/biolink/vocab/has_phenotype>))
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0018784> AS ?d)
+  }
+}
+    UNION
+    {
+  {
+    ?x ?p <http://purl.obolibrary.org/obo/MONDO_0005301> . BIND("in" AS ?dir) FILTER(?p != <https://w3id.org/biolink/vocab/subclass_of>)
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0005301> AS ?d)
+  }
+  UNION
+  {
+    ?x ?p <http://purl.obolibrary.org/obo/MONDO_0005314> . BIND("in" AS ?dir) FILTER(?p != <https://w3id.org/biolink/vocab/subclass_of>)
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0005314> AS ?d)
+  }
+  UNION
+  {
+    ?x ?p <http://purl.obolibrary.org/obo/MONDO_0000450> . BIND("in" AS ?dir) FILTER(?p != <https://w3id.org/biolink/vocab/subclass_of>)
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0000450> AS ?d)
+  }
+  UNION
+  {
+    ?x ?p <http://purl.obolibrary.org/obo/MONDO_0000451> . BIND("in" AS ?dir) FILTER(?p != <https://w3id.org/biolink/vocab/subclass_of>)
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0000451> AS ?d)
+  }
+  UNION
+  {
+    ?x ?p <http://purl.obolibrary.org/obo/MONDO_0000452> . BIND("in" AS ?dir) FILTER(?p != <https://w3id.org/biolink/vocab/subclass_of>)
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0000452> AS ?d)
+  }
+  UNION
+  {
+    ?x ?p <http://purl.obolibrary.org/obo/MONDO_0005284> . BIND("in" AS ?dir) FILTER(?p != <https://w3id.org/biolink/vocab/subclass_of>)
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0005284> AS ?d)
+  }
+  UNION
+  {
+    ?x ?p <http://purl.obolibrary.org/obo/MONDO_0016429> . BIND("in" AS ?dir) FILTER(?p != <https://w3id.org/biolink/vocab/subclass_of>)
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0016429> AS ?d)
+  }
+  UNION
+  {
+    ?x ?p <http://purl.obolibrary.org/obo/MONDO_0018784> . BIND("in" AS ?dir) FILTER(?p != <https://w3id.org/biolink/vocab/subclass_of>)
+    BIND(<http://purl.obolibrary.org/obo/MONDO_0018784> AS ?d)
+  }
+}
+    OPTIONAL { ?x rdfs:label ?xlabel } OPTIONAL { ?x a ?xtype }
+  }
+} GROUP BY ?dir ?d ?p ?x ?xlabel

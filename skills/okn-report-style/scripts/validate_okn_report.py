@@ -388,6 +388,111 @@ def _check_notebook_figure_legends(paths: dict, cells: list[dict], r: _Report) -
             )
 
 
+_QUESTION_RE = re.compile(r"#{1,4}\s*(?:Question|Background)\b", re.I)
+_CONCLUSIONS_RE = re.compile(r"#{1,4}\s*Conclusions?\b", re.I)
+_LEGEND_RE = re.compile(r"Figures?\s+\d+\b")
+#: A Markdown list item (`- `, `* `, `+ `, `1. `): the conclusions' summary of findings.
+_SUMMARY_BULLET_RE = re.compile(r"^\s{0,3}(?:[-*+]|\d+[.)])\s+\S", re.M)
+#: The headings create_jupyter_notebook writes around the caller's `cells`.
+_ANALYSIS_HEADING = "## Analysis"
+_TOOL_TAIL_HEADINGS = ("## Verify against the live graphs", "## Figures")
+
+
+def _analysis_cells(cells: list[dict]) -> list[dict] | None:
+    """The caller's `cells`: between the tool's ``## Analysis`` heading and its closing sections.
+    None when the notebook has no analysis section (no `cells` were passed)."""
+    start = next(
+        (
+            i
+            for i, c in enumerate(cells)
+            if c.get("cell_type") == "markdown"
+            and _cell_text(c).strip() == _ANALYSIS_HEADING
+        ),
+        None,
+    )
+    if start is None:
+        return None
+    body = cells[start + 1 :]
+    end = next(
+        (
+            i
+            for i, c in enumerate(body)
+            if c.get("cell_type") == "markdown"
+            and _cell_text(c).strip().startswith(_TOOL_TAIL_HEADINGS)
+        ),
+        len(body),
+    )
+    return body[:end]
+
+
+def _check_notebook_story(label: str, cells: list[dict], r: _Report) -> None:
+    """The analysis reads as a story: question first, a why before each step, conclusions last.
+
+    A notebook of bare code cells reproduces the numbers but not the reasoning, and its main reader
+    is someone rerunning it without the chat (Rule et al. 2019, Rules 1 and 3). The opening and
+    closing cells are required; a code cell with no explanatory markdown before it only warns,
+    since a short setup cell can speak for itself.
+    """
+    body = _analysis_cells(cells)
+    if body is None:
+        r.err(
+            f"{label}/: the notebook has no analysis cells — pass the code that turns the query rows "
+            "into the reported numbers as `cells`, opening with `## Question and approach` and "
+            "closing with `## Conclusions`"
+        )
+        return
+
+    def heading(c: dict, pattern: re.Pattern) -> bool:
+        return c.get("cell_type") == "markdown" and bool(
+            pattern.match(_cell_text(c).lstrip())
+        )
+
+    code_at = [i for i, c in enumerate(body) if c.get("cell_type") == "code"]
+    question_at = [i for i, c in enumerate(body) if heading(c, _QUESTION_RE)]
+    conclusions_at = [i for i, c in enumerate(body) if heading(c, _CONCLUSIONS_RE)]
+
+    if not question_at:
+        r.err(
+            f"{label}/: the analysis has no `## Question and approach` cell — open `cells` with the "
+            "question in plain words, why it matters, and the approach"
+        )
+    elif code_at and question_at[0] > code_at[0]:
+        r.err(
+            f"{label}/: `## Question and approach` comes after analysis code — make it the first "
+            "cell of `cells`"
+        )
+    if not conclusions_at:
+        r.err(
+            f"{label}/: the analysis has no `## Conclusions` cell — close `cells` with a bulleted "
+            "summary of findings, what they answer and mean, and the main limitation"
+        )
+    else:
+        if code_at and conclusions_at[-1] < code_at[-1]:
+            r.err(
+                f"{label}/: analysis code follows `## Conclusions` — make the conclusions the last "
+                "cell of `cells`, after every analysis code cell"
+            )
+        if not _SUMMARY_BULLET_RE.search(_cell_text(body[conclusions_at[-1]])):
+            r.err(
+                f"{label}/: `## Conclusions` has no summary of findings — open it with 3–5 bullets, "
+                "each one finding with its headline number as the notebook computed it"
+            )
+
+    bare = sum(
+        1
+        for i in code_at
+        if i == 0
+        or body[i - 1].get("cell_type") != "markdown"
+        or _LEGEND_RE.match(_LEGEND_MARKUP_RE.sub("", _cell_text(body[i - 1])))
+    )
+    if bare:
+        r.warn(
+            f"{label}/: {bare} analysis code cell(s) have no explanatory markdown cell before them — "
+            "say what each step does and why (a figure legend describes the previous figure, not "
+            "the next step)"
+        )
+
+
 def _check_notebook(paths: dict, r: _Report) -> None:
     """The notebook folder is complete, re-runnable, and rendered.
 
@@ -457,6 +562,7 @@ def _check_notebook(paths: dict, r: _Report) -> None:
                 )
 
     _check_notebook_figure_legends(paths, cells, r)
+    _check_notebook_story(label, cells, r)
 
     html_path = paths["notebook_html"]
     if not html_path.is_file():
@@ -623,7 +729,7 @@ def _check_repro_skills(nb_path: Path, r: _Report) -> None:
         r.err(
             f"{label}: the header has no '- **Skills:**' line — pass `skills=[...]` to "
             "create_jupyter_notebook (e.g. `skills=['okn-bioanalysis v0.1.3', "
-            "'okn-report-style v0.2.3']`, versions from each skill's frontmatter `metadata.version`). "
+            "'okn-report-style v0.2.4']`, versions from each skill's frontmatter `metadata.version`). "
             "The server cannot see which skills your session loaded, so an omitted list leaves the "
             "record claiming no methodology at all; do NOT hand-edit the cell — regenerate the notebook"
         )

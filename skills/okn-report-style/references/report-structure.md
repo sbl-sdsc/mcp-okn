@@ -95,7 +95,8 @@ thresholds, and the join keys in plain terms — plus an **inventory / cohort ta
 verified counts. Add the main design / overview figure here (Figure 1). **Do not restate the exact
 specification here** — the replicator-grade detail (every join key, the exact backgrounds, scoring
 formulas such as `1/sqrt(fanout)`) lives *only* in the **notebook's `## Replicator specification`
-cell** (the first markdown cell of `create_jupyter_notebook`'s `cells`); cross-reference it ("full
+cell** (right after the `## Question and approach` cell that opens `create_jupyter_notebook`'s
+`cells`); cross-reference it ("full
 specification in the reproducibility notebook") rather than duplicating it. §3 is for a reader; the spec section is for a
 replicator — the same thresholds spelled out in both is drift waiting to happen.
 
@@ -289,7 +290,7 @@ if you cannot determine it — a family name, a product name, or an inferred id 
 mis-attributes the whole analysis.
 
 The header also carries the **skills** that shaped the run — `- **Skills:** okn-bioanalysis
-v0.1.3 · okn-report-style v0.2.3` — but only if you pass `skills=[...]`: the server cannot see which
+v0.1.3 · okn-report-style v0.2.4` — but only if you pass `skills=[...]`: the server cannot see which
 skills your session loaded, so an omitted list silently reads as "no methodology skill was used".
 Give each as `"<name> v<version>"`, the version taken from that skill's frontmatter
 `metadata.version` (not guessed), and list only skills you actually followed — a skill you didn't use

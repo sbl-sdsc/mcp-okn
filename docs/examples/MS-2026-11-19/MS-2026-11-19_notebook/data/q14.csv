@@ -1,0 +1,179 @@
+loc,name,iso3,value,mort100k,population,ghe,source
+https://purl.org/okn/frink/kg/spoke-okn/location/TH,Thailand,THA,100.0,143.62,"69,626,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/LB,Lebanon,LBN,,0.0,"6,856,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/LY,Libya,LBY,,0.0,"6,777,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CR,Costa Rica,CRI,,0.0,"5,048,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/HU,Hungary,HUN,100.0,"1,032.52","9,685,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/FM,Micronesia,FSM,,0.0,"114,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/FR,France,FRA,800.0,"1,228.31","65,130,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BF,Burkina Faso,BFA,,0.0,"20,321,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/AL,Albania,ALB,,0.0,"2,881,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/GR,Greece,GRC,100.0,954.84,"10,473,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/LK,Sri Lanka,LKA,,0.0,"21,324,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SS,South Sudan,SSD,,0.0,"11,062,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/PY,Paraguay,PRY,,0.0,"7,045,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/NG,Nigeria,NGA,200.0,99.52,"200,964,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/AG,Antigua and Barbuda,ATG,,0.0,"97,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/IT,Italy,ITA,700.0,"1,156.07","60,550,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/ZA,South Africa,ZAF,100.0,170.77,"58,558,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SA,Saudi Arabia,SAU,,0.0,"34,269,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/NL,The Netherlands,NLD,300.0,"1,754.69","17,097,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SV,El Salvador,SLV,,0.0,"6,454,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/LS,Lesotho,LSO,,0.0,"2,125,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/NP,Nepal,NPL,,0.0,"28,609,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BO,Bolivia,BOL,,0.0,"11,513,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MG,Madagascar,MDG,,0.0,"26,969,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/TZ,Tanzania,TZA,,0.0,"58,005,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/ML,Mali,MLI,,0.0,"19,658,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/TR,Turkey,TUR,200.0,239.72,"83,430,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/TT,Trinidad and Tobago,TTO,,0.0,"1,395,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/IQ,Iraq,IRQ,,0.0,"39,310,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/KH,Cambodia,KHM,,0.0,"16,487,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/PG,Papua New Guinea,PNG,,0.0,"8,776,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/PH,Philippines,PHL,,0.0,"108,117,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/EC,Ecuador,ECU,,0.0,"17,374,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BB,Barbados,BRB,,0.0,"287,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/DO,Dominican Republic,DOM,,0.0,"10,739,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/EE,Estonia,EST,,0.0,"1,326,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/IR,Iran,IRN,400.0,482.43,"82,914,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/AR,Argentina,ARG,100.0,223.31,"44,781,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/IL,Israel,ISR,,0.0,"8,519,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/US,United States of America,USA,5100.0,"1,549.85","329,065,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BD,Bangladesh,BGD,200.0,122.66,"163,046,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CF,Central African Republic,CAF,,0.0,"4,745,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/KG,Kyrgyzstan,KGZ,,0.0,"6,416,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/GN,Guinea,GIN,,0.0,"12,771,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/TD,Chad,TCD,,0.0,"15,947,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/LU,Luxembourg,LUX,,0.0,"616,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/PA,Panama,PAN,,0.0,"4,246,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BS,Bahamas,BHS,,0.0,"389,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/GT,Guatemala,GTM,,0.0,"17,581,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CY,Cyprus,CYP,,0.0,"1,199,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/UA,Ukraine,UKR,300.0,681.91,"43,994,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/TJ,Tajikistan,TJK,,0.0,"9,321,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BW,Botswana,BWA,,0.0,"2,304,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/AZ,Azerbaijan,AZE,,0.0,"10,048,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SY,Syria,SYR,,0.0,"17,070,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BY,Belarus,BLR,,0.0,"9,452,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/AU,Australia,AUS,200.0,793.56,"25,203,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MM,Myanmar,MMR,100.0,185.03,"54,045,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CA,Canada,CAN,700.0,"1,871.11","37,411,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/JO,Jordan,JOR,,0.0,"10,102,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BE,Belgium,BEL,100.0,866.63,"11,539,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BH,Bahrain,BHR,,0.0,"1,641,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/ER,Eritrea,ERI,,0.0,"3,497,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/HN,Honduras,HND,,0.0,"9,746,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/RW,Rwanda,RWA,,0.0,"12,627,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/YE,Yemen,YEM,,0.0,"29,162,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CN,China,CHN,1700.0,117.9,"1,441,860,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/ID,Indonesia,IDN,200.0,73.9,"270,626,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SD,Sudan,SDN,100.0,233.57,"42,813,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SB,Solomon Islands,SLB,,0.0,"670,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/HR,Croatia,HRV,100.0,"2,421.31","4,130,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SL,Sierra Leone,SLE,,0.0,"7,813,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/VN,Vietnam,VNM,100.0,103.67,"96,462,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MT,Malta,MLT,,0.0,"440,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MR,Mauritania,MRT,,0.0,"4,526,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/LV,Latvia,LVA,,0.0,"1,907,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/WS,Samoa,WSM,,0.0,"197,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/GW,Guinea-Bissau,GNB,,0.0,"1,921,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BZ,Belize,BLZ,,0.0,"390,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/NZ,New Zealand,NZL,,0.0,"4,783,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SZ,Eswatini,SWZ,,0.0,"1,148,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/QA,Qatar,QAT,,0.0,"2,832,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BA,Bosnia and Herzegovina,BIH,,0.0,"3,301,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/JM,Jamaica,JAM,,0.0,"2,948,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/EG,Egypt,EGY,200.0,199.23,"100,388,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/IE,Ireland,IRL,100.0,"2,048.34","4,882,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CG,Republic of the Congo,COG,,0.0,"5,381,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/ST,Sao Tome and Principe,STP,,0.0,"215,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CZ,Czechia,CZE,100.0,935.54,"10,689,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SG,Singapore,SGP,,0.0,"5,804,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/NE,Niger,NER,,0.0,"23,311,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SC,Seychelles,SYC,,0.0,"98,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/DE,Germany,DEU,1600.0,"1,915.78","83,517,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CL,Chile,CHL,,0.0,"18,952,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MY,Malaysia,MYS,,0.0,"31,950,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CI,Ivory Coast,CIV,,0.0,"25,717,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/AM,Armenia,ARM,,0.0,"2,958,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/RO,Romania,ROU,100.0,516.4,"19,365,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/DK,Denmark,DNK,100.0,"1,732.50","5,772,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/LC,Saint Lucia,LCA,,0.0,"183,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/VU,Vanuatu,VUT,,0.0,"300,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/JP,Japan,JPN,100.0,78.83,"126,860,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/PT,Portugal,PRT,100.0,977.9,"10,226,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MX,Mexico,MEX,300.0,235.15,"127,576,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/AO,Angola,AGO,,0.0,"31,825,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/ZM,Zambia,ZMB,,0.0,"17,861,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BG,Bulgaria,BGR,100.0,"1,428.57","7,000,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/IN,India,IND,2300.0,168.32,"1,366,418,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/FJ,Fiji,FJI,,0.0,"890,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/TN,Tunisia,TUN,,0.0,"11,695,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MD,Moldova,MDA,,0.0,"4,043,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/AE,United Arab Emirates,ARE,,0.0,"9,771,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/GM,Gambia,GMB,,0.0,"2,348,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/AT,Austria,AUT,200.0,"2,233.39","8,955,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/DJ,Djibouti,DJI,,0.0,"974,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/UZ,Uzbekistan,UZB,,0.0,"32,982,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/GQ,Equatorial Guinea,GNQ,,0.0,"1,356,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/KE,Kenya,KEN,,0.0,"52,574,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SN,Senegal,SEN,,0.0,"16,296,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/ME,Montenegro,MNE,,0.0,"628,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/LA,Laos,LAO,,0.0,"7,169,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/KR,South Korea,KOR,,0.0,"51,225,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BR,Brazil,BRA,400.0,189.53,"211,050,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/RU,Russia,RUS,800.0,548.43,"145,872,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/LR,Liberia,LBR,,0.0,"4,937,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/TM,Turkmenistan,TKM,,0.0,"5,942,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/GA,Gabon,GAB,,0.0,"2,173,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/GE,Georgia,GEO,,0.0,"3,997,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/GH,Ghana,GHA,100.0,328.75,"30,418,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CV,Cabo Verde,CPV,,0.0,"550,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/TL,Timor Leste,TLS,,0.0,"1,293,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SR,Suriname,SUR,,0.0,"581,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/OM,Oman,OMN,,0.0,"4,975,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/KI,Kiribati,KIR,,0.0,"118,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/ZW,Zimbabwe,ZWE,,0.0,"14,645,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/PE,Peru,PER,,0.0,"32,510,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/GY,Guyana,GUY,,0.0,"783,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/HT,Haiti,HTI,,0.0,"11,263,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SE,Sweden,SWE,200.0,"1,992.83","10,036,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/PK,Pakistan,PAK,400.0,184.7,"216,565,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/GB,United Kingdom,GBR,1900.0,"2,813.56","67,530,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/UG,Uganda,UGA,,0.0,"44,270,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/ET,Ethiopia,ETH,100.0,89.22,"112,079,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/TO,Tonga,TON,,0.0,"104,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/NI,Nicaragua,NIC,,0.0,"6,546,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/TG,Togo,TGO,,0.0,"8,082,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/PL,Poland,POL,500.0,"1,319.68","37,888,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CO,Colombia,COL,100.0,198.65,"50,339,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/KP,North Korea,PRK,,0.0,"25,666,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/ES,Spain,ESP,300.0,641.89,"46,737,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/KZ,Kazakhstan,KAZ,,0.0,"18,551,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/UY,Uruguay,URY,,0.0,"3,462,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SI,Slovenia,SVN,,0.0,"2,079,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/IS,Iceland,ISL,,0.0,"339,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/DZ,Algeria,DZA,100.0,232.27,"43,053,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/AF,Afghanistan,AFG,100.0,262.87,"38,042,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SK,Slovakia,SVK,100.0,"1,832.51","5,457,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/SO,Somalia,SOM,,0.0,"15,443,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CD,Democratic Republic of the Congo,COD,,0.0,"86,791,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MZ,Mozambique,MOZ,,0.0,"30,366,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MA,Morocco,MAR,100.0,274.18,"36,472,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CH,Switzerland,CHE,200.0,"2,328.02","8,591,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BJ,Benin,BEN,,0.0,"11,801,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BI,Burundi,BDI,,0.0,"11,531,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/LT,Lithuania,LTU,,0.0,"2,760,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/RS,Serbia,SRB,100.0,"1,139.99","8,772,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CU,Cuba,CUB,100.0,882.38,"11,333,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/NO,Norway,NOR,100.0,"1,859.08","5,379,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MN,Mongolia,MNG,,0.0,"3,225,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MW,Malawi,MWI,,0.0,"18,629,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MK,North Macedonia,MKD,,0.0,"2,083,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/BT,Bhutan,BTN,,0.0,"763,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/KM,Comoros,COM,,0.0,"851,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/FI,Finland,FIN,100.0,"1,807.66","5,532,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/MV,Maldives,MDV,,0.0,"531,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/VE,Venezuela,VEN,100.0,350.68,"28,516,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/CM,Cameroon,CMR,,0.0,"25,876,000",980,World Healh Organization
+https://purl.org/okn/frink/kg/spoke-okn/location/KW,Kuwait,KWT,,0.0,"4,207,000",980,World Healh Organization

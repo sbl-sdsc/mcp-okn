@@ -1,0 +1,156 @@
+pred,semtype,entity
+causes,bact_bact,Acinetobacter
+predisposes_to_condition,orga_orga,Age
+predisposes_to_condition,hops,Air Pollutants
+causes,eehu,Air Pollution
+predisposes_to_condition,inbe_inbe,Alcohol consumption
+causes,bact_bact,Bacteria
+predisposes_to_condition,bhvr_bhvr,Behavior
+predisposes_to_condition,orga_orga,Birth Weight
+predisposes_to_condition,orga,Body Size
+predisposes_to_condition,orga_orga,Body Weight
+preventative_for_condition,orch_phsu_vita_orch,Calcitriol
+predisposes_to_condition,orch_phsu_vita_orch,Cholecalciferol
+predisposes_to_condition,food_orch_phsu_food,Cod Liver Oil
+preventative_for_condition,food_orch_phsu_food,Cod Liver Oil
+predisposes_to_condition,food_food,Coffee
+predisposes_to_condition,inbe_inbe,Conflict (Psychology)
+preventative_for_condition,hlca_hlca,Counseling
+causes,virs_virs,Cytomegalovirus
+causes,food_food,Dairy Products
+causes,food_food,Diet
+predisposes_to_condition,food_food,Diet
+causes,virs,"Distemper Virus, Canine"
+preventative_for_condition,hops_orch_hops,Endotoxins
+causes,eehu,Environmental Pollution
+causes,virs_virs,Epstein-Barr Virus
+causes,orch_phsu_vita_phsu,Ergocalciferol
+predisposes_to_condition,orch_phsu_vita_phsu,Ergocalciferol
+predisposes_to_condition,dora_dora,Exercise
+preventative_for_condition,dora_dora,Exercise
+causes,food,Fish Products
+predisposes_to_condition,food_food,Food
+predisposes_to_condition,food_food,Fruit
+predisposes_to_condition,orga,Genotype
+predisposes_to_condition,inbe_inbe,Behaviorial Habits
+predisposes_to_condition,orga,Haplotypes
+predisposes_to_condition,inbe,Health behavior
+causes,virs,Hepatitis B Virus
+causes,virs,Murine hepatitis virus
+causes,virs_virs,Human Herpesvirus 2
+causes,virs_virs,Herpesviridae
+causes,virs_virs,"Herpesvirus 1, Cercopithecine"
+causes,virs_virs,"Herpesvirus 6, Human"
+predisposes_to_condition,hops_hops,Irritants
+causes,virs_virs,JC Virus
+preventative_for_condition,dora,Leisure Activities
+causes,virs_virs,Lymphocytic choriomeningitis virus
+causes,virs,"Herpesvirus 2, Gallid"
+causes,virs,Measles virus
+predisposes_to_condition,food_food,Meat
+predisposes_to_condition,dora,Physical activity
+preventative_for_condition,dora,Physical activity
+causes,virs,Mumps virus
+causes,virs,Myxoviruses
+causes,hops_orch_orch,Nicotine
+predisposes_to_condition,hops_orch_orch,Nicotine
+preventative_for_condition,hops_orch_orch,Nicotine
+predisposes_to_condition,orga,Nutritional Requirements
+causes,virs,Oncogenic Viruses
+causes,hops_hops,Pesticides
+predisposes_to_condition,orga,Phenotype
+causes,virs_virs,Family Picornaviridae
+causes,bact_bact,Pseudomonas
+causes,virs,Rabies virus
+causes,virs,Retroviridae
+causes,virs,Rhinovirus
+predisposes_to_condition,hops,Rodenticides
+causes,virs,Rubella virus
+causes,virs,Semliki forest virus
+predisposes_to_condition,orga,Sex Characteristics
+causes,virs,Slow virus
+causes,hops_hops,Smoke
+predisposes_to_condition,hops_hops,Smoke
+predisposes_to_condition,inbe_inbe,Smoking
+causes,bact_bact,Spirochaeta genus
+causes,bact_bact,Streptococcus
+predisposes_to_condition,hops_orch_orch,Tobacco
+causes,virs,Vaccinia virus
+causes,virs_virs,Human herpesvirus 3
+predisposes_to_condition,food,Vegetables
+causes,virs_virs,Virus
+causes,orch_phsu_vita_phsu,Vitamin A
+predisposes_to_condition,orch_phsu_vita_orch,Vitamin B 12
+causes,orch_phsu_vita_phsu,Vitamin D
+predisposes_to_condition,orch_phsu_vita_phsu,Vitamin D
+preventative_for_condition,orch_phsu_vita_phsu,Vitamin D
+preventative_for_condition,orch_phsu_vita_orch,Vitamins
+causes,hops,bisphenol A
+predisposes_to_condition,orga,Gender
+causes,bact_bact,Helicobacter pylori
+causes,virs,"Herpesvirus 7, Human"
+causes,virs,Spumavirus
+preventative_for_condition,dora_dora,Walking (activity)
+predisposes_to_condition,inbe,Cessation of smoking
+causes,bact,Mycobacterium paratuberculosis
+predisposes_to_condition,orga_orga,Ability
+predisposes_to_condition,inbe_inbe,Dietary Habits
+predisposes_to_condition,orga_orga,Females
+causes,virs_virs,"T-Cell Leukemia Viruses, Human"
+predisposes_to_condition,orga_orga,Males
+predisposes_to_condition,orch_phsu_vita_orch,Folate
+causes,food_food,"Sodium Chloride, Dietary"
+causes,virs,Genus: Coronavirus
+causes,virs,"Encephalomyelitis Virus, Murine, Theiler"
+causes,virs,Morbillivirus
+causes,virs_virs,Simplexvirus
+preventative_for_condition,hlca_hlca,Evaluation
+predisposes_to_condition,orga_orga,Predisposition -- attribute
+predisposes_to_condition,hops_hops,Cigarette smoke (substance)
+causes,hops_orch_phsu_hops,Opioids
+predisposes_to_condition,orga,Genetic Heterogeneity
+predisposes_to_condition,hops,Smoking tobacco
+predisposes_to_condition,orga,Genetic Predisposition to Disease
+causes,virs,Human virus
+predisposes_to_condition,inbe,Cigarette smoker
+causes,food,Cow's milk
+causes,eehu,Pollution
+predisposes_to_condition,lbtr,Human cells
+predisposes_to_condition,lbtr,Immunoglobulin level - finding
+predisposes_to_condition,hops_hops,Tobacco smoke
+predisposes_to_condition,qnco,Score
+predisposes_to_condition,food,Processed meat
+predisposes_to_condition,inbe_inbe,Tobacco use
+predisposes_to_condition,inbe,Milk intake
+predisposes_to_condition,orga,Life event observable
+predisposes_to_condition,inbe,Confident
+predisposes_to_condition,inbe_inbe,Performance
+predisposes_to_condition,orga,virus infection mechanism
+predisposes_to_condition,orga,trait
+predisposes_to_condition,food,Nutrients
+predisposes_to_condition,inbe_inbe,skill
+predisposes_to_condition,orga,genetic trait
+predisposes_to_condition,inbe,healthful behavior
+causes,virs,human gammaherpesvirus
+predisposes_to_condition,inbe,Psychological adjustment
+predisposes_to_condition,dora,Cigarette Smoking
+preventative_for_condition,hlca_hlca,Reporting
+predisposes_to_condition,orga,Proband
+predisposes_to_condition,hops,Environmental Tobacco Smoke
+predisposes_to_condition,orga_orga,Response process
+causes,virs,Torque teno virus
+causes,virs,"Herpesvirus 6A, Human"
+causes,virs,"Herpesvirus 6B, Human"
+predisposes_to_condition,inbe,Physical Activity:behavior
+causes,virs,"Herpesvirus 1, Meleagrid"
+causes,virs,Human endogenous retrovirus W
+preventative_for_condition,hlca_hlca,Intervention regimes
+predisposes_to_condition,dora,Fitness
+preventative_for_condition,dora_dora,Moderate Exercise
+predisposes_to_condition,orga,sex
+preventative_for_condition,hlca_hlca,follow-up
+predisposes_to_condition,orga,adiposity
+predisposes_to_condition,food,Soft Drinks
+preventative_for_condition,hlca_hlca,Clinical Observation
+predisposes_to_condition,orga,Genetic Background
+causes,virs,2019 novel coronavirus

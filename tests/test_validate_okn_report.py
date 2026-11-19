@@ -70,17 +70,27 @@ Everything needed to rerun the analysis is in the Demo_notebook folder backing t
 
 
 DEFAULT_SKILLS = ["okn-bioanalysis v0.1.1", "okn-report-style v0.2.0"]
-# The notebook draws each report figure in its own code cell, its numbered legend right after.
-FIGURE_CELLS = [
-    {
-        "type": "code",
-        "source": 'fig, ax = plt.subplots()\nF.finalize(fig, 1, "figures/fig1_demo.png")',
-    },
-    {
-        "type": "markdown",
-        "source": "> ***Figure 1. A demonstration panel showing nothing in particular.***",
-    },
-]
+# The analysis tells a story: question first, a why before each step, conclusions last. The notebook
+# draws each report figure in its own code cell, its numbered legend right after.
+QUESTION_CELL = {
+    "type": "markdown",
+    "source": "## Question and approach\n\nWhat does the demo show, and how was it computed?",
+}
+WHY_CELL = {"type": "markdown", "source": "Plot the demo panel to show its shape."}
+FIGURE_CODE = {
+    "type": "code",
+    "source": 'fig, ax = plt.subplots()\nF.finalize(fig, 1, "figures/fig1_demo.png")',
+}
+LEGEND_CELL = {
+    "type": "markdown",
+    "source": "> ***Figure 1. A demonstration panel showing nothing in particular.***",
+}
+CONCLUSIONS_CELL = {
+    "type": "markdown",
+    "source": "## Conclusions\n\n- The demo panel has 1 of 1 rows.\n\n"
+    "The demo shows nothing in particular.",
+}
+FIGURE_CELLS = [QUESTION_CELL, WHY_CELL, FIGURE_CODE, LEGEND_CELL, CONCLUSIONS_CELL]
 _QUERY = "SELECT ?s WHERE { GRAPH <https://purl.org/okn/frink/kg/sawgraph> { ?s a ?t } } LIMIT 1"
 
 
@@ -411,6 +421,76 @@ def test_notebook_figure_not_copied_fails(tmp_path):
     (study / NB / "figures").mkdir()
     (study / NB / "figures" / "fig1_demo.png").write_bytes(b"\x89PNG\r\n")
     assert v.validate(str(study)).errors == []
+
+
+# ── Notebook story (question → why per step → conclusions) ──────────────────────────────────────────
+
+
+def test_notebook_without_question_cell_fails(tmp_path):
+    study = _build(tmp_path)
+    _write_notebook(study, cells=[WHY_CELL, FIGURE_CODE, LEGEND_CELL, CONCLUSIONS_CELL])
+    r = v.validate(str(study))
+    assert any("no `## Question and approach` cell" in e for e in r.errors), r.errors
+
+
+def test_notebook_without_conclusions_cell_fails(tmp_path):
+    study = _build(tmp_path)
+    _write_notebook(study, cells=[QUESTION_CELL, WHY_CELL, FIGURE_CODE, LEGEND_CELL])
+    r = v.validate(str(study))
+    assert any("no `## Conclusions` cell" in e for e in r.errors), r.errors
+
+
+def test_conclusions_without_summary_of_findings_fails(tmp_path):
+    # A heading over prose alone: the reader can't pick out what was found.
+    study = _build(tmp_path)
+    prose_only = {
+        "type": "markdown",
+        "source": "## Conclusions\n\nThe demo shows nothing in particular.",
+    }
+    _write_notebook(
+        study, cells=[QUESTION_CELL, WHY_CELL, FIGURE_CODE, LEGEND_CELL, prose_only]
+    )
+    r = v.validate(str(study))
+    assert any("no summary of findings" in e for e in r.errors), r.errors
+
+
+def test_notebook_story_out_of_order_fails(tmp_path):
+    # Conclusions before the code it concludes, and the question after it: both headings present,
+    # neither doing its job.
+    study = _build(tmp_path)
+    _write_notebook(
+        study,
+        cells=[WHY_CELL, CONCLUSIONS_CELL, FIGURE_CODE, LEGEND_CELL, QUESTION_CELL],
+    )
+    r = v.validate(str(study))
+    assert any("comes after analysis code" in e for e in r.errors), r.errors
+    assert any("analysis code follows `## Conclusions`" in e for e in r.errors), (
+        r.errors
+    )
+
+
+def test_notebook_without_analysis_cells_fails(tmp_path):
+    # No `cells` at all: the notebook only reruns the queries. (No report figures, so the legend
+    # check stays quiet and only the story check speaks.)
+    study = _build(tmp_path)
+    _write_notebook(study, cells=[])
+    r = v.validate(str(study))
+    assert any("no analysis cells" in e for e in r.errors), r.errors
+
+
+def test_code_cell_without_why_cell_warns_only(tmp_path):
+    # The figure cell right after another code cell, and a code cell right after a figure legend:
+    # neither has its own why cell. (The first setup cell follows the question, which explains it.)
+    study = _build(tmp_path)
+    setup = {"type": "code", "source": "import analysis as A"}
+    _write_notebook(
+        study,
+        cells=[QUESTION_CELL, setup, FIGURE_CODE, LEGEND_CELL, setup, CONCLUSIONS_CELL],
+    )
+    os.utime(study / NB / f"{NB}.html", None)
+    r = v.validate(str(study))
+    assert r.errors == [], r.errors
+    assert any("2 analysis code cell(s)" in w for w in r.warnings), r.warnings
 
 
 def test_jupyter_leftovers_in_notebook_folder_fail(tmp_path):

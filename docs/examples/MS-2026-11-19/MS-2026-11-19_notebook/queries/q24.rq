@@ -1,0 +1,13 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT (REPLACE(STR(?trait),"^.*/","") AS ?t) (REPLACE(STR(?g),"^.*/","") AS ?entrez) (SAMPLE(?sym) AS ?s) (MAX(?w) AS ?maxw) WHERE {
+  { SELECT DISTINCT ?trait WHERE {
+     { GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?root <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/DOID_2377> . ?trait rdfs:subClassOf* ?root . } }
+     UNION
+     { GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?root <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/DOID_2377> . ?m rdfs:subClassOf* ?root . ?m <http://www.w3.org/2004/02/skos/core#exactMatch> ?trait . FILTER(STRSTARTS(STR(?trait),'http://www.ebi.ac.uk/efo/') || CONTAINS(STR(?trait),'Orphanet_')) } }
+  } }
+  GRAPH <https://purl.org/okn/frink/kg/digcfdekg> {
+    ?st rdf:object ?trait ; rdf:predicate <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ; rdf:subject ?g ; <https://purl.org/okn/frink/kg/digcfdekg/schema/weight> ?w .
+    OPTIONAL { ?g rdfs:label ?sym }
+  }
+} GROUP BY ?trait ?g

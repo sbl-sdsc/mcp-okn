@@ -1,0 +1,201 @@
+loc,name,iso3,kind,lat,lon,value,year
+https://purl.org/okn/frink/kg/spoke-okn/location/JP,Japan,JPN,https://schema.org/Country,,,0.01400435801052,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CO,Colombia,COL,https://schema.org/Country,,,0.0054572631107058555,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/AL,Albania,ALB,https://schema.org/Country,,,0.09735713810934,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/UZ,Uzbekistan,UZB,https://schema.org/Country,,,0.02158199159368,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/IE,Ireland,IRL,https://schema.org/Country,,,0.16732057983314,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MM,Myanmar,MMR,https://schema.org/Country,,,0.00354989566125974,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BA,Bosnia and Herzegovina,BIH,https://schema.org/Country,,,0.03676313009234,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/AG,Antigua and Barbuda,ATG,https://schema.org/Country,,,0.02142019363288,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/AE,United Arab Emirates,ARE,https://schema.org/Country,,,0.034529551728810004,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/FJ,Fiji,FJI,https://schema.org/Country,,,0.002613706867099673,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/KE,Kenya,KEN,https://schema.org/Country,,,0.003051351775431621,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CZ,Czechia,CZE,https://schema.org/Country,,,0.04293781573799,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/ZW,Zimbabwe,ZWE,https://schema.org/Country,,,0.004526528256501977,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SR,Suriname,SUR,https://schema.org/Country,,,0.006236923634844981,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/HT,Haiti,HTI,https://schema.org/Country,,,0.008177991288265171,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/RW,Rwanda,RWA,https://schema.org/Country,,,0.0029511635757385893,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/DK,Denmark,DNK,https://schema.org/Country,,,0.16081292092433,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BO,Bolivia,BOL,https://schema.org/Country,,,0.00772371177529707,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SO,Somalia,SOM,https://schema.org/Country,,,0.002629723672892631,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CL,Chile,CHL,https://schema.org/Country,,,0.02704962533067,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GE,Georgia,GEO,https://schema.org/Country,,,0.03594097541022,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SB,Solomon Islands,SLB,https://schema.org/Country,,,0.0016068880213066373,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TR,Turkey,TUR,https://schema.org/Country,,,0.058608823885779995,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MN,Mongolia,MNG,https://schema.org/Country,,,0.023642344352559998,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/UY,Uruguay,URY,https://schema.org/Country,,,0.02959188136308,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/HN,Honduras,HND,https://schema.org/Country,,,0.004861244631662891,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MG,Madagascar,MDG,https://schema.org/Country,,,0.005031698186487606,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/NE,Niger,NER,https://schema.org/Country,,,0.004539987504234297,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/PK,Pakistan,PAK,https://schema.org/Country,,,0.007510332484675708,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/LS,Lesotho,LSO,https://schema.org/Country,,,0.007195405447266627,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BY,Belarus,BLR,https://schema.org/Country,,,0.026689233764790002,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/HR,Croatia,HRV,https://schema.org/Country,,,0.03687986842413,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/QA,Qatar,QAT,https://schema.org/Country,,,0.06517329472576,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SA,Saudi Arabia,SAU,https://schema.org/Country,,,0.03126391770715,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/NR,Nauru,NRU,https://schema.org/Country,,,0.0012877247822620456,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TK,Tokelau,TKL,https://schema.org/Country,,,0.001860580245535177,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/HU,Hungary,HUN,https://schema.org/Country,,,0.04762651532779,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/FI,Finland,FIN,https://schema.org/Country,,,0.11418606153088,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/JM,Jamaica,JAM,https://schema.org/Country,,,0.00926947167457816,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BD,Bangladesh,BGD,https://schema.org/Country,,,0.007468727742849954,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MC,Monaco,MCO,https://schema.org/Country,,,0.08620250906526,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CD,Democratic Republic of the Congo,COD,https://schema.org/Country,,,0.0025674790770168726,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TO,Tonga,TON,https://schema.org/Country,,,0.002597595581737317,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/ID,Indonesia,IDN,https://schema.org/Country,,,0.0024685363206922275,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/ML,Mali,MLI,https://schema.org/Country,,,0.005131600550981434,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/AZ,Azerbaijan,AZE,https://schema.org/Country,,,0.024412106658849998,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CV,Cabo Verde,CPV,https://schema.org/Country,,,0.008151193033149805,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/AS,American Samoa,ASM,https://schema.org/Country,,,0.00233145458024232,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/VN,Vietnam,VNM,https://schema.org/Country,,,0.003532209146652521,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GY,Guyana,GUY,https://schema.org/Country,,,0.005410375338629429,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/UA,Ukraine,UKR,https://schema.org/Country,,,0.04039560354366,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/ES,Spain,ESP,https://schema.org/Country,,,0.11524853805192001,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/AO,Angola,AGO,https://schema.org/Country,,,0.0035667707667832713,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/NZ,New Zealand,NZL,https://schema.org/Country,,,0.04591886541749,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/DZ,Algeria,DZA,https://schema.org/Country,,,0.04447603502858,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BN,Brunei,BRN,https://schema.org/Country,,,0.003689159374852396,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/DE,Germany,DEU,https://schema.org/Country,,,0.12533587533865,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/NU,Niue,NIU,https://schema.org/Country,,,0.003223948402630285,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/KZ,Kazakhstan,KAZ,https://schema.org/Country,,,0.06846567624675,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BF,Burkina Faso,BFA,https://schema.org/Country,,,0.004691291574713176,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MK,North Macedonia,MKD,https://schema.org/Country,,,0.051378630053779996,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/NP,Nepal,NPL,https://schema.org/Country,,,0.008137469071280903,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/ER,Eritrea,ERI,https://schema.org/Country,,,0.0045953535704223334,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/NL,The Netherlands,NLD,https://schema.org/Country,,,0.12542569549793,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GN,Guinea,GIN,https://schema.org/Country,,,0.004556038158036718,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MX,Mexico,MEX,https://schema.org/Country,,,0.01239789014837,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BJ,Benin,BEN,https://schema.org/Country,,,0.0043200895108675185,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/KG,Kyrgyzstan,KGZ,https://schema.org/Country,,,0.01861888279465,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MT,Malta,MLT,https://schema.org/Country,,,0.0349352163486,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CY,Cyprus,CYP,https://schema.org/Country,,,0.05803330515414,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/RO,Romania,ROU,https://schema.org/Country,,,0.02154804014853,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/LV,Latvia,LVA,https://schema.org/Country,,,0.03286456932852,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/LR,Liberia,LBR,https://schema.org/Country,,,0.004271543416393227,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/LB,Lebanon,LBN,https://schema.org/Country,,,0.05965257693138001,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GL,Greenland,GRL,https://schema.org/Country,,,0.10018419768675998,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BE,Belgium,BEL,https://schema.org/Country,,,0.10266020896642,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BB,Barbados,BRB,https://schema.org/Country,,,0.02142124658336,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TJ,Tajikistan,TJK,https://schema.org/Country,,,0.01560898411692,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TV,Tuvalu,TUV,https://schema.org/Country,,,0.0017039603980211525,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TW,Taiwan,TWN,https://schema.org/Country,,,0.008569219061646286,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/PL,Poland,POL,https://schema.org/Country,,,0.07849048938365001,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/KM,Comoros,COM,https://schema.org/Country,,,0.005011286684910235,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/PH,Philippines,PHL,https://schema.org/Country,,,0.0026451195196453524,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/AM,Armenia,ARM,https://schema.org/Country,,,0.04411056307408,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/ZM,Zambia,ZMB,https://schema.org/Country,,,0.003923496968899927,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/KP,North Korea,PRK,https://schema.org/Country,,,0.005316815673332605,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/EE,Estonia,EST,https://schema.org/Country,,,0.03043431461817,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/IT,Italy,ITA,https://schema.org/Country,,,0.12627574067626,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CK,Cook Islands,COK,https://schema.org/Country,,,0.0034512633848944887,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BT,Bhutan,BTN,https://schema.org/Country,,,0.008404280142079919,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/YE,Yemen,YEM,https://schema.org/Country,,,0.01665220807079,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/AF,Afghanistan,AFG,https://schema.org/Country,,,0.027611578973949998,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/VU,Vanuatu,VUT,https://schema.org/Country,,,0.002002251384101518,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/LU,Luxembourg,LUX,https://schema.org/Country,,,0.12005791889102,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/UG,Uganda,UGA,https://schema.org/Country,,,0.0021931371360399358,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TD,Chad,TCD,https://schema.org/Country,,,0.0043918018454147485,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TL,Timor Leste,TLS,https://schema.org/Country,,,0.0016452922500715527,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MD,Moldova,MDA,https://schema.org/Country,,,0.01959844187697,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/LA,Laos,LAO,https://schema.org/Country,,,0.0027073834776280108,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/DJ,Djibouti,DJI,https://schema.org/Country,,,0.004824747812835389,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/VC,Saint Vincent and the Grenadines,VCT,https://schema.org/Country,,,0.009218017340705771,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/LT,Lithuania,LTU,https://schema.org/Country,,,0.03101269899704,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GB,United Kingdom,GBR,https://schema.org/Country,,,0.15875103997535,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/WS,Samoa,WSM,https://schema.org/Country,,,0.0020583664761191704,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SL,Sierra Leone,SLE,https://schema.org/Country,,,0.004361501470318887,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/FR,France,FRA,https://schema.org/Country,,,0.12388732915118,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/AT,Austria,AUT,https://schema.org/Country,,,0.11154776852269001,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/PA,Panama,PAN,https://schema.org/Country,,,0.005551066347009498,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/RS,Serbia,SRB,https://schema.org/Country,,,0.06251444699617,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/ME,Montenegro,MNE,https://schema.org/Country,,,0.06286137638454,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/IL,Israel,ISR,https://schema.org/Country,,,0.03835120532911,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/AU,Australia,AUS,https://schema.org/Country,,,0.08353451786514,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/NO,Norway,NOR,https://schema.org/Country,,,0.19276747721082998,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MU,Mauritius,MUS,https://schema.org/Country,,,0.004124826901767636,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/VE,Venezuela,VEN,https://schema.org/Country,,,0.006576963205050873,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/JO,Jordan,JOR,https://schema.org/Country,,,0.04231508700825,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SZ,Eswatini,SWZ,https://schema.org/Country,,,0.006169017904044503,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MA,Morocco,MAR,https://schema.org/Country,,,0.04359414086977,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/PW,Palau,PLW,https://schema.org/Country,,,0.002418859236744264,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MP,Northern Mariana Islands,MNP,https://schema.org/Country,,,0.0033050381065672057,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SN,Senegal,SEN,https://schema.org/Country,,,0.005776564711885774,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SY,Syria,SYR,https://schema.org/Country,,,0.04286062819648,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SD,Sudan,SDN,https://schema.org/Country,,,0.01734842683091,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/ET,Ethiopia,ETH,https://schema.org/Country,,,0.0032131151501936187,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MV,Maldives,MDV,https://schema.org/Country,,,0.0019290065960587649,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/ST,Sao Tome and Principe,STP,https://schema.org/Country,,,0.0038594442608920667,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/KI,Kiribati,KIR,https://schema.org/Country,,,0.0014850800552471744,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MY,Malaysia,MYS,https://schema.org/Country,,,0.0020548756816484437,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/AR,Argentina,ARG,https://schema.org/Country,,,0.028794617111539998,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BG,Bulgaria,BGR,https://schema.org/Country,,,0.0627059357313,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SK,Slovakia,SVK,https://schema.org/Country,,,0.03600699800114,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GH,Ghana,GHA,https://schema.org/Country,,,0.014967281148099998,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/IN,India,IND,https://schema.org/Country,,,0.0078514124047769,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/PG,Papua New Guinea,PNG,https://schema.org/Country,,,0.0013976089110130034,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/EG,Egypt,EGY,https://schema.org/Country,,,0.01890763322712,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CF,Central African Republic,CAF,https://schema.org/Country,,,0.0029972072593629183,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GU,Guam,GUM,https://schema.org/Country,,,0.0024997898126248048,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CN,China,CHN,https://schema.org/Country,,,0.003123728725380308,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GR,Greece,GRC,https://schema.org/Country,,,0.048499248501230004,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GD,Grenada,GRD,https://schema.org/Country,,,0.012686457720570001,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GQ,Equatorial Guinea,GNQ,https://schema.org/Country,,,0.0024846202286671303,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TT,Trinidad and Tobago,TTO,https://schema.org/Country,,,0.008935450839941898,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/KW,Kuwait,KWT,https://schema.org/Country,,,0.0646144708079,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BI,Burundi,BDI,https://schema.org/Country,,,0.0025211311415561438,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TH,Thailand,THA,https://schema.org/Country,,,0.003727579019950972,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/KR,South Korea,KOR,https://schema.org/Country,,,0.01297354761463,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BZ,Belize,BLZ,https://schema.org/Country,,,0.00752160595584342,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SG,Singapore,SGP,https://schema.org/Country,,,0.0041971567840622896,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TZ,Tanzania,TZA,https://schema.org/Country,,,0.0030610361153021667,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/PY,Paraguay,PRY,https://schema.org/Country,,,0.01434244198704,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GW,Guinea-Bissau,GNB,https://schema.org/Country,,,0.005212531483280044,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/DO,Dominican Republic,DOM,https://schema.org/Country,,,0.008543098110054376,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/EC,Ecuador,ECU,https://schema.org/Country,,,0.005256763529880163,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/LK,Sri Lanka,LKA,https://schema.org/Country,,,0.002789310550882809,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BR,Brazil,BRA,https://schema.org/Country,,,0.02234446689936,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/KN,Saint Kitts and Nevis,KNA,https://schema.org/Country,,,0.02069405650825,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CR,Costa Rica,CRI,https://schema.org/Country,,,0.008675486918622324,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BH,Bahrain,BHR,https://schema.org/Country,,,0.04222526885912,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/PE,Peru,PER,https://schema.org/Country,,,0.007466394921192356,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/LY,Libya,LBY,https://schema.org/Country,,,0.04577108169945,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GA,Gabon,GAB,https://schema.org/Country,,,0.0032697288123204084,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/NI,Nicaragua,NIC,https://schema.org/Country,,,0.005523102954947308,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BS,Bahamas,BHS,https://schema.org/Country,,,0.01471944653156,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/OM,Oman,OMN,https://schema.org/Country,,,0.03360779666193,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CM,Cameroon,CMR,https://schema.org/Country,,,0.0043539475164101615,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/AD,Andorra,AND,https://schema.org/Country,,,0.09189002039274,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SE,Sweden,SWE,https://schema.org/Country,,,0.21652860321509002,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CA,Canada,CAN,https://schema.org/Country,,,0.19546752514729002,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/VI,U.S. Virgin Islands,VIR,https://schema.org/Country,,,0.014515769941860001,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SV,El Salvador,SLV,https://schema.org/Country,,,0.005921883993205763,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/IR,Iran,IRN,https://schema.org/Country,,,0.057902020867149996,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/ZA,South Africa,ZAF,https://schema.org/Country,,,0.008470289031880868,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/IS,Iceland,ISL,https://schema.org/Country,,,0.13946153619082,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SM,San Marino,SMR,https://schema.org/Country,,,0.058062765221400005,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/US,United States of America,USA,https://schema.org/Country,,,0.13156102934714,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TN,Tunisia,TUN,https://schema.org/Country,,,0.059476663562500004,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SS,South Sudan,SSD,https://schema.org/Country,,,0.0030529757860017315,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MR,Mauritania,MRT,https://schema.org/Country,,,0.007335698974901728,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BM,Bermuda,BMU,https://schema.org/Country,,,0.02391636318468,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MW,Malawi,MWI,https://schema.org/Country,,,0.0037600928150264903,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GT,Guatemala,GTM,https://schema.org/Country,,,0.005482074683200199,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/RU,Russia,RUS,https://schema.org/Country,,,0.025340360823120002,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/PT,Portugal,PRT,https://schema.org/Country,,,0.04599693089897,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SI,Slovenia,SVN,https://schema.org/Country,,,0.05563654614243999,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/NG,Nigeria,NGA,https://schema.org/Country,,,0.004379612330842075,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TG,Togo,TGO,https://schema.org/Country,,,0.0050523179506341805,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/FM,Micronesia,FSM,https://schema.org/Country,,,0.0017629995230290174,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/LC,Saint Lucia,LCA,https://schema.org/Country,,,0.0100911396241,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/DM,Dominica,DMA,https://schema.org/Country,,,0.0090905297926216,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CU,Cuba,CUB,https://schema.org/Country,,,0.01811013430448,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/KH,Cambodia,KHM,https://schema.org/Country,,,0.002341481098640471,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/SC,Seychelles,SYC,https://schema.org/Country,,,0.0034810958090955735,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MZ,Mozambique,MOZ,https://schema.org/Country,,,0.0041365419352135885,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/BW,Botswana,BWA,https://schema.org/Country,,,0.006318935145284283,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/CH,Switzerland,CHE,https://schema.org/Country,,,0.13253818770450002,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/PR,Puerto Rico,PRI,https://schema.org/Country,,,0.01599032414213,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/IQ,Iraq,IRQ,https://schema.org/Country,,,0.03214980838711,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/GM,Gambia,GMB,https://schema.org/Country,,,0.005354818839261189,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/MH,Marshall Islands,MHL,https://schema.org/Country,,,0.001848552864503499,2019
+https://purl.org/okn/frink/kg/spoke-okn/location/TM,Turkmenistan,TKM,https://schema.org/Country,,,0.03488263398715,2019

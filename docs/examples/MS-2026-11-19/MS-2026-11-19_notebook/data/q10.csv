@@ -1,0 +1,4 @@
+rel,compound,name,phase,source,act
+https://purl.org/okn/frink/kg/spoke-okn/schema/TREATS_CtD,http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/VNWKTOKETHGBQD-UHFFFAOYSA-N,Methane,3,ChEMBL,
+https://purl.org/okn/frink/kg/spoke-okn/schema/TREATS_CtD,http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/BVKZGUZCCUSVTD-UHFFFAOYSA-N,Carbonic Acid,1,ChEMBL,
+https://purl.org/okn/frink/kg/spoke-okn/schema/TREATS_CtD,http://rdf.ncbi.nlm.nih.gov/pubchem/inchikey/KFZMGEQAYNKOFK-UHFFFAOYSA-N,Isopropyl Alcohol,4,ChEMBL,

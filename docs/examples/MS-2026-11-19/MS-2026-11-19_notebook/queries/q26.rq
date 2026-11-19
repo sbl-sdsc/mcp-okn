@@ -1,0 +1,11 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT (REPLACE(STR(?mondo),"^.*/","") AS ?ms) (REPLACE(STR(?role),"^.*/","") AS ?role_) (REPLACE(STR(?chg),"^.*/","") AS ?change) (REPLACE(STR(?ent),"^.*[/#]","") AS ?entity) (SAMPLE(STR(?elab)) AS ?entity_label) (COUNT(DISTINCT ?s) AS ?n_assess) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { <http://purl.obolibrary.org/obo/DOID_2377> a <https://w3id.org/biolink/vocab/Disease> . }
+  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?root <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/DOID_2377> . ?mondo rdfs:subClassOf* ?root . }
+  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> {
+    VALUES ?role { <http://purl.obolibrary.org/obo/OBCI_1000008> <http://purl.obolibrary.org/obo/OBCI_1000002> }
+    ?s ?role ?mondo .
+    VALUES ?chg { <http://purl.obolibrary.org/obo/OBCI_1000009> <http://purl.obolibrary.org/obo/OBCI_1000015> <http://purl.obolibrary.org/obo/OBCI_1000016> <http://purl.obolibrary.org/obo/OBCI_1000017> }
+    OPTIONAL { ?s ?chg ?ent . OPTIONAL { ?ent rdfs:label ?elab } }
+  }
+} GROUP BY ?mondo ?role ?chg ?ent

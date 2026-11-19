@@ -1,0 +1,7 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?term ?label WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {
+    ?term rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0005301> .
+    OPTIONAL { ?term rdfs:label ?label . }
+  }
+} LIMIT 1000

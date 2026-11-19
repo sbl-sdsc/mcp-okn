@@ -1,0 +1,16 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT (REPLACE(STR(?hp),"^.*/","") AS ?hpo) (SAMPLE(STR(?lab)) AS ?label) (MAX(?lor) AS ?max_lor) (MAX(?pc) AS ?max_pair) (COUNT(DISTINCT ?ds) AS ?n_datasets) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/oard-kg> {
+    { VALUES ?mondo { <http://purl.obolibrary.org/obo/MONDO_0005301> <http://purl.obolibrary.org/obo/MONDO_0005314> <http://purl.obolibrary.org/obo/MONDO_0000450> <http://purl.obolibrary.org/obo/MONDO_0000451> <http://purl.obolibrary.org/obo/MONDO_0000452> <http://purl.obolibrary.org/obo/MONDO_0005284> <http://purl.obolibrary.org/obo/MONDO_0016429> <http://purl.obolibrary.org/obo/MONDO_0018784> }
+      ?a <https://w3id.org/biolink/vocab/subject> ?mondo ; <https://w3id.org/biolink/vocab/object> ?hp . }
+    UNION
+    { VALUES ?mondo { <http://purl.obolibrary.org/obo/MONDO_0005301> <http://purl.obolibrary.org/obo/MONDO_0005314> <http://purl.obolibrary.org/obo/MONDO_0000450> <http://purl.obolibrary.org/obo/MONDO_0000451> <http://purl.obolibrary.org/obo/MONDO_0000452> <http://purl.obolibrary.org/obo/MONDO_0005284> <http://purl.obolibrary.org/obo/MONDO_0016429> <http://purl.obolibrary.org/obo/MONDO_0018784> }
+      ?a <https://w3id.org/biolink/vocab/object> ?mondo ; <https://w3id.org/biolink/vocab/subject> ?hp . }
+    FILTER(STRSTARTS(STR(?hp), "http://purl.obolibrary.org/obo/HP_"))
+    ?a <https://w3id.org/biolink/vocab/has_supporting_studies> ?study .
+    ?study <https://w3id.org/biolink/vocab/has_study_results> ?r1, ?r2 .
+    ?r1 <https://w3id.org/biolink/vocab/log_odds_ratio> ?lor .
+    ?r2 <https://w3id.org/biolink/vocab/concept_pair_count> ?pc ; <https://w3id.org/biolink/vocab/supporting_data_set> ?ds .
+    OPTIONAL { ?hp rdfs:label ?lab }
+  }
+} GROUP BY ?hp HAVING (MAX(?lor) >= 1.5 && MAX(?pc) >= 20)

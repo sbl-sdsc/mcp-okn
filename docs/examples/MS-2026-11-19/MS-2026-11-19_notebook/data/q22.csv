@@ -1,0 +1,236 @@
+drug,labels,max_phase,target,target_labels,actions,mechanisms
+https://pubchem.ncbi.nlm.nih.gov/compound/107970,fingolimod_107970,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/11363176,ponesimod_11363176,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/16623,Hydrocortisone hemisuccinate|cortisol succinate_16623.0,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/1727,dalfampridine_1727.0|SID11113806_1727,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/3081884,Glatiramer acetate,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/31307,triamcinolone_31307,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/4212,mitoxantrone_4212|mitoxantrone_4212.0,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/443967,Betamethasone acetate,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/44599207,Siponimod_44599207,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/52938427,ozanimod_52938427,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/5369209,monomethyl fumarate_5369209,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/54677946,Laquinimod,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/54684141,Teriflunomide_54684141,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/5743,DEXAMETHASONE|Dexamethasone_5743|dexamethasone_5743.0,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/5744,"Acetic acid 2-((8S,9S,10R,11S,13S,14S,17R)-11,17-dihydroxy-10,13-dimethyl-3-oxo-2,3,6,7,8,9,10,11,12,13,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-17-yl)-2-oxo-ethyl ester_5744",,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/5754,Cortisol Measurement_5754.0|Hydrocortisone_5754,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/5755,prednisolone_5755.0|prednisolone_5755,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/5865,prednisone_5865.0|prednisone_5865,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/6216,Triamcinolone diacetate,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/6436,triamcinolone acetonide_6436.0|Triamcinolone Acetonide_6436,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/6741,methylprednisolone_6741,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/73330464,Diroximel fumarate,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/8254,Dimethyl Ether,,,,,
+https://pubchem.ncbi.nlm.nih.gov/compound/9782,betamethasone_9782|betamethasone_9782.0,,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1000,CHEMBL1000|DRUG_CHEMBL1000|CETIRIZINE,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1042,CHOLECALCIFEROL|CHEMBL1042|DRUG_CHEMBL1042,2.0,http://purl.uniprot.org/uniprot/P11473,P11473|Vitamin D3 receptor,AGONIST,1|Vitamin D receptor agonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1064,DRUG_CHEMBL1064|SIMVASTATIN|CHEMBL1064,3.0,http://purl.uniprot.org/uniprot/P04035,P04035|3-hydroxy-3-methylglutaryl-coenzyme A reductase,INHIBITOR,1|HMG-CoA reductase inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1068,CHEMBL1068|OXCARBAZEPINE|DRUG_CHEMBL1068,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2331043,Sodium channel alpha subunit|CHEMBL2331043,BLOCKER,1|Sodium channel alpha subunit blocker
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1096146,PONESIMOD|DRUG_CHEMBL1096146|CHEMBL1096146,4.0,http://purl.uniprot.org/uniprot/P21453,P21453|Sphingosine 1-phosphate receptor 1,AGONIST,Sphingosine 1-phosphate receptor Edg-1 agonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1096882,FLUDARABINE PHOSPHATE|DRUG_CHEMBL1096882|CHEMBL1096882,1.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095215,CHEMBL2095215|Ribonucleoside-diphosphate reductase RR1,INHIBITOR,Ribonucleoside-diphosphate reductase RR1 inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1096882,CHEMBL1096882|FLUDARABINE PHOSPHATE|DRUG_CHEMBL1096882,1.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2363042,CHEMBL2363042|DNA polymerase (alpha/delta/epsilon),INHIBITOR,1|DNA polymerase (alpha/delta/epsilon) inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL112,DRUG_CHEMBL112|CHEMBL112|ACETAMINOPHEN,3.0,http://purl.uniprot.org/uniprot/O00519,Fatty-acid amide hydrolase 1|O00519,INHIBITOR,Anandamide amidohydrolase inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL112,ACETAMINOPHEN|DRUG_CHEMBL112|CHEMBL112,3.0,http://purl.uniprot.org/uniprot/Q8NER1,Transient receptor potential cation channel subfamily V member 1|Q8NER1,OPENER,Vanilloid receptor opener|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL112,ACETAMINOPHEN|DRUG_CHEMBL112|CHEMBL112,3.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094253,CHEMBL2094253|Cyclooxygenase,INHIBITOR,Cyclooxygenase inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1140,CHEMBL1140|NIACINAMIDE|DRUG_CHEMBL1140,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1149,CHEMBL1149|DRUG_CHEMBL1149|LEVOCARNITINE,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1152,PREDNISOLONE ACETATE|CHEMBL1152|DRUG_CHEMBL1152,4.0,http://purl.uniprot.org/uniprot/P04150,Glucocorticoid receptor|P04150,AGONIST,1|Glucocorticoid receptor agonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1172,CHEMBL1172|DRUG_CHEMBL1172|DESLORATADINE,3.0,http://purl.uniprot.org/uniprot/P35367,Histamine H1 receptor|P35367,ANTAGONIST,1|Histamine H1 receptor antagonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1175,DULOXETINE|CHEMBL1175|DRUG_CHEMBL1175,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL118,CELECOXIB|DRUG_CHEMBL118|CHEMBL118,2.0,http://purl.uniprot.org/uniprot/P35354,P35354|Prostaglandin G/H synthase 2,INHIBITOR,Cyclooxygenase-2 inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200328,DRUG_CHEMBL1200328|CHEMBL1200328|DULOXETINE HYDROCHLORIDE,3.0,http://purl.uniprot.org/uniprot/P23975,P23975|Sodium-dependent noradrenaline transporter,INHIBITOR,1|Norepinephrine transporter inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200328,CHEMBL1200328|DULOXETINE HYDROCHLORIDE|DRUG_CHEMBL1200328,3.0,http://purl.uniprot.org/uniprot/P31645,Sodium-dependent serotonin transporter|P31645,INHIBITOR,Serotonin transporter inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200380,CHEMBL1200380|DRUG_CHEMBL1200380|ACYCLOVIR SODIUM,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200574,CHEMBL1200574|SODIUM CHLORIDE|DRUG_CHEMBL1200574,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200748,DRUG_CHEMBL1200748|CHEMBL1200748|CARBIDOPA,2.0,http://purl.uniprot.org/uniprot/P20711,Aromatic-L-amino-acid decarboxylase|P20711,INHIBITOR,DOPA decarboxylase inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200795,CLEMASTINE FUMARATE|DRUG_CHEMBL1200795|CHEMBL1200795,1.0,http://purl.uniprot.org/uniprot/P35367,P35367|Histamine H1 receptor,ANTAGONIST,1|Histamine H1 receptor antagonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200796,DRUG_CHEMBL1200796|CYCLOPHOSPHAMIDE|CHEMBL1200796,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200826,CHEMBL1200826|DRUG_CHEMBL1200826|LITHIUM CARBONATE,1.0,http://purl.uniprot.org/uniprot/P29218,Inositol monophosphatase 1|P29218,INHIBITOR,Inositol-1(or 4)-monophosphatase 1 inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200826,LITHIUM CARBONATE|DRUG_CHEMBL1200826|CHEMBL1200826,1.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095188,Glycogen synthase kinase-3|CHEMBL2095188,INHIBITOR,Glycogen synthase kinase-3 inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200927,DEXCHLORPHENIRAMINE MALEATE|DRUG_CHEMBL1200927|CHEMBL1200927,3.0,http://purl.uniprot.org/uniprot/P35367,Histamine H1 receptor|P35367,ANTAGONIST,Histamine H1 receptor antagonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201014,PREDNISOLONE SODIUM PHOSPHATE|DRUG_CHEMBL1201014|CHEMBL1201014,4.0,http://purl.uniprot.org/uniprot/P04150,Glucocorticoid receptor|P04150,AGONIST,1|Glucocorticoid receptor agonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201081,DRUG_CHEMBL1201081|CHEMBL1201081|METHYLPREDNISOLONE SODIUM SUCCINATE,4.0,http://purl.uniprot.org/uniprot/P04150,Glucocorticoid receptor|P04150,AGONIST,1|Glucocorticoid receptor agonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201119,DRUG_CHEMBL1201119|CHEMBL1201119|LIOTHYRONINE SODIUM,1.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2111462,CHEMBL2111462|Thyroid hormone receptor,AGONIST,Thyroid hormone receptor agonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201192,CHEMBL1201192|DRUG_CHEMBL1201192|ARMODAFINIL,2.0,http://purl.uniprot.org/uniprot/Q01959,Q01959|Sodium-dependent dopamine transporter,INHIBITOR,1|Dopamine transporter inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201222,DRUG_CHEMBL1201222|LISDEXAMFETAMINE|CHEMBL1201222,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201265,CHEMBL1201265|DRUG_CHEMBL1201265|METHYLPREDNISOLONE HEMISUCCINATE,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201288,CHEMBL1201288|DANTROLENE|DRUG_CHEMBL1201288,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201507,CHEMBL1201507|DRUG_CHEMBL1201507|GLATIRAMER ACETATE,4.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201576,CHEMBL1201576|DRUG_CHEMBL1201576|RITUXIMAB,3.0,http://purl.uniprot.org/uniprot/P11836,B-lymphocyte antigen CD20|P11836,BINDING AGENT,B-lymphocyte antigen CD20 binding agent|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201587,DRUG_CHEMBL1201587|ALEMTUZUMAB|CHEMBL1201587,4.0,http://purl.uniprot.org/uniprot/P31358,P31358|CAMPATH-1 antigen,INHIBITOR,CAMPATH-1 antigen inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201605,CHEMBL1201605|DACLIZUMAB|DRUG_CHEMBL1201605,4.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2364167,CHEMBL2364167|Interleukin-2 receptor,INHIBITOR,1|Interleukin-2 receptor inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201607,CHEMBL1201607|DRUG_CHEMBL1201607|NATALIZUMAB,4.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1907599,Integrin alpha-4/beta-1|CHEMBL1907599,INHIBITOR,Integrin alpha-4/beta-1 inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201607,CHEMBL1201607|NATALIZUMAB|DRUG_CHEMBL1201607,4.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095184,Integrin alpha-4/beta-7|CHEMBL2095184,INHIBITOR,1|Integrin alpha-4/beta-7 inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201835,CHEMBL1201835|DRUG_CHEMBL1201835|USTEKINUMAB,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2364153,Interleukin-12|CHEMBL2364153,INHIBITOR,1|Interleukin-12 inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201835,DRUG_CHEMBL1201835|USTEKINUMAB|CHEMBL1201835,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2364154,Interleukin-23|CHEMBL2364154,INHIBITOR,1|Interleukin-23 inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201836,CHEMBL1201836|DRUG_CHEMBL1201836|OFATUMUMAB,4.0,http://purl.uniprot.org/uniprot/P11836,P11836|B-lymphocyte antigen CD20,BINDING AGENT,1|B-lymphocyte antigen CD20 binding agent
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1222250,CHEMBL1222250|DEXTROSE|DRUG_CHEMBL1222250,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1248,CHEMBL1248|FLUORIDE ION F-18|DRUG_CHEMBL1248,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1256391,DRUG_CHEMBL1256391|PIRFENIDONE|CHEMBL1256391,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1294,CHEMBL1294|DRUG_CHEMBL1294|QUINIDINE,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL131,CHEMBL131|DRUG_CHEMBL131|PREDNISOLONE,4.0,http://purl.uniprot.org/uniprot/P04150,Glucocorticoid receptor|P04150,AGONIST,1|Glucocorticoid receptor agonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL135,DRUG_CHEMBL135|ESTRADIOL|CHEMBL135,3.0,http://purl.uniprot.org/uniprot/P03372,Estrogen receptor|P03372,AGONIST,Estrogen receptor alpha agonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1373,CHEMBL1373|MODAFINIL|DRUG_CHEMBL1373,3.0,http://purl.uniprot.org/uniprot/Q01959,Q01959|Sodium-dependent dopamine transporter,INHIBITOR,1|Dopamine transporter inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL140,DRUG_CHEMBL140|CURCUMIN|CHEMBL140,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1417019,DRUG_CHEMBL1417019|CHEMBL1417019|MITOXANTRONE HYDROCHLORIDE,4.0,http://purl.uniprot.org/uniprot/P11388,P11388|DNA topoisomerase 2-alpha,INHIBITOR,DNA topoisomerase II alpha inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1431,METFORMIN|DRUG_CHEMBL1431|CHEMBL1431,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1434,MINOCYCLINE|DRUG_CHEMBL1434|CHEMBL1434,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1440,TETRACYCLINE|CHEMBL1440|DRUG_CHEMBL1440,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1447,CHEMBL1447|DRUG_CHEMBL1447|LINCOMYCIN,4.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1456,CHEMBL1456|MYCOPHENOLATE MOFETIL|DRUG_CHEMBL1456,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2111369,CHEMBL2111369|Inosine-5'-monophosphate dehydrogenase (IMPDH),INHIBITOR,Inosine-5'-monophosphate dehydrogenase (IMPDH) inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL146,BUTYLATED HYDROXYTOLUENE|CHEMBL146,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1476022,DRUG_CHEMBL1476022|CHEMBL1476022|NOMEGESTROL ACETATE,3.0,http://purl.uniprot.org/uniprot/P06401,Progesterone receptor|P06401,AGONIST,Progesterone receptor agonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1486,DRUG_CHEMBL1486|CHEMBL1486|TENOFOVIR DISOPROXIL FUMARATE,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1487,ATORVASTATIN|DRUG_CHEMBL1487|CHEMBL1487,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1502,DRUG_CHEMBL1502|PANTOPRAZOLE|CHEMBL1502,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1504,CHEMBL1504|TRIAMCINOLONE ACETONIDE|DRUG_CHEMBL1504,4.0,http://purl.uniprot.org/uniprot/P04150,Glucocorticoid receptor|P04150,AGONIST,1|Glucocorticoid receptor agonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1534,CHEMBL1534|RIBOFLAVIN|DRUG_CHEMBL1534,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1536,DRUG_CHEMBL1536|CHEMBL1536|ERGOCALCIFEROL,3.0,http://purl.uniprot.org/uniprot/P11473,P11473|Vitamin D3 receptor,AGONIST,1|Vitamin D receptor agonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL154,CHEMBL154|DRUG_CHEMBL154|NAPROXEN,3.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094253,Cyclooxygenase|CHEMBL2094253,INHIBITOR,1|Cyclooxygenase inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1568,FLUDARABINE|DRUG_CHEMBL1568|CHEMBL1568,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1569,DRUG_CHEMBL1569|CHEMBL1569|AMANTADINE HYDROCHLORIDE,3.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094124,CHEMBL2094124|Glutamate [NMDA] receptor,ANTAGONIST,Glutamate [NMDA] receptor antagonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL157101,CHEMBL157101|DRUG_CHEMBL157101|KETOCONAZOLE,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1588,THIAMINE|DRUG_CHEMBL1588|CHEMBL1588,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1619,DRUG_CHEMBL1619|CHEMBL1619|CLADRIBINE,4.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1626,CLEMASTINE|DRUG_CHEMBL1626|CHEMBL1626,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1642,IMATINIB MESYLATE|CHEMBL1642|DRUG_CHEMBL1642,2.0,http://purl.uniprot.org/uniprot/P00519,Tyrosine-protein kinase ABL1|P00519,INHIBITOR,Tyrosine-protein kinase ABL inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1642,CHEMBL1642|DRUG_CHEMBL1642|IMATINIB MESYLATE,2.0,http://purl.uniprot.org/uniprot/P09619,Platelet-derived growth factor receptor beta|P09619,INHIBITOR,Platelet-derived growth factor receptor beta inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1642,CHEMBL1642|IMATINIB MESYLATE|DRUG_CHEMBL1642,2.0,http://purl.uniprot.org/uniprot/P10721,P10721|Mast/stem cell growth factor receptor Kit,INHIBITOR,Stem cell growth factor receptor inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1703,DRUG_CHEMBL1703|METFORMIN HYDROCHLORIDE|CHEMBL1703,2.0,http://purl.uniprot.org/uniprot/P43304,"Glycerol-3-phosphate dehydrogenase, mitochondrial|P43304",INHIBITOR,1|Mitochondrial glycerol-3-phosphate dehydrogenase inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1703,METFORMIN HYDROCHLORIDE|DRUG_CHEMBL1703|CHEMBL1703,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2363065,Mitochondrial complex I (NADH dehydrogenase)|CHEMBL2363065,INHIBITOR,1|Mitochondrial complex I (NADH dehydrogenase) inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL17157,DRUG_CHEMBL17157|CHEMBL17157|TERFENADINE,3.0,http://purl.uniprot.org/uniprot/P35367,Histamine H1 receptor|P35367,ANTAGONIST,1|Histamine H1 receptor antagonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1738,DRUG_CHEMBL1738|CHEMBL1738|DEXRAZOXANE,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094255,CHEMBL2094255|DNA topoisomerase II,INHIBITOR,1|DNA topoisomerase II inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1742995,BRIAKINUMAB|CHEMBL1742995|DRUG_CHEMBL1742995,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2364153,CHEMBL2364153|Interleukin-12,INHIBITOR,1|Interleukin-12 inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1742995,CHEMBL1742995|DRUG_CHEMBL1742995|BRIAKINUMAB,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2364154,Interleukin-23|CHEMBL2364154,INHIBITOR,Interleukin-23 inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1743068,SECUKINUMAB|DRUG_CHEMBL1743068|CHEMBL1743068,2.0,http://purl.uniprot.org/uniprot/Q16552,Interleukin-17A|Q16552,INHIBITOR,Interleukin 17A inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1774461,FLORBETAPIR F 18|DRUG_CHEMBL1774461|CHEMBL1774461,0.5,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1789843,DRUG_CHEMBL1789843|BELIMUMAB|CHEMBL1789843,2.0,http://purl.uniprot.org/uniprot/Q9Y275,Q9Y275|Tumor necrosis factor ligand superfamily member 13B,INHIBITOR,1|Tumor necrosis factor ligand superfamily member 13B inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1790041,DRUG_CHEMBL1790041|RANITIDINE|CHEMBL1790041,3.0,http://purl.uniprot.org/uniprot/P25021,Histamine H2 receptor|P25021,ANTAGONIST,1|Histamine H2 receptor antagonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL17962,HISTIDINE|CHEMBL17962,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL19019,DRUG_CHEMBL19019|CHEMBL19019|NALTREXONE,3.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095181,CHEMBL2095181|Opioid receptors; mu/kappa/delta,ANTAGONIST,1|Opioid receptors; mu/kappa/delta antagonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL190461,CANNABIDIOL|DRUG_CHEMBL190461|CHEMBL190461,2.0,http://purl.uniprot.org/uniprot/P21554,P21554|Cannabinoid receptor 1,NEGATIVE ALLOSTERIC MODULATOR,1|Cannabinoid CB1 receptor negative allosteric modulator
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1908391,DRUG_CHEMBL1908391|MASITINIB|CHEMBL1908391,3.0,http://purl.uniprot.org/uniprot/P10721,P10721|Mast/stem cell growth factor receptor Kit,INHIBITOR,Stem cell growth factor receptor inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1908391,CHEMBL1908391|DRUG_CHEMBL1908391|MASITINIB,3.0,http://purl.uniprot.org/uniprot/P22607,Fibroblast growth factor receptor 3|P22607,INHIBITOR,Fibroblast growth factor receptor 3 inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1908391,CHEMBL1908391|DRUG_CHEMBL1908391|MASITINIB,3.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095189,Platelet-derived growth factor receptor|CHEMBL2095189,INHIBITOR,1|Platelet-derived growth factor receptor inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL197194,DRUG_CHEMBL197194|CHEMBL197194|VIDOFLUDIMUS,3.0,http://purl.uniprot.org/uniprot/Q02127,"Dihydroorotate dehydrogenase (quinone), mitochondrial|Q02127",INHIBITOR,Dihydroorotate dehydrogenase inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL20,ACETAZOLAMIDE|DRUG_CHEMBL20|CHEMBL20,2.0,http://purl.uniprot.org/uniprot/O43570,Carbonic anhydrase 12|O43570,INHIBITOR,1|Carbonic anhydrase XII inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL20,ACETAZOLAMIDE|CHEMBL20|DRUG_CHEMBL20,2.0,http://purl.uniprot.org/uniprot/P00915,P00915|Carbonic anhydrase 1,INHIBITOR,1|Carbonic anhydrase I inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL20,CHEMBL20|ACETAZOLAMIDE|DRUG_CHEMBL20,2.0,http://purl.uniprot.org/uniprot/P00918,P00918|Carbonic anhydrase 2,INHIBITOR,Carbonic anhydrase II inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL20,CHEMBL20|DRUG_CHEMBL20|ACETAZOLAMIDE,2.0,http://purl.uniprot.org/uniprot/P22748,Carbonic anhydrase 4|P22748,INHIBITOR,Carbonic anhydrase IV inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL207456,CHEMBL207456|PITTSBURGH COMPOUND B,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2104967,CHEMBL2104967|FIRATEGRAST,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1907599,Integrin alpha-4/beta-1|CHEMBL1907599,ANTAGONIST,Integrin alpha-4/beta-1 antagonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2104967,CHEMBL2104967|FIRATEGRAST,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095184,CHEMBL2095184|Integrin alpha-4/beta-7,ANTAGONIST,Integrin alpha-4/beta-7 antagonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2106049,"DRUG_CHEMBL2106049|CHEMBL2106049|CHARCOAL, ACTIVATED",3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2106643,MYCOPHENOLATE SODIUM|CHEMBL2106643|DRUG_CHEMBL2106643,4.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2111369,CHEMBL2111369|Inosine-5'-monophosphate dehydrogenase (IMPDH),INHIBITOR,1|Inosine-5'-monophosphate dehydrogenase (IMPDH) inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2107312,DRUG_CHEMBL2107312|ARBACLOFEN PLACARBIL|CHEMBL2107312,3.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2111463,GABA-B receptor|CHEMBL2111463,AGONIST,GABA-B receptor agonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2107333,DIMETHYL FUMARATE|DRUG_CHEMBL2107333|CHEMBL2107333,4.0,http://purl.uniprot.org/uniprot/Q14145,Q14145|Kelch-like ECH-associated protein 1,INHIBITOR,1|Kelch-like ECH-associated protein 1 inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2107762,CHEMBL2107762|NERISPIRDINE,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2331043,CHEMBL2331043|Sodium channel alpha subunit,BLOCKER,Sodium channel alpha subunit blocker|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2107762,NERISPIRDINE|CHEMBL2107762,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2362996,CHEMBL2362996|Voltage-gated potassium channel,BLOCKER,1|Voltage-gated potassium channel blocker
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2108041,DRUG_CHEMBL2108041|OCRELIZUMAB|CHEMBL2108041,4.0,http://purl.uniprot.org/uniprot/P11836,B-lymphocyte antigen CD20|P11836,BINDING AGENT,1|B-lymphocyte antigen CD20 binding agent
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2108354,DRUG_CHEMBL2108354|UBLITUXIMAB|CHEMBL2108354,3.0,http://purl.uniprot.org/uniprot/P11836,P11836|B-lymphocyte antigen CD20,BINDING AGENT,B-lymphocyte antigen CD20 binding agent|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2108679,CHEMBL2108679|OZANEZUMAB,1.0,http://purl.uniprot.org/uniprot/Q9NQC3,Q9NQC3|Reticulon-4,INHIBITOR,1|Reticulon-4 inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2109334,DRUG_CHEMBL2109334|CHEMBL2109334|INEBILIZUMAB,1.0,http://purl.uniprot.org/uniprot/P15391,P15391|B-lymphocyte antigen CD19,BINDING AGENT,B-lymphocyte antigen CD19 binding agent|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2109433,CHEMBL2109433|OTILIMAB|DRUG_CHEMBL2109433,1.0,http://purl.uniprot.org/uniprot/P04141,Granulocyte-macrophage colony-stimulating factor|P04141,INHIBITOR,Granulocyte-macrophage colony-stimulating factor inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL220492,CHEMBL220492|DRUG_CHEMBL220492|TOPIRAMATE,2.0,http://purl.uniprot.org/uniprot/P00918,P00918|Carbonic anhydrase 2,INHIBITOR,1|Carbonic anhydrase II inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL220492,DRUG_CHEMBL220492|CHEMBL220492|TOPIRAMATE,2.0,http://purl.uniprot.org/uniprot/P22748,P22748|Carbonic anhydrase 4,INHIBITOR,1|Carbonic anhydrase IV inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL220492,DRUG_CHEMBL220492|CHEMBL220492|TOPIRAMATE,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2093872,CHEMBL2093872|GABA-A receptor; anion channel,POSITIVE MODULATOR,GABA-A receptor; anion channel positive modulator|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL220492,CHEMBL220492|DRUG_CHEMBL220492|TOPIRAMATE,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2096670,CHEMBL2096670|Glutamate receptor ionotropic AMPA,ANTAGONIST,Glutamate receptor ionotropic AMPA antagonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL220492,TOPIRAMATE|CHEMBL220492|DRUG_CHEMBL220492,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2109241,CHEMBL2109241|Glutamate receptor ionotropic kainate,ANTAGONIST,1|Glutamate receptor ionotropic kainate antagonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL220492,TOPIRAMATE|CHEMBL220492|DRUG_CHEMBL220492,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2331043,CHEMBL2331043|Sodium channel alpha subunit,BLOCKER,Sodium channel alpha subunit blocker|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2336071,CHEMBL2336071|SIPONIMOD|DRUG_CHEMBL2336071,4.0,http://purl.uniprot.org/uniprot/P21453,P21453|Sphingosine 1-phosphate receptor 1,AGONIST,Sphingosine 1-phosphate receptor Edg-1 agonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL239243,CHEMBL239243|DRUG_CHEMBL239243|TAURINE,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL25,ASPIRIN|CHEMBL25|DRUG_CHEMBL25,3.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094253,Cyclooxygenase|CHEMBL2094253,INHIBITOR,1|Cyclooxygenase inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL262777,VANCOMYCIN|DRUG_CHEMBL262777|CHEMBL262777,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL269732,CHEMBL269732|DRUG_CHEMBL269732|TACROLIMUS ANHYDROUS,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL283800,CHEMBL283800|DRUG_CHEMBL283800|CREATINE,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL284348,CHEMBL284348|DALFAMPRIDINE|DRUG_CHEMBL284348,4.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2362996,Voltage-gated potassium channel|CHEMBL2362996,BLOCKER,1|Voltage-gated potassium channel blocker
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL297453,CHEMBL297453|DRUG_CHEMBL297453|EPIGALOCATECHIN GALLATE,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3092650,GSK239512|CHEMBL3092650,1.0,http://purl.uniprot.org/uniprot/Q9Y5N1,Q9Y5N1|Histamine H3 receptor,ANTAGONIST,Histamine H3 receptor antagonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3137693,GOLD|CHEMBL3137693,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL314854,DRUG_CHEMBL314854|CHEMBL314854|FINGOLIMOD,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3188993,DRUG_CHEMBL3188993|QUETIAPINE FUMARATE|CHEMBL3188993,1.0,http://purl.uniprot.org/uniprot/P14416,P14416|D(2) dopamine receptor,ANTAGONIST,1|Dopamine D2 receptor antagonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3188993,QUETIAPINE FUMARATE|CHEMBL3188993|DRUG_CHEMBL3188993,1.0,http://purl.uniprot.org/uniprot/P28223,5-hydroxytryptamine receptor 2A|P28223,ANTAGONIST,Serotonin 2a (5-HT2a) receptor antagonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3188993,QUETIAPINE FUMARATE|DRUG_CHEMBL3188993|CHEMBL3188993,1.0,http://purl.uniprot.org/uniprot/P28335,5-hydroxytryptamine receptor 2C|P28335,ANTAGONIST,1|Serotonin 2c (5-HT2c) receptor antagonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL33864,"CHEMBL33864|DRUG_CHEMBL33864|LIPOIC ACID, ALPHA",2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL34259,METHOTREXATE|DRUG_CHEMBL34259|CHEMBL34259,3.0,http://purl.uniprot.org/uniprot/P00374,Dihydrofolate reductase|P00374,INHIBITOR,1|Dihydrofolate reductase inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL354077,DRUG_CHEMBL354077|CHEMBL354077|AMIFAMPRIDINE,3.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2362996,Voltage-gated potassium channel|CHEMBL2362996,BLOCKER,Voltage-gated potassium channel blocker|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3544922,CHEMBL3544922|OPICINUMAB,2.0,http://purl.uniprot.org/uniprot/Q96FE5,Q96FE5|Leucine-rich repeat and immunoglobulin-like domain-containing nogo receptor-interacting protein 1,INHIBITOR,1|Leucine-rich repeat and immunoglobulin-like domain-containing nogo receptor-interacting protein 1 inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3545042,CHEMBL3545042|SELURAMPANEL,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2096670,CHEMBL2096670|Glutamate receptor ionotropic AMPA,ANTAGONIST,Glutamate receptor ionotropic AMPA antagonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3545042,CHEMBL3545042|SELURAMPANEL,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2109241,Glutamate receptor ionotropic kainate|CHEMBL2109241,ANTAGONIST,1|Glutamate receptor ionotropic kainate antagonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3707228,PLOZALIZUMAB|CHEMBL3707228,2.0,http://purl.uniprot.org/uniprot/P41597,P41597|C-C chemokine receptor type 2,INHIBITOR,1|C-C chemokine receptor type 2 inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3707246,OZANIMOD HYDROCHLORIDE|DRUG_CHEMBL3707246|CHEMBL3707246,4.0,http://purl.uniprot.org/uniprot/P21453,P21453|Sphingosine 1-phosphate receptor 1,MODULATOR,Sphingosine 1-phosphate receptor Edg-1 modulator|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3707247,CHEMBL3707247|OZANIMOD|DRUG_CHEMBL3707247,3.0,http://purl.uniprot.org/uniprot/Q9H228,Sphingosine 1-phosphate receptor 5|Q9H228,MODULATOR,Sphingosine 1-phosphate receptor 5 modulator|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL374478,RIFAMPIN|CHEMBL374478|DRUG_CHEMBL374478,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3833333,CHEMBL3833333|DRUG_CHEMBL3833333|NABIXIMOLS,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL384467,DEXAMETHASONE|DRUG_CHEMBL384467|CHEMBL384467,4.0,http://purl.uniprot.org/uniprot/P04150,P04150|Glucocorticoid receptor,AGONIST,Glucocorticoid receptor agonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL386630,CHEMBL386630|TESTOSTERONE|DRUG_CHEMBL386630,2.0,http://purl.uniprot.org/uniprot/P10275,Androgen receptor|P10275,AGONIST,Androgen Receptor agonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3989944,DRUG_CHEMBL3989944|CHEMBL3989944|DIROXIMEL FUMARATE,4.0,http://purl.uniprot.org/uniprot/Q14145,Q14145|Kelch-like ECH-associated protein 1,INHIBITOR,1|Kelch-like ECH-associated protein 1 inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4065122,FENEBRUTINIB|DRUG_CHEMBL4065122|CHEMBL4065122,3.0,http://purl.uniprot.org/uniprot/Q06187,Q06187|Tyrosine-protein kinase BTK,INHIBITOR,Tyrosine-protein kinase BTK inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4072833,CHEMBL4072833|DRUG_CHEMBL4072833|EVOBRUTINIB,3.0,http://purl.uniprot.org/uniprot/Q06187,Q06187|Tyrosine-protein kinase BTK,INHIBITOR,Tyrosine-protein kinase BTK inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL408701,DRUG_CHEMBL408701|TAUROLITHOCHOLIC ACID|CHEMBL408701,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL420,DRUG_CHEMBL420|GUANABENZ|CHEMBL420,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297363,UCB-1184197|CHEMBL4297363,2.0,http://purl.uniprot.org/uniprot/P13612,Integrin alpha-4|P13612,INHIBITOR,1|Integrin alpha-4 inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297542,CHEMBL4297542|GSK-2018682,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297672,CHEMBL4297672|METHYLCOBALAMIN,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297743,CHEMBL4297743|ELEZANUMAB,2.0,http://purl.uniprot.org/uniprot/Q96B86,Q96B86|Repulsive guidance molecule A,INHIBITOR,1|Repulsive guidance molecule A inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297884,CHEMBL4297884|PEPINEMAB,1.0,http://purl.uniprot.org/uniprot/Q92854,Q92854|Semaphorin-4D,INHIBITOR,Semaphorin-4D inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4298150,CHEMBL4298150|DRUG_CHEMBL4298150|SIPONIMOD FUMARIC ACID,4.0,http://purl.uniprot.org/uniprot/P21453,Sphingosine 1-phosphate receptor 1|P21453,AGONIST,1|Sphingosine 1-phosphate receptor Edg-1 agonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4483575,DRUG_CHEMBL4483575|REMIBRUTINIB|CHEMBL4483575,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL449158,CHEMBL449158|BRYOSTATIN 1,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL45,CHEMBL45|MELATONIN|DRUG_CHEMBL45,1.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094268,Melatonin receptor|CHEMBL2094268,AGONIST,1|Melatonin receptor agonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL457,GEMFIBROZIL|CHEMBL457|DRUG_CHEMBL457,1.0,http://purl.uniprot.org/uniprot/Q07869,Q07869|Peroxisome proliferator-activated receptor alpha,AGONIST,Peroxisome proliferator-activated receptor alpha agonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4594357,IANALUMAB|CHEMBL4594357|DRUG_CHEMBL4594357,2.0,http://purl.uniprot.org/uniprot/Q96RJ3,Q96RJ3|Tumor necrosis factor receptor superfamily member 13C,BINDING AGENT,1|Tumor necrosis factor receptor superfamily member 13C binding agent
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4594547,TEMELIMAB|CHEMBL4594547,2.0,http://purl.uniprot.org/uniprot/Q9UQF0,Syncytin-1|protein|Q9UQF0-PRO_0000008486|Q9UQF0,INHIBITOR,Syncytin-1 inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL460026,ICOSAPENT|DRUG_CHEMBL460026|CHEMBL460026,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4649457,UDIFITIMOD|CHEMBL4649457,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL465,CHEMBL465|DRONABINOL|DRUG_CHEMBL465,2.0,http://purl.uniprot.org/uniprot/P21554,P21554|Cannabinoid receptor 1,AGONIST,1|Cannabinoid CB1 receptor agonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4650323,TOLEBRUTINIB|CHEMBL4650323|DRUG_CHEMBL4650323,3.0,http://purl.uniprot.org/uniprot/Q06187,Q06187|Tyrosine-protein kinase BTK,INHIBITOR,1|Tyrosine-protein kinase BTK inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4650485,CHEMBL4650485|DRUG_CHEMBL4650485|PIRTOBRUTINIB,2.0,http://purl.uniprot.org/uniprot/Q06187,Tyrosine-protein kinase BTK|Q06187,INHIBITOR,1|Tyrosine-protein kinase BTK inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL467,DRUG_CHEMBL467|HYDROXYUREA|CHEMBL467,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2095215,Ribonucleoside-diphosphate reductase RR1|CHEMBL2095215,INHIBITOR,Ribonucleoside-diphosphate reductase RR1 inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL502,DRUG_CHEMBL502|CHEMBL502|DONEPEZIL,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL5083772,BIIB-091|CHEMBL5083772,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL5095050,FINGOLIMOD LAURYL SULFATE|DRUG_CHEMBL5095050|CHEMBL5095050,4.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2363041,CHEMBL2363041|Sphingosine 1-phosphate receptor,BINDING AGENT,Sphingosine 1-phosphate receptor binding agent|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL5095122,FREXALIMAB|CHEMBL5095122|DRUG_CHEMBL5095122,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL5095416,CHEMBL5095416|UDIFITIMOD HYDROCHLORIDE,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL521,IBUPROFEN|CHEMBL521|DRUG_CHEMBL521,3.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094253,Cyclooxygenase|CHEMBL2094253,INHIBITOR,Cyclooxygenase inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL52440,DRUG_CHEMBL52440|CHEMBL52440|DEXTROMETHORPHAN,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL529,AZITHROMYCIN|CHEMBL529|DRUG_CHEMBL529,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL5314474,ODITRASERTIB|CHEMBL5314474,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL544665,DRUG_CHEMBL544665|CHEMBL544665|FINGOLIMOD HYDROCHLORIDE,4.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2363041,Sphingosine 1-phosphate receptor|CHEMBL2363041,AGONIST,Sphingosine 1-phosphate receptor agonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL559180,CHEMBL559180|ISOXSUPRINE HYDROCHLORIDE,1.0,http://purl.uniprot.org/uniprot/P07550,Beta-2 adrenergic receptor|P07550,AGONIST,Beta-2 adrenergic receptor agonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL559180,CHEMBL559180|ISOXSUPRINE HYDROCHLORIDE,1.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094251,CHEMBL2094251|Adrenergic receptor alpha-1,ANTAGONIST,1|Adrenergic receptor alpha-1 antagonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL571,CHEMBL571|DRUG_CHEMBL571|KETOPROFEN,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2094253,Cyclooxygenase|CHEMBL2094253,INHIBITOR,1|Cyclooxygenase inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL58,DRUG_CHEMBL58|MITOXANTRONE|CHEMBL58,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL589586,CHEMBL589586|MONOMETHYL FUMARATE|DRUG_CHEMBL589586,4.0,http://purl.uniprot.org/uniprot/Q14145,Q14145|Kelch-like ECH-associated protein 1,INHIBITOR,1|Kelch-like ECH-associated protein 1 inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL595,CHEMBL595|PIOGLITAZONE|DRUG_CHEMBL595,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL600,DRUG_CHEMBL600|CHEMBL600|ACETYLCYSTEINE,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL6068609,GATRALIMAB|CHEMBL6068609,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL612,CHEMBL612|DEXTROAMPHETAMINE|DRUG_CHEMBL612,2.0,http://purl.uniprot.org/uniprot/P23975,P23975|Sodium-dependent noradrenaline transporter,RELEASING AGENT,1|Norepinephrine transporter releasing agent
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL612,CHEMBL612|DRUG_CHEMBL612|DEXTROAMPHETAMINE,2.0,http://purl.uniprot.org/uniprot/Q01959,Sodium-dependent dopamine transporter|Q01959,RELEASING AGENT,Dopamine transporter releasing agent|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL612,DRUG_CHEMBL612|DEXTROAMPHETAMINE|CHEMBL612,2.0,http://purl.uniprot.org/uniprot/Q05940,Synaptic vesicular amine transporter|Q05940,INHIBITOR,1|Synaptic vesicular amine transporter inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL63,ROLIPRAM|CHEMBL63,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2093863,CHEMBL2093863|Phosphodiesterase 4,INHIBITOR,Phosphodiesterase 4 inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL635,CHEMBL635|PREDNISONE|DRUG_CHEMBL635,4.0,http://purl.uniprot.org/uniprot/P04150,P04150|Glucocorticoid receptor,AGONIST,1|Glucocorticoid receptor agonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL650,DRUG_CHEMBL650|CHEMBL650|METHYLPREDNISOLONE,4.0,http://purl.uniprot.org/uniprot/P04150,P04150|Glucocorticoid receptor,AGONIST,1|Glucocorticoid receptor agonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL657,CHEMBL657|DIPHENHYDRAMINE|DRUG_CHEMBL657,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL660,DRUG_CHEMBL660|AMANTADINE|CHEMBL660,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL66092,CHEMBL66092|DRUG_CHEMBL66092|LAQUINIMOD,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL701,CHEMBL701|DRUG_CHEMBL701|BACLOFEN,4.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2111463,GABA-B receptor|CHEMBL2111463,AGONIST,GABA-B receptor agonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL709,DRUG_CHEMBL709|CHEMBL709|ALFUZOSIN,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL742,CHEMBL742|DRUG_CHEMBL742|KETAMINE,0.5,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL744,CHEMBL744|RILUZOLE|DRUG_CHEMBL744,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2331043,CHEMBL2331043|Sodium channel alpha subunit,BLOCKER,1|Sodium channel alpha subunit blocker
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL74415,CHEMBL74415|DRUG_CHEMBL74415|CANNABINOL,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL796,DRUG_CHEMBL796|CHEMBL796|METHYLPHENIDATE,3.0,http://purl.uniprot.org/uniprot/P23975,P23975|Sodium-dependent noradrenaline transporter,INHIBITOR,1|Norepinephrine transporter inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL796,METHYLPHENIDATE|DRUG_CHEMBL796|CHEMBL796,3.0,http://purl.uniprot.org/uniprot/Q01959,Sodium-dependent dopamine transporter|Q01959,INHIBITOR,Dopamine transporter inhibitor|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL807,CHEMBL807|DRUG_CHEMBL807|MEMANTINE,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL857,CHEMBL857|BIOTIN|DRUG_CHEMBL857,3.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL8659,CHEMBL8659|OLEIC ACID,1.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL880,FAMCICLOVIR|DRUG_CHEMBL880|CHEMBL880,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL885,EMTRICITABINE|DRUG_CHEMBL885|CHEMBL885,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL90,CHEMBL90|HISTAMINE|DRUG_CHEMBL90,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL928,DRUG_CHEMBL928|DANTROLENE SODIUM|CHEMBL928,4.0,http://purl.uniprot.org/uniprot/P21817,Ryanodine receptor 1|P21817,ANTAGONIST,1|Ryanodine receptor 1 antagonist
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL928,CHEMBL928|DRUG_CHEMBL928|DANTROLENE SODIUM,4.0,http://purl.uniprot.org/uniprot/Q15413,Q15413|Ryanodine receptor 3,ANTAGONIST,Ryanodine receptor 3 antagonist|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL940,CHEMBL940|GABAPENTIN|DRUG_CHEMBL940,2.0,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2363032,Voltage-gated calcium channel|CHEMBL2363032,MODULATOR,Voltage-gated calcium channel modulator|1
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL973,DRUG_CHEMBL973|CHEMBL973|TERIFLUNOMIDE,4.0,http://purl.uniprot.org/uniprot/Q02127,"Q02127|Dihydroorotate dehydrogenase (quinone), mitochondrial",INHIBITOR,1|Dihydroorotate dehydrogenase inhibitor
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL975,CHEMBL975|DRUG_CHEMBL975|MESNA,2.0,,,,
+https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL998,CHEMBL998|LORATADINE|DRUG_CHEMBL998,1.0,http://purl.uniprot.org/uniprot/P35367,P35367|Histamine H1 receptor,ANTAGONIST,1|Histamine H1 receptor antagonist

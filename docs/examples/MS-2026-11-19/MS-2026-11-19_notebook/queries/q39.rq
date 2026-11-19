@@ -1,0 +1,8 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?prop (REPLACE(STR(?v),"^.*/","") AS ?val) (SAMPLE(?vl) AS ?label) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/wikidata> {
+    VALUES ?prop { <http://www.wikidata.org/prop/direct/P2293> <http://www.wikidata.org/prop/direct/P2176> <http://www.wikidata.org/prop/direct/P780> <http://www.wikidata.org/prop/direct/P5642> <http://www.wikidata.org/prop/direct/P1193> <http://www.wikidata.org/prop/direct/P1995> <http://www.wikidata.org/prop/direct/P828> <http://www.wikidata.org/prop/direct/P923> <http://www.wikidata.org/prop/direct/P4044> }
+    <http://www.wikidata.org/entity/Q8277> ?prop ?v .
+    OPTIONAL { ?v rdfs:label ?vl FILTER(LANG(?vl)="en") }
+  }
+} GROUP BY ?prop ?v

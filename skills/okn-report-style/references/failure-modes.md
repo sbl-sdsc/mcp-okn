@@ -94,9 +94,17 @@ set*). `validate_okn_report.py` checks it, but these are the ways it goes wrong:
   that code as `code_files` (e.g. `{"analysis.py": …}`) and the cells that call it on `data["q01"]` …
   as `cells`, so running the notebook recomputes the headline numbers and regenerates the figures.
 - **The spec is missing or split off.** The replicator specification (rules, thresholds, joins,
-  verified quantities, limitations) goes in the notebook as the first markdown cell of `cells`, headed
-  `## Replicator specification`. A separate `_reproducibility.md`, transcript or spec file beside the
-  notebook is a second record that drifts from the first; the validator rejects it.
+  verified quantities, limitations) goes in the notebook as a markdown cell of `cells`, headed
+  `## Replicator specification`, right after `## Question and approach`. A separate
+  `_reproducibility.md`, transcript or spec file beside the notebook is a second record that drifts
+  from the first; the validator rejects it.
+- **The notebook has code but no story** (cells of code with no question up front, no word on why
+  each step is there, and nothing saying what the results mean) → open `cells` with
+  `## Question and approach`, put a short why cell before each analysis code cell, and close with
+  `## Conclusions` after the last analysis code cell, opening with a bulleted summary of findings
+  (each finding with its computed number). The validator fails a notebook whose analysis lacks
+  either heading, ends its analysis before the conclusions, or has conclusions with no bulleted
+  summary, and warns on each analysis code cell with no explanatory markdown cell before it.
 - **No HTML page, or a stale one** → run the tool's `html_command` after the folder is saved. If it
   fails, read the error: it is almost always an analysis cell raising. Fix the code, regenerate the
   notebook (`overwrite=True` for a local write), and run `html_command` again. Never hand-edit the

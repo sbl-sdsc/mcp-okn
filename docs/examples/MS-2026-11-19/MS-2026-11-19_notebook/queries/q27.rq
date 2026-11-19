@@ -1,0 +1,8 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT (REPLACE(STR(?p),"^.*[/#]","") AS ?pred) (REPLACE(STR(?o),"^.*[/#]","") AS ?obj) (SAMPLE(STR(?olab)) AS ?olabel) (COUNT(DISTINCT ?s) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> {
+    ?s <http://purl.obolibrary.org/obo/OBCI_1000002> <http://purl.obolibrary.org/obo/MONDO_0005301> .
+    ?s ?p ?o . FILTER(?p != <http://purl.obolibrary.org/obo/OBCI_1000002>)
+    OPTIONAL { ?o rdfs:label ?olab }
+  }
+} GROUP BY ?p ?o

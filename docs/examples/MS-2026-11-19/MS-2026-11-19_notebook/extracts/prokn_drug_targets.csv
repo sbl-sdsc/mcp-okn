@@ -1,0 +1,132 @@
+drug,drug_iri,max_phase,target_gene,action,target_label
+Cholecalciferol,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1042,2.0,VDR,AGONIST,Vitamin D3 receptor
+Simvastatin,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1064,3.0,HMGCR,INHIBITOR,3-hydroxy-3-methylglutaryl-coenzyme A reductase
+Ponesimod,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1096146,4.0,S1PR1,AGONIST,Sphingosine 1-phosphate receptor 1
+Acetaminophen,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL112,3.0,FAAH,INHIBITOR,Fatty-acid amide hydrolase 1
+Acetaminophen,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL112,3.0,TRPV1,OPENER,Transient receptor potential cation channel subfamily V member 1
+Acetaminophen,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL112,3.0,PTGS1,INHIBITOR,Cyclooxygenase
+Acetaminophen,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL112,3.0,PTGS2,INHIBITOR,Cyclooxygenase
+Prednisolone Acetate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1152,4.0,NR3C1,AGONIST,Glucocorticoid receptor
+Desloratadine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1172,3.0,HRH1,ANTAGONIST,Histamine H1 receptor
+Celecoxib,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL118,2.0,PTGS2,INHIBITOR,Prostaglandin G/H synthase 2
+Duloxetine Hydrochloride,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200328,3.0,SLC6A2,INHIBITOR,Sodium-dependent noradrenaline transporter
+Duloxetine Hydrochloride,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200328,3.0,SLC6A4,INHIBITOR,Sodium-dependent serotonin transporter
+Clemastine Fumarate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200795,1.0,HRH1,ANTAGONIST,Histamine H1 receptor
+Lithium Carbonate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200826,1.0,IMPA1,INHIBITOR,Inositol monophosphatase 1
+Dexchlorpheniramine Maleate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1200927,3.0,HRH1,ANTAGONIST,Histamine H1 receptor
+Prednisolone Sodium Phosphate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201014,4.0,NR3C1,AGONIST,Glucocorticoid receptor
+Methylprednisolone Sodium Succinate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201081,4.0,NR3C1,AGONIST,Glucocorticoid receptor
+Liothyronine Sodium,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201119,1.0,THRA,AGONIST,Thyroid hormone receptor
+Liothyronine Sodium,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201119,1.0,THRB,AGONIST,Thyroid hormone receptor
+Armodafinil,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201192,2.0,SLC6A3,INHIBITOR,Sodium-dependent dopamine transporter
+Rituximab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201576,3.0,MS4A1,BINDING AGENT,B-lymphocyte antigen CD20
+Alemtuzumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201587,4.0,CD52,INHIBITOR,CAMPATH-1 antigen
+Daclizumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201605,4.0,IL2RA,INHIBITOR,Interleukin-2 receptor
+Natalizumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201607,4.0,ITGA4,INHIBITOR,Integrin alpha-4/beta-1
+Natalizumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201607,4.0,ITGB1,INHIBITOR,Integrin alpha-4/beta-1
+Natalizumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201607,4.0,ITGB7,INHIBITOR,Integrin alpha-4/beta-7
+Ustekinumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201835,2.0,IL12A,INHIBITOR,Interleukin-12
+Ustekinumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201835,2.0,IL12B,INHIBITOR,Interleukin-12
+Ustekinumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201835,2.0,IL23A,INHIBITOR,Interleukin-23
+Ofatumumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1201836,4.0,MS4A1,BINDING AGENT,B-lymphocyte antigen CD20
+Prednisolone,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL131,4.0,NR3C1,AGONIST,Glucocorticoid receptor
+Estradiol,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL135,3.0,ESR1,AGONIST,Estrogen receptor
+Modafinil,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1373,3.0,SLC6A3,INHIBITOR,Sodium-dependent dopamine transporter
+Mitoxantrone Hydrochloride,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1417019,4.0,TOP2A,INHIBITOR,DNA topoisomerase 2-alpha
+Mycophenolate Mofetil,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1456,2.0,IMPDH1,INHIBITOR,Inosine-5'-monophosphate dehydrogenase (IMPDH)
+Mycophenolate Mofetil,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1456,2.0,IMPDH2,INHIBITOR,Inosine-5'-monophosphate dehydrogenase (IMPDH)
+Nomegestrol Acetate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1476022,3.0,PGR,AGONIST,Progesterone receptor
+Triamcinolone Acetonide,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1504,4.0,NR3C1,AGONIST,Glucocorticoid receptor
+Ergocalciferol,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1536,3.0,VDR,AGONIST,Vitamin D3 receptor
+Naproxen,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL154,3.0,PTGS1,INHIBITOR,Cyclooxygenase
+Naproxen,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL154,3.0,PTGS2,INHIBITOR,Cyclooxygenase
+Amantadine Hydrochloride,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1569,3.0,GRIN1,ANTAGONIST,Glutamate [NMDA] receptor
+Imatinib Mesylate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1642,2.0,ABL1,INHIBITOR,Tyrosine-protein kinase ABL1
+Imatinib Mesylate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1642,2.0,PDGFRB,INHIBITOR,Platelet-derived growth factor receptor beta
+Imatinib Mesylate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1642,2.0,KIT,INHIBITOR,Mast/stem cell growth factor receptor Kit
+Metformin Hydrochloride,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1703,2.0,GPD2,INHIBITOR,"Glycerol-3-phosphate dehydrogenase, mitochondrial"
+Terfenadine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL17157,3.0,HRH1,ANTAGONIST,Histamine H1 receptor
+Dexrazoxane,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1738,2.0,TOP2A,INHIBITOR,DNA topoisomerase II
+Briakinumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1742995,2.0,IL12A,INHIBITOR,Interleukin-12
+Briakinumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1742995,2.0,IL12B,INHIBITOR,Interleukin-12
+Briakinumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1742995,2.0,IL23A,INHIBITOR,Interleukin-23
+Secukinumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1743068,2.0,IL17A,INHIBITOR,Interleukin-17A
+Belimumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1789843,2.0,TNFSF13B,INHIBITOR,Tumor necrosis factor ligand superfamily member 13B
+Ranitidine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1790041,3.0,HRH2,ANTAGONIST,Histamine H2 receptor
+Naltrexone,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL19019,3.0,OPRM1,ANTAGONIST,Opioid receptors; mu/kappa/delta
+Cannabidiol,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL190461,2.0,CNR1,NEGATIVE ALLOSTERIC MODULATOR,Cannabinoid receptor 1
+Masitinib,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1908391,3.0,KIT,INHIBITOR,Mast/stem cell growth factor receptor Kit
+Masitinib,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1908391,3.0,FGFR3,INHIBITOR,Fibroblast growth factor receptor 3
+Masitinib,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL1908391,3.0,PDGFRB,INHIBITOR,Platelet-derived growth factor receptor
+Vidofludimus,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL197194,3.0,DHODH,INHIBITOR,"Dihydroorotate dehydrogenase (quinone), mitochondrial"
+Acetazolamide,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL20,2.0,CA12,INHIBITOR,Carbonic anhydrase 12
+Acetazolamide,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL20,2.0,CA1,INHIBITOR,Carbonic anhydrase 1
+Acetazolamide,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL20,2.0,CA2,INHIBITOR,Carbonic anhydrase 2
+Acetazolamide,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL20,2.0,CA4,INHIBITOR,Carbonic anhydrase 4
+Firategrast,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2104967,2.0,ITGA4,ANTAGONIST,Integrin alpha-4/beta-1
+Firategrast,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2104967,2.0,ITGB1,ANTAGONIST,Integrin alpha-4/beta-1
+Firategrast,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2104967,2.0,ITGB7,ANTAGONIST,Integrin alpha-4/beta-7
+Mycophenolate Sodium,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2106643,4.0,IMPDH1,INHIBITOR,Inosine-5'-monophosphate dehydrogenase (IMPDH)
+Mycophenolate Sodium,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2106643,4.0,IMPDH2,INHIBITOR,Inosine-5'-monophosphate dehydrogenase (IMPDH)
+Arbaclofen Placarbil,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2107312,3.0,GABBR1,AGONIST,GABA-B receptor
+Dimethyl Fumarate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2107333,4.0,KEAP1,INHIBITOR,Kelch-like ECH-associated protein 1
+Nerispirdine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2107762,2.0,KCNA1,BLOCKER,Voltage-gated potassium channel
+Nerispirdine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2107762,2.0,KCNA2,BLOCKER,Voltage-gated potassium channel
+Ocrelizumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2108041,4.0,MS4A1,BINDING AGENT,B-lymphocyte antigen CD20
+Ublituximab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2108354,3.0,MS4A1,BINDING AGENT,B-lymphocyte antigen CD20
+Ozanezumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2108679,1.0,RTN4,INHIBITOR,Reticulon-4
+Inebilizumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2109334,1.0,CD19,BINDING AGENT,B-lymphocyte antigen CD19
+Otilimab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2109433,1.0,CSF2,INHIBITOR,Granulocyte-macrophage colony-stimulating factor
+Topiramate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL220492,2.0,CA2,INHIBITOR,Carbonic anhydrase 2
+Topiramate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL220492,2.0,CA4,INHIBITOR,Carbonic anhydrase 4
+Siponimod,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2336071,4.0,S1PR1,AGONIST,Sphingosine 1-phosphate receptor 1
+Aspirin,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL25,3.0,PTGS1,INHIBITOR,Cyclooxygenase
+Aspirin,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL25,3.0,PTGS2,INHIBITOR,Cyclooxygenase
+Dalfampridine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL284348,4.0,KCNA1,BLOCKER,Voltage-gated potassium channel
+Dalfampridine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL284348,4.0,KCNA2,BLOCKER,Voltage-gated potassium channel
+Gsk239512,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3092650,1.0,HRH3,ANTAGONIST,Histamine H3 receptor
+Quetiapine Fumarate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3188993,1.0,DRD2,ANTAGONIST,D(2) dopamine receptor
+Quetiapine Fumarate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3188993,1.0,HTR2A,ANTAGONIST,5-hydroxytryptamine receptor 2A
+Quetiapine Fumarate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3188993,1.0,HTR2C,ANTAGONIST,5-hydroxytryptamine receptor 2C
+Methotrexate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL34259,3.0,DHFR,INHIBITOR,Dihydrofolate reductase
+Amifampridine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL354077,3.0,KCNA1,BLOCKER,Voltage-gated potassium channel
+Amifampridine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL354077,3.0,KCNA2,BLOCKER,Voltage-gated potassium channel
+Opicinumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3544922,2.0,LINGO1,INHIBITOR,Leucine-rich repeat and immunoglobulin-like domain-containing nogo receptor-interacting protein 1
+Plozalizumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3707228,2.0,CCR2,INHIBITOR,C-C chemokine receptor type 2
+Ozanimod Hydrochloride,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3707246,4.0,S1PR1,MODULATOR,Sphingosine 1-phosphate receptor 1
+Ozanimod,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3707247,3.0,S1PR5,MODULATOR,Sphingosine 1-phosphate receptor 5
+Dexamethasone,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL384467,4.0,NR3C1,AGONIST,Glucocorticoid receptor
+Testosterone,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL386630,2.0,AR,AGONIST,Androgen receptor
+Diroximel Fumarate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL3989944,4.0,KEAP1,INHIBITOR,Kelch-like ECH-associated protein 1
+Fenebrutinib,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4065122,3.0,BTK,INHIBITOR,Tyrosine-protein kinase BTK
+Evobrutinib,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4072833,3.0,BTK,INHIBITOR,Tyrosine-protein kinase BTK
+Ucb-1184197,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297363,2.0,ITGA4,INHIBITOR,Integrin alpha-4
+Elezanumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297743,2.0,RGMA,INHIBITOR,Repulsive guidance molecule A
+Pepinemab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297884,1.0,SEMA4D,INHIBITOR,Semaphorin-4D
+Siponimod Fumaric Acid,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4298150,4.0,S1PR1,AGONIST,Sphingosine 1-phosphate receptor 1
+Gemfibrozil,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL457,1.0,PPARA,AGONIST,Peroxisome proliferator-activated receptor alpha
+Ianalumab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4594357,2.0,TNFRSF13C,BINDING AGENT,Tumor necrosis factor receptor superfamily member 13C
+Temelimab,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4594547,2.0,ERVW-1,INHIBITOR,Syncytin-1|protein
+Dronabinol,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL465,2.0,CNR1,AGONIST,Cannabinoid receptor 1
+Tolebrutinib,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4650323,3.0,BTK,INHIBITOR,Tyrosine-protein kinase BTK
+Pirtobrutinib,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4650485,2.0,BTK,INHIBITOR,Tyrosine-protein kinase BTK
+Fingolimod Lauryl Sulfate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL5095050,4.0,S1PR1,BINDING AGENT,Sphingosine 1-phosphate receptor
+Ibuprofen,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL521,3.0,PTGS1,INHIBITOR,Cyclooxygenase
+Ibuprofen,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL521,3.0,PTGS2,INHIBITOR,Cyclooxygenase
+Fingolimod Hydrochloride,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL544665,4.0,S1PR1,AGONIST,Sphingosine 1-phosphate receptor
+Isoxsuprine Hydrochloride,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL559180,1.0,ADRB2,AGONIST,Beta-2 adrenergic receptor
+Ketoprofen,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL571,2.0,PTGS1,INHIBITOR,Cyclooxygenase
+Ketoprofen,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL571,2.0,PTGS2,INHIBITOR,Cyclooxygenase
+Monomethyl Fumarate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL589586,4.0,KEAP1,INHIBITOR,Kelch-like ECH-associated protein 1
+Dextroamphetamine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL612,2.0,SLC6A2,RELEASING AGENT,Sodium-dependent noradrenaline transporter
+Dextroamphetamine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL612,2.0,SLC6A3,RELEASING AGENT,Sodium-dependent dopamine transporter
+Dextroamphetamine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL612,2.0,SLC18A2,INHIBITOR,Synaptic vesicular amine transporter
+Prednisone,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL635,4.0,NR3C1,AGONIST,Glucocorticoid receptor
+Methylprednisolone,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL650,4.0,NR3C1,AGONIST,Glucocorticoid receptor
+Baclofen,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL701,4.0,GABBR1,AGONIST,GABA-B receptor
+Methylphenidate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL796,3.0,SLC6A2,INHIBITOR,Sodium-dependent noradrenaline transporter
+Methylphenidate,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL796,3.0,SLC6A3,INHIBITOR,Sodium-dependent dopamine transporter
+Dantrolene Sodium,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL928,4.0,RYR1,ANTAGONIST,Ryanodine receptor 1
+Dantrolene Sodium,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL928,4.0,RYR3,ANTAGONIST,Ryanodine receptor 3
+Teriflunomide,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL973,4.0,DHODH,INHIBITOR,"Dihydroorotate dehydrogenase (quinone), mitochondrial"
+Loratadine,https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL998,1.0,HRH1,ANTAGONIST,Histamine H1 receptor

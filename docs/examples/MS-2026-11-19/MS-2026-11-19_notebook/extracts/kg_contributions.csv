@@ -1,0 +1,13 @@
+kg,n,what
+ubergraph,44,subtype xrefs (DOID/UMLS/MeSH/EFO/ICD…)
+wikidata,101,"Q8277 statements (genes, drugs, prevalence)"
+oard-kg,141,co-occurring HP phenotypes
+biohealth,155,literature risk / protective factors
+rdkg,266,"gene, drug, exposure, phenotype edges"
+biomarkerkg,359,risk + diagnostic biomarkers
+prokn,439,indicated compounds + drug→target rows
+spoke-okn,542,164 genes + 200 prevalence + 178 mortality rows
+gene-expression-atlas-okn,834,DE genes across 6 contrasts
+nde,874,datasets indexed to MS terms
+digcfdekg,1056,PIGEAN gene→trait scores
+nestkg,1324,protein–protein interactions in core

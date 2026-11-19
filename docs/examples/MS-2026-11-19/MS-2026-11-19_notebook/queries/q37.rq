@@ -1,0 +1,10 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT (REPLACE(STR(?pw),"^.*/","") AS ?pathway) (SAMPLE(?lab) AS ?label) (COUNT(DISTINCT ?sym) AS ?K) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    VALUES ?id { "R-HSA-1059683" "R-HSA-112411" "R-HSA-114604" "R-HSA-1169091" "R-HSA-1236974" "R-HSA-1257604" "R-HSA-1266695" "R-HSA-1433557" "R-HSA-198933" "R-HSA-202424" "R-HSA-202427" "R-HSA-202430" "R-HSA-202433" "R-HSA-202733" "R-HSA-2029482" "R-HSA-2132295" "R-HSA-216083" "R-HSA-2219530" "R-HSA-2424491" "R-HSA-2871796" "R-HSA-2871809" "R-HSA-2871837" "R-HSA-380108" "R-HSA-389357" "R-HSA-389948" "R-HSA-418594" "R-HSA-512988" "R-HSA-5607764" "R-HSA-5668541" "R-HSA-5673001" "R-HSA-6783783" "R-HSA-6785807" "R-HSA-6798695" "R-HSA-6811558" "R-HSA-844456" "R-HSA-877300" "R-HSA-877312" "R-HSA-8854691" "R-HSA-8983432" "R-HSA-8984722" "R-HSA-8985947" "R-HSA-9020558" "R-HSA-9020956" "R-HSA-9020958" "R-HSA-909733" "R-HSA-912526" "R-HSA-912631" "R-HSA-9660826" "R-HSA-9664422" "R-HSA-9670439" "R-HSA-9674555" "R-HSA-9679191" "R-HSA-9680350" "R-HSA-9692916" "R-HSA-9705462" "R-HSA-9705671" "R-HSA-9725371" "R-HSA-9732724" "R-HSA-982772" "R-HSA-983695" }
+    ?pw a <http://purl.uniprot.org/core/Pathway> . FILTER(STRENDS(STR(?pw), CONCAT("/", ?id)))
+    ?prot <https://w3id.org/biolink/vocab/participates_in> ?pw .
+    ?gene <http://semanticscience.org/resource/SIO_010078> ?prot ; a <http://purl.uniprot.org/core/Gene> ; rdfs:label ?sym .
+    OPTIONAL { ?pw rdfs:label ?lab }
+  }
+} GROUP BY ?pw

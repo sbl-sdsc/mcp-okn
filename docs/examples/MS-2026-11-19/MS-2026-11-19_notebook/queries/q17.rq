@@ -1,0 +1,12 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dir ?d ?p ?x ?xlabel (GROUP_CONCAT(DISTINCT STR(?xtype); separator="|") AS ?xtypes) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/rdkg> {
+    { VALUES ?d { <http://purl.obolibrary.org/obo/MONDO_0005301> <http://purl.obolibrary.org/obo/MONDO_0005314> <http://purl.obolibrary.org/obo/MONDO_0000450> <http://purl.obolibrary.org/obo/MONDO_0000451> <http://purl.obolibrary.org/obo/MONDO_0000452> <http://purl.obolibrary.org/obo/MONDO_0005284> <http://purl.obolibrary.org/obo/MONDO_0016429> <http://purl.obolibrary.org/obo/MONDO_0018784> }
+      ?d ?p ?x . BIND("out" AS ?dir)
+      FILTER(?p IN (<https://w3id.org/biolink/vocab/related_to>, <https://w3id.org/biolink/vocab/contributes_to>, <https://w3id.org/biolink/vocab/contraindicated_for>, <https://w3id.org/biolink/vocab/has_onset>, <https://w3id.org/biolink/vocab/has_mode_of_inheritance>, <https://w3id.org/biolink/vocab/genetic_association>, <https://w3id.org/biolink/vocab/has_phenotype>)) }
+    UNION
+    { VALUES ?d { <http://purl.obolibrary.org/obo/MONDO_0005301> <http://purl.obolibrary.org/obo/MONDO_0005314> <http://purl.obolibrary.org/obo/MONDO_0000450> <http://purl.obolibrary.org/obo/MONDO_0000451> <http://purl.obolibrary.org/obo/MONDO_0000452> <http://purl.obolibrary.org/obo/MONDO_0005284> <http://purl.obolibrary.org/obo/MONDO_0016429> <http://purl.obolibrary.org/obo/MONDO_0018784> }
+      ?x ?p ?d . BIND("in" AS ?dir) FILTER(?p != <https://w3id.org/biolink/vocab/subclass_of>) }
+    OPTIONAL { ?x rdfs:label ?xlabel } OPTIONAL { ?x a ?xtype }
+  }
+} GROUP BY ?dir ?d ?p ?x ?xlabel

@@ -1,0 +1,12 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?loc ?name ?iso3 ?kind ?lat ?lon ?value ?year WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?st rdf:subject <http://purl.obolibrary.org/obo/DOID_2377> ; rdf:predicate kg:PREVALENCE_DpL ; rdf:object ?loc ; kg:value ?value .
+    OPTIONAL { ?st kg:year ?year }
+    OPTIONAL { ?loc rdfs:label ?name } OPTIONAL { ?loc kg:iso3 ?iso3 }
+    OPTIONAL { ?loc <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ?kind }
+    OPTIONAL { ?loc kg:latitude ?lat } OPTIONAL { ?loc kg:longitude ?lon }
+  }
+}

@@ -1,0 +1,319 @@
+term,label,xref,exact
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,DOID:0050783,http://id.who.int/icd/entity/1045965709
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,DOID:0050783,http://identifiers.org/medgen/155969
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,DOID:0050783,http://identifiers.org/snomedct/425500002
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,DOID:0050783,http://linkedlifedata.com/resource/umls/id/C0751965
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,DOID:0050783,http://purl.obolibrary.org/obo/DOID_0050783
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,DOID:0050783,http://www.ebi.ac.uk/efo/EFO_0008522
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,EFO:0008522,http://id.who.int/icd/entity/1045965709
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,EFO:0008522,http://identifiers.org/medgen/155969
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,EFO:0008522,http://identifiers.org/snomedct/425500002
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,EFO:0008522,http://linkedlifedata.com/resource/umls/id/C0751965
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,EFO:0008522,http://purl.obolibrary.org/obo/DOID_0050783
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,EFO:0008522,http://www.ebi.ac.uk/efo/EFO_0008522
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,icd11.foundation:1045965709,http://id.who.int/icd/entity/1045965709
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,icd11.foundation:1045965709,http://identifiers.org/medgen/155969
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,icd11.foundation:1045965709,http://identifiers.org/snomedct/425500002
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,icd11.foundation:1045965709,http://linkedlifedata.com/resource/umls/id/C0751965
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,icd11.foundation:1045965709,http://purl.obolibrary.org/obo/DOID_0050783
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,icd11.foundation:1045965709,http://www.ebi.ac.uk/efo/EFO_0008522
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,MEDGEN:155969,http://id.who.int/icd/entity/1045965709
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,MEDGEN:155969,http://identifiers.org/medgen/155969
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,MEDGEN:155969,http://identifiers.org/snomedct/425500002
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,MEDGEN:155969,http://linkedlifedata.com/resource/umls/id/C0751965
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,MEDGEN:155969,http://purl.obolibrary.org/obo/DOID_0050783
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,MEDGEN:155969,http://www.ebi.ac.uk/efo/EFO_0008522
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,NANDO:1200026,http://id.who.int/icd/entity/1045965709
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,NANDO:1200026,http://identifiers.org/medgen/155969
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,NANDO:1200026,http://identifiers.org/snomedct/425500002
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,NANDO:1200026,http://linkedlifedata.com/resource/umls/id/C0751965
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,NANDO:1200026,http://purl.obolibrary.org/obo/DOID_0050783
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,NANDO:1200026,http://www.ebi.ac.uk/efo/EFO_0008522
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,NANDO:2201321,http://id.who.int/icd/entity/1045965709
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,NANDO:2201321,http://identifiers.org/medgen/155969
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,NANDO:2201321,http://identifiers.org/snomedct/425500002
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,NANDO:2201321,http://linkedlifedata.com/resource/umls/id/C0751965
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,NANDO:2201321,http://purl.obolibrary.org/obo/DOID_0050783
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,NANDO:2201321,http://www.ebi.ac.uk/efo/EFO_0008522
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,SCTID:425500002,http://id.who.int/icd/entity/1045965709
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,SCTID:425500002,http://identifiers.org/medgen/155969
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,SCTID:425500002,http://identifiers.org/snomedct/425500002
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,SCTID:425500002,http://linkedlifedata.com/resource/umls/id/C0751965
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,SCTID:425500002,http://purl.obolibrary.org/obo/DOID_0050783
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,SCTID:425500002,http://www.ebi.ac.uk/efo/EFO_0008522
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,UMLS:C0751965,http://id.who.int/icd/entity/1045965709
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,UMLS:C0751965,http://identifiers.org/medgen/155969
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,UMLS:C0751965,http://identifiers.org/snomedct/425500002
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,UMLS:C0751965,http://linkedlifedata.com/resource/umls/id/C0751965
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,UMLS:C0751965,http://purl.obolibrary.org/obo/DOID_0050783
+http://purl.obolibrary.org/obo/MONDO_0000450,secondary progressive multiple sclerosis,UMLS:C0751965,http://www.ebi.ac.uk/efo/EFO_0008522
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,DOID:0050784,http://id.who.int/icd/entity/1020720762
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,DOID:0050784,http://identifiers.org/medgen/155968
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,DOID:0050784,http://identifiers.org/snomedct/428700003
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,DOID:0050784,http://linkedlifedata.com/resource/umls/id/C0751964
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,DOID:0050784,http://purl.obolibrary.org/obo/DOID_0050784
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,DOID:0050784,http://www.ebi.ac.uk/efo/EFO_0008520
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,EFO:0008520,http://id.who.int/icd/entity/1020720762
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,EFO:0008520,http://identifiers.org/medgen/155968
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,EFO:0008520,http://identifiers.org/snomedct/428700003
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,EFO:0008520,http://linkedlifedata.com/resource/umls/id/C0751964
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,EFO:0008520,http://purl.obolibrary.org/obo/DOID_0050784
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,EFO:0008520,http://www.ebi.ac.uk/efo/EFO_0008520
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,icd11.foundation:1020720762,http://id.who.int/icd/entity/1020720762
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,icd11.foundation:1020720762,http://identifiers.org/medgen/155968
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,icd11.foundation:1020720762,http://identifiers.org/snomedct/428700003
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,icd11.foundation:1020720762,http://linkedlifedata.com/resource/umls/id/C0751964
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,icd11.foundation:1020720762,http://purl.obolibrary.org/obo/DOID_0050784
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,icd11.foundation:1020720762,http://www.ebi.ac.uk/efo/EFO_0008520
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,MEDGEN:155968,http://id.who.int/icd/entity/1020720762
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,MEDGEN:155968,http://identifiers.org/medgen/155968
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,MEDGEN:155968,http://identifiers.org/snomedct/428700003
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,MEDGEN:155968,http://linkedlifedata.com/resource/umls/id/C0751964
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,MEDGEN:155968,http://purl.obolibrary.org/obo/DOID_0050784
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,MEDGEN:155968,http://www.ebi.ac.uk/efo/EFO_0008520
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,NANDO:1200025,http://id.who.int/icd/entity/1020720762
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,NANDO:1200025,http://identifiers.org/medgen/155968
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,NANDO:1200025,http://identifiers.org/snomedct/428700003
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,NANDO:1200025,http://linkedlifedata.com/resource/umls/id/C0751964
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,NANDO:1200025,http://purl.obolibrary.org/obo/DOID_0050784
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,NANDO:1200025,http://www.ebi.ac.uk/efo/EFO_0008520
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,NANDO:2201320,http://id.who.int/icd/entity/1020720762
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,NANDO:2201320,http://identifiers.org/medgen/155968
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,NANDO:2201320,http://identifiers.org/snomedct/428700003
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,NANDO:2201320,http://linkedlifedata.com/resource/umls/id/C0751964
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,NANDO:2201320,http://purl.obolibrary.org/obo/DOID_0050784
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,NANDO:2201320,http://www.ebi.ac.uk/efo/EFO_0008520
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,SCTID:428700003,http://id.who.int/icd/entity/1020720762
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,SCTID:428700003,http://identifiers.org/medgen/155968
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,SCTID:428700003,http://identifiers.org/snomedct/428700003
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,SCTID:428700003,http://linkedlifedata.com/resource/umls/id/C0751964
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,SCTID:428700003,http://purl.obolibrary.org/obo/DOID_0050784
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,SCTID:428700003,http://www.ebi.ac.uk/efo/EFO_0008520
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,UMLS:C0751964,http://id.who.int/icd/entity/1020720762
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,UMLS:C0751964,http://identifiers.org/medgen/155968
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,UMLS:C0751964,http://identifiers.org/snomedct/428700003
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,UMLS:C0751964,http://linkedlifedata.com/resource/umls/id/C0751964
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,UMLS:C0751964,http://purl.obolibrary.org/obo/DOID_0050784
+http://purl.obolibrary.org/obo/MONDO_0000451,primary progressive multiple sclerosis,UMLS:C0751964,http://www.ebi.ac.uk/efo/EFO_0008520
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,DOID:0050785,http://identifiers.org/medgen/95982
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,DOID:0050785,http://identifiers.org/snomedct/230374002
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,DOID:0050785,http://linkedlifedata.com/resource/umls/id/C0393666
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,DOID:0050785,http://purl.obolibrary.org/obo/DOID_0050785
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,MEDGEN:95982,http://identifiers.org/medgen/95982
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,MEDGEN:95982,http://identifiers.org/snomedct/230374002
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,MEDGEN:95982,http://linkedlifedata.com/resource/umls/id/C0393666
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,MEDGEN:95982,http://purl.obolibrary.org/obo/DOID_0050785
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,SCTID:230374002,http://identifiers.org/medgen/95982
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,SCTID:230374002,http://identifiers.org/snomedct/230374002
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,SCTID:230374002,http://linkedlifedata.com/resource/umls/id/C0393666
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,SCTID:230374002,http://purl.obolibrary.org/obo/DOID_0050785
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,UMLS:C0393666,http://identifiers.org/medgen/95982
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,UMLS:C0393666,http://identifiers.org/snomedct/230374002
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,UMLS:C0393666,http://linkedlifedata.com/resource/umls/id/C0393666
+http://purl.obolibrary.org/obo/MONDO_0000452,progressive relapsing multiple sclerosis,UMLS:C0393666,http://purl.obolibrary.org/obo/DOID_0050785
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,DOID:2377,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,DOID:2377,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,DOID:2377,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,DOID:2377,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,DOID:2377,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,DOID:2377,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,DOID:2377,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,DOID:2377,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,DOID:2377,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10CM:G35,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10CM:G35,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10CM:G35,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10CM:G35,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10CM:G35,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10CM:G35,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10CM:G35,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10CM:G35,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10CM:G35,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10WHO:G35,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10WHO:G35,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10WHO:G35,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10WHO:G35,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10WHO:G35,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10WHO:G35,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10WHO:G35,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10WHO:G35,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD10WHO:G35,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,icd11.foundation:1298865187,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,icd11.foundation:1298865187,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,icd11.foundation:1298865187,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,icd11.foundation:1298865187,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,icd11.foundation:1298865187,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,icd11.foundation:1298865187,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,icd11.foundation:1298865187,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,icd11.foundation:1298865187,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,icd11.foundation:1298865187,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD9:340,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD9:340,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD9:340,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD9:340,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD9:340,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD9:340,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD9:340,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD9:340,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,ICD9:340,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MEDGEN:10123,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MEDGEN:10123,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MEDGEN:10123,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MEDGEN:10123,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MEDGEN:10123,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MEDGEN:10123,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MEDGEN:10123,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MEDGEN:10123,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MEDGEN:10123,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MESH:D009103,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MESH:D009103,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MESH:D009103,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MESH:D009103,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MESH:D009103,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MESH:D009103,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MESH:D009103,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MESH:D009103,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,MESH:D009103,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:1200023,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:1200023,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:1200023,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:1200023,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:1200023,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:1200023,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:1200023,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:1200023,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:1200023,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2100250,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2100250,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2100250,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2100250,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2100250,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2100250,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2100250,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2100250,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2100250,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2200904,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2200904,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2200904,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2200904,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2200904,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2200904,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2200904,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2200904,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NANDO:2200904,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NCIT:C3243,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NCIT:C3243,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NCIT:C3243,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NCIT:C3243,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NCIT:C3243,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NCIT:C3243,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NCIT:C3243,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NCIT:C3243,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,NCIT:C3243,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,Orphanet:802,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,Orphanet:802,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,Orphanet:802,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,Orphanet:802,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,Orphanet:802,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,Orphanet:802,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,Orphanet:802,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,Orphanet:802,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,Orphanet:802,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,SCTID:24700007,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,SCTID:24700007,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,SCTID:24700007,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,SCTID:24700007,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,SCTID:24700007,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,SCTID:24700007,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,SCTID:24700007,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,SCTID:24700007,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,SCTID:24700007,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,UMLS:C0026769,http://id.who.int/icd/entity/1298865187
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,UMLS:C0026769,http://identifiers.org/medgen/10123
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,UMLS:C0026769,http://identifiers.org/mesh/D009103
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,UMLS:C0026769,http://identifiers.org/snomedct/24700007
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,UMLS:C0026769,http://linkedlifedata.com/resource/umls/id/C0026769
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,UMLS:C0026769,http://purl.bioontology.org/ontology/ICD10CM/G35
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,UMLS:C0026769,http://purl.obolibrary.org/obo/DOID_2377
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,UMLS:C0026769,http://purl.obolibrary.org/obo/NCIT_C3243
+http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,UMLS:C0026769,https://icd.who.int/browse10/2019/en#/G35
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,DOID:2378,http://id.who.int/icd/entity/799053936
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,DOID:2378,http://identifiers.org/medgen/155669
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,DOID:2378,http://identifiers.org/mesh/D020529
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,DOID:2378,http://identifiers.org/snomedct/426373005
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,DOID:2378,http://linkedlifedata.com/resource/umls/id/C0751967
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,DOID:2378,http://purl.obolibrary.org/obo/DOID_2378
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,DOID:2378,http://purl.obolibrary.org/obo/NCIT_C165675
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,DOID:2378,http://www.ebi.ac.uk/efo/EFO_0003929
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,EFO:0003929,http://id.who.int/icd/entity/799053936
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,EFO:0003929,http://identifiers.org/medgen/155669
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,EFO:0003929,http://identifiers.org/mesh/D020529
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,EFO:0003929,http://identifiers.org/snomedct/426373005
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,EFO:0003929,http://linkedlifedata.com/resource/umls/id/C0751967
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,EFO:0003929,http://purl.obolibrary.org/obo/DOID_2378
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,EFO:0003929,http://purl.obolibrary.org/obo/NCIT_C165675
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,EFO:0003929,http://www.ebi.ac.uk/efo/EFO_0003929
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,icd11.foundation:799053936,http://id.who.int/icd/entity/799053936
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,icd11.foundation:799053936,http://identifiers.org/medgen/155669
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,icd11.foundation:799053936,http://identifiers.org/mesh/D020529
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,icd11.foundation:799053936,http://identifiers.org/snomedct/426373005
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,icd11.foundation:799053936,http://linkedlifedata.com/resource/umls/id/C0751967
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,icd11.foundation:799053936,http://purl.obolibrary.org/obo/DOID_2378
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,icd11.foundation:799053936,http://purl.obolibrary.org/obo/NCIT_C165675
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,icd11.foundation:799053936,http://www.ebi.ac.uk/efo/EFO_0003929
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MEDGEN:155669,http://id.who.int/icd/entity/799053936
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MEDGEN:155669,http://identifiers.org/medgen/155669
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MEDGEN:155669,http://identifiers.org/mesh/D020529
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MEDGEN:155669,http://identifiers.org/snomedct/426373005
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MEDGEN:155669,http://linkedlifedata.com/resource/umls/id/C0751967
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MEDGEN:155669,http://purl.obolibrary.org/obo/DOID_2378
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MEDGEN:155669,http://purl.obolibrary.org/obo/NCIT_C165675
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MEDGEN:155669,http://www.ebi.ac.uk/efo/EFO_0003929
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MESH:D020529,http://id.who.int/icd/entity/799053936
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MESH:D020529,http://identifiers.org/medgen/155669
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MESH:D020529,http://identifiers.org/mesh/D020529
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MESH:D020529,http://identifiers.org/snomedct/426373005
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MESH:D020529,http://linkedlifedata.com/resource/umls/id/C0751967
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MESH:D020529,http://purl.obolibrary.org/obo/DOID_2378
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MESH:D020529,http://purl.obolibrary.org/obo/NCIT_C165675
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,MESH:D020529,http://www.ebi.ac.uk/efo/EFO_0003929
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:1200024,http://id.who.int/icd/entity/799053936
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:1200024,http://identifiers.org/medgen/155669
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:1200024,http://identifiers.org/mesh/D020529
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:1200024,http://identifiers.org/snomedct/426373005
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:1200024,http://linkedlifedata.com/resource/umls/id/C0751967
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:1200024,http://purl.obolibrary.org/obo/DOID_2378
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:1200024,http://purl.obolibrary.org/obo/NCIT_C165675
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:1200024,http://www.ebi.ac.uk/efo/EFO_0003929
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:2201319,http://id.who.int/icd/entity/799053936
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:2201319,http://identifiers.org/medgen/155669
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:2201319,http://identifiers.org/mesh/D020529
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:2201319,http://identifiers.org/snomedct/426373005
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:2201319,http://linkedlifedata.com/resource/umls/id/C0751967
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:2201319,http://purl.obolibrary.org/obo/DOID_2378
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:2201319,http://purl.obolibrary.org/obo/NCIT_C165675
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NANDO:2201319,http://www.ebi.ac.uk/efo/EFO_0003929
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NCIT:C165675,http://id.who.int/icd/entity/799053936
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NCIT:C165675,http://identifiers.org/medgen/155669
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NCIT:C165675,http://identifiers.org/mesh/D020529
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NCIT:C165675,http://identifiers.org/snomedct/426373005
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NCIT:C165675,http://linkedlifedata.com/resource/umls/id/C0751967
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NCIT:C165675,http://purl.obolibrary.org/obo/DOID_2378
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NCIT:C165675,http://purl.obolibrary.org/obo/NCIT_C165675
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,NCIT:C165675,http://www.ebi.ac.uk/efo/EFO_0003929
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,SCTID:426373005,http://id.who.int/icd/entity/799053936
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,SCTID:426373005,http://identifiers.org/medgen/155669
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,SCTID:426373005,http://identifiers.org/mesh/D020529
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,SCTID:426373005,http://identifiers.org/snomedct/426373005
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,SCTID:426373005,http://linkedlifedata.com/resource/umls/id/C0751967
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,SCTID:426373005,http://purl.obolibrary.org/obo/DOID_2378
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,SCTID:426373005,http://purl.obolibrary.org/obo/NCIT_C165675
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,SCTID:426373005,http://www.ebi.ac.uk/efo/EFO_0003929
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,UMLS:C0751967,http://id.who.int/icd/entity/799053936
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,UMLS:C0751967,http://identifiers.org/medgen/155669
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,UMLS:C0751967,http://identifiers.org/mesh/D020529
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,UMLS:C0751967,http://identifiers.org/snomedct/426373005
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,UMLS:C0751967,http://linkedlifedata.com/resource/umls/id/C0751967
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,UMLS:C0751967,http://purl.obolibrary.org/obo/DOID_2378
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,UMLS:C0751967,http://purl.obolibrary.org/obo/NCIT_C165675
+http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,UMLS:C0751967,http://www.ebi.ac.uk/efo/EFO_0003929

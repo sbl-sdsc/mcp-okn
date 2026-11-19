@@ -1,0 +1,1749 @@
+rank,symbol,entrez,tier,score,n_sources,sources,spoke_okn,rdkg,digcfdekg,pigean_score,wikidata,biomarkerkg,gxa_up,gxa_down,gxa_ifn_response,prokn_drug_target,drugs,max_drug_phase,ppi_degree_core,ncRNA
+1,IL2RA,3559,A,5.4235,5,spoke-okn; rdkg; digcfdekg; wikidata; prokn,True,True,True,8.47,True,False,0,0,0,True,Daclizumab,4.0,0,False
+2,IFNG,3458,A,5.381846954678085,4,spoke-okn; rdkg; digcfdekg; biomarkerkg,True,True,True,4.0,False,True,0,0,0,False,,,112,False
+3,CD86,942,A,5.2580511275438,4,spoke-okn; digcfdekg; wikidata; gene-expression-atlas-okn,True,False,True,8.5,True,False,0,1,0,False,,,27,False
+4,CD6,923,A,5.222959216501082,4,spoke-okn; rdkg; digcfdekg; wikidata,True,True,True,7.98,True,False,0,0,0,False,,,26,False
+5,IL17A,3605,A,5.062,5,spoke-okn; rdkg; digcfdekg; biomarkerkg; prokn,True,True,True,1.24,False,True,0,0,0,True,Secukinumab,2.0,0,False
+6,CD58,965,A,4.854726662447001,4,spoke-okn; rdkg; digcfdekg; wikidata,True,True,True,4.67,True,False,0,0,0,False,,,11,False
+7,IL7R,3575,A,4.846573590279973,4,spoke-okn; rdkg; digcfdekg; wikidata,True,True,True,10.0,True,False,0,0,0,False,,,3,False
+8,TNFRSF1A,7132,A,4.791973818199593,4,spoke-okn; rdkg; digcfdekg; wikidata,True,True,True,3.85,True,False,0,0,0,False,,,10,False
+9,MERTK,10461,A,4.379286795139986,4,spoke-okn; digcfdekg; wikidata; gene-expression-atlas-okn,True,False,True,4.12,True,False,1,0,0,False,,,1,False
+10,TAGAP,117289,A,4.3475,4,spoke-okn; digcfdekg; wikidata; gene-expression-atlas-okn,True,False,True,6.95,True,False,1,0,0,False,,,0,False
+11,PTPRC,5788,A,4.29666562244258,3,spoke-okn; digcfdekg; gene-expression-atlas-okn,True,False,True,6.9,False,False,0,1,0,False,,,44,False
+12,TNFSF14,8740,A,4.287,4,spoke-okn; rdkg; digcfdekg; wikidata,True,True,True,5.74,True,False,0,0,0,False,,,0,False
+13,CBLB,868,A,4.2565,4,spoke-okn; rdkg; digcfdekg; wikidata,True,True,True,5.13,True,False,0,0,0,False,,,0,False
+14,CD40,958,A,4.2510241345053705,3,spoke-okn; rdkg; digcfdekg,True,True,True,8.73,False,False,0,0,0,False,,,25,False
+15,IL12A,3592,A,4.2375,4,spoke-okn; rdkg; digcfdekg; prokn,True,True,True,4.75,False,False,0,0,0,True,Briakinumab; Ustekinumab,2.0,0,False
+16,HLA-DRA,3122,A,4.15316562244258,3,rdkg; digcfdekg; wikidata,False,True,True,4.03,True,False,0,0,0,False,,,44,False
+17,HLA-DRB1,3123,A,4.143823957496618,3,spoke-okn; rdkg; digcfdekg,True,True,True,6.04,False,False,0,0,0,False,,,28,False
+18,IL1B,3553,A,4.105,4,spoke-okn; rdkg; digcfdekg; gene-expression-atlas-okn,True,True,True,2.1,False,False,0,1,0,False,,,0,False
+19,STAT3,6774,A,4.103760613339579,3,spoke-okn; digcfdekg; wikidata,True,False,True,6.62,True,False,0,0,0,False,,,21,False
+20,HLA-DQB1,3119,A,4.039726662447,3,rdkg; digcfdekg; gene-expression-atlas-okn,False,True,True,8.37,False,False,1,0,0,False,,,11,False
+21,MAPK1,5594,A,4.005147180559946,3,spoke-okn; digcfdekg; wikidata,True,False,True,6.24,True,False,0,0,0,False,,,15,False
+22,ITGAM,3684,A,3.9193239574966188,3,spoke-okn; digcfdekg; gene-expression-atlas-okn,True,False,True,1.55,False,False,0,1,0,False,,,28,False
+23,TYK2,7297,A,3.815737339365384,3,spoke-okn; rdkg; digcfdekg,True,True,True,3.49,False,False,0,0,0,False,,,12,False
+24,NLRP3,114548,A,3.6781462732485117,3,rdkg; digcfdekg; gene-expression-atlas-okn,False,True,True,2.05,False,False,0,1,0,False,,,9,False
+25,BATF,10538,A,3.658653072167027,3,spoke-okn; digcfdekg; wikidata,True,False,True,7.68,True,False,0,0,0,False,,,2,False
+26,MALT1,10892,A,3.6575735902799726,3,spoke-okn; digcfdekg; wikidata,True,False,True,6.22,True,False,0,0,0,False,,,3,False
+27,STAT4,6775,A,3.5676530721670274,3,spoke-okn; rdkg; digcfdekg,True,True,True,5.86,False,False,0,0,0,False,,,2,False
+28,TLR4,7099,A,3.5569775372638284,3,spoke-okn; digcfdekg; gene-expression-atlas-okn,True,False,True,1.41,False,False,0,1,0,False,,,6,False
+29,MS4A1,931,B,3.530573590279973,3,digcfdekg; gene-expression-atlas-okn; prokn,False,False,True,3.68,False,False,1,0,0,True,Ocrelizumab; Ofatumumab; Rituximab; Ublituximab,4.0,3,False
+30,TXK,7294,A,3.4832867951399864,3,spoke-okn; digcfdekg; gene-expression-atlas-okn,True,False,True,6.2,False,False,0,1,0,False,,,1,False
+31,VDR,7421,A,3.452859478108525,3,rdkg; digcfdekg; prokn,False,True,True,1.01,False,False,0,0,0,True,Cholecalciferol; Ergocalciferol,3.0,4,False
+32,TNF,7124,B,3.416596817473909,2,spoke-okn; digcfdekg,True,False,True,7.46,False,False,0,0,0,False,,,64,False
+33,CXCR5,643,A,3.404,3,spoke-okn; digcfdekg; wikidata,True,False,True,8.08,True,False,0,0,0,False,,,0,False
+34,ZC3HAV1,56829,A,3.4016530721670275,3,spoke-okn; digcfdekg; gene-expression-atlas-okn,True,False,True,2.54,False,False,1,0,0,False,,,2,False
+35,SAE1,10055,A,3.3696530721670275,3,spoke-okn; digcfdekg; wikidata,True,False,True,1.9,True,False,0,0,0,False,,,2,False
+36,IL12B,3593,C,3.334283681597883,2,digcfdekg; prokn,False,False,True,5.97,False,False,0,0,0,True,Briakinumab; Ustekinumab,2.0,62,False
+37,SP140,11262,A,3.332,3,spoke-okn; digcfdekg; wikidata,True,False,True,6.64,True,False,0,0,0,False,,,0,False
+38,ZFP36L1,677,A,3.3005,3,spoke-okn; digcfdekg; wikidata,True,False,True,6.01,True,False,0,0,0,False,,,0,False
+39,BACH2,60468,A,3.2885,3,spoke-okn; digcfdekg; wikidata,True,False,True,5.77,True,False,0,0,0,False,,,0,False
+40,ELMO1,9844,A,3.2735,3,spoke-okn; digcfdekg; gene-expression-atlas-okn,True,False,True,5.47,False,False,1,0,0,False,,,0,False
+41,NDFIP1,80762,A,3.2605,3,spoke-okn; digcfdekg; wikidata,True,False,True,5.21,True,False,0,0,0,False,,,0,False
+42,EVI5,7813,A,3.2475,3,spoke-okn; digcfdekg; wikidata,True,False,True,4.95,True,False,0,0,0,False,,,0,False
+43,IFNGR2,3460,A,3.2452867951399864,3,spoke-okn; digcfdekg; gene-expression-atlas-okn,True,False,True,1.44,False,False,1,0,0,False,,,1,False
+44,IL2,3558,B,3.2443342036195517,2,spoke-okn; digcfdekg,True,False,True,2.5,False,False,0,0,0,False,,,87,False
+45,FCRL1,115350,A,3.243286795139986,3,spoke-okn; digcfdekg; gene-expression-atlas-okn,True,False,True,1.4,False,False,1,1,0,False,,,1,False
+46,CYP24A1,1591,A,3.241,3,spoke-okn; digcfdekg; wikidata,True,False,True,4.82,True,False,0,0,0,False,,,0,False
+47,NCF4,4689,A,3.223,3,spoke-okn; digcfdekg; gene-expression-atlas-okn,True,False,True,4.46,False,False,1,0,0,False,,,0,False
+48,AFF1,4299,A,3.193,3,spoke-okn; digcfdekg; gene-expression-atlas-okn,True,False,True,3.86,False,False,1,0,0,False,,,0,False
+49,AHI1,54806,A,3.1905,3,spoke-okn; digcfdekg; wikidata,True,False,True,3.81,True,False,0,0,0,False,,,0,False
+50,KIF1B,23095,A,3.1732867951399863,3,spoke-okn; rdkg; wikidata,True,True,False,,True,False,0,0,0,False,,,1,False
+51,CD4,920,B,3.17138436097643,2,spoke-okn; digcfdekg,True,False,True,3.04,False,False,0,0,0,False,,,58,False
+52,EPS15L1,58513,A,3.162,3,spoke-okn; digcfdekg; wikidata,True,False,True,3.24,True,False,0,0,0,False,,,0,False
+53,TNFSF13B,10673,B,3.1335,3,digcfdekg; gene-expression-atlas-okn; prokn,False,False,True,2.67,False,False,0,1,0,True,Belimumab,2.0,0,False
+54,S1PR1,1901,B,3.125,3,digcfdekg; biomarkerkg; prokn,False,False,True,2.5,False,True,0,0,0,True,Fingolimod Hydrochloride; Fingolimod Lauryl Sulfate; Ozanimod Hydrochloride; Ponesimod; Siponimod; Siponimod Fumaric Acid,4.0,0,False
+55,SYK,6850,C,3.1248370153723535,2,digcfdekg; wikidata,False,False,True,4.72,True,False,0,0,0,False,,,34,False
+56,IL10,3586,A,3.1215,3,spoke-okn; rdkg; digcfdekg,True,True,True,2.43,False,False,0,0,0,False,,,0,False
+57,HLA-DQA1,3117,B,3.1164339756999317,2,spoke-okn; digcfdekg,True,False,True,5.0,False,False,0,0,0,False,,,31,False
+58,RGS14,10636,A,3.112,3,spoke-okn; digcfdekg; wikidata,True,False,True,2.24,True,False,0,0,0,False,,,0,False
+59,CD52,1043,B,3.0925,3,digcfdekg; gene-expression-atlas-okn; prokn,False,False,True,1.85,False,False,1,0,0,True,Alemtuzumab,4.0,0,False
+60,S1PR5,53637,B,3.0925,3,digcfdekg; biomarkerkg; prokn,False,False,True,1.85,False,True,0,0,0,True,Ozanimod,3.0,0,False
+61,AIF1,199,A,3.0855,3,spoke-okn; digcfdekg; gene-expression-atlas-okn,True,False,True,1.71,False,False,1,1,0,False,,,0,False
+62,BTK,695,C,3.0803370153723533,2,digcfdekg; prokn,False,False,True,3.83,False,False,0,0,0,True,Evobrutinib; Fenebrutinib; Pirtobrutinib; Tolebrutinib,3.0,34,False
+63,ZMIZ1,57178,A,3.0795,3,spoke-okn; digcfdekg; wikidata,True,False,True,1.59,True,False,0,0,0,False,,,0,False
+64,IL4,3565,B,3.077417404570842,2,spoke-okn; digcfdekg,True,False,True,2.86,False,False,0,0,0,False,,,41,False
+65,MLANA,2315,A,3.0765000000000002,3,spoke-okn; digcfdekg; wikidata,True,False,True,1.53,True,False,0,0,0,False,,,0,False
+66,CHST12,55501,A,3.076,3,spoke-okn; digcfdekg; wikidata,True,False,True,1.52,True,False,0,0,0,False,,,0,False
+67,ZBTB46,140685,B,3.071,3,digcfdekg; wikidata; gene-expression-atlas-okn,False,False,True,1.42,True,False,0,1,0,False,,,0,False
+68,MPV17L2,84769,A,3.065,3,spoke-okn; digcfdekg; wikidata,True,False,True,1.3,True,False,0,0,0,False,,,0,False
+69,JAK1,3716,B,3.0350929394740414,2,spoke-okn; digcfdekg,True,False,True,6.25,False,False,0,0,0,False,,,17,False
+70,HLA-DPB1,3115,B,3.0348904115324116,2,rdkg; digcfdekg,False,True,True,2.38,False,False,0,0,0,False,,,38,False
+71,B2M,567,C,3.006299345415539,2,digcfdekg; gene-expression-atlas-okn,False,False,True,3.12,False,False,1,0,0,False,,,29,False
+72,CLEC16A,23274,A,3.0,3,spoke-okn; rdkg; wikidata,True,True,False,,True,False,0,0,0,False,,,0,False
+73,GRB2,2885,B,2.9965134575869863,2,spoke-okn; digcfdekg,True,False,True,4.04,False,False,0,0,0,False,,,23,False
+74,HLA-DMB,3109,C,2.9767189562170504,2,digcfdekg; gene-expression-atlas-okn,False,False,True,3.44,False,False,0,1,0,False,,,24,False
+75,STAT1,6772,C,2.9766306094308557,2,digcfdekg; gene-expression-atlas-okn,False,False,True,4.31,False,False,1,0,1,False,,,20,False
+76,ITGA4,3676,C,2.93760974479161,2,digcfdekg; prokn,False,False,True,4.03,False,False,0,0,0,True,Firategrast; Natalizumab; Ucb-1184197,4.0,18,False
+77,VCAM1,7412,B,2.936226662447,2,rdkg; digcfdekg,False,True,True,6.3,False,False,0,0,0,False,,,11,False
+78,CD8A,925,B,2.92271895621705,2,spoke-okn; digcfdekg,True,False,True,2.36,False,False,0,0,0,False,,,24,False
+79,HLA-C,3107,C,2.9221306094308557,2,digcfdekg; gene-expression-atlas-okn,False,False,True,3.22,False,False,1,0,0,False,,,20,False
+80,IFI30,10437,B,2.8977643324038147,2,spoke-okn; digcfdekg,True,False,True,4.76,False,False,0,0,0,False,,,13,False
+81,CASP1,834,B,2.851013457586986,2,rdkg; digcfdekg,False,True,True,1.13,False,False,0,0,0,False,,,23,False
+82,TNFAIP3,7128,B,2.8299775372638285,2,rdkg; digcfdekg,False,True,True,6.87,False,False,0,0,0,False,,,6,False
+83,HLA-F,3134,B,2.8166097447916103,2,spoke-okn; digcfdekg,True,False,True,1.61,False,False,0,0,0,False,,,18,False
+84,FCRL3,115352,C,2.8079398673070135,2,digcfdekg; wikidata,False,False,True,7.2,True,False,0,0,0,False,,,5,False
+85,CD69,969,B,2.8054775372638283,2,spoke-okn; digcfdekg,True,False,True,6.38,False,False,0,0,0,False,,,6,False
+86,ICAM1,3383,B,2.798512550275553,2,rdkg; digcfdekg,False,True,True,2.43,False,False,0,0,0,False,,,14,False
+87,CD19,930,C,2.767860385419959,2,digcfdekg; prokn,False,False,True,4.96,False,False,0,0,0,True,Inebilizumab,1.0,7,False
+88,TGFB1,7040,B,2.760737339365384,2,spoke-okn; digcfdekg,True,False,True,2.39,False,False,0,0,0,False,,,12,False
+89,CSF2RB,1439,B,2.754237339365384,2,spoke-okn; digcfdekg,True,False,True,2.26,False,False,0,0,0,False,,,12,False
+90,IL6,3569,B,2.7479738181995925,2,spoke-okn; digcfdekg,True,False,True,2.97,False,False,0,0,0,False,,,10,False
+91,SLAMF7,57823,B,2.7469775372638283,2,spoke-okn; digcfdekg,True,False,True,5.21,False,False,0,0,0,False,,,6,False
+92,PDCD1,5133,B,2.739764332403815,2,rdkg; digcfdekg,False,True,True,1.6,False,False,0,0,0,False,,,13,False
+93,APOE,348,B,2.6791462732485116,2,rdkg; digcfdekg,False,True,True,2.07,False,False,0,0,0,False,,,9,False
+94,CSF2,1437,C,2.6597643324038147,2,spoke-okn; prokn,True,False,False,,False,False,0,0,0,True,Otilimab,1.0,13,False
+95,CD83,9308,C,2.645859478108525,2,digcfdekg; gene-expression-atlas-okn,False,False,True,4.87,False,False,0,1,0,False,,,4,False
+96,SMARCA4,6597,B,2.6439775372638286,2,spoke-okn; digcfdekg,True,False,True,3.15,False,False,0,0,0,False,,,6,False
+97,RUNX3,864,B,2.5766530721670273,2,spoke-okn; digcfdekg,True,False,True,6.04,False,False,0,0,0,False,,,2,False
+98,MARCHF1,55016,B,2.5644398673070135,2,spoke-okn; digcfdekg,True,False,True,2.33,False,False,0,0,0,False,,,5,False
+99,IQGAP1,8826,B,2.549073590279973,2,spoke-okn; digcfdekg,True,False,True,4.05,False,False,0,0,0,False,,,3,False
+100,CD226,10666,B,2.536359478108525,2,spoke-okn; digcfdekg,True,False,True,2.68,False,False,0,0,0,False,,,4,False
+101,POU2AF1,5450,C,2.5341530721670273,2,digcfdekg; gene-expression-atlas-okn,False,False,True,5.19,False,False,1,0,0,False,,,2,False
+102,RPS6KB1,6198,C,2.500073590279973,2,digcfdekg; wikidata,False,False,True,3.07,True,False,0,0,0,False,,,3,False
+103,FOXP1,27086,B,2.491786795139986,2,spoke-okn; digcfdekg,True,False,True,6.37,False,False,0,0,0,False,,,1,False
+104,IKZF3,22806,B,2.488,2,spoke-okn; digcfdekg,True,False,True,9.76,False,False,0,0,0,False,,,0,False
+105,ATXN1,6310,B,2.4676530721670273,2,spoke-okn; digcfdekg,True,False,True,3.86,False,False,0,0,0,False,,,2,False
+106,VMP1,81671,B,2.4386530721670274,2,spoke-okn; digcfdekg,True,False,True,3.28,False,False,0,0,0,False,,,2,False
+107,RGS1,5996,B,2.4055,2,spoke-okn; digcfdekg,True,False,True,8.11,False,False,0,0,0,False,,,0,False
+108,ETS1,2113,B,2.378,2,spoke-okn; digcfdekg,True,False,True,7.56,False,False,0,0,0,False,,,0,False
+109,PHGDH,26227,B,2.374786795139986,2,spoke-okn; digcfdekg,True,False,True,4.03,False,False,0,0,0,False,,,1,False
+110,IRF8,3394,B,2.3689999999999998,2,rdkg; digcfdekg,False,True,True,7.38,False,False,0,0,0,False,,,0,False
+111,OS9,10956,B,2.3506530721670273,2,spoke-okn; digcfdekg,True,False,True,1.52,False,False,0,0,0,False,,,2,False
+112,TNFRSF13C,115650,C,2.3422867951399864,2,digcfdekg; prokn,False,False,True,3.38,False,False,0,0,0,True,Ianalumab,2.0,1,False
+113,LEF1,51176,B,2.3415,2,spoke-okn; digcfdekg,True,False,True,6.83,False,False,0,0,0,False,,,0,False
+114,SH2B3,10019,B,2.31,2,spoke-okn; digcfdekg,True,False,True,6.2,False,False,0,0,0,False,,,0,False
+115,NR1D1,9572,B,2.3062867951399864,2,spoke-okn; digcfdekg,True,False,True,2.66,False,False,0,0,0,False,,,1,False
+116,PHLDB1,23187,B,2.3047867951399863,2,spoke-okn; digcfdekg,True,False,True,2.63,False,False,0,0,0,False,,,1,False
+117,GATA3,2625,B,2.3045,2,spoke-okn; digcfdekg,True,False,True,6.09,False,False,0,0,0,False,,,0,False
+118,PUS10,150962,B,2.296286795139986,2,spoke-okn; digcfdekg,True,False,True,2.46,False,False,0,0,0,False,,,1,False
+119,CCL2,6347,B,2.2922867951399866,2,spoke-okn; digcfdekg,True,False,True,2.38,False,False,0,0,1,False,,,1,False
+120,TRAF3,7187,B,2.2895,2,spoke-okn; digcfdekg,True,False,True,5.79,False,False,0,0,0,False,,,0,False
+121,HLA-A,3105,D,2.2775241345053705,1,digcfdekg,False,False,True,9.26,False,False,0,0,0,False,,,25,False
+122,CD2,914,D,2.257220770839918,1,digcfdekg,False,False,True,4.35,False,False,0,0,0,False,,,63,False
+123,TET2,54790,B,2.2557867951399864,2,spoke-okn; digcfdekg,True,False,True,1.65,False,False,0,0,0,False,,,1,False
+124,ANKRD55,79722,B,2.2535,2,spoke-okn; digcfdekg,True,False,True,5.07,False,False,0,0,0,False,,,0,False
+125,MYBPC3,4607,B,2.2502867951399863,2,spoke-okn; digcfdekg,True,False,True,1.54,False,False,0,0,0,False,,,1,False
+126,SLC44A2,57153,B,2.2492867951399864,2,spoke-okn; digcfdekg,True,False,True,1.52,False,False,0,0,0,False,,,1,False
+127,GFI1,2672,B,2.2485,2,spoke-okn; digcfdekg,True,False,True,4.97,False,False,0,0,0,False,,,0,False
+128,ITGB2,3689,D,2.226833296308118,1,digcfdekg,False,False,True,4.5,False,False,0,0,0,False,,,54,False
+129,CORO1A,11151,D,2.22316562244258,1,digcfdekg,False,False,True,5.43,False,False,0,0,0,False,,,44,False
+130,PITPNM2,57605,B,2.222,2,spoke-okn; digcfdekg,True,False,True,4.44,False,False,0,0,0,False,,,0,False
+131,SLC9B1,150159,B,2.2205,2,spoke-okn; digcfdekg,True,False,True,4.41,False,False,0,0,0,False,,,0,False
+132,TGFBR3,7049,B,2.22,2,spoke-okn; digcfdekg,True,False,True,4.4,False,False,0,0,0,False,,,0,False
+133,CD74,972,C,2.212,2,digcfdekg; gene-expression-atlas-okn,False,False,True,4.24,False,False,1,0,0,False,,,0,False
+134,VAV1,7409,D,2.2093002527269725,1,digcfdekg,False,False,True,4.83,False,False,0,0,0,False,,,47,False
+135,LCP2,3937,D,2.2053109296453566,1,digcfdekg,False,False,True,4.35,False,False,0,0,0,False,,,51,False
+136,CD3E,916,D,2.2044550745276568,1,digcfdekg,False,False,True,4.63,False,False,0,0,0,False,,,48,False
+137,NLRC5,84166,B,2.204,2,spoke-okn; digcfdekg,True,False,True,4.08,False,False,0,0,0,False,,,0,False
+138,LBH,81606,B,2.2005,2,spoke-okn; digcfdekg,True,False,True,4.01,False,False,0,0,0,False,,,0,False
+139,CD79A,973,C,2.1995,2,digcfdekg; gene-expression-atlas-okn,False,False,True,3.99,False,False,1,0,0,False,,,0,False
+140,FOXP3,50943,B,2.192,2,spoke-okn; digcfdekg,True,False,True,3.84,False,False,0,0,0,False,,,0,False
+141,HLA-DMA,3108,D,2.190051127543801,1,digcfdekg,False,False,True,7.14,False,False,0,0,0,False,,,27,False
+142,IL7,3574,B,2.1865,2,rdkg; digcfdekg,False,True,True,3.73,False,False,0,0,0,False,,,0,False
+143,INAVA,55765,B,2.1845,2,spoke-okn; digcfdekg,True,False,True,3.69,False,False,0,0,0,False,,,0,False
+144,ITGAL,3683,D,2.175800252726973,1,digcfdekg,False,False,True,4.16,False,False,0,0,0,False,,,47,False
+145,TNFAIP8,25816,B,2.175,2,spoke-okn; digcfdekg,True,False,True,3.5,False,False,0,0,0,False,,,0,False
+146,IFITM3,10410,C,2.1732867951399863,2,spoke-okn; gene-expression-atlas-okn,True,False,False,,False,False,1,0,1,False,,,1,False
+147,IL1RN,3557,C,2.1732867951399863,2,rdkg; gene-expression-atlas-okn,False,True,False,,False,False,1,1,0,False,,,1,False
+148,LYZ,4069,C,2.169,2,digcfdekg; gene-expression-atlas-okn,False,False,True,3.38,False,False,0,1,0,False,,,0,False
+149,ICOS,29851,D,2.168719863528484,1,digcfdekg,False,False,True,4.93,False,False,0,0,0,False,,,39,False
+150,FCRL2,79368,C,2.165,2,digcfdekg; gene-expression-atlas-okn,False,False,True,3.3,False,False,1,1,0,False,,,0,False
+151,GNG2,54331,B,2.165,2,spoke-okn; digcfdekg,True,False,True,3.3,False,False,0,0,0,False,,,0,False
+152,JAZF1,221895,B,2.161,2,spoke-okn; digcfdekg,True,False,True,3.22,False,False,0,0,0,False,,,0,False
+153,TNIP3,79931,B,2.1605,2,spoke-okn; digcfdekg,True,False,True,3.21,False,False,0,0,0,False,,,0,False
+154,ETV7,51513,B,2.1545,2,spoke-okn; digcfdekg,True,False,True,3.09,False,False,0,0,1,False,,,0,False
+155,ZNHIT3,9326,B,2.1525,2,spoke-okn; digcfdekg,True,False,True,3.05,False,False,0,0,0,False,,,0,False
+156,HLA-E,3133,D,2.1513370153723534,1,digcfdekg,False,False,True,5.25,False,False,0,0,0,False,,,34,False
+157,ERG,2078,B,2.148,2,spoke-okn; digcfdekg,True,False,True,2.96,False,False,0,0,0,False,,,0,False
+158,BAD,572,C,2.1465,2,digcfdekg; gene-expression-atlas-okn,False,False,True,2.93,False,False,1,0,0,False,,,0,False
+159,ITK,3702,D,2.1434592165010824,1,digcfdekg,False,False,True,6.39,False,False,0,0,0,False,,,26,False
+160,HLA-B,3106,C,2.1375,2,digcfdekg; gene-expression-atlas-okn,False,False,True,2.75,False,False,1,0,0,False,,,0,False
+161,KEAP1,9817,C,2.1365,2,digcfdekg; prokn,False,False,True,2.73,False,False,0,0,0,True,Dimethyl Fumarate; Diroximel Fumarate; Monomethyl Fumarate,4.0,0,False
+162,VAV2,7410,C,2.1310000000000002,2,digcfdekg; wikidata,False,False,True,2.62,True,False,0,0,0,False,,,0,False
+163,PLXNC1,10154,B,2.1285,2,spoke-okn; digcfdekg,True,False,True,2.57,False,False,0,0,0,False,,,0,False
+164,JUNB,3726,C,2.128,2,digcfdekg; gene-expression-atlas-okn,False,False,True,2.56,False,False,1,0,0,False,,,0,False
+165,CTLA4,1493,D,2.122337015372353,1,digcfdekg,False,False,True,4.67,False,False,0,0,0,False,,,34,False
+166,CLECL1,160365,C,2.1215,2,digcfdekg; wikidata,False,False,True,2.43,True,False,0,0,0,False,,,0,False
+167,ISG20,3669,C,2.1215,2,digcfdekg; gene-expression-atlas-okn,False,False,True,2.43,False,False,1,0,1,False,,,0,False
+168,IKZF2,22807,C,2.1205,2,digcfdekg; gene-expression-atlas-okn,False,False,True,2.41,False,False,0,1,0,False,,,0,False
+169,VANGL2,57216,B,2.1205,2,spoke-okn; digcfdekg,True,False,True,2.41,False,False,0,0,0,False,,,0,False
+170,IL23A,51561,C,2.1189999999999998,2,digcfdekg; prokn,False,False,True,2.38,False,False,0,0,0,True,Briakinumab; Ustekinumab,2.0,0,False
+171,RAC2,5880,D,2.118917404570842,1,digcfdekg,False,False,True,3.69,False,False,0,0,0,False,,,41,False
+172,IQCB1,9657,B,2.1185,2,spoke-okn; digcfdekg,True,False,True,2.37,False,False,0,0,0,False,,,0,False
+173,MTHFR,4524,B,2.117,2,spoke-okn; digcfdekg,True,False,True,2.34,False,False,0,0,0,False,,,0,False
+174,PPP4C,5531,C,2.1165,2,digcfdekg; gene-expression-atlas-okn,False,False,True,2.33,False,False,1,0,0,False,,,0,False
+175,IGHM,3507,C,2.116,2,digcfdekg; gene-expression-atlas-okn,False,False,True,2.32,False,False,1,0,0,False,,,0,False
+176,NR3C1,2908,C,2.115,2,digcfdekg; prokn,False,False,True,2.3,False,False,0,0,0,True,Dexamethasone; Methylprednisolone; Methylprednisolone Sodium Succinate; Prednisolone; Prednisolone Acetate; Prednisolone Sodium Phosphate; Prednisone; Triamcinolone Acetonide,4.0,0,False
+177,ATM,472,C,2.1135,2,digcfdekg; gene-expression-atlas-okn,False,False,True,2.27,False,False,0,1,0,False,,,0,False
+178,TLL1,7092,C,2.1135,2,digcfdekg; wikidata,False,False,True,2.27,True,False,0,0,0,False,,,0,False
+179,HRH1,3269,C,2.1125,2,digcfdekg; prokn,False,False,True,2.25,False,False,0,0,0,True,Clemastine Fumarate; Desloratadine; Dexchlorpheniramine Maleate; Loratadine; Terfenadine,3.0,0,False
+180,FGL2,10875,C,2.1075,2,digcfdekg; gene-expression-atlas-okn,False,False,True,2.15,False,False,0,1,0,False,,,0,False
+181,TRIM14,9830,B,2.1075,2,spoke-okn; digcfdekg,True,False,True,2.15,False,False,0,0,1,False,,,0,False
+182,TOX2,84969,B,2.107,2,spoke-okn; digcfdekg,True,False,True,2.14,False,False,0,0,0,False,,,0,False
+183,CD5,921,D,2.1050125502755526,1,digcfdekg,False,False,True,8.56,False,False,0,0,0,False,,,14,False
+184,FRG1,2483,C,2.1045,2,digcfdekg; gene-expression-atlas-okn,False,False,True,2.09,False,False,1,0,0,False,,,0,False
+185,LPP,4026,B,2.103,2,spoke-okn; digcfdekg,True,False,True,2.06,False,False,0,0,0,False,,,0,False
+186,PAX5,5079,C,2.101,2,digcfdekg; gene-expression-atlas-okn,False,False,True,2.02,False,False,1,0,0,False,,,0,False
+187,CDH3,1001,B,2.0995,2,spoke-okn; digcfdekg,True,False,True,1.99,False,False,0,0,0,False,,,0,False
+188,CENPO,79172,B,2.098,2,spoke-okn; digcfdekg,True,False,True,1.96,False,False,0,0,0,False,,,0,False
+189,HAVCR2,84868,C,2.098,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.96,False,False,0,1,0,False,,,0,False
+190,PTPN6,5777,D,2.0978370153723533,1,digcfdekg,False,False,True,4.18,False,False,0,0,0,False,,,34,False
+191,SEMA4D,10507,C,2.0955,2,digcfdekg; prokn,False,False,True,1.91,False,False,0,0,0,True,Pepinemab,1.0,0,False
+192,SLC2A4RG,56731,B,2.094,2,spoke-okn; digcfdekg,True,False,True,1.88,False,False,0,0,0,False,,,0,False
+193,GALC,2581,B,2.0935,2,spoke-okn; digcfdekg,True,False,True,1.87,False,False,0,0,0,False,,,0,False
+194,TAP1,6890,C,2.0925,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.85,False,False,1,0,1,False,,,0,False
+195,FCER1G,2207,C,2.0915,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.83,False,False,1,0,0,False,,,0,False
+196,AIM2,9447,C,2.089,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.78,False,False,1,0,1,False,,,0,False
+197,FOS,2353,C,2.089,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.78,False,False,0,1,0,False,,,0,False
+198,PRELID1,27166,C,2.089,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.78,False,False,1,0,0,False,,,0,False
+199,ITGB7,3695,C,2.0885,2,digcfdekg; prokn,False,False,True,1.77,False,False,0,0,0,True,Firategrast; Natalizumab,4.0,0,False
+200,MYD88,4615,C,2.0885,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.77,False,False,1,0,0,False,,,0,False
+201,LCK,3932,D,2.087799345415539,1,digcfdekg,False,False,True,4.75,False,False,0,0,0,False,,,29,False
+202,CAMK4,814,C,2.0865,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.73,False,False,0,1,0,False,,,0,False
+203,RREB1,6239,C,2.0855,2,digcfdekg; wikidata,False,False,True,1.71,True,False,0,0,0,False,,,0,False
+204,ARCN1,372,C,2.085,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.7,False,False,1,0,0,False,,,0,False
+205,PLCL2,23228,C,2.0845,2,digcfdekg; wikidata,False,False,True,1.69,True,False,0,0,0,False,,,0,False
+206,ABL1,25,C,2.084,2,digcfdekg; prokn,False,False,True,1.68,False,False,0,0,0,True,Imatinib Mesylate,2.0,0,False
+207,LY86,9450,C,2.0835,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.67,False,False,0,1,0,False,,,0,False
+208,HCK,3055,C,2.083,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.66,False,False,0,1,0,False,,,0,False
+209,LRRIQ4,344657,B,2.0825,2,spoke-okn; digcfdekg,True,False,True,1.65,False,False,0,0,0,False,,,0,False
+210,PVR,5817,C,2.0825,2,digcfdekg; wikidata,False,False,True,1.65,True,False,0,0,0,False,,,0,False
+211,IL1R1,3554,C,2.082,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.64,False,False,0,1,0,False,,,0,False
+212,TLR7,51284,C,2.082,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.64,False,False,0,1,1,False,,,0,False
+213,AGBL2,79841,B,2.0815,2,spoke-okn; digcfdekg,True,False,True,1.63,False,False,0,0,0,False,,,0,False
+214,MZB1,51237,C,2.0815,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.63,False,False,1,0,0,False,,,0,False
+215,DIPK1A,388650,B,2.081,2,spoke-okn; digcfdekg,True,False,True,1.62,False,False,0,0,0,False,,,0,False
+216,ZAP70,7535,D,2.0798239574966186,1,digcfdekg,False,False,True,4.76,False,False,0,0,0,False,,,28,False
+217,GZMB,3002,C,2.0795,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.59,False,False,1,0,0,False,,,0,False
+218,SLC9A8,23315,B,2.078,2,spoke-okn; digcfdekg,True,False,True,1.56,False,False,0,0,0,False,,,0,False
+219,DOCK2,1794,D,2.077719863528484,1,digcfdekg,False,False,True,3.11,False,False,0,0,0,False,,,39,False
+220,MYNN,55892,C,2.077,2,digcfdekg; wikidata,False,False,True,1.54,True,False,0,0,0,False,,,0,False
+221,PLEKHG1,57480,C,2.076,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.52,False,False,0,1,0,False,,,0,False
+222,LILRB2,10288,C,2.075,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.5,False,False,0,1,0,False,,,0,False
+223,PRXL2B,127281,B,2.075,2,spoke-okn; digcfdekg,True,False,True,1.5,False,False,0,0,0,False,,,0,False
+224,TOP3A,7156,B,2.075,2,spoke-okn; digcfdekg,True,False,True,1.5,False,False,0,0,0,False,,,0,False
+225,H4C9,8294,C,2.0745,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.49,False,False,1,0,0,False,,,0,False
+226,AGAP2,116986,B,2.0725,2,spoke-okn; digcfdekg,True,False,True,1.45,False,False,0,0,0,False,,,0,False
+227,PYCARD,29108,C,2.071,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.42,False,False,1,0,0,False,,,0,False
+228,CYP27B1,1594,B,2.0705,2,spoke-okn; digcfdekg,True,False,True,1.41,False,False,0,0,0,False,,,0,False
+229,PARP15,165631,C,2.0705,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.41,False,False,0,1,0,False,,,0,False
+230,CCR2,729230,C,2.07,2,digcfdekg; prokn,False,False,True,1.4,False,False,0,0,0,True,Plozalizumab,2.0,0,False
+231,PHACTR2,9749,B,2.0695,2,spoke-okn; digcfdekg,True,False,True,1.39,False,False,0,0,0,False,,,0,False
+232,CLEC10A,10462,C,2.0685000000000002,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.37,False,False,0,1,0,False,,,0,False
+233,PRR5L,79899,B,2.0685000000000002,2,spoke-okn; digcfdekg,True,False,True,1.37,False,False,0,0,0,False,,,0,False
+234,ESPN,83715,B,2.0675,2,spoke-okn; digcfdekg,True,False,True,1.35,False,False,0,0,0,False,,,0,False
+235,NBN,4683,C,2.0675,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.35,False,False,1,0,0,False,,,0,False
+236,SELE,6401,B,2.0675,2,rdkg; digcfdekg,False,True,True,1.35,False,False,0,0,0,False,,,0,False
+237,MARCKS,4082,C,2.067,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.34,False,False,0,1,0,False,,,0,False
+238,FAM30A,9834,C,2.066,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.32,False,False,1,0,0,False,,,0,False
+239,SKAP2,8935,B,2.066,2,spoke-okn; digcfdekg,True,False,True,1.32,False,False,0,0,0,False,,,0,False
+240,TIMMDC1,51300,B,2.066,2,spoke-okn; digcfdekg,True,False,True,1.32,False,False,0,0,0,False,,,0,False
+241,PIK3CD,5293,D,2.0658370153723533,1,digcfdekg,False,False,True,3.54,False,False,0,0,0,False,,,34,False
+242,CD38,952,C,2.0655,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.31,False,False,1,0,1,False,,,0,False
+243,FCRL5,83416,C,2.0655,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.31,False,False,1,0,0,False,,,0,False
+244,THRA,7067,C,2.0655,2,digcfdekg; prokn,False,False,True,1.31,False,False,0,0,0,True,Liothyronine Sodium,1.0,0,False
+245,HOXA1,3198,B,2.0645,2,spoke-okn; digcfdekg,True,False,True,1.29,False,False,0,0,0,False,,,0,False
+246,TSPAN31,6302,B,2.064,2,spoke-okn; digcfdekg,True,False,True,1.28,False,False,0,0,0,False,,,0,False
+247,TYROBP,7305,C,2.064,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.28,False,False,1,0,0,False,,,0,False
+248,EBF1,1879,C,2.0635,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.27,False,False,1,0,0,False,,,0,False
+249,ESR1,2099,C,2.062,2,digcfdekg; prokn,False,False,True,1.24,False,False,0,0,0,True,Estradiol,3.0,0,False
+250,METTL1,4234,B,2.062,2,spoke-okn; digcfdekg,True,False,True,1.24,False,False,0,0,0,False,,,0,False
+251,ALOX5,240,C,2.06,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.2,False,False,0,1,0,False,,,0,False
+252,FPR2,2358,C,2.06,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.2,False,False,1,0,0,False,,,0,False
+253,IGSF23,147710,C,2.06,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.2,False,False,1,0,0,False,,,0,False
+254,LGALS1,3956,C,2.06,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.2,False,False,1,0,0,False,,,0,False
+255,RPS18,6222,C,2.06,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.2,False,False,1,0,0,False,,,0,False
+256,KIT,3815,C,2.057,2,digcfdekg; prokn,False,False,True,1.14,False,False,0,0,0,True,Imatinib Mesylate; Masitinib,3.0,0,False
+257,IL2RB,3560,D,2.0569968011212865,1,digcfdekg,False,False,True,3.97,False,False,0,0,0,False,,,30,False
+258,NR4A3,8013,C,2.0564999999999998,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.13,False,False,0,1,0,False,,,0,False
+259,TSFM,10102,B,2.0564999999999998,2,spoke-okn; digcfdekg,True,False,True,1.13,False,False,0,0,0,False,,,0,False
+260,PLEKHG5,57449,B,2.056,2,spoke-okn; digcfdekg,True,False,True,1.12,False,False,0,0,0,False,,,0,False
+261,FPR1,2357,C,2.0555,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.11,False,False,0,1,0,False,,,0,False
+262,TBX6,6911,B,2.0555,2,spoke-okn; digcfdekg,True,False,True,1.11,False,False,0,0,0,False,,,0,False
+263,TNFRSF17,608,C,2.055,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.1,False,False,1,0,0,False,,,0,False
+264,IFI16,3428,C,2.0545,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.09,False,False,1,0,0,False,,,0,False
+265,MYOM2,9172,C,2.0545,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.09,False,False,1,0,0,False,,,0,False
+266,PXT1,222659,B,2.0535,2,spoke-okn; digcfdekg,True,False,True,1.07,False,False,0,0,0,False,,,0,False
+267,ALDH2,217,C,2.0525,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.05,False,False,0,1,0,False,,,0,False
+268,CSMD1,64478,C,2.0525,2,digcfdekg; wikidata,False,False,True,1.05,True,False,0,0,0,False,,,0,False
+269,PLAU,5328,C,2.052,2,digcfdekg; gene-expression-atlas-okn,False,False,True,1.04,False,False,0,2,0,False,,,0,False
+270,MMEL1,79258,B,2.0505,2,spoke-okn; digcfdekg,True,False,True,1.01,False,False,0,0,0,False,,,0,False
+271,HCLS1,3059,D,2.020933975699932,1,digcfdekg,False,False,True,3.09,False,False,0,0,0,False,,,31,False
+272,ALPK2,115701,B,2.0,2,spoke-okn; wikidata,True,False,False,,True,False,0,0,0,False,,,0,False
+273,BTNL2,56244,B,2.0,2,spoke-okn; wikidata,True,False,False,,True,False,0,0,0,False,,,0,False
+274,CNR1,1268,C,2.0,2,rdkg; prokn,False,True,False,,False,False,0,0,0,True,Cannabidiol; Dronabinol,2.0,0,False
+275,DKKL1,27120,B,2.0,2,spoke-okn; wikidata,True,False,False,,True,False,0,0,0,False,,,0,False
+276,IFNB1,3456,C,2.0,2,spoke-okn; rdkg,True,True,False,,False,False,0,0,0,False,,,0,False
+277,PTGS1,5742,C,2.0,2,gene-expression-atlas-okn; prokn,False,False,False,,False,False,0,1,0,True,Acetaminophen; Aspirin; Ibuprofen; Ketoprofen; Naproxen,3.0,0,False
+278,PTGS2,5743,C,2.0,2,gene-expression-atlas-okn; prokn,False,False,False,,False,False,0,1,0,True,Acetaminophen; Aspirin; Celecoxib; Ibuprofen; Ketoprofen; Naproxen,3.0,0,False
+279,TOP2A,7153,C,2.0,2,gene-expression-atlas-okn; prokn,False,False,False,,False,False,1,0,0,True,Dexrazoxane; Mitoxantrone Hydrochloride,4.0,0,False
+280,TSBP1,10665,B,2.0,2,spoke-okn; wikidata,True,False,False,,True,False,0,0,0,False,,,0,False
+281,PSMB10,5699,D,1.9913735539822874,1,digcfdekg,False,False,True,4.15,False,False,0,0,0,False,,,22,False
+282,LYN,4067,D,1.9875134575869864,1,digcfdekg,False,False,True,3.86,False,False,0,0,0,False,,,23,False
+283,IKZF1,10320,D,1.9822189562170502,1,digcfdekg,False,False,True,3.55,False,False,0,0,0,False,,,24,False
+284,JAK2,3717,D,1.9716306094308558,1,digcfdekg,False,False,True,4.21,False,False,0,0,1,False,,,20,False
+285,FYN,2534,D,1.9692189562170503,1,digcfdekg,False,False,True,3.29,False,False,0,0,0,False,,,24,False
+286,INPP5D,3635,D,1.9620134575869863,1,digcfdekg,False,False,True,3.35,False,False,0,0,0,False,,,23,False
+287,CD3G,917,D,1.9568735539822875,1,digcfdekg,False,False,True,3.46,False,False,0,0,0,False,,,22,False
+288,PRKCD,5580,D,1.9562189562170502,1,digcfdekg,False,False,True,3.03,False,False,0,0,0,False,,,24,False
+289,DOCK8,81704,D,1.9236306094308557,1,digcfdekg,False,False,True,3.25,False,False,0,0,0,False,,,20,False
+290,SLAMF6,114836,D,1.9200125502755527,1,digcfdekg,False,False,True,4.86,False,False,0,0,0,False,,,14,False
+291,NFKB1,4790,D,1.909306144334055,1,digcfdekg,False,False,True,7.2,False,False,0,0,0,False,,,8,False
+292,CXCR4,7852,D,1.9001462732485115,1,digcfdekg,False,False,True,6.49,False,False,0,0,0,False,,,9,False
+293,LY9,4063,D,1.8861462732485115,1,digcfdekg,False,False,True,6.21,False,False,0,0,0,False,,,9,False
+294,BCL2,596,D,1.8681462732485115,1,digcfdekg,False,False,True,5.85,False,False,0,0,0,False,,,9,False
+295,MYC,4609,D,1.8466462732485116,1,digcfdekg,False,False,True,5.42,False,False,0,0,0,False,,,9,False
+296,SLAMF1,6504,D,1.839226662447,1,digcfdekg,False,False,True,4.36,False,False,0,0,0,False,,,11,False
+297,RELA,5970,D,1.8223061443340551,1,digcfdekg,False,False,True,5.46,False,False,0,0,0,False,,,8,False
+298,IL2RG,3561,D,1.8156462732485115,1,digcfdekg,False,False,True,4.8,False,False,0,0,0,False,,,9,False
+299,JAK3,3718,D,1.8102373393653841,1,digcfdekg,False,False,True,3.38,False,False,0,0,0,False,,,12,False
+300,LTA,4049,D,1.8031462732485115,1,digcfdekg,False,False,True,4.55,False,False,0,0,0,False,,,9,False
+301,RASGRP1,10125,D,1.800360385419959,1,digcfdekg,False,False,True,5.61,False,False,0,0,0,False,,,7,False
+302,FAS,355,D,1.7881462732485116,1,digcfdekg,False,False,True,4.25,False,False,0,0,1,False,,,9,False
+303,GPR65,8477,D,1.787806144334055,1,digcfdekg,False,False,True,4.77,False,False,0,0,0,False,,,8,False
+304,REL,5966,D,1.7824775372638284,1,digcfdekg,False,False,True,5.92,False,False,0,0,0,False,,,6,False
+305,IL6ST,3572,D,1.781726662447,1,digcfdekg,False,False,True,3.21,False,False,0,0,0,False,,,11,False
+306,CCR7,1236,D,1.7801462732485116,1,digcfdekg,False,False,True,4.09,False,False,0,0,0,False,,,9,False
+307,PRF1,5551,D,1.773726662447,1,digcfdekg,False,False,True,3.05,False,False,0,0,0,False,,,11,False
+308,RHOH,399,D,1.771859478108525,1,digcfdekg,False,False,True,7.39,False,False,0,0,0,False,,,4,False
+309,LAT,27040,D,1.7629738181995926,1,digcfdekg,False,False,True,3.27,False,False,0,0,0,False,,,10,False
+310,NFKBIA,4792,D,1.7626462732485115,1,digcfdekg,False,False,True,3.74,False,False,0,0,0,False,,,9,False
+311,BCL10,8915,D,1.7488594781085252,1,digcfdekg,False,False,True,6.93,False,False,0,0,0,False,,,4,False
+312,TNFRSF1B,7133,D,1.732806144334055,1,digcfdekg,False,False,True,3.67,False,False,0,0,0,False,,,8,False
+313,IFNGR1,3459,D,1.7294775372638285,1,digcfdekg,False,False,True,4.86,False,False,0,0,0,False,,,6,False
+314,NFKB2,4791,D,1.729306144334055,1,digcfdekg,False,False,True,3.6,False,False,0,0,0,False,,,8,False
+315,DPP4,1803,D,1.725360385419959,1,digcfdekg,False,False,True,4.11,False,False,0,0,0,False,,,7,False
+316,CCR4,1233,D,1.7034398673070137,1,digcfdekg,False,False,True,5.11,False,False,0,0,0,False,,,5,False
+317,CASP8,841,D,1.6969775372638285,1,digcfdekg,False,False,True,4.21,False,False,0,0,0,False,,,6,False
+318,IL4R,3566,D,1.6529398673070137,1,digcfdekg,False,False,True,4.1,False,False,0,0,0,False,,,5,False
+319,UBASH3B,84959,D,1.650859478108525,1,digcfdekg,False,False,True,4.97,False,False,0,0,0,False,,,4,False
+320,BCL6,604,D,1.646859478108525,1,digcfdekg,False,False,True,4.89,False,False,0,0,0,False,,,4,False
+321,P2RY10,27334,D,1.6449775372638284,1,digcfdekg,False,False,True,3.17,False,False,0,0,0,False,,,6,False
+322,MTOR,2475,D,1.6374775372638284,1,digcfdekg,False,False,True,3.02,False,False,0,0,0,False,,,6,False
+323,CD22,933,D,1.6369398673070137,1,digcfdekg,False,False,True,3.78,False,False,0,0,0,False,,,5,False
+324,STAT5B,6777,D,1.6299398673070136,1,digcfdekg,False,False,True,3.64,False,False,0,0,0,False,,,5,False
+325,PTGER4,5734,D,1.6245735902799727,1,digcfdekg,False,False,True,5.56,False,False,0,0,0,False,,,3,False
+326,GPR183,1880,D,1.6170735902799727,1,digcfdekg,False,False,True,5.41,False,False,0,0,0,False,,,3,False
+327,CTSH,1512,D,1.5936530721670275,1,digcfdekg,False,False,True,6.38,False,False,0,0,0,False,,,2,False
+328,FCER2,2208,D,1.567859478108525,1,digcfdekg,False,False,True,3.31,False,False,0,0,0,False,,,4,False
+329,CR2,1380,D,1.557859478108525,1,digcfdekg,False,False,True,3.11,False,False,0,0,0,False,,,4,False
+330,MAP3K14,9020,D,1.5171530721670274,1,digcfdekg,False,False,True,4.85,False,False,0,0,0,False,,,2,False
+331,CLEC2D,29121,D,1.5126530721670275,1,digcfdekg,False,False,True,4.76,False,False,0,0,0,False,,,2,False
+332,RUNX1,861,D,1.5030735902799728,1,digcfdekg,False,False,True,3.13,False,False,0,0,0,False,,,3,False
+333,CD28,940,D,1.5,1,digcfdekg,False,False,True,10.6,False,False,0,0,0,False,,,0,False
+334,TNFRSF14,8764,D,1.4912867951399864,1,digcfdekg,False,False,True,6.36,False,False,0,0,0,False,,,1,False
+335,SYPL1,6856,D,1.4586530721670274,1,digcfdekg,False,False,True,3.68,False,False,0,0,0,False,,,2,False
+336,CD27,939,D,1.4535,1,digcfdekg,False,False,True,9.07,False,False,0,0,0,False,,,0,False
+337,HLA-DOB,3112,D,1.4506530721670274,1,digcfdekg,False,False,True,3.52,False,False,0,0,0,False,,,2,False
+338,SOCS1,8651,D,1.44,1,digcfdekg,False,False,True,8.8,False,False,0,0,0,False,,,0,False
+339,PRKCQ,5588,D,1.4331530721670276,1,digcfdekg,False,False,True,3.17,False,False,0,0,0,False,,,2,False
+340,TCF7,6932,D,1.4325,1,digcfdekg,False,False,True,8.65,False,False,0,0,0,False,,,0,False
+341,BLK,640,D,1.4242867951399862,1,digcfdekg,False,False,True,5.02,False,False,0,0,0,False,,,1,False
+342,MBP,4155,D,1.4023594781085251,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,4,False
+343,CD37,951,D,1.3940000000000001,1,digcfdekg,False,False,True,7.88,False,False,0,0,0,False,,,0,False
+344,MYB,4602,D,1.3845,1,digcfdekg,False,False,True,7.69,False,False,0,0,0,False,,,0,False
+345,CCR6,1235,D,1.3807867951399864,1,digcfdekg,False,False,True,4.15,False,False,0,0,0,False,,,1,False
+346,CARD11,84433,D,1.379,1,digcfdekg,False,False,True,7.58,False,False,0,0,0,False,,,0,False
+347,FCMR,9214,D,1.3702867951399864,1,digcfdekg,False,False,True,3.94,False,False,0,0,0,False,,,1,False
+348,CD80,941,D,1.37,1,digcfdekg,False,False,True,7.4,False,False,0,0,0,False,,,0,False
+349,IRF4,3662,D,1.366,1,digcfdekg,False,False,True,7.32,False,False,0,0,0,False,,,0,False
+350,SPI1,6688,D,1.3555000000000001,1,digcfdekg,False,False,True,7.11,False,False,0,0,0,False,,,0,False
+351,PIK3IP1,113791,D,1.3492867951399863,1,digcfdekg,False,False,True,3.52,False,False,0,0,0,False,,,1,False
+352,TRIB2,28951,D,1.3437867951399864,1,digcfdekg,False,False,True,3.41,False,False,0,0,0,False,,,1,False
+353,CORO2A,7464,D,1.3377867951399864,1,digcfdekg,False,False,True,3.29,False,False,0,0,0,False,,,1,False
+354,MEF2C,4208,D,1.3357867951399864,1,digcfdekg,False,False,True,3.25,False,False,0,0,0,False,,,1,False
+355,EOMES,8320,D,1.3335,1,digcfdekg,False,False,True,6.67,False,False,0,0,0,False,,,0,False
+356,PLEK,5341,D,1.3175,1,digcfdekg,False,False,True,6.35,False,False,0,0,0,False,,,0,False
+357,TBX21,30009,D,1.309,1,digcfdekg,False,False,True,6.18,False,False,0,0,0,False,,,0,False
+358,THEMIS,387357,D,1.2825,1,digcfdekg,False,False,True,5.65,False,False,0,0,0,False,,,0,False
+359,ATXN2,6311,D,1.2746530721670275,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,2,False
+360,BDNF,627,D,1.2746530721670275,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,2,False
+361,GFAP,2670,D,1.2746530721670275,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,2,False
+362,LIMK2,3985,D,1.2746530721670275,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,2,False
+363,RBPJ,3516,D,1.2746530721670275,1,rdkg,False,True,False,,False,False,0,0,0,False,,,2,False
+364,ZFP36L2,678,D,1.263,1,digcfdekg,False,False,True,5.26,False,False,0,0,0,False,,,0,False
+365,IRF5,3663,D,1.256,1,digcfdekg,False,False,True,5.12,False,False,0,0,0,False,,,0,False
+366,HHEX,3087,D,1.2555,1,digcfdekg,False,False,True,5.11,False,False,0,0,0,False,,,0,False
+367,BATF3,55509,D,1.2495,1,digcfdekg,False,False,True,4.99,False,False,0,0,0,False,,,0,False
+368,SATB1,6304,D,1.249,1,digcfdekg,False,False,True,4.98,False,False,0,0,0,False,,,0,False
+369,NFKBIZ,64332,D,1.228,1,digcfdekg,False,False,True,4.56,False,False,0,0,0,False,,,0,False
+370,GRAP2,9402,D,1.2215,1,digcfdekg,False,False,True,4.43,False,False,0,0,0,False,,,0,False
+371,IRF1,3659,D,1.221,1,digcfdekg,False,False,True,4.42,False,False,0,0,0,False,,,0,False
+372,CD3D,915,D,1.2205,1,digcfdekg,False,False,True,4.41,False,False,0,0,0,False,,,0,False
+373,KCNRG,283518,D,1.2185000000000001,1,digcfdekg,False,False,True,4.37,False,False,0,0,0,False,,,0,False
+374,TRIM26,7726,D,1.2175,1,digcfdekg,False,False,True,4.35,False,False,0,0,0,False,,,0,False
+375,NCKAP1L,3071,D,1.2125,1,digcfdekg,False,False,True,4.25,False,False,0,0,0,False,,,0,False
+376,VAV3,10451,D,1.207,1,digcfdekg,False,False,True,4.14,False,False,0,0,0,False,,,0,False
+377,GPSM3,63940,D,1.2065000000000001,1,digcfdekg,False,False,True,4.13,False,False,0,0,0,False,,,0,False
+378,SP110,3431,D,1.202,1,digcfdekg,False,False,True,4.04,False,False,0,0,1,False,,,0,False
+379,MAF,4094,D,1.2,1,digcfdekg,False,False,True,4.0,False,False,0,0,0,False,,,0,False
+380,TNFRSF25,8718,D,1.1985000000000001,1,digcfdekg,False,False,True,3.97,False,False,0,0,0,False,,,0,False
+381,PKIA,5569,D,1.1945000000000001,1,digcfdekg,False,False,True,3.89,False,False,0,0,0,False,,,0,False
+382,PPIF,10105,D,1.1925,1,digcfdekg,False,False,True,3.85,False,False,0,0,0,False,,,0,False
+383,PRKCH,5583,D,1.191,1,digcfdekg,False,False,True,3.82,False,False,0,0,0,False,,,0,False
+384,SAR1B,51128,D,1.1885,1,digcfdekg,False,False,True,3.77,False,False,0,0,0,False,,,0,False
+385,SASH3,54440,D,1.1875,1,digcfdekg,False,False,True,3.75,False,False,0,0,0,False,,,0,False
+386,CMC1,152100,D,1.187,1,digcfdekg,False,False,True,3.74,False,False,0,0,0,False,,,0,False
+387,JARID2,3720,D,1.183,1,digcfdekg,False,False,True,3.66,False,False,0,0,0,False,,,0,False
+388,CD48,962,D,1.18,1,digcfdekg,False,False,True,3.6,False,False,0,0,0,False,,,0,False
+389,ZNF438,220929,D,1.1795,1,digcfdekg,False,False,True,3.59,False,False,0,0,0,False,,,0,False
+390,SKAP1,8631,D,1.179,1,digcfdekg,False,False,True,3.58,False,False,0,0,0,False,,,0,False
+391,HLA-DOA,3111,D,1.178,1,digcfdekg,False,False,True,3.56,False,False,0,0,1,False,,,0,False
+392,CD79B,974,D,1.1755,1,digcfdekg,False,False,True,3.51,False,False,0,0,0,False,,,0,False
+393,OR14J1,442191,D,1.175,1,digcfdekg,False,False,True,3.5,False,False,0,0,0,False,,,0,False
+394,L3MBTL3,84456,D,1.1735,1,digcfdekg,False,False,True,3.47,False,False,0,0,0,False,,,0,False
+395,NCOA5,57727,D,1.1732867951399863,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,1,False
+396,SLC15A2,6565,D,1.1732867951399863,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,1,False
+397,CIITA,4261,D,1.171,1,digcfdekg,False,False,True,3.42,False,False,0,0,0,False,,,0,False
+398,RRAS2,22800,D,1.17,1,digcfdekg,False,False,True,3.4,False,False,0,0,0,False,,,0,False
+399,SPRED2,200734,D,1.167,1,digcfdekg,False,False,True,3.34,False,False,0,0,0,False,,,0,False
+400,POU5F1B,5462,D,1.1665,1,digcfdekg,False,False,True,3.33,False,False,0,0,0,False,,,0,False
+401,SH2D1A,4068,D,1.1665,1,digcfdekg,False,False,True,3.33,False,False,0,0,0,False,,,0,False
+402,BAK1,578,D,1.166,1,digcfdekg,False,False,True,3.32,False,False,0,0,0,False,,,0,False
+403,RASA2,5922,D,1.1655,1,digcfdekg,False,False,True,3.31,False,False,0,0,0,False,,,0,False
+404,SMCR8,140775,D,1.1655,1,digcfdekg,False,False,True,3.31,False,False,0,0,0,False,,,0,False
+405,PAPD7,11044,D,1.165,1,digcfdekg,False,False,True,3.3,False,False,0,0,0,False,,,0,False
+406,ARHGAP25,9938,D,1.1635,1,digcfdekg,False,False,True,3.27,False,False,0,0,0,False,,,0,False
+407,ADO,84890,D,1.163,1,digcfdekg,False,False,True,3.26,False,False,0,0,0,False,,,0,False
+408,CCDC88B,283234,D,1.163,1,digcfdekg,False,False,True,3.26,False,False,0,0,0,False,,,0,False
+409,IL12RB1,3594,D,1.1625,1,digcfdekg,False,False,True,3.25,False,False,0,0,0,False,,,0,False
+410,OLIG3,167826,D,1.1595,1,digcfdekg,False,False,True,3.19,False,False,0,0,0,False,,,0,False
+411,GIMAP4,55303,D,1.157,1,digcfdekg,False,False,True,3.14,False,False,0,0,0,False,,,0,False
+412,TESPA1,9840,D,1.1560000000000001,1,digcfdekg,False,False,True,3.12,False,False,0,0,0,False,,,0,False
+413,PRDM1,639,D,1.1525,1,digcfdekg,False,False,True,3.05,False,False,0,0,0,False,,,0,False
+414,RAG1,5896,D,1.1495,1,digcfdekg,False,False,True,2.99,False,False,0,0,0,False,,,0,False
+415,IL22RA2,116379,D,1.1475,1,digcfdekg,False,False,True,2.95,False,False,0,0,0,False,,,0,False
+416,STAT6,6778,D,1.146,1,digcfdekg,False,False,True,2.92,False,False,0,0,0,False,,,0,False
+417,LIG4,3981,D,1.145,1,digcfdekg,False,False,True,2.9,False,False,0,0,0,False,,,0,False
+418,RAG2,5897,D,1.145,1,digcfdekg,False,False,True,2.9,False,False,0,0,0,False,,,0,False
+419,CD247,919,D,1.1445,1,digcfdekg,False,False,True,2.89,False,False,0,0,0,False,,,0,False
+420,GIMAP1-GIMAP5,100527949,D,1.1445,1,digcfdekg,False,False,True,2.89,False,False,0,0,0,False,,,0,False
+421,NFKBID,84807,D,1.1445,1,digcfdekg,False,False,True,2.89,False,False,0,0,0,False,,,0,False
+422,IL21R,50615,D,1.143,1,digcfdekg,False,False,True,2.86,False,False,0,0,0,False,,,0,False
+423,PTPN22,26191,D,1.143,1,digcfdekg,False,False,True,2.86,False,False,0,0,0,False,,,0,False
+424,XCL1,6375,D,1.1425,1,digcfdekg,False,False,True,2.85,False,False,0,0,0,False,,,0,False
+425,MYO1G,64005,D,1.142,1,digcfdekg,False,False,True,2.84,False,False,0,0,0,False,,,0,False
+426,TRIML1,339976,D,1.142,1,digcfdekg,False,False,True,2.84,False,False,0,0,0,False,,,0,False
+427,ZNF391,346157,D,1.1415,1,digcfdekg,False,False,True,2.83,False,False,0,0,0,False,,,0,False
+428,CTSW,1521,D,1.141,1,digcfdekg,False,False,True,2.82,False,False,0,0,0,False,,,0,False
+429,KLHDC7B,113730,D,1.141,1,digcfdekg,False,False,True,2.82,False,False,0,0,1,False,,,0,False
+430,LIME1,54923,D,1.141,1,digcfdekg,False,False,True,2.82,False,False,0,0,0,False,,,0,False
+431,CD44,960,D,1.1405,1,digcfdekg,False,False,True,2.81,False,False,0,0,0,False,,,0,False
+432,GPR171,29909,D,1.1405,1,digcfdekg,False,False,True,2.81,False,False,0,0,0,False,,,0,False
+433,GRK6,2870,D,1.1405,1,digcfdekg,False,False,True,2.81,False,False,0,0,0,False,,,0,False
+434,GPX6,257202,D,1.14,1,digcfdekg,False,False,True,2.8,False,False,0,0,0,False,,,0,False
+435,CCL5,6352,D,1.1395,1,digcfdekg,False,False,True,2.79,False,False,0,0,0,False,,,0,False
+436,BCL3,602,D,1.139,1,digcfdekg,False,False,True,2.78,False,False,0,0,0,False,,,0,False
+437,CD274,29126,D,1.1385,1,digcfdekg,False,False,True,2.77,False,False,0,0,0,False,,,0,False
+438,CD70,970,D,1.1385,1,digcfdekg,False,False,True,2.77,False,False,0,0,0,False,,,0,False
+439,CRTAM,56253,D,1.1385,1,digcfdekg,False,False,True,2.77,False,False,0,0,0,False,,,0,False
+440,SPIB,6689,D,1.1385,1,digcfdekg,False,False,True,2.77,False,False,0,0,0,False,,,0,False
+441,GIMAP1,170575,D,1.138,1,digcfdekg,False,False,True,2.76,False,False,0,0,0,False,,,0,False
+442,IL4I1,259307,D,1.138,1,digcfdekg,False,False,True,2.76,False,False,0,0,1,False,,,0,False
+443,ITPR3,3710,D,1.137,1,digcfdekg,False,False,True,2.74,False,False,0,0,0,False,,,0,False
+444,MCL1,4170,D,1.1360000000000001,1,digcfdekg,False,False,True,2.72,False,False,0,0,0,False,,,0,False
+445,SIT1,27240,D,1.1355,1,digcfdekg,False,False,True,2.71,False,False,0,0,0,False,,,0,False
+446,FUCA2,2519,D,1.1345,1,digcfdekg,False,False,True,2.69,False,False,0,0,0,False,,,0,False
+447,LTBR,4055,D,1.1345,1,digcfdekg,False,False,True,2.69,False,False,0,0,0,False,,,0,False
+448,SIDT1,54847,D,1.1345,1,digcfdekg,False,False,True,2.69,False,False,0,0,0,False,,,0,False
+449,EAF2,55840,D,1.134,1,digcfdekg,False,False,True,2.68,False,False,0,0,0,False,,,0,False
+450,FAM76B,143684,D,1.1335,1,digcfdekg,False,False,True,2.67,False,False,0,0,0,False,,,0,False
+451,AGER,177,D,1.133,1,digcfdekg,False,False,True,2.66,False,False,0,0,0,False,,,0,False
+452,ZBTB1,22890,D,1.1325,1,digcfdekg,False,False,True,2.65,False,False,0,0,0,False,,,0,False
+453,CD46,4179,D,1.1315,1,digcfdekg,False,False,True,2.63,False,False,0,0,0,False,,,0,False
+454,STK17B,9262,D,1.1315,1,digcfdekg,False,False,True,2.63,False,False,0,0,0,False,,,0,False
+455,DOCK10,55619,D,1.131,1,digcfdekg,False,False,True,2.62,False,False,0,0,0,False,,,0,False
+456,GPX5,2880,D,1.131,1,digcfdekg,False,False,True,2.62,False,False,0,0,0,False,,,0,False
+457,EGR2,1959,D,1.1305,1,digcfdekg,False,False,True,2.61,False,False,0,0,0,False,,,0,False
+458,KPNB1,3837,D,1.1305,1,digcfdekg,False,False,True,2.61,False,False,0,0,0,False,,,0,False
+459,TRAF3IP3,80342,D,1.13,1,digcfdekg,False,False,True,2.6,False,False,0,0,0,False,,,0,False
+460,BCL11B,64919,D,1.1295,1,digcfdekg,False,False,True,2.59,False,False,0,0,0,False,,,0,False
+461,DUSP2,1844,D,1.1295,1,digcfdekg,False,False,True,2.59,False,False,0,0,0,False,,,0,False
+462,LTB,4050,D,1.1295,1,digcfdekg,False,False,True,2.59,False,False,0,0,0,False,,,0,False
+463,PPA2,27068,D,1.1295,1,digcfdekg,False,False,True,2.59,False,False,0,0,0,False,,,0,False
+464,PRKDC,5591,D,1.129,1,digcfdekg,False,False,True,2.58,False,False,0,0,0,False,,,0,False
+465,MAPK3,5595,D,1.1280000000000001,1,digcfdekg,False,False,True,2.56,False,False,0,0,0,False,,,0,False
+466,PRKCB,5579,D,1.1280000000000001,1,digcfdekg,False,False,True,2.56,False,False,0,0,0,False,,,0,False
+467,TOX,9760,D,1.1275,1,digcfdekg,False,False,True,2.55,False,False,0,0,0,False,,,0,False
+468,CYLD,1540,D,1.127,1,digcfdekg,False,False,True,2.54,False,False,0,0,0,False,,,0,False
+469,PTRH2,51651,D,1.127,1,digcfdekg,False,False,True,2.54,False,False,0,0,0,False,,,0,False
+470,TRBC1,28639,D,1.127,1,digcfdekg,False,False,True,2.54,False,False,0,0,0,False,,,0,False
+471,PIK3CG,5294,D,1.126,1,digcfdekg,False,False,True,2.52,False,False,0,0,0,False,,,0,False
+472,RASA3,22821,D,1.1255,1,digcfdekg,False,False,True,2.51,False,False,0,0,0,False,,,0,False
+473,HLA-DQA2,3118,D,1.125,1,digcfdekg,False,False,True,2.5,False,False,0,0,0,False,,,0,False
+474,MAP3K8,1326,D,1.1245,1,digcfdekg,False,False,True,2.49,False,False,0,0,0,False,,,0,False
+475,PTPN1,5770,D,1.1245,1,digcfdekg,False,False,True,2.49,False,False,0,0,0,False,,,0,False
+476,RIPK2,8767,D,1.1245,1,digcfdekg,False,False,True,2.49,False,False,0,0,0,False,,,0,False
+477,SOX8,30812,D,1.1245,1,digcfdekg,False,False,True,2.49,False,False,0,0,0,False,,,0,False
+478,PDCD1LG2,80380,D,1.124,1,digcfdekg,False,False,True,2.48,False,False,0,0,0,False,,,0,False
+479,TLR10,81793,D,1.124,1,digcfdekg,False,False,True,2.48,False,False,0,0,0,False,,,0,False
+480,BTN3A3,10384,D,1.1235,1,digcfdekg,False,False,True,2.47,False,False,0,0,0,False,,,0,False
+481,KLHL6,89857,D,1.1235,1,digcfdekg,False,False,True,2.47,False,False,0,0,0,False,,,0,False
+482,PEX13,5194,D,1.1225,1,digcfdekg,False,False,True,2.45,False,False,0,0,0,False,,,0,False
+483,STK4,6789,D,1.1219999999999999,1,digcfdekg,False,False,True,2.44,False,False,0,0,0,False,,,0,False
+484,GPR25,2848,D,1.121,1,digcfdekg,False,False,True,2.42,False,False,0,0,0,False,,,0,False
+485,ARHGEF1,9138,D,1.1205,1,digcfdekg,False,False,True,2.41,False,False,0,0,0,False,,,0,False
+486,IL10RA,3587,D,1.1205,1,digcfdekg,False,False,True,2.41,False,False,0,0,0,False,,,0,False
+487,PPP3CA,5530,D,1.12,1,digcfdekg,False,False,True,2.4,False,False,0,0,0,False,,,0,False
+488,TNFSF4,7292,D,1.12,1,digcfdekg,False,False,True,2.4,False,False,0,0,0,False,,,0,False
+489,FCGR2B,2213,D,1.1195,1,digcfdekg,False,False,True,2.39,False,False,0,0,0,False,,,0,False
+490,PTPN2,5771,D,1.1195,1,digcfdekg,False,False,True,2.39,False,False,0,0,0,False,,,0,False
+491,TNFRSF9,3604,D,1.1195,1,digcfdekg,False,False,True,2.39,False,False,0,0,0,False,,,0,False
+492,GIMAP6,474344,D,1.119,1,digcfdekg,False,False,True,2.38,False,False,0,0,0,False,,,0,False
+493,MVP,9961,D,1.119,1,digcfdekg,False,False,True,2.38,False,False,0,0,0,False,,,0,False
+494,TRIM27,5987,D,1.119,1,digcfdekg,False,False,True,2.38,False,False,0,0,0,False,,,0,False
+495,ARHGEF3,50650,D,1.1185,1,digcfdekg,False,False,True,2.37,False,False,0,0,0,False,,,0,False
+496,BHLHE40,8553,D,1.1185,1,digcfdekg,False,False,True,2.37,False,False,0,0,0,False,,,0,False
+497,BTLA,151888,D,1.1179999999999999,1,digcfdekg,False,False,True,2.36,False,False,0,0,0,False,,,0,False
+498,C7orf72,100130988,D,1.1179999999999999,1,digcfdekg,False,False,True,2.36,False,False,0,0,0,False,,,0,False
+499,TGFBR2,7048,D,1.117,1,digcfdekg,False,False,True,2.34,False,False,0,0,0,False,,,0,False
+500,LMF1,64788,D,1.1165,1,digcfdekg,False,False,True,2.33,False,False,0,0,0,False,,,0,False
+501,PTEN,5728,D,1.1165,1,digcfdekg,False,False,True,2.33,False,False,0,0,0,False,,,0,False
+502,RASAL3,64926,D,1.116,1,digcfdekg,False,False,True,2.32,False,False,0,0,0,False,,,0,False
+503,RPH3A,22895,D,1.116,1,digcfdekg,False,False,True,2.32,False,False,0,0,0,False,,,0,False
+504,SLA,6503,D,1.116,1,digcfdekg,False,False,True,2.32,False,False,0,0,0,False,,,0,False
+505,TIGIT,201633,D,1.116,1,digcfdekg,False,False,True,2.32,False,False,0,0,0,False,,,0,False
+506,TRIP10,9322,D,1.1155,1,digcfdekg,False,False,True,2.31,False,False,0,0,0,False,,,0,False
+507,XBP1,7494,D,1.1155,1,digcfdekg,False,False,True,2.31,False,False,0,0,0,False,,,0,False
+508,CD160,11126,D,1.1145,1,digcfdekg,False,False,True,2.29,False,False,0,0,0,False,,,0,False
+509,RC3H1,149041,D,1.1145,1,digcfdekg,False,False,True,2.29,False,False,0,0,0,False,,,0,False
+510,HLA-G,3135,D,1.113,1,digcfdekg,False,False,True,2.26,False,False,0,0,0,False,,,0,False
+511,TRAT1,50852,D,1.1125,1,digcfdekg,False,False,True,2.25,False,False,0,0,0,False,,,0,False
+512,CCL22,6367,D,1.112,1,digcfdekg,False,False,True,2.24,False,False,0,0,1,False,,,0,False
+513,SELL,6402,D,1.112,1,digcfdekg,False,False,True,2.24,False,False,0,0,0,False,,,0,False
+514,CBFB,865,D,1.111,1,digcfdekg,False,False,True,2.22,False,False,0,0,0,False,,,0,False
+515,CD1D,912,D,1.111,1,digcfdekg,False,False,True,2.22,False,False,0,0,0,False,,,0,False
+516,SIRPG,55423,D,1.111,1,digcfdekg,False,False,True,2.22,False,False,0,0,0,False,,,0,False
+517,BLNK,29760,D,1.1105,1,digcfdekg,False,False,True,2.21,False,False,0,0,0,False,,,0,False
+518,FLI1,2313,D,1.1105,1,digcfdekg,False,False,True,2.21,False,False,0,0,0,False,,,0,False
+519,NEDD1,121441,D,1.1105,1,digcfdekg,False,False,True,2.21,False,False,0,0,0,False,,,0,False
+520,SH2D2A,9047,D,1.1105,1,digcfdekg,False,False,True,2.21,False,False,0,0,0,False,,,0,False
+521,CR1,1378,D,1.11,1,digcfdekg,False,False,True,2.2,False,False,0,0,0,False,,,0,False
+522,GPR18,2841,D,1.11,1,digcfdekg,False,False,True,2.2,False,False,0,0,0,False,,,0,False
+523,ARHGDIB,397,D,1.1095,1,digcfdekg,False,False,True,2.19,False,False,0,0,0,False,,,0,False
+524,CSK,1445,D,1.1095,1,digcfdekg,False,False,True,2.19,False,False,0,0,0,False,,,0,False
+525,CLCN6,1185,D,1.109,1,digcfdekg,False,False,True,2.18,False,False,0,0,0,False,,,0,False
+526,GZMK,3003,D,1.109,1,digcfdekg,False,False,True,2.18,False,False,0,0,0,False,,,0,False
+527,LDLR,3949,D,1.1085,1,digcfdekg,False,False,True,2.17,False,False,0,0,1,False,,,0,False
+528,TMC8,147138,D,1.1085,1,digcfdekg,False,False,True,2.17,False,False,0,0,0,False,,,0,False
+529,STAT5A,6776,D,1.108,1,digcfdekg,False,False,True,2.16,False,False,0,0,0,False,,,0,False
+530,PARP14,54625,D,1.107,1,digcfdekg,False,False,True,2.14,False,False,0,0,1,False,,,0,False
+531,CADM1,23705,D,1.1065,1,digcfdekg,False,False,True,2.13,False,False,0,0,0,False,,,0,False
+532,CSGALNACT2,55454,D,1.1065,1,digcfdekg,False,False,True,2.13,False,False,0,0,0,False,,,0,False
+533,HLA-DPA1,3113,D,1.1065,1,digcfdekg,False,False,True,2.13,False,False,0,0,0,False,,,0,False
+534,BCL2L11,10018,D,1.106,1,digcfdekg,False,False,True,2.12,False,False,0,0,0,False,,,0,False
+535,NKG7,4818,D,1.106,1,digcfdekg,False,False,True,2.12,False,False,0,0,0,False,,,0,False
+536,P2RX5,5026,D,1.106,1,digcfdekg,False,False,True,2.12,False,False,0,0,0,False,,,0,False
+537,PNP,4860,D,1.106,1,digcfdekg,False,False,True,2.12,False,False,0,0,0,False,,,0,False
+538,KLRC1,3821,D,1.1055,1,digcfdekg,False,False,True,2.11,False,False,0,0,0,False,,,0,False
+539,POU5F1,5460,D,1.1055,1,digcfdekg,False,False,True,2.11,False,False,0,0,0,False,,,0,False
+540,IRF2,3660,D,1.105,1,digcfdekg,False,False,True,2.1,False,False,0,0,0,False,,,0,False
+541,PLCG2,5336,D,1.105,1,digcfdekg,False,False,True,2.1,False,False,0,0,0,False,,,0,False
+542,RORA,6095,D,1.105,1,digcfdekg,False,False,True,2.1,False,False,0,0,0,False,,,0,False
+543,TRBC2,28638,D,1.105,1,digcfdekg,False,False,True,2.1,False,False,0,0,0,False,,,0,False
+544,ZNF746,155061,D,1.105,1,digcfdekg,False,False,True,2.1,False,False,0,0,0,False,,,0,False
+545,COMMD10,51397,D,1.1045,1,digcfdekg,False,False,True,2.09,False,False,0,0,0,False,,,0,False
+546,HIST1H2BJ,8970,D,1.1045,1,digcfdekg,False,False,True,2.09,False,False,0,0,0,False,,,0,False
+547,PIM2,11040,D,1.1045,1,digcfdekg,False,False,True,2.09,False,False,0,0,0,False,,,0,False
+548,PLCG1,5335,D,1.1045,1,digcfdekg,False,False,True,2.09,False,False,0,0,0,False,,,0,False
+549,TRAF1,7185,D,1.1045,1,digcfdekg,False,False,True,2.09,False,False,0,0,0,False,,,0,False
+550,CD40LG,959,D,1.104,1,digcfdekg,False,False,True,2.08,False,False,0,0,0,False,,,0,False
+551,HMGCS2,3158,D,1.104,1,digcfdekg,False,False,True,2.08,False,False,0,0,0,False,,,0,False
+552,IL23R,149233,D,1.104,1,digcfdekg,False,False,True,2.08,False,False,0,0,0,False,,,0,False
+553,CD180,4064,D,1.1035,1,digcfdekg,False,False,True,2.07,False,False,0,0,0,False,,,0,False
+554,HIST1H2AG,8969,D,1.1035,1,digcfdekg,False,False,True,2.07,False,False,0,0,0,False,,,0,False
+555,MAP3K7,6885,D,1.1035,1,digcfdekg,False,False,True,2.07,False,False,0,0,0,False,,,0,False
+556,SH3BP2,6452,D,1.1035,1,digcfdekg,False,False,True,2.07,False,False,0,0,0,False,,,0,False
+557,CD72,971,D,1.103,1,digcfdekg,False,False,True,2.06,False,False,0,0,0,False,,,0,False
+558,HMHA1,23526,D,1.103,1,digcfdekg,False,False,True,2.06,False,False,0,0,0,False,,,0,False
+559,CST7,8530,D,1.1025,1,digcfdekg,False,False,True,2.05,False,False,0,0,0,False,,,0,False
+560,CTSS,1520,D,1.1025,1,digcfdekg,False,False,True,2.05,False,False,0,0,0,False,,,0,False
+561,FADD,8772,D,1.1025,1,digcfdekg,False,False,True,2.05,False,False,0,0,0,False,,,0,False
+562,TRAC,28755,D,1.1025,1,digcfdekg,False,False,True,2.05,False,False,0,0,0,False,,,0,False
+563,ZNF774,342132,D,1.1025,1,digcfdekg,False,False,True,2.05,False,False,0,0,0,False,,,0,False
+564,WIPF1,7456,D,1.102,1,digcfdekg,False,False,True,2.04,False,False,0,0,0,False,,,0,False
+565,ZPBP,11055,D,1.102,1,digcfdekg,False,False,True,2.04,False,False,0,0,0,False,,,0,False
+566,PIK3R1,5295,D,1.1015,1,digcfdekg,False,False,True,2.03,False,False,0,0,0,False,,,0,False
+567,PTK2B,2185,D,1.1015,1,digcfdekg,False,False,True,2.03,False,False,0,0,0,False,,,0,False
+568,TMC6,11322,D,1.1015,1,digcfdekg,False,False,True,2.03,False,False,0,0,0,False,,,0,False
+569,ADAM8,101,D,1.101,1,digcfdekg,False,False,True,2.02,False,False,0,0,0,False,,,0,False
+570,SART1,9092,D,1.101,1,digcfdekg,False,False,True,2.02,False,False,0,0,0,False,,,0,False
+571,CYTIP,9595,D,1.1005,1,digcfdekg,False,False,True,2.01,False,False,0,0,0,False,,,0,False
+572,IL18,3606,D,1.1005,1,digcfdekg,False,False,True,2.01,False,False,0,0,1,False,,,0,False
+573,PTPRCAP,5790,D,1.1005,1,digcfdekg,False,False,True,2.01,False,False,0,0,0,False,,,0,False
+574,TAPBP,6892,D,1.1005,1,digcfdekg,False,False,True,2.01,False,False,0,0,0,False,,,0,False
+575,SOS1,6654,D,1.0995,1,digcfdekg,False,False,True,1.99,False,False,0,0,0,False,,,0,False
+576,CD81,975,D,1.099,1,digcfdekg,False,False,True,1.98,False,False,0,0,0,False,,,0,False
+577,PTRHD1,391356,D,1.0985,1,digcfdekg,False,False,True,1.97,False,False,0,0,0,False,,,0,False
+578,CD7,924,D,1.098,1,digcfdekg,False,False,True,1.96,False,False,0,0,0,False,,,0,False
+579,MTPN,136319,D,1.098,1,digcfdekg,False,False,True,1.96,False,False,0,0,0,False,,,0,False
+580,CCR5,1234,D,1.0975,1,digcfdekg,False,False,True,1.95,False,False,0,0,0,False,,,0,False
+581,FOXO1,2308,D,1.0975,1,digcfdekg,False,False,True,1.95,False,False,0,0,0,False,,,0,False
+582,IL15,3600,D,1.0975,1,digcfdekg,False,False,True,1.95,False,False,0,0,0,False,,,0,False
+583,ZEB1,6935,D,1.0975,1,digcfdekg,False,False,True,1.95,False,False,0,0,0,False,,,0,False
+584,ZNF311,282890,D,1.0975,1,digcfdekg,False,False,True,1.95,False,False,0,0,0,False,,,0,False
+585,HTR3A,3359,D,1.097,1,digcfdekg,False,False,True,1.94,False,False,0,0,0,False,,,0,False
+586,EBI3,10148,D,1.0965,1,digcfdekg,False,False,True,1.93,False,False,0,0,0,False,,,0,False
+587,LAPTM5,7805,D,1.0965,1,digcfdekg,False,False,True,1.93,False,False,0,0,0,False,,,0,False
+588,BTN2A2,10385,D,1.096,1,digcfdekg,False,False,True,1.92,False,False,0,0,0,False,,,0,False
+589,EVL,51466,D,1.096,1,digcfdekg,False,False,True,1.92,False,False,0,0,0,False,,,0,False
+590,FMNL1,752,D,1.096,1,digcfdekg,False,False,True,1.92,False,False,0,0,0,False,,,0,False
+591,RELB,5971,D,1.096,1,digcfdekg,False,False,True,1.92,False,False,0,0,0,False,,,0,False
+592,TRAF6,7189,D,1.096,1,digcfdekg,False,False,True,1.92,False,False,0,0,0,False,,,0,False
+593,ZBTB7B,51043,D,1.096,1,digcfdekg,False,False,True,1.92,False,False,0,0,0,False,,,0,False
+594,ADAMTS18,170692,D,1.095,1,digcfdekg,False,False,True,1.9,False,False,0,0,0,False,,,0,False
+595,FOXN1,8456,D,1.095,1,digcfdekg,False,False,True,1.9,False,False,0,0,0,False,,,0,False
+596,GPR15,2838,D,1.095,1,digcfdekg,False,False,True,1.9,False,False,0,0,0,False,,,0,False
+597,KIF21B,23046,D,1.095,1,digcfdekg,False,False,True,1.9,False,False,0,0,0,False,,,0,False
+598,TSHR,7253,D,1.095,1,digcfdekg,False,False,True,1.9,False,False,0,0,0,False,,,0,False
+599,IL15RA,3601,D,1.0945,1,digcfdekg,False,False,True,1.89,False,False,0,0,0,False,,,0,False
+600,GALNT8,26290,D,1.094,1,digcfdekg,False,False,True,1.88,False,False,0,0,0,False,,,0,False
+601,NADSYN1,55191,D,1.094,1,digcfdekg,False,False,True,1.88,False,False,0,0,0,False,,,0,False
+602,TBC1D10C,374403,D,1.093,1,digcfdekg,False,False,True,1.86,False,False,0,0,0,False,,,0,False
+603,ZBP1,81030,D,1.093,1,digcfdekg,False,False,True,1.86,False,False,0,0,2,False,,,0,False
+604,CD8B,926,D,1.0925,1,digcfdekg,False,False,True,1.85,False,False,0,0,0,False,,,0,False
+605,DLL1,28514,D,1.0925,1,digcfdekg,False,False,True,1.85,False,False,0,0,0,False,,,0,False
+606,ID2,3398,D,1.0925,1,digcfdekg,False,False,True,1.85,False,False,0,0,0,False,,,0,False
+607,GALM,130589,D,1.092,1,digcfdekg,False,False,True,1.84,False,False,0,0,0,False,,,0,False
+608,KAT5,10524,D,1.092,1,digcfdekg,False,False,True,1.84,False,False,0,0,0,False,,,0,False
+609,KLHL25,64410,D,1.092,1,digcfdekg,False,False,True,1.84,False,False,0,0,0,False,,,0,False
+610,PIK3R2,5296,D,1.092,1,digcfdekg,False,False,True,1.84,False,False,0,0,0,False,,,0,False
+611,LAX1,54900,D,1.0915,1,digcfdekg,False,False,True,1.83,False,False,0,0,0,False,,,0,False
+612,MAP4K1,11184,D,1.091,1,digcfdekg,False,False,True,1.82,False,False,0,0,0,False,,,0,False
+613,NPPA,4878,D,1.091,1,digcfdekg,False,False,True,1.82,False,False,0,0,0,False,,,0,False
+614,RGCC,28984,D,1.091,1,digcfdekg,False,False,True,1.82,False,False,0,0,0,False,,,0,False
+615,SH3KBP1,30011,D,1.091,1,digcfdekg,False,False,True,1.82,False,False,0,0,0,False,,,0,False
+616,CASP4,837,D,1.0905,1,digcfdekg,False,False,True,1.81,False,False,0,0,0,False,,,0,False
+617,TNFSF9,8744,D,1.0905,1,digcfdekg,False,False,True,1.81,False,False,0,0,0,False,,,0,False
+618,AHR,196,D,1.09,1,digcfdekg,False,False,True,1.8,False,False,0,0,0,False,,,0,False
+619,GZMA,3001,D,1.09,1,digcfdekg,False,False,True,1.8,False,False,0,0,0,False,,,0,False
+620,LEP,3952,D,1.09,1,digcfdekg,False,False,True,1.8,False,False,0,0,0,False,,,0,False
+621,OR2W1,26692,D,1.09,1,digcfdekg,False,False,True,1.8,False,False,0,0,0,False,,,0,False
+622,TUBD1,51174,D,1.0895,1,digcfdekg,False,False,True,1.79,False,False,0,0,0,False,,,0,False
+623,BTN3A1,11119,D,1.089,1,digcfdekg,False,False,True,1.78,False,False,0,0,0,False,,,0,False
+624,HLA-DRB5,3127,D,1.089,1,digcfdekg,False,False,True,1.78,False,False,0,0,0,False,,,0,False
+625,KLF2,10365,D,1.089,1,digcfdekg,False,False,True,1.78,False,False,0,0,0,False,,,0,False
+626,C19orf44,84167,D,1.0885,1,digcfdekg,False,False,True,1.77,False,False,0,0,0,False,,,0,False
+627,DNMT3A,1788,D,1.088,1,digcfdekg,False,False,True,1.76,False,False,0,0,0,False,,,0,False
+628,ITPKB,3707,D,1.088,1,digcfdekg,False,False,True,1.76,False,False,0,0,0,False,,,0,False
+629,KLRC4-KLRK1,100528032,D,1.088,1,digcfdekg,False,False,True,1.76,False,False,0,0,0,False,,,0,False
+630,KLRD1,3824,D,1.088,1,digcfdekg,False,False,True,1.76,False,False,0,0,0,False,,,0,False
+631,RPL5,6125,D,1.088,1,digcfdekg,False,False,True,1.76,False,False,0,0,1,False,,,0,False
+632,COG6,57511,D,1.0875,1,digcfdekg,False,False,True,1.75,False,False,0,0,0,False,,,0,False
+633,GVINP1,387751,D,1.0875,1,digcfdekg,False,False,True,1.75,False,False,0,0,0,False,,,0,False
+634,HIVEP2,3097,D,1.0875,1,digcfdekg,False,False,True,1.75,False,False,0,0,0,False,,,0,False
+635,CCL3,6348,D,1.087,1,digcfdekg,False,False,True,1.74,False,False,0,0,0,False,,,0,False
+636,DENND2D,79961,D,1.087,1,digcfdekg,False,False,True,1.74,False,False,0,0,0,False,,,0,False
+637,LAG3,3902,D,1.087,1,digcfdekg,False,False,True,1.74,False,False,0,0,0,False,,,0,False
+638,RC3H2,54542,D,1.087,1,digcfdekg,False,False,True,1.74,False,False,0,0,0,False,,,0,False
+639,CCL19,6363,D,1.0865,1,digcfdekg,False,False,True,1.73,False,False,0,0,0,False,,,0,False
+640,DUSP10,11221,D,1.0865,1,digcfdekg,False,False,True,1.73,False,False,0,0,0,False,,,0,False
+641,BIRC3,330,D,1.086,1,digcfdekg,False,False,True,1.72,False,False,0,0,0,False,,,0,False
+642,IL13,3596,D,1.086,1,digcfdekg,False,False,True,1.72,False,False,0,0,0,False,,,0,False
+643,OR2B6,26212,D,1.086,1,digcfdekg,False,False,True,1.72,False,False,0,0,0,False,,,0,False
+644,ICOSLG,23308,D,1.0855,1,digcfdekg,False,False,True,1.71,False,False,0,0,0,False,,,0,False
+645,RND3,390,D,1.0855,1,digcfdekg,False,False,True,1.71,False,False,0,0,0,False,,,0,False
+646,TP53,7157,D,1.0855,1,digcfdekg,False,False,True,1.71,False,False,0,0,0,False,,,0,False
+647,C6orf222,389384,D,1.085,1,digcfdekg,False,False,True,1.7,False,False,0,0,0,False,,,0,False
+648,CHD7,55636,D,1.085,1,digcfdekg,False,False,True,1.7,False,False,0,0,0,False,,,0,False
+649,EVI2B,2124,D,1.085,1,digcfdekg,False,False,True,1.7,False,False,0,0,0,False,,,0,False
+650,WAS,7454,D,1.085,1,digcfdekg,False,False,True,1.7,False,False,0,0,0,False,,,0,False
+651,ACAP1,9744,D,1.0845,1,digcfdekg,False,False,True,1.69,False,False,0,0,0,False,,,0,False
+652,CD53,963,D,1.0845,1,digcfdekg,False,False,True,1.69,False,False,0,0,0,False,,,0,False
+653,DGKZ,8525,D,1.0845,1,digcfdekg,False,False,True,1.69,False,False,0,0,0,False,,,0,False
+654,CASP3,836,D,1.084,1,digcfdekg,False,False,True,1.68,False,False,0,0,0,False,,,0,False
+655,NCAPH2,29781,D,1.084,1,digcfdekg,False,False,True,1.68,False,False,0,0,0,False,,,0,False
+656,SPNS2,124976,D,1.084,1,digcfdekg,False,False,True,1.68,False,False,0,0,0,False,,,0,False
+657,TICAM1,148022,D,1.084,1,digcfdekg,False,False,True,1.68,False,False,0,0,0,False,,,0,False
+658,TM9SF2,9375,D,1.084,1,digcfdekg,False,False,True,1.68,False,False,0,0,0,False,,,0,False
+659,FASLG,356,D,1.0835,1,digcfdekg,False,False,True,1.67,False,False,0,0,0,False,,,0,False
+660,CNR2,1269,D,1.083,1,digcfdekg,False,False,True,1.66,False,False,0,0,0,False,,,0,False
+661,PBRM1,55193,D,1.083,1,digcfdekg,False,False,True,1.66,False,False,0,0,0,False,,,0,False
+662,SMAD7,4092,D,1.083,1,digcfdekg,False,False,True,1.66,False,False,0,0,0,False,,,0,False
+663,CD84,8832,D,1.0825,1,digcfdekg,False,False,True,1.65,False,False,0,0,0,False,,,0,False
+664,DCLRE1C,64421,D,1.0825,1,digcfdekg,False,False,True,1.65,False,False,0,0,0,False,,,0,False
+665,FLT3LG,2323,D,1.0825,1,digcfdekg,False,False,True,1.65,False,False,0,0,0,False,,,0,False
+666,NDUFA9,4704,D,1.0825,1,digcfdekg,False,False,True,1.65,False,False,0,0,0,False,,,0,False
+667,OR5V1,81696,D,1.0825,1,digcfdekg,False,False,True,1.65,False,False,0,0,0,False,,,0,False
+668,TARM1,441864,D,1.0825,1,digcfdekg,False,False,True,1.65,False,False,0,0,0,False,,,0,False
+669,HLA-DRB4,3126,D,1.082,1,digcfdekg,False,False,True,1.64,False,False,0,0,0,False,,,0,False
+670,NKAP,79576,D,1.082,1,digcfdekg,False,False,True,1.64,False,False,0,0,0,False,,,0,False
+671,BANK1,55024,D,1.0815,1,digcfdekg,False,False,True,1.63,False,False,0,0,0,False,,,0,False
+672,EFNB2,1948,D,1.0815,1,digcfdekg,False,False,True,1.63,False,False,0,0,0,False,,,0,False
+673,IFITM1,8519,D,1.0815,1,digcfdekg,False,False,True,1.63,False,False,0,0,1,False,,,0,False
+674,LRRC34,151827,D,1.0815,1,digcfdekg,False,False,True,1.63,False,False,0,0,0,False,,,0,False
+675,PTPN11,5781,D,1.0815,1,digcfdekg,False,False,True,1.63,False,False,0,0,0,False,,,0,False
+676,SELP,6403,D,1.0815,1,digcfdekg,False,False,True,1.63,False,False,0,0,0,False,,,0,False
+677,RASSF5,83593,D,1.081,1,digcfdekg,False,False,True,1.62,False,False,0,0,0,False,,,0,False
+678,IKBKB,3551,D,1.0805,1,digcfdekg,False,False,True,1.61,False,False,0,0,0,False,,,0,False
+679,KLF6,1316,D,1.0805,1,digcfdekg,False,False,True,1.61,False,False,0,0,0,False,,,0,False
+680,LPIN3,64900,D,1.0805,1,digcfdekg,False,False,True,1.61,False,False,0,0,0,False,,,0,False
+681,LRRC8A,56262,D,1.0805,1,digcfdekg,False,False,True,1.61,False,False,0,0,0,False,,,0,False
+682,PFDN4,5203,D,1.0805,1,digcfdekg,False,False,True,1.61,False,False,0,0,0,False,,,0,False
+683,NFATC2,4773,D,1.08,1,digcfdekg,False,False,True,1.6,False,False,0,0,0,False,,,0,False
+684,UBASH3A,53347,D,1.08,1,digcfdekg,False,False,True,1.6,False,False,0,0,0,False,,,0,False
+685,BTG1,694,D,1.0795,1,digcfdekg,False,False,True,1.59,False,False,0,0,0,False,,,0,False
+686,DAPP1,27071,D,1.0795,1,digcfdekg,False,False,True,1.59,False,False,0,0,0,False,,,0,False
+687,IL18R1,8809,D,1.0795,1,digcfdekg,False,False,True,1.59,False,False,0,0,0,False,,,0,False
+688,LBR,3930,D,1.0795,1,digcfdekg,False,False,True,1.59,False,False,0,0,0,False,,,0,False
+689,RPL22,6146,D,1.0795,1,digcfdekg,False,False,True,1.59,False,False,0,0,0,False,,,0,False
+690,TCF3,6929,D,1.0795,1,digcfdekg,False,False,True,1.59,False,False,0,0,0,False,,,0,False
+691,LRFN5,145581,D,1.079,1,digcfdekg,False,False,True,1.58,False,False,0,0,0,False,,,0,False
+692,SRF,6722,D,1.079,1,digcfdekg,False,False,True,1.58,False,False,0,0,0,False,,,0,False
+693,ODF3B,440836,D,1.0785,1,digcfdekg,False,False,True,1.57,False,False,0,0,0,False,,,0,False
+694,PRKCZ,5590,D,1.0785,1,digcfdekg,False,False,True,1.57,False,False,0,0,0,False,,,0,False
+695,RASSF2,9770,D,1.0785,1,digcfdekg,False,False,True,1.57,False,False,0,0,0,False,,,0,False
+696,SEC24A,10802,D,1.0785,1,digcfdekg,False,False,True,1.57,False,False,0,0,0,False,,,0,False
+697,CALR3,125972,D,1.078,1,digcfdekg,False,False,True,1.56,False,False,0,0,0,False,,,0,False
+698,EHMT2,10919,D,1.078,1,digcfdekg,False,False,True,1.56,False,False,0,0,0,False,,,0,False
+699,FLT3,2322,D,1.078,1,digcfdekg,False,False,True,1.56,False,False,0,0,0,False,,,0,False
+700,MTCH2,23788,D,1.078,1,digcfdekg,False,False,True,1.56,False,False,0,0,0,False,,,0,False
+701,PDE4A,5141,D,1.078,1,digcfdekg,False,False,True,1.56,False,False,0,0,0,False,,,0,False
+702,FCRLA,84824,D,1.0775000000000001,1,digcfdekg,False,False,True,1.55,False,False,0,0,0,False,,,0,False
+703,LILRB4,11006,D,1.0775000000000001,1,digcfdekg,False,False,True,1.55,False,False,0,0,0,False,,,0,False
+704,LIMD2,80774,D,1.0775000000000001,1,digcfdekg,False,False,True,1.55,False,False,0,0,0,False,,,0,False
+705,PDE4B,5142,D,1.0775000000000001,1,digcfdekg,False,False,True,1.55,False,False,0,0,0,False,,,0,False
+706,SPN,6693,D,1.0775000000000001,1,digcfdekg,False,False,True,1.55,False,False,0,0,0,False,,,0,False
+707,AKAP3,10566,D,1.077,1,digcfdekg,False,False,True,1.54,False,False,0,0,0,False,,,0,False
+708,CARMIL2,146206,D,1.077,1,digcfdekg,False,False,True,1.54,False,False,0,0,0,False,,,0,False
+709,KLF13,51621,D,1.077,1,digcfdekg,False,False,True,1.54,False,False,0,0,0,False,,,0,False
+710,DHCR7,1717,D,1.0765,1,digcfdekg,False,False,True,1.53,False,False,0,0,0,False,,,0,False
+711,IKBKG,8517,D,1.0765,1,digcfdekg,False,False,True,1.53,False,False,0,0,0,False,,,0,False
+712,NCF2,4688,D,1.0765,1,digcfdekg,False,False,True,1.53,False,False,0,0,0,False,,,0,False
+713,CD200R1,131450,D,1.076,1,digcfdekg,False,False,True,1.52,False,False,0,0,0,False,,,0,False
+714,GBP5,115362,D,1.076,1,digcfdekg,False,False,True,1.52,False,False,0,0,1,False,,,0,False
+715,IL16,3603,D,1.076,1,digcfdekg,False,False,True,1.52,False,False,0,0,0,False,,,0,False
+716,ST6GAL1,6480,D,1.076,1,digcfdekg,False,False,True,1.52,False,False,0,0,0,False,,,0,False
+717,CD96,10225,D,1.0755,1,digcfdekg,False,False,True,1.51,False,False,0,0,0,False,,,0,False
+718,IFT46,56912,D,1.0755,1,digcfdekg,False,False,True,1.51,False,False,0,0,0,False,,,0,False
+719,TNIP1,10318,D,1.0755,1,digcfdekg,False,False,True,1.51,False,False,0,0,0,False,,,0,False
+720,TRIM38,10475,D,1.0755,1,digcfdekg,False,False,True,1.51,False,False,0,0,0,False,,,0,False
+721,ADA,100,D,1.075,1,digcfdekg,False,False,True,1.5,False,False,0,0,0,False,,,0,False
+722,FIGNL1,63979,D,1.075,1,digcfdekg,False,False,True,1.5,False,False,0,0,0,False,,,0,False
+723,IRF9,10379,D,1.075,1,digcfdekg,False,False,True,1.5,False,False,0,0,0,False,,,0,False
+724,RASGRP2,10235,D,1.075,1,digcfdekg,False,False,True,1.5,False,False,0,0,0,False,,,0,False
+725,SLFN12L,100506736,D,1.075,1,digcfdekg,False,False,True,1.5,False,False,0,0,0,False,,,0,False
+726,STIM1,6786,D,1.075,1,digcfdekg,False,False,True,1.5,False,False,0,0,0,False,,,0,False
+727,CITED2,10370,D,1.0745,1,digcfdekg,False,False,True,1.49,False,False,0,0,0,False,,,0,False
+728,FAM107B,83641,D,1.0745,1,digcfdekg,False,False,True,1.49,False,False,0,0,0,False,,,0,False
+729,LCP1,3936,D,1.0745,1,digcfdekg,False,False,True,1.49,False,False,0,0,0,False,,,0,False
+730,TNFRSF18,8784,D,1.0745,1,digcfdekg,False,False,True,1.49,False,False,0,0,0,False,,,0,False
+731,IL21,59067,D,1.074,1,digcfdekg,False,False,True,1.48,False,False,0,0,0,False,,,0,False
+732,CXCL10,3627,D,1.0735,1,digcfdekg,False,False,True,1.47,False,False,0,0,1,False,,,0,False
+733,HAX1,10456,D,1.0735,1,digcfdekg,False,False,True,1.47,False,False,0,0,0,False,,,0,False
+734,NOD2,64127,D,1.0735,1,digcfdekg,False,False,True,1.47,False,False,0,0,0,False,,,0,False
+735,SELENOK,58515,D,1.0735,1,digcfdekg,False,False,True,1.47,False,False,0,0,0,False,,,0,False
+736,UPF2,26019,D,1.0735,1,digcfdekg,False,False,True,1.47,False,False,0,0,0,False,,,0,False
+737,ARHGAP9,64333,D,1.073,1,digcfdekg,False,False,True,1.46,False,False,0,0,0,False,,,0,False
+738,CEP57,9702,D,1.073,1,digcfdekg,False,False,True,1.46,False,False,0,0,0,False,,,0,False
+739,IGHD,3495,D,1.073,1,digcfdekg,False,False,True,1.46,False,False,0,0,0,False,,,0,False
+740,NCR3,259197,D,1.073,1,digcfdekg,False,False,True,1.46,False,False,0,0,0,False,,,0,False
+741,SSTR5,6755,D,1.073,1,digcfdekg,False,False,True,1.46,False,False,0,0,0,False,,,0,False
+742,TNFSF11,8600,D,1.073,1,digcfdekg,False,False,True,1.46,False,False,0,0,0,False,,,0,False
+743,ZBTB32,27033,D,1.073,1,digcfdekg,False,False,True,1.46,False,False,0,0,0,False,,,0,False
+744,ZC3H4,23211,D,1.073,1,digcfdekg,False,False,True,1.46,False,False,0,0,0,False,,,0,False
+745,ABCF1,23,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+746,ADGRG5,221188,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+747,APLF,200558,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+748,CCND3,896,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+749,CD47,961,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+750,ICAM3,3385,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+751,LGALS9,3965,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+752,LY75,4065,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+753,NCOA3,8202,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+754,RNFT1,51136,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+755,SMARCD2,6603,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+756,ZBTB16,7704,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+757,ZNF831,128611,D,1.0725,1,digcfdekg,False,False,True,1.45,False,False,0,0,0,False,,,0,False
+758,ANXA1,301,D,1.072,1,digcfdekg,False,False,True,1.44,False,False,0,0,0,False,,,0,False
+759,HLA-DQB2,3120,D,1.072,1,digcfdekg,False,False,True,1.44,False,False,0,0,0,False,,,0,False
+760,TNFRSF13B,23495,D,1.072,1,digcfdekg,False,False,True,1.44,False,False,0,0,0,False,,,0,False
+761,TNFRSF4,7293,D,1.072,1,digcfdekg,False,False,True,1.44,False,False,0,0,0,False,,,0,False
+762,ARHGAP23,57636,D,1.0715,1,digcfdekg,False,False,True,1.43,False,False,0,0,0,False,,,0,False
+763,ARID2,196528,D,1.0715,1,digcfdekg,False,False,True,1.43,False,False,0,0,0,False,,,0,False
+764,C1orf52,148423,D,1.0715,1,digcfdekg,False,False,True,1.43,False,False,0,0,0,False,,,0,False
+765,CHRM3-AS2,100506915,D,1.071,1,digcfdekg,False,False,True,1.42,False,False,0,0,0,False,,,0,True
+766,HLA-DRB3,3125,D,1.071,1,digcfdekg,False,False,True,1.42,False,False,0,0,0,False,,,0,False
+767,LINC00861,100130231,D,1.071,1,digcfdekg,False,False,True,1.42,False,False,0,0,0,False,,,0,True
+768,MDK,4192,D,1.071,1,digcfdekg,False,False,True,1.42,False,False,0,0,0,False,,,0,False
+769,POM121L2,94026,D,1.071,1,digcfdekg,False,False,True,1.42,False,False,0,0,0,False,,,0,False
+770,SLC9B2,133308,D,1.071,1,digcfdekg,False,False,True,1.42,False,False,0,0,0,False,,,0,False
+771,SMAP2,64744,D,1.071,1,digcfdekg,False,False,True,1.42,False,False,0,0,0,False,,,0,False
+772,C4orf36,132989,D,1.0705,1,digcfdekg,False,False,True,1.41,False,False,0,0,0,False,,,0,False
+773,ST3GAL4,6484,D,1.0705,1,digcfdekg,False,False,True,1.41,False,False,0,0,0,False,,,0,False
+774,TLR9,54106,D,1.0705,1,digcfdekg,False,False,True,1.41,False,False,0,0,0,False,,,0,False
+775,CCR9,10803,D,1.07,1,digcfdekg,False,False,True,1.4,False,False,0,0,0,False,,,0,False
+776,CDK6,1021,D,1.07,1,digcfdekg,False,False,True,1.4,False,False,0,0,0,False,,,0,False
+777,KLRK1,22914,D,1.07,1,digcfdekg,False,False,True,1.4,False,False,0,0,0,False,,,0,False
+778,LILRB1,10859,D,1.07,1,digcfdekg,False,False,True,1.4,False,False,0,0,0,False,,,0,False
+779,LYL1,4066,D,1.07,1,digcfdekg,False,False,True,1.4,False,False,0,0,0,False,,,0,False
+780,NLRP6,171389,D,1.07,1,digcfdekg,False,False,True,1.4,False,False,0,0,0,False,,,0,False
+781,NOTCH1,4851,D,1.07,1,digcfdekg,False,False,True,1.4,False,False,0,0,0,False,,,0,False
+782,IL18RAP,8807,D,1.0695,1,digcfdekg,False,False,True,1.39,False,False,0,0,0,False,,,0,False
+783,MCOLN2,255231,D,1.0695,1,digcfdekg,False,False,True,1.39,False,False,0,0,0,False,,,0,False
+784,ZC3H12D,340152,D,1.0695,1,digcfdekg,False,False,True,1.39,False,False,0,0,0,False,,,0,False
+785,PPP3CB,5532,D,1.069,1,digcfdekg,False,False,True,1.38,False,False,0,0,0,False,,,0,False
+786,TNFSF8,944,D,1.069,1,digcfdekg,False,False,True,1.38,False,False,0,0,0,False,,,0,False
+787,MSL1,339287,D,1.0685,1,digcfdekg,False,False,True,1.37,False,False,0,0,0,False,,,0,False
+788,PDPK1,5170,D,1.0685,1,digcfdekg,False,False,True,1.37,False,False,0,0,0,False,,,0,False
+789,PRKCA,5578,D,1.0685,1,digcfdekg,False,False,True,1.37,False,False,0,0,0,False,,,0,False
+790,STAP1,26228,D,1.0685,1,digcfdekg,False,False,True,1.37,False,False,0,0,0,False,,,0,False
+791,TTC28,23331,D,1.0685,1,digcfdekg,False,False,True,1.37,False,False,0,0,0,False,,,0,False
+792,APBB1IP,54518,D,1.068,1,digcfdekg,False,False,True,1.36,False,False,0,0,0,False,,,0,False
+793,BBC3,27113,D,1.068,1,digcfdekg,False,False,True,1.36,False,False,0,0,0,False,,,0,False
+794,CCHCR1,54535,D,1.068,1,digcfdekg,False,False,True,1.36,False,False,0,0,0,False,,,0,False
+795,DICER1,23405,D,1.068,1,digcfdekg,False,False,True,1.36,False,False,0,0,0,False,,,0,False
+796,GNL1,2794,D,1.068,1,digcfdekg,False,False,True,1.36,False,False,0,0,0,False,,,0,False
+797,HSPA1B,3304,D,1.068,1,digcfdekg,False,False,True,1.36,False,False,0,0,0,False,,,0,False
+798,MAPK14,1432,D,1.068,1,digcfdekg,False,False,True,1.36,False,False,0,0,0,False,,,0,False
+799,PDHA2,5161,D,1.068,1,digcfdekg,False,False,True,1.36,False,False,0,0,0,False,,,0,False
+800,PRR7,80758,D,1.068,1,digcfdekg,False,False,True,1.36,False,False,0,0,0,False,,,0,False
+801,C2,717,D,1.0675,1,digcfdekg,False,False,True,1.35,False,False,0,0,1,False,,,0,False
+802,CD276,80381,D,1.0675,1,digcfdekg,False,False,True,1.35,False,False,0,0,0,False,,,0,False
+803,GTDC1,79712,D,1.0675,1,digcfdekg,False,False,True,1.35,False,False,0,0,0,False,,,0,False
+804,IFNAR2,3455,D,1.0675,1,digcfdekg,False,False,True,1.35,False,False,0,0,0,False,,,0,False
+805,PBXIP1,57326,D,1.0675,1,digcfdekg,False,False,True,1.35,False,False,0,0,0,False,,,0,False
+806,PSMB9,5698,D,1.0675,1,digcfdekg,False,False,True,1.35,False,False,0,0,0,False,,,0,False
+807,DEF6,50619,D,1.067,1,digcfdekg,False,False,True,1.34,False,False,0,0,0,False,,,0,False
+808,LMAN2,10960,D,1.067,1,digcfdekg,False,False,True,1.34,False,False,0,0,0,False,,,0,False
+809,PYHIN1,149628,D,1.067,1,digcfdekg,False,False,True,1.34,False,False,0,0,0,False,,,0,False
+810,TMEM156,80008,D,1.067,1,digcfdekg,False,False,True,1.34,False,False,0,0,0,False,,,0,False
+811,ZNF335,63925,D,1.067,1,digcfdekg,False,False,True,1.34,False,False,0,0,0,False,,,0,False
+812,ASXL1,171023,D,1.0665,1,digcfdekg,False,False,True,1.33,False,False,0,0,0,False,,,0,False
+813,FGD3,89846,D,1.0665,1,digcfdekg,False,False,True,1.33,False,False,0,0,0,False,,,0,False
+814,GADD45B,4616,D,1.0665,1,digcfdekg,False,False,True,1.33,False,False,0,0,0,False,,,0,False
+815,LSP1,4046,D,1.0665,1,digcfdekg,False,False,True,1.33,False,False,0,0,0,False,,,0,False
+816,PSMG1,8624,D,1.0665,1,digcfdekg,False,False,True,1.33,False,False,0,0,0,False,,,0,False
+817,SPTA1,6708,D,1.0665,1,digcfdekg,False,False,True,1.33,False,False,0,0,0,False,,,0,False
+818,TCF19,6941,D,1.0665,1,digcfdekg,False,False,True,1.33,False,False,0,0,0,False,,,0,False
+819,WDFY4,57705,D,1.0665,1,digcfdekg,False,False,True,1.33,False,False,0,0,0,False,,,0,False
+820,ZC2HC1A,51101,D,1.0665,1,digcfdekg,False,False,True,1.33,False,False,0,0,0,False,,,0,False
+821,ZNF131,7690,D,1.0665,1,digcfdekg,False,False,True,1.33,False,False,0,0,0,False,,,0,False
+822,NCK2,8440,D,1.066,1,digcfdekg,False,False,True,1.32,False,False,0,0,0,False,,,0,False
+823,PPP1R16B,26051,D,1.066,1,digcfdekg,False,False,True,1.32,False,False,0,0,0,False,,,0,False
+824,PPP1R18,170954,D,1.066,1,digcfdekg,False,False,True,1.32,False,False,0,0,0,False,,,0,False
+825,ABLIM1,3983,D,1.0655000000000001,1,digcfdekg,False,False,True,1.31,False,False,0,0,0,False,,,0,False
+826,BCL2L1,598,D,1.0655000000000001,1,digcfdekg,False,False,True,1.31,False,False,0,0,0,False,,,0,False
+827,CSF3,1440,D,1.0655000000000001,1,digcfdekg,False,False,True,1.31,False,False,0,0,0,False,,,0,False
+828,DTX1,1840,D,1.0655000000000001,1,digcfdekg,False,False,True,1.31,False,False,0,0,0,False,,,0,False
+829,GPR174,84636,D,1.0655000000000001,1,digcfdekg,False,False,True,1.31,False,False,0,0,0,False,,,0,False
+830,MYO19,80179,D,1.0655000000000001,1,digcfdekg,False,False,True,1.31,False,False,0,0,0,False,,,0,False
+831,PIGW,284098,D,1.0655000000000001,1,digcfdekg,False,False,True,1.31,False,False,0,0,0,False,,,0,False
+832,TP53BP1,7158,D,1.0655000000000001,1,digcfdekg,False,False,True,1.31,False,False,0,0,0,False,,,0,False
+833,ARID1B,57492,D,1.065,1,digcfdekg,False,False,True,1.3,False,False,0,0,0,False,,,0,False
+834,ARID5B,84159,D,1.065,1,digcfdekg,False,False,True,1.3,False,False,0,0,0,False,,,0,False
+835,ELL2,22936,D,1.065,1,digcfdekg,False,False,True,1.3,False,False,0,0,0,False,,,0,False
+836,GLI2,2736,D,1.065,1,digcfdekg,False,False,True,1.3,False,False,0,0,0,False,,,0,False
+837,TMEM87B,84910,D,1.065,1,digcfdekg,False,False,True,1.3,False,False,0,0,0,False,,,0,False
+838,TRAF3IP2,10758,D,1.065,1,digcfdekg,False,False,True,1.3,False,False,0,0,0,False,,,0,False
+839,CDK4,1019,D,1.0645,1,digcfdekg,False,False,True,1.29,False,False,0,0,0,False,,,0,False
+840,IL1RL2,8808,D,1.0645,1,digcfdekg,False,False,True,1.29,False,False,0,0,0,False,,,0,False
+841,IL20RA,53832,D,1.0645,1,digcfdekg,False,False,True,1.29,False,False,0,0,0,False,,,0,False
+842,IL27RA,9466,D,1.0645,1,digcfdekg,False,False,True,1.29,False,False,0,0,0,False,,,0,False
+843,LAT2,7462,D,1.0645,1,digcfdekg,False,False,True,1.29,False,False,0,0,0,False,,,0,False
+844,MIR21,406991,D,1.0645,1,digcfdekg,False,False,True,1.29,False,False,0,0,0,False,,,0,True
+845,NEDD4,4734,D,1.0645,1,digcfdekg,False,False,True,1.29,False,False,0,0,0,False,,,0,False
+846,NHLH1,4807,D,1.0645,1,digcfdekg,False,False,True,1.29,False,False,0,0,0,False,,,0,False
+847,PRR3,80742,D,1.0645,1,digcfdekg,False,False,True,1.29,False,False,0,0,0,False,,,0,False
+848,RRAGA,10670,D,1.0645,1,digcfdekg,False,False,True,1.29,False,False,0,0,0,False,,,0,False
+849,SYTL3,94120,D,1.0645,1,digcfdekg,False,False,True,1.29,False,False,0,0,0,False,,,0,False
+850,TRIM13,10206,D,1.0645,1,digcfdekg,False,False,True,1.29,False,False,0,0,0,False,,,0,False
+851,LY6E,4061,D,1.064,1,digcfdekg,False,False,True,1.28,False,False,0,0,1,False,,,0,False
+852,PSD4,23550,D,1.064,1,digcfdekg,False,False,True,1.28,False,False,0,0,0,False,,,0,False
+853,TREML2,79865,D,1.064,1,digcfdekg,False,False,True,1.28,False,False,0,0,0,False,,,0,False
+854,ACSF3,197322,D,1.0635,1,digcfdekg,False,False,True,1.27,False,False,0,0,0,False,,,0,False
+855,CCL21,6366,D,1.0635,1,digcfdekg,False,False,True,1.27,False,False,0,0,0,False,,,0,False
+856,GLB1,2720,D,1.0635,1,digcfdekg,False,False,True,1.27,False,False,0,0,0,False,,,0,False
+857,KIAA1841,84542,D,1.0635,1,digcfdekg,False,False,True,1.27,False,False,0,0,0,False,,,0,False
+858,KL,9365,D,1.0635,1,digcfdekg,False,False,True,1.27,False,False,0,0,0,False,,,0,False
+859,NUCB2,4925,D,1.0635,1,digcfdekg,False,False,True,1.27,False,False,0,0,0,False,,,0,False
+860,PARP3,10039,D,1.0635,1,digcfdekg,False,False,True,1.27,False,False,0,0,0,False,,,0,False
+861,SSH2,85464,D,1.0635,1,digcfdekg,False,False,True,1.27,False,False,0,0,0,False,,,0,False
+862,TRADD,8717,D,1.0635,1,digcfdekg,False,False,True,1.27,False,False,0,0,0,False,,,0,False
+863,ANKRD44,91526,D,1.063,1,digcfdekg,False,False,True,1.26,False,False,0,0,0,False,,,0,False
+864,BTN3A2,11118,D,1.063,1,digcfdekg,False,False,True,1.26,False,False,0,0,0,False,,,0,False
+865,DIAPH1,1729,D,1.063,1,digcfdekg,False,False,True,1.26,False,False,0,0,0,False,,,0,False
+866,HES1,3280,D,1.063,1,digcfdekg,False,False,True,1.26,False,False,0,0,0,False,,,0,False
+867,RNF115,27246,D,1.063,1,digcfdekg,False,False,True,1.26,False,False,0,0,0,False,,,0,False
+868,TCF4,6925,D,1.063,1,digcfdekg,False,False,True,1.26,False,False,0,0,0,False,,,0,False
+869,NFATC1,4772,D,1.0625,1,digcfdekg,False,False,True,1.25,False,False,0,0,0,False,,,0,False
+870,NKX2-3,159296,D,1.0625,1,digcfdekg,False,False,True,1.25,False,False,0,0,0,False,,,0,False
+871,NMT1,4836,D,1.0625,1,digcfdekg,False,False,True,1.25,False,False,0,0,0,False,,,0,False
+872,AKAP13,11214,D,1.062,1,digcfdekg,False,False,True,1.24,False,False,0,0,0,False,,,0,False
+873,KDELR1,10945,D,1.062,1,digcfdekg,False,False,True,1.24,False,False,0,0,0,False,,,0,False
+874,KRTAP5-7,440050,D,1.062,1,digcfdekg,False,False,True,1.24,False,False,0,0,0,False,,,0,False
+875,PTPN13,5783,D,1.062,1,digcfdekg,False,False,True,1.24,False,False,0,0,0,False,,,0,False
+876,PTPRJ,5795,D,1.062,1,digcfdekg,False,False,True,1.24,False,False,0,0,0,False,,,0,False
+877,RGS13,6003,D,1.062,1,digcfdekg,False,False,True,1.24,False,False,0,0,0,False,,,0,False
+878,SP100,6672,D,1.062,1,digcfdekg,False,False,True,1.24,False,False,0,0,0,False,,,0,False
+879,ADRBK1,156,D,1.0615,1,digcfdekg,False,False,True,1.23,False,False,0,0,0,False,,,0,False
+880,ETV3,2117,D,1.0615,1,digcfdekg,False,False,True,1.23,False,False,0,0,0,False,,,0,False
+881,GGA2,23062,D,1.0615,1,digcfdekg,False,False,True,1.23,False,False,0,0,0,False,,,0,False
+882,STIM2,57620,D,1.0615,1,digcfdekg,False,False,True,1.23,False,False,0,0,0,False,,,0,False
+883,CXCR2,3579,D,1.061,1,digcfdekg,False,False,True,1.22,False,False,0,0,0,False,,,0,False
+884,METTL21B,25895,D,1.061,1,digcfdekg,False,False,True,1.22,False,False,0,0,0,False,,,0,False
+885,TCF12,6938,D,1.061,1,digcfdekg,False,False,True,1.22,False,False,0,0,0,False,,,0,False
+886,TRAF5,7188,D,1.061,1,digcfdekg,False,False,True,1.22,False,False,0,0,0,False,,,0,False
+887,AMBRA1,55626,D,1.0605,1,digcfdekg,False,False,True,1.21,False,False,0,0,0,False,,,0,False
+888,APC,324,D,1.0605,1,digcfdekg,False,False,True,1.21,False,False,0,0,0,False,,,0,False
+889,CHIT1,1118,D,1.0605,1,digcfdekg,False,False,True,1.21,False,False,0,0,0,False,,,0,False
+890,CTNNB1,1499,D,1.0605,1,digcfdekg,False,False,True,1.21,False,False,0,0,0,False,,,0,False
+891,HES2,54626,D,1.0605,1,digcfdekg,False,False,True,1.21,False,False,0,0,0,False,,,0,False
+892,HSD3B2,3284,D,1.0605,1,digcfdekg,False,False,True,1.21,False,False,0,0,0,False,,,0,False
+893,NEU1,4758,D,1.0605,1,digcfdekg,False,False,True,1.21,False,False,0,0,0,False,,,0,False
+894,RIPK3,11035,D,1.0605,1,digcfdekg,False,False,True,1.21,False,False,0,0,0,False,,,0,False
+895,SEMA7A,8482,D,1.0605,1,digcfdekg,False,False,True,1.21,False,False,0,0,0,False,,,0,False
+896,ATG5,9474,D,1.06,1,digcfdekg,False,False,True,1.2,False,False,0,0,0,False,,,0,False
+897,EMILIN3,90187,D,1.06,1,digcfdekg,False,False,True,1.2,False,False,0,0,0,False,,,0,False
+898,GBP2,2634,D,1.06,1,digcfdekg,False,False,True,1.2,False,False,0,0,0,False,,,0,False
+899,MSN,4478,D,1.06,1,digcfdekg,False,False,True,1.2,False,False,0,0,0,False,,,0,False
+900,NCR1,9437,D,1.06,1,digcfdekg,False,False,True,1.2,False,False,0,0,0,False,,,0,False
+901,RNF8,9025,D,1.06,1,digcfdekg,False,False,True,1.2,False,False,0,0,0,False,,,0,False
+902,SNRNP40,9410,D,1.06,1,digcfdekg,False,False,True,1.2,False,False,0,0,0,False,,,0,False
+903,SUN2,25777,D,1.06,1,digcfdekg,False,False,True,1.2,False,False,0,0,0,False,,,0,False
+904,ZHX3,23051,D,1.06,1,digcfdekg,False,False,True,1.2,False,False,0,0,0,False,,,0,False
+905,ADAM17,6868,D,1.0594999999999999,1,digcfdekg,False,False,True,1.19,False,False,0,0,0,False,,,0,False
+906,CTSC,1075,D,1.0594999999999999,1,digcfdekg,False,False,True,1.19,False,False,0,0,0,False,,,0,False
+907,MAP3K3,4215,D,1.0594999999999999,1,digcfdekg,False,False,True,1.19,False,False,0,0,0,False,,,0,False
+908,RORC,6097,D,1.0594999999999999,1,digcfdekg,False,False,True,1.19,False,False,0,0,0,False,,,0,False
+909,S1PR4,8698,D,1.0594999999999999,1,digcfdekg,False,False,True,1.19,False,False,0,0,0,False,,,0,False
+910,SMARCC1,6599,D,1.0594999999999999,1,digcfdekg,False,False,True,1.19,False,False,0,0,0,False,,,0,False
+911,TMIGD2,126259,D,1.0594999999999999,1,digcfdekg,False,False,True,1.19,False,False,0,0,0,False,,,0,False
+912,CCR1,1230,D,1.059,1,digcfdekg,False,False,True,1.18,False,False,0,0,1,False,,,0,False
+913,CDKN2B,1030,D,1.059,1,digcfdekg,False,False,True,1.18,False,False,0,0,0,False,,,0,False
+914,LRFN2,57497,D,1.059,1,digcfdekg,False,False,True,1.18,False,False,0,0,0,False,,,0,False
+915,PECAM1,5175,D,1.059,1,digcfdekg,False,False,True,1.18,False,False,0,0,0,False,,,0,False
+916,TMPPE,643853,D,1.059,1,digcfdekg,False,False,True,1.18,False,False,0,0,0,False,,,0,False
+917,VSIR,64115,D,1.059,1,digcfdekg,False,False,True,1.18,False,False,0,0,0,False,,,0,False
+918,ZC3HAV1L,92092,D,1.059,1,digcfdekg,False,False,True,1.18,False,False,0,0,0,False,,,0,False
+919,ACTB,60,D,1.0585,1,digcfdekg,False,False,True,1.17,False,False,0,0,0,False,,,0,False
+920,ACTL6A,86,D,1.0585,1,digcfdekg,False,False,True,1.17,False,False,0,0,0,False,,,0,False
+921,EFNB1,1947,D,1.0585,1,digcfdekg,False,False,True,1.17,False,False,0,0,0,False,,,0,False
+922,FBXO7,25793,D,1.0585,1,digcfdekg,False,False,True,1.17,False,False,0,0,0,False,,,0,False
+923,PSMB8,5696,D,1.0585,1,digcfdekg,False,False,True,1.17,False,False,0,0,0,False,,,0,False
+924,RIMBP2,23504,D,1.0585,1,digcfdekg,False,False,True,1.17,False,False,0,0,0,False,,,0,False
+925,SLC44A4,80736,D,1.0585,1,digcfdekg,False,False,True,1.17,False,False,0,0,0,False,,,0,False
+926,SOD1,6647,D,1.0585,1,digcfdekg,False,False,True,1.17,False,False,0,0,0,False,,,0,False
+927,AIRE,326,D,1.058,1,digcfdekg,False,False,True,1.16,False,False,0,0,0,False,,,0,False
+928,ENTPD1,953,D,1.058,1,digcfdekg,False,False,True,1.16,False,False,0,0,0,False,,,0,False
+929,NPY1R,4886,D,1.058,1,digcfdekg,False,False,True,1.16,False,False,0,0,0,False,,,0,False
+930,PPP3CC,5533,D,1.058,1,digcfdekg,False,False,True,1.16,False,False,0,0,0,False,,,0,False
+931,SCIMP,388325,D,1.058,1,digcfdekg,False,False,True,1.16,False,False,0,0,0,False,,,0,False
+932,CREBBP,1387,D,1.0575,1,digcfdekg,False,False,True,1.15,False,False,0,0,0,False,,,0,False
+933,DGKA,1606,D,1.0575,1,digcfdekg,False,False,True,1.15,False,False,0,0,0,False,,,0,False
+934,DUSP22,56940,D,1.0575,1,digcfdekg,False,False,True,1.15,False,False,0,0,0,False,,,0,False
+935,HDAC1,3065,D,1.0575,1,digcfdekg,False,False,True,1.15,False,False,0,0,0,False,,,0,False
+936,HDAC2,3066,D,1.0575,1,digcfdekg,False,False,True,1.15,False,False,0,0,0,False,,,0,False
+937,MAPKAPK2,9261,D,1.0575,1,digcfdekg,False,False,True,1.15,False,False,0,0,0,False,,,0,False
+938,PGLYRP2,114770,D,1.0575,1,digcfdekg,False,False,True,1.15,False,False,0,0,0,False,,,0,False
+939,SLC34A1,6569,D,1.0575,1,digcfdekg,False,False,True,1.15,False,False,0,0,0,False,,,0,False
+940,SPOCK2,9806,D,1.0575,1,digcfdekg,False,False,True,1.15,False,False,0,0,0,False,,,0,False
+941,TAF7,6879,D,1.0575,1,digcfdekg,False,False,True,1.15,False,False,0,0,0,False,,,0,False
+942,FCRL4,83417,D,1.057,1,digcfdekg,False,False,True,1.14,False,False,0,0,0,False,,,0,False
+943,GPR55,9290,D,1.057,1,digcfdekg,False,False,True,1.14,False,False,0,0,0,False,,,0,False
+944,HAO2,51179,D,1.057,1,digcfdekg,False,False,True,1.14,False,False,0,0,0,False,,,0,False
+945,SGPL1,8879,D,1.057,1,digcfdekg,False,False,True,1.14,False,False,0,0,0,False,,,0,False
+946,VPREB3,29802,D,1.057,1,digcfdekg,False,False,True,1.14,False,False,0,0,0,False,,,0,False
+947,CYTH1,9267,D,1.0565,1,digcfdekg,False,False,True,1.13,False,False,0,0,0,False,,,0,False
+948,EPSTI1,94240,D,1.0565,1,digcfdekg,False,False,True,1.13,False,False,0,0,1,False,,,0,False
+949,ETV6,2120,D,1.0565,1,digcfdekg,False,False,True,1.13,False,False,0,0,0,False,,,0,False
+950,MIF4GD,57409,D,1.0565,1,digcfdekg,False,False,True,1.13,False,False,0,0,0,False,,,0,False
+951,NCF1,653361,D,1.0565,1,digcfdekg,False,False,True,1.13,False,False,0,0,0,False,,,0,False
+952,NCOR2,9612,D,1.0565,1,digcfdekg,False,False,True,1.13,False,False,0,0,0,False,,,0,False
+953,SHH,6469,D,1.0565,1,digcfdekg,False,False,True,1.13,False,False,0,0,0,False,,,0,False
+954,ALDH1L1,10840,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+955,C4orf32,132720,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+956,FAM102A,399665,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+957,FLII,2314,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+958,GIMAP5,55340,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+959,HMGB1,3146,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+960,IFNAR1,3454,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+961,LPXN,9404,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+962,LRRC31,79782,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+963,SEPT6,23157,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+964,ST6GALNAC3,256435,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+965,TRAF2,7186,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+966,TRMT61A,115708,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+967,TYMP,1890,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+968,ZBTB12,221527,D,1.056,1,digcfdekg,False,False,True,1.12,False,False,0,0,0,False,,,0,False
+969,B3GALT4,8705,D,1.0555,1,digcfdekg,False,False,True,1.11,False,False,0,0,0,False,,,0,False
+970,BECN1,8678,D,1.0555,1,digcfdekg,False,False,True,1.11,False,False,0,0,0,False,,,0,False
+971,CAMK2G,818,D,1.0555,1,digcfdekg,False,False,True,1.11,False,False,0,0,0,False,,,0,False
+972,LYST,1130,D,1.0555,1,digcfdekg,False,False,True,1.11,False,False,0,0,0,False,,,0,False
+973,PLEC,5339,D,1.0555,1,digcfdekg,False,False,True,1.11,False,False,0,0,0,False,,,0,False
+974,POU2F2,5452,D,1.0555,1,digcfdekg,False,False,True,1.11,False,False,0,0,0,False,,,0,False
+975,RFTN1,23180,D,1.0555,1,digcfdekg,False,False,True,1.11,False,False,0,0,0,False,,,0,False
+976,TPD52,7163,D,1.0555,1,digcfdekg,False,False,True,1.11,False,False,0,0,0,False,,,0,False
+977,ANXA6,309,D,1.055,1,digcfdekg,False,False,True,1.1,False,False,0,0,0,False,,,0,False
+978,CXCR6,10663,D,1.055,1,digcfdekg,False,False,True,1.1,False,False,0,0,0,False,,,0,False
+979,FOXO3,2309,D,1.055,1,digcfdekg,False,False,True,1.1,False,False,0,0,0,False,,,0,False
+980,KCNA3,3738,D,1.055,1,digcfdekg,False,False,True,1.1,False,False,0,0,0,False,,,0,False
+981,MAVS,57506,D,1.055,1,digcfdekg,False,False,True,1.1,False,False,0,0,0,False,,,0,False
+982,NUP98,4928,D,1.055,1,digcfdekg,False,False,True,1.1,False,False,0,0,0,False,,,0,False
+983,PPP2R3C,55012,D,1.055,1,digcfdekg,False,False,True,1.1,False,False,0,0,0,False,,,0,False
+984,RARA,5914,D,1.055,1,digcfdekg,False,False,True,1.1,False,False,0,0,0,False,,,0,False
+985,RGS16,6004,D,1.055,1,digcfdekg,False,False,True,1.1,False,False,0,0,0,False,,,0,False
+986,SPPL2A,84888,D,1.055,1,digcfdekg,False,False,True,1.1,False,False,0,0,0,False,,,0,False
+987,VAMP3,9341,D,1.055,1,digcfdekg,False,False,True,1.1,False,False,0,0,0,False,,,0,False
+988,VNN1,8876,D,1.055,1,digcfdekg,False,False,True,1.1,False,False,0,0,0,False,,,0,False
+989,ACTRT3,84517,D,1.0545,1,digcfdekg,False,False,True,1.09,False,False,0,0,0,False,,,0,False
+990,ARHGAP30,257106,D,1.0545,1,digcfdekg,False,False,True,1.09,False,False,0,0,0,False,,,0,False
+991,ARL4C,10123,D,1.0545,1,digcfdekg,False,False,True,1.09,False,False,0,0,0,False,,,0,False
+992,GIMAP7,168537,D,1.0545,1,digcfdekg,False,False,True,1.09,False,False,0,0,0,False,,,0,False
+993,IHH,3549,D,1.0545,1,digcfdekg,False,False,True,1.09,False,False,0,0,0,False,,,0,False
+994,IL36B,27177,D,1.0545,1,digcfdekg,False,False,True,1.09,False,False,0,0,0,False,,,0,False
+995,SRGN,5552,D,1.0545,1,digcfdekg,False,False,True,1.09,False,False,0,0,0,False,,,0,False
+996,UNC93B1,81622,D,1.0545,1,digcfdekg,False,False,True,1.09,False,False,0,0,0,False,,,0,False
+997,XRCC6,2547,D,1.0545,1,digcfdekg,False,False,True,1.09,False,False,0,0,0,False,,,0,False
+998,AKT1,207,D,1.054,1,digcfdekg,False,False,True,1.08,False,False,0,0,0,False,,,0,False
+999,CCL4,6351,D,1.054,1,digcfdekg,False,False,True,1.08,False,False,0,0,0,False,,,0,False
+1000,DYSF,8291,D,1.054,1,digcfdekg,False,False,True,1.08,False,False,0,0,0,False,,,0,False
+1001,HIF1A,3091,D,1.054,1,digcfdekg,False,False,True,1.08,False,False,0,0,0,False,,,0,False
+1002,IFT43,112752,D,1.054,1,digcfdekg,False,False,True,1.08,False,False,0,0,0,False,,,0,False
+1003,KRAS,3845,D,1.054,1,digcfdekg,False,False,True,1.08,False,False,0,0,0,False,,,0,False
+1004,NFAT5,10725,D,1.054,1,digcfdekg,False,False,True,1.08,False,False,0,0,0,False,,,0,False
+1005,NUDT7,283927,D,1.054,1,digcfdekg,False,False,True,1.08,False,False,0,0,0,False,,,0,False
+1006,ADAM19,8728,D,1.0535,1,digcfdekg,False,False,True,1.07,False,False,0,0,0,False,,,0,False
+1007,ANK3,288,D,1.0535,1,digcfdekg,False,False,True,1.07,False,False,0,0,0,False,,,0,False
+1008,ARFRP1,10139,D,1.0535,1,digcfdekg,False,False,True,1.07,False,False,0,0,0,False,,,0,False
+1009,CASC3,22794,D,1.0535,1,digcfdekg,False,False,True,1.07,False,False,0,0,0,False,,,0,False
+1010,FYB,2533,D,1.0535,1,digcfdekg,False,False,True,1.07,False,False,0,0,0,False,,,0,False
+1011,KCTD20,222658,D,1.0535,1,digcfdekg,False,False,True,1.07,False,False,0,0,0,False,,,0,False
+1012,MARCHF9,92979,D,1.0535,1,digcfdekg,False,False,True,1.07,False,False,0,0,0,False,,,0,False
+1013,MYBL2,4605,D,1.0535,1,digcfdekg,False,False,True,1.07,False,False,0,0,0,False,,,0,False
+1014,RAB3A,5864,D,1.0535,1,digcfdekg,False,False,True,1.07,False,False,0,0,0,False,,,0,False
+1015,TLR1,7096,D,1.0535,1,digcfdekg,False,False,True,1.07,False,False,0,0,0,False,,,0,False
+1016,ZC3H12A,80149,D,1.0535,1,digcfdekg,False,False,True,1.07,False,False,0,0,0,False,,,0,False
+1017,CLEC4D,338339,D,1.053,1,digcfdekg,False,False,True,1.06,False,False,0,0,0,False,,,0,False
+1018,CR1L,1379,D,1.053,1,digcfdekg,False,False,True,1.06,False,False,0,0,0,False,,,0,False
+1019,CSF1,1435,D,1.053,1,digcfdekg,False,False,True,1.06,False,False,0,0,0,False,,,0,False
+1020,IDH1,3417,D,1.053,1,digcfdekg,False,False,True,1.06,False,False,0,0,0,False,,,0,False
+1021,LGMN,5641,D,1.053,1,digcfdekg,False,False,True,1.06,False,False,0,0,0,False,,,0,False
+1022,LIPG,9388,D,1.053,1,digcfdekg,False,False,True,1.06,False,False,0,0,0,False,,,0,False
+1023,RAP1A,5906,D,1.053,1,digcfdekg,False,False,True,1.06,False,False,0,0,0,False,,,0,False
+1024,SOCS5,9655,D,1.053,1,digcfdekg,False,False,True,1.06,False,False,0,0,0,False,,,0,False
+1025,TRIM10,10107,D,1.053,1,digcfdekg,False,False,True,1.06,False,False,0,0,0,False,,,0,False
+1026,YPEL3,83719,D,1.053,1,digcfdekg,False,False,True,1.06,False,False,0,0,0,False,,,0,False
+1027,ZC3H12C,85463,D,1.053,1,digcfdekg,False,False,True,1.06,False,False,0,0,0,False,,,0,False
+1028,AKNA,80709,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1029,CDH5,1003,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1030,CEACAM19,56971,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1031,CLNK,116449,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1032,ELF1,1997,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1033,ID3,3399,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1034,ITM2A,9452,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1035,NANS,54187,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1036,PIK3R6,146850,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1037,PIM1,5292,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1038,TAP2,6891,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1039,TLR6,10333,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1040,UBXN6,80700,D,1.0525,1,digcfdekg,False,False,True,1.05,False,False,0,0,0,False,,,0,False
+1041,CLEC4G,339390,D,1.052,1,digcfdekg,False,False,True,1.04,False,False,0,0,0,False,,,0,False
+1042,IL5RA,3568,D,1.052,1,digcfdekg,False,False,True,1.04,False,False,0,0,0,False,,,0,False
+1043,MSI2,124540,D,1.052,1,digcfdekg,False,False,True,1.04,False,False,0,0,0,False,,,0,False
+1044,PRRT2,112476,D,1.052,1,digcfdekg,False,False,True,1.04,False,False,0,0,0,False,,,0,False
+1045,RHOQ,23433,D,1.052,1,digcfdekg,False,False,True,1.04,False,False,0,0,0,False,,,0,False
+1046,RNF125,54941,D,1.052,1,digcfdekg,False,False,True,1.04,False,False,0,0,0,False,,,0,False
+1047,VPS52,6293,D,1.052,1,digcfdekg,False,False,True,1.04,False,False,0,0,0,False,,,0,False
+1048,XRCC5,7520,D,1.052,1,digcfdekg,False,False,True,1.04,False,False,0,0,0,False,,,0,False
+1049,ZNF184,7738,D,1.052,1,digcfdekg,False,False,True,1.04,False,False,0,0,0,False,,,0,False
+1050,ATG7,10533,D,1.0515,1,digcfdekg,False,False,True,1.03,False,False,0,0,0,False,,,0,False
+1051,CLIC4,25932,D,1.0515,1,digcfdekg,False,False,True,1.03,False,False,0,0,0,False,,,0,False
+1052,FAM65B,9750,D,1.0515,1,digcfdekg,False,False,True,1.03,False,False,0,0,0,False,,,0,False
+1053,HIST1H2BK,85236,D,1.0515,1,digcfdekg,False,False,True,1.03,False,False,0,0,0,False,,,0,False
+1054,HOXA2,3199,D,1.0515,1,digcfdekg,False,False,True,1.03,False,False,0,0,0,False,,,0,False
+1055,KITLG,4254,D,1.0515,1,digcfdekg,False,False,True,1.03,False,False,0,0,0,False,,,0,False
+1056,KRTAP5-8,57830,D,1.0515,1,digcfdekg,False,False,True,1.03,False,False,0,0,0,False,,,0,False
+1057,LINC01215,101929623,D,1.0515,1,digcfdekg,False,False,True,1.03,False,False,0,0,0,False,,,0,True
+1058,MYO1E,4643,D,1.0515,1,digcfdekg,False,False,True,1.03,False,False,0,0,0,False,,,0,False
+1059,PRNP,5621,D,1.0515,1,digcfdekg,False,False,True,1.03,False,False,0,0,0,False,,,0,False
+1060,BRAF,673,D,1.051,1,digcfdekg,False,False,True,1.02,False,False,0,0,0,False,,,0,False
+1061,CXCR3,2833,D,1.051,1,digcfdekg,False,False,True,1.02,False,False,0,0,0,False,,,0,False
+1062,GGNBP2,79893,D,1.051,1,digcfdekg,False,False,True,1.02,False,False,0,0,0,False,,,0,False
+1063,HDGFRP2,84717,D,1.051,1,digcfdekg,False,False,True,1.02,False,False,0,0,0,False,,,0,False
+1064,HIST1H2AH,85235,D,1.051,1,digcfdekg,False,False,True,1.02,False,False,0,0,0,False,,,0,False
+1065,MEFV,4210,D,1.051,1,digcfdekg,False,False,True,1.02,False,False,0,0,0,False,,,0,False
+1066,MT2A,4502,D,1.051,1,digcfdekg,False,False,True,1.02,False,False,0,0,1,False,,,0,False
+1067,SH3RF1,57630,D,1.051,1,digcfdekg,False,False,True,1.02,False,False,0,0,0,False,,,0,False
+1068,SLC15A4,121260,D,1.051,1,digcfdekg,False,False,True,1.02,False,False,0,0,0,False,,,0,False
+1069,TSPAN32,10077,D,1.051,1,digcfdekg,False,False,True,1.02,False,False,0,0,0,False,,,0,False
+1070,CFLAR,8837,D,1.0505,1,digcfdekg,False,False,True,1.01,False,False,0,0,0,False,,,0,False
+1071,CRTAP,10491,D,1.0505,1,digcfdekg,False,False,True,1.01,False,False,0,0,0,False,,,0,False
+1072,KLRB1,3820,D,1.0505,1,digcfdekg,False,False,True,1.01,False,False,0,0,0,False,,,0,False
+1073,LMBR1L,55716,D,1.0505,1,digcfdekg,False,False,True,1.01,False,False,0,0,0,False,,,0,False
+1074,MAPK11,5600,D,1.0505,1,digcfdekg,False,False,True,1.01,False,False,0,0,0,False,,,0,False
+1075,MAPK8,5599,D,1.0505,1,digcfdekg,False,False,True,1.01,False,False,0,0,0,False,,,0,False
+1076,PTAFR,5724,D,1.0505,1,digcfdekg,False,False,True,1.01,False,False,0,0,0,False,,,0,False
+1077,RASGRP3,25780,D,1.0505,1,digcfdekg,False,False,True,1.01,False,False,0,0,0,False,,,0,False
+1078,SCAF11,9169,D,1.0505,1,digcfdekg,False,False,True,1.01,False,False,0,0,0,False,,,0,False
+1079,A2M,2,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1080,ACSL1,2180,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1081,ACVR1C,130399,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1082,ADAM9,8754,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1083,ADAP2,55803,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1084,ADCY3,109,D,1.0,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,0,False
+1085,ADGRE2,30817,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1086,ADGRG6,57211,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1087,ADM,133,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1088,ADRB1,153,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1089,ADRB2,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Isoxsuprine Hydrochloride,1.0,0,False
+1090,AGRN,375790,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1091,AIFM3,150209,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1092,APOA1,335,D,1.0,1,biomarkerkg,False,False,False,,False,True,0,0,0,False,,,0,False
+1093,AQP5,362,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1094,AR,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Testosterone,2.0,0,False
+1095,ARHGAP22,58504,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1096,ARHGAP6,395,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1097,ARHGEF10L,55160,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1098,ARHGEF2,9181,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1099,ARHGEF40,55701,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1100,ARMCX1,51309,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1101,ARPC4,10093,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1102,ASPM,259266,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1103,ASTN2,23245,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1104,ATF3,467,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1105,ATP1B1,481,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1106,ATP5F1E,514,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1107,ATP6V0B,533,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1108,ATP6V0E1,8992,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1109,ATP8B4,79895,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1110,AVPI1,60370,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1111,AXL,558,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,1,False,,,0,False
+1112,B3GNT5,84002,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1113,B4GALT4,8702,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1114,BBLN,79095,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1115,BCAT1,586,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1116,BCHE,590,D,1.0,1,rdkg,False,True,False,,False,False,0,0,0,False,,,0,False
+1117,BCL2A1,597,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1118,BEAN1,146227,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1119,BEND4,389206,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1120,BHLHE23,128408,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1121,BHLHE41,79365,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1122,BLOC1S1,2647,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1123,BRD10,158358,D,1.0,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,0,False
+1124,BUB1,699,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1125,BUB1B,701,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1126,C19orf38,255809,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1127,C1QB,713,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,1,False,,,0,False
+1128,C1orf122,127687,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1129,C3,718,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1130,C3AR1,719,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1131,C5AR1,728,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1132,CA1,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Acetazolamide,2.0,0,False
+1133,CA12,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Acetazolamide,2.0,0,False
+1134,CA2,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Acetazolamide; Topiramate,2.0,0,False
+1135,CA4,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Acetazolamide; Topiramate,2.0,0,False
+1136,CABP5,56344,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1137,CAMP,820,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1138,CATSPER1,117144,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1139,CAV1,857,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1140,CCNB1,891,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1141,CCNK,8812,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1142,CD14,929,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1143,CD163,9332,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1144,CD24,100133941,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1145,CD302,9936,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1146,CD9,928,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1147,CD93,22918,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1148,CDA,978,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1149,CDC14A,8556,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1150,CDC42BPA,8476,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1151,CDC42EP1,11135,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1152,CDC7,8317,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1153,CDK2AP1,8099,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1154,CDV3,55573,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1155,CEBPB,1051,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1156,CEBPD,1052,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1157,CENPC,1060,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1158,CEP128,145508,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1159,CEP85L,387119,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1160,CFD,1675,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1161,CFP,5199,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1162,CH25H,9023,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1163,CHMP2A,27243,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1164,CLDN11,5010,D,1.0,1,rdkg,False,True,False,,False,False,0,0,0,False,,,0,False
+1165,CLEC5A,23601,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1166,CLEC7A,64581,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1167,CLIC1,1192,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1168,CLTB,1212,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1169,CNPY3,10695,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1170,CNRIP1,25927,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1171,COBLL1,22837,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1172,COL4A3,1285,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1173,COL9A2,1298,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1174,COLEC12,81035,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1175,COPE,11316,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1176,COX4I1,1327,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1177,COX5B,1329,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1178,COX6A1,1337,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1179,COX6B1,1340,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1180,COX7A2,1347,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1181,CPED1,79974,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1182,CREB5,9586,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1183,CREM,1390,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1184,CSF1R,1436,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1185,CSF2RA,1438,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1186,CSRNP1,64651,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1187,CST3,1471,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1188,CSTA,1475,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,1,0,False,,,0,False
+1189,CTRB2,440387,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1190,CTSB,1508,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1191,CTTNBP2,83992,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1192,CTTNBP2NL,55917,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1193,CX3CR1,1524,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1194,CXADR,1525,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1195,CXCL8,3576,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1196,CXCR1,3577,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1197,CYBB,1536,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1198,CYFIP1,23191,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1199,CYP1B1,1545,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1200,DAB2,1601,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1201,DAD1,1603,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1202,DDAH1,23576,D,1.0,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,0,False
+1203,DDAH2,23564,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1204,DDO,8528,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1205,DDX3Y,8653,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1206,DDX60,55601,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1207,DENND5B,160518,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1208,DEPTOR,64798,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1209,DHFR,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Methotrexate,3.0,0,False
+1210,DHODH,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Teriflunomide; Vidofludimus,4.0,0,False
+1211,DHX58,79132,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1212,DLGAP5,9787,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1213,DMXL2,23312,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1214,DOCK4,9732,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1215,DOCK5,80005,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1216,DPY19L4,286148,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1217,DRAP1,10589,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1218,DRC1,92749,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1219,DRD2,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Quetiapine Fumarate,1.0,0,False
+1220,DSC2,1824,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1221,DSE,29940,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1222,DTX3L,151636,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1223,DUSP6,1848,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1224,EEA1,8411,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1225,EFCAB13,124989,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1226,EGR1,1958,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1227,EIF4EBP1,1978,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1228,ELOB,6923,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1229,EPB41L2,2037,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1230,EPS8,2059,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1231,ERVW-1,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Temelimab,2.0,0,False
+1232,ETS2,2114,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1233,ETV5,2119,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1234,EVA1B,55194,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1235,Entrez:100113407,100113407,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1236,Entrez:100128398,100128398,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1237,Entrez:100129387,100129387,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1238,Entrez:100129726,100129726,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1239,Entrez:100130557,100130557,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1240,Entrez:100271044,100271044,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1241,Entrez:100289635,100289635,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1242,Entrez:100379132,100379132,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1243,Entrez:100505658,100505658,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1244,Entrez:100505702,100505702,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1245,Entrez:100506190,100506190,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1246,Entrez:100506965,100506965,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1247,Entrez:100873962,100873962,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1248,Entrez:100874292,100874292,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1249,Entrez:101060200,101060200,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1250,Entrez:101927015,101927015,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1251,Entrez:101927156,101927156,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1252,Entrez:101927300,101927300,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1253,Entrez:101928595,101928595,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1254,Entrez:101929272,101929272,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1255,Entrez:101929595,101929595,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1256,Entrez:101929693,101929693,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1257,Entrez:102723508,102723508,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1258,Entrez:102724231,102724231,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1259,Entrez:104384744,104384744,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1260,Entrez:104472715,104472715,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1261,Entrez:105372274,105372274,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1262,Entrez:105372578,105372578,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1263,Entrez:105377267,105377267,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1264,Entrez:107984208,107984208,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1265,Entrez:11147,11147,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1266,Entrez:114769,114769,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1267,Entrez:116435295,116435295,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1268,Entrez:116541,116541,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1269,Entrez:121233923,121233923,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1270,Entrez:128667226,128667226,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1271,Entrez:143371,143371,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1272,Entrez:146225,146225,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1273,Entrez:162655,162655,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1274,Entrez:163131,163131,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1275,Entrez:170622,170622,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1276,Entrez:171558,171558,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1277,Entrez:207063,207063,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1278,Entrez:23136,23136,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,1,0,False,,,0,False
+1279,Entrez:246126,246126,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1280,Entrez:257218,257218,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1281,Entrez:26184,26184,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1282,Entrez:26716,26716,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1283,Entrez:283152,283152,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1284,Entrez:283663,283663,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1285,Entrez:284207,284207,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1286,Entrez:28442,28442,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1287,Entrez:28454,28454,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1288,Entrez:285331,285331,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1289,Entrez:286319,286319,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1290,Entrez:28776,28776,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1291,Entrez:28817,28817,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1292,Entrez:28862,28862,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1293,Entrez:28874,28874,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1294,Entrez:28908,28908,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1295,Entrez:28912,28912,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1296,Entrez:28923,28923,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1297,Entrez:28943,28943,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1298,Entrez:3042,3042,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1299,Entrez:345651,345651,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1300,Entrez:348094,348094,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1301,Entrez:3493,3493,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1302,Entrez:3494,3494,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1303,Entrez:3501,3501,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1304,Entrez:3514,3514,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1305,Entrez:3539,3539,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1306,Entrez:3734,3734,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1307,Entrez:388886,388886,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1308,Entrez:4332,4332,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1309,Entrez:440068,440068,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1310,Entrez:4550,4550,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1311,Entrez:4572,4572,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1312,Entrez:50840,50840,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1313,Entrez:51435,51435,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1314,Entrez:51471,51471,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1315,Entrez:54055,54055,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1316,Entrez:56108,56108,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1317,Entrez:5616,5616,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1318,Entrez:57683,57683,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1319,Entrez:58191,58191,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1320,Entrez:613204,613204,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1321,Entrez:642757,642757,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1322,Entrez:642852,642852,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1323,Entrez:643617,643617,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1324,Entrez:645784,645784,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1325,Entrez:646719,646719,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1326,Entrez:652983,652983,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1327,Entrez:729389,729389,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1328,Entrez:7404,7404,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1329,Entrez:7503,7503,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1330,Entrez:7755,7755,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1331,Entrez:80343,80343,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1332,Entrez:83869,83869,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1333,Entrez:83937,83937,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1334,Entrez:83982,83982,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1335,Entrez:84519,84519,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1336,Entrez:8484,8484,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1337,Entrez:84898,84898,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1338,Entrez:9086,9086,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1339,Entrez:9087,9087,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1340,Entrez:92370,92370,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1341,Entrez:9383,9383,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1342,Entrez:93979,93979,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1343,F13A1,2162,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1344,F2RL2,2151,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1345,FAAH,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Acetaminophen,3.0,0,False
+1346,FAM110B,90362,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1347,FAM20C,56975,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1348,FAU,2197,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1349,FCER1A,2205,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1350,FCGBP,8857,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1351,FCGR3B,2215,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1352,FCGRT,2217,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1353,FGD4,121512,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1354,FGFR3,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Masitinib,3.0,0,False
+1355,FLOT1,10211,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1356,FMNL2,114793,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,1,False,,,0,False
+1357,FN1,2335,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1358,FOLR3,2352,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1359,FOSL2,2355,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1360,FOXB1,27023,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1361,FPR3,2359,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,1,False,,,0,False
+1362,FTH1,2495,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1363,FTHL17,53940,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1364,FTL,2512,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1365,FZD1,8321,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1366,GABBR1,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Arbaclofen Placarbil; Baclofen,4.0,0,False
+1367,GALK1,2584,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1368,GASK1B,51313,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1369,GAST,2520,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1370,GATD3,8209,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1371,GATM,2628,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1372,GBP1,2633,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1373,GC,2638,D,1.0,1,rdkg,False,True,False,,False,False,0,0,0,False,,,0,False
+1374,GGH,8836,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1375,GGT1,2678,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1376,GGT5,2687,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1377,GGTA1,2681,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1378,GLIPR2,152007,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1379,GMFG,9535,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1380,GNB4,59345,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1381,GNG10,2790,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1382,GNG11,2791,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1383,GNG5,2787,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1384,GOLGA8B,440270,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1385,GP9,2815,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1386,GPAT3,84803,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1387,GPD2,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Metformin Hydrochloride,2.0,0,False
+1388,GPR3,2827,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1389,GPR75,10936,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1390,GPRASP1,9737,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1391,GRIN1,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Amantadine Hydrochloride,3.0,0,False
+1392,GSTO1,9446,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1393,GTPBP2,54676,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1394,H1-2,3006,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1395,H1-3,3007,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1396,H1-4,3008,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1397,H2AC8,3012,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1398,H2BC21,8349,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1399,H4C5,8367,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1400,HBEGF,1839,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1401,HBQ1,3049,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1402,HERC5,51191,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1403,HMGCR,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Simvastatin,3.0,0,False
+1404,HMMR,3161,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1405,HMOX1,3162,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1406,HNMT,3176,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1407,HOOK3,84376,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1408,HPGDS,27306,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1409,HRH2,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Ranitidine,3.0,0,False
+1410,HRH3,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Gsk239512,1.0,0,False
+1411,HSPA12A,259217,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1412,HTR2A,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Quetiapine Fumarate,1.0,0,False
+1413,HTR2C,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Quetiapine Fumarate,1.0,0,False
+1414,HTRA1,5654,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1415,IER3,8870,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1416,IFI27,3429,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,2,False,,,0,False
+1417,IFI44,10561,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1418,IFI44L,10964,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1419,IFIT1,3434,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1420,IFIT2,3433,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1421,IFITM2,10581,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1422,IGSF6,10261,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1423,IL13RA1,3597,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1424,IL1A,3552,D,1.0,1,spoke-okn,True,False,False,,False,False,0,0,1,False,,,0,False
+1425,IL1R2,7850,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,1,0,False,,,0,False
+1426,ILDR1,286676,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1427,IMPA1,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Lithium Carbonate,1.0,0,False
+1428,IMPDH1,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Mycophenolate Mofetil; Mycophenolate Sodium,4.0,0,False
+1429,IMPDH2,3615,D,1.0,1,prokn,False,False,False,,False,False,0,0,1,True,Mycophenolate Mofetil; Mycophenolate Sodium,4.0,0,False
+1430,INAFM2,100505573,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1431,IRAK3,11213,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1432,IRF7,3665,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1433,IRS2,8660,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1434,ITGB1,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Firategrast; Natalizumab,4.0,0,False
+1435,ITGB5,3693,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1436,ITSN1,6453,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1437,JADE2,23338,D,1.0,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,0,False
+1438,JCHAIN,3512,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,2,0,0,False,,,0,False
+1439,JPT1,51155,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1440,KCNA1,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Amifampridine; Dalfampridine; Nerispirdine,4.0,0,False
+1441,KCNA2,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Amifampridine; Dalfampridine; Nerispirdine,4.0,0,False
+1442,KCNAB1,7881,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1443,KCNJ10,3766,D,1.0,1,rdkg,False,True,False,,False,False,0,0,0,False,,,0,False
+1444,KCNQ3,3786,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1445,KDM5D,8284,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1446,KDM6A,7403,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1447,KIF11,3832,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1448,KIF13A,63971,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1449,KIF16B,55614,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1450,KLF4,9314,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1451,KLF8,11279,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1452,KLHL14,57565,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1453,KLHL15,80311,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1454,KMO,8564,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1455,KYNU,8942,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1456,LATS2,26524,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1457,LDLRAD3,143458,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1458,LGR4,55366,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1459,LILRA2,11027,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1460,LILRA5,353514,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1461,LINGO1,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Opicinumab,2.0,0,False
+1462,LMO2,4005,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1463,LPCAT2,54947,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1464,LRP3,4037,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1465,LSM10,84967,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1466,LST1,7940,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1467,LY96,23643,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1468,LYVE1,10894,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1469,MAFB,9935,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1470,MAML3,55534,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1471,MAP1LC3A,84557,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1472,MAP7D2,256714,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1473,MARCKSL1,65108,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1474,MARCO,8685,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1475,MAT2B,27430,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1476,MCAM,4162,D,1.0,1,rdkg,False,True,False,,False,False,0,0,0,False,,,0,False
+1477,MCAT,27349,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1478,MCEMP1,199675,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,1,0,False,,,0,False
+1479,MDM4,4194,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1480,MISP3,113230,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1481,MITF,4286,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1482,MKI67,4288,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1483,MOG,4340,D,1.0,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,0,False
+1484,MRC1,4360,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,1,False,,,0,False
+1485,MRPL14,64928,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1486,MS4A4A,51338,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1487,MS4A6A,64231,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1488,MSR1,4481,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1489,MSRB1,51734,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1490,MSRB2,22921,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1491,MTFR2,113115,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1492,MTX3,345778,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1493,MX1,4599,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1494,MX2,4600,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1495,MYL12B,103910,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1496,MYL6,4637,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1497,MYO7B,4648,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1498,MYOF,26509,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,1,False,,,0,False
+1499,NAA30,122830,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1500,NAA38,84316,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1501,NBPF15,284565,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1502,NDUFA1,4694,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1503,NDUFA6,4700,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1504,NDUFB3,4709,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1505,NDUFB6,4712,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1506,NECAB2,54550,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1507,NECTIN2,5819,D,1.0,1,rdkg,False,True,False,,False,False,0,0,0,False,,,0,False
+1508,NEFL,4747,D,1.0,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,0,False
+1509,NFE2,4778,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1510,NFIL3,4783,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1511,NINJ1,4814,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1512,NMI,9111,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1513,NOP10,55505,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1514,NPTN,27020,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1515,NR4A2,4929,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1516,NRARP,441478,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1517,NRCAM,4897,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1518,NRGN,4900,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1519,NRROS,375387,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1520,NT5E,4907,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1521,NT5M,56953,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1522,NUAK1,9891,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1523,NUTF2,10204,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1524,OAS2,4939,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1525,OAS3,4940,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1526,OASL,8638,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,2,0,1,False,,,0,False
+1527,ODF2L,57489,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1528,OGFR,11054,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1529,OLR1,4973,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1530,OPRM1,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Naltrexone,3.0,0,False
+1531,OSBPL10,114884,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1532,OSM,5008,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1533,OST4,100128731,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1534,P2RX7,5027,D,1.0,1,rdkg,False,True,False,,False,False,0,0,0,False,,,0,False
+1535,P2RY12,64805,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1536,P3H2,55214,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1537,PADI2,11240,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1538,PALD1,27143,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1539,PALLD,23022,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1540,PALS2,51678,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1541,PAPSS2,9060,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1542,PARP9,83666,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1543,PAWR,5074,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1544,PCSK1N,27344,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1545,PDGFC,56034,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1546,PDGFRB,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Imatinib Mesylate; Masitinib,3.0,0,False
+1547,PEA15,8682,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1548,PF4,5196,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1549,PFKFB3,5209,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1550,PGAP6,58986,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1551,PGCKA1,55286,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1552,PGLS,25796,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1553,PGR,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Nomegestrol Acetate,3.0,0,False
+1554,PI3,5266,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1555,PID1,55022,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1556,PIGR,5284,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1557,PKHD1L1,93035,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1558,PKIB,5570,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1559,PLAUR,5329,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1560,PLBD1,79887,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1561,PLCXD2,257068,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1562,PLEKHG6,55200,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1563,PLSCR1,5359,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1564,PLXNB2,23654,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1565,PNOC,5368,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1566,POLE4,56655,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1567,POMC,5443,D,1.0,1,rdkg,False,True,False,,False,False,0,0,0,False,,,0,False
+1568,PPARA,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Gemfibrozil,1.0,0,False
+1569,PPBP,5473,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1570,PRDX5,25824,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1571,PRKAR2B,5577,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1572,PROS1,5627,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1573,PSENEN,55851,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1574,PXDC1,221749,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1575,PYGL,5836,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1576,RAB20,55647,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1577,RAB31,11031,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1578,RABAC1,10567,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1579,RALGPS2,55103,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1580,RAPH1,65059,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1581,RBP7,116362,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1582,RGMA,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Elezanumab,2.0,0,False
+1583,RHOB,388,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1584,RHOBTB1,9886,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1585,RHOG,391,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1586,RIN2,54453,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1587,RMI2,116028,D,1.0,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,0,False
+1588,RMRP,6023,D,1.0,1,biomarkerkg,False,False,False,,False,True,0,0,0,False,,,0,True
+1589,RNASE2,6036,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1590,RNASE6,6039,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1591,RNF181,51255,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1592,RNF217,154214,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1593,RPL24,6152,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1594,RPL27,6155,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1595,RPL30,6156,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1596,RPL31,6160,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1597,RPL32,6161,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1598,RPL35,11224,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1599,RPL39,6170,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1600,RPN1,6184,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1601,RPS14,6208,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1602,RPS15A,6210,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1603,RPS21,6227,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1604,RPS27,6232,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1605,RPS29,6235,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1606,RPS4Y1,6192,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1607,RPS9,6203,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1608,RRM2,6241,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1609,RSAD2,91543,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1610,RSPH9,221421,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1611,RTKN2,219790,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1612,RTN1,6252,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1613,RTN3,10313,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1614,RTN4,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Ozanezumab,1.0,0,False
+1615,RXRA,6256,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1616,RYR1,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Dantrolene Sodium,4.0,0,False
+1617,RYR3,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Dantrolene Sodium,4.0,0,False
+1618,S100A11,6282,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1619,S100A12,6283,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1620,S100A4,6275,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1621,S100A6,6277,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1622,S100A8,6279,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1623,S100A9,6280,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1624,S100P,6286,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1625,SAMD4A,23034,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,1,False,,,0,False
+1626,SAMD9L,219285,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1627,SBK2,646643,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1628,SCAI,286205,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1629,SCARF2,91179,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1630,SCIN,85477,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1631,SELENOP,6414,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1632,SERF2,10169,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1633,SERPINA1,5265,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,1,0,False,,,0,False
+1634,SF3B6,51639,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1635,SGK1,6446,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1636,SH3BGRL3,83442,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1637,SH3BP4,23677,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1638,SIPA1L2,57568,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1639,SIRPA,140885,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1640,SLC11A1,6556,D,1.0,1,rdkg,False,True,False,,False,False,0,0,0,False,,,0,False
+1641,SLC18A2,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Dextroamphetamine,2.0,0,False
+1642,SLC1A3,6507,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1643,SLC30A7,148867,D,1.0,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,0,False
+1644,SLC35A3,23443,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1645,SLC38A11,151258,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1646,SLC60A1,148808,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1647,SLC6A2,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Dextroamphetamine; Duloxetine Hydrochloride; Methylphenidate,3.0,0,False
+1648,SLC6A3,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Armodafinil; Dextroamphetamine; Methylphenidate; Modafinil,3.0,0,False
+1649,SLC6A4,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Duloxetine Hydrochloride,3.0,0,False
+1650,SLC7A7,9056,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1651,SLC8A1,6546,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1652,SLPI,6590,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1653,SMCHD1,23347,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1654,SMPDL3A,10924,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1655,SNCA,6622,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1656,SNX7,51375,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1657,SOCS6,9306,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1658,SORT1,6272,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1659,SPEF2,79925,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1660,SPHK1,8877,D,1.0,1,biomarkerkg,False,False,False,,False,True,0,0,0,False,,,0,False
+1661,SPHK2,56848,D,1.0,1,biomarkerkg,False,False,False,,False,True,0,0,0,False,,,0,False
+1662,SPIN4,139886,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1663,SPINK7,84651,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1664,SPP1,6696,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1665,SPRED1,161742,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1666,SRA1,10011,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1667,SSH1,54434,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1668,SSR2,6746,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1669,ST3GAL6,10402,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1670,STAB1,23166,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1671,STEAP3,55240,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1672,STK11IP,114790,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1673,STON2,85439,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1674,STX11,8676,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1675,SULF2,55959,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1676,SULT1A2,6799,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1677,SYNE2,23224,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1678,TAL1,6886,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1679,TALDO1,6888,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1680,TANC1,85461,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1681,TBC1D12,23232,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1682,TCHH,7062,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1683,TDRD7,23424,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1684,TFPT,29844,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1685,TGFBI,7045,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1686,TGM3,7053,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1687,THBD,7056,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1688,THRB,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Liothyronine Sodium,1.0,0,False
+1689,TIMM17B,10245,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1690,TIMP1,7076,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1691,TIMP2,7077,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1692,TLR2,7097,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1693,TLR8,51311,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1694,TM6SF1,53346,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1695,TMCC3,57458,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1696,TMED1,11018,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1697,TMEM120A,83862,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1698,TMEM258,746,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1699,TMEM40,55287,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1700,TMEM52B,120939,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1701,TNFAIP6,7130,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1702,TNFRSF12A,51330,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1703,TNNI2,7136,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1704,TNS3,64759,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1705,TREM1,54210,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1706,TREML1,340205,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1707,TRH,7200,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1708,TRIM21,6737,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1709,TRIM22,10346,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1710,TRIM36,55521,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1711,TRPV1,,D,1.0,1,prokn,False,False,False,,False,False,0,0,0,True,Acetaminophen,3.0,0,False
+1712,TSHZ2,128553,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1713,TSPO,706,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1714,TST,7263,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1715,TTC34,100287898,D,1.0,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,0,False
+1716,TUBA4A,7277,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1717,TXN,7295,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1718,UBC,7316,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1719,UBL5,59286,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1720,UBTD1,80019,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1721,UCP3,7352,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1722,UQCR10,29796,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1723,UQCR11,10975,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1724,UQCRQ,27089,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1725,USP9Y,8287,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1726,UTS2R,2837,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1727,VCAN,1462,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1728,VEGFA,7422,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1729,VENTX,27287,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1730,VMO1,284013,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1731,VSIG4,11326,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1732,WDFY3,23001,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1733,WLS,79971,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1734,WWOX,51741,D,1.0,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,0,False
+1735,XKR6,286046,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1736,ZBTB38,253461,D,1.0,1,spoke-okn,True,False,False,,False,False,0,0,0,False,,,0,False
+1737,ZFHX3,463,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1738,ZFY,7544,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1739,ZMAT1,84460,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1740,ZNF154,7710,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1741,ZNF181,339318,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1742,ZNF273,10793,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1743,ZNF577,84765,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1744,ZNF714,148206,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,0,1,0,False,,,0,False
+1745,ZNFX1,57169,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,1,False,,,0,False
+1746,ZNHIT1,10467,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1747,ZP3,7784,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
+1748,ZWINT,11130,D,1.0,1,gene-expression-atlas-okn,False,False,False,,False,False,1,0,0,False,,,0,False
