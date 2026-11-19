@@ -11,6 +11,10 @@ notebook — have their full procedures at the end.
 - Map tiles read "Access blocked … OpenStreetMap's volunteer-run servers" → the basemap is OSM's own
   tile server, which rejects Referer-less requests (file:// reports, contextily). Rebuild with the
   helpers' default Esri World Street Map (`okn_figstyle.BASEMAP_TILES`).
+- Interactive map shows only a colour bar and attribution, no basemap or shapes (in a saved HTML
+  file and in the notebook) → it's a plotly tile map (`Choroplethmap`/`Scattermap`, `*_map`/`*mapbox`),
+  whose WebGL worker can't load from file:// or an iframe. Rebuild it with folium on
+  `BASEMAP_TILES` (one `GeoJson` + a `setStyle` drop-down for several layers).
 - Figures out of numerical order after inserting a new one → renumber captions + files (enforced by
   `check_figure_numbering` inside the `check_report_parity` delivery gate — it FAILs on non-consecutive
   captions or filenames, so this can't ship silently).

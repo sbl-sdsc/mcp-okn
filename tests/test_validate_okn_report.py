@@ -576,3 +576,96 @@ def test_osm_tile_server_in_figure_html_fails(tmp_path):
     )
     r = v.validate(str(study))
     assert any("figures/map.html" in e for e in r.errors), r.errors
+
+
+# A plotly figure page, cut down: the drawn trace, then the default template that styles every trace
+# type by name (so even a bar chart's page mentions "scattermap").
+_PLOTLY_TEMPLATE = (
+    '"template":{"data":{"scattermap":[{"type":"scattermap","marker":{"colorbar":'
+    '{"outlinewidth":0}}}],"bar":[{"type":"bar"}]}}'
+)
+
+
+def _plotly_page(trace_type: str) -> str:
+    return (
+        '<script>Plotly.newPlot("fig", [{"z":[1],"type":"'
+        + trace_type
+        + '"}], {'
+        + _PLOTLY_TEMPLATE
+        + "})</script>"
+    )
+
+
+def test_plotly_tile_map_in_figure_html_fails(tmp_path):
+    study = _build(tmp_path)
+    (study / "figures" / "map.html").write_text(_plotly_page("choroplethmap"))
+    r = v.validate(str(study))
+    assert any(
+        "figures/map.html" in e and "plotly tile map (choroplethmap)" in e
+        for e in r.errors
+    ), r.errors
+
+
+def test_plotly_tile_map_inlined_in_report_fails(tmp_path):
+    study = _build(tmp_path)
+    html_path = study / f"{TOKEN}_report.html"
+    srcdoc = (
+        _plotly_page("scattermapbox")
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+    html_path.write_text(
+        html_path.read_text().replace(
+            "</body>", f'<iframe srcdoc="{srcdoc}"></iframe></body>'
+        )
+    )
+    r = v.validate(str(study))
+    assert any("plotly tile map (scattermapbox)" in e for e in r.errors), r.errors
+
+
+def test_plotly_non_map_figure_passes(tmp_path):
+    # The template's "scattermap" entry is styling, not a drawn map; plotly's SVG geo maps also render.
+    study = _build(tmp_path)
+    (study / "figures" / "bars.html").write_text(_plotly_page("bar"))
+    (study / "figures" / "geo.html").write_text(_plotly_page("choropleth"))
+    r = v.validate(str(study))
+    assert not any("plotly tile map" in e for e in r.errors), r.errors
+
+
+def test_plotly_tile_map_in_notebook_output_fails(tmp_path):
+    study = _build(tmp_path)
+    nb_path = study / NB / f"{NB}.ipynb"
+    nb = json.loads(nb_path.read_text())
+    nb["cells"].append(
+        {
+            "cell_type": "code",
+            "metadata": {},
+            "execution_count": 1,
+            "source": ["fig"],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "metadata": {},
+                    # Pretty-printed with sorted keys, as Jupyter saves it: "type" comes last.
+                    "data": {
+                        "application/vnd.plotly.v1+json": {
+                            "data": [{"locations": ["06"], "type": "densitymap"}],
+                            "layout": {
+                                "template": {
+                                    "data": {"scattermap": [{"type": "scattermap"}]}
+                                }
+                            },
+                        }
+                    },
+                }
+            ],
+        }
+    )
+    nb_path.write_text(json.dumps(nb, indent=1, sort_keys=True))
+    r = v.validate(str(study))
+    errs = [e for e in r.errors if "plotly tile map" in e]
+    assert errs and "(densitymap)" in errs[0] and f"{NB}/{NB}.ipynb" in errs[0], (
+        r.errors
+    )
