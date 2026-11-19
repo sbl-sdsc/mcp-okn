@@ -1,0 +1,10 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?kind (COUNT(?stmt) AS ?n) (COUNT(DISTINCT ?loc) AS ?nloc) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?stmt rdf:subject <http://purl.obolibrary.org/obo/DOID_9351> ; rdf:predicate kg:PREVALENCE_DpL ; rdf:object ?loc ;
+          dcterms:source "PLACES" .
+    OPTIONAL { ?loc <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ?kind }
+  }
+} GROUP BY ?kind

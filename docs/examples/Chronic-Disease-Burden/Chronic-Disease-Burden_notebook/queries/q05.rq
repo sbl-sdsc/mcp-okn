@@ -1,0 +1,11 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?sdoh ?label ?method ?variable (COUNT(?stmt) AS ?n) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?stmt rdf:predicate kg:PREVALENCEIN_SpL ; rdf:subject ?sdoh ; rdf:object ?loc ; dcterms:source "County Health Rankings" .
+    ?loc <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <http://www.wikidata.org/entity/Q28575> .
+    OPTIONAL { ?stmt kg:method ?method } OPTIONAL { ?stmt kg:variable ?variable } OPTIONAL { ?sdoh rdfs:label ?label }
+  }
+} GROUP BY ?sdoh ?label ?method ?variable

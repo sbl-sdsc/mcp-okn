@@ -1,0 +1,9 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?state (COUNT(DISTINCT ?city) AS ?places) (COUNT(DISTINCT ?c) AS ?counties_linked) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?stmt rdf:predicate kg:PREVALENCE_DpL ; rdf:subject <http://purl.obolibrary.org/obo/DOID_9351> ; rdf:object ?city ; dcterms:source "PLACES" ; kg:state_abbr ?state .
+    OPTIONAL { ?city kg:PARTOF_LpL ?c . ?c <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <http://www.wikidata.org/entity/Q28575> . }
+  }
+} GROUP BY ?state

@@ -1,0 +1,11 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?fips (SUM(?dv * ?pop) AS ?wsum) (SUM(?pop) AS ?popsum) (COUNT(?city) AS ?nplaces) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?stmt rdf:subject <http://purl.obolibrary.org/obo/DOID_9351> ; rdf:predicate kg:PREVALENCE_DpL ; rdf:object ?city ;
+          dcterms:source "PLACES" ; kg:data_value ?dv ; kg:total_population ?pop .
+    ?city kg:PARTOF_LpL ?county . ?county <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <http://www.wikidata.org/entity/Q28575> .
+    BIND(REPLACE(STR(?county), "^.*/location/", "") AS ?fips)
+  }
+} GROUP BY ?fips

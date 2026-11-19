@@ -1,0 +1,83 @@
+sdoh,label,method,variable,n
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/1220612000,Access to physical activity facility (observable entity),percentage(quartile),access to exercise opportunities,3069
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/86198006,Administration of vaccine product containing only Influenza virus antigen (procedure),percentage(quartile),flu vaccinations,3114
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/102413006,Air pollution (event),average(quartile),air pollution - particulate matter,3107
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_alcohol-impaired_driving_deaths,alcohol-impaired_driving_deaths,percentage(quartile),alcohol-impaired driving deaths,3105
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/413490006,American Indian or Alaska native (racial group),percentage,american indian or alaska native,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/413582008,Asian race (racial group),percentage,asian,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_broadband_access,broadband_access,percentage,broadband access,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_census_participation,census_participation,percentage,census participation,3129
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/413817003,Child day care center (environment),percentage,child care centers,2984
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_child_care_cost_burden,child_care_cost_burden,percentage,child care cost burden,3130
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_child_mortality,child_mortality,percentage,child mortality,1876
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_children_eligible_for_free_or_reduced_price_lunch,children_eligible_for_free_or_reduced_price_lunch,percentage,children eligible for free or reduced price lunch,2560
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_children_in_poverty,children_in_poverty,percentage(quartile),children in poverty,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_dentists,dentists,ratio(quartile),dentists,3046
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_diabetes_prevalence,diabetes_prevalence,percentage,diabetes prevalence,3129
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_disconnected_youth,disconnected_youth,percentage,disconnected youth,1200
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/228326007,Drinking binge (finding),percentage(quartile),excessive drinking,3129
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/102415004,Drinking water pollution (event),presence(quartile),drinking water violations,3089
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_driving_alone_to_work,driving_alone_to_work,percentage(quartile),driving alone to work,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_drug_overdose_deaths,drug_overdose_deaths,percentage,drug overdose deaths,1791
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/105436006,Elderly person (person),percentage,65 and older,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_firearm_fatalities,firearm_fatalities,percentage,firearm fatalities,2262
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/733423003,Food insecurity (finding),percentage,food insecurity,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_food_environment_index,food_environment_index,index(quartile),food environment index,3101
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_frequent_mental_distress,frequent_mental_distress,percentage,frequent mental distress,3129
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_frequent_physical_distress,frequent_physical_distress,percentage,frequent physical distress,3129
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_gender_pay_gap,gender_pay_gap,ratio,gender pay gap,3124
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_high_school_completion,high_school_completion,percentage(quartile),high school completion,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_high_school_graduation,high_school_graduation,percentage,high school graduation,2306
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/414408004,Hispanic (racial group),percentage,hispanic,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_hiv_prevalence,hiv_prevalence,percentage,hiv prevalence,2674
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_homeownership,homeownership,percentage,homeownership,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/27935005,Homicide (event),percentage,homicides,1318
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_income_inequality,income_inequality,ratio(quartile),income inequality,3124
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_infant_mortality,infant_mortality,percentage,infant mortality,1209
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_injury_deaths,injury_deaths,percentage(quartile),injury deaths,3027
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_juvenile_arrests,juvenile_arrests,percentage,juvenile arrests,1959
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_life_expectancy,life_expectancy,average,life expectancy,3062
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_limited_access_to_healthy_foods,limited_access_to_healthy_foods,percentage,limited access to healthy foods,3101
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_long_commute_-_driving_alone,long_commute_-_driving_alone,percentage(quartile),long commute - driving alone,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/276610007,Low birth weight infant (disorder),percentage(quartile),low birthweight,3026
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_math_scores,math_scores,average,math scores,2688
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_mental_health_providers,mental_health_providers,ratio(quartile),mental health providers,2930
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/410599005,Minor (person),percentage,below 18 years of age,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_motor_vehicle_crash_deaths,motor_vehicle_crash_deaths,percentage,motor vehicle crash deaths,2682
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_native_hawaiian_or_other_pacific_islander,native_hawaiian_or_other_pacific_islander,percentage,native hawaiian or other pacific islander,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_non-hispanic_black,non-hispanic_black,percentage,non-hispanic black,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_non-hispanic_white,non-hispanic_white,percentage,non-hispanic white,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/455961000124100,Not proficient in English (finding),percentage,not proficient in english,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/414916001,Obesity (disorder),percentage(quartile),adult obesity,3129
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_other_primary_care_providers,other_primary_care_providers,ratio,other primary care providers,3120
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_poor_mental_health_days,poor_mental_health_days,average(quartile),poor mental health days,3129
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_poor_or_fair_health,poor_or_fair_health,percentage(quartile),poor or fair health,3129
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_poor_physical_health_days,poor_physical_health_days,average(quartile),poor physical health days,3129
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_premature_age-adjusted_mortality,premature_age-adjusted_mortality,percentage,premature age-adjusted mortality,3072
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_premature_death,premature_death,percentage(quartile),premature death,2855
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_preventable_hospital_stays,preventable_hospital_stays,percentage(quartile),preventable hospital stays,3061
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_primary_care_physicians,primary_care_physicians,ratio(quartile),primary care physicians,2985
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_reading_scores,reading_scores,average,reading scores,2773
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_residential_segregation_-_black/white,residential_segregation_-_black/white,index,residential segregation - black/white,2075
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_rural,rural,percentage,rural,3126
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_school_funding_adequacy,school_funding_adequacy,average,school funding adequacy,3075
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_school_segregation,school_segregation,index,school segregation,2900
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/24623002,Screening mammography (procedure),percentage(quartile),mammography screening,3112
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/415510005,Sedentary lifestyle (finding),percentage(quartile),physical inactivity,3129
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_severe_housing_cost_burden,severe_housing_cost_burden,percentage,severe housing cost burden,3127
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_severe_housing_problems,severe_housing_problems,percentage(quartile),severe housing problems,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/8098009,Sexually transmitted infectious disease (disorder),percentage(quartile),sexually transmitted infections,3008
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/21959005,Single parent family (finding),percentage(quartile),children in single-parent households,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/130989002,Sleep deprivation (finding),percentage,insufficient sleep,3129
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/77176002,Smoker (finding),percentage(quartile),adult smoking,3129
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_social_associations,social_associations,percentage(quartile),social associations,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_some_college,some_college,percentage(quartile),some college,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/44301001,Suicide (event),percentage,suicides,2424
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_teen_births,teen_births,percentage(quartile),teen births,2943
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_traffic_volume,traffic_volume,average,traffic volume,2980
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/73438004,Unemployed (finding),percentage(quartile),unemployment,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_uninsured,uninsured,percentage(quartile),uninsured,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_uninsured_adults,uninsured_adults,percentage,uninsured adults,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_uninsured_children,uninsured_children,percentage,uninsured children,3131
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_voter_turnout,voter_turnout,percentage,voter turnout,3103
+https://purl.org/okn/frink/kg/spoke-okn/sdoh/224526002,Woman (person),percentage,female,3131

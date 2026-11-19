@@ -1,3 +1,0 @@
-source,location_kind,data_value_type,n_diseases,n_statements,n_locations,year
-IHME,https://schema.org/Country,,144,28800,200,2019
-PLACES,https://schema.org/City,Age-adjusted prevalence,9,246285,27365,

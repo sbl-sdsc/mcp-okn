@@ -1,0 +1,5 @@
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+# Background: distinct genes carrying any spoke-okn disease->gene association (ASSOCIATES_DaG), and number of diseases
+SELECT (COUNT(DISTINCT ?g) AS ?n_genes) (COUNT(DISTINCT ?d) AS ?n_diseases) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { ?d kg:ASSOCIATES_DaG ?g . }
+}

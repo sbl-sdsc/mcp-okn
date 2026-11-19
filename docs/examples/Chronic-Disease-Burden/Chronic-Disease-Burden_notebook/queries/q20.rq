@@ -1,0 +1,12 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+# Extends join recipe A10 skeleton (spoke-okn DOID -> ubergraph skos:exactMatch -> MONDO) for the 9 PLACES conditions
+SELECT ?doid ?doid_label ?mondo ?mondo_label WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    VALUES ?doid { obo:DOID_9351 obo:DOID_9970 obo:DOID_10763 obo:DOID_2349 obo:DOID_3393 obo:DOID_6713 obo:DOID_3083 obo:DOID_2841 obo:DOID_1596 }
+    ?doid a <https://w3id.org/biolink/vocab/Disease> ; rdfs:label ?doid_label .
+  }
+  OPTIONAL { GRAPH <https://purl.org/okn/frink/kg/ubergraph> {
+    ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> ?doid . FILTER(STRSTARTS(STR(?mondo),'http://purl.obolibrary.org/obo/MONDO_'))
+    OPTIONAL { ?mondo rdfs:label ?mondo_label } } }
+}

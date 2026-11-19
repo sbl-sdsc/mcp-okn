@@ -1,0 +1,9 @@
+pandas>=1.5
+numpy
+scipy
+matplotlib>=3.10
+geopandas>=0.14
+libpysal
+esda
+folium
+openpyxl
