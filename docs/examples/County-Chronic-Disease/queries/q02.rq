@@ -1,0 +1,13 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+# Q2 - The nine CDC PLACES measures stored as place-level (City) disease prevalence, with the survey item each DOID term stands for
+SELECT ?disease ?disease_label ?short_question_text ?data_value_type ?unit (COUNT(?stmt) AS ?n_places) (SUM(xsd:double(?tp)) AS ?pop_covered) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?stmt rdf:predicate kg:PREVALENCE_DpL ; rdf:subject ?disease ; dcterms:source "PLACES" ;
+          kg:short_question_text ?short_question_text ; kg:data_value_type ?data_value_type ; kg:data_value_unit ?unit ; kg:total_population ?tp .
+    OPTIONAL { ?disease rdfs:label ?disease_label }
+  }
+} GROUP BY ?disease ?disease_label ?short_question_text ?data_value_type ?unit ORDER BY ?short_question_text

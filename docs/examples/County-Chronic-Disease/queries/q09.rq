@@ -1,0 +1,28 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX doid: <http://purl.obolibrary.org/obo/DOID_>
+# Q9 - CDC PLACES place-level age-adjusted prevalence rolled up to counties (population-weighted, see Q8); state FIPS 14-28
+SELECT ?fips (COUNT(DISTINCT ?city) AS ?n_places) (ROUND(SUM(IF(?col="htn",?w,0))) AS ?pop_places)
+  (ROUND(10*SUM(IF(?col="htn",?dv*?w,0))/SUM(IF(?col="htn",?w,0)))/10 AS ?hypertension)
+  (ROUND(10*SUM(IF(?col="chd",?dv*?w,0))/SUM(IF(?col="chd",?w,0)))/10 AS ?chd)
+  (ROUND(10*SUM(IF(?col="stroke",?dv*?w,0))/SUM(IF(?col="stroke",?w,0)))/10 AS ?stroke)
+  (ROUND(10*SUM(IF(?col="dep",?dv*?w,0))/SUM(IF(?col="dep",?w,0)))/10 AS ?depression)
+  (ROUND(10*SUM(IF(?col="dm",?dv*?w,0))/SUM(IF(?col="dm",?w,0)))/10 AS ?diabetes_pl)
+  (ROUND(10*SUM(IF(?col="ob",?dv*?w,0))/SUM(IF(?col="ob",?w,0)))/10 AS ?obesity_pl)
+  (ROUND(10*SUM(IF(?col="ast",?dv*?w,0))/SUM(IF(?col="ast",?w,0)))/10 AS ?asthma_pl)
+  (ROUND(10*SUM(IF(?col="copd",?dv*?w,0))/SUM(IF(?col="copd",?w,0)))/10 AS ?copd_pl)
+  (ROUND(10*SUM(IF(?col="chol",?dv*?w,0))/SUM(IF(?col="chol",?w,0)))/10 AS ?high_chol_pl)
+WHERE {
+  { SELECT ?city (COUNT(DISTINCT ?c2) AS ?nc) WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+      ?city kg:PARTOF_LpL ?c2 . ?c2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <http://www.wikidata.org/entity/Q28575> . } } GROUP BY ?city }
+  VALUES (?d ?col) { (doid:10763 "htn") (doid:3393 "chd") (doid:6713 "stroke") (doid:1596 "dep") (doid:9351 "dm") (doid:9970 "ob") (doid:2841 "ast") (doid:3083 "copd") (doid:2349 "chol") }
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?stmt rdf:subject ?d ; rdf:predicate kg:PREVALENCE_DpL ; rdf:object ?city ; kg:data_value ?dvs ; kg:total_population ?tp .
+    ?city kg:PARTOF_LpL ?cty . ?cty <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <http://www.wikidata.org/entity/Q28575> .
+  }
+  BIND(STRAFTER(STR(?cty), "/location/") AS ?fips)
+  FILTER(REGEX(?fips, "^(1[4-9]|2[0-8])[0-9]{3}$"))
+  BIND(xsd:double(?dvs) AS ?dv)
+  BIND(xsd:double(?tp) / ?nc AS ?w)
+} GROUP BY ?fips ORDER BY ?fips

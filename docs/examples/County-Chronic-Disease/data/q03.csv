@@ -1,0 +1,25 @@
+col,sdoh,source,yr,n_counties,min,mean,max
+age65,https://purl.org/okn/frink/kg/spoke-okn/sdoh/ACS_PCT_AGE_ABOVE65,AHRQ SDOH Database,2020,3130,3.03,19.25,57.78
+arthritis,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CDCP_ARTHRITIS_ADULT_A,AHRQ SDOH Database,2019,3110,15.2,25.09,38.7
+asthma,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CDCP_ASTHMA_ADULT_A,AHRQ SDOH Database,2019,3110,7.2,9.72,13.3
+bachelor,https://purl.org/okn/frink/kg/spoke-okn/sdoh/ACS_PCT_BACHELOR_DGR,AHRQ SDOH Database,2020,3130,0.0,14.63,43.0
+black,https://purl.org/okn/frink/kg/spoke-okn/sdoh/ACS_PCT_BLACK_NONHISP,AHRQ SDOH Database,2020,3130,0.0,8.86,87.79
+ckd,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CDCP_KIDNEY_DISEASE_ADULT_A,AHRQ SDOH Database,2019,3110,2.0,2.94,5.9
+copd,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CDCP_PULMONARY_ADULT_A,AHRQ SDOH Database,2019,3110,3.2,7.4,15.5
+heart_hosp,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CDCA_HEART_HOSP_RATE_ABOVE65,AHRQ SDOH Database,2018,3114,19.1,60.05,126.5
+heart_mort,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CDCA_HEART_DTH_RATE_ABOVE35,AHRQ SDOH Database,2019,3128,110.1,461.87,974.7
+high_chol,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CDCP_CHOLES_ADULT_A,AHRQ SDOH Database,2019,3110,22.3,29.53,36.9
+hispanic,https://purl.org/okn/frink/kg/spoke-okn/sdoh/ACS_PCT_HISPANIC,AHRQ SDOH Database,2020,3130,0.0,9.57,98.9
+inactivity,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CDCP_NO_PHY_ACTV_ADULT_A,AHRQ SDOH Database,2019,3110,12.9,30.38,51.8
+income,https://purl.org/okn/frink/kg/spoke-okn/sdoh/ACS_MEDIAN_HH_INC,AHRQ SDOH Database,2020,3129,22292.0,55002.1,147111.0
+pop,https://purl.org/okn/frink/kg/spoke-okn/sdoh/ACS_TOT_POP_WT,AHRQ SDOH Database,2020,3130,117.0,104125,10040682.0
+poverty,https://purl.org/okn/frink/kg/spoke-okn/sdoh/SAIPE_PCT_POV,AHRQ SDOH Database,2020,3130,3.0,13.72,43.9
+stroke_hosp,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CDCA_STROKE_HOSP_RATE_ABOVE65,AHRQ SDOH Database,2018,3112,3.2,11.82,23.6
+stroke_mort,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CDCA_STROKE_DTH_RATE_ABOVE35,AHRQ SDOH Database,2019,3124,0.0,76.04,172.2
+diabetes,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_diabetes_prevalence,County Health Rankings,2023,3129,5.6,10.47,21.5
+food_env,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_food_environment_index,County Health Rankings,2023,3101,0.0,7.43,10.0
+mental_distress,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_frequent_mental_distress,County Health Rankings,2023,3129,9.8,15.74,23.3
+obesity,https://purl.org/okn/frink/kg/spoke-okn/sdoh/414916001,County Health Rankings,2023,3129,17.6,36.2,53.2
+physical_distress,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_frequent_physical_distress,County Health Rankings,2023,3129,5.6,10.96,20.9
+rural,https://purl.org/okn/frink/kg/spoke-okn/sdoh/CHR_rural,County Health Rankings,2023,3126,0.0,58.61,100.0
+smoking,https://purl.org/okn/frink/kg/spoke-okn/sdoh/77176002,County Health Rankings,2023,3129,6.7,20.04,41.1

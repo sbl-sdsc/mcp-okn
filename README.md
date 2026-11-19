@@ -103,8 +103,8 @@ research question, spanning disease biology, spaceflight, environmental exposure
 and justice, and infrastructure. Each finding is tagged with its source(s) and
 ranked by cross-source agreement. Every case study is a self-contained folder under
 `docs/examples/{Name}/` with an interactive HTML report, a literature comparison, a
-reproducibility record of every verbatim SPARQL query, an Excel workbook, and the
-figures, scripts, and data that produced them.
+reproducibility record of every verbatim SPARQL query (a re-runnable Jupyter notebook in
+newer studies), an Excel workbook, and the figures, scripts, and data that produced them.
 
 **Prerequisites for re-running a case study:**
 
@@ -113,6 +113,7 @@ figures, scripts, and data that produced them.
 
 | Case study | Model | Report | Literature Comparison | Data | Reproducibility | Folder |
 |---|---|---|---|---|---|---|
+| **US county chronic disease burden** — 2 KGs | `claude-opus-5-5` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/County-Chronic-Disease/county-chronic-disease-2026-11-18-2.html) | — | [xlsx](docs/examples/County-Chronic-Disease/outputs/county_chronic_disease_results.xlsx) | [notebook](docs/examples/County-Chronic-Disease/county-chronic-disease-2026-11-18-2.ipynb) | [files](docs/examples/County-Chronic-Disease/) |
 | **Type 2 diabetes** — 16 KGs | `claude-opus-4-8` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Diabetes/Diabetes_report.html) | [md](docs/examples/Diabetes/Diabetes_literature_comparison.md) | [xlsx](docs/examples/Diabetes/Diabetes_results.xlsx) | [md](docs/examples/Diabetes/Diabetes_reproducibility.md) | [files](docs/examples/Diabetes/) |
 | **Alzheimer's disease** — 8 KGs | `claude-opus-4-8` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/Alzheimers/Alzheimers_report.html) | [md](docs/examples/Alzheimers/Alzheimers_literature_comparison.md) | [xlsx](docs/examples/Alzheimers/Alzheimers_results.xlsx) | [md](docs/examples/Alzheimers/Alzheimers_reproducibility.md) | [files](docs/examples/Alzheimers/) |
 | **Multiple sclerosis** — 14 KGs | `claude-opus-4-8` | [HTML](https://sbl-sdsc.github.io/mcp-okn/docs/examples/MS/MS_report.html) | [md](docs/examples/MS/MS_literature_comparison.md) | [xlsx](docs/examples/MS/MS_results.xlsx) | [md](docs/examples/MS/MS_reproducibility.md) | [files](docs/examples/MS/) |
