@@ -1,0 +1,142 @@
+hpo,label,max_lor,max_pair,n_datasets
+HP_0000103,Polyuria,3.11097,89,1
+HP_0000365,Hearing impairment,1.6253,56,1
+HP_0000486,Strabismus,2.84269,33,1
+HP_0000508,Ptosis,2.37184,30,1
+HP_0000613,Photophobia,3.34657,97,1
+HP_0000708,Behavioral abnormality,3.38777,80,1
+HP_0000709,Psychosis,2.50984,23,1
+HP_0000716,Depression,1.71712,123,1
+HP_0000729,Autistic behavior,2.70954,30,1
+HP_0000739,Anxiety,1.50687,102,1
+HP_0000750,Delayed speech and language development,2.36104,29,1
+HP_0000805,Enuresis,3.51085,88,1
+HP_0000820,Abnormality of the thyroid gland,2.5353,68,1
+HP_0000858,Irregular menstruation,1.98815,31,1
+HP_0000952,Jaundice,2.99803,71,1
+HP_0000956,Acanthosis nigricans,4.5132,60,1
+HP_0000961,Cyanosis,3.46083,101,1
+HP_0000964,Eczema,1.55256,34,1
+HP_0000967,Petechiae,3.48688,49,1
+HP_0000973,Cutis laxa,4.43402,22,1
+HP_0000975,Hyperhidrosis,1.73487,25,1
+HP_0000978,Bruising susceptibility,1.60106,23,1
+HP_0000980,Pallor,3.7146,107,1
+HP_0000989,Pruritus,1.58627,94,1
+HP_0001065,Striae distensae,3.64197,31,1
+HP_0001249,Intellectual disability,1.77058,25,1
+HP_0001250,Seizure,2.40852,137,1
+HP_0001252,Hypotonia,3.22465,31,1
+HP_0001254,Lethargy,2.26617,20,1
+HP_0001257,Spasticity,3.01601,22,1
+HP_0001263,Global developmental delay,3.04028,63,1
+HP_0001276,Hypertonia,3.80633,21,1
+HP_0001279,Syncope,1.74899,57,1
+HP_0001288,Gait disturbance,2.18674,28,1
+HP_0001324,Muscle weakness,2.92504,89,1
+HP_0001337,Tremor,1.51509,53,1
+HP_0001370,Rheumatoid arthritis,1.63515,124,1
+HP_0001371,Flexion contracture,2.09592,24,1
+HP_0001386,Joint swelling,2.77399,72,1
+HP_0001387,Joint stiffness,3.03819,82,1
+HP_0001392,Abnormality of the liver,1.56529,53,1
+HP_0001397,Hepatic steatosis,2.7643,52,1
+HP_0001508,Failure to thrive,3.77176,87,1
+HP_0001510,Growth delay,2.94491,26,1
+HP_0001513,Obesity,1.93091,93,1
+HP_0001596,Alopecia,2.00686,48,1
+HP_0001609,Hoarse voice,2.92426,94,1
+HP_0001627,Abnormal heart morphology,3.62902,108,1
+HP_0001629,Ventricular septal defect,3.2528,34,1
+HP_0001631,Atrial septal defect,2.84849,31,1
+HP_0001635,Congestive heart failure,1.85868,67,1
+HP_0001638,Cardiomyopathy,3.02834,91,1
+HP_0001643,Patent ductus arteriosus,2.66718,26,1
+HP_0001644,Dilated cardiomyopathy,3.11858,37,1
+HP_0001649,Tachycardia,2.03073,61,1
+HP_0001662,Bradycardia,1.50456,28,1
+HP_0001667,Right ventricular hypertrophy,3.48431,34,1
+HP_0001699,Sudden death,2.83645,21,1
+HP_0001712,Left ventricular hypertrophy,2.06176,26,1
+HP_0001714,Ventricular hypertrophy,2.40765,38,1
+HP_0001824,Weight loss,1.63792,123,1
+HP_0001903,Anemia,2.04996,120,1
+HP_0001944,Dehydration,2.75946,57,1
+HP_0001959,Polydipsia,2.77436,21,1
+HP_0001962,Palpitations,2.5042,168,1
+HP_0002013,Vomiting,2.00474,148,1
+HP_0002014,Diarrhea,1.91715,120,1
+HP_0002015,Dysphagia,1.96633,75,1
+HP_0002019,Constipation,1.89333,125,1
+HP_0002020,Gastroesophageal reflux,1.55701,98,1
+HP_0002024,Malabsorption,2.7305,30,1
+HP_0002027,Abdominal pain,1.77777,134,1
+HP_0002039,Anorexia,2.28013,34,1
+HP_0002088,Abnormal lung morphology,1.76055,20,1
+HP_0002094,Dyspnea,2.34978,190,1
+HP_0002098,Respiratory distress,2.76871,34,1
+HP_0002099,Asthma,2.07569,133,1
+HP_0002104,Apnea,2.0912,62,1
+HP_0002105,Hemoptysis,2.80617,71,1
+HP_0002169,Clonus,2.46775,46,1
+HP_0002172,Postural instability,2.00549,30,1
+HP_0002240,Hepatomegaly,2.8383,34,1
+HP_0002248,Hematemesis,3.63918,57,1
+HP_0002315,Headache,1.97832,150,1
+HP_0002321,Vertigo,2.4937,178,1
+HP_0002329,Drowsiness,1.752,23,1
+HP_0002360,Sleep disturbance,2.32012,81,1
+HP_0002527,Falls,1.54058,46,1
+HP_0002591,Polyphagia,3.68816,62,1
+HP_0002650,Scoliosis,2.73374,104,1
+HP_0002653,Bone pain,3.22811,83,1
+HP_0002829,Arthralgia,1.82345,115,1
+HP_0002870,Obstructive sleep apnea,2.33152,44,1
+HP_0002910,Elevated hepatic transaminase,2.26796,30,1
+HP_0003233,Decreased HDL cholesterol concentration,2.16509,36,1
+HP_0003270,Abdominal distention,2.20648,63,1
+HP_0003326,Myalgia,2.40687,86,1
+HP_0004322,Short stature,2.97847,28,1
+HP_0004324,Increased body weight,3.04752,181,1
+HP_0004395,Malnutrition,3.94517,54,1
+HP_0004396,Poor appetite,1.92541,73,1
+HP_0004905,Low levels of vitamin A,3.62815,26,1
+HP_0005135,Abnormal T-wave,3.7233,28,1
+HP_0005162,Abnormal left ventricular function,3.27056,35,1
+HP_0007018,Attention deficit hyperactivity disorder,1.93534,23,1
+HP_0009763,Limb pain,2.40031,30,1
+HP_0010535,Sleep apnea,1.87985,50,1
+HP_0011675,Arrhythmia,2.5509,73,1
+HP_0011876,Abnormal platelet volume,3.15131,20,1
+HP_0011947,Respiratory tract infection,2.05696,40,1
+HP_0011967,Decreased circulating copper concentration,4.89386,25,1
+HP_0011968,Feeding difficulties,4.45556,101,1
+HP_0012378,Fatigue,2.11119,177,1
+HP_0012587,Macroscopic hematuria,2.48888,85,1
+HP_0012735,Cough,2.35655,181,1
+HP_0012743,Abdominal obesity,4.55996,50,1
+HP_0012764,Orthopnea,1.79411,40,1
+HP_0025092,Epidermal acanthosis,3.62212,68,1
+HP_0025168,Left ventricular diastolic dysfunction,3.98416,32,1
+HP_0025169,Left ventricular systolic dysfunction,4.21712,35,1
+HP_0025267,Snoring,2.57779,109,1
+HP_0025406,Asthenia,2.30673,171,1
+HP_0025501,Class III obesity,6.06947,31,1
+HP_0025502,Overweight,1.86571,50,1
+HP_0030148,Heart murmur,1.77741,25,1
+HP_0030157,Flank pain,1.64676,26,1
+HP_0030718,Right atrial enlargement,2.37593,24,1
+HP_0030766,Ear pain,2.92446,91,1
+HP_0030828,Wheezing,2.40005,85,1
+HP_0031417,Rhinorrhea,2.3538,99,1
+HP_0031589,Suicidal ideation,3.43829,63,1
+HP_0032254,Increased circulating copper concentration,5.41705,43,1
+HP_0033050,Pharyngalgia,1.8857,70,1
+HP_0033454,Tube feeding,3.65907,26,1
+HP_0033567,Right axis deviation,2.20457,40,1
+HP_0040135,Abnormal transferrin saturation,5.80759,29,1
+HP_0100033,Tics,3.08454,45,1
+HP_0100512,Low levels of vitamin D,2.14845,74,1
+HP_0100518,Dysuria,1.93735,89,1
+HP_0100749,Chest pain,2.15352,159,1
+HP_0200128,Biventricular hypertrophy,4.32077,23,1

@@ -1,0 +1,8 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT (COUNT(DISTINCT ?sym) AS ?N_bp) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    ?st rdf:predicate <https://w3id.org/biolink/vocab/actively_involved_in> ; rdf:subject ?prot .
+    ?gene <http://semanticscience.org/resource/SIO_010078> ?prot ; a <http://purl.uniprot.org/core/Gene> ; rdfs:label ?sym .
+  }
+}

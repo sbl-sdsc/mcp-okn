@@ -1,0 +1,11 @@
+PREFIX biolink: <https://w3id.org/biolink/vocab/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+SELECT ?d ?label (GROUP_CONCAT(DISTINCT STR(?see); separator="|") AS ?seeAlso) (GROUP_CONCAT(DISTINCT STR(?mesh); separator="|") AS ?meshList) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?d a biolink:Disease ; rdfs:label ?label .
+    FILTER(CONTAINS(LCASE(STR(?label)), "sclerosis") || CONTAINS(LCASE(STR(?label)), "demyelinat"))
+    OPTIONAL { ?d rdfs:seeAlso ?see }
+    OPTIONAL { ?d kg:mesh_list ?mesh }
+  }
+} GROUP BY ?d ?label

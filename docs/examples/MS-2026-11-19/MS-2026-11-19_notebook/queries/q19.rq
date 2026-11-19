@@ -1,0 +1,6 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?mondo ?d ?dlabel WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { <http://purl.obolibrary.org/obo/DOID_2377> a <https://w3id.org/biolink/vocab/Disease> . }
+  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?msroot <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/DOID_2377> . ?mondo rdfs:subClassOf* ?msroot . }
+  GRAPH <https://purl.org/okn/frink/kg/prokn> { ?d <http://www.w3.org/2004/02/skos/core#exactMatch> ?mondo . OPTIONAL { ?d rdfs:label ?dlabel } }
+}

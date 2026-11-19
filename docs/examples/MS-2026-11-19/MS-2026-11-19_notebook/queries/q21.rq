@@ -1,0 +1,11 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?drug (SAMPLE(?lab) AS ?label) (MAX(?ph) AS ?max_phase) (GROUP_CONCAT(DISTINCT STR(?d); separator="|") AS ?ms_terms) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    VALUES ?d { <http://purl.obolibrary.org/obo/DOID_2377> <http://purl.obolibrary.org/obo/DOID_2378> <http://purl.obolibrary.org/obo/DOID_0050783> <https://www.ncbi.nlm.nih.gov/mesh/?term=D009103> }
+    ?st rdf:object ?d ; rdf:predicate obo:NCIT_C41184 ; rdf:subject ?drug .
+    OPTIONAL { ?st <https://w3id.org/reproduceme#Phase> ?ph }
+    OPTIONAL { ?drug rdfs:label ?lab }
+  }
+} GROUP BY ?drug

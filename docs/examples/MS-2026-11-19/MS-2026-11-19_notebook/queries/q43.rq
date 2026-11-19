@@ -1,0 +1,9 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT (REPLACE(STR(?p),"^.*[/#]","") AS ?pred) (REPLACE(STR(?cat),"^.*/","") AS ?semtype) (STR(?label) AS ?entity) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/DOID_2377> ; <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UMLS:C0026769" . }
+  GRAPH <https://purl.org/okn/frink/kg/biohealth> {
+    VALUES ?p { <https://w3id.org/biolink/vocab/predisposes_to_condition> <https://w3id.org/biolink/vocab/causes> <https://w3id.org/biolink/vocab/preventative_for_condition> }
+    ?s ?p <https://biohealthkg.proto-okn.net/kg/node/C0026769> ; <https://w3id.org/biolink/vocab/category> ?cat ; rdfs:label ?label .
+    FILTER(REGEX(STR(?cat), "semtype/(virs|inbe|orga|bhvr|food|hlca|dora|lbtr|qnco|socb|popg|geoa|bact|eehu|hops|vita)") || CONTAINS(STR(?cat),"vita"))
+  }
+}

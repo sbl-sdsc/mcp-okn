@@ -1,0 +1,9 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT (REPLACE(STR(?g),"^.*/","") AS ?entrez) (SAMPLE(?sym) AS ?s) (MAX(?w) AS ?maxw) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/digcfdekg> {
+    ?st rdf:object <http://purl.obolibrary.org/obo/MONDO_0005301> ; rdf:predicate <https://purl.org/okn/frink/kg/digcfdekg/schema/geneToTrait> ; rdf:subject ?g ; <https://purl.org/okn/frink/kg/digcfdekg/schema/weight> ?w .
+    OPTIONAL { ?st rdf:object <http://purl.obolibrary.org/obo/MONDO_0005301> . ?st rdf:subject ?g . ?g rdfs:label ?sym }
+    FILTER((REPLACE(STR(?g),"^.*/","") >= "93" && REPLACE(STR(?g),"^.*/","") <= "960") && BOUND(?w))
+  }
+} GROUP BY ?g

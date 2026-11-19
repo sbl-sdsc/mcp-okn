@@ -1,0 +1,17 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?study (SAMPLE(?sdis) AS ?disease) ?assay (SAMPLE(?aname) AS ?contrast) (GROUP_CONCAT(DISTINCT REPLACE(STR(?attr),"^.*/",""); separator="|") AS ?attrs) (SAMPLE(?org) AS ?organism) WHERE {
+  { SELECT DISTINCT ?d WHERE {
+     { GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?root <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/DOID_2377> . ?d rdfs:subClassOf* ?root . } }
+     UNION
+     { GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?root <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/DOID_2377> . ?m rdfs:subClassOf* ?root . ?m <http://www.w3.org/2004/02/skos/core#exactMatch> ?d . FILTER(CONTAINS(STR(?d),'/efo/EFO_') || CONTAINS(STR(?d),'Orphanet_')) } }
+  } }
+  GRAPH <https://purl.org/okn/frink/kg/gene-expression-atlas-okn> {
+    { ?study <https://w3id.org/biolink/vocab/studies> ?d . ?study <https://w3id.org/biolink/vocab/has_output> ?assay . }
+    UNION
+    { ?assay <https://w3id.org/biolink/vocab/has_attribute> ?d . ?study <https://w3id.org/biolink/vocab/has_output> ?assay . }
+    BIND(REPLACE(STR(?d),"^.*/","") AS ?sdis)
+    OPTIONAL { ?assay <https://w3id.org/biolink/vocab/name> ?aname }
+    OPTIONAL { ?assay <https://w3id.org/biolink/vocab/has_attribute> ?attr }
+    OPTIONAL { ?study <http://purl.org/okn/wobd/organism> ?org }
+  }
+} GROUP BY ?study ?assay

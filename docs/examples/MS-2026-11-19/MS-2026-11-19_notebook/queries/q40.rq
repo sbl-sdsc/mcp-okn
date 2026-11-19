@@ -1,0 +1,10 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?iso3 (SAMPLE(STR(?coord)) AS ?wkt) (SAMPLE(?item) AS ?wd) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?st rdf:subject <http://purl.obolibrary.org/obo/DOID_2377> ; rdf:predicate <https://purl.org/okn/frink/kg/spoke-okn/schema/PREVALENCE_DpL> ; rdf:object ?loc .
+    ?loc <https://purl.org/okn/frink/kg/spoke-okn/schema/iso3> ?iso3 .
+  }
+  GRAPH <https://purl.org/okn/frink/kg/wikidata> {
+    ?item <http://www.wikidata.org/prop/direct/P298> ?iso3 ; <http://www.wikidata.org/prop/direct/P625> ?coord .
+  }
+} GROUP BY ?iso3

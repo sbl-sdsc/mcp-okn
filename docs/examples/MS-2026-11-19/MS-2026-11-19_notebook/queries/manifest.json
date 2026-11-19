@@ -1,0 +1,673 @@
+[
+  {
+    "name": "q01",
+    "description": "q01 ubergraph: lookup of the MS disease term",
+    "timestamp": "2026-11-19T09:26:35+00:00",
+    "graphs": [
+      "ubergraph"
+    ],
+    "row_count": 6,
+    "cached_rows": 6,
+    "truncated": false,
+    "cache": "data/q01.csv",
+    "sent": null
+  },
+  {
+    "name": "q02",
+    "description": "q02 ubergraph: subtype term lookup",
+    "timestamp": "2026-11-19T09:26:36+00:00",
+    "graphs": [
+      "ubergraph"
+    ],
+    "row_count": 3,
+    "cached_rows": 3,
+    "truncated": false,
+    "cache": "data/q02.csv",
+    "sent": null
+  },
+  {
+    "name": "q03",
+    "description": "q03 ubergraph: subtype term lookup",
+    "timestamp": "2026-11-19T09:26:38+00:00",
+    "graphs": [
+      "ubergraph"
+    ],
+    "row_count": 1,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q03.csv",
+    "sent": null
+  },
+  {
+    "name": "q04",
+    "description": "q04 ubergraph: subtype term lookup",
+    "timestamp": "2026-11-19T09:26:40+00:00",
+    "graphs": [
+      "ubergraph"
+    ],
+    "row_count": 1,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q04.csv",
+    "sent": null
+  },
+  {
+    "name": "q05",
+    "description": "q05 ubergraph: subtype term lookup",
+    "timestamp": "2026-11-19T09:26:41+00:00",
+    "graphs": [
+      "ubergraph"
+    ],
+    "row_count": 1,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q05.csv",
+    "sent": null
+  },
+  {
+    "name": "q06",
+    "description": "q06 ubergraph: MONDO_0005301 subclass closure (MS subtypes)",
+    "timestamp": "2026-11-19T09:26:52+00:00",
+    "graphs": [
+      "ubergraph"
+    ],
+    "row_count": 8,
+    "cached_rows": 8,
+    "truncated": false,
+    "cache": "data/q06.csv",
+    "sent": null
+  },
+  {
+    "name": "q07",
+    "description": "q07 ubergraph: subtype exact matches and cross-references (ID crosswalk)",
+    "timestamp": "2026-11-19T09:26:53+00:00",
+    "graphs": [
+      "ubergraph"
+    ],
+    "row_count": 318,
+    "cached_rows": 318,
+    "truncated": false,
+    "cache": "data/q07.csv",
+    "sent": null
+  },
+  {
+    "name": "q08",
+    "description": "q08 spoke-okn: MS node by label",
+    "timestamp": "2026-11-19T09:27:05+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 2,
+    "cached_rows": 2,
+    "truncated": false,
+    "cache": "data/q08.csv",
+    "sent": null
+  },
+  {
+    "name": "q09",
+    "description": "q09 spoke-okn: MS-associated genes (via ubergraph DOID bridge)",
+    "timestamp": "2026-11-19T09:27:23+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 164,
+    "cached_rows": 164,
+    "truncated": false,
+    "cache": "data/q09.csv",
+    "sent": "queries/sent/q09.rq"
+  },
+  {
+    "name": "q10",
+    "description": "q10 spoke-okn: TREATS_CtD edges (flagged spurious)",
+    "timestamp": "2026-11-19T09:27:57+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 3,
+    "cached_rows": 3,
+    "truncated": false,
+    "cache": "data/q10.csv",
+    "sent": "queries/sent/q10.rq"
+  },
+  {
+    "name": "q11",
+    "description": "q11 spoke-okn: RESEMBLES edges",
+    "timestamp": "2026-11-19T09:28:00+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 1,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q11.csv",
+    "sent": null
+  },
+  {
+    "name": "q12",
+    "description": "q12 spoke-okn: prevalence summary",
+    "timestamp": "2026-11-19T09:28:05+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 1,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q12.csv",
+    "sent": "queries/sent/q12.rq"
+  },
+  {
+    "name": "q13",
+    "description": "q13 spoke-okn: IHME 2019 prevalence by country",
+    "timestamp": "2026-11-19T09:28:12+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 200,
+    "cached_rows": 200,
+    "truncated": false,
+    "cache": "data/q13.csv",
+    "sent": "queries/sent/q13.rq"
+  },
+  {
+    "name": "q14",
+    "description": "q14 spoke-okn: WHO GHE MS deaths by country",
+    "timestamp": "2026-11-19T09:28:14+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 178,
+    "cached_rows": 178,
+    "truncated": false,
+    "cache": "data/q14.csv",
+    "sent": "queries/sent/q14.rq"
+  },
+  {
+    "name": "q15",
+    "description": "q15 SUPERSEDED (BIND scoping error; not used)",
+    "timestamp": "2026-11-19T09:29:19+00:00",
+    "graphs": [
+      "spoke-okn",
+      "ubergraph",
+      "rdkg"
+    ],
+    "row_count": 441283,
+    "cached_rows": 1000,
+    "truncated": true,
+    "cache": "data/q15.csv",
+    "sent": null
+  },
+  {
+    "name": "q16",
+    "description": "q16 rdkg: predicates on MS terms (ubergraph bridge)",
+    "timestamp": "2026-11-19T09:29:37+00:00",
+    "graphs": [
+      "spoke-okn",
+      "ubergraph",
+      "rdkg"
+    ],
+    "row_count": 8,
+    "cached_rows": 8,
+    "truncated": false,
+    "cache": "data/q16.csv",
+    "sent": null
+  },
+  {
+    "name": "q17",
+    "description": "q17 rdkg: genes, drugs, exposures and phenotypes per MS subtype",
+    "timestamp": "2026-11-19T09:30:03+00:00",
+    "graphs": [
+      "rdkg"
+    ],
+    "row_count": 225,
+    "cached_rows": 225,
+    "truncated": false,
+    "cache": "data/q17.csv",
+    "sent": "queries/sent/q17.rq"
+  },
+  {
+    "name": "q18",
+    "description": "q18 rdkg: grouped MS nodes (phenotypes, progressive-MS treats)",
+    "timestamp": "2026-11-19T09:30:23+00:00",
+    "graphs": [
+      "rdkg"
+    ],
+    "row_count": 41,
+    "cached_rows": 41,
+    "truncated": false,
+    "cache": "data/q18.csv",
+    "sent": "queries/sent/q18.rq"
+  },
+  {
+    "name": "q19",
+    "description": "q19 prokn: MS disease nodes via DOID/MeSH",
+    "timestamp": "2026-11-19T09:30:36+00:00",
+    "graphs": [
+      "spoke-okn",
+      "ubergraph",
+      "prokn"
+    ],
+    "row_count": 7,
+    "cached_rows": 7,
+    "truncated": false,
+    "cache": "data/q19.csv",
+    "sent": null
+  },
+  {
+    "name": "q20",
+    "description": "q20 prokn: MS entities by predicate",
+    "timestamp": "2026-11-19T09:32:12+00:00",
+    "graphs": [
+      "spoke-okn",
+      "ubergraph",
+      "prokn"
+    ],
+    "row_count": 549,
+    "cached_rows": 549,
+    "truncated": false,
+    "cache": "data/q20.csv",
+    "sent": null
+  },
+  {
+    "name": "q21",
+    "description": "q21 prokn: MS-indicated compounds with max phase",
+    "timestamp": "2026-11-19T09:33:28+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "row_count": 204,
+    "cached_rows": 204,
+    "truncated": false,
+    "cache": "data/q21.csv",
+    "sent": null
+  },
+  {
+    "name": "q22",
+    "description": "q22 prokn: drug -> target for MS-indicated compounds",
+    "timestamp": "2026-11-19T09:33:41+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "row_count": 235,
+    "cached_rows": 235,
+    "truncated": false,
+    "cache": "data/q22.csv",
+    "sent": null
+  },
+  {
+    "name": "q23",
+    "description": "q23 SUPERSEDED (raw digcfdekg dump, replaced by q24)",
+    "timestamp": "2026-11-19T09:34:42+00:00",
+    "graphs": [
+      "ubergraph",
+      "digcfdekg"
+    ],
+    "row_count": 1550,
+    "cached_rows": 1000,
+    "truncated": true,
+    "cache": "data/q23.csv",
+    "sent": null
+  },
+  {
+    "name": "q24",
+    "description": "q24 digcfdekg: PIGEAN gene scores for MONDO_0005301",
+    "timestamp": "2026-11-19T09:34:55+00:00",
+    "graphs": [
+      "ubergraph",
+      "digcfdekg"
+    ],
+    "row_count": 1059,
+    "cached_rows": 1000,
+    "truncated": true,
+    "cache": "data/q24.csv",
+    "sent": null
+  },
+  {
+    "name": "q25",
+    "description": "q25 oard-kg: HP phenotypes co-occurring with MS (EHR)",
+    "timestamp": "2026-11-19T09:35:45+00:00",
+    "graphs": [
+      "oard-kg"
+    ],
+    "row_count": 141,
+    "cached_rows": 141,
+    "truncated": false,
+    "cache": "data/q25.csv",
+    "sent": null
+  },
+  {
+    "name": "q26",
+    "description": "q26 biomarkerkg: MS risk and diagnostic biomarkers",
+    "timestamp": "2026-11-19T09:36:44+00:00",
+    "graphs": [
+      "spoke-okn",
+      "ubergraph",
+      "biomarkerkg"
+    ],
+    "row_count": 359,
+    "cached_rows": 359,
+    "truncated": false,
+    "cache": "data/q26.csv",
+    "sent": null
+  },
+  {
+    "name": "q27",
+    "description": "q27 biomarkerkg: diagnostic biomarker details (specimens, analytes)",
+    "timestamp": "2026-11-19T09:36:53+00:00",
+    "graphs": [
+      "biomarkerkg"
+    ],
+    "row_count": 52,
+    "cached_rows": 52,
+    "truncated": false,
+    "cache": "data/q27.csv",
+    "sent": null
+  },
+  {
+    "name": "q28",
+    "description": "q28 gene-expression-atlas-okn: MS assays and contrasts",
+    "timestamp": "2026-11-19T09:37:12+00:00",
+    "graphs": [
+      "ubergraph",
+      "gene-expression-atlas-okn"
+    ],
+    "row_count": 48,
+    "cached_rows": 48,
+    "truncated": false,
+    "cache": "data/q28.csv",
+    "sent": null
+  },
+  {
+    "name": "q29",
+    "description": "q29 gene-expression-atlas-okn: DE counts per contrast",
+    "timestamp": "2026-11-19T09:37:29+00:00",
+    "graphs": [
+      "gene-expression-atlas-okn"
+    ],
+    "row_count": 9,
+    "cached_rows": 9,
+    "truncated": false,
+    "cache": "data/q29.csv",
+    "sent": null
+  },
+  {
+    "name": "q30",
+    "description": "q30 gene-expression-atlas-okn: DE genes per contrast",
+    "timestamp": "2026-11-19T09:37:38+00:00",
+    "graphs": [
+      "gene-expression-atlas-okn"
+    ],
+    "row_count": 891,
+    "cached_rows": 891,
+    "truncated": false,
+    "cache": "data/q30.csv",
+    "sent": null
+  },
+  {
+    "name": "q31",
+    "description": "q31 prokn: GO BP hit counts k in the signature",
+    "timestamp": "2026-11-19T09:39:07+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "row_count": 167,
+    "cached_rows": 167,
+    "truncated": false,
+    "cache": "data/q31.csv",
+    "sent": "queries/sent/q31.rq"
+  },
+  {
+    "name": "q32",
+    "description": "q32 prokn: GO BP term sizes K",
+    "timestamp": "2026-11-19T09:39:41+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "row_count": 167,
+    "cached_rows": 167,
+    "truncated": false,
+    "cache": "data/q32.csv",
+    "sent": "queries/sent/q32.rq"
+  },
+  {
+    "name": "q33",
+    "description": "q33 prokn: GO BP background N",
+    "timestamp": "2026-11-19T09:39:46+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "row_count": 1,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q33.csv",
+    "sent": null
+  },
+  {
+    "name": "q34",
+    "description": "q34 SUPERSEDED (BIND scoping error; not used)",
+    "timestamp": "2026-11-19T09:40:09+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "row_count": 1,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q34.csv",
+    "sent": null
+  },
+  {
+    "name": "q35",
+    "description": "q35 prokn: signature sizes n (GO, Reactome, in prokn)",
+    "timestamp": "2026-11-19T09:40:29+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "row_count": 1,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q35.csv",
+    "sent": null
+  },
+  {
+    "name": "q36",
+    "description": "q36 prokn: Reactome hit counts k",
+    "timestamp": "2026-11-19T09:40:49+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "row_count": 60,
+    "cached_rows": 60,
+    "truncated": false,
+    "cache": "data/q36.csv",
+    "sent": null
+  },
+  {
+    "name": "q37",
+    "description": "q37 prokn: Reactome pathway sizes K",
+    "timestamp": "2026-11-19T09:41:05+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "row_count": 60,
+    "cached_rows": 60,
+    "truncated": false,
+    "cache": "data/q37.csv",
+    "sent": null
+  },
+  {
+    "name": "q38",
+    "description": "q38 prokn: Reactome background N",
+    "timestamp": "2026-11-19T09:41:08+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "row_count": 1,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q38.csv",
+    "sent": null
+  },
+  {
+    "name": "q39",
+    "description": "q39 wikidata: Q8277 statements (genes, drugs, diagnostics)",
+    "timestamp": "2026-11-19T09:41:17+00:00",
+    "graphs": [
+      "wikidata"
+    ],
+    "row_count": 101,
+    "cached_rows": 101,
+    "truncated": false,
+    "cache": "data/q39.csv",
+    "sent": "queries/sent/q39.rq"
+  },
+  {
+    "name": "q40",
+    "description": "q40 spoke-okn + wikidata: country coordinates via ISO3",
+    "timestamp": "2026-11-19T09:41:26+00:00",
+    "graphs": [
+      "spoke-okn",
+      "wikidata"
+    ],
+    "row_count": 200,
+    "cached_rows": 200,
+    "truncated": false,
+    "cache": "data/q40.csv",
+    "sent": null
+  },
+  {
+    "name": "q41",
+    "description": "q41 spoke-okn + wikidata: MS item via P699 DOID:2377",
+    "timestamp": "2026-11-19T09:41:39+00:00",
+    "graphs": [
+      "spoke-okn",
+      "wikidata"
+    ],
+    "row_count": 1,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q41.csv",
+    "sent": null
+  },
+  {
+    "name": "q42",
+    "description": "q42 ubergraph + biohealth: MS neighbours by semantic type",
+    "timestamp": "2026-11-19T09:42:19+00:00",
+    "graphs": [
+      "ubergraph",
+      "biohealth"
+    ],
+    "row_count": 232,
+    "cached_rows": 232,
+    "truncated": false,
+    "cache": "data/q42.csv",
+    "sent": "queries/sent/q42.rq"
+  },
+  {
+    "name": "q43",
+    "description": "q43 ubergraph + biohealth: risk and protective factors",
+    "timestamp": "2026-11-19T09:42:28+00:00",
+    "graphs": [
+      "ubergraph",
+      "biohealth"
+    ],
+    "row_count": 155,
+    "cached_rows": 155,
+    "truncated": false,
+    "cache": "data/q43.csv",
+    "sent": null
+  },
+  {
+    "name": "q44",
+    "description": "q44 spoke-okn + nde: datasets per MS subtype",
+    "timestamp": "2026-11-19T09:42:45+00:00",
+    "graphs": [
+      "spoke-okn",
+      "nde"
+    ],
+    "row_count": 6,
+    "cached_rows": 6,
+    "truncated": false,
+    "cache": "data/q44.csv",
+    "sent": null
+  },
+  {
+    "name": "q45",
+    "description": "q45 prokn + nestkg: PPI among signature genes (part 1)",
+    "timestamp": "2026-11-19T09:43:42+00:00",
+    "graphs": [
+      "prokn",
+      "nestkg"
+    ],
+    "row_count": 1324,
+    "cached_rows": 1000,
+    "truncated": true,
+    "cache": "data/q45.csv",
+    "sent": null
+  },
+  {
+    "name": "q46",
+    "description": "q46 prokn + nestkg: PPI among signature genes (part 2)",
+    "timestamp": "2026-11-19T09:44:36+00:00",
+    "graphs": [
+      "prokn",
+      "nestkg"
+    ],
+    "row_count": 466,
+    "cached_rows": 466,
+    "truncated": false,
+    "cache": "data/q46.csv",
+    "sent": null
+  },
+  {
+    "name": "q47",
+    "description": "q47 digcfdekg: PIGEAN tail (row-cap recovery)",
+    "timestamp": "2026-11-19T09:44:45+00:00",
+    "graphs": [
+      "digcfdekg"
+    ],
+    "row_count": 29,
+    "cached_rows": 29,
+    "truncated": false,
+    "cache": "data/q47.csv",
+    "sent": "queries/sent/q47.rq"
+  },
+  {
+    "name": "q48",
+    "description": "q48 digcfdekg: PIGEAN tail (row-cap recovery)",
+    "timestamp": "2026-11-19T09:44:55+00:00",
+    "graphs": [
+      "digcfdekg"
+    ],
+    "row_count": 35,
+    "cached_rows": 35,
+    "truncated": false,
+    "cache": "data/q48.csv",
+    "sent": "queries/sent/q48.rq"
+  },
+  {
+    "name": "q49",
+    "description": "q49 prokn: UniProt -> gene symbol for drug targets",
+    "timestamp": "2026-11-19T09:45:14+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "row_count": 52,
+    "cached_rows": 52,
+    "truncated": false,
+    "cache": "data/q49.csv",
+    "sent": null
+  },
+  {
+    "name": "q50",
+    "description": "q50 gene-expression-atlas-okn + spoke-okn: Entrez -> symbol",
+    "timestamp": "2026-11-19T09:46:04+00:00",
+    "graphs": [
+      "gene-expression-atlas-okn",
+      "spoke-okn"
+    ],
+    "row_count": 683,
+    "cached_rows": 683,
+    "truncated": false,
+    "cache": "data/q50.csv",
+    "sent": null
+  }
+]

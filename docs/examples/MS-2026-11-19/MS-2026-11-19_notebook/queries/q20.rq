@@ -1,0 +1,13 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX biolink_model: <https://biolink.github.io/biolink-model/>
+SELECT ?d ?p ?ent ?entlabel (GROUP_CONCAT(DISTINCT STR(?etype); separator="|") AS ?etypes) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { <http://purl.obolibrary.org/obo/DOID_2377> a <https://w3id.org/biolink/vocab/Disease> . }
+  GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?msroot <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/DOID_2377> . ?mondo rdfs:subClassOf* ?msroot . }
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    ?d <http://www.w3.org/2004/02/skos/core#exactMatch> ?mondo .
+    VALUES ?p { biolink_model:associated_with obo:NCIT_C41184 obo:RO_0002410 <http://purl.obolibrary.org/obo/bto#related_to> obo:RO_0003308 }
+    ?ent ?p ?d .
+    OPTIONAL { ?ent rdfs:label ?entlabel } OPTIONAL { ?ent a ?etype }
+  }
+} GROUP BY ?d ?p ?ent ?entlabel

@@ -1,0 +1,53 @@
+pred,obj,olabel,n
+label,LOINC:12980-9,,1
+label,LOINC:13820-6,,1
+label,LOINC:13902-2,,1
+label,LOINC:14932-8,,1
+label,LOINC:14933-6,,1
+label,LOINC:14934-4,,1
+label,LOINC:14935-1,,1
+label,NCBI:335,,1
+label,Increased Immunoglobulins (gamma fraction) [biomarker_term_in_review],,1
+label,"Increased Immunoglobulins (IgG, IgA, and IgM) [biomarker_term_in_review]",,2
+label,LOINC:14341-2,,1
+label,LOINC:100755-8,,1
+label,LOINC:100756-6,,1
+label,LOINC:100755-8,,1
+label,LOINC:100756-6,,1
+label,LOINC:14117-6,,1
+label,LOINC:100755-8,,1
+label,LOINC:100756-6,,1
+label,LOINC:13536-8,,1
+label,LOINC:14425-3,,1
+label,LOINC:14426-1,,1
+label,LOINC:14427-9,,1
+label,LOINC:14428-7,,1
+label,LOINC:14429-5,,1
+label,LOINC:14430-3,,1
+label,LOINC:14431-1,,1
+label,LOINC:15356-9,,1
+label,Increased Quinolinic acid [biomarker_term_in_review],,1
+source,mw,,28
+source,PMC_biomarker_sets,,1
+OBCI_1000006,MONDO_0005301,multiple sclerosis,1
+OBCI_1000011,OBCI_0000002,diagnostic biomarker,29
+type,OBCI_0000002,diagnostic biomarker,29
+OBCI_1000011,OBCI_0000006,prognostic biomarker,1
+OBCI_1000018,UBERON_0000173,amniotic fluid,1
+OBCI_1000018,UBERON_0001087,pleural fluid,1
+OBCI_1000018,UBERON_0001088,urine,7
+OBCI_1000018,UBERON_0001090,synovial fluid,1
+OBCI_1000018,UBERON_0001268,peritoneal fluid,1
+OBCI_1000018,UBERON_0001359,cerebrospinal fluid,7
+OBCI_1000018,UBERON_0001968,semen,1
+OBCI_1000018,UBERON_0001969,blood plasma,6
+OBCI_1000018,UBERON_0001977,blood serum,6
+OBCI_1000018,UBERON_0006314,bodily fluid,2
+OBCI_1000009,GID1901,sphingosine-1-phosphate receptor 1,1
+OBCI_1000009,GID335,apolipoprotein A1,1
+OBCI_1000009,GID3458,interferon gamma,1
+OBCI_1000009,GID3605,interleukin 17A,1
+OBCI_1000009,GID53637,sphingosine-1-phosphate receptor 5,1
+OBCI_1000009,GID56848,sphingosine kinase 2,1
+OBCI_1000009,GID6023,RNA component of mitochondrial RNA processing endoribonuclease,1
+OBCI_1000009,GID8877,sphingosine kinase 1,1

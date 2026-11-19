@@ -1,0 +1,12 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?grp ?x ?xlabel (GROUP_CONCAT(DISTINCT STR(?xtype); separator="|") AS ?xtypes) ?p WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/rdkg> {
+    { VALUES ?grp { <https://rdaccelerate.org/resource/MONDO_GROUPED_21571_7462_12956_12957_12958_13893> <https://rdaccelerate.org/resource/MONDO_GROUPED_5284_451_450> } ?grp ?p ?x }
+    UNION
+    { VALUES ?grp { <https://rdaccelerate.org/resource/MONDO_GROUPED_21571_7462_12956_12957_12958_13893> <https://rdaccelerate.org/resource/MONDO_GROUPED_5284_451_450> } ?x ?p ?grp }
+    FILTER(?p NOT IN (rdf:type, rdfs:label, skos:prefLabel, <https://w3id.org/biolink/vocab/category>, <https://w3id.org/biolink/vocab/id>))
+    OPTIONAL { ?x rdfs:label ?xlabel } OPTIONAL { ?x a ?xtype }
+  }
+} GROUP BY ?grp ?x ?xlabel ?p

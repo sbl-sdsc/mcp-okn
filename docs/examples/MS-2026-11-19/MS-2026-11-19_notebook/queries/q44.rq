@@ -1,0 +1,7 @@
+SELECT (REPLACE(STR(?cond),"^.*/","") AS ?condition) (REPLACE(STR(?type),"^.*/","") AS ?dtype) (COUNT(DISTINCT ?ds) AS ?n_datasets) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { <http://purl.obolibrary.org/obo/DOID_2377> a <https://w3id.org/biolink/vocab/Disease> . }
+  GRAPH <https://purl.org/okn/frink/kg/nde> {
+    VALUES ?cond { <http://purl.obolibrary.org/obo/DOID_2377> <http://purl.obolibrary.org/obo/MONDO_0005301> <http://purl.obolibrary.org/obo/MONDO_0005314> <http://purl.obolibrary.org/obo/MONDO_0000450> <http://purl.obolibrary.org/obo/MONDO_0000451> <http://purl.obolibrary.org/obo/MONDO_0000452> <http://purl.obolibrary.org/obo/MONDO_0005284> <http://purl.obolibrary.org/obo/MONDO_0018784> <http://purl.obolibrary.org/obo/DOID_2378> <http://purl.obolibrary.org/obo/DOID_0050783> <http://purl.obolibrary.org/obo/DOID_0050784> }
+    ?ds <http://schema.org/healthCondition> ?cond . OPTIONAL { ?ds a ?type }
+  }
+} GROUP BY ?cond ?type

@@ -1,0 +1,226 @@
+dir,d,p,x,xlabel,xtypes
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/related_to,https://rdaccelerate.org/resource/MONDO_GROUPED_5284_451_450,progressive multiple sclerosis,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00073,Rituximab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00121,Biotin,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00279,Liothyronine,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00531,Cyclophosphamide,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB08880,Teriflunomide,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_acth,Acth,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_biib041_fampridine_,Biib041 (fampridine),https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_cc_97540,Cc-97540,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_clemastine_fumarate,Clemastine Fumarate,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_diroximel_fumarate,Diroximel Fumarate,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_disease_modifying_therapies,Disease-modifying Therapies,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_elnd002,Elnd002,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_extended_release_quetiapine_fumarate,Extended-release Quetiapine Fumarate,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_fludarabine,Fludarabine,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_glatiramer_acetate,Glatiramer Acetate,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_insulin,Insulin,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_interferon_beta_1b_betaseron_bay86_5046_,"Interferon Beta-1b (betaseron, Bay86-5046)",https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_nbi_5788,Nbi-5788,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_ocrelizumab_dose_1,Ocrelizumab Dose 1,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_ocrelizumab_dose_2_and_dose_3,Ocrelizumab Dose 2 And Dose 3,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_remibrutinib,Remibrutinib,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_tolebrutinib,Tolebrutinib,https://w3id.org/biolink/vocab/Drug
+out,http://purl.obolibrary.org/obo/MONDO_0000452,https://w3id.org/biolink/vocab/related_to,https://rdaccelerate.org/resource/MONDO_GROUPED_5284_451_450,progressive multiple sclerosis,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contraindicated_for,http://identifiers.org/drugbank/DB00126,Ascorbic acid,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contraindicated_for,http://identifiers.org/drugbank/DB11248,Zinc gluconate,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contributes_to,https://rdaccelerate.org/resource/MESH_C527525,teriflunomide,https://w3id.org/biolink/vocab/ChemicalExposure
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contributes_to,https://rdaccelerate.org/resource/MESH_D007854,Lead,https://w3id.org/biolink/vocab/ChemicalExposure
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contributes_to,https://rdaccelerate.org/resource/MESH_D008628,Mercury,https://w3id.org/biolink/vocab/ChemicalExposure
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contributes_to,https://rdaccelerate.org/resource/MESH_D012997,Solvents,https://w3id.org/biolink/vocab/ChemicalExposure
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contributes_to,https://rdaccelerate.org/resource/MESH_D014028,Tobacco Smoke Pollution,https://w3id.org/biolink/vocab/ChemicalExposure
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/114548,NLRP3,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/1268,CNR1,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/23095,KIF1B,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/23274,CLEC16A,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/2638,GC,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3115,HLA-DPB1,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3119,HLA-DQB1,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3122,HLA-DRA,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3123,HLA-DRB1,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3383,ICAM1,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3394,IRF8,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3456,IFNB1,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3458,IFNG,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/348,APOE,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3516,RBPJ,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3553,IL1B,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3557,IL1RN,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3559,IL2RA,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3574,IL7,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3575,IL7R,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3586,IL10,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3592,IL12A,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3605,IL17A,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3766,KCNJ10,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/4162,MCAM,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/5010,CLDN11,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/5027,P2RX7,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/5133,PDCD1,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/5443,POMC,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/5819,NECTIN2,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/590,BCHE,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/6401,SELE,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/6556,SLC11A1,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/6775,STAT4,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/7128,TNFAIP3,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/7132,TNFRSF1A,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/7297,TYK2,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/7412,VCAM1,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/7421,VDR,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/834,CASP1,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/868,CBLB,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/8740,TNFSF14,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/923,CD6,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/958,CD40,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/965,CD58,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0000568,autoimmune disease of central nervous system,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0002562,demyelinating disease,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0005560,brain disease,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0006704,CNS demyelinating autoimmune disease,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0019100,neuromyelitis optica,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,https://rdaccelerate.org/resource/MONDO_GROUPED_21571_7462_12956_12957_12958_13893,"multiple sclerosis, susceptibility to",https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,https://rdaccelerate.org/resource/MONDO_GROUPED_5284_451_450,progressive multiple sclerosis,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00108,Natalizumab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00443,Betamethasone,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00620,Triamcinolone,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00635,Prednisone,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00741,Hydrocortisone,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00860,Prednisolone,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00959,Methylprednisolone,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB01234,Dexamethasone,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB01380,Cortisone acetate,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB06637,Dalfampridine,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB08880,Teriflunomide,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB12612,Ozanimod,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB14539,Hydrocortisone acetate,https://w3id.org/biolink/vocab/Drug
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contraindicated_for,http://identifiers.org/drugbank/DB00126,Ascorbic acid,https://w3id.org/biolink/vocab/Drug
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contraindicated_for,http://identifiers.org/drugbank/DB11248,Zinc gluconate,https://w3id.org/biolink/vocab/Drug
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contributes_to,https://rdaccelerate.org/resource/MESH_C527525,teriflunomide,https://w3id.org/biolink/vocab/ChemicalExposure
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contributes_to,https://rdaccelerate.org/resource/MESH_D007854,Lead,https://w3id.org/biolink/vocab/ChemicalExposure
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contributes_to,https://rdaccelerate.org/resource/MESH_D008628,Mercury,https://w3id.org/biolink/vocab/ChemicalExposure
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contributes_to,https://rdaccelerate.org/resource/MESH_D012997,Solvents,https://w3id.org/biolink/vocab/ChemicalExposure
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/contributes_to,https://rdaccelerate.org/resource/MESH_D014028,Tobacco Smoke Pollution,https://w3id.org/biolink/vocab/ChemicalExposure
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/114548,NLRP3,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/1268,CNR1,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/23095,KIF1B,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/23274,CLEC16A,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/2638,GC,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3115,HLA-DPB1,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3119,HLA-DQB1,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3122,HLA-DRA,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3123,HLA-DRB1,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3383,ICAM1,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3394,IRF8,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3456,IFNB1,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3458,IFNG,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/348,APOE,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3516,RBPJ,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3553,IL1B,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3557,IL1RN,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3559,IL2RA,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3574,IL7,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3575,IL7R,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3586,IL10,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3592,IL12A,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3605,IL17A,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/3766,KCNJ10,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/4162,MCAM,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/5010,CLDN11,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/5027,P2RX7,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/5133,PDCD1,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/5443,POMC,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/5819,NECTIN2,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/590,BCHE,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/6401,SELE,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/6556,SLC11A1,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/6775,STAT4,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/7128,TNFAIP3,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/7132,TNFRSF1A,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/7297,TYK2,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/7412,VCAM1,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/7421,VDR,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/834,CASP1,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/868,CBLB,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/8740,TNFSF14,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/923,CD6,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/958,CD40,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/965,CD58,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0000568,autoimmune disease of central nervous system,https://w3id.org/biolink/vocab/Disease
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0002562,demyelinating disease,https://w3id.org/biolink/vocab/Disease
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0005314,relapsing-remitting multiple sclerosis,https://w3id.org/biolink/vocab/Disease
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0005560,brain disease,https://w3id.org/biolink/vocab/Disease
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0006704,CNS demyelinating autoimmune disease,https://w3id.org/biolink/vocab/Disease
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0019100,neuromyelitis optica,https://w3id.org/biolink/vocab/Disease
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,https://rdaccelerate.org/resource/MONDO_GROUPED_21571_7462_12956_12957_12958_13893,"multiple sclerosis, susceptibility to",https://w3id.org/biolink/vocab/Disease
+out,http://purl.obolibrary.org/obo/MONDO_0005301,https://w3id.org/biolink/vocab/related_to,https://rdaccelerate.org/resource/MONDO_GROUPED_5284_451_450,progressive multiple sclerosis,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/348,APOE,https://w3id.org/biolink/vocab/Gene
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00060,Interferon beta-1a,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00068,Interferon beta-1b,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00087,Alemtuzumab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00111,Daclizumab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00242,Cladribine,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00283,Clemastine,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00959,Methylprednisolone,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB01204,Mitoxantrone,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB06650,Ofatumumab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB06817,Raltegravir,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB08868,Fingolimod,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB08879,Belimumab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB08908,Dimethyl fumarate,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB09122,Peginterferon beta-1a,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_bg00012,Bg00012,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_continued_ocrelizumab,Continued Ocrelizumab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_copaxone_,Copaxone®,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_dietary_supplement_vitamin_a,Dietary Supplement: Vitamin A,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_glatiramer_acetate,Glatiramer Acetate,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_gnbac1,Gnbac1,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_imu_838_10_mg_day_,Imu-838 (10 Mg/day),https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_imu_838_30_mg_day_,Imu-838 (30 Mg/day),https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_imu_838_45_mg_day_,Imu-838 (45 Mg/day),https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_peg_liposomal_prednisolone_sodium_phosphate,Peg-liposomal Prednisolone Sodium Phosphate,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_perfusion_of_treatment_ocrelizumab,Perfusion Of Treatment Ocrelizumab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_perfusion_of_treatment_rituximab,Perfusion Of Treatment Rituximab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_rebif_,Rebif®,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_rg2077_ctla4_igg4m_,Rg2077 (ctla4-igg4m),https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_short_course_ocrelizumab,Short-course Ocrelizumab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_tysabri,Tysabri,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_ublituximab,Ublituximab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_vay736,Vay736,https://w3id.org/biolink/vocab/Drug
+out,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/related_to,http://identifiers.org/ncbigene/348,APOE,https://w3id.org/biolink/vocab/Gene
+out,http://purl.obolibrary.org/obo/MONDO_0005314,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0005301,multiple sclerosis,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0016429,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0016428,multiple sclerosis variant,https://w3id.org/biolink/vocab/Disease
+out,http://purl.obolibrary.org/obo/MONDO_0016429,https://w3id.org/biolink/vocab/has_mode_of_inheritance,http://purl.obolibrary.org/obo/HP_0001426,Multifactorial inheritance,https://w3id.org/biolink/vocab/PhenotypicFeature
+out,http://purl.obolibrary.org/obo/MONDO_0016429,https://w3id.org/biolink/vocab/has_onset,http://purl.obolibrary.org/obo/HP_0011460,Adult,https://w3id.org/biolink/vocab/PhenotypicFeature
+out,http://purl.obolibrary.org/obo/MONDO_0016429,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0016428,multiple sclerosis variant,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0016428,multiple sclerosis variant,https://w3id.org/biolink/vocab/Disease
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00060,Interferon beta-1a,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00108,Natalizumab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00863,Ranitidine,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB00959,Methylprednisolone,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB06650,Ofatumumab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB08868,Fingolimod,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB08880,Teriflunomide,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB08908,Dimethyl fumarate,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB09122,Peginterferon beta-1a,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,http://identifiers.org/drugbank/DB11988,Ocrelizumab,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_alemtuzumab_gz402673,Alemtuzumab Gz402673,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_beta_interferon,Beta-interferon,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_biib017_peginterferon_beta_1a_,Biib017 (peginterferon Beta-1a),https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_bioactivated_gra_for_adult_patients,Bioactivated Gra For Adult Patients,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_bioactivated_gra_for_pediatric_patients,Bioactivated Gra For Pediatric Patients,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_fenebrutinib,Fenebrutinib,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_fingolimod_0_5mg,Fingolimod 0.5mg,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_glatiramer_acetate,Glatiramer Acetate,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_interferon_1a,Interferon Β-1a,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_interferon_beta_1b_betaseron_bay86_5046_,"Interferon Beta-1b (betaseron, Bay86-5046)",https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_interferon_beta_type_1a,Interferon Beta Type 1a,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_rebif_,Rebif®,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_siponimod,Siponimod,https://w3id.org/biolink/vocab/Drug
+in,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/treats,https://rdaccelerate.org/resource/CTDRUG_ublituximab,Ublituximab,https://w3id.org/biolink/vocab/Drug
+out,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/has_onset,http://purl.obolibrary.org/obo/HP_0003581,Adult onset,https://w3id.org/biolink/vocab/PhenotypicFeature
+out,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/has_onset,http://purl.obolibrary.org/obo/HP_0011461,Fetal onset,https://w3id.org/biolink/vocab/PhenotypicFeature
+out,http://purl.obolibrary.org/obo/MONDO_0018784,https://w3id.org/biolink/vocab/related_to,http://purl.obolibrary.org/obo/MONDO_0016428,multiple sclerosis variant,https://w3id.org/biolink/vocab/Disease

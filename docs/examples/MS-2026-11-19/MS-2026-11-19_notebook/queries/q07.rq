@@ -1,0 +1,11 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+SELECT ?term ?label ?xref ?exact WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {
+    VALUES ?term { <http://purl.obolibrary.org/obo/MONDO_0005301> <http://purl.obolibrary.org/obo/MONDO_0005314> <http://purl.obolibrary.org/obo/MONDO_0000450> <http://purl.obolibrary.org/obo/MONDO_0000451> <http://purl.obolibrary.org/obo/MONDO_0000452> }
+    ?term rdfs:label ?label .
+    OPTIONAL { ?term oboInOwl:hasDbXref ?xref }
+    OPTIONAL { ?term skos:exactMatch ?exact }
+  }
+}

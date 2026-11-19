@@ -1,0 +1,12 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?loc ?name ?iso3 ?value ?mort100k ?population ?ghe ?source WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?st rdf:subject <http://purl.obolibrary.org/obo/DOID_2377> ; rdf:predicate kg:MORTALITY_DmL ; rdf:object ?loc .
+    OPTIONAL { ?st rdf:subject <http://purl.obolibrary.org/obo/DOID_2377> . ?st kg:value ?value } OPTIONAL { ?st rdf:subject <http://purl.obolibrary.org/obo/DOID_2377> . ?st kg:mortality_per_100k ?mort100k } OPTIONAL { ?st rdf:subject <http://purl.obolibrary.org/obo/DOID_2377> . ?st kg:population ?population }
+    OPTIONAL { ?st rdf:subject <http://purl.obolibrary.org/obo/DOID_2377> . ?st kg:ghe_code ?ghe } OPTIONAL { ?st rdf:subject <http://purl.obolibrary.org/obo/DOID_2377> . ?st dcterms:source ?source }
+    OPTIONAL { ?st rdf:subject <http://purl.obolibrary.org/obo/DOID_2377> . ?st rdf:object ?loc . ?loc rdfs:label ?name } OPTIONAL { ?st rdf:subject <http://purl.obolibrary.org/obo/DOID_2377> . ?st rdf:object ?loc . ?loc kg:iso3 ?iso3 }
+  }
+}

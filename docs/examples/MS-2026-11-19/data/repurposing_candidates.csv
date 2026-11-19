@@ -1,0 +1,42 @@
+drug,targets,best_tier,max_phase,action
+Briakinumab,"IL12A, IL12B, IL23A",A,2.0,INHIBITOR
+Secukinumab,IL17A,A,2.0,INHIBITOR
+Ustekinumab,"IL12A, IL12B, IL23A",A,2.0,INHIBITOR
+Belimumab,TNFSF13B,B,2.0,INHIBITOR
+Dexamethasone,NR3C1,C,4.0,AGONIST
+Methylprednisolone,NR3C1,C,4.0,AGONIST
+Methylprednisolone Sodium Succinate,NR3C1,C,4.0,AGONIST
+Prednisolone,NR3C1,C,4.0,AGONIST
+Prednisolone Acetate,NR3C1,C,4.0,AGONIST
+Prednisolone Sodium Phosphate,NR3C1,C,4.0,AGONIST
+Prednisone,NR3C1,C,4.0,AGONIST
+Triamcinolone Acetonide,NR3C1,C,4.0,AGONIST
+Acetaminophen,"PTGS1, PTGS2",C,3.0,INHIBITOR
+Aspirin,"PTGS1, PTGS2",C,3.0,INHIBITOR
+Desloratadine,HRH1,C,3.0,ANTAGONIST
+Dexchlorpheniramine Maleate,HRH1,C,3.0,ANTAGONIST
+Estradiol,ESR1,C,3.0,AGONIST
+Evobrutinib,BTK,C,3.0,INHIBITOR
+Fenebrutinib,BTK,C,3.0,INHIBITOR
+Ibuprofen,"PTGS1, PTGS2",C,3.0,INHIBITOR
+Masitinib,KIT,C,3.0,INHIBITOR
+Naproxen,"PTGS1, PTGS2",C,3.0,INHIBITOR
+Terfenadine,HRH1,C,3.0,ANTAGONIST
+Tolebrutinib,BTK,C,3.0,INHIBITOR
+Cannabidiol,CNR1,C,2.0,NEGATIVE ALLOSTERIC MODULATOR
+Celecoxib,PTGS2,C,2.0,INHIBITOR
+Dexrazoxane,TOP2A,C,2.0,INHIBITOR
+Dronabinol,CNR1,C,2.0,AGONIST
+Firategrast,"ITGA4, ITGB7",C,2.0,ANTAGONIST
+Ianalumab,TNFRSF13C,C,2.0,BINDING AGENT
+Imatinib Mesylate,"ABL1, KIT",C,2.0,INHIBITOR
+Ketoprofen,"PTGS1, PTGS2",C,2.0,INHIBITOR
+Pirtobrutinib,BTK,C,2.0,INHIBITOR
+Plozalizumab,CCR2,C,2.0,INHIBITOR
+Ucb-1184197,ITGA4,C,2.0,INHIBITOR
+Clemastine Fumarate,HRH1,C,1.0,ANTAGONIST
+Inebilizumab,CD19,C,1.0,BINDING AGENT
+Liothyronine Sodium,THRA,C,1.0,AGONIST
+Loratadine,HRH1,C,1.0,ANTAGONIST
+Otilimab,CSF2,C,1.0,INHIBITOR
+Pepinemab,SEMA4D,C,1.0,INHIBITOR

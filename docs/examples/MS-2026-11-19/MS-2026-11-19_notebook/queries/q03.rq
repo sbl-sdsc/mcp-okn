@@ -1,0 +1,17 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
+SELECT DISTINCT ?term ?label ?matched_on ?matched_text WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/ubergraph> {
+    { VALUES ?lit { "primary progressive multiple sclerosis" "primary progressive multiple sclerosis"@en "Primary progressive multiple sclerosis" "Primary progressive multiple sclerosis"@en "Primary Progressive Multiple Sclerosis" "Primary Progressive Multiple Sclerosis"@en } ?term rdfs:label ?lit . BIND("label" AS ?matched_on) }
+    UNION
+    { VALUES ?lit { "primary progressive multiple sclerosis" "primary progressive multiple sclerosis"@en "Primary progressive multiple sclerosis" "Primary progressive multiple sclerosis"@en "Primary Progressive Multiple Sclerosis" "Primary Progressive Multiple Sclerosis"@en } ?term oio:hasExactSynonym ?lit . BIND("exact_synonym" AS ?matched_on) }
+    UNION
+    { VALUES ?lit { "primary progressive multiple sclerosis" "primary progressive multiple sclerosis"@en "Primary progressive multiple sclerosis" "Primary progressive multiple sclerosis"@en "Primary Progressive Multiple Sclerosis" "Primary Progressive Multiple Sclerosis"@en } ?term oio:hasRelatedSynonym ?lit . BIND("related_synonym" AS ?matched_on) }
+    UNION
+    { VALUES ?lit { "primary progressive multiple sclerosis" "primary progressive multiple sclerosis"@en "Primary progressive multiple sclerosis" "Primary progressive multiple sclerosis"@en "Primary Progressive Multiple Sclerosis" "Primary Progressive Multiple Sclerosis"@en } ?term oio:hasNarrowSynonym ?lit . BIND("narrow_synonym" AS ?matched_on) }
+    UNION
+    { VALUES ?lit { "primary progressive multiple sclerosis" "primary progressive multiple sclerosis"@en "Primary progressive multiple sclerosis" "Primary progressive multiple sclerosis"@en "Primary Progressive Multiple Sclerosis" "Primary Progressive Multiple Sclerosis"@en } ?term oio:hasBroadSynonym ?lit . BIND("broad_synonym" AS ?matched_on) }
+    OPTIONAL { ?term rdfs:label ?label }
+  }
+  BIND(STR(?lit) AS ?matched_text)
+} LIMIT 25

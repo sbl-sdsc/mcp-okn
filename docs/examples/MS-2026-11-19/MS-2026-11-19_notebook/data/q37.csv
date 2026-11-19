@@ -1,0 +1,61 @@
+pathway,label,K
+R-HSA-1059683,Interleukin-6 signaling,10
+R-HSA-112411,MAPK1 (ERK2) activation,9
+R-HSA-114604,GPVI-mediated activation cascade,27
+R-HSA-1169091,Activation of NF-kappaB in B cells,46
+R-HSA-1236974,ER-Phagosome pathway,71
+R-HSA-1257604,PIP3 activates AKT signaling,66
+R-HSA-1266695,Interleukin-7 signaling,16
+R-HSA-1433557,Signaling by SCF-KIT,31
+R-HSA-198933,Immunoregulatory interactions between a Lymphoid and a non-Lymphoid cell,96
+R-HSA-202424,Downstream TCR signaling,72
+R-HSA-202427,Phosphorylation of CD3 and TCR zeta chains,20
+R-HSA-202430,Translocation of ZAP-70 to Immunological synapse,18
+R-HSA-202433,Generation of second messenger molecules,30
+R-HSA-202733,Cell surface interactions at the vascular wall,84
+R-HSA-2029482,Regulation of actin dynamics for phagocytic cup formation,55
+R-HSA-2132295,MHC class II antigen presentation,90
+R-HSA-216083,Integrin cell surface interactions,75
+R-HSA-2219530,Constitutive Signaling by Aberrant PI3K in Cancer,53
+R-HSA-2424491,DAP12 signaling,21
+R-HSA-2871796,FCERI mediated MAPK activation,37
+R-HSA-2871809,FCERI mediated Ca+2 mobilization,35
+R-HSA-2871837,FCERI mediated NF-kB activation,66
+R-HSA-380108,Chemokine receptors bind chemokines,26
+R-HSA-389357,CD28 dependent PI3K/Akt signaling,20
+R-HSA-389948,Co-inhibition by PD-1,22
+R-HSA-418594,G alpha (i) signalling events,164
+R-HSA-512988,"Interleukin-3, Interleukin-5 and GM-CSF signaling",20
+R-HSA-5607764,CLEC7A (Dectin-1) signaling,56
+R-HSA-5668541,TNFR2 non-canonical NF-kB pathway,48
+R-HSA-5673001,RAF/MAP kinase cascade,93
+R-HSA-6783783,Interleukin-10 signaling,31
+R-HSA-6785807,Interleukin-4 and Interleukin-13 signaling,92
+R-HSA-6798695,Neutrophil degranulation,360
+R-HSA-6811558,"PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling",71
+R-HSA-844456,The NLRP3 inflammasome,14
+R-HSA-877300,Interferon gamma signaling,48
+R-HSA-877312,Regulation of IFNG signaling,10
+R-HSA-8854691,Interleukin-20 family signaling,14
+R-HSA-8983432,Interleukin-15 signaling,11
+R-HSA-8984722,Interleukin-35 Signalling,8
+R-HSA-8985947,Interleukin-9 signaling,7
+R-HSA-9020558,Interleukin-2 signaling,12
+R-HSA-9020956,Interleukin-27 signaling,8
+R-HSA-9020958,Interleukin-21 signaling,9
+R-HSA-909733,Interferon alpha/beta signaling,37
+R-HSA-912526,Interleukin receptor SHC signaling,22
+R-HSA-912631,Regulation of signaling by CBL,18
+R-HSA-9660826,Purinergic signaling in leishmaniasis infection,22
+R-HSA-9664422,FCGR3A-mediated phagocytosis,54
+R-HSA-9670439,"Signaling by phosphorylated juxtamembrane, extracellular and kinase domain KIT mutants",18
+R-HSA-9674555,Signaling by CSF3 (G-CSF),15
+R-HSA-9679191,Potential therapeutics for SARS,90
+R-HSA-9680350,Signaling by CSF1 (M-CSF) in myeloid cells,27
+R-HSA-9692916,SARS-CoV-1 activates/modulates innate immune responses,30
+R-HSA-9705462,Inactivation of CSF3 (G-CSF) signaling,20
+R-HSA-9705671,SARS-CoV-2 activates/modulates innate and adaptive immune responses,100
+R-HSA-9725371,Nuclear events stimulated by ALK signaling in cancer,27
+R-HSA-9732724,IFNG signaling activates MAPKs,8
+R-HSA-982772,Growth hormone receptor signaling,14
+R-HSA-983695,Antigen activates B Cell Receptor (BCR) leading to generation of second messengers,35

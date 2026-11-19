@@ -1,0 +1,857 @@
+a,contrast,compartment,subtype,kind,entrez,symbol,l2fc,direction,sex_chrom_Y
+E-GEOD-14386-g2_g1,IFN-beta-1a vs none,whole blood,MS,treatment,3429,IFI27,2.3,up,False
+E-GEOD-14386-g2_g1,IFN-beta-1a vs none,whole blood,MS,treatment,3552,IL1A,-1.3,down,False
+E-GEOD-14386-g2_g1,IFN-beta-1a vs none,whole blood,MS,treatment,359845,RFLNB,-1.1,down,False
+E-GEOD-14386-g2_g1,IFN-beta-1a vs none,whole blood,MS,treatment,4318,MMP9,-1.4,down,False
+E-GEOD-14386-g2_g1,IFN-beta-1a vs none,whole blood,MS,treatment,4360,MRC1,-1.7,down,False
+E-GEOD-14386-g2_g1,IFN-beta-1a vs none,whole blood,MS,treatment,4938,OAS1,1.1,up,False
+E-GEOD-14386-g2_g1,IFN-beta-1a vs none,whole blood,MS,treatment,5168,ENPP2,1.3,up,False
+E-GEOD-14386-g2_g1,IFN-beta-1a vs none,whole blood,MS,treatment,5266,PI3,-1.0,down,False
+E-GEOD-14386-g2_g1,IFN-beta-1a vs none,whole blood,MS,treatment,6367,CCL22,-1.1,down,False
+E-GEOD-14386-g2_g1,IFN-beta-1a vs none,whole blood,MS,treatment,6373,CXCL11,2.7,up,False
+E-GEOD-14386-g2_g1,IFN-beta-1a vs none,whole blood,MS,treatment,81030,ZBP1,1.0,up,False
+E-GEOD-14386-g2_g1,IFN-beta-1a vs none,whole blood,MS,treatment,9966,TNFSF15,-1.4,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,100131733,,1.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,101927027,,1.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,1026,CDKN1A,1.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,10346,TRIM22,1.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,10410,IFITM3,2.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,105373098,,1.4,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,10561,IFI44,2.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,10581,IFITM2,1.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,10800,CYSLTR1,1.0,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,10964,IFI44L,4.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,113730,KLHDC7B,2.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,114793,FMNL2,2.4,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,115362,GBP5,1.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,116071,BATF2,1.9,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,118932,ANKRD22,3.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,1230,CCR1,1.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,127254,ERICH3,1.0,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,129607,CMPK2,2.6,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,140691,TRIM69,1.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,140707,BRI3BP,-1.0,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,144811,LACC1,1.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,1514,CTSL,1.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,151636,DTX3L,1.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,1672,DEFB1,2.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,1975,EIF4B,-1.5,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,219285,SAMD9L,2.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,23034,SAMD4A,2.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,23424,TDRD7,1.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,2359,FPR3,2.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,2591,GALNT3,1.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,259307,IL4I1,1.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,26010,SPATS2L,2.8,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,26270,FBXO6,1.8,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,2633,GBP1,2.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,2643,GCH1,1.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,26509,MYOF,1.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,27074,LAMP3,2.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,27348,TOR1B,1.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,2766,GMPR,3.0,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,286333,,1.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3111,HLA-DOA,-1.4,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3429,IFI27,7.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3430,IFI35,2.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3431,SP110,1.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3434,IFIT1,3.8,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3480,IGF1R,-1.1,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,355,FAS,1.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3606,IL18,-1.4,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3615,IMPDH2,-1.0,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3620,IDO1,1.9,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3627,CXCL10,4.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3665,IRF7,2.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3669,ISG20,1.9,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3682,ITGAE,-1.1,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3717,JAK2,1.8,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,391020,,2.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3949,LDLR,1.8,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,3959,LGALS3BP,3.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,4061,LY6E,2.8,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,4343,MOV10,1.8,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,4496,MT1H,1.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,4502,MT2A,1.6,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,4599,MX1,2.8,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,4600,MX2,2.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,4938,OAS1,2.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,4939,OAS2,2.6,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,4940,OAS3,3.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,51131,PHF11,1.0,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,51191,HERC5,3.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,51284,TLR7,1.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,51316,PLAC8,1.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,51338,MS4A4A,2.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,51513,ETV7,1.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,51523,CXXC5,-1.0,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,5326,PLAGL2,1.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,5359,PLSCR1,1.4,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,5414,SEPTIN4,1.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,54625,PARP14,1.4,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,54739,XAF1,2.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,54809,SAMD9,1.9,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,54877,ZCCHC2,1.4,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,55008,HERC6,2.6,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,55026,TMEM255A,3.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,55300,PI4K2B,1.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,55337,SHFL,1.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,55601,DDX60,2.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,558,AXL,2.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,5610,EIF2AK2,1.8,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,57169,ZNFX1,1.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,57493,HEG1,1.4,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,57674,RNF213,1.0,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,57801,HES4,2.9,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,6125,RPL5,-1.0,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,6347,CCL2,5.6,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,6355,CCL8,5.6,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,6373,CXCL11,3.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,64135,IFIH1,2.0,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,644,BLVRA,1.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,64761,PARP12,1.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,6614,SIGLEC1,3.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,6653,SORL1,-1.1,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,6772,STAT1,1.4,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,6773,STAT2,1.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,6890,TAP1,1.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,710,SERPING1,4.6,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,713,C1QB,2.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,714,C1QC,1.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,717,C2,1.6,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,738,VPS51,-1.0,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,7444,VRK2,1.4,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,7453,WARS1,1.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,79132,DHX58,1.6,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,80830,APOL6,1.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,81030,ZBP1,2.9,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,83666,PARP9,2.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,838,CASP5,2.0,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,8436,CAVIN2,-1.3,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,8454,CUL1,1.4,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,84941,HSH2D,1.0,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,8519,IFITM1,2.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,85363,TRIM5,1.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,85441,HELZ2,1.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,8564,KMO,1.8,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,8638,OASL,3.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,87178,PNPT1,1.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,873,CBR1,1.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,8820,HESX1,4.3,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,911,CD1C,-1.3,down,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,9111,NMI,1.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,91351,DDX60L,1.6,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,91543,RSAD2,4.4,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,91624,NEXN,3.5,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,9246,UBE2L6,1.4,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,94240,EPSTI1,3.0,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,9447,AIM2,1.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,950,SCARB2,1.2,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,952,CD38,1.7,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,9636,ISG15,3.1,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,9683,N4BP1,1.0,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,9830,TRIM14,1.0,up,False
+E-GEOD-26104-g7_g3,IFN-beta-1a 3 mo vs baseline,PBMC,MS,treatment,9910,RABGAP1L,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,10011,SRA1,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,100128398,,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,100128731,OST4,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,100129387,,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,100271044,,-1.6,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,100289635,,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,100506190,,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,100506965,,-1.4,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,10093,ARPC4,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,101060200,,-1.2,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,10169,SERF2,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,101927015,,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,101927156,,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,101927300,,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,101928595,,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,101929693,,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,10211,FLOT1,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,10245,TIMM17B,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,102723508,,-1.5,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,102724231,,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,103910,MYL12B,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1043,CD52,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,104472715,,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,10467,ZNHIT1,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,105372274,,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,105372578,,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,105377267,,-1.8,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,10567,RABAC1,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,10581,IFITM2,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,10589,DRAP1,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,10695,CNPY3,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,10936,GPR75,-1.4,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,10975,UQCR11,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,11018,TMED1,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,11224,RPL35,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,11279,KLF8,-1.2,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,11316,COPE,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,113230,MISP3,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,115350,FCRL1,-1.2,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,116362,RBP7,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,116541,,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,117144,CATSPER1,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1192,CLIC1,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1212,CLTB,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,121233923,,-1.4,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,122830,NAA30,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,124989,EFCAB13,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,127687,C1orf122,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,128553,TSHZ2,-1.2,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1298,COL9A2,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,130399,ACVR1C,-1.3,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1327,COX4I1,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1329,COX5B,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1337,COX6A1,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1340,COX6B1,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1347,COX7A2,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,139886,SPIN4,-1.3,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1438,CSF2RA,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,146225,,1.7,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1471,CST3,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1475,CSTA,1.6,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,147710,IGSF23,2.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,148206,ZNF714,-1.2,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,148808,SLC60A1,-1.3,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,150209,AIFM3,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,151258,SLC38A11,-1.6,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,152007,GLIPR2,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1603,DAD1,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,162655,,-1.3,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,163131,,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,165631,PARP15,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,170622,,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,171558,,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,1978,EIF4EBP1,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,199,AIF1,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,199675,MCEMP1,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,207063,,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2197,FAU,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2207,FCER1G,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,221421,RSPH9,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2217,FCGRT,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,22807,IKZF2,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,22921,MSRB2,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,23443,SLC35A3,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2352,FOLR3,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,23564,DDAH2,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,23643,LY96,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2483,FRG1,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2512,FTL,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,255809,C19orf38,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,257068,PLCXD2,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,257218,,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,25796,PGLS,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,25824,PRDX5,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2584,GALK1,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,259217,HSPA12A,-1.6,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2647,BLOC1S1,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2678,GGT1,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2687,GGT5,1.5,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,27089,UQCRQ,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,27166,PRELID1,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,27243,CHMP2A,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2787,GNG5,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2791,GNG11,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,2815,GP9,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,283152,,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,284565,NBPF15,-1.2,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,285331,,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,286046,XKR6,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,286148,DPY19L4,-1.3,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,286205,SCAI,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,28776,,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,28817,,1.5,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,28874,,1.5,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,28923,,1.6,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,28943,,1.6,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,29108,PYCARD,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,29796,UQCR10,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,29844,TFPT,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3002,GZMB,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3006,H1-2,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3012,H2AC8,1.6,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3042,,1.7,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3049,HBQ1,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3106,HLA-B,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3107,HLA-C,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3119,HLA-DQB1,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,339318,ZNF181,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,340205,TREML1,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,345778,MTX3,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,348094,,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3493,,1.5,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3494,,1.7,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3501,,1.5,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3512,JCHAIN,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,353514,LILRA5,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3539,,1.6,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3557,IL1RN,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3577,CXCR1,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3665,IRF7,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3669,ISG20,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,387119,CEP85L,-1.3,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,388886,,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,391,RHOG,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,3956,LGALS1,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4037,LRP3,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,440270,GOLGA8B,-1.3,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4550,,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4572,,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4637,MYL6,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4648,MYO7B,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4689,NCF4,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4694,NDUFA1,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4709,NDUFB3,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4712,NDUFB6,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4778,NFE2,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4814,NINJ1,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4897,NRCAM,-1.6,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4900,NRGN,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,4907,NT5E,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,50840,,-1.4,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,51155,JPT1,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,51255,RNF181,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,51330,TNFRSF12A,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,514,ATP5F1E,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,51471,,1.5,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,51639,SF3B6,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,51678,PALS2,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,51734,MSRB1,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,5196,PF4,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,5199,CFP,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,5266,PI3,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,533,ATP6V0B,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,54055,,1.5,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,54550,NECAB2,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,5473,PPBP,1.5,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,55194,EVA1B,1.5,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,55287,TMEM40,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,5531,PPP4C,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,55366,LGR4,-1.6,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,55505,NOP10,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,55614,KIF16B,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,55851,PSENEN,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,56344,CABP5,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,56655,POLE4,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,56953,NT5M,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,572,BAD,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,57480,PLEKHG1,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,57489,ODF2L,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,57683,,-1.4,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,58986,PGAP6,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,59286,UBL5,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,597,BCL2A1,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6039,RNASE6,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6152,RPL24,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6155,RPL27,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6156,RPL30,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6160,RPL31,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6161,RPL32,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6170,RPL39,1.5,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6203,RPS9,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6208,RPS14,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6210,RPS15A,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6222,RPS18,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6227,RPS21,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6232,RPS27,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6235,RPS29,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6275,S100A4,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6277,S100A6,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6279,S100A8,1.8,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6280,S100A9,1.8,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6282,S100A11,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6283,S100A12,1.8,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6286,S100P,1.5,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,642852,,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,646719,,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,64928,MRPL14,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6590,SLPI,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6746,SSR2,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6799,SULT1A2,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6888,TALDO1,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,6923,ELOB,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,7053,TGM3,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,706,TSPO,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,7076,TIMP1,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,7136,TNNI2,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,7263,TST,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,7277,TUBA4A,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,729389,,-1.6,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,7294,TXK,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,7295,TXN,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,7305,TYROBP,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,7316,UBC,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,746,TMEM258,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,7784,ZP3,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,7850,IL1R2,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,79095,BBLN,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,79368,FCRL2,-1.2,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,7940,LST1,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,79925,SPEF2,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,80019,UBTD1,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,80311,KLHL15,-1.2,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,814,CAMK4,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,820,CAMP,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,8209,GATD3,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,8294,H4C9,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,8317,CDC7,-1.2,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,83442,SH3BGRL3,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,83862,TMEM120A,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,83982,,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,8411,EEA1,-1.2,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,84316,NAA38,1.3,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,84460,ZMAT1,-1.4,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,84519,,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,84557,MAP1LC3A,1.4,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,84765,ZNF577,-1.3,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,84967,LSM10,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,8556,CDC14A,-1.3,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,8638,OASL,1.5,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,8702,B4GALT4,-1.0,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,8992,ATP6V0E1,1.2,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,9172,MYOM2,1.6,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,92370,,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,92749,DRC1,1.8,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,93979,,1.6,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,9446,GSTO1,1.1,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,9535,GMFG,1.0,up,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,9737,GPRASP1,-1.1,down,False
+E-GEOD-66573-g1_g2,RRMS vs healthy,whole blood,RRMS,disease,978,CDA,1.3,up,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,100379132,,-1.1,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,100505658,,-1.2,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,100873962,,-3.5,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,100874292,,-1.1,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,101929595,,-1.2,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,104384744,,-1.0,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,10461,MERTK,1.5,up,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,11135,CDC42EP1,-1.2,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,128667226,,-1.0,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,146227,BEAN1,-1.0,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,2151,F2RL2,-1.1,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,246126,,-6.3,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,256714,MAP7D2,1.5,up,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,3734,,-3.4,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,55286,PGCKA1,-1.0,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,5616,,-5.6,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,6192,RPS4Y1,-7.9,down,True
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,642757,,-1.2,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,652983,,-1.0,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,7403,KDM6A,1.0,up,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,7404,,-6.4,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,7503,,7.2,up,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,7544,ZFY,-5.3,down,True
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,7710,ZNF154,-1.2,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,8284,KDM5D,-7.1,down,True
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,8287,USP9Y,-4.7,down,True
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,8349,H2BC21,1.1,up,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,83869,,-2.2,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,8528,DDO,1.4,up,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,8653,DDX3Y,-7.5,down,True
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,9086,,-6.2,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,9087,,-2.6,down,False
+E-GEOD-77598-g2_g1,MS vs healthy,blood CD14+ monocytes,MS,disease,9383,,1.7,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,100129726,,1.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,100130557,,1.8,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,10204,NUTF2,1.2,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,10313,RTN3,1.2,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,10346,TRIM22,1.8,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,10410,IFITM3,1.6,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,10561,IFI44,3.4,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,1060,CENPC,-1.1,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,10793,ZNF273,-1.0,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,107984208,,2.3,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,10964,IFI44L,4.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,11054,OGFR,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,11147,,1.5,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,114769,,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,114790,STK11IP,-1.0,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,117289,TAGAP,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,128408,BHLHE23,2.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,133,ADM,1.4,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,143371,,-1.1,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,151636,DTX3L,1.4,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,219285,SAMD9L,1.9,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,23136,,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,23224,SYNE2,-1.0,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,23245,ASTN2,-1.4,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,23347,SMCHD1,1.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,23424,TDRD7,1.3,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,2358,FPR2,1.2,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,2520,GAST,1.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,26184,,3.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,2633,GBP1,2.2,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,26716,,1.5,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,27020,NPTN,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,27023,FOXB1,1.9,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,27344,PCSK1N,1.9,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,27349,MCAT,-1.4,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,27430,MAT2B,1.3,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,2790,GNG10,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,2827,GPR3,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,2837,UTS2R,1.4,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,28454,,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,286676,ILDR1,-2.6,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,3007,H1-3,-1.5,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,3008,H1-4,-1.6,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,3428,IFI16,1.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,3429,IFI27,3.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,3433,IFIT2,2.6,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,3434,IFIT1,3.5,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,345651,,1.4,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,3460,IFNGR2,1.3,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,362,AQP5,1.4,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,372,ARCN1,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,3726,JUNB,1.3,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,375387,NRROS,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,375790,AGRN,1.4,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,4194,MDM4,-1.0,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,4299,AFF1,1.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,440068,,1.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,440387,CTRB2,3.7,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,4599,MX1,3.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,4600,MX2,1.7,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,4615,MYD88,1.2,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,4683,NBN,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,4700,NDUFA6,-1.0,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,472,ATM,-1.4,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,4939,OAS2,2.5,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,4940,OAS3,3.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,51191,HERC5,2.8,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,51338,MS4A4A,1.2,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,51435,,2.7,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,5265,SERPINA1,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,5328,PLAU,-1.1,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,5359,PLSCR1,1.9,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,53940,FTHL17,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,54434,SSH1,-1.1,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,54676,GTPBP2,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,55200,PLEKHG6,1.2,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,55573,CDV3,-1.1,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,55601,DDX60,2.2,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,56108,,-1.3,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,567,B2M,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,56829,ZC3HAV1,1.4,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,57169,ZNFX1,1.3,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,5788,PTPRC,-1.0,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,613204,,1.2,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,6184,RPN1,1.3,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,643617,,-1.6,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,64651,CSRNP1,1.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,646643,SBK2,2.4,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,65108,MARCKSL1,1.2,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,6737,TRIM21,1.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,6772,STAT1,1.4,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,6890,TAP1,1.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,7130,TNFAIP6,2.2,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,7352,UCP3,-1.3,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,7755,,2.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,79132,DHX58,2.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,83666,PARP9,2.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,8367,H4C5,-1.5,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,84376,HOOK3,-1.4,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,84651,SPINK7,2.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,8484,,1.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,8564,KMO,1.3,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,8638,OASL,2.7,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,8676,STX11,1.6,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,8812,CCNK,-1.0,down,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,9111,NMI,1.2,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,91179,SCARF2,1.4,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,91543,RSAD2,4.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,9181,ARHGEF2,1.1,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,972,CD74,1.0,up,False
+E-MTAB-2973-g3_g2,MS vs healthy (no exercise arm),whole blood,MS,disease,9844,ELMO1,1.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,100113407,,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,100133941,CD24,1.5,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,100505573,INAFM2,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,100505702,,-1.6,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,101929272,,1.8,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,10261,IGSF6,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,10288,LILRB2,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,10402,ST3GAL6,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,10462,CLEC10A,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1051,CEBPB,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1052,CEBPD,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,10673,TNFSF13B,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,10875,FGL2,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,10894,LYVE1,-2.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,10924,SMPDL3A,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,11027,LILRA2,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,11031,RAB31,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,11130,ZWINT,1.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,11213,IRAK3,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,11240,PADI2,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,113115,MTFR2,1.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,11326,VSIG4,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,114548,NLRP3,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,114793,FMNL2,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,114884,OSBPL10,1.6,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,115350,FCRL1,1.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,116435295,,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,120939,TMEM52B,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,121512,FGD4,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1285,COL4A3,1.1,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1390,CREM,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,140685,ZBTB46,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,140885,SIRPA,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,143458,LDLRAD3,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1436,CSF1R,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,145508,CEP128,1.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1462,VCAN,-1.6,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1475,CSTA,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1508,CTSB,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1524,CX3CR1,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1525,CXADR,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,153,ADRB1,-1.7,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1536,CYBB,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,154214,RNF217,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1545,CYP1B1,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1601,DAB2,-1.7,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,160518,DENND5B,1.3,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,161742,SPRED1,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1675,CFD,-1.6,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1824,DSC2,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1839,HBEGF,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1848,DUSP6,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1879,EBF1,1.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,1958,EGR1,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,199,AIF1,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,199675,MCEMP1,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2,A2M,-1.9,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2037,EPB41L2,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2059,EPS8,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2114,ETS2,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2119,ETV5,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2162,F13A1,-1.9,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,217,ALDH2,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2180,ACSL1,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,219790,RTKN2,1.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2205,FCER1A,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2215,FCGR3B,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,221749,PXDC1,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,22837,COBLL1,1.1,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,22918,CD93,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,23001,WDFY3,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,23022,PALLD,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,23034,SAMD4A,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,23136,,-1.7,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,23166,STAB1,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,23191,CYFIP1,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,23232,TBC1D12,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,23312,DMXL2,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2335,FN1,-1.8,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2353,FOS,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2355,FOSL2,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2357,FPR1,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2359,FPR3,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,23601,CLEC5A,-2.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,23654,PLXNB2,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,23677,SH3BP4,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,240,ALOX5,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2495,FTH1,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,259266,ASPM,1.2,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,25927,CNRIP1,-1.6,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2628,GATM,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,26509,MYOF,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,26524,LATS2,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,2681,GGTA1,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,27143,PALD1,-1.6,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,27287,VENTX,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,27306,HPGDS,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,283663,,1.1,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,284013,VMO1,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,284207,,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,28442,,1.1,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,286319,,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,28862,,2.3,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,28908,,1.9,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,28912,,1.6,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,29940,DSE,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3055,HCK,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,30817,ADGRE2,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3109,HLA-DMB,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3161,HMMR,1.2,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3162,HMOX1,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3176,HNMT,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3507,IGHM,3.9,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3512,JCHAIN,2.3,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3514,,4.7,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3553,IL1B,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3554,IL1R1,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3557,IL1RN,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3576,CXCL8,-2.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3597,IL13RA1,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3684,ITGAM,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3693,ITGB5,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3786,KCNQ3,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,3832,KIF11,1.1,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,388,RHOB,-1.6,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,389206,BEND4,1.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,395,ARHGAP6,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,4005,LMO2,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,4069,LYZ,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,4082,MARCKS,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,4286,MITF,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,4288,MKI67,1.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,4332,,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,4360,MRC1,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,441478,NRARP,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,4481,MSR1,-2.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,463,ZFHX3,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,467,ATF3,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,4783,NFIL3,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,481,ATP1B1,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,4929,NR4A2,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,4973,OLR1,-2.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5008,OSM,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5074,PAWR,1.1,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5079,PAX5,1.7,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,51237,MZB1,1.9,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,51284,TLR7,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,51309,ARMCX1,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,51311,TLR8,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,51313,GASK1B,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,51375,SNX7,-1.6,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5209,PFKFB3,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5265,SERPINA1,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5284,PIGR,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5328,PLAU,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5329,PLAUR,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,53346,TM6SF1,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5368,PNOC,1.1,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,54210,TREM1,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,54453,RIN2,-2.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5450,POU2AF1,3.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,54947,LPCAT2,-1.8,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,55022,PID1,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,55103,RALGPS2,1.2,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,55160,ARHGEF10L,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,55214,P3H2,1.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,55240,STEAP3,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,55521,TRIM36,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,55534,MAML3,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,55647,RAB20,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5570,PKIB,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,55701,ARHGEF40,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5577,PRKAR2B,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,558,AXL,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,55803,ADAP2,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,55917,CTTNBP2NL,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,55959,SULF2,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,56034,PDGFC,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5627,PROS1,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5654,HTRA1,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,56975,FAM20C,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,57211,ADGRG6,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5742,PTGS1,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5743,PTGS2,-1.6,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,57458,TMCC3,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,57565,KLHL14,1.4,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,57568,SIPA1L2,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,58191,,-1.6,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,5836,PYGL,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,58504,ARHGAP22,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,586,BCAT1,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,59345,GNB4,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6036,RNASE2,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,60370,AVPI1,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,608,TNFRSF17,3.3,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6241,RRM2,2.2,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6252,RTN1,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6256,RXRA,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6272,SORT1,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,63971,KIF13A,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6414,SELENOP,-2.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,64231,MS4A6A,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6446,SGK1,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6453,ITSN1,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,645784,,3.2,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,64581,CLEC7A,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,64759,TNS3,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,64798,DEPTOR,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,64805,P2RY12,-1.7,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,65059,RAPH1,-1.9,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6507,SLC1A3,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6546,SLC8A1,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6622,SNCA,-1.8,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6696,SPP1,-2.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,6886,TAL1,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,699,BUB1,1.2,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,701,BUB1B,1.2,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,7045,TGFBI,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,7056,THBD,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,7062,TCHH,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,7077,TIMP2,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,7097,TLR2,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,7099,TLR4,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,713,C1QB,-1.7,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,7153,TOP2A,1.2,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,718,C3,-1.8,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,719,C3AR1,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,7200,TRH,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,728,C5AR1,-2.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,7422,VEGFA,-2.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,7850,IL1R2,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,7881,KCNAB1,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,79365,BHLHE41,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,79368,FCRL2,1.2,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,79887,PLBD1,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,79895,ATP8B4,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,79971,WLS,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,79974,CPED1,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,80005,DOCK5,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,8013,NR4A3,-1.7,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,80343,,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,8099,CDK2AP1,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,81035,COLEC12,-2.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,8321,FZD1,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,83416,FCRL5,1.1,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,83937,,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,83992,CTTNBP2,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,84002,B3GNT5,-1.6,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,8476,CDC42BPA,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,84803,GPAT3,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,84868,HAVCR2,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,84898,,-1.7,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,85439,STON2,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,85461,TANC1,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,85477,SCIN,-2.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,857,CAV1,1.2,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,8660,IRS2,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,8682,PEA15,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,8685,MARCO,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,8754,ADAM9,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,8836,GGH,1.1,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,8857,FCGBP,-1.7,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,8870,IER3,-1.8,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,891,CCNB1,1.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,8942,KYNU,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9023,CH25H,-2.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,90362,FAM110B,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9056,SLC7A7,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9060,PAPSS2,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,928,CD9,-1.3,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,929,CD14,-1.9,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,93035,PKHD1L1,1.4,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9306,SOCS6,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9308,CD83,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,931,MS4A1,1.4,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9314,KLF4,-1.4,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9332,CD163,-1.9,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,942,CD86,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9447,AIM2,1.0,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9450,LY86,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,952,CD38,1.8,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9586,CREB5,-1.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,973,CD79A,1.2,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9732,DOCK4,-2.0,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9787,DLGAP5,1.3,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9834,FAM30A,1.9,up,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9886,RHOBTB1,-1.2,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9891,NUAK1,-1.1,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9935,MAFB,-1.5,down,False
+E-MTAB-69-g3_g1,MS vs non-inflammatory neuro. disease,CSF leukocytes,MS,disease,9936,CD302,-1.1,down,False

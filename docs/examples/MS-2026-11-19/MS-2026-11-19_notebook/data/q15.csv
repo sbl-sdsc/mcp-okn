@@ -1,0 +1,1001 @@
+mondo,d,dlabel,p,n
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00001,Lepirudin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00001,Lepirudin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00001,Lepirudin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00001,Lepirudin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00001,Lepirudin,https://w3id.org/biolink/vocab/contraindicated_for,15
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00001,Lepirudin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00001,Lepirudin,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00002,Cetuximab,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00002,Cetuximab,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00002,Cetuximab,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00002,Cetuximab,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00002,Cetuximab,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00002,Cetuximab,https://w3id.org/biolink/vocab/treats,25
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00003,Dornase alfa,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00003,Dornase alfa,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00003,Dornase alfa,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00003,Dornase alfa,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00003,Dornase alfa,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00003,Dornase alfa,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00004,Denileukin diftitox,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00004,Denileukin diftitox,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00004,Denileukin diftitox,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00004,Denileukin diftitox,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00004,Denileukin diftitox,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00004,Denileukin diftitox,https://w3id.org/biolink/vocab/treats,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00005,Etanercept,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00005,Etanercept,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00005,Etanercept,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00005,Etanercept,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00005,Etanercept,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00005,Etanercept,https://w3id.org/biolink/vocab/treats,21
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00006,Bivalirudin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00006,Bivalirudin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00006,Bivalirudin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00006,Bivalirudin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00006,Bivalirudin,https://w3id.org/biolink/vocab/contraindicated_for,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00006,Bivalirudin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00006,Bivalirudin,https://w3id.org/biolink/vocab/treats,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00007,Leuprolide,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00007,Leuprolide,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00007,Leuprolide,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00007,Leuprolide,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00007,Leuprolide,https://w3id.org/biolink/vocab/contraindicated_for,16
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00007,Leuprolide,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00007,Leuprolide,https://w3id.org/biolink/vocab/treats,31
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00008,Peginterferon alfa-2a,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00008,Peginterferon alfa-2a,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00008,Peginterferon alfa-2a,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00008,Peginterferon alfa-2a,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00008,Peginterferon alfa-2a,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00008,Peginterferon alfa-2a,https://w3id.org/biolink/vocab/treats,6
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00009,Alteplase,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00009,Alteplase,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00009,Alteplase,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00009,Alteplase,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00009,Alteplase,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00009,Alteplase,https://w3id.org/biolink/vocab/treats,10
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00010,Sermorelin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00010,Sermorelin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00010,Sermorelin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00010,Sermorelin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00010,Sermorelin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00010,Sermorelin,https://w3id.org/biolink/vocab/treats,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00012,Darbepoetin alfa,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00012,Darbepoetin alfa,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00012,Darbepoetin alfa,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00012,Darbepoetin alfa,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00012,Darbepoetin alfa,https://w3id.org/biolink/vocab/contraindicated_for,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00012,Darbepoetin alfa,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00012,Darbepoetin alfa,https://w3id.org/biolink/vocab/treats,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00013,Urokinase,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00013,Urokinase,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00013,Urokinase,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00013,Urokinase,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00013,Urokinase,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00013,Urokinase,https://w3id.org/biolink/vocab/treats,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00014,Goserelin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00014,Goserelin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00014,Goserelin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00014,Goserelin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00014,Goserelin,https://w3id.org/biolink/vocab/contraindicated_for,11
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00014,Goserelin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00014,Goserelin,https://w3id.org/biolink/vocab/treats,9
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00015,Reteplase,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00015,Reteplase,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00015,Reteplase,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00015,Reteplase,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00015,Reteplase,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00015,Reteplase,https://w3id.org/biolink/vocab/treats,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00017,Salmon calcitonin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00017,Salmon calcitonin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00017,Salmon calcitonin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00017,Salmon calcitonin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00017,Salmon calcitonin,https://w3id.org/biolink/vocab/contraindicated_for,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00017,Salmon calcitonin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00017,Salmon calcitonin,https://w3id.org/biolink/vocab/treats,11
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00022,Peginterferon alfa-2b,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00022,Peginterferon alfa-2b,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00022,Peginterferon alfa-2b,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00022,Peginterferon alfa-2b,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00022,Peginterferon alfa-2b,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00022,Peginterferon alfa-2b,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00023,Asparaginase Escherichia coli,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00023,Asparaginase Escherichia coli,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00023,Asparaginase Escherichia coli,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00023,Asparaginase Escherichia coli,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00023,Asparaginase Escherichia coli,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00023,Asparaginase Escherichia coli,https://w3id.org/biolink/vocab/treats,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00025,"Antihemophilic factor, human recombinant",http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00025,"Antihemophilic factor, human recombinant",http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00025,"Antihemophilic factor, human recombinant",http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00025,"Antihemophilic factor, human recombinant",https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00025,"Antihemophilic factor, human recombinant",https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00025,"Antihemophilic factor, human recombinant",https://w3id.org/biolink/vocab/treats,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00026,Anakinra,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00026,Anakinra,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00026,Anakinra,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00026,Anakinra,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00026,Anakinra,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00026,Anakinra,https://w3id.org/biolink/vocab/treats,18
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00027,Gramicidin D,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00027,Gramicidin D,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00027,Gramicidin D,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00027,Gramicidin D,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00027,Gramicidin D,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00027,Gramicidin D,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00030,Insulin human,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00030,Insulin human,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00030,Insulin human,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00030,Insulin human,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00030,Insulin human,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00030,Insulin human,https://w3id.org/biolink/vocab/treats,5
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00031,Tenecteplase,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00031,Tenecteplase,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00031,Tenecteplase,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00031,Tenecteplase,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00031,Tenecteplase,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00031,Tenecteplase,https://w3id.org/biolink/vocab/treats,7
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00035,Desmopressin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00035,Desmopressin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00035,Desmopressin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00035,Desmopressin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00035,Desmopressin,https://w3id.org/biolink/vocab/contraindicated_for,14
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00035,Desmopressin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00035,Desmopressin,https://w3id.org/biolink/vocab/treats,12
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00036,Coagulation factor VIIa Recombinant Human,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00036,Coagulation factor VIIa Recombinant Human,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00036,Coagulation factor VIIa Recombinant Human,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00036,Coagulation factor VIIa Recombinant Human,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00036,Coagulation factor VIIa Recombinant Human,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00036,Coagulation factor VIIa Recombinant Human,https://w3id.org/biolink/vocab/treats,5
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00038,Oprelvekin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00038,Oprelvekin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00038,Oprelvekin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00038,Oprelvekin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00038,Oprelvekin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00038,Oprelvekin,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00041,Aldesleukin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00041,Aldesleukin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00041,Aldesleukin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00041,Aldesleukin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00041,Aldesleukin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00041,Aldesleukin,https://w3id.org/biolink/vocab/treats,24
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00043,Omalizumab,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00043,Omalizumab,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00043,Omalizumab,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00043,Omalizumab,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00043,Omalizumab,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00043,Omalizumab,https://w3id.org/biolink/vocab/treats,11
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00046,Insulin lispro,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00046,Insulin lispro,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00046,Insulin lispro,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00046,Insulin lispro,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00046,Insulin lispro,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00046,Insulin lispro,https://w3id.org/biolink/vocab/treats,9
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00047,Insulin glargine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00047,Insulin glargine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00047,Insulin glargine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00047,Insulin glargine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00047,Insulin glargine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00047,Insulin glargine,https://w3id.org/biolink/vocab/treats,8
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00048,Collagenase clostridium histolyticum,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00048,Collagenase clostridium histolyticum,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00048,Collagenase clostridium histolyticum,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00048,Collagenase clostridium histolyticum,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00048,Collagenase clostridium histolyticum,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00048,Collagenase clostridium histolyticum,https://w3id.org/biolink/vocab/treats,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00049,Rasburicase,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00049,Rasburicase,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00049,Rasburicase,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00049,Rasburicase,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00049,Rasburicase,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00049,Rasburicase,https://w3id.org/biolink/vocab/treats,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00051,Adalimumab,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00051,Adalimumab,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00051,Adalimumab,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00051,Adalimumab,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00051,Adalimumab,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00051,Adalimumab,https://w3id.org/biolink/vocab/treats,37
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00052,Somatotropin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00052,Somatotropin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00052,Somatotropin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00052,Somatotropin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00052,Somatotropin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00052,Somatotropin,https://w3id.org/biolink/vocab/treats,8
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00053,Imiglucerase,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00053,Imiglucerase,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00053,Imiglucerase,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00053,Imiglucerase,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00053,Imiglucerase,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00053,Imiglucerase,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00056,Gemtuzumab ozogamicin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00056,Gemtuzumab ozogamicin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00056,Gemtuzumab ozogamicin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00056,Gemtuzumab ozogamicin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00056,Gemtuzumab ozogamicin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00056,Gemtuzumab ozogamicin,https://w3id.org/biolink/vocab/treats,23
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00059,Pegaspargase,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00059,Pegaspargase,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00059,Pegaspargase,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00059,Pegaspargase,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00059,Pegaspargase,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00059,Pegaspargase,https://w3id.org/biolink/vocab/treats,7
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00060,Interferon beta-1a,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00060,Interferon beta-1a,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00060,Interferon beta-1a,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00060,Interferon beta-1a,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00060,Interferon beta-1a,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00060,Interferon beta-1a,https://w3id.org/biolink/vocab/treats,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00061,Pegademase,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00061,Pegademase,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00061,Pegademase,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00061,Pegademase,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00061,Pegademase,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00061,Pegademase,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00063,Eptifibatide,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00063,Eptifibatide,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00063,Eptifibatide,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00063,Eptifibatide,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00063,Eptifibatide,https://w3id.org/biolink/vocab/contraindicated_for,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00063,Eptifibatide,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00063,Eptifibatide,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00065,Infliximab,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00065,Infliximab,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00065,Infliximab,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00065,Infliximab,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00065,Infliximab,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00065,Infliximab,https://w3id.org/biolink/vocab/treats,23
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00068,Interferon beta-1b,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00068,Interferon beta-1b,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00068,Interferon beta-1b,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00068,Interferon beta-1b,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00068,Interferon beta-1b,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00068,Interferon beta-1b,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00072,Trastuzumab,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00072,Trastuzumab,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00072,Trastuzumab,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00072,Trastuzumab,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00072,Trastuzumab,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00072,Trastuzumab,https://w3id.org/biolink/vocab/treats,15
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00073,Rituximab,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00073,Rituximab,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00073,Rituximab,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00073,Rituximab,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00073,Rituximab,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00073,Rituximab,https://w3id.org/biolink/vocab/treats,107
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00078,Ibritumomab tiuxetan,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00078,Ibritumomab tiuxetan,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00078,Ibritumomab tiuxetan,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00078,Ibritumomab tiuxetan,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00078,Ibritumomab tiuxetan,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00078,Ibritumomab tiuxetan,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00080,Daptomycin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00080,Daptomycin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00080,Daptomycin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00080,Daptomycin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00080,Daptomycin,https://w3id.org/biolink/vocab/contraindicated_for,11
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00080,Daptomycin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00080,Daptomycin,https://w3id.org/biolink/vocab/treats,6
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00082,Pegvisomant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00082,Pegvisomant,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00082,Pegvisomant,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00082,Pegvisomant,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00082,Pegvisomant,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00082,Pegvisomant,https://w3id.org/biolink/vocab/treats,5
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00085,Pancrelipase,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00085,Pancrelipase,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00085,Pancrelipase,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00085,Pancrelipase,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00085,Pancrelipase,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00085,Pancrelipase,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00087,Alemtuzumab,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00087,Alemtuzumab,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00087,Alemtuzumab,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00087,Alemtuzumab,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00087,Alemtuzumab,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00087,Alemtuzumab,https://w3id.org/biolink/vocab/treats,18
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00088,Alglucerase,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00088,Alglucerase,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00088,Alglucerase,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00088,Alglucerase,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00088,Alglucerase,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00088,Alglucerase,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00090,Laronidase,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00090,Laronidase,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00090,Laronidase,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00090,Laronidase,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00090,Laronidase,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00090,Laronidase,https://w3id.org/biolink/vocab/treats,5
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00091,Cyclosporine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00091,Cyclosporine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00091,Cyclosporine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00091,Cyclosporine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00091,Cyclosporine,https://w3id.org/biolink/vocab/contraindicated_for,25
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00091,Cyclosporine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00091,Cyclosporine,https://w3id.org/biolink/vocab/treats,56
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00099,Filgrastim,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00099,Filgrastim,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00099,Filgrastim,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00099,Filgrastim,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00099,Filgrastim,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00099,Filgrastim,https://w3id.org/biolink/vocab/treats,16
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00100,Coagulation Factor IX (Recombinant),http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00100,Coagulation Factor IX (Recombinant),http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00100,Coagulation Factor IX (Recombinant),http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00100,Coagulation Factor IX (Recombinant),https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00100,Coagulation Factor IX (Recombinant),https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00100,Coagulation Factor IX (Recombinant),https://w3id.org/biolink/vocab/treats,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00104,Octreotide,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00104,Octreotide,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00104,Octreotide,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00104,Octreotide,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00104,Octreotide,https://w3id.org/biolink/vocab/contraindicated_for,20
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00104,Octreotide,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00104,Octreotide,https://w3id.org/biolink/vocab/treats,27
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00105,Interferon alfa-2b,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00105,Interferon alfa-2b,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00105,Interferon alfa-2b,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00105,Interferon alfa-2b,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00105,Interferon alfa-2b,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00105,Interferon alfa-2b,https://w3id.org/biolink/vocab/treats,14
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00106,Abarelix,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00106,Abarelix,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00106,Abarelix,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00106,Abarelix,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00106,Abarelix,https://w3id.org/biolink/vocab/contraindicated_for,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00106,Abarelix,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00107,Oxytocin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00107,Oxytocin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00107,Oxytocin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00107,Oxytocin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00107,Oxytocin,https://w3id.org/biolink/vocab/contraindicated_for,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00107,Oxytocin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00107,Oxytocin,https://w3id.org/biolink/vocab/treats,11
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00108,Natalizumab,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00108,Natalizumab,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00108,Natalizumab,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00108,Natalizumab,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00108,Natalizumab,https://w3id.org/biolink/vocab/contraindicated_for,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00108,Natalizumab,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00108,Natalizumab,https://w3id.org/biolink/vocab/treats,8
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00109,Enfuvirtide,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00109,Enfuvirtide,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00109,Enfuvirtide,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00109,Enfuvirtide,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00109,Enfuvirtide,https://w3id.org/biolink/vocab/contraindicated_for,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00109,Enfuvirtide,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00109,Enfuvirtide,https://w3id.org/biolink/vocab/treats,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00110,Palivizumab,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00110,Palivizumab,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00110,Palivizumab,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00110,Palivizumab,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00110,Palivizumab,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00110,Palivizumab,https://w3id.org/biolink/vocab/treats,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00111,Daclizumab,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00111,Daclizumab,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00111,Daclizumab,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00111,Daclizumab,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00111,Daclizumab,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00111,Daclizumab,https://w3id.org/biolink/vocab/treats,6
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00112,Bevacizumab,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00112,Bevacizumab,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00112,Bevacizumab,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00112,Bevacizumab,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00112,Bevacizumab,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00112,Bevacizumab,https://w3id.org/biolink/vocab/treats,100
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00115,Cyanocobalamin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00115,Cyanocobalamin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00115,Cyanocobalamin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00115,Cyanocobalamin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00115,Cyanocobalamin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00115,Cyanocobalamin,https://w3id.org/biolink/vocab/treats,12
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00117,Histidine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00117,Histidine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00117,Histidine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00117,Histidine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00117,Histidine,https://w3id.org/biolink/vocab/contraindicated_for,19
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00117,Histidine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00118,Ademetionine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00118,Ademetionine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00118,Ademetionine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00118,Ademetionine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00118,Ademetionine,https://w3id.org/biolink/vocab/contraindicated_for,6
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00118,Ademetionine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00120,Phenylalanine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00120,Phenylalanine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00120,Phenylalanine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00120,Phenylalanine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00120,Phenylalanine,https://w3id.org/biolink/vocab/contraindicated_for,19
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00120,Phenylalanine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00121,Biotin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00121,Biotin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00121,Biotin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00121,Biotin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00121,Biotin,https://w3id.org/biolink/vocab/contraindicated_for,13
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00121,Biotin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00121,Biotin,https://w3id.org/biolink/vocab/treats,5
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00122,Choline,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00122,Choline,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00122,Choline,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00122,Choline,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00122,Choline,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00122,Choline,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00123,L-Lysine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00123,L-Lysine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00123,L-Lysine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00123,L-Lysine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00123,L-Lysine,https://w3id.org/biolink/vocab/contraindicated_for,19
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00123,L-Lysine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00125,Arginine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00125,Arginine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00125,Arginine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00125,Arginine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00125,Arginine,https://w3id.org/biolink/vocab/contraindicated_for,28
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00125,Arginine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00125,Arginine,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00126,Ascorbic acid,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00126,Ascorbic acid,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00126,Ascorbic acid,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00126,Ascorbic acid,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00126,Ascorbic acid,https://w3id.org/biolink/vocab/contraindicated_for,64
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00126,Ascorbic acid,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00126,Ascorbic acid,https://w3id.org/biolink/vocab/treats,9
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00128,Aspartic acid,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00128,Aspartic acid,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00128,Aspartic acid,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00128,Aspartic acid,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00128,Aspartic acid,https://w3id.org/biolink/vocab/contraindicated_for,10
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00128,Aspartic acid,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00128,Aspartic acid,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00129,Ornithine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00129,Ornithine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00129,Ornithine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00129,Ornithine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00129,Ornithine,https://w3id.org/biolink/vocab/contraindicated_for,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00129,Ornithine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00130,L-Glutamine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00130,L-Glutamine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00130,L-Glutamine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00130,L-Glutamine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00130,L-Glutamine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00130,L-Glutamine,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00131,Adenosine phosphate,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00131,Adenosine phosphate,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00131,Adenosine phosphate,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00131,Adenosine phosphate,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00131,Adenosine phosphate,https://w3id.org/biolink/vocab/contraindicated_for,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00131,Adenosine phosphate,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00131,Adenosine phosphate,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00133,Serine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00133,Serine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00133,Serine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00133,Serine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00133,Serine,https://w3id.org/biolink/vocab/contraindicated_for,33
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00133,Serine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00133,Serine,https://w3id.org/biolink/vocab/treats,8
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00134,Methionine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00134,Methionine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00134,Methionine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00134,Methionine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00134,Methionine,https://w3id.org/biolink/vocab/contraindicated_for,25
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00134,Methionine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00134,Methionine,https://w3id.org/biolink/vocab/treats,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00136,Calcitriol,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00136,Calcitriol,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00136,Calcitriol,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00136,Calcitriol,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00136,Calcitriol,https://w3id.org/biolink/vocab/contraindicated_for,12
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00136,Calcitriol,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00136,Calcitriol,https://w3id.org/biolink/vocab/treats,19
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00137,Lutein,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00137,Lutein,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00137,Lutein,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00137,Lutein,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00137,Lutein,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00137,Lutein,https://w3id.org/biolink/vocab/treats,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00139,Succinic acid,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00139,Succinic acid,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00139,Succinic acid,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00139,Succinic acid,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00139,Succinic acid,https://w3id.org/biolink/vocab/contraindicated_for,12
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00139,Succinic acid,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00139,Succinic acid,https://w3id.org/biolink/vocab/treats,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00140,Riboflavin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00140,Riboflavin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00140,Riboflavin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00140,Riboflavin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00140,Riboflavin,https://w3id.org/biolink/vocab/contraindicated_for,34
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00140,Riboflavin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00140,Riboflavin,https://w3id.org/biolink/vocab/treats,10
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00142,Glutamic acid,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00142,Glutamic acid,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00142,Glutamic acid,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00142,Glutamic acid,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00142,Glutamic acid,https://w3id.org/biolink/vocab/contraindicated_for,21
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00142,Glutamic acid,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00145,Glycine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00145,Glycine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00145,Glycine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00145,Glycine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00145,Glycine,https://w3id.org/biolink/vocab/contraindicated_for,26
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00145,Glycine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00145,Glycine,https://w3id.org/biolink/vocab/treats,9
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00146,Calcifediol,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00146,Calcifediol,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00146,Calcifediol,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00146,Calcifediol,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00146,Calcifediol,https://w3id.org/biolink/vocab/contraindicated_for,12
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00146,Calcifediol,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00146,Calcifediol,https://w3id.org/biolink/vocab/treats,8
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00149,Leucine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00149,Leucine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00149,Leucine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00149,Leucine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00149,Leucine,https://w3id.org/biolink/vocab/contraindicated_for,19
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00149,Leucine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00149,Leucine,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00150,Tryptophan,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00150,Tryptophan,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00150,Tryptophan,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00150,Tryptophan,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00150,Tryptophan,https://w3id.org/biolink/vocab/contraindicated_for,11
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00150,Tryptophan,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00151,Cysteine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00151,Cysteine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00151,Cysteine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00151,Cysteine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00151,Cysteine,https://w3id.org/biolink/vocab/contraindicated_for,9
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00151,Cysteine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00151,Cysteine,https://w3id.org/biolink/vocab/treats,10
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00153,Ergocalciferol,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00153,Ergocalciferol,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00153,Ergocalciferol,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00153,Ergocalciferol,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00153,Ergocalciferol,https://w3id.org/biolink/vocab/contraindicated_for,60
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00153,Ergocalciferol,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00153,Ergocalciferol,https://w3id.org/biolink/vocab/treats,14
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00155,Citrulline,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00155,Citrulline,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00155,Citrulline,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00155,Citrulline,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00155,Citrulline,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00155,Citrulline,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00156,Threonine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00156,Threonine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00156,Threonine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00156,Threonine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00156,Threonine,https://w3id.org/biolink/vocab/contraindicated_for,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00156,Threonine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00158,Folic acid,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00158,Folic acid,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00158,Folic acid,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00158,Folic acid,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00158,Folic acid,https://w3id.org/biolink/vocab/contraindicated_for,35
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00158,Folic acid,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00158,Folic acid,https://w3id.org/biolink/vocab/treats,15
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00159,Icosapent,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00159,Icosapent,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00159,Icosapent,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00159,Icosapent,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00159,Icosapent,https://w3id.org/biolink/vocab/contraindicated_for,17
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00159,Icosapent,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00159,Icosapent,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00160,Alanine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00160,Alanine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00160,Alanine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00160,Alanine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00160,Alanine,https://w3id.org/biolink/vocab/contraindicated_for,19
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00160,Alanine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00162,Vitamin A,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00162,Vitamin A,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00162,Vitamin A,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00162,Vitamin A,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00162,Vitamin A,https://w3id.org/biolink/vocab/contraindicated_for,26
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00162,Vitamin A,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00162,Vitamin A,https://w3id.org/biolink/vocab/treats,6
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00163,Vitamin E,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00163,Vitamin E,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00163,Vitamin E,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00163,Vitamin E,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00163,Vitamin E,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00163,Vitamin E,https://w3id.org/biolink/vocab/treats,9
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00165,Pyridoxine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00165,Pyridoxine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00165,Pyridoxine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00165,Pyridoxine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00165,Pyridoxine,https://w3id.org/biolink/vocab/contraindicated_for,52
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00165,Pyridoxine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00165,Pyridoxine,https://w3id.org/biolink/vocab/treats,5
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00167,Isoleucine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00167,Isoleucine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00167,Isoleucine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00167,Isoleucine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00167,Isoleucine,https://w3id.org/biolink/vocab/contraindicated_for,19
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00167,Isoleucine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00169,Cholecalciferol,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00169,Cholecalciferol,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00169,Cholecalciferol,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00169,Cholecalciferol,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00169,Cholecalciferol,https://w3id.org/biolink/vocab/contraindicated_for,60
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00169,Cholecalciferol,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00169,Cholecalciferol,https://w3id.org/biolink/vocab/treats,21
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00172,Proline,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00172,Proline,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00172,Proline,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00172,Proline,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00172,Proline,https://w3id.org/biolink/vocab/contraindicated_for,19
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00172,Proline,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00175,Pravastatin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00175,Pravastatin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00175,Pravastatin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00175,Pravastatin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00175,Pravastatin,https://w3id.org/biolink/vocab/contraindicated_for,44
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00175,Pravastatin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00175,Pravastatin,https://w3id.org/biolink/vocab/treats,17
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00176,Fluvoxamine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00176,Fluvoxamine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00176,Fluvoxamine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00176,Fluvoxamine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00176,Fluvoxamine,https://w3id.org/biolink/vocab/contraindicated_for,10
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00176,Fluvoxamine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00176,Fluvoxamine,https://w3id.org/biolink/vocab/treats,9
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00177,Valsartan,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00177,Valsartan,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00177,Valsartan,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00177,Valsartan,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00177,Valsartan,https://w3id.org/biolink/vocab/contraindicated_for,33
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00177,Valsartan,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00177,Valsartan,https://w3id.org/biolink/vocab/treats,13
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00178,Ramipril,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00178,Ramipril,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00178,Ramipril,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00178,Ramipril,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00178,Ramipril,https://w3id.org/biolink/vocab/contraindicated_for,18
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00178,Ramipril,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00178,Ramipril,https://w3id.org/biolink/vocab/treats,15
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00179,Masoprocol,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00179,Masoprocol,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00179,Masoprocol,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00179,Masoprocol,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00179,Masoprocol,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00179,Masoprocol,https://w3id.org/biolink/vocab/treats,7
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00180,Flunisolide,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00180,Flunisolide,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00180,Flunisolide,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00180,Flunisolide,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00180,Flunisolide,https://w3id.org/biolink/vocab/contraindicated_for,16
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00180,Flunisolide,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00180,Flunisolide,https://w3id.org/biolink/vocab/treats,5
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00181,Baclofen,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00181,Baclofen,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00181,Baclofen,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00181,Baclofen,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00181,Baclofen,https://w3id.org/biolink/vocab/contraindicated_for,16
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00181,Baclofen,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00181,Baclofen,https://w3id.org/biolink/vocab/treats,6
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00182,Amphetamine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00182,Amphetamine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00182,Amphetamine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00182,Amphetamine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00182,Amphetamine,https://w3id.org/biolink/vocab/contraindicated_for,74
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00182,Amphetamine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00182,Amphetamine,https://w3id.org/biolink/vocab/treats,9
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00184,Nicotine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00184,Nicotine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00184,Nicotine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00184,Nicotine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00184,Nicotine,https://w3id.org/biolink/vocab/contraindicated_for,41
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00184,Nicotine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00184,Nicotine,https://w3id.org/biolink/vocab/treats,9
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00185,Cevimeline,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00185,Cevimeline,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00185,Cevimeline,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00185,Cevimeline,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00185,Cevimeline,https://w3id.org/biolink/vocab/contraindicated_for,28
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00185,Cevimeline,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00186,Lorazepam,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00186,Lorazepam,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00186,Lorazepam,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00186,Lorazepam,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00186,Lorazepam,https://w3id.org/biolink/vocab/contraindicated_for,23
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00186,Lorazepam,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00186,Lorazepam,https://w3id.org/biolink/vocab/treats,19
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00187,Esmolol,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00187,Esmolol,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00187,Esmolol,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00187,Esmolol,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00187,Esmolol,https://w3id.org/biolink/vocab/contraindicated_for,11
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00187,Esmolol,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00187,Esmolol,https://w3id.org/biolink/vocab/treats,6
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00188,Bortezomib,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00188,Bortezomib,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00188,Bortezomib,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00188,Bortezomib,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00188,Bortezomib,https://w3id.org/biolink/vocab/contraindicated_for,25
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00188,Bortezomib,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00188,Bortezomib,https://w3id.org/biolink/vocab/treats,51
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00189,Ethchlorvynol,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00189,Ethchlorvynol,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00189,Ethchlorvynol,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00189,Ethchlorvynol,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00189,Ethchlorvynol,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00189,Ethchlorvynol,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00190,Carbidopa,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00190,Carbidopa,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00190,Carbidopa,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00190,Carbidopa,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00190,Carbidopa,https://w3id.org/biolink/vocab/contraindicated_for,42
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00190,Carbidopa,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00190,Carbidopa,https://w3id.org/biolink/vocab/treats,12
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00191,Phentermine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00191,Phentermine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00191,Phentermine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00191,Phentermine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00191,Phentermine,https://w3id.org/biolink/vocab/contraindicated_for,25
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00191,Phentermine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00191,Phentermine,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00193,Tramadol,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00193,Tramadol,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00193,Tramadol,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00193,Tramadol,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00193,Tramadol,https://w3id.org/biolink/vocab/contraindicated_for,25
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00193,Tramadol,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00193,Tramadol,https://w3id.org/biolink/vocab/treats,11
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00195,Betaxolol,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00195,Betaxolol,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00195,Betaxolol,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00195,Betaxolol,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00195,Betaxolol,https://w3id.org/biolink/vocab/contraindicated_for,33
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00195,Betaxolol,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00195,Betaxolol,https://w3id.org/biolink/vocab/treats,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00196,Fluconazole,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00196,Fluconazole,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00196,Fluconazole,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00196,Fluconazole,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00196,Fluconazole,https://w3id.org/biolink/vocab/contraindicated_for,6
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00196,Fluconazole,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00196,Fluconazole,https://w3id.org/biolink/vocab/treats,29
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00197,Troglitazone,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00197,Troglitazone,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00197,Troglitazone,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00197,Troglitazone,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00197,Troglitazone,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00197,Troglitazone,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00198,Oseltamivir,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00198,Oseltamivir,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00198,Oseltamivir,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00198,Oseltamivir,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00198,Oseltamivir,https://w3id.org/biolink/vocab/contraindicated_for,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00198,Oseltamivir,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00198,Oseltamivir,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00199,Erythromycin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00199,Erythromycin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00199,Erythromycin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00199,Erythromycin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00199,Erythromycin,https://w3id.org/biolink/vocab/contraindicated_for,21
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00199,Erythromycin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00199,Erythromycin,https://w3id.org/biolink/vocab/treats,54
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00200,Hydroxocobalamin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00200,Hydroxocobalamin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00200,Hydroxocobalamin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00200,Hydroxocobalamin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00200,Hydroxocobalamin,https://w3id.org/biolink/vocab/contraindicated_for,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00200,Hydroxocobalamin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00200,Hydroxocobalamin,https://w3id.org/biolink/vocab/treats,5
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00201,Caffeine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00201,Caffeine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00201,Caffeine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00201,Caffeine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00201,Caffeine,https://w3id.org/biolink/vocab/contraindicated_for,172
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00201,Caffeine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00201,Caffeine,https://w3id.org/biolink/vocab/treats,15
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00202,Succinylcholine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00202,Succinylcholine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00202,Succinylcholine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00202,Succinylcholine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00202,Succinylcholine,https://w3id.org/biolink/vocab/contraindicated_for,80
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00202,Succinylcholine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00203,Sildenafil,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00203,Sildenafil,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00203,Sildenafil,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00203,Sildenafil,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00203,Sildenafil,https://w3id.org/biolink/vocab/contraindicated_for,30
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00203,Sildenafil,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00203,Sildenafil,https://w3id.org/biolink/vocab/treats,28
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00204,Dofetilide,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00204,Dofetilide,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00204,Dofetilide,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00204,Dofetilide,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00204,Dofetilide,https://w3id.org/biolink/vocab/contraindicated_for,9
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00204,Dofetilide,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00204,Dofetilide,https://w3id.org/biolink/vocab/treats,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00205,Pyrimethamine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00205,Pyrimethamine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00205,Pyrimethamine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00205,Pyrimethamine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00205,Pyrimethamine,https://w3id.org/biolink/vocab/contraindicated_for,18
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00205,Pyrimethamine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00205,Pyrimethamine,https://w3id.org/biolink/vocab/treats,5
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00206,Reserpine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00206,Reserpine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00206,Reserpine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00206,Reserpine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00206,Reserpine,https://w3id.org/biolink/vocab/contraindicated_for,50
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00206,Reserpine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00206,Reserpine,https://w3id.org/biolink/vocab/treats,7
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00207,Azithromycin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00207,Azithromycin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00207,Azithromycin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00207,Azithromycin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00207,Azithromycin,https://w3id.org/biolink/vocab/contraindicated_for,12
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00207,Azithromycin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00207,Azithromycin,https://w3id.org/biolink/vocab/treats,62
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00208,Ticlopidine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00208,Ticlopidine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00208,Ticlopidine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00208,Ticlopidine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00208,Ticlopidine,https://w3id.org/biolink/vocab/contraindicated_for,17
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00208,Ticlopidine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00210,Adapalene,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00210,Adapalene,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00210,Adapalene,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00210,Adapalene,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00210,Adapalene,https://w3id.org/biolink/vocab/contraindicated_for,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00210,Adapalene,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00210,Adapalene,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00211,Midodrine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00211,Midodrine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00211,Midodrine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00211,Midodrine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00211,Midodrine,https://w3id.org/biolink/vocab/contraindicated_for,10
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00211,Midodrine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00211,Midodrine,https://w3id.org/biolink/vocab/treats,9
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00213,Pantoprazole,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00213,Pantoprazole,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00213,Pantoprazole,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00213,Pantoprazole,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00213,Pantoprazole,https://w3id.org/biolink/vocab/contraindicated_for,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00213,Pantoprazole,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00213,Pantoprazole,https://w3id.org/biolink/vocab/treats,16
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00214,Torasemide,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00214,Torasemide,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00214,Torasemide,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00214,Torasemide,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00214,Torasemide,https://w3id.org/biolink/vocab/contraindicated_for,8
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00214,Torasemide,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00214,Torasemide,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00215,Citalopram,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00215,Citalopram,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00215,Citalopram,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00215,Citalopram,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00215,Citalopram,https://w3id.org/biolink/vocab/contraindicated_for,16
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00215,Citalopram,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00215,Citalopram,https://w3id.org/biolink/vocab/treats,14
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00216,Eletriptan,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00216,Eletriptan,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00216,Eletriptan,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00216,Eletriptan,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00216,Eletriptan,https://w3id.org/biolink/vocab/contraindicated_for,31
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00216,Eletriptan,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00216,Eletriptan,https://w3id.org/biolink/vocab/treats,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00218,Moxifloxacin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00218,Moxifloxacin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00218,Moxifloxacin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00218,Moxifloxacin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00218,Moxifloxacin,https://w3id.org/biolink/vocab/contraindicated_for,21
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00218,Moxifloxacin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00218,Moxifloxacin,https://w3id.org/biolink/vocab/treats,32
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00220,Nelfinavir,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00220,Nelfinavir,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00220,Nelfinavir,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00220,Nelfinavir,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00220,Nelfinavir,https://w3id.org/biolink/vocab/contraindicated_for,10
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00220,Nelfinavir,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00220,Nelfinavir,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00222,Glimepiride,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00222,Glimepiride,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00222,Glimepiride,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00222,Glimepiride,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00222,Glimepiride,https://w3id.org/biolink/vocab/contraindicated_for,68
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00222,Glimepiride,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00222,Glimepiride,https://w3id.org/biolink/vocab/treats,8
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00224,Indinavir,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00224,Indinavir,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00224,Indinavir,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00224,Indinavir,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00224,Indinavir,https://w3id.org/biolink/vocab/contraindicated_for,16
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00224,Indinavir,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00224,Indinavir,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00226,Guanadrel,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00226,Guanadrel,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00226,Guanadrel,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00226,Guanadrel,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00226,Guanadrel,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00226,Guanadrel,https://w3id.org/biolink/vocab/treats,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00227,Lovastatin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00227,Lovastatin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00227,Lovastatin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00227,Lovastatin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00227,Lovastatin,https://w3id.org/biolink/vocab/contraindicated_for,25
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00227,Lovastatin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00227,Lovastatin,https://w3id.org/biolink/vocab/treats,18
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00228,Enflurane,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00228,Enflurane,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00228,Enflurane,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00228,Enflurane,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00228,Enflurane,https://w3id.org/biolink/vocab/contraindicated_for,6
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00228,Enflurane,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00230,Pregabalin,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00230,Pregabalin,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00230,Pregabalin,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00230,Pregabalin,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00230,Pregabalin,https://w3id.org/biolink/vocab/contraindicated_for,17
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00230,Pregabalin,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00230,Pregabalin,https://w3id.org/biolink/vocab/treats,24
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00231,Temazepam,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00231,Temazepam,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00231,Temazepam,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00231,Temazepam,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00231,Temazepam,https://w3id.org/biolink/vocab/contraindicated_for,15
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00231,Temazepam,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00231,Temazepam,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00232,Methyclothiazide,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00232,Methyclothiazide,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00232,Methyclothiazide,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00232,Methyclothiazide,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00232,Methyclothiazide,https://w3id.org/biolink/vocab/contraindicated_for,32
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00232,Methyclothiazide,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00232,Methyclothiazide,https://w3id.org/biolink/vocab/treats,6
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00233,Aminosalicylic acid,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00233,Aminosalicylic acid,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00233,Aminosalicylic acid,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00233,Aminosalicylic acid,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00233,Aminosalicylic acid,https://w3id.org/biolink/vocab/contraindicated_for,17
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00233,Aminosalicylic acid,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00233,Aminosalicylic acid,https://w3id.org/biolink/vocab/treats,6
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00234,Reboxetine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00234,Reboxetine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00234,Reboxetine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00234,Reboxetine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00234,Reboxetine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00234,Reboxetine,https://w3id.org/biolink/vocab/treats,4
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00235,Milrinone,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00235,Milrinone,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00235,Milrinone,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00235,Milrinone,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00235,Milrinone,https://w3id.org/biolink/vocab/contraindicated_for,13
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00235,Milrinone,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00235,Milrinone,https://w3id.org/biolink/vocab/treats,3
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00237,Butabarbital,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00237,Butabarbital,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00237,Butabarbital,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00237,Butabarbital,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00237,Butabarbital,https://w3id.org/biolink/vocab/contraindicated_for,94
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00237,Butabarbital,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00237,Butabarbital,https://w3id.org/biolink/vocab/treats,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00238,Nevirapine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00238,Nevirapine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00238,Nevirapine,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00238,Nevirapine,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00238,Nevirapine,https://w3id.org/biolink/vocab/contraindicated_for,13
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00238,Nevirapine,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00238,Nevirapine,https://w3id.org/biolink/vocab/treats,5
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00239,Oxiconazole,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00239,Oxiconazole,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00239,Oxiconazole,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00239,Oxiconazole,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00239,Oxiconazole,https://w3id.org/biolink/vocab/contraindicated_for,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00239,Oxiconazole,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00239,Oxiconazole,https://w3id.org/biolink/vocab/treats,5
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00241,Butalbital,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00241,Butalbital,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00241,Butalbital,http://www.w3.org/2004/02/skos/core#prefLabel,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00241,Butalbital,https://w3id.org/biolink/vocab/category,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00241,Butalbital,https://w3id.org/biolink/vocab/contraindicated_for,79
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00241,Butalbital,https://w3id.org/biolink/vocab/id,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00241,Butalbital,https://w3id.org/biolink/vocab/treats,2
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00242,Cladribine,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00242,Cladribine,http://www.w3.org/2000/01/rdf-schema#label,1
+http://purl.obolibrary.org/obo/MONDO_0005301,http://identifiers.org/drugbank/DB00242,Cladribine,http://www.w3.org/2004/02/skos/core#prefLabel,1

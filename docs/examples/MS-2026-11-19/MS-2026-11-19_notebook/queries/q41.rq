@@ -1,0 +1,4 @@
+SELECT ?item ?doid WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> { <http://purl.obolibrary.org/obo/DOID_2377> a <https://w3id.org/biolink/vocab/Disease> . }
+  GRAPH <https://purl.org/okn/frink/kg/wikidata> { VALUES ?doid { "DOID:2377" } ?item <http://www.wikidata.org/prop/direct/P699> ?doid . }
+}

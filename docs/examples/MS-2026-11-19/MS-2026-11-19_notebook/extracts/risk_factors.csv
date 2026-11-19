@@ -1,0 +1,161 @@
+pred,semtype,entity,kg,factor
+causes,bact_bact,Acinetobacter,biohealth,Bacteria / microbes
+predisposes_to_condition,orga_orga,Age,biohealth,Sex / age / genetics
+predisposes_to_condition,hops,Air Pollutants,biohealth,Air pollution / chemicals / metals
+causes,eehu,Air Pollution,biohealth,Air pollution / chemicals / metals
+predisposes_to_condition,inbe_inbe,Alcohol consumption,biohealth,Other
+causes,bact_bact,Bacteria,biohealth,Bacteria / microbes
+predisposes_to_condition,bhvr_bhvr,Behavior,biohealth,Other
+predisposes_to_condition,orga_orga,Birth Weight,biohealth,Other
+predisposes_to_condition,orga,Body Size,biohealth,Adiposity / body size / diet
+predisposes_to_condition,orga_orga,Body Weight,biohealth,Adiposity / body size / diet
+preventative_for_condition,orch_phsu_vita_orch,Calcitriol,biohealth,Vitamin D / sunlight
+predisposes_to_condition,orch_phsu_vita_orch,Cholecalciferol,biohealth,Vitamin D / sunlight
+predisposes_to_condition,food_orch_phsu_food,Cod Liver Oil,biohealth,Vitamin D / sunlight
+preventative_for_condition,food_orch_phsu_food,Cod Liver Oil,biohealth,Vitamin D / sunlight
+predisposes_to_condition,food_food,Coffee,biohealth,Adiposity / body size / diet
+predisposes_to_condition,inbe_inbe,Conflict (Psychology),biohealth,Other
+preventative_for_condition,hlca_hlca,Counseling,biohealth,Other
+causes,virs_virs,Cytomegalovirus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,food_food,Dairy Products,biohealth,Adiposity / body size / diet
+causes,food_food,Diet,biohealth,Adiposity / body size / diet
+predisposes_to_condition,food_food,Diet,biohealth,Adiposity / body size / diet
+causes,virs,"Distemper Virus, Canine",biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+preventative_for_condition,hops_orch_hops,Endotoxins,biohealth,Other
+causes,eehu,Environmental Pollution,biohealth,Air pollution / chemicals / metals
+causes,virs_virs,Epstein-Barr Virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,orch_phsu_vita_phsu,Ergocalciferol,biohealth,Vitamin D / sunlight
+predisposes_to_condition,orch_phsu_vita_phsu,Ergocalciferol,biohealth,Vitamin D / sunlight
+predisposes_to_condition,dora_dora,Exercise,biohealth,Physical activity
+preventative_for_condition,dora_dora,Exercise,biohealth,Physical activity
+causes,food,Fish Products,biohealth,Adiposity / body size / diet
+predisposes_to_condition,food_food,Food,biohealth,Adiposity / body size / diet
+predisposes_to_condition,food_food,Fruit,biohealth,Adiposity / body size / diet
+predisposes_to_condition,orga,Genotype,biohealth,Sex / age / genetics
+predisposes_to_condition,inbe_inbe,Behaviorial Habits,biohealth,Other
+predisposes_to_condition,orga,Haplotypes,biohealth,Sex / age / genetics
+predisposes_to_condition,inbe,Health behavior,biohealth,Other
+causes,virs,Hepatitis B Virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,Murine hepatitis virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs_virs,Human Herpesvirus 2,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs_virs,Herpesviridae,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs_virs,"Herpesvirus 1, Cercopithecine",biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs_virs,"Herpesvirus 6, Human",biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+predisposes_to_condition,hops_hops,Irritants,biohealth,Air pollution / chemicals / metals
+causes,virs_virs,JC Virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+preventative_for_condition,dora,Leisure Activities,biohealth,Physical activity
+causes,virs_virs,Lymphocytic choriomeningitis virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,"Herpesvirus 2, Gallid",biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,Measles virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+predisposes_to_condition,food_food,Meat,biohealth,Adiposity / body size / diet
+predisposes_to_condition,dora,Physical activity,biohealth,Physical activity
+preventative_for_condition,dora,Physical activity,biohealth,Physical activity
+causes,virs,Mumps virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,Myxoviruses,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,hops_orch_orch,Nicotine,biohealth,Tobacco smoke / nicotine
+predisposes_to_condition,hops_orch_orch,Nicotine,biohealth,Tobacco smoke / nicotine
+preventative_for_condition,hops_orch_orch,Nicotine,biohealth,Tobacco smoke / nicotine
+predisposes_to_condition,orga,Nutritional Requirements,biohealth,Other
+causes,virs,Oncogenic Viruses,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,hops_hops,Pesticides,biohealth,Air pollution / chemicals / metals
+predisposes_to_condition,orga,Phenotype,biohealth,Other
+causes,virs_virs,Family Picornaviridae,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,bact_bact,Pseudomonas,biohealth,Bacteria / microbes
+causes,virs,Rabies virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,Retroviridae,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,Rhinovirus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+predisposes_to_condition,hops,Rodenticides,biohealth,Air pollution / chemicals / metals
+causes,virs,Rubella virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,Semliki forest virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+predisposes_to_condition,orga,Sex Characteristics,biohealth,Sex / age / genetics
+causes,virs,Slow virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,hops_hops,Smoke,biohealth,Tobacco smoke / nicotine
+predisposes_to_condition,hops_hops,Smoke,biohealth,Tobacco smoke / nicotine
+predisposes_to_condition,inbe_inbe,Smoking,biohealth,Tobacco smoke / nicotine
+causes,bact_bact,Spirochaeta genus,biohealth,Bacteria / microbes
+causes,bact_bact,Streptococcus,biohealth,Bacteria / microbes
+predisposes_to_condition,hops_orch_orch,Tobacco,biohealth,Tobacco smoke / nicotine
+causes,virs,Vaccinia virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs_virs,Human herpesvirus 3,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+predisposes_to_condition,food,Vegetables,biohealth,Adiposity / body size / diet
+causes,virs_virs,Virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,orch_phsu_vita_phsu,Vitamin A,biohealth,Other
+predisposes_to_condition,orch_phsu_vita_orch,Vitamin B 12,biohealth,Other
+causes,orch_phsu_vita_phsu,Vitamin D,biohealth,Vitamin D / sunlight
+predisposes_to_condition,orch_phsu_vita_phsu,Vitamin D,biohealth,Vitamin D / sunlight
+preventative_for_condition,orch_phsu_vita_phsu,Vitamin D,biohealth,Vitamin D / sunlight
+preventative_for_condition,orch_phsu_vita_orch,Vitamins,biohealth,Other
+causes,hops,bisphenol A,biohealth,Air pollution / chemicals / metals
+predisposes_to_condition,orga,Gender,biohealth,Sex / age / genetics
+causes,bact_bact,Helicobacter pylori,biohealth,Bacteria / microbes
+causes,virs,"Herpesvirus 7, Human",biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,Spumavirus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+preventative_for_condition,dora_dora,Walking (activity),biohealth,Physical activity
+predisposes_to_condition,inbe,Cessation of smoking,biohealth,Tobacco smoke / nicotine
+causes,bact,Mycobacterium paratuberculosis,biohealth,Bacteria / microbes
+predisposes_to_condition,orga_orga,Ability,biohealth,Other
+predisposes_to_condition,inbe_inbe,Dietary Habits,biohealth,Adiposity / body size / diet
+predisposes_to_condition,orga_orga,Females,biohealth,Sex / age / genetics
+causes,virs_virs,"T-Cell Leukemia Viruses, Human",biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+predisposes_to_condition,orga_orga,Males,biohealth,Sex / age / genetics
+predisposes_to_condition,orch_phsu_vita_orch,Folate,biohealth,Other
+causes,food_food,"Sodium Chloride, Dietary",biohealth,Adiposity / body size / diet
+causes,virs,Genus: Coronavirus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,"Encephalomyelitis Virus, Murine, Theiler",biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,Morbillivirus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs_virs,Simplexvirus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+preventative_for_condition,hlca_hlca,Evaluation,biohealth,Other
+predisposes_to_condition,orga_orga,Predisposition -- attribute,biohealth,Other
+predisposes_to_condition,hops_hops,Cigarette smoke (substance),biohealth,Tobacco smoke / nicotine
+causes,hops_orch_phsu_hops,Opioids,biohealth,Other
+predisposes_to_condition,orga,Genetic Heterogeneity,biohealth,Sex / age / genetics
+predisposes_to_condition,hops,Smoking tobacco,biohealth,Tobacco smoke / nicotine
+predisposes_to_condition,orga,Genetic Predisposition to Disease,biohealth,Sex / age / genetics
+causes,virs,Human virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+predisposes_to_condition,inbe,Cigarette smoker,biohealth,Tobacco smoke / nicotine
+causes,food,Cow's milk,biohealth,Adiposity / body size / diet
+causes,eehu,Pollution,biohealth,Air pollution / chemicals / metals
+predisposes_to_condition,lbtr,Human cells,biohealth,Other
+predisposes_to_condition,lbtr,Immunoglobulin level - finding,biohealth,Other
+predisposes_to_condition,hops_hops,Tobacco smoke,biohealth,Tobacco smoke / nicotine
+predisposes_to_condition,qnco,Score,biohealth,Other
+predisposes_to_condition,food,Processed meat,biohealth,Adiposity / body size / diet
+predisposes_to_condition,inbe_inbe,Tobacco use,biohealth,Tobacco smoke / nicotine
+predisposes_to_condition,inbe,Milk intake,biohealth,Adiposity / body size / diet
+predisposes_to_condition,orga,Life event observable,biohealth,Other
+predisposes_to_condition,inbe,Confident,biohealth,Other
+predisposes_to_condition,inbe_inbe,Performance,biohealth,Other
+predisposes_to_condition,orga,virus infection mechanism,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+predisposes_to_condition,orga,trait,biohealth,Sex / age / genetics
+predisposes_to_condition,food,Nutrients,biohealth,Other
+predisposes_to_condition,inbe_inbe,skill,biohealth,Other
+predisposes_to_condition,orga,genetic trait,biohealth,Sex / age / genetics
+predisposes_to_condition,inbe,healthful behavior,biohealth,Other
+causes,virs,human gammaherpesvirus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+predisposes_to_condition,inbe,Psychological adjustment,biohealth,Other
+predisposes_to_condition,dora,Cigarette Smoking,biohealth,Tobacco smoke / nicotine
+preventative_for_condition,hlca_hlca,Reporting,biohealth,Other
+predisposes_to_condition,orga,Proband,biohealth,Sex / age / genetics
+predisposes_to_condition,hops,Environmental Tobacco Smoke,biohealth,Tobacco smoke / nicotine
+predisposes_to_condition,orga_orga,Response process,biohealth,Other
+causes,virs,Torque teno virus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,"Herpesvirus 6A, Human",biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,"Herpesvirus 6B, Human",biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+predisposes_to_condition,inbe,Physical Activity:behavior,biohealth,Physical activity
+causes,virs,"Herpesvirus 1, Meleagrid",biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+causes,virs,Human endogenous retrovirus W,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+preventative_for_condition,hlca_hlca,Intervention regimes,biohealth,Other
+predisposes_to_condition,dora,Fitness,biohealth,Physical activity
+preventative_for_condition,dora_dora,Moderate Exercise,biohealth,Physical activity
+predisposes_to_condition,orga,sex,biohealth,Sex / age / genetics
+preventative_for_condition,hlca_hlca,follow-up,biohealth,Other
+predisposes_to_condition,orga,adiposity,biohealth,Adiposity / body size / diet
+predisposes_to_condition,food,Soft Drinks,biohealth,Adiposity / body size / diet
+preventative_for_condition,hlca_hlca,Clinical Observation,biohealth,Other
+predisposes_to_condition,orga,Genetic Background,biohealth,Sex / age / genetics
+causes,virs,2019 novel coronavirus,biohealth,"Viral infection (EBV, HHV-6, HERV-W, CMV, measles…)"
+contributes_to,,teriflunomide,rdkg,Other
+contributes_to,,Lead,rdkg,Air pollution / chemicals / metals
+contributes_to,,Mercury,rdkg,Air pollution / chemicals / metals
+contributes_to,,Solvents,rdkg,Air pollution / chemicals / metals
+contributes_to,,Tobacco Smoke Pollution,rdkg,Tobacco smoke / nicotine

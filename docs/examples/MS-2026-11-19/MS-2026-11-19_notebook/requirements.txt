@@ -1,0 +1,10 @@
+pandas>=1.5
+numpy
+scipy
+matplotlib>=3.7
+networkx
+geopandas
+contextily
+folium
+branca
+pillow

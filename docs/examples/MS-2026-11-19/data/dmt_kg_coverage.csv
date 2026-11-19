@@ -1,0 +1,17 @@
+dmt,rdkg,prokn_indication,prokn_target,wikidata,target_genes,target_tiers
+Interferon-β,True,False,False,True,—,—
+Glatiramer acetate,True,True,False,False,—,—
+Fingolimod,True,True,True,True,S1PR1,S1PR1:B
+Siponimod,True,True,True,False,S1PR1,S1PR1:B
+Ozanimod,True,True,True,False,"S1PR1, S1PR5","S1PR1:B, S1PR5:B"
+Ponesimod,False,True,True,False,S1PR1,S1PR1:B
+Natalizumab,True,True,True,True,"ITGA4, ITGB1, ITGB7","ITGA4:C, ITGB1:D, ITGB7:C"
+Ocrelizumab,True,True,True,False,MS4A1,MS4A1:B
+Ofatumumab,True,True,True,False,MS4A1,MS4A1:B
+Ublituximab,True,True,True,False,MS4A1,MS4A1:B
+Alemtuzumab,True,True,True,True,CD52,CD52:B
+Cladribine,True,True,False,True,—,—
+Fumarates (DMF/DRF/MMF),True,True,True,True,KEAP1,KEAP1:C
+Teriflunomide,True,True,True,True,DHODH,DHODH:D
+Mitoxantrone,True,True,True,True,TOP2A,TOP2A:C
+BTK inhibitors,True,True,True,False,BTK,BTK:C

@@ -1,0 +1,276 @@
+key,name,kgs,n_kg,drug_class,mechanism,status,contexts
+mitoxantrone,Mitoxantrone,"['prokn', 'rdkg', 'wikidata']",3,Cytotoxic,TOP2A inhibition,approved DMT (legacy),MONDO_0005314; drug used for treatment; phase nan
+teriflunomide,Teriflunomide,"['prokn', 'rdkg', 'wikidata']",3,DHODH inhibitor,pyrimidine synthesis in activated lymphocytes,approved DMT,MONDO_0000452; MONDO_0005301; MONDO_0018784; drug used for treatment; phase nan; progressive MS group
+alemtuzumab,Alemtuzumab,"['prokn', 'rdkg', 'wikidata']",3,Anti-CD52 mAb,CD52 lymphocyte depletion,approved DMT,MONDO_0005314; MONDO_0018784; drug used for treatment; phase 4.0
+methylprednisolone,Methylprednisolone,"['prokn', 'rdkg', 'wikidata']",3,Corticosteroid,relapse treatment (NR3C1),relapse,MONDO_0005301; MONDO_0005314; MONDO_0018784; drug used for treatment; phase nan
+dalfampridine,Dalfampridine,"['prokn', 'rdkg', 'wikidata']",3,K+ channel blocker,symptomatic gait,symptomatic,MONDO_0005301; drug used for treatment; phase nan
+betamethasone,Betamethasone,"['prokn', 'rdkg', 'wikidata']",3,,,,MONDO_0005301; drug used for treatment; phase nan
+fingolimod,Fingolimod,"['prokn', 'rdkg', 'wikidata']",3,S1P receptor modulator,S1PR1 lymphocyte sequestration,approved DMT,MONDO_0005314; MONDO_0018784; drug used for treatment; phase nan
+diroximel fumarate,Diroximel Fumarate,"['prokn', 'rdkg']",2,Fumarate,KEAP1/NRF2 activation,approved DMT,MONDO_0000452; phase nan
+prednisolone,Prednisolone,"['prokn', 'rdkg']",2,,,,MONDO_0005301; phase nan
+prednisone,Prednisone,"['prokn', 'rdkg']",2,,,,MONDO_0005301; phase nan; progressive MS group
+glatiramer,Glatiramer Acetate,"['prokn', 'rdkg']",2,Immunomodulator,MHC-II peptide competition / Th2 shift,approved DMT,MONDO_0000452; MONDO_0005314; MONDO_0018784; phase nan
+belimumab,Belimumab,"['prokn', 'rdkg']",2,,,,MONDO_0005314; phase 2.0
+baclofen,ARBACLOFEN PLACARBIL,"['prokn', 'wikidata']",2,GABA-B agonist,spasticity,symptomatic,drug used for treatment; phase 3.0; phase 4.0
+interferon beta,"Interferon Beta-1b (betaseron, Bay86-5046)","['rdkg', 'wikidata']",2,Interferon,IFNAR1/IFNAR2 signalling,approved DMT,MONDO_0000452; MONDO_0005314; MONDO_0018784; drug used for treatment
+rituximab,Rituximab,"['rdkg', 'wikidata']",2,Anti-CD20 mAb (off-label),MS4A1 B-cell depletion,off-label,MONDO_0000452; MONDO_0005314; drug used for treatment
+triamcinolone,Triamcinolone,"['prokn', 'rdkg']",2,,,,MONDO_0005301; phase nan
+siponimod,Siponimod,"['prokn', 'rdkg']",2,S1P receptor modulator,S1PR1/S1PR5,approved DMT,MONDO_0018784; phase nan
+biotin,Biotin,"['prokn', 'rdkg']",2,,,,MONDO_0000452; phase 3.0
+fampridine,Fampridine,"['prokn', 'rdkg']",2,K+ channel blocker,symptomatic gait,symptomatic,phase 3.0; progressive MS group
+ozanimod,Ozanimod,"['prokn', 'rdkg']",2,S1P receptor modulator,S1PR1/S1PR5,approved DMT,MONDO_0005301; phase nan
+daclizumab,Daclizumab,"['rdkg', 'wikidata']",2,Anti-CD25 mAb,IL2RA (withdrawn 2018),withdrawn,MONDO_0005314; drug used for treatment
+natalizumab,Natalizumab,"['rdkg', 'wikidata']",2,Anti-integrin mAb,ITGA4 (VLA-4) blockade of BBB transmigration,approved DMT,MONDO_0005301; MONDO_0018784; drug used for treatment; progressive MS group
+armodafinil,ARMODAFINIL,"['prokn', 'wikidata']",2,,,,drug used for treatment; phase 2.0
+cladribine,Cladribine,"['rdkg', 'wikidata']",2,Purine analogue,ADA-resistant lymphocyte depletion,approved DMT,MONDO_0005314; drug used for treatment
+dexamethasone,Dexamethasone,"['prokn', 'rdkg']",2,,,,MONDO_0005301; phase nan
+monomethyl fumarate,monomethyl fumarate,"['prokn', 'wikidata']",2,Fumarate,KEAP1/NRF2 activation,approved DMT,drug used for treatment; phase nan
+dimethyl fumarate,Dimethyl fumarate,"['rdkg', 'wikidata']",2,Fumarate,KEAP1/NRF2 activation,approved DMT,MONDO_0005314; MONDO_0018784; drug used for treatment
+chembl66092,CHEMBL66092,['prokn'],1,,,,phase 3.0
+chembl657,CHEMBL657,['prokn'],1,,,,phase 3.0
+chembl650,CHEMBL650,['prokn'],1,,,,phase 4.0
+chembl635,CHEMBL635,['prokn'],1,,,,phase 4.0
+chembl612,CHEMBL612,['prokn'],1,,,,phase 2.0
+clemastine,Clemastine Fumarate,['rdkg'],1,Remyelination candidate,HRH1 / M1 muscarinic antagonism,investigational,MONDO_0000452; MONDO_0005314
+copaxone,Copaxone®,['rdkg'],1,,,,MONDO_0005314
+cortisol measurement,Cortisol Measurement,['prokn'],1,,,,phase nan
+chembl63,CHEMBL63,['prokn'],1,,,,phase 2.0
+chembl998,CHEMBL998,['prokn'],1,,,,phase 1.0
+chembl975,CHEMBL975,['prokn'],1,,,,phase 2.0
+chembl744,CHEMBL744,['prokn'],1,,,,phase 2.0
+chembl796,CHEMBL796,['prokn'],1,,,,phase 3.0
+chembl807,CHEMBL807,['prokn'],1,,,,phase 3.0
+chembl8659,CHEMBL8659,['prokn'],1,,,,phase 1.0
+chembl973,CHEMBL973,['prokn'],1,,,,phase 4.0
+chembl880,CHEMBL880,['prokn'],1,,,,phase 2.0
+chembl885,CHEMBL885,['prokn'],1,,,,phase 2.0
+chembl90,CHEMBL90,['prokn'],1,,,,phase 2.0
+chembl940,CHEMBL940,['prokn'],1,,,,phase 2.0
+chembl928,CHEMBL928,['prokn'],1,,,,phase 4.0
+chembl742,CHEMBL742,['prokn'],1,,,,phase 0.5
+chembl465,CHEMBL465,['prokn'],1,,,,phase 2.0
+chembl4649457,CHEMBL4649457,['prokn'],1,,,,phase 1.0
+chembl460026,CHEMBL460026,['prokn'],1,,,,phase 2.0
+chembl4594547,CHEMBL4594547,['prokn'],1,,,,phase 2.0
+chembl4594357,CHEMBL4594357,['prokn'],1,,,,phase 2.0
+chembl457,CHEMBL457,['prokn'],1,,,,phase 1.0
+chembl45,CHEMBL45,['prokn'],1,,,,phase 1.0
+corticotropin,corticotropin,['wikidata'],1,,,,drug used for treatment
+chembl4298150,CHEMBL4298150,['prokn'],1,,,,phase 4.0
+chembl4297884,CHEMBL4297884,['prokn'],1,,,,phase 1.0
+chembl4297743,CHEMBL4297743,['prokn'],1,,,,phase 2.0
+chembl4297672,CHEMBL4297672,['prokn'],1,,,,phase 1.0
+chembl4297542,CHEMBL4297542,['prokn'],1,,,,phase 1.0
+chembl4297363,CHEMBL4297363,['prokn'],1,,,,phase 2.0
+chembl420,CHEMBL420,['prokn'],1,,,,phase 1.0
+chembl408701,CHEMBL408701,['prokn'],1,,,,phase 1.0
+chembl4483575,CHEMBL4483575,['prokn'],1,,,,phase 3.0
+chembl6068609,CHEMBL6068609,['prokn'],1,,,,phase 1.0
+chembl595,CHEMBL595,['prokn'],1,,,,phase 1.0
+chembl589586,CHEMBL589586,['prokn'],1,,,,phase 4.0
+chembl58,CHEMBL58,['prokn'],1,,,,phase 3.0
+chembl571,CHEMBL571,['prokn'],1,,,,phase 2.0
+chembl559180,CHEMBL559180,['prokn'],1,,,,phase 1.0
+chembl544665,CHEMBL544665,['prokn'],1,,,,phase 4.0
+chembl4650323,CHEMBL4650323,['prokn'],1,,,,phase 3.0
+chembl52440,CHEMBL52440,['prokn'],1,,,,phase 3.0
+chembl521,CHEMBL521,['prokn'],1,,,,phase 3.0
+chembl5095416,CHEMBL5095416,['prokn'],1,,,,phase 1.0
+chembl5095122,CHEMBL5095122,['prokn'],1,,,,phase 3.0
+chembl5095050,CHEMBL5095050,['prokn'],1,,,,phase 4.0
+chembl502,CHEMBL502,['prokn'],1,,,,phase 3.0
+chembl467,CHEMBL467,['prokn'],1,,,,phase 2.0
+chembl4650485,CHEMBL4650485,['prokn'],1,,,,phase 2.0
+chembl5314474,CHEMBL5314474,['prokn'],1,,,,phase 2.0
+acyclovir sodium,ACYCLOVIR SODIUM,['prokn'],1,,,,phase 3.0
+azithromycin,AZITHROMYCIN,['prokn'],1,,,,phase 2.0
+beta-interferon,Beta-interferon,['rdkg'],1,,,,MONDO_0018784
+bg00012,Bg00012,['rdkg'],1,,,,MONDO_0005314
+biib-091,BIIB-091,['prokn'],1,,,,phase 2.0
+acth,Acth,['rdkg'],1,,,,MONDO_0000452
+biib041,Biib041 (fampridine),['rdkg'],1,,,,MONDO_0000452
+bioactivated gra for adult patients,Bioactivated Gra For Adult Patients,['rdkg'],1,,,,MONDO_0018784
+bioactivated gra for pediatric patients,Bioactivated Gra For Pediatric Patients,['rdkg'],1,,,,MONDO_0018784
+briakinumab,BRIAKINUMAB,['prokn'],1,,,,phase 2.0
+bryostatin 1,BRYOSTATIN 1,['prokn'],1,,,,phase 1.0
+butylated hydroxytoluene,BUTYLATED HYDROXYTOLUENE,['prokn'],1,,,,phase 1.0
+cannabidiol,CANNABIDIOL,['prokn'],1,,,,phase 2.0
+n-acetyl cysteine,N-acetyl Cysteine,['rdkg'],1,,,,progressive MS group
+carbidopa,CARBIDOPA,['prokn'],1,,,,phase 2.0
+carbonic acid,Carbonic Acid,['spoke-okn'],1,,,,TREATS_CtD (flagged)
+cc-97540,Cc-97540,['rdkg'],1,,,,MONDO_0000452
+celecoxib,CELECOXIB,['prokn'],1,,,,phase 2.0
+cetirizine,CETIRIZINE,['prokn'],1,,,,phase 3.0
+charcoal activated,"CHARCOAL, ACTIVATED",['prokn'],1,,,,phase 3.0
+chembl1042,CHEMBL1042,['prokn'],1,,,,phase 2.0
+chembl1064,CHEMBL1064,['prokn'],1,,,,phase 3.0
+chembl1068,CHEMBL1068,['prokn'],1,,,,phase 2.0
+chembl1096146,CHEMBL1096146,['prokn'],1,,,,phase 4.0
+chembl1096882,CHEMBL1096882,['prokn'],1,,,,phase 1.0
+chembl1140,CHEMBL1140,['prokn'],1,,,,phase 1.0
+chembl1149,CHEMBL1149,['prokn'],1,,,,phase 3.0
+chembl1152,CHEMBL1152,['prokn'],1,,,,phase 4.0
+cannabinol,CANNABINOL,['prokn'],1,,,,phase 2.0
+cortisol succinate,cortisol succinate,['prokn'],1,,,,phase nan
+cortisone,Cortisone acetate,['rdkg'],1,,,,MONDO_0005301
+cyanocobalamin,cyanocobalamin,['wikidata'],1,,,,drug used for treatment
+cyclophosphamide,Cyclophosphamide,['rdkg'],1,,,,MONDO_0000452
+dantrolene,dantrolene,['wikidata'],1,RyR antagonist,spasticity,symptomatic,drug used for treatment
+dietary supplement vitamin a,Dietary Supplement: Vitamin A,['rdkg'],1,,,,MONDO_0005314
+dimethyl ether,Dimethyl Ether,['prokn'],1,,,,phase nan
+chembl4072833,CHEMBL4072833,['prokn'],1,,,,phase 3.0
+nbi-5788,Nbi-5788,['rdkg'],1,,,,MONDO_0000452
+norethindrone,Norethindrone,['rdkg'],1,,,,progressive MS group
+ocrelizumab,Ocrelizumab Dose 1,['rdkg'],1,Anti-CD20 mAb,MS4A1 B-cell depletion,approved DMT,MONDO_0000452; MONDO_0005314; MONDO_0018784; progressive MS group
+ofatumumab,Ofatumumab,['rdkg'],1,Anti-CD20 mAb,MS4A1 B-cell depletion,approved DMT,MONDO_0005314; MONDO_0018784
+acetic acid 2--1117-dihydroxy-1013-dimethyl-3-oxo-2367891011121314151617-tetradecahydro-1h-cyclopentaaphenanthren-17-yl-2-oxo-ethyl ester,"Acetic acid 2-((8S,9S,10R,11S,13S,14S,17R)-11,17-dihydroxy-10,13-dimethyl-3-oxo-2,3,6,7,8,9,10,11,12,13,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-17-yl)-2-oxo-ethyl ester",['prokn'],1,,,,phase nan
+peg-liposomal prednisolone,Peg-liposomal Prednisolone Sodium Phosphate,['rdkg'],1,,,,MONDO_0005314
+ublituximab,Ublituximab,['rdkg'],1,Anti-CD20 mAb,MS4A1 B-cell depletion,approved DMT,MONDO_0005314; MONDO_0018784
+pregabalin,pregabalin,['wikidata'],1,,,,drug used for treatment
+raltegravir,Raltegravir,['rdkg'],1,,,,MONDO_0005314
+ranitidine,Ranitidine,['rdkg'],1,,,,MONDO_0018784
+rebif,Rebif®,['rdkg'],1,,,,MONDO_0005314; MONDO_0018784
+remibrutinib,Remibrutinib,['rdkg'],1,BTK inhibitor,BTK,investigational,MONDO_0000452
+rg2077,Rg2077 (ctla4-igg4m),['rdkg'],1,,,,MONDO_0005314
+riluzole,Riluzole,['rdkg'],1,,,,progressive MS group
+ritalin,Ritalin,['rdkg'],1,,,,progressive MS group
+saline,Saline,['rdkg'],1,,,,progressive MS group
+sativex,Sativex®,['rdkg'],1,,,,progressive MS group
+tolebrutinib,Tolebrutinib,['rdkg'],1,BTK inhibitor,BTK (B cells + microglia),investigational,MONDO_0000452
+triamcinolone acetonide,Triamcinolone Acetonide,['prokn'],1,,,,phase nan
+triamcinolone di,Triamcinolone diacetate,['prokn'],1,,,,phase nan
+tysabri,Tysabri,['rdkg'],1,,,,MONDO_0005314
+ponesimod,ponesimod,['prokn'],1,S1P receptor modulator,S1PR1,approved DMT,phase nan
+insulin,Insulin,['rdkg'],1,,,,MONDO_0000452
+interferon -1a,Interferon Β-1a,['rdkg'],1,,,,MONDO_0018784
+isopropyl alcohol,Isopropyl Alcohol,['spoke-okn'],1,,,,TREATS_CtD (flagged)
+laquinimod,Laquinimod,['prokn'],1,,,,phase nan
+liothyronine,Liothyronine,['rdkg'],1,,,,MONDO_0000452
+masitinib,Masitinib,['rdkg'],1,Tyrosine kinase inhibitor,"KIT/mast cells, microglia",investigational,progressive MS group
+melatonin,Melatonin,['rdkg'],1,,,,progressive MS group
+methane,Methane,['spoke-okn'],1,,,,TREATS_CtD (flagged)
+acetylcysteine,ACETYLCYSTEINE,['prokn'],1,,,,phase 2.0
+chembl1175,CHEMBL1175,['prokn'],1,,,,phase 2.0
+chembl1200328,CHEMBL1200328,['prokn'],1,,,,phase 3.0
+chembl1200574,CHEMBL1200574,['prokn'],1,,,,phase 2.0
+chembl1200795,CHEMBL1200795,['prokn'],1,,,,phase 1.0
+chembl1200796,CHEMBL1200796,['prokn'],1,,,,phase 3.0
+chembl1200826,CHEMBL1200826,['prokn'],1,,,,phase 1.0
+chembl3833333,CHEMBL3833333,['prokn'],1,,,,phase 3.0
+chembl1294,CHEMBL1294,['prokn'],1,,,,phase 3.0
+chembl1256391,CHEMBL1256391,['prokn'],1,,,,phase 1.0
+chembl1248,CHEMBL1248,['prokn'],1,,,,phase 1.0
+chembl1222250,CHEMBL1222250,['prokn'],1,,,,phase 3.0
+chembl1201836,CHEMBL1201836,['prokn'],1,,,,phase 4.0
+chembl1201835,CHEMBL1201835,['prokn'],1,,,,phase 2.0
+chembl1201607,CHEMBL1201607,['prokn'],1,,,,phase 4.0
+chembl1200927,CHEMBL1200927,['prokn'],1,,,,phase 3.0
+chembl1201576,CHEMBL1201576,['prokn'],1,,,,phase 3.0
+chembl1201507,CHEMBL1201507,['prokn'],1,,,,phase 4.0
+chembl1201288,CHEMBL1201288,['prokn'],1,,,,phase 1.0
+chembl1201265,CHEMBL1201265,['prokn'],1,,,,phase 1.0
+chembl1201222,CHEMBL1201222,['prokn'],1,,,,phase 2.0
+chembl1201119,CHEMBL1201119,['prokn'],1,,,,phase 1.0
+chembl1201081,CHEMBL1201081,['prokn'],1,,,,phase 4.0
+chembl1201014,CHEMBL1201014,['prokn'],1,,,,phase 4.0
+chembl1201605,CHEMBL1201605,['prokn'],1,,,,phase 4.0
+alfuzosin,ALFUZOSIN,['prokn'],1,,,,phase 2.0
+alpha lipoic acid,Alpha Lipoic Acid,['rdkg'],1,,,,progressive MS group
+amantadine,AMANTADINE HYDROCHLORIDE,['prokn'],1,,,,phase 3.0
+amiloride,Amiloride,['rdkg'],1,,,,progressive MS group
+andrographolides,Andrographolides,['rdkg'],1,,,,progressive MS group
+apremilast,apremilast,['wikidata'],1,,,,drug used for treatment
+aspirin,ASPIRIN,['prokn'],1,,,,phase 3.0
+atorvastatin,ATORVASTATIN,['prokn'],1,,,,phase 2.0
+azathioprine,azathioprine,['wikidata'],1,,,,drug used for treatment
+chembl1172,CHEMBL1172,['prokn'],1,,,,phase 3.0
+modafinil,modafinil,['wikidata'],1,,,,drug used for treatment
+biib017,Biib017 (peginterferon Beta-1a),['rdkg'],1,,,,MONDO_0018784
+vay736,Vay736,['rdkg'],1,,,,MONDO_0005314
+-cyclophosphamide,(RS)-cyclophosphamide,['wikidata'],1,,,,drug used for treatment
+acetaminophen,ACETAMINOPHEN,['prokn'],1,,,,phase 3.0
+imu-838,Imu-838 (10 Mg/day),['rdkg'],1,,,,MONDO_0005314
+ibudilast,Ibudilast,['rdkg'],1,PDE inhibitor,"PDE4/10, glial",investigational,progressive MS group
+hydroxocobalamin,hydroxocobalamin,['wikidata'],1,,,,drug used for treatment
+hydrocortisone,Hydrocortisone,['rdkg'],1,,,,MONDO_0005301
+gold nanocrystals,Gold Nanocrystals,['rdkg'],1,,,,progressive MS group
+gnbac1,Gnbac1,['rdkg'],1,,,,MONDO_0005314
+gabapentin,gabapentin,['wikidata'],1,,,,drug used for treatment
+fty720,Fty720,['rdkg'],1,,,,progressive MS group
+acetazolamide,ACETAZOLAMIDE,['prokn'],1,,,,phase 2.0
+fluoxetine,Fluoxetine,['rdkg'],1,,,,progressive MS group
+fludarabine,Fludarabine,['rdkg'],1,,,,MONDO_0000452
+adipose tissue-derived mesenchymal stromal cells,Adipose Tissue-derived Mesenchymal Stromal Cells,['rdkg'],1,,,,progressive MS group
+fenebrutinib,Fenebrutinib,['rdkg'],1,BTK inhibitor,BTK,investigational,MONDO_0018784
+extended-release quetiapine fumarate,Extended-release Quetiapine Fumarate,['rdkg'],1,,,,MONDO_0000452
+estriol,Estriol,['rdkg'],1,,,,progressive MS group
+elnd002,Elnd002,['rdkg'],1,,,,MONDO_0000452; progressive MS group
+disease-modifying therapies,Disease-modifying Therapies,['rdkg'],1,,,,MONDO_0000452
+foralumab tzls-401 100 g,Foralumab Tzls-401 100 Μg,['rdkg'],1,,,,progressive MS group
+chembl2106643,CHEMBL2106643,['prokn'],1,,,,phase 4.0
+chembl2107333,CHEMBL2107333,['prokn'],1,,,,phase 4.0
+chembl2107762,CHEMBL2107762,['prokn'],1,,,,phase 2.0
+chembl2108041,CHEMBL2108041,['prokn'],1,,,,phase 4.0
+chembl2108354,CHEMBL2108354,['prokn'],1,,,,phase 3.0
+chembl2108679,CHEMBL2108679,['prokn'],1,,,,phase 1.0
+chembl2109334,CHEMBL2109334,['prokn'],1,,,,phase 1.0
+chembl2109433,CHEMBL2109433,['prokn'],1,,,,phase 1.0
+chembl220492,CHEMBL220492,['prokn'],1,,,,phase 2.0
+chembl2336071,CHEMBL2336071,['prokn'],1,,,,phase 4.0
+chembl239243,CHEMBL239243,['prokn'],1,,,,phase 1.0
+chembl262777,CHEMBL262777,['prokn'],1,,,,phase 1.0
+chembl269732,CHEMBL269732,['prokn'],1,,,,phase 2.0
+chembl283800,CHEMBL283800,['prokn'],1,,,,phase 1.0
+chembl284348,CHEMBL284348,['prokn'],1,,,,phase 4.0
+chembl131,CHEMBL131,['prokn'],1,,,,phase 4.0
+chembl4065122,CHEMBL4065122,['prokn'],1,,,,phase 3.0
+chembl3989944,CHEMBL3989944,['prokn'],1,,,,phase 4.0
+chembl386630,CHEMBL386630,['prokn'],1,,,,phase 2.0
+chembl384467,CHEMBL384467,['prokn'],1,,,,phase 4.0
+chembl374478,CHEMBL374478,['prokn'],1,,,,phase 2.0
+chembl3707247,CHEMBL3707247,['prokn'],1,,,,phase 3.0
+chembl3707246,CHEMBL3707246,['prokn'],1,,,,phase 4.0
+chembl297453,CHEMBL297453,['prokn'],1,,,,phase 2.0
+chembl3545042,CHEMBL3545042,['prokn'],1,,,,phase 2.0
+chembl3544922,CHEMBL3544922,['prokn'],1,,,,phase 2.0
+chembl34259,CHEMBL34259,['prokn'],1,,,,phase 3.0
+chembl33864,CHEMBL33864,['prokn'],1,,,,phase 2.0
+chembl3188993,CHEMBL3188993,['prokn'],1,,,,phase 1.0
+chembl314854,CHEMBL314854,['prokn'],1,,,,phase 3.0
+chembl3137693,CHEMBL3137693,['prokn'],1,,,,phase 2.0
+chembl3092650,CHEMBL3092650,['prokn'],1,,,,phase 1.0
+chembl3707228,CHEMBL3707228,['prokn'],1,,,,phase 2.0
+chembl154,CHEMBL154,['prokn'],1,,,,phase 3.0
+chembl1536,CHEMBL1536,['prokn'],1,,,,phase 3.0
+chembl1534,CHEMBL1534,['prokn'],1,,,,phase 1.0
+chembl1504,CHEMBL1504,['prokn'],1,,,,phase 4.0
+chembl1502,CHEMBL1502,['prokn'],1,,,,phase 1.0
+chembl1486,CHEMBL1486,['prokn'],1,,,,phase 2.0
+chembl1476022,CHEMBL1476022,['prokn'],1,,,,phase 3.0
+chembl2104967,CHEMBL2104967,['prokn'],1,,,,phase 2.0
+chembl1447,CHEMBL1447,['prokn'],1,,,,phase 4.0
+chembl1440,CHEMBL1440,['prokn'],1,,,,phase 1.0
+chembl1434,CHEMBL1434,['prokn'],1,,,,phase 3.0
+chembl1431,CHEMBL1431,['prokn'],1,,,,phase 2.0
+chembl1417019,CHEMBL1417019,['prokn'],1,,,,phase 4.0
+chembl140,CHEMBL140,['prokn'],1,,,,phase 2.0
+chembl1373,CHEMBL1373,['prokn'],1,,,,phase 3.0
+chembl135,CHEMBL135,['prokn'],1,,,,phase 3.0
+chembl1456,CHEMBL1456,['prokn'],1,,,,phase 2.0
+chembl207456,CHEMBL207456,['prokn'],1,,,,phase 2.0
+chembl197194,CHEMBL197194,['prokn'],1,,,,phase 3.0
+chembl1908391,CHEMBL1908391,['prokn'],1,,,,phase 3.0
+chembl19019,CHEMBL19019,['prokn'],1,,,,phase 3.0
+chembl17962,CHEMBL17962,['prokn'],1,,,,phase 2.0
+chembl1790041,CHEMBL1790041,['prokn'],1,,,,phase 3.0
+chembl1774461,CHEMBL1774461,['prokn'],1,,,,phase 0.5
+chembl1568,CHEMBL1568,['prokn'],1,,,,phase 2.0
+chembl1738,CHEMBL1738,['prokn'],1,,,,phase 2.0
+chembl17157,CHEMBL17157,['prokn'],1,,,,phase 3.0
+chembl1703,CHEMBL1703,['prokn'],1,,,,phase 2.0
+chembl1642,CHEMBL1642,['prokn'],1,,,,phase 2.0
+chembl1626,CHEMBL1626,['prokn'],1,,,,phase 2.0
+chembl1619,CHEMBL1619,['prokn'],1,,,,phase 4.0
+chembl1588,CHEMBL1588,['prokn'],1,,,,phase 1.0
+chembl157101,CHEMBL157101,['prokn'],1,,,,phase 1.0
+chembl1743068,CHEMBL1743068,['prokn'],1,,,,phase 2.0

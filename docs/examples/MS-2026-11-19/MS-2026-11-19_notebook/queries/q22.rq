@@ -1,0 +1,15 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?drug (GROUP_CONCAT(DISTINCT ?lab; separator="|") AS ?labels) (MAX(?ph) AS ?max_phase) ?target (GROUP_CONCAT(DISTINCT ?tlab; separator="|") AS ?target_labels) (GROUP_CONCAT(DISTINCT STR(?action); separator="|") AS ?actions) (GROUP_CONCAT(DISTINCT STR(?mech); separator="|") AS ?mechanisms) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    VALUES ?d { <http://purl.obolibrary.org/obo/DOID_2377> <http://purl.obolibrary.org/obo/DOID_2378> <http://purl.obolibrary.org/obo/DOID_0050783> <https://www.ncbi.nlm.nih.gov/mesh/?term=D009103> }
+    ?st rdf:object ?d ; rdf:predicate obo:NCIT_C41184 ; rdf:subject ?drug .
+    OPTIONAL { ?st <https://w3id.org/reproduceme#Phase> ?ph }
+    OPTIONAL { ?drug rdfs:label ?lab }
+    OPTIONAL { ?ts rdf:subject ?drug ; rdf:predicate <https://w3id.org/biolink/vocab/directly_physically_interacts_with> ; rdf:object ?target .
+               OPTIONAL { ?target rdfs:label ?tlab }
+               OPTIONAL { ?ts <http://purl.allotrope.org/ontologies/result#AFR_0003142> ?action }
+               OPTIONAL { ?ts <http://snomed.info/id/257544000> ?mech } }
+  }
+} GROUP BY ?drug ?target

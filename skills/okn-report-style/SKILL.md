@@ -19,7 +19,7 @@ compatibility: >-
   to render the HTML report, figures, workbook, and maps.
 metadata:
   author: sbl-sdsc
-  version: "0.2.3"
+  version: "0.2.4"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -106,11 +106,12 @@ another or "deduplicate" them away:
   reads standalone), `build_report_from_markdown(..., stats=…)` for the `.html`, `kpis_from_stats(stats,
   spec)` for the KPI cards — one edit updates prose, HTML, and cards at once.
 - **The notebook is the record, not a retelling.** Its header carries the **originating user prompt**
-  VERBATIM (`prompt=`); its first analysis cell is the replicator SPEC (rules, thresholds, joins,
-  verified quantities, limitations); then the **verbatim SPARQL** supporting the findings, each with
-  the rows it returned, and the analysis code that turns those rows into the reported numbers. The
-  queries exist nowhere else in the package. Spec + queries + code live in this ONE folder — no
-  separate `_reproducibility.md`, transcript or spec file.
+  VERBATIM (`prompt=`), then the **verbatim SPARQL** supporting the findings, each with the rows it
+  returned. The analysis reads as a story: the **question and approach**, the replicator SPEC (rules,
+  thresholds, joins, verified quantities, limitations), each step's code with a line on *why*, and
+  the **conclusions** (*Reproducibility notebook* below). The queries exist nowhere else in the
+  package. Spec + queries + code live in this ONE folder — no separate `_reproducibility.md`,
+  transcript or spec file.
 - **`.xlsx` is the data**, not a narrative.
 
 ## Report structure (Markdown)
@@ -317,11 +318,14 @@ create_jupyter_notebook(
     supporting=[…],                      # OPTIONAL: curate to the findings' queries (keep every
                                          #   query a credited source depends on)
     code_files={"analysis.py": "…"},     # the code that turns query rows into the reported numbers
-    cells=[{"type": "markdown", "source": "## Replicator specification\n\n…"},   # FIRST
-           {"type": "code", "source": "from analysis import …"}, …],
+    cells=[{"type": "markdown", "source": "## Question and approach\n\n…"},     # FIRST
+           {"type": "markdown", "source": "## Replicator specification\n\n…"},
+           {"type": "markdown", "source": "Why this step: …"},             # before each step
+           {"type": "code", "source": "from analysis import …"}, …,
+           {"type": "markdown", "source": "## Conclusions\n\n- finding 1 …"}],  # LAST
     figures=[{"path": "figures/fig1_….png", "caption": "…", "source": "<study>/figures/fig1_….png"}],
     requirements=["matplotlib>=3.7", …],
-    skills=["okn-report-style v0.2.3", …],   # every skill you followed, "<name> v<version>"
+    skills=["okn-report-style v0.2.4", …],   # every skill you followed, "<name> v<version>"
     external_mcp_servers=["PubMed", …],      # every other connector that fed the analysis
     chat_started="<ISO-8601>",           # OPTIONAL: whole-chat elapsed time in the header
     output_dir="<absolute path of <study>/>",   # honoured when the server runs locally
@@ -334,8 +338,25 @@ create_jupyter_notebook(
   shares the study prefix.
 - **Make it reproduce the findings, not just the queries.** In the notebook, query k's rows are
   `data["qNN"]` (a pandas DataFrame). Put the analysis in `code_files` and call it from `cells`, so a
-  run recomputes the headline numbers and redraws the figures. The spec is the first markdown cell;
+  run recomputes the headline numbers and redraws the figures. The spec follows the question cell;
   it is the single home of the replicator detail.
+- **Tell the story: beginning, middle, end.** The notebook's first reader is someone (often the user,
+  months later) rerunning it without the chat, so its cells must explain themselves (Rule et al. 2019,
+  *Ten simple rules for … Jupyter Notebooks*, Rules 1 and 3):
+  - **Beginning: `## Question and approach`**, the FIRST cell of `cells`. In a few sentences: the
+    question in plain words, why it matters, and the approach (which graphs, joined on what, and how
+    the rows become the answer). The prompt in the header is the user's wording; this cell says what
+    was actually done about it.
+  - **Middle: a short markdown cell before each analysis step** saying what the next code cell does
+    and *why*: why this filter, this threshold, this test. One step per code cell, and keep each one
+    readable (split a cell that runs past ~100 lines). A figure's cells are why → code → legend. The
+    legend says what the figure shows; the why cell says what question it answers.
+  - **End: `## Conclusions`**, the LAST cell of `cells`, after every analysis code cell. It opens
+    with a **concise summary of findings**: 3–5 bullets, each one finding with its headline number as
+    the cells above computed it (and its denominator). Then a sentence or two answering the opening
+    question and saying what the findings mean, and the main limitation. It mirrors the report's
+    executive summary and limitations, but shorter, and it never brings in a number the notebook does
+    not compute.
 - **The code is IN the notebook, not behind a call.** A reader must see how every number and figure
   is made. Cells hold the analysis steps themselves (build the table, run each statistic, write the
   extracts) and each figure's full plotting code; `code_files` holds only reusable helpers that
@@ -357,7 +378,7 @@ create_jupyter_notebook(
 
 Pass `model=` — the **exact runtime model identifier**, matching the report title block character for
 character; ask the user if you cannot determine it (*Exact model provenance* above). `skills=` records
-the methodology (this skill is `okn-report-style v0.2.3`; versions from each skill's frontmatter
+the methodology (this skill is `okn-report-style v0.2.4`; versions from each skill's frontmatter
 `metadata.version`), and `external_mcp_servers=` the evidence base beyond the KGs. The server can see
 neither, so only these arguments put them on the record. Failure modes and fixes:
 **`references/failure-modes.md`** (*Reproducibility notebook incomplete…*).
@@ -404,7 +425,9 @@ It rejects, each as a blocking error:
    file it lists (`okn_sparql.py`, `requirements.txt`, a query, a cached-rows file) or an image it shows
    not saved; no queries recorded; or no `<study>_notebook.html` (a page older than the notebook only
    warns). Also any second reproducibility/transcript/spec document, such as a leftover
-   `_reproducibility.md`.
+   `_reproducibility.md`, and an analysis that does not open with `## Question and approach` or
+   close with `## Conclusions` opening with a bulleted summary of findings (a code cell with no why
+   cell before it only warns).
 4. **`data/` pollution** — the `<study>_literature_comparison.md` misfiled inside `data/` (it is a
    top-level sibling). Reproducibility intermediates (`diagrams.json`, `mermaid/`, the template, subset
    extracts) are allowed; an unusual extension only warns.

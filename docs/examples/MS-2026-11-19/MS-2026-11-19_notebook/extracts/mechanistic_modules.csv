@@ -1,0 +1,49 @@
+module,gene,tier,prokn_drugs
+HLA class II / antigen presentation,HLA-DRB1,A,
+HLA class II / antigen presentation,HLA-DQB1,A,
+HLA class II / antigen presentation,HLA-DRA,A,
+HLA class II / antigen presentation,HLA-DPB1,B,
+HLA class II / antigen presentation,CD40,A,
+HLA class II / antigen presentation,CD86,A,
+T-cell activation & co-stimulation,IL2RA,A,Daclizumab
+T-cell activation & co-stimulation,IL7R,A,
+T-cell activation & co-stimulation,CD58,A,
+T-cell activation & co-stimulation,CD6,A,
+T-cell activation & co-stimulation,CBLB,A,
+T-cell activation & co-stimulation,TAGAP,A,
+T-cell activation & co-stimulation,PTPRC,A,
+T-cell activation & co-stimulation,MALT1,A,
+T-cell activation & co-stimulation,CD52,B,Alemtuzumab
+T-cell activation & co-stimulation,DHODH,D,Teriflunomide; Vidofludimus
+Cytokine / JAK–STAT / Th1–Th17,IFNG,A,
+Cytokine / JAK–STAT / Th1–Th17,IL17A,A,Secukinumab
+Cytokine / JAK–STAT / Th1–Th17,IL12A,A,Briakinumab; Ustekinumab
+Cytokine / JAK–STAT / Th1–Th17,IL12B,C,Briakinumab; Ustekinumab
+Cytokine / JAK–STAT / Th1–Th17,TYK2,A,
+Cytokine / JAK–STAT / Th1–Th17,STAT3,A,
+Cytokine / JAK–STAT / Th1–Th17,STAT4,A,
+Cytokine / JAK–STAT / Th1–Th17,TNFRSF1A,A,
+Cytokine / JAK–STAT / Th1–Th17,CSF2,C,Otilimab
+B cell / plasma cell,MS4A1,B,Ocrelizumab; Ofatumumab; Rituximab; Ublituximab
+B cell / plasma cell,CD19,C,Inebilizumab
+B cell / plasma cell,CXCR5,A,
+B cell / plasma cell,TNFSF13B,B,Belimumab
+B cell / plasma cell,IKZF3,B,
+B cell / plasma cell,BTK,C,Evobrutinib; Fenebrutinib; Pirtobrutinib; Tolebrutinib
+Innate / microglia / inflammasome,NLRP3,A,
+Innate / microglia / inflammasome,IL1B,A,
+Innate / microglia / inflammasome,TLR4,A,
+Innate / microglia / inflammasome,ITGAM,A,
+Innate / microglia / inflammasome,MERTK,A,
+Innate / microglia / inflammasome,CASP1,B,
+Innate / microglia / inflammasome,KIT,C,Imatinib Mesylate; Masitinib
+Innate / microglia / inflammasome,CCR2,C,Plozalizumab
+Lymphocyte trafficking / BBB,ITGA4,C,Firategrast; Natalizumab; Ucb-1184197
+Lymphocyte trafficking / BBB,S1PR1,B,Fingolimod Hydrochloride; Fingolimod Lauryl Sulfate; Ozanimod Hydrochloride; Ponesimod; Siponimod; Siponimod Fumaric Acid
+Lymphocyte trafficking / BBB,S1PR5,B,Ozanimod
+Redox / remyelination / conduction,KEAP1,C,Dimethyl Fumarate; Diroximel Fumarate; Monomethyl Fumarate
+Redox / remyelination / conduction,LINGO1,D,Opicinumab
+Redox / remyelination / conduction,RGMA,D,Elezanumab
+Redox / remyelination / conduction,HRH1,C,Clemastine Fumarate; Desloratadine; Dexchlorpheniramine Maleate; Loratadine; Terfenadine
+Redox / remyelination / conduction,KCNA1,D,Amifampridine; Dalfampridine; Nerispirdine
+Redox / remyelination / conduction,VDR,A,Cholecalciferol; Ergocalciferol

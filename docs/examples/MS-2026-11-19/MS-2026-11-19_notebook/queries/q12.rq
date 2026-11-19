@@ -1,0 +1,10 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?metric ?vtype ?unit ?year ?source (COUNT(*) AS ?n) (MIN(?v) AS ?minv) (MAX(?v) AS ?maxv) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?st rdf:subject <http://purl.obolibrary.org/obo/DOID_2377> ; rdf:predicate kg:PREVALENCE_DpL ; rdf:object ?loc .
+    OPTIONAL { ?st kg:metric_name ?metric } OPTIONAL { ?st kg:data_value_type ?vtype } OPTIONAL { ?st kg:data_value_unit ?unit }
+    OPTIONAL { ?st kg:year ?year } OPTIONAL { ?st dcterms:source ?source } OPTIONAL { ?st kg:value ?v }
+  }
+} GROUP BY ?metric ?vtype ?unit ?year ?source

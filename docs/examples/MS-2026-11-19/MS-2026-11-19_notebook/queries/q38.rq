@@ -1,0 +1,7 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT (COUNT(DISTINCT ?sym) AS ?N_reactome) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    ?prot <https://w3id.org/biolink/vocab/participates_in> ?pw . ?pw a <http://purl.uniprot.org/core/Pathway> . FILTER(CONTAINS(STR(?pw),"R-HSA"))
+    ?gene <http://semanticscience.org/resource/SIO_010078> ?prot ; a <http://purl.uniprot.org/core/Gene> ; rdfs:label ?sym .
+  }
+}
