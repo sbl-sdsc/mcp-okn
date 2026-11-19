@@ -11,7 +11,7 @@ cd /path/to/MS-2026-11-19_notebook
 uv run --with jupyterlab --with-requirements requirements.txt jupyter lab MS-2026-11-19_notebook.ipynb
 ```
 
-Then choose **Run → Run All Cells**. The query cells load the cached rows; set `RERUN = True` in the setup cell (or start with `OKN_RERUN=1`) to query the live endpoint instead. To rerun every query live without opening Jupyter, writing a copy with the new results:
+Then choose **Run → Run All Cells**. The query cells load the cached rows. To rerun the study from scratch against the live endpoint, uncomment `# RERUN = True` in the setup cell (or start with `OKN_RERUN=1`). To rerun every query live without opening Jupyter, writing a copy with the new results:
 
 ```bash
 cd /path/to/MS-2026-11-19_notebook

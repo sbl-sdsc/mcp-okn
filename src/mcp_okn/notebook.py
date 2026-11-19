@@ -260,9 +260,10 @@ _RERUN_MARKDOWN = """\
 ## Re-running this study
 
 Every query cell loads the rows the session logged (`data/`), so the notebook runs \
-offline and shows the original results. Set `RERUN = True` in the next cell (or \
-start Jupyter with `OKN_RERUN=1`) to re-execute every query live against the OKN \
-federation instead, or run the last cell (`verify_all()`) to compare each query's \
+offline and shows the original results. To rerun the study from scratch, \
+uncomment `# RERUN = True` in the next cell and run all cells (or start Jupyter with \
+`OKN_RERUN=1`): every query is then re-executed live against the OKN federation. \
+Or run the last cell (`verify_all()`) to compare each query's \
 live row count with the logged one. \
 A changed count usually means the knowledge graph was redeployed since the study \
 ran, not that the analysis is wrong."""
@@ -274,9 +275,15 @@ import pandas as pd
 
 from okn_sparql import run_query, verify_all
 
-# False: load the rows logged during the session (data/). True: re-run each query live.
-# Starting Jupyter with OKN_RERUN=1 sets it without editing the notebook.
+# By default (RERUN = False) every query cell loads the rows logged during the
+# session from data/, so the notebook runs offline and shows the original results.
+# Starting Jupyter with OKN_RERUN=1 sets RERUN = True without editing the notebook.
 RERUN = os.environ.get("OKN_RERUN", "") == "1"
+
+# To rerun the study from scratch, uncomment the next line and run all cells:
+# every query is then re-executed live against the OKN federation.
+# RERUN = True
+
 data: dict[str, pd.DataFrame] = {}"""
 
 
@@ -690,8 +697,9 @@ def _readme(
             "```",
             "",
             "Then choose **Run → Run All Cells**. The query cells load the cached "
-            "rows; set `RERUN = True` in the setup cell (or start with `OKN_RERUN=1`) "
-            "to query the live endpoint instead. To rerun every query live without "
+            "rows. To rerun the study from scratch against the live endpoint, uncomment "
+            "`# RERUN = True` in the setup cell (or start with `OKN_RERUN=1`). "
+            "To rerun every query live without "
             "opening Jupyter, writing a copy with the new results:",
             "",
             "```bash",
