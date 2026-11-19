@@ -204,10 +204,13 @@ async def create_jupyter_notebook(
         cells: Analysis cells after the query cells, in order, each
             `{"type": "markdown" | "code", "source": str}`. Code cells can use
             `data["q01"]` … and your `code_files` modules; they are saved without
-            outputs. Make a figure cell save its image to the `figures` path, so a
-            re-run regenerates it.
+            outputs. Make a figure cell save its image to the `figures` path AND
+            show it (`plt.show()` or `IPython.display.Image`), so a re-run
+            regenerates it in place; show each figure once, where it is drawn.
         figures: Images the study produced, each `{"path": "figures/fig1.png",
-            "caption": str, "source": str?}`; embedded in a Figures section.
+            "caption": str, "source": str?}`; listed in the README and copied in.
+            A "Figures" gallery of them is added only when `cells` has no code
+            cell; with code cells, the cell that draws a figure shows it.
             `source` is the image's current location, used by a local write.
         requirements: Extra pip requirements your code needs (pandas is always
             listed; the run command adds JupyterLab), e.g. `["matplotlib>=3.7"]`.
