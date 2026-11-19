@@ -19,7 +19,7 @@ compatibility: >-
   to render the HTML report, figures, workbook, and maps.
 metadata:
   author: sbl-sdsc
-  version: "0.2.0"
+  version: "0.2.1"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -215,6 +215,11 @@ essentials:
   disk, contextily's fetch) and draws "Access blocked" in place of every tile. Building
   `folium.Map` yourself (e.g. a choropleth)? Pass `tiles=BASEMAP_TILES, attr=BASEMAP_ATTR` from
   `okn_figstyle`, never `tiles="OpenStreetMap"` — `validate_okn_report.py` fails a report that does.
+- **Interactive maps are folium, never plotly's tile maps** (`px.choropleth_map` / `scatter_map` /
+  `density_map`, `go.Choroplethmap` / `Scattermap`, or the older `*_mapbox` traces). They start a WebGL
+  worker that never loads from a file:// page or a notebook's iframe, so the reader sees a colour bar
+  over a blank map. Several layers? One `folium.GeoJson` + a drop-down that calls `setStyle`. The
+  validator fails plotly tile maps in the report, `figures/` and the notebook folder.
 - **Verify:** always `Read` the rendered PNG back before embedding — the first matplotlib layout is
   often wrong.
 
@@ -316,7 +321,7 @@ create_jupyter_notebook(
            {"type": "code", "source": "from analysis import …"}, …],
     figures=[{"path": "figures/fig1_….png", "caption": "…", "source": "<study>/figures/fig1_….png"}],
     requirements=["matplotlib>=3.7", …],
-    skills=["okn-report-style v0.2.0", …],   # every skill you followed, "<name> v<version>"
+    skills=["okn-report-style v0.2.1", …],   # every skill you followed, "<name> v<version>"
     external_mcp_servers=["PubMed", …],      # every other connector that fed the analysis
     chat_started="<ISO-8601>",           # OPTIONAL: whole-chat elapsed time in the header
     output_dir="<absolute path of <study>/>",   # honoured when the server runs locally
@@ -339,7 +344,7 @@ create_jupyter_notebook(
 
 Pass `model=` — the **exact runtime model identifier**, matching the report title block character for
 character; ask the user if you cannot determine it (*Exact model provenance* above). `skills=` records
-the methodology (this skill is `okn-report-style v0.2.0`; versions from each skill's frontmatter
+the methodology (this skill is `okn-report-style v0.2.1`; versions from each skill's frontmatter
 `metadata.version`), and `external_mcp_servers=` the evidence base beyond the KGs. The server can see
 neither, so only these arguments put them on the record. Failure modes and fixes:
 **`references/failure-modes.md`** (*Reproducibility notebook incomplete…*).

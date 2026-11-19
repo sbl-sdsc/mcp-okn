@@ -72,6 +72,14 @@ code can't predict.
       every tile. Calling `folium.Map` directly? Pass `tiles=BASEMAP_TILES, attr=BASEMAP_ATTR` from
       `okn_figstyle` (`validate_okn_report.py` fails on OSM tile URLs). Open the map / `Read` the PNG
       and confirm real streets and place names show.
+- [ ] **No plotly tile maps** — `px.choropleth_map` / `scatter_map` / `density_map`,
+      `go.Choroplethmap` / `Scattermap` / `Densitymap` or the older `*mapbox` traces. Their MapLibre
+      (or Mapbox GL) web worker never starts from file:// or inside a notebook iframe, so the map is
+      blank apart from the colour bar and attribution; nothing errors. Build the choropleth with
+      `folium.Map(tiles=BASEMAP_TILES, attr=BASEMAP_ATTR)` + `folium.GeoJson`; for several layers,
+      keep one GeoJson and switch colours with a drop-down that calls `setStyle` (one copy of the
+      geometry, not one per layer). `validate_okn_report.py` fails these traces in the report,
+      `figures/*.html` and the notebook folder.
 - [ ] **Keep the tile attribution**; contextily and `folium_osm_map` add it by default — don't strip it.
 - [ ] Legend below states the **coordinate source** (which KG/predicate supplied lat/long or the S2
       cell) and what each marker/colour encodes, same as any other figure.

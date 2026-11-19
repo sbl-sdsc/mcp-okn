@@ -28,7 +28,7 @@ not shadowed by a stale `_reproducibility.md` / transcript / spec), `data/` = fl
 References last), the notebook header's `Skills` provenance line, an exact model id recorded identically
 in the .md / .html / notebook, figure
 file/reference cross-check, a recursive scan for QA/temp/scratch junk, and no map tiles from OpenStreetMap's
-own server (blocked when the report is opened from disk).
+own server (blocked when the report is opened from disk) and no plotly tile maps (blank from disk).
 Stdlib-only (an .xlsx is a zip — sheet names are read straight from `xl/workbook.xml`), so it runs
 wherever a report is built, exactly like the sibling gates.
 """
@@ -570,7 +570,7 @@ def _check_repro_skills(nb_path: Path, r: _Report) -> None:
         r.err(
             f"{label}: the header has no '- **Skills:**' line — pass `skills=[...]` to "
             "create_jupyter_notebook (e.g. `skills=['okn-bioanalysis v0.1.3', "
-            "'okn-report-style v0.2.0']`, versions from each skill's frontmatter `metadata.version`). "
+            "'okn-report-style v0.2.1']`, versions from each skill's frontmatter `metadata.version`). "
             "The server cannot see which skills your session loaded, so an omitted list leaves the "
             "record claiming no methodology at all; do NOT hand-edit the cell — regenerate the notebook"
         )
@@ -688,14 +688,96 @@ def _check_junk(study: Path, r: _Report) -> None:
 _OSM_TILE_RE = re.compile(r"tile\.openstreetmap\.org", re.I)
 
 
+#: plotly's tile-map traces (MapLibre since plotly 6; the `*mapbox` names are the older Mapbox GL ones).
+#: Both start a WebGL web worker that never loads from a file:// page or a notebook's iframe, so the
+#: figure shows only its colour bar and attribution over a blank map. Plotly's `choropleth` /
+#: `scattergeo` (SVG) render, but have no street basemap either. Use folium on BASEMAP_TILES.
+_PLOTLY_TILE_TRACES = r"(?:choropleth|scatter|density)map(?:box)?"
+_PLOTLY_TYPE_RE = re.compile(
+    r'\\?"type\\?"\s*:\s*\\?"(' + _PLOTLY_TILE_TRACES + r')\\?"'
+)
+
+
+def _plotly_tile_traces(text: str) -> set[str]:
+    """Tile-map trace types drawn in an HTML page (or HTML-in-JSON string).
+
+    Every plotly figure carries a template that styles each trace type by name (compact JSON:
+    `"scattermap":[{"type":"scattermap",…`), so a bar chart's page mentions `scattermap` too; a
+    `"type"` that opens such a template entry is not a drawn trace and is skipped."""
+    found = set()
+    for m in _PLOTLY_TYPE_RE.finditer(text):
+        name = m.group(1)
+        before = text[max(0, m.start() - 80) : m.start()]
+        if re.search(r'\\?"' + name + r'\\?"\s*:\s*\[\s*\{\s*$', before):
+            continue
+        found.add(name)
+    return found
+
+
+def _notebook_plotly_tile_traces(nb: Path) -> set[str]:
+    """Tile-map traces in a notebook's saved outputs (plotly JSON and its HTML fallback)."""
+    try:
+        cells = json.loads(nb.read_text(encoding="utf-8")).get("cells", [])
+    except (OSError, ValueError):
+        return set()
+    found: set[str] = set()
+    for cell in cells:
+        for out in cell.get("outputs", []) or []:
+            data = out.get("data") or {}
+            fig = data.get("application/vnd.plotly.v1+json")
+            if isinstance(fig, dict):
+                for trace in fig.get("data") or []:
+                    t = trace.get("type", "") if isinstance(trace, dict) else ""
+                    if re.fullmatch(_PLOTLY_TILE_TRACES, t):
+                        found.add(t)
+            page = data.get("text/html")
+            if page:
+                found |= _plotly_tile_traces(
+                    "".join(page) if isinstance(page, list) else str(page)
+                )
+    return found
+
+
 def _check_basemap(study: Path, paths: dict, r: _Report) -> None:
-    htmls = [paths["report_html"], *sorted((study / "figures").glob("*.html"))]
-    for h in htmls:
-        if h.is_file() and _OSM_TILE_RE.search(h.read_text(encoding="utf-8")):
+    nb_dir = paths["notebook_dir"]
+    nb_files = (
+        [
+            p
+            for p in sorted(nb_dir.rglob("*"))
+            if p.suffix in (".html", ".ipynb")
+            and not any(part in _JUNK_DIRS for part in p.relative_to(nb_dir).parts)
+        ]
+        if nb_dir.is_dir()
+        else []
+    )
+    pages = [
+        paths["report_html"],
+        *sorted((study / "figures").glob("*.html")),
+        *nb_files,
+    ]
+    for h in pages:
+        if not h.is_file():
+            continue
+        rel = h.relative_to(study).as_posix()
+        text = h.read_text(encoding="utf-8")
+        if _OSM_TILE_RE.search(text):
             r.err(
-                f"{h.relative_to(study).as_posix()} loads tiles from tile.openstreetmap.org, which shows "
+                f"{rel} loads tiles from tile.openstreetmap.org, which shows "
                 "'Access blocked' when the report is opened from disk — rebuild the map with "
                 "okn_figstyle.BASEMAP_TILES / BASEMAP_ATTR (folium_osm_map's default)"
+            )
+        traces = (
+            _notebook_plotly_tile_traces(h)
+            if h.suffix == ".ipynb"
+            # A map inlined with folium_map_iframe sits HTML-escaped in srcdoc; unescape to see it.
+            else _plotly_tile_traces(html.unescape(text))
+        )
+        if traces:
+            r.err(
+                f"{rel} draws a plotly tile map ({', '.join(sorted(traces))}) — plotly's MapLibre/Mapbox "
+                "map traces render an empty map when opened from disk or inside a notebook iframe; "
+                "rebuild it with folium on okn_figstyle.BASEMAP_TILES (folium_osm_map for points, "
+                "folium.Map + GeoJson for a choropleth)"
             )
 
 
