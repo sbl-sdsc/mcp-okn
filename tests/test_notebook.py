@@ -525,3 +525,9 @@ def test_sparql_fold_keeps_blank_query_lines_inside():
 
     fold = "\n".join(_sparql_details("SELECT ?s WHERE {\n\n  ?s a <x> .\n}"))
     assert "\n\n" not in fold and "\n<span></span>\n" in fold and "&lt;x&gt;" in fold
+
+
+async def test_readme_says_trust_html():
+    _log_two()
+    out = await _build(title="Trust Study")
+    assert "Trust HTML" in out["files"]["README.md"]

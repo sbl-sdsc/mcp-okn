@@ -641,7 +641,9 @@ def _readme(
     layout = [
         f"- `{study.notebook}`: the notebook (provenance, one cell per query, analysis)",
         f"- `{study.notebook.removesuffix('.ipynb')}.html`: the executed notebook as one "
-        "self-contained page, when it has been rendered (see above)",
+        "self-contained page, when it has been rendered (see above). View it in a "
+        "browser; JupyterLab's HTML viewer blocks scripts until you click **Trust "
+        "HTML**, so interactive maps and charts stay blank there",
         "- `okn_sparql.py`: `run_query()` / `verify_all()`; needs only pandas",
         "- `queries/`: each query verbatim (`qNN.rq`), the text actually sent when the "
         "server rewrote it (`sent/qNN.rq`), and `manifest.json`",
