@@ -74,7 +74,7 @@ DEFAULT_SKILLS = ["okn-bioanalysis v0.1.1", "okn-report-style v0.2.0"]
 FIGURE_CELLS = [
     {
         "type": "code",
-        "source": "plot_demo()  # saves figures/fig1_demo.png and shows it",
+        "source": 'fig, ax = plt.subplots()\nF.finalize(fig, 1, "figures/fig1_demo.png")',
     },
     {
         "type": "markdown",
@@ -715,3 +715,13 @@ def test_notebook_figure_legend_not_after_code_fails(tmp_path):
     assert any("Figure 1 legend does not follow a code cell" in e for e in r.errors), (
         r.errors
     )
+
+
+def test_notebook_figure_behind_a_call_fails(tmp_path):
+    """A one-line call into a script hides the plotting code the notebook exists to show."""
+    cells = [
+        {"type": "code", "source": "BF.fig1()"},
+        {"type": "markdown", "source": "**Figure 1. Demo.** Drawn in a script."},
+    ]
+    r = v.validate(str(_with_cells(tmp_path, cells)))
+    assert any("does not draw the figure itself" in e for e in r.errors), r.errors

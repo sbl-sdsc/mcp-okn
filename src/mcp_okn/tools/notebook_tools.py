@@ -198,17 +198,19 @@ async def create_jupyter_notebook(
             `{"index": int, "description": str}` dicts (the description becomes the
             query's heading). None = every logged query, in order.
         code_files: Your generated text files, relative path → content (e.g.
-            `{"analysis.py": "<source>"}`), written verbatim. Put reusable logic
-            here and import it from `cells` (`from analysis import plot_overlap`),
-            so the notebook stays readable and the functions stay testable.
+            `{"analysis.py": "<source>"}`), written verbatim. Only reusable
+            helpers that cells call by name like a library (statistics, data
+            shaping, plot styling). The analysis steps and each figure's plotting
+            code belong in `cells`, where the reader sees them, never in a script
+            a cell merely runs or calls (`build_figures.py`, `fig3()`).
         cells: Analysis cells after the query cells, in order, each
             `{"type": "markdown" | "code", "source": str}`. Code cells can use
             `data["q01"]` … and your `code_files` modules; they are saved without
-            outputs. Draw each figure in its OWN code cell, in report order, that
-            saves it to its `figures` path and shows it, then follow it with a
-            markdown cell holding the report's numbered legend verbatim
-            (`**Figure N. Title.** …`). Never one cell that builds every figure
-            plus another that shows them all.
+            outputs. Draw each figure in its OWN code cell, in report order,
+            holding its plotting code and saving it to its `figures` path (and
+            showing it), then follow it with a markdown cell holding the report's
+            numbered legend verbatim (`**Figure N. Title.** …`). Never one cell
+            that builds every figure plus another that shows them all.
         figures: Images the study produced, each `{"path": "figures/fig1.png",
             "caption": str, "source": str?}`; listed in the README and copied in.
             A "Figures" gallery of them is added only when `cells` has no code

@@ -336,13 +336,19 @@ create_jupyter_notebook(
   `data["qNN"]` (a pandas DataFrame). Put the analysis in `code_files` and call it from `cells`, so a
   run recomputes the headline numbers and redraws the figures. The spec is the first markdown cell;
   it is the single home of the replicator detail.
-- **Each figure where it is drawn, with its legend — like the report.** Write the figure code as one
-  function per figure (`def fig1(): …` in `code_files`, sharing a `prepare()` that loads the rows),
-  and give each figure its OWN code cell, in report order (`BF.fig3()`); `okn_figstyle.finalize`
+- **The code is IN the notebook, not behind a call.** A reader must see how every number and figure
+  is made. Cells hold the analysis steps themselves (build the table, run each statistic, write the
+  extracts) and each figure's full plotting code; `code_files` holds only reusable helpers that
+  cells call by name like a library (`analysis.py`: `A.spearman_matrix(m)`; `okn_figstyle.py`).
+  Never a `build_figures.py` / `make_map.py` script whose figures appear as `BF.fig3()` or a
+  `subprocess.run([... "build_figures.py"])` cell — that hides the code the notebook exists to show.
+- **Each figure where it is drawn, with its legend — like the report.** One code cell per figure, in
+  report order, holding that figure's plotting code and ending in `F.finalize(fig, N, path)`, which
   saves the PNG and, inside Jupyter, shows it in that cell. Right after it, a markdown cell holds the
-  report's numbered legend verbatim (`**Figure 3. Title.** …`). Never one cell that builds every
-  figure plus another that shows them all, and no gallery at the end (with code cells the tool adds
-  none). The validator fails a report figure with no `Figure N.` legend cell after a code cell.
+  report's numbered legend verbatim (`**Figure 3. Title.** …`); the interactive map gets its cell and
+  caption the same way. Never one cell that builds every figure plus another that shows them all,
+  and no gallery at the end (with code cells the tool adds none). The validator fails a report figure
+  with no `Figure N.` legend cell, or whose preceding code cell does not itself save the figure.
 - **Render it.** Run the result's `html_command` once the folder is saved; it executes the notebook
   from the cached rows and writes `<study>_notebook.html` beside it. If you have no shell, give the
   user the command and say the package is incomplete until it has run.

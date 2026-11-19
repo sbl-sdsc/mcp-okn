@@ -338,6 +338,7 @@ def _notebook_header(nb_path: Path) -> str | None:
 
 
 _LEGEND_MARKUP_RE = re.compile(r"^[\s>*_]+")
+_SAVES_FIGURE_RE = re.compile(r"\b(?:finalize|savefig)\(")
 
 
 def _check_notebook_figure_legends(paths: dict, cells: list[dict], r: _Report) -> None:
@@ -347,6 +348,8 @@ def _check_notebook_figure_legends(paths: dict, cells: list[dict], r: _Report) -
     markdown cell that opens with ``Figure N.`` (bold/blockquote markup allowed) right AFTER a code cell,
     which is the cell that draws and shows that figure. A "build every figure" cell followed by a "show all
     figures" cell (or a gallery at the end) leaves the figures away from their code and without legends.
+    That code cell must save the figure itself (``finalize(`` / ``savefig(``): a one-line ``BF.fig3()``
+    into a script hides the plotting code the notebook exists to show.
     """
     report_md = paths["report_md"]
     if not report_md.is_file():
@@ -371,6 +374,17 @@ def _check_notebook_figure_legends(paths: dict, cells: list[dict], r: _Report) -
             r.err(
                 f"{label}/: the Figure {n} legend does not follow a code cell — put it right after "
                 "the code cell that draws and shows the figure"
+            )
+        elif not any(
+            i > 0
+            and cells[i - 1].get("cell_type") == "code"
+            and _SAVES_FIGURE_RE.search(_cell_text(cells[i - 1]))
+            for i in at
+        ):
+            r.err(
+                f"{label}/: the code cell before the Figure {n} legend does not draw the figure "
+                "itself — put its plotting code in that cell, ending in F.finalize(fig, N, path), "
+                "instead of calling into a script"
             )
 
 
