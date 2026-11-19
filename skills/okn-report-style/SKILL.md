@@ -19,7 +19,7 @@ compatibility: >-
   to render the HTML report, figures, workbook, and maps.
 metadata:
   author: sbl-sdsc
-  version: "0.2.1"
+  version: "0.2.2"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -321,7 +321,7 @@ create_jupyter_notebook(
            {"type": "code", "source": "from analysis import …"}, …],
     figures=[{"path": "figures/fig1_….png", "caption": "…", "source": "<study>/figures/fig1_….png"}],
     requirements=["matplotlib>=3.7", …],
-    skills=["okn-report-style v0.2.1", …],   # every skill you followed, "<name> v<version>"
+    skills=["okn-report-style v0.2.2", …],   # every skill you followed, "<name> v<version>"
     external_mcp_servers=["PubMed", …],      # every other connector that fed the analysis
     chat_started="<ISO-8601>",           # OPTIONAL: whole-chat elapsed time in the header
     output_dir="<absolute path of <study>/>",   # honoured when the server runs locally
@@ -344,7 +344,7 @@ create_jupyter_notebook(
 
 Pass `model=` — the **exact runtime model identifier**, matching the report title block character for
 character; ask the user if you cannot determine it (*Exact model provenance* above). `skills=` records
-the methodology (this skill is `okn-report-style v0.2.1`; versions from each skill's frontmatter
+the methodology (this skill is `okn-report-style v0.2.2`; versions from each skill's frontmatter
 `metadata.version`), and `external_mcp_servers=` the evidence base beyond the KGs. The server can see
 neither, so only these arguments put them on the record. Failure modes and fixes:
 **`references/failure-modes.md`** (*Reproducibility notebook incomplete…*).

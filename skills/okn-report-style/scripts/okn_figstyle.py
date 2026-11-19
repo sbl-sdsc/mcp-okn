@@ -464,15 +464,20 @@ def folium_map_iframe(m, height=520, title="Interactive map"):
     line in the Markdown body (``md_to_html`` passes a line that begins with ``<`` through verbatim).
     Every marker stays clickable. ``build_report_html.check_report_parity`` now also fails a report
     whose HTML has duplicate document tags, so a raw-inlined map is caught before delivery.
+
+    The iframe is wrapped in a ``<div>``: IPython's ``display.HTML`` warns "Consider using
+    IPython.display.IFrame instead" for any string that starts with ``<iframe`` and ends with
+    ``</iframe>``, and ``IFrame(src=…)`` is the wrong fix (it points at a file the exported
+    notebook HTML doesn't carry). The wrapper keeps the map self-contained and the output clean.
     """
     doc = m.get_root().render()
     srcdoc = html.escape(
         doc, quote=True
     )  # escape < > & " ' for the double-quoted attribute
     return (
-        f'<iframe title="{html.escape(title)}" srcdoc="{srcdoc}" loading="lazy" '
-        f'style="width:100%;height:{int(height)}px;border:1px solid #e5e7eb;'
-        f'border-radius:9px;margin:10px 0"></iframe>'
+        f'<div class="okn-map"><iframe title="{html.escape(title)}" srcdoc="{srcdoc}" '
+        f'loading="lazy" style="width:100%;height:{int(height)}px;border:1px solid #e5e7eb;'
+        f'border-radius:9px;margin:10px 0"></iframe></div>'
     )
 
 

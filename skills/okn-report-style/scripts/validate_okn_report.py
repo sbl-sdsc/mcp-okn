@@ -570,7 +570,7 @@ def _check_repro_skills(nb_path: Path, r: _Report) -> None:
         r.err(
             f"{label}: the header has no '- **Skills:**' line — pass `skills=[...]` to "
             "create_jupyter_notebook (e.g. `skills=['okn-bioanalysis v0.1.3', "
-            "'okn-report-style v0.2.1']`, versions from each skill's frontmatter `metadata.version`). "
+            "'okn-report-style v0.2.2']`, versions from each skill's frontmatter `metadata.version`). "
             "The server cannot see which skills your session loaded, so an omitted list leaves the "
             "record claiming no methodology at all; do NOT hand-edit the cell — regenerate the notebook"
         )
