@@ -171,6 +171,7 @@ async def create_jupyter_notebook(
         data/qNN.csv              the logged rows (up to 1,000 per query)
         <your code_files>         e.g. analysis.py, importable from the notebook
         requirements.txt, README.md
+        okn_notebook.html.j2      template `html_command` renders with
         <folder>.html             the executed notebook, once you run
                                   `html_command` (see Returns)
 

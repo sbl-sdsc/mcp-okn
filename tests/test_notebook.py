@@ -316,8 +316,8 @@ async def test_run_command_shown_to_user(tmp_path):
     assert "OKN_RERUN=1" in hosted["rerun_command"]
     assert "--output my-study-rerun.ipynb" in hosted["rerun_command"]
     assert hosted["html_command"].endswith(
-        "jupyter nbconvert --to html --execute --embed-images "
-        "--output my-study.html my-study.ipynb"
+        "jupyter nbconvert --to html --template-file okn_notebook.html.j2 "
+        "--execute --embed-images --output my-study.html my-study.ipynb"
     )
     assert "OKN_RERUN" not in hosted["html_command"]  # renders the cached rows
     assert "PYTHONDONTWRITEBYTECODE=1 uv run" in hosted["html_command"]
@@ -531,3 +531,54 @@ async def test_readme_says_trust_html():
     _log_two()
     out = await _build(title="Trust Study")
     assert "Trust HTML" in out["files"]["README.md"]
+
+
+def _fold_study():
+    long_code = "\n".join(f"x{i} = {i}" for i in range(12))
+    return build_study(
+        title="Fold Code",
+        when="2026-11-19",
+        model="m",
+        entries=[],
+        kgs=[],
+        endpoint="https://example.org/sparql",
+        generated_by="mcp-okn test",
+        cells=[
+            {"type": "markdown", "source": "Why: set up."},
+            {"type": "code", "source": "x = 1\nprint(x)"},
+            {"type": "markdown", "source": "Why: the long step."},
+            {"type": "code", "source": long_code},
+        ],
+    )
+
+
+def test_long_code_cells_fold_by_default():
+    """Analysis code cells over FOLD_MIN_LINES open folded; short ones and the setup stay open."""
+    study = _fold_study()
+    nb = nbformat.reads(study.files[study.notebook], as_version=4)
+    code = [c for c in nb.cells if c.cell_type == "code"]
+    hidden = [c.metadata.get("jupyter", {}).get("source_hidden") for c in code]
+    setup = next(c for c in code if "RERUN" in "".join(c.source))
+    assert setup.metadata == {}  # the RERUN switch stays in view
+    assert hidden.count(True) == 1
+    assert next(c for c in code if c.source.startswith("x0 = 0")).metadata == {
+        "jupyter": {"source_hidden": True}
+    }
+    assert "okn_notebook.html.j2" in study.files
+    assert "`okn_notebook.html.j2`" in study.files["README.md"]
+    assert "--template-file okn_notebook.html.j2" in study.files["README.md"]
+
+
+def test_html_template_folds_hidden_cells(tmp_path):
+    """The HTML page shows a folded cell's source under a 'Python (N lines)' summary."""
+    pytest.importorskip("nbconvert")
+    from nbconvert import HTMLExporter
+
+    study = _fold_study()
+    (tmp_path / "okn_notebook.html.j2").write_text(study.files["okn_notebook.html.j2"])
+    nb = nbformat.reads(study.files[study.notebook], as_version=4)
+    html, _ = HTMLExporter(
+        template_file=str(tmp_path / "okn_notebook.html.j2")
+    ).from_notebook_node(nb)
+    assert html.count('<details class="okn-fold">') == 1
+    assert "<summary>Python (12 lines)</summary>" in html

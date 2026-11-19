@@ -19,7 +19,7 @@ compatibility: >-
   to render the HTML report, figures, workbook, and maps.
 metadata:
   author: sbl-sdsc
-  version: "0.2.4"
+  version: "0.2.5"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -64,6 +64,7 @@ abbreviation (`T2D_…`) that disagrees with the folder.
     ├── <study>_notebook.html     #   replicator spec, every supporting query verbatim with its rows,
     ├── queries/  data/           #   the analysis code, and the executed notebook as HTML
     ├── okn_sparql.py  <analysis>.py
+    ├── okn_notebook.html.j2      #   the HTML page's template (html_command folds long code cells)
     └── requirements.txt  README.md
 ```
 
@@ -325,7 +326,7 @@ create_jupyter_notebook(
            {"type": "markdown", "source": "## Conclusions\n\n- finding 1 …"}],  # LAST
     figures=[{"path": "figures/fig1_….png", "caption": "…", "source": "<study>/figures/fig1_….png"}],
     requirements=["matplotlib>=3.7", …],
-    skills=["okn-report-style v0.2.4", …],   # every skill you followed, "<name> v<version>"
+    skills=["okn-report-style v0.2.5", …],   # every skill you followed, "<name> v<version>"
     external_mcp_servers=["PubMed", …],      # every other connector that fed the analysis
     chat_started="<ISO-8601>",           # OPTIONAL: whole-chat elapsed time in the header
     output_dir="<absolute path of <study>/>",   # honoured when the server runs locally
@@ -350,7 +351,9 @@ create_jupyter_notebook(
   - **Middle: a short markdown cell before each analysis step** saying what the next code cell does
     and *why*: why this filter, this threshold, this test. One step per code cell, and keep each one
     readable (split a cell that runs past ~100 lines). A figure's cells are why → code → legend. The
-    legend says what the figure shows; the why cell says what question it answers.
+    legend says what the figure shows; the why cell says what question it answers. The tool folds
+    every code cell over 10 lines (outputs stay in view, a click shows the code), so the why cell is
+    what the reader sees in its place: it must say what the folded code does.
   - **End: `## Conclusions`**, the LAST cell of `cells`, after every analysis code cell. It opens
     with a **concise summary of findings**: 3–5 bullets, each one finding with its headline number as
     the cells above computed it (and its denominator). Then a sentence or two answering the opening
@@ -378,7 +381,7 @@ create_jupyter_notebook(
 
 Pass `model=` — the **exact runtime model identifier**, matching the report title block character for
 character; ask the user if you cannot determine it (*Exact model provenance* above). `skills=` records
-the methodology (this skill is `okn-report-style v0.2.4`; versions from each skill's frontmatter
+the methodology (this skill is `okn-report-style v0.2.5`; versions from each skill's frontmatter
 `metadata.version`), and `external_mcp_servers=` the evidence base beyond the KGs. The server can see
 neither, so only these arguments put them on the record. Failure modes and fixes:
 **`references/failure-modes.md`** (*Reproducibility notebook incomplete…*).
