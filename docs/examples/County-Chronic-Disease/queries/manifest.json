@@ -1,0 +1,149 @@
+[
+  {
+    "name": "q01",
+    "description": "Q1 - Inventory: which sources / geography levels carry disease prevalence in spoke-okn",
+    "timestamp": "2026-11-18T23:46:02+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 2,
+    "cached_rows": 2,
+    "truncated": false,
+    "cache": "data/q01.csv",
+    "sent": null
+  },
+  {
+    "name": "q02",
+    "description": "Q2 - The nine CDC PLACES measures stored at place (City) level, and the DOID term each is mapped to",
+    "timestamp": "2026-11-18T23:46:05+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 9,
+    "cached_rows": 9,
+    "truncated": false,
+    "cache": "data/q02.csv",
+    "sent": null
+  },
+  {
+    "name": "q03",
+    "description": "Q3 - Coverage, year and range of the native county measures and covariates",
+    "timestamp": "2026-11-18T23:46:29+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 24,
+    "cached_rows": 24,
+    "truncated": false,
+    "cache": "data/q03.csv",
+    "sent": null
+  },
+  {
+    "name": "q04",
+    "description": "Q4 - Native county measures + RUCC (ruralkg), state FIPS 01-13",
+    "timestamp": "2026-11-18T23:46:53+00:00",
+    "graphs": [
+      "spoke-okn",
+      "ruralkg"
+    ],
+    "row_count": 544,
+    "cached_rows": 544,
+    "truncated": false,
+    "cache": "data/q04.csv",
+    "sent": null
+  },
+  {
+    "name": "q05",
+    "description": "Q5 - Native county measures + RUCC (ruralkg), state FIPS 14-28",
+    "timestamp": "2026-11-18T23:47:15+00:00",
+    "graphs": [
+      "spoke-okn",
+      "ruralkg"
+    ],
+    "row_count": 936,
+    "cached_rows": 936,
+    "truncated": false,
+    "cache": "data/q05.csv",
+    "sent": null
+  },
+  {
+    "name": "q06",
+    "description": "Q6 - Native county measures + RUCC (ruralkg), state FIPS 29-40",
+    "timestamp": "2026-11-18T23:47:38+00:00",
+    "graphs": [
+      "spoke-okn",
+      "ruralkg"
+    ],
+    "row_count": 723,
+    "cached_rows": 723,
+    "truncated": false,
+    "cache": "data/q06.csv",
+    "sent": null
+  },
+  {
+    "name": "q07",
+    "description": "Q7 - Native county measures + RUCC (ruralkg), state FIPS 41-56",
+    "timestamp": "2026-11-18T23:48:02+00:00",
+    "graphs": [
+      "spoke-okn",
+      "ruralkg"
+    ],
+    "row_count": 928,
+    "cached_rows": 928,
+    "truncated": false,
+    "cache": "data/q07.csv",
+    "sent": null
+  },
+  {
+    "name": "q08",
+    "description": "Q8 - PLACES place-level prevalence rolled up to counties, state FIPS 01-13",
+    "timestamp": "2026-11-18T23:48:19+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 476,
+    "cached_rows": 476,
+    "truncated": false,
+    "cache": "data/q08.csv",
+    "sent": null
+  },
+  {
+    "name": "q09",
+    "description": "Q9 - PLACES place-level prevalence rolled up to counties, state FIPS 14-28",
+    "timestamp": "2026-11-18T23:48:41+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 936,
+    "cached_rows": 936,
+    "truncated": false,
+    "cache": "data/q09.csv",
+    "sent": null
+  },
+  {
+    "name": "q10",
+    "description": "Q10 - PLACES place-level prevalence rolled up to counties, state FIPS 29-40",
+    "timestamp": "2026-11-18T23:48:56+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 718,
+    "cached_rows": 718,
+    "truncated": false,
+    "cache": "data/q10.csv",
+    "sent": null
+  },
+  {
+    "name": "q11",
+    "description": "Q11 - PLACES place-level prevalence rolled up to counties, state FIPS 41-56",
+    "timestamp": "2026-11-18T23:49:11+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "row_count": 927,
+    "cached_rows": 927,
+    "truncated": false,
+    "cache": "data/q11.csv",
+    "sent": null
+  }
+]

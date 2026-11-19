@@ -1,0 +1,25 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+PREFIX sd: <https://purl.org/okn/frink/kg/spoke-okn/sdoh/>
+# Q3 - County-level (native) health and covariate measures in spoke-okn (SDoH PREVALENCEIN_SpL): source, year, coverage, range
+SELECT ?col ?sdoh ?source ?yr (COUNT(DISTINCT ?loc) AS ?n_counties) (MIN(?num) AS ?min) (ROUND(100*AVG(?num))/100 AS ?mean) (MAX(?num) AS ?max) WHERE {
+  VALUES (?sdoh ?col ?yr) {
+    (sd:CHR_diabetes_prevalence "diabetes" "2023") (sd:414916001 "obesity" "2023") (sd:CDCP_ASTHMA_ADULT_A "asthma" "2019")
+    (sd:CDCP_PULMONARY_ADULT_A "copd" "2019") (sd:CDCP_ARTHRITIS_ADULT_A "arthritis" "2019") (sd:CDCP_KIDNEY_DISEASE_ADULT_A "ckd" "2019")
+    (sd:CDCP_CHOLES_ADULT_A "high_chol" "2019") (sd:CHR_frequent_mental_distress "mental_distress" "2023") (sd:CHR_frequent_physical_distress "physical_distress" "2023")
+    (sd:CDCA_HEART_DTH_RATE_ABOVE35 "heart_mort" "2019") (sd:CDCA_STROKE_DTH_RATE_ABOVE35 "stroke_mort" "2019")
+    (sd:CDCA_HEART_HOSP_RATE_ABOVE65 "heart_hosp" "2018") (sd:CDCA_STROKE_HOSP_RATE_ABOVE65 "stroke_hosp" "2018")
+    (sd:ACS_TOT_POP_WT "pop" "2020") (sd:ACS_PCT_AGE_ABOVE65 "age65" "2020") (sd:ACS_PCT_BLACK_NONHISP "black" "2020")
+    (sd:ACS_PCT_HISPANIC "hispanic" "2020") (sd:ACS_PCT_BACHELOR_DGR "bachelor" "2020") (sd:ACS_MEDIAN_HH_INC "income" "2020")
+    (sd:SAIPE_PCT_POV "poverty" "2020") (sd:CHR_rural "rural" "2023") (sd:77176002 "smoking" "2023")
+    (sd:CDCP_NO_PHY_ACTV_ADULT_A "inactivity" "2019") (sd:CHR_food_environment_index "food_env" "2023") }
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?stmt rdf:subject ?sdoh ; rdf:predicate kg:PREVALENCEIN_SpL ; rdf:object ?loc ; kg:value ?val ; kg:year ?y ; dcterms:source ?source .
+  }
+  FILTER(STR(?y) = ?yr)
+  BIND(STRAFTER(STR(?loc), "/location/") AS ?fips)
+  FILTER(REGEX(?fips, "^[0-5][0-9]{4}$"))
+  BIND(xsd:double(IF(CONTAINS(STR(?val),"("), STRBEFORE(STR(?val),"("), STR(?val))) AS ?num)
+} GROUP BY ?col ?sdoh ?source ?yr ORDER BY ?source ?col
