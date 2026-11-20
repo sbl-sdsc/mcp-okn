@@ -144,10 +144,13 @@ current, see [Identifying a deployment](#identifying-a-deployment).)
 
 ### Claude Desktop
 
-1. Open **Settings → Connectors → Add custom connector**.
-2. Name it `mcp-okn-dev` and enter the URL `https://apps.okn.us/okn-mcp-dev/mcp`.
-3. Click **Configure** and set the tool permissions to **Always allow**.
-4. In a new chat, click the `+` icon and enable the `mcp-okn-dev` toggle.
+1. Open **Settings → Plugins** and click **Browse plugins** at the bottom of the list.
+2. On the **Plugins** page, click **Add → Add custom connector**.
+3. Enter the **Name** `mcp-okn-dev` and the **MCP server URL** `https://apps.okn.us/okn-mcp-dev/mcp`, then click **Continue**.
+4. Under **Authentication**, keep **No sign-in** (it's preselected and marked *Detected*), then click **Add**.
+5. `mcp-okn-dev` now appears in the plugins list under **Active**.
+6. In **Settings → Plugins**, click **mcp-okn-dev**, open the **Permissions** tab, and under **Tool permissions** set the tools to **Always allow**.
+7. In a new chat, click the **+** button and enable `mcp-okn-dev`.
 
 > A Claude Pro or Max subscription is required for MCP connectors in Claude Desktop.
 
@@ -214,11 +217,12 @@ The case studies' **Comparison with prior work** step checks each finding agains
 the primary literature, which needs two additional MCP connectors beyond the
 mcp-okn server:
 
-- **PubMed** — `https://pubmed.mcp.claude.com/mcp`
-- **Paperclip** — `https://paperclip.gxl.ai/mcp`
+In Claude Desktop:
 
-Add them the same way as the mcp-okn server — in Claude Desktop / claude.ai via
-**Settings → Connectors → Add custom connector**, or from Claude Code:
+- **PubMed** is provided by Anthropic. On the **Plugins** page (step 1 above), search for **PubMed** and add it.
+- **Paperclip** is a custom connector. Add it the same way as `mcp-okn-dev` (steps 1–7 above), with the Name `paperclip` and the MCP server URL `https://paperclip.gxl.ai/mcp`.
+
+From Claude Code:
 
 ```bash
 claude mcp add --transport http pubmed https://pubmed.mcp.claude.com/mcp
