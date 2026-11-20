@@ -905,6 +905,13 @@ class EndpointError(RuntimeError):
     """The endpoint refused or failed a query; the message carries its reason."""
 
 
+class EndpointUnreachable(EndpointError):
+    """No HTTP reply at all: a firewall, proxy or agent sandbox blocks the endpoint.
+
+    verify_all() stops on it rather than filling every row with the same error.
+    """
+
+
 def manifest() -> list[dict[str, Any]]:
     """Per query: name, description, graphs (+ graph_versions), timestamp, row_count,
     rows_sha256, cache, sent."""
@@ -922,6 +929,11 @@ def query_text(name: str, sent: bool = True) -> str:
     """The query's text: the form the server sent (default), or as logged."""
     entry = _entry(name)
     path = HERE / entry["sent"] if sent and entry.get("sent") else QUERIES / f"{name}.rq"
+    if not path.is_file():
+        raise FileNotFoundError(
+            f"{path.relative_to(HERE)} is missing: the notebook folder is incomplete. "
+            "Copy the whole folder (queries/ and data/ included), not single files."
+        )
     return path.read_text(encoding="utf-8")
 
 
@@ -994,6 +1006,12 @@ def _post(query: str, timeout: int) -> dict[str, Any]:
             wait = _pause(error, attempt)
             print(f"endpoint busy (HTTP {error.code}); retrying in {wait:.0f}s")
             time.sleep(wait)
+        except urllib.error.URLError as error:  # no HTTP reply at all
+            raise EndpointUnreachable(
+                f"cannot reach {ENDPOINT}: {error.reason}. A firewall, proxy or agent "
+                "sandbox between this machine and the endpoint blocks it; run where the "
+                "endpoint is reachable (cached rows still load offline)."
+            ) from None
 
 
 def _rows(payload: dict[str, Any]) -> tuple[list[str], list[dict[str, Any]]]:
@@ -1099,7 +1117,9 @@ def verify_all(timeout: int = 300, fresh: bool = False) -> pd.DataFrame:
     → v0.0.6"); it is None when the releases are unknown.
 
     A query already run live in this session (``RERUN = True``) is not sent
-    again unless ``fresh``; the others are run now, one at a time.
+    again unless ``fresh``; the others are run now, one at a time. If the endpoint
+    cannot be reached at all, it raises ``EndpointUnreachable`` at the first query
+    instead of reporting the same error for every row.
     """
     releases = kg_versions()
     report = []
@@ -1117,6 +1137,8 @@ def verify_all(timeout: int = 300, fresh: bool = False) -> pd.DataFrame:
                 status = "changed"
             else:
                 status = "ok"
+        except EndpointUnreachable:
+            raise  # every other query would fail the same way
         except Exception as exc:  # report and keep going
             live, status = None, f"error: {str(exc)[:160]}"
         report.append(

@@ -388,6 +388,40 @@ def test_html_older_than_notebook_warns(tmp_path):
     assert any("older than the notebook" in w for w in r.warnings)
 
 
+def _verify_page(rows: list[str], note: str = "") -> str:
+    """An executed page's verify_all() table, as pandas renders it."""
+    cells = "".join(
+        f"<tr><th>{i}</th><td>q0{i}</td><td>{s}</td></tr>" for i, s in enumerate(rows)
+    )
+    return f"<html><body><pre>{note}</pre><table>{cells}</table></body></html>"
+
+
+def test_verify_table_with_error_rows_fails(tmp_path):
+    """A page rendered in a sandbox that blocks the endpoint publishes a table of errors."""
+    study = _build(tmp_path)
+    (study / NB / f"{NB}.html").write_text(
+        _verify_page(
+            ["error: [Errno 2] No such file or directory: '/...", "error: HTTP 403"],
+            note="graph releases unavailable: <urlopen error Tunnel connection failed>",
+        )
+    )
+    r = v.validate(str(study))
+    assert any("2 `error:` row(s)" in e for e in r.errors), r.errors
+
+
+def test_verify_table_drift_passes_and_missing_releases_warn(tmp_path):
+    """drift / changed are findings, not failures; a failed release lookup only warns."""
+    study = _build(tmp_path)
+    page = study / NB / f"{NB}.html"
+    page.write_text(_verify_page(["ok", "drift", "changed"]))
+    r = v.validate(str(study))
+    assert r.errors == [], r.errors
+    page.write_text(_verify_page(["ok"], note="graph releases unavailable: HTTP 503"))
+    r = v.validate(str(study))
+    assert r.errors == [], r.errors
+    assert any("release lookup failed" in w for w in r.warnings)
+
+
 def test_missing_cached_rows_fail(tmp_path):
     # A hosted server returns a file map; a file the agent forgot to save is caught via the manifest.
     study = _build(tmp_path)

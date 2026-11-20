@@ -500,6 +500,46 @@ def test_helper_reports_the_endpoint_reason(helper, monkeypatch):
     assert len(attempts) == 1 + len(helper.BACKOFF_SECONDS)
 
 
+def test_unreachable_endpoint_stops_verify_all(helper, monkeypatch):
+    """A blocked endpoint (an agent sandbox's egress proxy) raises once with a clear
+    reason, instead of a verify table with the same error in every row."""
+    import urllib.error
+
+    calls = []
+
+    def blocked(request, timeout):
+        calls.append(1)
+        raise urllib.error.URLError("Tunnel connection failed: 403 Forbidden")
+
+    monkeypatch.setattr(helper.urllib.request, "urlopen", blocked)
+    with pytest.raises(
+        helper.EndpointUnreachable, match=r"cannot reach .*proxy or agent"
+    ):
+        helper.run_sparql("SELECT 1")
+    calls.clear()
+    with pytest.raises(helper.EndpointUnreachable):
+        helper.verify_all()
+    assert len(calls) == 2  # the release lookup, then the first query — no more
+    assert issubclass(helper.EndpointUnreachable, helper.EndpointError)
+
+
+def test_missing_query_file_names_the_file(helper, monkeypatch):
+    (helper.QUERIES / "q01.rq").unlink()
+    with pytest.raises(
+        FileNotFoundError, match=r"queries/q01\.rq is missing.*whole folder"
+    ):
+        helper.query_text("q01")
+
+    def post(query, timeout):
+        if query == helper.VERSION_QUERY:
+            return _versions_payload({})
+        return _payload(["g"], [{"g": "x"}])
+
+    monkeypatch.setattr(helper, "_post", post)
+    status = helper.verify_all()["status"].tolist()
+    assert status[0].startswith("error: queries/q01.rq is missing")
+
+
 def test_verify_all_reuses_live_runs(helper, monkeypatch):
     sent = []
 
