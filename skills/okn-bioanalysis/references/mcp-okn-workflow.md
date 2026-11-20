@@ -23,7 +23,8 @@ analyses to run, what to integrate on, and how to interpret.
 - **Which id scheme populates a predicate** → `probe_namespaces` (MONDO vs DOID, Entrez vs Ensembl,
   CHEBI vs CAS…). Pick the richest; don't infer from the name.
 - **Clean model-organism contrasts** (spoke-genelab) → `get_valid_contrasts`.
-- **Logging / versions / record** → `reset_query_log` (start); `get_kg_version` +
+- **Logging / versions / record** → `reset_query_log(skills=[…])` (start; relay any
+  outdated-skill warning to the user); `get_kg_version` +
   `create_jupyter_notebook` (end; a re-runnable folder of the supporting queries, their rows and the
   analysis code — or `create_chat_transcript` for the full prose+results transcript).
 

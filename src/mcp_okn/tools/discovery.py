@@ -7,19 +7,24 @@ from typing import Any
 from .. import __version__, payloads, registry, schema, void
 from ..app import mcp
 from ..build_info import build_id
+from ..skill_versions import bundled_skill_versions
 from ..sparql import FEDERATION_ENDPOINT
 
 
 @mcp.tool()
 async def get_server_info() -> dict[str, Any]:
-    """Identify THIS server: `{service, version, build, sparql_endpoint, schema_files}`.
+    """Identify THIS server: `{service, version, build, sparql_endpoint, ...}`.
+
+    Also returns `schema_files` and `skill_versions`.
 
     `build` is the deployed commit (`unknown` if unidentifiable). `schema_files` is
     how many per-KG schema files `get_schema` can read (0 means every schema is
     probed live, so the deployment is missing them). The version alone
     can't tell two deployments apart, so call this when a tool or argument seems to
     be missing — a hosted server can lag the repo — or to record exactly which build
-    produced a result.
+    produced a result. `skill_versions` is the current version of each skill
+    (okn-bioanalysis, okn-report-style) this build ships with: a loaded skill with a
+    lower `metadata.version` is out of date — tell the user to update it.
     """
     return {
         "service": mcp.name,
@@ -27,6 +32,7 @@ async def get_server_info() -> dict[str, Any]:
         "build": build_id(),
         "sparql_endpoint": FEDERATION_ENDPOINT,
         "schema_files": schema.schema_file_count(),
+        "skill_versions": bundled_skill_versions(),
     }
 
 

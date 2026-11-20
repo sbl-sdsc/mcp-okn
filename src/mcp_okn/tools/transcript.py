@@ -20,6 +20,7 @@ from .. import __version__, session
 from ..app import mcp
 from ..build_info import build_id, build_suffix
 from ..mermaid_namespace import namespace_document
+from ..skill_versions import check_skills
 from ..sparql import FEDERATION_ENDPOINT, named_graph
 from ..transcript_render import (
     MERMAID_LABEL,
@@ -41,7 +42,9 @@ LATEST_PDF_URI = "transcript://session/latest.pdf"
 
 
 @mcp.tool()
-async def reset_query_log(scope: str | None = None) -> dict[str, Any]:
+async def reset_query_log(
+    scope: str | None = None, skills: list[str] | None = None
+) -> dict[str, Any]:
     """Clear this analysis's query log (and logged diagrams) for a fresh start.
 
     Call this at the START of a new analysis. Every subsequent `sparql_query`
@@ -58,18 +61,27 @@ async def reset_query_log(scope: str | None = None) -> dict[str, Any]:
             `create_chat_transcript`. Without it, their queries interleave in one
             log and one agent's SPARQL lands in another's transcript. Resetting
             one scope never touches another.
+        skills: OPTIONAL — every skill you are following, each `"<name> v<version>"`
+            with the version from the skill's frontmatter `metadata.version` (e.g.
+            `["okn-bioanalysis v0.1.3"]`). The server checks them against the skill
+            versions it ships with; the server cannot see your loaded skills otherwise.
 
     Returns:
-        `{"cleared": N, "scope": ..., "active_scopes": [...]}`. If `active_scopes`
-        shows scopes you did not create, other analyses ARE running concurrently
-        in this session — pass a `scope` from here on.
+        `{"cleared": N, "scope": ..., "active_scopes": [...]}`, plus `warnings` when
+        a passed skill is older (or newer) than this server's — RELAY those to the
+        user in your reply, they say how to update. If `active_scopes` shows scopes
+        you did not create, other analyses ARE running concurrently in this session
+        — pass a `scope` from here on.
     """
     removed = session.reset(scope)
-    return {
+    out: dict[str, Any] = {
         "cleared": removed,
         "scope": scope or session.DEFAULT_SCOPE,
         "active_scopes": session.scopes(),
     }
+    if skill_warnings := check_skills(_clean_entries(skills)):
+        out["warnings"] = skill_warnings
+    return out
 
 
 @mcp.tool()
@@ -777,6 +789,7 @@ async def create_chat_transcript(
     )
     if not skill_list:
         warnings.append(_skills_warning("transcript"))
+    warnings += check_skills(skill_list)
 
     if format == "json":
         payload: dict[str, Any] = {

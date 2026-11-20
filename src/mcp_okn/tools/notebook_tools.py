@@ -12,6 +12,7 @@ from .. import __version__, session, void
 from ..app import mcp
 from ..build_info import build_suffix
 from ..notebook import build_study, run_commands
+from ..skill_versions import check_skills
 from ..sparql import FEDERATION_ENDPOINT
 from .transcript import (
     _active_window,
@@ -286,6 +287,7 @@ async def create_jupyter_notebook(
     kg_versions = await _kg_versions(kgs, warnings)
     if not skill_list:
         warnings.append(_skills_warning("notebook"))
+    warnings += check_skills(skill_list)
     # Timing: the whole chat when the caller knows its start, else the active-query
     # window over the whole scoped log.
     window = _chat_window(chat_started, chat_ended) if chat_started else None

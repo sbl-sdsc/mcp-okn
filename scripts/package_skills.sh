@@ -6,7 +6,10 @@
 # CI fails when either one is out of sync with its folder, so run this after any
 # edit under skills/.
 set -euo pipefail
-cd "$(dirname "$0")/../skills"
+cd "$(dirname "$0")/.."
+# The server's copy of each skill's version (the update notice compares against it).
+python3 scripts/build_skill_versions.py
+cd skills
 for skill in okn-report-style okn-bioanalysis; do
   rm -f "$skill.zip" "$skill.skill"
   zip -rq "$skill.zip" "$skill" -x '*/__pycache__/*' -x '*.DS_Store'
