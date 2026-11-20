@@ -149,7 +149,7 @@ current, see [Identifying a deployment](#identifying-a-deployment).)
 3. Enter the **Name** `mcp-okn-dev` and the **MCP server URL** `https://apps.okn.us/okn-mcp-dev/mcp`, then click **Continue**.
 4. Under **Authentication**, keep **No sign-in** (it's preselected and marked *Detected*), then click **Add**.
 5. `mcp-okn-dev` now appears in the plugins list under **Active**.
-6. In **Settings → Plugins**, click **mcp-okn-dev**, open the **Permissions** tab, and under **Tool permissions** set the tools to **Always allow**.
+6. Click **mcp-okn-dev**, open the **Permissions** tab, and under **Tool permissions** set the tools to **Always allow**.
 7. In a new chat, click the **+** button and enable `mcp-okn-dev`.
 
 > A Claude Pro or Max subscription is required for MCP connectors in Claude Desktop.
