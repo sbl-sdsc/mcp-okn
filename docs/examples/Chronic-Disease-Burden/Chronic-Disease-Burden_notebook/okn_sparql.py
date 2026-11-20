@@ -5,7 +5,8 @@ standard library, so mcp-okn does not have to be installed.
 
     run_query("q01")               # cached rows from data/ (live if none are cached)
     run_query("q01", rerun=True)   # run it live and compare the row count
-    verify_all()                   # every query, live vs logged row counts
+    verify_all()                   # every query, live vs logged rows and releases
+    kg_versions()                  # each graph's current release on the endpoint
 
 The endpoint is shared and answers HTTP 429 when it is busy, so a request that
 fails quickly with 429 (or a 502/503/504 gateway error) is retried after a short,
@@ -15,6 +16,7 @@ time limit means the query itself ran out of time, and is not retried.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import random
 import time
@@ -27,6 +29,9 @@ from typing import Any
 import pandas as pd
 
 ENDPOINT = "https://apps.okn.us/federation/sparql"
+GRAPH_PREFIX = "https://purl.org/okn/frink/kg/"
+#: Reads each graph's release (pav:version) from the federation's VoID metadata.
+VERSION_QUERY = 'SELECT ?s ?version ?last_updated WHERE {\n  GRAPH <https://purl.org/okn/frink/kg/okn-void> {\n    ?s <http://purl.org/pav/version> ?version .\n    OPTIONAL { ?s <http://purl.org/pav/lastUpdatedOn> ?last_updated }\n  }\n}\nORDER BY ?s'
 HERE = Path(__file__).resolve().parent
 QUERIES = HERE / "queries"
 
@@ -39,8 +44,11 @@ BACKOFF_SECONDS = (2.0, 5.0, 15.0, 30.0)
 #: Longest Retry-After header honoured.
 MAX_RETRY_AFTER = 60.0
 
-#: Row counts of the queries run live in this session, for verify_all().
+#: Row counts and row digests of the queries run live in this session, for verify_all().
 _live_counts: dict[str, int] = {}
+_live_digests: dict[str, str] = {}
+#: Each graph's current release, read once by kg_versions().
+_releases: dict[str, str] | None = None
 
 
 class EndpointError(RuntimeError):
@@ -48,7 +56,8 @@ class EndpointError(RuntimeError):
 
 
 def manifest() -> list[dict[str, Any]]:
-    """Per query: name, description, graphs, timestamp, row_count, cache, sent."""
+    """Per query: name, description, graphs (+ graph_versions), timestamp, row_count,
+    rows_sha256, cache, sent."""
     return json.loads((QUERIES / "manifest.json").read_text(encoding="utf-8"))
 
 
@@ -137,17 +146,91 @@ def _post(query: str, timeout: int) -> dict[str, Any]:
             time.sleep(wait)
 
 
-def run_sparql(query: str, timeout: int = 300) -> pd.DataFrame:
-    """POST ``query`` to the federation and return the bindings as a DataFrame."""
-    payload = _post(query, timeout)
+def _rows(payload: dict[str, Any]) -> tuple[list[str], list[dict[str, Any]]]:
+    """A SPARQL JSON reply's columns and rows, values cast the way mcp-okn casts them."""
     if isinstance(payload.get("boolean"), bool):
-        return pd.DataFrame({"boolean": [payload["boolean"]]})
+        return ["boolean"], [{"boolean": payload["boolean"]}]
     columns = payload.get("head", {}).get("vars", [])
     rows = [
         {var: _value(cell) for var, cell in (binding or {}).items()}
         for binding in payload.get("results", {}).get("bindings", [])
     ]
+    return columns, rows
+
+
+def rows_digest(columns: list[str], rows: list[dict[str, Any]]) -> str:
+    """SHA-256 of a result's rows, independent of row order.
+
+    Each value is written canonically, one tab-joined line per row in ``columns``
+    order, and the sorted lines are hashed. Unbound is "", a boolean true/false, and
+    anything that reads as a finite number is written as that number, so 5, 5.0,
+    "5" and "5.0" agree, and so do "2.93226e+06" and 2932260.0: the endpoint's
+    exponent form, a value cast by mcp-okn, and a CSV round-trip all hash the same.
+    This function is copied verbatim into the generated ``okn_sparql.py``.
+    """
+
+    def cell(value: Any) -> str:
+        if value is None:
+            return ""
+        if isinstance(value, bool):
+            return "true" if value else "false"
+        text = str(value)
+        try:
+            number = float(text)
+        except ValueError:
+            return text
+        finite = number == number and abs(number) != float("inf")
+        return repr(number) if finite else text
+
+    lines = sorted("\t".join(cell(row.get(c)) for c in columns) for row in rows)
+    return hashlib.sha256("\n".join(lines).encode("utf-8")).hexdigest()
+
+
+def run_sparql(query: str, timeout: int = 300) -> pd.DataFrame:
+    """POST ``query`` to the federation and return the bindings as a DataFrame."""
+    columns, rows = _rows(_post(query, timeout))
     return pd.DataFrame(rows, columns=columns)
+
+
+def _run_live(name: str, timeout: int) -> pd.DataFrame:
+    """Run query ``name`` live, noting its row count and digest for verify_all()."""
+    columns, rows = _rows(_post(query_text(name), timeout))
+    _live_counts[name] = len(rows)
+    _live_digests[name] = rows_digest(columns, rows)
+    return pd.DataFrame(rows, columns=columns)
+
+
+def kg_versions(timeout: int = 60) -> dict[str, str] | None:
+    """Each graph's current release on the endpoint, ``{shortname: version}``.
+
+    Read once from the federation's VoID metadata and kept; None (with a note)
+    when the endpoint cannot be asked, so verify_all() still runs.
+    """
+    global _releases
+    if _releases is None:
+        try:
+            _, rows = _rows(_post(VERSION_QUERY, timeout))
+        except Exception as exc:  # the comparison is a courtesy
+            print(f"graph releases unavailable: {str(exc)[:160]}")
+            return None
+        _releases = {
+            str(row.get("s", "")).removeprefix(GRAPH_PREFIX): str(row["version"])
+            for row in rows
+            if row.get("version") is not None
+        }
+    return _releases
+
+
+def _redeployed(entry: dict[str, Any], live: dict[str, str] | None) -> str | None:
+    """The query's graphs whose release changed ("g v1 → v2"); None when unknown."""
+    logged = entry.get("graph_versions") or {}
+    if live is None or not any(logged.values()):
+        return None
+    return "; ".join(
+        f"{graph} {version} → {live[graph]}"
+        for graph, version in logged.items()
+        if version and live.get(graph) and live[graph] != version
+    )
 
 
 def load_cached(name: str) -> pd.DataFrame:
@@ -172,42 +255,53 @@ def run_query(name: str, rerun: bool = False, timeout: int = 300) -> pd.DataFram
                 "rows; rerun=True fetches all of them"
             )
         return load_cached(name)
-    frame = run_sparql(query_text(name), timeout=timeout)
-    _live_counts[name] = len(frame)
+    frame = _run_live(name, timeout)
     logged = entry.get("row_count")
     if isinstance(logged, int) and len(frame) != logged:
         print(
             f"{name}: {len(frame):,} rows now vs {logged:,} logged; the graph may "
-            "have been redeployed since the study ran"
+            "have been redeployed since the study ran (verify_all() names it)"
         )
     return frame
 
 
 def verify_all(timeout: int = 300, fresh: bool = False) -> pd.DataFrame:
-    """Logged vs live row counts, one row per query.
+    """Logged vs live results, one row per query.
+
+    ``status`` is ``ok``; ``drift`` (the row count changed); ``changed`` (the same
+    number of rows, different values); or ``error: …``. ``redeployed`` names each of
+    the query's graphs whose release differs from the logged one ("spoke-okn v0.0.5
+    → v0.0.6"); it is None when the releases are unknown.
 
     A query already run live in this session (``RERUN = True``) is not sent
     again unless ``fresh``; the others are run now, one at a time.
     """
+    releases = kg_versions()
     report = []
     for entry in manifest():
         name = entry["name"]
         try:
-            if not fresh and name in _live_counts:
-                live: Any = _live_counts[name]
+            if fresh or name not in _live_counts:
+                _run_live(name, timeout)
+            live: Any = _live_counts[name]
+            if live != entry["row_count"]:
+                status = "drift"
+            elif entry.get("rows_sha256") and (
+                _live_digests.get(name) != entry["rows_sha256"]
+            ):
+                status = "changed"
             else:
-                live = len(run_sparql(query_text(name), timeout=timeout))
-                _live_counts[name] = live
-            status = "ok" if live == entry["row_count"] else "drift"
+                status = "ok"
         except Exception as exc:  # report and keep going
             live, status = None, f"error: {str(exc)[:160]}"
         report.append(
             {
-                "query": entry["name"],
+                "query": name,
                 "graphs": ", ".join(entry.get("graphs") or []),
                 "logged_rows": entry["row_count"],
                 "live_rows": live,
                 "status": status,
+                "redeployed": _redeployed(entry, releases),
             }
         )
     return pd.DataFrame(report).astype({"live_rows": "Int64"})

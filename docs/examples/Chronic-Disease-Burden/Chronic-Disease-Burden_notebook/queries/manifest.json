@@ -6,7 +6,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 153,
+    "rows_sha256": "b948164efbcb25f22cf428937e3e5ff16ae0035eed170794f90a0f4801531a11",
     "cached_rows": 153,
     "truncated": false,
     "cache": "data/q01.csv",
@@ -19,7 +23,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 1,
+    "rows_sha256": "45e4e6d297bee5f5ec6e929145dc9d17371eb8c2f51586a241eb6bdcbf077718",
     "cached_rows": 1,
     "truncated": false,
     "cache": "data/q02.csv",
@@ -32,7 +40,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 9,
+    "rows_sha256": "5f1147e3aa0fd66f1784d97d79b64d44989329e405dd264b025b4de9a00b89b0",
     "cached_rows": 9,
     "truncated": false,
     "cache": "data/q03.csv",
@@ -45,7 +57,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 19,
+    "rows_sha256": "4724bca3cb8b39af0c84cbcf8a7651caa8c42c8f398e1036554c5780e0865ec1",
     "cached_rows": 19,
     "truncated": false,
     "cache": "data/q04.csv",
@@ -58,7 +74,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 82,
+    "rows_sha256": "9f8bc7f8518be1b896186ae96f7a436a5db73de231ca91ddafab4a565cc4b16f",
     "cached_rows": 82,
     "truncated": false,
     "cache": "data/q05.csv",
@@ -71,7 +91,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 2,
+    "rows_sha256": "624b6cbb8b4481fa25bc4a6be79b9dc591ffcb70a02f7f41f4cc6f48d3f65327",
     "cached_rows": 2,
     "truncated": false,
     "cache": "data/q06.csv",
@@ -84,7 +108,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 3057,
+    "rows_sha256": "406b6df0aa7d41b04516f2b32140d63c7ab8748e375acd0620f7f6e35a2fa726",
     "cached_rows": 3057,
     "truncated": false,
     "cache": "data/q07.csv",
@@ -97,7 +125,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 320,
+    "rows_sha256": "3ac402e47b4890be574e1e1dd2164cc57b7a7016bb507196e50bd52f28440a45",
     "cached_rows": 320,
     "truncated": false,
     "cache": "data/q08.csv",
@@ -110,7 +142,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 50,
+    "rows_sha256": "f806824b7932a796e2766b696cba9fbf5968d66af845d3e0651d4f7f503f9ae2",
     "cached_rows": 50,
     "truncated": false,
     "cache": "data/q09.csv",
@@ -123,7 +159,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 497,
+    "rows_sha256": "a9ab8ff64f7771e76e224037a4d0c66b9c65a8f9312a8cd51a9be9284244d38a",
     "cached_rows": 497,
     "truncated": false,
     "cache": "data/q10.csv",
@@ -136,7 +176,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 710,
+    "rows_sha256": "8a47b8c0d8a04cc5d10f95b29ccc78919d36fcfcff936683bc0c21d4d58e871b",
     "cached_rows": 710,
     "truncated": false,
     "cache": "data/q11.csv",
@@ -149,7 +193,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 639,
+    "rows_sha256": "cf8b5f25ba32856411f63c5485cc75b5a70f53364ed7779f9c0b1e0a00ef330d",
     "cached_rows": 639,
     "truncated": false,
     "cache": "data/q12.csv",
@@ -162,7 +210,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 891,
+    "rows_sha256": "1c711d71f5143aefb336852c4793aed7f619c53d07e13b95db25102828d2a2ac",
     "cached_rows": 891,
     "truncated": false,
     "cache": "data/q13.csv",
@@ -175,7 +227,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 362,
+    "rows_sha256": "059bc95412e44db28b21edb90c1307cb1bedafd9ac598b9c37c292d3f9a16a61",
     "cached_rows": 362,
     "truncated": false,
     "cache": "data/q14.csv",
@@ -188,7 +244,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 885,
+    "rows_sha256": "96213c4ee9d30f4847817fd311bdfd1f357e6599e6e4304e1abd4a66ad011ff7",
     "cached_rows": 885,
     "truncated": false,
     "cache": "data/q15.csv",
@@ -201,7 +261,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 907,
+    "rows_sha256": "94a57c2173e41dd152a95dc61df83c2508d2cab6ee4944578498ce33670407ad",
     "cached_rows": 907,
     "truncated": false,
     "cache": "data/q16.csv",
@@ -214,7 +278,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 977,
+    "rows_sha256": "ca3d73a314e371dadffba73927bf4eb7d61630237abe21b340e05405f1282391",
     "cached_rows": 977,
     "truncated": false,
     "cache": "data/q17.csv",
@@ -227,7 +295,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 81,
+    "rows_sha256": "ab7a3970056c8f49e9f4b76db2c8ae9b3e65da74864ac5ca6f8514c953f7aad3",
     "cached_rows": 81,
     "truncated": false,
     "cache": "data/q18.csv",
@@ -240,7 +312,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 1,
+    "rows_sha256": "c159732f48298031c61cb71cf4adbb17f16d766b2050330a492199219cff623f",
     "cached_rows": 1,
     "truncated": false,
     "cache": "data/q19.csv",
@@ -254,7 +330,12 @@
       "spoke-okn",
       "ubergraph"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6",
+      "ubergraph": "v0.0.2"
+    },
     "row_count": 9,
+    "rows_sha256": "dbd46bbb946a3c1bb659e369857e37102795db35fb8676f9761d265926f30673",
     "cached_rows": 9,
     "truncated": false,
     "cache": "data/q20.csv",

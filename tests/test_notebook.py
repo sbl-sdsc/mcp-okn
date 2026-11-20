@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pytest
 
-from mcp_okn import session
+from mcp_okn import notebook, session
 from mcp_okn.notebook import build_study, folder_slug, safe_relative_path, slugify
 from mcp_okn.sparql import prepare_query
 from mcp_okn.tools import notebook_tools
@@ -40,13 +40,63 @@ ROWS = {
 }
 
 
+RELEASES = [
+    {"shortname": "spoke-okn", "version": "v0.0.6", "last_updated": None},
+    {"shortname": "prokn", "version": "v1.2", "last_updated": None},
+    {"shortname": "ubergraph", "version": "v9", "last_updated": None},
+]
+
+
 @pytest.fixture(autouse=True)
 def clean_log(monkeypatch):
     session.reset()
     monkeypatch.setattr(notebook_tools, "_local_writes", False)
     monkeypatch.delenv("MCP_OKN_LOCAL_WRITES", raising=False)
+
+    async def releases(shortname=None, client=None):
+        return [dict(r) for r in RELEASES]
+
+    # The tool reads KG releases from the live VoID graph; never in tests.
+    monkeypatch.setattr(notebook_tools.void, "fetch_versions", releases)
     yield
     session.reset()
+
+
+def _binding(value):
+    if isinstance(value, bool):
+        return {
+            "type": "literal",
+            "value": str(value).lower(),
+            "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+        }
+    if isinstance(value, int):
+        return {
+            "type": "literal",
+            "value": str(value),
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+        }
+    if isinstance(value, float):
+        return {
+            "type": "literal",
+            "value": str(value),
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+        }
+    return {"type": "literal", "value": value}
+
+
+def _payload(columns, rows):
+    """A SPARQL JSON reply carrying ``rows`` (None = unbound)."""
+    bindings = [
+        {c: _binding(r[c]) for c in columns if r.get(c) is not None} for r in rows
+    ]
+    return {"head": {"vars": columns}, "results": {"bindings": bindings}}
+
+
+def _versions_payload(versions):
+    return _payload(
+        ["s", "version"],
+        [{"s": G + "/" + k, "version": v} for k, v in versions.items()],
+    )
 
 
 def _log_two():
@@ -175,11 +225,18 @@ async def test_notebook_cells_execute_offline(tmp_path, monkeypatch):
 
     # verify_all() re-runs live; stub the HTTP call and check it reports drift.
     helper = importlib.import_module("okn_sparql")
-    monkeypatch.setattr(
-        helper, "run_sparql", lambda q, timeout=300: pd.DataFrame({"x": [1]})
-    )
+
+    def post(query, timeout):
+        if query == helper.VERSION_QUERY:
+            return _versions_payload({"spoke-okn": "v0.0.6", "prokn": "v1.2"})
+        if "spoke-okn" in query:
+            return _payload(["x"], [{"x": 1}])
+        return _payload(["g"], [{"g": "x"}])
+
+    monkeypatch.setattr(helper, "_post", post)
     report = helper.verify_all()
     assert report["status"].tolist() == ["drift", "ok"]
+    assert report["redeployed"].tolist() == ["", ""]
     # The live run sends the server's rewritten form, not the verbatim text.
     assert "MINUS" in helper.query_text("q02") and "MINUS" not in helper.query_text(
         "q02", sent=False
@@ -446,15 +503,17 @@ def test_helper_reports_the_endpoint_reason(helper, monkeypatch):
 def test_verify_all_reuses_live_runs(helper, monkeypatch):
     sent = []
 
-    def fake(request, timeout):
-        sent.append(1)
-        return _ok(2 if len(sent) == 1 else 1)
+    def fake(query, timeout):
+        if query == helper.VERSION_QUERY:
+            return _versions_payload({})
+        sent.append(query)
+        return _payload(["x"], [{"x": i} for i in range(2 if len(sent) == 1 else 1)])
 
-    monkeypatch.setattr(helper.urllib.request, "urlopen", fake)
+    monkeypatch.setattr(helper, "_post", fake)
     helper.run_query("q01", rerun=True)  # live: 2 rows
     report = helper.verify_all()  # q01 reused, only q02 sent
     assert len(sent) == 2
-    assert report["status"].tolist() == ["ok", "ok"]
+    assert report["live_rows"].tolist() == [2, 1]
     assert str(report["live_rows"].dtype) == "Int64"
     helper.verify_all(fresh=True)
     assert len(sent) == 4
@@ -582,3 +641,121 @@ def test_html_template_folds_hidden_cells(tmp_path):
     ).from_notebook_node(nb)
     assert html.count('<details class="okn-fold">') == 1
     assert "<summary>Python (12 lines)</summary>" in html
+
+
+# --- KG releases and content drift -------------------------------------------------
+
+
+async def test_header_and_manifest_pin_kg_versions(monkeypatch):
+    async def releases(shortname=None, client=None):
+        return [dict(RELEASES[0])]  # prokn publishes no release here
+
+    monkeypatch.setattr(notebook_tools.void, "fetch_versions", releases)
+    _log_two()
+    out = await _build(title="Versions")
+    nb = nbformat.reads(out["files"]["versions.ipynb"], as_version=4)
+    header = "".join(nb.cells[0].source)
+    assert "`spoke-okn` v0.0.6" in header
+    assert "`prokn`" in header and "`prokn` v" not in header
+    manifest = json.loads(out["files"]["queries/manifest.json"])
+    assert manifest[0]["graph_versions"] == {"spoke-okn": "v0.0.6"}
+    assert manifest[1]["graph_versions"] == {"prokn": None}
+    assert manifest[0]["rows_sha256"] == notebook.rows_digest(
+        ROWS["vars"], ROWS["rows"]
+    )
+
+
+async def test_missing_kg_versions_warn_and_build(monkeypatch):
+    async def down(shortname=None, client=None):
+        raise RuntimeError("endpoint down")
+
+    monkeypatch.setattr(notebook_tools.void, "fetch_versions", down)
+    _log_two()
+    out = await _build(title="No Versions")
+    assert any("KG versions unavailable" in w for w in out["warnings"])
+    header = out["files"]["no-versions.ipynb"]
+    assert "`spoke-okn`, `prokn`" in header or "`prokn`, `spoke-okn`" in header
+
+
+def test_truncated_cache_has_no_digest():
+    entry = {
+        "sparql": Q_DISEASE,
+        "graphs": ["spoke-okn"],
+        "row_count": 5000,
+        "results": {**ROWS, "row_count": 5000, "truncated": True},
+    }
+    study = build_study(
+        title="T",
+        when="2026-11-19",
+        model="m",
+        entries=[entry],
+        kgs=[],
+        endpoint="https://example.org/sparql",
+        generated_by="mcp-okn test",
+    )
+    m = json.loads(study.files["queries/manifest.json"])[0]
+    assert m["rows_sha256"] is None and m["graph_versions"] == {"spoke-okn": None}
+
+
+def test_rows_digest_matches_between_log_and_helper(helper):
+    """The server's log casting and the helper's live casting hash the same rows."""
+    from mcp_okn.sparql import _flatten_bindings
+
+    columns = ["gene", "n", "score", "flag", "note"]
+    rows = [
+        {"gene": "IL2RA", "n": 3, "score": 0.25, "flag": True, "note": None},
+        {"gene": "VDR", "n": 12, "score": 1e-08, "flag": False, "note": "x"},
+    ]
+    payload = _payload(columns, rows)
+    logged = notebook.rows_digest(columns, _flatten_bindings(payload))
+    live_columns, live_rows = helper._rows(payload)
+    assert helper.rows_digest(live_columns, live_rows) == logged
+    reordered = _payload(columns, rows[::-1])
+    assert notebook.rows_digest(columns, _flatten_bindings(reordered)) == logged
+
+    # The cached CSV's text, and the endpoint's exponent form, hash like the cast values.
+    def text(v):
+        return None if v is None else str(v).lower() if isinstance(v, bool) else str(v)
+
+    as_text = [{k: text(v) for k, v in r.items()} for r in rows]
+    assert notebook.rows_digest(columns, as_text) == logged
+    assert notebook.rows_digest(["w"], [{"w": "2.93226e+06"}]) == notebook.rows_digest(
+        ["w"], [{"w": 2932260.0}]
+    )
+    edited = _payload(columns, [{**rows[0], "score": 0.26}, rows[1]])
+    assert notebook.rows_digest(columns, _flatten_bindings(edited)) != logged
+
+
+def test_verify_all_statuses_and_redeployed(helper, monkeypatch):
+    disease = ROWS["rows"]
+    replies = {
+        "ok": _payload(ROWS["vars"], disease),
+        "changed": _payload(ROWS["vars"], [disease[0], {**disease[1], "label": "y"}]),
+        "drift": _payload(ROWS["vars"], [*disease, {"disease": "M:3", "label": "z"}]),
+    }
+    state = {"q01": "ok", "versions": {"spoke-okn": "v0.0.6", "prokn": "v1.2"}}
+
+    def post(query, timeout):
+        if query == helper.VERSION_QUERY:
+            if state["versions"] is None:
+                raise helper.EndpointError("HTTP 503")
+            return _versions_payload(state["versions"])
+        if "spoke-okn" in query:
+            return replies[state["q01"]]
+        return _payload(["g"], [{"g": "x"}])
+
+    monkeypatch.setattr(helper, "_post", post)
+    for status in ("ok", "changed", "drift"):
+        state["q01"] = status
+        assert helper.verify_all(fresh=True)["status"].tolist() == [status, "ok"]
+
+    helper._releases = None
+    state["versions"] = {"spoke-okn": "v0.0.7", "prokn": "v1.2"}
+    report = helper.verify_all(fresh=True)
+    assert report["redeployed"].tolist() == ["spoke-okn v0.0.6 → v0.0.7", ""]
+
+    helper._releases = None
+    state["versions"] = None
+    report = helper.verify_all(fresh=True)
+    assert report["redeployed"].isna().all()
+    assert report["status"].tolist() == ["drift", "ok"]

@@ -8,7 +8,7 @@ from datetime import date as _date
 from pathlib import Path
 from typing import Any
 
-from .. import __version__, session
+from .. import __version__, session, void
 from ..app import mcp
 from ..build_info import build_suffix
 from ..notebook import build_study, run_commands
@@ -98,6 +98,32 @@ def _write_folder(
                 )
             pending.append(fig)
     return warnings, pending
+
+
+async def _kg_versions(
+    kgs: list[dict[str, Any]], warnings: list[str]
+) -> dict[str, str]:
+    """``{shortname: release}`` for the study's KGs, from the VoID metadata.
+
+    Read when the notebook is built, normally minutes after the queries ran. Fails
+    open: without the metadata the header lists the KGs by name only.
+    """
+    if not kgs:
+        return {}
+    try:
+        records = await void.fetch_versions()
+    except Exception as exc:  # provenance is a courtesy; never block the notebook
+        warnings.append(
+            f"KG versions unavailable ({str(exc)[:120]}); the header lists the "
+            "knowledge graphs by name only."
+        )
+        return {}
+    wanted = {k["shortname"] for k in kgs}
+    return {
+        r["shortname"]: str(r["version"])
+        for r in records
+        if r["shortname"] in wanted and r.get("version")
+    }
 
 
 def _show_command(folder: str, notebook: str, saved_by_you: bool) -> dict[str, str]:
@@ -257,6 +283,7 @@ async def create_jupyter_notebook(
         selected, [], kgs_used, check_phantom=True
     )
     warnings += guard_warnings
+    kg_versions = await _kg_versions(kgs, warnings)
     if not skill_list:
         warnings.append(_skills_warning("notebook"))
     # Timing: the whole chat when the caller knows its start, else the active-query
@@ -291,6 +318,7 @@ async def create_jupyter_notebook(
         include_data=include_data,
         window=window,
         window_label=window_label,
+        kg_versions=kg_versions,
     )
     warnings += study.warnings
     manifest: list[dict[str, Any]] = [
