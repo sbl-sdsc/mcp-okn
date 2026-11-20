@@ -77,7 +77,7 @@ def test_frontmatter_version_is_a_release_number(skill):
 
 import json  # noqa: E402
 
-from mcp_okn import session  # noqa: E402
+from mcp_okn import build_info, session  # noqa: E402
 from mcp_okn.app import INSTRUCTIONS  # noqa: E402
 from mcp_okn.server import create_chat_transcript, reset_query_log  # noqa: E402
 from mcp_okn.skill_versions import (  # noqa: E402
@@ -117,14 +117,46 @@ def test_current_and_foreign_skills_are_silent():
     assert check_skills(None) == []
 
 
-def test_outdated_skill_names_the_update():
+@pytest.fixture
+def build(monkeypatch):
+    """Set the server's build id (as `MCP_OKN_BUILD` would) for one test."""
+
+    def _set(value: str) -> None:
+        monkeypatch.setenv("MCP_OKN_BUILD", value)
+        build_info.build_id.cache_clear()
+
+    yield _set
+    build_info.build_id.cache_clear()
+
+
+def test_outdated_skill_names_the_update(build):
+    build("eca1374")
     current = bundled_skill_versions()["okn-report-style"]
     old = _older(current)
     (warning,) = check_skills([f"okn-report-style v{old}"])
     assert warning.startswith("OUTDATED SKILL")
     assert f"v{old}" in warning and f"v{current}" in warning
     assert "TELL THE USER" in warning
+    # The build commit's copy is the one that matches this server; main is the fallback.
+    assert download_url("okn-report-style", "eca1374") in warning
     assert download_url("okn-report-style") in warning
+
+
+@pytest.mark.parametrize("build_value", ["v0.6.3-renci", "unknown", "build-42"])
+def test_non_sha_build_links_main_only(build, build_value):
+    """A tag or CI number in MCP_OKN_BUILD is not a git ref we can link."""
+    build(build_value)
+    old = _older(bundled_skill_versions()["okn-report-style"])
+    (warning,) = check_skills([f"okn-report-style v{old}"])
+    assert download_url("okn-report-style") in warning
+    assert f"/raw/{build_value}/" not in warning
+
+
+def test_newer_skill_offers_the_matching_copy(build):
+    build("0123abcd")
+    (warning,) = check_skills(["okn-report-style v999"])
+    assert warning.startswith("SERVER OLDER THAN SKILL")
+    assert download_url("okn-report-style", "0123abcd") in warning
 
 
 @pytest.mark.parametrize(

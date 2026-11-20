@@ -13,7 +13,8 @@ generated from each ``skills/<name>/SKILL.md`` by ``scripts/build_skill_versions
 not the latest on GitHub: a skill has to match the tools the server actually exposes, and
 a hosted server can lag the repository. So a mismatch in either direction is reported —
 an older skill may call tools or arguments that were since removed, a newer one may call
-tools this deployment does not have yet.
+tools this deployment does not have yet. For the same reason the download link names the
+build commit (`raw/<sha>/skills/<name>.skill`) when the build id is a sha, not `main`.
 """
 
 from __future__ import annotations
@@ -22,6 +23,8 @@ import json
 import re
 from functools import lru_cache
 from importlib import resources
+
+from .build_info import build_id
 
 #: Where users get the current packages, and the per-client install/update table.
 REPOSITORY = "https://github.com/sbl-sdsc/mcp-okn"
@@ -46,9 +49,38 @@ def bundled_skill_versions() -> dict[str, str]:
     return {str(k): str(v) for k, v in json.loads(text).items()}
 
 
-def download_url(name: str) -> str:
-    """The `.skill` package of `name` on the main branch (uploadable to claude.ai/Desktop)."""
-    return f"{REPOSITORY}/raw/main/skills/{name}.skill"
+#: A git commit sha (short or full). `MCP_OKN_BUILD` may instead hold a tag or a CI
+#: build number, which is not a ref we can build a download link from.
+_SHA = re.compile(r"[0-9a-f]{7,40}")
+
+
+def download_url(name: str, ref: str = "main") -> str:
+    """The `.skill` package of `name` at git `ref` (uploadable to claude.ai/Desktop)."""
+    return f"{REPOSITORY}/raw/{ref}/skills/{name}.skill"
+
+
+def build_commit() -> str | None:
+    """The commit this server was built from, if `build_id()` is a sha; else None."""
+    build = build_id()
+    return build if _SHA.fullmatch(build) else None
+
+
+def _download_hint(name: str) -> str:
+    """Where to get the copy of `name` that matches THIS server.
+
+    The build commit's copy is the one `bundled_skill_versions()` was generated from, so
+    it always clears the warning — `main` can be behind an unmerged branch or ahead of a
+    lagging hosted server. `main` stays as the fallback for an unpushed local build, whose
+    commit link 404s.
+    """
+    main = download_url(name)
+    commit = build_commit()
+    if commit is None:
+        return main
+    return (
+        f"{download_url(name, commit)} (the copy this server build, {commit}, ships; if "
+        f"that link returns 404 the build was never pushed — use {main})"
+    )
 
 
 def _as_tuple(version: str) -> tuple[int, ...]:
@@ -90,7 +122,7 @@ def check_skills(entries: list[str] | None) -> list[str]:
             warnings.append(
                 f"OUTDATED SKILL: the loaded `{name}` is v{version}, but this server ships "
                 f"v{current}. TELL THE USER, in your reply: their copy of `{name}` is out of "
-                f"date and they should install v{current} — download {download_url(name)} and "
+                f"date and they should install v{current} — download {_download_hint(name)} and "
                 "upload it as a new version of the skill (claude.ai / Claude Desktop: Settings → "
                 f"Capabilities → Skills; other clients: see {UPDATE_DOCS}). Meanwhile, where the "
                 "old skill's instructions disagree with a tool's own description (a tool or "
@@ -101,7 +133,8 @@ def check_skills(entries: list[str] | None) -> list[str]:
                 f"SERVER OLDER THAN SKILL: the loaded `{name}` is v{version}, but this server "
                 f"ships v{current}, so the skill may call tools or arguments this deployment "
                 "does not have yet. TELL THE USER, in your reply: the mcp-okn server they are "
-                f"connected to lags the skill (see {UPDATE_DOCS}). Where a tool the skill names "
+                f"connected to lags the skill (see {UPDATE_DOCS}); to match the server instead, "
+                f"install v{current} from {_download_hint(name)}. Where a tool the skill names "
                 "is missing or rejects an argument, follow the tool's own description."
             )
     return warnings
