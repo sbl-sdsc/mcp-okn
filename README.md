@@ -142,10 +142,10 @@ client at that URL, no local install required. (For a local install instead, see
 [Local installation](#local-installation); to check whether the hosted server is
 current, see [Identifying a deployment](#identifying-a-deployment).)
 
-### Claude Desktop
+### Claude Desktop / claude.ai
 
-1. Open **Settings → Plugins** and click **Browse plugins** at the bottom of the list.
-2. On the **Plugins** page, click **Add → Add custom connector**.
+1. Select **Plugins** in the left sidebar.
+2. Click **Add → Add custom connector**.
 3. Enter the **Name** `mcp-okn-dev` and the **MCP server URL** `https://apps.okn.us/okn-mcp-dev/mcp`, then click **Continue**.
 4. Under **Authentication**, keep **No sign-in** (it's preselected and marked *Detected*), then click **Add**.
 5. `mcp-okn-dev` now appears in the plugins list under **Active**.
@@ -217,7 +217,7 @@ The case studies' **Comparison with prior work** step checks each finding agains
 the primary literature, which needs two additional MCP connectors beyond the
 mcp-okn server:
 
-In Claude Desktop:
+In Claude Desktop or claude.ai:
 
 - **PubMed** is provided by Anthropic. On the **Plugins** page (step 1 above), search for **PubMed** and add it.
 - **Paperclip** is a custom connector. Add it the same way as `mcp-okn-dev` (steps 1–7 above), with the Name `paperclip` and the MCP server URL `https://paperclip.gxl.ai/mcp`.
@@ -253,9 +253,8 @@ report deliverables without re-explaining conventions each time:
 
 Each skill is a self-contained folder: a `SKILL.md` plus `references/` and
 `scripts/`. A ready-to-install package of each is committed in two forms with the
-same contents: a `.skill` file for Claude Desktop and claude.ai, whose upload dialog
-accepts only `.skill` (or a lone `SKILL.md`, which would drop the scripts), and a
-`.zip` for other clients:
+same contents: a `.skill` file for Claude Desktop and claude.ai, and a `.zip` for other
+clients. (Claude Desktop and claude.ai accept either; a lone `SKILL.md` would drop the scripts.)
 
 - `okn-report-style`: [`.skill`](skills/okn-report-style.skill) · [`.zip`](skills/okn-report-style.zip)
 - `okn-bioanalysis`: [`.skill`](skills/okn-bioanalysis.skill) · [`.zip`](skills/okn-bioanalysis.zip)
@@ -272,8 +271,7 @@ Agent Skills work in these clients:
 
 | Client | Install method | Notes |
 | --- | --- | --- |
-| **Claude Desktop** (macOS / Windows) | Upload the `.skill` file under Settings → Capabilities → Skills; to update, upload the new `.skill` as a new version of the skill | Pro, Max, Team, or Enterprise |
-| **claude.ai** (web) | Upload the `.skill` file under Settings → Capabilities → Skills; to update, upload the new `.skill` as a new version of the skill | Pro, Max, Team, or Enterprise |
+| **Claude Desktop** (macOS / Windows) and **claude.ai** (web) | Select **Plugins** in the left sidebar, click **Add → Upload plugin**, and browse for the downloaded `.skill` file; to update, upload the new `.skill` the same way | Pro, Max, Team, or Enterprise |
 | **ChatGPT Desktop** | Type the prompt: `Install skill from GitHub: https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/skills/{skill}.zip` | Replace `{skill}` with `okn-report-style` or `okn-bioanalysis` |
 | **Claude Code** (CLI + IDE extensions) | Copy the folder into `.claude/skills/` or `~/.claude/skills/` ([see below](#claude-code-1)) | Free tier and up |
 | **Claude Agent SDK** | Point the SDK at the skill folder | For building custom agents |
