@@ -9,6 +9,7 @@ import pytest
 
 from mcp_okn import __version__, build_info
 from mcp_okn.server import get_server_info
+from mcp_okn.skill_versions import bundled_skill_versions
 from mcp_okn.sparql import FEDERATION_ENDPOINT
 
 
@@ -64,5 +65,7 @@ async def test_get_server_info_reports_the_running_build(monkeypatch):
         "build": "cafe123",
         "sparql_endpoint": FEDERATION_ENDPOINT,
         "schema_files": info["schema_files"],
+        "skill_versions": bundled_skill_versions(),
     }
+    assert set(info["skill_versions"]) == {"okn-bioanalysis", "okn-report-style"}
     assert info["schema_files"] > 0  # the shipped VoID files were found

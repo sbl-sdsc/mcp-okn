@@ -115,7 +115,7 @@ def count_labels(frame):
 
 async def _build(**kw):
     kw.setdefault("model", "claude-test-1")
-    kw.setdefault("skills", ["okn-bioanalysis v0.1.0"])
+    kw.setdefault("skills", ["okn-x v0.1.0"])
     return await create_jupyter_notebook(**kw)
 
 
@@ -173,7 +173,7 @@ async def test_folder_layout_and_valid_notebook():
     nb = nbformat.reads(files["kidney-cancer-study.ipynb"], as_version=4)
     nbformat.validate(nb)
     text = "".join("".join(c.source) for c in nb.cells)
-    assert "**Model:** claude-test-1" in text and "okn-bioanalysis v0.1.0" in text
+    assert "**Model:** claude-test-1" in text and "okn-x v0.1.0" in text
     assert "### q01 — disease labels" in text
     # A code cell shows its own figures, so no static gallery repeats them.
     assert "## Figures" not in text and "![Overlap](figures/fig1.png)" not in text

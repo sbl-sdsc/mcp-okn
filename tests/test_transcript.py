@@ -929,7 +929,7 @@ async def test_diagrams_off_does_not_bake_a_reminder():
     session.record(_q("sawgraph"), "json", result=JSON_RESULT)
     # `skills=` is passed so the header-provenance warning doesn't confound the check.
     off = await create_chat_transcript(
-        model="m", include_query_diagrams=False, skills=["okn-report-style v0.1.3"]
+        model="m", include_query_diagrams=False, skills=["okn-x v0.1.0"]
     )
     assert not off.startswith("<!--")  # no leading reminder comment
     assert "OMITTED" not in off and "mcp-okn WARNING" not in off

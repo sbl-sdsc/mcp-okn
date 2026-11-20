@@ -16,6 +16,7 @@ from .contrasts import (
     SPOKE_GENELAB_CONTRAST_GUIDANCE,
     SPOKE_GENELAB_CONTRAST_SNIPPET,
 )
+from .skill_versions import instructions_line
 
 INSTRUCTIONS = """\
 Query the OKN federated SPARQL endpoint over the Proto-OKN knowledge graphs.
@@ -212,6 +213,13 @@ INSTRUCTIONS += (
     + SPOKE_GENELAB_CONTRAST_SNIPPET
     + "\n"
 )
+
+# Current skill versions, so a model that loaded an outdated skill can tell the user even
+# if it never calls a tool that checks `skills=`. Inserted after the opening sentence,
+# not appended: clients truncate long server instructions, and the tail is what goes.
+if _skill_line := instructions_line():
+    _head, _rest = INSTRUCTIONS.split("\n\n", 1)
+    INSTRUCTIONS = f"{_head}\n\n{_skill_line}\n\n{_rest}"
 
 mcp = FastMCP("mcp-okn", instructions=INSTRUCTIONS)
 

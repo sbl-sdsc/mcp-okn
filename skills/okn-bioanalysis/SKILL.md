@@ -19,7 +19,7 @@ compatibility: >-
   ortholog-projection, and mechanistic-map scripts.
 metadata:
   author: sbl-sdsc
-  version: "0.1.3"
+  version: "0.1.4"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -81,9 +81,10 @@ surfaces after the whole analysis is done and there's no time left to turn them 
 
 ## Operating rules (non-negotiable — details in the workflow reference)
 
-1. `reset_query_log` at the start; `get_kg_version` + `create_jupyter_notebook` at the end (pin
+1. `reset_query_log(skills=[…])` at the start — if it returns an outdated-skill warning, tell the
+   user how to update; `get_kg_version` + `create_jupyter_notebook` at the end (pin
    versions + dates), passing `skills=` — every skill you actually followed as `"<name> v<version>"`
-   from its frontmatter `metadata.version` (this skill is `okn-bioanalysis v0.1.3`); the server can't
+   from its frontmatter `metadata.version` (this skill is `okn-bioanalysis v0.1.4`); the server can't
    see them, so an omitted list reads as "no methodology skill was used". Pass
    `external_mcp_servers=` the same way — every OTHER MCP connector a call actually fed the analysis
    from (`["PubMed", "Paperclip", …]`), so the header shows the whole evidence base, not just the KGs.
