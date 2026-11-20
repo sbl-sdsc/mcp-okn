@@ -292,11 +292,16 @@ if you cannot determine it — a family name, a product name, or an inferred id 
 mis-attributes the whole analysis.
 
 The header also carries the **skills** that shaped the run — `- **Skills:** okn-bioanalysis
-v0.1.3 · okn-report-style v0.2.5` — but only if you pass `skills=[...]`: the server cannot see which
+v0.1.3 · okn-report-style v0.2.6` — but only if you pass `skills=[...]`: the server cannot see which
 skills your session loaded, so an omitted list silently reads as "no methodology skill was used".
 Give each as `"<name> v<version>"`, the version taken from that skill's frontmatter
 `metadata.version` (not guessed), and list only skills you actually followed — a skill you didn't use
 is a phantom source, exactly like an unqueried KG in §2.
+
+The header pins each **knowledge graph's release** (`` `spoke-okn` v0.0.6 ``), read by the tool from
+the federation's VoID metadata; nothing to pass. The notebook's last cell, `verify_all()`, re-runs
+every query and reports `drift` (row count), `changed` (same count, new values) and which graphs were
+redeployed since, so §2's KG versions and the notebook header must agree.
 
 The same is true of the **external MCP servers** the study called — `- **External MCP servers:**
 PubMed · Paperclip` — passed as `external_mcp_servers=[...]`. The header's KG list covers only what

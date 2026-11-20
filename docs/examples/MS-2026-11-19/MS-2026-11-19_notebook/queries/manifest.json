@@ -6,7 +6,11 @@
     "graphs": [
       "ubergraph"
     ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2"
+    },
     "row_count": 6,
+    "rows_sha256": "d09f669ea36ed625a33bc20a2065235e0fda35a47eed44eacbe1c424c42f2086",
     "cached_rows": 6,
     "truncated": false,
     "cache": "data/q01.csv",
@@ -19,7 +23,11 @@
     "graphs": [
       "ubergraph"
     ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2"
+    },
     "row_count": 3,
+    "rows_sha256": "a87556ce9e8d4649e8e6c97e2e3e080e0bd4b9bec6679b328bf0e55bde943406",
     "cached_rows": 3,
     "truncated": false,
     "cache": "data/q02.csv",
@@ -32,7 +40,11 @@
     "graphs": [
       "ubergraph"
     ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2"
+    },
     "row_count": 1,
+    "rows_sha256": "00a35578e62e168c7cec8592c8056f077ff52e1c9fe9d1d5eb41fc6ae4cb2729",
     "cached_rows": 1,
     "truncated": false,
     "cache": "data/q03.csv",
@@ -45,7 +57,11 @@
     "graphs": [
       "ubergraph"
     ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2"
+    },
     "row_count": 1,
+    "rows_sha256": "7d328759a647e4be95cf271a1f8a22471fbf967a97a935d3d633d74e80879309",
     "cached_rows": 1,
     "truncated": false,
     "cache": "data/q04.csv",
@@ -58,7 +74,11 @@
     "graphs": [
       "ubergraph"
     ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2"
+    },
     "row_count": 1,
+    "rows_sha256": "6cc1d51adca140ce287abb30146af8d561b58beec80520509725b047c11740b4",
     "cached_rows": 1,
     "truncated": false,
     "cache": "data/q05.csv",
@@ -71,7 +91,11 @@
     "graphs": [
       "ubergraph"
     ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2"
+    },
     "row_count": 8,
+    "rows_sha256": "b9c23bc50151551f6b34dada10cc97cf0945f6ead7c49f235f4a1091b2f30b35",
     "cached_rows": 8,
     "truncated": false,
     "cache": "data/q06.csv",
@@ -84,7 +108,11 @@
     "graphs": [
       "ubergraph"
     ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2"
+    },
     "row_count": 318,
+    "rows_sha256": "bd3aea48ad9576b9bb9e42892a5c00db664b5937636cadea3848217e3e9cac50",
     "cached_rows": 318,
     "truncated": false,
     "cache": "data/q07.csv",
@@ -97,7 +125,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 2,
+    "rows_sha256": "e444b853c4a5465efee53d01427f55768e755669e3cecc3129989782b076f536",
     "cached_rows": 2,
     "truncated": false,
     "cache": "data/q08.csv",
@@ -110,7 +142,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 164,
+    "rows_sha256": "a750a694e9702a01825e9de48c74894a8f10680fd17f9e9f918a9f26f76ae1d2",
     "cached_rows": 164,
     "truncated": false,
     "cache": "data/q09.csv",
@@ -123,7 +159,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 3,
+    "rows_sha256": "a3ae420726d2e749d5bbc542a0fe16b59aee21760383f1e6d40c95efb5289f64",
     "cached_rows": 3,
     "truncated": false,
     "cache": "data/q10.csv",
@@ -136,7 +176,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 1,
+    "rows_sha256": "ff45cee0d47951ce69eecf37070036b9fb785f20f1589af837e0dbbb405f72a0",
     "cached_rows": 1,
     "truncated": false,
     "cache": "data/q11.csv",
@@ -149,7 +193,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 1,
+    "rows_sha256": "d4a29712466c775b4f313e1cf7d23e113c32129e4a3f2b7f03810277390fa4bf",
     "cached_rows": 1,
     "truncated": false,
     "cache": "data/q12.csv",
@@ -162,7 +210,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 200,
+    "rows_sha256": "25cf2d2e210fbaa13404bea2bd4ffae491a75e8dc9efcda29c385bcd13a8d225",
     "cached_rows": 200,
     "truncated": false,
     "cache": "data/q13.csv",
@@ -175,7 +227,11 @@
     "graphs": [
       "spoke-okn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 178,
+    "rows_sha256": "3747ad36c4ba5a449a3b33c08094f9d76a250f2dc7bf9f3b30fcc49e45f7bf91",
     "cached_rows": 178,
     "truncated": false,
     "cache": "data/q14.csv",
@@ -190,7 +246,13 @@
       "ubergraph",
       "rdkg"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6",
+      "ubergraph": "v0.0.2",
+      "rdkg": "v0.0.1"
+    },
     "row_count": 441283,
+    "rows_sha256": null,
     "cached_rows": 1000,
     "truncated": true,
     "cache": "data/q15.csv",
@@ -205,7 +267,13 @@
       "ubergraph",
       "rdkg"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6",
+      "ubergraph": "v0.0.2",
+      "rdkg": "v0.0.1"
+    },
     "row_count": 8,
+    "rows_sha256": "692bec59ca587ff1a242e4f05ad661077ce300196470a4028a70bb7a2fe56255",
     "cached_rows": 8,
     "truncated": false,
     "cache": "data/q16.csv",
@@ -218,7 +286,11 @@
     "graphs": [
       "rdkg"
     ],
+    "graph_versions": {
+      "rdkg": "v0.0.1"
+    },
     "row_count": 225,
+    "rows_sha256": "3648d6486d5949b07c8d0f80aea2c92e94b91c12744d690ae574bfd88f6709d9",
     "cached_rows": 225,
     "truncated": false,
     "cache": "data/q17.csv",
@@ -231,7 +303,11 @@
     "graphs": [
       "rdkg"
     ],
+    "graph_versions": {
+      "rdkg": "v0.0.1"
+    },
     "row_count": 41,
+    "rows_sha256": "bba3f8339df1e88e546c738f5e1a6387f1d4e256da231eaa959587a2bf2c8ba5",
     "cached_rows": 41,
     "truncated": false,
     "cache": "data/q18.csv",
@@ -246,7 +322,13 @@
       "ubergraph",
       "prokn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6",
+      "ubergraph": "v0.0.2",
+      "prokn": "v0.0.6"
+    },
     "row_count": 7,
+    "rows_sha256": "4da34b4cb4a2fa4cc97f1e80585dec201fe369f5e734d8dd9a529b54b11a6758",
     "cached_rows": 7,
     "truncated": false,
     "cache": "data/q19.csv",
@@ -261,7 +343,13 @@
       "ubergraph",
       "prokn"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6",
+      "ubergraph": "v0.0.2",
+      "prokn": "v0.0.6"
+    },
     "row_count": 549,
+    "rows_sha256": "87fd73cb178f07f803c3a388815b7a48feeb1dc6f7ec512942ef7f5796fc01e3",
     "cached_rows": 549,
     "truncated": false,
     "cache": "data/q20.csv",
@@ -274,7 +362,11 @@
     "graphs": [
       "prokn"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
     "row_count": 204,
+    "rows_sha256": "6763b5d5a0e1e5b04299bca35f5aef3521831b08c30b74f08520ee15945a92c1",
     "cached_rows": 204,
     "truncated": false,
     "cache": "data/q21.csv",
@@ -287,7 +379,11 @@
     "graphs": [
       "prokn"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
     "row_count": 235,
+    "rows_sha256": "2af48d68f0543ebcfaad744d4edf58aae88173c63c94d3a9659976a3084f1955",
     "cached_rows": 235,
     "truncated": false,
     "cache": "data/q22.csv",
@@ -301,7 +397,12 @@
       "ubergraph",
       "digcfdekg"
     ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2",
+      "digcfdekg": "v0.0.1"
+    },
     "row_count": 1550,
+    "rows_sha256": null,
     "cached_rows": 1000,
     "truncated": true,
     "cache": "data/q23.csv",
@@ -315,7 +416,12 @@
       "ubergraph",
       "digcfdekg"
     ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2",
+      "digcfdekg": "v0.0.1"
+    },
     "row_count": 1059,
+    "rows_sha256": null,
     "cached_rows": 1000,
     "truncated": true,
     "cache": "data/q24.csv",
@@ -328,7 +434,11 @@
     "graphs": [
       "oard-kg"
     ],
+    "graph_versions": {
+      "oard-kg": "v0.0.3"
+    },
     "row_count": 141,
+    "rows_sha256": "1a99695887f5c3e0ebe4b44e10e5019b48b4553b94a637bcb7e16e004f829364",
     "cached_rows": 141,
     "truncated": false,
     "cache": "data/q25.csv",
@@ -343,7 +453,13 @@
       "ubergraph",
       "biomarkerkg"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6",
+      "ubergraph": "v0.0.2",
+      "biomarkerkg": "v0.0.4"
+    },
     "row_count": 359,
+    "rows_sha256": "46c88ef2eee2159a00bdcabe269ca31b7e5d8f310557d0d53cec670f109ba8e7",
     "cached_rows": 359,
     "truncated": false,
     "cache": "data/q26.csv",
@@ -356,7 +472,11 @@
     "graphs": [
       "biomarkerkg"
     ],
+    "graph_versions": {
+      "biomarkerkg": "v0.0.4"
+    },
     "row_count": 52,
+    "rows_sha256": "18d9a74a586f2b641786e0391e2eb8e20040bc37d11be56b62210aa7dfb7139e",
     "cached_rows": 52,
     "truncated": false,
     "cache": "data/q27.csv",
@@ -370,7 +490,12 @@
       "ubergraph",
       "gene-expression-atlas-okn"
     ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2",
+      "gene-expression-atlas-okn": "v0.0.3"
+    },
     "row_count": 48,
+    "rows_sha256": "c9714695a66046b80c0bbac1c09702c2ab876c07448d03d6eed9b28ec140cef8",
     "cached_rows": 48,
     "truncated": false,
     "cache": "data/q28.csv",
@@ -383,7 +508,11 @@
     "graphs": [
       "gene-expression-atlas-okn"
     ],
+    "graph_versions": {
+      "gene-expression-atlas-okn": "v0.0.3"
+    },
     "row_count": 9,
+    "rows_sha256": "db05a9b3be0f7b8f65ce03bfddd567ff9356f666cfef2624accc318e76d19afe",
     "cached_rows": 9,
     "truncated": false,
     "cache": "data/q29.csv",
@@ -396,7 +525,11 @@
     "graphs": [
       "gene-expression-atlas-okn"
     ],
+    "graph_versions": {
+      "gene-expression-atlas-okn": "v0.0.3"
+    },
     "row_count": 891,
+    "rows_sha256": "a79184c2d5245fcd312bc4fec341c3614dfc268ea451fca74448cdc1e2ce7993",
     "cached_rows": 891,
     "truncated": false,
     "cache": "data/q30.csv",
@@ -409,7 +542,11 @@
     "graphs": [
       "prokn"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
     "row_count": 167,
+    "rows_sha256": "ab9a704435f1bf0ad3a0f827f781553a2ff1cc84b17bc1811268078a0a49d2a4",
     "cached_rows": 167,
     "truncated": false,
     "cache": "data/q31.csv",
@@ -422,7 +559,11 @@
     "graphs": [
       "prokn"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
     "row_count": 167,
+    "rows_sha256": "88390a9120a2fa963ddce55e7dd3f17f1cedf32ae7df3cda793981b8efbdfbfe",
     "cached_rows": 167,
     "truncated": false,
     "cache": "data/q32.csv",
@@ -435,7 +576,11 @@
     "graphs": [
       "prokn"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
     "row_count": 1,
+    "rows_sha256": "1583474adc7812aca8d849f3916e069048dae1945a77ae2cb60fc04543387fd9",
     "cached_rows": 1,
     "truncated": false,
     "cache": "data/q33.csv",
@@ -448,7 +593,11 @@
     "graphs": [
       "prokn"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
     "row_count": 1,
+    "rows_sha256": "77065e7d523b839fa5f95bdc60bbd099c67de2b2ace9c42e46e4f2b5ad6ba7c2",
     "cached_rows": 1,
     "truncated": false,
     "cache": "data/q34.csv",
@@ -461,7 +610,11 @@
     "graphs": [
       "prokn"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
     "row_count": 1,
+    "rows_sha256": "9f79b000fa58946aeb37504c86948b61a51e49d176a76fdcf8fd5622a64e91de",
     "cached_rows": 1,
     "truncated": false,
     "cache": "data/q35.csv",
@@ -474,7 +627,11 @@
     "graphs": [
       "prokn"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
     "row_count": 60,
+    "rows_sha256": "51ad172e16e708e4c43ffb6e3fda317a42641a2d25a5f369df68bb91700a72f9",
     "cached_rows": 60,
     "truncated": false,
     "cache": "data/q36.csv",
@@ -487,7 +644,11 @@
     "graphs": [
       "prokn"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
     "row_count": 60,
+    "rows_sha256": "07aa7b026e4a6cdc4b770faed66366c7449e4efe64ade9873a648dc1e1ad000d",
     "cached_rows": 60,
     "truncated": false,
     "cache": "data/q37.csv",
@@ -500,7 +661,11 @@
     "graphs": [
       "prokn"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
     "row_count": 1,
+    "rows_sha256": "8deb6b96f7625220e12291f658559238973ca734bd196933dc33330a0b5f7846",
     "cached_rows": 1,
     "truncated": false,
     "cache": "data/q38.csv",
@@ -513,7 +678,11 @@
     "graphs": [
       "wikidata"
     ],
+    "graph_versions": {
+      "wikidata": null
+    },
     "row_count": 101,
+    "rows_sha256": "f7d49a223b05288b84af8e892f34d555355cabd5c31da76af9b7925540c90479",
     "cached_rows": 101,
     "truncated": false,
     "cache": "data/q39.csv",
@@ -527,7 +696,12 @@
       "spoke-okn",
       "wikidata"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6",
+      "wikidata": null
+    },
     "row_count": 200,
+    "rows_sha256": "ab784e6de9e2c135e3407488478f7d7e8e0ff107e0e2bb36bdf3840942be6a6f",
     "cached_rows": 200,
     "truncated": false,
     "cache": "data/q40.csv",
@@ -541,7 +715,12 @@
       "spoke-okn",
       "wikidata"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6",
+      "wikidata": null
+    },
     "row_count": 1,
+    "rows_sha256": "8a6facb3af2985c68275cb70a87b8b21cc3f328c8d6349b49bab8d3e4bbaf07c",
     "cached_rows": 1,
     "truncated": false,
     "cache": "data/q41.csv",
@@ -555,7 +734,12 @@
       "ubergraph",
       "biohealth"
     ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2",
+      "biohealth": "v0.0.4"
+    },
     "row_count": 232,
+    "rows_sha256": "c6c1709545abac56a196e19f6546d596331704e5b6d16ea9edd43446d3103d40",
     "cached_rows": 232,
     "truncated": false,
     "cache": "data/q42.csv",
@@ -569,7 +753,12 @@
       "ubergraph",
       "biohealth"
     ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2",
+      "biohealth": "v0.0.4"
+    },
     "row_count": 155,
+    "rows_sha256": "f6b43e378f84aaec8ccfdeeefa195ddf75b61558b434b1422c0633a86447fc89",
     "cached_rows": 155,
     "truncated": false,
     "cache": "data/q43.csv",
@@ -583,7 +772,12 @@
       "spoke-okn",
       "nde"
     ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6",
+      "nde": "v0.0.3"
+    },
     "row_count": 6,
+    "rows_sha256": "5b1faca11b447be1895594e7fa425a59899dd15b77343773a3c0669414982b9b",
     "cached_rows": 6,
     "truncated": false,
     "cache": "data/q44.csv",
@@ -597,7 +791,12 @@
       "prokn",
       "nestkg"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6",
+      "nestkg": "v0.0.1"
+    },
     "row_count": 1324,
+    "rows_sha256": null,
     "cached_rows": 1000,
     "truncated": true,
     "cache": "data/q45.csv",
@@ -611,7 +810,12 @@
       "prokn",
       "nestkg"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6",
+      "nestkg": "v0.0.1"
+    },
     "row_count": 466,
+    "rows_sha256": "2d861e0f6be94a36f9b9585dbdc679d8f6cff3f23bc9cfa2e7bb78c328f74125",
     "cached_rows": 466,
     "truncated": false,
     "cache": "data/q46.csv",
@@ -624,7 +828,11 @@
     "graphs": [
       "digcfdekg"
     ],
+    "graph_versions": {
+      "digcfdekg": "v0.0.1"
+    },
     "row_count": 29,
+    "rows_sha256": "9d48385f0ab57381ed39e485e56aa1a639cd241654b77c80f1302afdb1ca38ce",
     "cached_rows": 29,
     "truncated": false,
     "cache": "data/q47.csv",
@@ -637,7 +845,11 @@
     "graphs": [
       "digcfdekg"
     ],
+    "graph_versions": {
+      "digcfdekg": "v0.0.1"
+    },
     "row_count": 35,
+    "rows_sha256": "bbfee6efbfdcd38960af18f1892252208dda1bba8bdbf078ccf7e738506392f8",
     "cached_rows": 35,
     "truncated": false,
     "cache": "data/q48.csv",
@@ -650,7 +862,11 @@
     "graphs": [
       "prokn"
     ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
     "row_count": 52,
+    "rows_sha256": "9a236d4a8db9c00c0641d065bd78c317c7b107fae7c0cd54d5c5df1798f8628b",
     "cached_rows": 52,
     "truncated": false,
     "cache": "data/q49.csv",
@@ -664,7 +880,12 @@
       "gene-expression-atlas-okn",
       "spoke-okn"
     ],
+    "graph_versions": {
+      "gene-expression-atlas-okn": "v0.0.3",
+      "spoke-okn": "v0.0.6"
+    },
     "row_count": 683,
+    "rows_sha256": "3a78bd9e5aa823556ddaee40546f5d7bf6e01ef4ef85bba35315d7d32b1335e7",
     "cached_rows": 683,
     "truncated": false,
     "cache": "data/q50.csv",

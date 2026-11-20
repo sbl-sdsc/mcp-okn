@@ -9,7 +9,8 @@ into one self-contained folder::
       okn_sparql.py       run_query()/verify_all(): stdlib HTTP + pandas, no mcp-okn
       queries/qNN.rq      each query verbatim, as logged
       queries/sent/qNN.rq the text the server actually POSTed, when its rewrites changed it
-      queries/manifest.json  per query: graphs, timestamp, logged row count, cache file
+      queries/manifest.json  per query: graphs and their releases, timestamp, logged
+                             row count and rows digest, cache file
       data/qNN.csv        the logged rows (capped at session.MAX_LOGGED_ROWS)
       <code files>        the agent's own modules, importable from the notebook
       figures/…           named here, copied in by the agent (or by a local server)
@@ -22,15 +23,18 @@ the hosted server returns it as a file map or a local server writes it to disk.
 
 The notebook loads ``data/`` by default and executes nothing against the endpoint,
 so it opens with the session's results already in place; ``RERUN = True`` replays
-every query live and ``verify_all()`` reports each query's row count against the
-logged one. A drifted count means the graph was redeployed, not that the study
-is wrong — see the README this writes.
+every query live and ``verify_all()`` compares each query's live rows with the
+logged ones (count and content) and names any graph whose release has changed.
+A difference usually means the graph was redeployed, not that the study is
+wrong — see the README this writes.
 """
 
 from __future__ import annotations
 
 import csv
+import hashlib
 import html
+import inspect
 import io
 import json
 import re
@@ -40,6 +44,7 @@ from pathlib import PurePosixPath
 from typing import Any
 
 from .sparql import prepare_query
+from .void import _GRAPH_IRI_PREFIX, _version_query
 
 #: Rows of each query's logged result shown as the cached cell output. The full
 #: logged sample is in ``data/``; this only keeps the .ipynb small.
@@ -259,6 +264,39 @@ def _rows_csv(columns: list[str], rows: list[dict[str, Any]]) -> str:
     return buf.getvalue()
 
 
+def rows_digest(columns: list[str], rows: list[dict[str, Any]]) -> str:
+    """SHA-256 of a result's rows, independent of row order.
+
+    Each value is written canonically, one tab-joined line per row in ``columns``
+    order, and the sorted lines are hashed. Unbound is "", a boolean true/false, and
+    anything that reads as a finite number is written as that number, so 5, 5.0,
+    "5" and "5.0" agree, and so do "2.93226e+06" and 2932260.0: the endpoint's
+    exponent form, a value cast by mcp-okn, and a CSV round-trip all hash the same.
+    This function is copied verbatim into the generated ``okn_sparql.py``.
+    """
+
+    def cell(value: Any) -> str:
+        if value is None:
+            return ""
+        if isinstance(value, bool):
+            return "true" if value else "false"
+        text = str(value)
+        try:
+            number = float(text)
+        except ValueError:
+            return text
+        finite = number == number and abs(number) != float("inf")
+        return repr(number) if finite else text
+
+    lines = sorted("\t".join(cell(row.get(c)) for c in columns) for row in rows)
+    return hashlib.sha256("\n".join(lines).encode("utf-8")).hexdigest()
+
+
+def _kg_label(shortname: str, kg_versions: dict[str, str]) -> str:
+    version = kg_versions.get(shortname)
+    return f"`{shortname}` {version}" if version else f"`{shortname}`"
+
+
 def _header_markdown(
     *,
     title: str,
@@ -274,6 +312,7 @@ def _header_markdown(
     notes: str,
     window: str = "",
     window_label: str = "Study active window",
+    kg_versions: dict[str, str] | None = None,
 ) -> str:
     lines = [
         f"# {title}",
@@ -291,7 +330,10 @@ def _header_markdown(
         f"- **Queries:** {n_queries}",
         *([f"- **{window_label}:** {window}"] if window else []),
         "- **Knowledge graphs used:** "
-        + (", ".join(f"`{k['shortname']}`" for k in kgs) or "_none_"),
+        + (
+            ", ".join(_kg_label(k["shortname"], kg_versions or {}) for k in kgs)
+            or "_none_"
+        ),
     ]
     if prompt.strip():
         lines += ["", "## Prompt", "", prompt.strip()]
@@ -308,8 +350,17 @@ offline and shows the original results. To rerun the study from scratch, \
 uncomment `# RERUN = True` in the next cell and run all cells (or start Jupyter with \
 `OKN_RERUN=1`): every query is then re-executed live against the OKN federation. \
 Or run the last cell (`verify_all()`) to compare each query's \
-live row count with the logged one. \
-A changed count usually means the knowledge graph was redeployed since the study \
+live result with the logged one. \
+A difference usually means the knowledge graph was redeployed since the study \
+ran, not that the analysis is wrong."""
+
+_VERIFY_MARKDOWN = """\
+## Verify against the live graphs
+
+`verify_all()` re-runs every query and compares it with the logged result. `status` is \
+`ok`, `drift` (the row count changed), `changed` (the same number of rows, different \
+values) or an error, and `redeployed` names each graph whose release differs from the \
+one in the header. A difference usually means the graph was redeployed since the study \
 ran, not that the analysis is wrong."""
 
 _SETUP_CODE = """\
@@ -386,6 +437,7 @@ def build_study(
     include_data: bool = True,
     window: str = "",
     window_label: str = "Study active window",
+    kg_versions: dict[str, str] | None = None,
 ) -> StudyFolder:
     """Assemble the study folder. See the module docstring for the layout.
 
@@ -422,7 +474,12 @@ def build_study(
         window: Timing for the header ("first → last (elapsed)"); empty = omitted.
         window_label: Its label: "Study active window" (query span) or
             "Elapsed time" (whole chat).
+        kg_versions: ``{shortname: release}`` read from the federation's VoID
+            metadata when the notebook was built (normally minutes after the
+            queries ran). Shown in the header and pinned per query in the
+            manifest, so ``verify_all()`` can name a redeployed graph.
     """
+    versions = kg_versions or {}
     name = folder_slug(folder_name, title)
     notebook = f"{name}.ipynb"
     study = StudyFolder(name=name, notebook=notebook)
@@ -450,6 +507,7 @@ def build_study(
             notes=notes,
             window=window,
             window_label=window_label,
+            kg_versions=versions,
         ),
     )
     add(_markdown_cell, _RERUN_MARKDOWN)
@@ -491,13 +549,20 @@ def build_study(
                 study.files[cache] = str(results["text"])
 
         graphs = entry.get("graphs") or []
+        # A digest only of a complete result: a truncated log holds the first rows only.
+        logged_vars = list(results.get("vars") or [])
+        complete = (
+            bool(logged_vars) and not results.get("truncated") and len(rows) == total
+        )
         manifest.append(
             {
                 "name": qname,
                 "description": entry.get("description") or "",
                 "timestamp": entry.get("timestamp", ""),
                 "graphs": graphs,
+                "graph_versions": {g: versions.get(g) for g in graphs},
                 "row_count": total,
+                "rows_sha256": rows_digest(logged_vars, rows) if complete else None,
                 "cached_rows": len(rows) if cache and rows else (total if cache else 0),
                 "truncated": bool(results.get("truncated")),
                 "cache": cache,
@@ -619,7 +684,7 @@ def build_study(
     if figure_md and not has_code:
         add(_markdown_cell, "## Figures\n\n" + "\n".join(figure_md).rstrip())
 
-    add(_markdown_cell, "## Verify against the live graphs")
+    add(_markdown_cell, _VERIFY_MARKDOWN)
     add(_code_cell, "verify_all()")
 
     study.files[notebook] = (
@@ -643,8 +708,12 @@ def build_study(
         )
         + "\n"
     )
-    study.files["okn_sparql.py"] = _HELPER.replace("__ENDPOINT__", endpoint).replace(
-        "__GENERATED_BY__", generated_by
+    study.files["okn_sparql.py"] = (
+        _HELPER.replace("__ENDPOINT__", endpoint)
+        .replace("__GENERATED_BY__", generated_by)
+        .replace("__GRAPH_PREFIX__", _GRAPH_IRI_PREFIX)
+        .replace("__VERSION_QUERY__", repr(_version_query(None)))
+        .replace("__ROWS_DIGEST__", inspect.getsource(rows_digest).rstrip("\n"))
     )
     reqs: list[str] = []
     for req in [*BASE_REQUIREMENTS, *(requirements or [])]:
@@ -714,7 +783,8 @@ def _readme(
     caveats = [
         "- The cached rows are what the endpoint returned when the study ran. The "
         "graphs are redeployed from time to time, so a live re-run can differ; "
-        "`verify_all()` reports which queries changed.",
+        "`verify_all()` reports which queries changed (row count or values) and which "
+        "graphs were redeployed.",
     ]
     if any_truncated:
         caveats.append(
@@ -785,7 +855,8 @@ standard library, so mcp-okn does not have to be installed.
 
     run_query("q01")               # cached rows from data/ (live if none are cached)
     run_query("q01", rerun=True)   # run it live and compare the row count
-    verify_all()                   # every query, live vs logged row counts
+    verify_all()                   # every query, live vs logged rows and releases
+    kg_versions()                  # each graph's current release on the endpoint
 
 The endpoint is shared and answers HTTP 429 when it is busy, so a request that
 fails quickly with 429 (or a 502/503/504 gateway error) is retried after a short,
@@ -795,6 +866,7 @@ time limit means the query itself ran out of time, and is not retried.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import random
 import time
@@ -807,6 +879,9 @@ from typing import Any
 import pandas as pd
 
 ENDPOINT = "__ENDPOINT__"
+GRAPH_PREFIX = "__GRAPH_PREFIX__"
+#: Reads each graph's release (pav:version) from the federation's VoID metadata.
+VERSION_QUERY = __VERSION_QUERY__
 HERE = Path(__file__).resolve().parent
 QUERIES = HERE / "queries"
 
@@ -819,8 +894,11 @@ BACKOFF_SECONDS = (2.0, 5.0, 15.0, 30.0)
 #: Longest Retry-After header honoured.
 MAX_RETRY_AFTER = 60.0
 
-#: Row counts of the queries run live in this session, for verify_all().
+#: Row counts and row digests of the queries run live in this session, for verify_all().
 _live_counts: dict[str, int] = {}
+_live_digests: dict[str, str] = {}
+#: Each graph's current release, read once by kg_versions().
+_releases: dict[str, str] | None = None
 
 
 class EndpointError(RuntimeError):
@@ -828,7 +906,8 @@ class EndpointError(RuntimeError):
 
 
 def manifest() -> list[dict[str, Any]]:
-    """Per query: name, description, graphs, timestamp, row_count, cache, sent."""
+    """Per query: name, description, graphs (+ graph_versions), timestamp, row_count,
+    rows_sha256, cache, sent."""
     return json.loads((QUERIES / "manifest.json").read_text(encoding="utf-8"))
 
 
@@ -917,17 +996,66 @@ def _post(query: str, timeout: int) -> dict[str, Any]:
             time.sleep(wait)
 
 
-def run_sparql(query: str, timeout: int = 300) -> pd.DataFrame:
-    """POST ``query`` to the federation and return the bindings as a DataFrame."""
-    payload = _post(query, timeout)
+def _rows(payload: dict[str, Any]) -> tuple[list[str], list[dict[str, Any]]]:
+    """A SPARQL JSON reply's columns and rows, values cast the way mcp-okn casts them."""
     if isinstance(payload.get("boolean"), bool):
-        return pd.DataFrame({"boolean": [payload["boolean"]]})
+        return ["boolean"], [{"boolean": payload["boolean"]}]
     columns = payload.get("head", {}).get("vars", [])
     rows = [
         {var: _value(cell) for var, cell in (binding or {}).items()}
         for binding in payload.get("results", {}).get("bindings", [])
     ]
+    return columns, rows
+
+
+__ROWS_DIGEST__
+
+
+def run_sparql(query: str, timeout: int = 300) -> pd.DataFrame:
+    """POST ``query`` to the federation and return the bindings as a DataFrame."""
+    columns, rows = _rows(_post(query, timeout))
     return pd.DataFrame(rows, columns=columns)
+
+
+def _run_live(name: str, timeout: int) -> pd.DataFrame:
+    """Run query ``name`` live, noting its row count and digest for verify_all()."""
+    columns, rows = _rows(_post(query_text(name), timeout))
+    _live_counts[name] = len(rows)
+    _live_digests[name] = rows_digest(columns, rows)
+    return pd.DataFrame(rows, columns=columns)
+
+
+def kg_versions(timeout: int = 60) -> dict[str, str] | None:
+    """Each graph's current release on the endpoint, ``{shortname: version}``.
+
+    Read once from the federation's VoID metadata and kept; None (with a note)
+    when the endpoint cannot be asked, so verify_all() still runs.
+    """
+    global _releases
+    if _releases is None:
+        try:
+            _, rows = _rows(_post(VERSION_QUERY, timeout))
+        except Exception as exc:  # the comparison is a courtesy
+            print(f"graph releases unavailable: {str(exc)[:160]}")
+            return None
+        _releases = {
+            str(row.get("s", "")).removeprefix(GRAPH_PREFIX): str(row["version"])
+            for row in rows
+            if row.get("version") is not None
+        }
+    return _releases
+
+
+def _redeployed(entry: dict[str, Any], live: dict[str, str] | None) -> str | None:
+    """The query's graphs whose release changed ("g v1 → v2"); None when unknown."""
+    logged = entry.get("graph_versions") or {}
+    if live is None or not any(logged.values()):
+        return None
+    return "; ".join(
+        f"{graph} {version} → {live[graph]}"
+        for graph, version in logged.items()
+        if version and live.get(graph) and live[graph] != version
+    )
 
 
 def load_cached(name: str) -> pd.DataFrame:
@@ -952,42 +1080,53 @@ def run_query(name: str, rerun: bool = False, timeout: int = 300) -> pd.DataFram
                 "rows; rerun=True fetches all of them"
             )
         return load_cached(name)
-    frame = run_sparql(query_text(name), timeout=timeout)
-    _live_counts[name] = len(frame)
+    frame = _run_live(name, timeout)
     logged = entry.get("row_count")
     if isinstance(logged, int) and len(frame) != logged:
         print(
             f"{name}: {len(frame):,} rows now vs {logged:,} logged; the graph may "
-            "have been redeployed since the study ran"
+            "have been redeployed since the study ran (verify_all() names it)"
         )
     return frame
 
 
 def verify_all(timeout: int = 300, fresh: bool = False) -> pd.DataFrame:
-    """Logged vs live row counts, one row per query.
+    """Logged vs live results, one row per query.
+
+    ``status`` is ``ok``; ``drift`` (the row count changed); ``changed`` (the same
+    number of rows, different values); or ``error: …``. ``redeployed`` names each of
+    the query's graphs whose release differs from the logged one ("spoke-okn v0.0.5
+    → v0.0.6"); it is None when the releases are unknown.
 
     A query already run live in this session (``RERUN = True``) is not sent
     again unless ``fresh``; the others are run now, one at a time.
     """
+    releases = kg_versions()
     report = []
     for entry in manifest():
         name = entry["name"]
         try:
-            if not fresh and name in _live_counts:
-                live: Any = _live_counts[name]
+            if fresh or name not in _live_counts:
+                _run_live(name, timeout)
+            live: Any = _live_counts[name]
+            if live != entry["row_count"]:
+                status = "drift"
+            elif entry.get("rows_sha256") and (
+                _live_digests.get(name) != entry["rows_sha256"]
+            ):
+                status = "changed"
             else:
-                live = len(run_sparql(query_text(name), timeout=timeout))
-                _live_counts[name] = live
-            status = "ok" if live == entry["row_count"] else "drift"
+                status = "ok"
         except Exception as exc:  # report and keep going
             live, status = None, f"error: {str(exc)[:160]}"
         report.append(
             {
-                "query": entry["name"],
+                "query": name,
                 "graphs": ", ".join(entry.get("graphs") or []),
                 "logged_rows": entry["row_count"],
                 "live_rows": live,
                 "status": status,
+                "redeployed": _redeployed(entry, releases),
             }
         )
     return pd.DataFrame(report).astype({"live_rows": "Int64"})

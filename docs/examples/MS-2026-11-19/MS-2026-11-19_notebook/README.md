@@ -52,6 +52,6 @@ Without uv: `pip install -r requirements.txt jupyterlab`, then `jupyter lab MS-2
 
 ## Caveats
 
-- The cached rows are what the endpoint returned when the study ran. The graphs are redeployed from time to time, so a live re-run can differ; `verify_all()` reports which queries changed.
+- The cached rows are what the endpoint returned when the study ran. The graphs are redeployed from time to time, so a live re-run can differ; `verify_all()` reports which queries changed (row count or values) and which graphs were redeployed.
 - Some queries returned more rows than the session log keeps; their cache holds the first rows only (see `cached_rows` in `queries/manifest.json`). `RERUN = True` fetches every row.
 - Figures are the images the study produced; re-running the analysis cells regenerates them only if those cells write them.
