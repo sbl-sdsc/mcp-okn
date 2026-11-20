@@ -1,0 +1,10 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kg: <https://purl.org/okn/frink/kg/digcfdekg/schema/>
+# digcfdekg (PIGEAN/EAGGL) bone traits: list the traits and gene-set sizes
+SELECT ?trait ?label (COUNT(DISTINCT ?g) AS ?nGenes) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/digcfdekg> {
+    ?trait a kg:Trait ; rdfs:label ?label .
+    FILTER(REGEX(STR(?label), "bone|osteopor|osteopenia|fracture|BMD", "i"))
+    OPTIONAL { ?g kg:geneToTrait ?trait }
+  }
+} GROUP BY ?trait ?label

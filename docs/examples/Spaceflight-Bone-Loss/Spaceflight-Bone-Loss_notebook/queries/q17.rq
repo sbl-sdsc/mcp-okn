@@ -1,0 +1,9 @@
+PREFIX bl: <https://w3id.org/biolink/vocab/>
+# Enrichment background N for rdkg disease gene sets: distinct rdkg genes linked to ANY MONDO disease (related_to either direction, or genetic_association)
+SELECT (COUNT(DISTINCT ?g) AS ?N) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/rdkg> {
+    ?g a bl:Gene .
+    FILTER(STRSTARTS(STR(?g), "http://identifiers.org/ncbigene/"))
+    FILTER EXISTS { { ?g bl:related_to ?d } UNION { ?d bl:related_to ?g } UNION { ?d bl:genetic_association ?g } }
+  }
+}

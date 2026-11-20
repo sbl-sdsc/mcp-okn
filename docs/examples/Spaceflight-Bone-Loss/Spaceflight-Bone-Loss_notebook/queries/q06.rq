@@ -1,0 +1,13 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
+SELECT ?assay ?gene ?symbol ?taxon ?lfc ?p ?hgene ?hsym WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
+    VALUES ?assay { <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-690-f82a89dc82f2903149d2d11cbd6a130d> <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-690-d89cbb20c4b7855f3f955e4adbb6515d> }
+    ?st rdf:subject ?assay ;
+        rdf:predicate kg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ; rdf:object ?gene ;
+        kg:log2fc ?lfc ; kg:adj_p_value ?p .
+    FILTER(?p <= 0.05 && ABS(?lfc) >= 1)
+    OPTIONAL { ?gene kg:symbol ?symbol } OPTIONAL { ?gene kg:taxonomy ?taxon }
+    OPTIONAL { ?gene kg:IS_ORTHOLOG_MGiG ?hgene . OPTIONAL { ?hgene kg:symbol ?hsym } }
+  }
+}

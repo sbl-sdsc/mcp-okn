@@ -1,0 +1,9 @@
+term,label,matched_on,matched_text
+http://purl.obolibrary.org/obo/HP_0000939,Osteoporosis,label,Osteoporosis
+http://purl.obolibrary.org/obo/MONDO_0005298,osteoporosis,label,osteoporosis
+http://purl.obolibrary.org/obo/MP_0000066,osteoporosis,label,osteoporosis
+http://purl.obolibrary.org/obo/NCIT_C146767,"Osteoporosis, CTCAE 5.0",exact_synonym,Osteoporosis
+http://purl.obolibrary.org/obo/NCIT_C3298,Osteoporosis,exact_synonym,osteoporosis
+http://purl.obolibrary.org/obo/NCIT_C3298,Osteoporosis,exact_synonym,Osteoporosis
+http://purl.obolibrary.org/obo/NCIT_C3298,Osteoporosis,label,Osteoporosis
+http://purl.obolibrary.org/obo/NCIT_C58396,"Osteoporosis, CTCAE 3.0",exact_synonym,Osteoporosis

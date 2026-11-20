@@ -1,0 +1,14 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+# prokn: named phase>=3 compounds acting on the druggable bone-linked spaceflight DE targets (repurposing shortlist)
+SELECT ?sym ?name (MAX(xsd:decimal(?ph)) AS ?phase) (SAMPLE(?act) AS ?action) WHERE {
+  VALUES ?sym { "IL6" "PTGS2" "CTSK" "PDGFRB" "PDGFRA" "FGFR2" "ABL1" "MMP2" "MMP3" "CSF2" "TGFB2" "HGF" "ENG" "CCN2" "PDE3A" "F2R" "GHR" "UGCG" "FLT4" }
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    ?g rdfs:label ?sym ; <http://semanticscience.org/resource/SIO_010078> ?prot .
+    ?st rdf:subject ?cpd ; rdf:predicate <https://w3id.org/biolink/vocab/directly_physically_interacts_with> ; rdf:object ?prot .
+    OPTIONAL { ?st <http://purl.allotrope.org/ontologies/result#AFR_0003142> ?act }
+    ?cpd <https://w3id.org/reproduceme#Phase> ?ph ; rdfs:label ?name .
+    FILTER(xsd:decimal(?ph) >= 3 && !STRSTARTS(STR(?name), "CHEMBL") && !STRSTARTS(STR(?name), "DRUG_"))
+  }
+} GROUP BY ?sym ?name

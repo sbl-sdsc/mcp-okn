@@ -1,0 +1,17 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
+# Compact DE signature, OSD-546 human MSC culture (osteogenic / standard medium): Entrez:log2FC ; adj_p<=0.05 & |log2FC|>=1
+SELECT ?a ?dir (COUNT(DISTINCT ?h) AS ?n) (GROUP_CONCAT(DISTINCT CONCAT(?h, ":", STR(ROUND(?lfc*100)/100)); separator=";") AS ?genes) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
+  ?st rdf:subject <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-546-7d689d4277a131607670c3e624202a44> ;
+        rdf:predicate kg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ; rdf:object ?gene ;
+        kg:log2fc ?lfc ; kg:adj_p_value ?p .
+    FILTER((?p <= 0.05 && ABS(?lfc) >= 1) && BOUND(?gene))
+    ?gene kg:taxonomy obo:NCBITaxon_9606 .
+    BIND(STRAFTER(STR(?gene), "gene/") AS ?h)
+    BIND(STRAFTER(STR(<https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-546-7d689d4277a131607670c3e624202a44>), "node/") AS ?a)
+    BIND(IF(?lfc > 0, "up", "down") AS ?dir)
+    BIND(<https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-546-7d689d4277a131607670c3e624202a44> AS ?assay)
+}
+} GROUP BY ?a ?dir

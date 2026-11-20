@@ -1,0 +1,12 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bl: <https://w3id.org/biolink/vocab/>
+# rdkg curated treatments: drugs that treat osteoporosis (MONDO_0005298) or any MONDO descendant (subclass_of is materialized transitively)
+SELECT ?drug ?drugLabel (GROUP_CONCAT(DISTINCT ?dl; separator=" | ") AS ?diseases) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/rdkg> {
+    { ?d bl:subclass_of obo:MONDO_0005298 } UNION { VALUES ?d { obo:MONDO_0005298 } }
+    ?drug bl:treats ?d .
+    OPTIONAL { ?drug rdfs:label ?drugLabel }
+    OPTIONAL { ?d rdfs:label ?dl }
+  }
+} GROUP BY ?drug ?drugLabel

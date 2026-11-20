@@ -1,0 +1,6 @@
+PREFIX kg: <https://purl.org/okn/frink/kg/digcfdekg/schema/>
+# Enrichment background N for digcfdekg trait sets: distinct numeric-Entrez genes with ANY geneToTrait edge
+SELECT (COUNT(DISTINCT ?g) AS ?N) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { ?g kg:geneToTrait ?t . }
+  FILTER(REGEX(STR(?g), "^http://www.ncbi.nlm.nih.gov/gene/[0-9]+$"))
+}

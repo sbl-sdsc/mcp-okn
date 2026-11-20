@@ -1,0 +1,10 @@
+contrast	gene_set	supplier	N	K	n	k	expected	fold	p	fdr
+SF_hMSC_osteo	digcfdekg BMD/osteoporosis genes (any trait)	digcfdekg	21052	2481	1407	289	165.8	1.74	1.306318546292156e-22	1.1756866916629405e-21
+SF_hMSC_osteo	digcfdekg BMD/osteoporosis genes (>=3 traits)	digcfdekg	21052	805	1407	113	53.8	2.1	3.1219042479609786e-14	1.4048569115824405e-13
+SF_hMSC_osteo	rdkg rare-disease low-BMD genes (curated)	rdkg	9127	940	835	136	86.0	1.58	1.3345637836703262e-08	4.003691351010979e-08
+SF_BM_Nrf2KO	digcfdekg BMD/osteoporosis genes (any trait)	digcfdekg	21052	2481	285	46	33.6	1.37	0.016665757789599292	0.037497955026598404
+SF_BM_WT	digcfdekg BMD/osteoporosis genes (any trait)	digcfdekg	21052	2481	177	29	20.9	1.39	0.0413910690415869	0.07450392427485643
+SF_BM_WT	digcfdekg BMD/osteoporosis genes (>=3 traits)	digcfdekg	21052	805	177	9	6.8	1.33	0.23748946261381954	0.35623419392072925
+SF_BM_Nrf2KO	digcfdekg BMD/osteoporosis genes (>=3 traits)	digcfdekg	21052	805	285	13	10.9	1.19	0.2969730941868628	0.38182254966882356
+SF_BM_WT	rdkg rare-disease low-BMD genes (curated)	rdkg	9127	940	90	9	9.3	0.97	0.5888962747377964	0.6545176654739222
+SF_BM_Nrf2KO	rdkg rare-disease low-BMD genes (curated)	rdkg	9127	940	136	13	14.0	0.93	0.6545176654739222	0.6545176654739222

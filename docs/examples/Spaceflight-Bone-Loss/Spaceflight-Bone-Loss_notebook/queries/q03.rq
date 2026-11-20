@@ -1,0 +1,11 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
+SELECT ?study ?assay ?mat1 ?mat2 ?fs1 ?fs2 ?meas (GROUP_CONCAT(DISTINCT ?f1; separator="|") AS ?factors1) (GROUP_CONCAT(DISTINCT ?f2; separator="|") AS ?factors2) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
+    ?assay a obo:OBI_0000070 ; kg:material_1 ?mat1 ; kg:material_2 ?mat2 ; kg:measurement ?meas .
+    FILTER(REGEX(?mat1, "bone|femur|tibia|calvari|osteo|skelet|vertebra|marrow|mesenchymal|stromal|chondro|cartilage|humerus|pelvis|spine|tooth|mandib", "i"))
+    ?study kg:PERFORMED_SpAS ?assay .
+    OPTIONAL { ?assay kg:factor_space_1 ?fs1 } OPTIONAL { ?assay kg:factor_space_2 ?fs2 }
+    OPTIONAL { ?assay kg:factors_1 ?f1 } OPTIONAL { ?assay kg:factors_2 ?f2 }
+  }
+} GROUP BY ?study ?assay ?mat1 ?mat2 ?fs1 ?fs2 ?meas

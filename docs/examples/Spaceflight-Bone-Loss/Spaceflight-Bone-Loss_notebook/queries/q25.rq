@@ -1,0 +1,23 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
+# GO Biological Process over-representation (prokn gene->protein->biolink:actively_involved_in->GO; reified statements, GO NOT-qualified (NegativePropertyAssertion) statements removed). k>=5, 10<=K<=500.
+SELECT ?sigset ?go (SAMPLE(?gl) AS ?label) (COUNT(DISTINCT ?sym) AS ?k) (SAMPLE(?K0) AS ?K) WHERE {
+  { SELECT DISTINCT ?sigset ?sym WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
+      VALUES (?assay ?sigset) { (<https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-690-f82a89dc82f2903149d2d11cbd6a130d> "SF_BM") (<https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-690-d89cbb20c4b7855f3f955e4adbb6515d> "SF_BM") (<https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-546-7d689d4277a131607670c3e624202a44> "SF_hMSC_osteo") }
+      ?st rdf:subject ?assay ; rdf:predicate kg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ; rdf:object ?gene ; kg:log2fc ?lfc ; kg:adj_p_value ?p .
+      FILTER(?p <= 0.05 && ABS(?lfc) >= 1)
+      { ?gene kg:IS_ORTHOLOG_MGiG ?h } UNION { ?gene kg:taxonomy obo:NCBITaxon_9606 . BIND(?gene AS ?h) }
+      ?h kg:symbol ?sym . } } }
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    ?g rdfs:label ?sym ; <http://semanticscience.org/resource/SIO_010078> ?prot .
+    ?s1 rdf:subject ?prot ; rdf:predicate <https://w3id.org/biolink/vocab/actively_involved_in> ; rdf:object ?go .
+    MINUS { ?s1 rdf:type <https://www.w3.org/2002/07/owl#NegativePropertyAssertion> }
+  }
+  { SELECT ?go (COUNT(DISTINCT ?g2) AS ?K0) WHERE { GRAPH <https://purl.org/okn/frink/kg/prokn> {
+      ?g2 <http://semanticscience.org/resource/SIO_010078> ?p2 .
+      ?s2 rdf:subject ?p2 ; rdf:predicate <https://w3id.org/biolink/vocab/actively_involved_in> ; rdf:object ?go .
+      MINUS { ?s2 rdf:type <https://www.w3.org/2002/07/owl#NegativePropertyAssertion> } } } GROUP BY ?go HAVING (COUNT(DISTINCT ?g2) >= 10 && COUNT(DISTINCT ?g2) <= 500) }
+  OPTIONAL { GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?go rdfs:label ?gl } }
+} GROUP BY ?sigset ?go HAVING (COUNT(DISTINCT ?sym) >= 5)

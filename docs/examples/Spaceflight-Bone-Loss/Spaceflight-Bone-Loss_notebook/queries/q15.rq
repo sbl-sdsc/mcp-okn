@@ -1,0 +1,11 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX kg: <https://purl.org/okn/frink/kg/digcfdekg/schema/>
+# digcfdekg broad (GWAS/PIGEAN) BMD + osteoporosis gene set: union over BMD / osteoporosis traits; nTraits = how many of these traits the gene is linked to
+SELECT ?entrez (COUNT(DISTINCT ?trait) AS ?nTraits) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/digcfdekg> {
+    VALUES ?trait { obo:OBA_2045559 <http://www.ebi.ac.uk/efo/EFO_0009270> <https://purl.org/okn/frink/kg/digcfdekg/node/trait/ce9fab5cfc433881fa71> <http://www.ebi.ac.uk/efo/EFO_0007785> <https://purl.org/okn/frink/kg/digcfdekg/node/trait/8a1c7ae8b81e9b648213> <https://purl.org/okn/frink/kg/digcfdekg/node/trait/9e16eca420eee5f32d37> <https://purl.org/okn/frink/kg/digcfdekg/node/trait/e491549d91b916e24445> <http://www.ebi.ac.uk/efo/EFO_0007702> <https://purl.org/okn/frink/kg/digcfdekg/node/trait/b9d2e23e2c4ab2bc7ef9> <https://purl.org/okn/frink/kg/digcfdekg/node/trait/e833c63364fe37d83622> }
+    ?g kg:geneToTrait ?trait .
+  }
+  BIND(STRAFTER(STR(?g), "gene/") AS ?entrez)
+  FILTER(REGEX(?entrez, "^[0-9]+$"))
+} GROUP BY ?entrez

@@ -1,0 +1,447 @@
+rank	entrez	symbol	tier	score	n_sf	SF_BM_WT	SF_BM_Nrf2KO	SF_hMSC_osteo	concordant	rdkg_lowBMD_diseases	dig_BMD_traits	drug_max_phase	phase3plus_agents	osteoporosis_drug_target	analog_HLU_DE	n_sources	sources
+1	3569	IL6	A	3.683	1			-2.8		4	5	4.0	Siltuximab (ph4); Clazakizumab (ph3); Olokizumab (ph3); Sirukumab (ph3)		False	4	spoke-genelab, rdkg, digcfdekg, prokn
+2	2022	ENG	A	3.6	2		-1.01	4.0	False	1	3	3.0	Carotuximab (ph3)		False	4	spoke-genelab, rdkg, digcfdekg, prokn
+3	4000	LMNA	A	3.317	2		-1.16	2.45	False	6	6				False	3	spoke-genelab, rdkg, digcfdekg
+4	2263	FGFR2	A	3.24	1			1.47		2	8	4.0	Regorafenib (ph4); Pemigatinib (ph4); Bemarituzumab (ph3)		False	4	spoke-genelab, rdkg, digcfdekg, prokn
+5	5159	PDGFRB	A	3.053	1			2.11		1	3	4.0	Dasatinib Anhydrous (ph4); Imatinib Mesylate (ph4); Sorafenib Tosylate (ph4); Tivozanib Hydrochloride (ph4)		False	4	spoke-genelab, rdkg, digcfdekg, prokn
+6	2919	CXCL1	A	3.0	3	1.9	1.99	-3.42	False	1	0				False	2	spoke-genelab, rdkg
+7	4313	MMP2	A	2.96	1		-1.38			2	7	3.0	Marimastat (ph3)		False	4	spoke-genelab, rdkg, digcfdekg, prokn
+8	2353	FOS	A	2.947	2		1.34	1.31	True	2	5				False	3	spoke-genelab, rdkg, digcfdekg
+9	22943	DKK1	A	2.783	1			2.35		1	6				False	3	spoke-genelab, rdkg, digcfdekg
+10	860	RUNX2	A	2.723	1			2.17		1	6				False	3	spoke-genelab, rdkg, digcfdekg
+11	1277	COL1A1	A	2.707	1			2.12		7	6				False	3	spoke-genelab, rdkg, digcfdekg
+12	2324	FLT4	A	2.633	2	-1.12	-1.15		True	1	0	4.0	Sunitinib (ph4); Catequentinib (ph3); Famitinib (ph3)		False	3	spoke-genelab, rdkg, prokn
+13	4088	SMAD3	A	2.62	1			1.86		2	7				False	3	spoke-genelab, rdkg, digcfdekg
+14	3479	IGF1	A	2.577	1			1.73		1	6				False	3	spoke-genelab, rdkg, digcfdekg
+15	6424	SFRP4	A	2.563	1			-1.69		1	7				False	3	spoke-genelab, rdkg, digcfdekg
+16	7474	WNT5A	A	2.563	1			-1.69		1	7				False	3	spoke-genelab, rdkg, digcfdekg
+17	857	CAV1	A	2.523	1			2.17		1	4				False	3	spoke-genelab, rdkg, digcfdekg
+18	4982	TNFRSF11B	A	2.497	1			1.49		2	10				False	3	spoke-genelab, rdkg, digcfdekg
+19	6347	CCL2	A	2.473	3	1.42	1.11	-1.2	False	2	0	2.0			False	3	spoke-genelab, rdkg, prokn
+20	56172	ANKH	A	2.453	1			1.36		1	5				False	3	spoke-genelab, rdkg, digcfdekg
+21	2201	FBN2	A	2.417	1			-1.25		1	6				False	3	spoke-genelab, rdkg, digcfdekg
+22	6934	TCF7L2	A	2.403	1			1.21		1	6				False	3	spoke-genelab, rdkg, digcfdekg
+23	4882	NPR2	A	2.383	1			1.15		1	6				False	3	spoke-genelab, rdkg, digcfdekg
+24	1301	COL11A1	A	2.38	1			1.14		1	6				False	3	spoke-genelab, rdkg, digcfdekg
+25	249	ALPL	A	2.38	3	-1.09	-1.14	-1.02	True	0	6				False	2	spoke-genelab, digcfdekg
+26	4041	LRP5	A	2.363	1			1.09		2	7				False	3	spoke-genelab, rdkg, digcfdekg
+27	176	ACAN	A	2.353	1			1.66		1	4				False	3	spoke-genelab, rdkg, digcfdekg
+28	652	BMP4	A	2.353	1			1.06		1	7				False	3	spoke-genelab, rdkg, digcfdekg
+29	5745	PTH1R	A	2.343	1		-1.03			2	6				False	3	spoke-genelab, rdkg, digcfdekg
+30	1291	COL6A1	A	2.223	1			1.87		1	3				False	3	spoke-genelab, rdkg, digcfdekg
+31	2200	FBN1	A	2.223	1			1.87		2	3				False	3	spoke-genelab, rdkg, digcfdekg
+32	23500	DAAM2	A	2.197	1			1.79		1	3				False	3	spoke-genelab, rdkg, digcfdekg
+33	54757	FAM20A	A	2.17	2	-2.01		1.79	False	1	0				False	2	spoke-genelab, rdkg
+34	6591	SNAI2	A	2.137	2	-1.2		1.91	False	0	6				False	2	spoke-genelab, digcfdekg
+35	7132	TNFRSF1A	A	2.11	1			1.53		1	3				False	3	spoke-genelab, rdkg, digcfdekg
+36	5166	PDK4	A	2.073	2	-1.38		2.92	False	0	3				False	2	spoke-genelab, digcfdekg
+37	1591	CYP24A1	A	2.033	1			1.3		1	3				False	3	spoke-genelab, rdkg, digcfdekg
+38	7249	TSC2	A	2.0	1			1.2		1	3				False	3	spoke-genelab, rdkg, digcfdekg
+39	6909	TBX2	A	1.68	2	-1.11	-1.14		True	0	4				False	2	spoke-genelab, digcfdekg
+40	27115	PDE7B	A	1.667	2		1.01	1.7	True	0	3				False	2	spoke-genelab, digcfdekg
+41	4314	MMP3	B	2.5	1			-4.07		2	0	3.0	Marimastat (ph3)		False	3	spoke-genelab, rdkg, prokn
+42	5156	PDGFRA	B	2.43	1			2.04		0	6	4.0	Avapritinib (ph4); Ripretinib (ph4); Olaratumab (ph4); Sunitinib (ph4)		False	3	spoke-genelab, digcfdekg, prokn
+43	4860	PNP	B	2.413	1			-1.99		1	0	4.0			False	3	spoke-genelab, rdkg, prokn
+44	2149	F2R	B	2.35	1			3.05		0	3	4.0	Vorapaxar Sulfate (ph4)		False	3	spoke-genelab, digcfdekg, prokn
+45	920	CD4	B	2.283	1			1.0		1	1	4.0			False	4	spoke-genelab, rdkg, digcfdekg, prokn
+46	2690	GHR	B	2.277	1			1.58		0	5	4.0	Somapacitan (ph4)		False	3	spoke-genelab, digcfdekg, prokn
+47	7035	TFPI	B	2.23	1			1.44		1	0	4.0			False	3	spoke-genelab, rdkg, prokn
+48	1958	EGR1	B	2.137	1			2.81		1	1				False	3	spoke-genelab, rdkg, digcfdekg
+49	6648	SOD2	B	2.093	1			-2.68		7	1				False	3	spoke-genelab, rdkg, digcfdekg
+50	1281	COL3A1	B	2.083	1			2.65		6	1				False	3	spoke-genelab, rdkg, digcfdekg
+51	1437	CSF2	B	2.04	1			-1.62		2	0	3.0	Lenzilumab (ph3); Otilimab (ph3)		False	3	spoke-genelab, rdkg, prokn
+52	9451	EIF2AK3	B	2.037	1			-2.51		1	1				False	3	spoke-genelab, rdkg, digcfdekg
+53	1728	NQO1	B	2.013	1			1.54		1	0	3.0			False	3	spoke-genelab, rdkg, prokn
+54	7042	TGFB2	B	2.003	1			-1.51		0	6	3.0	Lerdelimumab (ph3)		False	3	spoke-genelab, digcfdekg, prokn
+55	153020	RASGEF1B	B	2.0	1			-3.04		1	0				False	2	spoke-genelab, rdkg
+56	330	BIRC3	B	2.0	1			-3.23		1	0				False	2	spoke-genelab, rdkg
+57	3553	IL1B	B	2.0	1			-4.63		1	0				False	2	spoke-genelab, rdkg
+58	3576	CXCL8	B	2.0	1			-8.39		1	0	2.0			False	3	spoke-genelab, rdkg, prokn
+59	5627	PROS1	B	2.0	1			3.05		1	0				False	2	spoke-genelab, rdkg
+60	7130	TNFAIP6	B	2.0	1			-3.53		1	0				False	2	spoke-genelab, rdkg
+61	8425	LTBP4	B	2.0	1		-3.01			1	0				False	2	spoke-genelab, rdkg
+62	84879	MFSD2A	B	2.0	1			-3.63		1	0				False	2	spoke-genelab, rdkg
+63	8644	AKR1C3	B	2.0	1			3.07		1	0				False	2	spoke-genelab, rdkg
+64	9719	ADAMTSL2	B	1.967	1		-2.3			1	1				False	3	spoke-genelab, rdkg, digcfdekg
+65	1490	CCN2	B	1.96	1			1.38		0	6	3.0	Pamrevlumab (ph3)		False	3	spoke-genelab, digcfdekg, prokn
+66	25816	TNFAIP8	B	1.96	1			-2.88		1	0				False	2	spoke-genelab, rdkg
+67	374	AREG	B	1.953	1			-2.26		1	1				False	3	spoke-genelab, rdkg, digcfdekg
+68	2934	GSN	B	1.937	1			2.81		1	0				False	2	spoke-genelab, rdkg
+69	10826	FAXDC2	B	1.93	1			2.79		1	0				False	2	spoke-genelab, rdkg
+70	1513	CTSK	B	1.93	1			1.29		0	6	3.0	Odanacatib (ph3)		False	3	spoke-genelab, digcfdekg, prokn
+71	2316	FLNA	B	1.927	1			1.28		1	0	3.0			False	3	spoke-genelab, rdkg, prokn
+72	1646	AKR1C2	B	1.89	1			2.67		1	0				False	2	spoke-genelab, rdkg
+73	1749	DLX5	B	1.873	1			2.62		0	6				False	2	spoke-genelab, digcfdekg
+74	203228	C9orf72	B	1.857	1			-1.97		1	1				False	3	spoke-genelab, rdkg, digcfdekg
+75	10769	PLK2	B	1.847	1			2.54		1	0				False	2	spoke-genelab, rdkg
+76	288	ANK3	B	1.843	1			2.53		2	0				False	2	spoke-genelab, rdkg
+77	4582	MUC1	B	1.84	1			1.02		1	0	3.0			False	3	spoke-genelab, rdkg, prokn
+78	26011	TENM4	B	1.837	3	-1.28	-1.14	1.31	False	0	2				False	2	spoke-genelab, digcfdekg
+79	23767	FLRT3	B	1.833	1			1.3		1	2				False	3	spoke-genelab, rdkg, digcfdekg
+80	3915	LAMC1	B	1.827	1			1.88		1	1				False	3	spoke-genelab, rdkg, digcfdekg
+81	2247	FGF2	B	1.793	1			-2.38		0	6				False	2	spoke-genelab, digcfdekg
+82	2114	ETS2	B	1.783	1			-2.35		0	7				False	2	spoke-genelab, digcfdekg
+83	8013	NR4A3	B	1.767	1			-2.3		1	0				False	2	spoke-genelab, rdkg
+84	25	ABL1	B	1.757	1			-1.22		0	3	4.0	Asciminib (ph4); Bosutinib (ph4); Dasatinib Anhydrous (ph4); Imatinib Mesylate (ph4)		False	3	spoke-genelab, digcfdekg, prokn
+85	10516	FBLN5	B	1.753	1			2.26		1	0				False	2	spoke-genelab, rdkg
+86	3725	JUN	B	1.73	1			-1.59		1	1				False	3	spoke-genelab, rdkg, digcfdekg
+87	4053	LTBP2	B	1.723	1			2.17		1	0				False	2	spoke-genelab, rdkg
+88	3199	HOXA2	B	1.707	1			2.12		0	6				False	2	spoke-genelab, digcfdekg
+89	5087	PBX1	B	1.703	1			2.11		0	6				False	2	spoke-genelab, digcfdekg
+90	966	CD59	B	1.703	1			2.11		2	0				False	2	spoke-genelab, rdkg
+91	4256	MGP	B	1.693	2		-1.16	2.38	False	0	2				False	2	spoke-genelab, digcfdekg
+92	6495	SIX1	B	1.69	1			2.07		0	6				False	2	spoke-genelab, digcfdekg
+93	3376	IARS1	B	1.687	1			-2.06		1	0				False	2	spoke-genelab, rdkg
+94	84870	RSPO3	B	1.687	1			-2.06		0	8				False	2	spoke-genelab, digcfdekg
+95	51430	SUCO	B	1.683	1			-2.05		0	6				False	2	spoke-genelab, digcfdekg
+96	2317	FLNB	B	1.68	1			2.64		0	4				False	2	spoke-genelab, digcfdekg
+97	4891	SLC11A2	B	1.68	1			-2.04		1	0				False	2	spoke-genelab, rdkg
+98	64116	SLC39A8	B	1.68	1			-2.04		1	0				False	2	spoke-genelab, rdkg
+99	54453	RIN2	B	1.677	1			1.43		1	1				False	3	spoke-genelab, rdkg, digcfdekg
+100	3800	KIF5C	B	1.667	1		-2.0			1	0				False	2	spoke-genelab, rdkg
+101	1798	DPAGT1	B	1.663	1			-1.99		1	0				False	2	spoke-genelab, rdkg
+102	490	ATP2B1	B	1.647	1			-1.94		0	6				False	2	spoke-genelab, digcfdekg
+103	6925	TCF4	B	1.647	1			1.94		1	0				False	2	spoke-genelab, rdkg
+104	3693	ITGB5	B	1.643	1			1.93		1	0				False	2	spoke-genelab, rdkg
+105	4784	NFIX	B	1.64	1			1.92		1	0				False	2	spoke-genelab, rdkg
+106	2113	ETS1	B	1.627	1			-1.28		1	1				False	3	spoke-genelab, rdkg, digcfdekg
+107	4792	NFKBIA	B	1.627	1			-1.88		1	0				False	2	spoke-genelab, rdkg
+108	1303	COL12A1	B	1.62	1			1.26		1	1				False	3	spoke-genelab, rdkg, digcfdekg
+109	64388	GREM2	B	1.62	1			1.86		0	6				False	2	spoke-genelab, digcfdekg
+110	1063	CENPF	B	1.607	1			1.82		1	0				False	2	spoke-genelab, rdkg
+111	92344	GORAB	B	1.6	1			-1.8		2	0				False	2	spoke-genelab, rdkg
+112	23545	ATP6V0A2	B	1.593	1			-1.78		1	0				False	2	spoke-genelab, rdkg
+113	51569	UFM1	B	1.593	1			-1.78		1	0				False	2	spoke-genelab, rdkg
+114	9788	MTSS1	B	1.59	1			1.77		1	0				False	2	spoke-genelab, rdkg
+115	7412	VCAM1	B	1.577	1			1.73		1	0				False	2	spoke-genelab, rdkg
+116	7403	KDM6A	B	1.57	1			-1.11		1	1				False	3	spoke-genelab, rdkg, digcfdekg
+117	51268	PIPOX	B	1.567	1	-1.7				1	0				False	2	spoke-genelab, rdkg
+118	57178	ZMIZ1	B	1.567	1			1.1		2	1				False	3	spoke-genelab, rdkg, digcfdekg
+119	9786	KIAA0586	B	1.56	1			1.08		1	1				False	3	spoke-genelab, rdkg, digcfdekg
+120	1528	CYB5A	B	1.557	1			1.67		2	0				False	2	spoke-genelab, rdkg
+121	4774	NFIA	B	1.557	1			2.27		0	4				False	2	spoke-genelab, digcfdekg
+122	1462	VCAN	B	1.553	1			2.26		0	4				False	2	spoke-genelab, digcfdekg
+123	5315	PKM	B	1.553	1			1.66		1	0				False	2	spoke-genelab, rdkg
+124	9891	NUAK1	B	1.553	1	-1.06				1	1				False	3	spoke-genelab, rdkg, digcfdekg
+125	7090	TLE3	B	1.55	1			1.65		0	5				False	2	spoke-genelab, digcfdekg
+126	7849	PAX8	B	1.547	2	1.94	1.25		True	0	2				False	2	spoke-genelab, digcfdekg
+127	55768	NGLY1	B	1.537	1			-1.61		1	0				False	2	spoke-genelab, rdkg
+128	112609	MRAP2	B	1.533	1			1.6		1	0				False	2	spoke-genelab, rdkg
+129	64093	SMOC1	B	1.527	1			1.58		0	6				False	2	spoke-genelab, digcfdekg
+130	7414	VCL	B	1.523	1			1.57		1	0				False	2	spoke-genelab, rdkg
+131	2052	EPHX1	B	1.517	1			1.55		1	0				False	2	spoke-genelab, rdkg
+132	2969	GTF2I	B	1.51	1			1.53		1	0				False	2	spoke-genelab, rdkg
+133	4208	MEF2C	B	1.5	1			1.5		0	8				False	2	spoke-genelab, digcfdekg
+134	4929	NR4A2	B	1.493	1			-1.48		1	0				False	2	spoke-genelab, rdkg
+135	25805	BAMBI	B	1.49	1			1.47		0	6				False	2	spoke-genelab, digcfdekg
+136	2737	GLI3	B	1.487	1			1.46		0	6				False	2	spoke-genelab, digcfdekg
+137	3315	HSPB1	B	1.487	1			1.46		1	0				False	2	spoke-genelab, rdkg
+138	8626	TP63	B	1.487	1			1.46		0	5				False	2	spoke-genelab, digcfdekg
+139	55033	FKBP14	B	1.48	1			-1.44		2	0				False	2	spoke-genelab, rdkg
+140	8324	FZD7	B	1.477	1			1.43		0	6	2.0			False	3	spoke-genelab, digcfdekg, prokn
+141	51141	INSIG2	B	1.47	1			-1.41		0	5				False	2	spoke-genelab, digcfdekg
+142	6319	SCD	B	1.47	1			-1.41		1	0				False	2	spoke-genelab, rdkg
+143	79971	WLS	B	1.47	1			1.41		0	8				False	2	spoke-genelab, digcfdekg
+144	1954	MEGF8	B	1.463	1			2.59		0	3				False	2	spoke-genelab, digcfdekg
+145	847	CAT	B	1.463	1			1.39		4	0				False	2	spoke-genelab, rdkg
+146	800	CALD1	B	1.457	1			1.37		1	0				False	2	spoke-genelab, rdkg
+147	9886	RHOBTB1	B	1.457	1			1.37		1	0				False	2	spoke-genelab, rdkg
+148	1843	DUSP1	B	1.453	1			-1.36		1	0				False	2	spoke-genelab, rdkg
+149	10085	EDIL3	B	1.45	1			1.35		0	6				False	2	spoke-genelab, digcfdekg
+150	8642	DCHS1	B	1.45	1	-1.35				0	5				False	2	spoke-genelab, digcfdekg
+151	5595	MAPK3	B	1.447	1			1.34		0	5	2.0			False	3	spoke-genelab, digcfdekg, prokn
+152	8840	CCN4	B	1.447	1			1.94		0	4				False	2	spoke-genelab, digcfdekg
+153	50937	CDON	B	1.443	1			1.33		0	5				False	2	spoke-genelab, digcfdekg
+154	4790	NFKB1	B	1.44	1			-2.52		0	3				False	2	spoke-genelab, digcfdekg
+155	57190	SELENON	B	1.437	1			1.31		1	0				False	2	spoke-genelab, rdkg
+156	81565	NDEL1	B	1.437	1			-1.31		1	0				False	2	spoke-genelab, rdkg
+157	9509	ADAMTS2	B	1.437	1		-1.31			1	0				False	2	spoke-genelab, rdkg
+158	5329	PLAUR	B	1.43	1			-1.29		1	0				False	2	spoke-genelab, rdkg
+159	84159	ARID5B	B	1.427	1			1.28		0	5				False	2	spoke-genelab, digcfdekg
+160	130497	OSR1	B	1.42	1			1.26		0	6				False	2	spoke-genelab, digcfdekg
+161	51124	IER3IP1	B	1.417	1			-1.25		1	0				False	2	spoke-genelab, rdkg
+162	8731	RNMT	B	1.417	1			-1.25		0	6				False	2	spoke-genelab, digcfdekg
+163	7037	TFRC	B	1.413	1			-1.24		2	0				False	2	spoke-genelab, rdkg
+164	10253	SPRY2	B	1.41	1			-1.23		0	6				False	2	spoke-genelab, digcfdekg
+165	169792	GLIS3	B	1.41	1			-1.23		1	0				False	2	spoke-genelab, rdkg
+166	51075	TMX2	B	1.41	1			-1.23		1	0				False	2	spoke-genelab, rdkg
+167	118429	ANTXR2	B	1.407	1			1.22		4	0				False	2	spoke-genelab, rdkg
+168	55075	UACA	B	1.403	2		-1.01	1.51	False	0	2				False	2	spoke-genelab, digcfdekg
+169	7737	RNF113A	B	1.403	1			-1.21		1	0				False	2	spoke-genelab, rdkg
+170	168507	PKD1L1	B	1.4	1		-1.2			1	0				False	2	spoke-genelab, rdkg
+171	51128	SAR1B	B	1.4	1			-1.2		1	0				False	2	spoke-genelab, rdkg
+172	91942	NDUFAF2	B	1.4	1			-1.2		1	0				False	2	spoke-genelab, rdkg
+173	1612	DAPK1	B	1.393	1			1.18		1	0				False	2	spoke-genelab, rdkg
+174	29089	UBE2T	B	1.393	1			1.18		1	0				False	2	spoke-genelab, rdkg
+175	55650	PIGV	B	1.393	1			-1.18		1	0				False	2	spoke-genelab, rdkg
+176	1540	CYLD	B	1.39	1			-2.37		0	3				False	2	spoke-genelab, digcfdekg
+177	55603	TENT5A	B	1.39	1			1.17		0	5				False	2	spoke-genelab, digcfdekg
+178	7390	UROS	B	1.39	1			1.17		1	0				False	2	spoke-genelab, rdkg
+179	4552	MTRR	B	1.387	1			-1.16		2	0				False	2	spoke-genelab, rdkg
+180	3077	HFE	B	1.383	1			1.15		1	0				False	2	spoke-genelab, rdkg
+181	6513	SLC2A1	B	1.383	1			-1.15		1	0				False	2	spoke-genelab, rdkg
+182	10631	POSTN	B	1.38	1			1.14		1	0				False	2	spoke-genelab, rdkg
+183	6926	TBX3	B	1.38	1			-1.74		0	4				False	2	spoke-genelab, digcfdekg
+184	125228	FAM210A	B	1.377	1			-1.13		0	6				False	2	spoke-genelab, digcfdekg
+185	3908	LAMA2	B	1.377	1			1.13		1	0				False	2	spoke-genelab, rdkg
+186	9382	COG1	B	1.377	1			-1.13		1	0				False	2	spoke-genelab, rdkg
+187	9873	FCHSD2	B	1.377	1			1.13		1	0				False	2	spoke-genelab, rdkg
+188	3207	HOXA11	B	1.373	1			-1.12		0	6				False	2	spoke-genelab, digcfdekg
+189	4017	LOXL2	B	1.373	1			1.12		1	0	2.0			False	3	spoke-genelab, rdkg, prokn
+190	5727	PTCH1	B	1.373	1			1.12		0	7				False	2	spoke-genelab, digcfdekg
+191	10484	SEC23A	B	1.37	1			-1.11		1	0				False	2	spoke-genelab, rdkg
+192	6678	SPARC	B	1.367	1			1.1		1	0				False	2	spoke-genelab, rdkg
+193	2648	KAT2A	B	1.36	1			1.08		0	5				False	2	spoke-genelab, digcfdekg
+194	694	BTG1	B	1.36	1			-1.08		2	0				False	2	spoke-genelab, rdkg
+195	92345	NAF1	B	1.36	1			-1.08		1	0				False	2	spoke-genelab, rdkg
+196	4535	ND1	B	1.357	1	1.07				1	0				False	2	spoke-genelab, rdkg
+197	5373	PMM2|LOC100130283	B	1.357	1			-1.07		1	0				False	2	spoke-genelab, rdkg
+198	7289	TULP3	B	1.357	1			-1.07		0	5				False	2	spoke-genelab, digcfdekg
+199	302	ANXA2	B	1.35	1			1.05		1	0				False	2	spoke-genelab, rdkg
+200	4537	ND3	B	1.35	1	1.05				1	0				False	2	spoke-genelab, rdkg
+201	5530	PPP3CA	B	1.35	1			1.05		1	0				False	2	spoke-genelab, rdkg
+202	8799	PEX11B	B	1.35	1			1.05		2	0				False	2	spoke-genelab, rdkg
+203	92	ACVR2A	B	1.35	1			1.65		0	4				False	2	spoke-genelab, digcfdekg
+204	338773	TMEM119	B	1.347	1			1.04		0	5				False	2	spoke-genelab, digcfdekg
+205	43	ACHE	B	1.347	1	-1.04				1	0				False	2	spoke-genelab, rdkg
+206	54928	BPNT2	B	1.34	1			-1.02		0	6				False	2	spoke-genelab, digcfdekg
+207	55704	CCDC88A	B	1.34	1			1.02		1	0				False	2	spoke-genelab, rdkg
+208	1650	DDOST	B	1.337	1			-1.01		1	0				False	2	spoke-genelab, rdkg
+209	60528	ELAC2	B	1.337	1			1.01		1	0				False	2	spoke-genelab, rdkg
+210	8434	RECK	B	1.337	1			1.01		0	6				False	2	spoke-genelab, digcfdekg
+211	22998	LIMCH1	B	1.33	2		-1.1	1.89	False	0	1				False	2	spoke-genelab, digcfdekg
+212	50515	CHST11	B	1.307	1			-1.52		0	4				False	2	spoke-genelab, digcfdekg
+213	3751	KCND2	B	1.297	1			2.09		0	3				False	2	spoke-genelab, digcfdekg
+214	3202	HOXA5	B	1.27	2	-1.11		1.04	False	0	2				False	2	spoke-genelab, digcfdekg
+215	8082	SSPN	B	1.267	1			2.0		0	3				False	2	spoke-genelab, digcfdekg
+216	26035	GLCE	B	1.263	1			1.99		0	3				False	2	spoke-genelab, digcfdekg
+217	5069	PAPPA	B	1.263	1			1.99		0	3				False	2	spoke-genelab, digcfdekg
+218	135228	CD109	B	1.247	1			1.94		0	3				False	2	spoke-genelab, digcfdekg
+219	8322	FZD4	B	1.243	1			1.93		0	3				False	2	spoke-genelab, digcfdekg
+220	23213	SULF1	B	1.24	1			1.32		0	4				False	2	spoke-genelab, digcfdekg
+221	11197	WIF1	B	1.227	2	-1.58	-1.27		True	0	1				False	2	spoke-genelab, digcfdekg
+222	9942	XYLB	B	1.227	1		-1.88			0	3				False	2	spoke-genelab, digcfdekg
+223	5358	PLS3	B	1.223	1			1.27		0	4				False	2	spoke-genelab, digcfdekg
+224	406	ARNTL	B	1.217	1			-1.25		0	4				False	2	spoke-genelab, digcfdekg
+225	161882	ZFPM1	B	1.197	1		-1.79			0	3				False	2	spoke-genelab, digcfdekg
+226	5754	PTK7	B	1.197	1			1.19		0	4				False	2	spoke-genelab, digcfdekg
+227	6764	DENND2B	B	1.177	1			1.73		0	3				False	2	spoke-genelab, digcfdekg
+228	25937	WWTR1	B	1.16	1			1.08		0	4				False	2	spoke-genelab, digcfdekg
+229	2122	MECOM	B	1.157	1			1.07		0	4				False	2	spoke-genelab, digcfdekg
+230	55959	SULF2	B	1.157	1			1.07		0	4				False	2	spoke-genelab, digcfdekg
+231	7046	TGFBR1	B	1.157	1			1.07		0	4	2.0			False	3	spoke-genelab, digcfdekg, prokn
+232	23387	SIK3	B	1.153	1			-1.06		0	4				False	2	spoke-genelab, digcfdekg
+233	4211	MEIS1	B	1.153	1			1.66		0	3				False	2	spoke-genelab, digcfdekg
+234	25925	ZNF521	B	1.15	1	-1.05				0	4				False	2	spoke-genelab, digcfdekg
+235	10630	PDPN	B	1.143	1	1.03				0	4				False	2	spoke-genelab, digcfdekg
+236	9950	GOLGA5	B	1.137	1			-1.61		0	3				False	2	spoke-genelab, digcfdekg
+237	128553	TSHZ2	B	1.123	2	-1.1	-1.27		True	0	1				False	2	spoke-genelab, digcfdekg
+238	7976	FZD3	B	1.103	1			-1.51		0	3				False	2	spoke-genelab, digcfdekg
+239	1847	DUSP5	B	1.09	1			-1.47		0	3				False	2	spoke-genelab, digcfdekg
+240	3728	JUP	B	1.07	1			1.41		0	3				False	2	spoke-genelab, digcfdekg
+241	4776	NFATC4	B	1.043	1		-1.33			0	3				False	2	spoke-genelab, digcfdekg
+242	54345	SOX18	B	1.04	1		-1.32			0	3				False	2	spoke-genelab, digcfdekg
+243	8549	LGR5	B	1.037	1	-1.31				0	3				False	2	spoke-genelab, digcfdekg
+244	1906	EDN1	B	1.017	1			-1.25		0	3				False	2	spoke-genelab, digcfdekg
+245	4299	AFF1	B	1.0	1			-1.2		0	3				False	2	spoke-genelab, digcfdekg
+246	54726	OTUD4	B	0.997	1			-1.19		0	3				False	2	spoke-genelab, digcfdekg
+247	3675	ITGA3	B	0.993	1			1.18		0	3				False	2	spoke-genelab, digcfdekg
+248	8829	NRP1	B	0.98	1			1.14		0	3	2.0			False	3	spoke-genelab, digcfdekg, prokn
+249	9249	DHRS3	B	0.967	1			1.1		0	3				False	2	spoke-genelab, digcfdekg
+250	400954	EML6	B	0.963	1	-1.09				0	3				False	2	spoke-genelab, digcfdekg
+251	9021	SOCS3	B	0.963	1			1.09		0	3				False	2	spoke-genelab, digcfdekg
+252	27303	RBMS3	B	0.933	1		-1.0			0	3				False	2	spoke-genelab, digcfdekg
+253	5743	PTGS2	C	1.95	1			-4.15		0	1	4.0	Carprofen (ph4); Celecoxib (ph4); Etoricoxib (ph4); Etodolac (ph4)		False	3	spoke-genelab, digcfdekg, prokn
+254	5139	PDE3A	C	1.8	1			2.55		0	1	4.0	Cilostazol (ph4); Dyphylline (ph4); Inamrinone Lactate (ph4); Ibudilast (ph4)		False	3	spoke-genelab, digcfdekg, prokn
+255	19	ABCA1	C	1.69	1			-2.22		0	1	4.0			False	3	spoke-genelab, digcfdekg, prokn
+256	3269	HRH1	C	1.483	1		1.6			0	1	4.0			False	3	spoke-genelab, digcfdekg, prokn
+257	3082	HGF	C	1.433	1			1.6		0	2	3.0	Ficlatuzumab (ph3); Rilotumumab (ph3)		False	3	spoke-genelab, digcfdekg, prokn
+258	8516	ITGA8	C	1.4	1			4.65		0	2				False	2	spoke-genelab, digcfdekg
+259	7357	UGCG	C	1.39	1			-1.32		0	1	4.0	Eliglustat Tartrate (ph4); Miglustat (ph4); Lucerastat (ph3); Venglustat (ph3)		False	3	spoke-genelab, digcfdekg, prokn
+260	7140	TNNT3	C	1.29	1		-2.67			0	2				False	2	spoke-genelab, digcfdekg
+261	79026	AHNAK	C	1.287	1			2.66		0	2				False	2	spoke-genelab, digcfdekg
+262	341019	DCDC1	C	1.25	1			2.55		0	2				False	2	spoke-genelab, digcfdekg
+263	1004	CDH6	C	1.2	1			4.06		0	1				False	2	spoke-genelab, digcfdekg
+264	9201	DCLK1	C	1.2	1			3.28		0	1				False	2	spoke-genelab, digcfdekg
+265	79174	CRELD2	C	1.197	1			-2.99		0	1				False	2	spoke-genelab, digcfdekg
+266	23516	SLC39A14	C	1.193	1			-2.98		0	1				False	2	spoke-genelab, digcfdekg
+267	57381	RHOJ	C	1.19	1			2.97		0	1				False	2	spoke-genelab, digcfdekg
+268	51303	FKBP11	C	1.173	1			-2.32		0	2				False	2	spoke-genelab, digcfdekg
+269	7049	TGFBR3	C	1.143	1			2.23		0	2				False	2	spoke-genelab, digcfdekg
+270	4919	ROR1	C	1.127	1			1.28		0	1	3.0			False	3	spoke-genelab, digcfdekg, prokn
+271	222663	SCUBE3	C	1.103	1			2.11		0	2				False	2	spoke-genelab, digcfdekg
+272	639	PRDM1	C	1.103	1			-2.71		0	1				False	2	spoke-genelab, digcfdekg
+273	406937	MIR145	C	1.067	1			2.0		0	2				False	2	spoke-genelab, digcfdekg
+274	81502	HM13	C	1.063	1			-2.59		0	1				False	2	spoke-genelab, digcfdekg
+275	6400	SEL1L	C	1.06	1			-2.58		0	1				False	2	spoke-genelab, digcfdekg
+276	54510	PCDH18	C	1.053	1			2.56		0	1				False	2	spoke-genelab, digcfdekg
+277	6747	SSR3	C	1.037	1			-1.91		0	2				False	2	spoke-genelab, digcfdekg
+278	3205	HOXA9	C	1.03	1			1.89		0	2				False	2	spoke-genelab, digcfdekg
+279	85458	DIXDC1	C	1.03	1			2.49		0	1				False	2	spoke-genelab, digcfdekg
+280	51334	PRR16	C	1.007	1			1.82		0	2				False	2	spoke-genelab, digcfdekg
+281	115701	ALPK2	C	0.973	1			2.32		0	1				False	2	spoke-genelab, digcfdekg
+282	4856	CCN3	C	0.973	1			1.72		0	2				False	2	spoke-genelab, digcfdekg
+283	255488	RNF144B	C	0.97	1			-2.31		0	1				False	2	spoke-genelab, digcfdekg
+284	56261	GPCPD1	C	0.97	1			-2.31		0	1				False	2	spoke-genelab, digcfdekg
+285	83439	TCF7L1	C	0.967	1			1.7		0	2				False	2	spoke-genelab, digcfdekg
+286	7494	XBP1	C	0.963	1			-1.69		0	2				False	2	spoke-genelab, digcfdekg
+287	9628	RGS6	C	0.96	1		-2.28			0	1				False	2	spoke-genelab, digcfdekg
+288	55151	TMEM38B	C	0.957	1			-2.27		0	1				False	2	spoke-genelab, digcfdekg
+289	51523	CXXC5	C	0.953	1			1.66		0	2				False	2	spoke-genelab, digcfdekg
+290	57493	HEG1	C	0.953	1			2.26		0	1				False	2	spoke-genelab, digcfdekg
+291	9792	SERTAD2	C	0.947	1			-1.64		0	2				False	2	spoke-genelab, digcfdekg
+292	11174	ADAMTS6	C	0.937	1			-1.61		0	2				False	2	spoke-genelab, digcfdekg
+293	220164	DOK6	C	0.937	1			-2.21		0	1				False	2	spoke-genelab, digcfdekg
+294	79974	CPED1	C	0.93	1			-2.19		0	1				False	2	spoke-genelab, digcfdekg
+295	493856	CISD2	C	0.917	1			-2.15		0	1				False	2	spoke-genelab, digcfdekg
+296	7026	NR2F2	C	0.9	1	-1.5				0	2				False	2	spoke-genelab, digcfdekg
+297	80114	BICC1	C	0.9	1			1.5		0	2				False	2	spoke-genelab, digcfdekg
+298	8613	PLPP3	C	0.897	1			2.09		0	1				False	2	spoke-genelab, digcfdekg
+299	84071	ARMC2	C	0.893	1		1.48			0	2				False	2	spoke-genelab, digcfdekg
+300	56886	UGGT1	C	0.883	1			-2.05		0	1				False	2	spoke-genelab, digcfdekg
+301	3720	JARID2	C	0.87	1			-2.01		0	1				False	2	spoke-genelab, digcfdekg
+302	80139	ZNF703	C	0.87	1		-1.41			0	2				False	2	spoke-genelab, digcfdekg
+303	58499	ZNF462	C	0.867	1		-1.4			0	2				False	2	spoke-genelab, digcfdekg
+304	84068	SLC10A7	C	0.857	1			-1.97		0	1				False	2	spoke-genelab, digcfdekg
+305	6586	SLIT3	C	0.853	1			1.96		0	1				False	2	spoke-genelab, digcfdekg
+306	81706	PPP1R14C	C	0.853	1			-1.96		0	1				False	2	spoke-genelab, digcfdekg
+307	8861	LDB1	C	0.853	1			1.36		0	2				False	2	spoke-genelab, digcfdekg
+308	7133	TNFRSF1B	C	0.85	1			-1.35		0	2				False	2	spoke-genelab, digcfdekg
+309	54972	TMEM132A	C	0.84	1		-1.32			0	2				False	2	spoke-genelab, digcfdekg
+310	23362	PSD3	C	0.837	1			1.91		0	1				False	2	spoke-genelab, digcfdekg
+311	414899	BLID	C	0.833	1			1.9		0	1				False	2	spoke-genelab, digcfdekg
+312	29100	TMEM208	C	0.83	1			-1.89		0	1				False	2	spoke-genelab, digcfdekg
+313	84456	L3MBTL3	C	0.83	1			1.29		0	2				False	2	spoke-genelab, digcfdekg
+314	9369	NRXN3	C	0.83	1			1.89		0	1				False	2	spoke-genelab, digcfdekg
+315	5897	RAG2	C	0.823	1	-1.27				0	2				False	2	spoke-genelab, digcfdekg
+316	65125	WNK1	C	0.823	1			-1.27		0	2				False	2	spoke-genelab, digcfdekg
+317	55332	DRAM1	C	0.813	1			-1.84		0	1				False	2	spoke-genelab, digcfdekg
+318	160851	DGKH	C	0.807	1			-1.22		0	2				False	2	spoke-genelab, digcfdekg
+319	84193	SETD3	C	0.807	1			-1.22		0	2				False	2	spoke-genelab, digcfdekg
+320	134266	GRPEL2	C	0.803	1			-1.21		0	2				False	2	spoke-genelab, digcfdekg
+321	2668	GDNF	C	0.803	1			-1.81		0	1				False	2	spoke-genelab, digcfdekg
+322	4131	MAP1B	C	0.8	1		-1.8			0	1				False	2	spoke-genelab, digcfdekg
+323	55227	LRRC1	C	0.797	1			-1.19		0	2				False	2	spoke-genelab, digcfdekg
+324	9776	ATG13	C	0.797	1			-1.19		0	2				False	2	spoke-genelab, digcfdekg
+325	91851	CHRDL1	C	0.793	1			1.78		0	1				False	2	spoke-genelab, digcfdekg
+326	6675	UAP1	C	0.79	1			-1.77		0	1				False	2	spoke-genelab, digcfdekg
+327	1107	CHD3	C	0.787	1			1.16		0	2				False	2	spoke-genelab, digcfdekg
+328	9570	GOSR2	C	0.78	1			-1.74		0	1				False	2	spoke-genelab, digcfdekg
+329	2931	GSK3A	C	0.773	1		-1.12			0	2	2.0			False	3	spoke-genelab, digcfdekg, prokn
+330	4854	NOTCH3	C	0.77	1		-1.11			0	2	2.0			False	3	spoke-genelab, digcfdekg, prokn
+331	5764	PTN	C	0.767	1			1.1		0	2				False	2	spoke-genelab, digcfdekg
+332	23013	SPEN	C	0.763	1			-1.09		0	2				False	2	spoke-genelab, digcfdekg
+333	6574	SLC20A1	C	0.763	1			1.69		0	1				False	2	spoke-genelab, digcfdekg
+334	147948	ZNF582	C	0.76	1	1.68				0	1				False	2	spoke-genelab, digcfdekg
+335	28951	TRIB2	C	0.76	1			1.68		0	1				False	2	spoke-genelab, digcfdekg
+336	202151	RANBP3L	C	0.757	1			1.67		0	1				False	2	spoke-genelab, digcfdekg
+337	28962	OSTM1	C	0.753	1			-1.06		0	2				False	2	spoke-genelab, digcfdekg
+338	5587	PRKD1	C	0.753	1			1.66		0	1				False	2	spoke-genelab, digcfdekg
+339	85365	ALG2	C	0.747	1			-1.64		0	1				False	2	spoke-genelab, digcfdekg
+340	25987	TSKU	C	0.743	1			-1.03		0	2				False	2	spoke-genelab, digcfdekg
+341	54805	CNNM2	C	0.743	1			-1.03		0	2				False	2	spoke-genelab, digcfdekg
+342	57482	CRACD	C	0.74	1	-1.02				0	2				False	2	spoke-genelab, digcfdekg
+343	3204	HOXA7	C	0.737	1			1.01		0	2				False	2	spoke-genelab, digcfdekg
+344	85352	SHISAL1	C	0.737	1			1.61		0	1				False	2	spoke-genelab, digcfdekg
+345	780	DDR1	C	0.733	1		-1.0			0	2				False	2	spoke-genelab, digcfdekg
+346	1282	COL4A1	C	0.73	1			1.59		0	1				False	2	spoke-genelab, digcfdekg
+347	375056	MIA3	C	0.73	1			-1.59		0	1				False	2	spoke-genelab, digcfdekg
+348	64225	ATL2	C	0.73	1			-1.59		0	1				False	2	spoke-genelab, digcfdekg
+349	3927	LASP1	C	0.723	1			1.57		0	1				False	2	spoke-genelab, digcfdekg
+350	51363	CHST15	C	0.723	1			-1.57		0	1				False	2	spoke-genelab, digcfdekg
+351	10618	TGOLN2	C	0.72	1			1.56		0	1				False	2	spoke-genelab, digcfdekg
+352	54205	CYCS	C	0.717	1			-1.55		0	1				False	2	spoke-genelab, digcfdekg
+353	6729	SRP54	C	0.713	1			-1.54		0	1				False	2	spoke-genelab, digcfdekg
+354	388610	TRNP1	C	0.7	1	1.5				0	1				False	2	spoke-genelab, digcfdekg
+355	4782	NFIC	C	0.7	1		-1.5			0	1				False	2	spoke-genelab, digcfdekg
+356	9765	ZFYVE16	C	0.693	1			-1.48		0	1				False	2	spoke-genelab, digcfdekg
+357	6728	SRP19	C	0.69	1			-1.47		0	1				False	2	spoke-genelab, digcfdekg
+358	254251	LCORL	C	0.68	1			-1.44		0	1				False	2	spoke-genelab, digcfdekg
+359	4035	LRP1	C	0.677	1			1.43		0	1				False	2	spoke-genelab, digcfdekg
+360	54809	SAMD9	C	0.677	1			1.43		0	1				False	2	spoke-genelab, digcfdekg
+361	221079	ARL5B	C	0.673	1			-1.42		0	1				False	2	spoke-genelab, digcfdekg
+362	3755	KCNG1	C	0.673	1		-1.42			0	1				False	2	spoke-genelab, digcfdekg
+363	287	ANK2	C	0.67	1			1.41		0	1				False	2	spoke-genelab, digcfdekg
+364	3574	IL7	C	0.67	1			1.41		0	1				False	2	spoke-genelab, digcfdekg
+365	6781	STC1	C	0.667	1			-1.4		0	1				False	2	spoke-genelab, digcfdekg
+366	9124	PDLIM1	C	0.663	1			1.39		0	1				False	2	spoke-genelab, digcfdekg
+367	55773	TBC1D23	C	0.66	1			-1.38		0	1				False	2	spoke-genelab, digcfdekg
+368	11221	DUSP10	C	0.657	1			1.37		0	1				False	2	spoke-genelab, digcfdekg
+369	133121	ENPP6	C	0.657	1	-1.37				0	1				False	2	spoke-genelab, digcfdekg
+370	2043	EPHA4	C	0.657	1		-1.37			0	1				False	2	spoke-genelab, digcfdekg
+371	10840	ALDH1L1	C	0.653	1		-1.36			0	1				False	2	spoke-genelab, digcfdekg
+372	79087	ALG12	C	0.653	1			-1.36		0	1				False	2	spoke-genelab, digcfdekg
+373	57018	CCNL1	C	0.65	1			-1.35		0	1				False	2	spoke-genelab, digcfdekg
+374	92949	ADAMTSL1	C	0.65	1			1.35		0	1				False	2	spoke-genelab, digcfdekg
+375	10952	SEC61B	C	0.647	1			-1.34		0	1				False	2	spoke-genelab, digcfdekg
+376	285605	DTWD2	C	0.647	1			-1.34		0	1				False	2	spoke-genelab, digcfdekg
+377	91526	ANKRD44	C	0.647	1			1.34		0	1				False	2	spoke-genelab, digcfdekg
+378	286749	STON1-GTF2A1L	C	0.643	1			1.33		0	1				False	2	spoke-genelab, digcfdekg
+379	8439	NSMAF	C	0.64	1			-1.32		0	1				False	2	spoke-genelab, digcfdekg
+380	91653	BOC	C	0.64	1		-1.32			0	1				False	2	spoke-genelab, digcfdekg
+381	10380	BPNT1	C	0.633	1			1.3		0	1				False	2	spoke-genelab, digcfdekg
+382	6507	SLC1A3	C	0.633	1	-1.3				0	1				False	2	spoke-genelab, digcfdekg
+383	9843	HEPH	C	0.633	1			1.3		0	1				False	2	spoke-genelab, digcfdekg
+384	11258	DCTN3	C	0.63	1			1.29		0	1				False	2	spoke-genelab, digcfdekg
+385	23198	PSME4	C	0.623	1			-1.27		0	1				False	2	spoke-genelab, digcfdekg
+386	2674	GFRA1	C	0.623	1		-1.27			0	1				False	2	spoke-genelab, digcfdekg
+387	3902	LAG3	C	0.623	1		-1.27			0	1				False	2	spoke-genelab, digcfdekg
+388	398	ARHGDIG	C	0.62	1	1.26				0	1				False	2	spoke-genelab, digcfdekg
+389	80765	STARD5	C	0.62	1			1.26		0	1				False	2	spoke-genelab, digcfdekg
+390	171482	FAM9A	C	0.617	1	1.25				0	1				False	2	spoke-genelab, digcfdekg
+391	3756	KCNH1	C	0.617	1			1.25		0	1				False	2	spoke-genelab, digcfdekg
+392	84267	C9orf64	C	0.617	1			1.25		0	1				False	2	spoke-genelab, digcfdekg
+393	116068	LYSMD3	C	0.61	1			-1.23		0	1				False	2	spoke-genelab, digcfdekg
+394	23129	PLXND1	C	0.61	1			1.23		0	1				False	2	spoke-genelab, digcfdekg
+395	7058	THBS2	C	0.61	1			1.23		0	1				False	2	spoke-genelab, digcfdekg
+396	22858	CILK1	C	0.607	1			1.22		0	1				False	2	spoke-genelab, digcfdekg
+397	54808	DYM	C	0.607	1			-1.22		0	1				False	2	spoke-genelab, digcfdekg
+398	6745	SSR1	C	0.607	1			-1.22		0	1				False	2	spoke-genelab, digcfdekg
+399	23216	TBC1D1	C	0.603	1			-1.21		0	1				False	2	spoke-genelab, digcfdekg
+400	57545	CC2D2A	C	0.603	1			1.21		0	1				False	2	spoke-genelab, digcfdekg
+401	100302652	ASB3|GPR75-ASB3	C	0.6	1			-1.2		0	1				False	2	spoke-genelab, digcfdekg
+402	5868	RAB5A	C	0.6	1			-1.2		0	1				False	2	spoke-genelab, digcfdekg
+403	862	RUNX1T1	C	0.597	1			1.19		0	1				False	2	spoke-genelab, digcfdekg
+404	9037	SEMA5A	C	0.597	1			1.19		0	1				False	2	spoke-genelab, digcfdekg
+405	92154	MTSS2	C	0.597	1		-1.19			0	1				False	2	spoke-genelab, digcfdekg
+406	84318	CCDC77	C	0.593	1			1.18		0	1				False	2	spoke-genelab, digcfdekg
+407	1374	CPT1A	C	0.587	1			1.16		0	1				False	2	spoke-genelab, digcfdekg
+408	79567	RIPOR1	C	0.587	1		-1.16			0	1				False	2	spoke-genelab, digcfdekg
+409	79719	AAGAB	C	0.587	1			-1.16		0	1				False	2	spoke-genelab, digcfdekg
+410	81792	ADAMTS12	C	0.587	1			1.16		0	1				False	2	spoke-genelab, digcfdekg
+411	26108	PYGO1	C	0.583	1			-1.15		0	1				False	2	spoke-genelab, digcfdekg
+412	9734	HDAC9	C	0.58	1			-1.14		0	1				False	2	spoke-genelab, digcfdekg
+413	22801	ITGA11	C	0.577	1			1.13		0	1				False	2	spoke-genelab, digcfdekg
+414	26508	HEYL	C	0.577	1		-1.13			0	1				False	2	spoke-genelab, digcfdekg
+415	51102	MECR	C	0.577	1			1.13		0	1				False	2	spoke-genelab, digcfdekg
+416	54947	LPCAT2	C	0.577	1			1.13		0	1				False	2	spoke-genelab, digcfdekg
+417	10090	UST	C	0.573	1			-1.12		0	1				False	2	spoke-genelab, digcfdekg
+418	285704	RGMB	C	0.573	1			1.12		0	1				False	2	spoke-genelab, digcfdekg
+419	3092	HIP1	C	0.573	1			1.12		0	1				False	2	spoke-genelab, digcfdekg
+420	4897	NRCAM	C	0.573	1			-1.12		0	1				False	2	spoke-genelab, digcfdekg
+421	54556	ING3	C	0.573	1			-1.12		0	1				False	2	spoke-genelab, digcfdekg
+422	79956	ERMP1	C	0.573	1			1.12		0	1				False	2	spoke-genelab, digcfdekg
+423	7343	UBTF	C	0.57	1			1.11		0	1				False	2	spoke-genelab, digcfdekg
+424	144455	E2F7	C	0.567	1			-1.1		0	1				False	2	spoke-genelab, digcfdekg
+425	23268	DNMBP	C	0.567	1			1.1		0	1				False	2	spoke-genelab, digcfdekg
+426	5154	PDGFA	C	0.567	1			1.1		0	1				False	2	spoke-genelab, digcfdekg
+427	5896	RAG1	C	0.563	1	-1.09				0	1				False	2	spoke-genelab, digcfdekg
+428	10959	TMED2	C	0.56	1			-1.08		0	1				False	2	spoke-genelab, digcfdekg
+429	2822	GPLD1	C	0.56	1	1.08				0	1				False	2	spoke-genelab, digcfdekg
+430	9258	MFHAS1	C	0.56	1		-1.08			0	1				False	2	spoke-genelab, digcfdekg
+431	57410	SCYL1	C	0.557	1			-1.07		0	1				False	2	spoke-genelab, digcfdekg
+432	81620	CDT1	C	0.557	1		-1.07			0	1				False	2	spoke-genelab, digcfdekg
+433	89796	NAV1	C	0.557	1			1.07		0	1				False	2	spoke-genelab, digcfdekg
+434	104	ADARB1	C	0.547	1	-1.04				0	1				False	2	spoke-genelab, digcfdekg
+435	23034	SAMD4A	C	0.547	1			-1.04		0	1				False	2	spoke-genelab, digcfdekg
+436	5996	RGS1	C	0.547	1		1.04			0	1				False	2	spoke-genelab, digcfdekg
+437	1870	E2F2	C	0.543	1		-1.03			0	1				False	2	spoke-genelab, digcfdekg
+438	29102	DROSHA	C	0.543	1			1.03		0	1				False	2	spoke-genelab, digcfdekg
+439	3709	ITPR2	C	0.543	1			-1.03		0	1				False	2	spoke-genelab, digcfdekg
+440	5226	PGD	C	0.543	1			1.03		0	1				False	2	spoke-genelab, digcfdekg
+441	54511	HMGCLL1	C	0.543	1	-1.03				0	1				False	2	spoke-genelab, digcfdekg
+442	57507	ZNF608	C	0.543	1			1.03		0	1				False	2	spoke-genelab, digcfdekg
+443	1152	CKB	C	0.54	1			1.02		0	1				False	2	spoke-genelab, digcfdekg
+444	5913	RAPSN	C	0.54	1	1.02				0	1				False	2	spoke-genelab, digcfdekg
+445	6988	TCTA	C	0.54	1			1.02		0	1				False	2	spoke-genelab, digcfdekg
+446	9194	SLC16A7	C	0.533	1			-1.0		0	1				False	2	spoke-genelab, digcfdekg
