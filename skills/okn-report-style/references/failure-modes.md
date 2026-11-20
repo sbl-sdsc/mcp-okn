@@ -110,6 +110,13 @@ set*). `validate_okn_report.py` checks it, but these are the ways it goes wrong:
   notebook (`overwrite=True` for a local write), and run `html_command` again. Never hand-edit the
   `.ipynb` or produce the page any other way. If you cannot run shell commands, give the user
   `html_command` and say the package is incomplete until it has run.
+- **The page's verify table is all errors** → `html_command` runs `verify_all()`, which needs the
+  endpoint. Rendered inside an agent sandbox whose egress proxy blocks it ("Tunnel connection failed:
+  403 … agent proxy"), or from a folder missing its `queries/` files, the page publishes `error:` rows
+  that read as "this study does not reproduce". The runner now stops with `EndpointUnreachable`, so
+  `html_command` fails instead of rendering. Re-run it where the endpoint is reachable, with the whole
+  folder in place. If you can't, give the user `html_command` to run, as above. The validator fails a
+  page with `error:` rows.
 - **Jupyter leftovers** — opening the notebook in Jupyter leaves `__pycache__/` and
   `.ipynb_checkpoints/` in its folder. Delete them before delivering; the validator fails on both.
 - **Provenance missing** — the notebook header carries `model=`, `skills=` and

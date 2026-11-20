@@ -256,6 +256,12 @@ accepts only `.skill` (or a lone `SKILL.md`, which would drop the scripts), and 
 - `okn-report-style`: [`.skill`](skills/okn-report-style.skill) · [`.zip`](skills/okn-report-style.zip)
 - `okn-bioanalysis`: [`.skill`](skills/okn-bioanalysis.skill) · [`.zip`](skills/okn-bioanalysis.zip)
 
+Uploaded skills don't update themselves, so the server checks them for you: the
+skills pass their version to `mcp-okn` at the start of an analysis, and if a copy is
+older than the one the server ships with, the assistant tells you and links the
+matching `.skill` to upload. To see the current versions, call `get_server_info`
+(`skill_versions`).
+
 ### Supported clients
 
 Agent Skills work in these clients:

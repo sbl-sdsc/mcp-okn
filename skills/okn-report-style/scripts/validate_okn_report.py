@@ -570,10 +570,41 @@ def _check_notebook(paths: dict, r: _Report) -> None:
             f"{label}/: missing {html_path.name} — run the tool's `html_command` (it executes the "
             "notebook from the cached rows and writes the page beside it)"
         )
-    elif html_path.stat().st_mtime < nb.stat().st_mtime:
+    else:
+        if html_path.stat().st_mtime < nb.stat().st_mtime:
+            r.warn(
+                f"{label}/{html_path.name} is older than the notebook — re-run `html_command` so the "
+                "page shows the current version"
+            )
+        _check_verify_output(label, html_path, r)
+
+
+#: A `verify_all()` row whose query failed, as pandas renders it in the executed page.
+_VERIFY_ERROR_CELL = re.compile(r"<td>error: ")
+#: Printed by kg_versions() when the release lookup failed.
+_RELEASES_UNAVAILABLE = "graph releases unavailable:"
+
+
+def _check_verify_output(label: str, html_path: Path, r: _Report) -> None:
+    """The page's "Verify against the live graphs" table shows the live comparison, not errors.
+
+    `html_command` executes `verify_all()`, so a page rendered where the endpoint was unreachable (an
+    agent sandbox's egress proxy) or from an incomplete folder publishes a table of `error: …` rows
+    that reads as "this study does not reproduce". `drift` / `changed` rows are real findings and pass.
+    """
+    page = html_path.read_text(encoding="utf-8", errors="replace")
+    errors = len(_VERIFY_ERROR_CELL.findall(page))
+    if errors:
+        r.err(
+            f"{label}/{html_path.name}: the verify_all() table has {errors} `error:` row(s) — the page "
+            "was rendered where the queries could not run (endpoint blocked by a proxy/sandbox, or "
+            "query files missing). Re-run `html_command` on a machine that reaches the endpoint, with "
+            "the complete folder"
+        )
+    elif _RELEASES_UNAVAILABLE in page:
         r.warn(
-            f"{label}/{html_path.name} is older than the notebook — re-run `html_command` so the page "
-            "shows the current version"
+            f"{label}/{html_path.name}: the graph-release lookup failed during rendering, so the "
+            "verify table's `redeployed` column is empty — re-run `html_command` to fill it"
         )
 
 
@@ -729,7 +760,7 @@ def _check_repro_skills(nb_path: Path, r: _Report) -> None:
         r.err(
             f"{label}: the header has no '- **Skills:**' line — pass `skills=[...]` to "
             "create_jupyter_notebook (e.g. `skills=['okn-bioanalysis v0.1.4', "
-            "'okn-report-style v0.2.7']`, versions from each skill's frontmatter `metadata.version`). "
+            "'okn-report-style v0.2.8']`, versions from each skill's frontmatter `metadata.version`). "
             "The server cannot see which skills your session loaded, so an omitted list leaves the "
             "record claiming no methodology at all; do NOT hand-edit the cell — regenerate the notebook"
         )
