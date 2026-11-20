@@ -273,33 +273,6 @@ Agent Skills work in these clients:
 | --- | --- | --- |
 | **Claude Desktop** (macOS / Windows) and **claude.ai** (web) | Select **Plugins** in the left sidebar, click **Add → Upload plugin**, and browse for the downloaded `.skill` file; to update, upload the new `.skill` the same way | Pro, Max, Team, or Enterprise |
 | **ChatGPT Desktop** | Type the prompt: `Install skill from GitHub: https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/skills/{skill}.zip` | Replace `{skill}` with `okn-report-style` or `okn-bioanalysis` |
-| **Claude Code** (CLI + IDE extensions) | Copy the folder into `.claude/skills/` or `~/.claude/skills/` ([see below](#claude-code-1)) | Free tier and up |
-| **Claude Agent SDK** | Point the SDK at the skill folder | For building custom agents |
-| **Claude Developer Platform** (API) | Load via the code-execution / Skills API | For programmatic use |
-
-### Claude Code
-
-Download the skills straight from this repo into your personal skills directory
-(available in every project on this machine) — no clone required. Run the block
-for whichever skills you want:
-
-```bash
-mkdir -p ~/.claude/skills && cd ~/.claude/skills
-
-# okn-report-style
-curl -sL "https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/skills/okn-report-style.zip" -o okn-report-style.zip
-unzip -oq okn-report-style.zip && rm okn-report-style.zip
-
-# okn-bioanalysis
-curl -sL "https://raw.githubusercontent.com/sbl-sdsc/mcp-okn/main/skills/okn-bioanalysis.zip" -o okn-bioanalysis.zip
-unzip -oq okn-bioanalysis.zip && rm okn-bioanalysis.zip
-```
-
-For a project-scoped install (shared with a repo), swap `~/.claude/skills` for
-`.claude/skills` in your project root.
-
-Verify with `/skills` — you should see `okn-report-style` and `okn-bioanalysis`
-listed. Claude invokes a skill automatically when a task matches its description.
 
 ---
 
