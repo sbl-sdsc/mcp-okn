@@ -1,0 +1,12 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bl: <https://w3id.org/biolink/vocab/>
+# rdkg disease->phenotype (forward edges only) for osteoporosis (MONDO_0005298) and its MONDO descendants; HP label from ubergraph
+SELECT ?hp (SAMPLE(?hl) AS ?label) (COUNT(DISTINCT ?d) AS ?nDiseases) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/rdkg> {
+    { ?d bl:subclass_of obo:MONDO_0005298 } UNION { VALUES ?d { obo:MONDO_0005298 } }
+    FILTER(STRSTARTS(STR(?d), "http://purl.obolibrary.org/obo/MONDO_"))
+    ?d bl:has_phenotype ?hp . FILTER(STRSTARTS(STR(?hp), "http://purl.obolibrary.org/obo/HP_"))
+  }
+  OPTIONAL { GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?hp rdfs:label ?hl } }
+} GROUP BY ?hp HAVING (COUNT(DISTINCT ?d) >= 2)

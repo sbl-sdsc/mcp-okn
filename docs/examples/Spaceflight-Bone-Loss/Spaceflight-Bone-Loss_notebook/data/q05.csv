@@ -1,0 +1,6 @@
+gene,symbol,taxon,lfc,p,hgene,hsym
+http://www.ncbi.nlm.nih.gov/gene/216976,Rskr,http://purl.obolibrary.org/obo/NCBITaxon_10090,-1.38304,0.0298417,http://www.ncbi.nlm.nih.gov/gene/124923,RSKR
+http://www.ncbi.nlm.nih.gov/gene/111241,Hmga1b,http://purl.obolibrary.org/obo/NCBITaxon_10090,-5.10014,0.0372866,http://www.ncbi.nlm.nih.gov/gene/3159,HMGA1
+http://www.ncbi.nlm.nih.gov/gene/102635415,Halr1,http://purl.obolibrary.org/obo/NCBITaxon_10090,1.49444,0.0228203,,
+http://www.ncbi.nlm.nih.gov/gene/102635783,Gm11266,http://purl.obolibrary.org/obo/NCBITaxon_10090,1.39206,0.0175882,,
+http://www.ncbi.nlm.nih.gov/gene/74843,Mss51,http://purl.obolibrary.org/obo/NCBITaxon_10090,1.51853,1.31817e-06,http://www.ncbi.nlm.nih.gov/gene/118490,MSS51

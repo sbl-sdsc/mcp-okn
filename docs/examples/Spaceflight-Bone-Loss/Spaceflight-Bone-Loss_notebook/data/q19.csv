@@ -1,0 +1,19 @@
+drugLabel,sym,action
+Alfacalcidol,VDR,AGONIST
+Calcitriol,VDR,AGONIST
+Cholecalciferol,VDR,AGONIST
+Denosumab,TNFSF11,INHIBITOR
+Eldecalcitol,VDR,AGONIST
+Ergocalciferol,VDR,AGONIST
+Estradiol,ESR1,AGONIST
+Ethinylestradiol,ESR1,AGONIST
+Letrozole,CYP19A1,INHIBITOR
+Levonorgestrel,PGR,AGONIST
+Medroxyprogesterone acetate,PGR,AGONIST
+Minodronic acid,FDPS,INHIBITOR
+Norethisterone,PGR,AGONIST
+Norgestimate,PGR,AGONIST
+Prednisolone,NR3C1,AGONIST
+Progesterone,PGR,AGONIST
+Raloxifene,ESR1,MODULATOR
+Romosozumab,SOST,INHIBITOR

@@ -1,0 +1,184 @@
+sigset,pw,label,k,K
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-114608,Platelet degranulation ,15,103
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-1251985,Nuclear signaling by ERBB4,4,23
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-1257604,PIP3 activates AKT signaling,9,66
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-1268020,Mitochondrial protein import,4,33
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-1442490,Collagen degradation,13,52
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-1474228,Degradation of the extracellular matrix,14,66
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-1482801,Acyl chain remodelling of PS,4,12
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-1502540,Signaling by Activin,4,12
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-1566948,Elastic fibre formation,7,18
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-163125,Post-translational modification: synthesis of GPI-anchored proteins,6,40
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-1650814,Collagen biosynthesis and modifying enzymes,13,54
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-168638,NOD1/2 Signaling Pathway,5,32
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-176187,Activation of ATR in response to replication stress,5,23
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-1799339,SRP-dependent cotranslational protein targeting to membrane,14,97
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-186797,Signaling by PDGF,9,28
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-1912408,Pre-NOTCH Transcription and Translation,4,40
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-198933,Immunoregulatory interactions between a Lymphoid and a non-Lymphoid cell,8,96
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-1989781,PPARA activates gene expression,6,73
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2022090,Assembly of collagen fibrils and other multimeric structures,12,42
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2022854,Keratan sulfate biosynthesis,6,24
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2022857,Keratan sulfate degradation,4,13
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2022870,CS-GAG biosynthesis,4,18
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2022923,DS-GAG biosynthesis,4,11
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-202424,Downstream TCR signaling,5,72
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-202433,Generation of second messenger molecules,4,30
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-202733,Cell surface interactions at the vascular wall,6,84
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-204005,COPII-mediated vesicle transport,13,41
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-210991,Basigin interactions,8,19
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2122947,NOTCH1 Intracellular Domain Regulates Transcription,5,37
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2129379,Molecules associated with elastic fibres,13,33
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2132295,MHC class II antigen presentation,9,90
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2151201,Transcriptional activation of mitochondrial biogenesis,4,40
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-216083,Integrin cell surface interactions,15,75
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2173788,Downregulation of TGF-beta receptor signaling,5,24
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2173789,TGF-beta receptor signaling activates SMADs,8,26
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2219530,Constitutive Signaling by Aberrant PI3K in Cancer,8,53
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2243919,Crosslinking of collagen fibrils,5,16
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2467813,Separation of Sister Chromatids,4,121
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2500257,Resolution of Sister Chromatid Cohesion,4,87
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2559580,Oxidative Stress Induced Senescence,4,68
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2559582,Senescence-Associated Secretory Phenotype (SASP),7,45
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2644606,Constitutive Signaling by NOTCH1 PEST Domain Mutants,5,39
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2871796,FCERI mediated MAPK activation,4,37
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2871837,FCERI mediated NF-kB activation,4,66
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-2894862,Constitutive Signaling by NOTCH1 HD+PEST Domain Mutants,5,39
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-3000157,Laminin interactions,9,27
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-3000170,Syndecan interactions,6,26
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-3000171,Non-integrin membrane-ECM interactions,10,35
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-3000178,ECM proteoglycans,17,68
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-3214841,PKMTs methylate histone lysines,5,37
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-3299685,Detoxification of Reactive Oxygen Species,5,25
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-3371453,Regulation of HSF1-mediated heat shock response,6,64
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-350054,Notch-HLH transcription pathway,4,26
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-352230,Amino acid transport across the plasma membrane,6,16
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-3656225,Defective CHST6 causes MCDC1,4,7
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-3656243,Defective ST3GAL3 causes MCT12 and EIEE15,4,8
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-3656244,Defective B4GALT1 causes B4GALT1-CDG (CDG-2d),4,8
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-373080,Class B/2 (Secretin family receptors),6,26
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-375276,Peptide ligand-binding receptors,8,78
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-376176,Signaling by ROBO receptors,6,15
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-379716,Cytosolic tRNA aminoacylation,6,23
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-380994,ATF4 activates genes in response to endoplasmic reticulum  stress,4,19
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-381038,XBP1(S) activates chaperone genes,12,32
+SF_BM,https://identifiers.org/reactome/R-HSA-381426,Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs),5,108
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-381426,Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs),21,108
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-383280,Nuclear Receptor transcription pathway,4,44
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-4085001,Sialic acid metabolism,6,20
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-4086398,Ca2+ pathway,5,32
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-416476,G alpha (q) signalling events,9,111
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-418555,G alpha (s) signalling events,6,91
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-418594,G alpha (i) signalling events,6,164
+SF_BM,https://identifiers.org/reactome/R-HSA-419037,NCAM1 interactions,4,31
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-419037,NCAM1 interactions,6,31
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-425410,Metal ion SLC transporters,4,6
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-432722,Golgi Associated Vesicle Biogenesis,6,37
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-4420097,VEGFA-VEGFR2 Pathway,4,41
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-445095,Interaction between L1 and Ankyrins,4,27
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-445355,Smooth Muscle Contraction,9,28
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-445989,TAK1-dependent IKK and NF-kappa-B activation  ,5,25
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-446193,"Biosynthesis of the N-glycan precursor (dolichol lipid-linked oligosaccharide, LLO) and transfer to a nascent protein",4,12
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-446203,Asparagine N-linked glycosylation,4,10
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-4608870,Asymmetric localization of PCP proteins,4,45
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5083635,Defective B3GALTL causes PpS,5,26
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5173214,O-glycosylation of TSR domain-containing proteins,5,27
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5218920,VEGFR2 mediated vascular permeability,4,21
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-525793,Myogenesis,5,20
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5357956,TNFR1-induced NF-kappa-B signaling pathway,4,25
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5358346,Hedgehog ligand biogenesis,4,43
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5362768,Hh mutants are degraded by ERAD,4,40
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5578775,Ion homeostasis,4,37
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5607764,CLEC7A (Dectin-1) signaling,4,56
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5628897,TP53 Regulates Metabolic Genes,5,51
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5663220,RHO GTPases Activate Formins,5,95
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5673001,RAF/MAP kinase cascade,13,93
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5675221,Negative regulation of MAPK pathway,4,28
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5687128,MAPK6/MAPK4 signaling,4,61
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5689880,Ub-specific processing proteases,7,121
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-5694530,Cargo concentration in the ER,11,25
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6783783,Interleukin-10 signaling,9,31
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6784531,tRNA processing in the nucleus,4,45
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6785807,Interleukin-4 and Interleukin-13 signaling,17,92
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6791226,Major pathway of rRNA processing in the nucleolus and cytosol,4,133
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6796648,TP53 Regulates Transcription of DNA Repair Genes,4,40
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6798695,Neutrophil degranulation,37,360
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6802952,Signaling by BRAF and RAF1 fusions,6,56
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6804756,Regulation of TP53 Activity through Phosphorylation,5,70
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6807878,COPI-mediated anterograde transport,14,69
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6811434,COPI-dependent Golgi-to-ER retrograde traffic,7,62
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6811438,Intra-Golgi traffic,5,17
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6811440,Retrograde transport at the Trans-Golgi-Network,8,17
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-6811558,"PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling",10,71
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-68877,Mitotic Prometaphase,4,76
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-68949,Orc1 removal from chromatin,4,45
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-68962,Activation of the pre-replicative complex,5,17
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-72163,mRNA Splicing - Major Pathway,8,158
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-73762,RNA Polymerase I Transcription Initiation,5,27
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-75205,Dissolution of Fibrin Clot,5,11
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-844456,The NLRP3 inflammasome,4,14
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-877300,Interferon gamma signaling,4,48
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-8856825,Cargo recognition for clathrin-mediated endocytosis,10,77
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-8856828,Clathrin-mediated endocytosis,11,90
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-8862803,Deregulated CDK5 triggers multiple neurodegenerative pathways in Alzheimer's disease models,5,20
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-8873719,RAB geranylgeranylation,5,24
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-8874081,MET activates PTK2 signaling,9,28
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-8876198,RAB GEFs exchange GTP for GDP on RABs,6,36
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-8940973,RUNX2 regulates osteoblast differentiation,5,14
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-8943724,Regulation of PTEN gene transcription,6,44
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-8948216,Collagen chain trimerization,9,34
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-8950505,Gene and protein expression by JAK-STAT signaling after Interleukin-12 stimulation,6,35
+SF_BM,https://identifiers.org/reactome/R-HSA-8957275,Post-translational protein phosphorylation,4,93
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-8957275,Post-translational protein phosphorylation,18,93
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-8980692,RHOA GTPase cycle,10,67
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9009391,Extra-nuclear estrogen signaling,4,32
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-901032,ER Quality Control Compartment (ERQC),7,14
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013026,RHOB GTPase cycle,4,34
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013106,RHOC GTPase cycle,5,39
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013148,CDC42 GTPase cycle,9,66
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013149,RAC1 GTPase cycle,11,94
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013404,RAC2 GTPase cycle,7,49
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013405,RHOD GTPase cycle,4,33
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013406,RHOQ GTPase cycle,5,35
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013407,RHOH GTPase cycle,6,31
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013408,RHOG GTPase cycle,9,42
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013409,RHOJ GTPase cycle,4,31
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013420,RHOU GTPase cycle,4,30
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013423,RAC3 GTPase cycle,9,51
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013508,NOTCH3 Intracellular Domain Regulates Transcription,4,16
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9013695,NOTCH4 Intracellular Domain Regulates Transcription,5,14
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9018519,Estrogen-dependent gene expression,7,80
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9020702,Interleukin-1 signaling,5,61
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9035034,RHOF GTPase cycle,4,26
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-913709,O-linked glycosylation of mucins,5,35
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9615017,"FOXO-mediated transcription of oxidative stress, metabolic and neuronal genes",4,20
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9638630,Attachment of bacteria to epithelial cells,5,19
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9648025,EML4 and NUDC in mitotic spindle formation,4,80
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9660826,Purinergic signaling in leishmaniasis infection,5,22
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9683673,Maturation of protein 3a,4,9
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9694548,Maturation of spike protein,10,29
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9694719,Maturation of protein 3a,4,9
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9696270,RND2 GTPase cycle,5,24
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9705671,SARS-CoV-2 activates/modulates innate and adaptive immune responses,7,100
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9725370,Signaling by ALK fusions and activated point mutants,5,51
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-975634,Retinoid metabolism and transport,4,35
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9768727,Regulation of CDH1 posttranslational processing and trafficking to plasma membrane,7,26
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-977068,Termination of O-glycan biosynthesis,4,21
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-977606,Regulation of Complement cascade,4,54
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9793380,Formation of paraxial mesoderm,4,16
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9830364,Formation of the nephric duct,4,12
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9830674,Formation of the ureteric bud,5,13
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-983168,Antigen processing: Ubiquitination & Proteasome degradation,6,113
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-983170,"Antigen Presentation: Folding, assembly and peptide loading of class I MHC",7,25
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-983231,Factors involved in megakaryocyte development and platelet production,4,50
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9833110,RSV-host interactions,4,34
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9837999,Mitochondrial protein degradation,6,63
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9839389,TGFBR3 regulates TGF-beta signaling,4,7
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9841251,Mitochondrial unfolded protein response (UPRmt),4,15
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9841922,MLL4 and MLL3 complexes regulate expression of PPARG target genes in adipogenesis and hepatic steatosis,5,65
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9856530,High laminar flow shear stress activates signaling by PIEZO1 and PECAM1:CDH5:KDR in endothelial cells,5,42
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9856649,Transcriptional and post-translational regulation of MITF-M expression and activity,4,49
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9860927,"Turbulent (oscillatory, disturbed) flow shear stress activates signaling by PIEZO1 and integrins in endothelial cells",7,28
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9913351,Formation of the dystrophin-glycoprotein complex (DGC),5,26
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9925563,Developmental Lineage of Pancreatic Ductal Cells,9,35
+SF_hMSC_osteo,https://identifiers.org/reactome/R-HSA-9927432,Developmental Lineage of Mammary Gland Myoepithelial Cells,4,17

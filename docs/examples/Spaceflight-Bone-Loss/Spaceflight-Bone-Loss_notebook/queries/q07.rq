@@ -1,0 +1,16 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
+SELECT ?a ?sym ?tax ?lfc ?p ?h ?hsym WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
+    VALUES ?assay { <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-546-7d689d4277a131607670c3e624202a44> <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-546-5bce2adb9d944899c5961278dd8c92b6> <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-214-0092f94d01682ca951bc130ab667111a> }
+    ?st rdf:subject ?assay ;
+        rdf:predicate kg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ; rdf:object ?gene ;
+        kg:log2fc ?lfc ; kg:adj_p_value ?p .
+    FILTER(?p <= 0.05 && ABS(?lfc) >= 1)
+    OPTIONAL { ?gene kg:symbol ?sym } OPTIONAL { ?gene kg:taxonomy ?taxon }
+    OPTIONAL { ?gene kg:IS_ORTHOLOG_MGiG ?hgene . OPTIONAL { ?hgene kg:symbol ?hsym } }
+    BIND(STRAFTER(STR(?assay), "node/") AS ?a)
+    BIND(STRAFTER(STR(?taxon), "NCBITaxon_") AS ?tax)
+    BIND(STRAFTER(STR(?hgene), "gene/") AS ?h)
+  }
+}

@@ -1,0 +1,14 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
+PREFIX dg: <https://purl.org/okn/frink/kg/digcfdekg/schema/>
+# Enrichment n: per spaceflight contrast, DE genes that fall in the digcfdekg geneToTrait universe (C11 Entrez join, same IRI form)
+SELECT ?assay (COUNT(DISTINCT ?h) AS ?n_in_digcfdekg) WHERE {
+  { SELECT DISTINCT ?assay ?h WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
+      VALUES ?assay { <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-690-f82a89dc82f2903149d2d11cbd6a130d> <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-690-d89cbb20c4b7855f3f955e4adbb6515d> <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-546-7d689d4277a131607670c3e624202a44> }
+      ?st rdf:subject ?assay ; rdf:predicate kg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ; rdf:object ?gene ; kg:log2fc ?lfc ; kg:adj_p_value ?p .
+      FILTER(?p <= 0.05 && ABS(?lfc) >= 1)
+      { ?gene kg:IS_ORTHOLOG_MGiG ?h } UNION { ?gene kg:taxonomy obo:NCBITaxon_9606 . BIND(?gene AS ?h) }
+  } } }
+  GRAPH <https://purl.org/okn/frink/kg/digcfdekg> { FILTER EXISTS { ?h dg:geneToTrait ?t } }
+} GROUP BY ?assay

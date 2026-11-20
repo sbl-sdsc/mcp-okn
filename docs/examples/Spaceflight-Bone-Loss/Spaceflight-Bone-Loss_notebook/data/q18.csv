@@ -1,0 +1,85 @@
+drug,drugLabel,diseases
+http://identifiers.org/drugbank/DB00017,Salmon calcitonin,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB00136,Calcitriol,postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB00153,Ergocalciferol,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB00169,Cholecalciferol,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB00282,Pamidronic acid,drug-induced osteoporosis
+http://identifiers.org/drugbank/DB00367,Levonorgestrel,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB00396,Progesterone,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB00399,Zoledronic acid,premenopausal osteoporosis | drug-induced osteoporosis | osteoporosis | corticosteroid-induced osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB00481,Raloxifene,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB00603,Medroxyprogesterone acetate,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB00630,Alendronic acid,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB00710,Ibandronate,osteoporosis | postmenopausal osteoporosis | glucocorticoid-induced osteoporosis
+http://identifiers.org/drugbank/DB00717,Norethisterone,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB00783,Estradiol,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB00860,Prednisolone,glucocorticoid-induced osteoporosis
+http://identifiers.org/drugbank/DB00884,Risedronic acid,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB00957,Norgestimate,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB00977,Ethinylestradiol,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB01006,Letrozole,drug-induced osteoporosis
+http://identifiers.org/drugbank/DB01022,Phylloquinone,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB01086,Benzocaine,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB01174,Phenobarbital,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB01377,Magnesium oxide,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB01436,Alfacalcidol,glucocorticoid-induced osteoporosis
+http://identifiers.org/drugbank/DB05295,Eldecalcitol,glucocorticoid-induced osteoporosis | osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB06202,Lasofoxifene,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB06255,Incadronic acid,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB06285,Teriparatide,drug-induced osteoporosis | premenopausal osteoporosis | osteoporosis | glucocorticoid-induced osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB06401,Bazedoxifene,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB06548,Minodronic acid,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB06643,Denosumab,premenopausal osteoporosis | drug-induced osteoporosis | glucocorticoid-induced osteoporosis | postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB09070,Tibolone,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB09104,Magnesium hydroxide,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB09267,Strontium ranelate,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB09481,Magnesium carbonate,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB11110,Magnesium citrate,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB11126,Calcium gluconate,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB11620,Neridronic Acid,postmenopausal osteoporosis | osteoporosis
+http://identifiers.org/drugbank/DB11866,Romosozumab,postmenopausal osteoporosis | osteoporosis | glucocorticoid-induced osteoporosis
+http://identifiers.org/drugbank/DB13231,Calcium lactate,osteoporosis | postmenopausal osteoporosis
+http://identifiers.org/drugbank/DB13618,Ipriflavone,osteoporosis | postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_alendronate_70_mg_vitamin_d3_5600_iu_combin,Alendronate 70-mg/vitamin D3 5600 Iu Combination Tablet (fosamax Plus),postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_alendronate_fosamax_,Alendronate (fosamax),idiopathic juvenile osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_alendronate_ibandronate_risedronate,"Alendronate, Ibandronate; Risedronate",postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_alendronate_sodium,Alendronate Sodium,glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_alendronate,Alendronate,postmenopausal osteoporosis | premenopausal osteoporosis | idiopathic juvenile osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_alfacalcidol_tablets,Alfacalcidol Tablets,glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_bisphosphonates,Bisphosphonates,glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_calcium_carbonate_tablets,Calcium Carbonate Tablets,glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_cholecalciferol_vitamin_d3_,Cholecalciferol (vitamin D3),postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_comparator_calcium_carbonate_duration_of_tr,Comparator : Calcium Carbonate /duration Of Treatment : 2 Years,postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_denosumab_60_mg_ml_prefilled_syringe_prolia,Denosumab 60 Mg/ml Prefilled Syringe [prolia],premenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_denosumab_60_mg_ml,Denosumab 60 Mg/ml,postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_denosumab_ref,Denosumab-ref,postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_dmab_discontinuation_and_switching,Dmab Discontinuation And Switching,glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_eldecalcitol_capsules,Eldecalcitol Capsules,glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_estradiol_0_045_mg_levonorgestrel_0_015mg,Estradiol 0.045 Mg/levonorgestrel 0.015mg,premenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_glucocorticoid_effect,Glucocorticoid Effect,glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_glucocorticoid_treatment,Glucocorticoid Treatment,glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_high_tocotrienols_group,High Tocotrienols Group,postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_jmt103,Jmt103,glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_low_tocotrienols_group,Low Tocotrienols Group,postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_mk_0773,Mk 0773,postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_mk0217_alendronate_sodium_duration_of_treat,"Mk0217, Alendronate Sodium / Duration Of Treatment : 2 Years",postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_mk0217_duration_of_treatment_12_months,Mk0217/duration Of Treatment : 12 Months,glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_nitrates_nabt_main_trial_,Nitrates (nabt Main Trial),postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_pamidronate,Pamidronate,glucocorticoid-induced osteoporosis | idiopathic juvenile osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_parathyroid_hormone_hpth_1_34_,Parathyroid Hormone (hpth 1-34),glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_parathyroid_hormone_related_protein,Parathyroid Hormone-related Protein,postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_parathyroid_hormone,Parathyroid Hormone,glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_prolia_,Prolia®,postmenopausal osteoporosis | glucocorticoid-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_ql1206,Ql1206,postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_risedronate_cholecalciferol_combination_mon,Risedronate/cholecalciferol Combination(montly),postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_risedronate_cholecalciferol_combination_wee,Risedronate/cholecalciferol Combination(weekly),postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_risedronate_sodium,Risedronate Sodium,premenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_risedronate,Risedronate,glucocorticoid-induced osteoporosis | drug-induced osteoporosis | postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_romosozumab_prefilled_syringe_evenity_,Romosozumab Prefilled Syringe [evenity],premenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_salmon_calcitonin_100_iu_day_subcutaneous,Salmon Calcitonin 100 Iu/day Subcutaneous,postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_teriparatide_20_micrograms_day_subcutaneous,Teriparatide 20 Micrograms/day Subcutaneous,postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_teriparatide_nasal_spray,Teriparatide Nasal Spray,postmenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_teriparatide_pth_1_34_,Teriparatide (pth 1-34),premenopausal osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_xianlinggubao,Xianlinggubao,drug-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_zhongyaofufang,Zhongyaofufang,drug-induced osteoporosis
+https://rdaccelerate.org/resource/CTDRUG_zoledronic_acid_injection,Zoledronic Acid Injection,postmenopausal osteoporosis

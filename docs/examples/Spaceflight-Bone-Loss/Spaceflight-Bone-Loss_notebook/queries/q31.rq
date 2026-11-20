@@ -1,0 +1,20 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+# Module membership for the mechanistic map: prokn GO-BP annotations (non-negated) of the 40 Tier-A genes, restricted to the bone-relevant enriched themes
+SELECT ?sym ?go WHERE {
+  VALUES ?sym { "IL6" "ENG" "LMNA" "FGFR2" "PDGFRB" "CXCL1" "MMP2" "FOS" "DKK1" "RUNX2" "COL1A1" "FLT4" "SMAD3" "IGF1" "SFRP4" "WNT5A" "CAV1" "TNFRSF11B" "CCL2" "ANKH" "FBN2" "TCF7L2" "NPR2" "COL11A1" "ALPL" "LRP5" "ACAN" "BMP4" "PTH1R" "COL6A1" "FBN1" "DAAM2" "FAM20A" "SNAI2" "TNFRSF1A" "PDK4" "CYP24A1" "TSC2" "TBX2" "PDE7B" }
+  VALUES ?go { obo:GO_0001649 obo:GO_0045669 obo:GO_0030509 obo:GO_0001501 obo:GO_0060348 obo:GO_0060391 obo:GO_0001503 obo:GO_0030501
+               obo:GO_0016055 obo:GO_0090090 obo:GO_0090263 obo:GO_0060070
+               obo:GO_0030199 obo:GO_0007160
+               obo:GO_0034976 obo:GO_0030968 obo:GO_0036503 obo:GO_0006888
+               obo:GO_0032496 obo:GO_0071356 obo:GO_0006954 obo:GO_0032755
+               obo:GO_0071560 obo:GO_0007179
+               obo:GO_0001666 obo:GO_0001525 obo:GO_0071456
+               obo:GO_0009612 obo:GO_0071260 }
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    ?g rdfs:label ?sym ; <http://semanticscience.org/resource/SIO_010078> ?prot .
+    ?s1 rdf:subject ?prot ; rdf:predicate <https://w3id.org/biolink/vocab/actively_involved_in> ; rdf:object ?go .
+    MINUS { ?s1 rdf:type <https://www.w3.org/2002/07/owl#NegativePropertyAssertion> }
+  }
+}

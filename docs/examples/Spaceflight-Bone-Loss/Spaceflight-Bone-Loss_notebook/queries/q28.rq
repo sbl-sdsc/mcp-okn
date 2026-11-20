@@ -1,0 +1,12 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+# biomarkerkg: biomarkers for osteoporosis (MONDO_0005298 + ubergraph descendants), with the assessed entity and direction
+SELECT DISTINCT ?bm ?dir ?entity ?elabel ?mondo WHERE {
+  { SELECT DISTINCT ?mondo WHERE { GRAPH <https://purl.org/okn/frink/kg/ubergraph> { ?mondo rdfs:subClassOf* obo:MONDO_0005298 } } }
+  GRAPH <https://purl.org/okn/frink/kg/biomarkerkg> {
+    { ?bm obo:OBCI_1000008 ?mondo } UNION { ?bm obo:OBCI_1000002 ?mondo }
+    VALUES (?bp ?dir) { (obo:OBCI_1000009 "above normal") (obo:OBCI_1000015 "below normal") (obo:OBCI_1000016 "presence") (obo:OBCI_1000017 "absence") }
+    ?bm ?bp ?entity .
+    OPTIONAL { ?entity rdfs:label ?elabel }
+  }
+}

@@ -1,0 +1,56 @@
+trait,label,nGenes
+http://purl.obolibrary.org/obo/OBA_2045559,bone density,717
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/2cf19057fbed004c20dd,bone fracture,95
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/4c9a9bb4a649f5e9348c,Bone fracture,588
+http://www.ebi.ac.uk/efo/EFO_0007621,bone mineral content measurement,98
+http://www.ebi.ac.uk/efo/EFO_0004514,bone quantitative ultrasound measurement,38
+http://www.orpha.net/ORDO/Orphanet_223727,Bone sarcoma,26
+http://www.orpha.net/ORDO/Orphanet_371195,Congenital disorder of glycosylation-related bone disorder,250
+http://www.orpha.net/ORDO/Orphanet_235832,Congenital vascular bone syndrome,0
+http://www.ebi.ac.uk/efo/EFO_0009936,Drugs affecting bone structure and mineralization use measurement,32
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/b9d2e23e2c4ab2bc7ef9,EHR-defined osteoporosis,230
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/f06d505b8940f1f7f3ef,EHR-defined osteoporosis (additive model),250
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/822d2a7dd4120de88ed8,EHR-defined osteoporosis (dominant model),329
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/d0d2503bc6a18e596cd9,EHR-defined osteoporosis (heterodominant model),333
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/d9987b7219df14a3dbf7,EHR-defined osteoporosis (recessive model),304
+http://www.ebi.ac.uk/efo/EFO_0007785,Femoral neck bone mineral density,782
+http://www.orpha.net/ORDO/Orphanet_93425,Filamin-related bone disorder,0
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/e491549d91b916e24445,Forearm bone mineral density,343
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/f536cb6072cfe6124034,Forearm fracture,844
+http://www.orpha.net/ORDO/Orphanet_183527,Genetic bone tumor,9
+http://www.ebi.ac.uk/efo/EFO_0009270,heel bone mineral density,888
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/ce9fab5cfc433881fa71,Heel quantitative ultrasound estimated bone mineral density (eBMD),1036
+http://www.orpha.net/ORDO/Orphanet_314029,High bone mass osteogenesis imperfecta,0
+http://www.ebi.ac.uk/efo/EFO_0007702,hip bone mineral density,80
+http://purl.obolibrary.org/obo/OBA_2050103,hip bone size,45
+http://purl.obolibrary.org/obo/MONDO_0005327,Hip fracture,157
+http://www.orpha.net/ORDO/Orphanet_85193,Idiopathic juvenile osteoporosis,0
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/8a1c7ae8b81e9b648213,Lumbar spine bone mineral density,627
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/e833c63364fe37d83622,osteoporosis,63
+http://www.orpha.net/ORDO/Orphanet_138055,Pierre Robin syndrome associated with bone disease,36
+http://www.orpha.net/ORDO/Orphanet_364526,Primary bone dysplasia,1111
+http://www.orpha.net/ORDO/Orphanet_93446,Primary bone dysplasia with decreased bone density,53
+http://www.orpha.net/ORDO/Orphanet_93447,Primary bone dysplasia with defective bone mineralization,246
+http://www.orpha.net/ORDO/Orphanet_93450,Primary bone dysplasia with disorganized development of skeletal components,188
+http://www.orpha.net/ORDO/Orphanet_93444,Primary bone dysplasia with increased bone density,418
+http://www.orpha.net/ORDO/Orphanet_364536,Primary bone dysplasia with micromelia,0
+http://www.orpha.net/ORDO/Orphanet_93441,Primary bone dysplasia with multiple joint dislocations,47
+http://www.orpha.net/ORDO/Orphanet_364531,Primary bone dysplasia with progressive ossification of skin; skeletal muscle; fascia; tendons and ligaments,0
+http://www.ebi.ac.uk/efo/EFO_0007933,radius bone mineral density,27
+http://www.orpha.net/ORDO/Orphanet_139012,Rare bone development disorder,1697
+http://www.orpha.net/ORDO/Orphanet_93419,Rare bone disease,1776
+http://www.orpha.net/ORDO/Orphanet_364803,Rare bone disease related to a common gene or pathway defect,604
+http://www.orpha.net/ORDO/Orphanet_68411,Rare bone tumor,89
+http://www.orpha.net/ORDO/Orphanet_404584,Rare genetic bone development disorder,1705
+http://www.orpha.net/ORDO/Orphanet_183524,Rare genetic bone disease,1750
+http://www.orpha.net/ORDO/Orphanet_93440,Slender bone dysplasia,545
+http://www.ebi.ac.uk/efo/EFO_0007701,spine bone mineral density,72
+http://www.ebi.ac.uk/efo/EFO_0004508,spine bone size,8
+http://www.orpha.net/ORDO/Orphanet_93315,Spondylometaphyseal dysplasia; 'corner fracture' type,0
+http://www.orpha.net/ORDO/Orphanet_93423,Sulfation-related bone disorder,0
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/eac7647078ccfdee1d15,Total body (less head) bone mineral density,221
+https://purl.org/okn/frink/kg/digcfdekg/node/trait/9e16eca420eee5f32d37,Total body bone mineral density,952
+http://www.ebi.ac.uk/efo/EFO_0020095,trochanter bone mineral density,8
+http://www.orpha.net/ORDO/Orphanet_93422,Type 11 collagen-related bone disorder,0
+http://www.orpha.net/ORDO/Orphanet_93421,Type 2 collagen-related bone disorder,0
+http://www.ebi.ac.uk/efo/EFO_0007620,volumetric bone mineral density,34

@@ -1,0 +1,14 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX bl: <https://w3id.org/biolink/vocab/>
+# rdkg curated (rare/Mendelian) low-bone-mass gene set: genes of rare MONDO diseases annotated with HP Osteoporosis / Osteopenia / Reduced bone mineral density
+SELECT ?entrez (COUNT(DISTINCT ?d) AS ?nDiseases) WHERE {
+  { SELECT DISTINCT ?d WHERE { GRAPH <https://purl.org/okn/frink/kg/rdkg> {
+      VALUES ?hp { obo:HP_0000939 obo:HP_0000938 obo:HP_0004349 }
+      ?d bl:has_phenotype ?hp .
+      FILTER(STRSTARTS(STR(?d), "http://purl.obolibrary.org/obo/MONDO_")) } } }
+  GRAPH <https://purl.org/okn/frink/kg/rdkg> {
+    { ?g bl:related_to ?d } UNION { ?d bl:genetic_association ?g }
+    FILTER(STRSTARTS(STR(?g), "http://identifiers.org/ncbigene/"))
+  }
+  BIND(STRAFTER(STR(?g), "ncbigene/") AS ?entrez)
+} GROUP BY ?entrez

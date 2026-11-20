@@ -1,0 +1,11 @@
+PREFIX biolink: <https://w3id.org/biolink/vocab/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-okn/schema/>
+# spoke-okn bone diseases and their associated genes (ASSOCIATES_DaG), Entrez
+SELECT ?disease ?label (COUNT(DISTINCT ?g) AS ?nGenes) (GROUP_CONCAT(DISTINCT STRAFTER(STR(?g), "gene/"); separator=";") AS ?entrez) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-okn> {
+    ?disease a biolink:Disease ; rdfs:label ?label .
+    FILTER(REGEX(STR(?label), "osteo|bone|fracture|skelet|paget", "i"))
+    OPTIONAL { ?disease kg:ASSOCIATES_DaG ?g }
+  }
+} GROUP BY ?disease ?label

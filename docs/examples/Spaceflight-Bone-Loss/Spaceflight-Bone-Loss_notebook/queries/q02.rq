@@ -1,0 +1,7 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?cell ?label (COUNT(DISTINCT ?assay) AS ?nAssays) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
+    ?assay <https://purl.org/okn/frink/kg/spoke-genelab/schema/INVESTIGATED_ASiCT> ?cell .
+    OPTIONAL { ?cell rdfs:label ?label }
+  }
+} GROUP BY ?cell ?label

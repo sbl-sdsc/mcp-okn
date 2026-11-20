@@ -1,0 +1,16 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
+# Compact DE signature per contrast: human Entrez (ortholog for mouse; self for human) : log2FC ; adj_p<=0.05 & |log2FC|>=1
+SELECT ?a ?dir (COUNT(DISTINCT ?h) AS ?n) (GROUP_CONCAT(DISTINCT CONCAT(?h, ":", STR(ROUND(?lfc*100)/100)); separator=";") AS ?genes) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
+    VALUES ?assay { <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-690-f82a89dc82f2903149d2d11cbd6a130d> <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-690-d89cbb20c4b7855f3f955e4adbb6515d> <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-214-0092f94d01682ca951bc130ab667111a> <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-467-4d3703d7504fd48caceedadb36799194> }
+    ?st rdf:subject ?assay ;
+        rdf:predicate kg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ; rdf:object ?gene ;
+        kg:log2fc ?lfc ; kg:adj_p_value ?p .
+    FILTER(?p <= 0.05 && ABS(?lfc) >= 1)
+    ?gene kg:IS_ORTHOLOG_MGiG ?hgene .
+    BIND(STRAFTER(STR(?hgene), "gene/") AS ?h)
+    BIND(STRAFTER(STR(?assay), "node/") AS ?a)
+    BIND(IF(?lfc > 0, "up", "down") AS ?dir)
+  }
+} GROUP BY ?a ?dir

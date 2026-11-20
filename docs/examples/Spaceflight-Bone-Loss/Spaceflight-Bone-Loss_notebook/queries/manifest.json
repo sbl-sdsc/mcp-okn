@@ -1,0 +1,553 @@
+[
+  {
+    "name": "q01",
+    "description": "spoke-genelab: anatomy (UBERON) investigated per assay",
+    "timestamp": "2026-11-20T05:12:45+00:00",
+    "graphs": [
+      "spoke-genelab"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2"
+    },
+    "row_count": 42,
+    "rows_sha256": "d10edbd2a8513fbb9c56053c7fb253a085bd370fa276aee6a640a858bc6aaedd",
+    "cached_rows": 42,
+    "truncated": false,
+    "cache": "data/q01.csv",
+    "sent": null
+  },
+  {
+    "name": "q02",
+    "description": "spoke-genelab: cell types (CL) investigated per assay",
+    "timestamp": "2026-11-20T05:12:47+00:00",
+    "graphs": [
+      "spoke-genelab"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2"
+    },
+    "row_count": 7,
+    "rows_sha256": "77a8ab2edd6593bad4c8664cec091a9541a50e417de0ebbf6b1a7f2970d8d5a7",
+    "cached_rows": 7,
+    "truncated": false,
+    "cache": "data/q02.csv",
+    "sent": null
+  },
+  {
+    "name": "q03",
+    "description": "spoke-genelab: bone / marrow / cartilage / MSC assays and their factor arms",
+    "timestamp": "2026-11-20T05:13:02+00:00",
+    "graphs": [
+      "spoke-genelab"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2"
+    },
+    "row_count": 112,
+    "rows_sha256": "d759cf516acfcc761f201345b45de4cd78ac40fd049350e8fa172711c7814de9",
+    "cached_rows": 112,
+    "truncated": false,
+    "cache": "data/q03.csv",
+    "sent": null
+  },
+  {
+    "name": "q04",
+    "description": "spoke-genelab: OSD-546 (flown hMSC) and OSD-467 (HLU cortical bone) assay details",
+    "timestamp": "2026-11-20T05:13:18+00:00",
+    "graphs": [
+      "spoke-genelab"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2"
+    },
+    "row_count": 14,
+    "rows_sha256": "f029fc42bff189a3c7bd85a7ad5fbc240d3d5508ee0cae315f4d17ff331831ed",
+    "cached_rows": 14,
+    "truncated": false,
+    "cache": "data/q04.csv",
+    "sent": null
+  },
+  {
+    "name": "q05",
+    "description": "spoke-genelab: HLU cortical bone DE genes (OSD-467) with human orthologs",
+    "timestamp": "2026-11-20T05:13:29+00:00",
+    "graphs": [
+      "spoke-genelab"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2"
+    },
+    "row_count": 5,
+    "rows_sha256": "8550853397424e70c2bd5a7148ac9a9ea7a8649c17ee83a6d1e62afb4972d6e3",
+    "cached_rows": 5,
+    "truncated": false,
+    "cache": "data/q05.csv",
+    "sent": "queries/sent/q05.rq"
+  },
+  {
+    "name": "q06",
+    "description": "spoke-genelab: flight bone-marrow DE genes, WT and Nrf2-KO (OSD-690), with orthologs and symbols",
+    "timestamp": "2026-11-20T05:13:42+00:00",
+    "graphs": [
+      "spoke-genelab"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2"
+    },
+    "row_count": 578,
+    "rows_sha256": null,
+    "cached_rows": 578,
+    "truncated": false,
+    "cache": "data/q06.csv",
+    "sent": null
+  },
+  {
+    "name": "q07",
+    "description": "spoke-genelab: gene-level DE for OSD-546 (hMSC) and OSD-214 (HLU marrow), source of human symbols",
+    "timestamp": "2026-11-20T05:14:20+00:00",
+    "graphs": [
+      "spoke-genelab"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2"
+    },
+    "row_count": 2534,
+    "rows_sha256": null,
+    "cached_rows": 2534,
+    "truncated": false,
+    "cache": "data/q07.csv",
+    "sent": null
+  },
+  {
+    "name": "q08",
+    "description": "spoke-genelab: compact DE signatures (Entrez:log2FC) for OSD-690 WT/KO, OSD-214, OSD-467",
+    "timestamp": "2026-11-20T05:14:42+00:00",
+    "graphs": [
+      "spoke-genelab"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2"
+    },
+    "row_count": 7,
+    "rows_sha256": null,
+    "cached_rows": 7,
+    "truncated": false,
+    "cache": "data/q08.csv",
+    "sent": null
+  },
+  {
+    "name": "q09",
+    "description": "spoke-genelab: compact DE signature for OSD-546 osteogenic hMSC, flight vs ground",
+    "timestamp": "2026-11-20T05:14:54+00:00",
+    "graphs": [
+      "spoke-genelab"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2"
+    },
+    "row_count": 2,
+    "rows_sha256": null,
+    "cached_rows": 2,
+    "truncated": false,
+    "cache": "data/q09.csv",
+    "sent": "queries/sent/q09.rq"
+  },
+  {
+    "name": "q10",
+    "description": "ubergraph: term look-up 'osteoporosis' (MONDO_0005298, HP_0000939)",
+    "timestamp": "2026-11-20T05:15:07+00:00",
+    "graphs": [
+      "ubergraph"
+    ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2"
+    },
+    "row_count": 8,
+    "rows_sha256": "e52ec18907505a7f67c94ffb526db4a3426c038797084cea5b0ae2bc5587e5a2",
+    "cached_rows": 8,
+    "truncated": false,
+    "cache": "data/q10.csv",
+    "sent": null
+  },
+  {
+    "name": "q11",
+    "description": "ubergraph: term look-up 'bone mineral density'",
+    "timestamp": "2026-11-20T05:15:09+00:00",
+    "graphs": [
+      "ubergraph"
+    ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2"
+    },
+    "row_count": 5,
+    "rows_sha256": "3afa8e0a1a18fc24e9c5fab22ba5aaf39a0391c527bc4807621315e4f4afca3b",
+    "cached_rows": 5,
+    "truncated": false,
+    "cache": "data/q11.csv",
+    "sent": null
+  },
+  {
+    "name": "q12",
+    "description": "rdkg: curated low-BMD gene set (genes of rare diseases with HP osteoporosis / osteopenia / reduced BMD)",
+    "timestamp": "2026-11-20T05:16:34+00:00",
+    "graphs": [
+      "rdkg"
+    ],
+    "graph_versions": {
+      "rdkg": "v0.0.1"
+    },
+    "row_count": 940,
+    "rows_sha256": null,
+    "cached_rows": 940,
+    "truncated": false,
+    "cache": "data/q12.csv",
+    "sent": null
+  },
+  {
+    "name": "q13",
+    "description": "spoke-okn: bone-related diseases and their genes (only osteoarthritis present)",
+    "timestamp": "2026-11-20T05:16:42+00:00",
+    "graphs": [
+      "spoke-okn"
+    ],
+    "graph_versions": {
+      "spoke-okn": "v0.0.6"
+    },
+    "row_count": 1,
+    "rows_sha256": null,
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q13.csv",
+    "sent": null
+  },
+  {
+    "name": "q14",
+    "description": "digcfdekg: bone / BMD / osteoporosis traits and gene-set sizes",
+    "timestamp": "2026-11-20T05:16:54+00:00",
+    "graphs": [
+      "digcfdekg"
+    ],
+    "graph_versions": {
+      "digcfdekg": "v0.0.1"
+    },
+    "row_count": 55,
+    "rows_sha256": null,
+    "cached_rows": 55,
+    "truncated": false,
+    "cache": "data/q14.csv",
+    "sent": null
+  },
+  {
+    "name": "q15",
+    "description": "digcfdekg: BMD + osteoporosis gene set (union of 10 traits, nTraits per gene)",
+    "timestamp": "2026-11-20T05:17:02+00:00",
+    "graphs": [
+      "digcfdekg"
+    ],
+    "graph_versions": {
+      "digcfdekg": "v0.0.1"
+    },
+    "row_count": 2481,
+    "rows_sha256": null,
+    "cached_rows": 2481,
+    "truncated": false,
+    "cache": "data/q15.csv",
+    "sent": null
+  },
+  {
+    "name": "q16",
+    "description": "digcfdekg: enrichment background N",
+    "timestamp": "2026-11-20T05:17:14+00:00",
+    "graphs": [
+      "digcfdekg"
+    ],
+    "graph_versions": {
+      "digcfdekg": "v0.0.1"
+    },
+    "row_count": 1,
+    "rows_sha256": "b5987b8f588766fc44259528fb010ae59e516e62ab9c65ee5ed0c79073cc0b4c",
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q16.csv",
+    "sent": null
+  },
+  {
+    "name": "q17",
+    "description": "rdkg: enrichment background N",
+    "timestamp": "2026-11-20T05:17:15+00:00",
+    "graphs": [
+      "rdkg"
+    ],
+    "graph_versions": {
+      "rdkg": "v0.0.1"
+    },
+    "row_count": 1,
+    "rows_sha256": "3291a3b34db5e0debe8ed04a951f46d215f9b70d0426b39f9f9ac613f31f0446",
+    "cached_rows": 1,
+    "truncated": false,
+    "cache": "data/q17.csv",
+    "sent": null
+  },
+  {
+    "name": "q18",
+    "description": "rdkg: drugs that treat osteoporosis and its MONDO subtypes",
+    "timestamp": "2026-11-20T05:17:25+00:00",
+    "graphs": [
+      "rdkg"
+    ],
+    "graph_versions": {
+      "rdkg": "v0.0.1"
+    },
+    "row_count": 84,
+    "rows_sha256": null,
+    "cached_rows": 84,
+    "truncated": false,
+    "cache": "data/q18.csv",
+    "sent": null
+  },
+  {
+    "name": "q19",
+    "description": "rdkg -> babel -> prokn (DB2 skeleton): protein targets of rdkg osteoporosis drugs",
+    "timestamp": "2026-11-20T05:17:41+00:00",
+    "graphs": [
+      "rdkg",
+      "babel",
+      "prokn"
+    ],
+    "graph_versions": {
+      "rdkg": "v0.0.1",
+      "babel": "v0.0.1",
+      "prokn": "v0.0.6"
+    },
+    "row_count": 18,
+    "rows_sha256": null,
+    "cached_rows": 18,
+    "truncated": false,
+    "cache": "data/q19.csv",
+    "sent": null
+  },
+  {
+    "name": "q20",
+    "description": "spoke-genelab x rdkg (C6): flight DE genes inside the rdkg universe (n)",
+    "timestamp": "2026-11-20T05:18:50+00:00",
+    "graphs": [
+      "spoke-genelab",
+      "rdkg"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2",
+      "rdkg": "v0.0.1"
+    },
+    "row_count": 3,
+    "rows_sha256": "75c080266c50c8a38687c91e4a3431f0078a8ed7beccfa3003d7c5bc124bf4ea",
+    "cached_rows": 3,
+    "truncated": false,
+    "cache": "data/q20.csv",
+    "sent": null
+  },
+  {
+    "name": "q21",
+    "description": "SUPERSEDED by q22 (FILTER EXISTS scoped outside ?h; kept for transparency, not used)",
+    "timestamp": "2026-11-20T05:18:54+00:00",
+    "graphs": [
+      "spoke-genelab",
+      "digcfdekg"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2",
+      "digcfdekg": "v0.0.1"
+    },
+    "row_count": 3,
+    "rows_sha256": "c1c316b968eded5a53ebb41f0f05b6b389df10df605bcafb6de5d631d1e6378b",
+    "cached_rows": 3,
+    "truncated": false,
+    "cache": "data/q21.csv",
+    "sent": null
+  },
+  {
+    "name": "q22",
+    "description": "spoke-genelab x digcfdekg (C11): flight DE genes inside the digcfdekg universe (n)",
+    "timestamp": "2026-11-20T05:19:03+00:00",
+    "graphs": [
+      "spoke-genelab",
+      "digcfdekg"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2",
+      "digcfdekg": "v0.0.1"
+    },
+    "row_count": 3,
+    "rows_sha256": "78aead968547fabfe882318ad4a2630e06f6eca2bcc931ef52325641662d2a87",
+    "cached_rows": 3,
+    "truncated": false,
+    "cache": "data/q22.csv",
+    "sent": null
+  },
+  {
+    "name": "q23",
+    "description": "spoke-genelab x prokn: Reactome k (signature) and K (all prokn) per pathway",
+    "timestamp": "2026-11-20T05:20:01+00:00",
+    "graphs": [
+      "spoke-genelab",
+      "prokn"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2",
+      "prokn": "v0.0.6"
+    },
+    "row_count": 183,
+    "rows_sha256": null,
+    "cached_rows": 183,
+    "truncated": false,
+    "cache": "data/q23.csv",
+    "sent": null
+  },
+  {
+    "name": "q24",
+    "description": "prokn: Reactome backgrounds n (signature) and N (all genes)",
+    "timestamp": "2026-11-20T05:20:13+00:00",
+    "graphs": [
+      "spoke-genelab",
+      "prokn"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2",
+      "prokn": "v0.0.6"
+    },
+    "row_count": 3,
+    "rows_sha256": "c50529893758cc886fd5a30f8a4861b6e02509a195c5950a53f881c4434183b8",
+    "cached_rows": 3,
+    "truncated": false,
+    "cache": "data/q24.csv",
+    "sent": null
+  },
+  {
+    "name": "q25",
+    "description": "spoke-genelab x prokn: GO-BP k and K per term (GO-NOT removed)",
+    "timestamp": "2026-11-20T05:20:31+00:00",
+    "graphs": [
+      "spoke-genelab",
+      "prokn",
+      "ubergraph"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2",
+      "prokn": "v0.0.6",
+      "ubergraph": "v0.0.2"
+    },
+    "row_count": 394,
+    "rows_sha256": null,
+    "cached_rows": 394,
+    "truncated": false,
+    "cache": "data/q25.csv",
+    "sent": null
+  },
+  {
+    "name": "q26",
+    "description": "prokn: GO-BP backgrounds n and N",
+    "timestamp": "2026-11-20T05:20:46+00:00",
+    "graphs": [
+      "spoke-genelab",
+      "prokn"
+    ],
+    "graph_versions": {
+      "spoke-genelab": "v0.0.2",
+      "prokn": "v0.0.6"
+    },
+    "row_count": 3,
+    "rows_sha256": "3239031b7d95b8b2dc58aeda0c56903392fb71ce251c0f2039cc89e1b4faf30a",
+    "cached_rows": 3,
+    "truncated": false,
+    "cache": "data/q26.csv",
+    "sent": null
+  },
+  {
+    "name": "q27",
+    "description": "rdkg: phenotypes (HP) of osteoporosis and subtypes",
+    "timestamp": "2026-11-20T05:21:16+00:00",
+    "graphs": [
+      "rdkg",
+      "ubergraph"
+    ],
+    "graph_versions": {
+      "rdkg": "v0.0.1",
+      "ubergraph": "v0.0.2"
+    },
+    "row_count": 8,
+    "rows_sha256": null,
+    "cached_rows": 8,
+    "truncated": false,
+    "cache": "data/q27.csv",
+    "sent": null
+  },
+  {
+    "name": "q28",
+    "description": "biomarkerkg: osteoporosis biomarkers (MONDO closure via ubergraph)",
+    "timestamp": "2026-11-20T05:21:26+00:00",
+    "graphs": [
+      "ubergraph",
+      "biomarkerkg"
+    ],
+    "graph_versions": {
+      "ubergraph": "v0.0.2",
+      "biomarkerkg": "v0.0.4"
+    },
+    "row_count": 12,
+    "rows_sha256": null,
+    "cached_rows": 12,
+    "truncated": false,
+    "cache": "data/q28.csv",
+    "sent": null
+  },
+  {
+    "name": "q29",
+    "description": "prokn: compounds acting on the 446 bone-linked flight DE genes (max phase, action)",
+    "timestamp": "2026-11-20T05:22:33+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
+    "row_count": 37,
+    "rows_sha256": null,
+    "cached_rows": 37,
+    "truncated": false,
+    "cache": "data/q29.csv",
+    "sent": null
+  },
+  {
+    "name": "q30",
+    "description": "prokn: named phase>=3 agents on the druggable targets",
+    "timestamp": "2026-11-20T05:22:46+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
+    "row_count": 66,
+    "rows_sha256": null,
+    "cached_rows": 66,
+    "truncated": false,
+    "cache": "data/q30.csv",
+    "sent": null
+  },
+  {
+    "name": "q31",
+    "description": "prokn: GO-BP module membership of the 40 Tier-A genes",
+    "timestamp": "2026-11-20T05:25:15+00:00",
+    "graphs": [
+      "prokn"
+    ],
+    "graph_versions": {
+      "prokn": "v0.0.6"
+    },
+    "row_count": 179,
+    "rows_sha256": null,
+    "cached_rows": 179,
+    "truncated": false,
+    "cache": "data/q31.csv",
+    "sent": null
+  }
+]

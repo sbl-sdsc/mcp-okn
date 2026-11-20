@@ -1,0 +1,19 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# DB2 skeleton (rdkg DrugBank -> babel -> prokn ChEMBL compound) extended: protein targets + action of rdkg osteoporosis drugs
+SELECT DISTINCT ?drugLabel ?sym ?action WHERE {
+  { SELECT DISTINCT ?drug ?drugLabel ?pref WHERE {
+      GRAPH <https://purl.org/okn/frink/kg/rdkg> {
+        { ?d <https://w3id.org/biolink/vocab/subclass_of> <http://purl.obolibrary.org/obo/MONDO_0005298> } UNION { VALUES ?d { <http://purl.obolibrary.org/obo/MONDO_0005298> } }
+        ?drug <https://w3id.org/biolink/vocab/treats> ?d ; a <https://w3id.org/biolink/vocab/Drug> ; <http://www.w3.org/2000/01/rdf-schema#label> ?drugLabel . }
+      GRAPH <https://purl.org/okn/frink/kg/babel> { ?drug <http://www.w3.org/2004/02/skos/core#exactMatch> ?pref } } }
+  GRAPH <https://purl.org/okn/frink/kg/babel> { ?chembl <http://www.w3.org/2004/02/skos/core#exactMatch> ?pref }
+  FILTER(STRSTARTS(STR(?chembl),'http://identifiers.org/chembl.compound/'))
+  BIND(IRI(CONCAT('https://www.ebi.ac.uk/chembl/explore/compound/',STRAFTER(STR(?chembl),'chembl.compound/'))) AS ?cpd)
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    ?cpd a <http://purl.obolibrary.org/obo/NCIT_C43366> .
+    ?st rdf:subject ?cpd ; rdf:predicate <https://w3id.org/biolink/vocab/directly_physically_interacts_with> ; rdf:object ?prot .
+    OPTIONAL { ?st <http://purl.allotrope.org/ontologies/result#AFR_0003142> ?action }
+    ?gene <http://semanticscience.org/resource/SIO_010078> ?prot ; rdfs:label ?sym .
+  }
+}

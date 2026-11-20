@@ -1,0 +1,14 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
+SELECT ?study ?title ?comment ?assay ?mat1 ?mat2 ?fs1 ?fs2 ?tech (GROUP_CONCAT(DISTINCT ?f1; separator="|") AS ?factors1) (GROUP_CONCAT(DISTINCT ?f2; separator="|") AS ?factors2) WHERE {
+  GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
+    VALUES ?study { <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-546> <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-467> <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-690> <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-214> }
+    ?study kg:PERFORMED_SpAS ?assay .
+    OPTIONAL { ?study kg:project_title ?title } OPTIONAL { ?study rdfs:label ?comment }
+    OPTIONAL { ?assay kg:material_1 ?mat1 } OPTIONAL { ?assay kg:material_2 ?mat2 }
+    OPTIONAL { ?assay kg:technology ?tech }
+    OPTIONAL { ?assay kg:factor_space_1 ?fs1 } OPTIONAL { ?assay kg:factor_space_2 ?fs2 }
+    OPTIONAL { ?assay kg:factors_1 ?f1 } OPTIONAL { ?assay kg:factors_2 ?f2 }
+    FILTER(?study = <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-546> || ?study = <https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-467>)
+  }
+} GROUP BY ?study ?title ?comment ?assay ?mat1 ?mat2 ?fs1 ?fs2 ?tech

@@ -1,0 +1,22 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kg: <https://purl.org/okn/frink/kg/spoke-genelab/schema/>
+# Reactome over-representation (prokn gene->protein->participates_in->R-HSA pathway). Signatures = spaceflight DE (adj_p<=0.05,|log2FC|>=1) human genes, joined to prokn on HGNC symbol (rdfs:label). Returns k (signature genes in pathway) and K (all prokn genes in pathway); k>=4.
+SELECT ?sigset ?pw (SAMPLE(?pl) AS ?label) (COUNT(DISTINCT ?sym) AS ?k) (SAMPLE(?K0) AS ?K) WHERE {
+  { SELECT DISTINCT ?sigset ?sym WHERE { GRAPH <https://purl.org/okn/frink/kg/spoke-genelab> {
+      VALUES (?assay ?sigset) { (<https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-690-f82a89dc82f2903149d2d11cbd6a130d> "SF_BM") (<https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-690-d89cbb20c4b7855f3f955e4adbb6515d> "SF_BM") (<https://purl.org/okn/frink/kg/spoke-genelab/node/OSD-546-7d689d4277a131607670c3e624202a44> "SF_hMSC_osteo") }
+      ?st rdf:subject ?assay ; rdf:predicate kg:MEASURED_DIFFERENTIAL_EXPRESSION_ASmMG ; rdf:object ?gene ; kg:log2fc ?lfc ; kg:adj_p_value ?p .
+      FILTER(?p <= 0.05 && ABS(?lfc) >= 1)
+      { ?gene kg:IS_ORTHOLOG_MGiG ?h } UNION { ?gene kg:taxonomy obo:NCBITaxon_9606 . BIND(?gene AS ?h) }
+      ?h kg:symbol ?sym . } } }
+  GRAPH <https://purl.org/okn/frink/kg/prokn> {
+    ?g rdfs:label ?sym ; <http://semanticscience.org/resource/SIO_010078> ?prot .
+    ?prot <https://w3id.org/biolink/vocab/participates_in> ?pw .
+    ?pw a <http://purl.uniprot.org/core/Pathway> . FILTER(CONTAINS(STR(?pw), "R-HSA"))
+    OPTIONAL { ?pw rdfs:label ?pl }
+  }
+  { SELECT ?pw (COUNT(DISTINCT ?g2) AS ?K0) WHERE { GRAPH <https://purl.org/okn/frink/kg/prokn> {
+      ?g2 <http://semanticscience.org/resource/SIO_010078> ?p2 . ?p2 <https://w3id.org/biolink/vocab/participates_in> ?pw .
+      ?pw a <http://purl.uniprot.org/core/Pathway> . FILTER(CONTAINS(STR(?pw), "R-HSA")) } } GROUP BY ?pw }
+} GROUP BY ?sigset ?pw HAVING (COUNT(DISTINCT ?sym) >= 4)
