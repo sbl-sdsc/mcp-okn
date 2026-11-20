@@ -123,8 +123,8 @@ def check_skills(entries: list[str] | None) -> list[str]:
                 f"OUTDATED SKILL: the loaded `{name}` is v{version}, but this server ships "
                 f"v{current}. TELL THE USER, in your reply: their copy of `{name}` is out of "
                 f"date and they should install v{current} — download {_download_hint(name)} and "
-                "upload it as a new version of the skill (claude.ai / Claude Desktop: Settings → "
-                f"Capabilities → Skills; other clients: see {UPDATE_DOCS}). Meanwhile, where the "
+                "upload it (Claude Desktop / claude.ai: Plugins → Add → Upload plugin; other "
+                f"clients: see {UPDATE_DOCS}). Meanwhile, where the "
                 "old skill's instructions disagree with a tool's own description (a tool or "
                 "argument that no longer exists), follow the tool description."
             )

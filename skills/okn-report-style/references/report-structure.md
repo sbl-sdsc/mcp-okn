@@ -225,8 +225,9 @@ prose, never in the label.
 
 **Preflight:** this section needs the **PubMed** (`https://pubmed.mcp.claude.com/mcp`) and
 **Paperclip** (`https://paperclip.gxl.ai/mcp`) MCP connectors (look for tools named `pubmed` /
-`paperclip`). Confirm they're available before writing it; if one is missing, enable it (claude.ai →
-Settings → Connectors, or Claude Code `claude mcp add --transport http pubmed
+`paperclip`). Confirm they're available before writing it; if one is missing, enable it (Claude Desktop /
+claude.ai: search **Plugins** for PubMed; add Paperclip with **Plugins → Add → Add custom connector**,
+No sign-in; or Claude Code `claude mcp add --transport http pubmed
 https://pubmed.mcp.claude.com/mcp` / `claude mcp add --transport http paperclip
 https://paperclip.gxl.ai/mcp`, then reconnect) or state §8 is **omitted because the connector isn't
 enabled** — do not drop it silently. (The full preflight lives in okn-bioanalysis.)
@@ -292,7 +293,7 @@ if you cannot determine it — a family name, a product name, or an inferred id 
 mis-attributes the whole analysis.
 
 The header also carries the **skills** that shaped the run — `- **Skills:** okn-bioanalysis
-v0.1.4 · okn-report-style v0.2.8` — but only if you pass `skills=[...]`: the server cannot see which
+v0.1.5 · okn-report-style v0.2.9` — but only if you pass `skills=[...]`: the server cannot see which
 skills your session loaded, so an omitted list silently reads as "no methodology skill was used".
 Give each as `"<name> v<version>"`, the version taken from that skill's frontmatter
 `metadata.version` (not guessed), and list only skills you actually followed — a skill you didn't use

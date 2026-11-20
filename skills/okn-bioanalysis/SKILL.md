@@ -19,7 +19,7 @@ compatibility: >-
   ortholog-projection, and mechanistic-map scripts.
 metadata:
   author: sbl-sdsc
-  version: "0.1.4"
+  version: "0.1.5"
   repository: https://github.com/sbl-sdsc/mcp-okn
 ---
 
@@ -74,7 +74,9 @@ surfaces after the whole analysis is done and there's no time left to turn them 
   omission reads as "covered everything." **Never fabricate citations** to paper over the gap.
 - **How to enable (hand these to the user — you cannot do it for them, and a newly added server is not
   live until reconnect):**
-  - **claude.ai:** Settings → Connectors → add a custom connector for each missing URL above, then retry.
+  - **Claude Desktop / claude.ai:** PubMed is provided by Anthropic: search for it under **Plugins**.
+    Add Paperclip with **Plugins → Add → Add custom connector** (its URL above, No sign-in). Then
+    retry.
   - **Claude Code:** `claude mcp add --transport http pubmed https://pubmed.mcp.claude.com/mcp` and
     `claude mcp add --transport http paperclip https://paperclip.gxl.ai/mcp`, then reconnect (`/mcp`)
     or restart the session so the tools load.
@@ -84,7 +86,7 @@ surfaces after the whole analysis is done and there's no time left to turn them 
 1. `reset_query_log(skills=[…])` at the start — if it returns an outdated-skill warning, tell the
    user how to update; `get_kg_version` + `create_jupyter_notebook` at the end (pin
    versions + dates), passing `skills=` — every skill you actually followed as `"<name> v<version>"`
-   from its frontmatter `metadata.version` (this skill is `okn-bioanalysis v0.1.4`); the server can't
+   from its frontmatter `metadata.version` (this skill is `okn-bioanalysis v0.1.5`); the server can't
    see them, so an omitted list reads as "no methodology skill was used". Pass
    `external_mcp_servers=` the same way — every OTHER MCP connector a call actually fed the analysis
    from (`["PubMed", "Paperclip", …]`), so the header shows the whole evidence base, not just the KGs.
