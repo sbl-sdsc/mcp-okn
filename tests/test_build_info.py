@@ -10,7 +10,7 @@ import pytest
 from mcp_okn import __version__, build_info
 from mcp_okn.server import get_server_info
 from mcp_okn.skill_versions import bundled_skill_versions
-from mcp_okn.sparql import FEDERATION_ENDPOINT
+from mcp_okn.sparql import PUBLIC_ENDPOINT
 
 
 @pytest.fixture(autouse=True)
@@ -63,7 +63,7 @@ async def test_get_server_info_reports_the_running_build(monkeypatch):
         "service": "mcp-okn",
         "version": __version__,
         "build": "cafe123",
-        "sparql_endpoint": FEDERATION_ENDPOINT,
+        "sparql_endpoint": PUBLIC_ENDPOINT,
         "schema_files": info["schema_files"],
         "skill_versions": bundled_skill_versions(),
     }

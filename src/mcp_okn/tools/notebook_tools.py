@@ -13,7 +13,7 @@ from ..app import mcp
 from ..build_info import build_suffix
 from ..notebook import build_study, run_commands
 from ..skill_versions import check_skills
-from ..sparql import FEDERATION_ENDPOINT
+from ..sparql import PUBLIC_ENDPOINT
 from .transcript import (
     _active_window,
     _chat_window,
@@ -306,7 +306,7 @@ async def create_jupyter_notebook(
         model=model,
         entries=selected,
         kgs=kgs,
-        endpoint=FEDERATION_ENDPOINT,
+        endpoint=PUBLIC_ENDPOINT,
         generated_by=f"{mcp.name} v{__version__}{build_suffix()}",
         skills=skill_list,
         mcp_servers=server_list,

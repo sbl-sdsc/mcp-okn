@@ -8,7 +8,7 @@ from .. import __version__, payloads, registry, schema, void
 from ..app import mcp
 from ..build_info import build_id
 from ..skill_versions import bundled_skill_versions
-from ..sparql import FEDERATION_ENDPOINT
+from ..sparql import PUBLIC_ENDPOINT
 
 
 @mcp.tool()
@@ -30,7 +30,7 @@ async def get_server_info() -> dict[str, Any]:
         "service": mcp.name,
         "version": __version__,
         "build": build_id(),
-        "sparql_endpoint": FEDERATION_ENDPOINT,
+        "sparql_endpoint": PUBLIC_ENDPOINT,
         "schema_files": schema.schema_file_count(),
         "skill_versions": bundled_skill_versions(),
     }

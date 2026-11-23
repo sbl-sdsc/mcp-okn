@@ -15,6 +15,7 @@ import os
 import random
 import re
 import time
+import urllib.parse
 import weakref
 from collections.abc import Callable
 from typing import Any
@@ -34,9 +35,29 @@ from .query_rewrite import (
 )
 
 #: The single federation endpoint. Do not query per-KG endpoints.
-FEDERATION_ENDPOINT = os.environ.get(
-    "FEDERATION_ENDPOINT", "https://apps.okn.us/federation/sparql"
-)
+_PUBLIC_DEFAULT = "https://apps.okn.us/federation/sparql"
+FEDERATION_ENDPOINT = os.environ.get("FEDERATION_ENDPOINT", _PUBLIC_DEFAULT)
+
+
+def _public_endpoint() -> str:
+    """The endpoint a USER can reach, for notebooks, transcripts and server info.
+
+    A hosted deployment may query QLever through an in-cluster service name
+    (``http://frink-federation-qlever-server:7001``) that resolves only inside the
+    cluster; a notebook carrying it fails on the user's machine. ``OKN_PUBLIC_ENDPOINT``
+    sets it explicitly; otherwise a host without a dot (a bare service name, or
+    ``localhost``) is replaced by the public federation endpoint.
+    """
+    explicit = os.environ.get("OKN_PUBLIC_ENDPOINT", "").strip()
+    if explicit:
+        return explicit
+    host = urllib.parse.urlsplit(FEDERATION_ENDPOINT).hostname or ""
+    return FEDERATION_ENDPOINT if "." in host else _PUBLIC_DEFAULT
+
+
+#: The federation endpoint as users reach it; equals FEDERATION_ENDPOINT unless
+#: the server queries through an internal hostname (see :func:`_public_endpoint`).
+PUBLIC_ENDPOINT = _public_endpoint()
 
 #: Seconds a query may run on the endpoint before QLever stops it (sent as its
 #: ``timeout`` parameter, which it answers with 429 "Operation timed out"). Override
